@@ -328,6 +328,14 @@
         <span class="toggle-cross">☩</span>
     </div>
 
+    <!-- Phase 6 (sidebar-deletion refactor): the single neutral host
+         renderSharedOfficeNavigation() (js/office-ui.js) injects the live
+         "which office" navigator into, and the eventual home for every
+         real settings control the four legacy sidebars below still hold.
+         See RESUME_PROJECT_NOTE.md and the ui:phase6-retire-old-skin row
+         in audit-ledger.html for the staged plan this is part of. -->
+    <div id="legacy-office-controls" style="display:none" aria-hidden="true"></div>
+
     <!-- Settings panel -->
     <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
@@ -1208,7 +1216,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=309" defer></script>
+<script src="js/office-ui.js?v=310" defer></script>
 <script src="js/prayers.js?v=221"></script>
 <script src="js/tooltip.js"></script>
 

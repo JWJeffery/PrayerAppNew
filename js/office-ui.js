@@ -2244,12 +2244,9 @@ function setCustomDate(dateStr) {
 // Tradition-specific words are allowed; interaction structure is not.
 const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     daily: {
-        panelId: "settings-panel",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Time of Day",
-        hideSelectors: [".ordo-control"],
-        hideHeadings: ["Time of Day"],
         options: [
             { value: "morning-office", label: "Morning Prayer", detail: "Morning" },
             { value: "noonday-office", label: "Noonday Prayer", detail: "Midday" },
@@ -2258,12 +2255,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     coptic: {
-        panelId: "coptic-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Hour",
-        hideHeadings: ["Active Hour"],
-        hideButtonRowsAfterHeadings: ["Active Hour"],
         showAppearanceToggle: true,
         appearanceToggleId: "toggle-dark-coptic",
         options: [
@@ -2278,13 +2272,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     eastSyriac: {
-        panelId: "east-syriac-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Canonical Hour",
-        hideSelectors: ["#esy-override-panel"],
-        hideHeadings: ["Active Hour"],
-        hideButtonRowsAfterHeadings: ["Active Hour"],
         // FIXED 2026-09-03, found via a real report (Josh: "It's in dark mode, with no option to
         // change"): every other tradition using this shared navigator (Coptic, immediately above)
         // has showAppearanceToggle set, giving it a real Dark Mode checkbox in its own sidebar.
@@ -2301,12 +2291,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     horologion: {
-        panelId: "generic-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Office",
-        hideSelectors: [".ordo-control"],
-        hideNestedHeadings: ["Office"],
         showAppearanceToggle: true,
         appearanceToggleId: "toggle-dark-horologion",
         options: [
@@ -2414,167 +2401,25 @@ function _sharedOfficeNavigatorCurrentLine(modeKey) {
     return _sharedOfficeNavigatorReadableDate();
 }
 
-function _sharedOfficeNavigatorRestoreLegacyElement(el) {
-    if (!(el instanceof HTMLElement)) return;
+/* CORRECTED (Phase 6, sidebar-deletion refactor): this file used to also
+   define _sharedOfficeNavigatorHideLegacy() and two helpers here, which
+   retired old sibling markup inside each mode's own legacy sidebar so it
+   wouldn't visually clash with the freshly-built nav sitting next to it.
+   That legacy markup no longer exists (moved/deleted as part of this
+   refactor), so there is nothing left for that machinery to retire -- it
+   and the hideSelectors/hideHeadings/hideButtonRowsAfterHeadings/
+   hideNestedHeadings config keys it read have been deleted outright,
+   confirmed unread anywhere else in the repo before removal. */
 
-    el.classList.remove("shared-office-nav-legacy-hidden");
-    el.removeAttribute("aria-hidden");
-    el.removeAttribute("data-shared-office-nav-retired");
-    delete el.dataset.sharedOfficeNavRetired;
-
-    if (el.dataset.sharedOfficeLegacyDisplay !== undefined) {
-        el.style.display = el.dataset.sharedOfficeLegacyDisplay;
-        delete el.dataset.sharedOfficeLegacyDisplay;
-    } else {
-        el.style.removeProperty("display");
-    }
-
-    if (el.dataset.sharedOfficeLegacyVisibility !== undefined) {
-        el.style.visibility = el.dataset.sharedOfficeLegacyVisibility;
-        delete el.dataset.sharedOfficeLegacyVisibility;
-    } else {
-        el.style.removeProperty("visibility");
-    }
-
-    if (el.dataset.sharedOfficeLegacyPointerEvents !== undefined) {
-        el.style.pointerEvents = el.dataset.sharedOfficeLegacyPointerEvents;
-        delete el.dataset.sharedOfficeLegacyPointerEvents;
-    } else {
-        el.style.removeProperty("pointer-events");
-    }
-
-    if (el.dataset.sharedOfficeLegacyTabIndex !== undefined) {
-        if (el.dataset.sharedOfficeLegacyTabIndex === "") {
-            el.removeAttribute("tabindex");
-        } else {
-            el.setAttribute("tabindex", el.dataset.sharedOfficeLegacyTabIndex);
-        }
-        delete el.dataset.sharedOfficeLegacyTabIndex;
-    } else {
-        el.removeAttribute("tabindex");
-    }
-
-    if (el.dataset.sharedOfficeLegacyDisabled !== "true" && "disabled" in el) {
-        el.disabled = false;
-    }
-    delete el.dataset.sharedOfficeLegacyDisabled;
-
-    try {
-        el.inert = false;
-    } catch (_error) {
-        el.removeAttribute("inert");
-    }
-}
-
-function _sharedOfficeNavigatorRetireLegacyElement(el) {
-    if (!(el instanceof HTMLElement)) return;
-
-    if (el.closest(".shared-office-nav")) return;
-
-    if (el.style.display && el.dataset.sharedOfficeLegacyDisplay === undefined) {
-        el.dataset.sharedOfficeLegacyDisplay = el.style.display;
-    }
-    if (el.style.visibility && el.dataset.sharedOfficeLegacyVisibility === undefined) {
-        el.dataset.sharedOfficeLegacyVisibility = el.style.visibility;
-    }
-    if (el.style.pointerEvents && el.dataset.sharedOfficeLegacyPointerEvents === undefined) {
-        el.dataset.sharedOfficeLegacyPointerEvents = el.style.pointerEvents;
-    }
-    if (el.hasAttribute("tabindex") && el.dataset.sharedOfficeLegacyTabIndex === undefined) {
-        el.dataset.sharedOfficeLegacyTabIndex = el.getAttribute("tabindex") || "";
-    }
-    if (el.hasAttribute("disabled") && el.dataset.sharedOfficeLegacyDisabled === undefined) {
-        el.dataset.sharedOfficeLegacyDisabled = "true";
-    }
-
-    el.classList.add("shared-office-nav-legacy-hidden");
-    el.setAttribute("aria-hidden", "true");
-    el.setAttribute("data-shared-office-nav-retired", "true");
-    el.dataset.sharedOfficeNavRetired = "true";
-    el.tabIndex = -1;
-    el.style.display = "none";
-    el.style.visibility = "hidden";
-    el.style.pointerEvents = "none";
-
-    try {
-        el.inert = true;
-    } catch (_error) {
-        el.setAttribute("inert", "");
-    }
-
-    if ("disabled" in el) {
-        el.disabled = true;
-    }
-
-    el.querySelectorAll("a, button, input, select, textarea, summary, [tabindex]").forEach(child => {
-        if (!(child instanceof HTMLElement)) return;
-
-        if (child.hasAttribute("tabindex") && child.dataset.sharedOfficeLegacyTabIndex === undefined) {
-            child.dataset.sharedOfficeLegacyTabIndex = child.getAttribute("tabindex") || "";
-        }
-        if (child.hasAttribute("disabled") && child.dataset.sharedOfficeLegacyDisabled === undefined) {
-            child.dataset.sharedOfficeLegacyDisabled = "true";
-        }
-
-        child.setAttribute("aria-hidden", "true");
-        child.setAttribute("data-shared-office-nav-retired", "true");
-        child.tabIndex = -1;
-
-        if ("disabled" in child) {
-            child.disabled = true;
-        }
-    });
-}
-
-function _sharedOfficeNavigatorHideLegacy(panel, config) {
-    panel.querySelectorAll(".shared-office-nav-legacy-hidden[data-shared-office-nav-retired='true']").forEach(_sharedOfficeNavigatorRestoreLegacyElement);
-
-    const legacyElements = new Set();
-
-    for (const selector of config.hideSelectors || []) {
-        panel.querySelectorAll(selector).forEach(el => legacyElements.add(el));
-    }
-
-    for (const heading of config.hideHeadings || []) {
-        Array.from(panel.children).forEach(el => {
-            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
-                legacyElements.add(el);
-            }
-        });
-    }
-
-    for (const heading of config.hideButtonRowsAfterHeadings || []) {
-        const groups = Array.from(panel.children);
-        for (let i = 0; i < groups.length; i++) {
-            const el = groups[i];
-            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
-                const next = groups[i + 1];
-                if (next?.classList?.contains("ordo-buttons")) legacyElements.add(next);
-            }
-        }
-    }
-
-    for (const heading of config.hideNestedHeadings || []) {
-        panel.querySelectorAll(".nested-group").forEach(el => {
-            const strong = el.querySelector("strong");
-            if (strong && strong.textContent.trim().toLowerCase() === heading.toLowerCase()) {
-                legacyElements.add(el);
-            }
-        });
-    }
-
-    legacyElements.forEach(_sharedOfficeNavigatorRetireLegacyElement);
-}
+const SHARED_OFFICE_NAV_HOST_ID = "legacy-office-controls";
 
 function renderSharedOfficeNavigation() {
     const modeKey = _sharedOfficeNavigatorModeKey();
     if (!modeKey) return;
 
     const config = SHARED_OFFICE_NAVIGATOR_CONFIGS[modeKey];
-    const panel = document.getElementById(config.panelId);
-    if (!panel || panel.classList.contains("mode-hidden")) return;
-
-    _sharedOfficeNavigatorHideLegacy(panel, config);
+    const panel = document.getElementById(SHARED_OFFICE_NAV_HOST_ID);
+    if (!panel) return;
 
     let nav = panel.querySelector(".shared-office-nav");
     if (!nav) {

@@ -2346,14 +2346,6 @@ body.dark-mode .app-mode-kicker { color: var(--app-gold-soft); }
     line-height: 1.14;
 }
 
-.shared-office-nav-legacy-hidden,
-[data-shared-office-nav-retired="true"],
-[data-shared-office-nav-retired="true"] * {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
 @media (max-width: 900px) {
     .shared-office-nav-options {
         max-height: 18rem;
