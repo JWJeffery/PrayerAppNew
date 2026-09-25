@@ -41,14 +41,34 @@ all. **Real, unresolved gap surfaced**: this app's Midnight Office/Small Complin
 cite no named source edition whatsoever. Candidate identified precisely: Holy Trinity Publications'
 *The Unabbreviated Horologion or Book of the Hours* (Jordanville, NY, ISBN 978-0-88465-371-4) — the
 specific book already cited vaguely as "Jordanville Horologion (2008 edition)" throughout the
-existing corpus, but not actually held anywhere in the repo or Josh's Drive. **Needs Josh: does he
-have or can he get this (or another named edition) to supply pages from for the Midnight
-Office/Small Compline gap specifically**, matching the Maclean/O'Leary precedent. Also checked
-fresh: Lambertsen's Octoechos (governs hymnography, separate question from structure) still not
-under its announced free public license as of this session — no change since 2026-09-04. Proposed
-audit order once confirmed: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins
-(all covered by Hapgood already in hand), Midnight Office/Small Compline once sourced. **Not
-started.**
+existing corpus, but not actually held anywhere in the repo or Josh's Drive.
+
+**GAP CLOSED SAME DAY.** Josh had it and supplied it — Rassaphor-monk Laurence's *Unabbreviated
+Horologion*, Holy Trinity Monastery, Jordanville, **1997** Second Edition/Second Printing (note:
+1997, not the "2008" the existing corpus vaguely cites — a discrepancy disclosed, not yet resolved;
+check page-by-page as each office comes up, don't assume they match). Took two rounds to actually
+reach this branch: first landed as an untracked file in Josh's own Codespace (on this same branch
+name, but that's a local working tree, not the remote — being "in the branch" locally isn't being
+"in the branch" on GitHub until committed+pushed); his first push was rejected (non-fast-forward
+against commits made here in the meantime); resolved with `git pull --no-rebase && git push` from
+his end, then fast-forwarded in here. Verified before relying on it: `pdfinfo` confirms 412pp with a
+clean Adobe Acrobat OCR text layer; `pdftotext` spot-checks at three independent section starts
+(Midnight Office for Weekdays, Matins, Great Compline) all landed correctly, which also established
+a reliable `pdfPage = printedPage + 4` offset against the book's own Table of Contents. Saved as
+`data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt` (full text, 15,325 lines) +
+`...section-map.json` (transcribed from the book's own TOC), registered as `UNABHOR1997` in
+`source-index.json`. Contains all THREE Midnight Office forms (weekday/Saturday/Sunday — more
+granular than what this app currently builds) and Small Compline — exactly the gap — plus
+independently covers Matins, all four Hours, Typika, Vespers, and Great Compline too, so it now
+serves as a second, cross-checking witness alongside Hapgood for the whole Horologion, not just the
+two offices it was fetched for.
+
+Also checked fresh this session: Lambertsen's Octoechos (governs hymnography, separate question from
+structure) still not under its announced free public license — no change since 2026-09-04.
+
+**Every office in the Horologion's daily cycle now has a named, in-hand source. No sourcing
+blockers remain.** Proposed audit order: Vespers → Grand Compline → the four Hours → Typika →
+Orthros/Matins → Midnight Office → Small Compline. **Line-by-line audit not started yet.**
 
 **ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25.** Resolves the "TODO, next
 session" note below (kept here, struck through in spirit, for history). Design confirmed with

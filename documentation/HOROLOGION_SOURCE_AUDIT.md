@@ -1,6 +1,7 @@
 # Horologion Full Audit — Phase 1: Resources and Scope
 
-**Status: resource-gathering complete, line-by-line audit not yet started.** Written 2026-09-25 at
+**Status: resource-gathering complete, INCLUDING the Midnight Office/Small Compline gap (§4) —
+Josh supplied the missing source same-day. Line-by-line audit not yet started.** Written 2026-09-25 at
 Josh's direct request: "I want a full audit of the horologion. Start with determining what ought to
 be there. Let's pull together all of the resources that we need in order to do this correctly." This
 is that first phase. Nothing in the shipped Horologion content has been changed by this document.
@@ -122,23 +123,39 @@ must be — see §4.
 
 ---
 
-## 4. The open question this phase surfaces, not yet decided
+## 4. The gap, and how it was closed the same day
 
-**No named, defensible source is currently recorded for the Midnight Office's structure.**
-`data/horologion/midnight-office.json`'s own description says only "the structure presented here is
+**No named, defensible source had ever been recorded for the Midnight Office's structure.**
+`data/horologion/midnight-office.json`'s own description said only "the structure presented here is
 the ordinary... Midnight Office of the Constantinopolitan Horologion" — no edition, no citation. Given
 Hapgood (the lane's approved governing structural source) explicitly and confirmedly omits this
 office, and this project's own standing rule is no reconstruction/no synthesis for transcription work
-(`HOROLOGION_TESTING_PROTOCOL.md`), this is exactly the kind of gap a real audit exists to surface. It
-is **not yet established** whether the current Midnight Office / Small Compline structure was drawn
-from a real source that simply went uncited, or was reconstructed without one — that determination is
-itself the first item of the line-by-line audit, not something to guess at here.
+(`HOROLOGION_TESTING_PROTOCOL.md`), this was exactly the kind of gap a real audit exists to surface.
+Whether the current Midnight Office / Small Compline structure was drawn from a real source that
+simply went uncited, or was reconstructed without one, is **still not established** — that
+determination is the first item of the line-by-line audit, not answered here.
 
-**This needs a decision from Josh before the line-by-line audit can responsibly proceed on those two
-offices specifically**: does he have (or can he obtain) a copy of the Jordanville Unabbreviated
-Horologion, or another named edition, to supply pages from — matching the established, working pattern
-from Maclean/O'Leary/Hapgood's own Appendix B? Every other office in §1 already has Hapgood in hand in
-full; these two are the exception.
+**Closed same session**: Josh supplied a copy. **Rassaphor-monk Laurence (Laurence Campbell), *The
+Unabbreviated Horologion or Book of the Hours*, Holy Trinity Monastery (Jordanville, NY), Second
+Edition, Second Printing, 1997** (in copyright, ISBN 978-0-88465-371-4) — 412 pages, a clean Adobe
+Acrobat OCR text layer, spot-checked at three independent points before being relied on. Saved at
+`data/kalendar/source-witnesses/the-unabbreviated-horologion-or-book-of-the-hours-...pdf`, with a
+full plain-text extraction (`unabbreviated-horologion-1997.txt`, 15,325 lines) and a page map
+transcribed from the book's own Table of Contents (`unabbreviated-horologion-1997-section-map.json`,
+`pdfPage = printedPage + 4`, verified against three independent section starts). Registered in
+`source-index.json` as `UNABHOR1997`.
+
+**It contains all three Midnight Office forms** (Weekday, Saturday, and Sunday — more granular than
+what this app currently builds), **plus Small Compline (p.238)** — the exact gap. It also independently
+covers Matins, all four Hours with their Inter-Hours, Typica, Vespers, and Great Compline, meaning it
+now serves as a **second, cross-checking witness** alongside Hapgood for every office in §1, not just
+the two it was fetched for.
+
+**One discrepancy disclosed, not yet resolved**: several existing `data/horologion/*.json` files cite
+a vague "Jordanville Horologion (2008 edition)." This is a 1997 printing. Whether a genuinely distinct
+2008 edition exists and differs from this one is unknown — treat those existing citations as
+unverified against this specific text until checked page-by-page during the audit itself, not as
+automatically confirmed just because a Jordanville source has now arrived.
 
 ---
 
@@ -166,12 +183,12 @@ not a comprehensive structural inventory and should not be read as one.
 
 ## 6. Proposed next step
 
-Audit one office at a time against Hapgood's now-complete text (or, for Midnight Office/Small
-Compline, whatever source Josh supplies per §4), following the same discipline as this session's
-engine-audit sweep: every claim reproduced and verified directly against the actual file and the
-actual source text, not inferred or trusted from a prior comment. Suggested order, cheapest/highest-
-confidence first: **Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins**, then
-Midnight Office and Small Compline once §4 is resolved.
+Audit one office at a time against both sources now in hand (Hapgood + the Unabbreviated Horologion,
+cross-checking one against the other wherever both cover the same office), following the same
+discipline as this session's engine-audit sweep: every claim reproduced and verified directly against
+the actual file and the actual source text, not inferred or trusted from a prior comment. Every office
+in §1 is now sourced — no more blocked items. Suggested order, cheapest/highest-confidence first:
+**Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins → Midnight Office → Small
+Compline.**
 
-Not started yet — awaiting Josh's confirmation this scope and sourcing plan is right before the actual
-per-office line-by-line work begins.
+Not started yet.

@@ -20046,3 +20046,49 @@ prior comment. Suggested order: Vespers, Grand Compline, the four Hours, Typika,
 a real source for them. Awaiting his confirmation of this scope before the line-by-line work begins.
 
 SEED_VERSION bumped to `v371-2026-09-25-horologion-audit-phase-1-resources-gathered`.
+
+## Session 2026-09-25 continued -- the §4 gap closed same-day: Josh supplied the Unabbreviated Horologion
+
+Within the hour, Josh supplied a real source for the one gap §4 of the phase-1 document left open:
+**Rassaphor-monk Laurence (Laurence Campbell), *The Unabbreviated Horologion or Book of the Hours*,
+Holy Trinity Monastery (Jordanville, NY), Second Edition, Second Printing, 1997** (in copyright, ISBN
+978-0-88465-371-4, 412pp). Uploaded to a Codespace on this same branch; took two follow-up rounds to
+actually reach this session (first a plain untracked file in his Codespace's working tree, then a
+push that was rejected as non-fast-forward against commits made here in the meantime, resolved with
+`git pull --no-rebase && git push`, then fast-forwarded in here) -- recorded because it's a real,
+mildly confusing failure mode worth remembering: a file "being in the branch" in a Codespace's working
+directory is not the same as it being in the branch on GitHub until it's actually committed and
+pushed.
+
+Verified before relying on it, not assumed from the filename: `pdfinfo` confirms 412 pages, an Adobe
+Acrobat Paper Capture (OCR) text layer; `pdftotext` spot-checks at three independent points (Midnight
+Office for Weekdays, The Order of the Matins, The Order of Great Compline) all landed cleanly on the
+correct running header, confirming both OCR quality and a reliable `pdfPage = printedPage + 4` offset
+between the book's own page numbers and the PDF's physical pages -- checked against three separate
+section starts before being applied uniformly to the rest of the table of contents.
+
+**This is the exact gap-filler**: the book's own Table of Contents lists all three Midnight Office
+forms (Weekday p.1, Saturday p.21, Sunday p.40 -- more granular than what this app currently builds)
+and Small Compline (p.238). It also independently covers Matins, all four Hours with Inter-Hours,
+Typica, Vespers, and Great Compline -- meaning it now stands as a second, cross-checking witness
+alongside Hapgood for every office in the Horologion, not merely the two offices it was fetched to
+cover.
+
+Saved and registered as a full source-witness set, matching the Hapgood pattern from earlier this
+session: the PDF itself, a full plain-text extraction via `pdftotext -layout` (15,325 lines,
+`unabbreviated-horologion-1997.txt`), and a page map transcribed directly from the book's own printed
+Table of Contents (`unabbreviated-horologion-1997-section-map.json`). All registered in
+`source-index.json` under `UNABHOR1997`.
+
+**One discrepancy disclosed, deliberately not resolved yet**: several existing
+`data/horologion/*.json` files cite a vague "Jordanville Horologion (2008 edition)" for various
+tables. This is a 1997 printing. Whether a genuinely distinct 2008 edition exists and differs from
+this one is unknown -- those existing citations are to be treated as unverified against this specific
+text, checked page-by-page as each office comes up in the audit, not waved through just because *a*
+Jordanville source has now arrived.
+
+`documentation/HOROLOGION_SOURCE_AUDIT.md` updated in place (§4 and §6) to record this as resolved.
+**Every office in the Horologion's daily cycle now has a named, in-hand source. No more sourcing
+blockers remain before the line-by-line audit itself begins.**
+
+SEED_VERSION bumped to `v372-2026-09-25-horologion-audit-phase-1-complete-unabbreviated-horologion-supplied`.

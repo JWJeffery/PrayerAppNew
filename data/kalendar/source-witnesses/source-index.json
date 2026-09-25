@@ -1,4 +1,13 @@
 {
+  "UNABHOR1997": {
+    "label": "Rassaphor-monk Laurence (Laurence Campbell), The Unabbreviated Horologion or Book of the Hours, Holy Trinity Monastery (Jordanville, NY), Second Edition, Second Printing, 1997",
+    "path": "data/kalendar/source-witnesses/the-unabbreviated-horologion-or-book-of-the-hours-large-type-large-printnbsped-0884653714-9780884653714_compress.pdf",
+    "textPath": "data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt",
+    "sectionMapPath": "data/kalendar/source-witnesses/unabbreviated-horologion-1997-section-map.json",
+    "kind": "byzantine_service_book",
+    "authority_tier": "byzantine_governing_structure",
+    "notes": "In copyright (Holy Trinity Publications, ISBN 978-0-88465-371-4). Supplied by Josh 2026-09-25 specifically to close the Midnight Office / Small Compline gap left by Hapgood 1906/1922 (HAPGOOD1922 in this registry), which explicitly omits both (see that entry's own notes). PDF has a clean Adobe Acrobat Paper Capture (OCR) text layer, spot-checked at three independent points before being relied on. textPath is the full plain-text extraction (pdftotext -layout), 15,325 lines -- use this for grep/search rather than re-parsing the PDF each time. sectionMapPath is transcribed directly from the book's own printed Table of Contents (not machine-extracted the way HAPGOOD1922's map is), with pdfPage = printedPage + 4, an offset empirically verified against three independent section starts (not assumed from one sample) before being applied to the rest of the table. Contains ALL THREE Midnight Office forms (Weekday p.1, Saturday p.21, Sunday p.40) plus Matins, all four Hours with Inter-Hours, Typica, Vespers, Great Compline, and Small Compline (p.238) -- i.e. it independently covers the entire daily Horologion cycle, not just the two offices it was specifically fetched for, so it also serves as a second, cross-checking witness alongside Hapgood for everything Hapgood already covers. ONE DISCREPANCY DISCLOSED, not resolved: several `data/horologion/*.json` files in this corpus cite a vague \"Jordanville Horologion (2008 edition)\" -- this is a 1997 printing. Whether a genuinely distinct 2008 edition exists and differs from this one is not yet established; treat those existing citations as unverified against this specific text until checked page-by-page during the audit, not as automatically confirmed by this file's arrival."
+  },
   "HAPGOOD1922": {
     "label": "Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church, revised edition (1922)",
     "path": "data/kalendar/source-witnesses/hapgood-service-book-1922.txt",
