@@ -22,8 +22,41 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still (latest).** Josh said
+"Proceed with the rest of the que[ue]" -- resuming item 5 of his own original ordered plan, the last
+unstarted phase. Audited (CODE, not content) the 9 engine/calendar files the dashboard had carried as
+amber "not engine-audited this session" since 2026-07-10: `calendar-eastern-orthodox.js`,
+`calendar-east-syriac.js`, `calendar-ethiopian.js`, `horologion-engine.js`, `menaion-resolver.js`,
+`orthros-eothinon-engine.js`, `coe-eligibility.js`, `byzantine-paschalion.js`, plus one file from
+`js/octoechos/*`. Used 6 parallel background subagents (each required to reproduce every claimed bug
+by actually running the code, not just reading it), then independently re-verified every finding
+myself before fixing anything. **Four real bugs fixed**: (1) Eastern Orthodox Pascha computed 13 days
+too late -- a double-counted Julian/Gregorian offset (`_verifyPascha()` self-check went 0/16 -> 16/16)
+-- severe but currently unreachable live, since `getEOSeasonRanges()`, its only caller, is itself
+never called anywhere. (2) East Syriac Eliya-Sliwa season overlapped Qudash 'Idta by up to ~21 days
+in some years -- an unclamped season-end date. (3) East Syriac Holy Cross Day was one day off
+(Sep 13 instead of the file's own documented Sep 14 Julian), resolving that feast a day early. (4)
+Horologion Saturday Orthros was silently rendered with next week's tone instead of its own -- the
+Vespers-only "Saturday anticipates Sunday" rule was being applied to Orthros too. Also fixed a minor
+`rank:0`-coerced-to-null inconsistency in `menaion-resolver.js` (currently inert, no rank-0 entries
+exist yet). **Investigated and correctly determined NOT a bug**: a subagent flagged
+`_finalizeOrthrosReleaseHonestyPatch` (Horologion) as discarding a "complete" Sunday sessional-hymns
+corpus -- checked the underlying data file myself, which discloses its own texts as "provisional...
+pending source confirmation," so the override is this project's own unsourced-content rule working
+correctly, not a defect. Implementing the agent's suggested fix would have been a real regression.
+Confirmed clean: `byzantine-paschalion.js`, `coe-eligibility.js`, `orthros-eothinon-engine.js`'s core
+arithmetic. Two low-priority, currently-dead-code findings left unfixed and disclosed on the
+dashboard rather than silently ignored. None of the 5 touched files carry a cache-bust param, so none
+needed bumping. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (the
+engine audit sweep), SEED_VERSION v367 -> v368. This closes out the last item of Josh's original
+ordered plan. **Not yet redeployed** -- this batch is backend engine logic, mostly Byzantine/East
+Syriac lanes (one of which, Horologion, is currently gated from testers pending its own full audit
+per Josh's explicit "temporary unwire" instruction earlier this session), so a web-release rebuild
+was judged lower-urgency than the UI-visible fixes earlier in this session; redeploy on request or
+when the next batch of fixes accumulates.
+
 **BIBLE READER: HIGHLIGHT COLORS AND A GENUINELY UNREACHABLE HEADER, 2026-09-25 continued yet
-further still still (latest).** Josh sent a screenshot, then "Highlighting colors....all brown?"
+further still still.** Josh sent a screenshot, then "Highlighting colors....all brown?"
 **Colors**: all 5 highlight swatches (yellow/pink/green/blue/purple) rendered identically brown —
 `#bible-selection-toolbar button` (an ID+type selector, meant to bronze-style the Highlight/Note/
 Fathers action buttons) beat the swatch color classes on specificity regardless of source order,

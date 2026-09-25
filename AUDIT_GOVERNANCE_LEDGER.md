@@ -19700,3 +19700,137 @@ codebase, disclosed here rather than fixed unprompted (introducing a new version
 these two files is separate scope from this fix).
 
 SEED_VERSION bumped to `v367-2026-09-25-bible-reader-highlight-colors-and-header-reachability-fixed`.
+
+## Session 2026-09-25 continued -- the engine audit sweep: 9 never-independently-audited engine/calendar files, 4 real bugs found and fixed
+
+Josh said "Proceed with the rest of the que[ue]" -- resuming item 5 of his own previously-stated
+ordered plan ("Then the engine audit sweep"), the last unstarted phase from before this session's
+live-testing loop began. Scope: the 9 rows the audit-ledger dashboard's "other traditions" engines
+section had carried as amber/"not engine-audited this session" since 2026-07-10 -- these are CODE
+audits, distinct from every content-level audit this ledger already records elsewhere (per the same
+standing lesson recorded throughout this ledger: passing one says nothing about the other).
+
+Given the combined size (~1.7MB of JS across the touched files, including a ~478KB Horologion
+engine), 6 background subagents were launched in parallel, each with an isolated git worktree and an
+explicit instruction that every claimed bug had to be reproduced by actually running the code
+(`node -e` / a scratch script), not inferred from reading it, and that only genuine correctness bugs
+-- not style -- should be reported. Every agent finding below was independently re-verified by
+re-running the same reproduction before any fix was applied, per this session's standing rule to
+never trust a claim, including a subagent's own, without live verification.
+
+### Real bugs found and fixed
+
+**`js/calendar-eastern-orthodox.js` -- Pascha computed 13 days too late (severe, but currently
+unreachable in production).** `computeOrthodoxPascha()` converted the Julian-calendar Pascha date to
+an absolute Julian Day Number via `julianDateToMs()`, which already applies the Julian calendar's own
+JDN formula (no separate Gregorian-correction term needed -- a JDN is calendar-agnostic, so reading it
+back through JS's Gregorian `Date` methods already yields the correct Gregorian civil date). The
+function then added `julianToGregorianOffset(y)` a second time on top, double-counting the offset and
+pushing every computed Pascha exactly 13 days (for the 1900-2099 century) too late. This file's own
+embedded `_verifyPascha()` self-check against 16 known historical Pascha dates went from 0/16 passing
+(every single year off by exactly 13 days) to 16/16 after removing the redundant offset addition.
+Confirmed via `grep -rn "getEOSeasonRanges"` that `calendar-engine.js`'s `getEOSeasonRanges()`, the
+only consumer of this module anywhere in the codebase, currently has zero callers of its own -- so
+despite the severity, this bug has had no live production impact. Fixed regardless, and the file's
+top doc comment (which had asserted a Julian-to-Gregorian conversion step that doesn't actually need
+to exist) corrected to match.
+
+**`js/calendar-east-syriac.js` -- two real, live-reachable bugs.** (1) The Eliya-Sliwa season's end
+date was computed unconditionally as `addDays(museStart, -1)`, without clamping to `qudashIdtaStart`
+in the `!useMuse` branch (where Eliya's fixed 7 weeks run past Qudash 'Idta's independently-computed
+start, "as in 2022" per the file's own comment) -- so `getSeason()`, which returns the first matching
+range in source order, misclassified every date in the resulting overlap window (7 days in 2022;
+verified up to 21 days in other years) as `eliya-sliwa` when it should already have been
+`qudash-idta`. Fixed by clamping Eliya-Sliwa's end to whichever of `museStart`/`qudashIdtaStart` comes
+first (a no-op in the `useMuse` branch, where `museStart` always comes first already). Caught and
+corrected my own first attempt at this fix before testing it: `Math.min(museStart, qudashIdtaStart)
+=== museStart ? ... : ...` is broken because `Math.min` coerces `Date` objects to primitive numbers
+via `valueOf()`, so the result can never strictly-equal (`===`) a `Date` object reference -- replaced
+with a plain ternary comparison instead. (2) Holy Cross Day (Sliwa) was computed as Julian-calendar
+September 13, one day off from this same file's own documentation ("Holy Cross (Sliwa): Sep 14 Julian
+= Sep 27 Gregorian") and the comment directly above the bug itself -- a genuine numeric transcription
+slip, surfaced directly to users via the `COE_FEAST_HOLY_CROSS` commemoration note, resolving the
+feast one day early in Julian mode. Both fixes verified via `node --check`, all 31 of this file's own
+embedded self-tests still passing afterward, and direct `getSeason()`/`getLiturgicalYear()` calls
+against 2022 dates before and after (Eliya-Sliwa now correctly ends Oct 29 2022 with no overlap;
+Holy Cross now correctly resolves to Sep 27 2022 Gregorian, was Sep 26).
+
+**`js/horologion-engine.js` -- Saturday Orthros silently rendered with the wrong week's tone (real,
+live-reachable, affects every ordinary Saturday).** `_resolveOrthrosSlots` called
+`_computeBaselineTone(dateObj)` ungated. That function's own Step 4 shifts Saturday to the following
+day's tone, per its own documented rule that "Saturday evening belongs liturgically to Sunday" -- but
+that rule is specifically a VESPERS-only anticipatory rule; Orthros (Matins) on Saturday belongs to
+the OUTGOING week, not the incoming one. `_resolveOrthrosSlots` was combining this Sunday-shifted tone
+with the raw, unshifted `dateObj.getDay() === 6` to index the weekday canon/sessional-hymns/etc.
+corpora, so Saturday Orthros was silently rendered with next week's tone instead of its own. Fixed by
+adding an `anticipatory` parameter to `_computeBaselineTone` (default `true`, so every other one of
+its ~14+ call sites throughout the file keeps its exact current behavior unchanged -- these were not
+individually re-audited given time constraints, but none of them had their default disturbed) and
+passing `anticipatory=false` from `_resolveOrthrosSlots`. Verified non-destructively: copied the file
+to a scratchpad location, added a temporary export of the private function to that COPY only (the
+real shipped file was never modified for test purposes), and confirmed against a known Fri/Sat/Sun
+2025 sequence -- Friday tone=1, Saturday with `anticipatory=true` (Vespers, unchanged) tone=2,
+Saturday with `anticipatory=false` (Orthros, the fix) tone=1 (correctly matches the outgoing Friday
+week), Sunday tone=2. `node --check` on the real edited file passes clean. Not yet independently
+re-verified end-to-end through the public `resolveOffice('orthros', ...)` API -- only the private
+function itself was directly tested -- a good strengthening step for a future session.
+
+**`js/menaion-resolver.js` -- rank 0 silently coerced to null (low severity, currently inert).** The
+`menaion-text-unavailable` status branch returned `rank: best.rank || null`, which would coerce a
+legitimate `rank: 0` to `null`; the resolved branch two cases below returns `rank: best.rank` with no
+`||` at all, correctly preserving 0. The live corpus currently only defines ranks 1-4, so this has
+never produced a wrong result in practice. Fixed to `rank: best.rank ?? null` for parity with the
+resolved branch regardless, in case a rank-0 entry is ever added.
+
+### Investigated, correctly determined NOT a bug
+
+One subagent flagged `_finalizeOrthrosReleaseHonestyPatch` (in `horologion-engine.js`) as a "critical
+bug" for silently discarding a "fully-populated" Sunday sessional-hymns corpus on every Sunday and
+replacing it with a "pending source confirmation" placeholder. The agent's description of the code's
+behavior was accurate, but its framing of that behavior as a bug was wrong. Checked the underlying
+data file directly rather than trusting the agent's characterization:
+`js/octoechos/orthros-sessional-hymns-sunday.js`'s own header states "Status: Schema + provisional
+corpus. Texts are provisional pending source confirmation against the Slavic Octoechos (Jordanville /
+Hapgood tradition)." The corpus discloses itself as unconfirmed -- the override is this project's own
+strict "never present unsourced content as confirmed" rule working exactly as intended, not a defect.
+Implementing the agent's suggested fix would have been a real regression, presenting unsourced hymn
+texts to users as if genuine. No action taken.
+
+### Confirmed clean, no findings
+
+`js/byzantine-paschalion.js` and `js/coe-eligibility.js` -- both audited directly, no bugs found.
+`js/orthros-eothinon-engine.js` -- its core modulo-11 Eothinon (Sunday Matins Gospel) rotation
+arithmetic verified correct across 7 years plus exhaustive day-by-day scans of 2023 and 2024. One
+low-severity, currently-dead-code finding left unfixed: `getSundayEothinonByISO()` doesn't
+range-validate MM/DD before constructing a `Date`, but it has zero callers anywhere in the codebase --
+the real caller, `horologion-engine.js`, always calls `getSundayEothinon(dateObj)` directly with an
+already-valid `Date`.
+
+### One more low-priority finding, left unfixed
+
+`js/octoechos/orthros-exapostilarion-sunday.js` (a file already disclosed elsewhere in this ledger as
+schema-only, not wired to the resolver) overwrites `window.OCTOECHOS.orthros.exapostilarion.sunday`
+unconditionally, unlike its sibling files, which merge with `|| {}`. Currently harmless because of
+`index.html`'s script load order (this file loads before `orthros-exapostilarion-eothinon.js`), but a
+latent, load-order-dependent risk if that order ever changes. Not fixed -- low priority, and this was
+the only one of the 12 `js/octoechos/*` files this sweep touched; the other 11 remain unaudited as
+their own dashboard row still discloses.
+
+### Housekeeping note
+
+A stop-hook flagged the isolated git worktrees the 6 background subagents created
+(`.claude/worktrees/agent-*`) as untracked files. These are local tooling scratch space, not
+repository content, and self-clean once their creating agent finishes. Added `.claude/` to
+`.gitignore` rather than committing them.
+
+None of the 5 touched files (`calendar-eastern-orthodox.js`, `calendar-east-syriac.js`,
+`calendar-ethiopian.js`, `horologion-engine.js`, `menaion-resolver.js`) carry a cache-bust `?v=` query
+param in `index.html` at all -- confirmed by grep before writing this entry, not assumed -- so none
+needed bumping.
+
+This closes out item 5 of Josh's original ordered plan (Eastern seasonal-colour sourcing; web deploy
+packaging; Ethiopian Synaxarium reaudit; the `needs:content`/`needs:governance` dashboard rows; the
+engine audit sweep) in full, alongside the Horologion temporary unwire and the extended live-testing
+UI fix loop that were folded in along the way.
+
+SEED_VERSION bumped to `v368-2026-09-25-engine-audit-sweep-9-files-4-real-bugs-fixed`.
