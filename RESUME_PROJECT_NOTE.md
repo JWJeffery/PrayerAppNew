@@ -22,7 +22,64 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the remaining ~187 `body.shell-v2` occurrences in
+**PHASE 6 IS NOW COMPLETE, 2026-09-25 (latest).** Josh asked directly whether the UI refactoring
+was done; the honest answer was no — Phases 1–5 were done, but Phase 6 still had three disclosed
+remaining items and Book of Needs hadn't been touched. He said "Proceed with six." Researched all
+three via three parallel Explore agents before touching anything, since this exact file has already
+caused real reverts from confident-but-wrong reasoning. All three findings changed the shape of the
+work:
+
+**The "third ~170-line mobile-repair CSS block" was not legacy cruft — it's load-bearing.**
+`css/office.css:2091–2189` (99 lines today, already partly trimmed by an earlier stage). Of eleven
+selector groups, only **one** was confirmed dead (a `body.mobile-sidebar-open
+#daily-office-section::after` dim overlay — zero JS anywhere sets that class). Everything else is
+live, and the `html, body`/`#main-content` `overflow-x:hidden` rules appear to be the **sole
+mechanism** preventing horizontal scroll at mobile widths on both Daily Office and Book of Needs —
+`office-shell.css` has zero `html`/`body` selectors and never references `#daily-office-section` at
+all. The "genuinely unclear whether the new shell supersedes it" question is resolved: it does not.
+Deleted only the one dead rule; verified `scrollWidth === innerWidth` at 375/390px on both screens,
+identical before and after (the deleted rule was never reachable).
+
+**The legacy print block had real dead code mixed with rules shared by Book of Needs.**
+`css/office.css`'s two `@media print` blocks, split apart rather than treated as one unit:
+- Confirmed dead, deleted: the `.ethiopian-theme .rubric-text` rule (same basis as this project's
+  earlier full removal of `.ethiopian-theme` — the class is never applied anywhere); `.psalm-verse`/
+  `.verse-num` (nothing renders these classes — the live psalm renderer uses `.psalm-block`/
+  `.psalm-stanza`/`.psalm-half-verse` instead, leftovers from a superseded approach).
+- Removed as redundant, not dead: `.ordo-control`/`.setting-group` from the print `display:none`
+  list — the classes ARE used (they're the "moved legacy controls"), but already hidden by their
+  own always-on ancestor `#legacy-office-controls`'s inline `display:none`, confirmed via a direct
+  hidden-ancestor DOM walk, so this print-specific rule was pure redundancy.
+- **Kept, confirmed load-bearing and shared with Book of Needs**: `.office-container` and
+  `.component-text` — `js/prayers.js` directly renders both for the real single-prayer print path,
+  and `office-shell.css` has no print rule for either at all, so office.css's rule is the *only*
+  thing governing their print appearance. Deleting either would have been the exact regression a
+  prior session's own comment warned about when it left this block untouched.
+- Corrected two `office-shell.css` comments citing this block (one stale line number, one citing
+  the now-deleted `.psalm-verse` as a reason to stay screen-only-scoped) and removed the matching
+  dead `.office-container .psalm-verse` selector from `office-shell.css`'s own typography rule while
+  in the area — one small addition beyond originally planned comment-only scope for that file,
+  disclosed rather than left as a second copy of the same dead weight.
+
+**No print-preview baseline ever existed to "regenerate" against.** Confirmed via full-repo search:
+zero print-emulation test tooling anywhere, zero captured baseline artifacts — the "pre-Phase-6
+baseline" mentioned three times in this note was aspirational, never real. Printing has no in-app
+affordance at all (no Print button anywhere; purely Ctrl/Cmd+P). Josh chose ephemeral verification
+over permanent committed tooling. Built a throwaway Playwright print-emulation check covering all
+seven printable states (five office lanes, Book of Needs, Bible Browser, plus the open settings
+drawer), captured honestly as a "before this cleanup" reference rather than a fictional snapshot of
+the past. Two property diffs after the edit were investigated, not dismissed: the two redundant
+selectors' own `display` flipped from `none` to `block` as expected (still invisible via their
+hidden ancestor); `body` background/color showed small RGB jitter that reproduced identically on a
+same-code rerun, proving pre-existing headless-Chromium print-rendering noise, not a regression.
+Screenshot pixel-diff: **0/8 nonzero across every printable state.** Full regression sweep clean.
+
+**Phase 6 — "delete the old skin outright" — is now fully closed.** Everything disclosed as
+remaining across this whole project's Phase-6 work is done. The one thing still explicitly out of
+scope is Book of Needs' own design pass, deferred to "after" Phase 6 from the very start — not a
+Phase 6 gap, never claimed to be done here.
+
+**DONE, LIVE-CONFIRMED, 2026-09-25: the remaining ~187 `body.shell-v2` occurrences in
 `css/office-shell.css` are unscoped — the broader unscoping work deferred at the end of the
 entry-screen work below.** Executed the plan from the entry below's three-agent audit, in 8 staged
 commits, each verified against the *immediately preceding* stage (not Stage 0) with a 4-lane ×
@@ -1218,14 +1275,17 @@ and adopted. One canon — **rail · page · margin** — with everything not pr
 text column into the margin. Six phases. **Phase 1, 2, and 3 are all done, including live
 confirmation.**
 
-| Phase | State |
+**This table is stale (predates Phases 4-6's actual completion) — see the dated entries at the top
+of this file for current state. Kept for historical context only, not re-cited.**
+
+| Phase | State (AS OF 2026-09-20/21, SUPERSEDED — see top of file) |
 |---|---|
 | 1 — flagged stylesheet + dev toggle | **done** (`?shell=v2` on, `?shell=v1` off, sticky per browser) |
 | 2 — three-column shell, both themes, Auto/Light/Dark | **done and confirmed in the browser** |
 | 3 — Anglican lane emits the envelope | **done and confirmed in the browser (2026-09-20)** — see below |
 | 4 — threshold and Office Settings | **in progress** — threshold rebuilt in the correct place (`#mode-selection`) matching the real design source; ask-state `#tradition-entry` reverted untouched; all four drawers regrouped I/II/III; consolidation and the other 3 lanes' threshold text still open, see §0 item 2 |
 | 5 — the other three lanes | not started |
-| 6 — delete the old skin | **partly brought forward**, see the demolition note below |
+| 6 — delete the old skin | **NOW COMPLETE as of 2026-09-25** — see the top-of-file entry dated 2026-09-25 ("PHASE 6 IS NOW COMPLETE"); the demolition note below is historical context for why Phase 6 was brought forward early, not current status |
 
 **PHASE 3 IS FULLY DONE (2026-09-20) — REFACTORED AND BROWSER-CONFIRMED.**
 `renderBcpOffice()` (`js/office-ui.js`) no longer builds one `officeHtml` string and scrapes it
