@@ -1862,3 +1862,150 @@ body.shell-v2 .app-mode-tool-btn small {
     padding: 7px 13px;
     cursor: pointer;
 }
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: card-grid + icon layout port (Stage 2 of 6).
+
+   The second real gap Stage 1's own header comment names: nothing above
+   ever rebuilt these screens' actual grid layout, only recolored it. Ported
+   verbatim from office.css, with two deliberate, disclosed exceptions:
+   border-radius:18px on the card containers is DROPPED (Group 6's own
+   1584-1591-region rule already sets border-radius:0, confirmed live via
+   getComputedStyle as this screen's real, current appearance at every
+   viewport -- porting 18px would introduce rounded corners that don't
+   exist today); and the two hairline border-top colors below are the
+   LITERAL office.css value (rgba(103,58,31,0.12), the old parchment
+   brown), not var(--uo-hairline) -- confirmed live this hairline is still
+   rendering in that brown today, with var(--uo-hairline) resolving to a
+   visibly different gold on this always-night-palette screen. Using the
+   literal value preserves today's exact appearance; whether this one
+   remaining old-palette color should be modernized to match the
+   surrounding gold language is a separate, undecided design question,
+   not something this refactor resolves on its own. */
+
+.app-mode-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(103, 58, 31, 0.12);
+}
+
+#mode-selection .mode-btn.app-mode-card {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 13px;
+    align-items: center;
+    width: 100%;
+    min-height: 86px;
+    margin: 0;
+    padding: 16px 18px;
+}
+
+.app-mode-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+}
+
+.app-mode-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.app-mode-card-admin {
+    grid-column: 1 / -1;
+}
+
+.app-entry-family-grid,
+.app-entry-tradition-panel {
+    display: grid;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(103, 58, 31, 0.12);
+}
+
+.app-entry-family-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-entry-tradition-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+}
+
+.app-entry-panel-title {
+    grid-column: 1 / -1;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card {
+    display: grid;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    margin: 0;
+}
+
+.app-entry-family-card {
+    grid-template-columns: 46px minmax(0, 1fr);
+    min-height: 112px;
+    padding: 18px;
+}
+
+.app-entry-tradition-card {
+    grid-template-columns: 54px minmax(0, 1fr);
+    min-height: 96px;
+    padding: 16px 18px;
+}
+
+.app-entry-family-icon,
+.app-entry-tradition-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+}
+
+.app-entry-family-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+}
+
+.app-entry-tradition-code {
+    width: 50px;
+    height: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.app-entry-back {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+@media (max-width: 860px) {
+    .app-entry-family-grid,
+    .app-entry-tradition-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .app-mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #mode-selection .mode-btn.app-mode-card {
+        min-height: 76px;
+    }
+}
