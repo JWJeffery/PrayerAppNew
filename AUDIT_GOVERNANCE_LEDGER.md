@@ -18832,3 +18832,111 @@ Two files changed (`audit-ledger.html`, `scripts/audit-book-of-needs-tradition-c
 this documentation pass -- no application code, data, or rendered office output touched.
 
 SEED_VERSION bumped to `v357-2026-09-25-ledger-storage-and-stale-audit-fixed`.
+
+---
+
+## Session 2026-09-25 continued -- Book of Needs "For Ministers" vesting/serving prayers wired
+## into the existing 8-role ladder: order-specific vestments gated to their exact order, the
+## rest gated to the lowest minor-order rank, using a self-identification mechanism that
+## already existed and only needed to be connected. SEED_VERSION v357 -> v358.
+
+Josh, live in the app: on the Anglican-scoped Book of Needs, with "Show prayers for other
+ministries" unchecked and no ordained role set in his profile, he could still see "Vesting: The
+Stole (Deacon)" and "Vesting: The Stole (Priest)" -- and asked, correctly, why, given he is
+neither. Investigated rather than assumed a bug in the toggle mechanism itself.
+
+### The real gap: coverage, not mechanism
+
+`BOOK_OF_NEEDS_OPTION_MINIMUM_TIER` (`js/prayers.js`) -- the map
+`prayerOptionMeetsRoleRequirement()` checks -- held only 13 entries, and all 13 are
+Church-of-the-East/Maclean-sourced (blessings, exorcistic prayers, sacramental actions). Zero
+Anglican or Orthodox vesting/serving prayers had ever been added to it, so
+`prayerOptionMeetsRoleRequirement()` returned `true` unconditionally for all of them ("no entry
+here at all -- the common, lay-open case"). The toggle and the role ladder were both working
+exactly as coded; the per-prayer coverage was simply never extended past the original 13 when
+the Anglican/Orthodox "For Ministers" content was added.
+
+Read the full "For Ministers" section in `index.html` before proposing anything (Journey to
+Church, Before Entering Church, Vesting Prayers, Before Serving, After Serving -- eighteen
+options across Anglican and Orthodox content, none previously gated). Asked Josh to split
+unambiguous from ambiguous rather than guessing at liturgical practice that varies by tradition
+and parish.
+
+### Unambiguous: order-specific by what the vestment literally is
+
+Josh's direct yes, plus one more caught while reading the full list, same category, not
+originally asked about:
+
+- `vesting-stole-deacon` -> `deacon`
+- `vesting-stole-priest` -> `priest`
+- `vesting-chasuble` -> `priest`
+- `vesting-orthodox-epitrachelion` -> `priest` (the Orthodox priest's stole, distinct from a
+  deacon's orarion, which this corpus carries no separate vesting prayer for)
+- `vesting-orthodox-phailonion` -> `priest` (the Orthodox priest's chasuble-equivalent)
+- `minister-before-serving-deacon` -> `deacon` -- found while reading the full option list,
+  titled verbatim "For a Deacon Before the Liturgy," the same unambiguous category as the
+  vestments Josh had already confirmed.
+
+### Ambiguous: gated to the lowest minor-order rank, not hard-coded to a fixed tradition's practice
+
+Servers and acolytes are lay in many traditions -- this is not the same kind of question as the
+vestments above, which are unambiguous by what they physically are. Josh's direction: let a
+person self-identify rather than hard-code an assumption. Gated to `reader`, the lowest
+minor-order rank on the existing ladder:
+
+`minister-journey-bcp`, `minister-journey-orthodox`, `minister-entering-bcp`,
+`minister-entering-orthodox`, `vesting-amice`, `vesting-alb`, `vesting-cincture`,
+`vesting-orthodox-full` (combines multiple vestments, gated at the same floor as its parts),
+`minister-before-serving-bcp`, `minister-before-serving-orthodox`, `minister-after-serving-bcp`,
+`minister-after-serving-orthodox`.
+
+### The self-identification mechanism Josh asked for already existed
+
+Discovered, not built new: `index.html`'s `#profile-ministry-role` select already offers "I am a
+reader (minor order)" and "I am a subdeacon (minor order)," wired to the full 8-role ladder in
+`documentation/book-of-needs-role-access-governance.json` (built 2026-08-30, per that file's own
+`implementationStatus2026_08_30` note -- `BOOK_OF_NEEDS_OPTION_MINIMUM_TIER` and rank-based
+comparison replaced an earlier three-value lay/clergy/all field that same day, closing the exact
+gap this governance document's `roleAccessPrinciples` warns against, "a deacon or subdeacon
+merely self-identifying as clergy"). This work only had to wire the eighteen newly-identified
+prayers into the ladder that already existed and was already selectable -- not build any new UI
+or data model. `documentation/book-of-needs-role-access-governance.json` itself was not edited:
+its principles already explicitly name vesting and preparation-for-service material as something
+role access should govern (`purpose.usefulness`: "vesting prayers, deaconal/subdeaconal/reader
+material"); this work is direct implementation of that existing decision, not a new one.
+
+### Verified live, not assumed from the map alone
+
+In headless Chromium via `scripts/dev-spa-server.mjs`:
+
+- Lay profile, toggle off -- all eighteen newly-gated ids hidden, confirmed via each option's
+  actual `hidden` DOM state, not visual inspection alone.
+- Toggle on -- all eighteen visible again (the existing "filter, not a bar" contract holds).
+- Role set to `reader` via `setUserProfileMinistryRole()`, toggle off -- reader-gated ids
+  visible, deacon- and priest-gated ids still hidden.
+- Role set to `priest` -- both priest-gated and deacon-gated ids visible (priest outranks deacon
+  on `BOOK_OF_NEEDS_ROLE_ORDER`'s rank comparison, confirmed live, not merely assumed from the
+  numbers `reader:1 < subdeacon:2 < deacon:3 < priest:4 < bishop:5`).
+
+Every one of the eighteen new map keys confirmed, by a direct script check against `index.html`'s
+actual markup, to match a real `data-value` -- not guessed at or transcribed by hand. `node
+--check` clean on `js/prayers.js`. Re-ran `audit-book-of-needs-tradition-context.mjs` (21/21
+still pass) and `audit-book-of-needs-design-shell.mjs` (still passes) as regression checks --
+neither audit enumerates individual prayer ids, so neither was expected to catch this class of
+gap in the first place; that is a real coverage limit of both scripts, disclosed here rather than
+left looking like a clean bill of health on this specific question.
+
+### Left open, deliberately
+
+A related question surfaced in the same conversation -- whether the "Show prayers for other
+ministries" checkbox label should instead reference traditions -- was explicitly **not**
+actioned. Investigation showed the label is accurate to what the control actually does (a
+ministry/ordination-tier filter, not a tradition filter); Josh dismissed the clarifying question
+rather than confirming a rename. Left as-is, pending his own follow-up, not silently changed
+either way.
+
+One file changed (`js/prayers.js`) plus the dashboard row and this documentation pass -- no
+markup, CSS, or data files touched; no rendered Daily Office output affected at all (Book of
+Needs only).
+
+SEED_VERSION bumped to `v358-2026-09-25-book-of-needs-minister-role-gating-wired`.

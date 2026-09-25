@@ -205,6 +205,41 @@ const BOOK_OF_NEEDS_OPTION_MINIMUM_TIER = new Map([
     ['coe-maclean-blessing-boy-forty-days',      'priest'], // explicitly modelled on the priestly Presentation rite
     ['coe-maclean-prayer-woman-seeking-prayers', 'priest'], // explicitly "given though the priesthood"
     ['coe-maclean-prayer-new-cloths-vessels',    'priest'], // explicitly "for priestly use", altar furnishings
+
+    // ADDED 2026-09-25, at Josh's direction: the "For Ministers" vesting/
+    // serving prayers had no tier at all, so they showed to every profile
+    // regardless of role or the toggle below -- caught live when Josh, not
+    // ordained, saw "Vesting: The Stole (Priest)" with the toggle unchecked.
+    // Order-specific vestments are unambiguous by what they literally are --
+    // a layperson does not wear a chasuble -- so these map directly to the
+    // order that wears them:
+    ['vesting-stole-deacon',            'deacon'], // the deacon's stole
+    ['vesting-stole-priest',            'priest'], // the priest's stole
+    ['vesting-chasuble',                'priest'], // Western priestly/episcopal Mass vestment
+    ['vesting-orthodox-epitrachelion',  'priest'], // the Orthodox priest's stole -- distinct from the deacon's orarion, which this corpus does not carry a separate vesting prayer for
+    ['vesting-orthodox-phailonion',     'priest'], // the Orthodox priest's chasuble-equivalent
+    ['minister-before-serving-deacon',  'deacon'], // titled "For a Deacon Before the Liturgy"
+
+    // The rest of "For Ministers" is genuinely ambiguous -- servers/acolytes
+    // are lay in many traditions, so this is not a major-order question the
+    // way the vestments above are. Josh's direction: gate to the lowest
+    // minor-order rank already on this ladder (reader), so anyone who
+    // self-identifies as at least a reader or subdeacon in their profile
+    // sees these by default; anyone else still reaches them via the
+    // existing "show prayers for other ministries" toggle -- a filter, not
+    // a bar, per this file's own 2026-09-05 governance decision above.
+    ['minister-journey-bcp',            'reader'],
+    ['minister-journey-orthodox',       'reader'],
+    ['minister-entering-bcp',           'reader'],
+    ['minister-entering-orthodox',      'reader'],
+    ['vesting-amice',                   'reader'],
+    ['vesting-alb',                     'reader'],
+    ['vesting-cincture',                'reader'],
+    ['vesting-orthodox-full',           'reader'], // combines multiple vestments; gated at the same floor as its parts
+    ['minister-before-serving-bcp',     'reader'],
+    ['minister-before-serving-orthodox','reader'],
+    ['minister-after-serving-bcp',      'reader'],
+    ['minister-after-serving-orthodox', 'reader'],
 ]);
 
 // Rank order for the major-order ladder, mirrored from

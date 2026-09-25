@@ -22,7 +22,32 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**TWO HOUSEKEEPING ITEMS PROPERLY ROOT-CAUSED AND FIXED, 2026-09-25 continued (latest).** Josh
+**BOOK OF NEEDS "FOR MINISTERS" PRAYERS WIRED INTO THE EXISTING ROLE LADDER, 2026-09-25 continued
+further (latest).** Josh, live in the app: unchecked "Show prayers for other ministries," no
+ordained role set, Anglican-scoped Book of Needs — and could still see "Vesting: The Stole
+(Priest)." Real gap, not a bug in the toggle: `BOOK_OF_NEEDS_OPTION_MINIMUM_TIER`
+(`js/prayers.js`) held only 13 entries, all Church-of-the-East/Maclean-sourced — zero of the
+Anglican/Orthodox "For Ministers" vesting/serving prayers (18 options total) had ever been added
+to it, so they all showed regardless of role or the toggle. **Fixed**: order-specific vestments
+(Stole (Deacon) → `deacon`, Stole (Priest)/Chasuble/Orthodox Epitrachelion/Phailonion → `priest`,
+plus "For a Deacon Before the Liturgy" → `deacon`, found while reading the full list) gated to
+their exact order, per Josh's direct confirmation; the genuinely ambiguous rest (servers/acolytes
+are lay in many traditions — Amice, Alb, Cincture, Journey/Entering/Before-Serving/After-Serving,
+the Full Orthodox Sequence) gated to `reader`, the lowest minor-order rank. **The
+self-identification mechanism Josh asked for ("let the person specify a minor order") already
+existed** — `#profile-ministry-role` already offers "I am a reader (minor order)" / "I am a
+subdeacon (minor order)," wired to the full 8-role ladder built 2026-08-30
+(`documentation/book-of-needs-role-access-governance.json`). This work only connected 18 prayers
+to a ladder that was already built and already selectable. Live-verified in headless Chromium
+across lay/reader/priest profiles and the toggle, both on and off — every combination behaves
+exactly as the rank ordering predicts. A separate question raised in the same conversation
+(whether the toggle's *label* should reference traditions instead of ministries) was investigated
+and found to be based on a misunderstanding — the label is accurate to what the control does —
+and was explicitly left unchanged, pending Josh's own follow-up, not silently altered either way.
+Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued, SEED_VERSION v357 →
+v358.
+
+**TWO HOUSEKEEPING ITEMS PROPERLY ROOT-CAUSED AND FIXED, 2026-09-25 continued.** Josh
 reported the dashboard displaying incorrectly on a fresh GitHub Codespaces checkout of this branch
 (headings/notes rendering, every book/office stamp grid missing, in both light and dark mode —
 toggling theme changed nothing). Traced by reproducing commit `3345abc~1` locally and comparing
