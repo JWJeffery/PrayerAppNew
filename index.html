@@ -328,29 +328,27 @@
         <span class="toggle-cross">☩</span>
     </div>
 
-    <!-- Phase 6 (sidebar-deletion refactor): the single neutral host
-         renderSharedOfficeNavigation() (js/office-ui.js) injects the live
-         "which office" navigator into, and the eventual home for every
-         real settings control the four legacy sidebars below still hold.
-         See RESUME_PROJECT_NOTE.md and the ui:phase6-retire-old-skin row
-         in audit-ledger.html for the staged plan this is part of. -->
-    <div id="legacy-office-controls" style="display:none" aria-hidden="true"></div>
+    <!-- Phase 6 (sidebar-deletion refactor, Stage 3b): the single neutral
+         host renderSharedOfficeNavigation() (js/office-ui.js) injects the
+         live "which office" navigator into, AND now the static home for
+         every real settings control the four legacy sidebars used to hold
+         directly -- consolidated here so those four wrapper divs below
+         hold nothing load-bearing (Stage 4 deletes them outright). Every
+         element below kept its exact id/name/onchange handler; only
+         decorative chrome (Office Settings headers, the I/II/III section
+         dividers, Coptic's duplicate Prev/Today/Next -- superseded by the
+         shared navigator's own) was dropped, confirmed unread anywhere.
+         js/office-drawer.js's moveRealControls()/moveLegacyStateControls()
+         still relocate these into the drawer's own DOM at runtime exactly
+         as before -- this only changes where they start out in the page
+         source, not how any code finds them (all by id/name, confirmed
+         position-independent). See RESUME_PROJECT_NOTE.md and the
+         ui:phase6-retire-old-skin row in audit-ledger.html for the full
+         staged plan. -->
+    <div id="legacy-office-controls" style="display:none" aria-hidden="true">
+        <div id="borrowed-devotions-count">No borrowed devotions active (8 available)</div>
 
-    <!-- Settings panel -->
-    <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-        <div id="borrowed-devotions-count" style="color:rgba(201,168,76,0.65); font-family:'IBM Plex Mono',monospace; font-size:0.68em; letter-spacing:0.06em; margin-top:2px; margin-bottom:10px;">No borrowed devotions active (8 available)</div>
-
-        <!-- Phase 4 (UI_REDESIGN_HANDOFF.md §5) section headings inserted 2026-09-21. Existing
-             controls below are NOT reordered or renamed in this pass -- every id, name and
-             onchange handler is untouched, only grouped under the three headings the spec
-             requires. Remaining Phase 4 work, not done here: borrowed-devotions consolidation
-             with a count (currently spread across During/After/Opening Devotions), the same
-             pass for the Coptic/East Syriac/Horologion drawers, and the seasonal dot in "I"
-             (deliberately absent -- unsourced, see RESUME_PROJECT_NOTE.md item 4). -->
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
-
-        <!-- Date navigator -->
+        <!-- BCP -->
         <div class="ordo-control">
             <strong>Liturgical Ordo</strong>
             <div class="ordo-date" id="display-date">Loading...</div>
@@ -359,166 +357,104 @@
                 <button class="ordo-btn" onclick="resetDate()">Today</button>
                 <button class="ordo-btn" onclick="changeDate(1)">Next</button>
             </div>
-            <label for="date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
-            <input type="date" id="date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
-            <div id="calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+            <label for="date-picker">Select Date:</label>
+            <input type="date" id="date-picker" onchange="setCustomDate(this.value)">
+            <div id="calendar-info">Exploring the Ordo...</div>
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
-
-        <!-- Time of Day -->
-        <div class="setting-group" style="display:grid; grid-template-columns:1fr 1fr; column-gap:8px;">
+        <div class="setting-group">
             <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
             <label><input type="radio" name="office-time" value="noonday-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
             <label><input type="radio" name="office-time" value="evening-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
             <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Office Mode:&nbsp;<span class="info-btn" data-tip="Daily Devotions for Individuals and Families (BCP p.137-140) is a shorter form of each office, intended for use without a priest or when the fuller form isn't practical.">i</span></strong>
+        <div class="setting-group">
             <label><input type="radio" name="ang-office-mode" value="full" checked onchange="renderOffice(); saveSettings()"> Full Office</label>
             <label><input type="radio" name="ang-office-mode" value="devotion" onchange="renderOffice(); saveSettings()"> Daily Devotion (Short Form)</label>
         </div>
-
-        <!-- Appearance -->
         <div class="setting-group">
-            <strong>Appearance:</strong>
-            <label><input type="checkbox" id="toggle-dark" data-app-dark-toggle onchange="updateUI(this.checked); saveSettings()" checked> Dark Mode</label>
-        </div>
-
-        <!-- Liturgical Settings -->
-        <div class="setting-group">
-            <strong>Liturgical Settings:</strong>
             <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Language &amp; Rite</strong>
                 <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
                 <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Officiant</strong>
+            <div class="nested-group">
                 <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
                 <label><input type="radio" name="minister" value="lay"    onchange="renderOffice(); saveSettings()" checked> Layperson</label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Creed</strong>
-                <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:auto; min-width:160px; padding:4px 8px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
+            <div class="nested-group">
+                <select id="creed-type" onchange="renderOffice(); saveSettings()">
                     <option value="comm-creed-apostles">Apostles' Creed</option>
                     <option value="comm-creed-nicene">Nicene Creed</option>
                 </select>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Lectionary</strong>
-                <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
+            <div class="nested-group">
+                <label><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
                 <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
                 <label><input type="radio" name="gospel-placement" value="both"    onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
-                <label style="margin-top:6px;"><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
+                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Lectionary Alternates&nbsp;<span class="info-btn" data-tip="BCP offers a genuine 'or' for these readings on specific feast days. These select which alternate to use; they are reading choices, not post-office additions.">i</span></strong>
-                <label style="margin-top:4px;"><input type="checkbox" id="toggle-mary-virgin-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Readings for Saint Mary the Virgin&nbsp;<span class="info-btn" data-tip="BCP p.997 offers a genuine 'or' for Evening Prayer on August 15: Psalm 45 or 138,149; Jeremiah 31:1-14 or Zechariah 2:10-13; John 19:23-27 or Acts 1:6-14. Unchecked (default) uses Psalm 45 / Jeremiah 31:1-14 / Acts 1:6-14; check to use the alternates instead.">i</span></label>
-                <label><input type="checkbox" id="toggle-michaelmas-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Readings for Saint Michael and All Angels&nbsp;<span class="info-btn" data-tip="BCP p.999 offers a genuine 'or' for Evening Prayer on September 29: Psalm 34,7,150 or 104; Daniel 12:1-3 or 2 Kings 6:8-17; Mark 13:21-27 or Revelation 5:1-14. Unchecked (default) uses Psalm 34,7,150 / Daniel 12:1-3 / Mark 13:21-27; check to use the alternates instead.">i</span></label>
-                <label><input type="checkbox" id="toggle-good-friday-mp-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Morning Prayer Old Testament Reading for Good Friday&nbsp;<span class="info-btn" data-tip="BCP p.956 offers a genuine 'or' for the Year One Morning Prayer Old Testament reading on Good Friday: Wisdom 1:16-2:1,12-22, or Genesis 22:1-14 (the Binding of Isaac). No alternate exists for the Year Two reading (Lamentations). Unchecked (default) uses Wisdom; check to use Genesis instead.">i</span></label>
-                <label><input type="checkbox" id="toggle-easter-day-ep-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Gospel and Psalms for Easter Day&nbsp;<span class="info-btn" data-tip="BCP p.958-959 offers two genuine 'or' alternatives for Evening Prayer on Easter Day: the Gospel may be Luke 24:13-35 or John 20:19-23, and the Psalms may be 113 & 114, or 118 alone. Unchecked (default) uses Luke 24:13-35 and Psalms 113, 114; check to use John 20:19-23 and Psalm 118 instead.">i</span></label>
-            </div>
-        </div>
-
-        <!-- During the Office -->
-        <div class="setting-group" id="during-office-section">
-            <strong>During the Office:&nbsp;<span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
-            <label><input type="checkbox" id="toggle-gloria-patri"          onchange="renderOffice(); saveSettings()" checked> Gloria Patri&nbsp;<span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
-            <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
-            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
-            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
-            <div class="nested-group" id="invitatory-settings-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">The Invitatory</strong>
-                <label style="margin-top:4px;"><input type="checkbox" id="toggle-rotate-invitatory-psalm" onchange="renderOffice(); saveSettings()" checked> Rotate Venite/Jubilate Daily&nbsp;<span class="info-btn" data-tip="BCP p.42/82: 'one of the Invitatory Psalms, Venite or Jubilate' — a genuinely free daily choice, no seasonal restriction. Rotates by calendar date; uncheck to always use Venite.">i</span></label>
-                <label><input type="checkbox" id="toggle-invitatory-psalm-at-evening" onchange="renderOffice(); saveSettings()"> Invitatory Psalm at Evening Prayer (instead of Phos Hilaron)&nbsp;<span class="info-btn" data-tip="BCP p.63/117 frames Phos Hilaron, 'some other suitable hymn,' and an Invitatory Psalm as three alternatives — pick one. Unchecked (default): Evening Prayer shows Phos Hilaron. Check to show the Invitatory Psalm (Venite/Jubilate) instead.">i</span></label>
-                <label><input type="checkbox" id="toggle-pascha-nostrum-all-season" onchange="renderOffice(); saveSettings()"> Pascha Nostrum All Easter Season&nbsp;<span class="info-btn" data-tip="BCP p.45/85: Pascha Nostrum (Christ Our Passover) is mandatory for Easter Week only; for the rest of the season (Easter 2 through Pentecost) it's permitted but so is the ordinary Venite/Jubilate rotation. Unchecked (default): normal rotation resumes after Easter Week. Check to keep Pascha Nostrum every day through Pentecost.">i</span></label>
-            </div>
-            <div class="nested-group" id="noonday-settings-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Noonday</strong>
-                <label style="margin-top:4px;"><input type="checkbox" id="toggle-noonday-day-collect" onchange="renderOffice(); saveSettings()"> Use the Day's Collect at Noonday&nbsp;<span class="info-btn" data-tip="BCP p.106: 'If desired, the Collect of the Day may be used' instead of Noonday's own 4 collects. Unchecked (default) rotates among Noonday's own collects by calendar date; check to use the calendar day's Collect instead.">i</span></label>
-                <label><input type="checkbox" id="toggle-noonday-lesson-dol" onchange="renderOffice(); saveSettings()"> Use the Day's Lectionary Reading at Noonday&nbsp;<span class="info-btn" data-tip="BCP p.105 offers 3 suggested Short Lesson texts (Romans 5:5 / 2 Corinthians 5:17-18 / Malachi 1:11) as well as 'some other suitable passage.' Unchecked (default) rotates among the BCP's own suggested texts by calendar date; check to use the calendar day's Daily Office reading instead.">i</span></label>
-            </div>
-            <div class="nested-group" id="compline-settings-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Compline</strong>
-                <label style="margin-top:4px;"><input type="checkbox" id="toggle-rotate-compline-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Compline Collect Daily&nbsp;<span class="info-btn" data-tip="Rotates among the 4 general BCP-authorized Compline collects (p.132) by calendar date. Saturdays always use the Saturday-specific collect (p.133) regardless of this setting. Uncheck to always use the first general option.">i</span></label>
-                <label><input type="checkbox" id="toggle-compline-additional-prayer" onchange="renderOffice(); saveSettings()"> A Prayer for the Night&nbsp;<span class="info-btn" data-tip="BCP p.133: 'One of the following prayers may be added' after Compline's Collect — for those who work, watch, or weep at night. Optional; rotates between the two by calendar date.">i</span></label>
-                <label><input type="checkbox" id="toggle-compline-lesson-dol" onchange="renderOffice(); saveSettings()"> Use the Day's Lectionary Reading at Compline&nbsp;<span class="info-btn" data-tip="BCP p.130 offers 4 suggested Short Lesson texts (Jeremiah 14:9,22 / Matthew 11:28-30 / Hebrews 13:20-21 / 1 Peter 5:8-9a) as well as 'some other suitable passage.' Unchecked (default) rotates among the BCP's own suggested texts by calendar date; check to use the calendar day's Daily Office reading instead.">i</span></label>
-            </div>
-        </div>
-
-        <!-- After the Office -->
-        <div class="setting-group" id="closing-devotions-section">
-            <strong>After the Office:&nbsp;<span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
-            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
-            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
-            <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages&nbsp;<span class="info-btn" data-tip="BCP p.54/96 — a short set of versicles and responses said after the Apostles' Creed, before the Collects. This checkbox controls whether the whole set appears; see 'Rotate Suffrages A/B Daily' below to choose which of the two BCP-authorized sets is used.">i</span></label>
-            <label><input type="checkbox" id="toggle-rotate-suffrages" onchange="renderOffice(); saveSettings()" checked> Rotate Suffrages A/B Daily&nbsp;<span class="info-btn" data-tip="BCP p.54/96 offers two equally-authorized sets of Suffrages, A and B — previously only A existed. Rotates between them by calendar date; uncheck to always use Suffrages A.">i</span></label>
-            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany&nbsp;<span class="info-btn" data-tip="BCP p.148. A longer, separate penitential litany, especially appropriate for Ash Wednesday, Rogation Days, and other days of solemn entreaty. The BCP permits it at the end of Morning or Evening Prayer, or as a separate devotion — offered here as an occasional addition, not routine daily content.">i</span></label>
-            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving&nbsp;<span class="info-btn" data-tip="BCP p.101 (Rite II; the equivalent point in Rite I). Conventionally, the Officiant closes with this prayer or with the Prayer of St. Chrysostom below, not routinely both — most Daily Office guides describe them as alternatives rather than a pair to use together.">i</span></label>
-            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom&nbsp;<span class="info-btn" data-tip="BCP p.102 (Rite II; the equivalent point in Rite I). Conventionally used as an alternative to the General Thanksgiving above, not routinely alongside it.">i</span></label>
-            <label><input type="checkbox" id="toggle-rotate-mission-prayer"  onchange="renderOffice(); saveSettings()" checked> Rotate Mission Prayer Daily&nbsp;<span class="info-btn" data-tip="Rotates among the 3 BCP-authorized Morning Prayer mission prayers (p.99-100) by calendar date. Uncheck to always use the first option.">i</span></label>
-            <label><input type="checkbox" id="toggle-rotate-weekday-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Second Collect Daily&nbsp;<span class="info-btn" data-tip="BCP p.55-57/98-99 (Morning) and p.68-70/122-124 (Evening) each offer 7 collects after the Collect of the Day (Sundays, Fridays, Saturdays, plus office-specific ones) — previously only one was ever shown. Rotates through all 7 by calendar date; uncheck to always use Grace (Morning) or Peace (Evening).">i</span></label>
-            <label><input type="checkbox" id="toggle-rotate-closing-blessing" onchange="renderOffice(); saveSettings()" checked> Rotate Closing Blessing Daily&nbsp;<span class="info-btn" data-tip="BCP p.59-60 offers 3 closing blessings after 'Let us bless the Lord' (2 Corinthians 13:14 / Romans 15:13 / Ephesians 3:20-21) — previously only the first was ever shown. Rotates by calendar date; uncheck to always use the first option.">i</span></label>
-        </div>
-
-        <!-- Opening Devotions (ecumenical) -- placed after all core/regular BCP settings
-             per Josh's rule: regular BCP options before optional extra-prayer additions. -->
-        <div class="setting-group" id="ecumenical-devotions-section">
-            <strong>Opening Devotions:&nbsp;<span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
             <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
-                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span></label>
+                <label><input type="checkbox" id="toggle-mary-virgin-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Readings for Saint Mary the Virgin</label>
+                <label><input type="checkbox" id="toggle-michaelmas-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Readings for Saint Michael and All Angels</label>
+                <label><input type="checkbox" id="toggle-good-friday-mp-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Morning Prayer Old Testament Reading for Good Friday</label>
+                <label><input type="checkbox" id="toggle-easter-day-ep-alt" onchange="renderOffice(); saveSettings()"> Use Alternate Evening Prayer Gospel and Psalms for Easter Day</label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Byzantine Orthodox</strong>
-                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="The Horologion's fixed Prayer of the Hour, said after the Kontakion and the forty-fold Kyrie eleison at each of the canonical Hours. Corrected 2026-09-21 -- previously mislabeled Church of the East; verified word-for-word against the OCA's Horologion texts.">i</span></label>
+        </div>
+        <div class="setting-group" id="during-office-section">
+            <label><input type="checkbox" id="toggle-gloria-patri"          onchange="renderOffice(); saveSettings()" checked> Gloria Patri</label>
+            <label><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus</label>
+            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion</label>
+            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading</label>
+            <div class="nested-group" id="invitatory-settings-group">
+                <label><input type="checkbox" id="toggle-rotate-invitatory-psalm" onchange="renderOffice(); saveSettings()" checked> Rotate Venite/Jubilate Daily</label>
+                <label><input type="checkbox" id="toggle-invitatory-psalm-at-evening" onchange="renderOffice(); saveSettings()"> Invitatory Psalm at Evening Prayer</label>
+                <label><input type="checkbox" id="toggle-pascha-nostrum-all-season" onchange="renderOffice(); saveSettings()"> Pascha Nostrum All Easter Season</label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
-                <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
+            <div class="nested-group" id="noonday-settings-group">
+                <label><input type="checkbox" id="toggle-noonday-day-collect" onchange="renderOffice(); saveSettings()"> Use the Day's Collect at Noonday</label>
+                <label><input type="checkbox" id="toggle-noonday-lesson-dol" onchange="renderOffice(); saveSettings()"> Use the Day's Lectionary Reading at Noonday</label>
+            </div>
+            <div class="nested-group" id="compline-settings-group">
+                <label><input type="checkbox" id="toggle-rotate-compline-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Compline Collect Daily</label>
+                <label><input type="checkbox" id="toggle-compline-additional-prayer" onchange="renderOffice(); saveSettings()"> A Prayer for the Night</label>
+                <label><input type="checkbox" id="toggle-compline-lesson-dol" onchange="renderOffice(); saveSettings()"> Use the Day's Lectionary Reading at Compline</label>
+            </div>
+        </div>
+        <div class="setting-group" id="closing-devotions-section">
+            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen</label>
+            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator</label>
+            <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
+            <label><input type="checkbox" id="toggle-rotate-suffrages" onchange="renderOffice(); saveSettings()" checked> Rotate Suffrages A/B Daily</label>
+            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany</label>
+            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
+            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
+            <label><input type="checkbox" id="toggle-rotate-mission-prayer"  onchange="renderOffice(); saveSettings()" checked> Rotate Mission Prayer Daily</label>
+            <label><input type="checkbox" id="toggle-rotate-weekday-collect" onchange="renderOffice(); saveSettings()" checked> Rotate Second Collect Daily</label>
+            <label><input type="checkbox" id="toggle-rotate-closing-blessing" onchange="renderOffice(); saveSettings()" checked> Rotate Closing Blessing Daily</label>
+        </div>
+        <div class="setting-group" id="ecumenical-devotions-section">
+            <div class="nested-group">
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
+            </div>
+            <div class="nested-group">
+                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours</label>
+            </div>
+            <div class="nested-group">
                 <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
                 <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion&nbsp;<span style="color:rgba(201,168,76,0.55); font-family:'IBM Plex Mono',monospace; font-size:0.72em; letter-spacing:0.04em;">(borrowed)</span>&nbsp;<span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
+                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion</label>
                 <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
-                <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
                 <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
             </div>
         </div>
-
-        <!-- BCP Only Mode: foot of the drawer, single toggle, §5/§3.7. toggleBcpOnly() looks
-             this checkbox up by id, not DOM position, so moving it here from Appearance above
-             (2026-09-21) does not change its behavior -- confirmed against the function before
-             moving it. -->
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
+        <div class="setting-group">
             <label><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
         </div>
-    </div><!-- /settings-panel -->
 
-    <!-- Coptic Agpeya Liturgical Console -->
-    <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-
-        <!-- Phase 4 headings inserted 2026-09-21, same discipline as the BCP drawer: ids/names/
-             onchange unchanged; only the ordo-buttons block (no id, calls shared global
-             functions changeDate()/resetDate() by name, not position) was moved earlier, ahead
-             of the Active Hour radios, to match the I/II order the other three drawers use. -->
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
-        <div class="ordo-buttons">
-            <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-            <button class="ordo-btn" onclick="resetDate()">Today</button>
-            <button class="ordo-btn" onclick="changeDate(1)">Next</button>
-        </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
+        <!-- Coptic -->
         <div class="setting-group">
-            <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
-            <div id="cop-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">The Morning Office</div>
-            <div id="cop-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
+            <div id="cop-active-hour-label">The Morning Office</div>
+            <div id="cop-active-date-label">—</div>
             <label><input type="radio" name="cop-hour" value="coptic-morning-office" onchange="renderOffice()" checked> The Morning Office (Prime)</label>
             <label><input type="radio" name="cop-hour" value="coptic-third-hour" onchange="renderOffice()"> The Third Hour (Terce)</label>
             <label><input type="radio" name="cop-hour" value="coptic-sixth-hour" onchange="renderOffice()"> The Sixth Hour (Sext)</label>
@@ -528,51 +464,34 @@
             <label><input type="radio" name="cop-hour" value="coptic-midnight-office" onchange="renderOffice()"> The Midnight Office (Three Nocturns)</label>
             <label><input type="radio" name="cop-hour" value="coptic-theotokia" onchange="renderOffice()"> Theotokia (automatically follows today's weekday tune)</label>
         </div>
-    </div><!-- /coptic-settings -->
 
-    <!-- Church of the East Liturgical Console -->
-    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-
-        <!-- Phase 4 headings inserted 2026-09-21. Nothing below is moved -- this lane's existing
-             order (date readout+nav, then the hour-override panel, then mode/cycle/fast/anaphora)
-             already matched I/II/III, so headings are inserted only. -->
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
-
-        <!-- Active Hour display -->
+        <!-- East Syriac -->
         <div class="setting-group">
-            <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
-            <div id="esy-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
-            <div id="esy-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-            <a href="#" id="esy-override-toggle" onclick="toggleEsyOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
+            <div id="esy-active-hour-label">—</div>
+            <div id="esy-active-date-label">—</div>
+            <a href="#" id="esy-override-toggle" onclick="toggleEsyOverridePanel(event)">Choose different date/time</a>
         </div>
-        <div class="ordo-buttons" style="margin-top:10px;">
+        <div class="ordo-buttons">
         <button class="ordo-btn" onclick="esyChangeDate(-1)">Prev</button>
         <button class="ordo-btn" onclick="esyToday()">Today</button>
         <button class="ordo-btn" onclick="esyChangeDate(1)">Next</button>
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
         <!-- Override selection panel (hidden by default) -->
         <div id="esy-override-panel" style="display:none;">
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Date</strong>
-                <input type="date" id="esy-override-date" onchange="applyEsyOverride()"
-                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
+            <div class="setting-group">
+                <input type="date" id="esy-override-date" onchange="applyEsyOverride()">
             </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Canonical Hour</strong>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="endana"    onchange="applyEsyOverride()"> Endana &mdash; Prayer at Noon, Great Fast only (12:00–18:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="ramsha"    onchange="applyEsyOverride()"> Ramsha (18:00–21:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="lelya"     onchange="applyEsyOverride()"> Lelya (21:00–03:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="subaa"     onchange="applyEsyOverride()"> Suba'a (03:00–06:00)</label>
+            <div class="setting-group">
+                <label><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00)</label>
+                <label><input type="radio" name="esy-hour-override" value="endana"    onchange="applyEsyOverride()"> Endana &mdash; Prayer at Noon, Great Fast only (12:00–18:00)</label>
+                <label><input type="radio" name="esy-hour-override" value="ramsha"    onchange="applyEsyOverride()"> Ramsha (18:00–21:00)</label>
+                <label><input type="radio" name="esy-hour-override" value="lelya"     onchange="applyEsyOverride()"> Lelya (21:00–03:00)</label>
+                <label><input type="radio" name="esy-hour-override" value="subaa"     onchange="applyEsyOverride()"> Suba'a (03:00–06:00)</label>
             </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <button onclick="resetEsyOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
+            <div class="setting-group">
+                <button onclick="resetEsyOverride()">Reset to Current Time</button>
             </div>
         </div>
-
         <!-- Hidden esy-time radios — read by renderEastSyriac(); UI selection is
              handled by the override panel above and synced here via applyEsyOverride()/resetEsyOverride() -->
         <div style="display:none;">
@@ -582,71 +501,34 @@
             <input type="radio" name="esy-time" value="lelya">
             <input type="radio" name="esy-time" value="subaa">
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Office Mode</strong>
+        <div class="setting-group">
             <label><input type="radio" name="esy-mode" value="cathedral" checked onchange="renderOffice(); renderSharedOfficeNavigation();"> Cathedral (Simplified)</label>
             <label><input type="radio" name="esy-mode" value="monastic" onchange="renderOffice(); renderSharedOfficeNavigation();"> Monastic (Full)</label>
         </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="display:block; margin-bottom:6px;">Current Cycle</strong>
-            <div id="esy-cycle-box" style="font-family:'Cinzel',serif; font-size:0.9em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
-                Calculating...
-            </div>
+        <div class="setting-group">
+            <div id="esy-cycle-box">Calculating...</div>
+        </div>
+        <div class="setting-group">
+            <div id="esy-fast-box">—</div>
+        </div>
+        <div class="setting-group">
+            <div id="esy-anaphora-box">—</div>
         </div>
 
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="display:block; margin-bottom:6px;">Fasting Character</strong>
-            <div id="esy-fast-box" style="font-family:'Cinzel',serif; font-size:0.9em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
-                —
-            </div>
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="display:block; margin-bottom:6px;">Anaphora</strong>
-            <div id="esy-anaphora-box" style="font-family:'Cinzel',serif; font-size:0.85em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
-                —
-            </div>
-        </div>
-    </div><!-- /east-syriac-settings -->
-
-    <!-- Generic Sidebar Shell — Horologion and future traditions -->
-    <!-- Do not add BCP-specific controls here. This is the reusable neutral   -->
-    <!-- path for any tradition without its own dedicated settings panel.       -->
-    <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-
-        <!-- Phase 4 headings inserted 2026-09-21. The single "Liturgical Settings" container
-             previously held both the Office radio list and Calendar Mode; split into two so
-             Office (which hour) sits under II and Calendar Mode (how the fixed feasts are
-             reckoned) sits under III with Display -- no .setting-group is queried structurally
-             elsewhere in the JS (checked before splitting), so this is safe. -->
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">I &middot; The Ordo</div>
-
-        <!-- Liturgical Ordo (date navigator) -->
+        <!-- Horologion -->
         <div class="ordo-control">
-            <strong>Liturgical Ordo</strong>
             <div class="ordo-date" id="generic-display-date">Loading...</div>
             <div class="ordo-buttons">
                 <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
                 <button class="ordo-btn" onclick="resetDate()">Today</button>
                 <button class="ordo-btn" onclick="changeDate(1)">Next</button>
             </div>
-            <label for="generic-date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
-            <input type="date" id="generic-date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
-            <div id="generic-calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+            <label for="generic-date-picker">Select Date:</label>
+            <input type="date" id="generic-date-picker" onchange="setCustomDate(this.value)">
+            <div id="generic-calendar-info">Exploring the Ordo...</div>
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">II &middot; Which Office</div>
-
-        <!-- Liturgical Settings -->
         <div class="setting-group">
-            <strong>Liturgical Settings:</strong>
-
             <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Office</strong>
                 <div class="hor-office-list" role="radiogroup" aria-label="Horologion office">
                     <label class="hor-office-option" for="hor-btn-vespers">
                         <input type="radio" name="horologion-office" id="hor-btn-vespers" value="vespers" onchange="selectHorologionOffice('vespers')">
@@ -707,42 +589,22 @@
                 </div>
             </div>
         </div>
-
-        <div class="uo-settings-section-heading" style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.1em; text-transform:uppercase; margin-top:16px; margin-bottom:6px; opacity:0.85;">III &middot; How You Keep It</div>
-
         <div class="setting-group">
             <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Calendar Mode</strong>
-                <select id="hor-eo-calendar-select"
-                    onchange="selectEoMode(this.value)"
-                    style="margin-top:4px; width:100%; padding:5px 8px; background:#333; color:var(--gold); border:1px solid rgba(201,168,76,0.5); border-radius:2px; font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.04em; cursor:pointer;">
+                <select id="hor-eo-calendar-select" onchange="selectEoMode(this.value)">
                     <option value="new_calendar">New Calendar (Revised Julian fixed feasts)</option>
                     <option value="old_calendar">Old Calendar (Julian fixed feasts)</option>
                 </select>
             </div>
         </div>
-
-        <!-- Display -->
         <div class="setting-group">
-            <strong>Display:</strong>
             <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Diagnostics</strong>
-                <label style="margin-top:4px;">
-                    <button id="hor-btn-diag"
-                        onclick="toggleHorologionDiagnostics()"
-                        style="background:transparent; border:1px solid rgba(201,168,76,0.3);
-                               color:rgba(201,168,76,0.5); font-family:'Cinzel',serif;
-                               font-size:0.68em; letter-spacing:0.06em; padding:3px 8px;
-                               cursor:pointer; border-radius:2px; transition:all 0.15s;">
-                        Diagnostics: OFF
-                    </button>
+                <label>
+                    <button id="hor-btn-diag" onclick="toggleHorologionDiagnostics()">Diagnostics: OFF</button>
                 </label>
             </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Display Depth</strong>
-                <select id="hor-depth-select"
-                    onchange="selectHorologionReductionProfile(this.value)"
-                    style="margin-top:4px; width:100%; padding:5px 8px; background:#333; color:var(--gold); border:1px solid rgba(201,168,76,0.5); border-radius:2px; font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.04em; cursor:pointer;">
+            <div class="nested-group">
+                <select id="hor-depth-select" onchange="selectHorologionReductionProfile(this.value)">
                     <option value="full">Full / Monastic</option>
                     <option value="reader">Reader / Lay Use</option>
                     <option value="educational">Educational / Structure View</option>
@@ -750,6 +612,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Settings panel -->
+    <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily"></div><!-- /settings-panel -->
+
+    <!-- Coptic Agpeya Liturgical Console -->
+    <div id="coptic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-coptic"></div><!-- /coptic-settings -->
+
+    <!-- Church of the East Liturgical Console -->
+    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac"></div><!-- /east-syriac-settings -->
+
+    <!-- Generic Sidebar Shell — Horologion and future traditions -->
+    <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion"></div>
 
     <!-- Main content area -->
     <div id="main-content" class="app-primary-canvas">
