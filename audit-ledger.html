@@ -729,6 +729,7 @@ const OTHER_TRADITION_ENGINES = [
   {key:'engine:menaion-resolver', name:"js/menaion-resolver.js", status:'green', note:'2026-09-25 engine-audit sweep: one low-severity inconsistency fixed — the menaion-text-unavailable branch returned `rank: best.rank || null`, coercing a legitimate rank of 0 to null, unlike the resolved branch\'s `rank: best.rank` (no `||`). Currently inert since the live corpus only defines ranks 1-4; fixed to `??` for correctness parity regardless.'},
   {key:'engine:octoechos-modules', name:"js/octoechos/* (12 files — Orthros canon/hymnody by tone)", status:'amber', note:'Not comprehensively engine-audited this session; treated as one row for dashboard purposes. The 2026-09-25 engine-audit sweep did examine js/octoechos/orthros-exapostilarion-sunday.js specifically (a disclosed-dead file, not wired to the resolver) and found it overwrites window.OCTOECHOS.orthros.exapostilarion.sunday unconditionally instead of merging with `|| {}` like its sibling files — currently harmless given index.html\'s script load order, but latent/order-dependent risk if that order ever changes. Left unfixed (low priority); the other 11 files in this row remain unaudited.'},
   {key:'engine:roman-breviary', name:"js/roman-breviary-1960-1962-dev-slice.js", status:'amber', note:'Not engine-audited this session. Pre-import governance gates for this lane are tracked separately above (section VII) — this row is specifically about the rendering code, not corpus-import readiness.'},
+  {key:'tooling:admin-tradition-availability', name:"Admin tradition-availability control panel — data/tradition-availability.json, index.html entry cards/dropdown, office-ui.js initializeEntryRouting(), admin/admin.html panel", status:'green', note:"Built 2026-09-25, per Josh's own \"admin control panel for taking offices offline\" TODO. Replaces the Byzantine Horologion pause's original 3-hand-edited-file gate with one JSON file read by all three surfaces, plus an admin panel to edit it (no backend exists, so the panel outputs updated JSON to paste back in and redeploy -- it cannot push changes to testers directly, and says so on-screen). Fail-safe explicitly verified, not just designed: if the JSON can't be fetched, the entry screen keeps index.html's shipped baseline (which always matches today's real state), and a hard-coded fallback set still protects the highest-stakes case -- a returning tester's stale eastern-orthodox stored default -- even then. Live-verified in headless Chromium across 5 scenarios including a forced fetch failure. See documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md for the full design and AUDIT_GOVERNANCE_LEDGER.md for the verification detail."},
 ];
 
 const BREVIARY = [
@@ -895,7 +896,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v368-2026-09-25-engine-audit-sweep-9-files-4-real-bugs-fixed';
+const SEED_VERSION = 'v369-2026-09-25-admin-tradition-availability-control-panel-built';
 
 function checkSeedVersion(){
   let storedValue = null;

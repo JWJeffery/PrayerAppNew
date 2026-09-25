@@ -1525,6 +1525,75 @@ function scheduleSplashForegroundGuard() {
     window.setTimeout(ensureSplashForegroundVisible, 850);
 }
 
+// ── Tradition availability (admin-controlled offline/paused traditions) ──────
+// Generalizes the Byzantine Horologion's 2026-09-25 manual pause into a data-
+// driven gate: data/tradition-availability.json is the single source of truth
+// for which whole traditions are reachable, read here and applied to the entry
+// cards + profile dropdown. See documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+const TRADITION_AVAILABILITY_URL = 'data/tradition-availability.json';
+
+// Fail-safe only: if the JSON can't be fetched (bad deploy, offline load, etc.),
+// isTraditionAvailable() falls back to this set for the entry-routing guard --
+// the one gate Josh called "the one that actually mattered" (a returning tester's
+// stale stored default silently reopening a paused lane) must never regress even
+// when the data-driven path can't run. The entry cards/dropdown need no such
+// fallback: their disabled/aria-disabled markup in index.html already ships
+// matching today's real state, so a failed fetch just leaves that baseline alone.
+const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set(['eastern-orthodox']);
+
+async function loadTraditionAvailability() {
+    try {
+        const response = await Promise.race([
+            fetch(TRADITION_AVAILABILITY_URL),
+            new Promise((_, reject) => window.setTimeout(() => reject(new Error('tradition-availability fetch timeout')), 1500)),
+        ]);
+        if (!response.ok) return null;
+        const data = await response.json();
+        return (data && data.traditions && typeof data.traditions === 'object') ? data.traditions : null;
+    } catch (err) {
+        console.warn('[tradition-availability] Could not load data/tradition-availability.json, entry screen keeps its shipped defaults:', err);
+        return null;
+    }
+}
+
+function isTraditionAvailable(tradition, availability) {
+    if (availability && Object.prototype.hasOwnProperty.call(availability, tradition)) {
+        return availability[tradition].available !== false;
+    }
+    return !TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK.has(tradition);
+}
+
+function applyTraditionAvailabilityToDOM(availability) {
+    if (!availability) return; // fetch failed/timed out -- leave index.html's shipped baseline as-is
+
+    document.querySelectorAll('[data-entry-tradition]').forEach(card => {
+        const entry = availability[card.dataset.entryTradition];
+        if (!entry) return;
+        const available = entry.available !== false;
+        card.classList.toggle('is-disabled', !available);
+        card.disabled = !available;
+        card.setAttribute('aria-disabled', available ? 'false' : 'true');
+        const subtitle = card.querySelector('small');
+        if (subtitle) {
+            subtitle.textContent = available
+                ? (card.dataset.availableSubtitle || subtitle.textContent)
+                : (entry.reason || subtitle.textContent);
+        }
+    });
+
+    const dropdown = document.getElementById('profile-tradition-default');
+    if (dropdown) {
+        Array.from(dropdown.options).forEach(option => {
+            const entry = availability[option.value];
+            if (!entry) return;
+            const available = entry.available !== false;
+            const baseLabel = option.dataset.availableLabel || option.textContent;
+            option.disabled = !available;
+            option.textContent = available ? baseLabel : `${baseLabel} — ${entry.reason || 'unavailable'}`;
+        });
+    }
+}
+
 function resolveEntryTraditionRoute(tradition) {
     switch (tradition) {
         case 'unknown':
@@ -1633,11 +1702,21 @@ function resetUserTraditionDefault() {
     showTraditionEntry();
 }
 
-function initializeEntryRouting() {
+async function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
     scheduleSplashForegroundGuard();
+
+    // Awaited here, before anything is shown: the entry/mode screens are already
+    // hidden-by-default until this function decides which one to display (see the
+    // comment on #tradition-entry in index.html), so there is no flash-of-wrong-
+    // state risk in waiting on a same-origin JSON fetch (capped at 1.5s) at this
+    // point. Applies disabled/reason text to the entry cards and profile dropdown
+    // for any tradition the admin has paused, then feeds the same data into the
+    // stale-stored-default guard below.
+    const traditionAvailability = await loadTraditionAvailability();
+    applyTraditionAvailabilityToDOM(traditionAvailability);
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 
@@ -1663,14 +1742,16 @@ function initializeEntryRouting() {
     // bypass was silently overriding -- instead of unconditionally skipping it.
     let storedDefault = getUserEntryDefault();
 
-    // TEMPORARY, 2026-09-25, per Josh's direct instruction: Byzantine Horologion is not
-    // yet fully audited and must not reach testers, including a returning tester whose
-    // browser already has 'eastern-orthodox' saved as their entry default from before
-    // this pause. Clear it and fall through to the entry screen (where the Eastern
-    // Orthodoxy card is now shown disabled) rather than silently reopening the lane.
-    // Reverse by deleting this block once the audit clears -- the entry-card and
-    // profile-dropdown disables (index.html) are the other two places to re-enable.
-    if (storedDefault === 'eastern-orthodox') {
+    // GENERALIZED 2026-09-25, engine-audit-sweep follow-up: this used to be a single
+    // hard-coded `if (storedDefault === 'eastern-orthodox')` block, written the same day
+    // Byzantine Horologion was paused. It's now data-driven via
+    // data/tradition-availability.json (isTraditionAvailable() above) so any tradition the
+    // admin panel marks unavailable gets a returning tester's stale stored default cleared
+    // here, not just Horologion specifically -- falling through to the entry screen (where
+    // the card is now shown disabled, per applyTraditionAvailabilityToDOM() above) rather
+    // than silently reopening a paused lane. See
+    // documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+    if (storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
         clearUserEntryDefault();
         storedDefault = null;
     }

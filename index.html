@@ -64,14 +64,14 @@
     <div id="entry-western-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Western Christian</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican" data-available-subtitle="TEC 1979 Book of Common Prayer Daily Office.">
             <span class="app-entry-tradition-code">ANG</span>
             <span>
                 <strong>Anglican</strong>
                 <small>TEC 1979 Book of Common Prayer Daily Office.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true">
+        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true" data-entry-tradition="latin-catholic" data-available-subtitle="Liturgy of the Hours.">
             <span class="app-entry-tradition-code">LC</span>
             <span>
                 <strong>Catholic</strong>
@@ -83,21 +83,21 @@
     <div id="entry-eastern-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Eastern Christian</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-coe-step="true">
+        <button class="app-entry-tradition-card" type="button" data-entry-coe-step="true" data-entry-tradition="church-of-the-east" data-available-subtitle="East Syriac Hudra office stream.">
             <span class="app-entry-tradition-code">COE</span>
             <span>
                 <strong>Church of the East</strong>
                 <small>East Syriac Hudra office stream.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true">
+        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true" data-entry-tradition="eastern-orthodox" data-available-subtitle="Byzantine Horologion offices.">
             <span class="app-entry-tradition-code">EO</span>
             <span>
                 <strong>Eastern Orthodoxy</strong>
                 <small>Byzantine Horologion is paused for a content audit.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox" data-available-subtitle="The Coptic Agpeya, Book of Hours.">
             <span class="app-entry-tradition-code">OO</span>
             <span>
                 <strong>Oriental Orthodoxy</strong>
@@ -109,14 +109,14 @@
     <div id="entry-coe-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <button class="app-entry-back" type="button" data-entry-back="true" data-entry-back-to="eastern">Back</button>
         <div class="app-entry-panel-title">Church of the East</div>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="acoe">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="acoe" data-available-subtitle="Gregorian calendar, adopted 1964.">
             <span class="app-entry-tradition-code" style="font-size:0.62rem; letter-spacing:0.02em;">ACOE</span>
             <span>
                 <strong>Assyrian Church of the East</strong>
                 <small>Gregorian calendar, adopted 1964.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="ancient">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east" data-entry-coe-body="ancient" data-available-subtitle="Julian calendar, the traditional reckoning.">
             <span class="app-entry-tradition-code">ACE</span>
             <span>
                 <strong>Ancient Church of the East</strong>
@@ -260,11 +260,11 @@
                 <span>Default tradition</span>
                 <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
                     <option value="">No tradition selected</option>
-                    <option value="anglican">The Episcopal Church</option>
-                    <option value="oriental-orthodox">Oriental Orthodoxy</option>
-                    <option value="church-of-the-east">Church of the East</option>
-                    <option value="eastern-orthodox" disabled>Eastern Orthodoxy — paused for a content audit</option>
-                    <option value="latin-catholic" disabled>Latin Catholic — Liturgy of the Hours pending</option>
+                    <option value="anglican" data-available-label="The Episcopal Church">The Episcopal Church</option>
+                    <option value="oriental-orthodox" data-available-label="Oriental Orthodoxy">Oriental Orthodoxy</option>
+                    <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
+                    <option value="eastern-orthodox" disabled data-available-label="Eastern Orthodoxy">Eastern Orthodoxy — paused for a content audit</option>
+                    <option value="latin-catholic" disabled data-available-label="Latin Catholic">Latin Catholic — Liturgy of the Hours pending</option>
                 </select>
             </label>
 
@@ -1069,7 +1069,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=314" defer></script>
+<script src="js/office-ui.js?v=315" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 

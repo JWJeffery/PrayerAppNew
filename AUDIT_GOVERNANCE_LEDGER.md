@@ -19834,3 +19834,76 @@ engine audit sweep) in full, alongside the Horologion temporary unwire and the e
 UI fix loop that were folded in along the way.
 
 SEED_VERSION bumped to `v368-2026-09-25-engine-audit-sweep-9-files-4-real-bugs-fixed`.
+
+## Session 2026-09-25 continued -- admin tradition-availability control panel, replacing the manual Horologion-style gate with a data-driven one
+
+Josh's own "TODO, next session" note: an admin control panel to take offices offline with a click,
+prompted by how manual and error-prone the earlier Byzantine Horologion unwire was (three hand-edited
+files). Scope/design were explicitly not yet discussed, so a design note was written first
+(`documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md`) and Josh confirmed scope (whole
+traditions only, JSON-file-backed, admin UI to edit it) via `AskUserQuestion` before any code was
+touched. He then said "proceed."
+
+### What changed
+
+A new `data/tradition-availability.json`, seeded with today's real, already-live state (`anglican`,
+`church-of-the-east`, `oriental-orthodox` available; `eastern-orthodox` paused, same reason/date as
+the existing manual gate; `latin-catholic` permanently unavailable), replaces the three hand-written
+gates from the original Horologion unwire with one data file read by all three:
+
+1. **Entry cards** (`index.html`) -- every managed card got a `data-entry-tradition` key (the two
+   that were hard-disabled, `eastern-orthodox` and `latin-catholic`, never had one before, since
+   neither needed to route anywhere while disabled) and a `data-available-subtitle` attribute holding
+   the exact text to restore if ever re-enabled. `eastern-orthodox`'s was recovered via `git show` of
+   the pre-pause commit ("Byzantine Horologion offices.") rather than guessed.
+2. **Profile dropdown** (`index.html`) -- all five `<option>`s got a matching `data-available-label`.
+3. **`initializeEntryRouting()`** (`js/office-ui.js`) -- now `async`, `await`s a new
+   `loadTraditionAvailability()` (fetches the JSON, 1.5s timeout, returns `null` on any failure)
+   before deciding anything. Safe to await here because the entry/mode screens are already
+   hidden-by-default until this function picks one to show -- the same pattern already guarding a
+   different flash-of-wrong-state bug Josh caught 2026-09-22. A new `applyTraditionAvailabilityToDOM()`
+   syncs every managed card/option to the fetched data. The old single hard-coded
+   `if (storedDefault === 'eastern-orthodox')` stale-default guard is now a generic check
+   (`isTraditionAvailable()`) against the fetched map, for any tradition, not just Horologion.
+
+**The static HTML gates on `eastern-orthodox` and `latin-catholic` were deliberately left in place**,
+not removed -- they're the fail-safe. If the JSON can't be fetched, `applyTraditionAvailabilityToDOM()`
+does nothing and the cards/dropdown simply keep whatever `index.html` shipped with, which always
+matches today's real state. Separately, `isTraditionAvailable()` falls back to a small hard-coded
+`TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK` set (`eastern-orthodox`) for the routing guard
+specifically, so a returning tester with Horologion saved as their default still can't skip past the
+entry screen even if the JSON is completely unreachable. The system can only fail toward *more*
+gating than the JSON specifies, never less -- it cannot leak a paused tradition through a fetch
+failure.
+
+**Admin panel** (`admin/admin.html`, new "Tradition Availability" panel) -- one row per tradition
+with a status badge, its reason when paused, and a Pause/Restore button (pausing prompts for a reason
+and stamps today's date); the permanently-unavailable `latin-catholic` shows a disabled button, not a
+toggle. Below the rows, a live-updating textarea holds the exact JSON to paste back into the real
+file, with a "Copy updated JSON" button. **This app has no backend** -- the panel edits an in-memory
+copy only; on-panel text says explicitly that toggling here has no effect on testers until the JSON
+is committed and the web release is redeployed, so it can't be mistaken for a live switch.
+
+### Verified live, headless Chromium, mirroring the original Horologion-unwire's own verification method
+
+(1) Fresh load -- `eastern-orthodox`/`latin-catholic` cards and dropdown options disabled with
+correct reason text, `anglican` unaffected, zero console errors. (2) A returning tester with a stale
+`eastern-orthodox` stored default -- cleared correctly, entry screen shown, `office-active` stays
+false (same outcome as the original manual gate). (3) A returning tester with a valid `anglican`
+default -- correctly NOT cleared, routes straight in. (4) **The JSON fetch forced to fail**
+(`page.route(...).abort('failed')`) -- the stale `eastern-orthodox` default is *still* cleared, via
+the hard-coded fallback, proving the fail-safe works in practice and not just on paper. (5) The admin
+panel -- loads and renders all five rows correctly; pausing Anglican via its toggle (auto-accepting
+the native reason prompt) updates the row and produces valid, correctly-shaped JSON in the textarea;
+restoring it reverts the row; the permanent Latin Catholic row's button is confirmed disabled.
+
+Cache-bust `js/office-ui.js v314 -> v315`. `data/tradition-availability.json` and `admin/admin.html`
+carry no cache-bust param, matching this codebase's existing convention for data files and the admin
+tool.
+
+Two unrelated UI issues Josh flagged live mid-session, explicitly "to fix later" -- a Bible Reader
+"What the Fathers Say" panel positioned oddly over the passage text, and the East Syriac "The Order"
+rail not scrolling with content that's longer than its visible height -- were logged in
+`RESUME_PROJECT_NOTE.md` rather than investigated now, per his own instruction.
+
+SEED_VERSION bumped to `v369-2026-09-25-admin-tradition-availability-control-panel-built`.

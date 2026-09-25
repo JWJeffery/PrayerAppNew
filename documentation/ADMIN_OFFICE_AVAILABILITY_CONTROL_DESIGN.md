@@ -1,8 +1,10 @@
 # Admin Office/Tradition Availability Control — Design Note
 
-**Status: proposed, not built.** Written 2026-09-25 for Josh's review before any code is touched,
-per his own note in `RESUME_PROJECT_NOTE.md`: "TODO, next session — admin control panel for taking
-offices offline... Not started; scope/design not yet discussed with Josh."
+**Status: BUILT 2026-09-25, live-verified, per Josh's "proceed" after reviewing this note.**
+Originally written for review before any code was touched, per his own note in
+`RESUME_PROJECT_NOTE.md`: "TODO, next session — admin control panel for taking offices offline...
+Not started; scope/design not yet discussed with Josh." Section 5 below records what was actually
+built and how it was verified; sections 1-4 are the design as proposed and approved, unchanged.
 
 **Scope confirmed with Josh:** whole traditions only (not individual offices within a tradition,
 not individual pages). A JSON data file read by production code, edited through a new admin panel.
@@ -123,3 +125,72 @@ control surface — see `admin/readme.md`: JSON-driven panels, fetched client-si
   today; building one is a much larger, separate decision.
 - Not a change to *which* traditions are currently available — this is a mechanical refactor of
   *how* that state is expressed and edited, seeded from today's real state.
+
+## 5. What was actually built, 2026-09-25
+
+Built exactly per the plan above, migration steps 1-4. Key names corrected from this note's
+original draft to match the codebase's real, already-live tradition keys (confirmed by reading
+`resolveEntryTraditionRoute()` in `js/office-ui.js` and the profile dropdown's existing `option`
+values, not assumed): `latin-catholic`, not `roman-catholic`.
+
+**`data/tradition-availability.json`** — seeded with today's real, committed state: `anglican`,
+`church-of-the-east`, `oriental-orthodox` available; `eastern-orthodox` paused (same reason/date as
+the existing manual gate); `latin-catholic` unavailable and `permanent: true`.
+
+**`index.html`** — every card this system manages (`anglican`, the Church of the East step-in card
+plus both its ACOE/Ancient sub-cards, `oriental-orthodox`, `eastern-orthodox`, `latin-catholic`) got
+a `data-entry-tradition` key (the three previously-ungated ones already had it; `eastern-orthodox`
+and `latin-catholic` did not, since neither ever needed to route anywhere while hard-disabled) plus
+a `data-available-subtitle` attribute holding the exact text to restore if the admin later marks it
+available again -- for `eastern-orthodox` this is `"Byzantine Horologion offices."`, recovered from
+`git show` of the original pre-pause commit rather than guessed. The five profile-dropdown
+`<option>`s got matching `data-available-label` attributes. The static `disabled`/`is-disabled`/
+`aria-disabled` markup on the `eastern-orthodox` and `latin-catholic` cards, and the `disabled`
+attribute on their two dropdown options, was deliberately **kept as-is** -- see the fail-safe note
+below.
+
+**`js/office-ui.js`** — added `loadTraditionAvailability()` (fetches the JSON with a 1.5s timeout,
+returns `null` on any failure), `applyTraditionAvailabilityToDOM()` (walks every
+`[data-entry-tradition]` card and the profile dropdown, syncing disabled state and subtitle/label
+text to the fetched data -- a no-op if the fetch failed), and `isTraditionAvailable()`.
+`initializeEntryRouting()` is now `async`: it `await`s the fetch before doing anything else, safe
+because the entry/mode screens are already hidden-by-default until this function decides which one
+to show (the same pattern that already guards against a different flash-of-wrong-state bug Josh
+caught 2026-09-22). The old single hard-coded `if (storedDefault === 'eastern-orthodox')` guard is
+now a generic check against the fetched availability map for *any* stored default.
+
+**Fail-safe, explicitly kept:** if `data/tradition-availability.json` can't be fetched (bad deploy,
+offline load, a timeout), `applyTraditionAvailabilityToDOM()` does nothing and the entry
+cards/dropdown simply keep whatever `index.html` shipped with -- which is always today's real state,
+since the HTML markup itself was never changed to "available" for the two currently-paused
+traditions. Separately, `isTraditionAvailable()` falls back to a small hard-coded
+`TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK` set (currently just `eastern-orthodox`) for the
+stale-stored-default routing guard specifically, so a returning tester with Horologion saved as
+their default still can't skip straight into it even if the JSON is completely unreachable. This
+means the system can only ever fail toward *more* traditions staying gated than the JSON says, never
+fewer -- it cannot accidentally leak a paused tradition to testers through a fetch failure.
+
+**Admin panel** (`admin/admin.html`, new "Tradition Availability" panel, `.ta-*` CSS, sourced from
+`../data/tradition-availability.json`) — one row per tradition with a status badge, its reason (if
+paused), and a Pause/Restore button; pausing prompts for a reason and stamps today's date;
+permanently-unavailable traditions (`latin-catholic`) show a disabled button, not a toggle. Below
+the rows, a live-updating read-only textarea holds the exact JSON to paste back into the real file,
+with a "Copy updated JSON" button and explicit on-panel text that toggling here has no effect on
+testers until that JSON is committed and redeployed -- so the panel can't be mistaken for a live
+switch.
+
+**Verified live, headless Chromium**, mirroring the original manual Horologion-unwire's own
+verification method: (1) fresh load — `eastern-orthodox` and `latin-catholic` cards/dropdown options
+disabled with their correct reason text, `anglican` unaffected, zero console errors; (2) a returning
+tester with a stale `eastern-orthodox` stored default — cleared correctly, entry screen shown,
+`office-active` stays false; (3) a returning tester with a valid `anglican` stored default —
+correctly *not* cleared, routes straight in as before; (4) the JSON fetch forced to fail
+(`page.route(...).abort()`) — the stale `eastern-orthodox` default is *still* cleared via the
+hard-coded fallback, proving the fail-safe actually works and not just in theory; (5) the admin
+panel — loads and renders all five rows correctly, pausing Anglican via the toggle (auto-accepting
+the native reason prompt) updates the row and produces valid, correctly-shaped JSON in the textarea,
+restoring it reverts the row, and the permanent Latin Catholic row's button is confirmed disabled.
+
+Cache-bust `js/office-ui.js v314 -> v315`. `data/tradition-availability.json` and `admin/admin.html`
+carry no cache-bust param in this codebase's existing convention (data files and the admin tool
+aren't versioned that way elsewhere either).

@@ -751,6 +751,43 @@ header {
 .ugb-v1-flag         { font-size:0.7em; padding:1px 6px; border-radius:3px; background:rgba(212,146,74,0.1); color:var(--sev-med); border:1px solid rgba(212,146,74,0.25); white-space:nowrap; }
 .ugb-owner           { font-size:0.82em; color:var(--text-dim); white-space:nowrap; }
 /* PHASE-1.3-CSS-END */
+/* ── Tradition Availability panel, added 2026-09-25 ─────────────────────────
+   Admin-facing write side of data/tradition-availability.json -- see
+   documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md. No backend
+   exists, so this panel edits an in-memory copy and outputs updated JSON to
+   copy back into the real file; it cannot push changes to testers directly. */
+.ta-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-top: 1px solid var(--border);
+  font-size: 0.8em; line-height: 1.5;
+}
+.ta-row:first-child { border-top: none; }
+.ta-name { flex: 0 0 210px; font-weight: 500; }
+.ta-reason { flex: 1; color: var(--text-dim); font-size: 0.92em; }
+.ta-badge { font-size: 0.72em; padding: 1px 7px; border-radius: 3px; white-space: nowrap; }
+.ta-badge-available  { background: rgba(74,124,89,0.15);  color: #5a9b6a;        border: 1px solid rgba(74,124,89,0.3); }
+.ta-badge-paused     { background: rgba(224,82,82,0.15);  color: var(--sev-high); border: 1px solid rgba(224,82,82,0.3); }
+.ta-badge-permanent  { background: rgba(58,56,53,0.5);    color: var(--text-dim); border: 1px solid var(--border); }
+.ta-toggle-btn {
+  flex: 0 0 auto; background: var(--surface-2); border: 1px solid var(--border-bright);
+  color: var(--accent); font-family: var(--mono); font-size: 0.85em;
+  padding: 4px 10px; border-radius: var(--radius); cursor: pointer;
+}
+.ta-toggle-btn:hover { background: #1c2028; border-color: var(--accent); }
+.ta-toggle-btn:disabled { opacity: 0.4; cursor: default; }
+.ta-toggle-btn:disabled:hover { background: var(--surface-2); border-color: var(--border-bright); }
+.ta-json-note {
+  margin-top: 12px; padding: 9px 12px; font-size: 0.78em; color: var(--text-dim);
+  line-height: 1.6; background: rgba(212,146,74,0.05); border: 1px solid rgba(212,146,74,0.2);
+  border-radius: var(--radius);
+}
+.ta-json-box {
+  width: 100%; margin-top: 8px; font-family: var(--mono); font-size: 0.76em;
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--border-bright);
+  border-radius: var(--radius); padding: 10px; box-sizing: border-box; resize: vertical;
+}
+.ta-dirty-flag { font-size: 0.7em; color: var(--sev-med); margin-left: 8px; display: none; }
+.ta-dirty-flag.visible { display: inline; }
 /* PHASE-1.4-CSS-START */
 /* ── Phase 1.4: External Corpus Integration card ─────────────────────────── */
 .ubr-restricted-card {
@@ -1235,6 +1272,17 @@ header {
         <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: project_roadmap.json</span>
       </div>
       <div class="panel-body" id="universal-roadmap-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+    <!-- Tradition Availability — admin control for gating whole traditions from testers, added 2026-09-25 -->
+    <div class="panel" id="panel-tradition-availability">
+      <div class="panel-head">
+        <span class="panel-title">Tradition Availability</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: data/tradition-availability.json</span>
+      </div>
+      <div class="panel-body" id="tradition-availability-body">
         <div class="empty-state loading-dot">Loading</div>
       </div>
     </div>
@@ -2490,6 +2538,119 @@ function renderGovernanceQuestionBoard(govQs, esc) {
 }
 // PHASE-1.3-HELPERS-END
 
+// ── Tradition Availability panel, added 2026-09-25 ──────────────────────────
+// Admin write side for data/tradition-availability.json (read by index.html's
+// entry cards/profile dropdown and js/office-ui.js's initializeEntryRouting --
+// see documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md). This app has
+// no backend, so toggling here only edits an in-memory copy; the panel's real
+// output is the JSON box below the rows, which has to be copied back into the
+// real file and deployed like any other content change -- it does not change
+// what testers see by itself.
+const TA_DISPLAY_NAMES = {
+  'anglican':           'Anglican (The Episcopal Church)',
+  'church-of-the-east':  'Church of the East',
+  'oriental-orthodox':   'Oriental Orthodoxy (Coptic Agpeya)',
+  'eastern-orthodox':    'Eastern Orthodoxy (Byzantine Horologion)',
+  'latin-catholic':      'Latin Catholic (Liturgy of the Hours)',
+};
+let taState = null;    // in-memory { traditions: {...} }, edited by toggles
+let taDirty = false;   // true once it diverges from the fetched file
+
+function taEsc(s) {
+  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function loadTraditionAvailabilityPanel() {
+  const body = document.getElementById('tradition-availability-body');
+  if (!body) return;
+
+  fetch('../data/tradition-availability.json')
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(data => {
+      taState = data;
+      taDirty = false;
+      renderTraditionAvailabilityPanel();
+    })
+    .catch(err => {
+      const msg = String(err?.message ?? err).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      body.innerHTML = `<div class="ubr-warning">⚠ Could not load data/tradition-availability.json: ${msg}</div>`;
+    });
+}
+
+function taToggle(key) {
+  const entry = taState.traditions[key];
+  if (!entry || entry.permanent) return;
+
+  if (entry.available === false) {
+    entry.available = true;
+  } else {
+    const reason = window.prompt(
+      `Reason to show testers for pausing "${TA_DISPLAY_NAMES[key] || key}"?`,
+      entry.reason || ''
+    );
+    if (reason === null) return; // cancelled
+    entry.available = false;
+    entry.reason = reason;
+    entry.since = new Date().toISOString().slice(0, 10);
+  }
+  taDirty = true;
+  renderTraditionAvailabilityPanel();
+}
+
+function taCopyJSON() {
+  const box = document.getElementById('ta-json-box');
+  if (!box) return;
+  box.select();
+  navigator.clipboard?.writeText(box.value).catch(() => {});
+  try { document.execCommand('copy'); } catch (_e) {}
+}
+
+function renderTraditionAvailabilityPanel() {
+  const body = document.getElementById('tradition-availability-body');
+  if (!body || !taState) return;
+
+  const traditions = taState.traditions || {};
+  const rows = Object.keys(traditions).map(key => {
+    const entry = traditions[key];
+    const name = TA_DISPLAY_NAMES[key] || key;
+    let badge, action;
+    if (entry.permanent) {
+      badge = `<span class="ta-badge ta-badge-permanent">Not built</span>`;
+      action = `<button class="ta-toggle-btn" disabled>—</button>`;
+    } else if (entry.available === false) {
+      badge = `<span class="ta-badge ta-badge-paused">Paused</span>`;
+      action = `<button class="ta-toggle-btn" onclick="taToggle('${key}')">Restore</button>`;
+    } else {
+      badge = `<span class="ta-badge ta-badge-available">Available</span>`;
+      action = `<button class="ta-toggle-btn" onclick="taToggle('${key}')">Pause</button>`;
+    }
+    const reasonText = entry.available === false && entry.reason
+      ? entry.reason + (entry.since ? ` (since ${entry.since})` : '')
+      : '';
+    return `<div class="ta-row">
+      <span class="ta-name">${taEsc(name)}</span>
+      ${badge}
+      <span class="ta-reason">${taEsc(reasonText)}</span>
+      ${action}
+    </div>`;
+  }).join('');
+
+  const json = taEsc(JSON.stringify(taState, null, 2));
+
+  body.innerHTML = `
+    ${rows}
+    <div class="ta-json-note">
+      No backend exists in this app — toggling above edits this panel's own copy only.
+      To make it real: copy the JSON below over <code>data/tradition-availability.json</code>,
+      commit it, and redeploy the web release, the same way every other content change reaches
+      testers.
+      <span class="ta-dirty-flag${taDirty ? ' visible' : ''}" id="ta-dirty-flag">● unsaved changes below</span>
+    </div>
+    <textarea class="ta-json-box" id="ta-json-box" rows="14" readonly onclick="this.select()">${json}</textarea>
+    <button class="run-btn" style="margin-top:8px;" onclick="taCopyJSON()">⧉ Copy updated JSON</button>
+  `;
+}
+
 function loadUniversalBetaRoadmap() {
   const body = document.getElementById('universal-roadmap-body');
   if (!body) return;
@@ -2597,6 +2758,9 @@ renderRepoHygiene();
 
   // Load Universal Beta Roadmap
   loadUniversalBetaRoadmap();
+
+  // Load Tradition Availability panel
+  loadTraditionAvailabilityPanel();
 
   // Load Byzantine release roadmap (legacy cockpit)
   renderReleaseRoadmap();

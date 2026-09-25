@@ -22,6 +22,27 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25.** Resolves the "TODO, next
+session" note below (kept here, struck through in spirit, for history). Design confirmed with
+Josh first (whole traditions only, JSON-backed, admin UI) via `AskUserQuestion`, written up in
+`documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md`, then built after Josh said "proceed."
+New `data/tradition-availability.json` (seeded with today's real state) replaces the three
+hand-edited gates from the original Horologion unwire with one file, read by `index.html`'s entry
+cards + profile dropdown and by `js/office-ui.js`'s now-`async initializeEntryRouting()`. The
+original hard-coded `eastern-orthodox`/`latin-catholic` disabled markup in `index.html` was
+deliberately **kept**, not removed — it's the fail-safe: if the JSON can't be fetched, the entry
+screen simply keeps shipping today's real state, and a hard-coded fallback set still protects the
+stale-stored-default routing guard (the case Josh called "the one that actually mattered") even
+then. New "Tradition Availability" panel in `admin/admin.html` lets Josh toggle a tradition
+paused/available (prompting for a reason) and copy out updated JSON to paste back into the real
+file — **there is no backend**, so this cannot push changes to testers by itself; the panel says so
+on-screen. Verified live in headless Chromium: fresh load, a stale-EO-default returning tester
+(cleared correctly), a valid-Anglican-default returning tester (correctly not cleared), the JSON
+fetch forced to fail (fallback still protects EO), and the admin panel's toggle/restore/JSON-output
+round-trip. Cache-bust `office-ui.js v314 -> v315`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (admin tradition-availability control panel), SEED_VERSION
+v368 → v369.
+
 **FLAGGED BY JOSH, NOT YET INVESTIGATED — "The Order" rail doesn't scroll with the office content,
 2026-09-25.** Josh, again explicitly "to fix later": on Church of the East (screenshot showed
 Wathar Friday), the left "THE ORDER" rail (the same rail whose dot-position bugs were fixed earlier
@@ -183,11 +204,11 @@ now leave full-contrast text; re-entering an office afterward still works normal
 `office-ui.js v313 -> v314`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
 (this session, `ui:stale-uo-day-class-fixed`), SEED_VERSION v363 → v364.
 
-**TODO, next session — admin control panel for taking offices offline.** Josh: "we need to build
-an admin control panel that allows us to take certain offices or whole offices offline with a
-click." Today's Horologion unwire (entry below) was done by hand across three files
-(`index.html` ×2, `js/office-ui.js`) — real, verified, but manual and easy to get wrong or forget
-a spot next time. Not started; scope/design not yet discussed with Josh.
+**RESOLVED — see "ADMIN TRADITION-AVAILABILITY CONTROL PANEL, BUILT 2026-09-25" near the top of
+this file.** (Original note, kept for history:) Josh: "we need to build an admin control panel that
+allows us to take certain offices or whole offices offline with a click." Today's Horologion unwire
+(entry below) was done by hand across three files (`index.html` ×2, `js/office-ui.js`) — real,
+verified, but manual and easy to get wrong or forget a spot next time.
 
 **BYZANTINE HOROLOGION TEMPORARILY UNWIRED FROM TESTERS, 2026-09-25 continued still further.**
 Josh, moved to top of queue mid-session: "I am not providing my testers with access
