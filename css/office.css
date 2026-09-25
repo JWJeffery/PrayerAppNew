@@ -2177,14 +2177,20 @@ body:not(.office-active) {
         white-space: normal !important;
     }
 
-    body.mobile-sidebar-open #daily-office-section::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.54);
-        z-index: 500;
-        pointer-events: none;
-    }
+    /* CONFIRMED DEAD, deleted 2026-09-25: a body.mobile-sidebar-open
+       #daily-office-section::after dim-overlay rule used to sit here.
+       grep across every .js file and index.html found zero code anywhere
+       that ever sets the mobile-sidebar-open class on body -- it was a
+       leftover from the legacy sidebar's slide-out animation, already
+       unreachable before the sidebars themselves were deleted (Phase 6).
+       Everything else in this block (html/body and #main-content overflow
+       containment, #daily-office-section positioning, .office-container/
+       .shared-office-nav*/.setting-group sizing) is still live and, for
+       the overflow-x rules specifically, appears to be the SOLE mechanism
+       preventing horizontal scroll at mobile widths on both Daily Office
+       and Book of Needs -- office-shell.css has zero html/body selectors
+       and never references #daily-office-section at all. Confirmed via a
+       three-agent research pass, not guessed; left in place. */
 }
 /* === UO MOBILE DRAWER REPAIR END === */
 
