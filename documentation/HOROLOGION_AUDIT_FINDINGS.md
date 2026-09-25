@@ -242,9 +242,49 @@ project has already built for other slots (e.g. the Vespers prokeimena-by-day ta
 scope correction because it means this slot is not actually blocked on the same thing the Troparion-
 of-the-day slot is — it could be sourced and built now, independent of Menaion import.
 
-## ORTHROS/MATINS — not yet audited
+## ORTHROS/MATINS — audited, 2 findings
 
-## ORTHROS/MATINS — not yet audited
+**Source note**: `HAPGOOD1922`'s Matins presentation is specifically the Sunday/festal All-Night Vigil
+form (Polyeleos + Gospel), not ordinary ferial Matins — not the right direct comparison for the
+skeleton's own stated scope ("the ordinary Orthros of the Constantinopolitan Horologion"). Used
+`UNABHOR1997`'s general "THE ORDER OF THE MATINS" (pp.46-64) as the primary structural source for this
+office instead, cross-checking against `HAPGOOD1922` only for pieces common to both forms (Six Psalms,
+God is the Lord, Great Litany placement — all confirmed matching). Live-verified via
+`resolveOffice('orthros', ...)`: 26/26 slots resolve, several correctly and honestly deferred (rank-3
+Menaion sessional hymns/kontakion/exapostilarion/praises stichera for a real saint on the test date,
+St. Gregory the Illuminator — not findings, matches this project's standing disclosure policy).
+
+### Finding O1 — GAP: Psalms 19 and 20 missing from the opening, before the Six Psalms
+
+`UNABHOR1997` p.47: after "O come, let us worship" (marked point "(III)," the branch reached when
+Matins is preceded by Vespers or the Midnight Office and it is not Great Lent — the common case for
+this app's independently-resolved offices, same reasoning as the Vespers V-O1 observation), the
+rubric explicitly continues "And three reverences. And Psalms 19 and 20," followed by their full text.
+Live-verified: the app's `[opening]` section jumps directly from the `usual-beginning` sequence to the
+Six Psalms rubric — no item anywhere represents Psalms 19/20.
+
+### Finding O2 — GAP/MISORDERING: sessional hymns are not interleaved with their own kathisma
+
+`UNABHOR1997` pp.60-61 shows each kathisma followed immediately by its own sessional hymn(s) and a
+Small Ectenia, repeated per kathisma (kathisma 1 → its sessional hymns → litany → kathisma 2 → its
+sessional hymns → litany → ...), not all kathismata read consecutively with sessional hymns bundled
+separately afterward. Live-verified: the app's `[kathismata]` section renders Kathisma 8, then
+Kathisma 9, then a "not appointed" rubric for a third, as three consecutive items — only *after* all
+three does the separate `[sessional-hymns]` section render a single combined sessional-hymns slot.
+Structurally, two real kathismata were read on the test date, each of which should carry its own
+sessional hymn immediately after it; the skeleton only has one combined slot to represent both.
+
+### Confirmed correct / honestly disclosed (not findings)
+
+Opening → Six Psalms → Great Litany → God is the Lord → Troparia → Kathismata order is otherwise
+correct (Great Litany placement directly after the Six Psalms, before "God is the Lord," matches
+`UNABHOR1997` precisely). Psalm 50 correctly opens the `[canon]` section, matching the "simple
+service" path in `UNABHOR1997` p.61 exactly. The Canon, Kontakion, Exapostilarion, and Praises-
+Stichera slots all correctly and honestly disclose Menaion-dependent content as not yet available
+rather than fabricating it — not findings. The "third Kathisma not appointed on ordinary weekdays"
+rubric reads as a reasoned, aware disclosure of real Typikon complexity (weekday kathisma count
+varies by season), not an error — not investigated further given time, but not flagged as a finding
+either.
 
 ## MIDNIGHT OFFICE — not yet audited
 
