@@ -858,7 +858,7 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
    Prayer, ordo/keeping bars confirmed fixed top and bottom throughout, no
    text cut off): put the scroll on THIS element instead, and stop
    #main-content from scrolling at all (`overflow-y: hidden` added to
-   `body.shell-v2 #main-content.app-primary-canvas` below). #main-content
+   `#main-content.app-primary-canvas` below). #main-content
    keeps its original fixed height (css/office.css's `height: 100vh`,
    untouched), so the grid's rows resolve to real pixel heights against it
    as normal, and THIS row's box -- whatever height that resolves to --
@@ -879,7 +879,7 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
    and `min-height: 0` set together, AND #main-content no longer competing
    for the same scroll, this is the standard, well-established pattern for
    a scrollable middle panel between a fixed header and footer. */
-body.shell-v2 .uo-page {
+.uo-page {
     padding: 34px 40px 48px;
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
@@ -892,14 +892,14 @@ body.shell-v2 .uo-page {
    foot still span it, while the text itself is held to a readable line and
    centred within. Capping the column instead would drag every one of those to
    the left edge. */
-body.shell-v2 .uo-page > #office-display,
-body.shell-v2 .uo-page > .saint-section,
-body.shell-v2 .uo-page > .uo-ornament {
+.uo-page > #office-display,
+.uo-page > .saint-section,
+.uo-page > .uo-ornament {
     max-width: var(--uo-measure);
     margin-inline: auto;
 }
 
-body.shell-v2 .uo-ornament {
+.uo-ornament {
     display: block;
     width: 84px;
     height: 12px;
@@ -910,7 +910,7 @@ body.shell-v2 .uo-ornament {
 
 /* ── The margin ───────────────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-margin {
+.uo-margin {
     padding: 26px 20px;
     border-left: 1px solid var(--uo-hairline);
     font-size: 15px;
@@ -922,21 +922,21 @@ body.shell-v2 .uo-margin {
    cards a gold one — the same left-bar-as-category convention, never a
    rounded card or a drop shadow (handoff §7's "no rounded cards" rule
    applies here same as on the page). */
-body.shell-v2 .uo-margin-card {
+.uo-margin-card {
     padding: 4px 0 4px 12px;
     margin-bottom: 16px;
     border-left: 3px solid var(--uo-hairline);
 }
 
-body.shell-v2 .uo-margin-card.is-overlay {
+.uo-margin-card.is-overlay {
     border-left-color: var(--uo-rubric);
 }
 
-body.shell-v2 .uo-margin-card.is-diagnostic {
+.uo-margin-card.is-diagnostic {
     border-left-color: var(--uo-accent);
 }
 
-body.shell-v2 .uo-margin-card-head {
+.uo-margin-card-head {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.16em;
@@ -945,7 +945,7 @@ body.shell-v2 .uo-margin-card-head {
     margin-bottom: 4px;
 }
 
-body.shell-v2 .uo-margin-card-body {
+.uo-margin-card-body {
     font-size: 15px;
     line-height: 1.5;
     color: var(--uo-ink);
@@ -953,7 +953,7 @@ body.shell-v2 .uo-margin-card-body {
 
 /* Handoff §1: at most two cards visible; the rest collapse to this quiet
    line rather than a caption explaining the margin. */
-body.shell-v2 .uo-margin-more {
+.uo-margin-more {
     background: none;
     border: none;
     padding: 0;
@@ -968,13 +968,13 @@ body.shell-v2 .uo-margin-more {
 /* Collapsed cards stay in the DOM (never omitted) so print — which cannot
    run the click handler that reveals them on screen — still carries full
    overlay/diagnostic attribution. See the @media print override below. */
-body.shell-v2 .uo-margin-card-collapsed {
+.uo-margin-card-collapsed {
     display: none;
 }
 
 /* ── The keeping-place bar ────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-keeping {
+.uo-keeping {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -988,13 +988,13 @@ body.shell-v2 .uo-keeping {
     background: var(--uo-ground);
 }
 
-body.shell-v2 .uo-keeping-actions {
+.uo-keeping-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-body.shell-v2 .uo-keeping-hint {
+.uo-keeping-hint {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.14em;
@@ -1004,13 +1004,13 @@ body.shell-v2 .uo-keeping-hint {
 
 /* ── Auto / Light / Dark ──────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-theme-control {
+.uo-theme-control {
     display: flex;
     gap: 2px;
     flex: 0 0 auto;
 }
 
-body.shell-v2 .uo-theme-button {
+.uo-theme-button {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.14em;
@@ -1022,16 +1022,16 @@ body.shell-v2 .uo-theme-button {
     cursor: pointer;
 }
 
-body.shell-v2 .uo-theme-button:hover {
+.uo-theme-button:hover {
     color: var(--uo-ink);
 }
 
-body.shell-v2 .uo-theme-button.is-on {
+.uo-theme-button.is-on {
     color: var(--uo-accent);
     border-color: var(--uo-hairline);
 }
 
-body.shell-v2 .uo-theme-button:focus-visible {
+.uo-theme-button:focus-visible {
     outline: 2px solid var(--uo-accent);
     outline-offset: 2px;
 }
@@ -1057,7 +1057,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
        actual prayer text (.uo-page) down to a sliver on a long office.
        Capped and independently scrollable, matching how .uo-page already
        scrolls its own overflow rather than growing past its row. */
-    body.shell-v2 .uo-rail {
+    .uo-rail {
         border-right: none;
         border-bottom: 1px solid var(--uo-hairline);
         padding: 14px 18px;
@@ -1066,19 +1066,19 @@ body.shell-v2 .uo-theme-button:focus-visible {
         -webkit-overflow-scrolling: touch;
     }
 
-    body.shell-v2 .uo-margin {
+    .uo-margin {
         border-left: none;
         border-top: 1px solid var(--uo-hairline);
     }
 
-    body.shell-v2 .uo-page { padding: 24px 20px 36px; }
+    .uo-page { padding: 24px 20px 36px; }
 
     /* On a phone the viewport is already narrower than the measure; letting the
        cap apply there would leave the text floating in a column narrower than
        the screen. */
-    body.shell-v2 .uo-page > #office-display,
-    body.shell-v2 .uo-page > .saint-section,
-    body.shell-v2 .uo-page > .uo-ornament {
+    .uo-page > #office-display,
+    .uo-page > .saint-section,
+    .uo-page > .uo-ornament {
         max-width: none;
     }
 
@@ -1111,9 +1111,9 @@ body.shell-v2 .uo-theme-button:focus-visible {
         color: #000;
     }
 
-    body.shell-v2 .uo-ordo,
-    body.shell-v2 .uo-rail,
-    body.shell-v2 .uo-keeping {
+    .uo-ordo,
+    .uo-rail,
+    .uo-keeping {
         display: none;
     }
 
@@ -1123,7 +1123,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
        where it cannot be recovered. Populated for the Anglican lane as of
        2026-09-16 (js/anglican-envelope.js); the other three lanes still emit
        no envelope, so this rule still has nothing to act on for them. */
-    body.shell-v2 .uo-margin {
+    .uo-margin {
         border: none;
         padding: 0;
         margin-top: 18px;
@@ -1135,11 +1135,11 @@ body.shell-v2 .uo-theme-button:focus-visible {
        has no click, so every card prints regardless of on-screen collapse —
        the expand control itself is the one thing that must not print, since
        it is a UI affordance with nothing left for it to do on paper. */
-    body.shell-v2 .uo-margin-card-collapsed {
+    .uo-margin-card-collapsed {
         display: block;
     }
 
-    body.shell-v2 .uo-margin-more {
+    .uo-margin-more {
         display: none;
     }
 }
@@ -1182,7 +1182,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
    account.
    --------------------------------------------------------------------------- */
 
-body.shell-v2 .uo-drawer-open {
+.uo-drawer-open {
     background: transparent;
     border: 0;
     padding: 4px 0;
@@ -1193,8 +1193,8 @@ body.shell-v2 .uo-drawer-open {
     text-transform: uppercase;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-open:hover,
-body.shell-v2 .uo-drawer-open:focus-visible { color: var(--uo-ink); }
+.uo-drawer-open:hover,
+.uo-drawer-open:focus-visible { color: var(--uo-ink); }
 
 dialog.uo-drawer {
     position: fixed;
