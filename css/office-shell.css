@@ -1430,7 +1430,20 @@ body.uo-day .uo-drawer-datepick { color-scheme: light; }
     padding: 0;
     margin: 12px 0 0;
 }
-body.shell-v2 .uo-drawer-moved strong {
+/* These three selectors are the one place in the drawer where the moved
+   content (.setting-group/.nested-group nodes relocated wholesale from the
+   deleted legacy sidebars, still real office.css classes elsewhere in the
+   app) shares a class name with a still-live office.css rule
+   (.setting-group strong/label, .setting-group label input[type=checkbox]).
+   A bare-.uo-drawer-moved strip lands at an exact specificity tie for
+   strong/label and an outright LOSS for the checkbox (office.css's
+   .setting-group label input[type=checkbox] is one element ahead) --
+   confirmed by direct specificity comparison, not assumed. Anchored on
+   dialog.uo-drawer instead of body.shell-v2: real, already-used selector
+   for the drawer element itself (see the base rule above), giving a full
+   specificity margin over every known competitor rather than a load-order
+   tie. 2026-09-25, unscoping Stage 3. */
+dialog.uo-drawer .uo-drawer-moved strong {
     display: block;
     margin: 10px 0 4px;
     font-family: var(--uo-face-machine);
@@ -1440,7 +1453,7 @@ body.shell-v2 .uo-drawer-moved strong {
     text-transform: uppercase;
     color: var(--uo-ink-quiet) !important;
 }
-body.shell-v2 .uo-drawer-moved label {
+dialog.uo-drawer .uo-drawer-moved label {
     display: block;
     margin: 6px 0;
     line-height: 1.45;
@@ -1449,8 +1462,8 @@ body.shell-v2 .uo-drawer-moved label {
     font-size: 16px;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-moved input[type="checkbox"],
-body.shell-v2 .uo-drawer-foot input[type="checkbox"] {
+dialog.uo-drawer .uo-drawer-moved input[type="checkbox"],
+dialog.uo-drawer .uo-drawer-foot input[type="checkbox"] {
     accent-color: #c9a84c;
     margin-right: 8px;
 }
