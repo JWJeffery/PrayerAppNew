@@ -19454,3 +19454,127 @@ Cache-bust `js/office-ui.js?v=313 -> v314` (the v312 -> v313 bump earlier this s
 separate Horologion-unwire commit).
 
 SEED_VERSION bumped to `v364-2026-09-25-stale-uo-day-class-fixed`.
+
+## Session 2026-09-25 continued -- office shell/drawer/Book of Needs UI batch
+
+Josh, with screenshots, flagged a batch of live UI problems and said to work through the whole
+batch before resurfacing a web deployment. Eight items, each investigated and fixed in the real
+code (not just cosmetically patched), verified live in headless Chromium:
+
+**1. Keeping-bar hint text.** "The '↑ ↓ move by block · space holds the place' bar is odd. Please
+remove the text." Investigated first rather than assumed: grepped the whole app for keydown/
+keyup/ArrowUp/ArrowDown handling and found none at all -- the hint described a "move by block"
+keyboard feature that was never built, pure aspirational text. `js/office-shell.js`'s `buildShell()`
+now creates `.uo-keeping-hint` with no text content, kept as an empty node (not deleted) so
+`.uo-keeping`'s `justify-content:space-between` still has two children and the Office Settings/
+Audit Dashboard buttons stay pinned right, exactly as before.
+
+**2. The rail dot never moved.** "It seems to me that it ought to [move as the user scrolls]."
+True: `renderRailFromEnvelope()` hardcoded `.is-current` onto item 0 at render time and nothing
+ever touched it again; the "I of N" footer was likewise a hardcoded literal `'I of ' + count`, not
+computed from any live index. Building real scroll-tracking required first discovering that the
+rail (18 items in a typical BCP office) and `#office-display`'s actual rendered content (38+ DOM
+children, most rail items spanning a `.rubric-text` span plus one or more `.uo-block` divs, several
+items with no separate rubric at all) do not correspond 1:1 by DOM position. Built
+`computeRailWaypoints()`: walks the rail's labels and the page's `.rubric-text` spans in parallel,
+matching by exact text in document order to find each item's real Y offset within `.uo-page`'s
+scrollable content; a rail item with no distinct rubric (an Invitatory or Collect whose only
+heading is inline text inside its own block) inherits its predecessor's waypoint rather than a
+guessed one, so the dot still advances correctly, just not to a distinct position of its own for
+that one item. `updateRailCurrent()`, driven by a rAF-throttled scroll listener
+(`watchRailScroll()`) on `.uo-page`, finds the last waypoint the reader has scrolled past (120px
+threshold, so the dot leads slightly rather than lagging) and updates both `.is-current` and the
+"I of N" footer (added a small `toRoman()` helper, since the footer uses roman numerals) together.
+Waypoints are recomputed on every fresh envelope render and, as a safety net, whenever
+`#office-display` mutates for any other reason (the existing `watchRenderChanges()` MutationObserver
+already re-applies theme on every mutation; recomputing waypoints there too costs nothing extra).
+VERIFIED LIVE: BCP Evening Prayer, scrolled to 60% -- dot and footer correctly moved from "Opening
+Sentence / I of 18" to "Nunc Dimittis / IX of 18"; scrolled back to top -- correctly returned to
+"Opening Sentence / I of 18".
+
+**3. Book of Needs Dark Mode toggle: wrong position AND broken.** Two separate real bugs, not one.
+POSITION: `.app-dark-toggle`'s shared rule is `position:absolute`, pinned to the nearest
+positioned ancestor's corner -- correct on the old splash's own bounded card, but the 2026-09-25
+Book of Needs design pass deliberately removed that card ("no card... left-aligned... rather than
+centred like the old splash"), leaving `#prayer-selection` with no positioning context of its own,
+so the pin escaped all the way to `#individual-prayers-section` and landed in the top-right corner
+of the full viewport rather than near the title. Fixed: `#individual-prayers-section
+.app-dark-toggle` taken out of absolute positioning, placed back in the normal left-aligned flow.
+BROKEN: two independent, compounding causes, both found live rather than guessed. (a) The
+checkbox's own `checked` state was never synced to the theme actually in effect -- it starts at its
+bare HTML default (unchecked) and nothing ever set it from `body.dark-mode`, so a person could see
+an unchecked box while the screen was already dark, click it, and land back on dark, reading as "it
+does not work." Fixed in `resetBookOfNeedsView()` (`js/prayers.js`): syncs the checkbox from
+`document.body.classList.contains('dark-mode')` every time Book of Needs is shown. (b) The real
+bug: `selectMode()` sets `body.office-active` unconditionally for every mode including `'prayers'`,
+so `js/office-shell.js`'s shell theme system already governs Book of Needs' `dark-mode`/`light-mode`
+classes the same as any real office -- and that file's own `watchOfficeChanges()` re-applies
+`applyTheme(readTheme())` after EVERY click anywhere on the page (a deliberate mechanism for
+tracking Horologion's office changes, which fire no `change` event). Clicking the old
+`[data-app-dark-toggle]` checkbox correctly flipped `body.dark-mode`/`light-mode` via
+`applyDarkMode()` -- and within one tick this same global click handler silently reverted it back
+to the shell's own theme decision, the checkbox's own `.checked` state left stranded showing the
+change while the real classes had already reverted out from under it. Exactly the "two systems
+fighting" failure this same file's own `applyTheme()` comment already names, surfacing on a new
+screen. Fixed narrowly: the global click handler now skips re-resolving when the click originated
+inside `.app-dark-toggle`, leaving the Horologion-tracking behavior this listener exists for
+completely untouched. VERIFIED LIVE: click now flips `body.dark-mode`↔`light-mode` and stays
+flipped at +50ms and +300ms (previously reverted within the first tick); `--bon-ground` measured
+correctly following the real state both ways.
+
+**4. Commemoration card not dark-mode-aligned.** "You did not bring the commemoration card into
+alignment with the rest of the office if it is dark." Real bug, not a missed styling detail: the
+2026-09-?? "Daily Office commemoration card readability pass" (`css/office.css`) hardcoded a fixed
+light-cream gradient background with `!important`, ignoring `--app-surface`/`--app-surface-strong`
+-- variables this same file's own `body.dark-mode` block already defines correctly for every other
+card on the page. Only the card's text colors were already `var()`-based, so dark mode looked like
+gold-on-cream text sitting in an unchanged cream card, floating on an otherwise dark page. Fixed:
+background, border, and shadow now read `--app-surface-strong`/`--app-surface`/`--app-border`/
+`--app-bronze`/`--app-shadow-card` with the original hardcoded values kept only as the `var()`
+fallback. VERIFIED LIVE: with `body.dark-mode` set, the card's computed background is now
+`linear-gradient(rgba(24,18,8,0.98), rgba(30,22,8,0.92))` (dark) with `rgb(232,217,176)` text
+(cream) -- correctly aligned with the rest of a dark office.
+
+**5/8. Drawer: "How you keep it" renamed, and swapped ahead of "Which office."** Josh: "'How you
+keep it' effects your options for which office. Switch the order," plus separately "'How you keep
+it' is not good wording. 'Options' would be better." `js/office-drawer.js`'s `buildDialog()`:
+section II is now "Options" (was III, "How you keep it" -- East Syriac's own Cathedral/Monastic
+choice is the concrete case where this section changes what the next one even offers), section III
+is now "Which office" (was II). Code-comment section headers updated to match; no functional
+control lost or re-homed, only the heading text and DOM append order. VERIFIED LIVE: drawer section
+headings read "I · The Ordo", "II · Options", "III · Which office" in that order.
+
+**6. "Borrowed Devotions" renamed, with per-item tradition shown.** Josh: "'Borrowed Devotions' is
+accurate, but I don't like the term. We need to pick something better" -- asked rather than
+guessed at a subjective naming call; Josh chose "Additional Devotions, but we say where they are
+from." Sourced from this project's own governance data rather than invented: `ecu-examen` is
+tagged "Ignatian" and `ecu-prayer-before-reading`/`ecu-kyrie-pantocrator`/`ecu-east-syriac-hours`
+are all tagged "Byzantine Orthodox" in `components/ecumenical.json` (the last one corrected
+2026-09-21 from a wrong "Church of the East" tag despite its own toggle id -- the corrected value
+is carried forward here, not the misleading id name). Agpeya Opening and Theotokion both come from
+`components/coptic.json`, which carries no per-entry tradition field because the whole file is
+Coptic by scope -- "Coptic" reflects that file-level scoping. Angelus and Trisagion have NO
+tradition recorded in `ecumenical.json` at all, a real disclosed gap in that file, not fixed here
+-- labeled with their well-established common attribution (Roman Catholic; Byzantine) rather than
+left blank, flagged in-code as common knowledge, not yet a citation this project has itself
+verified. "Borrowed devotions" / "Choose borrowed devotions" renamed to "Additional devotions" /
+"Choose additional devotions" throughout the drawer; each item now reads e.g. "Angelus (Roman
+Catholic)". VERIFIED LIVE: drawer row reads "Additional devotions".
+
+**7. "Further Prayer Book Choices" reordered.** "This list is poorly ordered. You have options
+that cover one day or one week above daily options. Please reorder." The panel's content comes
+from three pre-existing legacy groups appended in sequence; the one-day-specific group (Use
+Alternate Readings for Saint Mary the Virgin / Michael and All Angels / Good Friday / Easter Day)
+was first, ahead of `during-office-section` and `closing-devotions-section`'s remaining content
+(Gloria Patri, invitatory/noonday/compline rotation groups, the Suffrages/Mission/Collect/Blessing
+daily rotations), which apply to every ordinary office. Reordered in `moveRealControls()`
+(`js/office-drawer.js`) so the daily-applicable groups move first and the single-day alternates
+move last. VERIFIED LIVE: further-choices group order is now during-office-section,
+closing-devotions-section, then the alt-readings group.
+
+Cache-bust `css/office.css v225 -> v226`, `js/prayers.js v221 -> v222`, `js/office-shell.js v298 ->
+v299`, `js/office-drawer.js v6 -> v7`. Not yet redeployed -- Josh: "When all the UI issues are
+resolved, resurface a web deployment," and more issues were still incoming when this entry was
+written.
+
+SEED_VERSION bumped to `v365-2026-09-25-office-shell-drawer-ui-batch`.

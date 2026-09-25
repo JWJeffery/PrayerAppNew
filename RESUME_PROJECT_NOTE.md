@@ -22,8 +22,47 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**OFFICE SHELL / DRAWER / BOOK OF NEEDS UI BATCH -- EIGHT REAL FIXES, 2026-09-25 continued yet
+further still (latest).** Josh sent a batch of live screenshots; asked for the whole batch fixed
+before redeploying ("When all the UI issues are resolved, resurface a web deployment" — not
+redeployed yet as of this entry, more items were still incoming). Each investigated to a real root
+cause:
+1. **Keeping-bar hint text removed** — turned out to describe a keyboard "move by block" feature
+   that was never actually built (grepped the whole app for key handlers, found none).
+2. **Rail dot now tracks real scroll position** — was hardcoded to item 0 forever, "I of N" footer
+   likewise frozen at "I". Built real waypoint tracking (`computeRailWaypoints()`/
+   `updateRailCurrent()`, `js/office-shell.js`) matching rail labels to `.rubric-text` spans by
+   text, since the rail and the rendered page don't correspond 1:1 by DOM position.
+3. **Book of Needs Dark Mode toggle: two separate real bugs.** Position — the shared corner-pin CSS
+   had no positioning context to pin to on this redesigned screen, so it escaped to the full
+   viewport corner; taken out of absolute positioning, placed in-flow. "Does not work" — (a) the
+   checkbox's own checked state was never synced to the actual theme, AND (b) a genuine "two
+   systems fighting" bug: `js/office-shell.js`'s global click listener (built for Horologion
+   office-change tracking) was silently reverting the checkbox's own theme change within one tick,
+   since Book of Needs carries `body.office-active` the same as any real office. Fixed by excluding
+   `.app-dark-toggle` clicks from that listener.
+4. **Commemoration card now follows dark mode** — its background was hardcoded to a fixed light
+   gradient with `!important`, ignoring the `--app-surface`/`--app-surface-strong` variables this
+   same file already defines correctly for dark mode; only the text color was ever theme-aware.
+5/8. **Drawer: "How you keep it" renamed to "Options" and moved before "Which office"** — per
+   Josh's own reasoning, Options can change what Which Office even shows (East Syriac's Cathedral/
+   Monastic choice).
+6. **"Borrowed Devotions" renamed to "Additional Devotions," each item now shows its tradition** —
+   sourced from `components/ecumenical.json`/`coptic.json` where recorded (Ignatian, Byzantine
+   Orthodox — including a 2026-09-21 correction carried forward, not the misleading toggle id);
+   Angelus/Trisagion flagged in-code as common-knowledge attribution, not yet a citation this
+   project has verified itself.
+7. **"Further Prayer Book Choices" reordered** — daily-applicable options now precede the
+   single-day alternate-reading toggles, not the reverse.
+
+All eight verified live in headless Chromium, zero console errors beyond the pre-existing
+sandboxed font-CDN failure. Cache-bust `office.css v225→v226`, `prayers.js v221→v222`,
+`office-shell.js v298→v299`, `office-drawer.js v6→v7`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (office shell/drawer/Book of Needs UI batch), SEED_VERSION v364 →
+v365.
+
 **REAL LIVE BUG: STALE `uo-day` CLASS MADE THE ENTRY SCREENS NEARLY ILLEGIBLE, 2026-09-25
-continued still further (latest).** Josh sent a live screenshot of theuniversaloffice.com's
+continued still further.** Josh sent a live screenshot of theuniversaloffice.com's
 "Universal Office Selector" grid with every heading and card barely visible — "Holdup! This is a
 problem!" — then confirmed "Its doing it in the codespace as well" once asked, ruling out a stale-
 deployment theory before it was even proposed (both environments run this same repo). Root-caused:

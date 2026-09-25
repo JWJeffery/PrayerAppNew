@@ -74,6 +74,34 @@
         'toggle-agpeya-opening', 'toggle-east-syriac-hours'
     ];
 
+    /* RENAMED 2026-09-25, per Josh's direct instruction ("Additional Devotions,
+       but we say where they are from"): "Borrowed" is retired; each item's own
+       tradition is shown alongside its name instead. Sourced from this
+       project's own governance data where it exists -- components/ecumenical.json
+       (ecu-examen: "Ignatian"; ecu-prayer-before-reading, ecu-kyrie-pantocrator,
+       and ecu-east-syriac-hours: "Byzantine Orthodox", the last corrected
+       2026-09-21 from a previously-wrong "Church of the East" tag despite its
+       own toggle id -- do not re-introduce that error here). Agpeya Opening and
+       Theotokion both come from components/coptic.json, which carries no
+       per-entry tradition field because the whole file is Coptic by scope; "Coptic"
+       here reflects that file-level scoping, not a separate per-item citation.
+       Angelus and Trisagion have no tradition recorded in ecumenical.json at
+       all (a real, disclosed gap in that file, not fixed here) -- labeled with
+       their well-established common attribution (Roman Catholic; Byzantine,
+       consistent with the three already-sourced Byzantine entries above) rather
+       than left blank, but this is common knowledge, not a citation this
+       project has itself verified -- worth a real sourcing pass later. */
+    var BORROWED_TRADITIONS = {
+        'toggle-angelus':              'Roman Catholic',
+        'toggle-trisagion':            'Byzantine',
+        'toggle-prayer-before-reading':'Byzantine Orthodox',
+        'toggle-examen':               'Ignatian',
+        'toggle-kyrie-pantocrator':    'Byzantine Orthodox',
+        'toggle-agpeya-opening':       'Coptic',
+        'toggle-east-syriac-hours':    'Byzantine Orthodox'
+    };
+    var THEOTOKION_TRADITION = 'Coptic';
+
     var moved = false;
     var hosts = {};
 
@@ -90,12 +118,22 @@
         /* The remaining native BCP choices, in their existing groups. Their
            borrowed labels have already left them (above), so what moves here
            is BCP-only content. The groups keep their ids, which
-           updateSidebarForOffice() uses to show/hide per office. */
+           updateSidebarForOffice() uses to show/hide per office.
+           REORDERED 2026-09-25, per Josh's direct report ("this list is
+           poorly ordered. You have options that cover one day or one week
+           above daily options."): altGroup (Mary the Virgin / Michael and
+           All Angels / Good Friday / Easter Day -- each a single named
+           day's alternate reading) moved to the END, after
+           during-office-section and closing-devotions-section, whose
+           remaining content (Gloria Patri, the invitatory/noonday/compline
+           rotation groups, the Suffrages/Mission/Collect/Blessing daily
+           rotations) applies to every ordinary office, not one specific
+           day. */
         var alt = document.getElementById('toggle-mary-virgin-alt');
         var altGroup = alt ? alt.closest('.nested-group') : null;
-        [altGroup,
-         document.getElementById('during-office-section'),
-         document.getElementById('closing-devotions-section')
+        [document.getElementById('during-office-section'),
+         document.getElementById('closing-devotions-section'),
+         altGroup
         ].forEach(function (n) { if (n) hosts.further.appendChild(n); });
 
         /* BCP Only Mode: the real checkbox, at the foot (§5, §3.7). */
@@ -450,7 +488,7 @@
         sec.appendChild(tools);
     }
 
-    /* ── Section II · Which office ────────────────────────────────────────── */
+    /* ── Section III · Which office (was II; swapped 2026-09-25, see buildDialog) ── */
 
     function buildOffices(modeKey) {
         var sec = hosts.offices;
@@ -477,7 +515,9 @@
         sec.appendChild(grid);
     }
 
-    /* ── Section III · How you keep it (lane-supplied) ────────────────────── */
+    /* ── Section II · Options (was III, "How you keep it"; renamed and moved
+       before "Which office" 2026-09-25, per Josh's direct instruction --
+       lane-supplied) ──────────────────────────────────────────────────── */
 
     function borrowedSummary() {
         var names = [];
@@ -486,10 +526,14 @@
             if (!box || !box.checked) return;
             var lab = box.closest('label');
             var t = lab ? lab.childNodes[1] && lab.childNodes[1].textContent : '';
-            names.push((t || id).trim());
+            var name = (t || id).trim();
+            var trad = BORROWED_TRADITIONS[id];
+            names.push(trad ? name + ' (' + trad + ')' : name);
         });
         var m = document.querySelector('input[name="marian-element"]:checked');
-        if (m && (m.value === 'theotokion' || m.value === 'both')) names.push('Theotokion');
+        if (m && (m.value === 'theotokion' || m.value === 'both')) {
+            names.push('Theotokion (' + THEOTOKION_TRADITION + ')');
+        }
         return names;
     }
 
@@ -561,9 +605,9 @@
         hosts.borrowedValue.textContent = bcpOnly ? 'BCP only'
             : (names.length ? names.length + ' on' : 'None');
         hosts.borrowedList.textContent = names.length
-            ? names.join(' \u00B7 ') + '. Each keeps its own name and its own tradition.'
-            : (bcpOnly ? 'BCP Only Mode is on; nothing is borrowed.'
-                       : 'Nothing borrowed. The office is the Prayer Book\u2019s alone.');
+            ? names.join(' \u00B7 ') + '.'
+            : (bcpOnly ? 'BCP Only Mode is on; nothing additional is included.'
+                       : 'Nothing additional. The office is the Prayer Book\u2019s alone.');
         /* When every borrowed row is hidden (BCP Only, or this office offers
            none), the expander has nothing to show and is not offered. */
         var anyShown = BORROWED_IDS.some(function (id) {
@@ -602,25 +646,29 @@
         hosts.ordo = el('div', 'uo-drawer-section');
         body.appendChild(hosts.ordo);
 
-        body.appendChild(heading('II \u00B7 Which office'));
-        hosts.offices = el('div', 'uo-drawer-section');
-        body.appendChild(hosts.offices);
-
-        body.appendChild(heading('III \u00B7 How you keep it'));
+        // ORDER SWAPPED 2026-09-25, per Josh's direct instruction ("'How you keep
+        // it' effects your options for which office. Switch the order."): Options
+        // (Cathedral/Monastic use, Rite, etc.) can change which entries "Which
+        // office" even offers -- East Syriac's own Cathedral/Monastic choice is
+        // the concrete case -- so it now comes first, reading in the order a
+        // person actually decides: how you keep it, then which office follows
+        // from that. Renamed from "How you keep it" per Josh's direct feedback
+        // ("is not good wording. 'Options' would be better").
+        body.appendChild(heading('II \u00B7 Options'));
         var keep = el('div', 'uo-drawer-section');
         hosts.keepRows = el('div', 'uo-drawer-rows');
         keep.appendChild(hosts.keepRows);
 
         hosts.borrowedBlock = el('div', 'uo-drawer-borrowed');
         var brow = el('div', 'uo-drawer-row uo-drawer-borrowed-row');
-        brow.appendChild(el('span', 'uo-drawer-row-label', 'Borrowed devotions'));
+        brow.appendChild(el('span', 'uo-drawer-row-label', 'Additional devotions'));
         hosts.borrowedValue = el('span', 'uo-drawer-borrowed-count');
         brow.appendChild(hosts.borrowedValue);
         hosts.borrowedBlock.appendChild(brow);
         hosts.borrowedList = el('p', 'uo-drawer-borrowed-list');
         hosts.borrowedBlock.appendChild(hosts.borrowedList);
         hosts.borrowedDetails = el('details', 'uo-drawer-details');
-        hosts.borrowedDetails.appendChild(el('summary', null, 'Choose borrowed devotions'));
+        hosts.borrowedDetails.appendChild(el('summary', null, 'Choose additional devotions'));
         hosts.borrowed = el('div', 'uo-drawer-moved');
         hosts.borrowedDetails.appendChild(hosts.borrowed);
         hosts.borrowedBlock.appendChild(hosts.borrowedDetails);
@@ -632,6 +680,10 @@
         hosts.furtherBlock.appendChild(hosts.further);
         keep.appendChild(hosts.furtherBlock);
         body.appendChild(keep);
+
+        body.appendChild(heading('III · Which office'));
+        hosts.offices = el('div', 'uo-drawer-section');
+        body.appendChild(hosts.offices);
 
         hosts.foot = el('div', 'uo-drawer-foot');
         hosts.bcpOnly = el('div', 'uo-drawer-bcp-only');
