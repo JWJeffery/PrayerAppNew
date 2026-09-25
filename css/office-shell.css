@@ -414,10 +414,20 @@ body.uo-day {
    style="display:flex" inline on that label, and an inline style beats any
    stylesheet rule. The section wrapper carries no inline style.
 
-   Phase 4 deletes these sidebars and this rule goes with them.
-   --------------------------------------------------------------------------- */
+   CORRECTED 2026-09-25: the claim above ("Phase 4 deletes these sidebars
+   and this rule goes with them") is stale. The four legacy sidebars ARE
+   now deleted (Phase 6), but this rule was never about them -- it hides
+   the shared office navigator's OWN built-in "Appearance" card
+   (js/office-ui.js's renderSharedOfficeNavigation(), rendered whenever a
+   lane config sets showAppearanceToggle: true -- still true for three
+   lanes today, confirmed by grep, so this card still actively renders).
+   That card carries its own legacy Dark Mode checkbox, superseded by the
+   shell's own Auto/Light/Dark control same as the sidebars' copy was --
+   a separate duplicate, not the same one. Still needed; not going away.
+   Unscoped since office.css has no rule at all for this class (confirmed
+   by grep) -- nothing to compete with regardless of specificity. */
 
-body.shell-v2 .shared-office-nav-appearance-card {
+.shared-office-nav-appearance-card {
     display: none;
 }
 
