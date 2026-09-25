@@ -72,19 +72,28 @@ was already stale — that region is unrelated Roman Breviary content today — 
 and the ordo line plus the full rail family (verified the mobile rail height cap, 34vh from the
 earlier hotfix, still applies correctly on both long-rail lanes).
 
-**Flagged, not fixed — outside this pass's audited scope**: `.shared-office-nav-appearance-card`
-(found while reading Stage 6's range). Its own comment claims "Phase 4 deletes these sidebars and
-this rule goes with them" — the four legacy sidebars *are* now deleted and this rule still exists,
-so that comment is stale in a way the three-agent audit didn't cover. Left scoped rather than
-guessed at mid-stage.
+**Flagged, then fixed the same day**: `.shared-office-nav-appearance-card` (found while reading
+Stage 6's range, left scoped at the time since it wasn't in the three-agent audit's scope). Its own
+comment claimed "Phase 4 deletes these sidebars and this rule goes with them" — stale: the four
+legacy sidebars *are* deleted, but this rule is unrelated to them. It hides the shared office
+navigator's *own* built-in "Appearance" card (`js/office-ui.js`'s `renderSharedOfficeNavigation()`,
+rendered whenever a lane config sets `showAppearanceToggle: true` — still true for three lane
+configs today, confirmed by grep, so the card genuinely still renders with its own legacy Dark Mode
+checkbox, superseded by the shell's own Auto/Light/Dark control same as the sidebars' copy was, but
+a distinct element — still needed, not dead). Josh asked for it directly afterward ("fix
+`.shared-office-nav-appearance-card` now too"); confirmed office.css has zero rules for this class
+at all, so nothing to compete with regardless of specificity — unscoped outright, comment corrected.
+Verified the card still renders and still computes `display:none` in all three lane configs that
+set the toggle; 24-way check + 24 screenshots zero diffs; **whole-file grep now confirms
+`office-shell.css` carries zero real `body.shell-v2` selectors anywhere** — the unscoping work is
+closed in full, not partial.
 
 Full regression sweep (migration-check, migration-functional, stage1-check, stage1-bon-check,
-cross-lane-stress, mobile-check) re-run clean after all eight stages. Cache-bust `office-shell.css`
-314 (from the hotfix below) → 325 across the sequence. SEED_VERSION v352 → v353.
+cross-lane-stress, mobile-check) re-run clean after all nine changes. Cache-bust `office-shell.css`
+314 (from the hotfix below) → 326 across the sequence. SEED_VERSION v352 → v354.
 
-**Remaining, disclosed, not done**: `.shared-office-nav-appearance-card` (one selector, above), the
-legacy print block cleanup, the third ~170-line mobile-repair CSS block, and print-preview
-regeneration — none of which were in this plan's audited scope.
+**Remaining, disclosed, not done — outside this pass's scope entirely**: the legacy print block
+cleanup, the third ~170-line mobile-repair CSS block, and print-preview regeneration.
 
 **DONE, LIVE-CONFIRMED, 2026-09-25: entry-screen hairline modernized; a real, currently-live
 mobile/print grid bug found and fixed, along with a second bug it exposed.** Josh: settle the
