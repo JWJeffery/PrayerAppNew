@@ -1576,13 +1576,13 @@ body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
    still wins there.
    =========================================================================== */
 
-body.shell-v2 #splash-bg {
+#splash-bg {
     filter: blur(3px) saturate(0.5) brightness(0.34) !important;
     opacity: 0.4 !important;
 }
 
-body.shell-v2 #tradition-entry.app-tradition-entry,
-body.shell-v2 #mode-selection.app-mode-shell {
+#tradition-entry.app-tradition-entry,
+#mode-selection.app-mode-shell {
     background: linear-gradient(180deg, rgba(8, 7, 12, 0.94), rgba(11, 9, 18, 0.90));
     border: 1px solid var(--uo-hairline);
     border-radius: 0;
@@ -1590,51 +1590,51 @@ body.shell-v2 #mode-selection.app-mode-shell {
     color: var(--uo-ink);
 }
 
-body.shell-v2 #tradition-entry .app-dark-toggle {
+#tradition-entry .app-dark-toggle {
     display: none;
 }
 
-body.shell-v2 .app-entry-kicker,
-body.shell-v2 .app-mode-kicker {
+.app-entry-kicker,
+.app-mode-kicker {
     font-family: var(--uo-face-machine);
     color: var(--uo-accent);
 }
 
-body.shell-v2 #tradition-entry h1,
-body.shell-v2 #mode-selection.app-mode-shell h1 {
+#tradition-entry h1,
+#mode-selection.app-mode-shell h1 {
     font-family: var(--uo-face-title);
     color: var(--uo-ink);
     text-shadow: none;
 }
 
-body.shell-v2 .app-entry-lede,
-body.shell-v2 #mode-selection.app-mode-shell p {
+.app-entry-lede,
+#mode-selection.app-mode-shell p {
     font-family: var(--uo-face-prayed);
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .app-entry-panel-title {
+.app-entry-panel-title {
     font-family: var(--uo-face-machine);
     color: var(--uo-accent);
 }
 
 /* Cards: flat, hairline-bordered, no shadow, no rounded corners -- the same
    treatment .uo-drawer-office already uses for "II . Which office". */
-body.shell-v2 .app-entry-family-card,
-body.shell-v2 .app-entry-tradition-card,
-body.shell-v2 #mode-selection .mode-btn.app-mode-card {
+.app-entry-family-card,
+.app-entry-tradition-card,
+#mode-selection .mode-btn.app-mode-card {
     background: transparent;
     border: 1px solid rgba(201, 168, 76, 0.22);
     border-radius: 0;
     box-shadow: none;
     color: var(--uo-ink-quiet);
 }
-body.shell-v2 .app-entry-family-card:hover,
-body.shell-v2 .app-entry-family-card:focus-visible,
-body.shell-v2 .app-entry-tradition-card:hover,
-body.shell-v2 .app-entry-tradition-card:focus-visible,
-body.shell-v2 #mode-selection .mode-btn.app-mode-card:hover,
-body.shell-v2 #mode-selection .mode-btn.app-mode-card:focus-visible {
+.app-entry-family-card:hover,
+.app-entry-family-card:focus-visible,
+.app-entry-tradition-card:hover,
+.app-entry-tradition-card:focus-visible,
+#mode-selection .mode-btn.app-mode-card:hover,
+#mode-selection .mode-btn.app-mode-card:focus-visible {
     background: rgba(201, 168, 76, 0.08);
     border-color: rgba(201, 168, 76, 0.6);
     box-shadow: none;
@@ -1642,43 +1642,43 @@ body.shell-v2 #mode-selection .mode-btn.app-mode-card:focus-visible {
     color: var(--uo-ink);
 }
 
-body.shell-v2 .app-entry-family-icon,
-body.shell-v2 .app-entry-tradition-code,
-body.shell-v2 .app-mode-icon {
+.app-entry-family-icon,
+.app-entry-tradition-code,
+.app-mode-icon {
     background: none;
     border: 1px solid rgba(201, 168, 76, 0.4);
     color: var(--uo-accent);
     box-shadow: none;
 }
 
-body.shell-v2 .app-entry-family-card strong,
-body.shell-v2 .app-entry-tradition-card strong,
-body.shell-v2 .app-mode-title {
+.app-entry-family-card strong,
+.app-entry-tradition-card strong,
+.app-mode-title {
     font-family: var(--uo-face-title);
     color: var(--uo-ink);
 }
-body.shell-v2 .app-entry-family-card small,
-body.shell-v2 .app-entry-tradition-card small,
-body.shell-v2 .app-mode-subtitle {
+.app-entry-family-card small,
+.app-entry-tradition-card small,
+.app-mode-subtitle {
     font-family: var(--uo-face-prayed);
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .app-entry-tradition-card.is-disabled,
-body.shell-v2 .app-entry-tradition-card:disabled {
+.app-entry-tradition-card.is-disabled,
+.app-entry-tradition-card:disabled {
     opacity: 0.4;
     filter: none;
 }
 
-body.shell-v2 .app-entry-back {
+.app-entry-back {
     border: 1px solid rgba(201, 168, 76, 0.3);
     border-radius: 0;
     background: transparent;
     color: var(--uo-accent);
     font-family: var(--uo-face-prayed);
 }
-body.shell-v2 .app-entry-back:hover,
-body.shell-v2 .app-entry-back:focus-visible {
+.app-entry-back:hover,
+.app-entry-back:focus-visible {
     background: rgba(201, 168, 76, 0.08);
     border-color: rgba(201, 168, 76, 0.6);
     color: var(--uo-ink);
@@ -1688,7 +1688,7 @@ body.shell-v2 .app-entry-back:focus-visible {
 /* The regrouped tools row -- deliberately smaller and unornamented next to
    the tradition grid above it, so the two read as different categories at a
    glance, not five equal choices. */
-body.shell-v2 .app-mode-section-label {
+.app-mode-section-label {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.18em;
@@ -1699,18 +1699,18 @@ body.shell-v2 .app-mode-section-label {
 /* Only the label AFTER a tradition grid gets the separating hairline -- the
    first one (right under the <h1>) would otherwise draw a stray line
    directly beneath the title. */
-body.shell-v2 .app-mode-grid + .app-mode-section-label {
+.app-mode-grid + .app-mode-section-label {
     margin-top: 22px;
     padding-top: 18px;
     border-top: 1px solid var(--uo-hairline);
 }
 
-body.shell-v2 .app-mode-tools-row {
+.app-mode-tools-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
-body.shell-v2 .app-mode-tool-btn {
+.app-mode-tool-btn {
     background: transparent;
     border: 1px solid rgba(201, 168, 76, 0.16);
     border-radius: 0;
@@ -1721,12 +1721,12 @@ body.shell-v2 .app-mode-tool-btn {
     cursor: pointer;
     text-align: left;
 }
-body.shell-v2 .app-mode-tool-btn:hover,
-body.shell-v2 .app-mode-tool-btn:focus-visible {
+.app-mode-tool-btn:hover,
+.app-mode-tool-btn:focus-visible {
     border-color: rgba(201, 168, 76, 0.5);
     outline: none;
 }
-body.shell-v2 .app-mode-tool-btn strong {
+.app-mode-tool-btn strong {
     display: block;
     font-family: var(--uo-face-title);
     font-weight: 600;
@@ -1734,18 +1734,18 @@ body.shell-v2 .app-mode-tool-btn strong {
     color: var(--uo-ink);
     margin-bottom: 2px;
 }
-body.shell-v2 .app-mode-tool-btn:hover strong,
-body.shell-v2 .app-mode-tool-btn:focus-visible strong {
+.app-mode-tool-btn:hover strong,
+.app-mode-tool-btn:focus-visible strong {
     color: var(--uo-accent);
 }
-body.shell-v2 .app-mode-tool-btn small {
+.app-mode-tool-btn small {
     display: block;
     color: var(--uo-ink-quiet);
     font-size: 0.82rem;
 }
 
 @media (max-width: 760px) {
-    body.shell-v2 .app-mode-tools-row {
+    .app-mode-tools-row {
         flex-direction: column;
     }
 }
