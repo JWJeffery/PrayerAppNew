@@ -22,7 +22,71 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): entry-screen hairline modernized; a real, currently-live
+**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the remaining ~187 `body.shell-v2` occurrences in
+`css/office-shell.css` are unscoped — the broader unscoping work deferred at the end of the
+entry-screen work below.** Executed the plan from the entry below's three-agent audit, in 8 staged
+commits, each verified against the *immediately preceding* stage (not Stage 0) with a 4-lane ×
+6-viewport `getComputedStyle` sweep plus pixel-diffed screenshots.
+
+**Two real specificity gaps found and fixed beyond what the original audit caught** — the audit
+was thorough but not exhaustive, and both were caught only by directly re-verifying which rule
+actually wins after a naive strip, not by trusting the audit's own specificity table:
+1. **Stage 4**: the base `.office-container` rule (and its reappearance in the `p, li` selector
+   list) would land at an *exact specificity tie* with office.css's own bare `.office-container`
+   (background/max-width/width/margin/padding/border-radius/box-shadow/color — nearly the same
+   property set) once fully unscoped. The audit had only computed this tie for the `::before`/
+   `::after` variant. Fixed the same way: kept `.office-active` for a real specificity margin
+   instead of a load-order-only tie. Confirmed via direct `document.styleSheets` rule inspection
+   (not just computed values, which can tie at the same value from a different source) that the
+   shell's rule is now the sole winner, with a margin.
+2. **Stage 8**: a final whole-file grep caught `.uo-drawer-open` and its hover/focus states still
+   scoped — missed in Stage 2 because that stage's edit range started at `dialog.uo-drawer`'s line
+   number, and `.uo-drawer-open` (the ordo-line button that opens the drawer, a different element)
+   sits just before it in the file. Fixed the same way as the rest of Stage 2, after confirming
+   zero office.css competitor.
+
+**Stage 3** fixed the one risk the audit itself flagged in advance: `.uo-drawer-moved strong`/
+`label`/`input[checkbox]` would land at an exact tie (`strong`/`label`) or an outright **loss**
+(`input[checkbox]` — office.css's `.setting-group label input[checkbox]` is one selector-chain
+element ahead, which would have silently reverted `margin-right` from 8px to 6px) against still-live
+office.css `.setting-group` rules. Fixed by anchoring on `dialog.uo-drawer` (a real, already-used
+selector, not invented for this) instead of `body.shell-v2`, giving a genuine margin instead of a
+load-order tie. Also, mid-stage, discovered BCP/Horologion's clock-driven default office was
+drifting between captures during this long session (Sixth Hour → Ninth Hour between two runs,
+confirmed by comparing rendered titles, not assumed) — added office-pinning to the verification
+script for the remaining stages.
+
+**Stage 5**, the highest-stakes stage: unscoped the `#main-content.app-primary-canvas` grid trio
+(base + its mobile and print `@media` overrides) together, in lockstep, preserving the
+equal-specificity/source-order-decides relationship the mobile-grid hotfix (entry below) had just
+built — splitting them across stages would have changed a deliberate tie into an outright win, same
+visual result today but a more fragile mechanism than what the hotfix established. Zero diffs
+across all 24 lane/viewport checks; print emulation confirmed `display:block` still applies.
+
+**Stages 1, 2, 6, 7** unscoped, respectively: the root `--uo-*` token blocks (zero collisions
+anywhere in the repo, confirmed by grep); the drawer's bulk chrome (~72 selectors, zero office.css
+`dialog` selectors exist anywhere); the remaining `#main-content` standalone rules (background
+variant, ground-image `::before`, z-index group, back-button, 8 per-tradition decorative rules) plus
+the `office-active` padding override (independently re-confirmed its "office.css:2270/2274" citation
+was already stale — that region is unrelated Roman Breviary content today — before relying on it);
+and the ordo line plus the full rail family (verified the mobile rail height cap, 34vh from the
+earlier hotfix, still applies correctly on both long-rail lanes).
+
+**Flagged, not fixed — outside this pass's audited scope**: `.shared-office-nav-appearance-card`
+(found while reading Stage 6's range). Its own comment claims "Phase 4 deletes these sidebars and
+this rule goes with them" — the four legacy sidebars *are* now deleted and this rule still exists,
+so that comment is stale in a way the three-agent audit didn't cover. Left scoped rather than
+guessed at mid-stage.
+
+Full regression sweep (migration-check, migration-functional, stage1-check, stage1-bon-check,
+cross-lane-stress, mobile-check) re-run clean after all eight stages. Cache-bust `office-shell.css`
+314 (from the hotfix below) → 325 across the sequence. SEED_VERSION v352 → v353.
+
+**Remaining, disclosed, not done**: `.shared-office-nav-appearance-card` (one selector, above), the
+legacy print block cleanup, the third ~170-line mobile-repair CSS block, and print-preview
+regeneration — none of which were in this plan's audited scope.
+
+**DONE, LIVE-CONFIRMED, 2026-09-25: entry-screen hairline modernized; a real, currently-live
 mobile/print grid bug found and fixed, along with a second bug it exposed.** Josh: settle the
 hairline color question, then unscope the rest of `office-shell.css` and do the audit that needs.
 **Hairline (settled)**: the family-grid/tradition-panel/mode-grid `border-top` — left as the literal
