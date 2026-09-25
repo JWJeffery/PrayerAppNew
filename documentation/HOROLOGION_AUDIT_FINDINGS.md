@@ -177,7 +177,72 @@ Little Hours' own Theotokion corpus isn't yet imported, rather than fabricating 
 The `troparion-of-the-day` slots correctly disclose the weekday troparion as deferred pending Menaion
 import — not a finding, matches this project's standing policy.
 
-## TYPIKA — not yet audited
+## TYPIKA — audited, 7 findings
+
+Live-verified via `resolveOffice(date, 'typika')` for an ordinary Wednesday. 13/13 slots "implemented"
+per the engine's own diagnostics — but see T1, which shows that count is misleading for two of them.
+
+### Finding T1 — BUG, live console error: Epistle/Gospel lectionary resolution is broken
+
+The live console output shows, unprompted: `Typika ordinary weekday epistle resolution failed:
+resolveScripturePericope is not defined` and the identical error for the Gospel. This is a real
+`ReferenceError` at runtime — the function the resolver calls to look up the day's Epistle/Gospel does
+not exist in scope. `structure.json`'s own `governance.byzantine_release_roadmap` claims this was built
+and live ("Typika Epistle/Gospel scripture resolution is now helper-normalized via
+`resolveScripturePericope()` as of 2026-05-10") — that claim is currently false at runtime. The failure
+is caught and silently downgrades to a generic "consult the Apostol/Evangelist" rubric with no visible
+error surfaced to the user, and the engine's own diagnostics still count these slots as "implemented"
+(13/13, 0 placeholders) despite them having actually failed. This is the single highest-severity finding
+in the audit so far — a claimed-complete feature that is silently non-functional.
+
+### Finding T2 — BUG: Beatitudes rendered before Psalms 102 and 145 instead of after
+
+Live-verified: section order is `[beatitudes]` then `[psalmody]`. Both sources place Psalm 102 and
+Psalm 145 (with the "O Only-begotten Son" hymn between them and what follows) *before* the Beatitudes,
+not after (`HAPGOOD1922` p.59: Psalm 145 concludes, then "O Only-begotten Son, and Word of God..."
+hymn, then "In the Great Fast... we sing... The Beatitudes"). Same class of bug as Vespers Finding V1.
+
+### Finding T3 — GAP: "O Only-begotten Son, and Word of God" hymn missing
+
+Between the two psalms and the Beatitudes in both sources (`HAPGOOD1922` p.59, full text given above).
+No item anywhere in the skeleton represents it.
+
+### Finding T4 — GAP: "The heavenly choir doth hymn thee" hymn missing
+
+Between the Beatitudes' closing "Remember us, O Lord/Master/Holy One" and the Creed, both sources give
+this three-part hymn ("Holy, holy, holy, Lord God of Hosts: heaven and earth are full of thy glory"
+with its own verse and Gloria). Absent from the skeleton.
+
+### Finding T5 — BUG: a full Trisagion+Our Father sequence is inserted where the source has none, and duplicates the Lord's Prayer that correctly appears later
+
+Live-dumped in full: the `[trisagion]` section between Creed and Troparia contains a complete Holy-
+God/All-holy-Trinity/Our-Father/"For Thine is the kingdom" sequence. `HAPGOOD1922` (pp.60-61) shows no
+Trisagion at all in this position — the Creed leads directly into a distinct prayer ("Loose, remit,
+pardon, O God, our transgressions...", see T6) and then directly into the Lord's Prayer once, followed
+by the day-of-week Kontakia. The app's `[lords-prayer]` section, correctly positioned near the end,
+already renders "Our Father" again on its own (`typika-lords-prayer`) — meaning the Lord's Prayer is
+currently rendered **twice** in one office render, once misplaced mid-office inside an unwarranted
+Trisagion block and once correctly at the end.
+
+### Finding T6 — GAP: "Loose, remit, pardon, O God, our transgressions" prayer missing
+
+Both sources place this fixed prayer directly after the Creed, before the Lord's Prayer. Absent from
+the skeleton.
+
+### Finding T7 — SCOPE CORRECTION (not a bug, but changes what's blocked): the Kontakion-of-the-day does not need the Menaion
+
+`typika-kontakion-rubric` currently discloses the day's Kontakion as needing the Menaion (echoing the
+adjacent `troparion-of-the-day` rubric, which correctly does need it). But `HAPGOOD1922` (pp.61-62)
+gives the Typika Kontakion as a **fixed table by day of week** — Monday: Bodiless Powers; Tuesday: the
+Forerunner; Wednesday and Friday: the Cross; Thursday: the Holy Apostles (with St. Nicholas added the
+same day); Saturday: the Martyrs, with the Transfiguration Kontakion given as the worked example — plus
+a fixed Kontakion for the departed and a Theotokion ("O Protection of Christians") on every day except
+Saturday. None of this depends on the Menaion; it's exactly the kind of fixed, day-keyed table this
+project has already built for other slots (e.g. the Vespers prokeimena-by-day table). Recorded as a
+scope correction because it means this slot is not actually blocked on the same thing the Troparion-
+of-the-day slot is — it could be sourced and built now, independent of Menaion import.
+
+## ORTHROS/MATINS — not yet audited
 
 ## ORTHROS/MATINS — not yet audited
 
