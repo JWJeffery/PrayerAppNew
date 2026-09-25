@@ -640,6 +640,20 @@ function backToSplash() {
     // Remove office-active so body returns to its splash flex-centering state
     document.body.classList.remove('office-active');
 
+    // FIXED 2026-09-25, found via a real report (Josh: live screenshot of theuniversaloffice.com
+    // showing "The Universal Office" selector grid with every heading and card rendered nearly
+    // illegible -- dark ink on the screen's own permanently-dark background). Root cause:
+    // js/office-shell.js's applyTheme() only ever WRITES `uo-day` while body.office-active is
+    // present (by design, per its own comment), but nothing ever REMOVED it on the way back out.
+    // A day-themed office (uo-day added) followed by any return to the splash/mode-selection
+    // screens left uo-day stuck on <body> -- and since :root's `body.uo-day` rule sets the DAY
+    // ink colors unconditionally, not scoped to office-active, the always-dark entry/threshold
+    // screens then painted their text in near-black day-theme ink. Reproduced exactly (pixel-
+    // identical to Josh's screenshot) by forcing uo-day before calling this function. Fixed
+    // symmetrically with the office-active removal directly above, matching how this class is
+    // scoped everywhere else in the shell.
+    document.body.classList.remove('uo-day');
+
     // Clear any forced office override
     window._forcedOfficeId = undefined;
 
@@ -1427,6 +1441,7 @@ function showTraditionEntry() {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     selectTraditionFamily(null);
 }
@@ -1469,6 +1484,7 @@ function showUniversalModeSelection(persistDefault = false) {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     // 2026-09-23: this always shows BCP's threshold (updateUoThresholdDisplay() with no
     // argument), so any lane a previous showLaneThreshold() call left in window._uoThresholdMode

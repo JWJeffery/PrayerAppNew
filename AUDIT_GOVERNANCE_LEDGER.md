@@ -19399,3 +19399,58 @@ carries a note at the top marking this unwire and naming exactly what to reverse
 `Cache-bust js/office-ui.js?v=312 -> v313.`
 
 SEED_VERSION bumped to `v363-2026-09-25-horologion-temporarily-unwired`.
+
+## Session 2026-09-25 continued -- real live bug: stale uo-day class made the entry screens nearly illegible
+
+Josh sent a live screenshot of theuniversaloffice.com's "Universal Office Selector" grid with
+every heading and card rendered barely visible -- "Holdup! This is a problem!" Asked to confirm
+scope before diagnosing, he replied "Its doing it in the codespace as well," ruling out a
+stale-deployment theory (the two environments run the same repo) before it was ever proposed.
+
+### Root cause
+
+`js/office-shell.js`'s `applyTheme()` writes the `uo-day` class onto `<body>` only while
+`body.office-active` is present, by its own documented design (a prior fix's comment: "Scoped to
+the office screen ONLY... Without this check the shell wrote uo-day... unconditionally... exactly
+the behaviour this comment block already claimed was fixed, and wasn't"). But nothing ever
+*removed* `uo-day` on the way back out of an office. `css/office-shell.css`'s `:root` block
+defines `--uo-ink` et al. for `body.uo-day` unconditionally -- not scoped to `office-active` --
+setting the day theme's dark ink color (`#2a2118`), meant for a light day-office background. The
+entry, threshold, and mode-selection screens are always dark by design (own comment: "this screen
+is always dark... a checkbox implying otherwise would just be a control that visibly does
+nothing"). So: visit any day-themed office (Morning Prayer, the Sixth Hour, anything triggering
+`uo-day`), then return to those screens by any path, and `uo-day` stays stuck on `<body>` --
+painting near-black day-theme ink text over a screen that never stops being dark.
+
+### Reproduced before touching any code
+
+Forced `uo-day` onto `<body>` after entering an office, called `backToSplash()`, screenshotted the
+result: pixel-identical to Josh's own screenshot -- the same faint gold "UNIVERSAL OFFICE
+SELECTOR" kicker, the same barely-visible "The Universal Office" heading, the same near-invisible
+card borders and body text for The Daily Office / The Coptic Agpeya / Church of the East / Book of
+Needs / Bible Browser.
+
+### Fixed
+
+`document.body.classList.remove('uo-day')` added to all three functions that already remove
+`office-active` on the way out of an office (`js/office-ui.js`): `backToSplash()`,
+`showTraditionEntry()`, `showUniversalModeSelection()`. Symmetric with how the class is added --
+whatever writes a class only while a condition holds should clear it the moment that condition no
+longer holds, the same ownership discipline `applyTheme()`'s own comment already establishes for
+`office-active` itself.
+
+### Verified live
+
+Five checks in headless Chromium: (1) a genuinely active day office still correctly carries both
+`office-active` and `uo-day` together, confirming the fix doesn't touch the class while it's
+legitimately in use; (2) `backToSplash()` after a day office now leaves `<body>` with no `uo-day`
+and the mode-selection grid renders at full contrast (`rgb(230, 220, 196)` text, matching the
+night-theme `--uo-ink` value); (3) `showTraditionEntry()`, and (4) `showUniversalModeSelection()`
+called directly, both confirmed the same; (5) re-entering an office afterward still correctly
+picks up `uo-day` again, so the fix doesn't block legitimate re-entry. Zero console/page errors
+beyond the pre-existing sandboxed font-CDN failure present in every check this session.
+
+Cache-bust `js/office-ui.js?v=313 -> v314` (the v312 -> v313 bump earlier this session was the
+separate Horologion-unwire commit).
+
+SEED_VERSION bumped to `v364-2026-09-25-stale-uo-day-class-fixed`.

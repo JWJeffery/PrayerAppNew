@@ -22,8 +22,33 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**BYZANTINE HOROLOGION TEMPORARILY UNWIRED FROM TESTERS, 2026-09-25 continued still further
-(latest).** Josh, moved to top of queue mid-session: "I am not providing my testers with access
+**REAL LIVE BUG: STALE `uo-day` CLASS MADE THE ENTRY SCREENS NEARLY ILLEGIBLE, 2026-09-25
+continued still further (latest).** Josh sent a live screenshot of theuniversaloffice.com's
+"Universal Office Selector" grid with every heading and card barely visible — "Holdup! This is a
+problem!" — then confirmed "Its doing it in the codespace as well" once asked, ruling out a stale-
+deployment theory before it was even proposed (both environments run this same repo). Root-caused:
+`js/office-shell.js`'s `applyTheme()` only ever ADDS the `uo-day` class to `<body>` while
+`office-active` is present, but nothing ever REMOVED it on the way back out — and `:root`'s
+`body.uo-day` rule sets the DAY theme's dark ink colors unconditionally, not scoped to
+`office-active`, while the entry/threshold/mode-selection screens are *always* dark by design. So
+visiting any day-themed office and then returning to those screens left near-black day-ink text
+painted over a screen that never stops being dark — reproduced pixel-identical to Josh's own
+screenshot before touching any code. **Fixed**: `document.body.classList.remove('uo-day')` added
+to all three functions that already remove `office-active` on exit — `backToSplash()`,
+`showTraditionEntry()`, `showUniversalModeSelection()` (`js/office-ui.js`). Live-verified, 5
+checks: an active day office still correctly keeps both classes together; all three exit paths
+now leave full-contrast text; re-entering an office afterward still works normally. Cache-bust
+`office-ui.js v313 -> v314`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+(this session, `ui:stale-uo-day-class-fixed`), SEED_VERSION v363 → v364.
+
+**TODO, next session — admin control panel for taking offices offline.** Josh: "we need to build
+an admin control panel that allows us to take certain offices or whole offices offline with a
+click." Today's Horologion unwire (entry below) was done by hand across three files
+(`index.html` ×2, `js/office-ui.js`) — real, verified, but manual and easy to get wrong or forget
+a spot next time. Not started; scope/design not yet discussed with Josh.
+
+**BYZANTINE HOROLOGION TEMPORARILY UNWIRED FROM TESTERS, 2026-09-25 continued still further.**
+Josh, moved to top of queue mid-session: "I am not providing my testers with access
 to The Horologion, because it has not been fully audited and corrected... gray it out like you do
 with 'Catholic'... then resurface the web." Found and gated THREE reachable paths, not one: (1)
 the entry-card picker (`index.html`) — "Eastern Orthodoxy" now `is-disabled`/`disabled`/
