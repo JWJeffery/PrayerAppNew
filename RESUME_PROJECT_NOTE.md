@@ -138,11 +138,86 @@ pixel-consistent throughout. Cache-bust `office-ui.js` 308→312 (across stages)
 (the JS file) 297→298, `office-drawer.js` 3→6, `office-shell.css` (the CSS file — distinct from
 `office-shell.js` above) 308→309, `office.css` 219→220. SEED_VERSION v349 → v350.
 
-**Remaining, disclosed, not done**: `office-shell.css` unscoping (the original Phase 6 stage 5,
-attempted and reverted once already — see the entry below), the deferred entry-screen CSS split, the
-legacy print block cleanup, the third ~170-line mobile-repair CSS block whose relationship to the new
-shell's own mobile CSS is still genuinely unresolved, and print-preview regeneration against a
-pre-Phase-6 baseline.
+**Remaining, disclosed, not done (as of that entry — see the entry directly below for what's since
+closed)**: `office-shell.css` unscoping (the original Phase 6 stage 5, attempted and reverted once
+already), the deferred entry-screen CSS split, the legacy print block cleanup, the third ~170-line
+mobile-repair CSS block whose relationship to the new shell's own mobile CSS is still genuinely
+unresolved, and print-preview regeneration against a pre-Phase-6 baseline.
+
+**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the entry/threshold screens' old parchment CSS is
+deleted and `office-shell.css`'s corresponding block is unscoped — the two coupled deferred items
+above, closed together.** Josh chose to do both together, given the entry below records both prior
+attempts at pieces of this were reverted for the same root cause: `office-shell.css` only ever
+recolored `#tradition-entry` ("Where do you pray?") and `#mode-selection`/`#uo-threshold-grid`
+("Choose a tradition") — it never rebuilt their actual grid layout or viewport-centering math, so
+deleting `office.css`'s rules broke real behavior, and unscoping `office-shell.css` (which relied on
+extra `.shell-v2` specificity to beat still-live `office.css` rules) broke it a second way.
+
+**This time: port every missing declaration into `office-shell.css` first, verify it reproduces
+today's exact appearance, only then delete the `office.css` originals and unscope.** Researched via
+an Explore agent (full selector map, exact line numbers) and a Plan agent (staged sequence from that
+map) — both used as a starting draft, neither trusted blindly. Reviewing both against the actual
+files directly caught two real transcription errors before they could cause a third revert:
+
+1. `border-radius: 22px` in `office.css`'s two `max-width:760px` overrides is provably dead code
+   today — `office-shell.css`'s unconditional `border-radius:0` (specificity (0,1,2,1)) already beats
+   it (0,1,1,0) regardless of viewport, confirmed live via `getComputedStyle` reading `"0px"` at
+   every one of 6 tested viewports including mobile. Omitted from the port rather than reviving
+   dead-code-turned-live rounded corners.
+2. The family-grid/tradition-panel/mode-grid hairline (`rgba(103,58,31,0.12)`, the old parchment
+   brown) has no `office-shell.css` override at all — confirmed live it's still rendering in that
+   brown today — and `var(--uo-hairline)` on this always-night-palette screen resolves to a visibly
+   different **gold** (`rgba(201,168,76,0.12)`). Porting the token would have been a real, if subtle,
+   unrequested visual change disguised as a neutral refactor. Ported the literal brown value instead;
+   flagged the one remaining old-palette color on an otherwise fully-restyled screen as a separate,
+   undecided design question for Josh — **not resolved in this pass.**
+
+Given both of the above, execution discipline for the six stages was explicit: every declaration
+ported was copied via `Read` directly from the cited `office.css` line range at edit time, never
+retyped from the plan or agent output.
+
+**Six stages, each independently committed and verified** (screenshots at 6 viewports — the 3-col/
+2-col grids, the 861px/761px collapses, the 1100×760 desktop variant, combined narrow+short — *plus*
+`getComputedStyle` spot-checks, since a pixel diff alone isn't guaranteed to surface a subtle
+single-property miss): **Stage 1** ported typography. **Stage 2** ported card-grid and icon layout —
+the gap that caused the *first* prior revert (the family grid collapsing into an unstyled row).
+**Stage 3** ported container sizing and the three viewport-stabilization breakpoints — `office.css`
+declares `#tradition-entry`'s sizing *twice* (a base rule, then a later same-specificity rule that
+wins for every property it redeclares); only the winning, later values were ported, confirmed live at
+every viewport including the 1100×760 and sub-760-height combinations nothing else in the matrix
+exercises. **Stage 4** deleted `office.css`'s old rules, preserving every `[hidden]`/`display:none`
+visibility and drill-down step-routing gate, `#splash-bg`'s own rules, and `.app-sponsor-link`. While
+investigating this deletion, found and verified safe a **third** thing neither research pass caught:
+a much older, pre-redesign bare `#mode-selection`/`#mode-selection h1`/`#mode-selection p` rule
+predating the `.app-mode-shell` system entirely — confirmed by hand and then via direct CSS-rule
+inspection that every property it sets is still outranked by a still-live, higher-specificity
+`.app-mode-shell`-qualified rule, so it stays exactly as dead as it always was. Stage 4's own
+verification also caught a **real bug this session introduced in Stage 2**: the icon port dropped
+`border-radius:999px`, turning the drill-down icons from circular to square — caught because the
+screenshot diff showed an identical 1152-pixel diff across every viewport regardless of size (unlike
+the established ~50-pixel clock-noise pattern), investigated immediately, and fixed forward in the
+same Stage 2 block (already pushed; per this repo's own convention, never amend pushed history) with
+the gap disclosed in Stage 4's own commit message. New `entry-routing-check.mjs` drove the actual
+drill-down flow, confirming the visibility gates still route correctly, not just look right in a
+screenshot. **Stage 5** confirmed via direct CSS-rule inspection (not just computed-style values,
+which can tie at the same value from a different source) that the two specificity-fight rules from
+the second prior revert now have zero competitors. **Stage 6** mechanically stripped `.shell-v2` from
+the remaining ~45 pre-existing selectors, safe by construction now that Stage 4 removed what they
+needed the extra specificity to beat — verified against Stage 4 (pre-unscope), not Stage 0
+specifically, to catch a rule dropping from tied-but-winning to losing, the exact failure shape of
+the original revert.
+
+Full app-wide regression sweep re-run clean after all six stages, zero console errors; Book of Needs
+screenshotted directly and confirmed completely unaffected (the `.mode-btn` base class it shares with
+the entry screens was never touched, only entry-screen-specific classes). Cache-bust
+`office-shell.css` 309→313 (across stages), `office.css` 220→221. SEED_VERSION v350 → v351.
+
+**Remaining, disclosed, not done**: unscoping the rest of `office-shell.css` (~186 of ~231 total
+`body.shell-v2` occurrences — the `.office-container` recolor, the three-column uo-ordo/rail/page/
+margin/keeping shell internals, the `.uo-drawer-*` Office Settings drawer — none audited against the
+rest of `office.css` in this pass, a separately-scoped task of comparable size to what was just done),
+the legacy print block cleanup, the third ~170-line mobile-repair CSS block, print-preview
+regeneration, and the hairline-color design question flagged above.
 
 **DONE (attempted, reverted), LIVE-CONFIRMED, 2026-09-24: Phase 6 stage 5 — unscoping
 `css/office-shell.css` found to be unsafe while stage 3's deferred office.css cleanup is still
