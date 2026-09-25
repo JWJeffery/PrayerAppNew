@@ -25,7 +25,7 @@ requireIncludes("Book of Needs shell HTML", index, [
 ]);
 
 requireIncludes("Book of Needs shell CSS", css, [
-  "Book of Needs parchment app shell propagation pass",
+  "BOOK OF NEEDS -- its own design pass",
   "#individual-prayers-section.app-book-needs-shell",
   "#prayer-selection.app-book-needs-selection",
   ".app-book-needs-title",
@@ -54,4 +54,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("PASS Book of Needs design shell audit: parchment app shell guarded");
+console.log("PASS Book of Needs design shell audit: design-pass shell guarded");

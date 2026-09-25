@@ -459,8 +459,11 @@ async function showSinglePrayer() {
     const prayer      = prayersData[prayerId];
     const selectedLabel = document.getElementById('prayer-select-label').textContent;
     const prayerTitle = prayer ? prayer.title : selectedLabel;
+    /* Styled entirely by css/office.css's #prayer-display .office-container p
+       rule (Book of Needs design pass, 2026-09-25) -- no inline style, so
+       that rule actually governs rather than being silently beaten by it. */
     const prayerSource = prayer
-        ? `<p style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.12em; text-transform:uppercase; color:#a89878; margin-top:-10px; margin-bottom:28px;">${prayer.source}</p>`
+        ? `<p>${prayer.source}</p>`
         : '';
     const prayerText  = prayer ? prayer.text : 'Prayer text not found.';
 
