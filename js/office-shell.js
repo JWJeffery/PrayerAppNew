@@ -581,6 +581,7 @@
        guessed one of its own: scrolling into that content still correctly advances
        the dot to at least the nearest preceding item, never leaves it behind. */
     var railWaypoints = [];
+    var railCurrentIndex = -1;
 
     function computeRailWaypoints() {
         var rail = document.querySelector('.uo-rail');
@@ -684,6 +685,25 @@
         var foot = rail ? rail.querySelector('.uo-rail-foot') : null;
         if (foot) {
             foot.textContent = toRoman(currentIndex + 1) + ' of ' + railWaypoints.length;
+        }
+
+        // FIXED 2026-09-25, per Josh's own wording live: "it needs to scroll
+        // with the content on the right." Making .uo-rail scrollable (see its
+        // CSS rule) only lets a reader scroll it manually; on a long order
+        // (30+ items is routine for East Syriac/Horologion) the highlighted
+        // "current" item could still scroll out of the rail's own visible
+        // area as the reader progresses through the office, exactly the
+        // "doesn't stay in sync" complaint. Scrolls the rail (only, via
+        // block:'nearest' -- never the page itself, which is what the user
+        // is actually scrolling) just enough to keep the current item
+        // visible, and only when it actually changes, so a reader who is
+        // manually browsing the rail by hand isn't fought on every scroll
+        // frame of the page.
+        if (currentIndex !== railCurrentIndex) {
+            railCurrentIndex = currentIndex;
+            if (current.item.scrollIntoView) {
+                current.item.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+            }
         }
     }
 

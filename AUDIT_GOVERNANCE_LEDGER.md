@@ -19907,3 +19907,66 @@ rail not scrolling with content that's longer than its visible height -- were lo
 `RESUME_PROJECT_NOTE.md` rather than investigated now, per his own instruction.
 
 SEED_VERSION bumped to `v369-2026-09-25-admin-tradition-availability-control-panel-built`.
+
+## Session 2026-09-25 continued -- "The Order" rail fixed: was clipped, not scrollable, on any long office
+
+Picking up the first of the two items Josh flagged "to fix later" earlier this session. His words:
+"The order....is longer than this....it needs to scroll with the content on the right."
+
+### Root cause, confirmed live before fixing, not assumed
+
+`.uo-rail` sits in the same CSS grid row as `.uo-page` (`grid-template-areas: "rail page margin"`),
+and that row's rendered height resolves against `#main-content.app-primary-canvas`'s own fixed
+height (`height: 100vh`, `overflow-y: hidden`) -- this element itself deliberately does not scroll;
+see its own header comment. `.uo-page` already solved this exact problem for itself
+(`overflow-y: auto` + `min-height: 0`, documented at length in that rule's own comment from an
+earlier session) so it can scroll its own overflow within whatever pixel height the row resolves to.
+`.uo-rail` never got the same treatment -- it still had the CSS grid default `min-height: auto`,
+which refuses to shrink below its own content's natural height, and no `overflow-y` of its own.
+Confirmed via a live headless-Chromium measurement on Church of the East Ramsha (33 rail items, a
+routine count for East Syriac/Horologion): `scrollHeight` 1551px against a `clientHeight` of only
+788px, computed `overflow-y: visible`, and setting `scrollTop` directly had no effect at all --
+content past the fold was simply clipped by `#main-content`'s own `overflow-y: hidden`, with no
+scrollbar anywhere to reach it. Exactly Josh's report.
+
+### Fix
+
+Added the identical, already-proven `overflow-y: auto; min-height: 0;` pair to the base (desktop)
+`.uo-rail` rule in `css/office-shell.css`, mirroring `.uo-page`'s own fix. The mobile media query's
+existing `.uo-rail` override (its own `overflow-y: auto` plus an explicit `max-height: 34vh`, since
+mobile deliberately collapses the rail to a capped top strip rather than a full-height column) was
+left untouched -- this is its desktop-width equivalent, not a replacement.
+
+**A second, related gap closed at the same time**, because Josh's own wording ("scroll *with* the
+content") asked for more than just "can be scrolled manually": on a long office the highlighted
+"current" rail item could still scroll out of the rail's own newly-scrollable viewport as the reader
+progressed through the page, since nothing kept the two in sync. `updateRailCurrent()`
+(`js/office-shell.js`) now tracks the current item's index and, only when it actually changes, calls
+`scrollIntoView({ block: 'nearest', inline: 'nearest' })` on it -- scoped to the rail's own scroll
+container, never the page -- so the highlighted item stays visible as the reader scrolls through the
+office. Guarded on an actual index change (not fired on every scroll-driven animation frame) so it
+never fights a reader who is separately, manually scrolling the rail by hand.
+
+### Verified live, headless Chromium
+
+Before the fix: 33-item Church of the East rail measured exactly as described above (clipped,
+non-scrollable). After: same rail measures `overflow-y: auto`, `min-height: 0`, `scrollTop` moves
+correctly, and manually setting `scrollTop` works. Scrolling `.uo-page` to 85% down its content
+correctly advanced the rail's `is-current` item to "The Martyrs' Anthem" AND auto-scrolled the rail
+itself so that item is visible within its own viewport (confirmed both via geometry -- the current
+item's rect falls entirely inside the rail's rect -- and via a full-page screenshot). A short rail
+(Anglican Daily Office, 16 items, `scrollHeight === clientHeight`) confirmed no regression: no
+scrollbar appears when everything already fits, and the row's rendered height is unchanged (still
+resolves to the same fixed pixel box as before this fix in both the long- and short-rail cases,
+confirming the grid row's own sizing wasn't disturbed).
+
+Cache-bust `css/office-shell.css v327 -> v328`, `js/office-shell.js v300 -> v301`.
+
+The second flagged item -- the Bible Reader "What the Fathers Say" panel -- was investigated but not
+yet fixed: its current top-right floating placement was traced to deliberate, working code (a
+dedicated "study mode" branch in `positionContextPanel()`, not an accidental
+`position:absolute`-escapes-its-ancestor bug like several other fixes this session), so before
+changing anything a clarifying question is going back to Josh about what specifically looked wrong,
+rather than guess-fixing behavior that may be intentional.
+
+SEED_VERSION bumped to `v370-2026-09-25-order-rail-scroll-fixed`.

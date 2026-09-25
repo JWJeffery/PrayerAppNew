@@ -43,17 +43,27 @@ round-trip. Cache-bust `office-ui.js v314 -> v315`. Full detail: `AUDIT_GOVERNAN
 entry dated 2026-09-25 continued (admin tradition-availability control panel), SEED_VERSION
 v368 → v369.
 
+**"THE ORDER" RAIL SCROLL, FIXED 2026-09-25.** Resolves the flag below (kept for history). Root
+cause confirmed live before fixing: `.uo-rail` shares a CSS grid row with `.uo-page`, and never got
+the `overflow-y: auto` + `min-height: 0` pair `.uo-page` already uses to scroll its own overflow
+within `#main-content`'s fixed, non-scrolling height — `.uo-rail` still had the grid default
+`min-height: auto`, so a long order (33 items measured on Church of the East Ramsha) just got
+clipped by `#main-content`'s own `overflow-y: hidden` with no scrollbar reachable at all. Same fix
+applied (`css/office-shell.css`). Also, per Josh's own wording ("scroll *with* the content," not
+just "be scrollable"): `updateRailCurrent()` (`js/office-shell.js`) now auto-scrolls the rail to
+keep the highlighted "current" item visible as the reader scrolls the office, only when it actually
+changes so it never fights a reader manually browsing the rail by hand. Verified live in headless
+Chromium: the 33-item rail now scrolls, the highlighted item follows page scroll into view within
+the rail, and a short rail (Anglican, 16 items, everything already fits) shows no regression.
+Cache-bust `office-shell.css v327 → v328`, `office-shell.js v300 → v301`. Full detail:
+`AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued ("The Order" rail fixed),
+SEED_VERSION v369 → v370.
+
 **FLAGGED BY JOSH, NOT YET INVESTIGATED — "The Order" rail doesn't scroll with the office content,
-2026-09-25.** Josh, again explicitly "to fix later": on Church of the East (screenshot showed
-Wathar Friday), the left "THE ORDER" rail (the same rail whose dot-position bugs were fixed earlier
-this session) lists more items than fit in the visible rail height, and the rail itself does not
-scroll — "The order....is longer than this....it needs to scroll with the content on the right."
-Likely candidates once picked up: the rail container may have a fixed/`100vh`-relative height with
-`overflow` not set to scroll, or it scrolls but only when the mouse is directly over the (currently
-very short-looking) rail column rather than in sync with the main content pane. Worth checking
-whether this is specific to Church of the East's longer orders (more items than BCP/Coptic ever
-have) or a general rail-height bug that just happens to be more visible here. **Not investigated
-yet — no root cause confirmed, nothing fixed.**
+2026-09-25.** (Original note, kept for history:) Josh, explicitly "to fix later": on Church of the
+East (screenshot showed Wathar Friday), the left "THE ORDER" rail lists more items than fit in the
+visible rail height, and the rail itself does not scroll — "The order....is longer than this....it
+needs to scroll with the content on the right."
 
 **FLAGGED BY JOSH, NOT YET INVESTIGATED — "a problem to fix later," Bible Reader "What the
 Fathers Say" panel, 2026-09-25.** Josh sent a screenshot mid-turn (no further description; said

@@ -781,10 +781,32 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
 
 /* ── The rail ─────────────────────────────────────────────────────────────── */
 
+/* FIXED 2026-09-25, Josh live: "The order....is longer than this....it needs
+   to scroll with the content on the right." .uo-rail sits in the same grid
+   row as .uo-page (grid-template-areas "rail page margin"), and that row's
+   height resolves against #main-content's own fixed height, not the rail's
+   content -- #main-content itself is overflow-y:hidden (see its comment
+   above). .uo-page already solves this exact problem for itself with
+   overflow-y:auto + min-height:0 (a grid item's default min-height:auto
+   blocks it from shrinking to its track size, which is what overflow-y:auto
+   needs something to scroll inside -- see that rule's own long comment for
+   the full explanation, already worked out once this session). The rail
+   never got the same treatment, so a long order list (East Syriac and
+   Horologion both regularly exceed 30 items) simply overflowed past the
+   row and was clipped by #main-content's overflow-y:hidden with no
+   scrollbar anywhere -- confirmed live before fixing: 33 rail items on
+   Church of the East Ramsha measured scrollHeight 1551 vs clientHeight 788,
+   overflow-y computed as visible, scrollTop had no effect. Same fix, same
+   reason, applied to the rail. The mobile media query below already gives
+   .uo-rail its own overflow-y:auto (with an explicit max-height instead,
+   since mobile collapses it to a capped top strip rather than a full-height
+   column) -- this is the desktop-width equivalent of that. */
 .uo-rail {
     padding: 26px 20px;
     border-right: 1px solid var(--uo-hairline);
     text-align: left;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .uo-rail-head,
