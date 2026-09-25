@@ -22,7 +22,21 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still (latest).** Josh said
+**FLAGGED BY JOSH, NOT YET INVESTIGATED — "a problem to fix later," Bible Reader "What the
+Fathers Say" panel, 2026-09-25.** Josh sent a screenshot mid-turn (no further description; said
+explicitly to fix it later, not now) of the Bible Reader open to Genesis 42 with the "What the
+Fathers Say" panel open. Visible in the screenshot: the panel renders as a floating card
+overlapping the top-right of the passage text rather than appearing in-flow with the rest of the
+Study Tools panel — worth checking for the same `position:absolute`-with-no-positioned-ancestor
+root cause already found and fixed multiple times elsewhere this session (Book of Needs and Bible
+Reader dark-mode toggles). Also visible: "Commentary for Genesis has not been added yet" / "No
+Church Fathers commentary found in the current index" — this itself is very likely correct,
+honesty-preserving disclosure (Genesis Fathers commentary genuinely not yet in the corpus), not a
+bug, per this project's standing unsourced-content rule — do not "fix" by fabricating commentary.
+**Not investigated yet — no root cause confirmed, nothing fixed.** Pick this up before the next
+redeploy.
+
+**THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still.** Josh said
 "Proceed with the rest of the que[ue]" -- resuming item 5 of his own original ordered plan, the last
 unstarted phase. Audited (CODE, not content) the 9 engine/calendar files the dashboard had carried as
 amber "not engine-audited this session" since 2026-07-10: `calendar-eastern-orthodox.js`,
