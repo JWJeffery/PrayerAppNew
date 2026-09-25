@@ -1868,27 +1868,33 @@ body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
 
    The second real gap Stage 1's own header comment names: nothing above
    ever rebuilt these screens' actual grid layout, only recolored it. Ported
-   verbatim from office.css, with two deliberate, disclosed exceptions:
+   verbatim from office.css, with one deliberate, disclosed exception:
    border-radius:18px on the card containers is DROPPED (Group 6's own
    1584-1591-region rule already sets border-radius:0, confirmed live via
    getComputedStyle as this screen's real, current appearance at every
    viewport -- porting 18px would introduce rounded corners that don't
-   exist today); and the two hairline border-top colors below are the
-   LITERAL office.css value (rgba(103,58,31,0.12), the old parchment
-   brown), not var(--uo-hairline) -- confirmed live this hairline is still
-   rendering in that brown today, with var(--uo-hairline) resolving to a
-   visibly different gold on this always-night-palette screen. Using the
-   literal value preserves today's exact appearance; whether this one
-   remaining old-palette color should be modernized to match the
-   surrounding gold language is a separate, undecided design question,
-   not something this refactor resolves on its own. */
+   exist today).
+
+   UPDATED 2026-09-25: the two hairline border-tops below were ported as
+   the literal office.css brown (rgba(103,58,31,0.12)) when this stage
+   first landed, on the reasoning that var(--uo-hairline) resolves to a
+   visibly different gold on this always-night-palette screen and a
+   faithful port shouldn't sneak in a color change. Josh reviewed that
+   finding and asked for the modernization: these are now
+   var(--uo-hairline), matching every other hairline on this screen and
+   the governing rule already stated at the top of this section ("no
+   rounded cards, no drop shadows on the page, no borders around prayer.
+   Hairlines and light do the separating"). Verified live: both grids'
+   hairlines now render gold, consistent with the rest of the screen;
+   nothing else on the page depended on the old brown value (confirmed by
+   grep -- these were its only two occurrences in this file). */
 
 .app-mode-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     padding-top: 22px;
-    border-top: 1px solid rgba(103, 58, 31, 0.12);
+    border-top: 1px solid var(--uo-hairline);
 }
 
 #mode-selection .mode-btn.app-mode-card {
@@ -1929,7 +1935,7 @@ body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
     display: grid;
     gap: 12px;
     padding-top: 22px;
-    border-top: 1px solid rgba(103, 58, 31, 0.12);
+    border-top: 1px solid var(--uo-hairline);
 }
 
 .app-entry-family-grid {
