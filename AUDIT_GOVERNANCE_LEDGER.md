@@ -19320,3 +19320,28 @@ Dashboard `eth:senk:other` moved from amber ("not yet audited") to red, matching
 and reflecting the same class of finding now confirmed corpus-wide.
 
 SEED_VERSION bumped to `v361-2026-09-25-ethiopian-senkessar-full-reaudit`.
+
+## Session 2026-09-25 continued -- what needs:content/needs:governance actually refer to
+
+Fourth item of Josh's ordered plan: figure out what the two stale "unclear whether content exists
+yet to audit" dashboard rows (`needs:content`, `needs:governance`) actually refer to.
+
+Traced to `NEEDS` array / section VII "The Book of Needs" -- the note was simply never updated as
+the Book of Needs grew from governance scaffolding into a fully-built, role-gated, imaged feature
+across many later sessions. Ran all 10 `audit:book-of-needs-*` scripts live: 7 pass clean
+(design-shell, tradition-context, browser-qc-runner, source-posture-drift,
+role-access-governance, anglican-taxonomy-review, eo-ancient-faith-source-inventory). 3 fail, and
+all three trace to the same root cause: 25 `coe-maclean-*` prayers
+(East Syriac, Maclean-sourced) exist in `data/prayers.json` with real taxonomy assignments in
+`js/prayers.js`, but were never given an `<option>` element in `index.html`'s picker, so a user
+can never see or select them regardless of role or tradition -- and the same 25 were never added
+to the source-governance provenance inventory either. `audit:book-of-needs-taxonomy` (78 of 103
+prayers exposed as options), `audit:book-of-needs-source-governance` (COE has 29 assigned
+prayers, only 4 provenance-inventoried), and `audit:book-of-needs-source-intake-inventory`
+(separately, a data-hygiene issue -- a long prose block pasted into a metadata notes field) all
+fail because of this. Dashboard rows VII replaced: the 2 vague placeholders became 9 accurate
+per-script rows (6 green, 3 red with the specific diagnostic above). Not fixed this pass --
+Josh's plan treats "figure out what these refer to" as its own step, separate from remediation;
+the 25-prayer UI/governance gap is now a well-scoped, visible red item rather than a mystery.
+
+SEED_VERSION bumped to `v362-2026-09-25-book-of-needs-dashboard-rows-clarified`.

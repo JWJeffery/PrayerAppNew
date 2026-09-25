@@ -22,7 +22,21 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**ETHIOPIAN SENKESSAR: FULL 13-MONTH REAUDIT, 2026-09-25 continued yet further (latest).** Third
+**BOOK OF NEEDS DASHBOARD ROWS CLARIFIED, 2026-09-25 continued yet further (latest).** Fourth item
+of Josh's ordered plan: figure out what the two stale "unclear whether content exists" dashboard
+rows actually refer to. They were section VII, "The Book of Needs" -- simply never updated since
+an early point when only governance scaffolding existed, even as the feature grew into a fully-
+built, role-gated, imaged 103-prayer corpus. Ran all 10 `audit:book-of-needs-*` scripts live: 7
+pass clean, 3 fail, all three tracing to one root cause -- 25 `coe-maclean-*` (East Syriac,
+Maclean-sourced) prayers exist in `data/prayers.json` with real taxonomy in `js/prayers.js`, but
+were never given an `<option>` in `index.html`'s picker (so a user can never see or select them,
+regardless of role) and were never added to the source-governance provenance inventory either.
+Replaced the 2 vague rows with 9 accurate per-script rows. **Not fixed this pass** — Josh's plan
+treats "figure out what these refer to" as its own step; the 25-prayer gap is now a well-scoped,
+visible red item, not a mystery. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25
+continued (what needs:content/needs:governance actually refer to), SEED_VERSION v361 → v362.
+
+**ETHIOPIAN SENKESSAR: FULL 13-MONTH REAUDIT, 2026-09-25 continued yet further.** Third
 item of Josh's ordered plan. Previously only Ginbot days 1-17 had been checked against the
 project's Budge source PDF, finding hallucinated and displaced saints; the other 12 months (plus
 the intercalary Pagumen) were flagged amber, "not yet audited." **Built the full 366-day source

@@ -175,7 +175,7 @@
   <div id="byzantineSection"></div>
 
   <h2>VII. The Book of Needs</h2>
-  <p class="section-note">Governance/intake scripts exist; unclear whether actual service text exists yet to audit. Status pending clarification.</p>
+  <p class="section-note">2026-09-25: the "unclear whether content exists" note below was stale -- 103 real prayers exist (data/prayers.json), fully role-gated and taxonomy-tagged. Rows below are the actual state of the 9 book-of-needs-* governance/QC scripts, run live.</p>
   <div id="needsSection"></div>
 
   <h2>VIII. Roman Breviary (1960/1962) — completed portion only</h2>
@@ -644,8 +644,16 @@ const BYZANTINE = BYZANTINE_TOP.concat([
 ]);
 
 const NEEDS = [
-  {key:'needs:content', name:"Service texts", status:'amber', note:'unclear whether content exists yet to audit'},
-  {key:'needs:governance', name:"Governance/taxonomy scaffolding", status:'amber', note:'scripts exist; content status unclear'}
+  {key:'needs:design-shell', name:"audit:book-of-needs-design-shell", status:'green', note:'PASS -- design-pass shell guarded'},
+  {key:'needs:tradition-context', name:"audit:book-of-needs-tradition-context", status:'green', note:'PASS -- 21 checks passed'},
+  {key:'needs:browser-qc-runner', name:"audit:book-of-needs-browser-qc-runner", status:'green', note:'PASS -- browser-runtime routing sweep guarded'},
+  {key:'needs:source-posture-drift', name:"audit:book-of-needs-source-posture-drift", status:'green', note:'PASS -- files=5 checks=10'},
+  {key:'needs:role-access-governance', name:"audit:book-of-needs-role-access-governance", status:'green', note:'PASS -- checks=16'},
+  {key:'needs:anglican-taxonomy-review', name:"audit:book-of-needs-anglican-taxonomy-review", status:'green', note:'PASS -- entries=25, strongAnglicanBasis=18, notAnglicanExclusive=7'},
+  {key:'needs:eo-ancient-faith-source-inventory', name:"audit:book-of-needs-eo-ancient-faith-source-inventory", status:'green', note:'PASS -- candidates=15, posture=source-witness, modernContext=research-required'},
+  {key:'needs:taxonomy', name:"audit:book-of-needs-taxonomy", status:'red', note:'2026-09-25: FAIL, 2 failures. index.html exposes only 78 of 103 prayers as selectable options -- the missing 25 are all coe-maclean-* prayers (East Syriac, Maclean-sourced) that exist in data/prayers.json with real taxonomy assignments in js/prayers.js but were never given an <option> element, so a user can never select or see them regardless of role/tradition. Root cause of the whole "unclear whether content exists" note above: this specific content genuinely is invisible in the running app, even though it is real and correctly built.'},
+  {key:'needs:source-governance', name:"audit:book-of-needs-source-governance", status:'red', note:'2026-09-25: FAIL, 3 failures -- governance coverage counts are stale; COE has 29 assigned prayers but only 4 have a provenance-inventory entry (the same 25 coe-maclean-* prayers missing from index.html are also missing here); "COE is seeded with real sourced prayers" check fails. Same root cause as needs:taxonomy above -- these 25 prayers were built but never wired into either the UI or the governance record.'},
+  {key:'needs:source-intake-inventory', name:"audit:book-of-needs-source-intake-inventory", status:'red', note:'2026-09-25: FAIL -- candidateSourceLeads[6].notes holds a suspiciously long block of prose rather than short metadata, a data-hygiene issue (imported source text pasted into the wrong field), not a sourcing-integrity issue.'}
 ];
 
 // Engine/rendering-logic audit, 2026-07-10 — Josh's direction: audit the CODE that
@@ -883,7 +891,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v361-2026-09-25-ethiopian-senkessar-full-reaudit';
+const SEED_VERSION = 'v362-2026-09-25-book-of-needs-dashboard-rows-clarified';
 
 function checkSeedVersion(){
   let storedValue = null;
