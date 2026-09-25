@@ -18940,3 +18940,108 @@ markup, CSS, or data files touched; no rendered Daily Office output affected at 
 Needs only).
 
 SEED_VERSION bumped to `v358-2026-09-25-book-of-needs-minister-role-gating-wired`.
+
+---
+
+## Session 2026-09-25 continued -- Book of Needs gets a real ground image for the first time: a
+## paleochristian Chi-Rho mosaic, chosen because it predates every split this app's traditions
+## sit on either side of, superseding the original design pass's deliberate choice to ship none.
+## SEED_VERSION v358 -> v359.
+
+Josh: "We've been adding muted graphics behind everything. Let's do that here as well. However,
+we need to do imagery that is more or less ecumenical across the apostolic traditions."
+
+### Why the original design pass shipped none, and why that reasoning doesn't block this
+
+The 2026-09-25 design pass (see the `ui:book-of-needs-design-pass` row above) had deliberately
+shipped no ground image at all, for a real reason recorded in its own CSS comment: this screen
+has no single tradition the way an office lane does, so a lane-specific image would misrepresent
+it the same way forcing it into the office's rail/page/margin grid would have. That reasoning
+holds for a *lane-specific* image; it says nothing about an image that genuinely serves every
+tradition equally, which is exactly what Josh asked for here.
+
+### Concept chosen with Josh, not guessed at
+
+Proposed candidates before sourcing anything, matching how every prior ground image on this page
+was handled: a Chi-Rho monogram, plain geometric interlace with no cross or figures, or a generic
+ancient parchment texture. Josh chose the Chi-Rho -- one of the oldest Christian symbols in
+continuous use.
+
+### Sourcing, including a real network-access blocker
+
+This session's network policy initially blocked `commons.wikimedia.org` and
+`upload.wikimedia.org` outright -- a policy denial (403), not a transient failure, the same
+restriction a prior session hit sourcing the Coptic/East Syriac/Byzantine images. Disclosed to
+Josh per this environment's own documented guidance rather than retried; he widened the
+environment's network access from its settings.
+
+Searched Commons' own search API for "chi-rho catacomb" rather than guessing at a filename;
+compared two real candidates before choosing one: a Roman catacomb stone tablet (Catacombs of San
+Callisto, 1261×931, lower resolution) and a mosaic from the Christian catacombs of Sousse (ancient
+Hadrumetum, Tunisia; 3648×2736, CC BY-SA 3.0, single-author "own work" attribution, tagged
+"Paleochristian mosaics" and "Catacombs of Sousse" on its own Commons page). Chose the Sousse
+mosaic: genuinely paleochristian -- predating the Church of the East's separation (431), Oriental
+Orthodoxy's separation from Chalcedon (451), and the Great Schism (1054), every later division
+this app's traditions sit on either side of, so it is shared heritage rather than a Western or
+Eastern later stylization of the symbol -- plus higher resolution and a simpler license (CC BY-SA
+only, no NC restriction unlike the Walters manuscript images used elsewhere).
+
+Full-resolution download hit Wikimedia's own bulk-access rate limit twice (HTTP 429, with an
+explicit message recommending a listed thumbnail size instead of the original). Resolved per that
+message -- requested a standard 1280px-wide thumbnail instead -- not by retrying the blocked
+request.
+
+### Cropped and wired the same way as every other ground image on this page
+
+Cropped locally (`images/chi-rho-sousse.jpg`, 1280×960 down to 820×820) to remove the museum
+mount's wide white mat, a wall-mounted descriptive plaque (in French and Arabic), and the dark
+gallery wall visible around the framed panel in the original photograph -- confirmed by looking at
+the actual cropped result, not assumed from crop coordinates alone.
+
+Built in `css/office.css`: a new `::before` layer on `#individual-prayers-section.app-book-needs-
+shell`, the identical technique as the office shell's own per-lane ground imagery -- absolutely
+positioned, z-index below content, excluded from normal grid/flow flow by the CSS spec itself, not
+`filter:blur()` on the section directly (which would blur the prayer text too). Because this
+section is a plain flex column with no other positioned descendants, its three direct children
+(`#prayer-selection`, `#prayer-display`, `#prayer-back-bar`) needed explicit `position:relative`
+to paint above the new `::before` -- the same reason the office shell's own rail/page/margin/
+keeping areas needed the identical promotion when their own ground layer was built; without it,
+non-positioned in-flow content paints BEFORE a positioned z-index:0 sibling in CSS's own stacking
+order, which would have put the real content behind the image instead of in front of it. The stale
+"no image texture" comment this superseded was replaced with the reasoning above, not silently
+deleted.
+
+### Tuned by measurement, first pass -- no multi-round correction needed this time
+
+Started from the Coptic/Byzantine images' own final, most-corrected filter values rather than the
+wider initial guesses those images needed several rounds to escape: night `blur(6px) saturate(0.5)
+brightness(0.55) opacity(0.48)`, day `blur(6px) saturate(0.5) brightness(1.05) opacity(0.3)`.
+Measured with the same method as those images -- a pixel-grid sample of a live Playwright
+screenshot, WCAG contrast against `--bon-ink` (Book of Needs' own separate token, not `--uo-ink`),
+text-colored pixels excluded: night median 11.56:1, p95 13.57:1, p99 14.05:1; day median 9.71:1,
+p95 11.50:1, p99 12.04:1 -- both comfortably clear AAA's 7:1 at every percentile measured, on the
+first attempt.
+
+Confirmed visually too, not contrast numbers alone, per the specific lesson this project already
+paid for once ("Agpeya just looks like a blur" -- a passing contrast ratio proves live text stays
+readable on top of an image, it says nothing about whether the image underneath is recognizable as
+anything): the mosaic's radiating pattern and the Chi-Rho monogram itself are both genuinely
+recognizable as texture in both themes, confirmed by looking at the actual rendered screenshots.
+
+### Verified live
+
+Headless Chromium, `scripts/dev-spa-server.mjs`: the selection screen in both dark and light mode,
+and the single-prayer display screen with a real displayed prayer ("Prayer of Humble Access") --
+zero console errors beyond the pre-existing, already-documented sandboxed Google Fonts CDN
+failure. `images/CREDITS.md` updated with full source, license, and reasoning, matching the
+existing entries' own level of detail. Re-ran `audit:book-of-needs-design-shell` and
+`audit:book-of-needs-tradition-context` as regression checks -- both still pass; neither audit
+covers ground imagery, so neither was expected to catch a regression here either way, disclosed
+rather than presented as proof this is bug-free. CSS brace balance confirmed by direct count after
+editing.
+
+A separate question raised in the same conversation -- whether the "Show prayers for other
+ministries" toggle's label should reference traditions instead -- was investigated and resolved
+separately; see the `needs:minister-role-gating-wired` entry above. Not part of this entry's scope.
+
+SEED_VERSION bumped to `v359-2026-09-25-book-of-needs-ecumenical-ground-imagery`.

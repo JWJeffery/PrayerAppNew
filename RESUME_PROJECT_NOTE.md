@@ -22,8 +22,37 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**BOOK OF NEEDS GETS A REAL GROUND IMAGE, 2026-09-25 continued further still (latest).** Josh:
+"We've been adding muted graphics behind everything. Let's do that here as well. However, we need
+to do imagery that is more or less ecumenical across the apostolic traditions." The design pass
+had deliberately shipped none — its own CSS comment said Book of Needs "has no one tradition of
+its own to veil a ground image for," correct reasoning for a lane-specific image, but not a block
+on one that genuinely serves every tradition. Proposed candidates before sourcing anything (Chi-Rho
+monogram / plain geometric interlace / generic parchment texture); Josh chose the Chi-Rho. **Hit a
+real network-policy block** (`commons.wikimedia.org`/`upload.wikimedia.org` both denied outright —
+the same restriction a prior session hit sourcing the other lanes' images); disclosed rather than
+retried, Josh widened the environment's network access. Searched Commons' own API rather than
+guessing a filename; chose a mosaic from the Christian catacombs of Sousse (Tunisia) over a lower-
+resolution alternative — genuinely **paleochristian**, predating the Church of the East's 431
+separation, Oriental Orthodoxy's 451 separation from Chalcedon, and the 1054 Great Schism, so it's
+shared heritage rather than a later Western or Eastern stylization. CC BY-SA 3.0, single-author
+attribution, cropped locally to remove the museum mount/plaque/wall (`images/chi-rho-sousse.jpg`).
+Built the same `::before`-layer technique as the office shell's own per-lane ground imagery in
+`css/office.css`, with Book of Needs' three direct children (`#prayer-selection`/`#prayer-display`/
+`#prayer-back-bar`) explicitly promoted to `position:relative` for the same stacking-order reason
+the office shell's rail/page/margin/keeping areas needed it. **Tuned by measurement, first pass —
+no multi-round correction needed** (unlike Coptic/Byzantine's own history): started from those
+images' own converged filter values; measured WCAG contrast against `--bon-ink` from live
+screenshots — night median 11.56:1, day median 9.71:1, both clear of AAA's 7:1 at every percentile
+checked. Confirmed visually too, not contrast numbers alone (the project's own "just looks like a
+blur" lesson) — the mosaic and the Chi-Rho itself are genuinely recognizable as texture in both
+themes. Live-verified in headless Chromium across both themes and the single-prayer display view,
+zero console errors beyond the pre-existing sandboxed font-CDN failure; `images/CREDITS.md`
+updated; both Book-of-Needs audit scripts still pass. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued, SEED_VERSION v358 → v359.
+
 **BOOK OF NEEDS "FOR MINISTERS" PRAYERS WIRED INTO THE EXISTING ROLE LADDER, 2026-09-25 continued
-further (latest).** Josh, live in the app: unchecked "Show prayers for other ministries," no
+further.** Josh, live in the app: unchecked "Show prayers for other ministries," no
 ordained role set, Anglican-scoped Book of Needs — and could still see "Vesting: The Stole
 (Priest)." Real gap, not a bug in the toggle: `BOOK_OF_NEEDS_OPTION_MINIMUM_TIER`
 (`js/prayers.js`) held only 13 entries, all Church-of-the-East/Maclean-sourced — zero of the

@@ -941,8 +941,7 @@ body.light-mode #individual-prayers-section {
     --bon-hairline:      rgba(103, 58, 31, 0.14);
 }
 
-/* ── Shell: full-bleed ground, no card, no image texture -- Book of Needs
-   has no one tradition of its own to veil a ground image for. ── */
+/* ── Shell: full-bleed ground. ── */
 #individual-prayers-section.app-book-needs-shell {
     position: fixed;
     inset: 0;
@@ -959,6 +958,53 @@ body.light-mode #individual-prayers-section {
     z-index: 200;
     color: var(--bon-ink);
     font-family: var(--bon-face-prayed);
+}
+
+/* ---------------------------------------------------------------------------
+   GROUND IMAGERY, 2026-09-25. Superseding the original design pass's own
+   comment ("no image texture -- Book of Needs has no one tradition of its
+   own to veil a ground image for") -- that reasoning was correct for a
+   LANE-specific image (the per-lane treatment above is keyed to a single
+   tradition's envelope), but this screen serves every tradition equally,
+   so it needs imagery that does the same. Josh: "we need to do imagery
+   that is more or less ecumenical across the apostolic traditions."
+
+   Same technique as the office shell's own per-lane ground imagery above:
+   a separate ::before layer, not filter:blur() on the section itself
+   (which would blur the prayer text too), absolutely positioned so it is
+   excluded from normal flow, z-index below the real content. Because this
+   section is a plain flex column with no other positioned descendants,
+   its three direct children (#prayer-selection, #prayer-display,
+   #prayer-back-bar) are explicitly promoted to position:relative so they
+   paint above the ::before rather than relying on the non-positioned
+   in-flow paint order, which would otherwise place them BEHIND a
+   z-index:0 positioned ::before -- the same reason the office shell's own
+   rail/page/margin/keeping areas needed the identical promotion. --------- */
+
+#individual-prayers-section.app-book-needs-shell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url('/images/chi-rho-sousse.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(6px) saturate(0.5) brightness(0.55);
+    opacity: 0.48;
+}
+
+body.light-mode #individual-prayers-section.app-book-needs-shell::before {
+    filter: blur(6px) saturate(0.5) brightness(1.05);
+    opacity: 0.3;
+}
+
+#individual-prayers-section.app-book-needs-shell > #prayer-selection,
+#individual-prayers-section.app-book-needs-shell > #prayer-display,
+#individual-prayers-section.app-book-needs-shell > #prayer-back-bar {
+    position: relative;
+    z-index: 1;
 }
 
 /* ── Selection screen: no card, generous top space, left-aligned like the

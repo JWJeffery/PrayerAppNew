@@ -112,3 +112,45 @@ and East Syriac treatments were tuned by measuring real WCAG contrast ratios aga
 `--uo-ink` from live Playwright screenshots of the rendered office, not by eye; see
 `AUDIT_GOVERNANCE_LEDGER.md`, key `ui:per-lane-ground-imagery`, for the full method
 and the measured numbers.
+
+## Book of Needs (ecumenical, not tied to one tradition)
+
+- **File**: `chi-rho-sousse.jpg` (cropped from the museum original)
+- **Subject**: A Chi-Rho (☧) Christogram mosaic with Alpha and Omega, from the
+  Christian catacombs of Sousse (ancient Hadrumetum), Tunisia — paleochristian,
+  now held in the Archaeological Museum of Sousse.
+- **Source**: Wikimedia Commons, [File:Sousse mosaic chi rho.jpg](https://commons.wikimedia.org/wiki/File:Sousse_mosaic_chi_rho.jpg),
+  photographed by Ad Meskens ("own work").
+- **License**: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) —
+  <https://creativecommons.org/licenses/by-sa/3.0/legalcode>. Confirmed directly
+  from the file's own Commons page (`LicenseShortName` in its extended metadata),
+  not assumed. Attribution required (given here); no non-commercial restriction,
+  unlike the Coptic and Byzantine Walters images above.
+- **Why this image, not a lane-specific one**: Book of Needs serves every
+  tradition in this app at once — the original design pass deliberately shipped
+  no ground image at all for exactly that reason ("Book of Needs has no one
+  tradition of its own to veil a ground image for"). The Chi-Rho is one of the
+  oldest Christian symbols in continuous use, predating the Great Schism (1054),
+  the Church of the East's separation (431), and Oriental Orthodoxy's separation
+  from Chalcedon (451) — every later division this app's traditions sit on
+  either side of. A specifically *paleochristian* instance (not a later,
+  tradition-specific stylization of the symbol) was chosen for the same reason:
+  genuinely shared heritage, not a Western or Eastern rendering of it.
+- Cropped locally to remove the museum mount's wide white mat, the wall-mounted
+  descriptive plaque, and the dark gallery wall visible around the framed panel
+  in the original photograph — the same treatment as every other image on this
+  page, isolating the artifact itself.
+- **Tuned by measurement, not eyeballed**, following the same Playwright
+  contrast-sampling method as the Coptic/East Syriac images above (`--bon-ink`
+  in place of `--uo-ink`, since Book of Needs uses its own, deliberately
+  separate token set): night `blur(6px) saturate(0.5) brightness(0.55)
+  opacity(0.48)` measured median 11.56:1, p95 13.57:1, p99 14.05:1 against
+  `--bon-ink`; day `blur(6px) saturate(0.5) brightness(1.05) opacity(0.3)`
+  measured median 9.71:1, p95 11.50:1, p99 12.04:1. Both comfortably clear
+  WCAG AAA (7:1) at every percentile measured, on the first tuning pass —
+  unlike Coptic/Byzantine above, no multi-pass correction was needed here.
+  Confirmed visually as well, not contrast numbers alone: the mosaic's
+  radiating pattern and the Chi-Rho monogram itself are both genuinely
+  recognizable as texture in both themes, not reduced to an undifferentiated
+  wash. See `AUDIT_GOVERNANCE_LEDGER.md`, key `needs:ecumenical-ground-imagery`,
+  for the full method.
