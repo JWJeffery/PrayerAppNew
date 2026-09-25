@@ -158,18 +158,15 @@
                 <button type="button" onclick="showUoThresholdGrid()" style="border:1px solid rgba(201,168,76,0.25); background:none; padding:12px 26px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.2em; color:rgba(230,220,196,0.65); text-transform:uppercase; cursor:pointer;">Another office</button>
             </div>
 
+            <!-- FIXED 2026-09-25, per Josh's direct instruction: the "PRAYING IN"
+                 list that used to sit here was a hardcoded, manually-maintained
+                 span list in this file, disconnected from what the app actually
+                 offers (it never automatically reflected the Horologion unwire
+                 above, for instance) and redundant with "Another office"'s own
+                 grid just below, which already lists the same lanes from their
+                 own real markup. Removed rather than made to compute live, per
+                 Josh's own choice. -->
             <div style="margin-top:26px; padding-top:16px; border-top:1px solid rgba(201,168,76,0.14); max-width:560px;">
-                <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(201,168,76,0.5); margin-bottom:9px;">PRAYING IN</div>
-                <div style="display:flex; flex-wrap:wrap; gap:6px 0; font-size:16px; color:rgba(230,220,196,0.66);">
-                    <span>Anglican&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;BCP</span>
-                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
-                    <span>Coptic&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Agpeya</span>
-                    <span style="color:rgba(201,168,76,0.4);">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
-                    <span>Church of the East&nbsp;<span style="color:rgba(201,168,76,0.75);">·</span>&nbsp;Hudra</span>
-                </div>
-            </div>
-
-            <div style="margin-top:14px;">
                 <button type="button" onclick="openUniversalBookOfNeeds()" style="background:none; border:none; color:rgba(230,220,196,0.4); font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; padding:4px 0;">Book of Needs</button>
             </div>
 
@@ -1077,7 +1074,7 @@
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
-<script src="js/office-shell.js?v=299" defer></script>
+<script src="js/office-shell.js?v=300" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
 <script src="js/office-drawer.js?v=7" defer></script>
 </body>

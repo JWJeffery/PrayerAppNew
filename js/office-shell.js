@@ -597,12 +597,31 @@
         var rubricPointer = 0;
         var lastY = 0;
 
+        // FIXED 2026-09-25, found via Josh's live report on the Coptic Agpeya
+        // ("You didn't fix the scrolling ball"): the explanation-tooltip layer
+        // (applyExplanationLayer) nests an <span class="info-btn"> holding the
+        // literal character "i" INSIDE some .rubric-text spans, so a plain
+        // .textContent read picked up "Prayer of Esaias i" against a rail label
+        // of "Prayer of Esaias" -- almost every match failed, most items silently
+        // fell back to inheriting a neighbor's position, and only the two or
+        // three items that happened to have no tooltip got a real waypoint. Read
+        // only the rubric's own direct text nodes (excluding any nested element,
+        // tooltip marker or otherwise) so a tooltip never changes what counts as
+        // a match.
+        function ownText(el) {
+            var out = '';
+            for (var k = 0; k < el.childNodes.length; k++) {
+                if (el.childNodes[k].nodeType === 3) out += el.childNodes[k].textContent;
+            }
+            return out.trim();
+        }
+
         items.forEach(function (item) {
             var labelEl = item.querySelector('.uo-rail-label');
             var labelText = labelEl ? labelEl.textContent.trim() : '';
             var matched = null;
             for (var j = rubricPointer; j < rubrics.length; j++) {
-                if (rubrics[j].textContent.trim() === labelText) {
+                if (ownText(rubrics[j]) === labelText) {
                     matched = rubrics[j];
                     rubricPointer = j + 1;
                     break;
@@ -630,12 +649,30 @@
 
         var current = railWaypoints[0];
         var currentIndex = 0;
-        for (var i = 0; i < railWaypoints.length; i++) {
-            if (railWaypoints[i].y <= scrollY + RAIL_CURRENT_THRESHOLD_PX) {
-                current = railWaypoints[i];
-                currentIndex = i;
-            } else {
-                break;
+
+        // FIXED 2026-09-25, found via Josh's live report (rail stuck on "The
+        // Collect" with "Closing (Noonday)" visibly on screen, at the very
+        // bottom of the page): a short final block can sit closer to the end
+        // of the document than RAIL_CURRENT_THRESHOLD_PX -- Noonday Prayer's
+        // own "Closing (Noonday)" waypoint measured ~5624px down a ~6102px
+        // page whose max scrollTop is only 5214px, so scrollY + threshold
+        // (5334px) could never reach it and the last item was permanently
+        // unreachable. At the true bottom of scroll (within 2px, matching how
+        // browsers already report an exact match despite subpixel rounding),
+        // the last item is current outright -- no page has content below its
+        // own final block to scroll to.
+        var atBottom = (scrollY + page.clientHeight) >= (page.scrollHeight - 2);
+        if (atBottom) {
+            current = railWaypoints[railWaypoints.length - 1];
+            currentIndex = railWaypoints.length - 1;
+        } else {
+            for (var i = 0; i < railWaypoints.length; i++) {
+                if (railWaypoints[i].y <= scrollY + RAIL_CURRENT_THRESHOLD_PX) {
+                    current = railWaypoints[i];
+                    currentIndex = i;
+                } else {
+                    break;
+                }
             }
         }
 

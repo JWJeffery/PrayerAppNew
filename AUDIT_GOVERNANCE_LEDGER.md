@@ -19578,3 +19578,62 @@ resolved, resurface a web deployment," and more issues were still incoming when 
 written.
 
 SEED_VERSION bumped to `v365-2026-09-25-office-shell-drawer-ui-batch`.
+
+## Session 2026-09-25 continued -- rail dot follow-up: two real bugs the first pass missed
+
+Josh redeployed the prior batch and tested live, finding the rail-dot fix (`ui:stale-uo-day-class-fixed`... no, `ui:office-shell-drawer-ui-batch`'s item 2) was genuinely broken on two of the three lanes it was supposed to cover, plus a real edge case even on the lane it looked correct on.
+
+### Bug 1: the explanation-tooltip marker polluted the text match
+
+Reported live as "You didn't fix the scrolling ball on the left on the Agpeya" and, separately,
+"its super bugggy in the church of the east" (screenshot: East Syriac stuck on "The Opening" while
+scrolled well into "The Evening Prayer"). Root cause, found by reading the actual rendered HTML
+rather than re-guessing: `applyExplanationLayer()` nests a `<span class="info-btn
+uo-explanation-marker">i</span>` (a clickable tooltip icon, literal character "i") INSIDE many
+`.rubric-text` spans that have an explanation available -- `computeRailWaypoints()`'s exact-text
+match compared the rubric's FULL `.textContent` (e.g. "Prayer of Esaias i") against the rail's
+plain label ("Prayer of Esaias"), so almost every item with a tooltip failed to match and silently
+fell back to inheriting a neighbor's position. Coptic Agpeya (most items tooltipped) and East Syriac
+(also heavily tooltipped, 69 rubric-text spans for 33 rail items once every "Priest." / "They
+answer" stage-direction rubric is counted too) were hit hardest; BCP's own earlier verification
+happened to pass because fewer of its components carry explanations. FIXED: `computeRailWaypoints()`
+now reads only a rubric's own direct text nodes (`ownText()`, a small helper that walks
+`childNodes` and skips anything that isn't a text node), so a nested tooltip marker -- or any other
+future nested element -- can never change what counts as a match.
+
+### Bug 2: a short final block could sit past the reachable scroll ceiling
+
+Reported live via screenshot: BCP Noonday Prayer's rail stuck on "The Collect" (VII of 8) with
+"Closing (Noonday)" and the Commemorations card clearly on screen, scrolled to the true bottom.
+Measured directly: "Closing (Noonday)"'s own waypoint sat at y=5624px on a page whose maximum
+reachable `scrollTop` is only 5214px -- even at absolute bottom, `scrollY + RAIL_CURRENT_THRESHOLD_PX`
+(5334px) could never reach 5624px, so the last item was structurally unreachable by the threshold
+check whenever the final block is short. FIXED: `updateRailCurrent()` now checks whether the page is
+scrolled to its true bottom (`scrollTop + clientHeight >= scrollHeight - 2`) and, if so, sets the
+LAST rail item current outright, bypassing the threshold math entirely -- there is never content
+below a page's own final block to scroll toward, so this can't misfire.
+
+### Verified live, full scroll range, all three lanes
+
+BCP Noonday Prayer at true bottom: "Closing (Noonday)", VIII of 8 (was stuck at "The Collect", VII
+of 8). Coptic Agpeya at 0% / 50% / 100% scroll: "The Psalms" I of 12 -> "Prayer of Esaias" II of 12
+-> "Prayer Recited After Each Office" XII of 12 (was stuck oscillating between two tied groups
+before Bug 1's fix). East Syriac at 0% / 50% / 100%: "The Opening" I of 33 -> "The Karuzutha" XVII
+of 33 -> "The Nicene Creed" XXXIII of 33 (was stuck on "The Opening" throughout before Bug 1's fix).
+Zero console errors beyond the pre-existing sandboxed font-CDN failure.
+
+### The "PRAYING IN" line removed
+
+Josh asked why the threshold splash screen still showed "PRAYING IN / Anglican · BCP • Coptic ·
+Agpeya • Church of the East · Hudra." Investigated rather than assumed a bug: this is a hardcoded,
+manually-maintained span list in `index.html`, disconnected from what the app actually offers (it
+never automatically reflected the Horologion unwire, for instance) and redundant with "Another
+office"'s own grid immediately below, which already lists the same three lanes from their own real
+markup. Asked Josh whether to remove it, compute it live, or leave it; he chose remove. Deleted the
+block; the Book of Needs link that followed it now sits directly under the Begin/Another-office
+buttons, keeping the same border-top separator.
+
+Cache-bust `js/office-shell.js v299 -> v300`. `index.html` also edited (PRAYING IN removal), no
+cache-bust param of its own.
+
+SEED_VERSION bumped to `v366-2026-09-25-rail-dot-tooltip-and-bottom-edge-fixed`.

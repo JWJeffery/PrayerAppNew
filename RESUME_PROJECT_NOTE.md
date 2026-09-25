@@ -22,8 +22,29 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**RAIL DOT FOLLOW-UP: TWO REAL BUGS THE FIRST PASS MISSED, 2026-09-25 continued yet further still
+(latest).** Josh redeployed the batch below and found, live, that the rail-dot fix was genuinely
+broken on two of three lanes plus a real edge case on the third. **(1)** "You didn't fix the
+scrolling ball on the left on the Agpeya" / "its super bugggy in the church of the east" — root
+cause: the explanation-tooltip layer nests a small "i" icon span INSIDE many `.rubric-text`
+elements, so `computeRailWaypoints()`'s exact-text match against the plain rail label failed for
+almost every tooltipped item (most of Coptic Agpeya's and East Syriac's), silently inheriting a
+neighbor's position instead of getting its own. Fixed with `ownText()` — reads only a rubric's own
+direct text nodes, ignoring any nested element. **(2)** BCP Noonday Prayer stuck on "The Collect"
+at the absolute bottom of scroll, with "Closing (Noonday)" clearly on screen — root cause: a short
+final block's own waypoint sat further down than the maximum reachable `scrollTop + threshold`
+could ever reach. Fixed: `updateRailCurrent()` now snaps to the last item outright once the page
+is scrolled to its true bottom. **Verified live across the full scroll range on all three lanes** —
+BCP Noonday now correctly reaches "Closing (Noonday)" (VIII of 8); Coptic Agpeya and East Syriac
+both progress smoothly through every distinct item to their real final one. **Separately**, removed
+the threshold splash's hardcoded "PRAYING IN" tradition list — Josh asked why it was still there;
+it was disconnected from what's actually available (never reflected the Horologion unwire) and
+redundant with the "Another office" grid right below it; asked rather than assumed, Josh chose to
+remove it. Cache-bust `office-shell.js v299 → v300`. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`,
+entry dated 2026-09-25 continued (rail dot follow-up), SEED_VERSION v365 → v366.
+
 **OFFICE SHELL / DRAWER / BOOK OF NEEDS UI BATCH -- EIGHT REAL FIXES, 2026-09-25 continued yet
-further still (latest).** Josh sent a batch of live screenshots; asked for the whole batch fixed
+further.** Josh sent a batch of live screenshots; asked for the whole batch fixed
 before redeploying ("When all the UI issues are resolved, resurface a web deployment" — not
 redeployed yet as of this entry, more items were still incoming). Each investigated to a real root
 cause:
