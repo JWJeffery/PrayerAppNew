@@ -216,9 +216,23 @@ body.uo-day {
    theme behaviour untouched.
    --------------------------------------------------------------------------- */
 
-/* office.css 1632 + 1648 — the card itself. Nothing but layout survives. */
-body.shell-v2.office-active .office-container,
-body.shell-v2.office-active.dark-mode .office-container {
+/* office.css 1632 + 1648 — the card itself. Nothing but layout survives.
+   The dark-mode-qualified selector this rule used to also carry (needed
+   while body.shell-v2 was the only anchor) is now a literal duplicate of
+   the bare .office-container above -- dropped rather than kept as dead
+   weight, 2026-09-25 unscoping Stage 4.
+
+   KEPT .office-active here, not stripped fully bare: a fully-bare
+   .office-container would be an EXACT specificity tie with office.css's
+   own bare .office-container rule (line 365 -- background, max-width,
+   width, margin, padding, border-radius, box-shadow, color, nearly every
+   property this rule also sets), decided only by <link> load order --
+   the same fragile pattern already caught and guarded for ::before/
+   ::after below. Not flagged by the original three-agent audit (which
+   only checked this pair's ::before/::after variant), found by directly
+   re-verifying which office.css rule was actually winning after the
+   naive strip, not assumed safe from the audit's table alone. */
+.office-active .office-container {
     width: auto;
     max-width: none;
     margin: 0;
@@ -231,24 +245,26 @@ body.shell-v2.office-active.dark-mode .office-container {
 }
 
 /* office.css 1658 + 1665 — the inset rule and the corner ornament. */
-body.shell-v2.office-active .office-container::before,
-body.shell-v2.office-active .office-container::after {
+.office-active .office-container::before,
+.office-active .office-container::after {
     display: none;
     content: none;
 }
 
 /* office.css 1670 — the card's headings return to the shell's own faces. */
-body.shell-v2.office-active .office-container h1,
-body.shell-v2.office-active .office-container h2,
-body.shell-v2.office-active .office-container h3 {
+.office-container h1,
+.office-container h2,
+.office-container h3 {
     font-family: var(--uo-face-title);
     color: var(--uo-ink);
 }
 
-/* The prayed text is Cormorant at the 25px floor, not the skin's Georgia. */
-body.shell-v2.office-active .office-container,
-body.shell-v2.office-active .office-container p,
-body.shell-v2.office-active .office-container li {
+/* The prayed text is Cormorant at the 25px floor, not the skin's Georgia.
+   First selector keeps .office-active for the same tie reason as the base
+   rule above -- office.css's bare .office-container also sets `color`. */
+.office-active .office-container,
+.office-container p,
+.office-container li {
     font-family: var(--uo-face-prayed);
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
@@ -287,12 +303,12 @@ body.shell-v2.office-active .office-container li {
    .component-text and .psalm-verse, and at (0,4,0) these rules would beat those
    in print too and put 25px on paper. Print stays exactly as it was. */
 @media screen {
-    body.shell-v2.office-active .office-container .component-text,
-    body.shell-v2.office-active .office-container .reading-text,
-    body.shell-v2.office-active .office-container .psalm-block,
-    body.shell-v2.office-active .office-container .psalm-stanza,
-    body.shell-v2.office-active .office-container .psalm-verse,
-    body.shell-v2.office-active .office-container .psalm-stanza .psalm-half-verse {
+    .office-container .component-text,
+    .office-container .reading-text,
+    .office-container .psalm-block,
+    .office-container .psalm-stanza,
+    .office-container .psalm-verse,
+    .office-container .psalm-stanza .psalm-half-verse {
         font-family: var(--uo-face-prayed);
         font-size: var(--uo-size-body);
         line-height: var(--uo-leading-body);
@@ -302,8 +318,8 @@ body.shell-v2.office-active .office-container li {
 
 /* Rubrics keep their colour from the shell's tokens, which are contrast-checked
    against both grounds; the skin's values were not. */
-body.shell-v2.office-active .office-container .rubric,
-body.shell-v2.office-active .office-container .rubric-text {
+.office-container .rubric,
+.office-container .rubric-text {
     color: var(--uo-rubric);
 }
 
@@ -329,14 +345,14 @@ body.shell-v2.office-active .office-container .rubric-text {
    to plain block flow (no grid columns) and .passage-reference prints
    exactly as its own existing print rule already handles it. */
 @media screen {
-    body.shell-v2.office-active .office-container .uo-block {
+    .office-container .uo-block {
         display: grid;
         grid-template-columns: var(--uo-gutter-width) 1fr;
         column-gap: 18px;
         align-items: start;
     }
 
-    body.shell-v2.office-active .office-container .uo-gutter-label {
+    .office-container .uo-gutter-label {
         grid-column: 1;
         text-align: right;
         font-family: var(--uo-face-machine);
@@ -347,7 +363,7 @@ body.shell-v2.office-active .office-container .rubric-text {
         padding-top: 0.3em;   /* nudges the label toward the body text's cap-height rather than its ascender */
     }
 
-    body.shell-v2.office-active .office-container .uo-block-body {
+    .office-container .uo-block-body {
         grid-column: 2;
         min-width: 0;   /* lets long citations/reading text wrap inside the track instead of overflowing it */
     }
@@ -355,7 +371,7 @@ body.shell-v2.office-active .office-container .rubric-text {
     /* The citation now lives in the gutter, not inline in the body -- the
        page is "the prayed text only, nothing else" (handoff doc §1). The
        element stays in the DOM; only the on-screen view hides it. */
-    body.shell-v2.office-active .office-container .uo-block-body .passage-reference {
+    .office-container .uo-block-body .passage-reference {
         display: none;
     }
 }
@@ -1069,11 +1085,11 @@ body.shell-v2 .uo-theme-button:focus-visible {
        gutter label stacks ABOVE its block's text instead of beside it,
        matching how the rail already collapses rather than force-fitting a
        sidebar onto a phone screen. */
-    body.shell-v2.office-active .office-container .uo-block {
+    .office-container .uo-block {
         display: block;
     }
 
-    body.shell-v2.office-active .office-container .uo-gutter-label {
+    .office-container .uo-gutter-label {
         display: block;
         text-align: left;
         margin-bottom: 2px;
