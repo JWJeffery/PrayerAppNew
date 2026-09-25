@@ -93,6 +93,10 @@ content decision (which books, how much size to add to the web-release bundle, w
 `.external` source-intake needs re-fetching), not a quick fix — asked Josh which books/how much
 before touching anything.** Nothing changed in code for this item.
 
+**Josh's decision, same session**: leave it exactly as-is for now (Hebrews-only, current "has not
+been added yet" message unchanged) — "We will return to this later." Do not expand book coverage,
+do not touch the UI message, without Josh raising this again.
+
 **THE ENGINE AUDIT SWEEP, 2026-09-25 continued yet further still still still.** Josh said
 "Proceed with the rest of the que[ue]" -- resuming item 5 of his own original ordered plan, the last
 unstarted phase. Audited (CODE, not content) the 9 engine/calendar files the dashboard had carried as
