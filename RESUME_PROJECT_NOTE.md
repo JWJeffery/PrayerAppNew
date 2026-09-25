@@ -22,6 +22,60 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DONE, LIVE-CONFIRMED, 2026-09-25 (latest): the sidebar-control migration Phase 6 stage 4 found
+missing — done.** Josh, directly: "Migrate the remaining sidebar controls into the drawer." This is
+exactly the prerequisite stage 4's own note named as real, unattempted work: every control
+`radioRow()`/`checkboxRow()`/`selectRow()` surfaces via a synthetic drawer row reads its real
+`<input>`/`<select>` in place rather than moving it, and every "which office" control is written
+back to by the existing shared-office-nav mechanism — both patterns need the real element to
+exist *somewhere*, but neither cares *where*, since `document.querySelector`/`getElementById` find
+an element regardless of its position in the tree. That's the whole migration: physically relocate
+(via `appendChild`, a real DOM move, not a clone) every remaining real control into a new,
+permanently-hidden host in the drawer's own DOM — `hosts.legacyState` in `js/office-drawer.js` —
+so the four legacy sidebars can eventually be deleted without breaking anything reading these
+elements from their old location.
+
+**Read every remaining control's exact markup first** (all four sidebars, in full) rather than
+guess boundaries, then moved the smallest container that holds exactly one setting and nothing
+load-bearing else — 11 groups in total: BCP's "Which office" (`office-time`), "Office Mode"
+(`ang-office-mode`), "Liturgical Settings" (`rite`, `minister`, `creed-type`, `gospel-placement` +
+the 30-Day Psalter toggle — the Lectionary Alternates sub-group inside this same container was
+already moved by the existing `moveRealControls()`, confirmed it wouldn't be double-moved since a
+real DOM move leaves nothing behind to move again), and "Marian Element" (`marian-element`,
+`marian-antiphon-pos`); Coptic's "Active Hour" (`cop-hour`); East Syriac's override panel
+(`esy-hour-override`, `esy-override-date`), the already-`display:none` `esy-time` radio wrapper,
+and "Office Mode" (`esy-mode`); Horologion's 14-office list (`horologion-office`), "Calendar Mode"
+(`hor-eo-calendar-select`), and "Display Depth" (`hor-depth-select`).
+
+**Two controls deliberately left behind, confirmed unread anywhere else**: `toggle-dark` (BCP's old
+"Appearance" Dark Mode checkbox — a prior session already replaced every read of it with an
+attribute-based selector, confirmed by its own code comment; superseded by the shell's independent
+Auto/Light/Dark control) and `hor-btn-diag` (Horologion's dev-only Diagnostics toggle button — reads
+its own id only to update its own label text, nothing else depends on it). Also left behind, out of
+scope for a *control* migration: East Syriac's three read-only display boxes (Current Cycle/Fasting
+Character/Anaphora — written to, never read from) and the plain date-picker inputs.
+
+**Verified live, thoroughly, not just "it didn't crash"**: confirmed all 11 groups actually landed
+inside the new hidden host across all four lanes (`hostChildCount: 11` every time, every named
+control found `true` inside it); then ran real functional tests, not just presence checks — toggled
+Rite via the drawer's synthetic select and confirmed the real radio flips; toggled Marian Element to
+Theotokion and confirmed it sticks; clicked Coptic's "Third Hour" in the drawer's own office grid and
+confirmed both the rendered title AND the underlying `cop-hour` radio actually changed; toggled East
+Syriac Cathedral→Monastic via the drawer and confirmed it took; toggled Horologion's Display Depth
+and switched its office via the drawer's grid, both confirmed. Full four-lane envelope sweep, Book of
+Needs, both entry screens, and the stage-2 lane-switch fix all re-verified — every screenshot
+pixel-identical to its pre-migration baseline (0 nonzero pixels), zero console errors throughout.
+Screenshotted the open drawer itself too: no stray or duplicate old-skin controls leaked into view —
+the moved elements are genuinely invisible, exactly as intended.
+
+**What this unlocks, not yet done**: the four legacy sidebars' remaining content is now either
+already-moved (borrowed devotions, BCP's further choices, BCP Only Mode — done in an earlier
+session) or moved by this session (the controls above) or confirmed safe to leave behind (display-only
+boxes, two dead toggles). Deleting the sidebar HTML itself, and the two `display:none` hiding rules
+in `css/office-shell.css` that exist only to hide them, is real next work for a future session — not
+done here, and not attempted, since that's Phase 6 stage 4's own deferred deletion step, now
+unblocked but still a separate action. Cache-bust `office-drawer.js` 2 → 3.
+
 **DONE (attempted, reverted), LIVE-CONFIRMED, 2026-09-24 (latest): Phase 6 stage 5 — unscoping
 `css/office-shell.css` found to be unsafe while stage 3's deferred office.css cleanup is still
 outstanding; comment corrections kept, the actual selector change reverted.** Wrote a script to

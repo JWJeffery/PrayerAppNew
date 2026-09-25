@@ -103,6 +103,99 @@
         /* BCP Only Mode: the real checkbox, at the foot (§5, §3.7). */
         var bcp = labelOf('toggle-bcp-only');
         if (bcp) hosts.bcpOnly.appendChild(bcp);
+
+        moveLegacyStateControls();
+    }
+
+    /* Every remaining real control across all four legacy sidebars that
+       moveRealControls() above doesn't already handle -- not because it's
+       unimportant, but because this drawer already gives it its own UI
+       elsewhere: the "which office" grid (Section II, built from the
+       separate shared-office-nav-* radios that write back to these) or a
+       radioRow()/checkboxRow()/selectRow() synthetic row further down (which
+       read these by name/id directly, never move them). Confirmed by
+       reading radioRow()/checkboxRow()/selectRow()'s own code before writing
+       this: they say plainly the controls they surface are read in place,
+       never moved -- this function is what makes "read in place" survive
+       the legacy sidebars eventually being deleted. Moved into
+       hosts.legacyState (permanently display:none -- nothing here needs a
+       visible home, the drawer's own UI already covers it), same appendChild
+       pattern as moveRealControls() above: the same real nodes, same ids,
+       same onchange handlers, never rebuilt.
+
+       Left OUT, on purpose, confirmed unread anywhere outside their own
+       onchange: #settings-panel's "Appearance" Dark Mode checkbox
+       (toggle-dark, superseded by the shell's own independent Auto/Light/
+       Dark control) and #generic-settings's Diagnostics toggle button
+       (hor-btn-diag, a dev-only display toggle, not a persisted value
+       another function reads back). Also left out: the three East Syriac
+       "Current Cycle"/"Fasting Character"/"Anaphora" display boxes and the
+       BCP/Horologion date-picker inputs -- these are written TO by render
+       logic, never read FROM, so nothing depends on their DOM location; out
+       of scope for a control migration. */
+    function moveLegacyStateControls() {
+        var host = hosts.legacyState;
+
+        // BCP: "Which office" (office-time), "Office Mode" (ang-office-mode),
+        // and "Liturgical Settings" (rite, minister, creed-type, Gospel
+        // placement + 30-Day Psalter -- Lectionary Alternates already left
+        // this same setting-group above, via moveRealControls()'s altGroup).
+        var officeTimeRadio = document.querySelector('input[name="office-time"]');
+        var officeTimeGroup = officeTimeRadio ? officeTimeRadio.closest('.setting-group') : null;
+        if (officeTimeGroup) host.appendChild(officeTimeGroup);
+
+        var angModeRadio = document.querySelector('input[name="ang-office-mode"]');
+        var angModeGroup = angModeRadio ? angModeRadio.closest('.setting-group') : null;
+        if (angModeGroup) host.appendChild(angModeGroup);
+
+        var riteRadio = document.querySelector('input[name="rite"]');
+        var liturgicalGroup = riteRadio ? riteRadio.closest('.setting-group') : null;
+        if (liturgicalGroup) host.appendChild(liturgicalGroup);
+
+        // BCP: Marian Element (marian-element, marian-antiphon-pos) -- its
+        // own nested-group inside #ecumenical-devotions-section, sibling to
+        // the Coptic/Byzantine borrowed-devotion nested-groups that stay
+        // behind (their own checkboxes already moved individually above).
+        var marianRadio = document.querySelector('input[name="marian-element"]');
+        var marianGroup = marianRadio ? marianRadio.closest('.nested-group') : null;
+        if (marianGroup) host.appendChild(marianGroup);
+
+        // Coptic: "Active Hour" (cop-hour, plus its own display labels).
+        var copHourRadio = document.querySelector('input[name="cop-hour"]');
+        var copHourGroup = copHourRadio ? copHourRadio.closest('.setting-group') : null;
+        if (copHourGroup) host.appendChild(copHourGroup);
+
+        // East Syriac: the override panel (esy-hour-override, esy-override-date,
+        // the reset button) and the always-hidden esy-time radios it stays in
+        // sync with -- already display:none in place, confirmed by its own
+        // existing comment ("read by renderEastSyriac()... synced here").
+        var esyOverridePanel = document.getElementById('esy-override-panel');
+        if (esyOverridePanel) host.appendChild(esyOverridePanel);
+
+        var esyTimeRadio = document.querySelector('input[name="esy-time"]');
+        var esyTimeGroup = esyTimeRadio ? esyTimeRadio.closest('div') : null;
+        if (esyTimeGroup) host.appendChild(esyTimeGroup);
+
+        // East Syriac: "Office Mode" (esy-mode, Cathedral/Monastic).
+        var esyModeRadio = document.querySelector('input[name="esy-mode"]');
+        var esyModeGroup = esyModeRadio ? esyModeRadio.closest('.setting-group') : null;
+        if (esyModeGroup) host.appendChild(esyModeGroup);
+
+        // Horologion: the 14-office radio list, Calendar Mode, and Display
+        // Depth -- each its own nested-group; Diagnostics (a sibling
+        // nested-group of Display Depth) deliberately stays behind, see the
+        // header comment on this function.
+        var horOfficeRadio = document.querySelector('input[name="horologion-office"]');
+        var horOfficeGroup = horOfficeRadio ? horOfficeRadio.closest('.nested-group') : null;
+        if (horOfficeGroup) host.appendChild(horOfficeGroup);
+
+        var horCalSelect = document.getElementById('hor-eo-calendar-select');
+        var horCalGroup = horCalSelect ? horCalSelect.closest('.nested-group') : null;
+        if (horCalGroup) host.appendChild(horCalGroup);
+
+        var horDepthSelect = document.getElementById('hor-depth-select');
+        var horDepthGroup = horDepthSelect ? horDepthSelect.closest('.nested-group') : null;
+        if (horDepthGroup) host.appendChild(horDepthGroup);
     }
 
     /* ── Value rows: a native <select> standing in front of real radios ──── */
@@ -475,6 +568,20 @@
         hosts.bcpOnly = el('div', 'uo-drawer-bcp-only');
         hosts.foot.appendChild(hosts.bcpOnly);
         dialog.appendChild(hosts.foot);
+
+        /* Real home for every control that already has its own drawer UI
+           (the "which office" grid above, or a radioRow()/checkboxRow()/
+           selectRow() synthetic row) but whose real <input>/<select> still
+           needs to exist SOMEWHERE for those rows -- and js/office-ui.js's
+           own render functions -- to read from and write back to. Moved
+           here, 2026-09-24, so the four legacy sidebars hold nothing this
+           drawer still depends on; see moveLegacyStateControls() below for
+           the inventory and RESUME_PROJECT_NOTE.md for why this was needed
+           before the sidebars themselves could ever be deleted. Never shown:
+           the drawer already has real UI for everything moved in here. */
+        hosts.legacyState = el('div', 'uo-drawer-legacy-state');
+        hosts.legacyState.style.display = 'none';
+        dialog.appendChild(hosts.legacyState);
 
         /* Close on backdrop click: the click lands on the <dialog> itself only
            when it is outside the panel box. */
