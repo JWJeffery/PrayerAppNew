@@ -124,11 +124,13 @@ arithmetic. Two low-priority, currently-dead-code findings left unfixed and disc
 dashboard rather than silently ignored. None of the 5 touched files carry a cache-bust param, so none
 needed bumping. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`, entry dated 2026-09-25 continued (the
 engine audit sweep), SEED_VERSION v367 -> v368. This closes out the last item of Josh's original
-ordered plan. **Not yet redeployed** -- this batch is backend engine logic, mostly Byzantine/East
-Syriac lanes (one of which, Horologion, is currently gated from testers pending its own full audit
-per Josh's explicit "temporary unwire" instruction earlier this session), so a web-release rebuild
-was judged lower-urgency than the UI-visible fixes earlier in this session; redeploy on request or
-when the next batch of fixes accumulates.
+ordered plan. **REDEPLOYED 2026-09-25 continued further still** -- `npm run release:web` rebuilt
+and sent to Josh, folded together with the admin tradition-availability panel and the "Order" rail
+scroll fix (both built after this entry was originally written; see their own entries above).
+`npm run audit:admin-release-support` and `npm run audit:bible-browser-smoke` both passed against
+the rebuild; `data/tradition-availability.json` and the updated `admin/admin.html` confirmed present
+in `web-release/`. Horologion remains gated (unaffected by this batch -- still pending its own
+content audit per Josh's "temporary unwire" instruction).
 
 **BIBLE READER: HIGHLIGHT COLORS AND A GENUINELY UNREACHABLE HEADER, 2026-09-25 continued yet
 further still still.** Josh sent a screenshot, then "Highlighting colors....all brown?"
