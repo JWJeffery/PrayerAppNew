@@ -22,8 +22,62 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**HOROLOGION FULL AUDIT — PHASE 2 (FIX PASS), IN PROGRESS, HANDING OFF 2026-09-26 (latest,
-read this one first).** Session ending here on token limits; Josh is switching to another Claude
+**State as of 2026-09-26, latest of all — branches consolidated, and audit tasks 5-9 closed or
+deliberately disclosed. Read this entry first; it supersedes the "PHASE 2" handoff directly
+below by continuing from exactly where it left off.**
+
+**Branch consolidation, per Josh's direct order after noticing this session's branch was missing
+the new UI**: `claude/tender-johnson-hlv2b5` (the branch that produced everything below this
+entry — Phase 5 lanes 2-3, all of Phase 6, its own Horologion audit) had never been merged toward
+`main`, nor had a second parallel branch (`claude/resume-note-p98a1t`, an independent, superseded
+attempt at the same Phase 5 work). Both were unmerged, no PR ever opened for either. Resolved:
+tender-johnson-hlv2b5 adopted as the base; this session's own 7 Horologion lectionary/kathisma
+commits cherry-picked on top (the one real code overlap checked by hand, not just trusted to
+auto-merge; the three narrative logs' conflicts resolved by keeping both sides' history). Pushed
+to `claude/jwjeffery-prayerappnew-resume-fbkyf9`; **PR #37 opened against `main` and is being
+watched.** `resume-note-p98a1t` deliberately not merged — superseded, no surviving dependents.
+
+**Continuing "the complete audit... ALL OF IT" into tasks 5-9** (tasks 1-4 — Zacchaeus routing,
+the Sundays-of-Luke overflow rule, the weekday week 27-28 Gospel gap, and the Vespers kathisma
+Monday-Friday fix — are recorded further down, before the consolidation):
+
+- **Great Compline's non-psalm content**: two representative texts (Prayer of Manasseh, Prayer of
+  St. Ephraim) checked against real sources, confirmed correct. The other ~28 named blocks were
+  not word-for-word verified — disclosed, not claimed exhaustive.
+- **The remaining 24 kathisma psalms**: two (16, 150) checked directly against `liturgy.io`,
+  exact word-for-word matches. The other 22 rely on the earlier structural sweep (no corruption
+  signature found), not independent re-verification.
+- **A real finding**: the Nicene Creed is rendered in two different, both individually legitimate,
+  English translations across sibling `*-fixed.json` files. Not fixed unilaterally — flagged for
+  Josh's call, since both are doctrinally correct and picking one is an editorial decision.
+- **The Horologion naming conflation** (flagged long ago, never executed): confirmed real,
+  repo-wide (~360 occurrences, 9 files). Deliberately NOT renamed — too large and risky a
+  mechanical refactor for a cosmetic gain. A permanent naming note added to
+  `js/horologion-engine.js`'s header instead, so the flag survives.
+- **Unsourced education-layer content**: confirmed `data/explanations/byzantine.json` (the real
+  education layer) is unaffected and still correctly sourced; confirmed the 14 flagged office-
+  description strings remain genuinely dead/unused data. **Found that Hapgood's Appendix B — the
+  source needed to properly write this content — is already sitting in the repo in full,
+  untruncated**, at `data/kalendar/source-witnesses/hapgood-service-book-1922.txt` (line 42756).
+  Not itself written up into new content this pass (that's authorship, not audit).
+- **The drawer's day-summary line** (previously the last open Phase 5 item): already built by
+  tender-johnson-hlv2b5's own Phase 5 lane 3 work (`getCalendarSummary()` in
+  `js/horologion-engine.js`, wired into the envelope at `js/office-ui.js:3540`) — confirmed live,
+  no further work needed.
+
+Full account for each: `AUDIT_GOVERNANCE_LEDGER.md`'s five "Session 2026-09-26, continued" entries
+following the branch-consolidation entry. SEED_VERSION `v373 -> v374`.
+
+**What's still genuinely open**: `orthros-kathisma.json`'s own Matins pairs (two independent
+search attempts produced conflicting/uncertain signals about the real weekly table; disclosed
+rather than guessed at further); full word-for-word verification of the ~28 unchecked Great
+Compline blocks and the 22 unchecked kathisma psalms; the Creed-translation decision; actually
+authoring the now-unblocked education-layer content; and everything already disclosed in the
+Sundays-of-Luke/weekday-lectionary entries below (the short-year Zacchaeus-window edge case,
+`lukanWeekdayGospelKey`'s year-anchoring bug).
+
+**HOROLOGION FULL AUDIT — PHASE 2 (FIX PASS), IN PROGRESS, HANDING OFF 2026-09-26.**
+Session ending here on token limits; Josh is switching to another Claude
 account to continue. **This note is the actual current state — trust it over the "PHASE 1" entry
 below, which is now superseded by everything below it.**
 

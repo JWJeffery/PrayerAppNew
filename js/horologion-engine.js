@@ -3,6 +3,25 @@
 // Horologion Engine v2.0
 // Architecture layer: ENGINE (not UI, not calendar)
 //
+// NAMING NOTE, added 2026-09-26: "Horologion" is technically only one of the
+// four constituent books of the Byzantine Divine Office (the fixed Hours
+// book), alongside the Menaion (fixed-date saints/feasts), Triodion
+// (pre-Lenten through Holy Saturday), and Pentecostarion (Pascha through All
+// Saints). This module and its data files, UI element ids, and user-facing
+// copy ("Byzantine Horologion") all use "Horologion" loosely to mean the
+// whole Byzantine lane -- flagged in AUDIT_GOVERNANCE_LEDGER.md as a real
+// terminology conflation, not yet renamed. Assessed 2026-09-26: a repo-wide
+// rename (this file, data/horologion/*, ~360 call sites in js/office-ui.js,
+// index.html, and four other files) is a large, high-risk mechanical
+// refactor for a purely cosmetic/architectural gain -- no content or logic
+// bug follows from the name itself, and the actual content-family split
+// (Hours vs. Menaion vs. Triodion vs. Pentecostarion) is already handled
+// correctly by this module's own season/feast-overlay logic regardless of
+// what the file and function names are called. Deliberately NOT renamed
+// this pass; left for a dedicated, carefully-scoped rename pass rather than
+// risked as a byproduct of content-audit work. If a rename is ever done,
+// "ByzantineOfficeEngine" (or similar) is the more accurate name.
+//
 // This module owns:
 //   - Loading and caching office skeletons from data/horologion/*.json
 //   - Resolving a normalized office payload from a skeleton + date context
