@@ -21129,3 +21129,96 @@ to the already-disclosed Menaion/Triodion/Pentecostarion content-volume gap: rea
 future work, now demonstrably tractable (the access blocker is gone), but not something to rush
 through inside a bug-hunting pass. Recorded here specifically so a future session doesn't waste time
 rediscovering that Hapgood's Appendix B is already sitting in the repo, fully readable.
+
+---
+
+## Session 2026-09-26, continued -- Horologion audit fix pass, office-group 3 of 7: the four Hours
+## (First, Third, Sixth, Ninth) -- Findings H1, H2, H3 fixed.
+
+Continuing the fix pass `documentation/HOROLOGION_AUDIT_FINDINGS.md` calls for, in its own stated
+order (Vespers and Grand Compline already fixed per this note's "HOROLOGION FULL AUDIT -- PHASE 2"
+entry in `RESUME_PROJECT_NOTE.md`; the four Hours are next). **Note for whoever reads this next**:
+that prior entry's own Vespers (V1/V2/V4/V5/V6) and Grand Compline (GC1) fixes were never given
+their own ledger entries here -- only `RESUME_PROJECT_NOTE.md` describes them. Not backfilled in
+this session (out of scope for continuing the fix pass itself); worth doing whenever a session has
+spare capacity, since the resume note is a handoff document, not the permanent record it's supposed
+to defer to.
+
+**Methodology, per the CRITICAL METHODOLOGY WARNING already on record**: rebuilt the full-script
+test harness before trusting or fixing anything (`js/calendar-engine.js` through
+`js/horologion-engine.js`, the exact script list `index.html` loads, run via a `vm.createContext`
+sandbox with a `fetch` shim reading local files -- the prior session's own scratchpad copy was gone,
+so this is a fresh build from the documented script list, not a reconstruction from memory).
+
+**H2 and H3 verified independently against both `HAPGOOD1922` and `UNABHOR1997` before fixing, not
+taken on the finding's own wording.** This caught a real over-generalization in the finding itself:
+H3 says the missing verse is "shared by all four Hours," checked only against Third Hour. Reading
+each of the other three Hours' own text directly (`UNABHOR1997` pp.89, 116-117, 127, 177-178) shows
+**each Hour has its own distinct fixed verse, not a shared one**:
+- First Hour: Psalm 118 (LXX) vv.133-135, 171 -- "My steps do thou direct according to thy
+  saying..."
+- Third Hour: Psalm 67 (LXX) v.20 -- "Blessed is the Lord God, blessed is the Lord day by day..."
+  (as originally found)
+- Sixth Hour: Psalm 78 (LXX) vv.8-9 -- "Let thy compassions quickly go before us, O Lord..."
+- Ninth Hour: Song of the Three Youths / Daniel 3 (LXX) vv.34-35 -- "Deliver us not up utterly..."
+
+Fixed per-Hour with each Hour's own verse, not copied across Hours. This is exactly the kind of
+overgeneralized-finding risk the methodology warning was written to guard against, caught by going
+back to the primary source per office rather than trusting the finding's own summary text.
+
+**H2 confirmed identical across all four Hours** (unlike H3): both sources show, between the
+psalms and the troparia, only "Alleluia, alleluia, alleluia. Glory to Thee, O God. (Thrice.) Lord,
+have mercy. (Thrice.)" -- not the full O-Heavenly-King/Trisagion/Our-Father complex the app was
+rendering there (a verbatim duplicate of the opening's own Usual Beginning). The full complex's real
+second occurrence is after each Hour's own fixed verse (the H3 item), before the Kontakion position
+(not itself modeled -- a separate, undisclosed, pre-existing gap, not part of H1-H3, not touched
+this pass).
+
+**H1, also checked beyond the finding's own suggested fixes**: the finding offered two options --
+source a genuine year-round Prayer of the Third Hour, or gate the current (Lenten) text to Great
+Lent. Checked both sources' full Third Hour text directly rather than picking blind: **neither
+source gives Third Hour a distinct year-round prose prayer the way First/Sixth/Ninth Hour each
+genuinely have one** (confirmed by reading each Hour's own post-Kontakion material) -- on ordinary
+days Third Hour's own sources simply proceed from the Kontakion to the dismissal, with no prayer of
+that kind at all. Sourcing a substitute would have been inventing content no witness supports, so
+the fix taken is the finding's other option: `_resolveThirdHourSlots()` in
+`js/horologion-engine.js` now gates the Lenten troparion ("O Lord God, Who didst send down Thy Most
+Holy Spirit...") to Great Lent weekdays (Monday-Friday, reusing the existing `isGreatLentWeekday`
+pattern already used elsewhere in this file, e.g. `_resolveFeastOverrideContext()`), relabeled
+"Lenten Troparion of the Third Hour" rather than "Prayer of the Third Hour" to stop misdescribing
+it, and renders an honest disclosure rubric on ordinary days instead of the text unconditionally.
+
+**Built**: all four `data/horologion/{first,third,sixth,ninth}-hour-fixed.json` files --
+`trisagion-prayers` shrunk to the real short unit; a new `trisagion-prayers-repeated` slot holding
+the full complex's real second occurrence; a new per-Hour fixed-verse slot
+(`{hour}-fixed-verse`). All four `data/horologion/{...}-hour.json` skeletons -- a new
+`fixed-verse-and-repeated-trisagion` section inserted between `troparia` and `prayer-and-dismissal`,
+carrying the two new items; the `trisagion` section's own `notes` corrected to describe the short
+unit rather than imply the full complex. `js/horologion-engine.js` -- all four
+`_resolve{Hour}Slots()` functions' `FIXED_SLOT_KEYS` sets extended with the two new keys;
+`_resolveThirdHourSlots()` given the H1 Lent-gating branch described above.
+
+**Verified**: `node --check js/horologion-engine.js` clean; all 8 touched JSON files reparse clean.
+The rebuilt full-script harness confirms all four Hours resolve `status: "complete"`, 0 placeholder
+slots, on an ordinary Wednesday (2026-09-30); confirms the Lenten branch correctly fires and renders
+the relabeled troparion on a real Great Lent weekday found by scanning the engine's own season
+resolver across 2027 (2027-03-15, Clean Monday) rather than assumed from a calendar; a 5-year
+(2024-2028), 10-office, both-calendar-mode sweep (36,540 `resolveOffice()` calls) shows zero
+exceptions and zero placeholders -- no regression elsewhere from the `FIXED_SLOT_KEYS` changes.
+Live-confirmed in this sandbox's own headless Chromium (`playwright`, `/opt/pw-browsers`) against
+the real running dev server under `?shell=v2`: all four Hours render the new section with the
+correct item keys resolved, zero non-environmental console errors (the one error present,
+`ERR_CERT_AUTHORITY_INVALID` on a Google Fonts request, confirmed via a `requestfailed` listener to
+be the sandbox's own proxy blocking an external font fetch -- unrelated to this change and the same
+class of environmental noise prior sessions already documented for this container).
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated: the Hours section marked FIXED with the H3
+over-generalization correction recorded in place (not silently corrected), the summary table's Hours
+row updated, and the top status line updated to "3 of 7 fixed." `RESUME_PROJECT_NOTE.md` updated to
+match. No cache-bust bump needed -- `js/horologion-engine.js` carries no version param in
+`index.html` (loaded unversioned, confirmed by checking the actual script tag before assuming), and
+the touched `data/horologion/*.json` files are fetched by path with no version query anywhere in
+this engine, matching the existing pattern for this data directory.
+
+**Next in the fix pass, per the audit's own stated order**: Typika (Findings T2-T7; T1 already
+retracted as a false positive before this pass began).

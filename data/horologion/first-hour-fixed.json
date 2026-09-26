@@ -20,7 +20,8 @@
     "NOTE: usual-beginning and trisagion-prayers are identical to",
     "compline-fixed.json. They are duplicated here intentionally so that",
     "each office resolves independently from its own file. If a shared-common",
-    "fixed-texts file is introduced in a future pass, these can be deduplicated."
+    "fixed-texts file is introduced in a future pass, these can be deduplicated.",
+    "AUDIT FIX 2026-09-26 (Findings H2, H3): 'trisagion-prayers' was the full O-Heavenly-King/Trisagion/Our-Father complex, duplicating the opening's own Usual Beginning -- both sources (HAPGOOD1922 pp.44-45 Third Hour; UNABHOR1997 pp.89/117/127/178, First/Third/Sixth/Ninth Hour) show only a short Alleluia/Lord-have-mercy unit at that position. Shrunk to match. The full complex's real second occurrence (after this Hour's own fixed verse, before the Kontakion) is now its own slot, 'trisagion-prayers-repeated'. This Hour's own fixed verse (verified individually per Hour, not assumed shared) is now 'first-hour-fixed-verse'."
   ],
   "slots": {
     "usual-beginning": {
@@ -110,50 +111,19 @@
     },
     "trisagion-prayers": {
       "type": "sequence",
-      "label": "Trisagion Prayers",
+      "label": "Alleluia and Lord Have Mercy",
       "items": [
         {
           "type": "text",
           "key": "trisagion-prayers-1",
-          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "text": "Alleluia, alleluia, alleluia. Glory to Thee, O God.",
           "repeat": 3
         },
         {
           "type": "text",
           "key": "trisagion-prayers-2",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-3",
-          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-4",
           "text": "Lord, have mercy.",
           "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-5",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-6",
-          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-7",
-          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-8",
-          "text": "Lord, have mercy.",
-          "repeat": 12
         }
       ]
     },
@@ -161,6 +131,55 @@
       "type": "text",
       "label": "Prayer of the First Hour",
       "text": "O Christ, the True Light, Who enlightenest and sanctifiest every man that cometh into the world: let the light of Thy countenance be signed upon us, that in it we may see the unapproachable Light; and direct our steps in the keeping of Thy commandments, through the intercessions of Thy most-pure Mother and of all Thy Saints. Amen."
+    },
+    "first-hour-fixed-verse": {
+      "type": "text",
+      "label": "Fixed Verse of the First Hour",
+      "text": "My steps do thou direct according to thy saying, and let no iniquity have dominion over me. Deliver me from the false accusation of men, and I will keep thy commandments. Make thy face to shine upon thy servant, and teach me thy statutes.\n\nLet my mouth be filled with thy praise, O Lord, that I may hymn thy glory and thy majesty all the day long.",
+      "source": "Psalm 118 (LXX), verses 133-135 and 171"
+    },
+    "trisagion-prayers-repeated": {
+      "type": "sequence",
+      "label": "Trisagion and the Lord's Prayer (repeated)",
+      "items": [
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-1",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-3",
+          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-4",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-5",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-6",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-repeated-7",
+          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        }
+      ]
     }
   }
 }

@@ -51,10 +51,75 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — PR #37 open against `main`, being watched; nothing
-actionable on it yet. Read this entry first; it supersedes the "branches consolidated" entry
-directly below only on the PR's live status — that entry's account of the consolidation itself is
-still the accurate record.**
+**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 3 of 7 (the
+four Hours) fixed: Findings H1, H2, H3. Read this entry first.** Continuing the fix pass in the
+order `documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers and Grand Compline already
+fixed, see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down). Per the branching rule
+above: found PR #37 still open, reset this session's assigned branch to its head (`d6d7e50`)
+before starting, confirmed the other three Horologion/UI branches named in that PR's body are
+still exactly as it describes them (no new undisclosed divergence), then did this work on top.
+
+**Rebuilt the full-script test harness first**, per the CRITICAL METHODOLOGY WARNING below — the
+prior session's own copy was gone (scratchpad, not committed), so this is a fresh build from the
+documented script list (`js/calendar-engine.js` through `js/horologion-engine.js`, everything
+`index.html` loads first, run in a `vm.createContext` sandbox with a local-file `fetch` shim), not
+a reconstruction from memory.
+
+**H3's own finding text overgeneralized, caught before fixing rather than after**: it called the
+missing "Blessed is the Lord God..." verse "shared by all four Hours" on the strength of checking
+Third Hour alone. Reading each of the other three Hours directly against `UNABHOR1997`
+(pp.89, 116-117, 127, 177-178) before fixing anything showed **each Hour has its own distinct
+fixed verse**, not one shared verse: First Hour — Psalm 118 (LXX) vv.133-135,171 ("My steps do
+thou direct..."); Third Hour — Psalm 67 (LXX) v.20 ("Blessed is the Lord God...", as originally
+found); Sixth Hour — Psalm 78 (LXX) vv.8-9 ("Let thy compassions quickly go before us..."); Ninth
+Hour — Song of the Three Youths / Daniel 3 (LXX) vv.34-35 ("Deliver us not up utterly..."). Fixed
+per-Hour with each one's own verse. This is exactly the class of false-positive-by-
+overgeneralization the methodology warning exists to catch — caught this time by going back to
+the primary source per office rather than trusting the finding's own summary.
+
+**H2 (confirmed identical across all four Hours, unlike H3)**: `trisagion-prayers` had been the
+full O-Heavenly-King/Trisagion/Our-Father complex — a verbatim duplicate of the opening's own
+Usual Beginning. Both sources agree the real content there is only the short "Alleluia, alleluia,
+alleluia. Glory to Thee, O God. (Thrice.) Lord, have mercy. (Thrice.)" Shrunk to match; the full
+complex's real second occurrence (after each Hour's own fixed verse, before the Kontakion
+position — not itself modeled, a separate pre-existing gap not touched this pass) is now its own
+new slot, `trisagion-prayers-repeated`.
+
+**H1, checked beyond the finding's own two suggested fixes**: reading both sources' full Third
+Hour text directly (not assumed) showed neither gives Third Hour a distinct year-round prose
+prayer the way First/Sixth/Ninth Hour genuinely each have one — ordinarily this Hour just proceeds
+from the Kontakion straight to the dismissal. Sourcing a substitute would have invented content no
+witness supports, so `_resolveThirdHourSlots()` now gates the Lenten troparion ("O Lord God, Who
+didst send down Thy Most Holy Spirit...") to Great Lent weekdays only (reusing the existing
+`isGreatLentWeekday` pattern already used elsewhere in this engine), relabeled to stop calling it a
+"prayer," and discloses its year-round absence honestly on ordinary days instead of rendering it
+unconditionally.
+
+**Verified**: `node --check` clean; all 8 touched JSON files reparse clean; the rebuilt harness
+confirms all four Hours resolve `status: "complete"`, 0 placeholders, on an ordinary Wednesday; the
+Lenten branch correctly fires on a real Great Lent weekday found by scanning the engine's own
+season resolver across 2027 (2027-03-15, Clean Monday), not assumed from a calendar; a 5-year,
+10-office, both-calendar-mode sweep (36,540 calls) — zero exceptions, zero placeholders, no
+regression. Live-confirmed in this sandbox's own headless Chromium against the real running dev
+server under `?shell=v2`: correct section/keys resolved, zero non-environmental console errors
+(one `ERR_CERT_AUTHORITY_INVALID` on a Google Fonts request, confirmed via `requestfailed` to be
+the sandbox's own proxy blocking an external font fetch — the same class of environmental noise
+already documented for this container, not a regression). Full account:
+`AUDIT_GOVERNANCE_LEDGER.md`'s "Horologion audit fix pass, office-group 3 of 7" entry;
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Hours section updated to FIXED with the H3
+correction recorded in place. SEED_VERSION `v374 -> v375`.
+
+**One thing noticed, not acted on**: the prior session's own Vespers (V1/V2/V4/V5/V6) and Grand
+Compline (GC1) fixes were never given their own `AUDIT_GOVERNANCE_LEDGER.md` entries — only this
+note describes them. Not backfilled this session (out of scope for continuing the fix pass
+itself); worth doing when a session has spare capacity, since the ledger, not this note, is
+supposed to be the permanent record.
+
+**Next in the fix pass, per the audit's own order**: Typika (Findings T2-T7).
+
+**State as of 2026-09-26 — PR #37 open against `main`, being watched; nothing actionable on it as
+of its last check. Superseded above only on being "latest"; still the accurate record of the PR
+and the branch-consolidation account below it.**
 
 `https://github.com/JWJeffery/PrayerAppNew/pull/37` — head `acf520c` on
 `claude/jwjeffery-prayerappnew-resume-fbkyf9`, base `main`. Last checked 2026-09-26T03:25Z:

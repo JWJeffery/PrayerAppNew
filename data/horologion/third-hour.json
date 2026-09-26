@@ -54,7 +54,7 @@
     {
       "id": "trisagion",
       "label": "Trisagion Prayers",
-      "notes": "The Trisagion prayer sequence precedes the troparia.",
+      "notes": "A short Alleluia/Lord-have-mercy unit precedes the troparia. (Not the full Trisagion complex -- that is said again in full after the Theotokion; see the section below.)",
       "items": [
         {
           "type": "placeholder",
@@ -83,6 +83,27 @@
           "label": "Theotokion of the Third Hour",
           "status": "unresolved",
           "note": "Variable: tone-dependent Theotokion from the Octoechos Third Hour cycle. Resolved by HorologionEngine as explicit rubric stub at baseline; full text deferred pending Third Hour Octoechos data."
+        }
+      ]
+    },
+    {
+      "id": "fixed-verse-and-repeated-trisagion",
+      "label": "Fixed Verse and Repeated Trisagion",
+      "notes": "After the Theotokion, this Hour's own fixed verse is said, then the Trisagion/Our Father complex is said again in full (its real place, per both governing sources -- not a second copy of the opening).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "third-hour-fixed-verse",
+          "label": "Fixed Verse of the Third Hour",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers-repeated",
+          "label": "Trisagion and the Lord's Prayer (repeated)",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
         }
       ]
     },

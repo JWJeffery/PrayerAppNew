@@ -6241,6 +6241,8 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'psalm-89',
             'psalm-100',
             'trisagion-prayers',
+            'first-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-first-hour'
         ]);
 
@@ -6343,7 +6345,8 @@ async function _loadThirdHourFixedData() {
             'psalm-24',
             'psalm-50',
             'trisagion-prayers',
-            'prayer-of-the-third-hour'
+            'third-hour-fixed-verse',
+            'trisagion-prayers-repeated'
         ]);
 
         for (const section of sections) {
@@ -6377,6 +6380,44 @@ async function _loadThirdHourFixedData() {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
                         });
+                    }
+                    continue;
+                }
+
+                if (item.key === 'prayer-of-the-third-hour') {
+                    // Finding H1 (audit 2026-09-26): this text is UNABHOR1997/HAPGOOD1922's
+                    // Lenten-weekday troparion, not a year-round Prayer of the Third Hour --
+                    // neither source gives this Hour a separate year-round prose prayer the
+                    // way First/Sixth/Ninth Hour each have. Gate to Great Lent weekdays;
+                    // disclose the absence otherwise rather than rendering it unconditionally.
+                    const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+                    const isGreatLentWeekday =
+                        seasonResult &&
+                        seasonResult.season === 'great-lent' &&
+                        dayOfWeek >= 1 &&
+                        dayOfWeek <= 5;
+
+                    if (isGreatLentWeekday) {
+                        const slotData = _thirdHourFixedData &&
+                            _thirdHourFixedData.slots &&
+                            _thirdHourFixedData.slots['prayer-of-the-third-hour'];
+                        if (slotData) {
+                            section.items[i] = {
+                                type:       slotData.type || 'text',
+                                key:        item.key,
+                                label:      slotData.label,
+                                text:       slotData.text,
+                                resolvedAs: 'third-hour-lenten-troparion'
+                            };
+                        }
+                    } else {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      'Prayer of the Third Hour',
+                            text:       'The Third Hour has no separate year-round prayer at this position in either governing source; on ordinary days the office proceeds from the Kontakion to the dismissal. The Lenten-weekday troparion proper to this position renders here only on Great Lent weekdays.',
+                            resolvedAs: 'third-hour-no-year-round-prayer'
+                        };
                     }
                     continue;
                 }
@@ -6441,6 +6482,8 @@ async function _loadThirdHourFixedData() {
             'psalm-54',
             'psalm-90',
             'trisagion-prayers',
+            'sixth-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-sixth-hour'
         ]);
 
@@ -6539,6 +6582,8 @@ async function _loadThirdHourFixedData() {
             'psalm-84',
             'psalm-85',
             'trisagion-prayers',
+            'ninth-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-ninth-hour'
         ]);
 

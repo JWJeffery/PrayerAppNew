@@ -1,7 +1,9 @@
 # Horologion Full Audit — Findings Log
 
-**Status: all 8 offices/office-groups audited. No fixes applied yet.** Per Josh's instruction: "Keep
-auditing. Record every error, and then we'll fix everything at once." This file is the running record.
+**Status: all 8 offices/office-groups audited. Fix pass in progress — 3 of 7 office-groups fixed
+(Vespers, Grand Compline, the four Hours); Typika next.** Per Josh's instruction: "Keep
+auditing. Record every error, and then we'll fix everything at once," followed by "Please proceed"
+(twice) to start the fix pass. This file is the running record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -14,7 +16,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 |---|---|---|
 | Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
 | Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
-| The four Hours | 3 (1 bug, 2 shared gaps) | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; a fixed verse missing from all four |
+| The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer |
 | Orthros/Matins | 2 (2 gaps) | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
@@ -164,7 +166,48 @@ Psalms 69/142 → Small Doxology → Canon → closing block (Kyrie 40/Prayer of
 → Prayer of Ephraim, omitted Fridays → Trisagion → Supplicatory Prayer to the Theotokos → Prayer of
 Antiochus → ...→ dismissal) all match both sources' own ordering everywhere checked.
 
-## THE FOUR HOURS — audited, 3 findings (2 shared across all four, 1 Third-Hour-specific)
+## THE FOUR HOURS — audited, 3 findings, FIXED 2026-09-26 (H1, H2, H3)
+
+**Correction made during the fix pass, not assumed from the finding text above:** H3's own
+wording called the missing verse "shared by all four Hours" on the strength of checking Third
+Hour alone. Re-verified individually against `UNABHOR1997` for each of the other three Hours
+before fixing — **each Hour has its own distinct fixed verse at this position, not a shared
+one**: First Hour (Psalm 118 LXX vv.133-135, 171 — "My steps do thou direct..."), Third Hour
+("Blessed is the Lord God...", as originally found), Sixth Hour (Psalm 78 LXX vv.8-9 — "Let thy
+compassions quickly go before us..."), Ninth Hour (Song of the Three Youths / Daniel 3 LXX
+vv.34-35 — "Deliver us not up utterly..."). Fixed per-Hour, not copied across Hours. This is
+exactly the over-generalization the methodology warning below cautions about, caught by
+independently re-checking the primary source per office rather than trusting the finding's own
+summary.
+
+**H1 fix, also verified beyond the finding's own text**: neither `HAPGOOD1922` nor `UNABHOR1997`
+gives the Third Hour a distinct year-round prose "Prayer of the Hour" the way First/Sixth/Ninth
+Hour each genuinely have one (confirmed by reading each Hour's post-Kontakion material directly,
+not inferred) — on ordinary days Third Hour's own governing sources simply proceed from the
+Kontakion to the dismissal. `_resolveThirdHourSlots()` in `js/horologion-engine.js` now gates the
+Lenten troparion to Great Lent weekdays (Mon-Fri, matching the existing `isGreatLentWeekday`
+pattern already used elsewhere in this file) and renders an honest disclosure rubric otherwise,
+rather than the finding's other suggested option (fabricating a substitute year-round prayer,
+which no real source supports).
+
+**H2 fix**: `trisagion-prayers` in all four `*-fixed.json` files shrunk to the real short
+Alleluia/Lord-have-mercy unit; a new `trisagion-prayers-repeated` slot (the full complex, its real
+second occurrence) added after each Hour's own fixed verse, before the Kontakion position.
+
+**Verified**: `node --check js/horologion-engine.js` clean; all 8 touched JSON files reparse
+clean; a rebuilt full-script harness (per the methodology warning below — every script
+`index.html` loads before `horologion-engine.js`, in order) confirms all four Hours render
+`status: "complete"`, 0 placeholders, on an ordinary Wednesday (2026-09-30), and confirms the
+Lenten branch fires correctly and renders the correct (relabeled) troparion on a real Great Lent
+weekday (2027-03-15, Clean Monday). A 5-year (2024-2028), 10-office, both-calendar-mode sweep
+(36,540 calls) shows zero exceptions and zero placeholders — no regression elsewhere. Live-
+confirmed in real headless Chromium against the running dev server under `?shell=v2`: all four
+Hours' new sections render with the correct item keys, zero non-environmental console errors (one
+`ERR_CERT_AUTHORITY_INVALID` on a Google Fonts request, confirmed via `requestfailed` to be the
+sandbox's own proxy blocking an external font fetch, unrelated to this change and matching the
+class of environmental noise prior sessions already documented).
+
+### Original findings, for reference (all three now fixed as described above)
 
 All four Hours (`data/horologion/first-hour.json`, `third-hour.json`, `sixth-hour.json`,
 `ninth-hour.json`) share one skeleton pattern: `[opening]` (usual-beginning) → `[psalmody]` (3 fixed
