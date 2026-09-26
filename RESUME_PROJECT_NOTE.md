@@ -10,6 +10,23 @@ check `SEED_VERSION` in `audit-ledger.html`. Josh runs at least two Claude accou
 concurrently, so never trust this note's HEAD, SEED_VERSION or "what's open" at face value. Cache-bust
 params likewise: read them out of `index.html` rather than trusting a number written here.
 
+**BRANCHING RULE, ADDED 2026-09-26 AFTER JOSH CAUGHT THIS GOING WRONG:** because multiple
+concurrent accounts each get their own assigned branch, work has repeatedly piled up on branches
+that never got merged or even had a PR opened — three branches (`tender-johnson-hlv2b5`,
+`resume-note-p98a1t`, and this session's own) diverged for an extended period with zero PRs among
+them, discovered only when Josh happened to open one and found it missing the others' work. Do not
+let that repeat. Every session, in addition to the clone/log/SEED_VERSION check above:
+1. List remote branches (`git branch -r` or `list_branches`/`list_pull_requests` via the GitHub
+   tools) and check whether any branch other than your own assigned one is ahead of `main` with no
+   open PR. If you find one, flag it to Josh immediately — don't just proceed on your own branch
+   as if it's the only work in flight.
+2. Open a PR against `main` for your own branch as soon as you have a commit worth landing —
+   don't wait until "the audit is done" or a session is ending. An open PR is cheap and makes
+   divergence visible; an unmerged branch sitting quietly for days is exactly how this happened.
+3. If you do end up consolidating divergent branches (as this session did into PR #37), record it
+   here and in `AUDIT_GOVERNANCE_LEDGER.md` the same way this entry does, so the next session
+   isn't left reconstructing it from git archaeology.
+
 **THE DESIGN MOCKUP IS IN THE REPO. `documentation/design/screens/*.png` (6 files) +
 `documentation/design/DESIGN_HANDOFF_SOURCE.md`. Josh has supplied this zip multiple times over
 two weeks because it kept getting lost between sessions. If asked to compare the UI against "the
