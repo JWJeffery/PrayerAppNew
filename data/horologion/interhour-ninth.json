@@ -2,31 +2,31 @@
   "officeKey": "interhour-ninth",
   "label": "Interhour of the Ninth Hour",
   "tradition": "BYZC",
-  "description": "The Interhour of the Ninth Hour (Mezhduchasiye) is a brief interstitial office appended to the Ninth Hour in monastic practice. It consists of three psalms, the Trisagion, a troparion of the day, and a Theotokion proper to this hour.",
+  "description": "The Interhour of the Ninth Hour (Mezhduchasiye) is a brief interstitial office appended to its Hour in monastic practice. CORRECTED 2026-09-26, Horologion audit fix pass (Findings IH1-IH3): the psalms were wrong, the troparia were wrongly modeled as Menaion-dependent (this office's troparia are a fixed, hour-specific triad per UNABHOR1997), and roughly half of the office's real closing content was missing outright. Rebuilt against UNABHOR1997 (Rassaphor-monk Laurence, The Unabbreviated Horologion, Holy Trinity Monastery, 1997) in full.",
   "sections": [
     {
       "id": "psalmody",
       "label": "Fixed Psalmody",
-      "notes": "The Interhour of the Ninth Hour appoints Psalms 86, 87, and 88 (LXX).",
+      "notes": "The Interhour of the Ninth Hour appoints Psalms 112, 137, 139 (LXX). CORRECTED 2026-09-26, Horologion audit fix pass (Finding IH1): the psalms previously listed here did not match UNABHOR1997.",
       "items": [
         {
           "type": "placeholder",
-          "key": "psalm-86",
-          "label": "Psalm 86 (LXX) — His foundations are in the holy mountains",
+          "key": "psalm-112",
+          "label": "Psalm 112 (LXX) — Praise the Lord, O ye servants",
           "status": "unresolved",
           "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
         },
         {
           "type": "placeholder",
-          "key": "psalm-87",
-          "label": "Psalm 87 (LXX) — O Lord God of my salvation",
+          "key": "psalm-137",
+          "label": "Psalm 137 (LXX) — I will confess Thee, O Lord, with my whole heart",
           "status": "unresolved",
           "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
         },
         {
           "type": "placeholder",
-          "key": "psalm-88",
-          "label": "Psalm 88 (LXX) — I will sing of Thy mercies, O Lord",
+          "key": "psalm-139",
+          "label": "Psalm 139 (LXX) — Rescue me, O Lord, from the evil man",
           "status": "unresolved",
           "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
         }
@@ -48,14 +48,14 @@
     {
       "id": "troparia",
       "label": "Troparia",
-      "notes": "The troparion of the day followed by the Theotokion of the Interhour of the Ninth Hour.",
+      "notes": "CORRECTED 2026-09-26, Horologion audit fix pass (Finding IH2): a FIXED troparia triad (UNABHOR1997), not Menaion-dependent.",
       "items": [
         {
           "type": "placeholder",
           "key": "troparion-of-the-day",
-          "label": "Troparion of the Day",
+          "label": "Troparia",
           "status": "unresolved",
-          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine."
+          "note": "Fixed triad. Resolved from interhour-ninth-fixed.json by HorologionEngine."
         },
         {
           "type": "placeholder",
@@ -63,6 +63,41 @@
           "label": "Theotokion of the Interhour of the Ninth Hour",
           "status": "unresolved",
           "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "label": "Closing Prayers",
+      "notes": "ADDED 2026-09-26, Horologion audit fix pass (Finding IH3): this entire section was previously missing.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "kyrie40-more-honourable",
+          "label": "Lord have mercy × 40, More Honourable, and Blessing",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "prayer-of-ephraim",
+          "label": "Prayer of St. Ephraim the Syrian",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "prayer-of-basil",
+          "label": "Prayer of Basil the Great",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "final-kyrie-dismissal",
+          "label": "Final Kyrie and Dismissal",
+          "status": "unresolved",
+          "note": "Ninth Hour's Interhour only. Resolved from interhour-ninth-fixed.json by HorologionEngine."
         }
       ]
     },

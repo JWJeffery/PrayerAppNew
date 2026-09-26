@@ -109,8 +109,22 @@
     {
       "id": "lamp-lighting-psalms",
       "label": "Kathisma / Lamp-Lighting Psalms",
-      "notes": "On weekdays a Kathisma from the Psalter is read. On Sundays and feasts, Psalm 140 (LXX) and companions are chanted as 'Lord, I Have Cried' with stichera.",
+      "notes": "FIXED 2026-09-26, Horologion audit fix pass (Findings V1, V2): the appointed Kathisma is read first, followed by a Little Litany, and only then 'Lord, I Have Cried' with its stichera -- both HAPGOOD1922 (p.5-7: the First Selection of the Psalms, then the Little Litany, then 'Lord, I have cried') and UNABHOR1997 (p.189-190: 'the appointed kathisma is read... followed by the Small Ectenia... And, regardless of the rank of service, we chant Lord, I have cried') agree on this order. The kathisma-reading/stichera items and their own notes are otherwise unchanged from before this fix; only their order (and the added Little Litany between them) changed.",
       "items": [
+        {
+          "type": "placeholder",
+          "key": "kathisma-reading",
+          "label": "Kathisma Reading",
+          "status": "unresolved",
+          "note": "Variable Psalter kathisma appointed for this day of the week. Requires Psalter cycle resolution. Not yet implemented."
+        },
+        {
+          "type": "litany",
+          "key": "little-litany-after-kathisma",
+          "label": "The Little Litany",
+          "text": "Deacon: Again and again, in peace let us pray to the Lord.\nChoir: Lord, have mercy.\n\nDeacon: Help us, save us, have mercy on us, and keep us, O God, by Thy grace.\nChoir: Lord, have mercy.\n\nDeacon: Commemorating our all-holy, immaculate, most-blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.\nChoir: To Thee, O Lord.\n\nPriest: For Thine is the dominion, and Thine is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.\nChoir: Amen.",
+          "source": "UNABHOR1997 p.190 ('the Small Ectenia')"
+        },
         {
           "type": "rubric",
           "key": "lord-i-have-cried-rubric",
@@ -122,13 +136,6 @@
           "label": "Stichera at 'Lord, I Have Cried'",
           "status": "unresolved",
           "note": "Variable stichera appointed for this day or feast. Requires Octoechos tone, Menaion, or Triodion/Pentecostarion resolution. Not yet implemented."
-        },
-        {
-          "type": "placeholder",
-          "key": "kathisma-reading",
-          "label": "Kathisma Reading",
-          "status": "unresolved",
-          "note": "Variable Psalter kathisma appointed for this day of the week. Requires Psalter cycle resolution. Not yet implemented."
         }
       ]
     },
@@ -152,8 +159,8 @@
     },
     {
       "id": "prokeimenon",
-      "label": "Prokeimenon",
-      "notes": "A variable psalm verse chanted before the evening reading. Appointed by the day of the week or the feast.",
+      "label": "Prokeimenon and Evening Litanies",
+      "notes": "A variable psalm verse chanted before the evening reading, appointed by the day of the week or the feast, followed on ordinary days by 'Vouchsafe, O Lord', the Litany of Completion, and the Prayer of the Bowing of Heads (Findings V4-V6, added 2026-09-26). On a vigil or polyeleos day the Augmented Litany precedes 'Vouchsafe, O Lord' instead (not modeled here; this office's baseline is the ordinary weekday form).",
       "items": [
         {
           "type": "placeholder",
@@ -168,6 +175,30 @@
           "label": "Vesperal Reading (Paremiae)",
           "status": "unresolved",
           "note": "Paremiae (Old Testament readings) are appointed only on feasts of ranks 1–2 and during Great Lent. On all ordinary days this slot is resolved as omitted by HorologionEngine v1.2. Festal and Lenten reading resolution is deferred to v1.3+."
+        },
+        {
+          "type": "text",
+          "key": "vouchsafe-o-lord",
+          "label": "Vouchsafe, O Lord",
+          "text": "Reader: Vouchsafe, O Lord, to keep us this evening without sin. Blessed art Thou, O Lord, the God of our fathers, and praised and glorified is Thy name unto the ages. Amen.\n\nLet Thy mercy, O Lord, be upon us, according as we have hoped in Thee. Blessed art Thou, O Lord, teach me Thy statutes. Blessed art Thou, O Master, give me understanding of Thy statutes. Blessed art Thou, O Holy One, enlighten me by Thy statutes.\n\nO Lord, Thy mercy endureth for ever; disdain not the work of Thy hands. To Thee is due praise, to Thee is due a song, to Thee glory is due, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen.",
+          "note": "ADDED 2026-09-26, Horologion audit fix pass (Finding V4). On a vigil or polyeleos day the Augmented Litany precedes this (see UNABHOR1997 p.194); on an ordinary weekday ('a simple service') this follows the Prokeimenon/readings directly -- the Augmented Litany is correctly not modeled here (Finding V3, retracted as a false positive: it does not belong on ordinary days).",
+          "source": "UNABHOR1997 p.194"
+        },
+        {
+          "type": "litany",
+          "key": "litany-of-completion",
+          "label": "Litany of Completion",
+          "text": "Deacon: Let us complete our evening prayer unto the Lord.\nChoir: Lord, have mercy.\n\nDeacon: Help us, save us, have mercy on us, and keep us, O God, by Thy grace.\nChoir: Lord, have mercy.\n\nDeacon: That the whole evening may be perfect, holy, peaceful, and sinless, let us ask of the Lord.\nChoir: Grant this, O Lord.\n\nDeacon: An angel of peace, a faithful guide, a guardian of our souls and bodies, let us ask of the Lord.\nChoir: Grant this, O Lord.\n\nDeacon: Pardon and remission of our sins and offences, let us ask of the Lord.\nChoir: Grant this, O Lord.\n\nDeacon: Things good and profitable for our souls, and peace for the world, let us ask of the Lord.\nChoir: Grant this, O Lord.\n\nDeacon: That we may complete the remaining time of our life in peace and repentance, let us ask of the Lord.\nChoir: Grant this, O Lord.\n\nDeacon: A Christian ending to our life, painless, blameless, peaceful, and a good defence before the dread judgment seat of Christ, let us ask.\nChoir: Grant this, O Lord.\n\nDeacon: Calling to remembrance our most holy, most pure, most blessed, glorious Lady Theotokos and Ever-Virgin Mary with all the saints, let us commit ourselves and one another and all our life unto Christ our God.\nChoir: To Thee, O Lord.\n\nPriest: For a good God art Thou, and the Lover of mankind, and unto Thee do we send up glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages.\nChoir: Amen.",
+          "note": "ADDED 2026-09-26, Horologion audit fix pass (Finding V5).",
+          "source": "UNABHOR1997 p.195"
+        },
+        {
+          "type": "text",
+          "key": "bowing-of-heads-prayer",
+          "label": "Prayer of the Bowing of Heads",
+          "text": "Priest: Peace be unto all.\nChoir: And to thy spirit.\n\nDeacon: Let us bow our heads unto the Lord.\nChoir: To Thee, O Lord.\n\nPriest (secretly): O Lord our God, who didst bow the heavens and come down for the salvation of mankind: look upon Thy servants and Thine inheritance; for unto Thee, the awful Judge who yet lovest mankind, have Thy servants bowed their heads and submissively inclined their necks, awaiting not succor from men, but entreating Thy mercy and looking confidently for Thy salvation. Guard them at all times, both during this present evening and in the approaching night, from every foe, from all adverse powers of the devil, and from vain thoughts and evil imaginations.\n\nPriest (aloud): Blessed and most glorified be the dominion of Thy kingdom: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages.\nChoir: Amen.",
+          "note": "ADDED 2026-09-26, Horologion audit fix pass (Finding V6). The dialogue and the aloud exclamation are UNABHOR1997's own wording (p.196); the priest's secret prayer itself is not printed there (a 'people's book' convention of omitting priest-only silent prayers) and is taken from HAPGOOD1922 (p.10-11), the only one of the two governing sources that gives its text.",
+          "source": "UNABHOR1997 p.196 (dialogue/exclamation); HAPGOOD1922 p.10-11 (the priest's secret prayer)"
         }
       ]
     },

@@ -213,7 +213,14 @@ const MenaionResolver = (() => {
                 tone: best.troparion_tone || null,
                 title: null,
                 text: null,
-                rank: best.rank || null,
+                // FIXED 2026-09-25, found by the engine-audit sweep: `||`
+                // coerces a legitimate rank of 0 to null, inconsistent with
+                // the resolved branch below (`rank: best.rank`, no `||`),
+                // which correctly returns 0. Currently inert -- the live
+                // corpus only defines ranks 1-4 -- but `??` matches the
+                // resolved branch's behavior exactly should a rank-0 entry
+                // ever be added.
+                rank: best.rank ?? null,
                 note: `A Menaion commemoration (${best.name || mmdd}) is recorded for this date but the troparion text has not yet been imported into this corpus.`
             };
         }

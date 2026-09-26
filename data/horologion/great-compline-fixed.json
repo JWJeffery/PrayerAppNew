@@ -9,95 +9,209 @@
     "stored here as gc-saturday-kontakion and routed by the engine.",
     "Menaion feast override for gc-weekday-troparia routes to gc-weekday-troparia-menaion.",
     "their text is gated or rubric-only in the resolver.",
-    "Source: orthodoxprayer.org Great Compline witness."
+    "PSALM SOURCE, corrected 2026-09-26: the prior citation (\"orthodoxprayer.org Great",
+    "Compline witness\") named a real site but could not be verified as a stable, citable,",
+    "or public-domain source, and the modern-English psalm wording it supplied could not be",
+    "confirmed against any published translation. The ten psalms in this office (69, 4, 6,",
+    "12, 24, 30, 90, 50, 101, 142 LXX) have been replaced with Isabel F. Hapgood, Service",
+    "Book of the Holy Orthodox-Catholic Apostolic Church (Houghton, Mifflin and Company,",
+    "1906), public domain -- the Coverdale/Book of Common Prayer Psalter, which this project",
+    "already uses and trusts elsewhere (see edu:layer:byzantine-populated on the dashboard).",
+    "Transcribed directly from the 1906 text (archive.org), LXX/Vulgate numbering as printed",
+    "there (Psalm lxix, iv, vi, xii, xxiv, xxx, xc, l, ci, cxlii), only orthography lightly",
+    "modernized (thee/thou left as printed). All non-psalm material (troparia, litanies,",
+    "prayers, rubrics) is unchanged and untouched by this correction.",
+    "",
+    "AUDIT FIX PASS, full re-audit 2026-09-26 (Findings GC1-GC7): gc-theotokion-mon-wed-fri",
+    "and gc-theotokion-tue-thu (Finding GC7) REMOVED -- both were sourced from a different",
+    "office entirely (the Mon-Wed-Fri text is Orthros's own Exaposteilaria Theotokion; the",
+    "Tue-Thu Cross Theotokion is likewise unattested here), and no rubric in UNABHOR1997's own",
+    "Great Compline calls for a closing Theotokion at that position at all. Finding GC2:",
+    "Friday's own weekday-troparia substitution (Resurrection troparion/kontakion by tone,",
+    "same 8-tone table as Small Compline's Finding SC4) is now handled directly in",
+    "_resolveGreatComplineSlots() rather than via a fixed-data slot here, since it's",
+    "tone-dependent, not a fixed text. Findings GC3-GC5 (the missing ten-prayer 'Prayers on",
+    "Approaching Sleep' block and the closing dismissal correction) are tracked separately and",
+    "not yet built as of this comment."
   ],
   "slots": {
     "gc-usual-beginning": {
       "type": "sequence",
       "label": "The Usual Beginning",
       "items": [
-        { "type": "text", "key": "gc-ub-1", "text": "Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen." },
-        { "type": "text", "key": "gc-ub-2", "text": "Glory to You, our God, glory to You." },
-        { "type": "text", "key": "gc-ub-3", "text": "O Heavenly King, Comforter, Spirit of Truth, Who are everywhere present and fills all things, Treasury of good things and Giver of life: Come and dwell in us, and cleanse us of all impurity, and save our souls, O Good One." },
-        { "type": "text", "key": "gc-ub-4", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
-        { "type": "text", "key": "gc-ub-5", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-ub-6", "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake." },
-        { "type": "text", "key": "gc-ub-7", "text": "Lord have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-ub-8", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-ub-9", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
-        { "type": "text", "key": "gc-ub-10", "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-ub-11", "text": "Lord have mercy.", "repeat": 12 },
-        { "type": "text", "key": "gc-ub-12", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-ub-13", "text": "O come, let us worship God our King.\nO come, let us worship and fall down before Christ our King and God.\nO come, let us worship and fall down before Christ Himself, our King and our God." }
+        {
+          "type": "text",
+          "key": "gc-ub-1",
+          "text": "Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-2",
+          "text": "Glory to You, our God, glory to You."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-3",
+          "text": "O Heavenly King, Comforter, Spirit of Truth, Who are everywhere present and fills all things, Treasury of good things and Giver of life: Come and dwell in us, and cleanse us of all impurity, and save our souls, O Good One."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-4",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-5",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-6",
+          "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-7",
+          "text": "Lord have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-8",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-9",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-10",
+          "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-11",
+          "text": "Lord have mercy.",
+          "repeat": 12
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-12",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-ub-13",
+          "text": "O come, let us worship God our King.\nO come, let us worship and fall down before Christ our King and God.\nO come, let us worship and fall down before Christ Himself, our King and our God."
+        }
       ]
     },
     "gc-psalm-69-week1": {
       "type": "psalm",
       "lxxNumber": 69,
       "hebrewNumber": 70,
-      "label": "Psalm 69 (LXX) — Make haste, O God (first week only)",
-      "text": "Make haste, O God, to deliver me! Make haste to help me, O Lord!\n\nLet them be ashamed and confounded who seek my life; let them be turned back and confused who desire my hurt. Let them be turned back because of their shame, who say, \"Aha, aha!\"\n\nLet all those who seek You rejoice and be glad in You; and let those who love Your salvation say continually, \"Let God be magnified!\"\n\nBut I am poor and needy; make haste to me, O God! You are my help and my deliverer; O Lord, do not delay.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 69 (LXX) — Haste thee, O God, to deliver me (first week only)",
+      "text": "Haste thee, O God, to deliver me: make haste to help me, O Lord.\n\nLet them be ashamed and confounded that seek after my soul: let them be turned backward and put to confusion that wish me evil. Let them for their reward be soon brought to shame: that cry over me, There, there.\n\nBut let all those that seek thee be joyful and glad in thee: and let all such as delight in thy salvation say alway, The Lord be praised.\n\nAs for me, I am poor and in misery: haste thee unto me, O God. Thou art my helper and my redeemer: O Lord, make no long tarrying.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-4": {
       "type": "psalm",
       "lxxNumber": 4,
       "hebrewNumber": 4,
-      "label": "Psalm 4 (LXX)",
-      "text": "Hear me when I call, O God of my righteousness! You have relieved me in my distress; have mercy on me, and hear my prayer.\n\nHow long, O you sons of men, will you turn my glory to shame? How long will you love worthlessness and seek falsehood? But know that the Lord has set apart for Himself him who is godly; the Lord will hear when I call to Him.\n\nBe angry, and do not sin. Meditate within your heart on your bed, and be still. Offer the sacrifices of righteousness, and put your trust in the Lord.\n\nThere are many who say, \"Who will show us any good?\" Lord, lift up the light of Your countenance upon us. You have put gladness in my heart, more than in the season that their grain and wine increased.\n\nI will both lie down in peace, and sleep; for You alone, O Lord, make me dwell in safety.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 4 (LXX) — Hear me when I call, O God of my righteousness",
+      "text": "Hear me when I call, O God of my righteousness: thou hast set me at liberty when I was in trouble; have mercy upon me, and hearken unto my prayer.\n\nO ye sons of men, how long will ye blaspheme mine honour: and have such pleasure in vanity, and seek after leasing?\n\nKnow this also, that the Lord hath chosen to himself the man that is godly: when I call upon the Lord, he will hear me.\n\nStand in awe, and sin not: commune with your own heart, and in your chamber, and be still. Offer the sacrifice of righteousness: and put your trust in the Lord.\n\nThere be many that say: Who will shew us any good? Lord, lift thou up: the light of thy countenance upon us. Thou hast put gladness in my heart: since the time that their corn and wine and oil increased.\n\nI will lay me down in peace, and take my rest: for it is thou, Lord, only, that makest me dwell in safety.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-6": {
       "type": "psalm",
       "lxxNumber": 6,
       "hebrewNumber": 6,
-      "label": "Psalm 6 (LXX)",
-      "text": "O Lord, do not rebuke me in Your anger, nor chasten me in Your hot displeasure. Have mercy on me, O Lord, for I am weak; O Lord, heal me, for my bones are troubled. My soul also is greatly troubled; but You, O Lord, how long?\n\nReturn, O Lord, deliver me! Oh, save me for Your mercies' sake! For in death there is no remembrance of You; in the grave who will give You thanks?\n\nI am weary with my groaning; all night I make my bed swim; I drench my couch with my tears. My eye wastes away because of grief; it grows old because of all my enemies.\n\nDepart from me, all you workers of iniquity; for the Lord has heard the voice of my weeping. The Lord has heard my supplication; the Lord will receive my prayer.\n\nLet all my enemies be ashamed and greatly troubled; let them turn back and be ashamed suddenly.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 6 (LXX) — O Lord, rebuke me not in thine indignation",
+      "text": "O Lord, rebuke me not in thine indignation: neither chasten me in thy displeasure.\n\nHave mercy upon me, O Lord, for I am weak: Lord, heal me, for my bones are vexed. My soul also is sore troubled: but, Lord, how long wilt thou punish me?\n\nTurn thee, O Lord, and deliver my soul: O save me for thy mercy's sake. For in death no man remembereth thee: and who will give thee thanks in the pit?\n\nI am weary of my groaning; every night wash I my bed: and water my couch with my tears. My beauty is gone for very trouble: and worn away because of all mine enemies.\n\nAway from me, all ye that work vanity: for the Lord hath heard the voice of my weeping. The Lord hath heard my petition: the Lord will receive my prayer.\n\nAll mine enemies shall be confounded, and sore vexed: they shall be turned back, and put to shame suddenly.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-12": {
       "type": "psalm",
       "lxxNumber": 12,
       "hebrewNumber": 13,
-      "label": "Psalm 12 (LXX)",
-      "text": "How long, O Lord? Will You forget me forever? How long will You hide Your face from me? How long shall I take counsel in my soul, having sorrow in my heart daily? How long will my enemy be exalted over me?\n\nConsider and hear me, O Lord my God; enlighten my eyes, lest I sleep the sleep of death; lest my enemy say, \"I have prevailed against him\"; lest those who trouble me rejoice when I am moved.\n\nBut I have trusted in Your mercy; my heart shall rejoice in Your salvation. I will sing to the Lord, because He has dealt bountifully with me.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 12 (LXX) — How long wilt thou forget me, O Lord",
+      "text": "How long wilt thou forget me, O Lord, for ever: how long wilt thou hide thy face from me?\n\nHow long shall I seek counsel in my soul, and be so vexed in my heart: how long shall mine enemies triumph over me?\n\nConsider, and hear me, O Lord my God: lighten mine eyes, that I sleep not in death. Lest mine enemy say, I have prevailed against him: for if I be cast down, they that trouble me will rejoice at it.\n\nBut my trust is in thy mercy: and my heart is joyful in thy salvation. I will sing of the Lord, because he hath dealt so lovingly with me: yea, I will praise the Name of the Lord most Highest.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-inter-doxology-1": {
       "type": "sequence",
       "label": "Doxology between first and second psalm cycles",
       "items": [
-        { "type": "text", "key": "gc-id1-1", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-id1-2", "text": "Alleluia, alleluia, alleluia. Glory to You, O God.", "repeat": 3 },
-        { "type": "text", "key": "gc-id1-3", "text": "Lord, have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-id1-4", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-id1-1",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-id1-2",
+          "text": "Alleluia, alleluia, alleluia. Glory to You, O God.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-id1-3",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-id1-4",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-psalm-24": {
       "type": "psalm",
       "lxxNumber": 24,
       "hebrewNumber": 25,
-      "label": "Psalm 24 (LXX)",
-      "text": "To You, O Lord, I lift up my soul. O my God, I trust in You; let me not be ashamed; let not my enemies triumph over me. Indeed, let no one who waits on You be ashamed; let those be ashamed who deal treacherously without cause.\n\nShow me Your ways, O Lord; teach me Your paths. Lead me in Your truth and teach me, for You are the God of my salvation; on You I wait all the day. Remember, O Lord, Your tender mercies and Your lovingkindnesses, for they are from of old. Do not remember the sins of my youth, nor my transgressions; according to Your mercy remember me, for Your goodness' sake, O Lord.\n\nGood and upright is the Lord; therefore He teaches sinners in the way. The humble He guides in justice, and the humble He teaches His way. All the paths of the Lord are mercy and truth, to such as keep His covenant and His testimonies. For Your name's sake, O Lord, pardon my iniquity, for it is great.\n\nWho is the man that fears the Lord? Him shall He teach in the way He chooses. He himself shall dwell in prosperity, and his descendants shall inherit the earth. The secret of the Lord is with those who fear Him, and He will show them His covenant.\n\nMy eyes are ever toward the Lord, for He shall pluck my feet out of the net. Turn Yourself to me, and have mercy on me, for I am desolate and afflicted. The troubles of my heart have enlarged; bring me out of my distresses! Look on my affliction and my pain, and forgive all my sins.\n\nConsider my enemies, for they are many; and they hate me with cruel hatred. Keep my soul, and deliver me; let me not be ashamed, for I put my trust in You. Let integrity and uprightness preserve me, for I wait for You.\n\nRedeem Israel, O God, out of all their troubles!\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 24 (LXX) — Unto thee, O Lord, will I lift up my soul",
+      "text": "Unto thee, O Lord, will I lift up my soul; my God, I have put my trust in thee: O let me not be confounded, neither let mine enemies triumph over me. For all they that hope in thee shall not be ashamed; but such as transgress without a cause shall be put to confusion.\n\nShow me thy ways, O Lord, and teach me thy paths. Lead me forth in thy truth, and learn me: for thou art the God of my salvation; in thee hath been my hope all the day long.\n\nCall to remembrance, O Lord, thy tender mercies, and thy loving-kindnesses, which have been ever of old. O remember not the sins and offences of my youth; but according to thy mercy think thou upon me, O Lord, for thy goodness.\n\nGracious and righteous is the Lord; therefore will he teach sinners in the way. Them that are meek shall he guide in judgment; and such as are gentle, them shall he learn his way. All the paths of the Lord are mercy and truth, unto such as keep his covenant, and his testimonies.\n\nFor thy Name's sake, O Lord, be merciful unto my sin; for it is great. What man is he that feareth the Lord? him shall he teach in the way that he shall choose. His soul shall dwell at ease, and his seed shall inherit the land.\n\nThe secret of the Lord is among them that fear him; and he will show them his covenant. Mine eyes are ever looking unto the Lord; for he shall pluck my feet out of the net. Turn thee unto me, and have mercy upon me; for I am desolate, and in misery.\n\nThe sorrows of my heart are enlarged: O bring thou me out of my troubles. Look upon my adversity and misery, and forgive me all my sin. Consider mine enemies, how many they are; and they bear a tyrannous hate against me.\n\nO keep my soul, and deliver me: let me not be confounded, for I have put my trust in thee. Let perfectness and righteous dealing wait upon me; for my hope hath been in thee. Deliver Israel, O God, out of all his troubles.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-30": {
       "type": "psalm",
       "lxxNumber": 30,
       "hebrewNumber": 31,
-      "label": "Psalm 30 (LXX)",
-      "text": "In You, O Lord, I put my trust; let me never be ashamed; deliver me in Your righteousness. Bow down Your ear to me, deliver me speedily; be my rock of refuge, a fortress of defense to save me. For You are my rock and my fortress; therefore, for Your name's sake, lead me and guide me. Pull me out of the net which they have secretly laid for me, for You are my strength.\n\nInto Your hand I commit my spirit; You have redeemed me, O Lord God of truth. I have hated those who regard useless idols; but I trust in the Lord. I will be glad and rejoice in Your mercy, for You have considered my trouble; You have known my soul in adversities, and have not shut me up into the hand of the enemy; You have set my feet in a wide place.\n\nHave mercy on me, O Lord, for I am in trouble; my eye wastes away with grief, yes, my soul and my body! For my life is spent with grief, and my years with sighing; my strength fails because of my iniquity, and my bones waste away.\n\nI am a reproach among all my enemies, but especially among my neighbors, and am repulsive to my acquaintances; those who see me outside flee from me. I am forgotten like a dead man, out of mind; I am like a broken vessel. For I hear the slander of many; fear is on every side; while they take counsel together against me, they scheme to take away my life.\n\nBut as for me, I trust in You, O Lord; I say, \"You are my God.\" My times are in Your hand; deliver me from the hand of my enemies, and from those who persecute me. Make Your face shine upon Your servant; save me for Your mercies' sake.\n\nDo not let me be ashamed, O Lord, for I have called upon You; let the wicked be ashamed; let them be silent in the grave. Let the lying lips be put to silence, which speak insolent things proudly and contemptuously against the righteous.\n\nOh, how great is Your goodness, which You have laid up for those who fear You, which You have prepared for those who trust in You in the presence of the sons of men! You shall hide them in the secret place of Your presence from the plots of man; You shall keep them secretly in a pavilion from the strife of tongues.\n\nBlessed be the Lord, for He has shown me His marvelous kindness in a strong city! For I said in my haste, \"I am cut off from before Your eyes\"; nevertheless You heard the voice of my supplications when I cried out to You.\n\nOh, love the Lord, all you His saints! For the Lord preserves the faithful, and fully repays the proud person. Be of good courage, and He shall strengthen your heart, all you who hope in the Lord.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 30 (LXX) — In thee, O Lord, have I put my trust",
+      "text": "In thee, O Lord, have I put my trust: let me never be put to confusion, deliver me in thy righteousness.\n\nBow down thine ear to me: make haste to deliver me. And be thou my strong rock, and house of defence: that thou mayest save me. For thou art my strong rock, and my castle: be thou also my guide, and lead me for thy Name's sake. Draw me out of the net that they have laid privily for me: for thou art my strength.\n\nInto thy hands I commend my spirit: for thou hast redeemed me, O Lord, thou God of truth. I have hated them that hold of superstitious vanities: and my trust hath been in the Lord. I will be glad and rejoice in thy mercy: for thou hast considered my trouble, and hast known my soul in adversities. Thou hast not shut me up into the hand of the enemy: but hast set my feet in a large room.\n\nHave mercy upon me, O Lord, for I am in trouble: and mine eye is consumed for very heaviness; yea, my soul and my body. For my life is waxen old with heaviness: and my years with mourning. My strength faileth me, because of mine iniquity: and my bones are consumed.\n\nI became a reproof among all mine enemies, but especially among my neighbours: and they of mine acquaintance were afraid of me; and they that did see me without conveyed themselves from me. I am clean forgotten, as a dead man out of mind: I am become like a broken vessel. For I have heard the blasphemy of the multitude: and fear is on every side, while they conspire together against me, and take their counsel to take away my life.\n\nBut my hope hath been in thee, O Lord: I have said, Thou art my God. My time is in thy hand, deliver me from the hand of mine enemies: and from them that persecute me. Shew thy servant the light of thy countenance: and save me for thy mercy's sake.\n\nLet me not be confounded, O Lord, for I have called upon thee: let the ungodly be put to confusion, and be put to silence in the grave.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-90": {
       "type": "psalm",
       "lxxNumber": 90,
       "hebrewNumber": 91,
-      "label": "Psalm 90 (LXX)",
-      "text": "He who dwells in the secret place of the Most High shall abide under the shadow of the Almighty. I will say of the Lord, \"He is my refuge and my fortress; my God, in Him I will trust.\"\n\nSurely He shall deliver you from the snare of the fowler and from the perilous pestilence. He shall cover you with His feathers, and under His wings you shall take refuge; His truth shall be your shield and buckler. You shall not be afraid of the terror by night, nor of the arrow that flies by day, nor of the pestilence that walks in darkness, nor of the destruction that lays waste at noonday.\n\nA thousand may fall at your side, and ten thousand at your right hand; but it shall not come near you. Only with your eyes shall you look, and see the reward of the wicked. Because you have made the Lord, who is my refuge, even the Most High, your dwelling place, no evil shall befall you, nor shall any plague come near your dwelling; for He shall give His angels charge over you, to keep you in all your ways.\n\n\"Because he has set his love upon Me, therefore I will deliver him; I will set him on high, because he has known My name. He shall call upon Me, and I will answer him; I will be with him in trouble; I will deliver him and honor him. With long life I will satisfy him, and show him My salvation.\"\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 90 (LXX) — Whoso dwelleth under the defence of the Most High",
+      "text": "Whoso dwelleth under the defence of the Most High, shall abide under the shadow of the Almighty. I will say unto the Lord, Thou art my hope, and my strong hold; my God, in him will I trust.\n\nFor he shall deliver thee from the snare of the hunter, and from the noisome pestilence. He shall defend thee under his wings, and thou shalt be safe under his feathers; his faithfulness and truth shall be thy shield and buckler.\n\nThou shalt not be afraid for any terror by night, nor for the arrow that flieth by day; for the pestilence that walketh in darkness, nor for the sickness that destroyeth in the noon-day.\n\nA thousand shall fall beside thee, and ten thousand at thy right hand; but it shall not come nigh thee. Yea, with thine eyes shalt thou behold, and see the reward of the ungodly.\n\nFor thou, Lord, art my hope; thou hast set thine house of defence very high. There shall no evil happen unto thee, neither shall any plague come nigh thy dwelling.\n\nFor he shall give his angels charge over thee, to keep thee in all thy ways. They shall bear thee in their hands, that thou hurt not thy foot against a stone. Thou shalt go upon the lion and adder: the young lion and the dragon shalt thou tread under thy feet.\n\nBecause he hath set his love upon me, therefore will I deliver him; I will set him up, because he hath known my Name. He shall call upon me, and I will hear him; yea, I am with him in trouble; I will deliver him, and bring him to honour. With long life will I satisfy him, and show him my salvation.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-inter-doxology-2": {
       "type": "sequence",
       "label": "Doxology between second and third psalm cycles",
       "items": [
-        { "type": "text", "key": "gc-id2-1", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-id2-2", "text": "Alleluia, alleluia, alleluia. Glory to You, O God.", "repeat": 3 },
-        { "type": "text", "key": "gc-id2-3", "text": "Lord, have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-id2-4", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-id2-1",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-id2-2",
+          "text": "Alleluia, alleluia, alleluia. Glory to You, O God.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-id2-3",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-id2-4",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-angelic-hymn": {
@@ -116,11 +230,31 @@
       "type": "sequence",
       "label": "Troparia: The Day Being Past",
       "items": [
-        { "type": "text", "key": "gc-dbp-1", "text": "The day being past, I give You thanks, O Lord; the evening I pray together with the night, grant me without sin, O Savior, and save me." },
-        { "type": "text", "key": "gc-dbp-gl", "text": "Glory to the Father, and to the Son, and to the Holy Spirit." },
-        { "type": "text", "key": "gc-dbp-2", "text": "The day being past, I glorify You, O Master; the evening I pray together with the night, grant me without temptation, O Savior, and save me." },
-        { "type": "text", "key": "gc-dbp-now", "text": "Both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-dbp-3", "text": "The day being past, I hymn You, O Holy One; the evening I pray together with the night, grant me without peril, O Savior, and save me." }
+        {
+          "type": "text",
+          "key": "gc-dbp-1",
+          "text": "The day being past, I give You thanks, O Lord; the evening I pray together with the night, grant me without sin, O Savior, and save me."
+        },
+        {
+          "type": "text",
+          "key": "gc-dbp-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-dbp-2",
+          "text": "The day being past, I glorify You, O Master; the evening I pray together with the night, grant me without temptation, O Savior, and save me."
+        },
+        {
+          "type": "text",
+          "key": "gc-dbp-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-dbp-3",
+          "text": "The day being past, I hymn You, O Holy One; the evening I pray together with the night, grant me without peril, O Savior, and save me."
+        }
       ]
     },
     "gc-creed": {
@@ -133,53 +267,144 @@
       "label": "Litanic Intercessions",
       "rubric": "Each said twice (except the Theotokos, thrice). Prostrations, except on Friday evenings (bows).",
       "items": [
-        { "type": "text", "key": "gc-li-1", "text": "O most holy Lady Theotokos, intercede for us sinners.", "repeat": 3 },
-        { "type": "text", "key": "gc-li-2", "text": "O all ye Heavenly Hosts of the holy Angels and Archangels, intercede for us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-3", "text": "O holy John, Prophet, Forerunner, and Baptist of our Lord Jesus Christ, intercede for us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-4", "text": "O holy glorious Apostles, Prophets, and Martyrs, and all the Saints, intercede for us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-5", "text": "O our holy and God-bearing fathers, pastors, and ecumenical teachers, intercede for us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-6", "text": "O Invincible and incomprehensible and divine power of the precious and life-giving Cross, forsake not us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-7", "text": "O God, cleanse us sinners.", "repeat": 2 },
-        { "type": "text", "key": "gc-li-8", "text": "O God, cleanse us sinners, and have mercy on us." }
+        {
+          "type": "text",
+          "key": "gc-li-1",
+          "text": "O most holy Lady Theotokos, intercede for us sinners.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-li-2",
+          "text": "O all ye Heavenly Hosts of the holy Angels and Archangels, intercede for us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-3",
+          "text": "O holy John, Prophet, Forerunner, and Baptist of our Lord Jesus Christ, intercede for us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-4",
+          "text": "O holy glorious Apostles, Prophets, and Martyrs, and all the Saints, intercede for us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-5",
+          "text": "O our holy and God-bearing fathers, pastors, and ecumenical teachers, intercede for us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-6",
+          "text": "O Invincible and incomprehensible and divine power of the precious and life-giving Cross, forsake not us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-7",
+          "text": "O God, cleanse us sinners.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "gc-li-8",
+          "text": "O God, cleanse us sinners, and have mercy on us."
+        }
       ]
     },
     "gc-trisagion-1": {
       "type": "sequence",
       "label": "Trisagion and Our Father",
       "items": [
-        { "type": "text", "key": "gc-t1-1", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
-        { "type": "text", "key": "gc-t1-2", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t1-3", "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake." },
-        { "type": "text", "key": "gc-t1-4", "text": "Lord have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-t1-5", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t1-6", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
-        { "type": "text", "key": "gc-t1-7", "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-t1-1",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-3",
+          "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake."
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-4",
+          "text": "Lord have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-5",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-6",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "gc-t1-7",
+          "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-kyrie-40-prayer-of-basil": {
       "type": "sequence",
       "label": "Lord have mercy × 40 and Prayer of Basil the Great",
       "items": [
-        { "type": "text", "key": "gc-k40-1", "text": "Lord have mercy.", "repeat": 40 },
-        { "type": "text", "key": "gc-k40-2", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-k40-3", "text": "More honorable than the Cherubim, and more glorious beyond compare than the Seraphim; who without corruption gave birth to God the Word, you Theotokos, we magnify." },
-        { "type": "text", "key": "gc-k40-4", "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen." },
-        { "type": "text", "key": "gc-k40-basil", "label": "Prayer of Basil the Great", "text": "O Lord, O Lord, Who have delivered us from every arrow that flies by day, deliver us from everything that walks in darkness. Receive as an evening sacrifice the lifting up of our hands. Vouchsafe us also to pass through the course of the night without blemish, untempted by evil. And deliver us from every anxiety and fear that come to us from the devil. Grant unto our souls compunction, and unto our thoughts solicitude concerning the trial at Your dread and righteous judgment. Nail down our flesh with the fear of You, and mortify our earthly members, that in the stillness of sleep we may be enlightened by the vision of Your judgments. Take from us every unseemly dream and harmful carnal desire. Raise us up at the hour of prayer, fortified in faith and advancing in Your commandments; through the goodness and love for mankind of Your Only-begotten Son, with Whom You are blessed, together with Your most holy and good and life-giving Spirit, now and ever, and unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-k40-1",
+          "text": "Lord have mercy.",
+          "repeat": 40
+        },
+        {
+          "type": "text",
+          "key": "gc-k40-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-k40-3",
+          "text": "More honorable than the Cherubim, and more glorious beyond compare than the Seraphim; who without corruption gave birth to God the Word, you Theotokos, we magnify."
+        },
+        {
+          "type": "text",
+          "key": "gc-k40-4",
+          "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-k40-basil",
+          "label": "Prayer of Basil the Great",
+          "text": "O Lord, O Lord, Who have delivered us from every arrow that flies by day, deliver us from everything that walks in darkness. Receive as an evening sacrifice the lifting up of our hands. Vouchsafe us also to pass through the course of the night without blemish, untempted by evil. And deliver us from every anxiety and fear that come to us from the devil. Grant unto our souls compunction, and unto our thoughts solicitude concerning the trial at Your dread and righteous judgment. Nail down our flesh with the fear of You, and mortify our earthly members, that in the stillness of sleep we may be enlightened by the vision of Your judgments. Take from us every unseemly dream and harmful carnal desire. Raise us up at the hour of prayer, fortified in faith and advancing in Your commandments; through the goodness and love for mankind of Your Only-begotten Son, with Whom You are blessed, together with Your most holy and good and life-giving Spirit, now and ever, and unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-psalm-50": {
       "type": "psalm",
       "lxxNumber": 50,
       "hebrewNumber": 51,
-      "label": "Psalm 50 (LXX)",
-      "text": "Have mercy upon me, O God, according to Your lovingkindness; according to the multitude of Your tender mercies, blot out my transgressions. Wash me thoroughly from my iniquity, and cleanse me from my sin. For I acknowledge my transgressions, and my sin is always before me. Against You, You only, have I sinned, and done this evil in Your sight, that You may be found just when You speak, and blameless when You judge.\n\nBehold, I was brought forth in iniquity, and in sin my mother conceived me. Behold, You desire truth in the inward parts, and in the hidden part You will make me to know wisdom. Purge me with hyssop, and I shall be clean; wash me, and I shall be whiter than snow. Make me hear joy and gladness, that the bones You have broken may rejoice. Hide Your face from my sins, and blot out all my iniquities.\n\nCreate in me a clean heart, O God, and renew a steadfast spirit within me. Do not cast me away from Your presence, and do not take Your Holy Spirit from me. Restore to me the joy of Your salvation, and uphold me by Your generous Spirit.\n\nThen I will teach transgressors Your ways, and sinners shall be converted to You. Deliver me from the guilt of bloodshed, O God, the God of my salvation, and my tongue shall sing aloud of Your righteousness. O Lord, open my lips, and my mouth shall show forth Your praise. For You do not desire sacrifice, or else I would give it; You do not delight in burnt offering. The sacrifices of God are a broken spirit, a broken and a contrite heart — these, O God, You will not despise.\n\nDo good in Your good pleasure to Zion; build the walls of Jerusalem. Then You shall be pleased with the sacrifices of righteousness, with burnt offering and whole burnt offering; then they shall offer bulls on Your altar.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 50 (LXX) — Have mercy upon me, O God, after thy great goodness",
+      "text": "Have mercy upon me, O God, after thy great goodness; according to the multitude of thy mercies do away mine offences.\n\nWash me throughly from my wickedness, and cleanse me from my sin. For I acknowledge my faults, and my sin is ever before me. Against thee only have I sinned, and done this evil in thy sight; that thou mightest be justified in thy saying, and clear when thou art judged.\n\nBehold, I was shapen in wickedness, and in sin hath my mother conceived me. But lo, thou requirest truth in the inward parts, and shalt make me to understand wisdom secretly.\n\nThou shalt purge me with hyssop, and I shall be clean; thou shalt wash me, and I shall be whiter than snow. Thou shalt make me hear of joy and gladness, that the bones which thou hast broken may rejoice.\n\nTurn thy face from my sins, and put out all my misdeeds. Make me a clean heart, O God, and renew a right spirit within me.\n\nCast me not away from thy presence, and take not thy Holy Spirit from me. O give me the comfort of thy help again, and stablish me with thy free Spirit. Then shall I teach thy ways unto the wicked, and sinners shall be converted unto thee.\n\nDeliver me from blood-guiltiness, O God, thou that art the God of my health; and my tongue shall sing of thy righteousness. Thou shalt open my lips, O Lord, and my mouth shall show thy praise.\n\nFor thou desirest no sacrifice, else would I give it thee; but thou delightest not in burnt-offerings. The sacrifice of God is a troubled spirit: a broken and contrite heart, O God, shalt thou not despise.\n\nO be favourable and gracious unto Sion; build thou the walls of Jerusalem. Then shalt thou be pleased with the sacrifice of righteousness, with the burnt-offerings and oblations; then shall they offer young bullocks upon thine altar.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-101": {
       "type": "psalm",
       "lxxNumber": 101,
       "hebrewNumber": 102,
-      "label": "Psalm 101 (LXX)",
-      "text": "Hear my prayer, O Lord, and let my cry come to You. Do not hide Your face from me in the day of my trouble; incline Your ear to me; in the day that I call, answer me speedily.\n\nFor my days are consumed like smoke, and my bones are burned like a hearth. My heart is stricken and withered like grass, so that I forget to eat my bread. Because of the sound of my groaning my bones cling to my skin. I am like a pelican of the wilderness; I am like an owl of the desert. I lie awake, and am like a sparrow alone on the housetop.\n\nMy enemies reproach me all day long; those who deride me swear an oath against me. For I have eaten ashes like bread, and mingled my drink with weeping, because of Your indignation and Your wrath; for You have lifted me up and cast me away. My days are like a shadow that lengthens, and I wither away like grass.\n\nBut You, O Lord, shall endure forever, and the remembrance of Your name to all generations. You will arise and have mercy on Zion; for the time to favor her, yes, the set time, has come. For Your servants take pleasure in her stones, and show favor to her dust. So the nations shall fear the name of the Lord, and all the kings of the earth Your glory. For the Lord shall build up Zion; He shall appear in His glory. He shall regard the prayer of the destitute, and shall not despise their prayer.\n\nThis will be written for the generation to come, that a people yet to be created may praise the Lord. For He looked down from the height of His sanctuary; from heaven the Lord viewed the earth, to hear the groaning of the prisoner, to release those appointed to death, to declare the name of the Lord in Zion, and His praise in Jerusalem, when the peoples are gathered together, and the kingdoms, to serve the Lord.\n\nHe weakened my strength in the way; He shortened my days. I said, \"O my God, do not take me away in the midst of my days; Your years are throughout all generations.\"\n\nOf old You laid the foundation of the earth, and the heavens are the work of Your hands. They will perish, but You will endure; yes, they will all grow old like a garment; like a cloak You will change them, and they will be changed. But You are the same, and Your years will have no end. The children of Your servants will continue, and their descendants will be established before You.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 101 (LXX) — Hear my prayer, O Lord, and let my crying come unto thee",
+      "text": "Hear my prayer, O Lord: and let my crying come unto thee.\n\nHide not thy face from me in the time of my trouble: incline thine ear unto me when I call; O hear me, and that right soon.\n\nFor my days are consumed away like smoke: and my bones are burnt up as it were a fire-brand. My heart is smitten down, and withered like grass: so that I forget to eat my bread. For the voice of my groaning: my bones will scarce cleave to my flesh. I am become like a pelican in the wilderness: and like an owl that is in the desert. I have watched, and am even as it were a sparrow: that sitteth alone upon the house-top.\n\nMine enemies revile me all the day long: and they that are mad upon me are sworn together against me. For I have eaten ashes as it were bread: and mingled my drink with weeping; and that because of thine indignation and wrath: for thou hast taken me up, and cast me down. My days are gone like a shadow: and I am withered like grass.\n\nBut thou, O Lord, shalt endure for ever: and thy remembrance throughout all generations. Thou shalt arise, and have mercy upon Sion: for it is time that thou have mercy upon her, yea, the time is come. And why? thy servants think upon her stones: and it pitieth them to see her in the dust.\n\nThe heathen shall fear thy Name, O Lord: and all the kings of the earth thy majesty; when the Lord shall build up Sion: and when his glory shall appear; when he turneth him unto the prayer of the poor destitute: and despiseth not their desire.\n\nThis shall be written for those that come after: and the people which shall be born shall praise the Lord. For he hath looked down from his sanctuary: out of the heaven did the Lord behold the earth; that he might hear the mournings of such as are in captivity: and deliver the children appointed unto death; that they may declare the Name of the Lord in Sion: and his worship at Jerusalem; when the people are gathered together: and the kingdoms also, to serve the Lord.\n\nHe brought down my strength in my journey: and shortened my days. But I said, O my God, take me not away in the midst of mine age: as for thy years, they endure throughout all generations.\n\nThou, Lord, in the beginning hast laid the foundation of the earth: and the heavens are the work of thy hands. They shall perish, but thou shalt endure: they all shall wax old as doth a garment; and as a vesture shalt thou change them, and they shall be changed: but thou art the same, and thy years shall not fail. The children of thy servants shall continue: and their seed shall stand fast in thy sight.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-prayer-of-manasseh": {
       "type": "text",
@@ -190,13 +415,43 @@
       "type": "sequence",
       "label": "Trisagion and Our Father (after Manasseh)",
       "items": [
-        { "type": "text", "key": "gc-t2-1", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
-        { "type": "text", "key": "gc-t2-2", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t2-3", "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake." },
-        { "type": "text", "key": "gc-t2-4", "text": "Lord have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-t2-5", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t2-6", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
-        { "type": "text", "key": "gc-t2-7", "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-t2-1",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-3",
+          "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake."
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-4",
+          "text": "Lord have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-5",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-6",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "gc-t2-7",
+          "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-come-worship-2": {
@@ -213,22 +468,65 @@
       "type": "sequence",
       "label": "Troparia in the Sixth Tone",
       "items": [
-        { "type": "text", "key": "gc-stt-1", "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defense, this prayer do we sinners offer unto You as Master: have mercy on us." },
-        { "type": "text", "key": "gc-stt-gl", "text": "Glory to the Father, and to the Son, and to the Holy Spirit." },
-        { "type": "text", "key": "gc-stt-2", "text": "Lord, have mercy on us; for we have hoped in You; be not angry with us greatly, neither remember our iniquities; but look upon us now as You are compassionate, and deliver us from our enemies, for You are our God, and we Your people; all are the works of Your hands, and we call upon Your name." },
-        { "type": "text", "key": "gc-stt-now", "text": "Both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-stt-th", "label": "Theotokion", "text": "The door of compassion open unto us, O blessed Theotokos; hoping in you, let us not perish; through you may we be delivered from adversities, for you are the salvation of the Christian race." }
+        {
+          "type": "text",
+          "key": "gc-stt-1",
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defense, this prayer do we sinners offer unto You as Master: have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-stt-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-stt-2",
+          "text": "Lord, have mercy on us; for we have hoped in You; be not angry with us greatly, neither remember our iniquities; but look upon us now as You are compassionate, and deliver us from our enemies, for You are our God, and we Your people; all are the works of Your hands, and we call upon Your name."
+        },
+        {
+          "type": "text",
+          "key": "gc-stt-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-stt-th",
+          "label": "Theotokion",
+          "text": "The door of compassion open unto us, O blessed Theotokos; hoping in you, let us not perish; through you may we be delivered from adversities, for you are the salvation of the Christian race."
+        }
       ]
     },
     "gc-kyrie-40-maradius": {
       "type": "sequence",
       "label": "Lord have mercy × 40 and Prayer of Saint Maradius",
       "items": [
-        { "type": "text", "key": "gc-mar-kyrie", "text": "Lord have mercy.", "repeat": 40 },
-        { "type": "text", "key": "gc-mar-gl", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-mar-more", "text": "More honorable than the Cherubim, and beyond compare more glorious than the Seraphim; who without corruption gave birth to God the Word, the very Theotokos, you do we magnify." },
-        { "type": "text", "key": "gc-mar-through", "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen." },
-        { "type": "text", "key": "gc-mar-prayer", "label": "Prayer of Saint Maradius the Martyr", "text": "O Master God, the Father Almighty; O Lord, the Only-begotten Son, Jesus Christ; and O Holy Spirit, one Godhead, one Power: have mercy on me a sinner, and by the judgments which You know, save me, Your unworthy servant; for blessed are You unto the ages of ages. Amen." }
+        {
+          "type": "text",
+          "key": "gc-mar-kyrie",
+          "text": "Lord have mercy.",
+          "repeat": 40
+        },
+        {
+          "type": "text",
+          "key": "gc-mar-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-mar-more",
+          "text": "More honorable than the Cherubim, and beyond compare more glorious than the Seraphim; who without corruption gave birth to God the Word, the very Theotokos, you do we magnify."
+        },
+        {
+          "type": "text",
+          "key": "gc-mar-through",
+          "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-mar-prayer",
+          "label": "Prayer of Saint Maradius the Martyr",
+          "text": "O Master God, the Father Almighty; O Lord, the Only-begotten Son, Jesus Christ; and O Holy Spirit, one Godhead, one Power: have mercy on me a sinner, and by the judgments which You know, save me, Your unworthy servant; for blessed are You unto the ages of ages. Amen."
+        }
       ]
     },
     "gc-come-worship-3": {
@@ -242,14 +540,14 @@
       "hebrewNumber": 70,
       "label": "Psalm 69 (LXX) — omitted in first week",
       "rubric": "Omitted in the first week of Great Lent.",
-      "text": "Make haste, O God, to deliver me! Make haste to help me, O Lord!\n\nLet them be ashamed and confounded who seek my life; let them be turned back and confused who desire my hurt. Let them be turned back because of their shame, who say, \"Aha, aha!\"\n\nLet all those who seek You rejoice and be glad in You; and let those who love Your salvation say continually, \"Let God be magnified!\"\n\nBut I am poor and needy; make haste to me, O God! You are my help and my deliverer; O Lord, do not delay.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "text": "Haste thee, O God, to deliver me: make haste to help me, O Lord.\n\nLet them be ashamed and confounded that seek after my soul: let them be turned backward and put to confusion that wish me evil. Let them for their reward be soon brought to shame: that cry over me, There, there.\n\nBut let all those that seek thee be joyful and glad in thee: and let all such as delight in thy salvation say alway, The Lord be praised.\n\nAs for me, I am poor and in misery: haste thee unto me, O God. Thou art my helper and my redeemer: O Lord, make no long tarrying.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-psalm-142": {
       "type": "psalm",
       "lxxNumber": 142,
       "hebrewNumber": 143,
-      "label": "Psalm 142 (LXX)",
-      "text": "Hear my prayer, O Lord, give ear to my supplications! In Your faithfulness answer me, and in Your righteousness. Do not enter into judgment with Your servant, for in Your sight no one living is righteous.\n\nFor the enemy has persecuted my soul; he has crushed my life to the ground; he has made me dwell in darkness, like those who have long been dead. Therefore my spirit is overwhelmed within me; my heart within me is distressed.\n\nI remember the days of old; I meditate on all Your works; I muse on the work of Your hands. I spread out my hands to You; my soul longs for You like a thirsty land.\n\nAnswer me speedily, O Lord; my spirit fails! Do not hide Your face from me, so that I will not be like those who go down into the pit. Cause me to hear Your lovingkindness in the morning, for in You do I trust; cause me to know the way in which I should walk, for I lift up my soul to You.\n\nDeliver me, O Lord, from my enemies; in You I take shelter. Teach me to do Your will, for You are my God; Your Spirit is good. Lead me in the land of uprightness.\n\nRevive me, O Lord, for Your name's sake! For Your righteousness' sake bring my soul out of trouble. In Your mercy cut off my enemies, and destroy all those who afflict my soul; for I am Your servant.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      "label": "Psalm 142 (LXX) — Hear my prayer, O Lord, and consider my desire",
+      "text": "Hear my prayer, O Lord, and consider my desire: hearken unto me for thy truth and righteousness sake. And enter not into judgement with thy servant: for in thy sight shall no man living be justified.\n\nFor the enemy hath persecuted my soul; he hath smitten my life down to the ground: he hath laid me in the darkness, as the men that have been long dead. Therefore is my spirit vexed within me: and my heart within me is desolate.\n\nYet do I remember the time past; I muse upon all thy works: yea, I exercise myself in the works of thy hands. I stretch forth my hands unto thee: my soul gaspeth unto thee as a thirsty land.\n\nHear me, O Lord, and that soon, for my spirit waxeth faint: hide not thy face from me, lest I be like unto them that go down into the pit. O let me hear thy loving-kindness betimes in the morning, for in thee is my trust: shew thou me the way that I should walk in, for I lift up my soul unto thee.\n\nDeliver me, O Lord, from mine enemies: for I flee unto thee to hide me. Teach me to do the thing that pleaseth thee, for thou art my God: let thy loving Spirit lead me forth into the land of righteousness.\n\nQuicken me, O Lord, for thy Name's sake: and for thy righteousness sake bring my soul out of trouble. And of thy goodness slay mine enemies: and destroy all them that vex my soul; for I am thy servant.\n\nGlory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
     },
     "gc-small-doxology": {
       "type": "text",
@@ -262,28 +560,95 @@
       "label": "O Lord of Hosts (Tone 6; omitted on Fridays)",
       "rubric": "Chanted in a loud voice, and slowly, in the Sixth Tone. Omitted entirely on Friday evenings; instead the Kontakion of the Saturday commemoration is said.",
       "items": [
-        { "type": "text", "key": "gc-loh-refrain", "text": "O Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s1", "text": "Stichos 1: Praise ye God in His saints, praise Him in the firmament of His power.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s2", "text": "Stichos 2: Praise Him for His mighty acts, praise Him according to the multitude of His greatness.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s3", "text": "Stichos 3: Praise Him with the sound of Trumpet, praise Him with the psaltery and harp.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s4", "text": "Stichos 4: Praise Him with timbrel and dance, praise Him with strings and flute.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s5", "text": "Stichos 5: Praise Him with tuneful cymbals, praise Him with cymbals of jubilation. Let every breath praise the Lord.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-s6", "text": "Stichos 6: Praise ye God in His saints, praise Him in the firmament of His power.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
-        { "type": "text", "key": "gc-loh-glory", "text": "Glory to the Father, and to the Son, and to the Holy Spirit.\nO Lord, if we had not had Your saints as intercessors, and Your goodness being merciful to us, how should we have dared, O Savior, to hymn You, Whom angels do unceasingly glorify? O You that knows the hearts, spare our souls." },
-        { "type": "text", "key": "gc-loh-now", "text": "Both now and ever, and unto the ages of ages. Amen.\nGreatly multiplied, O Theotokos, are my sins, and unto You have I fled, O pure one, imploring salvation. Do You visit mine enfeebled soul, and pray to Your Son and our God that He grant me forgiveness for the evil I have done, O You only blessed one." }
+        {
+          "type": "text",
+          "key": "gc-loh-refrain",
+          "text": "O Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s1",
+          "text": "Stichos 1: Praise ye God in His saints, praise Him in the firmament of His power.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s2",
+          "text": "Stichos 2: Praise Him for His mighty acts, praise Him according to the multitude of His greatness.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s3",
+          "text": "Stichos 3: Praise Him with the sound of Trumpet, praise Him with the psaltery and harp.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s4",
+          "text": "Stichos 4: Praise Him with timbrel and dance, praise Him with strings and flute.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s5",
+          "text": "Stichos 5: Praise Him with tuneful cymbals, praise Him with cymbals of jubilation. Let every breath praise the Lord.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-s6",
+          "text": "Stichos 6: Praise ye God in His saints, praise Him in the firmament of His power.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-glory",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit.\nO Lord, if we had not had Your saints as intercessors, and Your goodness being merciful to us, how should we have dared, O Savior, to hymn You, Whom angels do unceasingly glorify? O You that knows the hearts, spare our souls."
+        },
+        {
+          "type": "text",
+          "key": "gc-loh-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen.\nGreatly multiplied, O Theotokos, are my sins, and unto You have I fled, O pure one, imploring salvation. Do You visit mine enfeebled soul, and pray to Your Son and our God that He grant me forgiveness for the evil I have done, O You only blessed one."
+        }
       ]
     },
     "gc-closing-prayer-block": {
       "type": "sequence",
       "label": "Closing Prayer Block",
       "items": [
-        { "type": "text", "key": "gc-cpb-1", "text": "O all-holy Theotokos, throughout my lifetime forsake me not; to human protection entrust me not; but do You Yourself defend me and have mercy on me." },
-        { "type": "text", "key": "gc-cpb-2", "text": "All my hope I place in You, O Mother of God; keep me under Your protection." },
-        { "type": "text", "key": "gc-cpb-kyrie40", "text": "Lord have mercy.", "repeat": 40 },
-        { "type": "text", "key": "gc-cpb-youwho", "label": "You Who at all times", "text": "You Who at all times and at every hour, in heaven and on earth, are worshipped and glorified, O Christ God, Who are long-suffering, plenteous in mercy, most compassionate, Who loves the righteous and has mercy on sinners, Who calls all to salvation through the promise of good things to come: Receive, O Lord, our prayers at this hour, and guide our lives toward Your commandments. Sanctify our souls, purify our bodies, correct our thoughts, cleanse our intentions, and deliver us from every sorrow, evil, and pain. Compass us about with Your holy angels, that, guarded and guided by their array, we may attain to the unity of the faith and the knowledge of Your unapproachable glory; for blessed are You unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-cpb-kyrie3", "text": "Lord, have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-cpb-more-honorable", "text": "More honorable than the Cherubim, and beyond compare more glorious than the Seraphim; who without corruption gave birth to God the Word, the very Theotokos, you do we magnify." },
-        { "type": "text", "key": "gc-cpb-through", "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen." }
+        {
+          "type": "text",
+          "key": "gc-cpb-1",
+          "text": "O all-holy Theotokos, throughout my lifetime forsake me not; to human protection entrust me not; but do You Yourself defend me and have mercy on me."
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-2",
+          "text": "All my hope I place in You, O Mother of God; keep me under Your protection."
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-kyrie40",
+          "text": "Lord have mercy.",
+          "repeat": 40
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-youwho",
+          "label": "You Who at all times",
+          "text": "You Who at all times and at every hour, in heaven and on earth, are worshipped and glorified, O Christ God, Who are long-suffering, plenteous in mercy, most compassionate, Who loves the righteous and has mercy on sinners, Who calls all to salvation through the promise of good things to come: Receive, O Lord, our prayers at this hour, and guide our lives toward Your commandments. Sanctify our souls, purify our bodies, correct our thoughts, cleanse our intentions, and deliver us from every sorrow, evil, and pain. Compass us about with Your holy angels, that, guarded and guided by their array, we may attain to the unity of the faith and the knowledge of Your unapproachable glory; for blessed are You unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-kyrie3",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-more-honorable",
+          "text": "More honorable than the Cherubim, and beyond compare more glorious than the Seraphim; who without corruption gave birth to God the Word, the very Theotokos, you do we magnify."
+        },
+        {
+          "type": "text",
+          "key": "gc-cpb-through",
+          "text": "Through the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        }
       ]
     },
     "gc-prayer-of-ephraim": {
@@ -291,24 +656,80 @@
       "label": "Prayer of St. Ephraim the Syrian (omitted on Fridays)",
       "rubric": "Not said on Friday evenings.",
       "items": [
-        { "type": "text", "key": "gc-eph-1", "text": "O Lord and Master of my life, a spirit of idleness, despondency, ambition, and idle talking give me not.", "rubric": "Prostration" },
-        { "type": "text", "key": "gc-eph-2", "text": "But rather a spirit of chastity, humble-mindedness, patience, and love bestow upon me Your servant.", "rubric": "Prostration" },
-        { "type": "text", "key": "gc-eph-3", "text": "Yea, O Lord King, grant me to see my own failings and not condemn my brother; for blessed are You unto the ages of ages. Amen.", "rubric": "Prostration" },
-        { "type": "text", "key": "gc-eph-bows", "text": "Yea, O Lord King, grant me to see my own failings and not condemn my brother; for blessed are You unto the ages of ages. Amen.", "repeat": 12, "rubric": "Twelve bows" }
+        {
+          "type": "text",
+          "key": "gc-eph-1",
+          "text": "O Lord and Master of my life, a spirit of idleness, despondency, ambition, and idle talking give me not.",
+          "rubric": "Prostration"
+        },
+        {
+          "type": "text",
+          "key": "gc-eph-2",
+          "text": "But rather a spirit of chastity, humble-mindedness, patience, and love bestow upon me Your servant.",
+          "rubric": "Prostration"
+        },
+        {
+          "type": "text",
+          "key": "gc-eph-3",
+          "text": "Yea, O Lord King, grant me to see my own failings and not condemn my brother; for blessed are You unto the ages of ages. Amen.",
+          "rubric": "Prostration"
+        },
+        {
+          "type": "text",
+          "key": "gc-eph-bows",
+          "text": "Yea, O Lord King, grant me to see my own failings and not condemn my brother; for blessed are You unto the ages of ages. Amen.",
+          "repeat": 12,
+          "rubric": "Twelve bows"
+        }
       ]
     },
     "gc-trisagion-4": {
       "type": "sequence",
       "label": "Trisagion, Our Father, and Lord have mercy × 12 (after prostrations)",
       "items": [
-        { "type": "text", "key": "gc-t4-1", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
-        { "type": "text", "key": "gc-t4-2", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t4-3", "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake." },
-        { "type": "text", "key": "gc-t4-4", "text": "Lord have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-t4-5", "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t4-6", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
-        { "type": "text", "key": "gc-t4-7", "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-t4-8", "text": "Lord, have mercy.", "repeat": 12 }
+        {
+          "type": "text",
+          "key": "gc-t4-1",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-3",
+          "text": "O Most Holy Trinity, have mercy on us. O Lord, blot out our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for Your name's sake."
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-4",
+          "text": "Lord have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-5",
+          "text": "Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-6",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-7",
+          "text": "For Thine is the kingdom, the power, and the glory of the Father, the Son, and the Holy Spirit, now and forever unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-t4-8",
+          "text": "Lord, have mercy.",
+          "repeat": 12
+        }
       ]
     },
     "gc-save-help-protect": {
@@ -326,58 +747,134 @@
       "label": "Prayer to our Lord Jesus Christ (Antiochus the Monk)",
       "text": "And grant rest, O Master, to our souls and bodies as we sleep; preserve us from the gloomy slumber of sin and from the dark passions of the night. Calm the impulses of carnal desires, quench the fiery darts of the evil one which are craftily directed against us. Still the rebellions of the flesh, and put far from us all anxiety and worldly cares.\n\nGrant us, O God, a watchful mind, pure thoughts, a sober heart, and a quiet rest free from every vision of the devil. Raise us up again at the hour of prayer, strengthened in Your precepts and holding steadfastly within us the thought of Your commandments.\n\nGrant that we may sing praises to You through the night and that we may hymn, bless and glorify Your all-honorable and majestic name, of the Father and of the Son and of the Holy Spirit, now and ever and unto ages of ages. Amen."
     },
-    "gc-prayer-joannicius": {
-      "type": "sequence",
-      "label": "Prayer of Saint Joannicius",
-      "items": [
-        { "type": "text", "key": "gc-pj-1", "text": "My hope is the Father, my refuge is the Son, my protection is the Holy Spirit: O Holy Trinity, glory to You." },
-        { "type": "text", "key": "gc-pj-2", "text": "All my hope I place in You, O Mother of God: keep me under Your protection." },
-        { "type": "text", "key": "gc-pj-3", "text": "All creation, the assembly of angels and the race of man rejoices in You, O You who are full of grace, O sacred temple and noetical paradise, boast of virgins, from whom God, Who exists from before time, was incarnate and became a child; for He made Your body a throne, and Your womb He made more spacious than the heavens. All creation rejoices in You, O You who are full of grace. Glory to You!" }
-      ]
-    },
-    "gc-prayer-guardian-angel": {
-      "type": "text",
-      "label": "Prayer to the Guardian Angel",
-      "text": "O holy angel that stands by my wretched soul and my passionate life, forsake not me a sinner, nor shrink from me because of mine intemperance. Give no place for the cunning demon to master me through the violence of my mortal body; strengthen my poor and feeble hand, and guide me in the way of salvation. Yea, O holy angel of God, guardian and protector of my wretched soul and body, forgive me all wherein I have offended you all the days of my life; and if I have sinned in anything this day, protect me during this present night, and guard me from every temptation of the enemy, that I may not anger God by any sin. And pray to the Lord for me, that He may establish me in His fear and show me, His servant, to be worthy of His goodness. Amen."
-    },
-    "gc-ave-maria": {
-      "type": "text",
-      "label": "O Theotokos and Virgin, rejoice (thrice)",
-      "repeat": 3,
-      "text": "O Theotokos and Virgin, rejoice, O Mary full of grace; the Lord is with You; blessed are You among women, and blessed is the Fruit of Your womb, for You have borne the Savior of our souls."
-    },
     "gc-dismissal-prayers": {
       "type": "sequence",
-      "label": "Dismissal, Remit/Pardon, and Intercessions",
+      "label": "Resumption of the Order, Dismissal, Mutual Forgiveness, and Intercessions",
       "items": [
-        { "type": "text", "key": "gc-dp-glory", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-dp-kyrie3", "text": "Lord, have mercy.", "repeat": 3 },
-        { "type": "text", "key": "gc-dp-dismissal", "text": "O Lord Jesus Christ, Son of God, for the sake of the prayers of Your most holy pure Mother, of our holy and God-bearing fathers, and of all the saints, have mercy on us and save us, for You are good and the Lover of mankind." },
-        { "type": "text", "key": "gc-dp-remit", "text": "Remit, pardon, forgive, O God, our offenses, both voluntary and involuntary, in deed and word, in knowledge and ignorance, by day and by night, in mind and thought; forgive us all things, for You are good and the Lover of mankind. Amen." },
-        { "type": "text", "key": "gc-dp-intercessions", "text": "Let us pray for peace in the world.\n\nFor our Bishop, our Father, and for all our brotherhood in Christ.\n\nO Lord, Lover of mankind, forgive them that hate and wrong us. Do good to them that do good. Grant our brethren and kindred their saving petitions and life eternal; visit the infirm and grant them healing. Guide those at sea. Journey with them that travel. Help Orthodox Christians to struggle. To them that serve and are kind to us grant remission of sins. On them that have charged us, the unworthy, to pray for them, have mercy according to Your great mercy.\n\nRemember, O Lord, our fathers and brethren departed before us, and grant them rest where the light of Your countenance shall visit them. Remember, O Lord, our brethren in captivity, and deliver them from every misfortune. Remember, O Lord, those that bear fruit and do good works in Your holy churches, and grant them their saving petitions and life eternal.\n\nRemember also, O Lord, us Your lowly and sinful and unworthy servants, and enlighten our minds with the light of Your knowledge, and guide us in the way of Your commandments; through the intercessions of our most pure Lady the Theotokos and Ever-Virgin Mary and of all Your saints, for blessed are You unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-dp-final-kyrie", "text": "Lord, have mercy.", "repeat": 3 }
+        {
+          "type": "rubric",
+          "key": "dp-resumed-rubric",
+          "text": "Here the Order of Great Compline is resumed."
+        },
+        {
+          "type": "text",
+          "key": "dp-priest-hope",
+          "text": "Priest: Glory to You, O Christ God, our hope, glory to You."
+        },
+        {
+          "type": "text",
+          "key": "dp-chanters-glory",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "dp-kyrie3",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "dp-bless",
+          "text": "Father (Master), bless."
+        },
+        {
+          "type": "text",
+          "key": "dp-long-dismissal",
+          "rubric": "Prostration",
+          "text": "Master plenteous in mercy, O Lord Jesus Christ our God: Through the intercessions of our immaculate Lady Theotokos and Ever-Virgin Mary; through the power of the precious and life-giving Cross; through the mediations of the honourable, heavenly Bodiless Hosts; of the honourable, glorious Prophet, Forerunner, and Baptist John; of the holy, glorious, and all-praised apostles; of the holy, glorious, and victorious martyrs; of our holy and God-bearing fathers; of the holy and Righteous Ancestors of God Joachim and Anna; and all Your saints: make our prayer acceptable; grant us the remission of our sins; shelter us with the shelter of Your wings; drive away from us every enemy and adversary; make our life peaceful, O Lord; have mercy on us and on Your world, and save our souls, for You are good and the Lover of mankind."
+        },
+        {
+          "type": "text",
+          "key": "dp-amen-1",
+          "text": "Chanters: Amen."
+        },
+        {
+          "type": "text",
+          "key": "dp-forgive-1",
+          "rubric": "Prostration",
+          "text": "Priest: Bless, (holy master and) holy fathers (mothers) and brethren (sisters), and forgive me a sinner, all wherein I have sinned this day in deed, word, and thought, and in all my senses."
+        },
+        {
+          "type": "text",
+          "key": "dp-forgive-2",
+          "text": "Brethren: May God forgive and have mercy on you, holy father."
+        },
+        {
+          "type": "text",
+          "key": "dp-forgive-3",
+          "rubric": "Prostration",
+          "text": "Brethren: Bless me, holy father, and forgive all wherein I have sinned this day in deed, word, and thought, and in all my senses, and pray for me a sinner."
+        },
+        {
+          "type": "text",
+          "key": "dp-forgive-4",
+          "text": "Priest: Through His grace may God forgive and have mercy on us all."
+        },
+        {
+          "type": "text",
+          "key": "dp-litany-intro",
+          "text": "Priest: Let us pray for the Orthodox episcopate of the Church of Russia; for our lord the Very Most Reverend Metropolitan N., First Hierarch of the Russian Church Abroad; for our lord the Most Reverend (Archbishop or Bishop N., whose diocese it is), and all our brethren in Christ."
+        },
+        {
+          "type": "text",
+          "key": "dp-litany-petitions",
+          "rubric": "Chanters respond \"Lord, have mercy\" quietly through each petition.",
+          "text": "For the suffering Russian land and its Orthodox people both in the homeland and in the diaspora, and for their salvation; for this land, its authorities and armed forces.\n\nFor them that hate us and them that love us.\n\nFor them that are kind to us and them that serve us.\n\nFor them that have charged us unworthy ones to pray for them.\n\nFor the deliverance of the imprisoned.\n\nFor our fathers and brethren that are away.\n\nFor them that sail upon the sea.\n\nFor them that are bedridden in infirmities.\n\nLet us pray for the abundance of the fruits of the earth.\n\nAnd for every Orthodox Christian soul.\n\nLet us bless pious kings (rulers).\n\nOrthodox hierarchs, and the founders of this sacred habitation.\n\nOur parents, and all that have passed on before us, our fathers and brethren, and the Orthodox here and everywhere laid to rest.\n\nLet us say also for ourselves."
+        },
+        {
+          "type": "text",
+          "key": "dp-final-kyrie",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "dp-final-blessing",
+          "text": "Priest: For the sake of the intercessions of Your most pure Mother, of (the patron saint of the temple), and of all the saints, O Lord Jesus Christ our God, have mercy on us."
+        },
+        {
+          "type": "text",
+          "key": "dp-final-amen",
+          "text": "Chanters: Amen."
+        },
+        {
+          "type": "rubric",
+          "key": "dp-icon-veneration",
+          "text": "And we venerate the holy icons and receive a blessing from the priest."
+        }
       ]
-    },
-    "gc-theotokion-mon-wed-fri": {
-      "type": "text",
-      "label": "Closing Theotokion — Monday, Wednesday, Friday (Tone 2)",
-      "text": "Joy of all who sorrow, protectress of the wronged, and nurture of all the poor, comfort unto the estranged, a staff for the blind, visitation of all the sick, a shelter and help unto those brought down by pain, helper of orphans: Mother of God in the highest are You, O Immaculate Maiden; hasten, we beseech You, to redeem Your servants."
-    },
-    "gc-theotokion-tue-thu": {
-      "type": "text",
-      "label": "Closing Theotokion — Tuesday, Thursday (Cross Theotokion, Tone 1)",
-      "text": "On seeing Your unjust slaughter, O Christ, Your pure Mother cried in grief: O most sweet Child, how is it that You died lawlessly? How is it that You, Who suspended all the earth upon the flood of waters, are now Yourself suspended from the Tree? O most merciful Benefactor, do not leave me, Your Mother and handmaid, alone."
     },
     "gc-weekday-troparia-mon-wed": {
       "type": "sequence",
       "label": "Weekday Troparia — Monday and Wednesday (Tone 2)",
       "rubric": "On Monday and Wednesday evenings, in the Second Tone.",
       "items": [
-        { "type": "text", "key": "gc-wt-mw-1", "text": "Enlighten mine eyes, O Christ God, lest at any time I sleep unto death, lest at any time mine enemy say: I have prevailed against him." },
-        { "type": "text", "key": "gc-wt-mw-gl", "text": "Glory to the Father, and to the Son, and to the Holy Spirit." },
-        { "type": "text", "key": "gc-wt-mw-2", "text": "Be my soul's helper, O God, for I pass through the midst of many snares; deliver me out of them, and save me, O Good One, for You are the Lover of Mankind." },
-        { "type": "text", "key": "gc-wt-mw-now", "text": "Both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-wt-mw-th", "label": "Theotokion", "text": "Seeing that we have no boldness on account of our many sins, do You beseech Him that was born of You, O Virgin Theotokos, for the supplication of a mother avails much to win the Master's favor. Disdain not the prayers of sinners, O all-pure one, for merciful and mighty to save is He Who deigned also to suffer for our sake." }
+        {
+          "type": "text",
+          "key": "gc-wt-mw-1",
+          "text": "Enlighten mine eyes, O Christ God, lest at any time I sleep unto death, lest at any time mine enemy say: I have prevailed against him."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-2",
+          "text": "Be my soul's helper, O God, for I pass through the midst of many snares; deliver me out of them, and save me, O Good One, for You are the Lover of Mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-th",
+          "label": "Theotokion",
+          "text": "Seeing that we have no boldness on account of our many sins, do You beseech Him that was born of You, O Virgin Theotokos, for the supplication of a mother avails much to win the Master's favor. Disdain not the prayers of sinners, O all-pure one, for merciful and mighty to save is He Who deigned also to suffer for our sake."
+        }
       ]
     },
     "gc-weekday-troparia-tue-thu": {
@@ -385,13 +882,43 @@
       "label": "Weekday Troparia — Tuesday and Thursday (Tone 8)",
       "rubric": "On Tuesday and Thursday evenings, in the Eighth Tone.",
       "items": [
-        { "type": "text", "key": "gc-wt-tt-1", "text": "O Lord, You know the unsleeping vigilance of mine invisible enemies, and the weakness of my miserable flesh knows You Who have fashioned me: into Your hands, therefore, I will commit my spirit; shelter me with the wings of Your goodness, lest at any time I sleep unto death, and enlighten the eyes of my mind to the enjoyment of Your divine words, and raise me up in a seasonable time unto Your glorification, for You alone are good and the Lover of mankind." },
-        { "type": "text", "key": "gc-wt-tt-stichos", "label": "Stichos", "text": "Look upon me and hear me, O Lord my God." },
-        { "type": "text", "key": "gc-wt-tt-2", "text": "How terrible is Your judgment, O Lord, with the angels standing round about, the men being led in, the books opened, the deeds examined, the thoughts weighed. What judgment shall be awarded unto me who was conceived in sins? Who shall quench the flame for me, who shall enlighten the darkness for me, if not You, O Lord, Who have mercy on me as the Lover of mankind." },
-        { "type": "text", "key": "gc-wt-tt-gl", "text": "Glory to the Father, and to the Son, and to the Holy Spirit." },
-        { "type": "text", "key": "gc-wt-tt-3", "text": "Grant me tears, O God, as You didst once give to the sinning woman, and vouchsafe me to moisten Your feet which have freed me from the path of delusion, and to offer to You as fragrant myrrh a pure life, fashioned in me by repentance, that I may hear Your desired voice: Your faith has saved you, go in peace." },
-        { "type": "text", "key": "gc-wt-tt-now", "text": "Both now and ever, and unto the ages of ages. Amen." },
-        { "type": "text", "key": "gc-wt-tt-th", "label": "Theotokion", "text": "Having in You, O Theotokos, a hope that cannot be put to shame, I shall be saved; having obtained Your mediation, O most pure one, I shall not fear. I shall pursue enemies and triumph over them, having covered myself, as in a breastplate, only with Your protection; and imploring Your all-powerful aid, I cry unto You: O Sovereign Lady, save me through Your intercessions, and raise me up from somber sleep to Your glorification, by the might of the Son of God Who was incarnate of You." }
+        {
+          "type": "text",
+          "key": "gc-wt-tt-1",
+          "text": "O Lord, You know the unsleeping vigilance of mine invisible enemies, and the weakness of my miserable flesh knows You Who have fashioned me: into Your hands, therefore, I will commit my spirit; shelter me with the wings of Your goodness, lest at any time I sleep unto death, and enlighten the eyes of my mind to the enjoyment of Your divine words, and raise me up in a seasonable time unto Your glorification, for You alone are good and the Lover of mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-stichos",
+          "label": "Stichos",
+          "text": "Look upon me and hear me, O Lord my God."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-2",
+          "text": "How terrible is Your judgment, O Lord, with the angels standing round about, the men being led in, the books opened, the deeds examined, the thoughts weighed. What judgment shall be awarded unto me who was conceived in sins? Who shall quench the flame for me, who shall enlighten the darkness for me, if not You, O Lord, Who have mercy on me as the Lover of mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-3",
+          "text": "Grant me tears, O God, as You didst once give to the sinning woman, and vouchsafe me to moisten Your feet which have freed me from the path of delusion, and to offer to You as fragrant myrrh a pure life, fashioned in me by repentance, that I may hear Your desired voice: Your faith has saved you, go in peace."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-th",
+          "label": "Theotokion",
+          "text": "Having in You, O Theotokos, a hope that cannot be put to shame, I shall be saved; having obtained Your mediation, O most pure one, I shall not fear. I shall pursue enemies and triumph over them, having covered myself, as in a breastplate, only with Your protection; and imploring Your all-powerful aid, I cry unto You: O Sovereign Lady, save me through Your intercessions, and raise me up from somber sleep to Your glorification, by the might of the Son of God Who was incarnate of You."
+        }
       ]
     },
     "gc-saturday-kontakion": {
@@ -422,6 +949,104 @@
       "label": "Canon (Menaion)",
       "text": "A qualifying feast (rank 1–2) is commemorated today. The Menaion canon for the saint of the day is appointed at Great Compline in place of the Octoechos Theotokos canon. Following the canon, the appointed stichera for the commemoration are sung.",
       "resolvedAs": "gc-canon-menaion"
+    },
+    "gc-prayers-approaching-sleep": {
+      "type": "sequence",
+      "label": "The Prayers on Approaching Sleep",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "pas-opening-rubric",
+          "text": "At this point, according to the usage of the Holy Trinity Monastery, the Prayers on Approaching Sleep are said."
+        },
+        {
+          "type": "text",
+          "key": "pas-1",
+          "label": "Prayer I, of St. Macarius the Great",
+          "text": "O Eternal God and King of all creation, Who have vouchsafed me to arrive at this hour, forgive me the sins that I have committed this day in deed, word, and thought; and cleanse, O Lord, my lowly soul of all impurity of flesh and spirit, and grant me, O Lord, to pass the sleep of this night in peace; that, rising from my lowly bed, I may please Your most holy name all the days of my life, and thwart the enemies, fleshly and bodiless, that war against me. And deliver me, O Lord, from vain thoughts and evil desires which defile me. For Yours is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-2",
+          "label": "Prayer II, of St. Antiochus",
+          "text": "O Ruler of all, Word of the Father, O Jesus Christ, You Who are perfect: For the sake of the plenitude of Your mercy, never depart from me, but always remain in me Your servant. O Jesus, Good Shepherd of Your sheep, deliver me not over to the sedition of the serpent, and leave me not to the will of Satan, for the seed of corruption is in me. But do You, O Lord, worshipful God, holy King, Jesus Christ, as I sleep, guard me by the Unwaning Light, Your Holy Spirit, by Whom You did sanctify Your disciples. O Lord, grant me, Your unworthy servant, Your salvation upon my bed. Enlighten my mind with the light of understanding of Your Holy Gospel; my soul, with the love of Your Cross; my heart, with the purity of Your word; my body, with Your passionless Passion. Keep my thought in Your humility, and raise me up at the proper time for Your glorification. For most glorified are You together with Your unoriginate Father, and the Most-holy Spirit, unto the ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-3",
+          "label": "Prayer III, to the Holy Spirit",
+          "text": "O Lord, Heavenly King, Comforter, Spirit of Truth, show compassion and have mercy on me Your sinful servant, and loose me from mine unworthiness, and forgive all wherein I have sinned against You today as a man, and not only as a man, but even worse than a beast, my sins voluntary and involuntary, known and unknown, whether from youth, and from evil suggestion, or whether from brazenness and despondency. If I have sworn by Your name, or blasphemed it in my thought; or reproached anyone, or slandered anyone in mine anger, or grieved anyone, or have become angry about anything; or have lied, or slept needlessly, or if a beggar has come to me and I disdained him; or if I have grieved my brother, or have quarreled, or have condemned anyone; or if I have been boastful, or prideful, or angry; if, as I stood at prayer, my mind has been distracted by the wiles of this world, or by thoughts of depravity; if I have overeaten, or have drunk excessively, or laughed frivolously; if I have thought evil, or seen the beauty of another and been wounded thereby in my heart; if I have said improper things, or derided my brother's sin when mine own sins are countless; if I have been neglectful of prayer, or have done some other wrong that I do not remember, for all of this and more than this have I done: have mercy, O Master my Creator, on me Your downcast and unworthy servant, and loose me, and remit, and forgive me, for You are good and the Lover of mankind, so that, lustful, sinful, and wretched as I am, I may lie down and sleep and rest in peace. And I shall worship, and hymn, and glorify Your most honourable name, together with the Father and His Only-begotten Son, now and ever, and unto the ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-4",
+          "label": "Prayer IV, of St. Macarius the Great",
+          "text": "What shall I offer You, or what shall I give You, O greatly-gifted, immortal King, O compassionate Lord Who loves mankind? For though I have been slothful in pleasing You, and have done nothing good, You have led me to the close of this day that is past, establishing the conversion and salvation of my soul. Be merciful to me a sinner, bereft of every good deed, raise up my fallen soul which has become defiled by countless sins, and take away from me every evil thought of this visible life. Forgive my sins, O Only Sinless One, in which I have sinned against You this day, known or unknown, in word, and deed, and thought, and in all my senses. Do You Yourself protect and guard me from every opposing circumstance, by Your Divine authority and power and inexpressible love for mankind. Blot out, O God, blot out the multitude of my sins. Be pleased, O Lord, to deliver me from the net of the evil one, and save my passionate soul, and overshadow me with the light of Your countenance when You shall come in glory; and cause me, uncondemned now, to sleep a dreamless sleep, and keep Your servant untroubled by thoughts, and drive away from me all satanic deeds; and enlighten for me the eyes of my heart with understanding, lest I sleep unto death. And send me an angel of peace, a guardian and guide of my soul and body, that he may deliver me from mine enemies; that, rising from my bed, I may offer You prayers of thanksgiving. Yea, O Lord, hearken unto me, Your sinful and wretched servant, in confession and conscience; grant me, when I arise, to be instructed by Your sayings; and through Your angels cause demonic despondency to be driven far from me: that I may bless Your holy name, and glorify and extol the most pure Theotokos Mary, whom You have given to us sinners as a protectress, and accept her who prays for us. For I know that she exemplifies Your love for mankind and prays for us without ceasing. Through her protection, and the sign of the precious Cross, and for the sake of all Your saints, preserve my wretched soul, O Jesus Christ our God: for holy are You, and most glorious for ever. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-5",
+          "label": "Prayer V",
+          "text": "O Lord our God, as You are good and the Lover of mankind, forgive me wherein I have sinned today in word, deed, and thought. Grant me peaceful and undisturbed sleep; send Your guardian angel to protect and keep me from all evil. For You are the Guardian of our souls and bodies, and unto You do we send up glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-6",
+          "label": "Prayer VI",
+          "text": "O Lord our God, in Whom we believe and Whose Name we invoke above every name, grant us, as we go to sleep, relaxation of soul and body, and keep us from all dreams, and dark pleasures; stop the onslaught of the passions and quench the burnings that arise in the flesh. Grant us to live chastely in deed and word, that we may obtain a virtuous life, and not fall away from Your promised blessings; for blessed are You for ever. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-7",
+          "label": "Prayer VII, of St. John Chrysostom, according to the number of hours of day and night",
+          "text": "O Lord, deprive me not of Your heavenly good things. O Lord, deliver me from the eternal torments. O Lord, if I have sinned in mind or thought, in word or deed, forgive me. O Lord, deliver me from all ignorance, forgetfulness, faintheartedness, and stony insensibility. O Lord, deliver me from every temptation. O Lord, enlighten my heart which evil desire has darkened. O Lord, as a man I have sinned, but do You, as the compassionate God, have mercy on me, seeing the infirmity of my soul. O Lord, send Your grace to my help, that I may glorify Your holy name. O Lord Jesus Christ, write me Your servant in the Book of Life, and grant me a good end. O Lord my God, even though I have done nothing good in Your sight, yet grant me by Your grace to make a good beginning. O Lord, sprinkle into my heart the dew of Your grace. O Lord of heaven and earth, remember me Your sinful servant, shameful and unclean, in Your kingdom. Amen.\n\nO Lord, accept me in penitence. O Lord, forsake me not. O Lord, lead me not into temptation. O Lord, grant me good thoughts. O Lord, grant me tears, and remembrance of death, and compunction. O Lord, grant me the thought of confessing my sins. O Lord, grant me humility, chastity, and obedience. O Lord, grant me patience, courage, and meekness. O Lord, implant in me the root of good, Your fear in my heart. O Lord, vouchsafe me to love You with all my soul and thoughts, and in all things to do Your will. O Lord, protect me from evil men, and demons, and passions, and from every other unseemly thing. O Lord, You know that You do as You will: Your will be done also in me a sinner; for blessed are You unto the ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-8",
+          "label": "Prayer VIII, to our Lord Jesus Christ",
+          "text": "O Lord Jesus Christ, Son of God, for the sake of Your most honourable Mother, and Your bodiless angels, Your Prophet and Forerunner and Baptist, the God-inspired apostles, the radiant and victorious martyrs, the holy and God-bearing fathers, and through the intercessions of all the saints, deliver me from the besetting presence of the demons. Yea, my Lord and Creator, Who desires not the death of a sinner, but rather that he be converted and live, grant conversion also to me, wretched and unworthy; rescue me from the mouth of the pernicious serpent, who is yawning to devour me and take me down to hades alive. Yea, my Lord, my Comfort, Who for my miserable sake was clothed in corruptible flesh, draw me out of misery, and grant comfort to my miserable soul. Implant in my heart to fulfill Your commandments, and to forsake evil deeds, and to obtain Your blessings; for in You, O Lord, have I hoped, save me."
+        },
+        {
+          "type": "text",
+          "key": "pas-9",
+          "label": "Prayer IX, to the Most Holy Theotokos",
+          "text": "O good Mother of the Good King, most pure and blessed Theotokos Mary, pour out the mercy of your Son and our God upon my passionate soul, and by your intercessions guide me unto good works, that I may pass the remaining time of my life without blemish, and attain paradise through you, O Virgin Theotokos, who alone are pure and blessed."
+        },
+        {
+          "type": "text",
+          "key": "pas-10",
+          "label": "Prayer X, to the Holy Guardian Angel",
+          "text": "Angel of Christ, my holy guardian and protector of my soul and body, forgive me all wherein I have sinned this day, and deliver me from all opposing evil of mine enemy, lest I anger my God by any sin. Pray for me, a sinful and unworthy servant, that you may show me forth worthy of the kindness and mercy of the All-holy Trinity, and of the Mother of my Lord Jesus Christ, and of all the saints. Amen."
+        },
+        {
+          "type": "text",
+          "key": "pas-kontakion",
+          "label": "Kontakion to the Theotokos",
+          "text": "To you, the Champion Leader, we your servants dedicate a feast of victory and of thanksgiving as ones rescued out of sufferings, O Theotokos; but as you are one with might which is invincible, from all dangers that can be do you deliver us, that we may cry to you: Rejoice, you Bride unwedded!"
+        },
+        {
+          "type": "text",
+          "key": "pas-v1",
+          "text": "Most glorious, Ever-Virgin, Mother of Christ God, present our prayer to your Son and our God, that through you He may save our souls."
+        },
+        {
+          "type": "text",
+          "key": "pas-v2",
+          "text": "All my hope I place in you, O Mother of God: keep me under your protection."
+        },
+        {
+          "type": "text",
+          "key": "pas-v3",
+          "text": "O Virgin Theotokos, disdain not me a sinner, needing your help and your protection, and have mercy on me, for my soul has hoped in you."
+        },
+        {
+          "type": "text",
+          "key": "pas-joannicius",
+          "label": "Another Prayer, of St. Joannicius",
+          "text": "My hope is the Father, my refuge is the Son, my protection is the Holy Spirit: O Holy Trinity, glory to You."
+        }
+      ]
     }
   }
 }

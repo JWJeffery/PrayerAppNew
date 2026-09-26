@@ -116,7 +116,7 @@ check(
 check(
   'tradition filtering is strict',
   prayersJs.includes('function prayerOptionAppliesToContext') &&
-  prayersJs.includes('return traditions.includes(context);')
+  prayersJs.includes('if (!traditions.includes(context)) return false;')
 );
 
 check(

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "_comment": "Read by index.html (entry cards + profile dropdown) and js/office-ui.js (initializeEntryRouting's stale-stored-default guard) to gate whole traditions from testers. Edited via the admin panel's 'Tradition Availability' section (admin/admin.html), which outputs an updated copy of this exact file to paste back in -- there is no backend, so a toggle there does not take effect for testers until this file is committed and the web release is redeployed. See documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md for the full design.",
+  "traditions": {
+    "anglican": {
+      "available": true
+    },
+    "church-of-the-east": {
+      "available": true
+    },
+    "oriental-orthodox": {
+      "available": true
+    },
+    "eastern-orthodox": {
+      "available": false,
+      "reason": "Byzantine Horologion is paused for a content audit.",
+      "since": "2026-09-25"
+    },
+    "latin-catholic": {
+      "available": false,
+      "reason": "Liturgy of the Hours is not implemented yet.",
+      "permanent": true
+    }
+  }
+}

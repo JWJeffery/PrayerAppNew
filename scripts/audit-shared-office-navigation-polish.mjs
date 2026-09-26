@@ -29,53 +29,17 @@ try {
     failures.push('package.json parses');
 }
 
+/* CORRECTED (Phase 6, sidebar-deletion refactor): this audit used to check
+   for _sharedOfficeNavigatorHideLegacy() and its two helpers -- machinery
+   that retired old sibling markup inside each mode's own legacy sidebar so
+   it wouldn't visually clash with the freshly-built nav next to it. That
+   legacy markup (and the sidebars themselves) is being deleted as part of
+   this refactor, so there is nothing left for that machinery to retire; it
+   and the CSS rule that hid retired elements were deleted outright. See
+   audit-ledger.html's ui:phase6-retire-old-skin row for the full account. */
 check(
-    'legacy hider remains panel/config based',
-    officeUi.includes('function _sharedOfficeNavigatorHideLegacy(panel, config) {')
-);
-check(
-    'legacy restorer helper exists',
-    officeUi.includes('function _sharedOfficeNavigatorRestoreLegacyElement(el) {')
-);
-check(
-    'legacy retirement helper exists',
-    officeUi.includes('function _sharedOfficeNavigatorRetireLegacyElement(el) {')
-);
-check(
-    'legacy controls receive retired class',
-    officeUi.includes('el.classList.add("shared-office-nav-legacy-hidden")')
-);
-check(
-    'legacy controls receive aria-hidden',
-    officeUi.includes('el.setAttribute("aria-hidden", "true")')
-);
-check(
-    'legacy controls receive retirement data attribute',
-    officeUi.includes('el.setAttribute("data-shared-office-nav-retired", "true")')
-);
-check(
-    'legacy controls receive dataset retirement marker',
-    officeUi.includes('el.dataset.sharedOfficeNavRetired = "true"')
-);
-check(
-    'legacy controls use inert where supported',
-    officeUi.includes('el.inert = true')
-);
-check(
-    'legacy controls are removed from tab order',
-    officeUi.includes('el.tabIndex = -1') && officeUi.includes('child.tabIndex = -1')
-);
-check(
-    'legacy controls are disabled where applicable',
-    officeUi.includes('el.disabled = true') && officeUi.includes('child.disabled = true')
-);
-check(
-    'legacy display state is restorable',
-    officeUi.includes('sharedOfficeLegacyDisplay') && officeUi.includes('el.style.removeProperty("display")')
-);
-check(
-    'legacy tab state is restorable',
-    officeUi.includes('sharedOfficeLegacyTabIndex')
+    'single neutral shared-office-nav host exists',
+    officeUi.includes('const SHARED_OFFICE_NAV_HOST_ID = "legacy-office-controls";')
 );
 check(
     'shared nav css polish marker exists',
@@ -104,10 +68,6 @@ check(
 check(
     'shared nav option label is smaller',
     officeCss.includes('.shared-office-nav-option-label {\n    font-size: 0.84rem;')
-);
-check(
-    'retired controls are hidden and non-interactive in css',
-    officeCss.includes('[data-shared-office-nav-retired="true"] * {\n    display: none !important;\n    visibility: hidden !important;\n    pointer-events: none !important;')
 );
 check(
     'package exposes polish audit',

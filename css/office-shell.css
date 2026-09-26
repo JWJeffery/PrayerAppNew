@@ -3,33 +3,45 @@
 
    See documentation/UI_REDESIGN_HANDOFF.md for the full design and build plan.
 
-   PHASE 1 ONLY. This file currently declares the TOKEN LAYER and nothing else.
-   No structural rule, no layout, no typography is applied yet — those land in
-   Phase 2. Nothing in the app consumes these custom properties today, so
-   loading this file changes no rendering whatsoever.
+   Phases 1-5 built this file behind a `body.shell-v2` dev flag, kept scoped so
+   it could coexist with the old parchment pass without interleaving edits.
+   Phase 6 (2026-09-24) made this shell the app's only office shell and
+   dropped the flag itself -- `body` now carries `shell-v2` as a permanent
+   literal class (js/shell-flag.js, the toggle mechanism, is gone).
 
-   THREE RULES THAT GOVERN EVERY EDIT TO THIS FILE UNTIL PHASE 6:
+   THIS FILE'S OWN SELECTORS ARE STILL SCOPED UNDER `.shell-v2`, ON PURPOSE,
+   NOT AS A LEFTOVER. A full unscope was attempted the same day and reverted:
+   several rules here (e.g. the #tradition-entry/#mode-selection recolor
+   rules below) use `.shell-v2` as extra specificity weight to beat a real,
+   still-existing competing rule of the same target in css/office.css --
+   stripping it dropped those rules below the office.css rule's own
+   specificity and caused a real, verified regression (screenshot diff, not
+   guessed). office.css's own old parchment CSS for those two screens
+   couldn't be deleted either, the same day, for the matching reason (Stage
+   3's own deferral: office-shell.css only recolors those screens' cards, it
+   never rebuilt the grid layout the base rules still provide). Unscoping
+   this file safely needs that office.css cleanup done FIRST, not the other
+   way around -- future work, not done here. See RESUME_PROJECT_NOTE.md and
+   AUDIT_GOVERNANCE_LEDGER.md for the full account.
 
-   1. EVERYTHING IS SCOPED UNDER `body.shell-v2`. Not `:root`, not `body`, not a
-      bare element or class selector. The old parchment pass and this file must
-      be able to coexist without interleaving, which only works if this file can
-      never apply while the flag is off.
+   TWO RULES THAT STILL GOVERN THIS FILE:
 
-   2. NO EXISTING RULE IS EDITED. This file is loaded AFTER css/office.css and
-      wins on specificity where it needs to. It does not reach back and change
-      office.css, and office.css does not know it exists.
+   1. NO EXISTING RULE IN css/office.css IS EDITED. This file loads AFTER
+      office.css and wins on specificity where it needs to. It does not reach
+      back and change office.css.
 
-   3. TOKEN NAMES ARE PREFIXED `--uo-`. Verified 2026-09-12: no `--uo-` custom
+   2. TOKEN NAMES ARE PREFIXED `--uo-`. Verified 2026-09-12: no `--uo-` custom
       property existed anywhere in css/, js/ or index.html before this file, so
-      these names cannot collide with the 25 `--app-*` tokens of the parchment
-      pass or with the original theme's `--gold` / `--ink` / `--rubric`.
+      these names cannot collide with the (now largely deleted) `--app-*`
+      tokens of the parchment pass or with the original theme's `--gold` /
+      `--ink` / `--rubric`.
 
-   The parchment pass is retired in Phase 6, at which point this file is
-   unscoped and the flag is dropped. Note that Phase 6 conflicts with
-   documentation/universal-office-navigation-architecture.md, which is marked
-   canonical and fixes the parchment surface as the shared visual language —
-   that conflict is recorded, not resolved, and needs Josh's decision before
-   Phase 6. It does not affect Phases 1–5.
+   Book of Needs still runs the parchment pass and gets its own design pass
+   separately, per UI_REDESIGN_HANDOFF.md section 9 -- Phase 6 only ever
+   covered the office screen. The navigation-architecture governance conflict
+   that used to sit in front of Phase 6 was resolved 2026-09-21 (Josh's
+   ruling; see AUDIT_GOVERNANCE_LEDGER.md, gov:navigation-architecture-
+   surface-superseded) before this phase started.
    =========================================================================== */
 
 
@@ -102,7 +114,7 @@
    carries the night values and `body.shell-v2.uo-day` the day ones.
    --------------------------------------------------------------------------- */
 
-body.shell-v2 {
+:root {
     --uo-ground:        #08070c;
     --uo-ground-raised: #0b0912;
     --uo-ink:           #e6dcc4;
@@ -163,7 +175,7 @@ body.shell-v2 {
    DAY — Morning Prayer, the Sixth Hour.
    --------------------------------------------------------------------------- */
 
-body.shell-v2.uo-day {
+body.uo-day {
     --uo-ground:        #f2ebdf;
     --uo-ground-raised: #f4ece0;
     --uo-ink:           #2a2118;
@@ -204,9 +216,23 @@ body.shell-v2.uo-day {
    theme behaviour untouched.
    --------------------------------------------------------------------------- */
 
-/* office.css 1632 + 1648 — the card itself. Nothing but layout survives. */
-body.shell-v2.office-active .office-container,
-body.shell-v2.office-active.dark-mode .office-container {
+/* office.css 1632 + 1648 — the card itself. Nothing but layout survives.
+   The dark-mode-qualified selector this rule used to also carry (needed
+   while body.shell-v2 was the only anchor) is now a literal duplicate of
+   the bare .office-container above -- dropped rather than kept as dead
+   weight, 2026-09-25 unscoping Stage 4.
+
+   KEPT .office-active here, not stripped fully bare: a fully-bare
+   .office-container would be an EXACT specificity tie with office.css's
+   own bare .office-container rule (line 365 -- background, max-width,
+   width, margin, padding, border-radius, box-shadow, color, nearly every
+   property this rule also sets), decided only by <link> load order --
+   the same fragile pattern already caught and guarded for ::before/
+   ::after below. Not flagged by the original three-agent audit (which
+   only checked this pair's ::before/::after variant), found by directly
+   re-verifying which office.css rule was actually winning after the
+   naive strip, not assumed safe from the audit's table alone. */
+.office-active .office-container {
     width: auto;
     max-width: none;
     margin: 0;
@@ -219,24 +245,26 @@ body.shell-v2.office-active.dark-mode .office-container {
 }
 
 /* office.css 1658 + 1665 — the inset rule and the corner ornament. */
-body.shell-v2.office-active .office-container::before,
-body.shell-v2.office-active .office-container::after {
+.office-active .office-container::before,
+.office-active .office-container::after {
     display: none;
     content: none;
 }
 
 /* office.css 1670 — the card's headings return to the shell's own faces. */
-body.shell-v2.office-active .office-container h1,
-body.shell-v2.office-active .office-container h2,
-body.shell-v2.office-active .office-container h3 {
+.office-container h1,
+.office-container h2,
+.office-container h3 {
     font-family: var(--uo-face-title);
     color: var(--uo-ink);
 }
 
-/* The prayed text is Cormorant at the 25px floor, not the skin's Georgia. */
-body.shell-v2.office-active .office-container,
-body.shell-v2.office-active .office-container p,
-body.shell-v2.office-active .office-container li {
+/* The prayed text is Cormorant at the 25px floor, not the skin's Georgia.
+   First selector keeps .office-active for the same tie reason as the base
+   rule above -- office.css's bare .office-container also sets `color`. */
+.office-active .office-container,
+.office-container p,
+.office-container li {
     font-family: var(--uo-face-prayed);
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
@@ -271,16 +299,25 @@ body.shell-v2.office-active .office-container li {
    same kind of rule and was simply missed. Phase 6 deletes it outright.
 
    SCREEN ONLY, the same scoping decision and the same reason as the gutter grid
-   below: css/office.css:1124-1125 sets its own print sizes (11pt) for
-   .component-text and .psalm-verse, and at (0,4,0) these rules would beat those
-   in print too and put 25px on paper. Print stays exactly as it was. */
+   below: css/office.css:819 sets its own print size (11pt) for .component-text,
+   and at (0,4,0) this rule would beat that in print too and put 25px on paper.
+   Print stays exactly as it was.
+
+   CORRECTED 2026-09-25: this rule used to also list .office-container
+   .psalm-verse, and the paragraph above used to cite office.css's print rule
+   for .psalm-verse alongside .component-text. Both citations are gone now --
+   confirmed via a repo-wide grep for the class, nothing anywhere renders
+   .psalm-verse; the live psalm renderer emits .psalm-block/.psalm-stanza/
+   .psalm-half-verse instead (already covered by the other selectors here). It
+   was leftover from an earlier, superseded psalm-rendering approach. Dropped
+   from this selector list (matched nothing) and from office.css's own print
+   block (same reason), rather than left as dead weight pointing at itself. */
 @media screen {
-    body.shell-v2.office-active .office-container .component-text,
-    body.shell-v2.office-active .office-container .reading-text,
-    body.shell-v2.office-active .office-container .psalm-block,
-    body.shell-v2.office-active .office-container .psalm-stanza,
-    body.shell-v2.office-active .office-container .psalm-verse,
-    body.shell-v2.office-active .office-container .psalm-stanza .psalm-half-verse {
+    .office-container .component-text,
+    .office-container .reading-text,
+    .office-container .psalm-block,
+    .office-container .psalm-stanza,
+    .office-container .psalm-stanza .psalm-half-verse {
         font-family: var(--uo-face-prayed);
         font-size: var(--uo-size-body);
         line-height: var(--uo-leading-body);
@@ -290,8 +327,8 @@ body.shell-v2.office-active .office-container li {
 
 /* Rubrics keep their colour from the shell's tokens, which are contrast-checked
    against both grounds; the skin's values were not. */
-body.shell-v2.office-active .office-container .rubric,
-body.shell-v2.office-active .office-container .rubric-text {
+.office-container .rubric,
+.office-container .rubric-text {
     color: var(--uo-rubric);
 }
 
@@ -308,8 +345,10 @@ body.shell-v2.office-active .office-container .rubric-text {
    which don't, rather than the page text jumping left and right block to
    block.
 
-   SCREEN ONLY, entirely: css/office.css:1123 has its own @media print rule
-   for .passage-reference, and the handoff doc's own hazards list (§10) warns
+   SCREEN ONLY, entirely: css/office.css:818 has its own @media print rule
+   for .passage-reference (line number corrected 2026-09-25 -- the file has
+   shifted since this comment was written; the rule itself is unchanged and
+   still live), and the handoff doc's own hazards list (§10) warns
    print regresses silently if anything touching the grid forgets it. Rather
    than design print behaviour for the gutter now (a separate task, not what
    was asked for), this feature is scoped to the screen so print stays
@@ -317,14 +356,14 @@ body.shell-v2.office-active .office-container .rubric-text {
    to plain block flow (no grid columns) and .passage-reference prints
    exactly as its own existing print rule already handles it. */
 @media screen {
-    body.shell-v2.office-active .office-container .uo-block {
+    .office-container .uo-block {
         display: grid;
         grid-template-columns: var(--uo-gutter-width) 1fr;
         column-gap: 18px;
         align-items: start;
     }
 
-    body.shell-v2.office-active .office-container .uo-gutter-label {
+    .office-container .uo-gutter-label {
         grid-column: 1;
         text-align: right;
         font-family: var(--uo-face-machine);
@@ -335,7 +374,7 @@ body.shell-v2.office-active .office-container .rubric-text {
         padding-top: 0.3em;   /* nudges the label toward the body text's cap-height rather than its ascender */
     }
 
-    body.shell-v2.office-active .office-container .uo-block-body {
+    .office-container .uo-block-body {
         grid-column: 2;
         min-width: 0;   /* lets long citations/reading text wrap inside the track instead of overflowing it */
     }
@@ -343,7 +382,7 @@ body.shell-v2.office-active .office-container .rubric-text {
     /* The citation now lives in the gutter, not inline in the body -- the
        page is "the prayed text only, nothing else" (handoff doc §1). The
        element stays in the DOM; only the on-screen view hides it. */
-    body.shell-v2.office-active .office-container .uo-block-body .passage-reference {
+    .office-container .uo-block-body .passage-reference {
         display: none;
     }
 }
@@ -354,14 +393,19 @@ body.shell-v2.office-active .office-container .rubric-text {
 /* Phase 4 (2026-09-24): the 340px legacy sidebar no longer sits beside the
    grid under the flag -- Office Settings is one drawer, opened from the
    keeping-place bar (js/office-drawer.js). No clearance to reserve. */
-body.shell-v2.office-active #main-content.app-primary-canvas,
-body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
-    /* !important because office.css:2270/2274 reserve the old sidebar's
-       width with !important at (1,2,1); this is (1,3,1). */
+.office-active #main-content.app-primary-canvas,
+.office-active #main-content.app-primary-canvas.sidebar-hidden {
+    /* CORRECTED 2026-09-25: the "office.css:2270/2274" citation was already
+       stale -- that region holds unrelated Roman Breviary content today.
+       The real, current competitors are office.css's bare #main-content
+       (padding:40px 40px 40px 340px, (1,0,0)) and .sidebar-hidden
+       (padding-left:80px, (1,1,0)), neither !important -- already beaten
+       on specificity alone at (1,2,0)/(1,3,0) once unscoped, and beaten
+       twice over since every declaration here is !important regardless. */
     padding: 0 !important;
 }
 
-body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
+.office-active #main-content.app-primary-canvas.sidebar-hidden {
     padding-left: 0;
 }
 
@@ -381,10 +425,20 @@ body.shell-v2.office-active #main-content.app-primary-canvas.sidebar-hidden {
    style="display:flex" inline on that label, and an inline style beats any
    stylesheet rule. The section wrapper carries no inline style.
 
-   Phase 4 deletes these sidebars and this rule goes with them.
-   --------------------------------------------------------------------------- */
+   CORRECTED 2026-09-25: the claim above ("Phase 4 deletes these sidebars
+   and this rule goes with them") is stale. The four legacy sidebars ARE
+   now deleted (Phase 6), but this rule was never about them -- it hides
+   the shared office navigator's OWN built-in "Appearance" card
+   (js/office-ui.js's renderSharedOfficeNavigation(), rendered whenever a
+   lane config sets showAppearanceToggle: true -- still true for three
+   lanes today, confirmed by grep, so this card still actively renders).
+   That card carries its own legacy Dark Mode checkbox, superseded by the
+   shell's own Auto/Light/Dark control same as the sidebars' copy was --
+   a separate duplicate, not the same one. Still needed; not going away.
+   Unscoped since office.css has no rule at all for this class (confirmed
+   by grep) -- nothing to compete with regardless of specificity. */
 
-body.shell-v2 .shared-office-nav-appearance-card {
+.shared-office-nav-appearance-card {
     display: none;
 }
 
@@ -397,27 +451,25 @@ body.shell-v2 .shared-office-nav-appearance-card {
    envelope lands in Phase 3.
    --------------------------------------------------------------------------- */
 
-/* SPECIFICITY, and why these selectors look heavier than they need to.
-   css/office.css line 2248 carries:
+/* SPECIFICITY — historical note, kept because it explains why the two rules
+   below still carry more classes than a fresh file would use.
+   Originally css/office.css carried a competing
+   `body.office-active #main-content.app-primary-canvas { display: block; }`
+   at (0,3,1), which beat this file's plainer first draft and silently
+   defeated `display: grid`. Matched at equal specificity rather than reaching
+   for `!important`, relying on this file loading after office.css to win on
+   order. A `.dark-mode` sibling needed (0,4,1) to clear the same way.
 
-       body.office-active #main-content.app-primary-canvas { display: block; }
+   Phase 6 (2026-09-24) deleted both of those competing office.css rules
+   outright, so THIS SPECIFIC fight is over -- confirmed by grep, not assumed.
+   The extra classes below are no longer load-bearing for THIS pair and could
+   be trimmed, but a blanket unscope of the whole file was tried the same day
+   and reverted (see this file's own header comment) after it broke a
+   DIFFERENT pair of rules (the entry-screen ones) whose office.css opponent
+   is still very much alive. Left at full weight here too, for consistency,
+   rather than trim rule-by-rule and invite the same class of mistake. */
 
-   which is (0,3,1) — two classes and an id. A plainer
-   `body.shell-v2 #main-content` is (0,2,1) and LOSES to it, so `display: grid`
-   silently never applied and all five regions fell into normal flow. The
-   class-based rules further down had nothing competing with them and did apply,
-   which made the failure look like a half-working stylesheet rather than a
-   specificity loss.
-
-   Matched at (0,3,1) instead of reaching for !important: equal specificity, and
-   this file loads after office.css, so it wins on order. The background rule
-   needs (0,4,1) to clear `body.office-active.dark-mode #main-content`.
-
-   All of this disappears in Phase 6 when the parchment pass is deleted and this
-   file is unscoped. Until then, any NEW structural rule here that targets
-   #main-content must be written at this weight or it will lose the same way. */
-
-body.shell-v2 #main-content.app-primary-canvas {
+#main-content.app-primary-canvas {
     display: grid;
     grid-template-columns: var(--uo-rail-width) minmax(0, 1fr) var(--uo-margin-width);
     /* Rows are sized against THIS element's own fixed height (css/office.css's
@@ -441,18 +493,228 @@ body.shell-v2 #main-content.app-primary-canvas {
 /* Beats body.office-active.dark-mode #main-content (0,3,1) at (0,4,1). The
    parchment gradients are two stacked background layers, so this must set
    `background` wholesale rather than background-color. */
-body.shell-v2.office-active #main-content.app-primary-canvas {
+.office-active #main-content.app-primary-canvas {
     background: var(--uo-ground);
+    position: relative;
 }
 
-body.shell-v2 #main-content > .uo-ordo    { grid-area: ordo; }
-body.shell-v2 #main-content > .uo-rail    { grid-area: rail; }
-body.shell-v2 #main-content > .uo-page    { grid-area: page; }
-body.shell-v2 #main-content > .uo-margin  { grid-area: margin; }
-body.shell-v2 #main-content > .uo-keeping { grid-area: keep; }
+/* ---------------------------------------------------------------------------
+   PER-LANE GROUND IMAGERY -- 2026-09-24. HANDOFF.md §6 (Imagery): "Lane-
+   appropriate... grounds", each "under a heavy veil at 0.4-0.55 opacity as
+   texture, never as wallpaper" -- called for in the original design proposal,
+   never built in any of Phases 1-5 (confirmed: #main-content's computed
+   background was a flat solid colour, no image, checked directly against a
+   live render before writing this). Found on Josh's third time raising it.
+
+   A separate ::before layer, not filter:blur() on #main-content itself --
+   that would blur the rail/page/margin text it contains, not just the
+   background. ::before is position:absolute, which removes it from grid
+   flow automatically (the CSS Grid spec excludes absolutely-positioned grid
+   items from placement), so it cannot disturb the ordo/rail/page/margin/
+   keeping grid areas above it; z-index keeps it under them.
+
+   Keyed on data-uo-tradition (set by applyTraditionGround() in
+   js/office-shell.js from the envelope's own env.tradition -- never guessed
+   from the rendered page). A tradition with no rule below simply shows the
+   plain --uo-ground colour underneath -- an honest, disclosed gap, not a
+   placeholder or a borrowed image; see the ledger for which lanes still
+   lack one and why. NEVER a Western Gothic image behind an Eastern lane --
+   HANDOFF.md's own explicit rule.
+   --------------------------------------------------------------------------- */
+
+.office-active #main-content.app-primary-canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px) saturate(0.7) brightness(0.42);
+    opacity: 0.48;
+}
+
+#main-content.app-primary-canvas > .uo-ordo,
+#main-content.app-primary-canvas > .uo-rail,
+#main-content.app-primary-canvas > .uo-page,
+#main-content.app-primary-canvas > .uo-margin,
+#main-content.app-primary-canvas > .uo-keeping {
+    position: relative;
+    z-index: 1;
+}
+
+/* Anglican (ANG) -- images already in this repo, already vetted as
+   Western/Gothic-appropriate (used elsewhere in this same app: rood-screen.png
+   for #uo-threshold's own "night-prayer aesthetic", chartres-rose.png behind
+   the entry screen). Night offices (the default palette) get the rood-screen
+   archway; day offices (body.uo-day) get the Chartres rose window, matching
+   HANDOFF.md 1b's own description of a stained-glass band under a heavy veil
+   for Morning Prayer. */
+.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+    background-image: url('/images/rood-screen.png');
+}
+/* The rose window is far busier and more saturated than the rood-screen archway
+   -- at the shared blur/opacity above it read as wallpaper, not texture, exactly
+   what HANDOFF.md's own rule warns against. Heavier blur and a lower opacity
+   specifically for this image, confirmed live before shipping (screenshot
+   comparison, not guessed). */
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
+    background-image: url('/images/chartres-rose.png');
+    filter: blur(9px) saturate(0.35) brightness(0.7);
+    opacity: 0.22;
+}
+
+/* Coptic (OOR) -- Walters W.739, fol. 1r: a Coptic parchment fragment of the
+   Book of Exodus, 8th century CE. CORRECTED 2026-09-24: first attributed in
+   this file as "W.592, 1684 Arabic Gospels" and its license recorded as CC0
+   -- both wrong, caught by reading the file's own embedded XMP/IPTC metadata
+   rather than trusting the verbal description that came with it. The actual
+   embedded rights field reads: "Licensed for use under Creative Commons
+   Attribution-NonCommercial-ShareAlike 3.0 Unported... creativecommons.org/
+   licenses/by-nc-sa/3.0/legalcode" -- CC BY-NC-SA, not CC0. Fine for this
+   non-commercial app with attribution given (see images/CREDITS.md), but a
+   real correctness catch, not a formality -- do not re-cite the old "CC0"
+   claim anywhere. Supplied by Josh directly, cropped locally
+   (images/coptic-walters-w739.jpg) to remove the black photography
+   background and the pale binding-gutter strip down the original scan's
+   left edge -- an uncropped scan would have shown a hard black border once
+   veiled, exactly the failure Josh flagged.
+
+   This image is busier and higher-contrast than either Anglican image --
+   its own legible ink glyphs compete with live UI text far more readily
+   than blurred architecture does, so it needed its own tuning pass, not a
+   copy of the Anglican numbers. VERIFIED BY MEASUREMENT, not eyeballed, and
+   iterated THREE times, the third time on Josh's own direct correction
+   ("Agpeya just looks like a blur") after the first two passes had chased
+   contrast numbers into invisibility -- a real lesson, not just a number
+   to hit: pass 1 (blur 14px, opacity 0.24, brightness 0.32) measured 14:1,
+   very safe, image essentially invisible; pass 2 (blur 16px, opacity 0.6,
+   brightness 0.85) measured 10.1:1 median, more visible but still read as
+   an undifferentiated wash, not recognizable manuscript texture -- both
+   were measured correctly and both still failed the actual goal. Pass 3
+   dropped blur from 16px to 6px (opacity/brightness otherwise similar) so
+   the page's own text columns became genuinely perceptible, confirmed by
+   looking at the live screenshot, not the contrast number alone; still
+   safe at 12.4:1 median, 11.4:1 p95, 6.2:1 p99 (all clear WCAG AA's 4.5:1,
+   AAA's 7:1 except the same single top-0.01% outlier pixel as before). */
+.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+    background-image: url('/images/coptic-walters-w739.jpg');
+    filter: blur(6px) saturate(0.5) brightness(0.6);
+    opacity: 0.5;
+}
+/* Day-mode override -- found 2026-09-24 while checking whether Byzantine's own
+   day-mode "flat wash" bug (see that rule's own comment) also affected this
+   lane. It did, and worse: Coptic's Morning Office (Prime), the real day
+   office, measured only 4.87:1 median contrast (uncomfortably close to AA's
+   4.5:1 floor, not the 12.4:1 the night-mode comment above cites) and the
+   manuscript was essentially invisible on screen -- the exact "just a blur"
+   failure, this time never caught because this lane was only ever verified
+   against its own night offices. Same fix as Byzantine's day override:
+   brightness raised toward the source image instead of darkened further,
+   opacity lowered instead of relying on darkness to veil it; blur unchanged
+   (6px already confirmed legible). Re-verified by screenshot against real
+   Morning Office text. */
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="OOR"]::before {
+    filter: blur(6px) saturate(0.5) brightness(1.15);
+    opacity: 0.44;
+}
+
+/* East Syriac (COE) -- Wikimedia Commons, "File:East Syriac Script Thaksa.jpg":
+   an 18th-century Thaksa (service book) opening, Chaldean Syrian Church,
+   Thrissur. Public domain, verified directly on the Commons file page (not
+   assumed): tagged both CC-PD-Mark and PD-old-70-expired. Source:
+   https://commons.wikimedia.org/wiki/File:East_Syriac_Script_Thaksa.jpg .
+   Cropped locally (images/east-syriac-thaksa.jpg) to remove a thin black
+   scan-edge vignette, not a wide photography backdrop like the Coptic scan
+   needed. Low source resolution (624x386 before crop) -- acceptable here
+   because the blur this treatment already applies erases fine pixelation
+   regardless of source size; confirmed by looking at the actual live render,
+   not assumed from the numbers alone. Tuned and VERIFIED BY MEASUREMENT the
+   same way as Coptic (see that rule's own comment for the method) --
+   numbers below are this image's own result, not copied from Coptic's. */
+.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+    background-image: url('/images/east-syriac-thaksa.jpg');
+    filter: blur(10px) saturate(0.5) brightness(0.6);
+    opacity: 0.42;
+}
+/* Day-mode override -- found 2026-09-24 in the same sweep as the Coptic and
+   Byzantine day-mode fixes (see those rules' own comments for the full
+   account). Sapra (Morning Prayer), the real day office, measured a safer
+   8.36:1 median than Coptic's day-mode failure, and the cross ornament stayed
+   faintly perceptible rather than vanishing outright, but noticeably fainter
+   than this same image's own night-mode rendering (already on record as
+   "clearly recognizable"). Same fix: brightness raised toward the source
+   image instead of darkened, opacity lowered; blur unchanged (10px already
+   confirmed legible at night). Re-verified by screenshot against real Sapra
+   text. */
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="COE"]::before {
+    filter: blur(10px) saturate(0.5) brightness(1.05);
+    opacity: 0.3;
+}
+
+/* Byzantine/Eastern Orthodox (BYZC) -- Walters W.528, fol. 188r: the ornamented
+   headpiece and zoomorphic initial opening the Gospel of John, Greek Gospel
+   Book, early 13th century CE. DELIBERATELY an ornament-and-text page, not a
+   figural image: UI_REDESIGN_HANDOFF.md's own correction to the original
+   design proposal states plainly that an icon "is a venerated object, not a
+   texture" and vetoes using one this way; W.528's own single surviving
+   miniature (a different folio, an Evangelist portrait) was never a
+   candidate for that same reason. Confirmed by looking at the actual page
+   before cropping -- geometric interlace, floral ornament, two peacocks and
+   the manuscript's own incipit text, nothing figural. License CC BY-NC-SA
+   3.0 Unported, per that manuscript's own TEI description (same terms as
+   the Coptic W.739 page -- both Walters manuscripts, not CC0). Cropped
+   locally (images/byzantine-w528-headpiece.jpg) to remove the photography
+   background.
+
+   Corrected 2026-09-24: this selector originally read data-uo-tradition="EOR",
+   copying the general ANG/LAT/EOR/OOR/COE sanctoral convention used elsewhere
+   in the project. HorologionEngine's own authoritative constant (const
+   TRADITION = 'BYZC' in js/horologion-engine.js) is 'BYZC', not 'EOR' -- fixed
+   here, in images/CREDITS.md, and in the resume note/ledger, as part of
+   building the Horologion envelope port. Blur dropped from an initial 14px to 6px, matching the same fix
+   the Coptic rule needed after Josh flagged both as "just a blur" -- at
+   14px the headpiece's own interlace and ornament weren't recognizable as
+   anything, just a soft brown wash; at 6px the pattern and the two
+   peacocks are genuinely visible. Contrast against the stand-in text: 11.8:1
+   median, 9.5:1 p95 (both clear AAA), 4.0:1 p99 (essentially at AA's
+   4.5:1 line). Re-verify by the same measurement method against REAL
+   Horologion text once that lane ships a real envelope -- both the
+   image's visibility and this p99 figure specifically. */
+.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
+    background-image: url('/images/byzantine-w528-headpiece.jpg');
+    filter: blur(6px) saturate(0.55) brightness(0.55);
+    opacity: 0.42;
+}
+/* Day-mode override, added once the Horologion lane shipped a real envelope
+   and this rule could finally be checked against real Horologion text rather
+   than a stand-in -- caught live 2026-09-24: the night-mode numbers above
+   (darkened image, brightness 0.55) hold up well against the near-black night
+   ground (#08070c), but the SAME darkened image composited at low opacity over
+   the near-white day ground (#f2ebdf, body.shell-v2.uo-day) compresses toward
+   a flat light wash -- contrast against day ink (#2a2118) still measured safe
+   (6.8:1 median, 15:1 max, real screenshot of live Orthros text), but the
+   image's own internal tonal range read as washed-out, not textured. Fixed the
+   way ANG's own existing day override already solves it for the rose window:
+   do not darken toward the night palette at all -- raise brightness back
+   toward the source image's own tones and lower opacity instead, so veiling
+   comes from transparency, not from crushing the image dark first. Re-verified
+   by screenshot against real Orthros text (Great Lent, Tone 6, March 2026):
+   the headpiece's interlace and the two peacocks are recognizable, not a wash. */
+body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BYZC"]::before {
+    filter: blur(6px) saturate(0.5) brightness(1.05);
+    opacity: 0.3;
+}
+
+#main-content > .uo-ordo    { grid-area: ordo; }
+#main-content > .uo-rail    { grid-area: rail; }
+#main-content > .uo-page    { grid-area: page; }
+#main-content > .uo-margin  { grid-area: margin; }
+#main-content > .uo-keeping { grid-area: keep; }
 
 /* Hairlines and light do the separating — no borders around prayer. */
-body.shell-v2 .uo-ordo {
+.uo-ordo {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -465,7 +727,7 @@ body.shell-v2 .uo-ordo {
     background: var(--uo-ground);
 }
 
-body.shell-v2 .uo-ordo-mark {
+.uo-ordo-mark {
     font-family: var(--uo-face-title);
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -474,7 +736,7 @@ body.shell-v2 .uo-ordo-mark {
     white-space: nowrap;
 }
 
-body.shell-v2 .uo-ordo-day {
+.uo-ordo-day {
     flex: 1 1 auto;
     text-align: center;
     font-size: 17px;
@@ -484,7 +746,7 @@ body.shell-v2 .uo-ordo-day {
 /* #office-mode-title and #office-context-actions are MOVED into the ordo line
    rather than hidden, so every existing affordance stays reachable in Phase 2.
    Phase 4 gives them their proper homes. */
-body.shell-v2 .uo-ordo > #office-mode-title {
+.uo-ordo > #office-mode-title {
     margin: 0;
     font-family: var(--uo-face-title);
     font-size: 15px;
@@ -494,7 +756,7 @@ body.shell-v2 .uo-ordo > #office-mode-title {
     white-space: nowrap;
 }
 
-body.shell-v2 .uo-ordo > #office-context-actions {
+.uo-ordo > #office-context-actions {
     margin: 0;
     display: flex;
     gap: 8px;
@@ -508,8 +770,8 @@ body.shell-v2 .uo-ordo > #office-context-actions {
    be named explicitly here — a blanket rule would not touch them.
 
    Phase 4 rehomes this button properly; this keeps it usable until then. */
-body.shell-v2 #main-content.app-primary-canvas > .uo-ordo > button[onclick*="backToSplash"],
-body.shell-v2 .uo-ordo button[onclick*="backToSplash"] {
+#main-content.app-primary-canvas > .uo-ordo > button[onclick*="backToSplash"],
+.uo-ordo button[onclick*="backToSplash"] {
     position: static;
     top: auto;
     right: auto;
@@ -519,14 +781,36 @@ body.shell-v2 .uo-ordo button[onclick*="backToSplash"] {
 
 /* ── The rail ─────────────────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-rail {
+/* FIXED 2026-09-25, Josh live: "The order....is longer than this....it needs
+   to scroll with the content on the right." .uo-rail sits in the same grid
+   row as .uo-page (grid-template-areas "rail page margin"), and that row's
+   height resolves against #main-content's own fixed height, not the rail's
+   content -- #main-content itself is overflow-y:hidden (see its comment
+   above). .uo-page already solves this exact problem for itself with
+   overflow-y:auto + min-height:0 (a grid item's default min-height:auto
+   blocks it from shrinking to its track size, which is what overflow-y:auto
+   needs something to scroll inside -- see that rule's own long comment for
+   the full explanation, already worked out once this session). The rail
+   never got the same treatment, so a long order list (East Syriac and
+   Horologion both regularly exceed 30 items) simply overflowed past the
+   row and was clipped by #main-content's overflow-y:hidden with no
+   scrollbar anywhere -- confirmed live before fixing: 33 rail items on
+   Church of the East Ramsha measured scrollHeight 1551 vs clientHeight 788,
+   overflow-y computed as visible, scrollTop had no effect. Same fix, same
+   reason, applied to the rail. The mobile media query below already gives
+   .uo-rail its own overflow-y:auto (with an explicit max-height instead,
+   since mobile collapses it to a capped top strip rather than a full-height
+   column) -- this is the desktop-width equivalent of that. */
+.uo-rail {
     padding: 26px 20px;
     border-right: 1px solid var(--uo-hairline);
     text-align: left;
+    overflow-y: auto;
+    min-height: 0;
 }
 
-body.shell-v2 .uo-rail-head,
-body.shell-v2 .uo-margin-head {
+.uo-rail-head,
+.uo-margin-head {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -535,13 +819,13 @@ body.shell-v2 .uo-margin-head {
     margin-bottom: 18px;
 }
 
-body.shell-v2 .uo-rail-list {
+.uo-rail-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-body.shell-v2 .uo-rail-item {
+.uo-rail-item {
     display: flex;
     align-items: baseline;
     gap: 10px;
@@ -551,7 +835,7 @@ body.shell-v2 .uo-rail-item {
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .uo-rail-dot {
+.uo-rail-dot {
     flex: 0 0 auto;
     width: 5px;
     height: 5px;
@@ -563,18 +847,18 @@ body.shell-v2 .uo-rail-dot {
 
 /* Contract §6: the label is the tradition's own word. Nothing here
    capitalises, truncates or re-cases it. */
-body.shell-v2 .uo-rail-label {
+.uo-rail-label {
     min-width: 0;
 }
 
-body.shell-v2 .uo-rail-item.is-current {
+.uo-rail-item.is-current {
     color: var(--uo-ink);
     font-family: var(--uo-face-title);
     font-size: 17px;
     letter-spacing: 0.04em;
 }
 
-body.shell-v2 .uo-rail-item.is-current .uo-rail-dot {
+.uo-rail-item.is-current .uo-rail-dot {
     width: 9px;
     height: 9px;
     opacity: 1;
@@ -582,7 +866,7 @@ body.shell-v2 .uo-rail-item.is-current .uo-rail-dot {
     box-shadow: 0 0 8px 1px rgba(201, 168, 76, 0.45);
 }
 
-body.shell-v2 .uo-rail-foot {
+.uo-rail-foot {
     margin-top: 22px;
     padding-top: 14px;
     border-top: 1px solid var(--uo-hairline);
@@ -593,7 +877,7 @@ body.shell-v2 .uo-rail-foot {
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .uo-rail-placeholder {
+.uo-rail-placeholder {
     font-size: 15px;
     line-height: 1.6;
     font-style: italic;
@@ -617,7 +901,7 @@ body.shell-v2 .uo-rail-placeholder {
    Prayer, ordo/keeping bars confirmed fixed top and bottom throughout, no
    text cut off): put the scroll on THIS element instead, and stop
    #main-content from scrolling at all (`overflow-y: hidden` added to
-   `body.shell-v2 #main-content.app-primary-canvas` below). #main-content
+   `#main-content.app-primary-canvas` below). #main-content
    keeps its original fixed height (css/office.css's `height: 100vh`,
    untouched), so the grid's rows resolve to real pixel heights against it
    as normal, and THIS row's box -- whatever height that resolves to --
@@ -638,7 +922,7 @@ body.shell-v2 .uo-rail-placeholder {
    and `min-height: 0` set together, AND #main-content no longer competing
    for the same scroll, this is the standard, well-established pattern for
    a scrollable middle panel between a fixed header and footer. */
-body.shell-v2 .uo-page {
+.uo-page {
     padding: 34px 40px 48px;
     font-size: var(--uo-size-body);
     line-height: var(--uo-leading-body);
@@ -651,14 +935,14 @@ body.shell-v2 .uo-page {
    foot still span it, while the text itself is held to a readable line and
    centred within. Capping the column instead would drag every one of those to
    the left edge. */
-body.shell-v2 .uo-page > #office-display,
-body.shell-v2 .uo-page > .saint-section,
-body.shell-v2 .uo-page > .uo-ornament {
+.uo-page > #office-display,
+.uo-page > .saint-section,
+.uo-page > .uo-ornament {
     max-width: var(--uo-measure);
     margin-inline: auto;
 }
 
-body.shell-v2 .uo-ornament {
+.uo-ornament {
     display: block;
     width: 84px;
     height: 12px;
@@ -669,7 +953,7 @@ body.shell-v2 .uo-ornament {
 
 /* ── The margin ───────────────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-margin {
+.uo-margin {
     padding: 26px 20px;
     border-left: 1px solid var(--uo-hairline);
     font-size: 15px;
@@ -681,21 +965,21 @@ body.shell-v2 .uo-margin {
    cards a gold one — the same left-bar-as-category convention, never a
    rounded card or a drop shadow (handoff §7's "no rounded cards" rule
    applies here same as on the page). */
-body.shell-v2 .uo-margin-card {
+.uo-margin-card {
     padding: 4px 0 4px 12px;
     margin-bottom: 16px;
     border-left: 3px solid var(--uo-hairline);
 }
 
-body.shell-v2 .uo-margin-card.is-overlay {
+.uo-margin-card.is-overlay {
     border-left-color: var(--uo-rubric);
 }
 
-body.shell-v2 .uo-margin-card.is-diagnostic {
+.uo-margin-card.is-diagnostic {
     border-left-color: var(--uo-accent);
 }
 
-body.shell-v2 .uo-margin-card-head {
+.uo-margin-card-head {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.16em;
@@ -704,7 +988,7 @@ body.shell-v2 .uo-margin-card-head {
     margin-bottom: 4px;
 }
 
-body.shell-v2 .uo-margin-card-body {
+.uo-margin-card-body {
     font-size: 15px;
     line-height: 1.5;
     color: var(--uo-ink);
@@ -712,7 +996,7 @@ body.shell-v2 .uo-margin-card-body {
 
 /* Handoff §1: at most two cards visible; the rest collapse to this quiet
    line rather than a caption explaining the margin. */
-body.shell-v2 .uo-margin-more {
+.uo-margin-more {
     background: none;
     border: none;
     padding: 0;
@@ -727,13 +1011,13 @@ body.shell-v2 .uo-margin-more {
 /* Collapsed cards stay in the DOM (never omitted) so print — which cannot
    run the click handler that reveals them on screen — still carries full
    overlay/diagnostic attribution. See the @media print override below. */
-body.shell-v2 .uo-margin-card-collapsed {
+.uo-margin-card-collapsed {
     display: none;
 }
 
 /* ── The keeping-place bar ────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-keeping {
+.uo-keeping {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -747,13 +1031,13 @@ body.shell-v2 .uo-keeping {
     background: var(--uo-ground);
 }
 
-body.shell-v2 .uo-keeping-actions {
+.uo-keeping-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-body.shell-v2 .uo-keeping-hint {
+.uo-keeping-hint {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.14em;
@@ -763,13 +1047,13 @@ body.shell-v2 .uo-keeping-hint {
 
 /* ── Auto / Light / Dark ──────────────────────────────────────────────────── */
 
-body.shell-v2 .uo-theme-control {
+.uo-theme-control {
     display: flex;
     gap: 2px;
     flex: 0 0 auto;
 }
 
-body.shell-v2 .uo-theme-button {
+.uo-theme-button {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.14em;
@@ -781,16 +1065,16 @@ body.shell-v2 .uo-theme-button {
     cursor: pointer;
 }
 
-body.shell-v2 .uo-theme-button:hover {
+.uo-theme-button:hover {
     color: var(--uo-ink);
 }
 
-body.shell-v2 .uo-theme-button.is-on {
+.uo-theme-button.is-on {
     color: var(--uo-accent);
     border-color: var(--uo-hairline);
 }
 
-body.shell-v2 .uo-theme-button:focus-visible {
+.uo-theme-button:focus-visible {
     outline: 2px solid var(--uo-accent);
     outline-offset: 2px;
 }
@@ -798,7 +1082,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Mobile: rail becomes a top strip, margin moves inline ────────────────── */
 
 @media (max-width: 768px) {
-    body.shell-v2 #main-content {
+    #main-content.app-primary-canvas {
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto auto minmax(0, 1fr) auto auto;
         grid-template-areas:
@@ -809,25 +1093,35 @@ body.shell-v2 .uo-theme-button:focus-visible {
             "keep";
     }
 
-    body.shell-v2 .uo-rail {
+    /* "Top strip" only means anything if it's actually short: an office with
+       a long step list (East Syriac, Horologion) has 20-30+ .uo-rail-item
+       entries, and this media query was dead code until the specificity fix
+       just above it, so nothing ever caught that an uncapped rail crowds the
+       actual prayer text (.uo-page) down to a sliver on a long office.
+       Capped and independently scrollable, matching how .uo-page already
+       scrolls its own overflow rather than growing past its row. */
+    .uo-rail {
         border-right: none;
         border-bottom: 1px solid var(--uo-hairline);
         padding: 14px 18px;
+        max-height: 34vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    body.shell-v2 .uo-margin {
+    .uo-margin {
         border-left: none;
         border-top: 1px solid var(--uo-hairline);
     }
 
-    body.shell-v2 .uo-page { padding: 24px 20px 36px; }
+    .uo-page { padding: 24px 20px 36px; }
 
     /* On a phone the viewport is already narrower than the measure; letting the
        cap apply there would leave the text floating in a column narrower than
        the screen. */
-    body.shell-v2 .uo-page > #office-display,
-    body.shell-v2 .uo-page > .saint-section,
-    body.shell-v2 .uo-page > .uo-ornament {
+    .uo-page > #office-display,
+    .uo-page > .saint-section,
+    .uo-page > .uo-ornament {
         max-width: none;
     }
 
@@ -839,11 +1133,11 @@ body.shell-v2 .uo-theme-button:focus-visible {
        gutter label stacks ABOVE its block's text instead of beside it,
        matching how the rail already collapses rather than force-fitting a
        sidebar onto a phone screen. */
-    body.shell-v2.office-active .office-container .uo-block {
+    .office-container .uo-block {
         display: block;
     }
 
-    body.shell-v2.office-active .office-container .uo-gutter-label {
+    .office-container .uo-gutter-label {
         display: block;
         text-align: left;
         margin-bottom: 2px;
@@ -853,16 +1147,16 @@ body.shell-v2 .uo-theme-button:focus-visible {
 /* ── Print: the page prints, the chrome does not ──────────────────────────── */
 
 @media print {
-    body.shell-v2 #main-content {
+    #main-content.app-primary-canvas {
         display: block;
         min-height: 0;
         background: #fff;
         color: #000;
     }
 
-    body.shell-v2 .uo-ordo,
-    body.shell-v2 .uo-rail,
-    body.shell-v2 .uo-keeping {
+    .uo-ordo,
+    .uo-rail,
+    .uo-keeping {
         display: none;
     }
 
@@ -872,7 +1166,7 @@ body.shell-v2 .uo-theme-button:focus-visible {
        where it cannot be recovered. Populated for the Anglican lane as of
        2026-09-16 (js/anglican-envelope.js); the other three lanes still emit
        no envelope, so this rule still has nothing to act on for them. */
-    body.shell-v2 .uo-margin {
+    .uo-margin {
         border: none;
         padding: 0;
         margin-top: 18px;
@@ -884,11 +1178,11 @@ body.shell-v2 .uo-theme-button:focus-visible {
        has no click, so every card prints regardless of on-screen collapse —
        the expand control itself is the one thing that must not print, since
        it is a UI affordance with nothing left for it to do on paper. */
-    body.shell-v2 .uo-margin-card-collapsed {
+    .uo-margin-card-collapsed {
         display: block;
     }
 
-    body.shell-v2 .uo-margin-more {
+    .uo-margin-more {
         display: none;
     }
 }
@@ -909,18 +1203,29 @@ body.shell-v2 .uo-theme-button:focus-visible {
    Governance: UI_REDESIGN_HANDOFF.md §3.1 (heading "Office Settings",
    section I "The Ordo"), §5, §3.7 (BCP Only at the foot).
 
-   The four legacy sidebars stay in the DOM as the source of truth for every
-   setting but are not shown under the flag; their real controls that the
-   drawer does not summarise are MOVED into it by js/office-drawer.js. Phase 6
-   deletes the sidebars and these two hiding rules with them.
+   CLOSED 2026-09-25, Phase 6 sidebar-deletion refactor: the four legacy
+   sidebars this comment used to describe (kept permanently in the DOM,
+   hidden by two rules that lived here) are gone. Getting there took three
+   real prerequisites, each confirmed by reading the actual code before
+   touching it, not assumed: (1) mode detection was rebuilt on
+   js/office-ui.js's own selectedMode instead of reading a mode-hidden
+   class off these exact divs (js/office-shell.js's currentLane(),
+   js/office-drawer.js's currentModeKey()); (2) renderSharedOfficeNavigation()
+   was repointed at one neutral host instead of injecting into whichever
+   sidebar matched the active mode; (3) every remaining real control
+   (Rite, Gospel placement, Creed, Marian element/position, East Syriac's
+   Cathedral/Monastic use, Horologion's calendar/display-depth selects,
+   the Diagnostics toggle, the BCP-Only-Mode gate on the Marian rows, and
+   more) was relocated into that same neutral host as static HTML, so
+   every id/name lookup that used to find them inside a legacy sidebar
+   keeps finding them, just relocated. Only then were the sidebars and
+   #sidebar-toggle deleted from index.html, along with the two hiding
+   rules that used to sit here. See RESUME_PROJECT_NOTE.md and the
+   ui:phase6-retire-old-skin row in audit-ledger.html for the full staged
+   account.
    --------------------------------------------------------------------------- */
 
-body.shell-v2.office-active #sidebar-toggle,
-body.shell-v2.office-active .app-mode-drawer {
-    display: none !important;
-}
-
-body.shell-v2 .uo-drawer-open {
+.uo-drawer-open {
     background: transparent;
     border: 0;
     padding: 4px 0;
@@ -931,10 +1236,10 @@ body.shell-v2 .uo-drawer-open {
     text-transform: uppercase;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-open:hover,
-body.shell-v2 .uo-drawer-open:focus-visible { color: var(--uo-ink); }
+.uo-drawer-open:hover,
+.uo-drawer-open:focus-visible { color: var(--uo-ink); }
 
-body.shell-v2 dialog.uo-drawer {
+dialog.uo-drawer {
     position: fixed;
     inset: 0 0 0 auto;
     margin: 0;
@@ -952,17 +1257,17 @@ body.shell-v2 dialog.uo-drawer {
     border-left: 1px solid rgba(201, 168, 76, 0.28);
     font-family: var(--uo-face-prayed);
 }
-body.shell-v2 dialog.uo-drawer[open] { display: flex; }
-body.shell-v2 dialog.uo-drawer::backdrop { background: rgba(4, 3, 8, 0.45); }
-body.shell-v2.uo-day dialog.uo-drawer::backdrop { background: rgba(42, 33, 24, 0.18); }
+dialog.uo-drawer[open] { display: flex; }
+dialog.uo-drawer::backdrop { background: rgba(4, 3, 8, 0.45); }
+body.uo-day dialog.uo-drawer::backdrop { background: rgba(42, 33, 24, 0.18); }
 
-body.shell-v2 .uo-drawer-head {
+.uo-drawer-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     padding: 40px 36px 8px;
 }
-body.shell-v2 .uo-drawer-title {
+.uo-drawer-title {
     margin: 0;
     font-family: var(--uo-face-machine);
     font-weight: 400;
@@ -971,7 +1276,7 @@ body.shell-v2 .uo-drawer-title {
     text-transform: uppercase;
     color: var(--uo-accent);
 }
-body.shell-v2 .uo-drawer-close {
+.uo-drawer-close {
     background: transparent;
     border: 0;
     color: var(--uo-ink-quiet);
@@ -980,13 +1285,13 @@ body.shell-v2 .uo-drawer-close {
     cursor: pointer;
 }
 
-body.shell-v2 .uo-drawer-body {
+.uo-drawer-body {
     flex: 1 1 auto;
     overflow-y: auto;
     padding: 8px 36px 24px;
 }
 
-body.shell-v2 .uo-drawer-section-head {
+.uo-drawer-section-head {
     margin: 26px 0 12px;
     font-family: var(--uo-face-machine);
     font-size: 10px;
@@ -996,7 +1301,7 @@ body.shell-v2 .uo-drawer-section-head {
 }
 
 /* I · The Ordo */
-body.shell-v2 .uo-drawer-stepper {
+.uo-drawer-stepper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1004,7 +1309,7 @@ body.shell-v2 .uo-drawer-stepper {
     height: 52px;
     padding: 0 6px;
 }
-body.shell-v2 .uo-drawer-step {
+.uo-drawer-step {
     background: transparent;
     border: 0;
     width: 40px;
@@ -1013,20 +1318,20 @@ body.shell-v2 .uo-drawer-step {
     font-size: 14px;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-step:hover { color: var(--uo-ink); }
-body.shell-v2 .uo-drawer-date {
+.uo-drawer-step:hover { color: var(--uo-ink); }
+.uo-drawer-date {
     font-family: var(--uo-face-title);
     font-variant: small-caps;
     font-size: 18px;
     letter-spacing: 0.06em;
     color: var(--uo-ink);
 }
-body.shell-v2 .uo-drawer-dayline {
+.uo-drawer-dayline {
     margin-top: 12px;
     font-size: 17px;
     color: var(--uo-ink-quiet);
 }
-body.shell-v2 .uo-drawer-dot {
+.uo-drawer-dot {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -1034,21 +1339,21 @@ body.shell-v2 .uo-drawer-dot {
     margin-right: 8px;
     vertical-align: 2px;
 }
-body.shell-v2 .uo-drawer-fact {
+.uo-drawer-fact {
     display: flex;
     justify-content: space-between;
     gap: 16px;
     margin-top: 8px;
     font-size: 16px;
 }
-body.shell-v2 .uo-drawer-fact-value { color: var(--uo-ink-quiet); text-align: right; }
-body.shell-v2 .uo-drawer-datetools {
+.uo-drawer-fact-value { color: var(--uo-ink-quiet); text-align: right; }
+.uo-drawer-datetools {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
 }
-body.shell-v2 .uo-drawer-link {
+.uo-drawer-link {
     background: transparent;
     border: 0;
     padding: 4px 0;
@@ -1059,7 +1364,7 @@ body.shell-v2 .uo-drawer-link {
     text-transform: uppercase;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-datepick {
+.uo-drawer-datepick {
     background: transparent;
     border: 0;
     border-bottom: 1px solid var(--uo-hairline);
@@ -1068,15 +1373,15 @@ body.shell-v2 .uo-drawer-datepick {
     font-size: 11px;
     color-scheme: dark;
 }
-body.shell-v2.uo-day .uo-drawer-datepick { color-scheme: light; }
+body.uo-day .uo-drawer-datepick { color-scheme: light; }
 
 /* II · Which office */
-body.shell-v2 .uo-drawer-offices {
+.uo-drawer-offices {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
 }
-body.shell-v2 .uo-drawer-office {
+.uo-drawer-office {
     min-height: 46px;
     padding: 8px 14px;
     text-align: left;
@@ -1087,16 +1392,16 @@ body.shell-v2 .uo-drawer-office {
     font-size: 17px;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-office:hover { color: var(--uo-ink); }
-body.shell-v2 .uo-drawer-office[aria-checked="true"] {
+.uo-drawer-office:hover { color: var(--uo-ink); }
+.uo-drawer-office[aria-checked="true"] {
     border-color: rgba(201, 168, 76, 0.7);
     background: rgba(201, 168, 76, 0.1);
     color: var(--uo-ink);
 }
-body.shell-v2 .uo-drawer-office:disabled { opacity: 0.35; cursor: default; }
+.uo-drawer-office:disabled { opacity: 0.35; cursor: default; }
 
 /* III · How you keep it — label left, value right, no boxes */
-body.shell-v2 .uo-drawer-row {
+.uo-drawer-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1106,7 +1411,7 @@ body.shell-v2 .uo-drawer-row {
     color: var(--uo-ink);
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-row-value {
+.uo-drawer-row-value {
     appearance: none;
     -webkit-appearance: none;
     background: transparent;
@@ -1122,34 +1427,34 @@ body.shell-v2 .uo-drawer-row-value {
     cursor: pointer;
     max-width: 60%;
 }
-body.shell-v2 .uo-drawer-row-value option {
+.uo-drawer-row-value option {
     background: var(--uo-ground-raised);
     color: var(--uo-ink);
     text-transform: none;
 }
-body.shell-v2 .uo-drawer-row-value:focus-visible,
-body.shell-v2 .uo-drawer-office:focus-visible,
-body.shell-v2 .uo-drawer-step:focus-visible,
-body.shell-v2 .uo-drawer-link:focus-visible {
+.uo-drawer-row-value:focus-visible,
+.uo-drawer-office:focus-visible,
+.uo-drawer-step:focus-visible,
+.uo-drawer-link:focus-visible {
     outline: 1px solid var(--uo-accent);
     outline-offset: 2px;
 }
-body.shell-v2 .uo-drawer-rows > .uo-drawer-link { margin-top: 6px; }
+.uo-drawer-rows > .uo-drawer-link { margin-top: 6px; }
 
-body.shell-v2 .uo-drawer-borrowed {
+.uo-drawer-borrowed {
     margin-top: 14px;
     padding-top: 12px;
     border-top: 1px solid var(--uo-hairline);
 }
-body.shell-v2 .uo-drawer-borrowed-row { cursor: default; }
-body.shell-v2 .uo-drawer-borrowed-count {
+.uo-drawer-borrowed-row { cursor: default; }
+.uo-drawer-borrowed-count {
     font-family: var(--uo-face-title);
     font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--uo-accent);
 }
-body.shell-v2 .uo-drawer-borrowed-list {
+.uo-drawer-borrowed-list {
     margin: 6px 0 0;
     font-style: italic;
     font-size: 15px;
@@ -1157,8 +1462,8 @@ body.shell-v2 .uo-drawer-borrowed-list {
     color: var(--uo-ink-quiet);
 }
 
-body.shell-v2 .uo-drawer-details { margin-top: 12px; }
-body.shell-v2 .uo-drawer-details > summary {
+.uo-drawer-details { margin-top: 12px; }
+.uo-drawer-details > summary {
     font-family: var(--uo-face-machine);
     font-size: 10px;
     letter-spacing: 0.18em;
@@ -1167,7 +1472,7 @@ body.shell-v2 .uo-drawer-details > summary {
     cursor: pointer;
     padding: 4px 0;
 }
-body.shell-v2 .uo-drawer-further {
+.uo-drawer-further {
     margin-top: 18px;
     padding-top: 12px;
     border-top: 1px solid var(--uo-hairline);
@@ -1175,13 +1480,13 @@ body.shell-v2 .uo-drawer-further {
 
 /* Moved legacy controls: flattened into the drawer's language. Their inline
    tooltips (.info-btn) and ids are untouched. */
-body.shell-v2 .uo-drawer-moved {
+.uo-drawer-moved {
     padding: 6px 0 4px;
     font-size: 16px;
     color: var(--uo-ink);
 }
-body.shell-v2 .uo-drawer-moved .setting-group,
-body.shell-v2 .uo-drawer-moved .nested-group {
+.uo-drawer-moved .setting-group,
+.uo-drawer-moved .nested-group {
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -1189,7 +1494,20 @@ body.shell-v2 .uo-drawer-moved .nested-group {
     padding: 0;
     margin: 12px 0 0;
 }
-body.shell-v2 .uo-drawer-moved strong {
+/* These three selectors are the one place in the drawer where the moved
+   content (.setting-group/.nested-group nodes relocated wholesale from the
+   deleted legacy sidebars, still real office.css classes elsewhere in the
+   app) shares a class name with a still-live office.css rule
+   (.setting-group strong/label, .setting-group label input[type=checkbox]).
+   A bare-.uo-drawer-moved strip lands at an exact specificity tie for
+   strong/label and an outright LOSS for the checkbox (office.css's
+   .setting-group label input[type=checkbox] is one element ahead) --
+   confirmed by direct specificity comparison, not assumed. Anchored on
+   dialog.uo-drawer instead of body.shell-v2: real, already-used selector
+   for the drawer element itself (see the base rule above), giving a full
+   specificity margin over every known competitor rather than a load-order
+   tie. 2026-09-25, unscoping Stage 3. */
+dialog.uo-drawer .uo-drawer-moved strong {
     display: block;
     margin: 10px 0 4px;
     font-family: var(--uo-face-machine);
@@ -1199,7 +1517,7 @@ body.shell-v2 .uo-drawer-moved strong {
     text-transform: uppercase;
     color: var(--uo-ink-quiet) !important;
 }
-body.shell-v2 .uo-drawer-moved label {
+dialog.uo-drawer .uo-drawer-moved label {
     display: block;
     margin: 6px 0;
     line-height: 1.45;
@@ -1208,19 +1526,19 @@ body.shell-v2 .uo-drawer-moved label {
     font-size: 16px;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-moved input[type="checkbox"],
-body.shell-v2 .uo-drawer-foot input[type="checkbox"] {
+dialog.uo-drawer .uo-drawer-moved input[type="checkbox"],
+dialog.uo-drawer .uo-drawer-foot input[type="checkbox"] {
     accent-color: #c9a84c;
     margin-right: 8px;
 }
 
 /* BCP Only at the foot, a single toggle */
-body.shell-v2 .uo-drawer-foot {
+.uo-drawer-foot {
     padding: 18px 36px 26px;
     border-top: 1px solid var(--uo-hairline);
 }
-body.shell-v2 .uo-drawer-foot[hidden] { display: none; }
-body.shell-v2 .uo-drawer-bcp-only label {
+.uo-drawer-foot[hidden] { display: none; }
+.uo-drawer-bcp-only label {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1231,7 +1549,7 @@ body.shell-v2 .uo-drawer-bcp-only label {
     color: var(--uo-ink-quiet);
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"] {
+.uo-drawer-bcp-only input[type="checkbox"] {
     order: 2;
     appearance: none;
     -webkit-appearance: none;
@@ -1243,7 +1561,7 @@ body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"] {
     position: relative;
     cursor: pointer;
 }
-body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"]::before {
+.uo-drawer-bcp-only input[type="checkbox"]::before {
     content: "";
     position: absolute;
     top: 3px;
@@ -1254,16 +1572,18 @@ body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"]::before {
     background: rgba(201, 168, 76, 0.55);
     transition: left 0.15s;
 }
-body.shell-v2 .uo-drawer-bcp-only input[type="checkbox"]:checked::before {
+.uo-drawer-bcp-only input[type="checkbox"]:checked::before {
     left: 24px;
     background: #c9a84c;
 }
 
-/* The parchment pass (office.css ~1849) forces a light rounded box on every
-   select and date input under body.office-active with !important. Inside the
-   drawer that pass has no business; overridden at higher specificity. */
-body.shell-v2.office-active dialog.uo-drawer select.uo-drawer-row-value,
-body.shell-v2.office-active dialog.uo-drawer input.uo-drawer-datepick {
+/* CORRECTED 2026-09-25: no such office.css rule was found -- the "~1849"
+   citation was stale (that line is an unrelated saint-card rule today). Every
+   declaration below is !important anyway, so it wins regardless of whether a
+   competitor exists; kept !important as defensive belt-and-suspenders rather
+   than removed, since a future office.css change could reintroduce one. */
+body.office-active dialog.uo-drawer select.uo-drawer-row-value,
+body.office-active dialog.uo-drawer input.uo-drawer-datepick {
     background: transparent !important;
     color: var(--uo-ink) !important;
     border: 0 !important;
@@ -1271,27 +1591,614 @@ body.shell-v2.office-active dialog.uo-drawer input.uo-drawer-datepick {
     box-shadow: none !important;
     font-family: var(--uo-face-title) !important;
 }
-body.shell-v2.office-active dialog.uo-drawer input.uo-drawer-datepick {
+body.office-active dialog.uo-drawer input.uo-drawer-datepick {
     border-bottom: 1px solid var(--uo-hairline) !important;
     font-family: var(--uo-face-machine) !important;
     color: var(--uo-ink-quiet) !important;
 }
-body.shell-v2.office-active dialog.uo-drawer button {
+body.office-active dialog.uo-drawer button {
     border-radius: 0 !important;
     box-shadow: none !important;
 }
-body.shell-v2.office-active dialog.uo-drawer .uo-drawer-title {
+body.office-active dialog.uo-drawer .uo-drawer-title {
     border: 0 !important;
     padding: 0 !important;
 }
 
 @media (max-width: 768px) {
-    body.shell-v2 dialog.uo-drawer { width: 100vw; }
-    body.shell-v2 .uo-drawer-head,
-    body.shell-v2 .uo-drawer-body,
-    body.shell-v2 .uo-drawer-foot { padding-left: 22px; padding-right: 22px; }
+    dialog.uo-drawer { width: 100vw; }
+    .uo-drawer-head,
+    .uo-drawer-body,
+    .uo-drawer-foot { padding-left: 22px; padding-right: 22px; }
 }
 
 @media print {
-    body.shell-v2 dialog.uo-drawer { display: none !important; }
+    dialog.uo-drawer { display: none !important; }
+}
+
+
+/* ===========================================================================
+   ENTRY & UNIVERSAL SELECTOR SCREENS -- 2026-09-24, per Josh's direct request.
+
+   #tradition-entry ("Where do you pray?") and #mode-selection's own
+   #uo-threshold-grid ("Another office") had never been touched by this
+   redesign -- Phase 1-5 all stayed "off the office screen nothing changes"
+   (see the DEMOLITION comment far above). They still used the pre-redesign
+   parchment card system (rounded cards, drop shadows, gold-gradient icon
+   circles), so they were the one place in the app that still looked like a
+   different product from the office view they lead into -- Josh's own words:
+   "it looks very different from everything we've redesigned... very much
+   out of place."
+
+   SCOPE NOTE: this deliberately widens that "off the office screen" boundary
+   for these two screens ONLY, on Josh's direct instruction. Nothing else
+   outside the office screen (splash proper, Book of Needs, Bible Browser,
+   admin) is touched.
+
+   Restyled using the SAME flat, hairline-bordered component language
+   .uo-drawer-office already established just above (III · How you keep it),
+   not a new pattern -- per handoff §7's own governing rule: "no rounded
+   cards, no drop shadows on the page, no borders around prayer. Hairlines
+   and light do the separating."
+
+   REGROUPED, in index.html: Book of Needs and Bible Browser are tools, not
+   prayer traditions, and were previously indistinguishable cards in the same
+   5-card grid as Daily Office/Coptic Agpeya/Church of the East -- Josh's own
+   words, "the bible browser and book of needs do not answer the 'where do
+   you pray' question... it needs to be regrouped." Split into a primary
+   tradition grid (.app-mode-grid, now 3 cards) and a visibly smaller,
+   secondary "tools" row (.app-mode-tools-row) below a hairline and a quiet
+   label, so the two read as different categories at a glance rather than
+   five equal choices.
+
+   #tradition-entry keeps its existing family/tradition drill-down logic
+   (Western -> Anglican/Catholic, Eastern -> COE/EO/OO, COE -> ACOE/ACE)
+   completely untouched -- restyled only. Its own separate "Dark Mode"
+   checkbox is hidden here (not deleted -- ?shell=v1 keeps it, unaffected):
+   this screen now always renders in the night palette, the same choice
+   already made and Josh-approved for #uo-threshold ("a control that visibly
+   does nothing is worse than no control" -- 2026-09-22, see that screen's
+   own comment above). #splash-bg is correspondingly forced to its dark
+   treatment here too, slightly darker again, so the background doesn't
+   fight the now-always-dark card sitting on top of it; !important matches
+   the mobile breakpoint's own !important rule in css/office.css so this
+   still wins there.
+   =========================================================================== */
+
+#splash-bg {
+    filter: blur(3px) saturate(0.5) brightness(0.34) !important;
+    opacity: 0.4 !important;
+}
+
+#tradition-entry.app-tradition-entry,
+#mode-selection.app-mode-shell {
+    background: linear-gradient(180deg, rgba(8, 7, 12, 0.94), rgba(11, 9, 18, 0.90));
+    border: 1px solid var(--uo-hairline);
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--uo-ink);
+}
+
+#tradition-entry .app-dark-toggle {
+    display: none;
+}
+
+.app-entry-kicker,
+.app-mode-kicker {
+    font-family: var(--uo-face-machine);
+    color: var(--uo-accent);
+}
+
+#tradition-entry h1,
+#mode-selection.app-mode-shell h1 {
+    font-family: var(--uo-face-title);
+    color: var(--uo-ink);
+    text-shadow: none;
+}
+
+.app-entry-lede,
+#mode-selection.app-mode-shell p {
+    font-family: var(--uo-face-prayed);
+    color: var(--uo-ink-quiet);
+}
+
+.app-entry-panel-title {
+    font-family: var(--uo-face-machine);
+    color: var(--uo-accent);
+}
+
+/* Cards: flat, hairline-bordered, no shadow, no rounded corners -- the same
+   treatment .uo-drawer-office already uses for "II . Which office". */
+.app-entry-family-card,
+.app-entry-tradition-card,
+#mode-selection .mode-btn.app-mode-card {
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--uo-ink-quiet);
+}
+.app-entry-family-card:hover,
+.app-entry-family-card:focus-visible,
+.app-entry-tradition-card:hover,
+.app-entry-tradition-card:focus-visible,
+#mode-selection .mode-btn.app-mode-card:hover,
+#mode-selection .mode-btn.app-mode-card:focus-visible {
+    background: rgba(201, 168, 76, 0.08);
+    border-color: rgba(201, 168, 76, 0.6);
+    box-shadow: none;
+    transform: none;
+    color: var(--uo-ink);
+}
+
+.app-entry-family-icon,
+.app-entry-tradition-code,
+.app-mode-icon {
+    background: none;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    color: var(--uo-accent);
+    box-shadow: none;
+}
+
+.app-entry-family-card strong,
+.app-entry-tradition-card strong,
+.app-mode-title {
+    font-family: var(--uo-face-title);
+    color: var(--uo-ink);
+}
+.app-entry-family-card small,
+.app-entry-tradition-card small,
+.app-mode-subtitle {
+    font-family: var(--uo-face-prayed);
+    color: var(--uo-ink-quiet);
+}
+
+.app-entry-tradition-card.is-disabled,
+.app-entry-tradition-card:disabled {
+    opacity: 0.4;
+    filter: none;
+}
+
+.app-entry-back {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 0;
+    background: transparent;
+    color: var(--uo-accent);
+    font-family: var(--uo-face-prayed);
+}
+.app-entry-back:hover,
+.app-entry-back:focus-visible {
+    background: rgba(201, 168, 76, 0.08);
+    border-color: rgba(201, 168, 76, 0.6);
+    color: var(--uo-ink);
+    outline: none;
+}
+
+/* The regrouped tools row -- deliberately smaller and unornamented next to
+   the tradition grid above it, so the two read as different categories at a
+   glance, not five equal choices. */
+.app-mode-section-label {
+    font-family: var(--uo-face-machine);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uo-ink-quiet);
+    margin: 0 0 10px;
+}
+/* Only the label AFTER a tradition grid gets the separating hairline -- the
+   first one (right under the <h1>) would otherwise draw a stray line
+   directly beneath the title. */
+.app-mode-grid + .app-mode-section-label {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+.app-mode-tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.app-mode-tool-btn {
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.16);
+    border-radius: 0;
+    padding: 10px 16px;
+    color: var(--uo-ink-quiet);
+    font-family: var(--uo-face-prayed);
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+}
+.app-mode-tool-btn:hover,
+.app-mode-tool-btn:focus-visible {
+    border-color: rgba(201, 168, 76, 0.5);
+    outline: none;
+}
+.app-mode-tool-btn strong {
+    display: block;
+    font-family: var(--uo-face-title);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--uo-ink);
+    margin-bottom: 2px;
+}
+.app-mode-tool-btn:hover strong,
+.app-mode-tool-btn:focus-visible strong {
+    color: var(--uo-accent);
+}
+.app-mode-tool-btn small {
+    display: block;
+    color: var(--uo-ink-quiet);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+    .app-mode-tools-row {
+        flex-direction: column;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: typography + sizing port (Stage 1 of 6).
+
+   The rules above only ever recolored these screens (font-family/color) --
+   they never carried the actual type sizing office.css still supplies
+   (font-size/line-height/letter-spacing/margin/text-transform). Ported here
+   verbatim from office.css so the old rules can be deleted later (Stage 4)
+   without losing sizing. Genuinely unscoped from the start (no body.shell-v2
+   prefix) -- shell-v2 is permanent, and this file's own Group 6 rules above
+   are being unscoped in the same pass (Stage 6). See
+   documentation/entry-screen-unscoping (this session's plan) /
+   RESUME_PROJECT_NOTE.md / audit-ledger.html's ui:phase6-retire-old-skin row
+   for the full staged account. */
+
+.app-entry-kicker,
+.app-mode-kicker {
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+#tradition-entry h1 {
+    font-size: clamp(2.35rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: 0.008em;
+    margin: 0 0 10px;
+}
+
+#mode-selection.app-mode-shell h1 {
+    font-size: clamp(2.65rem, 6.5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: 0.008em;
+    margin: 0 0 10px;
+}
+
+.app-entry-lede {
+    font-size: clamp(1rem, 1.6vw, 1.24rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    margin: 0 0 28px;
+    max-width: 640px;
+}
+
+#mode-selection.app-mode-shell p {
+    font-size: clamp(1rem, 1.6vw, 1.28rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    margin: 0 0 28px;
+    max-width: 560px;
+}
+
+.app-entry-panel-title {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.app-entry-family-card strong,
+.app-entry-tradition-card strong {
+    display: block;
+    font-size: 1.14rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.app-mode-title {
+    display: block;
+    font-size: 1.15rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.app-entry-family-card small,
+.app-entry-tradition-card small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    line-height: 1.25;
+}
+
+.app-mode-subtitle {
+    display: block;
+    font-size: 0.90rem;
+    line-height: 1.25;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card,
+#mode-selection .mode-btn.app-mode-card {
+    cursor: pointer;
+    text-align: left;
+}
+
+#mode-selection .mode-btn.app-mode-card {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.app-entry-tradition-card.is-disabled,
+.app-entry-tradition-card:disabled {
+    cursor: not-allowed;
+}
+
+.app-entry-back {
+    font-size: 0.84rem;
+    padding: 7px 13px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: card-grid + icon layout port (Stage 2 of 6).
+
+   The second real gap Stage 1's own header comment names: nothing above
+   ever rebuilt these screens' actual grid layout, only recolored it. Ported
+   verbatim from office.css, with one deliberate, disclosed exception:
+   border-radius:18px on the card containers is DROPPED (Group 6's own
+   1584-1591-region rule already sets border-radius:0, confirmed live via
+   getComputedStyle as this screen's real, current appearance at every
+   viewport -- porting 18px would introduce rounded corners that don't
+   exist today).
+
+   UPDATED 2026-09-25: the two hairline border-tops below were ported as
+   the literal office.css brown (rgba(103,58,31,0.12)) when this stage
+   first landed, on the reasoning that var(--uo-hairline) resolves to a
+   visibly different gold on this always-night-palette screen and a
+   faithful port shouldn't sneak in a color change. Josh reviewed that
+   finding and asked for the modernization: these are now
+   var(--uo-hairline), matching every other hairline on this screen and
+   the governing rule already stated at the top of this section ("no
+   rounded cards, no drop shadows on the page, no borders around prayer.
+   Hairlines and light do the separating"). Verified live: both grids'
+   hairlines now render gold, consistent with the rest of the screen;
+   nothing else on the page depended on the old brown value (confirmed by
+   grep -- these were its only two occurrences in this file). */
+
+.app-mode-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+#mode-selection .mode-btn.app-mode-card {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 13px;
+    align-items: center;
+    width: 100%;
+    min-height: 86px;
+    margin: 0;
+    padding: 16px 18px;
+}
+
+.app-mode-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+}
+
+.app-mode-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.app-mode-card-admin {
+    grid-column: 1 / -1;
+}
+
+.app-entry-family-grid,
+.app-entry-tradition-panel {
+    display: grid;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--uo-hairline);
+}
+
+.app-entry-family-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-entry-tradition-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+}
+
+.app-entry-panel-title {
+    grid-column: 1 / -1;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card {
+    display: grid;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    margin: 0;
+}
+
+.app-entry-family-card {
+    grid-template-columns: 46px minmax(0, 1fr);
+    min-height: 112px;
+    padding: 18px;
+}
+
+.app-entry-tradition-card {
+    grid-template-columns: 54px minmax(0, 1fr);
+    min-height: 96px;
+    padding: 16px 18px;
+}
+
+.app-entry-family-icon,
+.app-entry-tradition-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-family: Georgia, serif;
+}
+
+.app-entry-family-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+}
+
+.app-entry-tradition-code {
+    width: 50px;
+    height: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.app-entry-back {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+@media (max-width: 860px) {
+    .app-entry-family-grid,
+    .app-entry-tradition-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .app-mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #mode-selection .mode-btn.app-mode-card {
+        min-height: 76px;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Entry/threshold screens: container sizing + viewport-stabilization port
+   (Stage 3 of 6, the highest-stakes of the six -- ported and verified via
+   both screenshots AND getComputedStyle spot-checks at 6 viewports before
+   anything in office.css was touched).
+
+   office.css sets #tradition-entry's width/max-width/max-height/margin/
+   overflow-y/backdrop-filter TWICE: a base rule, then a later "viewport
+   stabilization pass" rule with identical selector specificity that wins
+   for every property it redeclares, confirmed live via getComputedStyle at
+   every tested viewport (e.g. max-height:none at <=760px width, not the
+   base rule's calc(100vh-40px)). Only the WINNING (later) values are
+   ported below, plus whatever the base rule alone still supplies
+   (padding/box-sizing/position/z-index/text-align, never redeclared
+   anywhere else). #mode-selection has no such second declaration -- its
+   width/max-width/max-height come only from its one base rule.
+
+   border-radius:22px in both screens' <=760px overrides is OMITTED,
+   confirmed dead by the same reasoning as Stage 2 (Group 6's unconditional
+   border-radius:0 already wins at every viewport, confirmed live). The
+   asymmetry that #tradition-entry gets max-height:none at <=760px width
+   while #mode-selection keeps max-height:calc(100vh - 24px) is preserved
+   deliberately -- that's current, tested behavior, not an inconsistency to
+   fix here. */
+
+#tradition-entry.app-tradition-entry {
+    padding: clamp(28px, 4.5vw, 58px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+#mode-selection.app-mode-shell {
+    position: relative;
+    width: min(1080px, calc(100vw - 40px));
+    max-width: 1080px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: clamp(28px, 4.5vw, 58px);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* The winning (later-cascading) width/max-width/max-height/margin for
+   #tradition-entry, from office.css's viewport-stabilization pass. */
+#tradition-entry.app-tradition-entry {
+    width: min(860px, calc(100vw - 48px));
+    max-width: 860px;
+    max-height: calc(100vh - 48px);
+    max-height: calc(100svh - 48px);
+    max-height: calc(100dvh - 48px);
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+    overflow-y: auto;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+#mode-selection.app-mode-shell {
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+}
+
+@media (min-width: 1100px) and (min-height: 760px) {
+    #tradition-entry.app-tradition-entry {
+        width: min(900px, calc(100vw - 72px));
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 860px) {
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: clamp(72px, 11vh, 128px);
+    }
+}
+
+@media (max-width: 760px) {
+    #mode-selection.app-mode-shell {
+        width: min(100vw - 24px, 560px);
+        max-height: calc(100vh - 24px);
+        padding: 28px 22px;
+    }
+
+    #tradition-entry.app-tradition-entry {
+        width: min(100vw - 28px, 560px);
+        max-height: none;
+        padding: 28px 22px;
+    }
+}
+
+@media (max-height: 760px) {
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: 38px;
+    }
 }

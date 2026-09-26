@@ -640,6 +640,20 @@ function backToSplash() {
     // Remove office-active so body returns to its splash flex-centering state
     document.body.classList.remove('office-active');
 
+    // FIXED 2026-09-25, found via a real report (Josh: live screenshot of theuniversaloffice.com
+    // showing "The Universal Office" selector grid with every heading and card rendered nearly
+    // illegible -- dark ink on the screen's own permanently-dark background). Root cause:
+    // js/office-shell.js's applyTheme() only ever WRITES `uo-day` while body.office-active is
+    // present (by design, per its own comment), but nothing ever REMOVED it on the way back out.
+    // A day-themed office (uo-day added) followed by any return to the splash/mode-selection
+    // screens left uo-day stuck on <body> -- and since :root's `body.uo-day` rule sets the DAY
+    // ink colors unconditionally, not scoped to office-active, the always-dark entry/threshold
+    // screens then painted their text in near-black day-theme ink. Reproduced exactly (pixel-
+    // identical to Josh's screenshot) by forcing uo-day before calling this function. Fixed
+    // symmetrically with the office-active removal directly above, matching how this class is
+    // scoped everywhere else in the shell.
+    document.body.classList.remove('uo-day');
+
     // Clear any forced office override
     window._forcedOfficeId = undefined;
 
@@ -652,41 +666,8 @@ function backToSplash() {
     // currently doing.
     window._esyTemporalOverride = { active: false, date: null, hourId: null };
 
-    // Reset all settings panels to their default hidden states so the next
-    // mode selection starts clean (avoids e.g. East Syriac settings panel
-    // bleeding into a subsequent Daily Office load)
-   const settingsPanel = document.getElementById('settings-panel');
-    const ethSettings   = document.getElementById('ethiopian-settings');
-    const copSettings   = document.getElementById('coptic-settings');
-    const esySettings   = document.getElementById('east-syriac-settings');
-    const genSettings   = document.getElementById('generic-settings');
-    const mainContent   = document.getElementById('main-content');
-
-    // On splash, ALL panels are hidden. The next selectMode() call is solely
-    // responsible for activating whichever panel is correct for that mode.
-    // Do NOT restore #settings-panel here — that was the original splash
-    // deformation bug. Splash has no sidebar at all.
-    if (settingsPanel) {
-        settingsPanel.classList.add('sidebar-hidden');
-        settingsPanel.classList.add('mode-hidden');
-    }
-    if (ethSettings) {
-        ethSettings.classList.add('sidebar-hidden');
-        ethSettings.classList.add('mode-hidden');
-    }
-    if (copSettings) {
-        copSettings.classList.add('sidebar-hidden');
-        copSettings.classList.add('mode-hidden');
-    }
-    if (esySettings) {
-        esySettings.classList.add('sidebar-hidden');
-        esySettings.classList.add('mode-hidden');
-    }
-    if (genSettings) {
-        genSettings.classList.add('sidebar-hidden');
-        genSettings.classList.add('mode-hidden');
-    }
-       if (mainContent) {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
         mainContent.classList.remove('sidebar-hidden');
     }
 }
@@ -1460,6 +1441,7 @@ function showTraditionEntry() {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     selectTraditionFamily(null);
 }
@@ -1502,6 +1484,7 @@ function showUniversalModeSelection(persistDefault = false) {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('roman-breviary-dev-mode');
+    document.body.classList.remove('uo-day'); // see backToSplash()'s 2026-09-25 fix comment
 
     // 2026-09-23: this always shows BCP's threshold (updateUoThresholdDisplay() with no
     // argument), so any lane a previous showLaneThreshold() call left in window._uoThresholdMode
@@ -1540,6 +1523,75 @@ function ensureSplashForegroundVisible() {
 function scheduleSplashForegroundGuard() {
     window.setTimeout(ensureSplashForegroundVisible, 160);
     window.setTimeout(ensureSplashForegroundVisible, 850);
+}
+
+// ── Tradition availability (admin-controlled offline/paused traditions) ──────
+// Generalizes the Byzantine Horologion's 2026-09-25 manual pause into a data-
+// driven gate: data/tradition-availability.json is the single source of truth
+// for which whole traditions are reachable, read here and applied to the entry
+// cards + profile dropdown. See documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+const TRADITION_AVAILABILITY_URL = 'data/tradition-availability.json';
+
+// Fail-safe only: if the JSON can't be fetched (bad deploy, offline load, etc.),
+// isTraditionAvailable() falls back to this set for the entry-routing guard --
+// the one gate Josh called "the one that actually mattered" (a returning tester's
+// stale stored default silently reopening a paused lane) must never regress even
+// when the data-driven path can't run. The entry cards/dropdown need no such
+// fallback: their disabled/aria-disabled markup in index.html already ships
+// matching today's real state, so a failed fetch just leaves that baseline alone.
+const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set(['eastern-orthodox']);
+
+async function loadTraditionAvailability() {
+    try {
+        const response = await Promise.race([
+            fetch(TRADITION_AVAILABILITY_URL),
+            new Promise((_, reject) => window.setTimeout(() => reject(new Error('tradition-availability fetch timeout')), 1500)),
+        ]);
+        if (!response.ok) return null;
+        const data = await response.json();
+        return (data && data.traditions && typeof data.traditions === 'object') ? data.traditions : null;
+    } catch (err) {
+        console.warn('[tradition-availability] Could not load data/tradition-availability.json, entry screen keeps its shipped defaults:', err);
+        return null;
+    }
+}
+
+function isTraditionAvailable(tradition, availability) {
+    if (availability && Object.prototype.hasOwnProperty.call(availability, tradition)) {
+        return availability[tradition].available !== false;
+    }
+    return !TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK.has(tradition);
+}
+
+function applyTraditionAvailabilityToDOM(availability) {
+    if (!availability) return; // fetch failed/timed out -- leave index.html's shipped baseline as-is
+
+    document.querySelectorAll('[data-entry-tradition]').forEach(card => {
+        const entry = availability[card.dataset.entryTradition];
+        if (!entry) return;
+        const available = entry.available !== false;
+        card.classList.toggle('is-disabled', !available);
+        card.disabled = !available;
+        card.setAttribute('aria-disabled', available ? 'false' : 'true');
+        const subtitle = card.querySelector('small');
+        if (subtitle) {
+            subtitle.textContent = available
+                ? (card.dataset.availableSubtitle || subtitle.textContent)
+                : (entry.reason || subtitle.textContent);
+        }
+    });
+
+    const dropdown = document.getElementById('profile-tradition-default');
+    if (dropdown) {
+        Array.from(dropdown.options).forEach(option => {
+            const entry = availability[option.value];
+            if (!entry) return;
+            const available = entry.available !== false;
+            const baseLabel = option.dataset.availableLabel || option.textContent;
+            option.disabled = !available;
+            option.textContent = available ? baseLabel : `${baseLabel} — ${entry.reason || 'unavailable'}`;
+        });
+    }
 }
 
 function resolveEntryTraditionRoute(tradition) {
@@ -1650,11 +1702,21 @@ function resetUserTraditionDefault() {
     showTraditionEntry();
 }
 
-function initializeEntryRouting() {
+async function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
     scheduleSplashForegroundGuard();
+
+    // Awaited here, before anything is shown: the entry/mode screens are already
+    // hidden-by-default until this function decides which one to display (see the
+    // comment on #tradition-entry in index.html), so there is no flash-of-wrong-
+    // state risk in waiting on a same-origin JSON fetch (capped at 1.5s) at this
+    // point. Applies disabled/reason text to the entry cards and profile dropdown
+    // for any tradition the admin has paused, then feeds the same data into the
+    // stale-stored-default guard below.
+    const traditionAvailability = await loadTraditionAvailability();
+    applyTraditionAvailabilityToDOM(traditionAvailability);
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 
@@ -1678,7 +1740,22 @@ function initializeEntryRouting() {
     // entry flow, not just via a directly-set profile default from a prior visit. Routes
     // through getUserEntryDefault() -- the already-built, already-correct logic this
     // bypass was silently overriding -- instead of unconditionally skipping it.
-    const storedDefault = getUserEntryDefault();
+    let storedDefault = getUserEntryDefault();
+
+    // GENERALIZED 2026-09-25, engine-audit-sweep follow-up: this used to be a single
+    // hard-coded `if (storedDefault === 'eastern-orthodox')` block, written the same day
+    // Byzantine Horologion was paused. It's now data-driven via
+    // data/tradition-availability.json (isTraditionAvailable() above) so any tradition the
+    // admin panel marks unavailable gets a returning tester's stale stored default cleared
+    // here, not just Horologion specifically -- falling through to the entry screen (where
+    // the card is now shown disabled, per applyTraditionAvailabilityToDOM() above) rather
+    // than silently reopening a paused lane. See
+    // documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
+    if (storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
+        clearUserEntryDefault();
+        storedDefault = null;
+    }
+
     if (storedDefault === 'universal') {
         showUniversalModeSelection(false);
         return;
@@ -1895,15 +1972,7 @@ async function selectMode(mode) {
     window._esyTemporalOverride = { active: false, date: null, hourId: null };
 
 
-    // Mode transition invariant: exactly one office drawer is active for the selected mode.
-    // All non-active drawers must be both mode-hidden and sidebar-hidden so toggleSidebar()
-    // cannot target a stale drawer after cross-tradition navigation.
-    const settingsPanel = document.getElementById('settings-panel');
-    const ethSettings   = document.getElementById('ethiopian-settings');
-    const copSettings   = document.getElementById('coptic-settings');
-    const esySettings   = document.getElementById('east-syriac-settings');
-    const genSettings   = document.getElementById('generic-settings');
-    const mainContent   = document.getElementById('main-content');
+    const mainContent = document.getElementById('main-content');
 
     if (mode === 'prayers') {
         // ── Book of Needs ─────────────────────────────────────────────────────
@@ -1929,26 +1998,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (copSettings) {
-            copSettings.classList.remove('sidebar-hidden');
-            copSettings.classList.remove('mode-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
@@ -1964,22 +2013,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.remove('sidebar-hidden');
-            esySettings.classList.remove('mode-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
@@ -1998,22 +2031,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
-        }
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.remove('mode-hidden');
-            genSettings.classList.remove('sidebar-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         updateGenericDateDisplay();
@@ -2039,13 +2056,6 @@ async function selectMode(mode) {
         // the lane pipeline without claiming full Roman Breviary coverage.
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
-
-        for (const panel of [settingsPanel, ethSettings, esySettings, genSettings]) {
-            if (panel) {
-                panel.classList.add('sidebar-hidden');
-                panel.classList.add('mode-hidden');
-            }
-        }
 
         if (mainContent) {
             mainContent.classList.remove('sidebar-hidden');
@@ -2088,22 +2098,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden');
-            esySettings.classList.add('mode-hidden');
-        }
-        if (genSettings) {
-            genSettings.classList.add('sidebar-hidden');
-            genSettings.classList.add('mode-hidden');
-        }
-        if (settingsPanel) {
-            settingsPanel.classList.remove('mode-hidden');
-            settingsPanel.classList.remove('sidebar-hidden');
-        }
         mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
@@ -2145,30 +2139,6 @@ async function init() {
         console.error('[init] Kernel load failed:', err);
     }
 }
-function toggleSidebar() {
-    const bcpPanel = document.getElementById('settings-panel');
-    const ethPanel = document.getElementById('ethiopian-settings');
-    const esyPanel = document.getElementById('east-syriac-settings');
-    const genPanel = document.getElementById('generic-settings');
-    const main     = document.getElementById('main-content');
-    const toggle   = document.getElementById('sidebar-toggle');
-
-    let activePanel;
-    if (esyPanel && !esyPanel.classList.contains('mode-hidden')) {
-        activePanel = esyPanel;
-    } else if (ethPanel && !ethPanel.classList.contains('mode-hidden')) {
-        activePanel = ethPanel;
-    } else if (genPanel && !genPanel.classList.contains('mode-hidden')) {
-        activePanel = genPanel;
-    } else {
-        activePanel = bcpPanel;
-    }
-
-    const isHidden = activePanel.classList.toggle('sidebar-hidden');
-    main.classList.toggle('sidebar-hidden', isHidden);
-    if (toggle) toggle.style.opacity = isHidden ? '0.65' : '0.5';
-}
-
 // ── Date Controls ────────────────────────────────────────────────────────────
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);
@@ -2232,12 +2202,9 @@ function setCustomDate(dateStr) {
 // Tradition-specific words are allowed; interaction structure is not.
 const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
     daily: {
-        panelId: "settings-panel",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Time of Day",
-        hideSelectors: [".ordo-control"],
-        hideHeadings: ["Time of Day"],
         options: [
             { value: "morning-office", label: "Morning Prayer", detail: "Morning" },
             { value: "noonday-office", label: "Noonday Prayer", detail: "Midday" },
@@ -2246,12 +2213,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     coptic: {
-        panelId: "coptic-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Hour",
-        hideHeadings: ["Active Hour"],
-        hideButtonRowsAfterHeadings: ["Active Hour"],
         showAppearanceToggle: true,
         appearanceToggleId: "toggle-dark-coptic",
         options: [
@@ -2266,13 +2230,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     eastSyriac: {
-        panelId: "east-syriac-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Canonical Hour",
-        hideSelectors: ["#esy-override-panel"],
-        hideHeadings: ["Active Hour"],
-        hideButtonRowsAfterHeadings: ["Active Hour"],
         // FIXED 2026-09-03, found via a real report (Josh: "It's in dark mode, with no option to
         // change"): every other tradition using this shared navigator (Coptic, immediately above)
         // has showAppearanceToggle set, giving it a real Dark Mode checkbox in its own sidebar.
@@ -2289,12 +2249,9 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
         ],
     },
     horologion: {
-        panelId: "generic-settings",
         dateTitle: "Date",
         datePickerLabel: "Select Date",
         officeTitle: "Office",
-        hideSelectors: [".ordo-control"],
-        hideNestedHeadings: ["Office"],
         showAppearanceToggle: true,
         appearanceToggleId: "toggle-dark-horologion",
         options: [
@@ -2323,6 +2280,16 @@ function _sharedOfficeNavigatorModeKey() {
     if (selectedMode === "daily" || !selectedMode) return "daily";
     return null;
 }
+/* Exposed so js/office-shell.js and js/office-drawer.js can read the active
+   lane without re-deriving it from the DOM. `selectedMode` itself is a bare
+   top-level `let` (line 3), never a `window` property, so a function is
+   exposed instead of mirroring the variable -- a mirrored copy would go
+   stale the moment `selectedMode` is reassigned by bare identifier
+   elsewhere in this file, silently reintroducing the exact bug class
+   recorded in AUDIT_GOVERNANCE_LEDGER.md (a prior fix assumed
+   window.selectedMode worked and shipped a no-op). This function always
+   reads the current value. */
+window._sharedOfficeNavigatorModeKey = _sharedOfficeNavigatorModeKey;
 
 function _sharedOfficeNavigatorIsoDate(date) {
     const d = date instanceof Date && !Number.isNaN(date.getTime()) ? date : new Date();
@@ -2392,167 +2359,25 @@ function _sharedOfficeNavigatorCurrentLine(modeKey) {
     return _sharedOfficeNavigatorReadableDate();
 }
 
-function _sharedOfficeNavigatorRestoreLegacyElement(el) {
-    if (!(el instanceof HTMLElement)) return;
+/* CORRECTED (Phase 6, sidebar-deletion refactor): this file used to also
+   define _sharedOfficeNavigatorHideLegacy() and two helpers here, which
+   retired old sibling markup inside each mode's own legacy sidebar so it
+   wouldn't visually clash with the freshly-built nav sitting next to it.
+   That legacy markup no longer exists (moved/deleted as part of this
+   refactor), so there is nothing left for that machinery to retire -- it
+   and the hideSelectors/hideHeadings/hideButtonRowsAfterHeadings/
+   hideNestedHeadings config keys it read have been deleted outright,
+   confirmed unread anywhere else in the repo before removal. */
 
-    el.classList.remove("shared-office-nav-legacy-hidden");
-    el.removeAttribute("aria-hidden");
-    el.removeAttribute("data-shared-office-nav-retired");
-    delete el.dataset.sharedOfficeNavRetired;
-
-    if (el.dataset.sharedOfficeLegacyDisplay !== undefined) {
-        el.style.display = el.dataset.sharedOfficeLegacyDisplay;
-        delete el.dataset.sharedOfficeLegacyDisplay;
-    } else {
-        el.style.removeProperty("display");
-    }
-
-    if (el.dataset.sharedOfficeLegacyVisibility !== undefined) {
-        el.style.visibility = el.dataset.sharedOfficeLegacyVisibility;
-        delete el.dataset.sharedOfficeLegacyVisibility;
-    } else {
-        el.style.removeProperty("visibility");
-    }
-
-    if (el.dataset.sharedOfficeLegacyPointerEvents !== undefined) {
-        el.style.pointerEvents = el.dataset.sharedOfficeLegacyPointerEvents;
-        delete el.dataset.sharedOfficeLegacyPointerEvents;
-    } else {
-        el.style.removeProperty("pointer-events");
-    }
-
-    if (el.dataset.sharedOfficeLegacyTabIndex !== undefined) {
-        if (el.dataset.sharedOfficeLegacyTabIndex === "") {
-            el.removeAttribute("tabindex");
-        } else {
-            el.setAttribute("tabindex", el.dataset.sharedOfficeLegacyTabIndex);
-        }
-        delete el.dataset.sharedOfficeLegacyTabIndex;
-    } else {
-        el.removeAttribute("tabindex");
-    }
-
-    if (el.dataset.sharedOfficeLegacyDisabled !== "true" && "disabled" in el) {
-        el.disabled = false;
-    }
-    delete el.dataset.sharedOfficeLegacyDisabled;
-
-    try {
-        el.inert = false;
-    } catch (_error) {
-        el.removeAttribute("inert");
-    }
-}
-
-function _sharedOfficeNavigatorRetireLegacyElement(el) {
-    if (!(el instanceof HTMLElement)) return;
-
-    if (el.closest(".shared-office-nav")) return;
-
-    if (el.style.display && el.dataset.sharedOfficeLegacyDisplay === undefined) {
-        el.dataset.sharedOfficeLegacyDisplay = el.style.display;
-    }
-    if (el.style.visibility && el.dataset.sharedOfficeLegacyVisibility === undefined) {
-        el.dataset.sharedOfficeLegacyVisibility = el.style.visibility;
-    }
-    if (el.style.pointerEvents && el.dataset.sharedOfficeLegacyPointerEvents === undefined) {
-        el.dataset.sharedOfficeLegacyPointerEvents = el.style.pointerEvents;
-    }
-    if (el.hasAttribute("tabindex") && el.dataset.sharedOfficeLegacyTabIndex === undefined) {
-        el.dataset.sharedOfficeLegacyTabIndex = el.getAttribute("tabindex") || "";
-    }
-    if (el.hasAttribute("disabled") && el.dataset.sharedOfficeLegacyDisabled === undefined) {
-        el.dataset.sharedOfficeLegacyDisabled = "true";
-    }
-
-    el.classList.add("shared-office-nav-legacy-hidden");
-    el.setAttribute("aria-hidden", "true");
-    el.setAttribute("data-shared-office-nav-retired", "true");
-    el.dataset.sharedOfficeNavRetired = "true";
-    el.tabIndex = -1;
-    el.style.display = "none";
-    el.style.visibility = "hidden";
-    el.style.pointerEvents = "none";
-
-    try {
-        el.inert = true;
-    } catch (_error) {
-        el.setAttribute("inert", "");
-    }
-
-    if ("disabled" in el) {
-        el.disabled = true;
-    }
-
-    el.querySelectorAll("a, button, input, select, textarea, summary, [tabindex]").forEach(child => {
-        if (!(child instanceof HTMLElement)) return;
-
-        if (child.hasAttribute("tabindex") && child.dataset.sharedOfficeLegacyTabIndex === undefined) {
-            child.dataset.sharedOfficeLegacyTabIndex = child.getAttribute("tabindex") || "";
-        }
-        if (child.hasAttribute("disabled") && child.dataset.sharedOfficeLegacyDisabled === undefined) {
-            child.dataset.sharedOfficeLegacyDisabled = "true";
-        }
-
-        child.setAttribute("aria-hidden", "true");
-        child.setAttribute("data-shared-office-nav-retired", "true");
-        child.tabIndex = -1;
-
-        if ("disabled" in child) {
-            child.disabled = true;
-        }
-    });
-}
-
-function _sharedOfficeNavigatorHideLegacy(panel, config) {
-    panel.querySelectorAll(".shared-office-nav-legacy-hidden[data-shared-office-nav-retired='true']").forEach(_sharedOfficeNavigatorRestoreLegacyElement);
-
-    const legacyElements = new Set();
-
-    for (const selector of config.hideSelectors || []) {
-        panel.querySelectorAll(selector).forEach(el => legacyElements.add(el));
-    }
-
-    for (const heading of config.hideHeadings || []) {
-        Array.from(panel.children).forEach(el => {
-            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
-                legacyElements.add(el);
-            }
-        });
-    }
-
-    for (const heading of config.hideButtonRowsAfterHeadings || []) {
-        const groups = Array.from(panel.children);
-        for (let i = 0; i < groups.length; i++) {
-            const el = groups[i];
-            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
-                const next = groups[i + 1];
-                if (next?.classList?.contains("ordo-buttons")) legacyElements.add(next);
-            }
-        }
-    }
-
-    for (const heading of config.hideNestedHeadings || []) {
-        panel.querySelectorAll(".nested-group").forEach(el => {
-            const strong = el.querySelector("strong");
-            if (strong && strong.textContent.trim().toLowerCase() === heading.toLowerCase()) {
-                legacyElements.add(el);
-            }
-        });
-    }
-
-    legacyElements.forEach(_sharedOfficeNavigatorRetireLegacyElement);
-}
+const SHARED_OFFICE_NAV_HOST_ID = "legacy-office-controls";
 
 function renderSharedOfficeNavigation() {
     const modeKey = _sharedOfficeNavigatorModeKey();
     if (!modeKey) return;
 
     const config = SHARED_OFFICE_NAVIGATOR_CONFIGS[modeKey];
-    const panel = document.getElementById(config.panelId);
-    if (!panel || panel.classList.contains("mode-hidden")) return;
-
-    _sharedOfficeNavigatorHideLegacy(panel, config);
+    const panel = document.getElementById(SHARED_OFFICE_NAV_HOST_ID);
+    if (!panel) return;
 
     let nav = panel.querySelector(".shared-office-nav");
     if (!nav) {
@@ -3576,6 +3401,8 @@ async function renderOffice() {
 //   1. Calls HorologionEngine.resolveOffice() — non-throwing by contract.
 //   2. Checks payload.status === "error" and renders a visible error block.
 //   3. Walks sections and items, rendering placeholders as visible dashed blocks.
+//   4. Publishes the resolved-office envelope (Phase 5, lane 3 of 3) -- see
+//      _pushHorologionEnvelopeEntries() below for the item-type -> role mapping.
 //
 // No calendar logic, no feast resolution, no text composition belongs here.
 //
@@ -3587,6 +3414,8 @@ async function renderHorologionOffice(officeKey) {
     const payload = await HorologionEngine.resolveOffice(currentDate, officeKey, { eoMode: selectedEoMode });
 
     // ── Error state: surface explicitly, never silently blank ────────────────
+    // No envelope is published here -- there is no resolved content to describe,
+    // and the error block itself is the honest signal, same as the pre-port code.
     if (payload.status === 'error') {
         const msg = (payload.diagnostics.warnings || []).join(' ') || 'Unknown error.';
         display.innerHTML =
@@ -3608,35 +3437,207 @@ async function renderHorologionOffice(officeKey) {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    let html = `<div class="office-container">`;
-    html += `<p class="office-book-title">The Horologion</p>`;
-    html += `<h2>${payload.title}</h2>`;
-    html += `<p class="liturgical-title">${dateLabel}</p>`;
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Horologion';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = payload.title;
+    container.appendChild(h2);
+
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = dateLabel;
+    // ADDED 2026-09-25, spec section 6 (Byzantine/Slavic liturgical colour).
+    // Same "a single dot beside the day, never a wash over the page" contract
+    // the Anglican lane's own dot already implements (see renderBcpOffice()),
+    // reused here rather than duplicated blind: a saint/feast's own sourced
+    // liturgicalColorEOR wins when one is commemorated that day (matching the
+    // Anglican pattern where a Lesser Feast's own colour outranks the season
+    // default); Great Lent falls back to purple (this palette's dark/penitential
+    // entry -- Bulgakov's own scheme grades Lenten weekdays black-to-purple by
+    // day, a distinction this dot deliberately does not attempt, per its own
+    // "never a wash" contract); every other day falls back to gold, Bulgakov's
+    // own stated general-season default ("used when not using some other
+    // colour"). Only the six colours actually sourced get a dot -- anything
+    // else renders nothing, honest silence rather than an invented colour.
+    try {
+        const eorComms = await resolveCommemorations(currentDate, 'EOR', { includeEcumenical: false });
+        const eorColor = eorComms.find(s => s.liturgicalColorEOR)?.liturgicalColorEOR
+            || (HorologionEngine.getLiturgicalSeason(currentDate) === 'great-lent' ? 'purple' : 'gold');
+        const eorDotColor = {
+            gold:   '#c9a84c',
+            blue:   '#3a6ea5',
+            red:    '#9b2335',
+            purple: '#6b3070',
+            green:  '#4a7c59',
+            white:  '#f5f1e4',
+        }[eorColor];
+        if (eorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${eorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
+    container.appendChild(subtitle);
 
     // Diagnostic banner when variable slots remain unresolved
     if (payload.diagnostics.placeholderSlots > 0) {
-        html +=
-            `<div style="border:1px solid var(--rubric); border-radius:4px; ` +
-            `padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); ` +
-            `font-family:'Cinzel',serif; letter-spacing:0.04em;">` +
+        const banner = document.createElement('div');
+        banner.setAttribute('style',
+            'border:1px solid var(--rubric); border-radius:4px; padding:10px 14px; ' +
+            'margin:12px 0; font-size:0.8em; color:var(--rubric); font-family:\'Cinzel\',serif; ' +
+            'letter-spacing:0.04em;');
+        banner.textContent =
             `⚠ Public-beta notice: unresolved slot(s) remain visible below. ` +
-            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.` +
-            `</div>`;
+            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.`;
+        container.appendChild(banner);
     }
 
+    // env replaces nothing pre-existing here (this lane never built one) -- it is
+    // built alongside the same _renderHorologionItem() string output the display
+    // has always used, via _pushHorologionEnvelopeEntries() below, so the visible
+    // render is byte-for-byte what it was before this port; only the envelope is new.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
+
+    const contentDiv = document.createElement('div');
+    let contentHtml = '';
     for (const section of payload.sections) {
-        html +=
+        contentHtml +=
             `<h3 class="rubric-heading" style="margin-top:1.5em; font-family:'Cinzel',serif; ` +
             `font-size:1em; letter-spacing:0.1em; text-transform:uppercase; color:var(--rubric);">` +
             `${section.label}</h3>`;
         for (const item of section.items) {
-            html += _renderHorologionItem(item);
+            contentHtml += _renderHorologionItem(item);
+            _pushHorologionEnvelopeEntries(env, item);
+        }
+    }
+    contentDiv.innerHTML = contentHtml;
+    container.appendChild(contentDiv);
+
+    if (window.AnglicanEnvelope) {
+        try {
+            // Reusing window.AnglicanEnvelope.publish() deliberately -- see the
+            // identical comment on renderCopticAgpeya()'s own publish call: it is
+            // tradition-neutral, and the shell's listener reads env.tradition/
+            // blocks/context/overlays/diagnostics generically. tradition is 'BYZC',
+            // matching HorologionEngine's own authoritative `const TRADITION`
+            // (js/horologion-engine.js), not the 'EOR' sanctoral-calendar tag used
+            // elsewhere in this project for a different subsystem.
+            window.AnglicanEnvelope.publish({
+                tradition: 'BYZC',
+                officeFamily: officeKey || null,
+                context: {
+                    calendarSummary: HorologionEngine.getCalendarSummary(currentDate) || null,
+                    rankSummary: null
+                },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
         }
     }
 
-    html += `</div>`;
-    display.innerHTML = html;
+    display.replaceChildren(container);
     applyExplanationLayer('office-display');
+}
+
+/* Phase 5, lane 3 of 3 -- maps a resolved Horologion item to the contract's
+   closed 13-role taxonomy (UNIVERSAL_OFFICE_CORE_CONTRACT.md §7) by item.type,
+   built fresh rather than reusing js/anglican-envelope.js's ROLE_BY_LABEL
+   table, which was found (2026-09-24, reading it end to end) to contain
+   several non-compliant role strings of its own (penitential, invitatory,
+   collect, lords-prayer, thanksgiving, suffrages) -- a pre-existing Anglican
+   discrepancy, out of scope to fix here, but not one to copy into a new lane.
+   item.type maps far more directly onto the taxonomy than any label table
+   could: kathisma/psalm -> psalmody, stichera -> hymn, litany -> intercession,
+   rubric -> rubric, matching the taxonomy's own worked examples in §7's prose. */
+var HOR_ROLE_BY_TYPE = {
+    psalm: 'psalmody',
+    stichera: 'hymn',
+    kathisma: 'psalmody',
+    litany: 'intercession'
+};
+
+/* Walks one resolved (or unresolved) Horologion item and adds its contribution
+   to env -- one block per item, recursing into `sequence` containers rather
+   than giving the container itself a block (a sequence is structural grouping,
+   not a liturgical unit; each child already gets its own block at the same
+   granularity every other item type uses). Unresolved/placeholder items
+   contribute NO block -- there is no content to attribute -- but DO contribute
+   a real 'coverage-gap' diagnostic, per the explicit governance ruling
+   (UI_REDESIGN_HANDOFF.md §8 item 3): the Horologion's incipit-only/deferred
+   state is a stated gap, never a silently-dropped placeholder and never framed
+   as a user preference. */
+function _pushHorologionEnvelopeEntries(env, item) {
+    const isUnresolved =
+        item.type === 'placeholder' ||
+        item.status === 'unresolved' ||
+        item.status === 'placeholder';
+
+    if (isUnresolved) {
+        bcpPushDiagnostic(env, 'coverage-gap', item.label || item.key || 'Horologion slot');
+        return;
+    }
+
+    if (item.type === 'sequence') {
+        if (Array.isArray(item.items)) {
+            item.items.forEach(function (child) { _pushHorologionEnvelopeEntries(env, child); });
+        }
+        return;
+    }
+
+    if (item.type === 'rubric') {
+        // An instruction, not source content -- no unit to attribute.
+        env.blocks.push({ label: item.text || item.label || 'Rubric', role: 'rubric', units: [] });
+        return;
+    }
+
+    if (item.type === 'kathisma') {
+        const units = [];
+        const stases = Array.isArray(item.stases) ? item.stases : [];
+        stases.forEach(function (stasis, si) {
+            const psalms = Array.isArray(stasis.psalms) ? stasis.psalms : [];
+            psalms.forEach(function (psalm) {
+                units.push({ kind: 'psalm', citation: psalm.title || ('Stasis ' + (si + 1)) });
+            });
+        });
+        env.blocks.push({ label: item.label || 'Kathisma', role: 'psalmody', units: units });
+        return;
+    }
+
+    if (item.type === 'litany') {
+        env.blocks.push({ label: item.label || 'Litany', role: 'intercession', units: [{ kind: 'litany', citation: null }] });
+        return;
+    }
+
+    if (item.type === 'psalm' || item.type === 'stichera') {
+        env.blocks.push({
+            label: item.label || (item.type === 'psalm' ? 'Psalm' : 'Sticheron'),
+            role: HOR_ROLE_BY_TYPE[item.type],
+            units: [{ kind: item.type, citation: item.label || null }]
+        });
+        return;
+    }
+
+    // Fallback: "text" and any other resolved item type -- the same fallback
+    // branch _renderHorologionItem() itself falls through to.
+    env.blocks.push({
+        label: item.label || item.key || 'Text',
+        role: 'other',
+        units: [{ kind: item.type || 'text', citation: null }]
+    });
 }
 
 // Renders a single Horologion item as HTML.
@@ -4388,6 +4389,37 @@ function copEmitReading(container, env, title, citation, bodyText) {
     if (title) {
         env.blocks.push({ label: title, role: bcpRoleFor(title), units: [{ kind: 'scripture', citation: citation }] });
     }
+}
+
+/**
+ * East Syriac Hudra port -- Phase 5, lane 2 of 3 (documentation/UI_REDESIGN_HANDOFF.md §9).
+ * Shape mismatches against bcpEmitReading/bcpEmitPsalmBlock, found by reading renderEastSyriac()
+ * end to end before converting anything (recorded 2026-09-24 in RESUME_PROJECT_NOTE.md and
+ * AUDIT_GOVERNANCE_LEDGER.md, ui:phase5-east-syriac-lane-envelope):
+ *
+ * This lane renders EVERY scripture citation -- psalms, and even its one non-psalm citation
+ * (comp.scriptureRef, an Exodus canticle) -- as poetry (formatPsalmAsPoetry, class psalm-block),
+ * never as flowing prose. Neither bcpEmitReading nor copEmitReading fit (both are prose-shaped),
+ * so this is its own tiny emitter. It also never emits a leading label of its own -- confirmed
+ * 2026-09-24 that this lane's own component titles (e.g. "First Marmitha", "Second Shuraya",
+ * "Letter Psalm") already ARE the real citation-bearing label, shown once via the surrounding
+ * bcpEmitBlock call; a second "The Psalms"-style label immediately above the same content would
+ * just repeat it. Per Josh's 2026-09-24 ruling ("consistency unless a tradition requires
+ * otherwise"): every citation still gets its own gutter row and its own unit in the envelope --
+ * nothing is hidden -- it just folds into the ONE block its parent component's title already
+ * opened, rather than opening a second, redundant rail row. This matches bcpEmitPsalmBlock's own
+ * stated contract (§8: "one psalm is the smallest attributable piece") at the UNIT level, not the
+ * BLOCK level -- the same granularity, applied consistently, not a new rule invented for this lane.
+ * No divider (this lane has never had one anywhere, confirmed by inspection, same finding as
+ * Coptic's own copEmitReading).
+ */
+function esyEmitCitation(container, citationLabel, fullText) {
+    var cite = document.createElement('h4');
+    cite.className = 'passage-reference';
+    cite.textContent = citationLabel;
+    var body = bcpMakeSpan('psalm-block', formatPsalmAsPoetry(fullText), { tag: 'div' });
+    bcpWrapInGutter(container, citationLabel, [cite, body]);
+    return { kind: 'scripture', citation: citationLabel };
 }
 
 async function renderBcpOffice() {
@@ -5355,7 +5387,7 @@ async function renderBcpOffice() {
     // ── Finalise DOM (Phase 3 refactor: real nodes throughout, one assignment
     // to office-display, and the envelope assembled directly from `env` --
     // no more scraping the rendered HTML for it) ─────────────────────────────
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             window.AnglicanEnvelope.publish(
                 window.AnglicanEnvelope.assemble(env, {
@@ -5519,6 +5551,22 @@ async function renderEastSyriac() {
     // here once, reused below wherever the Sunday-only gates used to be.
     const isFeastDay = (typeof EastSyriacCalendar !== 'undefined')
         ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).commemorations.some(c => c.type === 'feast')
+        : false;
+
+    // Individual-saint memorial days (getDayClass's own dayClass === 'commemoration':
+    // a real, non-feast commemoration exists that day). Wired 2026-09-24 --
+    // components/traditions/east-syriac/rubrics.json's memorials-lelya-sequence
+    // (built 2026-08-19 from Maclean pp.68-84 alongside the Festival Evening
+    // Service) had zero references anywhere in this file until now, confirmed by
+    // grep before writing this: fully built content sitting orphaned. Ramsha and
+    // Sapra have NO equivalent assembled Memorial sequence yet -- Maclean's own
+    // Memorial content for those offices (the four commemoration-of-the-departed
+    // First/Second Anthem forms, the Suba'a appended afterward) exists only as
+    // loose components, not yet assembled into a sequence the way Lelya's was.
+    // That remains open; this wiring covers Lelya only, the one office where the
+    // content was already a complete, ready-to-route sequence.
+    const isMemorialDay = (typeof EastSyriacCalendar !== 'undefined')
+        ? EastSyriacCalendar.getDayClass(currentDate, { easterMode: selectedCoeEasterMode }).dayClass === 'commemoration'
         : false;
 
     // The actual feast commemoration object (not just the boolean above),
@@ -5730,6 +5778,18 @@ async function renderEastSyriac() {
     // already-verified Fast handling is left to win rather than guessing).
     if (officeKey === 'lelya' && isFeastDay && !lelyaFastSequenceName) {
         sequenceKey = 'feast-lelya-sequence';
+    } else if (officeKey === 'lelya' && isMemorialDay && dayName !== 'sunday' && !lelyaFastSequenceName) {
+        // A Feast of our Lord always wins over a coinciding memorial (the branch
+        // above), and Sunday's own Night Service always wins over a coinciding
+        // weekday memorial (matching how Sunday already takes precedence
+        // everywhere else in this function) -- a real memorial only reaches this
+        // branch when neither of those applies. Overrides Wednesday's own
+        // Before/After Motwa variation too, on the same reasoning already
+        // established for the Feast branch just above: this is inferred from
+        // this codebase's existing feast-over-weekday-variation precedent, not
+        // separately confirmed against Maclean's own stated priority order for
+        // this specific case.
+        sequenceKey = 'memorials-lelya-sequence';
     }
 
     // Endana ("Prayer at Noon in the Fast") has no content outside the
@@ -6254,43 +6314,122 @@ async function renderEastSyriac() {
     }
 
     if (!sequence) {
+        // DOM-based, not a fallback string -- built the same way as every other state in this
+        // function (and the same move renderBcpOffice()'s own Phase 3 refactor made for its own
+        // no-content states), so the rail gets populated here too instead of staying inert.
         const isEndanaOutsideFast = (officeKey === 'endana' && !isGreatFast);
-        const fallbackBody = isEndanaOutsideFast
-            ? `<p class="rubric-text">Not observed outside the Great Fast</p>`
-              + `<p class="component-text">Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
-              + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
-              + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
-              + `non-Fast days, per the primary source itself.</p>`
-            : `<p class="rubric-text">Not yet rebuilt</p>`
-              + `<p class="component-text">The Church of the East office content is being rebuilt from a verified primary source `
-              + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
-              + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
-              + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.</p>`;
-        document.getElementById('office-display').innerHTML =
-            `<div class="office-container">`
-            + `<p class="office-book-title">The Hudra</p>`
-            + `<h2>${officeTitle}</h2>`
-            + `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`
-            + (esyModeFallbackNote ? `<p class="rubric-text">${esyModeFallbackNote}</p>` : '')
-            + fallbackBody
-            + `</div>`;
+
+        const fbContainer = document.createElement('div');
+        fbContainer.className = 'office-container';
+
+        const fbBookTitle = document.createElement('p');
+        fbBookTitle.className = 'office-book-title';
+        fbBookTitle.textContent = 'The Hudra';
+        fbContainer.appendChild(fbBookTitle);
+
+        const fbH2 = document.createElement('h2');
+        fbH2.textContent = officeTitle;
+        fbContainer.appendChild(fbH2);
+
+        const fbSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + cycleSuffix;
+        const fbSubtitle = document.createElement('p');
+        fbSubtitle.className = 'liturgical-title';
+        fbSubtitle.textContent = fbSubtitleText;
+        fbContainer.appendChild(fbSubtitle);
+
+        if (esyModeFallbackNote) {
+            const fbNote = document.createElement('span');
+            fbNote.className = 'rubric-text';
+            fbNote.textContent = esyModeFallbackNote;
+            fbContainer.appendChild(fbNote);
+        }
+
+        const fbEnv = { blocks: [], overlays: [], diagnostics: [] };
+
+        // Endana outside the Fast is NOT a diagnostic: it is correct, by-design absence (the
+        // primary source gives this office no existence outside the Great Fast at all), not a
+        // gap this project simply hasn't rebuilt yet -- the same distinction the pre-port
+        // function already drew between the two states with different wording. "Not yet rebuilt"
+        // IS a genuine, disclosed content gap, so it gets the real diagnostic contract (§11)
+        // BCP already uses for exactly this situation, via bcpPushDiagnostic's existing
+        // 'not-yet-mapped' wording ("No proper is appointed for this day in the corpus. Nothing
+        // has been substituted.") -- an exact semantic match, not repurposed loosely.
+        if (isEndanaOutsideFast) {
+            bcpEmitBlock(fbContainer, fbEnv, 'Not observed outside the Great Fast',
+                `Endana ("Prayer at Noon in the Fast") is one of only two minor-hour relics in Maclean's `
+                + `source (the other being Quta'a, said as part of the Fast-season Morning Service); neither has any existence `
+                + `outside the Great Fast (Sauma). This is not unbuilt content -- it simply isn't part of the daily office on `
+                + `non-Fast days, per the primary source itself.`,
+                null, undefined);
+        } else {
+            bcpEmitBlock(fbContainer, fbEnv, 'Not yet rebuilt',
+                `The Church of the East office content is being rebuilt from a verified primary source `
+                + `(A.J. Maclean, <em>East Syrian Daily Offices</em>, 1894) one day and one hour at a time, replacing an earlier build `
+                + `that had no source citations. ${dayName[0].toUpperCase()}${dayName.slice(1)}'s ${officeTitle} hasn't been `
+                + `built yet. See AUDIT_GOVERNANCE_LEDGER.md for the rebuild plan.`,
+                null, undefined);
+            bcpPushDiagnostic(fbEnv, 'not-yet-mapped', officeTitle);
+        }
+
+        if (window.AnglicanEnvelope) {
+            try {
+                window.AnglicanEnvelope.publish({
+                    tradition: 'COE',
+                    officeFamily: officeKey || null,
+                    context: { calendarSummary: fbSubtitleText || null, rankSummary: null },
+                    blocks: fbEnv.blocks,
+                    overlays: fbEnv.overlays,
+                    diagnostics: fbEnv.diagnostics
+                });
+            } catch (e) {
+                console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+            }
+        }
+
+        document.getElementById('office-display').replaceChildren(fbContainer);
+        applyExplanationLayer('office-display');
         return;
     }
 
-    let officeHtml = `<div class="office-container">`;
-    officeHtml += `<p class="office-book-title">The Hudra</p>`;
-    officeHtml += `<h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}${cycleSuffix}</p>`;
-    if (esyModeFallbackNote) officeHtml += `<p class="rubric-text">${esyModeFallbackNote}</p>`;
+    const container = document.createElement('div');
+    container.className = 'office-container';
+
+    const bookTitle = document.createElement('p');
+    bookTitle.className = 'office-book-title';
+    bookTitle.textContent = 'The Hudra';
+    container.appendChild(bookTitle);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = officeTitle;
+    container.appendChild(h2);
+
+    const officeSubtitleText = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + cycleSuffix;
+    const subtitle = document.createElement('p');
+    subtitle.className = 'liturgical-title';
+    subtitle.textContent = officeSubtitleText;
+    container.appendChild(subtitle);
+
+    if (esyModeFallbackNote) {
+        const noteSpan = document.createElement('span');
+        noteSpan.className = 'rubric-text';
+        noteSpan.textContent = esyModeFallbackNote;
+        container.appendChild(noteSpan);
+    }
+
+    // env replaces the string-concatenated officeHtml entirely -- blocks/overlays/diagnostics
+    // built directly, here, at the moment each is actually emitted, the same pattern
+    // renderBcpOffice()/renderCopticAgpeya() established. overlays stays empty throughout this
+    // lane: nothing in the East Syriac Hudra borrows content from another tradition (confirmed
+    // 2026-09-24 by reading this function end to end), so there is nothing to mark as an overlay.
+    const env = { blocks: [], overlays: [], diagnostics: [] };
 
     for (const itemId of sequence) {
         const comp = appData.components.find(c => c.id === itemId);
         if (!comp) {
             console.warn(`[renderEastSyriac] Component not found: ${itemId}`);
+            bcpPushDiagnostic(env, 'coverage-gap', itemId);
             continue;
         }
-
-        officeHtml += `<span class="rubric-text">${comp.title || itemId}</span>`;
 
         // Feast-name substitution (see FEAST_PS78_TERMS above for the
         // research this is based on, and its two deliberately-unresolved
@@ -6322,11 +6461,15 @@ async function renderEastSyriac() {
                 .split('[the feast]').join(resolved);
         }
 
-        // Components carrying `psalms` (plural, e.g. a Marmitha of several
-        // psalms) or `psalmRef` (a single citation, e.g. a Shuraya) resolve
-        // their actual verse text from this app's own verified Bible corpus,
-        // appended after the rubric text already embedded in `text`.
-        officeHtml += `<span class="component-text">${componentText}</span>`;
+        // Label + body: reuses bcpEmitBlock exactly as the Anglican/Coptic lanes do -- per Josh's
+        // 2026-09-24 ruling ("consistency unless a tradition requires otherwise"), and nothing
+        // here requires otherwise (BCP_GUTTER_KIND_BY_LABEL simply returns '' for every East
+        // Syriac term, the same safe empty-gutter default Coptic got). Pushes exactly ONE
+        // env.blocks entry for this component; any citations below (psalms/psalmRef/scriptureRef/
+        // sections) fold into THAT SAME block's units rather than opening a second rail row that
+        // would just repeat the title already shown -- see esyEmitCitation's own comment for why.
+        bcpEmitBlock(container, env, comp.title || itemId, componentText, null, undefined);
+        const activeBlock = env.blocks[env.blocks.length - 1];
 
         if (Array.isArray(comp.sections)) {
             // A Hulala: a sequence of {prayer, psalms|scriptureRefs} pairs.
@@ -6334,41 +6477,53 @@ async function renderEastSyriac() {
             // psalm(s) or canticle(s) resolved from the corpus, mirroring
             // Maclean's actual structure (a proper prayer before each
             // subdivision of psalms within a Hulala, not one prayer for the
-            // whole Hulala).
+            // whole Hulala). Sections carry no label of their own -- matching
+            // the pre-port function, which never gave them individual headings.
             for (const section of comp.sections) {
                 if (section.prayer) {
-                    officeHtml += `<p class="component-text">${section.prayer}</p>`;
+                    bcpEmitBare(container, section.prayer, {});
                 }
                 const refs = Array.isArray(section.psalms) ? section.psalms.map(p => ({ label: `Psalm ${p}`, query: 'PSALM ' + p }))
                            : Array.isArray(section.scriptureRefs) ? section.scriptureRefs.map(r => ({ label: r, query: r }))
                            : [];
                 for (const ref of refs) {
                     const fullText = await getScriptureText(ref.query);
-                    officeHtml += `<h4 class="passage-reference">${ref.label}</h4>`;
-                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                    activeBlock.units.push(esyEmitCitation(container, ref.label, fullText));
                 }
             }
         } else if (Array.isArray(comp.psalms)) {
             for (const psRef of comp.psalms) {
                 const fullText = await getScriptureText('PSALM ' + psRef);
-                officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;
-                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                activeBlock.units.push(esyEmitCitation(container, `Psalm ${psRef}`, fullText));
             }
         } else if (comp.psalmRef) {
             const fullText = await getScriptureText('PSALM ' + comp.psalmRef);
-            officeHtml += `<h4 class="passage-reference">Psalm ${comp.psalmRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            activeBlock.units.push(esyEmitCitation(container, `Psalm ${comp.psalmRef}`, fullText));
         } else if (comp.scriptureRef) {
             // Non-Psalm scripture citation (e.g. the Exodus 15 canticle used as a
             // Shuraya substitute) -- comp.scriptureRef already carries the full
             // "BOOK chapter:verse" citation getScriptureText expects.
             const fullText = await getScriptureText(comp.scriptureRef);
-            officeHtml += `<h4 class="passage-reference">${comp.scriptureRef}</h4>`;
-            officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            activeBlock.units.push(esyEmitCitation(container, comp.scriptureRef, fullText));
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+    if (window.AnglicanEnvelope) {
+        try {
+            window.AnglicanEnvelope.publish({
+                tradition: 'COE',
+                officeFamily: officeKey || null,
+                context: { calendarSummary: officeSubtitleText || null, rankSummary: null },
+                blocks: env.blocks,
+                overlays: env.overlays,
+                diagnostics: env.diagnostics
+            });
+        } catch (e) {
+            console.warn('[shell] envelope emit failed; the office is unaffected:', e);
+        }
+    }
+
+    document.getElementById('office-display').replaceChildren(container);
     applyExplanationLayer('office-display');
 
     // ── Commemorations (Layer 3: individual saints) ─────────────────────────
@@ -6486,13 +6641,38 @@ async function renderCopticAgpeya() {
     const subtitle = document.createElement('p');
     subtitle.className = 'liturgical-title';
     subtitle.textContent = officeSubtitleText;
-    // No seasonal dot here, deliberately: UI_REDESIGN_HANDOFF.md §6 requires a
-    // named, jurisdiction-specific witness before any Eastern lane gets one
-    // (Coptic usage is "thinner and less codified than the Western sequence,"
-    // per the spec's own wording), and none has been sourced yet -- see the
-    // ui:phase5-eastern-seasonal-colors-sourcing row on the dashboard. An
-    // invented dot would be exactly the fabrication §6 warns against; no dot
-    // is honest silence until that sourcing work happens.
+    // ADDED 2026-09-25, spec section 6. SOURCED, PARTIALLY WIRED -- disclosed,
+    // not silently shipped incomplete. Coptic practice has no codified
+    // per-feast colour scheme (confirmed directly: a Coptic liturgical-
+    // vestments researcher who checked the canons found none, beyond "the
+    // tunic must be white" -- tasbeha.org community discussion); the commonly-
+    // observed but non-canonical folk custom (white default, red for martyr
+    // commemorations, purple during fasting periods) was built anyway on
+    // Josh's direct instruction. White/red are wired below, from each day's
+    // own sourced liturgicalColorOOR (data/saints/sanctoral.json). Purple is
+    // NOT wired: it would need a Coptic fasting-period calendar (Great Lent,
+    // the Nativity/Apostles'/Virgin Mary fasts, on the Coptic church's own
+    // Alexandrian computus -- distinct from both the Western and Byzantine
+    // reckonings already built for other lanes) that does not exist anywhere
+    // in this codebase, confirmed by a repo-wide search before writing this.
+    // Building one is real, separate engine work, not a data-sourcing gap --
+    // flagged here and on the dashboard rather than faked with a guessed date
+    // range or silently dropped from the approved 3-colour scheme.
+    try {
+        const oorComms = await resolveCommemorations(currentDate, 'OOR', { includeEcumenical: false });
+        const oorColor = oorComms.find(s => s.liturgicalColorOOR)?.liturgicalColorOOR || 'white';
+        const oorDotColor = { white: '#f5f1e4', red: '#9b2335' }[oorColor];
+        if (oorDotColor) {
+            const dot = document.createElement('span');
+            dot.className = 'seasonal-dot';
+            dot.setAttribute('aria-hidden', 'true');
+            dot.style.cssText = `display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:${oorDotColor}; margin-left:0.5em; vertical-align:middle;`;
+            subtitle.appendChild(dot);
+        }
+    } catch (_error) {
+        // Commemoration lookup failing must never block the office itself
+        // from rendering -- the dot is a disclosure, not a dependency.
+    }
     container.appendChild(subtitle);
 
     // env replaces the string-concatenated officeHtml entirely -- blocks/
@@ -6647,7 +6827,7 @@ async function renderCopticAgpeya() {
 
     // ── Finalise DOM (same move as renderBcpOffice()'s own Phase 3 close:
     // publish the envelope first, then one replaceChildren, not innerHTML) ──
-    if (window.AnglicanEnvelope && document.body.classList.contains('shell-v2')) {
+    if (window.AnglicanEnvelope) {
         try {
             // Reusing window.AnglicanEnvelope.publish() deliberately -- it is a
             // plain, tradition-neutral event dispatch (sets
@@ -6684,120 +6864,3 @@ async function renderCopticAgpeya() {
     if (saintSection) saintSection.style.display = 'none';
 }
 
-// === UO MOBILE DRAWER REPAIR START ===
-// This end-of-file override avoids brittle edits inside the legacy drawer code.
-(function () {
-    function getActiveOfficeDrawer() {
-        var panels = [
-            document.getElementById('east-syriac-settings'),
-            document.getElementById('ethiopian-settings'),
-            document.getElementById('generic-settings'),
-            document.getElementById('coptic-settings'),
-            document.getElementById('settings-panel')
-        ];
-
-        for (var i = 0; i < panels.length; i += 1) {
-            if (panels[i] && !panels[i].classList.contains('mode-hidden')) {
-                return panels[i];
-            }
-        }
-
-        return document.getElementById('settings-panel');
-    }
-
-    function isMobileOfficeShell() {
-        return Boolean(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
-    }
-
-    var originalSelectMode = window.selectMode;
-
-    if (typeof originalSelectMode === 'function' && !originalSelectMode.__uoMobileDrawerWrapped) {
-        window.selectMode = async function repairedSelectMode(mode) {
-            document.body.classList.remove('mobile-sidebar-open');
-            var toggle = document.getElementById('sidebar-toggle');
-            if (toggle) toggle.setAttribute('aria-expanded', 'false');
-
-            var result = await originalSelectMode.apply(this, arguments);
-
-            if (isMobileOfficeShell()) {
-                document.body.classList.remove('mobile-sidebar-open');
-
-                var activePanel = getActiveOfficeDrawer();
-                var main = document.getElementById('main-content');
-
-                if (activePanel) activePanel.classList.add('sidebar-hidden');
-                if (main) main.classList.add('sidebar-hidden');
-                if (toggle) {
-                    toggle.style.opacity = '0.86';
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
-            }
-
-            return result;
-        };
-
-        window.selectMode.__uoMobileDrawerWrapped = true;
-    }
-
-    window.toggleSidebar = function repairedToggleSidebar() {
-        var activePanel = getActiveOfficeDrawer();
-        var main = document.getElementById('main-content');
-        var toggle = document.getElementById('sidebar-toggle');
-
-        if (!activePanel || !main) return;
-
-        if (isMobileOfficeShell()) {
-            var willOpen = !document.body.classList.contains('mobile-sidebar-open');
-
-            document.body.classList.toggle('mobile-sidebar-open', willOpen);
-            activePanel.classList.toggle('sidebar-hidden', !willOpen);
-            main.classList.toggle('sidebar-hidden', !willOpen);
-
-            if (toggle) {
-                toggle.style.opacity = willOpen ? '1' : '0.86';
-                toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-            }
-
-            return;
-        }
-
-        document.body.classList.remove('mobile-sidebar-open');
-
-        var isHidden = activePanel.classList.toggle('sidebar-hidden');
-        main.classList.toggle('sidebar-hidden', isHidden);
-
-        if (toggle) {
-            toggle.style.opacity = isHidden ? '0.65' : '0.5';
-            toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-        }
-    };
-
-    document.addEventListener('click', function closeMobileDrawerFromOverlay(event) {
-        if (!isMobileOfficeShell()) return;
-        if (!document.body.classList.contains('mobile-sidebar-open')) return;
-
-        var activePanel = getActiveOfficeDrawer();
-        var toggle = document.getElementById('sidebar-toggle');
-
-        if (activePanel && activePanel.contains(event.target)) return;
-        if (toggle && toggle.contains(event.target)) return;
-
-        document.body.classList.remove('mobile-sidebar-open');
-        if (activePanel) activePanel.classList.add('sidebar-hidden');
-
-        var main = document.getElementById('main-content');
-        if (main) main.classList.add('sidebar-hidden');
-
-        if (toggle) {
-            toggle.style.opacity = '0.86';
-            toggle.setAttribute('aria-expanded', 'false');
-        }
-    }, true);
-
-    window.addEventListener('resize', function normalizeMobileDrawerOnResize() {
-        if (!isMobileOfficeShell()) {
-            document.body.classList.remove('mobile-sidebar-open');
-        }
-    });
-}());
-// === UO MOBILE DRAWER REPAIR END ===

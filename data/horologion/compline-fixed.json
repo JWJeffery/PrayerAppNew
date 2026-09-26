@@ -7,7 +7,22 @@
     "Variable slot (troparion-of-the-day) is NOT here; resolved dynamically.",
     "",
     "Psalm translations follow the LXX numeration used in Byzantine practice.",
-    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+    "PSALM SOURCE, corrected 2026-09-26: the prior citation (\"Standard Antiochian/OCA",
+    "Horologion, Jordanville 2008 edition\") could not be verified against that or any other",
+    "real source and has been replaced. Hapgood's 1906 Service Book has no separate section",
+    "for the ordinary (non-Lenten) Small Compline, so for consistency with the rest of this",
+    "Horologion the same public-domain Coverdale/Book of Common Prayer Psalter text already",
+    "used elsewhere (see edu:layer:byzantine-populated on the dashboard) is used here for",
+    "Psalms 50, 69, and 142 (LXX), transcribed from Isabel F. Hapgood, Service Book of the",
+    "Holy Orthodox-Catholic Apostolic Church (Houghton, Mifflin and Company, 1906) and the",
+    "1662 Book of Common Prayer (Scottish Episcopal Church edition, Project Gutenberg #29622),",
+    "only orthography lightly modernized (thee/thou left as printed).",
+    "AUDIT FIX 2026-09-26 (Findings SC1, SC2, SC3): 'sc-night-prayers' (SC1),",
+    "'sc-vouchsafe' (SC2), and 'sc-it-is-truly-meet' (SC3) added between the Small",
+    "Doxology and the Trisagion -- UNABHOR1997 pp.240-242. The Canon between the",
+    "Creed and 'It is truly meet' is Menaion/Octoechos-dependent and is not",
+    "modeled as its own slot, matching this corpus's standing disclosure policy",
+    "for Menaion-dependent content elsewhere."
   ],
   "slots": {
     "usual-beginning": {
@@ -78,22 +93,22 @@
       "type": "psalm",
       "lxxNumber": 50,
       "hebrewNumber": 51,
-      "label": "Psalm 50 (LXX) — Have mercy on me, O God",
-      "text": "Have mercy on me, O God, according to Thy great mercy; and according to the multitude of Thy tender mercies blot out my transgression.\n\nWash me thoroughly from mine iniquity, and cleanse me from my sin. For I know mine iniquity, and my sin is ever before me. Against Thee only have I sinned and done evil before Thee, that Thou mightest be justified in Thy words and prevail when Thou art judged.\n\nFor behold, I was conceived in iniquities, and in sins did my mother bear me. For behold, Thou hast loved truth; the hidden and secret things of Thy wisdom hast Thou made manifest unto me.\n\nThou shalt sprinkle me with hyssop, and I shall be made clean; Thou shalt wash me, and I shall be made whiter than snow. Thou shalt make me to hear joy and gladness; the bones that be humbled shall rejoice.\n\nTurn Thy face away from my sins, and blot out all mine iniquities. Create in me a clean heart, O God, and renew a right spirit within me. Cast me not away from Thy presence, and take not Thy Holy Spirit from me.\n\nRestore unto me the joy of Thy salvation, and with Thy governing Spirit establish me. I shall teach transgressors Thy ways, and the ungodly shall turn back unto Thee.\n\nDeliver me from blood-guiltiness, O God, Thou God of my salvation; my tongue shall rejoice in Thy righteousness. O Lord, Thou shalt open my lips, and my mouth shall declare Thy praise.\n\nFor if Thou hadst desired sacrifice, I had given it; with whole-burnt offerings Thou shalt not be pleased. A sacrifice unto God is a broken spirit; a broken and humbled heart God will not despise.\n\nDo good, O Lord, in Thy good pleasure unto Zion, and let the walls of Jerusalem be builded. Then shalt Thou be pleased with a sacrifice of righteousness, with oblation and whole-burnt offerings. Then shall they offer bullocks upon Thine altar.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+      "label": "Psalm 50 (LXX) — Have mercy upon me, O God, after thy great goodness",
+      "text": "Have mercy upon me, O God, after thy great goodness; according to the multitude of thy mercies do away mine offences.\n\nWash me throughly from my wickedness, and cleanse me from my sin. For I acknowledge my faults, and my sin is ever before me. Against thee only have I sinned, and done this evil in thy sight; that thou mightest be justified in thy saying, and clear when thou art judged.\n\nBehold, I was shapen in wickedness, and in sin hath my mother conceived me. But lo, thou requirest truth in the inward parts, and shalt make me to understand wisdom secretly.\n\nThou shalt purge me with hyssop, and I shall be clean; thou shalt wash me, and I shall be whiter than snow. Thou shalt make me hear of joy and gladness, that the bones which thou hast broken may rejoice.\n\nTurn thy face from my sins, and put out all my misdeeds. Make me a clean heart, O God, and renew a right spirit within me.\n\nCast me not away from thy presence, and take not thy Holy Spirit from me. O give me the comfort of thy help again, and stablish me with thy free Spirit. Then shall I teach thy ways unto the wicked, and sinners shall be converted unto thee.\n\nDeliver me from blood-guiltiness, O God, thou that art the God of my health; and my tongue shall sing of thy righteousness. Thou shalt open my lips, O Lord, and my mouth shall show thy praise.\n\nFor thou desirest no sacrifice, else would I give it thee; but thou delightest not in burnt-offerings. The sacrifice of God is a troubled spirit: a broken and contrite heart, O God, shalt thou not despise.\n\nO be favourable and gracious unto Sion; build thou the walls of Jerusalem. Then shalt thou be pleased with the sacrifice of righteousness, with the burnt-offerings and oblations; then shall they offer young bullocks upon thine altar.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-69": {
       "type": "psalm",
       "lxxNumber": 69,
       "hebrewNumber": 70,
-      "label": "Psalm 69 (LXX) — O God, come to my assistance",
-      "text": "O God, be attentive unto helping me; O Lord, make haste to help me.\n\nLet them be ashamed and confounded that seek after my soul. Let them be turned backward and put to shame that wish me evil. Let them be turned back by reason of their shame that say unto me: Well done, well done.\n\nLet all that seek Thee rejoice and be glad in Thee; and let them that love Thy salvation say continually: The Lord be magnified.\n\nBut I am poor and needy; O God, help me. Thou art my helper and deliverer; O Lord, make no tarrying.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+      "label": "Psalm 69 (LXX) — Haste thee, O God, to deliver me",
+      "text": "Haste thee, O God, to deliver me: make haste to help me, O Lord.\n\nLet them be ashamed and confounded that seek after my soul: let them be turned backward and put to confusion that wish me evil. Let them for their reward be soon brought to shame: that cry over me, There, there.\n\nBut let all those that seek thee be joyful and glad in thee: and let all such as delight in thy salvation say alway, The Lord be praised.\n\nAs for me, I am poor and in misery: haste thee unto me, O God. Thou art my helper and my redeemer: O Lord, make no long tarrying.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-142": {
       "type": "psalm",
       "lxxNumber": 142,
       "hebrewNumber": 143,
-      "label": "Psalm 142 (LXX) — Hear my prayer, O Lord",
-      "text": "O Lord, hear my prayer, give ear unto my supplication in Thy truth; hearken unto me in Thy righteousness. And enter not into judgment with Thy servant, for in Thy sight shall no man living be justified.\n\nFor the enemy hath persecuted my soul; he hath humbled my life down to the earth. He hath sat me in darkness as those that have been long dead, and my spirit within me is become despondent; within me my heart is troubled.\n\nI remembered days of old, I meditated on all Thy works, I pondered on the creations of Thy hands. I stretched forth my hands unto Thee; my soul thirsteth after Thee like a waterless land.\n\nHearken unto me speedily, O Lord; my spirit hath fainted away. Turn not Thy face away from me, lest I be like unto them that go down into the pit.\n\nCause me to hear Thy mercy in the morning, for in Thee have I put my hope. Cause me to know, O Lord, the way wherein I should walk, for unto Thee have I lifted up my soul.\n\nDeliver me from mine enemies, O Lord, for unto Thee have I fled for refuge. Teach me to do Thy will, for Thou art my God. Thy good Spirit shall lead me in the land of uprightness.\n\nFor Thy Name's sake, O Lord, Thou shalt quicken me. In Thy righteousness Thou shalt bring my soul out of affliction, and in Thy mercy Thou shalt utterly destroy mine enemies. And Thou shalt cut off all them that afflict my soul, for I am Thy servant.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+      "label": "Psalm 142 (LXX) — Hear my prayer, O Lord, and consider my desire",
+      "text": "Hear my prayer, O Lord, and consider my desire: hearken unto me for thy truth and righteousness sake. And enter not into judgement with thy servant: for in thy sight shall no man living be justified.\n\nFor the enemy hath persecuted my soul; he hath smitten my life down to the ground: he hath laid me in the darkness, as the men that have been long dead. Therefore is my spirit vexed within me: and my heart within me is desolate.\n\nYet do I remember the time past; I muse upon all thy works: yea, I exercise myself in the works of thy hands. I stretch forth my hands unto thee: my soul gaspeth unto thee as a thirsty land.\n\nHear me, O Lord, and that soon, for my spirit waxeth faint: hide not thy face from me, lest I be like unto them that go down into the pit. O let me hear thy loving-kindness betimes in the morning, for in thee is my trust: shew thou me the way that I should walk in, for I lift up my soul unto thee.\n\nDeliver me, O Lord, from mine enemies: for I flee unto thee to hide me. Teach me to do the thing that pleaseth thee, for thou art my God: let thy loving Spirit lead me forth into the land of righteousness.\n\nQuicken me, O Lord, for thy Name's sake: and for thy righteousness sake bring my soul out of trouble. And of thy goodness slay mine enemies: and destroy all them that vex my soul; for I am thy servant.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "doxology": {
       "type": "sequence",
@@ -202,6 +217,59 @@
       "type": "text",
       "label": "Into Thy Hands",
       "text": "Into Thy hands, O Lord Jesus Christ my God, I commend my spirit. Do Thou bless me, have mercy on me, and grant me life everlasting. Amen.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO Lord of my forefathers and Master, my God Jesus Christ, let me not fall asleep in sin but grant me refreshing slumber. Let not the evil one overshadow and darken me with the darkness of sins; drive away from me all fleshly desires and other harmful temptations. Enliven my heart with the sprinkles of Thy holiness, that I may continually bless Thy holy Name throughout the night, and in the morning glorify Thee and Thy good Father and Thy Life-giving Spirit, both now and ever, and unto ages of ages. Amen.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nAll my hope I place in thee, O Mother of God; keep me under thy protection."
+    },
+    "sc-night-prayers": {
+      "type": "sequence",
+      "label": "Night Prayers",
+      "items": [
+        {
+          "type": "text",
+          "key": "scnp-1",
+          "text": "Every night will I bless Thee, and I will praise Thy Name for ever, yea, for ever and ever."
+        },
+        {
+          "type": "text",
+          "key": "scnp-2",
+          "text": "Lord, Thou hast been our refuge in generation and generation. I said: O Lord, have mercy on me, heal my soul, for I have sinned against Thee. O Lord, unto Thee have I fled for refuge, teach me to do Thy will, for Thou art my God. For in Thee is the fountain of life, in Thy light shall we see light. O continue Thy mercy unto them that know Thee."
+        }
+      ]
+    },
+    "sc-vouchsafe": {
+      "type": "sequence",
+      "label": "Vouchsafe, O Lord",
+      "items": [
+        {
+          "type": "text",
+          "key": "scv-1",
+          "text": "Vouchsafe, O Lord, to keep us this night without sin. Blessed art Thou, O Lord, the God of our fathers, and praised and glorified is Thy Name unto ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "scv-2",
+          "text": "Let Thy mercy, O Lord, be upon us, according as we have hoped in Thee. Blessed art Thou, O Lord, teach me Thy statutes. Blessed art Thou, O Master, give me understanding of Thy statutes. Blessed art Thou, O Holy One, enlighten me by Thy statutes."
+        },
+        {
+          "type": "text",
+          "key": "scv-3",
+          "text": "O Lord, Thy mercy endureth for ever; disdain not the work of Thy hands. To Thee is due praise, to Thee is due a song, to Thee glory is due, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        }
+      ]
+    },
+    "sc-it-is-truly-meet": {
+      "type": "sequence",
+      "label": "It Is Truly Meet",
+      "items": [
+        {
+          "type": "text",
+          "key": "scit-1",
+          "text": "It is truly meet to bless thee, the Theotokos, ever-blessed and most blameless, and Mother of our God."
+        },
+        {
+          "type": "text",
+          "key": "scit-2",
+          "text": "More honourable than the Cherubim, and beyond compare more glorious than the Seraphim, who without corruption gavest birth to God the Word, the very Theotokos, thee do we magnify."
+        }
+      ]
     }
   }
 }

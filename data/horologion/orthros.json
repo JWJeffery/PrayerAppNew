@@ -2,7 +2,7 @@
   "officeKey": "orthros",
   "label": "Orthros (Matins)",
   "tradition": "BYZC",
-  "description": "The Byzantine Morning Office (Orthros / Matins). Preceded by the Midnight Office on solemn occasions and followed by the First Hour. The structure presented here is the ordinary Orthros of the Constantinopolitan Horologion. Full festal, resurrectional, and Lenten Matins corpora are deferred beyond this baseline.",
+  "description": "The Byzantine Morning Office (Orthros / Matins). Preceded by the Midnight Office on solemn occasions and followed by the First Hour. The structure presented here is the ordinary Orthros of the Constantinopolitan Horologion, as it continues directly from Vespers or the Midnight Office (Psalms 19 and 20 read here, per that entry point). Full festal, resurrectional, and Lenten Matins corpora are deferred beyond this baseline.",
   "sections": [
     {
       "id": "opening",
@@ -20,6 +20,27 @@
           "label": "The Usual Beginning",
           "status": "unresolved",
           "note": "Trisagion prayers sequence. Resolved from orthros-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalms-19-20",
+      "label": "Psalms 19 and 20",
+      "notes": "After the Usual Beginning, and before the Six Psalms, Psalms 19 and 20 (LXX) are read with three reverences (Finding O1) -- the entry point this office's own baseline already assumes (not Great Lent, no Vigil, preceded by Vespers or the Midnight Office).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-19",
+          "label": "Psalm 19 (LXX) — The Lord hear thee in the day of trouble",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-20",
+          "label": "Psalm 20 (LXX) — The King shall rejoice in Thy strength, O Lord",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
         }
       ]
     },
@@ -122,7 +143,7 @@
     {
       "id": "kathismata",
       "label": "Psalter Kathismata",
-      "notes": "One or two Psalter kathismata are read. The number and assignment vary by day of the week and liturgical season. This section presents the rubric for the appointed kathismata at baseline.",
+      "notes": "One or two Psalter kathismata are read, each immediately followed by its own sessional hymn and a Small Litany (Finding O2 -- UNABHOR1997 pp.60-61: kathisma 1 -> its sessional hymn -> Small Litany -> kathisma 2 -> its sessional hymn -> Small Litany), not all kathismata read consecutively with sessional hymns bundled separately afterward. The number and assignment of kathismata vary by day of the week and liturgical season.",
       "items": [
         {
           "type": "placeholder",
@@ -133,10 +154,38 @@
         },
         {
           "type": "placeholder",
+          "key": "sessional-hymns-1",
+          "label": "Sessional Hymn After the First Kathisma",
+          "status": "unresolved",
+          "note": "Variable: sessional hymn from the Octoechos or Menaion appointed after the first kathisma. Full corpus deferred; explicit placeholder at baseline."
+        },
+        {
+          "type": "placeholder",
+          "key": "little-litany-after-kathisma-1",
+          "label": "The Small Litany",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
           "key": "kathisma-second",
           "label": "Second Kathisma",
           "status": "unresolved",
-         "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Not appointed in ordinary Sunday Orthros. The Sunday kathisma / Polyeleos decision is represented by the First Kathisma slot."
+          "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Not appointed in ordinary Sunday Orthros. The Sunday kathisma / Polyeleos decision is represented by the First Kathisma slot."
+        },
+        {
+          "type": "placeholder",
+          "key": "sessional-hymns-2",
+          "label": "Sessional Hymn After the Second Kathisma",
+          "status": "unresolved",
+          "note": "Variable: sessional hymn from the Octoechos or Menaion appointed after the second kathisma. Full corpus deferred; explicit placeholder at baseline."
+        },
+        {
+          "type": "placeholder",
+          "key": "little-litany-after-kathisma-2",
+          "label": "The Small Litany",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
         },
         {
           "type": "placeholder",
@@ -144,20 +193,6 @@
           "label": "Third Kathisma",
           "status": "unresolved",
           "note": "Third Psalter kathisma at Orthros. Appointed only during Great Lent (Monday–Saturday, up to three kathismata per service) and on Holy Week Monday–Wednesday. Not read on ordinary weekdays, Sundays, Holy Week Thursday–Friday (no Psalter reading), or Bright Week. Resolved by HorologionEngine."
-        }
-      ]
-    },
-    {
-      "id": "sessional-hymns",
-      "label": "Sessional Hymns (Sedalia / Kathismata)",
-      "notes": "Hymns sung seated after each kathisma. Variable by tone, feast, and season. Requires Octoechos or Menaion corpus not yet available at this baseline.",
-      "items": [
-        {
-          "type": "placeholder",
-          "key": "sessional-hymns",
-          "label": "Sessional Hymns (Sedalia)",
-          "status": "unresolved",
-          "note": "Variable: sessional hymns from the Octoechos or Menaion appointed after the kathismata. Full corpus deferred; explicit placeholder at baseline."
         }
       ]
     },
@@ -213,7 +248,7 @@
           "status": "unresolved",
           "note": "Fixed psalmody of the Praises section. Resolved from orthros-fixed.json by HorologionEngine."
         },
-         {
+        {
           "type": "placeholder",
           "key": "praises-stichera",
           "label": "Stichera at the Praises",

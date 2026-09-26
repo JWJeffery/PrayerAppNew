@@ -2,8 +2,8 @@
  * Phase 4 — Office Settings, as ONE drawer (UI_REDESIGN_HANDOFF.md §5, §9;
  * target: documentation/design/screens/1c-threshold-ordo-drawer.png).
  *
- * Gated on `body.shell-v2`. With the flag off this file does nothing at all
- * and the four legacy sidebars behave exactly as before.
+ * Phase 6 (2026-09-24) dropped the body.shell-v2 dev flag this file used to
+ * gate itself on -- it now always runs.
  *
  * WHAT THIS IS, AND WHAT IT DELIBERATELY IS NOT
  *
@@ -30,15 +30,17 @@
  * option (a11y-dialog) is itself now a thin layer over the same element; the
  * one thing it adds — close on backdrop click — is done below in a few lines.
  *
- * Lane is read from the DOM (which drawer lacks `mode-hidden`), never from
- * `window.selectedMode`, which does not exist — see RESUME_PROJECT_NOTE §0a.
+ * Lane is read via js/office-ui.js's own exposed
+ * `window._sharedOfficeNavigatorModeKey()` (Phase 6, sidebar-deletion
+ * refactor) — a function, not `window.selectedMode` itself, which still
+ * does not exist (a bare top-level `let` in office-ui.js, never a `window`
+ * property — see RESUME_PROJECT_NOTE §0a). A function always reads the
+ * live value; a mirrored variable would go stale the moment selectedMode is
+ * reassigned by bare identifier, which is exactly the bug class
+ * AUDIT_GOVERNANCE_LEDGER.md already recorded once.
  */
 (function () {
     'use strict';
-
-    function shellOn() {
-        return !!document.body && document.body.classList.contains('shell-v2');
-    }
 
     function el(tag, cls, text) {
         var n = document.createElement(tag);
@@ -49,18 +51,10 @@
 
     /* ── Lane ─────────────────────────────────────────────────────────────── */
 
-    var LANES = [
-        ['coptic-settings',      'coptic'],
-        ['east-syriac-settings', 'eastSyriac'],
-        ['generic-settings',     'horologion']
-    ];
-
     function currentModeKey() {
-        for (var i = 0; i < LANES.length; i++) {
-            var p = document.getElementById(LANES[i][0]);
-            if (p && !p.classList.contains('mode-hidden')) return LANES[i][1];
-        }
-        return 'daily';
+        var k = (typeof window._sharedOfficeNavigatorModeKey === 'function')
+            ? window._sharedOfficeNavigatorModeKey() : null;
+        return (k === 'coptic' || k === 'eastSyriac' || k === 'horologion') ? k : 'daily';
     }
 
     /* ── Moving real controls ─────────────────────────────────────────────── */
@@ -80,6 +74,34 @@
         'toggle-agpeya-opening', 'toggle-east-syriac-hours'
     ];
 
+    /* RENAMED 2026-09-25, per Josh's direct instruction ("Additional Devotions,
+       but we say where they are from"): "Borrowed" is retired; each item's own
+       tradition is shown alongside its name instead. Sourced from this
+       project's own governance data where it exists -- components/ecumenical.json
+       (ecu-examen: "Ignatian"; ecu-prayer-before-reading, ecu-kyrie-pantocrator,
+       and ecu-east-syriac-hours: "Byzantine Orthodox", the last corrected
+       2026-09-21 from a previously-wrong "Church of the East" tag despite its
+       own toggle id -- do not re-introduce that error here). Agpeya Opening and
+       Theotokion both come from components/coptic.json, which carries no
+       per-entry tradition field because the whole file is Coptic by scope; "Coptic"
+       here reflects that file-level scoping, not a separate per-item citation.
+       Angelus and Trisagion have no tradition recorded in ecumenical.json at
+       all (a real, disclosed gap in that file, not fixed here) -- labeled with
+       their well-established common attribution (Roman Catholic; Byzantine,
+       consistent with the three already-sourced Byzantine entries above) rather
+       than left blank, but this is common knowledge, not a citation this
+       project has itself verified -- worth a real sourcing pass later. */
+    var BORROWED_TRADITIONS = {
+        'toggle-angelus':              'Roman Catholic',
+        'toggle-trisagion':            'Byzantine',
+        'toggle-prayer-before-reading':'Byzantine Orthodox',
+        'toggle-examen':               'Ignatian',
+        'toggle-kyrie-pantocrator':    'Byzantine Orthodox',
+        'toggle-agpeya-opening':       'Coptic',
+        'toggle-east-syriac-hours':    'Byzantine Orthodox'
+    };
+    var THEOTOKION_TRADITION = 'Coptic';
+
     var moved = false;
     var hosts = {};
 
@@ -96,17 +118,191 @@
         /* The remaining native BCP choices, in their existing groups. Their
            borrowed labels have already left them (above), so what moves here
            is BCP-only content. The groups keep their ids, which
-           updateSidebarForOffice() uses to show/hide per office. */
+           updateSidebarForOffice() uses to show/hide per office.
+           REORDERED 2026-09-25, per Josh's direct report ("this list is
+           poorly ordered. You have options that cover one day or one week
+           above daily options."): altGroup (Mary the Virgin / Michael and
+           All Angels / Good Friday / Easter Day -- each a single named
+           day's alternate reading) moved to the END, after
+           during-office-section and closing-devotions-section, whose
+           remaining content (Gloria Patri, the invitatory/noonday/compline
+           rotation groups, the Suffrages/Mission/Collect/Blessing daily
+           rotations) applies to every ordinary office, not one specific
+           day. */
         var alt = document.getElementById('toggle-mary-virgin-alt');
         var altGroup = alt ? alt.closest('.nested-group') : null;
-        [altGroup,
-         document.getElementById('during-office-section'),
-         document.getElementById('closing-devotions-section')
+        [document.getElementById('during-office-section'),
+         document.getElementById('closing-devotions-section'),
+         altGroup
         ].forEach(function (n) { if (n) hosts.further.appendChild(n); });
 
         /* BCP Only Mode: the real checkbox, at the foot (§5, §3.7). */
         var bcp = labelOf('toggle-bcp-only');
         if (bcp) hosts.bcpOnly.appendChild(bcp);
+
+        moveLegacyStateControls();
+    }
+
+    /* Every remaining real control across all four legacy sidebars that
+       moveRealControls() above doesn't already handle -- not because it's
+       unimportant, but because this drawer already gives it its own UI
+       elsewhere: the "which office" grid (Section II, built from the
+       separate shared-office-nav-* radios that write back to these) or a
+       radioRow()/checkboxRow()/selectRow() synthetic row further down (which
+       read these by name/id directly, never move them). Confirmed by
+       reading radioRow()/checkboxRow()/selectRow()'s own code before writing
+       this: they say plainly the controls they surface are read in place,
+       never moved -- this function is what makes "read in place" survive
+       the legacy sidebars eventually being deleted. Moved into
+       hosts.legacyState (permanently display:none -- nothing here needs a
+       visible home, the drawer's own UI already covers it), same appendChild
+       pattern as moveRealControls() above: the same real nodes, same ids,
+       same onchange handlers, never rebuilt.
+
+       EXTENDED (Phase 6, sidebar-deletion refactor): the legacy sidebars
+       are being deleted outright, not just hidden, so every real element
+       any code still reads by id/name -- not just this drawer's own move/
+       read functions -- must be preserved somewhere, whether or not it has
+       its own drawer UI. Confirmed by reading every remaining reference
+       before moving anything:
+         - #ecumenical-devotions-section: its Marian nested-group and two
+           borrowed-devotion checkboxes already left it individually above,
+           leaving it an empty shell -- but toggleBcpOnly() (office-ui.js)
+           and this file's own buildKeep() both still find it purely by
+           getElementById('ecumenical-devotions-section') to read/write its
+           bcp-only-hidden class, position-independent. Moved wholesale so
+           that check keeps working unchanged.
+         - hor-btn-diag: previously left out as "a dev-only display toggle,
+           not a persisted value another function reads back" -- that was
+           wrong, buildKeep()'s horologion branch does read it
+           (getElementById('hor-btn-diag')) to build a working Diagnostics
+           row. Moved (its own nested-group, distinct from the already-moved
+           Display Depth nested-group) so that row keeps working.
+         - East Syriac's "Active Hour" setting-group
+           (esy-active-hour-label/esy-active-date-label/esy-override-toggle)
+           -- a separate setting-group from esy-override-panel, not
+           previously covered. esy-active-date-label is read by this file's
+           own DAY_LINE_FALLBACK.eastSyriac.
+         - esy-cycle-box/esy-fast-box/esy-anaphora-box -- three separate
+           setting-groups, each read by this file's buildOrdo() eastSyriac
+           branch and written by office-ui.js's render logic; confirmed
+           both null-guard their lookups, no crash risk either way.
+         - BCP's and Horologion's own .ordo-control blocks (date-picker/
+           generic-date-picker plus their display-date/calendar-info
+           siblings and Prev/Today/Next buttons) -- still read/written by id
+           (updateDatePicker(), updateGenericDateDisplay(), setCustomDate())
+           even though neither needs its own new drawer UI, superseded by
+           the shared navigator's own stepper/picker.
+
+       Still left OUT, on purpose, confirmed unread anywhere by id: only
+       #settings-panel's "Appearance" Dark Mode checkbox (toggle-dark) --
+       the shell provides its own lane-agnostic Auto/Light/Dark control,
+       and every synthetic dark-mode toggle the shared navigator builds for
+       coptic/eastSyriac/horologion uses the shared data-app-dark-toggle
+       attribute, not this element's id; grepped the whole repo for
+       getElementById('toggle-dark') and found zero hits outside its own
+       onchange. */
+    function moveLegacyStateControls() {
+        var host = hosts.legacyState;
+
+        // BCP: "Which office" (office-time), "Office Mode" (ang-office-mode),
+        // and "Liturgical Settings" (rite, minister, creed-type, Gospel
+        // placement + 30-Day Psalter -- Lectionary Alternates already left
+        // this same setting-group above, via moveRealControls()'s altGroup).
+        var officeTimeRadio = document.querySelector('input[name="office-time"]');
+        var officeTimeGroup = officeTimeRadio ? officeTimeRadio.closest('.setting-group') : null;
+        if (officeTimeGroup) host.appendChild(officeTimeGroup);
+
+        var angModeRadio = document.querySelector('input[name="ang-office-mode"]');
+        var angModeGroup = angModeRadio ? angModeRadio.closest('.setting-group') : null;
+        if (angModeGroup) host.appendChild(angModeGroup);
+
+        var riteRadio = document.querySelector('input[name="rite"]');
+        var liturgicalGroup = riteRadio ? riteRadio.closest('.setting-group') : null;
+        if (liturgicalGroup) host.appendChild(liturgicalGroup);
+
+        // BCP: Marian Element (marian-element, marian-antiphon-pos) -- its
+        // own nested-group inside #ecumenical-devotions-section, sibling to
+        // the Coptic/Byzantine borrowed-devotion nested-groups that stay
+        // behind (their own checkboxes already moved individually above).
+        var marianRadio = document.querySelector('input[name="marian-element"]');
+        var marianGroup = marianRadio ? marianRadio.closest('.nested-group') : null;
+        if (marianGroup) host.appendChild(marianGroup);
+
+        // Coptic: "Active Hour" (cop-hour, plus its own display labels).
+        var copHourRadio = document.querySelector('input[name="cop-hour"]');
+        var copHourGroup = copHourRadio ? copHourRadio.closest('.setting-group') : null;
+        if (copHourGroup) host.appendChild(copHourGroup);
+
+        // East Syriac: the override panel (esy-hour-override, esy-override-date,
+        // the reset button) and the always-hidden esy-time radios it stays in
+        // sync with -- already display:none in place, confirmed by its own
+        // existing comment ("read by renderEastSyriac()... synced here").
+        var esyOverridePanel = document.getElementById('esy-override-panel');
+        if (esyOverridePanel) host.appendChild(esyOverridePanel);
+
+        var esyTimeRadio = document.querySelector('input[name="esy-time"]');
+        var esyTimeGroup = esyTimeRadio ? esyTimeRadio.closest('div') : null;
+        if (esyTimeGroup) host.appendChild(esyTimeGroup);
+
+        // East Syriac: "Office Mode" (esy-mode, Cathedral/Monastic).
+        var esyModeRadio = document.querySelector('input[name="esy-mode"]');
+        var esyModeGroup = esyModeRadio ? esyModeRadio.closest('.setting-group') : null;
+        if (esyModeGroup) host.appendChild(esyModeGroup);
+
+        // Horologion: the 14-office radio list, Calendar Mode, and Display
+        // Depth -- each its own nested-group; Diagnostics (a sibling
+        // nested-group of Display Depth) deliberately stays behind, see the
+        // header comment on this function.
+        var horOfficeRadio = document.querySelector('input[name="horologion-office"]');
+        var horOfficeGroup = horOfficeRadio ? horOfficeRadio.closest('.nested-group') : null;
+        if (horOfficeGroup) host.appendChild(horOfficeGroup);
+
+        var horCalSelect = document.getElementById('hor-eo-calendar-select');
+        var horCalGroup = horCalSelect ? horCalSelect.closest('.nested-group') : null;
+        if (horCalGroup) host.appendChild(horCalGroup);
+
+        var horDepthSelect = document.getElementById('hor-depth-select');
+        var horDepthGroup = horDepthSelect ? horDepthSelect.closest('.nested-group') : null;
+        if (horDepthGroup) host.appendChild(horDepthGroup);
+
+        // #ecumenical-devotions-section: now-empty shell, moved so
+        // toggleBcpOnly()'s/buildKeep()'s bcp-only-hidden class check
+        // keeps working (both find it by id, not position).
+        var ecoSection = document.getElementById('ecumenical-devotions-section');
+        if (ecoSection) host.appendChild(ecoSection);
+
+        // Horologion: Diagnostics button's own nested-group (distinct from
+        // the already-moved Display Depth nested-group above).
+        var horDiagBtn = document.getElementById('hor-btn-diag');
+        var horDiagGroup = horDiagBtn ? horDiagBtn.closest('.nested-group') : null;
+        if (horDiagGroup) host.appendChild(horDiagGroup);
+
+        // East Syriac: "Active Hour" setting-group (esy-active-hour-label,
+        // esy-active-date-label, esy-override-toggle) -- separate from
+        // esy-override-panel, already moved above.
+        var esyActiveLabel = document.getElementById('esy-active-hour-label');
+        var esyActiveGroup = esyActiveLabel ? esyActiveLabel.closest('.setting-group') : null;
+        if (esyActiveGroup) host.appendChild(esyActiveGroup);
+
+        // East Syriac: Cycle/Fasting/Anaphora display boxes -- three
+        // separate setting-groups.
+        ['esy-cycle-box', 'esy-fast-box', 'esy-anaphora-box'].forEach(function (id) {
+            var box = document.getElementById(id);
+            var g = box ? box.closest('.setting-group') : null;
+            if (g) host.appendChild(g);
+        });
+
+        // BCP and Horologion date-picker blocks -- no dedicated drawer UI
+        // needed (superseded by the shared navigator's own stepper/picker),
+        // but still read/written by id.
+        var bcpDatePicker = document.getElementById('date-picker');
+        var bcpOrdoControl = bcpDatePicker ? bcpDatePicker.closest('.ordo-control') : null;
+        if (bcpOrdoControl) host.appendChild(bcpOrdoControl);
+
+        var horDatePicker = document.getElementById('generic-date-picker');
+        var horOrdoControl = horDatePicker ? horDatePicker.closest('.ordo-control') : null;
+        if (horOrdoControl) host.appendChild(horOrdoControl);
     }
 
     /* ── Value rows: a native <select> standing in front of real radios ──── */
@@ -292,7 +488,7 @@
         sec.appendChild(tools);
     }
 
-    /* ── Section II · Which office ────────────────────────────────────────── */
+    /* ── Section III · Which office (was II; swapped 2026-09-25, see buildDialog) ── */
 
     function buildOffices(modeKey) {
         var sec = hosts.offices;
@@ -319,7 +515,9 @@
         sec.appendChild(grid);
     }
 
-    /* ── Section III · How you keep it (lane-supplied) ────────────────────── */
+    /* ── Section II · Options (was III, "How you keep it"; renamed and moved
+       before "Which office" 2026-09-25, per Josh's direct instruction --
+       lane-supplied) ──────────────────────────────────────────────────── */
 
     function borrowedSummary() {
         var names = [];
@@ -328,10 +526,14 @@
             if (!box || !box.checked) return;
             var lab = box.closest('label');
             var t = lab ? lab.childNodes[1] && lab.childNodes[1].textContent : '';
-            names.push((t || id).trim());
+            var name = (t || id).trim();
+            var trad = BORROWED_TRADITIONS[id];
+            names.push(trad ? name + ' (' + trad + ')' : name);
         });
         var m = document.querySelector('input[name="marian-element"]:checked');
-        if (m && (m.value === 'theotokion' || m.value === 'both')) names.push('Theotokion');
+        if (m && (m.value === 'theotokion' || m.value === 'both')) {
+            names.push('Theotokion (' + THEOTOKION_TRADITION + ')');
+        }
         return names;
     }
 
@@ -403,9 +605,9 @@
         hosts.borrowedValue.textContent = bcpOnly ? 'BCP only'
             : (names.length ? names.length + ' on' : 'None');
         hosts.borrowedList.textContent = names.length
-            ? names.join(' \u00B7 ') + '. Each keeps its own name and its own tradition.'
-            : (bcpOnly ? 'BCP Only Mode is on; nothing is borrowed.'
-                       : 'Nothing borrowed. The office is the Prayer Book\u2019s alone.');
+            ? names.join(' \u00B7 ') + '.'
+            : (bcpOnly ? 'BCP Only Mode is on; nothing additional is included.'
+                       : 'Nothing additional. The office is the Prayer Book\u2019s alone.');
         /* When every borrowed row is hidden (BCP Only, or this office offers
            none), the expander has nothing to show and is not offered. */
         var anyShown = BORROWED_IDS.some(function (id) {
@@ -444,25 +646,29 @@
         hosts.ordo = el('div', 'uo-drawer-section');
         body.appendChild(hosts.ordo);
 
-        body.appendChild(heading('II \u00B7 Which office'));
-        hosts.offices = el('div', 'uo-drawer-section');
-        body.appendChild(hosts.offices);
-
-        body.appendChild(heading('III \u00B7 How you keep it'));
+        // ORDER SWAPPED 2026-09-25, per Josh's direct instruction ("'How you keep
+        // it' effects your options for which office. Switch the order."): Options
+        // (Cathedral/Monastic use, Rite, etc.) can change which entries "Which
+        // office" even offers -- East Syriac's own Cathedral/Monastic choice is
+        // the concrete case -- so it now comes first, reading in the order a
+        // person actually decides: how you keep it, then which office follows
+        // from that. Renamed from "How you keep it" per Josh's direct feedback
+        // ("is not good wording. 'Options' would be better").
+        body.appendChild(heading('II \u00B7 Options'));
         var keep = el('div', 'uo-drawer-section');
         hosts.keepRows = el('div', 'uo-drawer-rows');
         keep.appendChild(hosts.keepRows);
 
         hosts.borrowedBlock = el('div', 'uo-drawer-borrowed');
         var brow = el('div', 'uo-drawer-row uo-drawer-borrowed-row');
-        brow.appendChild(el('span', 'uo-drawer-row-label', 'Borrowed devotions'));
+        brow.appendChild(el('span', 'uo-drawer-row-label', 'Additional devotions'));
         hosts.borrowedValue = el('span', 'uo-drawer-borrowed-count');
         brow.appendChild(hosts.borrowedValue);
         hosts.borrowedBlock.appendChild(brow);
         hosts.borrowedList = el('p', 'uo-drawer-borrowed-list');
         hosts.borrowedBlock.appendChild(hosts.borrowedList);
         hosts.borrowedDetails = el('details', 'uo-drawer-details');
-        hosts.borrowedDetails.appendChild(el('summary', null, 'Choose borrowed devotions'));
+        hosts.borrowedDetails.appendChild(el('summary', null, 'Choose additional devotions'));
         hosts.borrowed = el('div', 'uo-drawer-moved');
         hosts.borrowedDetails.appendChild(hosts.borrowed);
         hosts.borrowedBlock.appendChild(hosts.borrowedDetails);
@@ -475,10 +681,28 @@
         keep.appendChild(hosts.furtherBlock);
         body.appendChild(keep);
 
+        body.appendChild(heading('III · Which office'));
+        hosts.offices = el('div', 'uo-drawer-section');
+        body.appendChild(hosts.offices);
+
         hosts.foot = el('div', 'uo-drawer-foot');
         hosts.bcpOnly = el('div', 'uo-drawer-bcp-only');
         hosts.foot.appendChild(hosts.bcpOnly);
         dialog.appendChild(hosts.foot);
+
+        /* Real home for every control that already has its own drawer UI
+           (the "which office" grid above, or a radioRow()/checkboxRow()/
+           selectRow() synthetic row) but whose real <input>/<select> still
+           needs to exist SOMEWHERE for those rows -- and js/office-ui.js's
+           own render functions -- to read from and write back to. Moved
+           here, 2026-09-24, so the four legacy sidebars hold nothing this
+           drawer still depends on; see moveLegacyStateControls() below for
+           the inventory and RESUME_PROJECT_NOTE.md for why this was needed
+           before the sidebars themselves could ever be deleted. Never shown:
+           the drawer already has real UI for everything moved in here. */
+        hosts.legacyState = el('div', 'uo-drawer-legacy-state');
+        hosts.legacyState.style.display = 'none';
+        dialog.appendChild(hosts.legacyState);
 
         /* Close on backdrop click: the click lands on the <dialog> itself only
            when it is outside the panel box. */
@@ -516,7 +740,6 @@
     }
 
     function open() {
-        if (!shellOn()) return;
         if (!dialog) buildDialog();
         if (!dialog.open) dialog.showModal();
         refresh();
@@ -525,7 +748,6 @@
     /* ── The keeping-place bar entry (§1, §3.1) ───────────────────────────── */
 
     function ensureEntry() {
-        if (!shellOn()) return;
         var actions = document.querySelector('#main-content .uo-keeping-actions');
         if (!actions || actions.querySelector('.uo-drawer-open')) return;
         var b = el('button', 'uo-drawer-open', 'Office Settings');
@@ -536,20 +758,21 @@
     }
 
     function init() {
-        if (!shellOn()) return;
         /* The render landing is the signal (RESUME_PROJECT_NOTE §0a: re-resolve
            on the render, not the click). #office-display changes on every
            office, date and lane change; the shared navigator is rewritten after
-           it. Both are watched; refresh is one call per frame. */
+           it -- this one observer already covers every lane switch, since
+           every selectMode() branch rewrites #office-display's innerHTML and
+           #office-display is #main-content's direct child. A second
+           per-panel observer (watching the four legacy sidebars' own class
+           attribute) used to run alongside this one; removed with the
+           sidebars themselves (Phase 6, sidebar-deletion refactor) -- it was
+           never the only signal, just a belt-and-suspenders one, confirmed
+           live (open drawer, switch lanes, still refreshes) before removing
+           it. */
         var obs = new MutationObserver(function () { ensureEntry(); refreshSoon(); });
         var main = document.getElementById('main-content');
         if (main) obs.observe(main, { childList: true, subtree: true });
-        ['settings-panel', 'coptic-settings', 'east-syriac-settings', 'generic-settings']
-            .forEach(function (id) {
-                var p = document.getElementById(id);
-                if (p) obs.observe(p, { childList: true, subtree: true,
-                                        attributes: true, attributeFilter: ['class'] });
-            });
         ensureEntry();
     }
 

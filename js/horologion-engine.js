@@ -3,6 +3,25 @@
 // Horologion Engine v2.0
 // Architecture layer: ENGINE (not UI, not calendar)
 //
+// NAMING NOTE, added 2026-09-26: "Horologion" is technically only one of the
+// four constituent books of the Byzantine Divine Office (the fixed Hours
+// book), alongside the Menaion (fixed-date saints/feasts), Triodion
+// (pre-Lenten through Holy Saturday), and Pentecostarion (Pascha through All
+// Saints). This module and its data files, UI element ids, and user-facing
+// copy ("Byzantine Horologion") all use "Horologion" loosely to mean the
+// whole Byzantine lane -- flagged in AUDIT_GOVERNANCE_LEDGER.md as a real
+// terminology conflation, not yet renamed. Assessed 2026-09-26: a repo-wide
+// rename (this file, data/horologion/*, ~360 call sites in js/office-ui.js,
+// index.html, and four other files) is a large, high-risk mechanical
+// refactor for a purely cosmetic/architectural gain -- no content or logic
+// bug follows from the name itself, and the actual content-family split
+// (Hours vs. Menaion vs. Triodion vs. Pentecostarion) is already handled
+// correctly by this module's own season/feast-overlay logic regardless of
+// what the file and function names are called. Deliberately NOT renamed
+// this pass; left for a dedicated, carefully-scoped rename pass rather than
+// risked as a byproduct of content-audit work. If a rename is ever done,
+// "ByzantineOfficeEngine" (or similar) is the more accurate name.
+//
 // This module owns:
 //   - Loading and caching office skeletons from data/horologion/*.json
 //   - Resolving a normalized office payload from a skeleton + date context
@@ -391,15 +410,7 @@ const HorologionEngine = (() => {
     // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
     let _midnightOfficeFixedData = null;
  
-    // ── v6.3: Midnight Office theotokion corpus URL and cache ─────────────
-// Tone × day-of-week grid. null = untranscribed; string = full text.
-// Shape: { tones: { "1": { "0": null|string, … "6": null|string }, … } }
-const MIDNIGHT_OFFICE_THEOTOKION_URL = 'data/horologion/midnight-office-theotokion.json';
-
-// Populated lazily by _loadMidnightOfficeTheotokionData().
-let _midnightOfficeTheotokionData = null;
-
-// ── v6.7: Great Compline fixed text URL and cache ─────────────────────
+    // ── v6.7: Great Compline fixed text URL and cache ─────────────────────
 const GREAT_COMPLINE_FIXED_URL = 'data/horologion/great-compline-fixed.json';
 let _greatComplineFixedData = null;
 
@@ -1382,7 +1393,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
     // Returns: { tone: number (1–8) | null, brightWeek: boolean,
     //            toneLabel: string, paschaISO: string }
     // ──────────────────────────────────────────────────────────────────────
-    function _computeBaselineTone(dateObj) {
+    function _computeBaselineTone(dateObj, anticipatory = true) {
         const localDate = new Date(
             dateObj.getFullYear(),
             dateObj.getMonth(),
@@ -1410,10 +1421,20 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             };
         }
 
-        // Step 4: For Saturday, the liturgical day is Sunday (next day).
-        // Use the upcoming Sunday date to compute the tone.
+        // Step 4: For Saturday VESPERS specifically, the liturgical day is
+        // Sunday (next day) -- "Saturday evening belongs liturgically to
+        // Sunday" per this function's own rule (3) above. Gated on
+        // `anticipatory` (default true, i.e. every pre-existing caller keeps
+        // today's behavior unchanged) -- FIXED 2026-09-25, found by the
+        // engine-audit sweep: _resolveOrthrosSlots called this function
+        // un-gated and combined its Saturday-shifted tone with the raw
+        // (unshifted) dateObj.getDay()===6 to index the weekday canon/
+        // sessional-hymns/etc. corpora, so Saturday Orthros -- which belongs
+        // to the OUTGOING week, not the incoming one; only Vespers
+        // anticipates -- was silently rendered with next week's tone.
+        // _resolveOrthrosSlots now passes anticipatory=false.
         let toneDate = localDate;
-        if (localDate.getDay() === 6) {
+        if (anticipatory && localDate.getDay() === 6) {
             toneDate = new Date(localDate.getFullYear(), localDate.getMonth(), localDate.getDate() + 1);
         }
 
@@ -2373,6 +2394,82 @@ const pascha = _getOrthodoxPascha(year);
     }
 
     // ──────────────────────────────────────────────────────────────────────
+    // Additive fasting-season helpers (2026-09-26, second-pass follow-up).
+    // These do NOT modify _computeLiturgicalSeason()'s existing return shape
+    // -- several callers already depend on its exact four values
+    // ('holy-week', 'bright-week', 'great-lent', 'ordinary') -- they add the
+    // further distinctions Findings SC4 (remaining imprecision), T8, and IH7
+    // all need, as separate, non-breaking functions. Pascha epoch
+    // cross-checked against Orthocal (mcp Orthocal server) for 2026 and 2027:
+    // pascha_distance and "Beginning of Apostles' Fast" both matched this
+    // engine's own _getOrthodoxPascha() exactly before any of this was built.
+    // ──────────────────────────────────────────────────────────────────────
+
+    // Sunday of the Publican and Pharisee (Pascha-70) through Cheesefare/
+    // Forgiveness Sunday (Pascha-49) -- the three pre-Lenten Triodion weeks.
+    // Clean Monday itself (Pascha-48) is NOT included; that's 'great-lent'.
+    function _isPreLentenTriodion(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const publicanPharisee = new Date(pascha.getTime() - 70 * MS_PER_DAY);
+        const cheesefare       = new Date(pascha.getTime() - 49 * MS_PER_DAY);
+        return localDate >= publicanPharisee && localDate <= cheesefare;
+    }
+
+    // 1-based Great Lent week number (1-6), or null if dateObj isn't in
+    // Great Lent at all. Week 6 includes Lazarus Saturday (Pascha-8); Palm
+    // Sunday (Pascha-7) onward is 'holy-week', not Great Lent, matching
+    // _computeLiturgicalSeason()'s own existing boundary.
+    function _getGreatLentWeekNumber(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const cleanMonday     = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+        const lazarusSaturday = new Date(pascha.getTime() -  8 * MS_PER_DAY);
+        if (localDate < cleanMonday || localDate > lazarusSaturday) return null;
+        const daysSinceCleanMonday = Math.round((localDate.getTime() - cleanMonday.getTime()) / MS_PER_DAY);
+        return Math.floor(daysSinceCleanMonday / 7) + 1;
+    }
+
+    // Bright Monday (Pascha+1) through All Saints Sunday (Pascha+56) -- the
+    // whole Pentecostarion season, matching how UNABHOR1997 p.245's own
+    // rubric describes it ("the Holy Pentecost season... until the Sunday
+    // of All Saints"). Bright Week itself (Pascha+1..+7) already has its own
+    // unrelated full-office displacement elsewhere in this engine -- callers
+    // that need to exclude Bright Week specifically should still check
+    // toneResult.brightWeek themselves, as existing code already does.
+    function _isPentecostSeason(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const brightMonday    = new Date(pascha.getTime() +  1 * MS_PER_DAY);
+        const allSaintsSunday = new Date(pascha.getTime() + 56 * MS_PER_DAY);
+        return localDate >= brightMonday && localDate <= allSaintsSunday;
+    }
+
+    // The Monday after All Saints Sunday (Pascha+57) -- the first day of
+    // the Apostles' Fast. Validated against Orthocal (mcp) for 2026:
+    // pascha_distance 57 on 2026-06-08 carries service_notes "Beginning of
+    // Apostles' Fast" and fast_level_desc "Apostles Fast", matching exactly.
+    function _isApostlesFastFirstDay(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const firstDay = new Date(pascha.getTime() + 57 * MS_PER_DAY);
+        return localDate.getTime() === firstDay.getTime();
+    }
+
+    // November 15 on whichever fixed calendar is active (Gregorian for
+    // 'new_calendar', Julian-shifted-to-civil-date for 'old_calendar') --
+    // the first day of the Nativity Fast. Reuses the same fixed-calendar-
+    // date convention _getFixedCalendarMmdd() already applies for Menaion
+    // lookups.
+    function _isNativityFastFirstDay(dateObj) {
+        return _getFixedCalendarMmdd(dateObj) === '11-15';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
     // v5.0: _loadTriodionData()
     //
     // Fetches and caches data/triodion/triodion-lenten-weekday.json.
@@ -2695,8 +2792,26 @@ const pascha = _getOrthodoxPascha(year);
     async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
     let resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
 
-    // Preserve any existing feast-winning behaviour.
-    if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
+    // Finding SC4 correction (audit 2026-09-26): _resolveTroparionSlot() is
+    // shared Vespers-style machinery, and its Menaion override fires for ANY
+    // rank 1-4 commemoration -- which is nearly every date on the real
+    // calendar (rank 4 is "simple commemoration", the most common case).
+    // UNABHOR1997 pp.239-245 (the Order of Small Compline) documents no such
+    // override for this slot at all: it prints only the fixed weekday-name
+    // troparion table (Sunday: Bodiless Powers; Monday: Forerunner; etc.) and
+    // a rubric about the TEMPLE's own patron saint (an unrelated, unmodeled
+    // concept) -- never the calendar day's Menaion saint. Letting every rank
+    // 3-4 commemoration pre-empt the fixed table would make Finding SC4's own
+    // fix fire on only a handful of days per year. Only a genuinely major
+    // feast (rank 1 Great Feast, rank 2 Polyeleos/Vigil) is left free to
+    // override here, matching the one tier for which a real override is
+    // plausible; rank 3-4 now falls through to the fixed table below.
+    if (
+        resolved &&
+        resolved.resolvedAs === 'menaion-feast-troparion' &&
+        typeof resolved.rank === 'number' &&
+        resolved.rank <= 2
+    ) {
         return resolved;
     }
 
@@ -2743,8 +2858,143 @@ const pascha = _getOrthodoxPascha(year);
         };
     }
 
+    // Finding SC4 (audit 2026-09-26): Small Compline's day-of-week troparia are
+    // a FIXED table (UNABHOR1997 pp.239-245), not Menaion-dependent -- same
+    // correction as Typika's own Finding T7. Reached here for every outcome
+    // _resolveTroparionSlot() can produce EXCEPT a rank <=2 feast override and
+    // a Great Lent Triodion override (both already returned above): the
+    // generic Vespers-style fallbacks ('weekday-theme-rubric',
+    // 'resurrectional-troparion-sunday'/'-saturday', 'menaion-text-unavailable',
+    // or a rank 3-4 'menaion-feast-troparion' -- none of which are textually
+    // attested for this slot) are all displaced unconditionally by the fixed
+    // table -- Small Compline's own Sunday troparion is the Bodiless Powers
+    // troparion, not the Resurrectional one, and Saturday's fixed
+    // troparion/kontakion pairing is by Octoechos tone, not any of the above.
+    const fixedTroparion = _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult, dateObj);
+    if (fixedTroparion) return fixedTroparion;
+
     resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
     return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved, dayOfWeek);
+}
+
+// Finding SC4: the fixed day-of-week troparion (Saturday: + Kontakion, by
+// Octoechos tone) said at Small Compline when no qualifying feast displaces it.
+// Sunday-Thursday's own further shared closing (a litany-like block after
+// each night's own troparion) is disclosed but not built here -- out of scope
+// for this finding, which names only the troparion-of-the-day slot itself.
+// Shared by Small Compline's own Saturday (Finding SC4) and Great Compline's
+// Friday (Finding GC2, UNABHOR1997 p.220's cross-reference "the troparion of
+// the Saturday commemoration, [see] page 243") -- both point at this same
+// fixed 8-tone Resurrection troparion/kontakion table.
+const _RESURRECTION_TROPARIA_TONE = {
+    1: 'When the stone had been sealed by the Jews, and the soldiers were guarding Thine immaculate Body, Thou didst arise on the third day, O Saviour, granting life unto the world. Wherefore, the Hosts of the heavens cried out to Thee, O Life-giver: Glory to Thy Resurrection, O Christ. Glory to Thy kingdom. Glory to Thy dispensation, O only Lover of mankind.',
+    2: 'When Thou didst descend unto death, O Life Immortal, then didst Thou slay hades with the lightning of Thy Divinity. And when Thou didst also raise the dead out of the nethermost depths, all the Hosts of the heavens cried out: O Life-giver, Christ our God, glory be to Thee.',
+    3: 'Let the heavens be glad; let earthly things rejoice; for the Lord hath wrought might with His arm. He hath trampled down death by death; the firstborn of the dead hath He become. From the belly of hades hath He delivered us and hath granted to the world great mercy.',
+    4: 'Having learned the joyful proclamation of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the apostles exultantly: death is despoiled and Christ God is risen, granting to the world great mercy.',
+    5: 'Let us, O faithful, praise and worship the Word Who is co-unoriginate with the Father and the Spirit, and Who was born of the Virgin for our salvation; for He was pleased to ascend the Cross in the flesh and to endure death, and to raise the dead by His glorious Resurrection.',
+    6: 'Angelic Hosts were above Thy tomb, and they that guarded Thee became as dead. And Mary stood by the grave seeking Thine immaculate Body. Thou didst despoil hades and wast not tempted by it. Thou didst meet the Virgin and didst grant us life. O Thou Who didst rise from the dead, O Lord, glory be to Thee.',
+    7: 'Thou didst destroy death by Thy Cross, Thou didst open Paradise to the thief. Thou didst change the lamentation of the Myrrh-bearers, and Thou didst command Thine Apostles to proclaim that Thou didst arise, O Christ God, and grantest to the world great mercy.',
+    8: 'From on high didst Thou descend, O Compassionate One; to burial of three days hast Thou submitted that Thou mightest free us from our passions. O our Life and Resurrection, O Lord, glory be to Thee.'
+};
+const _RESURRECTION_KONTAKIA_TONE = {
+    1: 'As God, Thou didst arise from the tomb in glory, and Thou didst raise the world together with Thyself. And mortal nature praiseth Thee as God, and death hath vanished. And Adam danceth, O Master, and Eve, now freed from fetters, rejoiceth as she crieth out: Thou art He, O Christ, that grantest unto all resurrection.',
+    2: 'Thou didst arise from the tomb, O omnipotent Saviour, and hades was terrified on beholding the wonder; and the dead arose, and creation at the sight thereof rejoiceth with Thee. And Adam also is joyful, and the world, O my Saviour, praiseth Thee for ever.',
+    3: 'Thou didst arise today from the tomb, O Merciful One, and didst lead us out of the gates of death. Today Adam danceth and Eve rejoiceth; and together with them both the Prophets and the Patriarchs unceasingly praise the divine might of Thine authority.',
+    4: 'My Saviour and Redeemer hath, as God, raised up the earthborn from the grave and from their fetters, and He hath broken the gates of hades, and, as Master, hath risen on the third day.',
+    5: 'Unto hades, O my Saviour, didst Thou descend, and having broken its gates as One omnipotent, Thou, as Creator, didst raise up the dead together with Thyself. And Thou didst break the sting of death, and didst deliver Adam from the curse, O Lover of mankind. Wherefore, we all cry unto Thee: save us, O Lord.',
+    6: 'Having by His life-bestowing hand raised up all the dead out of the dark abysses, Christ God, the Giver of Life, hath bestowed the Resurrection upon the fallen human race; for He is the Saviour of all, the Resurrection, and the Life, and the God of all.',
+    7: 'No longer will the dominion of death be able to keep men captive; for Christ hath descended, demolishing and destroying the powers thereof. Hades is bound; the Prophets rejoice with one voice, saying: a Saviour hath come for them that have faith. Come forth, ye faithful, for the Resurrection.',
+    8: 'Having arisen from the tomb, Thou didst raise up the dead and didst resurrect Adam. Eve also danceth at Thy Resurrection, and the ends of the world celebrate Thine arising from the dead, O greatly-merciful One.'
+};
+
+function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult, dateObj) {
+    const WEEKDAY_TROPARIA = {
+        0: { label: 'Troparion of the Bodiless Powers',
+             text: 'Supreme Commanders of the Heavenly Hosts, we unworthy ones implore you that by your supplications ye will encircle us with the shelter of the wings of your immaterial glory, and guard us who fall down before you and fervently cry: deliver us from dangers since ye are the Marshalls of the Hosts on high.' },
+        1: { label: 'Troparion of the Forerunner',
+             text: 'The memory of the righteous is celebrated with hymns of praise, but the Lord\'s testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly even more venerable than the Prophets, since thou wast granted to baptize in the running waters Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce the good tidings even to those in hades: that God hath appeared in the flesh, taking away the sin of the world and granting us great mercy.' },
+        2: { label: 'Troparion',
+             text: 'Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.' },
+        3: { label: 'Troparion of the Holy Apostles, and of St. Nicholas',
+             text: 'O holy Apostles, intercede with the merciful God, that He grant unto our souls forgiveness of offences.\n\nThe truth of things revealed thee to thy flock as a rule of faith, an icon of meekness and a teacher of temperance; therefore thou hast achieved the heights by humility, riches by poverty. O Father and Hierarch Nicholas, intercede with Christ God that our souls be saved.' },
+        4: { label: 'Troparion',
+             text: 'Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.' },
+        5: { label: 'Troparion of All Saints',
+             text: 'O Apostles, Martyrs, and Prophets, Hierarchs, Monastics, and Righteous Ones; ye that have accomplished a good labour and kept the faith, that have boldness before the Saviour: O good ones, intercede for us, we pray, that our souls be saved.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nKontakion: With the saints give rest, O Christ, to the souls of Thy servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nTo Thee, O Lord, the Planter of creation, the world doth offer the God-bearing martyrs as the firstfruits of nature. By their intercessions preserve Thy Church, Thy commonwealth, in profound peace, through the Theotokos, O greatly-merciful One.' }
+    };
+
+    if (dayOfWeek === 6) {
+        const tone = toneResult && toneResult.tone;
+        const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
+        const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
+        if (troparionText && kontakionText) {
+            // Finding SC4 correction, refined (2026-09-26, third pass):
+            // UNABHOR1997 p.245 -- "IT SHOULD BE KNOWN: that from the Sunday of the
+            // Publican and the Pharisee, and during all of the holy Great Lent, on
+            // all Saturdays at Compline the Kontakion of the Resurrection is not
+            // read, but rather the one from the Triodion (except the fifth week of
+            // Lent), as also during the Holy Pentecost season on all days the
+            // kontakion from the Pentecostarion is read, until the Sunday of All
+            // Saints." The troparion itself is unaffected by this rubric -- only
+            // the Kontakion. Now fully covered using the dedicated fasting-season
+            // helpers (_isPreLentenTriodion, _getGreatLentWeekNumber,
+            // _isPentecostSeason): the pre-Lenten Triodion weeks, Great Lent
+            // proper with the fifth-week exception, and the Pentecost season are
+            // all handled; only the exact Pentecostarion/Triodion kontakion texts
+            // themselves remain unsourced (disclosed, not fabricated).
+            let suppressKontakion = false;
+            let seasonLabel = null;
+            try {
+                if (dateObj && _isPreLentenTriodion(dateObj)) {
+                    suppressKontakion = true;
+                    seasonLabel = 'pre-lenten-triodion';
+                } else if (dateObj) {
+                    const lentWeek = _getGreatLentWeekNumber(dateObj);
+                    if (lentWeek !== null && lentWeek !== 5) {
+                        suppressKontakion = true;
+                        seasonLabel = 'great-lent-week-' + lentWeek;
+                    } else if (dateObj && _isPentecostSeason(dateObj)) {
+                        suppressKontakion = true;
+                        seasonLabel = 'pentecost-season';
+                    }
+                }
+            } catch (e) { /* non-throwing: falls through to the ordinary case below */ }
+
+            if (suppressKontakion) {
+                const deferredText = seasonLabel === 'pentecost-season'
+                    ? 'During the Pentecost season (through the Sunday of All Saints), the Pentecostarion\'s own Kontakion belongs here in place of the Resurrection Kontakion; not yet sourced in this corpus.'
+                    : 'During this week, the Triodion\'s own Kontakion belongs here in place of the Resurrection Kontakion (the fifth week of Great Lent is the one exception, where the Resurrection Kontakion is retained); not yet sourced in this corpus.';
+                return {
+                    type:       'text',
+                    key:        'troparion-of-the-day',
+                    label:      'Troparion of the Resurrection, Tone ' + tone,
+                    text:       troparionText + '\n\nKontakion: (' + deferredText + ')',
+                    tone:       tone,
+                    resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone + '-' + seasonLabel + '-kontakion-deferred'
+                };
+            }
+
+            return {
+                type:       'text',
+                key:        'troparion-of-the-day',
+                label:      'Troparion and Kontakion of the Resurrection, Tone ' + tone,
+                text:       troparionText + '\n\nKontakion: ' + kontakionText,
+                tone:       tone,
+                resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone
+            };
+        }
+        return null;
+    }
+
+    const dayEntry = WEEKDAY_TROPARIA[dayOfWeek];
+    if (!dayEntry) return null;
+    return {
+        type:       'text',
+        key:        'troparion-of-the-day',
+        label:      dayEntry.label,
+        text:       dayEntry.text,
+        resolvedAs: 'small-compline-weekday-fixed-troparion-' + dayOfWeek
+    };
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -3442,7 +3692,12 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                     const item = section.items[i];
 
-                    if (!item || item.key !== 'sessional-hymns') continue;
+                    // Finding O2 (audit 2026-09-26) split the old single
+                    // 'sessional-hymns' key into 'sessional-hymns-1' and
+                    // 'sessional-hymns-2', one per kathisma -- this guard must
+                    // still catch both, and patch each independently (no
+                    // longer safe to stop after the first match).
+                    if (!item || (item.key !== 'sessional-hymns-1' && item.key !== 'sessional-hymns-2')) continue;
 
                     const resolvedAs = String(item.resolvedAs || '');
 
@@ -3457,15 +3712,13 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                         key:        item.key,
 
-                        label:      'Sessional Hymns — Sunday',
+                        label:      item.label || 'Sessional Hymns — Sunday',
 
                         text:       '(Sunday Orthros sessional hymns are appointed here, but the currently loaded Sunday sessional hymn corpus is pending source confirmation. Full confirmed Sunday sessional hymn text is deferred.)',
 
                         resolvedAs: 'orthros-sunday-sessional-hymns-source-pending-rubric'
 
                     };
-
-                    break;
 
                 }
 
@@ -3488,7 +3741,10 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         ]);
 
         const dayOfWeek    = dateObj.getDay();
-        const toneResult   = _computeBaselineTone(dateObj);
+        // anticipatory=false: Orthros belongs to the day it's actually prayed
+        // on, including Saturday -- only Vespers anticipates Sunday. See the
+        // 2026-09-25 comment on _computeBaselineTone's Step 4.
+        const toneResult   = _computeBaselineTone(dateObj, false);
         const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
 
         // Hoist season booleans once — used by multiple slot branches below.
@@ -3502,6 +3758,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
+            'psalm-19',
+            'psalm-20',
             'psalm-3',
             'psalm-37',
             'psalm-62',
@@ -3511,7 +3769,9 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             'great-litany',
             'psalm-50',
             'praises-psalms',
-            'great-doxology'
+            'great-doxology',
+            'little-litany-after-kathisma-1',
+            'little-litany-after-kathisma-2'
         ]);
 
         for (const section of sections) {
@@ -3526,6 +3786,28 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         section.items.splice(i, 1);
                         i -= 1;
                         continue;
+                    }
+
+                    // Finding O2: a Small Litany with nothing to close (its own
+                    // kathisma isn't appointed today, e.g. the second kathisma on
+                    // an ordinary Sunday) is disclosed, not rendered as if real --
+                    // same reasoning as the sessional-hymn guard just above.
+                    if (item.key === 'little-litany-after-kathisma-1' || item.key === 'little-litany-after-kathisma-2') {
+                        const siblingKathismaKey = item.key === 'little-litany-after-kathisma-1' ? 'kathisma-first' : 'kathisma-second';
+                        const siblingKathismaItem =
+                            sections
+                                .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                                .find(it => it && it.key === siblingKathismaKey) || null;
+                        if (siblingKathismaItem && String(siblingKathismaItem.resolvedAs || '').includes('not-appointed')) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                label:      'The Small Litany',
+                                text:       '(Not applicable — no kathisma is appointed at this position today; see the kathisma item above.)',
+                                resolvedAs: 'orthros-small-litany-no-kathisma-not-applicable'
+                            };
+                            continue;
+                        }
                     }
 
                     const slotData = _orthrosFixedData &&
@@ -3797,11 +4079,16 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 // ── v5.7 / v6.x: kathisma-first, kathisma-second, kathisma-third ──
                 // kathisma-third is only appointed during Great Lent and Holy Week.
                 // isGreatLentDay covers Mon–Sat (unlike isGreatLentWeekday which is Mon–Fri only).
+                // Sundays of Great Lent are deliberately excluded here: the Great Lent
+                // appointment table (_resolveOrthrosKathismaPair) has no 'sunday' key, so a
+                // Lenten Sunday must fall through to that function's own Sunday branch
+                // (ordinary Kathisma 2) rather than into its Great Lent branch, which would
+                // find no entry and silently return null -- exactly the bug this excludes.
                 // Holy Week resolution is handled inside _resolveOrthrosKathismaPair via seasonResult.
                 if (item.key === 'kathisma-first' ||
                     item.key === 'kathisma-second' ||
                     item.key === 'kathisma-third') {
-                    const isGreatLentDay = seasonResult && seasonResult.season === 'great-lent';
+                    const isGreatLentDay = seasonResult && seasonResult.season === 'great-lent' && dayOfWeek !== 0;
                     const resolved = _resolveOrthrosKathismaPair(
                         item.key, dayOfWeek, isBrightWeek,
                         isGreatLentDay,
@@ -4666,26 +4953,55 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 }
 
                  // ── v5.8: sessional-hymns — season-aware rubric ──────────
-                if (item.key === 'sessional-hymns') {
+                // Finding O2 (audit 2026-09-26): each kathisma carries its OWN
+                // sessional hymn, immediately after it, not one combined slot
+                // after both kathismata (UNABHOR1997 pp.60-61). Two item keys,
+                // one per kathisma position, both resolved by the same logic
+                // the old single 'sessional-hymns' key used -- just asking for
+                // one position's hymn instead of both at once.
+                if (item.key === 'sessional-hymns-1' || item.key === 'sessional-hymns-2') {
+                    const kPosition = item.key === 'sessional-hymns-1' ? 'afterKathisma1' : 'afterKathisma2';
+
+                    // If this hymn's own kathisma isn't appointed today (e.g. the
+                    // second kathisma on an ordinary Sunday), there is nothing for
+                    // this hymn to follow -- disclose that directly rather than
+                    // rendering a pending/deferred hymn for a kathisma that isn't
+                    // there, matching the sibling kathisma item's own disclosure.
+                    const siblingKathismaKey = kPosition === 'afterKathisma1' ? 'kathisma-first' : 'kathisma-second';
+                    const siblingKathismaItem =
+                        sections
+                            .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                            .find(it => it && it.key === siblingKathismaKey) || null;
+                    if (siblingKathismaItem && String(siblingKathismaItem.resolvedAs || '').includes('not-appointed')) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
+                            text:       '(Not applicable — no kathisma is appointed at this position today; see the kathisma item directly above.)',
+                            resolvedAs: 'orthros-sessional-hymn-no-kathisma-not-applicable'
+                        };
+                        continue;
+                    }
+
                     let sessText;
                     let sessResolvedAs;
 
                     const troparionItem =
-    sections
-        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
-        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                        sections
+                            .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                            .find(it => it && it.key === 'troparion-of-the-day') || null;
                     const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
 
-const feastRank =
-    isFeast && typeof troparionItem.rank === 'number'
-        ? troparionItem.rank
-        : null;
+                    const feastRank =
+                        isFeast && typeof troparionItem.rank === 'number'
+                            ? troparionItem.rank
+                            : null;
 
-const isMajorFeastForPraises =
-    isFeast &&
-    feastRank !== null &&
-    feastRank >= 1 &&
-    feastRank <= 2;
+                    const isMajorFeastForPraises =
+                        isFeast &&
+                        feastRank !== null &&
+                        feastRank >= 1 &&
+                        feastRank <= 2;
 
                     if (isBrightWeek) {
                         sessText =
@@ -4699,10 +5015,10 @@ const isMajorFeastForPraises =
                         const hwDay = seasonResult && seasonResult.holyWeekDay
                             ? seasonResult.holyWeekDay : null;
                         const hwSessResolved = hwDay
-                            ? _resolveHolyWeekText('sessional-hymns', hwDay)
+                            ? _resolveHolyWeekText(item.key, hwDay)
                             : null;
                         if (hwSessResolved) {
-                            section.items[i] = hwSessResolved;
+                            section.items[i] = Object.assign({}, hwSessResolved, { key: item.key });
                             continue;
                         }
                         sessText =
@@ -4734,20 +5050,20 @@ const isMajorFeastForPraises =
                             ? (corpusTones[tone] || corpusTones[String(tone)] || null)
                             : null;
 
-                        if (toneEntry && toneEntry.afterKathisma1) {
+                        const sundaySessText = kPosition === 'afterKathisma1'
+                            ? toneEntry && toneEntry.afterKathisma1
+                            : toneEntry && (toneEntry.afterKathisma2 || toneEntry.afterKathisma1);
+                        if (sundaySessText) {
                             section.items[i] = {
-                                type:       'hymn-group',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns (Sedalia / Kathismata)',
+                                type:       'hymn',
+                                key:        item.key,
+                                label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                                 source:     'Octoechos',
                                 tone:       tone,
-                                items: [
-                                    { position: 'afterKathisma1', text: toneEntry.afterKathisma1 },
-                                    { position: 'afterKathisma2', text: toneEntry.afterKathisma2 || toneEntry.afterKathisma1 }
-                                ],
+                                text:       sundaySessText,
                                 resolvedAs: 'orthros-sunday-resurrectional-sessional-hymns-text'
                             };
-                            continue; 
+                            continue;
                         }
 
                         // Corpus not loaded or tone missing — honest rubric fallback
@@ -4769,14 +5085,15 @@ const isMajorFeastForPraises =
                         sessResolvedAs = 'orthros-sunday-feast-sessional-hymns-rubric';
                    } else {
                         // ── non-Sunday rank 1–2 Menaion feast guard ───────────────────
+                        const kOrdinalLabel = kPosition === 'afterKathisma1' ? 'After the First Kathisma' : 'After the Second Kathisma';
                         if (isMajorFeastForPraises) {
                             const _sessHymnFeastName = (troparionItem && troparionItem.label)
                                 ? troparionItem.label : 'this feast';
                             section.items[i] = {
                                 type:       'rubric',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns — Menaion Feast',
-                                text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymns: The appointed Menaion Sessional Hymns / Sedalia for ${_sessHymnFeastName} are not yet text-backed in the corpus and should be taken from the Menaion.`,
+                                key:        item.key,
+                                label:      'Sessional Hymn ' + kOrdinalLabel + ' — Menaion Feast',
+                                text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymn ${kOrdinalLabel}: The appointed Menaion Sessional Hymn / Sedalion for ${_sessHymnFeastName} is not yet text-backed in the corpus and should be taken from the Menaion.`,
                                 resolvedAs: 'orthros-menaion-feast-sessional-hymns-rubric'
                             };
                             continue;
@@ -4788,9 +5105,9 @@ const isMajorFeastForPraises =
                                 ? troparionItem.label : 'the commemoration';
                             section.items[i] = {
                                 type:       'rubric',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns — Menaion Commemoration',
-                                text:       `Menaion commemoration — rank 3: Sessional Hymns (${_r3SessName}). The Sessional Hymns (Sedalia) appointed from the Menaion according to the Typikon are not yet present in the current public-beta corpus.`,
+                                key:        item.key,
+                                label:      'Sessional Hymn ' + kOrdinalLabel + ' — Menaion Commemoration',
+                                text:       `Menaion commemoration — rank 3: Sessional Hymn ${kOrdinalLabel} (${_r3SessName}). The Sessional Hymn (Sedalion) appointed from the Menaion according to the Typikon is not yet present in the current public-beta corpus.`,
                                 resolvedAs: 'orthros-rank3-menaion-sessional-hymns-deferred-rubric'
                             };
                             continue;
@@ -4828,40 +5145,40 @@ const isMajorFeastForPraises =
                             ? (wdToneBlock[dayOfWeek] || wdToneBlock[String(dayOfWeek)] || null)
                             : null;
 
-                        if (wdEntry && (wdEntry.afterKathisma1 || wdEntry.afterKathisma2)) {
+                        const wdSessText = kPosition === 'afterKathisma1'
+                            ? wdEntry && (wdEntry.afterKathisma1 || wdEntry.afterKathisma2)
+                            : wdEntry && (wdEntry.afterKathisma2 || wdEntry.afterKathisma1);
+                        if (wdSessText) {
                             section.items[i] = {
-                                type:       'hymn-group',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns (Sedalia / Kathismata)',
+                                type:       'hymn',
+                                key:        item.key,
+                                label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                                 source:     'Octoechos',
                                 tone:       tone,
                                 day:        dayOfWeek,
-                                items: [
-                                    { position: 'afterKathisma1', text: wdEntry.afterKathisma1 || wdEntry.afterKathisma2 },
-                                    { position: 'afterKathisma2', text: wdEntry.afterKathisma2 || wdEntry.afterKathisma1 }
-                                ],
+                                text:       wdSessText,
                                 resolvedAs: 'orthros-ordinary-weekday-sessional-hymns-text'
                             };
                             continue;
                         }
 
                         // Corpus absent or entry null — honest rubric fallback
+                        const kOrdinal = kPosition === 'afterKathisma1' ? 'first' : 'second';
                         sessText =
-                            `ORDINARY WEEKDAY (${dayName}) — Sessional Hymns (Sedalia): After each ` +
-                            `kathisma a Sessional Hymn (Sedalion) is sung seated. On ordinary weekdays ` +
-                            `these are drawn from the Octoechos for the current tone and day.` + toneNote + '\n\n' +
+                            `ORDINARY WEEKDAY (${dayName}) — Sessional Hymn After the ${kOrdinal.charAt(0).toUpperCase() + kOrdinal.slice(1)} Kathisma: ` +
+                            `On ordinary weekdays this sedalion is drawn from the Octoechos for the current tone and day.` + toneNote + '\n\n' +
                             `The Octoechos theme for ${dayName} is ${theme}. ` +
-                            `The appointed sedalia follow this theme.\n\n` +
+                            `The appointed sedalion follows this theme.\n\n` +
                             `(If a Menaion commemoration of sufficient rank is appointed, the Menaion ` +
-                            `sedalia replace or supplement the Octoechos sedalia. Full Octoechos and ` +
+                            `sedalion replaces or supplements the Octoechos sedalion. Full Octoechos and ` +
                             `Menaion Sessional Hymn corpora are not yet embedded in this path.)`;
                         sessResolvedAs = 'orthros-ordinary-weekday-sessional-hymns-rubric';
                     }
 
                     section.items[i] = {
                         type:       'rubric',
-                        key:        'sessional-hymns',
-                        label:      'Sessional Hymns (Sedalia)',
+                        key:        item.key,
+                        label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                         text:       sessText,
                         resolvedAs: sessResolvedAs
                     };
@@ -5201,22 +5518,6 @@ const isMajorFeastForPraises =
         }
     
 }
-  // ── v6.3: _loadMidnightOfficeTheotokionData() ─────────────────────────
-    async function _loadMidnightOfficeTheotokionData() {
-        if (_midnightOfficeTheotokionData !== null) return;
- 
-        try {
-            const response = await fetch(MIDNIGHT_OFFICE_THEOTOKION_URL);
-            if (!response.ok) {
-                console.warn(`[HorologionEngine] Could not load Midnight Office theotokion data (HTTP ${response.status}); theotokion slot will use rubric fallback.`);
-                return;
-            }
-            _midnightOfficeTheotokionData = await response.json();
-            console.log('[HorologionEngine] Loaded Midnight Office theotokion data.');
-        } catch (err) {
-            console.warn('[HorologionEngine] _loadMidnightOfficeTheotokionData failed:', err.message, '— theotokion slot will use rubric fallback.');
-        }
-    }
  // ── v6.7: _loadGreatComplineFixedData() ──────────────────────────────
 async function _loadGreatComplineFixedData() {
     if (_greatComplineFixedData !== null) return;
@@ -5400,8 +5701,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'gc-closing-prayer-block',
             'gc-trisagion-4', 'gc-save-help-protect',
             'gc-supplicatory-prayer-theotokos', 'gc-prayer-antiochus',
-            'gc-prayer-joannicius', 'gc-prayer-guardian-angel',
-            'gc-ave-maria', 'gc-dismissal-prayers'
+            'gc-prayers-approaching-sleep'
         ]);
 
     const _slot = (key) =>
@@ -5513,6 +5813,40 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 continue;
             }
 
+            // Finding GC5 correction (audit 2026-09-26, found during post-build
+            // re-verification): UNABHOR1997 p.236 -- "The priest saith aloud, while
+            // we prostrate ourselves to the earth (except on Fridays, when the
+            // lesser dismissal is used): [Master plenteous in mercy...]". This
+            // scopes the substitution to that one prayer only -- the surrounding
+            // forgiveness exchange and intercessions are unaffected. "The lesser
+            // dismissal" is the standard short blessing used throughout this same
+            // source (identical wording to gc-opening-blessing-rubric and every
+            // other short "Through the prayers..." blessing in this office).
+            if (item.key === 'gc-dismissal-prayers') {
+                const base = _slot('gc-dismissal-prayers');
+                if (base && Array.isArray(base.items)) {
+                    const items = base.items.map(sub => {
+                        if (sub.key !== 'dp-long-dismissal') return sub;
+                        return isFriday
+                            ? {
+                                type: 'text',
+                                key: 'dp-long-dismissal',
+                                text: 'Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen.',
+                                resolvedAs: 'great-compline-friday-lesser-dismissal'
+                              }
+                            : sub;
+                    });
+                    section.items[i] = {
+                        type: 'sequence',
+                        key: item.key,
+                        label: base.label || item.label,
+                        items,
+                        resolvedAs: 'great-compline-fixed'
+                    };
+                }
+                continue;
+            }
+
          if (item.key === 'gc-weekday-troparia') {
                 const DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 const d = DAY[dayOfWeek] || 'this day';
@@ -5579,6 +5913,38 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                                : null;
                 const fixedEntry = fixedKey ? _slot(fixedKey) : null;
 
+                // Finding GC2 (audit 2026-09-26): UNABHOR1997 p.220 names Friday's own
+                // substitution explicitly -- "the troparion of the Saturday
+                // commemoration, [see] page 243" -- pointing at the same fixed 8-tone
+                // Resurrection troparion/kontakion table already built for Small
+                // Compline's Finding SC4. Checked first, before the Mon/Wed/Tue/Thu
+                // fixedKey lookup, since Friday has no fixedKey of its own.
+                if (isFriday) {
+                    const fridayToneResult = _computeBaselineTone(dateObj);
+                    const tone = fridayToneResult && fridayToneResult.tone;
+                    const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
+                    const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
+                    if (troparionText && kontakionText) {
+                        section.items[i] = {
+                            type: 'text',
+                            key: item.key,
+                            label: 'Troparion and Kontakion of the Resurrection, Tone ' + tone,
+                            text: troparionText + '\n\nKontakion: ' + kontakionText,
+                            tone: tone,
+                            resolvedAs: 'great-compline-friday-saturday-resurrection-tone-' + tone
+                        };
+                    } else {
+                        section.items[i] = {
+                            type: 'rubric',
+                            key: item.key,
+                            label: `Weekday Troparia — ${d}`,
+                            text: 'On Friday evenings, the troparion and kontakion of the Resurrection in the occurring tone belong here (UNABHOR1997 p.220, cross-referencing p.243); the current tone could not be determined for this date.',
+                            resolvedAs: 'great-compline-friday-saturday-resurrection-no-tone'
+                        };
+                    }
+                    continue;
+                }
+
                 if (fixedEntry) {
                     section.items[i] = _applyFixed(section.items[i], fixedKey);
                     section.items[i].resolvedAs = fixedKey === 'gc-weekday-troparia-mon-wed'
@@ -5589,12 +5955,9 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                     if (dayOfWeek === 1 || dayOfWeek === 3) {
                         text = `${d} — Weekday Troparia in Tone 2 (Mon/Wed): "Enlighten mine eyes, O Christ God…" Theotokion follows. Full text deferred to corpus tranche.`;
                         resolvedAs = 'great-compline-weekday-troparia-mon-wed-rubric';
-                    } else if (dayOfWeek === 2 || dayOfWeek === 4) {
+                    } else {
                         text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): "O Lord, You know the unsleeping vigilance…" Theotokion follows. Full text deferred to corpus tranche.`;
                         resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
-                    } else {
-                        text = `Friday Lenten Great Compline is appointed, but the Friday-specific modifications and appointed hymnody are not yet transcribed.`;
-                        resolvedAs = 'great-compline-weekday-troparia-unscheduled';
                     }
                     section.items[i] = {
                         type: 'rubric',
@@ -5790,32 +6153,6 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 continue;
             }
 
-            if (item.key === 'gc-closing-theotokion') {
-                const isTueThu = (dayOfWeek === 2 || dayOfWeek === 4);
-                const theotokKey = isTueThu ? 'gc-theotokion-tue-thu' : 'gc-theotokion-mon-wed-fri';
-                const s = _slot(theotokKey);
-
-                if (s) {
-                    section.items[i] = {
-                        type: 'text',
-                        key: item.key,
-                        label: s.label || 'Closing Theotokion',
-                        text: s.text,
-                        resolvedAs: isTueThu ? 'great-compline-cross-theotokion' : 'great-compline-joy-theotokion'
-                    };
-                } else {
-                    section.items[i] = {
-                        type: 'rubric',
-                        key: item.key,
-                        label: 'Closing Theotokion',
-                        text: isTueThu
-                            ? 'Tue/Thu: Cross Theotokion (Tone 1) — data not loaded.'
-                            : 'Mon/Wed/Fri: Theotokion (Tone 2) — data not loaded.',
-                        resolvedAs: 'great-compline-theotokion-data-unavailable'
-                    };
-                }
-                continue;
-            }
         }
     }
 }
@@ -5836,17 +6173,19 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
         }
     }
  
-    // ── v6.2: _resolveMidnightOfficeSlots(sections, dateObj) ─────────────
+    // ── Audit rebuild 2026-09-26 (Findings M0-M3): _resolveMidnightOfficeSlots
     //
-    // Slot resolution pass for the Midnight Office (Mesoniktikon).
-    //
-    // Fixed slots resolved from midnight-office-fixed.json:
-    //   usual-beginning, psalm-50, psalm-117, psalm-118,
-    //   trisagion-prayers, prayer-of-the-midnight-office
-    //
-    // Variable slots (honest rubric stubs — deferred beyond tranche 1):
-    //   troparion-of-the-day
-    //   midnight-office-theotokion
+    // The Midnight Office has three genuinely distinct day-forms (Finding M0):
+    // Weekday, Saturday, and Sunday. The skeleton (midnight-office.json)
+    // declares every section for every day-form, each tagged with its own
+    // `forDays` array; this function's first real job is to prune the
+    // sections that don't apply to today's day-form before resolving
+    // anything, the same way Bright Week already replaces the whole skeleton
+    // below. All surviving items are fixed text/rubric slots resolved
+    // generically from midnight-office-fixed.json -- this office carries no
+    // troparion-of-the-day or Menaion dependency at all (the old skeleton's
+    // 'troparion-of-the-day'/'midnight-office-theotokion' slots were never
+    // sourced from the real office and are not carried forward).
     //
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ─────────────────────────────────────────────────────────────────────
@@ -5879,96 +6218,43 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
        }
 
        await Promise.all([
-            _loadMidnightOfficeFixedData(),
-            _loadMidnightOfficeTheotokionData(),
-            _loadTroparionData(),
-            _loadWeekdayTroparionMeta(),
-            _loadTriodionData()
+            _loadMidnightOfficeFixedData()
         ]);
- 
-        const dayOfWeek  = dateObj.getDay();
-        const toneResult = _computeBaselineTone(dateObj);
- 
-        const FIXED_SLOT_KEYS = new Set([
-            'usual-beginning',
-            'psalm-50',
-            'psalm-117',
-            'psalm-118',
-            'trisagion-prayers',
-            'prayer-of-the-midnight-office'
-        ]);
- 
+
+        const dayOfWeek = dateObj.getDay();
+        const dayForm = dayOfWeek === 0 ? 'sunday' : (dayOfWeek === 6 ? 'saturday' : 'weekday');
+
+        // Prune every section that doesn't apply to today's day-form. Each
+        // section in the skeleton is tagged with the day-forms it belongs to;
+        // sections with no such tag are treated as universal (defensive
+        // default, not expected to occur in this skeleton).
+        for (let s = sections.length - 1; s >= 0; s--) {
+            const forDays = sections[s].forDays;
+            if (Array.isArray(forDays) && !forDays.includes(dayForm)) {
+                sections.splice(s, 1);
+            }
+        }
+
         for (const section of sections) {
             if (!Array.isArray(section.items)) continue;
- 
+
             for (let i = 0; i < section.items.length; i++) {
                 const item = section.items[i];
- 
-                // ── Fixed slots ───────────────────────────────────────────
-                if (FIXED_SLOT_KEYS.has(item.key)) {
-                    const slotData = _midnightOfficeFixedData &&
-                        _midnightOfficeFixedData.slots &&
-                        _midnightOfficeFixedData.slots[item.key];
- 
-                    if (slotData) {
-    section.items[i] = {
-        ...slotData,
-        key:        item.key,
-        label:      slotData.label || item.label,
-        resolvedAs: 'midnight-office-fixed'
-    };
-}
-                    // If data not loaded: item remains placeholder — correct degradation.
-                    continue;
+                if (item.type !== 'placeholder') continue; // baked rubrics pass through unchanged
+
+                const slotData = _midnightOfficeFixedData &&
+                    _midnightOfficeFixedData.slots &&
+                    _midnightOfficeFixedData.slots[item.key];
+
+                if (slotData) {
+                    section.items[i] = {
+                        ...slotData,
+                        key:        item.key,
+                        label:      slotData.label || item.label,
+                        resolvedAs: 'midnight-office-fixed'
+                    };
                 }
- 
-                // ── troparion-of-the-day — v6.2: delegate to shared stack ─
-                if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveLittleHourSeasonalTroparionSlot(
-                        'midnight-office', dayOfWeek, dateObj, toneResult
-                    );
-                    if (resolved) {
-                        section.items[i] = Object.assign({}, resolved, {
-                            key: 'troparion-of-the-day'
-                        });
-                    }
-                    // If null (data load failed): slot remains placeholder.
-                    continue;
-                }
- 
-                  // ── midnight-office-theotokion — v6.4: fixed-backed positional slot ──
-                if (item.key === 'midnight-office-theotokion') {
-                    // Policy (v6.4): positional, office-specific node.
-                    // No tone, no day-of-week, no feast override, no Stavrotheotokion.
-                    // Probe flat fixed-slot structure: slots["midnight-office-theotokion"].
-                    const entry =
-                        _midnightOfficeTheotokionData &&
-                        _midnightOfficeTheotokionData.slots
-                            ? (_midnightOfficeTheotokionData.slots['midnight-office-theotokion'] ?? null)
-                            : null;
- 
-                    if (typeof entry === 'string' && entry.length > 0) {
-                        section.items[i] = {
-                            type:       'text',
-                            key:        'midnight-office-theotokion',
-                            label:      'Theotokion of the Midnight Office',
-                            text:       entry,
-                            source:     'Horologion',
-                            resolvedAs: 'midnight-office-theotokion-text'
-                        };
-                    } else {
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'midnight-office-theotokion',
-                            label:      'Theotokion of the Midnight Office',
-                            text:       'MIDNIGHT OFFICE — Theotokion: The fixed Theotokion of the Midnight Office has not yet been transcribed.',
-                            resolvedAs: 'midnight-office-theotokion-not-transcribed'
-                        };
-                    }
-                    continue;
-                }
- 
-                // All other items (baked rubrics) pass through unchanged.
+                // If data not loaded, or key not found: item remains placeholder — correct degradation.
             }
         }
     }
@@ -6039,7 +6325,10 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
         'psalm-69',
         'psalm-142',
         'doxology',
+        'sc-night-prayers',
+        'sc-vouchsafe',
         'creed',
+        'sc-it-is-truly-meet',
         'trisagion-prayers',
         'prayer-of-basil',
         'into-thy-hands'
@@ -6204,6 +6493,8 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'psalm-89',
             'psalm-100',
             'trisagion-prayers',
+            'first-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-first-hour'
         ]);
 
@@ -6306,7 +6597,8 @@ async function _loadThirdHourFixedData() {
             'psalm-24',
             'psalm-50',
             'trisagion-prayers',
-            'prayer-of-the-third-hour'
+            'third-hour-fixed-verse',
+            'trisagion-prayers-repeated'
         ]);
 
         for (const section of sections) {
@@ -6340,6 +6632,44 @@ async function _loadThirdHourFixedData() {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
                         });
+                    }
+                    continue;
+                }
+
+                if (item.key === 'prayer-of-the-third-hour') {
+                    // Finding H1 (audit 2026-09-26): this text is UNABHOR1997/HAPGOOD1922's
+                    // Lenten-weekday troparion, not a year-round Prayer of the Third Hour --
+                    // neither source gives this Hour a separate year-round prose prayer the
+                    // way First/Sixth/Ninth Hour each have. Gate to Great Lent weekdays;
+                    // disclose the absence otherwise rather than rendering it unconditionally.
+                    const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+                    const isGreatLentWeekday =
+                        seasonResult &&
+                        seasonResult.season === 'great-lent' &&
+                        dayOfWeek >= 1 &&
+                        dayOfWeek <= 5;
+
+                    if (isGreatLentWeekday) {
+                        const slotData = _thirdHourFixedData &&
+                            _thirdHourFixedData.slots &&
+                            _thirdHourFixedData.slots['prayer-of-the-third-hour'];
+                        if (slotData) {
+                            section.items[i] = {
+                                type:       slotData.type || 'text',
+                                key:        item.key,
+                                label:      slotData.label,
+                                text:       slotData.text,
+                                resolvedAs: 'third-hour-lenten-troparion'
+                            };
+                        }
+                    } else {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      'Prayer of the Third Hour',
+                            text:       'The Third Hour has no separate year-round prayer at this position in either governing source; on ordinary days the office proceeds from the Kontakion to the dismissal. The Lenten-weekday troparion proper to this position renders here only on Great Lent weekdays.',
+                            resolvedAs: 'third-hour-no-year-round-prayer'
+                        };
                     }
                     continue;
                 }
@@ -6404,6 +6734,8 @@ async function _loadThirdHourFixedData() {
             'psalm-54',
             'psalm-90',
             'trisagion-prayers',
+            'sixth-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-sixth-hour'
         ]);
 
@@ -6502,6 +6834,8 @@ async function _loadThirdHourFixedData() {
             'psalm-84',
             'psalm-85',
             'trisagion-prayers',
+            'ninth-hour-fixed-verse',
+            'trisagion-prayers-repeated',
             'prayer-of-the-ninth-hour'
         ]);
 
@@ -7429,6 +7763,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         if (_pascha <= localDate) _pascha = _getOrthodoxPascha(_year + 1);
         const daysUntil = Math.round((_pascha - localDate) / 86400000);
         const PRE_LENTEN_MAP = {
+            77: 'zacchaeus',
             70: 'publican-pharisee',
             63: 'prodigal-son',
             56: 'meatfare',
@@ -7668,6 +8003,11 @@ async function _resolveTypikaSlots(sections, dateObj) {
 
         if (dayOfWeek === 0) {
             const dn = _dfn(natiCivil);
+            // Sunday of the Forefathers: the Sunday 8-14 days before Nativity,
+            // distinct from and always one week earlier than "Sunday before
+            // Nativity". Confirmed via Orthocal (Slavic tradition), 2020 and
+            // 2025 seasons: Gospel Luke 14:16-24, Epistle Colossians 3:4-11.
+            if (dn >= -14 && dn <= -8) keys.push('forefathers_sunday');
             if (dn >= -7 && dn <= -1) keys.push('nativity_sunday_before');
             if (dn >=  1 && dn <=  7) keys.push('nativity_sunday_after');
             const dt = _dfn(theoCivil);
@@ -7695,6 +8035,149 @@ async function _resolveTypikaSlots(sections, dateObj) {
         }
 
         return keys;
+    })();
+
+    // ────────────────────────────────────────────────────────────────────
+    // lukanSundayGospelKey
+    //
+    // Fixes a real, confirmed drift bug: the Sunday Gospel lectionary
+    // (_typikaLectionaryData.sundays[SAP]) was keyed only by the naive,
+    // continuous "Sunday After Pentecost" count -- but the real Byzantine
+    // Gospel lectionary runs a SEPARATE "Sundays of Luke" cycle from the
+    // Monday after the Sunday following the Exaltation of the Cross
+    // (Sept. 14) onward (the "Lucan Jump" -- cf. Metropolitan Cantor
+    // Institute, mci.archpitt.org/liturgy/September.html, already cited for
+    // lukanWeekdayGospelKey above), independent of the Epistle's own
+    // continuous SAP count. This key computes the ordinal position in that
+    // separate cycle for a given Sunday, so the Gospel can be looked up in
+    // _typikaLectionaryData.lukan_sunday_gospels instead of the naive table,
+    // while the Epistle continues to use the naive SAP table unchanged
+    // (confirmed via mcp Orthocal cross-check, Slavic tradition, that the
+    // Epistle sequence does NOT jump the way the Gospel does).
+    //
+    // Verified against Orthocal (Slavic tradition) across two seasons with
+    // different Pascha dates (2020-21 and 2025-26): the ordinal-to-citation
+    // mapping and the exclusion of the five fixed winter Sundays (Forefathers,
+    // before/after Nativity, before/after Theophany -- resolved instead by
+    // feastLectionaryOverlayKeys at higher priority) are confirmed exact for
+    // every Sunday from the season's start through the Sunday after Theophany
+    // in both seasons, and for all of 2020-21's remaining ordinary Sundays.
+    //
+    // KNOWN, DISCLOSED LIMITATION: in the narrow window between the Sunday
+    // after Theophany and Zacchaeus Sunday, when fewer than four ordinary
+    // Sundays remain in that window (confirmed via Orthocal for the 2025-26
+    // season specifically), the real lectionary appears to drop one further
+    // numbered "Sunday of Luke" position beyond the five fixed-Sunday
+    // exclusions this key already accounts for -- most likely so the last
+    // ordinary Sunday before Zacchaeus lands on Luke 18:35-43, the pericope
+    // immediately preceding the Zacchaeus story (Luke 19) in the Gospel text
+    // itself. No general rule for exactly which position gets dropped in a
+    // short season could be confirmed from the sources available this
+    // session (this may be governed by an annually-published typikon rather
+    // than a fixed algorithm -- cf. frjohnpeck.com/what-is-the-lukan-jump,
+    // which says as much). Disclosed rather than guessed at further: this
+    // affects at most one Sunday's Gospel citation, in some years only, only
+    // in that one-to-three-week window.
+    // ────────────────────────────────────────────────────────────────────
+    const lukanSundayGospelKey = (() => {
+        if (dayOfWeek !== 0) return null;
+
+        const MS_PER_DAY = 86400000;
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const year = localDate.getFullYear();
+        const month = localDate.getMonth() + 1;
+
+        function lukanStartForYear(y) {
+            const elevation = new Date(y, 8, 14); // September 14 — Exaltation of the Cross
+            let daysToSundayAfter = (7 - elevation.getDay()) % 7;
+            if (daysToSundayAfter === 0) daysToSundayAfter = 7;
+            const sundayAfterElevation = new Date(y, 8, 14 + daysToSundayAfter);
+            return new Date(
+                sundayAfterElevation.getFullYear(),
+                sundayAfterElevation.getMonth(),
+                sundayAfterElevation.getDate() + 1
+            );
+        }
+        function firstLukanSunday(y) {
+            const start = lukanStartForYear(y); // a Monday
+            return new Date(start.getFullYear(), start.getMonth(), start.getDate() + 6);
+        }
+
+        let seasonYear = (month <= 6) ? year - 1 : year;
+        let seasonStart = firstLukanSunday(seasonYear);
+        if (localDate < seasonStart) return null;
+
+        function orthodoxPascha(y) {
+            const a = y % 4;
+            const b = y % 7;
+            const c = y % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const m = Math.floor((d + e + 114) / 31);
+            const dd = ((d + e + 114) % 31) + 1;
+            return new Date(y, m - 1, dd + 13);
+        }
+        const upcomingPascha = orthodoxPascha(seasonYear + 1);
+        const zacchaeusSunday = new Date(upcomingPascha.getTime() - (77 * MS_PER_DAY));
+        if (localDate >= zacchaeusSunday) return null;
+
+        // Civil Nativity/Theophany dates for THIS season, anchored on seasonYear
+        // rather than on today's own month -- unlike feastLectionaryOverlayKeys's
+        // month-conditional formula (which only ever needs to work for dates within
+        // +/-14 days of Nativity/Theophany), this key must stay correct as late as
+        // February, when a month-conditional "December is this year, January is
+        // last year" formula would silently roll Nativity forward to next December.
+        const _fOff    = _juliOffset(seasonYear);
+        const natiCivil = (_currentEoMode === 'old_calendar')
+            ? new Date(seasonYear + 1, 0, _fOff - 6)
+            : new Date(seasonYear, 11, 25);
+        const theoCivil = (_currentEoMode === 'old_calendar')
+            ? new Date(seasonYear + 1, 0, 6 + _fOff)
+            : new Date(seasonYear + 1, 0, 6);
+
+        function sundayInWindow(anchor, startOffset, endOffset) {
+            for (let off = startOffset; off <= endOffset; off++) {
+                const d = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + off);
+                if (d.getDay() === 0) return d;
+            }
+            return null;
+        }
+
+        const fixedSundays = [
+            sundayInWindow(natiCivil, -14, -8),
+            sundayInWindow(natiCivil, -7, -1),
+            sundayInWindow(natiCivil, 1, 7),
+            sundayInWindow(theoCivil, -5, -1),
+            sundayInWindow(theoCivil, 1, 7)
+        ].filter(Boolean);
+
+        function ordinalFor(d) {
+            const rawWeek = Math.floor((d - seasonStart) / (7 * MS_PER_DAY)) + 1;
+            const excludedBefore = fixedSundays.filter(fd => fd < d).length;
+            return rawWeek - excludedBefore;
+        }
+
+        const ordinal = ordinalFor(localDate);
+        if (ordinal < 1) return null;
+
+        // Ordinal of the LAST ordinary Sunday before Zacchaeus this season -- needed
+        // below (see the resolver call site) whenever ordinal exceeds the 13-entry
+        // Lukan cycle. Confirmed via mcp Orthocal (Slavic tradition) across three
+        // independent seasons with different excess-Sunday counts -- 2019-2020 (one
+        // excess Sunday), 2021-2022 (one excess Sunday), 2023-2024 (four excess
+        // Sundays) -- that the real Byzantine lectionary does NOT resume the naive
+        // sundays[] table at the SAME ordinal number. Instead it counts BACKWARD from
+        // that final pre-Zacchaeus Sunday, which always uses sundays["17"] (Matthew
+        // 15:21-28), the second-to-last uses sundays["16"], and so on -- i.e. the
+        // real index is 17 - (lastOrdinalBeforeZacchaeus - ordinal). This is the
+        // actual mechanism behind what a naive spot-check would misread as a fixed
+        // 2-entry "Matthean filler" cycle (it only looked that way because a filler
+        // pair sampled from sundays["16"]/sundays["17"] happens to match those two
+        // ordinals exactly in a long season).
+        const lastSundayBeforeZacchaeus = new Date(zacchaeusSunday.getTime() - 7 * MS_PER_DAY);
+        const lastOrdinalBeforeZacchaeus = ordinalFor(lastSundayBeforeZacchaeus);
+
+        return { ordinal, lastOrdinalBeforeZacchaeus };
     })();
 
     async function resolveTypikaFeastOverlayReading(entries, field) {
@@ -7898,8 +8381,10 @@ async function _resolveTypikaSlots(sections, dateObj) {
         'typika-beatitudes',
         'typika-psalm-102',
         'typika-psalm-145',
+        'typika-only-begotten-son',
+        'typika-heavenly-choir-hymn',
         'typika-creed',
-        'typika-trisagion-prayers',
+        'typika-loose-remit-pardon',
         'typika-lords-prayer'
     ]);
 
@@ -7948,6 +8433,69 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         text:       SUNDAY_RESURRECTIONAL_KONTAKIA[tone],
                         resolvedAs: 'typika-sunday-resurrectional-kontakion-tone-' + tone
                     };
+                } else {
+                    // No 1-8 Octoechos tone resolves on Pascha itself (the week's
+                    // own tone cycle doesn't begin until Thomas Sunday) -- the
+                    // Paschal Kontakion belongs here instead, but sourcing it
+                    // correctly is out of scope for Finding T7 (the ordinary
+                    // weekday table); disclose rather than leave a bare
+                    // placeholder, matching this engine's standard degradation.
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion',
+                        text:       'The Paschal Kontakion belongs here; not yet sourced in this corpus.',
+                        resolvedAs: 'typika-sunday-kontakion-no-tone-deferred'
+                    };
+                }
+                continue;
+            }
+
+            // Finding T7 (audit 2026-09-26): Monday-Saturday fixed-by-weekday
+            // Kontakion table, per HAPGOOD1922 pp.61-62 / UNABHOR1997 pp.139-141.
+            // Does not need the Menaion -- unlike troparion-of-the-day, which does
+            // and remains deferred. A feast/saint override, when the Menaion is
+            // imported, would take precedence over this table; not built here.
+            if (item.key === 'typika-kontakion-rubric' && dayOfWeek !== 0) {
+                const WEEKDAY_KONTAKIA = {
+                    1: { label: 'Kontakion of the Bodiless Powers', tone: 2,
+                         text: 'Supreme commanders of God and ministers of the divine glory, guides of men and leaders of the bodiless hosts: ask for what is to our profit and for great mercy, since ye are supreme commanders of the bodiless hosts.' },
+                    2: { label: 'Kontakion of the Forerunner', tone: 2,
+                         text: 'O Prophet of God and Forerunner of grace, having obtained thy head from the earth as a most sacred rose, we ever receive healings; for again, as of old in the world, thou preachest repentance.' },
+                    3: { label: 'Kontakion of the Cross', tone: 4,
+                         text: 'O Thou Who wast lifted up willingly on the Cross, bestow Thy mercies upon the new community named after Thee, O Christ God; gladden with Thy power the Orthodox Christians, granting them victory over enemies; may they have as Thy help the weapon of peace, the invincible trophy.' },
+                    4: { label: 'Kontakion of the Holy Apostles, and of St. Nicholas', tone: 2,
+                         text: 'The firm and divine-voiced preachers, the chief of Thy disciples, O Lord, Thou hast taken to Thyself for the enjoyment of Thy blessings and for repose; their labours and death didst Thou accept as above every sacrifice, O Thou Who alone knowest the hearts.\n\nIn Myra, O Saint, thou didst prove to be a minister of things sacred; for having fulfilled the Gospel of Christ, O righteous one, thou didst lay down thy life for thy people, and didst save the innocent from death. Wherefore thou wast sanctified as a great initiate of the grace of God.' },
+                    5: { label: 'Kontakion of the Cross', tone: 4,
+                         text: 'O Thou Who wast lifted up willingly on the Cross, bestow Thy mercies upon the new community named after Thee, O Christ God; gladden with Thy power the Orthodox Christians, granting them victory over enemies; may they have as Thy help the weapon of peace, the invincible trophy.' }
+                };
+                const MEMORIAL_KONTAKION =
+                    'With the saints give rest, O Christ, to the souls of Thy servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.';
+                const PROTECTION_OF_CHRISTIANS =
+                    'O Protection of Christians that cannot be put to shame, O mediation unto the Creator unfailing: disdain not the suppliant voices of sinners, but be Thou quick, O Good One, to help us who in faith cry unto Thee. Hasten to intercession, and speed Thou to make supplication, Thou who dost ever protect, O Theotokos, them that honour Thee.';
+                const MARTYRS_KONTAKION =
+                    'To Thee, O Lord, the Planter of creation, the world doth offer the God-bearing martyrs as the firstfruits of nature. By their intercessions preserve Thy Church, Thy commonwealth, in profound peace, through the Theotokos, O Greatly-merciful One.';
+
+                if (dayOfWeek === 6) {
+                    section.items[i] = {
+                        type:       'text',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion for the Departed, and of the Holy Martyrs',
+                        text:       MEMORIAL_KONTAKION + '\n\n' + MARTYRS_KONTAKION,
+                        resolvedAs: 'typika-weekday-fixed-kontakion-saturday'
+                    };
+                } else {
+                    const dayEntry = WEEKDAY_KONTAKIA[dayOfWeek];
+                    if (dayEntry) {
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'typika-kontakion-rubric',
+                            label:      dayEntry.label,
+                            text:       dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS,
+                            tone:       dayEntry.tone,
+                            resolvedAs: 'typika-weekday-fixed-kontakion-' + dayOfWeek
+                        };
+                    }
                 }
                 continue;
             }
@@ -8666,10 +9214,69 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
+                if (lukanSundayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_sunday_gospels) {
+                    const lsg = _typikaLectionaryData.lukan_sunday_gospels;
+                    const cycle = lsg.cycle || {};
+                    const ord = lukanSundayGospelKey.ordinal;
+                    const lastOrd = lukanSundayGospelKey.lastOrdinalBeforeZacchaeus;
+                    const cycleSize = Object.keys(cycle).length;
+                    // Beyond the Lukan cycle's own 13 positions (an early-Pascha season with
+                    // more ordinary Sundays than that), the real Byzantine lectionary does NOT
+                    // resume the naive sundays[] table at this SAME ordinal number, and it is
+                    // NOT a fixed 2-entry "Matthean filler" cycle either (both were tried and
+                    // falsified). Confirmed via mcp Orthocal (Slavic tradition) across three
+                    // independent seasons -- 2019-2020 and 2021-2022 (one excess Sunday each)
+                    // and 2023-2024 (four excess Sundays, all four cross-checked) -- that the
+                    // LAST ordinary Sunday before Zacchaeus always uses sundays["17"] (Matthew
+                    // 15:21-28), the one before that sundays["16"], and so on counting
+                    // backward. The old "Matthean filler" pair ["Matthew 25:14-30", "Matthew
+                    // 15:21-28"] only looked right because it happened to equal sundays["16"]/
+                    // sundays["17"] and was validated against a long (4-excess-Sunday) season
+                    // where those are exactly the two ordinals used -- a short season (1-2
+                    // excess Sundays, landing on sundays["17"] alone or sundays["16"]+["17"])
+                    // needs a different pair, which the fixed 2-entry array could never supply.
+                    const naiveIndex = (lastOrd != null) ? (17 - (lastOrd - ord)) : null;
+                    const sundaysEntry = (naiveIndex != null && _typikaLectionaryData.sundays)
+                        ? _typikaLectionaryData.sundays[String(naiveIndex)]
+                        : null;
+                    const lukanGospelRef = (ord <= cycleSize)
+                        ? cycle[String(ord)]
+                        : (sundaysEntry && (sundaysEntry.gospel || sundaysEntry.gospel_segments));
+
+                    if (lukanGospelRef) {
+                        try {
+                            const result = await resolveScripturePericope(lukanGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-lukan-sunday-gospel-ord-' + ord
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:                'text',
+                                    key:                 item.key,
+                                    label:               'The Holy Gospel — ' + result.label,
+                                    text:                result.text,
+                                    resolvedAs:          'typika-lukan-sunday-gospel-ord-' + ord,
+                                    tone:                toneResult.tone,
+                                    sundayAfterPentecost: sundayAfterPentecost,
+                                    lukanOrdinal:        ord,
+                                    source:              'Sundays-of-Luke Gospel cycle (Lucan Jump), verified against Orthocal — see lukan_sunday_gospels'
+                                };
+                            }
+                            continue;
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Lukan Sunday gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
- 
+
                if (entry.type === 'special') {
                     const sap1GospelRef = entry.gospel || entry.gospel_segments;
                     try {
@@ -8772,83 +9379,141 @@ async function _loadInterhourFixedData(officeKey) {
 }
 
 // ── v7.0: _resolveInterhourSlots(officeKey, sections, dateObj) ────────
+//
+// CORRECTED 2026-09-26, Horologion audit fix pass (Findings IH1-IH3): this
+// resolver previously (a) named the wrong three psalms for every one of the
+// four Interhours via PSALM_KEY_MAP, and (b) routed troparion-of-the-day
+// through the Menaion/weekday-theme machinery, though UNABHOR1997 gives each
+// Interhour its own fixed, hour-specific troparia triad with no Menaion
+// dependency at all (same correction pattern as Small Compline's SC4 and
+// Typika's T7). Both are now fixed-data-driven: every placeholder key in the
+// (now-corrected) skeleton is resolved generically from that office's own
+// -fixed.json file, no per-office key maps or Menaion lookups needed.
 async function _resolveInterhourSlots(officeKey, sections, dateObj) {
-    await Promise.all([
-        _loadInterhourFixedData(officeKey),
-        _loadTroparionData(),
-        _loadWeekdayTroparionMeta(),
-        _loadTriodionData()
-    ]);
+    // Finding IH7 correction (2026-09-26): appointment gate for the Inter-Hours.
+    // UNABHOR1997 p.93 -- "[According to present-day usage, the Inter-Hours are
+    // said only on the first day of the Apostles' Fast, and on the first day of
+    // the Nativity Fast if it begin on a weekday. When the Inter-Hours are said,
+    // there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
+    // not appointed during Great Lent when the kathismata and readings from The
+    // Ladder are appointed at the Hours.]" The Nikolsky exclusion never actually
+    // overlaps either appointed day (the Apostles' Fast begins well after Pascha;
+    // the Nativity Fast begins fixed-calendar Nov. 15) -- it is cited in the
+    // disclosure text below for completeness, not applied as a separate branch.
+    let interhourAppointed = false;
+    try {
+        if (_isApostlesFastFirstDay(dateObj)) {
+            interhourAppointed = true;
+        } else if (_isNativityFastFirstDay(dateObj)) {
+            const dow = dateObj.getDay();
+            interhourAppointed = (dow >= 1 && dow <= 5);
+        }
+    } catch (e) {
+        console.warn('[HorologionEngine] _resolveInterhourSlots: appointment gate failed:', e.message);
+    }
 
-    const dayOfWeek = dateObj.getDay();
-    const toneResult = _computeBaselineTone(dateObj);
+    if (!interhourAppointed) {
+        sections.length = 0;
+        sections.push({
+            id: officeKey + '-not-appointed',
+            label: 'Not Appointed',
+            items: [
+                {
+                    type: 'rubric',
+                    key: 'interhour-not-appointed-rubric',
+                    text: 'Per present-day usage (UNABHOR1997 p.93), the Inter-Hours are appointed only on the first day of the Apostles’ Fast, and on the first day of the Nativity Fast if it falls on a weekday; when the Inter-Hours are said, there is no Divine Liturgy that day. (The Nikolsky Ustav additionally excludes the Inter-Hours during Great Lent, when the kathismata and readings from The Ladder are appointed at the Hours instead -- a condition that does not overlap either appointed day above.) This is not one of those two days.',
+                    resolvedAs: officeKey + '-not-appointed'
+                }
+            ]
+        });
+        return;
+    }
+
+    await _loadInterhourFixedData(officeKey);
+
     const fixedData = _interhourFixedDataCache[officeKey] || null;
-
-    const PSALM_KEY_MAP = {
-        'interhour-first': new Set(['psalm-20', 'psalm-21', 'psalm-22']),
-        'interhour-third': new Set(['psalm-34', 'psalm-35', 'psalm-36']),
-        'interhour-sixth': new Set(['psalm-60', 'psalm-61', 'psalm-62']),
-        'interhour-ninth': new Set(['psalm-86', 'psalm-87', 'psalm-88'])
-    };
-
-    const THEOTOKION_KEY_MAP = {
-        'interhour-first': 'interhour-first-theotokion',
-        'interhour-third': 'interhour-third-theotokion',
-        'interhour-sixth': 'interhour-sixth-theotokion',
-        'interhour-ninth': 'interhour-ninth-theotokion'
-    };
-
-    const psalmKeys = PSALM_KEY_MAP[officeKey] || new Set();
-    const theotokionKey = THEOTOKION_KEY_MAP[officeKey] || null;
-
-    const FIXED_SLOT_KEYS = new Set([
-        ...psalmKeys,
-        'trisagion-prayers',
-        theotokionKey
-    ].filter(Boolean));
 
     for (const section of sections) {
         if (!Array.isArray(section.items)) continue;
 
         for (let i = 0; i < section.items.length; i++) {
             const item = section.items[i];
+            if (item.type !== 'placeholder') continue;
 
-            if (FIXED_SLOT_KEYS.has(item.key)) {
-                const slotData = fixedData &&
-                    fixedData.slots &&
-                    fixedData.slots[item.key];
+            const slotData = fixedData &&
+                fixedData.slots &&
+                fixedData.slots[item.key];
 
-                if (slotData) {
-                    section.items[i] = {
-                        type: slotData.type || 'text',
-                        key: item.key,
-                        label: slotData.label || item.label,
-                        text: slotData.text,
-                        lxxNumber: slotData.lxxNumber,
-                        items: Array.isArray(slotData.items) ? slotData.items : undefined,
-                        resolvedAs: officeKey + '-fixed'
-                    };
-                }
-                continue;
-            }
-
-            if (item.key === 'troparion-of-the-day') {
-                const resolved = await _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult);
-                if (resolved) {
-                    section.items[i] = Object.assign({}, resolved, {
-                        key: 'troparion-of-the-day'
-                    });
-                }
-                continue;
+            if (slotData) {
+                section.items[i] = {
+                    type: slotData.type || 'text',
+                    key: item.key,
+                    label: slotData.label || item.label,
+                    text: slotData.text,
+                    lxxNumber: slotData.lxxNumber,
+                    items: Array.isArray(slotData.items) ? slotData.items : undefined,
+                    resolvedAs: officeKey + '-fixed'
+                };
             }
         }
     }
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// getCalendarSummary(dateObj) — Phase 5 Horologion envelope port.
+//
+// Composes the one-line day summary the envelope contract's
+// context.calendarSummary field expects (documentation/UI_REDESIGN_HANDOFF.md
+// §2), from the two real data sources this engine actually has: tone
+// (_computeBaselineTone) and season/Holy Week day (_computeLiturgicalSeason).
+// There is no fasting-character computation anywhere in this engine
+// (confirmed by inspection) — this summary does not claim one.
+function getCalendarSummary(dateObj) {
+    const toneResult = _computeBaselineTone(dateObj);
+    const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+
+    const HOLY_WEEK_DAY_LABELS = {
+        'palm-sunday':     'Palm Sunday',
+        'great-monday':    'Great and Holy Monday',
+        'great-tuesday':   'Great and Holy Tuesday',
+        'great-wednesday': 'Great and Holy Wednesday',
+        'great-thursday':  'Great and Holy Thursday',
+        'great-friday':    'Great and Holy Friday',
+        'great-saturday':  'Great and Holy Saturday'
+    };
+
+    if (seasonResult.season === 'holy-week') {
+        const dayLabel = HOLY_WEEK_DAY_LABELS[seasonResult.holyWeekDay] || 'Holy Week';
+        return dayLabel;
+    }
+    if (seasonResult.season === 'bright-week') {
+        return toneResult.toneLabel;
+    }
+    if (seasonResult.season === 'great-lent') {
+        return `Great Lent — ${toneResult.toneLabel}`;
+    }
+    return toneResult.toneLabel;
+}
+
+// ADDED 2026-09-25, for the seasonal dot (spec section 6, Byzantine/Slavic
+// liturgical colour): getCalendarSummary() above already computes the raw
+// season internally but only ever returns a formatted display string, never
+// the season value itself. Rather than have the caller re-derive the season
+// by parsing that string (fragile -- 'Great Lent' is only a substring of the
+// summary, not the whole thing) or re-implement _computeLiturgicalSeason's
+// own logic a second time, this exposes the same already-computed value
+// directly.
+function getLiturgicalSeason(dateObj) {
+    const toneResult = _computeBaselineTone(dateObj);
+    return _computeLiturgicalSeason(dateObj, toneResult).season;
+}
+
 return {
     getOfficeSkeleton,
     resolveOffice,
-    validateOfficePayload
+    validateOfficePayload,
+    getCalendarSummary,
+    getLiturgicalSeason
 };
 })();
 

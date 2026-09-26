@@ -2,7 +2,7 @@
   "officeKey": "great-compline",
   "label": "Great Compline (Mega Apodeipnon)",
   "tradition": "BYZC",
-  "description": "Great Compline (Mega Apodeipnon) is the solemn Byzantine night office appointed on weekday evenings during Great Lent and on the eves of Nativity and Theophany. It is substantially longer than Small Compline, with two psalm cycles, the Prayer of Manasseh, a variable canon, and an extended closing prayer sequence. Source witness: orthodoxprayer.org Great Compline. Baseline skeleton only — conditional and variable material deferred.",
+  "description": "Great Compline (Mega Apodeipnon) is the solemn Byzantine night office appointed on weekday evenings during Great Lent and on the eves of Nativity and Theophany. It is substantially longer than Small Compline, with two psalm cycles, the Prayer of Manasseh, a variable canon, and an extended closing prayer sequence. CORRECTED 2026-09-26, Horologion audit fix pass, full re-audit (Findings GC1-GC7): originally cited only 'orthodoxprayer.org', a website, not either of this lane's approved governing sources, and had only been spot-checked at the structural level rather than genuinely verified line-by-line. Now fully re-verified word-for-word against UNABHOR1997 (Rassaphor-monk Laurence, The Unabbreviated Horologion or Book of the Hours, Holy Trinity Monastery, 1997), pp.211-237 in full. Corrections: Friday's own weekday-troparia substitution (the Resurrection troparion/kontakion by Octoechos tone, same table as Small Compline's Finding SC4) was missing entirely and is now built (GC2); a fabricated day-dependent closing Theotokion sourced from a different office (Orthros's Exaposteilaria) has been removed (GC7). Still in progress: the entire ten-prayer 'Prayers on Approaching Sleep' block plus the Akathist Kontakion (GC3), correcting the closing dismissal sequence which currently borrows Typika's own forgiveness formula (GC4/GC5). See documentation/HOROLOGION_AUDIT_FINDINGS.md for the full account.",
   "sections": [
     {
       "id": "opening",
@@ -277,7 +277,7 @@
     {
       "id": "closing",
       "label": "Closing Prayers and Dismissal",
-      "notes": "Lord of Hosts kontakion (omitted Fridays), Theotokos prayers, Lord have mercy × 40, Prayer of Ephraim (omitted Fridays), closing prayers, day-dependent Theotokion, and dismissal. All deferred or conditionally resolved at baseline.",
+      "notes": "Lord of Hosts kontakion (omitted Fridays), Theotokos prayers, Lord have mercy × 40, Prayer of Ephraim (omitted Fridays), closing prayers, and dismissal. REMOVED 2026-09-26, Horologion audit fix pass (Finding GC7): a 'day-dependent Closing Theotokion' item previously sat here, but its text was sourced from a different office (Orthros's Exaposteilaria) and no rubric in UNABHOR1997's own Great Compline calls for a Theotokion at this position at all -- removed rather than kept as a disclosed gap, since the content was fabricated, not merely unsourced.",
       "items": [
         {
           "type": "placeholder",
@@ -330,43 +330,17 @@
         },
         {
           "type": "placeholder",
-          "key": "gc-prayer-joannicius",
-          "label": "Prayer of Saint Joannicius",
+          "key": "gc-prayers-approaching-sleep",
+          "label": "The Prayers on Approaching Sleep",
           "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "placeholder",
-          "key": "gc-prayer-guardian-angel",
-          "label": "Prayer to the Guardian Angel",
-          "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "placeholder",
-          "key": "gc-ave-maria",
-          "label": "O Theotokos and Virgin, rejoice (thrice)",
-          "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
+          "note": "ADDED 2026-09-26, Horologion audit fix pass (Finding GC3/GC4): a monastery-custom insertion (ten numbered prayers, the Akathist's own Kontakion plus three verses, and the Prayer of St. Joannicius) per UNABHOR1997 pp.228-236. Resolved from great-compline-fixed.json."
         },
         {
           "type": "placeholder",
           "key": "gc-dismissal-prayers",
-          "label": "Dismissal, Remit/Pardon, and Intercessions",
+          "label": "Resumption of the Order, Dismissal, Mutual Forgiveness, and Intercessions",
           "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "placeholder",
-          "key": "gc-closing-theotokion",
-          "label": "Closing Theotokion (day-dependent)",
-          "status": "unresolved",
-          "note": "Variable: Mon/Wed/Fri = Joy of all who sorrow (Tone 2); Tue/Thu = Cross Theotokion (Tone 1). Resolved by _resolveGreatComplineSlots()."
-        },
-        {
-          "type": "rubric",
-          "key": "gc-dismissal-rubric",
-          "text": "Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+          "note": "CORRECTED 2026-09-26, Horologion audit fix pass (Finding GC5): the previous content here (a short generic dismissal, Typika's own 'Remit, pardon, forgive' formula, and a differently-worded intercessory prayer) did not match UNABHOR1997 at this position. Rebuilt: the resumption rubric, the priest's short doxology, the long dismissal prayer, the mutual forgiveness exchange (not a recited prayer), and the real ROCOR-specific intercessory litany, per pp.236-237. Resolved from great-compline-fixed.json."
         }
       ]
     }

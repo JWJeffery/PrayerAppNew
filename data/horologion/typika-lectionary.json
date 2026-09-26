@@ -56,6 +56,60 @@
     "30": { "label": "Thirtieth Sunday After Pentecost",        "type": "resurrectional", "epistle": "Colossians 3:12-16",              "gospel": "Luke 18:18-27",    "greek_gospel": "Luke 14:16-24" },
     "31": { "label": "Thirty-First Sunday After Pentecost",     "type": "resurrectional", "epistle": "1 Timothy 1:15-17",               "gospel": "Luke 18:35-43"     }
   },
+  "lukan_sunday_gospels": {
+    "_comment": [
+      "Corrects a real, confirmed drift bug in the 'sundays' table above: this project's",
+      "Sunday Gospel readings used to be keyed by the same naive, continuous 'Sunday After",
+      "Pentecost' (SAP) count as the Epistle -- but the real Byzantine lectionary runs the",
+      "Gospel on a SEPARATE cycle, the 'Sundays of Luke', beginning the Monday after the",
+      "Sunday following the Exaltation of the Cross (Sept. 14) each year (the 'Lucan Jump'),",
+      "independent of the Epistle's own unbroken SAP sequence. The Epistle citations in the",
+      "'sundays' table above remain correct and in use as-is -- confirmed via direct",
+      "cross-check against Orthocal (mcp Orthocal, Slavic tradition) that the Epistle does",
+      "NOT jump the way the Gospel does. This table supplies the correct Gospel citation by",
+      "its own ordinal position in the Lukan cycle (js/horologion-engine.js's",
+      "lukanSundayGospelKey), independent of the naive SAP number, for every ordinary (non-",
+      "fixed-feast) Sunday from that cycle's start through Zacchaeus Sunday.",
+      "",
+      "The 13 numbered citations were verified directly against Orthocal (Slavic tradition)",
+      "for three seasons with different Pascha dates: 2020-2021, 2023-2024, and 2025-2026 --",
+      "all three confirming the same 13-entry content sequence and citation wording exactly.",
+      "The five fixed winter Sundays (Sunday of the Forefathers, Sunday before/after Nativity,",
+      "Sunday before/after Theophany) are excluded from this cycle's ordinal count and resolved",
+      "instead by feast_lectionary_overlays.winter_cycle, at higher priority.",
+      "",
+      "RESOLVED 2026-09-26 (was previously disclosed as an open, unresolved limitation --",
+      "see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-26 'Sundays of Luke overflow' entry for the",
+      "full account): in a season with MORE ordinary Sundays than this 13-entry cycle covers",
+      "(an early-Pascha year), the correct continuation is NOT a fixed-position replay of the",
+      "sundays[] table by matching ordinal number, and NOT a 2-entry repeating filler --both",
+      "hypotheses were tried and falsified against real Orthocal data. The actual mechanism,",
+      "confirmed across three independent seasons with different excess-Sunday counts",
+      "(2019-2020 and 2021-2022, one excess Sunday each; 2023-2024, four excess Sundays, all",
+      "four cross-checked individually): the LAST ordinary Sunday before Zacchaeus always uses",
+      "sundays[\"17\"] (Matthew 15:21-28), the one before that sundays[\"16\"], and so on counting",
+      "BACKWARD from that fixed anchor point -- i.e. js/horologion-engine.js computes",
+      "17 - (lastOrdinalBeforeZacchaeus - ordinal) as the index into the sundays[] table once",
+      "ordinal exceeds 13. No separate filler table is needed; this cycle's own 'cycle' object",
+      "above (positions 1-13) plus the pre-existing 'sundays' table (positions 14-17, reused via",
+      "the backward count) together cover every season length actually observed."
+    ],
+    "cycle": {
+      "1": "Luke 5:1-11",
+      "2": "Luke 6:31-36",
+      "3": "Luke 7:11-16",
+      "4": "Luke 8:5-15",
+      "5": "Luke 16:19-31",
+      "6": "Luke 8:26-39",
+      "7": "Luke 8:41-56",
+      "8": "Luke 10:25-37",
+      "9": "Luke 12:16-21",
+      "10": "Luke 13:10-17",
+      "11": "Luke 17:12-19",
+      "12": "Luke 18:18-27",
+      "13": "Luke 18:35-43"
+    }
+  },
   "pentecostarion": {
     "thomas-sunday": {
       "label": "Thomas Sunday (Antipascha)",
@@ -100,11 +154,11 @@
     "_comment": "Pre-Lenten Triodion Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian.",
     "zacchaeus": {
       "label": "Sunday of Zacchaeus",
-      "type": "pre-lenten-deferred",
+      "type": "pre-lenten",
       "epistle": "1 Timothy 4:9-15",
       "gospel": "Luke 19:1-10",
       "days_before_pascha": 77,
-      "tradition_note": "Greek/Antiochian tradition only; not routed until a tradition-variant gate exists."
+      "tradition_note": "Confirmed observed identically in BOTH Slavic and Greek practice, not Greek/Antiochian-only as this field previously (and incorrectly) claimed -- mcp Orthocal returns 'Sunday of Zacchaeus' with these exact citations for both tradition='slavic' and tradition='greek' on 2026-01-25 (Pascha 2026 - 77 days). The prior claim was never routed to code (no tradition-variant gate exists anywhere in js/horologion-engine.js), so this Sunday simply fell through to the naive SAP-indexed resurrectional table -- now fixed by adding 77 to PRE_LENTEN_MAP alongside the other four pre-Lenten Sundays."
     },
     "publican-pharisee": {
       "label": "Sunday of the Publican and Pharisee",
@@ -1639,10 +1693,79 @@
       "Post-Lukan weekday Gospel cycle after the true Monday-Saturday Lukan weekday table ends.",
       "Keyed by ordinary_week_after_pentecost + weekday, not by lukan_week.",
       "After Lukan Week 12 / ordinary Week 28; post-Lukan Mark/Luke rows begin at ordinary Week 29, Monday-Friday use Mark while Saturday retains Luke.",
-      "Current populated tranche: ordinary Weeks 29-33. Week 34+ belongs to the pre-Lenten/Triodion weekday family, not this ordinary post-Lukan family.",
-      "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope."
+      "Current populated tranche: ordinary Weeks 27-33. Week 34+ belongs to the pre-Lenten/Triodion weekday family, not this ordinary post-Lukan family.",
+      "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope.",
+      "",
+      "Weeks 27-28 ADDED 2026-09-26, closing a real, confirmed content gap: ordinaryWeekdayAfterPentecostKey's",
+      "own post-Theophany countdown branch (js/horologion-engine.js) can legitimately compute week numbers",
+      "as low as 27 in a season where many ordinary weeks remain between Theophany and Publican-and-Pharisee",
+      "Sunday -- the Epistle side already had full data for these weeks (this table's sibling,",
+      "ordinary_weekdays_after_pentecost, covers weeks 1-33), but no Gospel table covered weeks 27-28 at all:",
+      "lukan_weekday_gospels tops out at its own week 12 (and, separately, is never reached in January due to",
+      "a year-anchoring bug in its own IIFE), and this table previously started at 29. Confirmed via mcp",
+      "Orthocal (Slavic tradition) across three independent seasons with different Pascha dates that this is",
+      "FIXED, reusable content at this position (not year-specific): week 28's Monday (Luke 19:37-44) and",
+      "Saturday (Luke 12:32-40) match exactly across 2019-2020, 2023-2024, and 2026-2027 despite each season",
+      "landing on different calendar dates and different raw 'Nth Sunday after Pentecost' labels. Week 28",
+      "Tuesday-Friday and week 27 Monday-Friday sourced from the 2023-2024 season (the one season checked",
+      "where both weeks fall on non-fixed-feast days) and not independently re-confirmed against a second",
+      "season the way the Monday/Saturday anchors were -- worth a second cross-check if this is revisited.",
+      "Week 27's own Saturday needs no entry: it always coincides with the fixed 'Saturday after Theophany'",
+      "occasion (itself defined relative to Theophany, landing at exactly this position every year), which",
+      "the engine's feast-overlay path already resolves at higher priority -- confirmed via Orthocal for",
+      "2024-01-13, which the pre-existing feast overlay already renders correctly without this table's help."
     ],
     "weeks": {
+      "27": {
+        "monday": {
+          "label": "Monday of the 27th Week after Pentecost",
+          "gospel": "Luke 17:20-25"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 27th Week after Pentecost",
+          "gospel": "Luke 17:26-37"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 27th Week after Pentecost",
+          "gospel": "Luke 18:15-17, 26-30",
+          "gospel_segments": ["Luke 18:15-17", "Luke 18:26-30"],
+          "note": "Discontinuous Gospel with an omitted interval (18:18-25)."
+        },
+        "thursday": {
+          "label": "Thursday of the 27th Week after Pentecost",
+          "gospel": "Luke 18:31-34"
+        },
+        "friday": {
+          "label": "Friday of the 27th Week after Pentecost",
+          "gospel": "Luke 19:12-28"
+        }
+      },
+      "28": {
+        "monday": {
+          "label": "Monday of the 28th Week after Pentecost",
+          "gospel": "Luke 19:37-44"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 28th Week after Pentecost",
+          "gospel": "Luke 19:45-48"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:1-8"
+        },
+        "thursday": {
+          "label": "Thursday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:9-18"
+        },
+        "friday": {
+          "label": "Friday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:19-26"
+        },
+        "saturday": {
+          "label": "Saturday of the 28th Week after Pentecost",
+          "gospel": "Luke 12:32-40"
+        }
+      },
       "29": {
         "monday": {
           "label": "Monday of the 29th Week after Pentecost",
@@ -1809,6 +1932,15 @@
         "Nativity Eve and Theophany Eve use service_context metadata for Vesperal Liturgy readings; Royal Hours readings are explicitly out of scope."
       ],
       "entries": {
+        "forefathers_sunday": {
+          "label": "Sunday of the Forefathers",
+          "kind": "relative_sunday",
+          "date_rule": "Sunday between December 11 and December 17 inclusive (one week before 'Sunday before Nativity').",
+          "epistle": "Colossians 3:4-11",
+          "gospel": "Luke 14:16-24",
+          "source": "Confirmed via Orthocal (Slavic tradition), 2020-12-13 and 2025-12-14 seasons -- both independently show this exact epistle/gospel pairing under the title 'Sunday of the Forefathers'.",
+          "ordinary_fallback_allowed": false
+        },
         "nativity_saturday_before": {
           "label": "Saturday before Nativity",
           "kind": "relative_saturday",

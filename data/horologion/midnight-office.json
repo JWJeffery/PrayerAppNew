@@ -2,12 +2,16 @@
   "officeKey": "midnight-office",
   "label": "Midnight Office (Mesoniktikon)",
   "tradition": "BYZC",
-  "description": "The Byzantine Midnight Office (Mesoniktikon), appointed for the midnight hour. It precedes Orthros on solemn occasions and constitutes one of the canonical hours of the daily cycle. The structure presented here is the ordinary (weekday/Sunday) Midnight Office of the Constantinopolitan Horologion. Variable Octoechos and Theotokion corpora are deferred beyond this baseline.",
+  "description": "The Byzantine Midnight Office (Mesoniktikon), appointed for the midnight hour. UNABHOR1997 gives three genuinely distinct day-forms -- Weekday, Saturday, and Sunday -- differing in their psalmody, closing prayers, and (on Sunday) a real Canon to the Holy Trinity in place of the Weekday/Saturday Kathisma and its prayers (Finding M0). The correct day-form is resolved from the date. Full festal and Lenten variations, and the Octoechos-dependent Canon to the Holy Trinity and Hypakoe of the Tone on Sunday, are deferred beyond this baseline.",
   "sections": [
     {
-      "id": "opening",
+      "id": "opening-weekday-saturday",
+      "forDays": [
+        "weekday",
+        "saturday"
+      ],
       "label": "Opening",
-      "notes": "The Usual Beginning opens the office.",
+      "notes": "The Usual Beginning, including the risen-from-sleep troparia and two opening prayers, shared word-for-word between the Weekday and Saturday forms (UNABHOR1997 pp.1-2/21-22).",
       "items": [
         {
           "type": "rubric",
@@ -19,14 +23,41 @@
           "key": "usual-beginning",
           "label": "The Usual Beginning",
           "status": "unresolved",
-          "note": "Trisagion prayers sequence. Resolved from midnight-office-fixed.json by HorologionEngine."
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         }
       ]
     },
     {
-      "id": "psalmody",
-      "label": "Fixed Psalmody",
-      "notes": "The Midnight Office appoints three fixed psalms: 50, 117, and 118 (LXX). Psalm 118 (the Great Psalm) is the principal psalm of the office and is divided into three parts (stases) in the solemn form; on ordinary days it is read complete.",
+      "id": "opening-sunday",
+      "forDays": [
+        "sunday"
+      ],
+      "label": "Opening",
+      "notes": "The Sunday form's own, shorter opening -- no troparia, no opening prayers (UNABHOR1997 pp.40-41).",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning-sunday",
+          "label": "The Usual Beginning (Sunday)",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalm-50",
+      "forDays": [
+        "weekday",
+        "saturday",
+        "sunday"
+      ],
+      "label": "Psalm 50",
+      "notes": "Psalm 50 (LXX), shared by all three day-forms.",
       "items": [
         {
           "type": "placeholder",
@@ -34,14 +65,35 @@
           "label": "Psalm 50 (LXX) — Have mercy on me, O God",
           "status": "unresolved",
           "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
-        },
+        }
+      ]
+    },
+    {
+      "id": "macarius-prayers",
+      "forDays": [
+        "weekday",
+        "saturday"
+      ],
+      "label": "Prayers I-IX, and the Final Morning Prayer",
+      "notes": "Finding M2: nine Prayers of St. Macarius the Great / St. Basil the Great / to the Theotokos / to Christ / to the Guardian Angel, plus the Final Morning Prayer -- all missing entirely before this fix. Weekday and Saturday only; Sunday's own shorter opening has none of these (UNABHOR1997 pp.2-7/22-27).",
+      "items": [
         {
           "type": "placeholder",
-          "key": "psalm-117",
-          "label": "Psalm 117 (LXX) — O give thanks unto the Lord, for He is good",
+          "key": "macarius-prayers",
+          "label": "Prayers I-IX, and the Final Morning Prayer",
           "status": "unresolved",
           "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
-        },
+        }
+      ]
+    },
+    {
+      "id": "kathisma-weekday",
+      "forDays": [
+        "weekday"
+      ],
+      "label": "The Seventeenth Kathisma",
+      "notes": "Psalm 118 (LXX) in full, in three stases -- the Weekday form's own appointed Kathisma (Finding M1: this is NOT preceded by a separate 'Psalm 117,' which does not exist in the real office).",
+      "items": [
         {
           "type": "placeholder",
           "key": "psalm-118",
@@ -52,56 +104,313 @@
       ]
     },
     {
-      "id": "trisagion",
-      "label": "Trisagion Prayers",
-      "notes": "The Trisagion prayer sequence follows the psalmody.",
+      "id": "kathisma-saturday",
+      "forDays": [
+        "saturday"
+      ],
+      "label": "The Ninth Kathisma",
+      "notes": "Psalms 64-69 (LXX) -- the Saturday form's own appointed Kathisma, entirely different from the Weekday form's Seventeenth Kathisma (Finding M0).",
       "items": [
         {
           "type": "placeholder",
-          "key": "trisagion-prayers",
-          "label": "Trisagion Prayers",
+          "key": "kathisma-ninth-saturday",
+          "label": "The Ninth Kathisma (Psalms 64-69)",
           "status": "unresolved",
           "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         }
       ]
     },
     {
-      "id": "troparia",
-      "label": "Troparia",
-      "notes": "The troparion of the day and the Theotokion of the Midnight Office are sung here. These are variable slots; full corpus resolution is deferred beyond tranche 1.",
+      "id": "post-kathisma-weekday",
+      "forDays": [
+        "weekday"
+      ],
+      "label": "The Symbol of Faith, and Troparia",
+      "notes": "The Creed, then the Weekday form's own troparia -- the Bridegroom/Ten Virgins theme, Tone 8 (Finding M3, corrected: not a Canon of Odes; the 'wise virgins' phrase in the finding's own wording is from an unrelated opening prayer, not this troparia set, though this set does share the same theme).",
       "items": [
         {
           "type": "placeholder",
-          "key": "troparion-of-the-day",
-          "label": "Troparion of the Day",
+          "key": "creed",
+          "label": "The Symbol of Faith",
           "status": "unresolved",
-          "note": "Variable troparion: rubric fallback at baseline. Full Octoechos/Menaion resolution deferred."
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         },
-      {
+        {
           "type": "placeholder",
-          "key": "midnight-office-theotokion",
-          "label": "Theotokion of the Midnight Office",
+          "key": "post-kathisma-troparia-weekday",
+          "label": "Troparia, Tone 8 (the Bridegroom)",
           "status": "unresolved",
-          "note": "Fixed positional Theotokion of the Midnight Office. No tone or day-of-week dependency. Resolved from data/horologion/midnight-office-theotokion.json by HorologionEngine (v6.4). Corpus null pending transcription."
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         }
       ]
     },
     {
-      "id": "closing",
-      "label": "Closing Prayer and Dismissal",
-      "notes": "The Prayer of the Midnight Office and the dismissal conclude the service.",
+      "id": "post-kathisma-saturday",
+      "forDays": [
+        "saturday"
+      ],
+      "label": "The Symbol of Faith, and Troparia",
+      "notes": "The Creed, then the Saturday form's own troparia -- Trinity-praise themed, Tone 2, structurally distinct from the Weekday form's Bridegroom troparia (Finding M0).",
       "items": [
         {
           "type": "placeholder",
-          "key": "prayer-of-the-midnight-office",
-          "label": "Prayer of the Midnight Office",
+          "key": "creed",
+          "label": "The Symbol of Faith",
           "status": "unresolved",
           "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         },
+        {
+          "type": "placeholder",
+          "key": "post-kathisma-troparia-saturday",
+          "label": "Troparia, Tone 2",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "canon-to-trinity-sunday",
+      "forDays": [
+        "sunday"
+      ],
+      "label": "The Canon to the Holy Trinity",
+      "notes": "The Sunday form's own centerpiece, immediately after Psalm 50 -- a real Canon to the Most Holy Trinity (tone-dependent, Octoechos-sourced, disclosed as deferred rather than fabricated) followed by the fixed Hymns to the Trinity of Gregory the Sinaite (built in full).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "canon-to-trinity-deferred-rubric",
+          "label": "The Canon to the Most Holy Trinity",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "hymns-to-trinity-gregory-sinaite",
+          "label": "Hymns to the Trinity, by Gregory the Sinaite",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "lord-have-mercy-and-blessing-weekday-saturday",
+      "forDays": [
+        "weekday",
+        "saturday"
+      ],
+      "label": "Lord, Have Mercy (Forty Times), the Prayer of the Hours, and the Blessing",
+      "notes": "Finding M3 (confirmed real, further along in the sequence than first read): Lord, have mercy (forty times) with the Prayer of the Hours, then More Honourable and the priest's blessing.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "lord-have-mercy-and-blessing",
+          "label": "Lord, Have Mercy (Forty Times), the Prayer of the Hours, and the Blessing",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "lord-have-mercy-and-blessing-sunday",
+      "forDays": [
+        "sunday"
+      ],
+      "label": "The Repeated Trisagion, Hypakoe, Lord Have Mercy, and the Blessing",
+      "notes": "Sunday's own version of this position: the repeated Trisagion, the Hypakoe of the Tone (tone-dependent, Octoechos-sourced, disclosed as deferred), then Lord-have-mercy-forty (bare, with no Prayer of the Hours on this day-form), More Honourable, and the blessing.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-repeat",
+          "label": "Trisagion and the Lord's Prayer (repeated)",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "hypakoe-deferred-rubric",
+          "label": "The Hypakoe of the Tone",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "lord-have-mercy-and-blessing-sunday",
+          "label": "Lord, Have Mercy (Forty Times), and the Blessing",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trinity-prayer-weekday",
+      "forDays": [
+        "weekday"
+      ],
+      "label": "Prayer to the Holy Trinity",
+      "notes": "The brief Trinity prayer shared with Saturday (and, in different wording, with the Third Hour's own closing elsewhere in this corpus).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "brief-trinity-prayer",
+          "label": "Prayer to the Holy Trinity",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trinity-prayer-saturday",
+      "forDays": [
+        "saturday"
+      ],
+      "label": "Prayer to the Holy Trinity, and the Prayer of St. Eustratius",
+      "notes": "The same brief Trinity prayer as the Weekday form, followed by the Saturday form's own Prayer of St. Eustratius (Finding M0 -- Saturday-specific content, fitting for the day traditionally kept for the departed).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "brief-trinity-prayer",
+          "label": "Prayer to the Holy Trinity",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "prayer-of-st-eustratius",
+          "label": "Prayer of St. Eustratius",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "closing-psalms-and-memorial-weekday-saturday",
+      "forDays": [
+        "weekday",
+        "saturday"
+      ],
+      "label": "Psalms 120 and 133, the Repeated Trisagion, and the Memorial Troparia",
+      "notes": "Finding M3 (confirmed real): a second 'O come, let us worship,' then Psalms 120 and 133, the repeated Trisagion, two sets of memorial troparia for the departed (with their own Kontakion, Theotokia, and an intervening prayer), the litany for protection from calamity, and the real dismissal -- previously represented by nothing but a single generic closing rubric.",
+      "items": [
         {
           "type": "rubric",
-          "key": "dismissal-rubric",
-          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+          "key": "second-o-come-let-us-worship",
+          "text": "Come, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God. And three reverences."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-120",
+          "label": "Psalm 120 (LXX) — I have lifted up mine eyes to the mountains",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-133",
+          "label": "Psalm 133 (LXX) — Behold now, bless ye the Lord",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "trisagion-repeat",
+          "label": "Trisagion and the Lord's Prayer (repeated)",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "memorial-troparia-1",
+          "label": "Troparia, Tone 2, for the Departed",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "memorial-prayer",
+          "label": "Lord, Have Mercy (Twelve Times), and This Prayer",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "memorial-troparia-2",
+          "label": "Troparia, Tone 6",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "calamity-litany-and-dismissal",
+          "label": "The Litany and Dismissal",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trinity-prayer-sunday",
+      "forDays": [
+        "sunday"
+      ],
+      "label": "Prayer to the Most Holy Trinity",
+      "notes": "The Sunday form's own closing prayer, a composition of Mark the Monk -- Sunday has no Kathisma, no Psalms 120/133, and no memorial troparia at this position; it proceeds directly from this prayer to its own dismissal.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-to-trinity-mark-the-monk",
+          "label": "Prayer to the Most Holy Trinity (a composition of Mark the Monk)",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "dismissal-sunday",
+      "forDays": [
+        "sunday"
+      ],
+      "label": "The Dismissal",
+      "notes": "Sunday's own dismissal, naming the Resurrection explicitly -- no calamity litany precedes it on this day-form.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "dismissal-sunday",
+          "label": "The Dismissal",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "closing-common",
+      "forDays": [
+        "weekday",
+        "saturday",
+        "sunday"
+      ],
+      "label": "Mutual Forgiveness, the Ectenia, and Veneration of the Icons",
+      "notes": "Shared verbatim by all three day-forms: mutual bows and forgiveness, a closing Ectenia for the Church and the monastic community, and veneration of the icons.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "bows-and-forgiveness",
+          "label": "Mutual Forgiveness",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "monastic-ectenia",
+          "label": "The Ectenia",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "icon-veneration-rubric",
+          "label": "Veneration of the Icons",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
         }
       ]
     }
