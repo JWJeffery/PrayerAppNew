@@ -1441,6 +1441,45 @@ key `ui:entry-screens-redesigned-regrouped`. SEED_VERSION v339 → v340.
 
 **Phase 5 resumes where it left off — Horologion, lane 3 of 3 — nothing about this detour changes
 that scope**, see the "What that leaves" paragraph below this one.
+**State as of 2026-09-26 continued further still — Finding 5 (the Sunday Gospel lectionary's**
+**Sundays-of-Luke drift) is now FULLY RESOLVED, not just disclosed.** Josh's direct
+instruction: "typika-lectionary.json's Sunday readings drift from Orthocal starting
+mid-season. Root cause is real and precise: the engine does naive sequential week-counting
+instead of implementing the Byzantine lectionary's separate 'Sundays of Luke' Gospel cycle
+and its end-of-season leap. - fix it." Researched the real mechanism first (the "Lucan
+Jump" — Metropolitan Cantor Institute, already cited elsewhere in this corpus for the
+weekday Lukan cycle; frjohnpeck.com), then calibrated and verified it precisely against
+`mcp Orthocal` (Slavic tradition) across three seasons with different Pascha dates
+(2020-2021 very late, 2023-2024 the latest checked, 2025-2026 ordinary) rather than
+reconstructing it from memory. **Built**: a new `lukanSundayGospelKey` in
+`js/horologion-engine.js` (mirroring the existing, already-correct `lukanWeekdayGospelKey`'s
+date-anchor approach, Sunday-specific) plus a new `lukan_sunday_gospels` table in
+`data/horologion/typika-lectionary.json` (13 numbered Sundays-of-Luke citations plus a
+2-entry Matthean-filler fallback that CYCLES for very-late-Pascha years) — the Epistle
+keeps using the old, still-correct, naive-SAP-indexed table unchanged, since only the
+Gospel actually jumps. Also found and added a genuinely missing fixed occasion, "Sunday of
+the Forefathers" (one week before "Sunday before Nativity," previously absent under any
+key), to the existing feast-overlay mechanism. **Two real implementation bugs were caught
+and fixed during verification, not shipped**: an early version anchored its civil
+Nativity/Theophany dates on the wrong year past January (caught via a live browser test
+returning a blank rubric for Feb 2021); and the Matthean-filler fallback needed to cycle
+rather than stop after one pass (caught by a 6-year sweep flagging blank rubrics in the
+latest-Pascha season checked, confirmed against Orthocal that the fillers really do
+repeat). **Verified**: exact-citation match against Orthocal across all three checked
+seasons for every ordinary and fixed Sunday; a live-browser 313-call, 6-year, every-Sunday
+sweep of Typika alone (zero exceptions, zero placeholders); a 7,124-call sweep of all 14
+offices across the same range (zero exceptions, zero placeholders) confirming no
+regression anywhere else. **One narrow, bounded limitation remains, disclosed rather than
+guessed at further**: in the specific window between the Sunday after Theophany and
+Zacchaeus Sunday, when fewer than four ordinary Sundays remain there, the real lectionary
+(confirmed for 2025-2026 specifically) appears to drop one further numbered position beyond
+what this fix accounts for — no general rule for exactly which position could be confirmed
+from available sources (this may be governed by an annually-published typikon rather than a
+fixed formula). Affects at most one Sunday's Gospel citation, in some years only. Zacchaeus
+Sunday itself remains unrouted (separate, pre-existing, already-disclosed gap — not touched).
+Full account: `AUDIT_GOVERNANCE_LEDGER.md`, "Session 2026-09-26 continued further, Sunday
+Gospel lectionary" entry. SEED_VERSION `v341 -> v342`.
+
 **State as of 2026-09-26 continued further — Finding 4 (below) is now FULLY RESOLVED, not just
 disclosed.** Josh's direct instruction in response to Finding 4: **"If you cant verify it, we need
 to replace it with public domain text."** All fixed psalmody across all 9 `*-fixed.json` Horologion

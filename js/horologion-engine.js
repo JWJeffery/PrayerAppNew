@@ -7686,6 +7686,11 @@ async function _resolveTypikaSlots(sections, dateObj) {
 
         if (dayOfWeek === 0) {
             const dn = _dfn(natiCivil);
+            // Sunday of the Forefathers: the Sunday 8-14 days before Nativity,
+            // distinct from and always one week earlier than "Sunday before
+            // Nativity". Confirmed via Orthocal (Slavic tradition), 2020 and
+            // 2025 seasons: Gospel Luke 14:16-24, Epistle Colossians 3:4-11.
+            if (dn >= -14 && dn <= -8) keys.push('forefathers_sunday');
             if (dn >= -7 && dn <= -1) keys.push('nativity_sunday_before');
             if (dn >=  1 && dn <=  7) keys.push('nativity_sunday_after');
             const dt = _dfn(theoCivil);
@@ -7713,6 +7718,128 @@ async function _resolveTypikaSlots(sections, dateObj) {
         }
 
         return keys;
+    })();
+
+    // ────────────────────────────────────────────────────────────────────
+    // lukanSundayGospelKey
+    //
+    // Fixes a real, confirmed drift bug: the Sunday Gospel lectionary
+    // (_typikaLectionaryData.sundays[SAP]) was keyed only by the naive,
+    // continuous "Sunday After Pentecost" count -- but the real Byzantine
+    // Gospel lectionary runs a SEPARATE "Sundays of Luke" cycle from the
+    // Monday after the Sunday following the Exaltation of the Cross
+    // (Sept. 14) onward (the "Lucan Jump" -- cf. Metropolitan Cantor
+    // Institute, mci.archpitt.org/liturgy/September.html, already cited for
+    // lukanWeekdayGospelKey above), independent of the Epistle's own
+    // continuous SAP count. This key computes the ordinal position in that
+    // separate cycle for a given Sunday, so the Gospel can be looked up in
+    // _typikaLectionaryData.lukan_sunday_gospels instead of the naive table,
+    // while the Epistle continues to use the naive SAP table unchanged
+    // (confirmed via mcp Orthocal cross-check, Slavic tradition, that the
+    // Epistle sequence does NOT jump the way the Gospel does).
+    //
+    // Verified against Orthocal (Slavic tradition) across two seasons with
+    // different Pascha dates (2020-21 and 2025-26): the ordinal-to-citation
+    // mapping and the exclusion of the five fixed winter Sundays (Forefathers,
+    // before/after Nativity, before/after Theophany -- resolved instead by
+    // feastLectionaryOverlayKeys at higher priority) are confirmed exact for
+    // every Sunday from the season's start through the Sunday after Theophany
+    // in both seasons, and for all of 2020-21's remaining ordinary Sundays.
+    //
+    // KNOWN, DISCLOSED LIMITATION: in the narrow window between the Sunday
+    // after Theophany and Zacchaeus Sunday, when fewer than four ordinary
+    // Sundays remain in that window (confirmed via Orthocal for the 2025-26
+    // season specifically), the real lectionary appears to drop one further
+    // numbered "Sunday of Luke" position beyond the five fixed-Sunday
+    // exclusions this key already accounts for -- most likely so the last
+    // ordinary Sunday before Zacchaeus lands on Luke 18:35-43, the pericope
+    // immediately preceding the Zacchaeus story (Luke 19) in the Gospel text
+    // itself. No general rule for exactly which position gets dropped in a
+    // short season could be confirmed from the sources available this
+    // session (this may be governed by an annually-published typikon rather
+    // than a fixed algorithm -- cf. frjohnpeck.com/what-is-the-lukan-jump,
+    // which says as much). Disclosed rather than guessed at further: this
+    // affects at most one Sunday's Gospel citation, in some years only, only
+    // in that one-to-three-week window.
+    // ────────────────────────────────────────────────────────────────────
+    const lukanSundayGospelKey = (() => {
+        if (dayOfWeek !== 0) return null;
+
+        const MS_PER_DAY = 86400000;
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const year = localDate.getFullYear();
+        const month = localDate.getMonth() + 1;
+
+        function lukanStartForYear(y) {
+            const elevation = new Date(y, 8, 14); // September 14 — Exaltation of the Cross
+            let daysToSundayAfter = (7 - elevation.getDay()) % 7;
+            if (daysToSundayAfter === 0) daysToSundayAfter = 7;
+            const sundayAfterElevation = new Date(y, 8, 14 + daysToSundayAfter);
+            return new Date(
+                sundayAfterElevation.getFullYear(),
+                sundayAfterElevation.getMonth(),
+                sundayAfterElevation.getDate() + 1
+            );
+        }
+        function firstLukanSunday(y) {
+            const start = lukanStartForYear(y); // a Monday
+            return new Date(start.getFullYear(), start.getMonth(), start.getDate() + 6);
+        }
+
+        let seasonYear = (month <= 6) ? year - 1 : year;
+        let seasonStart = firstLukanSunday(seasonYear);
+        if (localDate < seasonStart) return null;
+
+        function orthodoxPascha(y) {
+            const a = y % 4;
+            const b = y % 7;
+            const c = y % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const m = Math.floor((d + e + 114) / 31);
+            const dd = ((d + e + 114) % 31) + 1;
+            return new Date(y, m - 1, dd + 13);
+        }
+        const upcomingPascha = orthodoxPascha(seasonYear + 1);
+        const zacchaeusSunday = new Date(upcomingPascha.getTime() - (77 * MS_PER_DAY));
+        if (localDate >= zacchaeusSunday) return null;
+
+        // Civil Nativity/Theophany dates for THIS season, anchored on seasonYear
+        // rather than on today's own month -- unlike feastLectionaryOverlayKeys's
+        // month-conditional formula (which only ever needs to work for dates within
+        // +/-14 days of Nativity/Theophany), this key must stay correct as late as
+        // February, when a month-conditional "December is this year, January is
+        // last year" formula would silently roll Nativity forward to next December.
+        const _fOff    = _juliOffset(seasonYear);
+        const natiCivil = (_currentEoMode === 'old_calendar')
+            ? new Date(seasonYear + 1, 0, _fOff - 6)
+            : new Date(seasonYear, 11, 25);
+        const theoCivil = (_currentEoMode === 'old_calendar')
+            ? new Date(seasonYear + 1, 0, 6 + _fOff)
+            : new Date(seasonYear + 1, 0, 6);
+
+        function sundayInWindow(anchor, startOffset, endOffset) {
+            for (let off = startOffset; off <= endOffset; off++) {
+                const d = new Date(anchor.getFullYear(), anchor.getMonth(), anchor.getDate() + off);
+                if (d.getDay() === 0) return d;
+            }
+            return null;
+        }
+
+        const fixedSundays = [
+            sundayInWindow(natiCivil, -14, -8),
+            sundayInWindow(natiCivil, -7, -1),
+            sundayInWindow(natiCivil, 1, 7),
+            sundayInWindow(theoCivil, -5, -1),
+            sundayInWindow(theoCivil, 1, 7)
+        ].filter(Boolean);
+
+        const rawWeek = Math.floor((localDate - seasonStart) / (7 * MS_PER_DAY)) + 1;
+        const excludedBefore = fixedSundays.filter(d => d < localDate).length;
+        const ordinal = rawWeek - excludedBefore;
+        if (ordinal < 1) return null;
+
+        return { ordinal };
     })();
 
     async function resolveTypikaFeastOverlayReading(entries, field) {
@@ -8684,10 +8811,50 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
+                if (lukanSundayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_sunday_gospels) {
+                    const lsg = _typikaLectionaryData.lukan_sunday_gospels;
+                    const cycle = lsg.cycle || {};
+                    const fillers = lsg.matthean_fillers || [];
+                    const ord = lukanSundayGospelKey.ordinal;
+                    const cycleSize = Object.keys(cycle).length;
+                    const lukanGospelRef = (ord <= cycleSize)
+                        ? cycle[String(ord)]
+                        : fillers[(ord - cycleSize - 1) % fillers.length];
+
+                    if (lukanGospelRef) {
+                        try {
+                            const result = await resolveScripturePericope(lukanGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-lukan-sunday-gospel-ord-' + ord
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:                'text',
+                                    key:                 item.key,
+                                    label:               'The Holy Gospel — ' + result.label,
+                                    text:                result.text,
+                                    resolvedAs:          'typika-lukan-sunday-gospel-ord-' + ord,
+                                    tone:                toneResult.tone,
+                                    sundayAfterPentecost: sundayAfterPentecost,
+                                    lukanOrdinal:        ord,
+                                    source:              'Sundays-of-Luke Gospel cycle (Lucan Jump), verified against Orthocal — see lukan_sunday_gospels'
+                                };
+                            }
+                            continue;
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Lukan Sunday gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
- 
+
                if (entry.type === 'special') {
                     const sap1GospelRef = entry.gospel || entry.gospel_segments;
                     try {
