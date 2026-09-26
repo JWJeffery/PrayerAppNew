@@ -22,7 +22,142 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**HOROLOGION FULL AUDIT — PHASE 1 (RESOURCES), 2026-09-25 (latest).** Josh: "I want a full audit
+**HOROLOGION FULL AUDIT — PHASE 2 (FIX PASS), IN PROGRESS, HANDING OFF 2026-09-26 (latest,
+read this one first).** Session ending here on token limits; Josh is switching to another Claude
+account to continue. **This note is the actual current state — trust it over the "PHASE 1" entry
+below, which is now superseded by everything below it.**
+
+**Where things stand, precisely.** Phase 1 (resource-gathering: `HAPGOOD1922` + `UNABHOR1997` both
+fully in the repo as `data/kalendar/source-witnesses/*`, registered in `source-index.json`) is done.
+The full findings audit (`documentation/HOROLOGION_AUDIT_FINDINGS.md`) is done — all 7 office-groups
+audited, originally 27 findings. **The fix pass is Josh's explicit next step** ("Please proceed" after
+the audit, "Please proceed" again to start fixing) and is IN PROGRESS, not complete.
+
+**Fixed and pushed so far (2 of 7 office-groups):**
+- **Vespers** — `data/horologion/vespers.json`. Fixed V1/V2 (Kathisma now correctly precedes the
+  Little Litany and "Lord, I have cried" — was reversed with no litany between), V4 ("Vouchsafe, O
+  Lord" added), V5 (Litany of Completion added), V6 (Prayer of the Bowing of Heads added, combining
+  `UNABHOR1997`'s dialogue with `HAPGOOD1922`'s priest's-secret-prayer text, the only one of the two
+  that prints it). **V3 was retracted, not fixed** — re-reading `UNABHOR1997` p.194 showed the
+  Augmented Litany is vigil/polyeleos-only and the app already correctly omits it on ordinary days;
+  the original audit misread this because `HAPGOOD1922` frames Vespers around the festal Vigil
+  throughout. Commit `3853984`.
+- **Grand Compline** — `data/horologion/great-compline.json`. Fixed GC1 (sourcing citation only):
+  corrected the description from citing `orthodoxprayer.org` to recording the `UNABHOR1997` spot-check
+  already done. Commit `cca512e`. **No structural fixes were needed** — this office was already
+  45/45 real content and its structure/sequencing checked out against `UNABHOR1997` wherever spot-
+  checked; that was a lighter check than Vespers got (structure-level, not full line-by-line), and
+  still is, if a future session wants to go deeper.
+
+**NOT yet fixed — this is the actual remaining work, in the audit's own stated order:**
+1. **The four Hours** (`data/horologion/first-hour.json`, `third-hour.json`, `sixth-hour.json`,
+   `ninth-hour.json`) — Findings H1 (Third Hour's `prayer-of-the-third-hour` renders Lent-only troparion
+   text year-round; needs the correct year-round Prayer of the Third Hour sourced and substituted, or
+   the current text properly Lent-gated), H2 (the `[trisagion]` section between psalms and troparia
+   uses the full Our-Father complex when only a short Alleluia-based unit belongs there; the full
+   complex's real place is a second occurrence after the troparia, not modeled at all — affects all
+   four Hours identically), H3 ("Blessed is the Lord God, blessed is the Lord day by day" verse missing
+   from all four, between Theotokion and the repeated Trisagion).
+2. **Typika** (`data/horologion/typika.json`) — Findings T2 (Beatitudes render before Psalms 102/145,
+   should be after), T3 ("O Only-begotten Son" hymn missing, between the two psalms and the
+   Beatitudes), T4 ("The heavenly choir doth hymn thee" hymn missing, between Beatitudes and Creed),
+   T5 (a full Trisagion+Our-Father block is wrongly inserted between Creed and Troparia — no Trisagion
+   belongs there at all per both sources — and duplicates the Lord's Prayer that correctly renders
+   again at the end), T6 ("Loose, remit, pardon, O God, our transgressions" prayer missing, between
+   Creed and the Lord's Prayer), T7 (scope correction, not a bug: the day-of-week Kontakion is a fixed
+   table per `HAPGOOD1922` pp.61-62, not Menaion-dependent the way `typika-kontakion-rubric` currently
+   implies — could be built now). **T1 was retracted as a false positive** — see the methodology
+   warning below; nothing to fix there.
+3. **Orthros/Matins** (`data/horologion/orthros.json`) — Findings O1 (Psalms 19 and 20 missing from the
+   opening, before the Six Psalms — `UNABHOR1997` p.47), O2 (sessional hymns should be interleaved
+   after each individual kathisma with a Small Litany between, not bundled into one combined
+   `[sessional-hymns]` section after all kathismata render consecutively).
+4. **Midnight Office** (`data/horologion/midnight-office.json`) — **the biggest remaining job.**
+   Finding M0 (major, structural): the real office has three genuinely distinct forms by day
+   (`UNABHOR1997`: Weekday pp.1-19, Saturday pp.21-39, Sunday pp.40-45, different content each), and
+   the app builds one generic form for all days — this needs actual day-of-week branching added to the
+   engine/skeleton, not just content patching. M1 (Psalm 117 doesn't belong anywhere in the real
+   Weekday sequence — real order is Psalm 50 → Prayers of St. Macarius → Kathisma 17 which IS Psalm
+   118 in three stases, not a separate Psalm 117 at all). M2 (the Prayers of St. Macarius the Great
+   are entirely missing, right after Psalm 50). M3 (the whole closing sequence is missing: a Canon to
+   the Holy Trinity, "Lord have mercy" ×40 + the Prayer of the Hours, a second "O come let us worship,"
+   and Psalms 120 and 133, before the closing Trisagion/dismissal). Given the scope, this office was
+   only read in the Weekday form in depth — the Saturday and Sunday forms exist and clearly differ
+   (confirmed their section starts and that Saturday's psalm sequence is different) but were not read
+   in the same depth; that reading is still needed before this office can be considered audited, let
+   alone fixed, in full.
+5. **Small Compline** (`data/horologion/small-compline.json`) — Findings SC1 (three fixed prayers
+   missing between the Small Doxology and the Creed: "Every night will I bless Thee...", "Lord, Thou
+   hast been our refuge...", `UNABHOR1997` pp.240-241), SC2 ("Vouchsafe, O Lord" and its continuation
+   missing, same family of prayer as Vespers V4 but Small Compline's own instance of it, also
+   pp.240-241), SC3 ("It is truly meet"/"More honourable than the Cherubim" missing after the Creed),
+   SC4 (scope correction, same pattern as T7: the day-of-week troparia table, `UNABHOR1997` pp.242-244,
+   is fixed/universal, not Menaion-dependent the way the current `troparion-of-the-day` naming implies).
+
+**CRITICAL METHODOLOGY WARNING, read before trusting or extending any finding below this note.**
+The original audit's test scripts (written before the fix pass began) loaded an *incomplete* set of
+scripts into their sandbox — e.g. `byzantine-paschalion.js` + `horologion-engine.js` only, omitting
+`js/scripture-resolver.js`, `js/menaion-resolver.js`, `js/saints-resolver.js`, and the `js/octoechos/*`
+files that `index.html` actually loads first. This produced **two confirmed false positives**, both
+caught and retracted *during* the fix pass, not before: **Typika T1** (a fabricated "the lectionary
+resolver is broken" finding — `resolveScripturePericope` genuinely wasn't in scope in the narrow test,
+but is defined by `scripture-resolver.js`, which loads before `horologion-engine.js` in the real app;
+with the correct script order the Epistle/Gospel resolve perfectly) and **Vespers V3** (a real,
+correct rubric this app already followed, misread as a gap — see above). Reasoned through, and then
+directly verified by re-running all ten offices, that no *other* finding depends on this same gap
+(everything else concerns skeleton array order or fixed-JSON-file content, neither of which depends on
+which other JS modules happen to be loaded) — but that reasoning has not been re-applied to any *new*
+finding that might surface while fixing the remaining offices, so **build and use the correct full
+harness for every remaining office before trusting its findings enough to fix them, and before
+declaring any of them fixed.** The correct script list, in order (everything `index.html` loads before
+`horologion-engine.js`, plus the engine itself) — this exact list is what a `full_engine_harness.mjs`
+in this session's now-gone scratchpad directory encoded; it will need to be recreated (a two-line
+`vm.runInContext` loop like every other verify-script this session wrote, reading `index.html`'s own
+script tags is the fastest way, or just copy this list):
+```
+js/calendar-engine.js, js/calendar-ethiopian.js, js/calendar-east-syriac.js, js/scripture-resolver.js,
+js/saints-resolver.js, js/menaion-resolver.js, js/octoechos/orthros-praises-sunday.js,
+js/octoechos/orthros-exapostilarion-sunday.js, js/octoechos/orthros-exapostilarion-eothinon.js,
+js/octoechos/orthros-exapostilarion-great-lent-weekday.js, js/octoechos/orthros-exapostilarion-weekday.js,
+js/octoechos/orthros-sessional-hymns-sunday.js, js/octoechos/orthros-sessional-hymns-weekday.js,
+js/octoechos/orthros-canon-weekday.js, js/octoechos/orthros-canon-sunday.js,
+js/octoechos/orthros-praises-weekday.js, js/octoechos/orthros-aposticha-weekday.js,
+js/octoechos/orthros-theotokion-weekday.js, js/octoechos/orthros-theotokion-sunday.js,
+js/octoechos/gc-canon-theotokos.js, js/octoechos/gc-canon-great-canon.js,
+js/octoechos/gc-canon-menaion.js, js/calendar-eastern-orthodox.js, js/byzantine-paschalion.js,
+js/orthros-eothinon-engine.js, js/horologion-engine.js
+```
+(A `fetch` shim reading local files by path, same pattern every `verify_*.mjs` script this session
+wrote already used, is still needed alongside it — nothing new to invent there.)
+
+**Sources, both fully in the repo, both already registered**: `HAPGOOD1922` =
+`data/kalendar/source-witnesses/hapgood-service-book-1922.txt` (+ its own section-map JSON) — public
+domain, covers Vespers/Hours/Typika/both Liturgies/Great Compline in full, explicitly and confirmedly
+does NOT cover the Midnight Office, Little Vespers, or Small Compline (her own Preface says so).
+`UNABHOR1997` = `data/kalendar/source-witnesses/the-unabbreviated-horologion-...pdf` (+ its own full
+plain-text extraction and section-map JSON) — in copyright, Josh's own upload, covers everything
+including all three Midnight Office forms and Small Compline. Both entries in
+`data/kalendar/source-witnesses/source-index.json` carry full provenance notes.
+
+**Not urgent, but noted so it isn't forgotten**: no web-release redeploy is needed for any of this yet
+— the whole Byzantine/Horologion lane remains gated from testers (Josh's "temporary unwire," still in
+effect, unrelated to and unaffected by this audit) until he decides otherwise, so there's no pressure
+to ship partial fix-pass progress. Two unrelated items from earlier in this session remain as Josh
+left them, not part of this audit: the Bible Reader "What the Fathers Say" panel (investigated,
+confirmed not a bug — Hebrews-only coverage is a known, deliberate scope limit — Josh said leave it for
+now) and the East Syriac rail scroll (already fixed and shipped, not outstanding).
+
+**Recommended next action for whichever session picks this up**: continue the fix pass in the order
+above (the four Hours next), rebuilding the full-script test harness first, fixing one office at a
+time, live-verifying against it before and after each fix, updating
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s per-office section to mark items fixed (matching the
+Vespers/Grand Compline entries' own style as the template), and committing+pushing after each office —
+exactly the granularity this session used for Vespers and Grand Compline. Midnight Office (item 4
+above) is real architectural work, not a quick patch, and should probably be flagged to Josh before
+starting in case he wants to weigh in on how day-of-week branching should be modeled across offices
+generally, given Orthros will likely need similar treatment eventually for its own Sunday/festal forms.
+
+**HOROLOGION FULL AUDIT — PHASE 1 (RESOURCES), 2026-09-25.** Josh: "I want a full audit
 of the horologion. Start with determining what ought to be there. Let's pull together all of the
 resources that we need in order to do this correctly." **This is resource-gathering only — no
 Horologion content has been audited or changed yet.** Full detail:
