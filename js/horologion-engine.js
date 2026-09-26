@@ -2794,7 +2794,7 @@ const pascha = _getOrthodoxPascha(year);
     // table -- Small Compline's own Sunday troparion is the Bodiless Powers
     // troparion, not the Resurrectional one, and Saturday's fixed
     // troparion/kontakion pairing is by Octoechos tone, not any of the above.
-    const fixedTroparion = _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult);
+    const fixedTroparion = _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult, dateObj);
     if (fixedTroparion) return fixedTroparion;
 
     resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
@@ -2831,7 +2831,7 @@ const _RESURRECTION_KONTAKIA_TONE = {
     8: 'Having arisen from the tomb, Thou didst raise up the dead and didst resurrect Adam. Eve also danceth at Thy Resurrection, and the ends of the world celebrate Thine arising from the dead, O greatly-merciful One.'
 };
 
-function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult) {
+function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult, dateObj) {
     const WEEKDAY_TROPARIA = {
         0: { label: 'Troparion of the Bodiless Powers',
              text: 'Supreme Commanders of the Heavenly Hosts, we unworthy ones implore you that by your supplications ye will encircle us with the shelter of the wings of your immaterial glory, and guard us who fall down before you and fervently cry: deliver us from dangers since ye are the Marshalls of the Hosts on high.' },
@@ -2852,6 +2852,34 @@ function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult) {
         const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
         const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
         if (troparionText && kontakionText) {
+            // Finding SC4 correction (found during post-completion re-verification):
+            // UNABHOR1997 p.245 -- "IT SHOULD BE KNOWN: that from the Sunday of the
+            // Publican and the Pharisee, and during all of the holy Great Lent, on
+            // all Saturdays at Compline the Kontakion of the Resurrection is not
+            // read, but rather the one from the Triodion (except the fifth week of
+            // Lent)..." The troparion itself is unaffected by this rubric -- only
+            // the Kontakion. This engine's season detection covers Great Lent
+            // proper (Clean Monday-Great Friday) but not the earlier pre-Lenten
+            // Triodion weeks the rubric's own start point names, nor the "except
+            // the fifth week" carve-out, nor the separate Pentecost-season rule
+            // for "all days" through All Saints Sunday -- disclosed as a known
+            // remaining gap rather than approximated further.
+            let seasonResult = null;
+            try {
+                seasonResult = dateObj && _computeLiturgicalSeason(dateObj, toneResult);
+            } catch (e) { /* non-throwing: falls through to the ordinary case below */ }
+
+            if (seasonResult && seasonResult.season === 'great-lent') {
+                return {
+                    type:       'text',
+                    key:        'troparion-of-the-day',
+                    label:      'Troparion of the Resurrection, Tone ' + tone,
+                    text:       troparionText + '\n\nKontakion: (During Great Lent, the Triodion\'s own Kontakion belongs here in place of the Resurrection Kontakion; not yet sourced in this corpus.)',
+                    tone:       tone,
+                    resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone + '-lenten-kontakion-deferred'
+                };
+            }
+
             return {
                 type:       'text',
                 key:        'troparion-of-the-day',

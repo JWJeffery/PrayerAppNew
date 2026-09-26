@@ -5,11 +5,30 @@ offices and let Grand Compline get a lighter "structural spot-check" pass instea
 treatment every other office got. Both gaps are now closed: Grand Compline has been re-audited
 line-by-line and fixed (7 findings, GC1-GC7, superseding the earlier 1-finding entry), and the four
 Interhours — never previously audited or even mentioned in this log — have been audited from
-scratch and fixed (4 findings, IH1-IH4). **Fix pass status: 12 of 12 offices fixed** (Vespers,
+scratch and fixed (4 findings, IH1-IH4). **Fix pass status: 14 of 14 offices fixed** (Vespers,
 Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office, Small Compline, the four
 Interhours).** Per Josh's instruction: "Keep auditing. Record every error, and then we'll fix
 everything at once" — taken this time to mean the *entire* Horologion, not the subset first
 scoped. This file is the running record.
+
+**Second-pass re-verification, 2026-09-26, continued**: Josh asked for independent re-verification —
+re-reading the raw source against the actual built JSON, not re-trusting the syntax check/regression
+sweep/browser test that had already been run once — across all 13 offices this fix pass touched
+before this pass began (all except Great Compline, which had already had this treatment when its own
+Friday-dismissal bug was caught the same way). Found and fixed two more real bugs (Midnight Office's
+closing Ectenia had been paraphrased away from the source rather than transcribed verbatim, dropping
+its specific ROCOR-language wording; Small Compline's Saturday Kontakion was applied unconditionally
+where the source requires it suppressed during Great Lent). Found and disclosed three further items
+not fixed in this pass: Typika has its own genuinely distinct, currently-unmodeled Great Lent
+structural form (T8 — comparable in scope to Midnight Office's own M0 finding); none of the four
+Interhours has any appointment gate, though the source restricts them to roughly two days a year and
+never during Great Lent (IH7); and Small Compline's own Saturday-Kontakion fix has known remaining
+imprecision around the pre-Lenten Triodion weeks and the Pentecost season, disclosed in place.
+Vespers, Orthros/Matins, and the four Hours were re-checked the same way and found to already match
+the sources exactly, no changes needed. Also corrected in the same pass: this document's own office
+count, previously miscounted as "12 offices" / "9 office-groups" in several places — the four Hours
+and four Interhours are each 4 separate offices sharing one findings-doc entry apiece, not 1 office
+each, making the real count 14 offices across 8 office-groups.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -31,8 +50,9 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 
 **38 findings total** (24 previously + 7 new for Grand Compline's re-audit, superseding its prior
 1-finding entry, + 4 new IH1-IH4 for the four Interhours never previously in this log at all) across
-9 audited office-groups (12 offices, since the four Hours and the four Interhours each share one
-entry). The recurring pattern worth noticing: at least five different offices/office-groups (Vespers,
+8 audited office-groups (14 offices — Vespers, Grand Compline, Typika, Orthros/Matins, Midnight
+Office, and Small Compline each count as one office, plus the four Hours and the four Interhours as
+two four-office groups: 6 + 4 + 4 = 14). The recurring pattern worth noticing: at least five different offices/office-groups (Vespers,
 Typika, Orthros, Midnight Office, Grand Compline) show a component sequenced in the wrong position or
 missing outright relative to what both sources agree the correct order/content is — this looks like a
 systemic authoring pattern, not isolated mistakes. The Interhours make the same point from a different
@@ -538,6 +558,26 @@ order and the correct day-specific Kontakion label, zero non-environmental conso
 Google Fonts/`ERR_CERT_AUTHORITY_INVALID` sandbox-proxy noise already documented, confirmed
 unrelated).
 
+### Finding T8 — Disclosed, found during second-pass re-verification: Typika has its own genuinely distinct Great Lent form, not currently modeled at all
+
+`UNABHOR1997` p.148 (immediately after the ordinary-day Beatitudes text T2-T7 already cover): "LENTEN
+SERVICE — If it be a Great Lent, the Typical Psalms are not said, and at the conclusion of the Ninth
+Hour we chant 'with sweet melody, in the Eighth Tone': [the Beatitudes, each verse followed by the
+refrain 'Remember us, O Lord, when Thou comest in Thy kingdom']." This describes an entirely
+different structural mode during Great Lent: Psalms 102 and 145 (the office's own opening) are
+dropped outright, and what remains of Typika is folded directly onto the end of the Ninth Hour as a
+short Beatitudes-with-refrain unit, rather than standing as its own separate office with the usual
+opening. The current build shows the full Psalm 102/145 opening unconditionally, on every date
+including every Great Lent weekday, with no season check at all (confirmed: `typika-psalm-102`/
+`typika-psalm-145` sit in a plain fixed-slot set in `_resolveTypikaSlots()`, no `_computeLiturgicalSeason`
+call anywhere in that function). This is comparable in scope to Midnight Office's own M0 finding — a
+real, distinct day/season-form the office doesn't model at all, not a small content drift — and
+building it properly (determining exactly what does and doesn't carry over into the Lenten form
+beyond the Beatitudes-and-refrain unit quoted above, and how it interacts with this office's existing
+T7 Kontakion-table fix) is its own dedicated pass, not a quick patch inside a re-verification sweep.
+Disclosed here rather than attempted; flagged as the most significant open item from the entire
+second-pass re-verification.
+
 ## ORTHROS/MATINS — audited, 2 findings, FIXED 2026-09-26 (O1, O2)
 
 **Source note**: `HAPGOOD1922`'s Matins presentation is specifically the Sunday/festal All-Night Vigil
@@ -750,6 +790,29 @@ unaffected; the 5-year, 10-office, both-calendar-mode sweep (36,540 calls) is cl
 headless Chromium against the real dev server under `?shell=v2` for all three day-forms, zero
 non-environmental console errors.
 
+**Correction found during the second-pass re-verification (2026-09-26, continued)**: re-reading the
+raw source line-by-line against the actual built JSON (the same discipline that caught Great
+Compline's Friday-dismissal miss) found that `monastic-ectenia` — the closing Ectenia shared by all
+three day-forms — had been paraphrased and generalized away from the source rather than transcribed
+verbatim: it read "Let us pray for the Orthodox episcopate of the Church, for our hierarchs..." where
+`UNABHOR1997` (p.20/p.45) actually prints the same specific ROCOR-language text already transcribed
+verbatim for Great Compline's own identical litany — "the Orthodox episcopate of the Church of
+Russia; for our lord the Very Most Reverend Metropolitan N., First Hierarch of the Russian Church
+Abroad..." — and the petition list itself had silently dropped "the suffering Russian land" and "for
+their salvation" from its first line. This inconsistency exists because Midnight Office was rebuilt
+before the "transcribe verbatim, don't generalize" standard was made explicit during Great Compline's
+own GC5 fix later in the same session. Corrected to match the source exactly, and the `bows-and-
+forgiveness`/`icon-veneration-rubric` slots' dropped parenthetical alternate-address forms
+("(bishop/superior and to the)", "(holy master and)", "(superior)(bishop)") restored for the same
+reason — cosmetic on their own, but inconsistent with the standard now used elsewhere in this corpus.
+Also caught and fixed in the same pass: the petition list had carried a stray `"repeat": 3` on the
+entire 14-line petition block (which the source shows recited once, not three times — only the
+interspersed "Lord, have mercy" response is repeated continuously while the petitions are read, with
+a separate discrete triple "Lord, have mercy" only *after* the list ends); split into its own item.
+Re-verified: `node --check` clean, the JSON reparses clean, all three day-forms still resolve
+`status: "complete"` with 0 placeholders, live-confirmed in headless Chromium that the corrected
+Ectenia text renders with "suffering Russian land" present.
+
 ## SMALL COMPLINE — audited, 4 findings, FIXED 2026-09-26 (SC1, SC2, SC3, SC4)
 
 Read `UNABHOR1997` pp.238-244 (through the day-of-week troparia table) in full. Psalms 50, 69, and 142
@@ -866,6 +929,27 @@ Supplicatory Prayer to the Theotokos by Paul of Evergetis) — not verified or t
 no SC finding names it; flagged here per this project's disclose-don't-fix-opportunistically practice
 for the next audit pass to pick up.
 
+**Correction found during the second-pass re-verification (2026-09-26, continued)**: `UNABHOR1997`
+p.245's own rubric, printed immediately after the Saturday troparion/kontakion-by-tone table SC4
+built, reads: "IT SHOULD BE KNOWN: that from the Sunday of the Publican and the Pharisee, and during
+all of the holy Great Lent, on all Saturdays at Compline the Kontakion of the Resurrection is not
+read, but rather the one from the Triodion (except the fifth week of Lent), as also during the Holy
+Pentecost season on all days the kontakion from the Pentecostarion is read, until the Sunday of All
+Saints." SC4's build applied the Resurrection troparion+kontakion pairing unconditionally on every
+Saturday, including Great Lent Saturdays, where the source says the Kontakion specifically (not the
+troparion, which the rubric doesn't mention) should be different, Triodion-sourced content. Fixed:
+during Great Lent (the one season this engine's own `_computeLiturgicalSeason()` already detects
+precisely), the Kontakion half is now replaced with an honest disclosure rather than the Resurrection
+text. **Not fixed, disclosed as a remaining gap**: the rubric's own start point (the pre-Lenten Sunday
+of the Publican and Pharisee, roughly three weeks before Great Lent proper begins) and its "except the
+fifth week of Lent" carve-out aren't covered, since this engine has no season bucket for the
+pre-Lenten Triodion weeks; nor is the separate Pentecost-season rule ("on all days," not just
+Saturdays, through All Saints Sunday), since there's no Pentecost-season bucket either. Building either
+properly is new season-detection infrastructure, not a small patch, and is out of scope for a
+re-verification pass — flagged here for whenever that infrastructure is built. Verified: `node --check`
+clean, the 5-year/14-office sweep is clean, live-confirmed a Great Lent Saturday now discloses the
+Kontakion gap while an ordinary Saturday is unaffected.
+
 ---
 
 ## THE FOUR INTERHOURS — newly audited 2026-09-26 (never previously scoped), 6 findings (IH1-IH6)
@@ -972,3 +1056,19 @@ This audit (and the fix that will follow it) covers what `resolveOffice()` produ
 office keys; it does not establish whether any current UI surface actually lets a user open an
 Interhour, or whether they are reachable only via direct API/test calls. Flagged so this isn't
 silently assumed either way — worth a quick UI check during the fix pass, not blocking it.
+
+### Finding IH7 — Disclosed, found during second-pass re-verification: no appointment gate exists for any of the four Interhours
+
+The First Hour's own Interhour text carries a bracketed usage note not repeated at the other three
+(`UNABHOR1997` p.93): "[According to present-day usage, the Inter-Hours are said only on the first
+day of the Apostles' Fast, and on the first day of the Nativity Fast if it begin on a weekday. When
+the Inter-Hours are said, there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
+not appointed during Great Lent when the kathismata and readings from The Ladder are appointed at the
+Hours.]" — i.e. in real practice this is one of the rarest offices in the whole Horologion, appointed
+on perhaps two days a year, and explicitly never during Great Lent. `_resolveInterhourSlots()` has no
+appointment gate at all — unlike Great Compline's own `greatComplineAppointed` check, it resolves full
+content for every date, including every day of Great Lent, where the source says it shouldn't be
+appointed at all. This is a content-accuracy-adjacent but distinct question from IH1-IH4 (whether the
+content shown is *correct*, not whether it should be *shown at all* on a given date) and building the
+gate is a separate, scoped piece of work — disclosed here rather than attempted inside a
+re-verification pass.

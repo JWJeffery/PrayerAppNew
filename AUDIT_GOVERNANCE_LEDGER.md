@@ -21725,3 +21725,91 @@ check, its own regression sweep, and its own browser verification had all missed
 those checks re-read the source text itself -- they only confirmed the code ran without error and
 produced non-empty output. The Horologion full audit remains complete at 12 of 12 offices, now with
 this correction folded in.**
+
+---
+## Session 2026-09-26, continued -- Josh asked for the same double-check treatment across the other
+## thirteen offices, not just Great Compline. Two more real bugs found and fixed; three real gaps
+## found and disclosed; a documentation office-count error corrected (14 offices, not 12).
+
+Also corrected in passing: Josh's own summary and mine both said "the other 10" when listing the
+offices to re-check; the actual count was 13 (Vespers, the four Hours, Typika, Orthros, Midnight
+Office, Small Compline, the four Interhours). And this whole findings doc had been calling the total
+"12 offices / 9 office-groups" in several places since the scope-correction commit -- the four Hours
+and four Interhours are each 4 separate offices sharing one findings-doc entry apiece, not 1 office
+each: 6 singly-counted offices + 4 + 4 = 14, across 8 office-groups. Fixed everywhere this appeared
+across all three narrative docs and the dashboard.
+
+Re-read the raw source line-by-line against the actual built JSON for all thirteen remaining
+offices -- not a re-run of the sweep/browser scripts already run once for each, which only prove code
+executes without error, never that its content matches the source. Grepped each office's own source
+range first for the specific class of thing that hid Great Compline's own miss (embedded conditional
+rubrics -- "except on...", "is not said...", "instead..." -- buried in flowing prose rather than
+called out as their own rubric), then read the flagged passages and the corresponding built content
+side by side.
+
+**Bugs found and fixed:**
+- **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
+  been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the
+  "transcribe verbatim, don't generalize" standard was made explicit later in the session during
+  Great Compline's GC5 fix. It read "Let us pray for the Orthodox episcopate of the Church, for our
+  hierarchs..." where `UNABHOR1997` actually prints the same ROCOR-specific text already built
+  verbatim for Great Compline's own identical litany ("...the Church of Russia; for our lord the
+  Very Most Reverend Metropolitan N., First Hierarch of the Russian Church Abroad..."), and had
+  silently dropped "the suffering Russian land" and "for their salvation" from the petition list's
+  first line. A stray `"repeat": 3` had also been left wrapping the entire 14-line petition block,
+  when the source shows it recited once, with only the interspersed "Lord, have mercy" response
+  said continuously throughout and a separate discrete triple repeat only after the list ends.
+  Corrected to match the source exactly; the `bows-and-forgiveness`/`icon-veneration-rubric` slots'
+  dropped parenthetical alternate-address forms restored for the same consistency reason.
+- **Small Compline's Saturday Kontakion** (Finding SC4's own build) was applied unconditionally on
+  every Saturday. `UNABHOR1997` p.245's own rubric, printed immediately after the tone table SC4
+  built, says the Kontakion specifically (not the troparion) is replaced by Triodion content during
+  Great Lent (with a "fifth week" exception) and by Pentecostarion content "on all days" during the
+  Pentecost season -- neither of which this engine's season detection covered at all. Fixed for the
+  one season this engine's `_computeLiturgicalSeason()` already detects precisely (Great Lent proper,
+  Clean Monday through Great Friday): the Kontakion half now renders an honest disclosure instead of
+  the Resurrection text on those Saturdays. The pre-Lenten Triodion start point, the fifth-week
+  exception, and the Pentecost-season rule remain disclosed, not built -- each would need new
+  season-detection infrastructure this engine doesn't have yet.
+
+**Gaps found and disclosed, not built (each would be its own dedicated pass, not a re-verification
+patch):**
+- **Typika (new Finding T8)**: has its own genuinely distinct Great Lent structural form --
+  `UNABHOR1997` p.148 says the Typical Psalms (102, 145) are dropped outright during Great Lent, and
+  what remains is folded directly onto the end of the Ninth Hour as a short Beatitudes-with-refrain
+  unit, not a separate office with its usual opening. The current build shows the full Psalm 102/145
+  opening unconditionally, every day, with no season check anywhere in `_resolveTypikaSlots()`. This
+  is comparable in scope to Midnight Office's own M0 finding, not a small drift -- flagged as the most
+  significant open item from this whole re-verification pass.
+- **The four Interhours (new Finding IH7)**: none has any appointment gate at all, though the First
+  Hour's own text carries a bracketed usage note (`UNABHOR1997` p.93) restricting the whole
+  office-group to roughly two days a year in present-day usage and explicitly never during Great
+  Lent. `_resolveInterhourSlots()` resolves full content for every date regardless. A different
+  question from IH1-IH4 (whether shown content is correct vs. whether it should be shown at all),
+  disclosed rather than gated in this pass.
+- Small Compline's own Great-Lent Kontakion fix (above) has known remaining imprecision, disclosed in
+  place rather than silently left implied as complete.
+
+**Checked and found already correct, no changes**: Vespers (V4/V5/V6's own newly-built content
+verified word-for-word against `UNABHOR1997`, including the correctly-disclosed HAPGOOD1922 composite
+sourcing for the one prayer UNABHOR1997 omits); Orthros/Matins (O1's Psalm 19/20 citation to
+`HAPGOOD1922` pp.15-16 was suspected false on a first grep miss -- the grep pattern didn't account for
+this specific source file's double-spaced-between-words OCR artifact; direct page-marker-anchored
+re-reading found both psalms printed verbatim at the cited pages, confirming the citation and content
+were both already correct); the four Hours (all four fixed verses, including Ninth Hour's, confirmed
+verbatim against `UNABHOR1997`, with one minor, defensible correction already present in the build --
+completing an apparent OCR-dropped "sake" for grammatical parallelism the source's own surrounding
+text pattern requires).
+
+**Verified after all fixes**: `node --check` clean; every touched JSON file reparses clean; the
+5-year/14-office/both-calendar-mode sweep (51,156 calls) is clean -- 0 exceptions, 0 placeholders.
+Live-confirmed in headless Chromium against the real dev server: Midnight Office's Ectenia renders
+with "suffering Russian land" present; Small Compline correctly discloses the Kontakion gap on a
+Great Lent Saturday while an ordinary Saturday is unaffected.
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated throughout: the office-count correction, a new
+"Second-pass re-verification" summary at the top, the Midnight Office and Small Compline corrections
+recorded in place, and new disclosed Findings T8 and IH7. This is not a claim that the corpus is now
+error-free -- it is a claim that this specific, requested second pass is complete, its findings are
+recorded, and the process itself (independent source re-read, not re-trusting automated checks) is
+what caught all of the above.

@@ -51,8 +51,62 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — Horologion full audit COMPLETE, 12 of 12 offices.
-Read this entry first.** The scope correction below (Grand Compline's full re-audit, the four
+**State as of 2026-09-26, latest of all — second-pass re-verification complete across all 13 other
+offices, not just Great Compline (Josh: "run the second pass on the other ten" — actual count was
+13; corrected below too). Two more real bugs found and fixed; three real gaps found and disclosed,
+not built. Read this entry first.**
+
+Re-read the raw source line-by-line against the actual built JSON for Vespers, the four Hours,
+Typika, Orthros/Matins, Midnight Office, Small Compline, and the four Interhours — the same
+independent-re-read discipline that caught Great Compline's own Friday-dismissal miss, not a re-run
+of the sweep/browser scripts already run once for each office.
+
+**Fixed**: Midnight Office's closing Ectenia (`monastic-ectenia`) had been paraphrased away from the
+source during its own M0-M3 rebuild — before the "verbatim, don't generalize" standard was made
+explicit later in the session — dropping the ROCOR-specific wording ("...Church of Russia... First
+Hierarch of the Russian Church Abroad...", "the suffering Russian land... for their salvation") that
+Great Compline's own identical litany already got right. Corrected to match the source exactly,
+including restoring dropped parenthetical alternate-address forms. Small Compline's Saturday
+Kontakion (Finding SC4) was applied unconditionally; `UNABHOR1997` p.245 says it's replaced by
+Triodion content during Great Lent — fixed for the one season this engine's own season-detection
+already covers precisely.
+
+**Disclosed, not built** (each is its own dedicated pass, not a quick patch): Typika has a genuinely
+distinct Great Lent structural form (new Finding T8) — Psalms 102/145 dropped, folded onto the Ninth
+Hour as a Beatitudes-only unit — comparable in scope to Midnight Office's own M0 finding, not
+currently modeled at all. None of the four Interhours has an appointment gate (new Finding IH7),
+though the source restricts them to ~2 days a year, never during Great Lent. Small Compline's own
+Great-Lent Kontakion fix has known remaining imprecision (the pre-Lenten weeks, the "fifth week"
+exception, the Pentecost-season rule) — disclosed in place, not silently implied complete.
+
+**Checked, already correct, no changes**: Vespers (V4/V5/V6 verified word-for-word), Orthros/Matins
+(O1's Hapgood citation was suspected false on a first grep miss — the grep didn't account for that
+source file's double-spaced OCR artifact; direct re-reading confirmed both the citation and content
+were already correct), the four Hours (all four fixed verses confirmed verbatim).
+
+**Also corrected**: this whole findings doc's own office count, miscounted as "12 offices / 9
+office-groups" in several places since the scope-correction commit — the four Hours and four
+Interhours are each 4 separate offices sharing one findings-doc entry apiece, not 1 office each; the
+real count is **14 offices across 8 office-groups**.
+
+Verified after all fixes: `node --check` clean, all touched JSON reparses clean, the
+5-year/14-office/both-calendar-mode sweep (51,156 calls) is clean, live-confirmed in headless
+Chromium (Midnight Office's Ectenia renders with "suffering Russian land" present; Small Compline
+correctly discloses the Kontakion gap on a Great Lent Saturday, unaffected on an ordinary Saturday).
+Full account: `AUDIT_GOVERNANCE_LEDGER.md`'s matching entry.
+
+**This is not a claim the corpus is now error-free** — it's a claim that this specific, requested
+second pass is complete and its findings (fixed and disclosed alike) are recorded. Two open,
+disclosed, comparably-sized-to-M0 items remain for a future dedicated pass: Typika's Great Lent form
+(T8) and the Interhours' appointment gating (IH7).
+
+---
+
+**State as of 2026-09-26, superseded by the entry above — Horologion full audit COMPLETE, 14 of 14
+offices (corrected count — this and other places in this pass's docs previously miscounted it as
+"12"; the four Hours and four Interhours are each 4 separate offices sharing one findings-doc entry
+apiece, not 1 office each — 6 singly-counted offices + 4 + 4 = 14, across 8 office-groups, not 9).**
+The scope correction below (Grand Compline's full re-audit, the four
 Interhours audited from scratch) is now fully closed: GC3, GC4, and GC5 — the ten-prayer "Prayers
 on Approaching Sleep" block, the Kontakion to the Theotokos and its three verses, the corrected
 Guardian Angel prayer, and the real closing dismissal sequence (mutual forgiveness exchange, the
@@ -78,7 +132,7 @@ substitutes the standard short blessing formula for Fridays specifically (see
 day-types) after the fix. All ten Prayers on Approaching Sleep, the Kontakion, and its verses were
 independently re-checked word-for-word in the same pass and found correct as originally built.
 
-**The Horologion full audit is genuinely complete now: all 12 offices across 9 audited
+**The Horologion full audit is genuinely complete now: all 14 offices across 8 audited
 office-groups — Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office,
 Small Compline, and the four Interhours — have been audited line-by-line against primary sources,
 fixed, regression-swept, and live-confirmed in a real browser. There is no next office-group to

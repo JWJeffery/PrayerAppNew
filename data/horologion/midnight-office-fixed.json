@@ -733,17 +733,17 @@
         {
           "type": "text",
           "key": "baf-1",
-          "text": "The priest maketh a bow (or a prostration) to the brethren, saying: Bless, holy fathers and brethren, and forgive me a sinner all wherein I have sinned this day in deed, word, and thought, and by all my senses."
+          "text": "Then the priest maketh a bow (or a prostration) to the (bishop/superior and to the) brethren (sisters)(congregation), saying: Bless, (holy master and) holy fathers (mothers) and brethren (sisters), and forgive me a sinner all wherein I have sinned this day in deed, word, and thought, and by all my senses."
         },
         {
           "type": "text",
           "key": "baf-2",
-          "text": "The brethren reply: May God forgive and have mercy on thee, holy father."
+          "text": "And the brethren (sisterhood)(congregation) reply: May God forgive and have mercy on thee, holy father."
         },
         {
           "type": "text",
           "key": "baf-3",
-          "text": "And they make a bow, asking this forgiveness: Bless me, holy father, and forgive all wherein I have sinned this day in deed, word, and thought, and in all my senses, and pray for me a sinner."
+          "text": "And they make a bow (or a prostration), asking this forgiveness: Bless me, holy father, and forgive all wherein I have sinned this day in deed, word, and thought, and in all my senses, and pray for me a sinner."
         },
         {
           "type": "text",
@@ -759,12 +759,18 @@
         {
           "type": "text",
           "key": "me-1",
-          "text": "Priest: Let us pray for the Orthodox episcopate of the Church, for our hierarchs, and all our brethren in Christ.\nChanters: Lord, have mercy. (Quietly, slowly, repeated until the petitions are ended.)"
+          "text": "Priest: Let us pray for the Orthodox episcopate of the Church of Russia; for our lord the Very Most Reverend Metropolitan N., First Hierarch of the Russian Church Abroad; for our lord the Most Reverend (Archbishop or Bishop N., whose diocese it is), and all our brethren in Christ.\nChanters: Lord, have mercy. (Quietly, slowly, repeatedly, until the petitions are ended.)"
         },
         {
           "type": "text",
           "key": "me-2",
-          "text": "For the suffering Orthodox people, both in the homeland and in the diaspora, and for their salvation; for this land, its authorities and armed forces.\n\nFor them that hate us and them that love us.\n\nFor them that are kind to us and them that serve us.\n\nFor them that have charged us unworthy ones to pray for them.\n\nFor the deliverance of the imprisoned.\n\nFor our fathers and brethren that are away.\n\nFor them that sail upon the sea.\n\nFor them that are bedridden in infirmities.\n\nLet us pray also for the abundance of the fruits of the earth.\n\nAnd for every Orthodox Christian soul.\n\nLet us bless pious kings (rulers).\n\nOrthodox hierarchs, and the founders of this sacred habitation.\n\nOur parents, and all that have passed on before us, our fathers and brethren, and the Orthodox here and everywhere laid to rest.\n\nLet us say also for ourselves.\nChanters: Lord, have mercy.",
+          "text": "For the suffering Russian land and its Orthodox people both in the homeland and in the diaspora, and for their salvation; for this land, its authorities and armed forces.\n\nFor them that hate us and them that love us.\n\nFor them that are kind to us and them that serve us.\n\nFor them that have charged us unworthy ones to pray for them.\n\nFor the deliverance of the imprisoned.\n\nFor our fathers and brethren that are away.\n\nFor them that sail upon the sea.\n\nFor them that are bedridden in infirmities.\n\nLet us pray also for the abundance of the fruits of the earth.\n\nAnd for every Orthodox Christian soul.\n\nLet us bless pious kings (rulers).\n\nOrthodox hierarchs, and the founders of this sacred habitation.\n\nOur parents, and all that have passed on before us, our fathers and brethren, and the Orthodox here and everywhere laid to rest.\n\nLet us say also for ourselves.",
+          "repeat": 1
+        },
+        {
+          "type": "text",
+          "key": "me-2b",
+          "text": "Chanters: Lord, have mercy.",
           "repeat": 3
         },
         {
@@ -777,7 +783,7 @@
     "icon-veneration-rubric": {
       "type": "rubric",
       "label": "Veneration of the Icons",
-      "text": "And we venerate the holy icons and receive a blessing from the priest."
+      "text": "And we venerate the holy icons and receive a blessing from the priest (superior)(bishop)."
     },
     "canon-to-trinity-deferred-rubric": {
       "type": "rubric",
