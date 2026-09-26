@@ -22,9 +22,27 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — branches consolidated, and audit tasks 5-9 closed or
-deliberately disclosed. Read this entry first; it supersedes the "PHASE 2" handoff directly
-below by continuing from exactly where it left off.**
+**State as of 2026-09-26, latest of all — PR #37 open against `main`, being watched; nothing
+actionable on it yet. Read this entry first; it supersedes the "branches consolidated" entry
+directly below only on the PR's live status — that entry's account of the consolidation itself is
+still the accurate record.**
+
+`https://github.com/JWJeffery/PrayerAppNew/pull/37` — head `acf520c` on
+`claude/jwjeffery-prayerappnew-resume-fbkyf9`, base `main`. Last checked 2026-09-26T03:25Z:
+`state: open`, `mergeable_state: clean`, 93 commits, 0 check runs (repo has no CI configured),
+0 reviews, 0 comments — i.e. genuinely nothing to act on, purely waiting on Josh's human review.
+This session subscribed to the PR's activity and scheduled a 60-minute self check-in
+(`trig_01PBTjjsQ4E1sSksFiud4QLn`, firing ~2026-09-26T04:26Z) to re-check and either act on new
+activity (a review, a comment, a merge-conflict transition) per the standard PR-babysitting rules,
+or re-arm silently if still unchanged. **If you are resuming this session fresh: re-check PR #37's
+live state yourself before trusting the numbers above — they are a snapshot, not a promise.** If
+the PR has since been merged or closed, this line is done; move on to "what's still genuinely
+open" below. If it's still open with real activity on it (a review, a failing check now that CI
+might exist, a conflict), that activity is the immediate task, ahead of resuming audit work.
+
+**State as of 2026-09-26, branches consolidated, and audit tasks 5-9 closed or deliberately
+disclosed** (superseded above only on the PR's live status; this account of the consolidation
+itself stands):
 
 **Branch consolidation, per Josh's direct order after noticing this session's branch was missing
 the new UI**: `claude/tender-johnson-hlv2b5` (the branch that produced everything below this
