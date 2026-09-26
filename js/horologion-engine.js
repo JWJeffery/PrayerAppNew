@@ -3471,7 +3471,12 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                     const item = section.items[i];
 
-                    if (!item || item.key !== 'sessional-hymns') continue;
+                    // Finding O2 (audit 2026-09-26) split the old single
+                    // 'sessional-hymns' key into 'sessional-hymns-1' and
+                    // 'sessional-hymns-2', one per kathisma -- this guard must
+                    // still catch both, and patch each independently (no
+                    // longer safe to stop after the first match).
+                    if (!item || (item.key !== 'sessional-hymns-1' && item.key !== 'sessional-hymns-2')) continue;
 
                     const resolvedAs = String(item.resolvedAs || '');
 
@@ -3486,15 +3491,13 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                         key:        item.key,
 
-                        label:      'Sessional Hymns — Sunday',
+                        label:      item.label || 'Sessional Hymns — Sunday',
 
                         text:       '(Sunday Orthros sessional hymns are appointed here, but the currently loaded Sunday sessional hymn corpus is pending source confirmation. Full confirmed Sunday sessional hymn text is deferred.)',
 
                         resolvedAs: 'orthros-sunday-sessional-hymns-source-pending-rubric'
 
                     };
-
-                    break;
 
                 }
 
@@ -3534,6 +3537,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
+            'psalm-19',
+            'psalm-20',
             'psalm-3',
             'psalm-37',
             'psalm-62',
@@ -3543,7 +3548,9 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             'great-litany',
             'psalm-50',
             'praises-psalms',
-            'great-doxology'
+            'great-doxology',
+            'little-litany-after-kathisma-1',
+            'little-litany-after-kathisma-2'
         ]);
 
         for (const section of sections) {
@@ -3558,6 +3565,28 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         section.items.splice(i, 1);
                         i -= 1;
                         continue;
+                    }
+
+                    // Finding O2: a Small Litany with nothing to close (its own
+                    // kathisma isn't appointed today, e.g. the second kathisma on
+                    // an ordinary Sunday) is disclosed, not rendered as if real --
+                    // same reasoning as the sessional-hymn guard just above.
+                    if (item.key === 'little-litany-after-kathisma-1' || item.key === 'little-litany-after-kathisma-2') {
+                        const siblingKathismaKey = item.key === 'little-litany-after-kathisma-1' ? 'kathisma-first' : 'kathisma-second';
+                        const siblingKathismaItem =
+                            sections
+                                .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                                .find(it => it && it.key === siblingKathismaKey) || null;
+                        if (siblingKathismaItem && String(siblingKathismaItem.resolvedAs || '').includes('not-appointed')) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                label:      'The Small Litany',
+                                text:       '(Not applicable — no kathisma is appointed at this position today; see the kathisma item above.)',
+                                resolvedAs: 'orthros-small-litany-no-kathisma-not-applicable'
+                            };
+                            continue;
+                        }
                     }
 
                     const slotData = _orthrosFixedData &&
@@ -4703,26 +4732,55 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 }
 
                  // ── v5.8: sessional-hymns — season-aware rubric ──────────
-                if (item.key === 'sessional-hymns') {
+                // Finding O2 (audit 2026-09-26): each kathisma carries its OWN
+                // sessional hymn, immediately after it, not one combined slot
+                // after both kathismata (UNABHOR1997 pp.60-61). Two item keys,
+                // one per kathisma position, both resolved by the same logic
+                // the old single 'sessional-hymns' key used -- just asking for
+                // one position's hymn instead of both at once.
+                if (item.key === 'sessional-hymns-1' || item.key === 'sessional-hymns-2') {
+                    const kPosition = item.key === 'sessional-hymns-1' ? 'afterKathisma1' : 'afterKathisma2';
+
+                    // If this hymn's own kathisma isn't appointed today (e.g. the
+                    // second kathisma on an ordinary Sunday), there is nothing for
+                    // this hymn to follow -- disclose that directly rather than
+                    // rendering a pending/deferred hymn for a kathisma that isn't
+                    // there, matching the sibling kathisma item's own disclosure.
+                    const siblingKathismaKey = kPosition === 'afterKathisma1' ? 'kathisma-first' : 'kathisma-second';
+                    const siblingKathismaItem =
+                        sections
+                            .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                            .find(it => it && it.key === siblingKathismaKey) || null;
+                    if (siblingKathismaItem && String(siblingKathismaItem.resolvedAs || '').includes('not-appointed')) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
+                            text:       '(Not applicable — no kathisma is appointed at this position today; see the kathisma item directly above.)',
+                            resolvedAs: 'orthros-sessional-hymn-no-kathisma-not-applicable'
+                        };
+                        continue;
+                    }
+
                     let sessText;
                     let sessResolvedAs;
 
                     const troparionItem =
-    sections
-        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
-        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                        sections
+                            .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                            .find(it => it && it.key === 'troparion-of-the-day') || null;
                     const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
 
-const feastRank =
-    isFeast && typeof troparionItem.rank === 'number'
-        ? troparionItem.rank
-        : null;
+                    const feastRank =
+                        isFeast && typeof troparionItem.rank === 'number'
+                            ? troparionItem.rank
+                            : null;
 
-const isMajorFeastForPraises =
-    isFeast &&
-    feastRank !== null &&
-    feastRank >= 1 &&
-    feastRank <= 2;
+                    const isMajorFeastForPraises =
+                        isFeast &&
+                        feastRank !== null &&
+                        feastRank >= 1 &&
+                        feastRank <= 2;
 
                     if (isBrightWeek) {
                         sessText =
@@ -4736,10 +4794,10 @@ const isMajorFeastForPraises =
                         const hwDay = seasonResult && seasonResult.holyWeekDay
                             ? seasonResult.holyWeekDay : null;
                         const hwSessResolved = hwDay
-                            ? _resolveHolyWeekText('sessional-hymns', hwDay)
+                            ? _resolveHolyWeekText(item.key, hwDay)
                             : null;
                         if (hwSessResolved) {
-                            section.items[i] = hwSessResolved;
+                            section.items[i] = Object.assign({}, hwSessResolved, { key: item.key });
                             continue;
                         }
                         sessText =
@@ -4771,20 +4829,20 @@ const isMajorFeastForPraises =
                             ? (corpusTones[tone] || corpusTones[String(tone)] || null)
                             : null;
 
-                        if (toneEntry && toneEntry.afterKathisma1) {
+                        const sundaySessText = kPosition === 'afterKathisma1'
+                            ? toneEntry && toneEntry.afterKathisma1
+                            : toneEntry && (toneEntry.afterKathisma2 || toneEntry.afterKathisma1);
+                        if (sundaySessText) {
                             section.items[i] = {
-                                type:       'hymn-group',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns (Sedalia / Kathismata)',
+                                type:       'hymn',
+                                key:        item.key,
+                                label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                                 source:     'Octoechos',
                                 tone:       tone,
-                                items: [
-                                    { position: 'afterKathisma1', text: toneEntry.afterKathisma1 },
-                                    { position: 'afterKathisma2', text: toneEntry.afterKathisma2 || toneEntry.afterKathisma1 }
-                                ],
+                                text:       sundaySessText,
                                 resolvedAs: 'orthros-sunday-resurrectional-sessional-hymns-text'
                             };
-                            continue; 
+                            continue;
                         }
 
                         // Corpus not loaded or tone missing — honest rubric fallback
@@ -4806,14 +4864,15 @@ const isMajorFeastForPraises =
                         sessResolvedAs = 'orthros-sunday-feast-sessional-hymns-rubric';
                    } else {
                         // ── non-Sunday rank 1–2 Menaion feast guard ───────────────────
+                        const kOrdinalLabel = kPosition === 'afterKathisma1' ? 'After the First Kathisma' : 'After the Second Kathisma';
                         if (isMajorFeastForPraises) {
                             const _sessHymnFeastName = (troparionItem && troparionItem.label)
                                 ? troparionItem.label : 'this feast';
                             section.items[i] = {
                                 type:       'rubric',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns — Menaion Feast',
-                                text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymns: The appointed Menaion Sessional Hymns / Sedalia for ${_sessHymnFeastName} are not yet text-backed in the corpus and should be taken from the Menaion.`,
+                                key:        item.key,
+                                label:      'Sessional Hymn ' + kOrdinalLabel + ' — Menaion Feast',
+                                text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymn ${kOrdinalLabel}: The appointed Menaion Sessional Hymn / Sedalion for ${_sessHymnFeastName} is not yet text-backed in the corpus and should be taken from the Menaion.`,
                                 resolvedAs: 'orthros-menaion-feast-sessional-hymns-rubric'
                             };
                             continue;
@@ -4825,9 +4884,9 @@ const isMajorFeastForPraises =
                                 ? troparionItem.label : 'the commemoration';
                             section.items[i] = {
                                 type:       'rubric',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns — Menaion Commemoration',
-                                text:       `Menaion commemoration — rank 3: Sessional Hymns (${_r3SessName}). The Sessional Hymns (Sedalia) appointed from the Menaion according to the Typikon are not yet present in the current public-beta corpus.`,
+                                key:        item.key,
+                                label:      'Sessional Hymn ' + kOrdinalLabel + ' — Menaion Commemoration',
+                                text:       `Menaion commemoration — rank 3: Sessional Hymn ${kOrdinalLabel} (${_r3SessName}). The Sessional Hymn (Sedalion) appointed from the Menaion according to the Typikon is not yet present in the current public-beta corpus.`,
                                 resolvedAs: 'orthros-rank3-menaion-sessional-hymns-deferred-rubric'
                             };
                             continue;
@@ -4865,40 +4924,40 @@ const isMajorFeastForPraises =
                             ? (wdToneBlock[dayOfWeek] || wdToneBlock[String(dayOfWeek)] || null)
                             : null;
 
-                        if (wdEntry && (wdEntry.afterKathisma1 || wdEntry.afterKathisma2)) {
+                        const wdSessText = kPosition === 'afterKathisma1'
+                            ? wdEntry && (wdEntry.afterKathisma1 || wdEntry.afterKathisma2)
+                            : wdEntry && (wdEntry.afterKathisma2 || wdEntry.afterKathisma1);
+                        if (wdSessText) {
                             section.items[i] = {
-                                type:       'hymn-group',
-                                key:        'sessional-hymns',
-                                label:      'Sessional Hymns (Sedalia / Kathismata)',
+                                type:       'hymn',
+                                key:        item.key,
+                                label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                                 source:     'Octoechos',
                                 tone:       tone,
                                 day:        dayOfWeek,
-                                items: [
-                                    { position: 'afterKathisma1', text: wdEntry.afterKathisma1 || wdEntry.afterKathisma2 },
-                                    { position: 'afterKathisma2', text: wdEntry.afterKathisma2 || wdEntry.afterKathisma1 }
-                                ],
+                                text:       wdSessText,
                                 resolvedAs: 'orthros-ordinary-weekday-sessional-hymns-text'
                             };
                             continue;
                         }
 
                         // Corpus absent or entry null — honest rubric fallback
+                        const kOrdinal = kPosition === 'afterKathisma1' ? 'first' : 'second';
                         sessText =
-                            `ORDINARY WEEKDAY (${dayName}) — Sessional Hymns (Sedalia): After each ` +
-                            `kathisma a Sessional Hymn (Sedalion) is sung seated. On ordinary weekdays ` +
-                            `these are drawn from the Octoechos for the current tone and day.` + toneNote + '\n\n' +
+                            `ORDINARY WEEKDAY (${dayName}) — Sessional Hymn After the ${kOrdinal.charAt(0).toUpperCase() + kOrdinal.slice(1)} Kathisma: ` +
+                            `On ordinary weekdays this sedalion is drawn from the Octoechos for the current tone and day.` + toneNote + '\n\n' +
                             `The Octoechos theme for ${dayName} is ${theme}. ` +
-                            `The appointed sedalia follow this theme.\n\n` +
+                            `The appointed sedalion follows this theme.\n\n` +
                             `(If a Menaion commemoration of sufficient rank is appointed, the Menaion ` +
-                            `sedalia replace or supplement the Octoechos sedalia. Full Octoechos and ` +
+                            `sedalion replaces or supplements the Octoechos sedalion. Full Octoechos and ` +
                             `Menaion Sessional Hymn corpora are not yet embedded in this path.)`;
                         sessResolvedAs = 'orthros-ordinary-weekday-sessional-hymns-rubric';
                     }
 
                     section.items[i] = {
                         type:       'rubric',
-                        key:        'sessional-hymns',
-                        label:      'Sessional Hymns (Sedalia)',
+                        key:        item.key,
+                        label:      kPosition === 'afterKathisma1' ? 'Sessional Hymn After the First Kathisma' : 'Sessional Hymn After the Second Kathisma',
                         text:       sessText,
                         resolvedAs: sessResolvedAs
                     };

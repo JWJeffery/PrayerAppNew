@@ -51,12 +51,56 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 4 of 7
-(Typika) fixed: Findings T2-T7. Read this entry first.** Continuing the fix pass in the order
-`documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers, Grand Compline, and the four Hours
-already fixed — see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down and the entry directly
-below this one for the Hours). Read both governing sources' full Typika text directly before
-touching anything (`HAPGOOD1922` pp.59-63; `UNABHOR1997` pp.135-143), not just the excerpts quoted
+**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 5 of 7
+(Orthros/Matins) fixed: Findings O1, O2. Read this entry first.** Continuing the fix pass in the
+order `documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers, Grand Compline, the four
+Hours, and Typika already fixed — see the entries directly below). Read `UNABHOR1997`'s "THE ORDER
+OF THE MATINS" (pp.46-64) plus `HAPGOOD1922`'s All-Night Vigil (for O1's psalm text specifically)
+directly before touching anything.
+
+**O1**: `psalm-19`/`psalm-20` added as a new section between `opening` and `six-psalms`, per
+`UNABHOR1997` p.47's entry point "(III)" — the path this office's baseline already assumes (not
+Great Lent, no Vigil, preceded by Vespers or the Midnight Office). Text sourced from `HAPGOOD1922`
+pp.15-16 for consistency with this file's own Coverdale-sourced Six Psalms/Psalm 50. Disclosed, not
+built: both sources show a repeated Trisagion complex plus what reads as festal/Vigil-specific
+troparia and a hierarch litany between Psalm 20 and the Six Psalms on this path — out of scope for
+a finding that asks only for the two psalms, and not confidently established as belonging to the
+*ordinary ferial* baseline rather than only the Vigil form.
+
+**O2**: `kathismata` and `sessional-hymns` merged into one interleaved section (kathisma 1 → its
+own hymn → Small Litany → kathisma 2 → its own hymn → Small Litany → kathisma 3, unchanged). The
+engine's own resolution logic already tracked per-kathisma hymn text internally
+(`afterKathisma1`/`afterKathisma2`) — only the skeleton's structural position was wrong.
+
+**Two real bugs caught while restructuring, both fixed before shipping, neither part of the
+original finding**: (1) a post-processing safety patch that downgrades an unverified Sunday
+sessional hymn to "pending source confirmation" matched the old singular key and would have gone
+silently dead on the new split keys — fixed to match either and patch each independently; (2) on an
+ordinary Sunday only the first kathisma is appointed, but the interleaved structure would have
+rendered the second kathisma's hymn/litany as if real content belonged there — both now check their
+sibling kathisma's own resolution and disclose "not applicable" instead, verified not to misfire on
+Great Lent/Bright Week/Holy Week dates where all three kathismata carry real content.
+
+**Verified**: same standard as every prior office-group — `node --check` clean, both JSON files
+reparse clean, rebuilt harness confirms a weekday and a Sunday both resolve correctly, the 5-year
+sweep clean, live-confirmed in headless Chromium under `?shell=v2`, zero non-environmental console
+errors. Full account: `AUDIT_GOVERNANCE_LEDGER.md`'s "Horologion audit fix pass, office-group 5 of
+7" entry; `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Orthros/Matins section updated to FIXED.
+SEED_VERSION `v376 -> v377`.
+
+**Next in the fix pass, per the audit's own order**: Midnight Office (Findings M0-M3) — M0 is real
+architectural work (day-of-week branching for three genuinely distinct office forms), flagged in
+the audit itself as probably worth Josh's input before starting, given Orthros will likely need
+similar treatment eventually for its own Sunday/festal forms.
+
+---
+
+**State as of 2026-09-26, office-group 4 of 7 (Typika) fixed: Findings T2-T7.** Continuing the fix
+pass in the order `documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers, Grand Compline,
+and the four Hours already fixed — see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down and
+the entry directly below this one for the Hours). Read both governing sources' full Typika text
+directly before touching anything (`HAPGOOD1922` pp.59-63; `UNABHOR1997` pp.135-143), not just the
+excerpts quoted
 in the findings doc — same discipline the Hours fix used, and it paid off the same way: **three
 things beyond T2-T6's own wording surfaced, all disclosed in place rather than silently absorbed**:
 `typika-beatitudes` had no closing refrain at all (T4's own text assumed one existed);

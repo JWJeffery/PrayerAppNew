@@ -21297,3 +21297,71 @@ three beyond-scope corrections recorded in place; the summary table and top stat
 pattern for this data directory.
 
 **Next in the fix pass, per the audit's own stated order**: Orthros/Matins (Findings O1-O2).
+
+---
+
+## Session 2026-09-26, continued -- Horologion audit fix pass, office-group 5 of 7: Orthros/Matins
+## -- Findings O1, O2 fixed.
+
+Continuing the fix pass in order (Vespers, Grand Compline, the four Hours, Typika already fixed).
+Read `UNABHOR1997`'s "THE ORDER OF THE MATINS" (pp.46-64) directly, plus `HAPGOOD1922`'s All-Night
+Vigil (which reaches the same structural point via a different entry marker) for O1's psalm text,
+before touching anything.
+
+**O1**: `psalm-19` and `psalm-20` added as a new section between `opening` and `six-psalms`, per
+`UNABHOR1997` p.47's entry point "(III)" -- the path this office's own baseline already assumes
+(not Great Lent, no Vigil, preceded by Vespers or the Midnight Office). Text sourced from
+`HAPGOOD1922` pp.15-16 for consistency with this file's own Coverdale-sourced Six Psalms/Psalm 50,
+not from `UNABHOR1997`'s own (differently-registered) translation. Disclosed, not built: both
+sources show a repeated Trisagion complex plus what reads as festal/Vigil-specific troparia and a
+hierarch litany between Psalm 20 and the Six Psalms on this path -- out of scope for a finding that
+asks only for the two psalms, and not established with confidence as belonging to the *ordinary
+ferial* baseline rather than only the Vigil form.
+
+**O2**: `kathismata` and `sessional-hymns` merged into one interleaved section (kathisma 1 -> its
+own sessional hymn -> Small Litany -> kathisma 2 -> its own sessional hymn -> Small Litany ->
+kathisma 3, unchanged). `js/horologion-engine.js`'s existing sessional-hymn resolution logic
+already tracked hymn text per kathisma internally (`afterKathisma1`/`afterKathisma2`, both the
+Sunday and ordinary-weekday corpus paths) -- only the skeleton's structural position, not the
+underlying data model, was wrong. Split the single `sessional-hymns` item key into
+`sessional-hymns-1`/`sessional-hymns-2`; each of the ~6 branches inside the old combined handler
+(Bright Week, Holy Week, Great Lent, Sunday +-feast, non-Sunday +-feast rank 1-2/rank 3/ordinary)
+converted to resolve one position's hymn instead of a two-item `hymn-group`. New
+`little-litany-after-kathisma-1`/`-2` fixed-text slots added, reusing Vespers' own
+`little-litany-after-kathisma` text verbatim (same fixed litany form, same source).
+
+**A real bug caught while restructuring, not part of the original finding**:
+`_finalizeOrthrosReleaseHonestyPatch()` -- a post-processing safety patch downgrading a Sunday
+sessional hymn to "pending source confirmation" when its corpus text hasn't been independently
+verified -- matched the old singular `sessional-hymns` key and `break`s after patching the first
+hit. Splitting the key into two would have silently disabled this patch entirely (neither new key
+matches the old check). Fixed to match either new key and patch each independently.
+
+**A second real gap caught while restructuring**: on an ordinary Sunday only the first kathisma is
+appointed (the second and third already correctly disclose "not appointed"), but the interleaved
+structure would have rendered `sessional-hymns-2` and its Small Litany as if real content belonged
+there regardless of whether its own kathisma exists. Both now check their sibling kathisma item's
+own resolution (`resolvedAs` containing `not-appointed`) and disclose "not applicable" instead.
+Verified directly against Great Lent, Bright Week, and Holy Week dates that this new check does not
+misfire on any of those paths -- their own "no kathisma" wording (`orthros-bright-week-no-kathisma`,
+etc.) doesn't match the specific `not-appointed` substring the guard looks for, so all three
+kathismata still resolve their existing, correct, season-specific content unaffected.
+
+**Verified**: `node --check` clean; both touched JSON files reparse clean; the rebuilt full-script
+harness confirms an ordinary weekday and a Sunday both resolve `status: "complete"`, 0
+placeholders, with the correct new section order; the "not applicable" guard confirmed correct on
+Sunday and confirmed not to misfire on Great Lent/Bright Week/Holy Week dates (spot-checked
+directly, not assumed from reading the code alone); the 5-year, 10-office, both-calendar-mode sweep
+(36,540 calls) is clean. Live-confirmed in this sandbox's own headless Chromium against the real
+running dev server under `?shell=v2`: both dates resolve with the correct section order and
+kathismata item keys, zero non-environmental console errors.
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated: the Orthros/Matins section marked FIXED with
+both real bugs caught during the fix recorded in place; the summary table and top status line
+updated to "5 of 7 fixed." `RESUME_PROJECT_NOTE.md` updated to match. No cache-bust bump needed,
+same reasoning as every prior office-group in this pass.
+
+**Next in the fix pass, per the audit's own stated order**: Midnight Office (Findings M0-M3). M0 is
+real architectural work (day-of-week branching for three genuinely distinct office forms) --
+flagged in the audit itself as probably worth Josh's input before starting, given Orthros will
+likely need similar treatment eventually for its own Sunday/festal forms.

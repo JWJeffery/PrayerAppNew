@@ -18,7 +18,8 @@
     "from the 1906 text (archive.org), LXX/Vulgate numbering as printed there (Psalm iii,",
     "xxxviii, lxiii, lxxxviii, ciii, cxliii), only orthography lightly modernized (thee/thou",
     "left as printed). The Alleluia/\"Lord, have mercy\" refrains and doxologies surrounding",
-    "each psalm are liturgical rubrics of the Six Psalms and are unchanged."
+    "each psalm are liturgical rubrics of the Six Psalms and are unchanged.",
+    "AUDIT FIX 2026-09-26 (Findings O1, O2): added 'psalm-19'/'psalm-20' (O1 -- UNABHOR1997 p.47's entry point '(III)', the path this office's own baseline already assumes: not Great Lent, no Vigil, preceded by Vespers or the Midnight Office; text from HAPGOOD1922 pp.15-16, her All-Night Vigil reaching the identical point, for consistency with this file's own Coverdale-sourced Six Psalms/Psalm 50). Added 'little-litany-after-kathisma-1'/'-2' (O2), reusing Vespers' own little-litany-after-kathisma text verbatim for the same fixed litany form. NOT built, disclosed only: what HAPGOOD1922/UNABHOR1997 show between Psalm 20 and the Six Psalms on this same entry path -- a repeated Trisagion complex and festal/Vigil-specific troparia and a hierarch litany -- is out of scope for Finding O1, which asks only for the two psalms themselves, and that further material reads as Vigil-specific rather than part of this office's own ordinary ferial baseline; not investigated further."
   ],
   "label": "Orthros / Matins — Invariable Fixed Texts",
   "slots": {
@@ -27,17 +28,64 @@
       "key": "usual-beginning",
       "label": "The Usual Beginning",
       "items": [
-        { "type": "text", "key": "usual-beginning-1", "text": "Amen. Glory to Thee, our God, glory to Thee." },
-        { "type": "text", "key": "usual-beginning-2", "text": "O Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One." },
-        { "type": "text", "key": "usual-beginning-3", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
-        { "type": "text", "key": "usual-beginning-4", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen." },
-        { "type": "text", "key": "usual-beginning-5", "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake." },
-        { "type": "text", "key": "usual-beginning-6", "text": "Lord, have mercy.", "repeat": 3 },
-        { "type": "text", "key": "usual-beginning-7", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen." },
-        { "type": "text", "key": "usual-beginning-8", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
-        { "type": "text", "key": "usual-beginning-9", "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen." },
-        { "type": "text", "key": "usual-beginning-10", "text": "Lord, have mercy.", "repeat": 12 },
-        { "type": "text", "key": "usual-beginning-11", "text": "Come, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God." }
+        {
+          "type": "text",
+          "key": "usual-beginning-1",
+          "text": "Amen. Glory to Thee, our God, glory to Thee."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-2",
+          "text": "O Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-3",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-4",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-5",
+          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-6",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-7",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-8",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-9",
+          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-10",
+          "text": "Lord, have mercy.",
+          "repeat": 12
+        },
+        {
+          "type": "text",
+          "key": "usual-beginning-11",
+          "text": "Come, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+        }
       ]
     },
     "psalm-3": {
@@ -145,6 +193,32 @@
       "hebrewNumber": 51,
       "label": "Psalm 50 (LXX) — Have mercy upon me, O God, after thy great goodness",
       "text": "Have mercy upon me, O God, after thy great goodness; according to the multitude of thy mercies do away mine offences.\n\nWash me throughly from my wickedness, and cleanse me from my sin. For I acknowledge my faults, and my sin is ever before me. Against thee only have I sinned, and done this evil in thy sight; that thou mightest be justified in thy saying, and clear when thou art judged.\n\nBehold, I was shapen in wickedness, and in sin hath my mother conceived me. But lo, thou requirest truth in the inward parts, and shalt make me to understand wisdom secretly.\n\nThou shalt purge me with hyssop, and I shall be clean; thou shalt wash me, and I shall be whiter than snow. Thou shalt make me hear of joy and gladness, that the bones which thou hast broken may rejoice.\n\nTurn thy face from my sins, and put out all my misdeeds. Make me a clean heart, O God, and renew a right spirit within me.\n\nCast me not away from thy presence, and take not thy Holy Spirit from me. O give me the comfort of thy help again, and stablish me with thy free Spirit. Then shall I teach thy ways unto the wicked, and sinners shall be converted unto thee.\n\nDeliver me from blood-guiltiness, O God, thou that art the God of my health; and my tongue shall sing of thy righteousness. Thou shalt open my lips, O Lord, and my mouth shall show thy praise.\n\nFor thou desirest no sacrifice, else would I give it thee; but thou delightest not in burnt-offerings. The sacrifice of God is a troubled spirit: a broken and contrite heart, O God, shalt thou not despise.\n\nO be favourable and gracious unto Sion; build thou the walls of Jerusalem. Then shalt thou be pleased with the sacrifice of righteousness, with the burnt-offerings and oblations; then shall they offer young bullocks upon thine altar.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-19": {
+      "type": "psalm",
+      "lxxNumber": 19,
+      "hebrewNumber": 20,
+      "label": "Psalm 19 (LXX) — The Lord hear thee in the day of trouble",
+      "text": "The Lord hear thee in the day of trouble; the Name of the God of Jacob defend thee: send thee help from the sanctuary, and strengthen thee out of Zion: remember all thy offerings, and accept thy burnt-sacrifice: grant thee thy heart's desire, and fulfil all thy mind. We will rejoice in thy salvation, and triumph in the Name of the Lord our God: the Lord perform all thy petitions. Now know I that the Lord helpeth his Anointed, and will hear him from his holy heaven, even with the wholesome strength of his right hand. Some put their trust in chariots, and some in horses; but we will remember the Name of the Lord our God. They are brought down and fallen; but we are risen and stand upright. Save, Lord; and hear us, O King of heaven, when we call upon thee."
+    },
+    "psalm-20": {
+      "type": "psalm",
+      "lxxNumber": 20,
+      "hebrewNumber": 21,
+      "label": "Psalm 20 (LXX) — The King shall rejoice in Thy strength, O Lord",
+      "text": "The King shall rejoice in thy strength, O Lord; exceeding glad shall he be of thy salvation. Thou hast given him his heart's desire, and hast not denied him the request of his lips. For thou shalt prevent him with the blessings of goodness, and shalt set a crown of pure gold upon his head. He asked life of thee; and thou gavest him a long life, even for ever and ever. His honour is great in thy salvation; glory and great worship shalt thou lay upon him. For thou shalt give him everlasting felicity, and make him glad with the joy of thy countenance. And why? Because the King putteth his trust in the Lord; and in the mercy of the Most Highest he shall not miscarry. All thine enemies shall feel thy hand; thy right hand shall find out them that hate thee. Thou shalt make them like a fiery oven in time of thy wrath: the Lord shall destroy them in his displeasure, and the fire shall consume them: their fruit shalt thou root out of the earth, and their seed from among the children of men. For they intended mischief against thee, and imagined such a device as they are not able to perform. Therefore shalt thou put them to flight, and the strings of thy bow shalt thou make ready against the face of them. Be thou exalted, Lord, in thine own strength; so will we sing, and praise thy power.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "little-litany-after-kathisma-1": {
+      "type": "litany",
+      "label": "The Small Litany",
+      "text": "Deacon: Again and again, in peace let us pray to the Lord.\nChoir: Lord, have mercy.\n\nDeacon: Help us, save us, have mercy on us, and keep us, O God, by Thy grace.\nChoir: Lord, have mercy.\n\nDeacon: Commemorating our all-holy, immaculate, most-blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.\nChoir: To Thee, O Lord.\n\nPriest: For Thine is the dominion, and Thine is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.\nChoir: Amen.",
+      "source": "UNABHOR1997 p.60 ('the Small Ectenia')"
+    },
+    "little-litany-after-kathisma-2": {
+      "type": "litany",
+      "label": "The Small Litany",
+      "text": "Deacon: Again and again, in peace let us pray to the Lord.\nChoir: Lord, have mercy.\n\nDeacon: Help us, save us, have mercy on us, and keep us, O God, by Thy grace.\nChoir: Lord, have mercy.\n\nDeacon: Commemorating our all-holy, immaculate, most-blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.\nChoir: To Thee, O Lord.\n\nPriest: For Thine is the dominion, and Thine is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.\nChoir: Amen.",
+      "source": "UNABHOR1997 p.61 ('the Small Ectenia')"
     }
   }
 }

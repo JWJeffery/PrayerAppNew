@@ -1,9 +1,10 @@
 # Horologion Full Audit — Findings Log
 
-**Status: all 8 offices/office-groups audited. Fix pass in progress — 4 of 7 office-groups fixed
-(Vespers, Grand Compline, the four Hours, Typika); Orthros/Matins next.** Per Josh's instruction:
-"Keep auditing. Record every error, and then we'll fix everything at once," followed by "Please
-proceed" (twice) to start the fix pass. This file is the running record.
+**Status: all 8 offices/office-groups audited. Fix pass in progress — 5 of 7 office-groups fixed
+(Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins); Midnight Office next (the big
+one — real architectural work, day-of-week branching).** Per Josh's instruction: "Keep auditing.
+Record every error, and then we'll fix everything at once," followed by "Please proceed" (twice)
+to start the fix pass. This file is the running record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -18,7 +19,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
-| Orthros/Matins | 2 (2 gaps) | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
+| Orthros/Matins | 2 (2 gaps) — **FIXED 2026-09-26** | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
 | Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
 
@@ -405,7 +406,7 @@ order and the correct day-specific Kontakion label, zero non-environmental conso
 Google Fonts/`ERR_CERT_AUTHORITY_INVALID` sandbox-proxy noise already documented, confirmed
 unrelated).
 
-## ORTHROS/MATINS — audited, 2 findings
+## ORTHROS/MATINS — audited, 2 findings, FIXED 2026-09-26 (O1, O2)
 
 **Source note**: `HAPGOOD1922`'s Matins presentation is specifically the Sunday/festal All-Night Vigil
 form (Polyeleos + Gospel), not ordinary ferial Matins — not the right direct comparison for the
@@ -436,6 +437,52 @@ Kathisma 9, then a "not appointed" rubric for a third, as three consecutive item
 three does the separate `[sessional-hymns]` section render a single combined sessional-hymns slot.
 Structurally, two real kathismata were read on the test date, each of which should carry its own
 sessional hymn immediately after it; the skeleton only has one combined slot to represent both.
+
+### O1 and O2 fixed
+
+**O1**: `psalm-19` and `psalm-20` added as their own new section between `opening` and
+`six-psalms`, text sourced from `HAPGOOD1922` pp.15-16 (her All-Night Vigil reaches the identical
+point via her own entry marking) for internal consistency with this file's own Coverdale-sourced
+Six Psalms and Psalm 50. **Not built, disclosed only**: what both sources show between Psalm 20 and
+the Six Psalms on this same entry path — a repeated Trisagion complex and what read as
+festal/Vigil-specific troparia and a hierarch litany — is out of scope for this finding, which asks
+only for the two psalms themselves; that further material wasn't investigated to the depth needed
+to be confident it belongs in this office's *ordinary ferial* baseline rather than only its Vigil
+form.
+
+**O2**: the `kathismata` and `sessional-hymns` sections merged into one interleaved section
+(kathisma 1 → its own sessional hymn → a Small Litany → kathisma 2 → its own sessional hymn → a
+Small Litany → kathisma 3, Lenten/Holy-Week only, unchanged). The single `sessional-hymns` slot
+split into `sessional-hymns-1`/`sessional-hymns-2`; the engine's own resolution logic already
+tracked per-kathisma hymn text internally (`afterKathisma1`/`afterKathisma2` on both the Sunday and
+ordinary-weekday corpus paths) — only the *skeleton's* structural position was wrong, not the
+underlying data model. The Small Litany's fixed text reuses Vespers' own
+`little-litany-after-kathisma` verbatim (same fixed litany form, same UNABHOR1997 source).
+
+**A real bug caught while restructuring, not part of the original finding**:
+`_finalizeOrthrosReleaseHonestyPatch()` — a post-processing safety patch that downgrades a
+Sunday sessional hymn to "pending source confirmation" when the loaded corpus text hasn't been
+independently verified — matched on the old singular `sessional-hymns` key and `break`s after
+patching the first hit. Splitting the key into two would have silently disabled this patch for
+both new items (no match at all). Fixed to match either new key and to patch each independently
+(no `break`).
+
+**A second real gap caught while restructuring**: on an ordinary Sunday, only the first kathisma is
+appointed (the second and third correctly disclose "not appointed"), but the new interleaved
+structure would have rendered `sessional-hymns-2` and its Small Litany as if a real hymn/litany
+belonged there regardless. Both now check their sibling kathisma item's own resolution and disclose
+"not applicable" when it isn't appointed, rather than rendering pending/deferred content for a
+kathisma that isn't there. Verified against Great Lent, Bright Week, and Holy Week dates directly —
+none of those paths' own "no kathisma" wording matches the specific "not-appointed" check, so their
+existing (correct, unrelated) behavior is unaffected.
+
+**Verified**: `node --check` clean; both touched JSON files reparse clean; the rebuilt harness
+confirms both an ordinary weekday and a Sunday resolve `status: "complete"`, 0 placeholders, with
+the correct interleaved section order; the "not applicable" guard confirmed correct on the Sunday
+case (only one kathisma appointed) and confirmed NOT to misfire on Great Lent, Bright Week, or Holy
+Week dates (all three kathismata carry real or season-appropriate content there, unaffected). The
+5-year, 10-office, both-calendar-mode sweep (36,540 calls) is clean. Live-confirmed in headless
+Chromium against the real dev server under `?shell=v2`.
 
 ### Confirmed correct / honestly disclosed (not findings)
 
