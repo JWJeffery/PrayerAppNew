@@ -15,18 +15,19 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Vespers | 6 (1 bug, 5 gaps) | Kathisma sequenced after "Lord, I have cried"; 5 missing litanies/prayers |
 | Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
 | The four Hours | 3 (1 bug, 2 shared gaps) | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; a fixed verse missing from all four |
-| Typika | 7 (3 bugs, 3 gaps, 1 scope correction) | **Epistle/Gospel lectionary silently broken at runtime** (`resolveScripturePericope is not defined`); Beatitudes before the Psalms instead of after; duplicated Lord's Prayer |
+| Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer |
 | Orthros/Matins | 2 (2 gaps) | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
 | Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
 
-**27 findings total** across 7 audited office-groups (8 offices, since the four Hours share one entry).
-Two findings (Typika T1, a live console error) rank as the clearest, highest-confidence bugs in the
-whole audit. The recurring pattern worth noticing before the fix pass: at least four different offices
-(Vespers, Typika, Orthros, Midnight Office) show a component sequenced in the wrong position relative
-to both sources agreeing on the correct order — this looks like a systemic authoring pattern, not
-isolated mistakes, and the fix pass should probably re-verify ordering deliberately in every office it
-touches, not just the ones with a finding already recorded here.
+**26 findings total** (27 originally recorded, minus Typika's T1 — see that entry below: it was a false
+positive caused by an incomplete test harness in the audit itself, caught and retracted before any fix
+was attempted) across 7 audited office-groups (8 offices, since the four Hours share one entry). The
+recurring pattern worth noticing before the fix pass: at least four different offices (Vespers, Typika,
+Orthros, Midnight Office) show a component sequenced in the wrong position relative to both sources
+agreeing on the correct order — this looks like a systemic authoring pattern, not isolated mistakes,
+and the fix pass should probably re-verify ordering deliberately in every office it touches, not just
+the ones with a finding already recorded here.
 
 Audit order: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins → Midnight Office →
 Small Compline.
@@ -202,18 +203,28 @@ import — not a finding, matches this project's standing policy.
 Live-verified via `resolveOffice(date, 'typika')` for an ordinary Wednesday. 13/13 slots "implemented"
 per the engine's own diagnostics — but see T1, which shows that count is misleading for two of them.
 
-### Finding T1 — BUG, live console error: Epistle/Gospel lectionary resolution is broken
+### Finding T1 — RETRACTED, false positive from my own incomplete test harness
 
-The live console output shows, unprompted: `Typika ordinary weekday epistle resolution failed:
-resolveScripturePericope is not defined` and the identical error for the Gospel. This is a real
-`ReferenceError` at runtime — the function the resolver calls to look up the day's Epistle/Gospel does
-not exist in scope. `structure.json`'s own `governance.byzantine_release_roadmap` claims this was built
-and live ("Typika Epistle/Gospel scripture resolution is now helper-normalized via
-`resolveScripturePericope()` as of 2026-05-10") — that claim is currently false at runtime. The failure
-is caught and silently downgrades to a generic "consult the Apostol/Evangelist" rubric with no visible
-error surfaced to the user, and the engine's own diagnostics still count these slots as "implemented"
-(13/13, 0 placeholders) despite them having actually failed. This is the single highest-severity finding
-in the audit so far — a claimed-complete feature that is silently non-functional.
+**Originally recorded as the audit's single highest-severity bug. It was wrong. Retracted 2026-09-25,
+before any fix was attempted, once the fix pass began and re-verification caught it.** The original
+test script loaded only `js/byzantine-paschalion.js` and `js/horologion-engine.js` — omitting
+`js/scripture-resolver.js`, which `index.html` actually loads *before* `horologion-engine.js` and which
+defines the very function (`resolveScripturePericope`, exported as `window.resolveScripturePericope`)
+the original error claimed was undefined. Re-ran with a harness loading the exact 26-script sequence
+`index.html` loads ahead of `horologion-engine.js`, in the same order: the Epistle correctly resolved to
+Ephesians 5:25-33 and the Gospel to Luke 5:33-39 (both real, correctly-cited text — "Metropolitan Cantor
+Institute" ordinary-after-Pentecost lectionary), no error, no fallback rubric.
+`structure.json`'s claim that this was built and live is correct after all.
+
+**Consequence for the rest of this document, checked deliberately rather than assumed**: every other
+finding here concerns either (a) the declared array order of items within a skeleton file, or (b) the
+presence, absence, or fixed content of a JSON data file read directly by URL — neither depends on which
+*other* JS modules happen to be loaded, so this specific harness gap could not have produced a false
+positive anywhere else. Re-ran all ten offices (Vespers, Great Compline, all four Hours, Typika,
+Orthros, Midnight Office, Small Compline) through the corrected 26-script harness as a direct check
+rather than trusting that reasoning alone: every office's `implementedSlots` count and every
+`resolvedAs` value already recorded in this document matched exactly, with zero warnings and zero
+errors anywhere. T2-T7 below stand as originally recorded.
 
 ### Finding T2 — BUG: Beatitudes rendered before Psalms 102 and 145 instead of after
 
