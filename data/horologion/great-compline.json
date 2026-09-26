@@ -2,7 +2,7 @@
   "officeKey": "great-compline",
   "label": "Great Compline (Mega Apodeipnon)",
   "tradition": "BYZC",
-  "description": "Great Compline (Mega Apodeipnon) is the solemn Byzantine night office appointed on weekday evenings during Great Lent and on the eves of Nativity and Theophany. It is substantially longer than Small Compline, with two psalm cycles, the Prayer of Manasseh, a variable canon, and an extended closing prayer sequence. Source witness: orthodoxprayer.org Great Compline. Baseline skeleton only — conditional and variable material deferred.",
+  "description": "Great Compline (Mega Apodeipnon) is the solemn Byzantine night office appointed on weekday evenings during Great Lent and on the eves of Nativity and Theophany. It is substantially longer than Small Compline, with two psalm cycles, the Prayer of Manasseh, a variable canon, and an extended closing prayer sequence. CORRECTED 2026-09-26, Horologion audit fix pass (Finding GC1): originally cited only 'orthodoxprayer.org', a website, not either of this lane's approved governing sources. Cross-checked this office's live content against UNABHOR1997 (Rassaphor-monk Laurence, The Unabbreviated Horologion or Book of the Hours, Holy Trinity Monastery, 1997) at the level of overall structure and sequencing (the opening, the conditional Psalm 69/Great Canon gating, both psalm cycles, and the full closing sequence word-for-word against pp.228-231): no discrepancies found. This is a structural spot-check, not a line-by-line re-verification of every psalm and prayer's exact wording against UNABHOR1997 -- that remains open if a fuller pass is ever wanted. Baseline skeleton only — conditional and variable material deferred.",
   "sections": [
     {
       "id": "opening",

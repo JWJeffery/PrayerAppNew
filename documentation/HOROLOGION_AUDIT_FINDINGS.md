@@ -125,7 +125,12 @@ and the Nunc Dimittis are all correctly ordered and match both sources.
 
 ---
 
-## GRAND COMPLINE — audited (structural/spot-check level), 1 finding
+## GRAND COMPLINE — audited (structural/spot-check level), 1 finding, FIXED 2026-09-26 (GC1)
+
+Fixed in `data/horologion/great-compline.json`'s description: corrected the source citation from
+`orthodoxprayer.org` to record the `UNABHOR1997` spot-check already performed (structure/sequencing
+only, not a line-by-line re-verification of every psalm's exact wording — disclosed as such in the
+corrected text, not overclaimed).
 
 **Scope note**: unlike Vespers, this office's live output is already 45/45 real content (0
 placeholders) and structurally mature. Audited at the structural/section-ordering level against both
