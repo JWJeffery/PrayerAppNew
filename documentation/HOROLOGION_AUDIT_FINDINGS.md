@@ -12,7 +12,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 
 | Office | Findings | Headline |
 |---|---|---|
-| Vespers | 6 (1 bug, 5 gaps) | Kathisma sequenced after "Lord, I have cried"; 5 missing litanies/prayers |
+| Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
 | Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
 | The four Hours | 3 (1 bug, 2 shared gaps) | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; a fixed verse missing from all four |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer |
@@ -20,9 +20,11 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
 | Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
 
-**26 findings total** (27 originally recorded, minus Typika's T1 — see that entry below: it was a false
-positive caused by an incomplete test harness in the audit itself, caught and retracted before any fix
-was attempted) across 7 audited office-groups (8 offices, since the four Hours share one entry). The
+**24 findings total** (27 originally recorded, minus Typika's T1 and Vespers' V3, both retracted during
+the fix pass before any fix was attempted — T1 was a false positive from an incomplete test harness;
+V3 was a real rubric this app already correctly follows, misread the first time because `HAPGOOD1922`
+frames Vespers around the festal Vigil throughout) across 7 audited office-groups (8 offices, since the
+four Hours share one entry). The
 recurring pattern worth noticing before the fix pass: at least four different offices (Vespers, Typika,
 Orthros, Midnight Office) show a component sequenced in the wrong position relative to both sources
 agreeing on the correct order — this looks like a systemic authoring pattern, not isolated mistakes,
@@ -34,7 +36,20 @@ Small Compline.
 
 ---
 
-## VESPERS — audited, 6 findings
+## VESPERS — audited, 6 findings, FIXED 2026-09-26 (V1, V2, V4, V5, V6; V3 retracted, no fix needed)
+
+Fixed in `data/horologion/vespers.json`: reordered Kathisma before the Little Litany and "Lord, I have
+cried" (V1/V2); added "Vouchsafe, O Lord" (V4), the Litany of Completion (V5), and the Prayer of the
+Bowing of Heads (V6), sourced from `UNABHOR1997` (and, for the one prayer only it doesn't print,
+`HAPGOOD1922`). Live-verified via the corrected full-script `resolveOffice()` harness: 21/21 slots
+resolve (was 17/17 before the 4 additions), correct new order confirmed
+(`kathisma-reading` → `little-litany-after-kathisma` → `lord-i-have-cried-rubric` →
+`stichera-at-lord-i-have-cried`), no JSON errors, no regressions. Also confirmed, so it isn't mistaken
+for a regression: on the test date the stichera slot now correctly renders an honest "proper festal
+stichera... should be appointed here" rubric instead of ordinary Octoechos stichera, because loading
+the correct full script set (including `menaion-resolver.js`, omitted from this office's original
+narrower audit test) lets the engine see a real rank-3 feast on that date — exactly the disclosed-gap
+behavior this project already uses elsewhere, not something this fix changed or broke.
 
 ### Finding V1 — BUG: Kathisma reading sequenced after "Lord, I have cried" instead of before it
 
@@ -58,12 +73,19 @@ Both sources place a Little Litany here (Unabbreviated Horologion calls it "the 
 explicitly "After Blessed is the man or the appointed kathisma"). Entirely absent from the skeleton
 (`data/horologion/vespers.json`) — no item, placeholder or otherwise, represents it.
 
-### Finding V3 — GAP: No Augmented Litany after the Prokeimenon/readings
+### Finding V3 — RETRACTED: the Augmented Litany is correctly absent on ordinary weekdays
 
-Hapgood: "The Augmented Litany (Sugubaya Ekteniya). Let us say, with all our soul..." (p.9), following
-the Prokeimenon and any Parables. Unabbreviated Horologion has the equivalent. The skeleton's
-`prokeimenon` section (`daily-prokeimenon`, `vesperal-reading`) has nothing after it before jumping to
-`aposticha` — this litany is not represented anywhere.
+**Originally recorded as a gap. Caught and corrected during the fix pass, before touching any code,
+by reading `UNABHOR1997` more precisely than the first audit pass had.** `HAPGOOD1922`'s presentation
+is framed around the festal Vigil throughout (as already disclosed for Orthros/Matins), which is what
+led the original pass to assume the Augmented Litany belongs at ordinary Vespers too. `UNABHOR1997`
+p.194 states the actual rule explicitly: *"If there be a vigil or polyeleos... the Augmented Ectenia...
+is said after the parables, followed by Vouchsafe, O Lord... If it be a simple service, immediately
+after the prokeimenon: Reader: Vouchsafe, O Lord, to keep us this evening without sin."* The Augmented
+Litany is vigil/polyeleos-only; on an ordinary weekday ("a simple service") it is correctly *omitted*,
+and going straight from the Prokeimenon to "Vouchsafe, O Lord" — which is exactly what the app already
+does, once V4 below is fixed — is the correct ordinary-day behavior, not a gap. No fix needed for this
+finding; it should not have been recorded as one.
 
 ### Finding V4 — GAP: No "Vouchsafe, O Lord, to keep us this night without sin"
 
