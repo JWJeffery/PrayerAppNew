@@ -1442,6 +1442,27 @@ key `ui:entry-screens-redesigned-regrouped`. SEED_VERSION v339 → v340.
 **Phase 5 resumes where it left off — Horologion, lane 3 of 3 — nothing about this detour changes
 that scope**, see the "What that leaves" paragraph below this one.
 **State as of 2026-09-26, latest — Zacchaeus Sunday routed, and the Sundays-of-Luke overflow
+**State as of 2026-09-26, latest still — the weekday Typika lectionary audited for the first
+time; a real, recurring content gap found and closed.** Continuing "ALL OF IT": a 21-year
+(2015-2035), every-weekday sweep of the post-Theophany window found 6 of 21 years showing a bare
+"appointed reading not found" Gospel rubric for 6-11 consecutive days, while the Epistle always
+resolved correctly. Root cause: the post-Theophany countdown week numbering (built for the
+Epistle, which has full data 1-33) can legitimately reach as low as week 27 — but neither Gospel
+table (`lukan_weekday_gospels`, `post_lukan_weekday_gospels`) covered weeks 27-28 at all. A real,
+never-before-populated content gap, not a routing bug. **Fixed**: sourced all 11 needed citations
+against `mcp Orthocal`, confirmed as fixed/reusable content (not year-specific) by cross-checking
+the two boundary values across three independent seasons, and added as weeks 27-28 to
+`post_lukan_weekday_gospels` — no engine code change needed. Also found and **disclosed, not
+fixed**: `lukanWeekdayGospelKey` has the same class of year-anchoring bug the Sunday-side key
+already had before this session's earlier fix — currently harmless (fails safe to null in
+January) but wrong, worth a cleanup pass. Verified: the 21-year sweep re-run, gap closed in all
+six affected years; a separate 2-day pattern in 6 other years checked directly and confirmed
+correct (Cheesefare Wednesday/Friday are genuinely aliturgical per the Typikon, not a bug). Full
+account: `AUDIT_GOVERNANCE_LEDGER.md`, "Session 2026-09-26, weekday lectionary audit" entry.
+SEED_VERSION `v343 -> v344`. **Not a claim of exhaustive weekday verification** — this was a
+structural-gap sweep, not a citation-by-citation check of the whole weekday corpus.
+
+**State as of 2026-09-26 — Zacchaeus Sunday routed, and the Sundays-of-Luke overflow
 limitation (disclosed in the entry directly below) fully resolved. HEAD before this session's
 commits was `7de6e8e`.** Picked up per Josh's direct order — given on a separate account/session
 earlier the same day — for "the complete audit of the Horologion and its extended elements. ALL OF

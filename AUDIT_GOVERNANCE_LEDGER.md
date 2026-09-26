@@ -20782,3 +20782,91 @@ volume gap (a different class of problem -- missing content, not a defect) and t
 psalm citation question (Finding 4, already fully resolved in an earlier entry this same day).
 
 SEED_VERSION bumped to `v343-2026-09-26-zacchaeus-routed-and-lukan-overflow-resolved`.
+
+---
+
+## Session 2026-09-26, weekday lectionary audit -- a real, recurring content gap found and
+## closed (Typika weekday Gospel, ordinary weeks 27-28). SEED_VERSION v343 -> v344.
+
+Continuing "the complete audit... ALL OF IT," moved from the Sunday lectionary (closed above) to
+the weekday Typika lectionary, which had never been checked against Orthocal at all. Early-season
+spot checks (Sept-Dec, both `ordinary_weekdays_after_pentecost` and `lukan_weekday_gospels`) matched
+Orthocal exactly with no issues. A systematic 21-year, every-weekday sweep (2015-2035, scanning the
+three weeks after each year's Sunday after Theophany, where `js/horologion-engine.js`'s
+`ordinaryWeekdayAfterPentecostKey` switches to its own post-Theophany countdown branch) surfaced a
+real, reproducible gap: **six years out of the 21 checked (2016, 2021, 2024, 2027, 2032, 2035)
+showed a bare "GOSPEL: appointed reading not found" rubric for between 6 and 11 consecutive
+weekdays**, while the Epistle resolved correctly every single day.
+
+### Root cause
+
+`ordinaryWeekdayAfterPentecostKey`'s post-Theophany countdown branch computes week numbers by
+counting DOWN from 33 (always the week immediately before Publican-and-Pharisee Sunday) rather than
+up from Pentecost -- a deliberate, already-correct design so the Epistle table (`ordinary_weekdays_
+after_pentecost`, fully populated for weeks 1-33) always lands on the right week regardless of that
+year's actual Sunday-after-Pentecost count. In a season with many ordinary weeks remaining after
+Theophany, this countdown can legitimately reach as low as week 27 (confirmed the floor across all
+21 checked years). But the GOSPEL side has two separate tables covering only part of that range:
+`lukan_weekday_gospels` (its own independent week-1-to-12 count from the Lukan season start, with no
+end-of-season cutoff in its IIFE -- itself a second, latent bug, see below) and `post_lukan_weekday_
+gospels` (ordinary weeks 29-33 only, per its own `_comment`'s explicit "After Lukan Week 12 /
+ordinary Week 28... begin at ordinary Week 29"). Weeks 27-28 were never covered by either table --
+a genuine content gap, not a routing bug, since the citations for that content had simply never been
+entered anywhere in the corpus.
+
+**Separately noted, not fixed this pass**: `lukanWeekdayGospelKey`'s own IIFE computes
+`lukanStartForYear(localDate.getFullYear())` -- using the CURRENT calendar year directly rather than
+adjusting for dates in the January/February tail of a season that started the previous September (the
+same class of bug the Sunday-side `lukanSundayGospelKey` already guards against with its `seasonYear
+= month <= 6 ? year - 1 : year` adjustment). In January this computes a lukanStart in the FUTURE
+(September of that same year), so `localDate < lukanStart` is always true and the key returns `null`
+harmlessly for December-January dates -- confirmed this doesn't itself cause wrong output (the
+ordinary-weekday and post-Lukan paths take over correctly when this key is null), but it is
+dead-wrong code that happens not to matter for the date range it's actually asked about. Flagged for
+a future cleanup pass; not touched here since fixing it isn't needed to close the actual gap.
+
+### Fix
+
+Sourced the real citations for weeks 27-28 directly against `mcp__Orthocal__get_day` (Slavic
+tradition), using the 2023-2024 season (the one checked season where both weeks fall on non-fixed-
+feast weekdays, giving all 11 needed dates in one continuous run: 2024-01-08 through 01-12 for week
+27 Monday-Friday, 2024-01-15 through 01-20 for week 28 Monday-Saturday). **Confirmed this is fixed,
+reusable content at this position, not year-specific**, by independently cross-checking week 28's two
+boundary values against two OTHER seasons: Monday (Luke 19:37-44) and Saturday (Luke 12:32-40) match
+exactly across 2019-2020, 2023-2024, and 2026-2027 despite each landing on different calendar dates
+under different raw Sunday-after-Pentecost counts. Week 27's own Saturday needed no new entry: it
+always coincides with the fixed "Saturday after Theophany" occasion (itself defined relative to
+Theophany, landing at exactly this position every year), which the engine's existing feast-overlay
+path already resolves at higher priority -- confirmed via Orthocal for 2024-01-13, rendered correctly
+by the pre-existing overlay without touching this table at all.
+
+Added `"27"` and `"28"` to `data/horologion/typika-lectionary.json`'s `post_lukan_weekday_gospels.
+weeks`, in the same shape as the existing 29-33 entries -- no `js/horologion-engine.js` change was
+needed, since the consuming code already looks up `plWeeks[week][weekday]` generically with no
+hardcoded lower bound; it simply never found a match for 27/28 before this data existed. `_comment`
+rewritten to record the mechanism, the fix, and the still-open `lukanWeekdayGospelKey` year-anchoring
+bug for a future pass.
+
+### Verification
+
+`node --check` and JSON reparse both clean. Re-ran the 21-year, every-weekday sweep: the week 27-28
+gap is fully closed (zero blank-Gospel days in any of the six previously-affected years). A separate,
+unrelated 2-day "gap" remaining in 6 of 21 years was investigated directly rather than assumed fixed
+or left alone: it is Cheesefare Wednesday and Friday, correctly aliturgical days per the Typikon
+("No Divine Liturgy Epistle/Gospel is appointed in the temporal table for Cheesefare Wednesday...")
+-- confirmed by reading the actual rendered rubric text, not the crude blank-Gospel detector alone,
+which cannot distinguish a genuine gap from this deliberate, already-correct rubric. Re-ran the
+Sunday-side 1,096-call sweep (2015-2035) as a regression check: unaffected, zero exceptions.
+
+### What this leaves open for "ALL OF IT"
+
+Not a claim of exhaustive weekday verification -- this was a systematic sweep for STRUCTURAL gaps
+(blank/rubric-fallback Gospel slots) across 21 years, not a citation-by-citation check of every
+weekday's content against Orthocal. Real, still-open items: the `lukanWeekdayGospelKey` year-
+anchoring bug noted above (currently harmless but wrong); no independent second-season cross-check
+for week 27 Monday-Friday or week 28 Tuesday-Friday (only the two boundary values got the full
+three-season treatment); and the broader weekday corpus (Sept-Dec ordinary weeks, the full Lukan
+weekday cycle, the pre-Lenten weekday family) was spot-checked at a handful of points, not verified
+day-by-day.
+
+SEED_VERSION bumped to `v344-2026-09-26-weekday-lectionary-week27-28-gap-closed`.

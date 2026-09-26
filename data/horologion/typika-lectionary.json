@@ -1693,10 +1693,79 @@
       "Post-Lukan weekday Gospel cycle after the true Monday-Saturday Lukan weekday table ends.",
       "Keyed by ordinary_week_after_pentecost + weekday, not by lukan_week.",
       "After Lukan Week 12 / ordinary Week 28; post-Lukan Mark/Luke rows begin at ordinary Week 29, Monday-Friday use Mark while Saturday retains Luke.",
-      "Current populated tranche: ordinary Weeks 29-33. Week 34+ belongs to the pre-Lenten/Triodion weekday family, not this ordinary post-Lukan family.",
-      "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope."
+      "Current populated tranche: ordinary Weeks 27-33. Week 34+ belongs to the pre-Lenten/Triodion weekday family, not this ordinary post-Lukan family.",
+      "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope.",
+      "",
+      "Weeks 27-28 ADDED 2026-09-26, closing a real, confirmed content gap: ordinaryWeekdayAfterPentecostKey's",
+      "own post-Theophany countdown branch (js/horologion-engine.js) can legitimately compute week numbers",
+      "as low as 27 in a season where many ordinary weeks remain between Theophany and Publican-and-Pharisee",
+      "Sunday -- the Epistle side already had full data for these weeks (this table's sibling,",
+      "ordinary_weekdays_after_pentecost, covers weeks 1-33), but no Gospel table covered weeks 27-28 at all:",
+      "lukan_weekday_gospels tops out at its own week 12 (and, separately, is never reached in January due to",
+      "a year-anchoring bug in its own IIFE), and this table previously started at 29. Confirmed via mcp",
+      "Orthocal (Slavic tradition) across three independent seasons with different Pascha dates that this is",
+      "FIXED, reusable content at this position (not year-specific): week 28's Monday (Luke 19:37-44) and",
+      "Saturday (Luke 12:32-40) match exactly across 2019-2020, 2023-2024, and 2026-2027 despite each season",
+      "landing on different calendar dates and different raw 'Nth Sunday after Pentecost' labels. Week 28",
+      "Tuesday-Friday and week 27 Monday-Friday sourced from the 2023-2024 season (the one season checked",
+      "where both weeks fall on non-fixed-feast days) and not independently re-confirmed against a second",
+      "season the way the Monday/Saturday anchors were -- worth a second cross-check if this is revisited.",
+      "Week 27's own Saturday needs no entry: it always coincides with the fixed 'Saturday after Theophany'",
+      "occasion (itself defined relative to Theophany, landing at exactly this position every year), which",
+      "the engine's feast-overlay path already resolves at higher priority -- confirmed via Orthocal for",
+      "2024-01-13, which the pre-existing feast overlay already renders correctly without this table's help."
     ],
     "weeks": {
+      "27": {
+        "monday": {
+          "label": "Monday of the 27th Week after Pentecost",
+          "gospel": "Luke 17:20-25"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 27th Week after Pentecost",
+          "gospel": "Luke 17:26-37"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 27th Week after Pentecost",
+          "gospel": "Luke 18:15-17, 26-30",
+          "gospel_segments": ["Luke 18:15-17", "Luke 18:26-30"],
+          "note": "Discontinuous Gospel with an omitted interval (18:18-25)."
+        },
+        "thursday": {
+          "label": "Thursday of the 27th Week after Pentecost",
+          "gospel": "Luke 18:31-34"
+        },
+        "friday": {
+          "label": "Friday of the 27th Week after Pentecost",
+          "gospel": "Luke 19:12-28"
+        }
+      },
+      "28": {
+        "monday": {
+          "label": "Monday of the 28th Week after Pentecost",
+          "gospel": "Luke 19:37-44"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 28th Week after Pentecost",
+          "gospel": "Luke 19:45-48"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:1-8"
+        },
+        "thursday": {
+          "label": "Thursday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:9-18"
+        },
+        "friday": {
+          "label": "Friday of the 28th Week after Pentecost",
+          "gospel": "Luke 20:19-26"
+        },
+        "saturday": {
+          "label": "Saturday of the 28th Week after Pentecost",
+          "gospel": "Luke 12:32-40"
+        }
+      },
       "29": {
         "monday": {
           "label": "Monday of the 29th Week after Pentecost",
