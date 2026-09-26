@@ -16,7 +16,13 @@
     "Psalms 50, 69, and 142 (LXX), transcribed from Isabel F. Hapgood, Service Book of the",
     "Holy Orthodox-Catholic Apostolic Church (Houghton, Mifflin and Company, 1906) and the",
     "1662 Book of Common Prayer (Scottish Episcopal Church edition, Project Gutenberg #29622),",
-    "only orthography lightly modernized (thee/thou left as printed)."
+    "only orthography lightly modernized (thee/thou left as printed).",
+    "AUDIT FIX 2026-09-26 (Findings SC1, SC2, SC3): 'sc-night-prayers' (SC1),",
+    "'sc-vouchsafe' (SC2), and 'sc-it-is-truly-meet' (SC3) added between the Small",
+    "Doxology and the Trisagion -- UNABHOR1997 pp.240-242. The Canon between the",
+    "Creed and 'It is truly meet' is Menaion/Octoechos-dependent and is not",
+    "modeled as its own slot, matching this corpus's standing disclosure policy",
+    "for Menaion-dependent content elsewhere."
   ],
   "slots": {
     "usual-beginning": {
@@ -211,6 +217,59 @@
       "type": "text",
       "label": "Into Thy Hands",
       "text": "Into Thy hands, O Lord Jesus Christ my God, I commend my spirit. Do Thou bless me, have mercy on me, and grant me life everlasting. Amen.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO Lord of my forefathers and Master, my God Jesus Christ, let me not fall asleep in sin but grant me refreshing slumber. Let not the evil one overshadow and darken me with the darkness of sins; drive away from me all fleshly desires and other harmful temptations. Enliven my heart with the sprinkles of Thy holiness, that I may continually bless Thy holy Name throughout the night, and in the morning glorify Thee and Thy good Father and Thy Life-giving Spirit, both now and ever, and unto ages of ages. Amen.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nAll my hope I place in thee, O Mother of God; keep me under thy protection."
+    },
+    "sc-night-prayers": {
+      "type": "sequence",
+      "label": "Night Prayers",
+      "items": [
+        {
+          "type": "text",
+          "key": "scnp-1",
+          "text": "Every night will I bless Thee, and I will praise Thy Name for ever, yea, for ever and ever."
+        },
+        {
+          "type": "text",
+          "key": "scnp-2",
+          "text": "Lord, Thou hast been our refuge in generation and generation. I said: O Lord, have mercy on me, heal my soul, for I have sinned against Thee. O Lord, unto Thee have I fled for refuge, teach me to do Thy will, for Thou art my God. For in Thee is the fountain of life, in Thy light shall we see light. O continue Thy mercy unto them that know Thee."
+        }
+      ]
+    },
+    "sc-vouchsafe": {
+      "type": "sequence",
+      "label": "Vouchsafe, O Lord",
+      "items": [
+        {
+          "type": "text",
+          "key": "scv-1",
+          "text": "Vouchsafe, O Lord, to keep us this night without sin. Blessed art Thou, O Lord, the God of our fathers, and praised and glorified is Thy Name unto ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "scv-2",
+          "text": "Let Thy mercy, O Lord, be upon us, according as we have hoped in Thee. Blessed art Thou, O Lord, teach me Thy statutes. Blessed art Thou, O Master, give me understanding of Thy statutes. Blessed art Thou, O Holy One, enlighten me by Thy statutes."
+        },
+        {
+          "type": "text",
+          "key": "scv-3",
+          "text": "O Lord, Thy mercy endureth for ever; disdain not the work of Thy hands. To Thee is due praise, to Thee is due a song, to Thee glory is due, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        }
+      ]
+    },
+    "sc-it-is-truly-meet": {
+      "type": "sequence",
+      "label": "It Is Truly Meet",
+      "items": [
+        {
+          "type": "text",
+          "key": "scit-1",
+          "text": "It is truly meet to bless thee, the Theotokos, ever-blessed and most blameless, and Mother of our God."
+        },
+        {
+          "type": "text",
+          "key": "scit-2",
+          "text": "More honourable than the Cherubim, and beyond compare more glorious than the Seraphim, who without corruption gavest birth to God the Word, the very Theotokos, thee do we magnify."
+        }
+      ]
     }
   }
 }

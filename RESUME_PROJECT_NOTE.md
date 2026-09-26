@@ -51,8 +51,76 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 6 of 7
-(Midnight Office) FULLY REBUILT: Findings M0-M3. Read this entry first.** M0 flagged this as real
+**State as of 2026-09-26, latest of all — Horologion audit fix pass COMPLETE, 7 of 7
+office-groups fixed. Last office-group: Small Compline, Findings SC1-SC4. Read this entry
+first.** The entire Horologion full audit (Phase 2, the fix pass) is now done: Vespers, Grand
+Compline, the four Hours, Typika, Orthros/Matins, Midnight Office, and now Small Compline have all
+been fixed against primary sources, regression-swept, and live-confirmed in a real browser. Per
+Josh's original instruction — "Keep auditing. Record every error, and then we'll fix everything at
+once," then "Please proceed" (twice) — this closes that loop.
+
+Re-read `UNABHOR1997` pp.239-245 (the Order of Small Compline, in full, through all 8 tones of the
+Saturday Resurrection troparion/kontakion) before building.
+
+**SC1/SC2/SC3 (gaps)**: added the three missing fixed prayers verbatim from pp.240-242 to
+`data/horologion/compline-fixed.json` (`sc-night-prayers`, `sc-vouchsafe`, `sc-it-is-truly-meet`),
+interleaved into `small-compline.json`'s `doxology-creed` section in source order, with a new
+`sc-canon-rubric` disclosure item for the (Menaion/Octoechos-dependent, not built) canon.
+
+**SC4 (scope correction)**: built the day-of-week fixed troparia table verbatim from pp.242-245 —
+Sunday through Friday's own named troparion, and Saturday's Resurrection troparion+kontakion pair
+across all 8 Octoechos tones (all 8 are printed in full in the source, not just the two "worked
+examples" the finding itself quoted) — in a new function,
+`_resolveSmallComplineFixedTroparion()`.
+
+**A second, unnamed bug found while verifying SC4 actually fires**: gating the new function behind
+`resolvedAs === 'weekday-theme-rubric'` looked right by inspection, but a full-year sweep for dates
+where it actually fired found only 3 days out of 365, and zero Saturdays or Sundays ever. Root
+cause: the shared Vespers-style machinery this slot reuses lets any Menaion commemoration of rank
+1-4 override its own ordinary fallback, and rank 4 ("simple commemoration") covers nearly every
+date on the real calendar — and Sunday/Saturday's own "no override" fallback never even carried
+the `'weekday-theme-rubric'` label to begin with (it's `'resurrectional-troparion-sunday'`/
+`'-saturday'`, Great Vespers' own baseline labels, reused here). Re-reading confirmed the fixed
+table is genuinely calendar-day-independent — no rubric in this office's text lets the day's
+Menaion saint override it. Since leaving the rank 1-4 override in place would have shipped a fix
+that compiles and looks built but fires on a handful of days a year, it was narrowed to rank 1-2
+only (Great Feast/Polyeleos, the tier where a real override is textually plausible), and the gate
+rewritten to apply unconditionally otherwise. Verified live: Theophany (rank 1) still overrides
+correctly; a corrected full-year sweep now finds all 6 weekday entries and all 8 Saturday tones
+firing; the pre-existing Great Lent Triodion override (untouched) still fires correctly.
+
+**Test-harness bug found and fixed in passing, scoped to this office only**: the 5-year regression
+sweep script used office key `'compline'` instead of the real `'small-compline'` throughout this
+entire fix pass — it silently degraded to an error payload rather than throwing, so it never
+flagged a regression but also never actually exercised this office in any earlier sweep. This did
+not affect any other office's own sweep results (their keys were correct); only Small Compline's
+own sweep is being run correctly for the first time now.
+
+**Verified**: `node --check` clean, both JSON files reparse clean, the corrected 5-year/10-office/
+both-calendar-mode sweep (36,540 calls) is clean — 0 exceptions, 0 placeholders. Live-confirmed in
+headless Chromium under `?shell=v2` across all 6 weekday troparia, a Saturday tone, the Theophany
+override, a Great Lent weekday, and Bright Monday (correctly displaced, pre-existing and
+unmodified), zero non-environmental console errors.
+
+**Disclosed, not built**: the further shared closing block after each Sunday-Thursday troparion
+(p.241); and a likely mismatch between this app's current closing (`prayer-of-basil`,
+`into-thy-hands`) and what pp.245+ actually show (Lord-have-mercy x40, Prayer of the Hours, "More
+honourable" again, a blessing, the Lenten Prayer of St. Ephraim, and the Supplicatory Prayer to the
+Theotokos by Paul of Evergetis) — neither named by SC1-SC4, both flagged in
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` for the next audit pass.
+
+Full account: `AUDIT_GOVERNANCE_LEDGER.md`'s "Horologion audit fix pass, office-group 7 of 7"
+entry; `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Small Compline section updated to FIXED, top
+status line now "7 of 7 fixed." SEED_VERSION `v378 -> v379`.
+
+**The fix pass is done. There is no further office-group to pick up next in this line of work** —
+whatever the next session works on, it isn't a continuation of this audit unless Josh opens a new
+one.
+
+---
+
+**State as of 2026-09-26, Horologion audit fix pass, office-group 6 of 7
+(Midnight Office) FULLY REBUILT: Findings M0-M3.** M0 flagged this as real
 architectural work — three genuinely distinct day-forms, no day-of-week branching at all — so
 before touching any code, asked how to proceed: read and scope all three day-forms fully first,
 then build all three in one pass. Chose that over building Weekday alone or deferring the whole

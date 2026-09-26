@@ -2716,8 +2716,26 @@ const pascha = _getOrthodoxPascha(year);
     async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
     let resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
 
-    // Preserve any existing feast-winning behaviour.
-    if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
+    // Finding SC4 correction (audit 2026-09-26): _resolveTroparionSlot() is
+    // shared Vespers-style machinery, and its Menaion override fires for ANY
+    // rank 1-4 commemoration -- which is nearly every date on the real
+    // calendar (rank 4 is "simple commemoration", the most common case).
+    // UNABHOR1997 pp.239-245 (the Order of Small Compline) documents no such
+    // override for this slot at all: it prints only the fixed weekday-name
+    // troparion table (Sunday: Bodiless Powers; Monday: Forerunner; etc.) and
+    // a rubric about the TEMPLE's own patron saint (an unrelated, unmodeled
+    // concept) -- never the calendar day's Menaion saint. Letting every rank
+    // 3-4 commemoration pre-empt the fixed table would make Finding SC4's own
+    // fix fire on only a handful of days per year. Only a genuinely major
+    // feast (rank 1 Great Feast, rank 2 Polyeleos/Vigil) is left free to
+    // override here, matching the one tier for which a real override is
+    // plausible; rank 3-4 now falls through to the fixed table below.
+    if (
+        resolved &&
+        resolved.resolvedAs === 'menaion-feast-troparion' &&
+        typeof resolved.rank === 'number' &&
+        resolved.rank <= 2
+    ) {
         return resolved;
     }
 
@@ -2764,8 +2782,92 @@ const pascha = _getOrthodoxPascha(year);
         };
     }
 
+    // Finding SC4 (audit 2026-09-26): Small Compline's day-of-week troparia are
+    // a FIXED table (UNABHOR1997 pp.239-245), not Menaion-dependent -- same
+    // correction as Typika's own Finding T7. Reached here for every outcome
+    // _resolveTroparionSlot() can produce EXCEPT a rank <=2 feast override and
+    // a Great Lent Triodion override (both already returned above): the
+    // generic Vespers-style fallbacks ('weekday-theme-rubric',
+    // 'resurrectional-troparion-sunday'/'-saturday', 'menaion-text-unavailable',
+    // or a rank 3-4 'menaion-feast-troparion' -- none of which are textually
+    // attested for this slot) are all displaced unconditionally by the fixed
+    // table -- Small Compline's own Sunday troparion is the Bodiless Powers
+    // troparion, not the Resurrectional one, and Saturday's fixed
+    // troparion/kontakion pairing is by Octoechos tone, not any of the above.
+    const fixedTroparion = _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult);
+    if (fixedTroparion) return fixedTroparion;
+
     resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
     return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved, dayOfWeek);
+}
+
+// Finding SC4: the fixed day-of-week troparion (Saturday: + Kontakion, by
+// Octoechos tone) said at Small Compline when no qualifying feast displaces it.
+// Sunday-Thursday's own further shared closing (a litany-like block after
+// each night's own troparion) is disclosed but not built here -- out of scope
+// for this finding, which names only the troparion-of-the-day slot itself.
+function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult) {
+    const WEEKDAY_TROPARIA = {
+        0: { label: 'Troparion of the Bodiless Powers',
+             text: 'Supreme Commanders of the Heavenly Hosts, we unworthy ones implore you that by your supplications ye will encircle us with the shelter of the wings of your immaterial glory, and guard us who fall down before you and fervently cry: deliver us from dangers since ye are the Marshalls of the Hosts on high.' },
+        1: { label: 'Troparion of the Forerunner',
+             text: 'The memory of the righteous is celebrated with hymns of praise, but the Lord\'s testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly even more venerable than the Prophets, since thou wast granted to baptize in the running waters Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce the good tidings even to those in hades: that God hath appeared in the flesh, taking away the sin of the world and granting us great mercy.' },
+        2: { label: 'Troparion',
+             text: 'Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.' },
+        3: { label: 'Troparion of the Holy Apostles, and of St. Nicholas',
+             text: 'O holy Apostles, intercede with the merciful God, that He grant unto our souls forgiveness of offences.\n\nThe truth of things revealed thee to thy flock as a rule of faith, an icon of meekness and a teacher of temperance; therefore thou hast achieved the heights by humility, riches by poverty. O Father and Hierarch Nicholas, intercede with Christ God that our souls be saved.' },
+        4: { label: 'Troparion',
+             text: 'Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.' },
+        5: { label: 'Troparion of All Saints',
+             text: 'O Apostles, Martyrs, and Prophets, Hierarchs, Monastics, and Righteous Ones; ye that have accomplished a good labour and kept the faith, that have boldness before the Saviour: O good ones, intercede for us, we pray, that our souls be saved.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nKontakion: With the saints give rest, O Christ, to the souls of Thy servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nTo Thee, O Lord, the Planter of creation, the world doth offer the God-bearing martyrs as the firstfruits of nature. By their intercessions preserve Thy Church, Thy commonwealth, in profound peace, through the Theotokos, O greatly-merciful One.' }
+    };
+    const RESURRECTION_TROPARIA_TONE = {
+        1: 'When the stone had been sealed by the Jews, and the soldiers were guarding Thine immaculate Body, Thou didst arise on the third day, O Saviour, granting life unto the world. Wherefore, the Hosts of the heavens cried out to Thee, O Life-giver: Glory to Thy Resurrection, O Christ. Glory to Thy kingdom. Glory to Thy dispensation, O only Lover of mankind.',
+        2: 'When Thou didst descend unto death, O Life Immortal, then didst Thou slay hades with the lightning of Thy Divinity. And when Thou didst also raise the dead out of the nethermost depths, all the Hosts of the heavens cried out: O Life-giver, Christ our God, glory be to Thee.',
+        3: 'Let the heavens be glad; let earthly things rejoice; for the Lord hath wrought might with His arm. He hath trampled down death by death; the firstborn of the dead hath He become. From the belly of hades hath He delivered us and hath granted to the world great mercy.',
+        4: 'Having learned the joyful proclamation of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the apostles exultantly: death is despoiled and Christ God is risen, granting to the world great mercy.',
+        5: 'Let us, O faithful, praise and worship the Word Who is co-unoriginate with the Father and the Spirit, and Who was born of the Virgin for our salvation; for He was pleased to ascend the Cross in the flesh and to endure death, and to raise the dead by His glorious Resurrection.',
+        6: 'Angelic Hosts were above Thy tomb, and they that guarded Thee became as dead. And Mary stood by the grave seeking Thine immaculate Body. Thou didst despoil hades and wast not tempted by it. Thou didst meet the Virgin and didst grant us life. O Thou Who didst rise from the dead, O Lord, glory be to Thee.',
+        7: 'Thou didst destroy death by Thy Cross, Thou didst open Paradise to the thief. Thou didst change the lamentation of the Myrrh-bearers, and Thou didst command Thine Apostles to proclaim that Thou didst arise, O Christ God, and grantest to the world great mercy.',
+        8: 'From on high didst Thou descend, O Compassionate One; to burial of three days hast Thou submitted that Thou mightest free us from our passions. O our Life and Resurrection, O Lord, glory be to Thee.'
+    };
+    const RESURRECTION_KONTAKIA_TONE = {
+        1: 'As God, Thou didst arise from the tomb in glory, and Thou didst raise the world together with Thyself. And mortal nature praiseth Thee as God, and death hath vanished. And Adam danceth, O Master, and Eve, now freed from fetters, rejoiceth as she crieth out: Thou art He, O Christ, that grantest unto all resurrection.',
+        2: 'Thou didst arise from the tomb, O omnipotent Saviour, and hades was terrified on beholding the wonder; and the dead arose, and creation at the sight thereof rejoiceth with Thee. And Adam also is joyful, and the world, O my Saviour, praiseth Thee for ever.',
+        3: 'Thou didst arise today from the tomb, O Merciful One, and didst lead us out of the gates of death. Today Adam danceth and Eve rejoiceth; and together with them both the Prophets and the Patriarchs unceasingly praise the divine might of Thine authority.',
+        4: 'My Saviour and Redeemer hath, as God, raised up the earthborn from the grave and from their fetters, and He hath broken the gates of hades, and, as Master, hath risen on the third day.',
+        5: 'Unto hades, O my Saviour, didst Thou descend, and having broken its gates as One omnipotent, Thou, as Creator, didst raise up the dead together with Thyself. And Thou didst break the sting of death, and didst deliver Adam from the curse, O Lover of mankind. Wherefore, we all cry unto Thee: save us, O Lord.',
+        6: 'Having by His life-bestowing hand raised up all the dead out of the dark abysses, Christ God, the Giver of Life, hath bestowed the Resurrection upon the fallen human race; for He is the Saviour of all, the Resurrection, and the Life, and the God of all.',
+        7: 'No longer will the dominion of death be able to keep men captive; for Christ hath descended, demolishing and destroying the powers thereof. Hades is bound; the Prophets rejoice with one voice, saying: a Saviour hath come for them that have faith. Come forth, ye faithful, for the Resurrection.',
+        8: 'Having arisen from the tomb, Thou didst raise up the dead and didst resurrect Adam. Eve also danceth at Thy Resurrection, and the ends of the world celebrate Thine arising from the dead, O greatly-merciful One.'
+    };
+
+    if (dayOfWeek === 6) {
+        const tone = toneResult && toneResult.tone;
+        const troparionText = tone && RESURRECTION_TROPARIA_TONE[tone];
+        const kontakionText = tone && RESURRECTION_KONTAKIA_TONE[tone];
+        if (troparionText && kontakionText) {
+            return {
+                type:       'text',
+                key:        'troparion-of-the-day',
+                label:      'Troparion and Kontakion of the Resurrection, Tone ' + tone,
+                text:       troparionText + '\n\nKontakion: ' + kontakionText,
+                tone:       tone,
+                resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone
+            };
+        }
+        return null;
+    }
+
+    const dayEntry = WEEKDAY_TROPARIA[dayOfWeek];
+    if (!dayEntry) return null;
+    return {
+        type:       'text',
+        key:        'troparion-of-the-day',
+        label:      dayEntry.label,
+        text:       dayEntry.text,
+        resolvedAs: 'small-compline-weekday-fixed-troparion-' + dayOfWeek
+    };
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -6060,7 +6162,10 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
         'psalm-69',
         'psalm-142',
         'doxology',
+        'sc-night-prayers',
+        'sc-vouchsafe',
         'creed',
+        'sc-it-is-truly-meet',
         'trisagion-prayers',
         'prayer-of-basil',
         'into-thy-hands'

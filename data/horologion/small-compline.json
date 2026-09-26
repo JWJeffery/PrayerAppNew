@@ -54,7 +54,7 @@
     {
       "id": "doxology-creed",
       "label": "Doxology and Creed",
-      "notes": "The Lesser Doxology, followed by the Nicene-Constantinopolitan Creed.",
+      "notes": "The Lesser Doxology, two further fixed night prayers (Finding SC1), \"Vouchsafe, O Lord, to keep us this night without sin\" and its continuation (Finding SC2), the Creed, the (Menaion/Octoechos-dependent, deferred) Canon, and \"It is truly meet\"/\"More honourable than the Cherubim\" (Finding SC3).",
       "items": [
         {
           "type": "placeholder",
@@ -65,8 +65,34 @@
         },
         {
           "type": "placeholder",
+          "key": "sc-night-prayers",
+          "label": "Night Prayers",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "sc-vouchsafe",
+          "label": "Vouchsafe, O Lord",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
           "key": "creed",
           "label": "The Creed (Nicene-Constantinopolitan)",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "sc-canon-rubric",
+          "text": "CANON: A canon from the Menaion, or to the Theotokos from the Octoechos, is read here. Full canon text is Menaion/Octoechos-dependent and deferred, matching this corpus's standing disclosure policy."
+        },
+        {
+          "type": "placeholder",
+          "key": "sc-it-is-truly-meet",
+          "label": "It Is Truly Meet",
           "status": "unresolved",
           "note": "Resolved from compline-fixed.json by HorologionEngine."
         }
