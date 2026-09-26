@@ -20870,3 +20870,72 @@ weekday cycle, the pre-Lenten weekday family) was spot-checked at a handful of p
 day-by-day.
 
 SEED_VERSION bumped to `v344-2026-09-26-weekday-lectionary-week27-28-gap-closed`.
+
+---
+
+## Session 2026-09-26, continued -- Vespers kathisma numbers were wrong for Monday-Friday;
+## fixed, cross-referenced comment in orthros-kathisma.json corrected too.
+
+Continuing "ALL OF IT" into `data/horologion/vespers-kathisma.json` and `orthros-kathisma.json`
+(never checked against any external source). **Vespers-kathisma.json's entire Monday-Friday
+progression was wrong**: it stepped by 2 (Kathismata 4, 6, 8, 10, 12) when the real weekly cycle
+steps by 3. Confirmed against two independent authoritative sources in exact agreement -- OCA
+(oca.org/liturgics/outlines/kathisma-readings-at-vespers: "Monday evening 6, Tuesday evening 9,
+Wednesday evening 12, Thursday evening 15, Friday evening 18, Saturday evening 1") and the
+Metropolitan Cantor Institute (mci.archpitt.org/liturgy/Kathismata.html: "Monday through Friday:
+kathismata 6, 9, 12, 15, and 18 respectively; Saturday: kathisma 1"). **Root cause**: reading
+`orthros-kathisma.json`'s own header alongside the Vespers file showed it explicitly claiming
+"Vespers reads Kathismata 1, 4, 6, 8, 10, 12" -- that's `orthros-kathisma.json`'s OWN `kathismaFirst`
+sequence for Matins, mistakenly duplicated into the Vespers file as if it were the Vespers cycle.
+**Fixed**: Kathismata 6 (Tuesday->Monday) and 12 (Friday->Wednesday) already existed correctly in
+the file, just filed under the wrong day -- moved. Kathismata 9, 15, and 18 newly sourced this pass
+(psalm ranges from Wikipedia's Kathisma article, the standard uncontroversial 20-kathisma LXX
+division; incipits from liturgy.io's Psalter According to the Seventy, LXX numbering, matching this
+file's own existing HTM-flavored incipit register for Kathismata 1/6/12). `orthros-kathisma.json`'s
+own cross-reference comment (repeating the same wrong claim) corrected in that file too.
+
+**NOT done this pass, flagged as a separate open item**: `orthros-kathisma.json`'s OWN Matins pairs
+were not independently re-verified. A single OCA fetch (oca.org/liturgics/outlines/kathisma-
+readings-at-matins) returned an internally irregular ordinary-time sequence (Sunday 4,5,6 / Monday
+7,8,9 / Tuesday 10,11,12 / Wednesday 13,14,15 / Thursday 19,20 / Friday 16,17 -- note Thursday and
+Friday out of numeric order) that could not be corroborated against a second source in the time
+available, and total-coverage arithmetic across the combined Vespers+Matins cycle left Kathismata 2
+and 3 apparently never read in an ordinary week, which doesn't obviously reconcile. Given the file's
+own Vespers cross-reference was proven wrong by the same conflation, its Matins claim deserves the
+same scrutiny before being trusted -- not rewritten here on one uncertain, internally odd extraction.
+
+VERIFIED: JSON reparses clean on both files; live-confirmed the corrected data loads through the
+running app (`fetch('data/horologion/vespers-kathisma.json')` in the real page, all six weekday
+entries showing the corrected numbers).
+
+---
+
+## Session 2026-09-26, branch consolidation -- three independently-diverged branches reconciled.
+
+Josh flagged, correctly, that this session's designated branch was missing months of UI work: two
+other branches existed with real, unmerged work and no PR ever opened for either.
+`claude/tender-johnson-hlv2b5` (~90 commits, 2026-09-24 through 2026-09-26) completed Phase 5 lanes
+2-3, all of Phase 6 (old skin deleted, shell-v2 made permanent), the entry-screen redesign, ground
+imagery, the admin tradition-availability panel, Eastern seasonal colors, and its own independent
+Horologion audit (Vespers reorder + missing prayers, Grand Compline citation fix, among others).
+`claude/resume-note-p98a1t` (2 commits) was a separate, independent, PARALLEL attempt at the same
+Phase 5 lanes 2-3 -- superseded by tender-johnson's own (later, live-tested, built-upon-by-Phase-6)
+version of the same work; not merged, since its commits are not an ancestor of tender-johnson's and
+its content has no surviving dependents.
+
+**Resolution, per Josh's direction**: tender-johnson-hlv2b5 adopted as the base. This session's
+seven Horologion lectionary/kathisma commits (the four inherited from the separately-merged
+`claude/prayerappnew-horologion-errors-fkrdxx` branch, plus this session's own three: Zacchaeus
+routing + Lukan overflow, the weekday week 27-28 gap, and the Vespers kathisma fix above) were
+cherry-picked on top in original order. Confirmed before merging that the one real code overlap
+(`js/horologion-engine.js`'s `_resolveComplineFestalTheotokionRubric`) touched different lines in
+each branch (this session: a Great-Lent-Sunday boolean guard; tender-johnson: a new parameter to
+`_computeBaselineTone`) and merged cleanly with no semantic conflict. The three narrative log files
+(this file, `RESUME_PROJECT_NOTE.md`, `audit-ledger.html`) conflicted at every cherry-pick, as
+expected for two independently-appended logs -- resolved by keeping both sides' content at each
+conflict (never dropping either branch's entries), with `audit-ledger.html`'s `SEED_VERSION` line
+resolved to this entry's own final value rather than an intermediate transient one. Verified after
+all seven cherry-picks: `node --check` clean, every `data/horologion/*.json` file reparses clean, no
+leftover conflict markers anywhere in the tree.
+
+SEED_VERSION bumped to `v373-2026-09-26-consolidated-tender-johnson-base-plus-horologion-lectionary-fixes`.
