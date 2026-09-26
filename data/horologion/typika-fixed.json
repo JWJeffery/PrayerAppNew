@@ -14,7 +14,8 @@
     "public domain -- the Coverdale/Book of Common Prayer Psalter, which this project already",
     "uses and trusts elsewhere (see edu:layer:byzantine-populated on the dashboard).",
     "Transcribed directly from the 1906 text (archive.org), LXX/Vulgate numbering as printed",
-    "there (Psalm ciii, cxlvi), only orthography lightly modernized (thee/thou left as printed)."
+    "there (Psalm ciii, cxlvi), only orthography lightly modernized (thee/thou left as printed).",
+    "AUDIT FIX 2026-09-26 (Findings T3, T4, T5, T6): 'typika-trisagion-prayers' -- a spurious full Trisagion+Our-Father complex duplicating the Usual Beginning and typika-lords-prayer -- removed (T5; neither HAPGOOD1922 pp.59-61 nor UNABHOR1997 pp.135-139 shows any Trisagion in this position). Added: 'typika-only-begotten-son' (T3), a 'Remember us...' closing appended to typika-beatitudes (needed for T4, missing entirely though T4's own finding text assumed it existed), 'typika-heavenly-choir-hymn' (T4), 'typika-loose-remit-pardon' (T6). Also fixed, found while sourcing T3's insertion point, not itself a numbered finding: typika-psalm-145's own text carried a spurious trailing Alleluia/Lord-have-mercy unit (a copy-paste artifact from the Hours' own mid-office unit) with no basis in either source for Typika; removed."
   ],
   "slots": {
     "typika-usual-beginning": {
@@ -100,6 +101,11 @@
           "type": "text",
           "key": "typika-beatitudes-doxology",
           "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "typika-beatitudes-remember-us",
+          "text": "Remember us, O Lord, when Thou comest into Thy Kingdom.\nRemember us, O Master, when Thou comest into Thy Kingdom.\nRemember us, O Holy One, when Thou comest into Thy Kingdom."
         }
       ]
     },
@@ -115,71 +121,53 @@
       "lxxNumber": 145,
       "hebrewNumber": 146,
       "label": "Psalm 145 (LXX) — Praise the Lord, O my soul; while I live will I praise the Lord",
-      "text": "Praise the Lord, O my soul; while I live will I praise the Lord: yea, as long as I have any being, I will sing praises unto my God.\n\nO put not your trust in princes, nor in any child of man: for there is no help in them. For when the breath of man goeth forth he shall turn again to his earth: and then all his thoughts perish.\n\nBlessed is he that hath the God of Jacob for his help: and whose hope is in the Lord his God; Who made heaven and earth, the sea, and all that therein is: who keepeth his promise for ever.\n\nWho helpeth them to right that suffer wrong: who feedeth the hungry. The Lord looseth men out of prison: the Lord giveth sight to the blind.\n\nThe Lord helpeth them that are fallen: the Lord careth for the righteous. The Lord careth for the strangers, he defendeth the fatherless and widow: as for the way of the ungodly, he turneth it upside down.\n\nThe Lord thy God, O Sion, shall be King for evermore: and throughout all generations.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+      "text": "Praise the Lord, O my soul; while I live will I praise the Lord: yea, as long as I have any being, I will sing praises unto my God.\n\nO put not your trust in princes, nor in any child of man: for there is no help in them. For when the breath of man goeth forth he shall turn again to his earth: and then all his thoughts perish.\n\nBlessed is he that hath the God of Jacob for his help: and whose hope is in the Lord his God; Who made heaven and earth, the sea, and all that therein is: who keepeth his promise for ever.\n\nWho helpeth them to right that suffer wrong: who feedeth the hungry. The Lord looseth men out of prison: the Lord giveth sight to the blind.\n\nThe Lord helpeth them that are fallen: the Lord careth for the righteous. The Lord careth for the strangers, he defendeth the fatherless and widow: as for the way of the ungodly, he turneth it upside down.\n\nThe Lord thy God, O Sion, shall be King for evermore: and throughout all generations.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "typika-creed": {
       "type": "text",
       "label": "The Symbol of Faith (Nicene-Constantinopolitan Creed)",
       "text": "I believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible.\n\nAnd in one Lord Jesus Christ, the Son of God, the Only-begotten, begotten of the Father before all ages; Light of Light, true God of true God; begotten, not made; of one essence with the Father; by Whom all things were made; Who for us men and for our salvation came down from heaven, and was incarnate of the Holy Spirit and the Virgin Mary, and became man; and was crucified also for us under Pontius Pilate, and suffered and was buried; and the third day He rose again, according to the Scriptures; and ascended into heaven, and sitteth at the right hand of the Father; and He shall come again with glory to judge the living and the dead; Whose Kingdom shall have no end.\n\nAnd in the Holy Spirit, the Lord, and Giver of life, Who proceedeth from the Father; Who with the Father and the Son together is worshipped and glorified; Who spake by the Prophets.\n\nIn one Holy Catholic and Apostolic Church. I acknowledge one Baptism for the remission of sins. I look for the Resurrection of the dead, and the life of the world to come. Amen."
     },
-    "typika-trisagion-prayers": {
-      "type": "sequence",
-      "label": "Trisagion Prayers",
-      "items": [
-        {
-          "type": "text",
-          "key": "typika-trisagion-1",
-          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-2",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-3",
-          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-4",
-          "text": "Lord, have mercy.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-5",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-6",
-          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-7",
-          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-8",
-          "text": "Lord, have mercy.",
-          "repeat": 12
-        },
-        {
-          "type": "text",
-          "key": "typika-trisagion-9",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        }
-      ]
-    },
     "typika-lords-prayer": {
       "type": "text",
       "label": "The Lord's Prayer",
       "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
+    },
+    "typika-only-begotten-son": {
+      "type": "text",
+      "label": "O Only-Begotten Son, and Word of God",
+      "text": "O Only-begotten Son and Word of God, Who art immortal, yet didst deign for our salvation to become incarnate of the holy Theotokos and ever-Virgin Mary, and without change didst become man; and wast crucified, O Christ God, trampling down death by death; Thou Who art one of the Holy Trinity, glorified with the Father and the Holy Spirit: save us."
+    },
+    "typika-heavenly-choir-hymn": {
+      "type": "sequence",
+      "label": "The Heavenly Choir Doth Hymn Thee",
+      "items": [
+        {
+          "type": "text",
+          "key": "typika-heavenly-choir-1",
+          "text": "The heavenly choir doth hymn Thee, and doth cry: Holy, holy, holy, Lord God of Hosts; heaven and earth are full of Thy glory."
+        },
+        {
+          "type": "text",
+          "key": "typika-heavenly-choir-stichos",
+          "text": "Come unto Him and be enlightened, and your faces shall not be ashamed."
+        },
+        {
+          "type": "text",
+          "key": "typika-heavenly-choir-2",
+          "text": "The heavenly choir doth hymn Thee, and doth cry: Holy, holy, holy, Lord God of Hosts; heaven and earth are full of Thy glory."
+        },
+        {
+          "type": "text",
+          "key": "typika-heavenly-choir-3",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit.\n\nThe choir of holy Angels and Archangels, with all the Powers of heaven, sing Thy praises and do cry: Holy, holy, holy, Lord God of Hosts; heaven and earth are full of Thy glory.\n\nBoth now and ever, and unto ages of ages. Amen."
+        }
+      ]
+    },
+    "typika-loose-remit-pardon": {
+      "type": "text",
+      "label": "Loose, Remit, Pardon, O God, Our Transgressions",
+      "text": "Loose, remit, pardon, O God, our transgressions, voluntary and involuntary; whether of word or of deed; whether of knowledge or of ignorance; whether of the day or of the night; whether of the mind or of the intention: forgive us all, for Thou art good and lovest mankind."
     }
   }
 }

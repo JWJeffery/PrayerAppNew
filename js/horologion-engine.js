@@ -8129,8 +8129,10 @@ async function _resolveTypikaSlots(sections, dateObj) {
         'typika-beatitudes',
         'typika-psalm-102',
         'typika-psalm-145',
+        'typika-only-begotten-son',
+        'typika-heavenly-choir-hymn',
         'typika-creed',
-        'typika-trisagion-prayers',
+        'typika-loose-remit-pardon',
         'typika-lords-prayer'
     ]);
 
@@ -8179,6 +8181,69 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         text:       SUNDAY_RESURRECTIONAL_KONTAKIA[tone],
                         resolvedAs: 'typika-sunday-resurrectional-kontakion-tone-' + tone
                     };
+                } else {
+                    // No 1-8 Octoechos tone resolves on Pascha itself (the week's
+                    // own tone cycle doesn't begin until Thomas Sunday) -- the
+                    // Paschal Kontakion belongs here instead, but sourcing it
+                    // correctly is out of scope for Finding T7 (the ordinary
+                    // weekday table); disclose rather than leave a bare
+                    // placeholder, matching this engine's standard degradation.
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion',
+                        text:       'The Paschal Kontakion belongs here; not yet sourced in this corpus.',
+                        resolvedAs: 'typika-sunday-kontakion-no-tone-deferred'
+                    };
+                }
+                continue;
+            }
+
+            // Finding T7 (audit 2026-09-26): Monday-Saturday fixed-by-weekday
+            // Kontakion table, per HAPGOOD1922 pp.61-62 / UNABHOR1997 pp.139-141.
+            // Does not need the Menaion -- unlike troparion-of-the-day, which does
+            // and remains deferred. A feast/saint override, when the Menaion is
+            // imported, would take precedence over this table; not built here.
+            if (item.key === 'typika-kontakion-rubric' && dayOfWeek !== 0) {
+                const WEEKDAY_KONTAKIA = {
+                    1: { label: 'Kontakion of the Bodiless Powers', tone: 2,
+                         text: 'Supreme commanders of God and ministers of the divine glory, guides of men and leaders of the bodiless hosts: ask for what is to our profit and for great mercy, since ye are supreme commanders of the bodiless hosts.' },
+                    2: { label: 'Kontakion of the Forerunner', tone: 2,
+                         text: 'O Prophet of God and Forerunner of grace, having obtained thy head from the earth as a most sacred rose, we ever receive healings; for again, as of old in the world, thou preachest repentance.' },
+                    3: { label: 'Kontakion of the Cross', tone: 4,
+                         text: 'O Thou Who wast lifted up willingly on the Cross, bestow Thy mercies upon the new community named after Thee, O Christ God; gladden with Thy power the Orthodox Christians, granting them victory over enemies; may they have as Thy help the weapon of peace, the invincible trophy.' },
+                    4: { label: 'Kontakion of the Holy Apostles, and of St. Nicholas', tone: 2,
+                         text: 'The firm and divine-voiced preachers, the chief of Thy disciples, O Lord, Thou hast taken to Thyself for the enjoyment of Thy blessings and for repose; their labours and death didst Thou accept as above every sacrifice, O Thou Who alone knowest the hearts.\n\nIn Myra, O Saint, thou didst prove to be a minister of things sacred; for having fulfilled the Gospel of Christ, O righteous one, thou didst lay down thy life for thy people, and didst save the innocent from death. Wherefore thou wast sanctified as a great initiate of the grace of God.' },
+                    5: { label: 'Kontakion of the Cross', tone: 4,
+                         text: 'O Thou Who wast lifted up willingly on the Cross, bestow Thy mercies upon the new community named after Thee, O Christ God; gladden with Thy power the Orthodox Christians, granting them victory over enemies; may they have as Thy help the weapon of peace, the invincible trophy.' }
+                };
+                const MEMORIAL_KONTAKION =
+                    'With the saints give rest, O Christ, to the souls of Thy servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.';
+                const PROTECTION_OF_CHRISTIANS =
+                    'O Protection of Christians that cannot be put to shame, O mediation unto the Creator unfailing: disdain not the suppliant voices of sinners, but be Thou quick, O Good One, to help us who in faith cry unto Thee. Hasten to intercession, and speed Thou to make supplication, Thou who dost ever protect, O Theotokos, them that honour Thee.';
+                const MARTYRS_KONTAKION =
+                    'To Thee, O Lord, the Planter of creation, the world doth offer the God-bearing martyrs as the firstfruits of nature. By their intercessions preserve Thy Church, Thy commonwealth, in profound peace, through the Theotokos, O Greatly-merciful One.';
+
+                if (dayOfWeek === 6) {
+                    section.items[i] = {
+                        type:       'text',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion for the Departed, and of the Holy Martyrs',
+                        text:       MEMORIAL_KONTAKION + '\n\n' + MARTYRS_KONTAKION,
+                        resolvedAs: 'typika-weekday-fixed-kontakion-saturday'
+                    };
+                } else {
+                    const dayEntry = WEEKDAY_KONTAKIA[dayOfWeek];
+                    if (dayEntry) {
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'typika-kontakion-rubric',
+                            label:      dayEntry.label,
+                            text:       dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS,
+                            tone:       dayEntry.tone,
+                            resolvedAs: 'typika-weekday-fixed-kontakion-' + dayOfWeek
+                        };
+                    }
                 }
                 continue;
             }

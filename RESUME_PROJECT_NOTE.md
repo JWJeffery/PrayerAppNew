@@ -51,13 +51,51 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 3 of 7 (the
-four Hours) fixed: Findings H1, H2, H3. Read this entry first.** Continuing the fix pass in the
-order `documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers and Grand Compline already
-fixed, see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down). Per the branching rule
-above: found PR #37 still open, reset this session's assigned branch to its head (`d6d7e50`)
-before starting, confirmed the other three Horologion/UI branches named in that PR's body are
-still exactly as it describes them (no new undisclosed divergence), then did this work on top.
+**State as of 2026-09-26, latest of all — Horologion audit fix pass, office-group 4 of 7
+(Typika) fixed: Findings T2-T7. Read this entry first.** Continuing the fix pass in the order
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers, Grand Compline, and the four Hours
+already fixed — see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down and the entry directly
+below this one for the Hours). Read both governing sources' full Typika text directly before
+touching anything (`HAPGOOD1922` pp.59-63; `UNABHOR1997` pp.135-143), not just the excerpts quoted
+in the findings doc — same discipline the Hours fix used, and it paid off the same way: **three
+things beyond T2-T6's own wording surfaced, all disclosed in place rather than silently absorbed**:
+`typika-beatitudes` had no closing refrain at all (T4's own text assumed one existed);
+`typika-psalm-145`'s fixed text carried a spurious trailing Alleluia/Lord-have-mercy unit with no
+basis in either source (a copy-paste artifact from the Hours' own H2, caught while sourcing T3's
+insertion point); and T5's own text treated the app's Lord's Prayer position as already correct
+when both sources place it well earlier (right after Creed + "Loose, remit, pardon," before the
+Kontakion) — fixed to match rather than left as a known error.
+
+**T7 built, not just filed as unblocked**: a real Monday-Saturday Kontakion table (Bodiless
+Powers/Forerunner/Cross/Apostles+Nicholas/Cross/Martyrs-with-memorial), cross-verified against
+`UNABHOR1997` independently. Sunday's existing tone-keyed table untouched.
+
+**A real regression caught by the standard 5-year, 10-office, both-calendar-mode sweep before
+shipping**: implementing T7 required changing the Kontakion skeleton item from a `rubric` (real
+fallback text) to a `placeholder`, which left Pascha itself — where no Octoechos tone resolves —
+as a bare unresolved placeholder instead of degrading gracefully. 0 placeholders before, 10 after
+(every swept year's Pascha, both calendar modes), 0 again after fixing it with an honest disclosure
+rubric rather than fabricating the Paschal Kontakion's own text.
+
+**Verified**: same standard as the Hours — `node --check` clean, both touched JSON files reparse
+clean, rebuilt harness confirms all seven weekdays plus Pascha resolve correctly, the 5-year sweep
+clean, live-confirmed in headless Chromium against the real dev server under `?shell=v2` (Monday,
+Saturday, Sunday all correct section order and day-specific Kontakion label, zero
+non-environmental console errors). Full account: `AUDIT_GOVERNANCE_LEDGER.md`'s "Horologion audit
+fix pass, office-group 4 of 7" entry; `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Typika section
+updated to FIXED. SEED_VERSION `v375 -> v376`.
+
+**Next in the fix pass, per the audit's own order**: Orthros/Matins (Findings O1-O2).
+
+---
+
+**State as of 2026-09-26, office-group 3 of 7 (the four Hours) fixed: Findings H1, H2, H3.**
+Continuing the fix pass in the order `documentation/HOROLOGION_AUDIT_FINDINGS.md` lays out (Vespers
+and Grand Compline already fixed, see the "HOROLOGION FULL AUDIT — PHASE 2" entry further down).
+Per the branching rule above: found PR #37 still open, reset this session's assigned branch to its
+head (`d6d7e50`) before starting, confirmed the other three Horologion/UI branches named in that
+PR's body are still exactly as it describes them (no new undisclosed divergence), then did this
+work on top.
 
 **Rebuilt the full-script test harness first**, per the CRITICAL METHODOLOGY WARNING below — the
 prior session's own copy was gone (scratchpad, not committed), so this is a fresh build from the

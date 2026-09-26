@@ -21222,3 +21222,78 @@ this engine, matching the existing pattern for this data directory.
 
 **Next in the fix pass, per the audit's own stated order**: Typika (Findings T2-T7; T1 already
 retracted as a false positive before this pass began).
+
+---
+
+## Session 2026-09-26, continued -- Horologion audit fix pass, office-group 4 of 7: Typika --
+## Findings T2-T7 fixed.
+
+Continuing the fix pass in order (Vespers, Grand Compline, the four Hours already fixed; Typika
+next). Read both governing sources' full Typika text directly before touching anything
+(`HAPGOOD1922` pp.59-63; `UNABHOR1997` pp.135-143, "The Order of the Typica") rather than relying
+only on the excerpts quoted in the findings doc -- the same discipline the Hours fix used, and for
+the same reason: it surfaced real gaps and one real overreach in the findings' own text.
+
+**Three things found beyond T2-T6's own wording, all disclosed in
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` in place rather than silently absorbed**:
+
+1. `typika-beatitudes` had no closing refrain ("Remember us, O Lord/Master/Holy One") at all --
+   T4's own finding text assumed it already existed. Added as part of fixing T4, since T4's new
+   hymn's position is defined relative to it.
+2. `typika-psalm-145`'s fixed text carried a spurious trailing Alleluia/Lord-have-mercy unit with
+   no basis in either source for Typika -- reads as a copy-paste artifact from the Hours' own
+   mid-office unit (see the Hours entry above, Finding H2). Found while sourcing T3's insertion
+   point, which needs to sit immediately after this psalm's real ending; removed.
+3. T5's own text treated the app's Lord's Prayer position (after the Epistle/Gospel readings, at
+   the very end) as already correct, asking only that the duplicate be removed. Both sources'
+   literal order is Creed -> "Loose, remit, pardon" -> the Lord's Prayer (once) -> the day's
+   Kontakion -- well before the readings. Fixed to match rather than left as a known error the
+   finding's own phrasing had talked past.
+
+**Built**: `data/horologion/typika-fixed.json` -- `typika-trisagion-prayers` deleted entirely (T5,
+the spurious duplicate); new slots `typika-only-begotten-son` (T3), `typika-heavenly-choir-hymn`
+(T4), `typika-loose-remit-pardon` (T6); `typika-beatitudes` extended with the closing refrain (see
+item 1 above); `typika-psalm-145` corrected (see item 2 above).
+`data/horologion/typika.json` -- resection order rebuilt to
+`opening -> psalmody -> beatitudes -> heavenly-choir -> creed -> lords-prayer -> troparia ->
+readings -> dismissal` (T2, and the T5 correction from item 3 above); the old combined
+`lords-prayer`+dismissal section split so the Lord's Prayer could move up while the dismissal
+rubric stays as the office's true final section; the `trisagion` section removed outright (T5).
+
+**T7 built, not just filed as unblocked**: a fixed Monday-Saturday Kontakion table (Monday --
+Bodiless Powers; Tuesday -- Forerunner; Wednesday/Friday -- the Cross, identical text; Thursday --
+Holy Apostles plus St. Nicholas; Saturday -- the memorial verse then the Kontakion of the Martyrs,
+no Theotokion), each weekday but Saturday followed by the shared memorial verse and Theotokion,
+cross-verified against `UNABHOR1997` pp.139-141 independently confirming the same six assignments.
+Built inline in `_resolveTypikaSlots()` in `js/horologion-engine.js`, matching the existing
+`SUNDAY_RESURRECTIONAL_KONTAKIA` object's own code style (an inline table, not a new fetched file)
+since that's the established precedent for this exact shape of content in this function. The
+Menaion/feast-override branch the source's own preamble also describes remains deferred, same
+status as `troparion-of-the-day`.
+
+**A real regression caught by the sweep, not shipped**: implementing T7 required changing
+`typika-kontakion-rubric`'s skeleton item from a `rubric` (with real fallback text) to a
+`placeholder`, which meant Pascha itself -- where no Octoechos tone resolves, since the tone cycle
+doesn't begin until Thomas Sunday -- degraded to a bare unresolved placeholder instead of gracefully
+disclosing the gap. Caught by the standard 5-year, 10-office, both-calendar-mode regression sweep
+(36,540 calls): 0 placeholders before this fix, 10 after, all five swept years' Pascha dates (new
+and old calendar mode each). Fixed with an honest disclosure rubric rather than fabricating the
+Paschal Kontakion's own text (out of scope for this finding); re-swept clean.
+
+**Verified**: `node --check` clean; both touched JSON files reparse clean; the rebuilt full-script
+harness confirms all seven weekdays plus Pascha resolve correctly (Pascha's disclosed gap is a
+`rubric`, not a `placeholder`, so it doesn't count against `diagnostics.placeholderSlots`); the
+5-year sweep clean after the Pascha fix. Live-confirmed in this sandbox's own headless Chromium
+against the real running dev server under `?shell=v2`: Monday, Saturday, and Sunday Typika all
+resolve with the correct new section order and the correct day-specific Kontakion label, zero
+non-environmental console errors (the same Google Fonts `ERR_CERT_AUTHORITY_INVALID` sandbox-proxy
+noise already documented for this container).
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated: the Typika section marked FIXED with all
+three beyond-scope corrections recorded in place; the summary table and top status line updated to
+"4 of 7 fixed." `RESUME_PROJECT_NOTE.md` updated to match. No cache-bust bump needed --
+`js/horologion-engine.js` carries no version param in `index.html`, and the touched
+`data/horologion/*.json` files are fetched by path with no version query, matching the existing
+pattern for this data directory.
+
+**Next in the fix pass, per the audit's own stated order**: Orthros/Matins (Findings O1-O2).

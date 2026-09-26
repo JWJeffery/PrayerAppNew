@@ -1,9 +1,9 @@
 # Horologion Full Audit — Findings Log
 
-**Status: all 8 offices/office-groups audited. Fix pass in progress — 3 of 7 office-groups fixed
-(Vespers, Grand Compline, the four Hours); Typika next.** Per Josh's instruction: "Keep
-auditing. Record every error, and then we'll fix everything at once," followed by "Please proceed"
-(twice) to start the fix pass. This file is the running record.
+**Status: all 8 offices/office-groups audited. Fix pass in progress — 4 of 7 office-groups fixed
+(Vespers, Grand Compline, the four Hours, Typika); Orthros/Matins next.** Per Josh's instruction:
+"Keep auditing. Record every error, and then we'll fix everything at once," followed by "Please
+proceed" (twice) to start the fix pass. This file is the running record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -17,7 +17,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
 | Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
-| Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer |
+| Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
 | Orthros/Matins | 2 (2 gaps) | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
 | Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
@@ -268,7 +268,31 @@ Little Hours' own Theotokion corpus isn't yet imported, rather than fabricating 
 The `troparion-of-the-day` slots correctly disclose the weekday troparion as deferred pending Menaion
 import — not a finding, matches this project's standing policy.
 
-## TYPIKA — audited, 7 findings
+## TYPIKA — audited, 7 findings, FIXED 2026-09-26 (T2-T7; T1 already retracted)
+
+**Verified against both sources directly before fixing, in full** (`HAPGOOD1922` pp.59-63;
+`UNABHOR1997` pp.135-143, "The Order of the Typica") — not just the excerpts quoted in T2-T6 below.
+This full read surfaced three things beyond what T2-T6 state:
+
+1. **The Beatitudes' own closing refrain ("Remember us, O Lord/Master/Holy One") was missing
+   entirely from `typika-beatitudes`.** T4's own wording assumed it already existed ("between the
+   Beatitudes' closing ... and the Creed") — checked directly and it wasn't there at all. Added as
+   part of fixing T4, since T4's new hymn's position depends on it.
+2. **`typika-psalm-145`'s own fixed text carried a spurious trailing Alleluia/Lord-have-mercy
+   unit** ("Alleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3) / Lord, have mercy. (×3) /
+   Glory...") with no basis in either source for Typika — reads as a copy-paste artifact from the
+   Hours' own mid-office unit (see H2 above). Found while sourcing T3's insertion point (which
+   needs to sit immediately after this psalm's real ending); removed.
+3. **T5's own text treated the app's Lord's Prayer position ("near the end," after the Epistle/
+   Gospel readings) as already correct, only asking for the duplicate to be removed.** Both sources'
+   literal running order is Creed → "Loose, remit, pardon" → the Lord's Prayer (once) → the day's
+   Kontakion — i.e., the Lord's Prayer belongs well *before* the readings/Kontakion position, not
+   after. Fixed to match: the `lords-prayer` section moved up to sit directly after `creed`, and a
+   new `dismissal` section holds the closing rubric that used to share space with it. **Beyond what
+   T5 itself asked for, but the correct position was directly verifiable, so left uncorrected would
+   have been a known error, not a disclosed limitation.**
+
+### Finding T2 — BUG: Beatitudes rendered before Psalms 102 and 145 instead of after
 
 Live-verified via `resolveOffice(date, 'typika')` for an ordinary Wednesday. 13/13 slots "implemented"
 per the engine's own diagnostics — but see T1, which shows that count is misleading for two of them.
@@ -342,6 +366,44 @@ Saturday. None of this depends on the Menaion; it's exactly the kind of fixed, d
 project has already built for other slots (e.g. the Vespers prokeimena-by-day table). Recorded as a
 scope correction because it means this slot is not actually blocked on the same thing the Troparion-
 of-the-day slot is — it could be sourced and built now, independent of Menaion import.
+
+**T7 built, not just recorded as unblocked.** Per the same worked pattern quoted above, cross-
+verified against `UNABHOR1997` pp.139-141 (independently gives the same six weekday assignments and
+the same Saturday structure): Monday (Bodiless Powers, Tone 2), Tuesday (Forerunner, Tone 2),
+Wednesday and Friday (the Cross, Tone 4, identical text both days), Thursday (Holy Apostles, Tone 2,
+plus St. Nicholas, Tone 3, same day), each followed by the shared memorial verse ("With the saints
+give rest...") and, on every day but Saturday, the shared Theotokion ("O Protection of Christians...
+"). Saturday has no day-proper Kontakion of its own in this position — only the memorial verse,
+followed by the Kontakion of the Holy Martyrs (Tone 8), with no Theotokion (confirmed: "on weekdays,
+but not Saturdays" is the source's own wording). Sunday's existing tone-keyed Resurrectional
+Kontakion table (already correct, unchanged) is untouched. Built inline in
+`_resolveTypikaSlots()`, matching the existing `SUNDAY_RESURRECTIONAL_KONTAKIA` object's own code
+style rather than a new fetched file, since that's the established precedent for exactly this shape
+of content in this function. The Menaion/feast-override branch the source's own preamble also
+describes ("if there be a feast of the Lord, we say its Kontakion...") remains deferred, matching
+`troparion-of-the-day`'s own disclosed status — this table is the fallback when no such feast/saint
+applies, not a replacement for that override.
+
+**A real regression caught before it shipped, during the sweep, not before:** implementing T7
+required changing `typika-kontakion-rubric`'s skeleton item from a `rubric` (with real, if generic,
+fallback text) to a `placeholder` — which meant that on Pascha itself, where no Octoechos tone
+1-8 resolves (the week's tone cycle doesn't begin until Thomas Sunday), the item was left as a bare
+unresolved placeholder instead of degrading gracefully. Caught by a 5-year regression sweep (10
+offices, both calendar modes, 36,540 calls) that had shown zero placeholders before this fix and 10
+after — all 10 were Pascha itself across the swept years. Fixed with an honest disclosure rubric
+("The Paschal Kontakion belongs here; not yet sourced in this corpus.") rather than fabricating the
+Paschal Kontakion's own text, which is out of scope for this finding. Re-swept clean: 0 exceptions,
+0 placeholders.
+
+**Verified overall**: `node --check` clean; both touched JSON files reparse clean; the rebuilt
+harness confirms all seven weekdays plus Pascha resolve `status: "complete"`/`"complete"`
+(Pascha's one honestly-disclosed gap aside, which is a `rubric`, not a `placeholder`, so it doesn't
+count against `diagnostics.placeholderSlots`); the 5-year, 10-office, both-calendar-mode sweep
+(36,540 calls) is clean after the Pascha fix. Live-confirmed in headless Chromium against the real
+dev server under `?shell=v2`: Monday, Saturday and Sunday all resolve with the correct new section
+order and the correct day-specific Kontakion label, zero non-environmental console errors (the same
+Google Fonts/`ERR_CERT_AUTHORITY_INVALID` sandbox-proxy noise already documented, confirmed
+unrelated).
 
 ## ORTHROS/MATINS — audited, 2 findings
 

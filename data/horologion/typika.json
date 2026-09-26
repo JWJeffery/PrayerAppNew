@@ -2,7 +2,7 @@
   "officeKey": "typika",
   "label": "Typika (Obednitsa)",
   "tradition": "BYZC",
-  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy on Sundays and feasts, in place of Holy Communion. Consists of the Beatitudes, Psalms 102 and 145, the Symbol of Faith, the Trisagion Prayers, and the Lord's Prayer, with appointed Epistle and Gospel readings.",
+  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy on Sundays and feasts, in place of Holy Communion. Consists of Psalms 102 and 145 with the \"O Only-begotten Son\" hymn, the Beatitudes, the Heavenly Choir hymn, the Symbol of Faith, \"Loose, remit, pardon,\" the Lord's Prayer, the day's Kontakion, and appointed Epistle and Gospel readings.",
   "sections": [
     {
       "id": "opening",
@@ -24,23 +24,9 @@
       ]
     },
     {
-      "id": "beatitudes",
-      "label": "The Beatitudes",
-      "notes": "The Beatitudes (Matthew 5:3–12) with refrains. Appointed at the Typika in place of the Antiphons of the Liturgy.",
-      "items": [
-        {
-          "type": "placeholder",
-          "key": "typika-beatitudes",
-          "label": "The Beatitudes (Matthew 5:3–12)",
-          "status": "unresolved",
-          "note": "Fixed text. Resolved from typika-fixed.json by HorologionEngine."
-        }
-      ]
-    },
-    {
       "id": "psalmody",
       "label": "Psalms 102 and 145",
-      "notes": "Two psalms appointed at the Typika: Psalm 102 (LXX) — Bless the Lord, O my soul; and Psalm 145 (LXX) — Praise the Lord, O my soul.",
+      "notes": "Two psalms appointed at the Typika: Psalm 102 (LXX) -- Bless the Lord, O my soul; and Psalm 145 (LXX) -- Praise the Lord, O my soul; followed by the fixed hymn \"O Only-begotten Son, and Word of God.\" Both sources place this psalmody BEFORE the Beatitudes, not after (Finding T2).",
       "items": [
         {
           "type": "placeholder",
@@ -55,13 +41,48 @@
           "label": "Psalm 145 (LXX) — Praise the Lord, O my soul",
           "status": "unresolved",
           "note": "Resolved from typika-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-only-begotten-son",
+          "label": "O Only-Begotten Son, and Word of God",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "beatitudes",
+      "label": "The Beatitudes",
+      "notes": "The Beatitudes (Matthew 5:3–12) with refrains. Appointed at the Typika in place of the Antiphons of the Liturgy.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-beatitudes",
+          "label": "The Beatitudes (Matthew 5:3–12)",
+          "status": "unresolved",
+          "note": "Fixed text, including its own closing refrain (\"Remember us, O Lord/Master/Holy One\"). Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "heavenly-choir",
+      "label": "The Heavenly Choir",
+      "notes": "Between the Beatitudes' closing refrain and the Creed, both sources give this three-part hymn (Finding T4).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-heavenly-choir-hymn",
+          "label": "The Heavenly Choir Doth Hymn Thee",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
         }
       ]
     },
     {
       "id": "creed",
       "label": "Symbol of Faith",
-      "notes": "The Nicene-Constantinopolitan Creed is recited at the Typika.",
+      "notes": "The Nicene-Constantinopolitan Creed, followed directly by the fixed prayer \"Loose, remit, pardon, O God, our transgressions\" (Finding T6) -- both sources place it here, immediately after the Creed and before the Lord's Prayer.",
       "items": [
         {
           "type": "placeholder",
@@ -69,18 +90,25 @@
           "label": "The Symbol of Faith (Nicene-Constantinopolitan Creed)",
           "status": "unresolved",
           "note": "Resolved from typika-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-loose-remit-pardon",
+          "label": "Loose, Remit, Pardon, O God, Our Transgressions",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
         }
       ]
     },
     {
-      "id": "trisagion",
-      "label": "Trisagion Prayers",
-      "notes": "The Trisagion prayer sequence.",
+      "id": "lords-prayer",
+      "label": "The Lord's Prayer",
+      "notes": "The Lord's Prayer, said once, directly after the Creed and \"Loose, remit, pardon\" -- both sources place it here, immediately before the day's Kontakion (Findings T5, T6). (Previously duplicated: once here, correctly, and once inside the now-removed spurious Trisagion block.)",
       "items": [
         {
           "type": "placeholder",
-          "key": "typika-trisagion-prayers",
-          "label": "Trisagion Prayers",
+          "key": "typika-lords-prayer",
+          "label": "The Lord's Prayer",
           "status": "unresolved",
           "note": "Resolved from typika-fixed.json by HorologionEngine."
         }
@@ -99,9 +127,11 @@
           "note": "Variable. Resolved via existing Menaion/Octoechos troparion stack by HorologionEngine."
         },
         {
-          "type": "rubric",
+          "type": "placeholder",
           "key": "typika-kontakion-rubric",
-          "text": "KONTAKION: The appointed kontakion of the day is read here. On ordinary weekdays, the kontakion of the saint from the Menaion; on Sundays and great feasts, the kontakion of the feast. If no proper kontakion is appointed, the kontakion to the Theotokos is read: 'To thee, the Champion Leader, we thy servants dedicate a feast of victory and of thanksgiving, as ones rescued out of sufferings, O Theotokos: but as thou art one with might which is invincible, from all dangers that can be do thou deliver us, that we may cry to thee: Rejoice, thou Bride unwedded.'"
+          "label": "Kontakion of the Day",
+          "status": "unresolved",
+          "note": "Sunday: the Resurrectional Kontakion by tone (already fixed, unchanged by this audit fix). Monday-Saturday: a fixed day-of-week table (Finding T7 -- HAPGOOD1922 pp.61-62), resolved by HorologionEngine. A feast or commemorated saint from the Menaion, when present, takes precedence over this fixed table; that override is not built (same deferred-pending-Menaion-import status as troparion-of-the-day)."
         }
       ]
     },
@@ -123,17 +153,10 @@
       ]
     },
     {
-      "id": "lords-prayer",
-      "label": "Lord's Prayer and Dismissal",
-      "notes": "The Lord's Prayer is read. A structural dismissal rubric closes the office.",
+      "id": "dismissal",
+      "label": "Dismissal",
+      "notes": "A structural dismissal rubric closes the office.",
       "items": [
-        {
-          "type": "placeholder",
-          "key": "typika-lords-prayer",
-          "label": "The Lord's Prayer",
-          "status": "unresolved",
-          "note": "Resolved from typika-fixed.json by HorologionEngine."
-        },
         {
           "type": "rubric",
           "key": "typika-dismissal-rubric",
