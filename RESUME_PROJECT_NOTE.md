@@ -58,7 +58,7 @@ because Josh said "pause immediately and write the resume note" — this is that
 any further work, per his standing correction earlier this session that a request to write the
 resume note is not also a request to finish the task. Read this entry first.**
 
-**Done and verified (uncommitted — see below):**
+**Done and verified (committed and pushed — see item 4 below):**
 1. **SC4 refinement — DONE.** `_resolveSmallComplineFixedTroparion`'s Saturday branch
    (`js/horologion-engine.js`, ~line 2926) now uses three new helper functions
    (`_isPreLentenTriodion`, `_getGreatLentWeekNumber`, `_isPentecostSeason` — plus
@@ -87,8 +87,11 @@ resume note is not also a request to finish the task. Read this entry first.**
    51,156 calls, 0 exceptions, 0 placeholders) after each was applied. `node --check` clean.
    **Not yet done: live headless-Chromium confirmation of either change** — only the Node harness
    has exercised them so far.
-4. **NOT YET COMMITTED.** `git status` shows only `js/horologion-engine.js` modified (both fixes
-   above, uncommitted, unpushed) — nothing else touched. Do not lose this diff.
+4. **Committed and pushed** as `71cceee` (this note's own edit included in that same commit), to
+   both `claude/modest-tesla-n4ofrs` and PR #37's head branch
+   (`claude/jwjeffery-prayerappnew-resume-fbkyf9`) — pushed in response to a stop-hook check that
+   requires no uncommitted changes at turn end, not as a sign this task is finished; T8 below is
+   still untouched.
 
 **In progress, not yet touching any file — T8 (Typika's Great Lent structural form) — investigation
 only, no code or data written yet.** Re-read `UNABHOR1997` pp.135-143 (lines 5060-5478) in full to
