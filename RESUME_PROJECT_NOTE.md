@@ -16,10 +16,22 @@ that never got merged or even had a PR opened — three branches (`tender-johnso
 `resume-note-p98a1t`, and this session's own) diverged for an extended period with zero PRs among
 them, discovered only when Josh happened to open one and found it missing the others' work. Do not
 let that repeat. Every session, in addition to the clone/log/SEED_VERSION check above:
+
+0. **Your harness assigns you a brand-new branch name off `main` by default — that default is
+   exactly what caused this problem, so don't just accept it blindly.** Before doing any work,
+   check for open unmerged PRs (`list_pull_requests` state=open, or check the PR number named in
+   the latest "State as of" entry above — right now that's **PR #37**,
+   `https://github.com/JWJeffery/PrayerAppNew/pull/37`, head branch
+   `claude/jwjeffery-prayerappnew-resume-fbkyf9`). **If such a PR is still open, reset your own
+   assigned branch to that PR's head commit — not to `main` — before starting new work**:
+   `git fetch origin claude/jwjeffery-prayerappnew-resume-fbkyf9 && git checkout -B
+   <your-assigned-branch> origin/claude/jwjeffery-prayerappnew-resume-fbkyf9`. Building fresh off
+   `main` while that PR is still open is how you silently drop 90+ commits and recreate this exact
+   mess. Only branch from `main` directly once the note above says the PR has merged.
 1. List remote branches (`git branch -r` or `list_branches`/`list_pull_requests` via the GitHub
-   tools) and check whether any branch other than your own assigned one is ahead of `main` with no
-   open PR. If you find one, flag it to Josh immediately — don't just proceed on your own branch
-   as if it's the only work in flight.
+   tools) and check whether any branch other than the one you just based on is ahead of `main`
+   with no open PR. If you find one, flag it to Josh immediately — don't just proceed as if it's
+   the only work in flight.
 2. Open a PR against `main` for your own branch as soon as you have a commit worth landing —
    don't wait until "the audit is done" or a session is ending. An open PR is cheap and makes
    divergence visible; an unmerged branch sitting quietly for days is exactly how this happened.
