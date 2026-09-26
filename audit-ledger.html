@@ -640,7 +640,8 @@ const BYZANTINE = BYZANTINE_TOP.concat([
   {key:'byz:octoechos', name:"Octoechos (weekday corpus)", status:'amber', note:'sourced from Lambertsen; not yet re-verified'},
   {key:'byz:menaion', name:"Menaion", status:'red', note:'open research-queue.json — acknowledged incomplete'},
   {key:'byz:triodion', name:"Triodion", status:'red', note:'only 1 file exists (lenten weekday) — barely started'},
-  {key:'byz:pentecostarion', name:"Pentecostarion", status:'red', note:'only 1 file exists (bright week) — barely started'}
+  {key:'byz:pentecostarion', name:"Pentecostarion", status:'red', note:'only 1 file exists (bright week) — barely started'},
+  {key:'byz:great-lent-sunday-kathisma-and-psalm-9-fixed', name:"Two real Horologion bugs found and fixed by a full engine sweep (51,156 resolver calls, all 14 offices, both calendar modes, 2024–2028)", status:'green', note:"2026-09-26: (1) js/horologion-engine.js — every Sunday of Great Lent rendered an empty placeholder Kathisma at Orthros; the Great Lent branch's own day-of-week guard was missing a Sunday exclusion that the function's own doc comment already specified, so a Lenten Sunday never reached its correct Sunday-Kathisma-2 branch. Fixed with a one-line condition change (dayOfWeek !== 0). (2) data/horologion/kathisma-full-text.json — 312 stray verse-number strings across 25 psalms (K2/K19/K20) had been captured as their own phantom array entries by a prior extraction pass, roughly doubling verse counts and destroying the displayed numbering; removed via a targeted 312-line sed deletion, not a full JSON re-serialization (a json.dump rewrite was tried first and reverted for silently reformatting unrelated parts of the file). Two of those 25 psalms' worth of stray markers concealed genuinely missing verse text (Psalm 9's would-be verses 3 and 22, HTM/liturgy.io numbering) rather than just doubling — confirmed by a consecutive-double-marker signature found nowhere else in the file, and restored verbatim from liturgy.io's own Psalter According to the Seventy page (psalt=DEF), the exact edition this file already cites for K2/K19/K20, read from raw HTML rather than trusted from WebFetch's AI-summarized response (which gave mismatched verse text on this precise query). Psalm 9 now carries all 38 verses. Full account: AUDIT_GOVERNANCE_LEDGER.md, 'Session 2026-09-26' entry. SEED_VERSION v338 → v339."}
 ]);
 
 const NEEDS = [
@@ -871,7 +872,7 @@ function renderOfficeTable(container, indent, items){
 }
 
 let ALL_ITEMS = [];
-const SEED_VERSION = 'v338-2026-09-24-phase5-coptic-lane-envelope-built';
+const SEED_VERSION = 'v339-2026-09-26-horologion-great-lent-kathisma-and-psalm-9-corruption-fixed';
 
 async function checkSeedVersion(){
   let storedValue = null;

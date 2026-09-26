@@ -17491,3 +17491,173 @@ Cache-bust: `js/office-ui.js` 301 -> 302.
 Next: East Syriac, per section 9's own lane ordering.
 
 SEED_VERSION bumped to `v338-2026-09-24-phase5-coptic-lane-envelope-built`.
+
+## Session 2026-09-26 -- two real Horologion (Byzantine) bugs found and fixed by direct engine
+## sweep, per Josh's direction to fix "the Horologion errors"
+
+HEAD before this session was `a9c00e5` (Phase 5, lane 1: Coptic Agpeya envelope port). This
+session did NOT continue the Phase 5 lane ordering (Coptic done, East Syriac next per the existing
+plan) -- it was asked specifically to find and fix Horologion errors, so it probed that lane
+directly rather than proceeding to East Syriac.
+
+**Method, matching `documentation/HOROLOGION_TESTING_PROTOCOL.md`'s own standard ("not rubric
+fallback, full text present, correct resolver path") rather than clicking through the UI by hand:**
+called `window.HorologionEngine.resolveOffice(date, officeKey, {eoMode})` directly, in a real
+headless Chromium session (`/opt/pw-browsers/chromium-1194`, this sandbox's pre-installed browser,
+driven via the globally-installed `playwright` npm package since this repo's own `package.json`
+does not depend on it), for all 14 Horologion offices, both calendar modes (`new_calendar` /
+`old_calendar`), every single day of 2024 through 2028 -- 51,156 resolver calls -- inspecting
+`diagnostics.placeholderSlots` and catching thrown exceptions. This isolated exactly one
+reproducible class of failure before any fix; both fixes below were verified by re-running the
+identical sweep afterward: zero exceptions, zero placeholder slots across all 51,156 calls.
+
+**Bug 1 (engine logic): every Sunday of Great Lent rendered an empty/placeholder Kathisma at
+Orthros.** `_resolveOrthrosKathismaPair()` in `js/horologion-engine.js` carries its own doc
+comment stating its `isGreatLent` parameter means "true on all Great Lent days (Mon-Sat
+inclusive)," and its Great Lent weekly appointment table genuinely has no `'sunday'` key (the
+table is keyed `monday` through `saturday` only, per the function's own inline documentation of
+the OCA-sourced weekly kathisma assignments). But the one call site (`_resolveOrthrosSlots()`,
+where `item.key` is `kathisma-first`/`kathisma-second`/`kathisma-third`) computed
+`isGreatLentDay = seasonResult && seasonResult.season === 'great-lent'` with no day-of-week
+exclusion -- true on Sundays as well, since a Sunday inside Great Lent is still liturgically "in"
+the Great Lent season. A Lenten Sunday therefore took the Great Lent branch inside
+`_resolveOrthrosKathismaPair()` instead of falling through to that same function's own correct,
+already-written Sunday branch (which resolves ordinary Kathisma 2 in full, exactly as any other
+Sunday) -- found `weekTable['sunday']` undefined, and returned `null`. The caller's contract
+(`if (resolved) section.items[i] = resolved;`) leaves the skeleton's original placeholder item
+standing whenever `null` comes back, so `diagnostics.placeholderSlots` counted three unresolved
+slots (kathisma-first/second/third) and Orthros showed nothing where Kathisma 2 belongs. This was
+confirmed live in the real render, not just via the engine payload: before the fix, navigating to
+Orthros on 2026-03-01 (Sunday of Orthodoxy, First Sunday of Lent) through the real
+`selectMode('horologion')` -> `selectHorologionOffice('orthros')` ->
+`setSharedOfficeNavDate('horologion', ...)` pipeline showed the placeholder in the actual DOM, not
+merely a diagnostic count.
+
+Confirmed the sweep's single hit (2026-03-01) was genuinely representative and not a fluke of that
+one date: computed the real 2026 Orthodox Pascha via the `Orthocal` MCP tool (2026-04-12,
+`pascha_distance: 0`, cross-checked against this engine's own `_getOrthodoxPascha()`) and derived
+all five 2026 Great Lent Sundays (Orthodoxy 3/1, Palamas 3/8, Cross 3/15, Climacus 3/22, Mary of
+Egypt 3/29) plus Palm Sunday (4/5) -- all six, plus three ordinary Sundays as negative controls,
+showed the identical placeholder failure pre-fix in both calendar modes.
+
+**Fixed**: `_resolveOrthrosSlots()`'s local `isGreatLentDay` computation changed to
+`seasonResult && seasonResult.season === 'great-lent' && dayOfWeek !== 0`, matching
+`_resolveOrthrosKathismaPair()`'s own documented Mon-Sat contract exactly (the function already
+handles Great Lent Sundays correctly via its Sunday branch; the caller was simply routing past it).
+One line of code changed, plus an explanatory comment. `node --check js/horologion-engine.js`
+clean. Re-verified: all five 2026 Lenten Sundays, Palm Sunday, and three ordinary Sundays, both
+calendar modes, now resolve `status:'complete'`, Kathisma 2 in full (`resolvedAs:
+'orthros-sunday-kathisma-2-full-text'`), identical to any other Sunday -- Great Lent Sundays are
+correctly treated as ordinary Sundays for kathisma purposes, which is the actual liturgical rule
+(the Lenten weekday kathisma table governs Monday-Saturday only; Sunday Matins keeps its usual
+Kathisma 2 regardless of season). Confirmed live in the real DOM afterward, not just via the
+engine payload.
+
+**Bug 2 (content corruption, `data/horologion/kathisma-full-text.json`): 312 stray verse-number
+strings captured as their own phantom array entries, and 2 real verses of Psalm 9 missing
+outright.** Discovered while confirming Bug 1's fix rendered correctly in the real DOM: Psalm 9 at
+Kathisma 2 displayed alternating real text with bare digits as if they were their own verses --
+"1. I will confess Thee..." / "2. 2" / "3. I will be glad..." / "4. 3" / "5. 4" / "6. For Thou
+hast maintained...". Confirmed in the raw rendered HTML (`container.innerHTML`, not just
+`innerText`, which can produce misleading whitespace artifacts from block-level layout alone) that
+this is genuine data corruption, not a display bug: the underlying `verses` array in the JSON
+itself contains the bare digit strings as standalone elements.
+
+Scanned the whole file programmatically (Python, `json.load` + a structural walk over every
+`kathismata.*.stases[].psalms[].verses` array): 312 elements across the entire file are pure
+digit-only strings sitting inside 25 psalms' `verses` arrays -- Psalms 9-16 (Kathisma 2, all three
+stases) and Psalms 134-150 (Kathismata 19 and 20, all three stases each) -- out of 2,583 total
+verse-array elements in the file. All 312 sit at the identical 16-space indentation depth (the
+`verses[]` array element level), confirmed by direct `grep` against the raw file, not inferred.
+This matches the file's own `_comment` changelog exactly: K2/K19/K20 (`v5.5.4`/`v5.5.3` per that
+changelog) are sourced from "Psalter According to the Seventy, HTM 1974, via liturgy.io
+(PSALTER70)" -- a different source and evidently a different, buggier extraction pass than
+K1/K4/K6/K8/K10/K12's OCA/Antiochian corpus, which shows no trace of this pattern. The mechanism is
+consistent with an HTML-scraping defect: liturgy.io's own page structure wraps each verse as
+`<div><span class="italicSmall">N</span>  verse text<br/></div>`, and the extraction evidently
+sometimes captured the `<span>`'s own number as a separate list item instead of discarding it or
+folding it into the following text.
+
+**Fixed the doubling**: all 312 stray entries removed via a single targeted `sed` line-deletion
+(`/^\s*"[0-9]\+",\s*$/d`), not a full JSON re-serialization. A `json.dump`-based rewrite was tried
+first and rejected: re-dumping the whole file reformatted unrelated content that had nothing to do
+with this fix (e.g. collapsing `meta.fully_supported_kathismata` from one line to eighteen, and
+silently normalizing an unrelated pre-existing indentation inconsistency in the file's own
+`_comment` array) -- exactly the kind of unintended diff noise `SESSION_START_SCRIPT.md`'s own
+"changed-line count matches what you intended, nothing more" rule exists to catch. Reverted via
+`git checkout --`, redone as the targeted `sed` deletion instead: confirmed beforehand, by direct
+grep, that every one of the 312 matching lines carried a trailing comma (so none was the final
+array element, where a naive line deletion would leave a dangling comma) and that none of the 312
+lines existed anywhere the deletion could touch unrelated content (checked file-wide, not just
+within the 25 known-affected psalms, for any other digit-only line at the same depth -- there were
+none, so the pattern is safely specific to this corruption). Result: `git diff --stat` shows
+exactly 312 deletions and nothing else in this part of the fix.
+
+**Separately found genuinely missing verse text, not just stray markers**: scanning the same 312
+entries for consecutive runs (two or more stray digit-only entries in a row with no real verse
+text between them -- a signature that cannot be explained by simple doubling, since it implies a
+verse's own text was dropped during the original extraction, not merely duplicated) found exactly
+two such runs, both inside Psalm 9: one between what would-be verses 2 and 4 (liturgy.io/HTM
+numbering), one between what would-be verses 21 and 23. This scan covered the entire file, not
+only the 25 known-affected psalms, so this is a complete finding for this corpus, not a sampled
+one. Confirmed by fetching liturgy.io's own Psalm 9 page directly
+(`https://www.liturgy.io/orthodox-psalter?chapter=9&style=LINED&trans=KJV&psalt=DEF` -- the exact
+edition this file's own `_comment` cites for K2/K19/K20) via `curl` and reading the raw server-
+rendered HTML itself, not the `WebFetch` tool's AI-summarized response, which was tried first and
+discarded as unreliable: on this exact precise-verse-alignment query it returned verse-3 and
+verse-23 text that did not actually match the live page's own numbered `<span class="italicSmall">`
+markup when checked against the raw HTML afterward -- a caution worth recording, since trusting
+that summarized response would have written wrong/mismatched text into the corpus under this
+project's own citation. The raw HTML's verse 3 ("When mine enemy be turned back, they shall grow
+weak and shall perish before Thy face,") and verse 22 ("When the ungodly man is arrogant, the poor
+man burneth within; they are caught in the counsels which they devise.") were both confirmed
+absent from this corpus's Psalm 9 by direct comparison against the cleaned (post-doubling-fix)
+array, at exactly the two gap positions the consecutive-marker scan had already flagged.
+
+**Restored verbatim from that same cited source** -- not paraphrased, not reconstructed, not
+synthesized from a different translation (a Douay-Rheims cross-check was run first purely to
+locate approximately where the gaps fell structurally, using the DRB corpus already in this repo
+at `data/bible/translations/drb-original-douay-rheims/raw/psalms.json`, which follows the same
+Vulgate/LXX verse-combining convention for Psalm 9 as this Horologion corpus does; DRB's own
+wording was never written into the file, precisely because it is a different translation from the
+Psalter According to the Seventy this file already cites -- mixing the two mid-psalm would have
+been a real sourcing error even though both are legitimate public-domain witnesses in their own
+right). Psalm 9 now carries all 38 verses, matching liturgy.io's own numbering and text exactly
+end to end when checked. Documented in the file's own `_comment` changelog as a new `v5.5.5` entry
+describing exactly what was found and fixed; `meta.version` bumped from `"5.5.4"` to `"5.5.5"` to
+match (confirmed first, by grep, that nothing in `js/horologion-engine.js` reads this field, so the
+bump is documentation-only and carries no behavioral risk).
+
+Also scanned every other file in `data/horologion/*.json` (troparia, theotokia, prokeimena,
+octoechos, all fixed-office skeletons) for the same numeric-phantom-entry pattern, using the same
+structural walk: none found. This corruption is confined to `kathisma-full-text.json`.
+
+**Verification, both fixes together**: `node --check js/horologion-engine.js` clean; the JSON file
+reparses clean (`json.load`); the full 51,156-call, 5-year, both-calendar-mode resolver sweep
+re-run after both fixes, zero exceptions, zero placeholder slots (was 2 of 1,036 in the initial
+narrower sweep, both on 2026-03-01, before either fix); live headless-Chromium render of Orthros on
+2026-03-01 confirmed both the correct Kathisma 2 content (not blank) and Psalm 9's now-complete,
+correctly-numbered 38 verses, through the real rendering pipeline
+(`selectMode`/`selectHorologionOffice`/`setSharedOfficeNavDate`, not a direct engine call), zero
+console errors throughout every check in this session. `git diff --stat`:
+`js/horologion-engine.js` 7 lines changed (2 lines of actual logic/condition change, 5 lines of new
+explanatory comment); `data/horologion/kathisma-full-text.json` a clean diff isolated to the 312
+stray-entry deletions, the 2 restored verse insertions, and the changelog/version-bump lines --
+confirmed no unrelated reformatting in either file via `git diff --stat` and a manual read of the
+full diff.
+
+**Not attempted this session, left open**: the Phase 5 lane-3 Horologion envelope port itself
+(`ui:phase5-horologion-lane-envelope-and-day-line` below) -- these were two concrete defects found
+while probing the lane for errors, not the port, and the existing Phase 5 ordering (Coptic done,
+East Syriac next, Horologion last per spec section 8 item 9) is unchanged by this session. Also
+untouched: the dashboard's Byzantine content-completeness rows (all 9 hours amber pending
+Lucy's-claim re-verification; Octoechos amber; Menaion/Triodion/Pentecostarion red, acknowledged
+incomplete since `research-queue.json`) -- that is a different, much larger class of gap (missing
+seasonal content, not a reproducible defect in what exists) than the two bugs found and fixed here,
+and was out of scope for this pass. The other 24 psalms whose stray entries were removed (Psalms
+10-16, 134-150) were confirmed complete only via the consecutive-marker structural signature
+(file-wide, so a real finding, not a sample) -- not independently re-verified verse-by-verse
+against liturgy.io the way Psalm 9 was, since the structural signature gives no positive reason to
+suspect any of them are still short a verse.
+
+SEED_VERSION bumped to `v339-2026-09-26-horologion-great-lent-kathisma-and-psalm-9-corruption-fixed`.

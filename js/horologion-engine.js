@@ -3797,11 +3797,16 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 // ── v5.7 / v6.x: kathisma-first, kathisma-second, kathisma-third ──
                 // kathisma-third is only appointed during Great Lent and Holy Week.
                 // isGreatLentDay covers Mon–Sat (unlike isGreatLentWeekday which is Mon–Fri only).
+                // Sundays of Great Lent are deliberately excluded here: the Great Lent
+                // appointment table (_resolveOrthrosKathismaPair) has no 'sunday' key, so a
+                // Lenten Sunday must fall through to that function's own Sunday branch
+                // (ordinary Kathisma 2) rather than into its Great Lent branch, which would
+                // find no entry and silently return null -- exactly the bug this excludes.
                 // Holy Week resolution is handled inside _resolveOrthrosKathismaPair via seasonResult.
                 if (item.key === 'kathisma-first' ||
                     item.key === 'kathisma-second' ||
                     item.key === 'kathisma-third') {
-                    const isGreatLentDay = seasonResult && seasonResult.season === 'great-lent';
+                    const isGreatLentDay = seasonResult && seasonResult.season === 'great-lent' && dayOfWeek !== 0;
                     const resolved = _resolveOrthrosKathismaPair(
                         item.key, dayOfWeek, isBrightWeek,
                         isGreatLentDay,
