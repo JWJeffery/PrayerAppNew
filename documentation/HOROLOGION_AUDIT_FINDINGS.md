@@ -241,6 +241,25 @@ both-calendar-mode sweep (51,156 calls) is clean, and live-confirmed in headless
 the real dev server on both an ordinary Lenten weekday and a Lenten Friday — correct Guardian Angel
 text, the forgiveness-exchange dialogue present, and the Russian-land litany line present in both.
 
+**Correction found during post-completion re-verification, not part of the original GC5 write-up**:
+after this build was committed and reported complete, a requested double-check (re-reading the
+raw source line-by-line against the actual built JSON, rather than re-trusting the earlier
+transcription) turned up a rubric the original GC5 pass had missed: p.236 — "The priest saith
+aloud, while we prostrate ourselves to the earth (**except on Fridays, when the lesser dismissal is
+used**): [Master plenteous in mercy...]". The long dismissal prayer had been built unconditionally;
+Fridays need "the lesser dismissal" in its place instead — identified as the standard short
+blessing formula used pervasively throughout this same source ("Through the prayers of our holy
+Fathers, O Lord Jesus Christ our God, have mercy on us. Amen.", identical wording to
+`gc-opening-blessing-rubric` and several other short blessings already built elsewhere in this same
+office), since the source itself doesn't spell out different text for it at this position and none
+is invented here. Fixed: `gc-dismissal-prayers` is no longer a blind `FIXED_KEYS` pass-through;
+`_resolveGreatComplineSlots()` now substitutes the lesser dismissal for `dp-long-dismissal`
+specifically on Fridays (the rest of the sequence — the forgiveness exchange, the intercessory
+litany, the final blessing, icon veneration — is unaffected, matching the rubric's own scope).
+Re-verified: `node --check` clean, the 5-year/14-office/both-calendar-mode sweep (51,156 calls) is
+clean, live-confirmed both an ordinary Lenten Tuesday (long dismissal) and a Lenten Friday (lesser
+dismissal) resolve correctly and differently.
+
 ### Finding GC6 — UNSOURCED: `gc-save-help-protect`'s exact wording doesn't appear in this text
 
 `"Save, help, and protect us, O Virgin Theotokos"` (its own standalone slot, positioned before the

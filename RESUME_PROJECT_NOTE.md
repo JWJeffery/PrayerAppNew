@@ -68,6 +68,16 @@ both-calendar-mode sweep (51,156 calls) is clean — 0 exceptions, 0 placeholder
 headless Chromium against the real dev server on both an ordinary Lenten weekday and a Lenten
 Friday.
 
+**Correction found afterward, when told to double-check rather than trust the sweep/browser-check
+above as sufficient**: an independent line-by-line re-read of the source against the actual built
+JSON (not a re-run of the same scripts) found the sweep and browser check had both missed a real
+gap — `UNABHOR1997` p.236's rubric that Fridays use "the lesser dismissal" in place of the long
+"Master plenteous in mercy..." prayer, at that one position only. Fixed: `gc-dismissal-prayers` now
+substitutes the standard short blessing formula for Fridays specifically (see
+`AUDIT_GOVERNANCE_LEDGER.md`'s matching entry). Re-verified the same way (sweep + browser, both
+day-types) after the fix. All ten Prayers on Approaching Sleep, the Kontakion, and its verses were
+independently re-checked word-for-word in the same pass and found correct as originally built.
+
 **The Horologion full audit is genuinely complete now: all 12 offices across 9 audited
 office-groups — Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office,
 Small Compline, and the four Interhours — have been audited line-by-line against primary sources,

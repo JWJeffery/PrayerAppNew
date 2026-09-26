@@ -5579,7 +5579,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'gc-closing-prayer-block',
             'gc-trisagion-4', 'gc-save-help-protect',
             'gc-supplicatory-prayer-theotokos', 'gc-prayer-antiochus',
-            'gc-prayers-approaching-sleep', 'gc-dismissal-prayers'
+            'gc-prayers-approaching-sleep'
         ]);
 
     const _slot = (key) =>
@@ -5686,6 +5686,40 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                         label: 'Prayer of St. Ephraim — omitted (Friday)',
                         text: '(The Prayer of St. Ephraim the Syrian is not said on Friday evenings.)',
                         resolvedAs: 'great-compline-friday-omission'
+                    };
+                }
+                continue;
+            }
+
+            // Finding GC5 correction (audit 2026-09-26, found during post-build
+            // re-verification): UNABHOR1997 p.236 -- "The priest saith aloud, while
+            // we prostrate ourselves to the earth (except on Fridays, when the
+            // lesser dismissal is used): [Master plenteous in mercy...]". This
+            // scopes the substitution to that one prayer only -- the surrounding
+            // forgiveness exchange and intercessions are unaffected. "The lesser
+            // dismissal" is the standard short blessing used throughout this same
+            // source (identical wording to gc-opening-blessing-rubric and every
+            // other short "Through the prayers..." blessing in this office).
+            if (item.key === 'gc-dismissal-prayers') {
+                const base = _slot('gc-dismissal-prayers');
+                if (base && Array.isArray(base.items)) {
+                    const items = base.items.map(sub => {
+                        if (sub.key !== 'dp-long-dismissal') return sub;
+                        return isFriday
+                            ? {
+                                type: 'text',
+                                key: 'dp-long-dismissal',
+                                text: 'Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen.',
+                                resolvedAs: 'great-compline-friday-lesser-dismissal'
+                              }
+                            : sub;
+                    });
+                    section.items[i] = {
+                        type: 'sequence',
+                        key: item.key,
+                        label: base.label || item.label,
+                        items,
+                        resolvedAs: 'great-compline-fixed'
                     };
                 }
                 continue;

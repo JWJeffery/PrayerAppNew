@@ -21684,3 +21684,44 @@ office-groups -- Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins
 Small Compline, and the four Interhours -- have been audited line-by-line against primary sources,
 fixed, regression-swept, and live-confirmed in a real browser. No office in this corpus's own
 office list remains unaudited or partially audited.**
+
+---
+## Session 2026-09-26, continued -- Josh, correctly, told me to double-check before calling GC3-GC5
+## done rather than take my own prior sweep/browser-check as sufficient. Re-verification found one
+## real bug the original build missed; fixed.
+
+Re-read the raw source line-by-line against the actual built JSON for every one of the ten Prayers
+on Approaching Sleep, the Kontakion and its three verses, and the full dismissal sequence -- not a
+re-run of the same sweep/browser script, an independent line-by-line text comparison. All ten
+prayers, the Kontakion, its verses, and the Joannicius prayer matched exactly (only the file's own
+established thee/thou -> you/your modernization applied, consistently).
+
+The dismissal sequence turned up one real miss: `UNABHOR1997` p.236 -- "The priest saith aloud,
+while we prostrate ourselves to the earth (except on Fridays, when the lesser dismissal is used):
+[Master plenteous in mercy...]". The prior build applied the long dismissal prayer unconditionally;
+Fridays call for "the lesser dismissal" instead, at this one position only. Identified as the
+standard short blessing used pervasively throughout this same source (identical wording to
+`gc-opening-blessing-rubric` and several other short blessings already built elsewhere in this
+office) rather than inventing new text the source doesn't actually spell out here.
+
+**Fixed**: pulled `gc-dismissal-prayers` out of the generic `FIXED_KEYS` pass-through;
+`_resolveGreatComplineSlots()` now substitutes the lesser dismissal for the `dp-long-dismissal`
+sub-item specifically on Fridays, leaving the rest of the sequence (forgiveness exchange,
+intercessory litany, final blessing, icon veneration) unaffected, matching the rubric's own scope
+exactly.
+
+**Verified**: `node --check` clean; the 5-year/14-office/both-calendar-mode sweep (51,156 calls) is
+clean; live-confirmed both an ordinary Lenten Tuesday (long dismissal, unchanged) and a Lenten
+Friday (now correctly substitutes the lesser dismissal) resolve as expected and differently from
+each other.
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated: the correction recorded in place under GC5,
+not folded silently into the original build account, so the record shows what was actually caught
+by re-verification versus what the first pass got right.
+
+**This is the value of the instruction to double-check rather than take a self-reported sweep as
+final: an independent line-by-line re-read caught something the original build, its own syntax
+check, its own regression sweep, and its own browser verification had all missed, because none of
+those checks re-read the source text itself -- they only confirmed the code ran without error and
+produced non-empty output. The Horologion full audit remains complete at 12 of 12 offices, now with
+this correction folded in.**
