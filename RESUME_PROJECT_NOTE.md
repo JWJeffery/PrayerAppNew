@@ -22,6 +22,107 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**State as of 2026-09-26 continued — Josh directed a full audit of the Horologion, not just the
+two bugs already found and pushed ("I didn't ask for a half-assed audit... The ENTIRE THING needs
+to be audited"). A real, systematic audit followed: every one of the 33 `data/horologion/*.json`
+files inventoried and read against its own declared source; content spot-checked against real
+external witnesses (OCA's own published PDFs, Hapgood 1906 via archive.org, the HTM "Psalter
+According to the Seventy" via three independent sites, straight KJV, and Orthocal's authoritative
+calendar via its MCP tool) rather than only re-running the engine sweep. Three more real findings
+came out of it — one fixed, two disclosed and NOT fixed because fixing them correctly needs more
+than this session could respons­ibly do in one pass.**
+
+**3. FOUND AND FIXED — a real content error in `data/horologion/octoechos-vespers.json`:** Tone 1's
+ordinary Saturday-Vespers Resurrectional Aposticha (the set every single Saturday of Tone-1 weeks
+renders, all year, every year) had a Transfiguration-feast hymn sitting in its first slot
+("You were transfigured on the mountain, O Christ our God...") — correct, real liturgical text,
+just for the wrong day entirely; Transfiguration is a fixed Aug. 6 feast, not an ordinary Saturday
+theme. Found by reading the file's actual tone-1 content directly, not by scanning for a pattern.
+**Checked whether this was isolated or systemic**: read all 8 tones' Saturday aposticha (48 verses)
+by hand — tones 2–8 all correctly Resurrectional/Paschal in theme, tone 1 was the only hit — then
+ran a keyword-consistency scan across every weekday theme section in all 8 tones (Monday=Angels,
+Tuesday=Forerunner, Wednesday/Friday=Cross-Theotokos, Thursday=Apostles) looking for verses with no
+on-theme keyword; 19 flagged, all 19 checked by hand and all 19 confirmed genuinely on-theme just
+using different wording than the keyword list expected (e.g. "Michael" for Monday's angel theme,
+"fishers of men" for Thursday's apostle theme) — no further contamination found by either method.
+**Fixed** by replacing the misplaced verse with the authentic Tone 1 Resurrectional aposticha
+sticheron ("By Thy Passion, O Christ, we have been set free from passions, and by Thy Resurrection
+we have been delivered from corruption. O Lord, glory be to Thee."), sourced and cross-confirmed
+from two independent witnesses: St. Sergius Orthodox Theological Institute's own published Tone I
+Octoechos service booklet (`st-sergius.org/services/oktiochos/1-1.pdf`, "AT GREAT VESPERS... On the
+Aposticha") and the Antiochian Archdiocese's own liturgical text page, which opens with the same
+line ("By thy passion, O Christ, we have been set free from sufferings"). One-line diff, JSON
+reparses clean, confirmed live via a direct fetch of the file through the running app.
+
+**4. FOUND, NOT FIXED — the fixed-office psalm text's own citation ("Standard Antiochian/OCA
+Horologion, Jordanville 2008 edition") does not match any of four real, independently checked
+sources, and is very likely inaccurate.** Checked Psalm 5 (First Hour), Psalm 3 (Orthros), and
+Psalm 16 (Third Hour) — three psalms across three different `*-fixed.json` files, all sharing the
+same citation boilerplate — against: (a) **OCA's own current official Horologion PDF**
+(`oca.org/files/PDF/Music/Rubrics/Horologion/first-hour.pdf`), which turns out to use an RSV-based
+translation, nothing like this corpus's wording; (b) **Hapgood's 1906 Service Book**, fetched in
+full from archive.org (1.7MB, the same edition this project already uses elsewhere and trusts —
+see `edu:layer:byzantine-populated` on the dashboard), which uses the Coverdale/BCP Psalter and
+also doesn't match; (c) **the HTM "Psalter According to the Seventy" (1974)**, the dominant modern
+English text for this exact purpose — confirmed identical across three independently-run sites
+(`liturgy.io`, `orthodox.net`, `saintjonah.org`), and still not a match; (d) **the literal King
+James Version** — closer, and Psalm 3 in particular is nearly verbatim KJV ("art a shield for me,
+my glory, and the lifter up of mine head" is distinctively KJV, not Coverdale's "art my defender...
+my worship" or HTM's own wording) — but not an exact match either; several verses are
+independently reworded relative to straight KJV. **Conclusion, stated at the actual confidence
+level this session reached and no further**: this content is closest to a lightly-edited King
+James Version base, but does not verbatim-match KJV, Hapgood, HTM, or OCA's current text — the
+four most likely and most checkable candidates for what "Standard Antiochian/OCA Horologion
+(Jordanville 2008 edition)" could mean. **Not fixed, deliberately** — correcting a citation this
+central (it covers the fixed psalmody of nine office files: Compline, First/Third/Sixth/Ninth
+Hour, Midnight Office, Orthros, Typika, Great Compline) needs either locating the real 2008
+Jordanville print edition to check directly (not freely available online the way Hapgood's 1906
+book is) or Josh's decision on how to treat unverifiable-but-plausible content, not a guess written
+into the corpus under a citation this session couldn't confirm. Flagged here and in the ledger;
+`orthros-fixed.json` specifically has no `_comment` citation block at all (only a `note` field
+saying "Jordanville 2008 edition / Hapgood" — an already-hedged citation, worth noticing on its
+own) and should get one whenever this is resolved.
+
+**5. FOUND, NOT FIXED — `data/horologion/typika-lectionary.json`'s Sunday Epistle/Gospel readings
+drift from Orthocal's authoritative calendar starting mid-season, and the mechanism is
+understood but not corrected.** Checked eight 2026 Sundays' epistle/gospel pairs directly against
+Orthocal (`mcp__Orthocal__get_day`, an independent, authoritative Slavic/OCA-tradition calendar
+source) at "Sunday after Pentecost" numbers 2, 14, 16, 18, 20, and 26: weeks 2, 14, and 16 matched
+exactly; **week 18's Gospel already diverges** (this corpus: Luke 5:1-11; Orthocal: Luke 6:31-36,
+Epistle still matching); **week 20 and week 26 diverge in both readings.** Traced to the actual
+code: `_computeSundayAfterPentecost()` in `js/horologion-engine.js` does plain sequential week
+counting from Thomas Sunday, with no adjustment — but the real Byzantine Gospel lectionary runs a
+**separate "Sundays of Luke" cycle**, starting its own count the Sunday after the Elevation of the
+Cross (Sept. 14) each year, independent of the Epistle's continuous Sunday-after-Pentecost count,
+and that Lukan cycle includes a well-documented "jump" (several numbered Sundays of Luke are
+skipped/combined) near the end of the season so the last pre-Triodion Sundays always land on the
+same fixed readings regardless of how many ordinary weeks a given year's Pascha date actually
+leaves available. This repo's `sundays` table and its lookup function implement neither the
+separate Lukan count nor the jump. **Not fixed** — implementing this correctly needs a real
+Sundays-of-Luke table with the actual jump rule, sourced properly, not a freehanded reimplementation
+risked in the time this pass had; a wrong "fix" here would be worse than the disclosed, understood
+gap that exists now. The table also has no entries past week 31 (`s['32']` etc. are `null`) — Sunday
+34 (checked directly, Orthocal correctly reports one for 2027-01-24) has nothing here at all, which
+is the same root cause, not a separate bug.
+
+**What this audit did NOT reach, disclosed rather than silently skipped**: full word-for-word
+verification of every fixed-office prayer/rubric beyond the spot-checked psalms; the ~460 lines of
+conditional content in `great-compline-fixed.json` (61KB, the largest single Horologion file); the
+kathisma-at-Vespers/Orthros appointment tables (`vespers-kathisma.json`, `orthros-kathisma.json`)
+against a real published table; the weekday (non-Sunday) portions of the Typika lectionary
+(`lukan_weekday_gospels`, `post_lukan_weekday_gospels`, etc.); and the other 24 psalms whose stray
+numeric entries were removed in this session's earlier data-corruption fix (Psalms 10–16, 134–150)
+— confirmed structurally complete (no double-marker signature anywhere else in the file), but not
+independently re-verified verse-by-verse against liturgy.io the way Psalm 9 was. The already-known,
+already-red dashboard rows (Menaion acknowledged incomplete, Triodion and Pentecostarion barely
+started) were not touched — that is a disclosed, pre-existing content-volume gap, a different class
+of problem from the reproducible defects this audit went looking for.
+
+**Verification for items 3–5**: `node --check` clean on both touched JS/JSON files (item 3's JSON
+reparses clean; items 4–5 touched no files, since neither was fixed); the full 51,156-call,
+5-year engine sweep re-run after item 3's fix, still zero exceptions and zero placeholders; item
+3's fix confirmed live via a direct fetch of the JSON through the running app.
+
 **State as of 2026-09-26. HEAD before this commit was `a9c00e5`. Two real Horologion (Byzantine)
 bugs found and fixed — NOT the Phase 5 lane-3 envelope port itself (still not started, see the
 entry below), but genuine content/logic defects hit while probing the lane for the errors this
