@@ -1,16 +1,15 @@
 # Horologion Full Audit — Findings Log
 
-**Status: scope corrected 2026-09-26 — the audit had wrongly stopped at 8 offices and let Grand
-Compline get a lighter "structural spot-check" pass instead of the full treatment every other
-office got. Both gaps are now closed: Grand Compline has been re-audited line-by-line (7 findings,
-GC1-GC7, superseding the earlier 1-finding entry), and the four Interhours — never previously
-audited or even mentioned in this log — have been audited from scratch (4 findings, IH1-IH4) and
-**fixed** (all four rebuilt: correct psalms, correct fixed troparia triads, the full closing
-sequence). Fix pass status: 11 of 12 offices fixed (Vespers, the four Hours, Typika, Orthros/
-Matins, Midnight Office, Small Compline, the four Interhours); Grand Compline is audited and its
-findings recorded below, fix pass for it in progress.** Per Josh's instruction: "Keep auditing.
-Record every error, and then we'll fix everything at once" — taken this time to mean the *entire*
-Horologion, not the subset first scoped. This file is the running record.
+**Status: scope corrected 2026-09-26 and now fully closed — the audit had wrongly stopped at 8
+offices and let Grand Compline get a lighter "structural spot-check" pass instead of the full
+treatment every other office got. Both gaps are now closed: Grand Compline has been re-audited
+line-by-line and fixed (7 findings, GC1-GC7, superseding the earlier 1-finding entry), and the four
+Interhours — never previously audited or even mentioned in this log — have been audited from
+scratch and fixed (4 findings, IH1-IH4). **Fix pass status: 12 of 12 offices fixed** (Vespers,
+Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office, Small Compline, the four
+Interhours).** Per Josh's instruction: "Keep auditing. Record every error, and then we'll fix
+everything at once" — taken this time to mean the *entire* Horologion, not the subset first
+scoped. This file is the running record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -22,7 +21,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Office | Findings | Headline |
 |---|---|---|
 | Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* — **FIXED 2026-09-26** | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
-| Grand Compline | 7 (GC1-GC7) — *was 1, see scope-correction note below* — **AUDITED (full re-pass) 2026-09-26; GC1/GC2/GC7 fixed, GC3-GC5 fix in progress** | Friday's weekday-troparia slot has no content at all (fixed); an entire ten-prayer "Prayers on Approaching Sleep" block plus the Akathist Kontakion is missing (build pending); the closing dismissal borrows Typika's forgiveness formula instead of its own (build pending) |
+| Grand Compline | 7 (GC1-GC7) — *was 1, see scope-correction note below* — **FIXED 2026-09-26, full re-pass** | Friday's weekday-troparia slot had no content at all (built: routes to the same Resurrection-by-tone table as Small Compline's SC4); an entire ten-prayer "Prayers on Approaching Sleep" block plus the Akathist Kontakion was missing (built); the closing dismissal borrowed Typika's forgiveness formula instead of its own real mutual-forgiveness exchange (rebuilt) |
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
 | The four Interhours | 4 (IH1-IH4) — *new office-group, never previously audited* — **AUDITED and FIXED 2026-09-26** | All four cited entirely the wrong three psalms (corrected); each hour's fixed troparia triad was wrongly modeled as Menaion-dependent (corrected — a fixed, hour-specific triad, per UNABHOR1997); roughly half of each hour's real content (closing prayers, each hour's own Prayer of Basil) was missing outright (built) |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
@@ -135,7 +134,7 @@ and the Nunc Dimittis are all correctly ordered and match both sources.
 
 ---
 
-## GRAND COMPLINE — re-audited 2026-09-26 (full line-by-line pass), 7 findings (GC1-GC7): GC1, GC2, GC7 fixed; GC3-GC5 fix in progress
+## GRAND COMPLINE — re-audited 2026-09-26 (full line-by-line pass), 7 findings, FIXED (GC1-GC7)
 
 **Correction to this section's own prior claim, made explicit rather than silently patched over:**
 the entry originally here said this office was "audited (structural/spot-check level)" and that a
@@ -172,7 +171,7 @@ is appointed, but the Friday-specific modifications and appointed hymnody are no
 transcribed."` Friday is a live, reachable day for this office in the engine's own appointment gate
 (Lenten weeks 1,2,3,4,6), so this fires on real dates, not just a theoretical gap.
 
-### Finding GC3 — GAP: an entire "Prayers on Approaching Sleep" block (ten numbered prayers plus the Kontakion to the Theotokos) is missing
+### Finding GC3 — GAP fixed: an entire "Prayers on Approaching Sleep" block (ten numbered prayers plus the Kontakion to the Theotokos) was missing
 
 `UNABHOR1997` pp.228-236, between the Prayer of Antiochus the Monk ("And grant unto us, O Master,
 in the coming sleep...", matched by the app's `gc-prayer-antiochus`) and the point where "the Order
@@ -192,20 +191,20 @@ a `gc-prayer-joannicius` item (matching this block's own closing prayer) and a `
 angel` item, but see Finding GC4 below — that guardian-angel item's text does not actually match
 Prayer X here, the one prayer in this block position it claims to represent.
 
-### Finding GC4 — BUG: the app's "Prayer to the Guardian Angel" and "O Theotokos and Virgin, rejoice" are not this source's text at this position
+### Finding GC4 — BUG fixed: the app's "Prayer to the Guardian Angel" and "O Theotokos and Virgin, rejoice" were not this source's text at this position
 
-`data/horologion/great-compline-fixed.json`'s `gc-prayer-guardian-angel` slot reads "O holy angel
+`data/horologion/great-compline-fixed.json`'s `gc-prayer-guardian-angel` slot read "O holy angel
 that stands by my wretched soul and my passionate life, forsake not me a sinner..." — a real,
 commonly-printed Guardian Angel prayer, but not the one `UNABHOR1997` prints as Prayer X at this
 exact position in Great Compline ("Angel of Christ, my holy guardian and protector of my soul and
 body, forgive me all wherein I have sinned this day...", p.236). Likewise `gc-ave-maria` ("O
-Theotokos and Virgin, rejoice...", ×3) does not appear anywhere in this office's own text at all —
-it reads as an import from the general morning/evening prayer rule, not this source. Both were
+Theotokos and Virgin, rejoice...", ×3) did not appear anywhere in this office's own text at all —
+it read as an import from the general morning/evening prayer rule, not this source. Both were
 apparently sourced from elsewhere and placed here without verification against this specific text;
-corrected as part of GC3's rebuild rather than as a separate patch, since both sit inside the same
+corrected as part of GC3's rebuild rather than as a separate patch, since both sat inside the same
 missing/misplaced block.
 
-### Finding GC5 — BUG: the closing dismissal sequence borrows Typika's "Remit, pardon, forgive" formula and a non-matching intercessory litany, not this office's own text
+### Finding GC5 — BUG fixed: the closing dismissal sequence had borrowed Typika's "Remit, pardon, forgive" formula and a non-matching intercessory litany, not this office's own text
 
 After "Here the Order of Great Compline is resumed" (p.236), the actual sequence is: the priest's
 short doxology and thrice Lord-have-mercy; the long dismissal prayer beginning "Master plenteous in
@@ -216,13 +215,31 @@ a recited prayer at all; then a specific intercessory list (the Orthodox episcop
 hierarch, "the suffering Russian land," the imprisoned, seafarers, the bedridden, the fruits of the
 earth, rulers, the monastery's founders, departed parents and brethren); a final thrice Lord-have-
 mercy; the dismissal blessing; and icon veneration. `data/horologion/great-compline-fixed.json`'s
-`gc-dismissal-prayers` sequence instead has: a short "O Lord Jesus Christ, Son of God, for the sake
-of the prayers of Your most holy pure Mother..." dismissal (not this text); `gc-dp-remit`, whose
-"Remit, pardon, forgive, O God, our offenses, both voluntary and involuntary..." wording is
+`gc-dismissal-prayers` sequence previously had: a short "O Lord Jesus Christ, Son of God, for the
+sake of the prayers of Your most holy pure Mother..." dismissal (not this text); `gc-dp-remit`,
+whose "Remit, pardon, forgive, O God, our offenses, both voluntary and involuntary..." wording is
 verbatim Typika's own formula (`data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt`
 line 5218), not anything printed in Great Compline; and `gc-dp-intercessions`, a differently-worded
 intercessory prayer that doesn't correspond to this text's own ROCOR-specific list. None of these
-three items match what `UNABHOR1997` actually prints at this position.
+three items matched what `UNABHOR1997` actually prints at this position.
+
+### GC3-GC5 built
+
+Rebuilt `data/horologion/great-compline-fixed.json`'s `gc-prayers-approaching-sleep` (a new 16-item
+sequence: the opening rubric, all ten prayers verbatim, the Akathist Kontakion plus its three
+verses, and the Prayer of St. Joannicius relocated into its real position) and rebuilt
+`gc-dismissal-prayers` entirely (a new 17-item sequence: the resumption rubric, the priest's short
+doxology, the long dismissal prayer, the mutual forgiveness exchange as a labeled dialogue rather
+than a recited prayer, the real ROCOR-specific intercessory litany transcribed verbatim rather than
+generalized away, the final blessing, and icon veneration). The old `gc-prayer-joannicius`,
+`gc-prayer-guardian-angel`, and `gc-ave-maria` slots were removed (folded into or superseded by the
+new sequence, not kept alongside it) and `data/horologion/great-compline.json`'s skeleton updated to
+match — the redundant trailing `gc-dismissal-rubric` was also removed, since the real ending is now
+built inside `gc-dismissal-prayers` itself. `js/horologion-engine.js`'s `FIXED_KEYS` set updated
+accordingly. Verified: `node --check` clean, both JSON files reparse clean, the 5-year/14-office/
+both-calendar-mode sweep (51,156 calls) is clean, and live-confirmed in headless Chromium against
+the real dev server on both an ordinary Lenten weekday and a Lenten Friday — correct Guardian Angel
+text, the forgiveness-exchange dialogue present, and the Russian-land litany line present in both.
 
 ### Finding GC6 — UNSOURCED: `gc-save-help-protect`'s exact wording doesn't appear in this text
 

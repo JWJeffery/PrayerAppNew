@@ -330,36 +330,17 @@
         },
         {
           "type": "placeholder",
-          "key": "gc-prayer-joannicius",
-          "label": "Prayer of Saint Joannicius",
+          "key": "gc-prayers-approaching-sleep",
+          "label": "The Prayers on Approaching Sleep",
           "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "placeholder",
-          "key": "gc-prayer-guardian-angel",
-          "label": "Prayer to the Guardian Angel",
-          "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "placeholder",
-          "key": "gc-ave-maria",
-          "label": "O Theotokos and Virgin, rejoice (thrice)",
-          "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
+          "note": "ADDED 2026-09-26, Horologion audit fix pass (Finding GC3/GC4): a monastery-custom insertion (ten numbered prayers, the Akathist's own Kontakion plus three verses, and the Prayer of St. Joannicius) per UNABHOR1997 pp.228-236. Resolved from great-compline-fixed.json."
         },
         {
           "type": "placeholder",
           "key": "gc-dismissal-prayers",
-          "label": "Dismissal, Remit/Pardon, and Intercessions",
+          "label": "Resumption of the Order, Dismissal, Mutual Forgiveness, and Intercessions",
           "status": "unresolved",
-          "note": "Fixed. Resolved from great-compline-fixed.json."
-        },
-        {
-          "type": "rubric",
-          "key": "gc-dismissal-rubric",
-          "text": "Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+          "note": "CORRECTED 2026-09-26, Horologion audit fix pass (Finding GC5): the previous content here (a short generic dismissal, Typika's own 'Remit, pardon, forgive' formula, and a differently-worded intercessory prayer) did not match UNABHOR1997 at this position. Rebuilt: the resumption rubric, the priest's short doxology, the long dismissal prayer, the mutual forgiveness exchange (not a recited prayer), and the real ROCOR-specific intercessory litany, per pp.236-237. Resolved from great-compline-fixed.json."
         }
       ]
     }

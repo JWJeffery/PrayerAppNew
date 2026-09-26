@@ -5579,8 +5579,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'gc-closing-prayer-block',
             'gc-trisagion-4', 'gc-save-help-protect',
             'gc-supplicatory-prayer-theotokos', 'gc-prayer-antiochus',
-            'gc-prayer-joannicius', 'gc-prayer-guardian-angel',
-            'gc-ave-maria', 'gc-dismissal-prayers'
+            'gc-prayers-approaching-sleep', 'gc-dismissal-prayers'
         ]);
 
     const _slot = (key) =>

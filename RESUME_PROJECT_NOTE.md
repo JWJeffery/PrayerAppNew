@@ -51,237 +51,28 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — SESSION UNSTABLE (repeated worker crashes/content-filter
-blocks per Josh, worker_epoch already at 5). Read this entry FIRST. It is a complete, self-contained
-build spec for the one remaining piece of work (Grand Compline GC3-GC5) — every prayer text is
-transcribed in full below, so do NOT re-read `UNABHOR1997` pp.228-236 from scratch; just build
-directly from this note. Everything else in the fix pass (Interhours IH1-IH4, Grand Compline
-GC1/GC2/GC7) is already committed and pushed — commit `5d84e6b` on both
-`claude/jwjeffery-prayerappnew-resume-fbkyf9` and `claude/modest-tesla-n4ofrs` (PR #37).**
+**State as of 2026-09-26, latest of all — Horologion full audit COMPLETE, 12 of 12 offices.
+Read this entry first.** The scope correction below (Grand Compline's full re-audit, the four
+Interhours audited from scratch) is now fully closed: GC3, GC4, and GC5 — the ten-prayer "Prayers
+on Approaching Sleep" block, the Kontakion to the Theotokos and its three verses, the corrected
+Guardian Angel prayer, and the real closing dismissal sequence (mutual forgiveness exchange, the
+ROCOR-specific intercessory litany) — are built, verified, and pushed. Commit history: `5d84e6b`
+(Interhours + GC1/GC2/GC7), `e9c90e7` (crash-recovery checkpoint: the GC3-GC5 build spec written to
+this note before building, since the session was crashing repeatedly at the time), and the commit
+that actually built GC3-GC5 from that spec (see `AUDIT_GOVERNANCE_LEDGER.md`'s matching entry for
+the full account — the build spec itself has been removed from this note now that it's built;
+consult git history for `RESUME_PROJECT_NOTE.md` if it's ever needed again).
 
-## REMAINING WORK: Grand Compline GC3, GC4, GC5
+Verified: `node --check` clean, all touched JSON files reparse clean, the 5-year/14-office/
+both-calendar-mode sweep (51,156 calls) is clean — 0 exceptions, 0 placeholders. Live-confirmed in
+headless Chromium against the real dev server on both an ordinary Lenten weekday and a Lenten
+Friday.
 
-**Where it goes**: `data/horologion/great-compline.json`'s `closing` section, between the
-`gc-prayer-antiochus` item and the `gc-dismissal-prayers` item (which itself needs rebuilding, see
-GC5). Currently that section reads: ...`gc-prayer-antiochus`, `gc-prayer-joannicius`,
-`gc-prayer-guardian-angel`, `gc-ave-maria`, `gc-dismissal-prayers`, `gc-dismissal-rubric`.
-
-**GC3/GC4 — new sequence to insert, replacing `gc-prayer-joannicius`, `gc-prayer-guardian-angel`,
-and `gc-ave-maria` entirely** (all three get folded into or superseded by this one new sequence;
-`gc-prayer-guardian-angel`'s and `gc-ave-maria`'s current text get deleted, not kept — they don't
-match this source at this position, per GC4). Call the new skeleton item `gc-prayers-approaching-sleep`
-(type `sequence` in the fixed-data slot). Content, in exact source order (`UNABHOR1997` pp.228-236):
-
-Opening rubric (render as the sequence's own rubric or a leading `rubric`-type sub-item): "At this
-point, according to the usage of the Holy Trinity Monastery, the Prayers on Approaching Sleep are
-said."
-
-Then ten numbered prayers, each its own text (verbatim, only lightly modernized thee/thou-style
-already used elsewhere in this file — match `great-compline-fixed.json`'s existing You/Your style
-for consistency with everything else already built there):
-
-- **Prayer I, of St. Macarius the Great**: "O Eternal God and King of all creation, Who have
-  vouchsafed me to arrive at this hour, forgive me the sins that I have committed this day in
-  deed, word, and thought; and cleanse, O Lord, my lowly soul of all impurity of flesh and spirit,
-  and grant me, O Lord, to pass the sleep of this night in peace; that, rising from my lowly bed, I
-  may please Your most holy name all the days of my life, and thwart the enemies, fleshly and
-  bodiless, that war against me. And deliver me, O Lord, from vain thoughts and evil desires which
-  defile me. For Yours is the kingdom, and the power, and the glory: of the Father, and of the Son,
-  and of the Holy Spirit, now and ever, and unto the ages of ages. Amen."
-- **Prayer II, of St. Antiochus**: "O Ruler of all, Word of the Father, O Jesus Christ, You Who are
-  perfect: For the sake of the plenitude of Your mercy, never depart from me, but always remain in
-  me Your servant. O Jesus, Good Shepherd of Your sheep, deliver me not over to the sedition of the
-  serpent, and leave me not to the will of Satan, for the seed of corruption is in me. But do You,
-  O Lord, worshipful God, holy King, Jesus Christ, as I sleep, guard me by the Unwaning Light, Your
-  Holy Spirit, by Whom You did sanctify Your disciples. O Lord, grant me, Your unworthy servant,
-  Your salvation upon my bed. Enlighten my mind with the light of understanding of Your Holy
-  Gospel; my soul, with the love of Your Cross; my heart, with the purity of Your word; my body,
-  with Your passionless Passion. Keep my thought in Your humility, and raise me up at the proper
-  time for Your glorification. For most glorified are You together with Your unoriginate Father,
-  and the Most-holy Spirit, unto the ages. Amen."
-- **Prayer III, to the Holy Spirit**: "O Lord, Heavenly King, Comforter, Spirit of Truth, show
-  compassion and have mercy on me Your sinful servant, and loose me from mine unworthiness, and
-  forgive all wherein I have sinned against You today as a man, and not only as a man, but even
-  worse than a beast, my sins voluntary and involuntary, known and unknown, whether from youth, and
-  from evil suggestion, or whether from brazenness and despondency. If I have sworn by Your name,
-  or blasphemed it in my thought; or reproached anyone, or slandered anyone in mine anger, or
-  grieved anyone, or have become angry about anything; or have lied, or slept needlessly, or if a
-  beggar has come to me and I disdained him; or if I have grieved my brother, or have quarreled, or
-  have condemned anyone; or if I have been boastful, or prideful, or angry; if, as I stood at
-  prayer, my mind has been distracted by the wiles of this world, or by thoughts of depravity; if I
-  have overeaten, or have drunk excessively, or laughed frivolously; if I have thought evil, or
-  seen the beauty of another and been wounded thereby in my heart; if I have said improper things,
-  or derided my brother's sin when mine own sins are countless; if I have been neglectful of
-  prayer, or have done some other wrong that I do not remember, for all of this and more than this
-  have I done: have mercy, O Master my Creator, on me Your downcast and unworthy servant, and loose
-  me, and remit, and forgive me, for You are good and the Lover of mankind, so that, lustful,
-  sinful, and wretched as I am, I may lie down and sleep and rest in peace. And I shall worship, and
-  hymn, and glorify Your most honourable name, together with the Father and His Only-begotten Son,
-  now and ever, and unto the ages. Amen."
-- **Prayer IV, of St. Macarius the Great**: "What shall I offer You, or what shall I give You, O
-  greatly-gifted, immortal King, O compassionate Lord Who loves mankind? For though I have been
-  slothful in pleasing You, and have done nothing good, You have led me to the close of this day
-  that is past, establishing the conversion and salvation of my soul. Be merciful to me a sinner,
-  bereft of every good deed, raise up my fallen soul which has become defiled by countless sins,
-  and take away from me every evil thought of this visible life. Forgive my sins, O Only Sinless
-  One, in which I have sinned against You this day, known or unknown, in word, and deed, and
-  thought, and in all my senses. Do You Yourself protect and guard me from every opposing
-  circumstance, by Your Divine authority and power and inexpressible love for mankind. Blot out, O
-  God, blot out the multitude of my sins. Be pleased, O Lord, to deliver me from the net of the
-  evil one, and save my passionate soul, and overshadow me with the light of Your countenance when
-  You shall come in glory; and cause me, uncondemned now, to sleep a dreamless sleep, and keep Your
-  servant untroubled by thoughts, and drive away from me all satanic deeds; and enlighten for me
-  the eyes of my heart with understanding, lest I sleep unto death. And send me an angel of peace,
-  a guardian and guide of my soul and body, that he may deliver me from mine enemies; that, rising
-  from my bed, I may offer You prayers of thanksgiving. Yea, O Lord, hearken unto me, Your sinful
-  and wretched servant, in confession and conscience; grant me, when I arise, to be instructed by
-  Your sayings; and through Your angels cause demonic despondency to be driven far from me: that I
-  may bless Your holy name, and glorify and extol the most pure Theotokos Mary, whom You have given
-  to us sinners as a protectress, and accept her who prays for us. For I know that she exemplifies
-  Your love for mankind and prays for us without ceasing. Through her protection, and the sign of
-  the precious Cross, and for the sake of all Your saints, preserve my wretched soul, O Jesus
-  Christ our God: for holy are You, and most glorious for ever. Amen."
-- **Prayer V**: "O Lord our God, as You are good and the Lover of mankind, forgive me wherein I
-  have sinned today in word, deed, and thought. Grant me peaceful and undisturbed sleep; send Your
-  guardian angel to protect and keep me from all evil. For You are the Guardian of our souls and
-  bodies, and unto You do we send up glory: to the Father, and to the Son, and to the Holy Spirit,
-  now and ever, and unto the ages of ages. Amen."
-- **Prayer VI**: "O Lord our God, in Whom we believe and Whose Name we invoke above every name,
-  grant us, as we go to sleep, relaxation of soul and body, and keep us from all dreams, and dark
-  pleasures; stop the onslaught of the passions and quench the burnings that arise in the flesh.
-  Grant us to live chastely in deed and word, that we may obtain a virtuous life, and not fall away
-  from Your promised blessings; for blessed are You for ever. Amen."
-- **Prayer VII, of St. John Chrysostom, according to the number of hours of day and night** (two
-  paragraphs, keep both in one text): "O Lord, deprive me not of Your heavenly good things. O Lord,
-  deliver me from the eternal torments. O Lord, if I have sinned in mind or thought, in word or
-  deed, forgive me. O Lord, deliver me from all ignorance, forgetfulness, faintheartedness, and
-  stony insensibility. O Lord, deliver me from every temptation. O Lord, enlighten my heart which
-  evil desire has darkened. O Lord, as a man I have sinned, but do You, as the compassionate God,
-  have mercy on me, seeing the infirmity of my soul. O Lord, send Your grace to my help, that I may
-  glorify Your holy name. O Lord Jesus Christ, write me Your servant in the Book of Life, and grant
-  me a good end. O Lord my God, even though I have done nothing good in Your sight, yet grant me by
-  Your grace to make a good beginning. O Lord, sprinkle into my heart the dew of Your grace. O Lord
-  of heaven and earth, remember me Your sinful servant, shameful and unclean, in Your kingdom.
-  Amen.\n\nO Lord, accept me in penitence. O Lord, forsake me not. O Lord, lead me not into
-  temptation. O Lord, grant me good thoughts. O Lord, grant me tears, and remembrance of death, and
-  compunction. O Lord, grant me the thought of confessing my sins. O Lord, grant me humility,
-  chastity, and obedience. O Lord, grant me patience, courage, and meekness. O Lord, implant in me
-  the root of good, Your fear in my heart. O Lord, vouchsafe me to love You with all my soul and
-  thoughts, and in all things to do Your will. O Lord, protect me from evil men, and demons, and
-  passions, and from every other unseemly thing. O Lord, You know that You do as You will: Your
-  will be done also in me a sinner; for blessed are You unto the ages. Amen."
-- **Prayer VIII, to our Lord Jesus Christ**: "O Lord Jesus Christ, Son of God, for the sake of Your
-  most honourable Mother, and Your bodiless angels, Your Prophet and Forerunner and Baptist, the
-  God-inspired apostles, the radiant and victorious martyrs, the holy and God-bearing fathers, and
-  through the intercessions of all the saints, deliver me from the besetting presence of the
-  demons. Yea, my Lord and Creator, Who desires not the death of a sinner, but rather that he be
-  converted and live, grant conversion also to me, wretched and unworthy; rescue me from the mouth
-  of the pernicious serpent, who is yawning to devour me and take me down to hades alive. Yea, my
-  Lord, my Comfort, Who for my miserable sake was clothed in corruptible flesh, draw me out of
-  misery, and grant comfort to my miserable soul. Implant in my heart to fulfill Your commandments,
-  and to forsake evil deeds, and to obtain Your blessings; for in You, O Lord, have I hoped, save
-  me."
-- **Prayer IX, to the Most Holy Theotokos**: "O good Mother of the Good King, most pure and blessed
-  Theotokos Mary, pour out the mercy of your Son and our God upon my passionate soul, and by your
-  intercessions guide me unto good works, that I may pass the remaining time of my life without
-  blemish, and attain paradise through you, O Virgin Theotokos, who alone are pure and blessed."
-- **Prayer X, to the Holy Guardian Angel** (this REPLACES the current, wrong
-  `gc-prayer-guardian-angel` text — the old text was a different, real prayer, just not this one):
-  "Angel of Christ, my holy guardian and protector of my soul and body, forgive me all wherein I
-  have sinned this day, and deliver me from all opposing evil of mine enemy, lest I anger my God by
-  any sin. Pray for me, a sinful and unworthy servant, that you may show me forth worthy of the
-  kindness and mercy of the All-holy Trinity, and of the Mother of my Lord Jesus Christ, and of all
-  the saints. Amen."
-
-Then the Kontakion to the Theotokos (the Akathist's own Kontakion) plus three short verses, all one
-sub-item or a short sequence:
-- Kontakion: "To you, the Champion Leader, we your servants dedicate a feast of victory and of
-  thanksgiving as ones rescued out of sufferings, O Theotokos; but as you are one with might which
-  is invincible, from all dangers that can be do you deliver us, that we may cry to you: Rejoice,
-  you Bride unwedded!"
-- "Most glorious, Ever-Virgin, Mother of Christ God, present our prayer to your Son and our God,
-  that through you He may save our souls."
-- "All my hope I place in you, O Mother of God: keep me under your protection." (— this duplicates
-  `gc-save-help-protect`'s neighbor text already in the corpus; keep both occurrences, they're both
-  attested at their own positions, that's not an error.)
-- "O Virgin Theotokos, disdain not me a sinner, needing your help and your protection, and have
-  mercy on me, for my soul has hoped in you."
-
-Then **move** the existing `gc-prayer-joannicius` item's text here as the closing item of this same
-sequence (its content is already correct and already in `great-compline-fixed.json` verbatim — just
-relocate/fold it in rather than retype it): "My hope is the Father, my refuge is the Son, my
-protection is the Holy Spirit: O Holy Trinity, glory to You."
-
-**`gc-ave-maria` gets deleted outright** (not moved, not kept) — confirmed in GC4 that "O Theotokos
-and Virgin, rejoice" does not appear anywhere in this office's own text.
-
-**GC5 — rebuild `gc-dismissal-prayers` entirely.** Its current content (a short "O Lord Jesus
-Christ, Son of God..." dismissal, `gc-dp-remit`'s "Remit, pardon, forgive..." which is verbatim
-Typika's own formula, and `gc-dp-intercessions`'s generic-sounding intercessory prayer) does not
-match what `UNABHOR1997` prints here at all. Replace with, in this exact order (pp.236-237):
-
-1. Rubric: "Here the Order of Great Compline is resumed."
-2. Priest: "Glory to You, O Christ God, our hope, glory to You."
-3. Chanters: "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and
-   unto the ages of ages. Amen."
-4. "Lord, have mercy." (×3). "Father (Master), bless."
-5. The long dismissal prayer (said with a prostration): "Master plenteous in mercy, O Lord Jesus
-   Christ our God: Through the intercessions of our immaculate Lady Theotokos and Ever-Virgin Mary;
-   through the power of the precious and life-giving Cross; through the mediations of the
-   honourable, heavenly Bodiless Hosts; of the honourable, glorious Prophet, Forerunner, and
-   Baptist John; of the holy, glorious, and all-praised apostles; of the holy, glorious, and
-   victorious martyrs; of our holy and God-bearing fathers; of the holy and Righteous Ancestors of
-   God Joachim and Anna; and all Your saints: make our prayer acceptable; grant us the remission of
-   our sins; shelter us with the shelter of Your wings; drive away from us every enemy and
-   adversary; make our life peaceful, O Lord; have mercy on us and on Your world, and save our
-   souls, for You are good and the Lover of mankind." Chanters: "Amen."
-6. The mutual forgiveness exchange (render as a short labeled dialogue, not a single recited
-   prayer): Priest (prostration): "Bless, (holy master and) holy fathers (mothers) and brethren
-   (sisters), and forgive me a sinner, all wherein I have sinned this day in deed, word, and
-   thought, and in all my senses." Brethren: "May God forgive and have mercy on you, holy father."
-   Brethren (prostration): "Bless me, holy father, and forgive all wherein I have sinned this day
-   in deed, word, and thought, and in all my senses, and pray for me a sinner." Priest: "Through
-   His grace may God forgive and have mercy on us all."
-7. Priest: "Let us pray for the Orthodox episcopate of the Church of Russia; for our lord the Very
-   Most Reverend Metropolitan N., First Hierarch of the Russian Church Abroad; for our lord the
-   Most Reverend (Archbishop or Bishop N., whose diocese it is), and all our brethren in Christ."
-   (Chanters respond "Lord, have mercy" quietly through each of the petitions below — render as one
-   rubric note rather than repeating the response after every line.)
-8. The petitions themselves, in order: "For the suffering Russian land and its Orthodox people both
-   in the homeland and in the diaspora, and for their salvation; for this land, its authorities and
-   armed forces. For them that hate us and them that love us. For them that are kind to us and them
-   that serve us. For them that have charged us unworthy ones to pray for them. For the deliverance
-   of the imprisoned. For our fathers and brethren that are away. For them that sail upon the sea.
-   For them that are bedridden in infirmities. Let us pray for the abundance of the fruits of the
-   earth. And for every Orthodox Christian soul. Let us bless pious kings (rulers). Orthodox
-   hierarchs, and the founders of this sacred habitation. Our parents, and all that have passed on
-   before us, our fathers and brethren, and the Orthodox here and everywhere laid to rest. Let us
-   say also for ourselves." (This is real ROCOR-specific liturgical language as printed in this
-   1997 Jordanville edition — transcribe verbatim, don't generalize it away.)
-9. "Lord, have mercy." (×3)
-10. Priest: "For the sake of the intercessions of Your most pure Mother, of (the patron saint of
-    the temple), and of all the saints, O Lord Jesus Christ our God, have mercy on us." Chanters:
-    "Amen." Then icon veneration (keep as a closing rubric: "And we venerate the holy icons and
-    receive a blessing from the priest.")
-
-`gc-dismissal-rubric` (the final short generic dismissal already at the very end of the skeleton)
-can stay or go — the new step 10 above already covers the real ending, so it's redundant; remove it
-for the same reason `gc-closing-theotokion` was removed in GC7 (don't leave a stale, now-duplicate
-generic dismissal sitting after the real one is built).
-
-**After building**: `node --check js/horologion-engine.js`, reparse both touched JSON files, re-run
-the 5-year/14-office/both-calendar-mode sweep (script already exists in this session's scratchpad
-history as `full_sweep.mjs`, or rebuild it: same pattern as every other office-group this pass —
-loop 2024-01-01 through 2028-12-31, call `resolveOffice(date, 'great-compline', {eoMode})` for both
-`new_calendar`/`old_calendar`, assert 0 exceptions and 0 placeholders), then live-verify in headless
-Chromium against the dev server the same way every other office-group in this pass was verified.
-Update `documentation/HOROLOGION_AUDIT_FINDINGS.md` (mark GC3/GC4/GC5 fixed, update the Grand
-Compline section header and summary table from "fix in progress" to "FIXED"),
-`AUDIT_GOVERNANCE_LEDGER.md` (new entry), and `audit-ledger.html` (`SEED_VERSION` bump, dashboard
-row updated to "12 of 12 offices fixed" — this closes out the *entire* Horologion, not just the
-scope-corrected pieces). Commit and push to both `claude/jwjeffery-prayerappnew-resume-fbkyf9` and
-`claude/modest-tesla-n4ofrs` (check `git merge-base --is-ancestor` first, per the branching rule
-below).
+**The Horologion full audit is genuinely complete now: all 12 offices across 9 audited
+office-groups — Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office,
+Small Compline, and the four Interhours — have been audited line-by-line against primary sources,
+fixed, regression-swept, and live-confirmed in a real browser. There is no next office-group to
+pick up in this line of work; whatever comes next is a new task, not a continuation of this audit.**
 
 ---
 

@@ -21633,3 +21633,54 @@ totals updated (38 findings total now, across 9 audited office-groups / 12 offic
 and remove the misplaced Ave Maria as part of the same rebuild), and GC5 (the real closing
 dismissal sequence) into `great-compline.json`/`great-compline-fixed.json`, then re-verify and
 close out Grand Compline as fully fixed.
+
+---
+## Session 2026-09-26, continued -- GC3/GC4/GC5 built. Grand Compline fully fixed. The Horologion
+## full audit is now genuinely complete: 12 of 12 offices.
+
+Session was crashing repeatedly (worker restarts, at least one content-filter-blocked output, per
+Josh) between this entry and the last one. Rather than risk the transcribed source text for GC3-GC5
+if the session died mid-build, wrote a complete, self-contained build spec -- every one of the ten
+"Prayers on Approaching Sleep" verbatim, the Kontakion and its three verses, and the full corrected
+dismissal sequence -- into `RESUME_PROJECT_NOTE.md` first, committed and pushed it as its own
+checkpoint (commit `e9c90e7`), then built directly from that spec once the session stayed up long
+enough to finish.
+
+**Built**: `data/horologion/great-compline-fixed.json`'s `gc-prayers-approaching-sleep` -- a new
+16-item sequence (the monastery-custom opening rubric, all ten prayers verbatim from `UNABHOR1997`
+pp.228-236, the Akathist's own Kontakion plus its three verses, and the Prayer of St. Joannicius
+relocated into its real position in this sequence rather than left as a free-standing item
+elsewhere). `gc-dismissal-prayers` rebuilt entirely as a 17-item sequence: the "Order is resumed"
+rubric, the priest's short doxology, the long dismissal prayer ("Master plenteous in mercy..."),
+the mutual forgiveness exchange rendered as a labeled dialogue (priest asks, brethren reply,
+brethren ask, priest replies) rather than a recited prayer, the real ROCOR-specific intercessory
+litany transcribed verbatim (not generalized away -- "the suffering Russian land," the specific
+petition list, "First Hierarch of the Russian Church Abroad," exactly as this 1997 Jordanville
+edition prints it), the final blessing, and icon veneration. The old `gc-prayer-joannicius`,
+`gc-prayer-guardian-angel` (wrong prayer at this position), and `gc-ave-maria` (unattested here at
+all) slots were removed rather than kept alongside the new content.
+`data/horologion/great-compline.json`'s skeleton updated to match (new
+`gc-prayers-approaching-sleep` placeholder, `gc-dismissal-prayers` relabeled and re-noted, the
+now-redundant trailing `gc-dismissal-rubric` removed since the real ending is built into
+`gc-dismissal-prayers` itself). `js/horologion-engine.js`'s `FIXED_KEYS` set updated for the new/
+removed keys.
+
+**Verified**: `node --check` clean; both touched JSON files reparse clean; the 5-year/14-office/
+both-calendar-mode sweep (51,156 calls) is clean -- 0 exceptions, 0 placeholders. Live-confirmed in
+headless Chromium against the real dev server on both an ordinary Lenten weekday and a Lenten
+Friday: correct 16-item Prayers-on-Approaching-Sleep sequence, correct Guardian Angel text (Prayer
+X, not the old mismatched one), the forgiveness-exchange dialogue present, and the Russian-land
+litany line present, on both dates.
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` updated: Grand Compline's GC3/GC4/GC5 entries marked
+fixed with the build account; section header and summary table updated from "fix in progress" to
+"FIXED"; top status line corrected from "11 of 12" to "**12 of 12 offices fixed**."
+`RESUME_PROJECT_NOTE.md` updated to match (the crash-recovery build spec entry superseded by a
+short completion note). `audit-ledger.html`'s dashboard row and `SEED_VERSION` updated to reflect
+full completion.
+
+**The Horologion full audit is now genuinely complete: all 12 offices across 9 audited
+office-groups -- Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office,
+Small Compline, and the four Interhours -- have been audited line-by-line against primary sources,
+fixed, regression-swept, and live-confirmed in a real browser. No office in this corpus's own
+office list remains unaudited or partially audited.**
