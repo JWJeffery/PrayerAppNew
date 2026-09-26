@@ -2394,6 +2394,82 @@ const pascha = _getOrthodoxPascha(year);
     }
 
     // ──────────────────────────────────────────────────────────────────────
+    // Additive fasting-season helpers (2026-09-26, second-pass follow-up).
+    // These do NOT modify _computeLiturgicalSeason()'s existing return shape
+    // -- several callers already depend on its exact four values
+    // ('holy-week', 'bright-week', 'great-lent', 'ordinary') -- they add the
+    // further distinctions Findings SC4 (remaining imprecision), T8, and IH7
+    // all need, as separate, non-breaking functions. Pascha epoch
+    // cross-checked against Orthocal (mcp Orthocal server) for 2026 and 2027:
+    // pascha_distance and "Beginning of Apostles' Fast" both matched this
+    // engine's own _getOrthodoxPascha() exactly before any of this was built.
+    // ──────────────────────────────────────────────────────────────────────
+
+    // Sunday of the Publican and Pharisee (Pascha-70) through Cheesefare/
+    // Forgiveness Sunday (Pascha-49) -- the three pre-Lenten Triodion weeks.
+    // Clean Monday itself (Pascha-48) is NOT included; that's 'great-lent'.
+    function _isPreLentenTriodion(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const publicanPharisee = new Date(pascha.getTime() - 70 * MS_PER_DAY);
+        const cheesefare       = new Date(pascha.getTime() - 49 * MS_PER_DAY);
+        return localDate >= publicanPharisee && localDate <= cheesefare;
+    }
+
+    // 1-based Great Lent week number (1-6), or null if dateObj isn't in
+    // Great Lent at all. Week 6 includes Lazarus Saturday (Pascha-8); Palm
+    // Sunday (Pascha-7) onward is 'holy-week', not Great Lent, matching
+    // _computeLiturgicalSeason()'s own existing boundary.
+    function _getGreatLentWeekNumber(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const cleanMonday     = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+        const lazarusSaturday = new Date(pascha.getTime() -  8 * MS_PER_DAY);
+        if (localDate < cleanMonday || localDate > lazarusSaturday) return null;
+        const daysSinceCleanMonday = Math.round((localDate.getTime() - cleanMonday.getTime()) / MS_PER_DAY);
+        return Math.floor(daysSinceCleanMonday / 7) + 1;
+    }
+
+    // Bright Monday (Pascha+1) through All Saints Sunday (Pascha+56) -- the
+    // whole Pentecostarion season, matching how UNABHOR1997 p.245's own
+    // rubric describes it ("the Holy Pentecost season... until the Sunday
+    // of All Saints"). Bright Week itself (Pascha+1..+7) already has its own
+    // unrelated full-office displacement elsewhere in this engine -- callers
+    // that need to exclude Bright Week specifically should still check
+    // toneResult.brightWeek themselves, as existing code already does.
+    function _isPentecostSeason(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const brightMonday    = new Date(pascha.getTime() +  1 * MS_PER_DAY);
+        const allSaintsSunday = new Date(pascha.getTime() + 56 * MS_PER_DAY);
+        return localDate >= brightMonday && localDate <= allSaintsSunday;
+    }
+
+    // The Monday after All Saints Sunday (Pascha+57) -- the first day of
+    // the Apostles' Fast. Validated against Orthocal (mcp) for 2026:
+    // pascha_distance 57 on 2026-06-08 carries service_notes "Beginning of
+    // Apostles' Fast" and fast_level_desc "Apostles Fast", matching exactly.
+    function _isApostlesFastFirstDay(dateObj) {
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const MS_PER_DAY = 86400000;
+        const pascha = _getOrthodoxPascha(localDate.getFullYear());
+        const firstDay = new Date(pascha.getTime() + 57 * MS_PER_DAY);
+        return localDate.getTime() === firstDay.getTime();
+    }
+
+    // November 15 on whichever fixed calendar is active (Gregorian for
+    // 'new_calendar', Julian-shifted-to-civil-date for 'old_calendar') --
+    // the first day of the Nativity Fast. Reuses the same fixed-calendar-
+    // date convention _getFixedCalendarMmdd() already applies for Menaion
+    // lookups.
+    function _isNativityFastFirstDay(dateObj) {
+        return _getFixedCalendarMmdd(dateObj) === '11-15';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
     // v5.0: _loadTriodionData()
     //
     // Fetches and caches data/triodion/triodion-lenten-weekday.json.
@@ -2852,31 +2928,49 @@ function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult, dateObj) {
         const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
         const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
         if (troparionText && kontakionText) {
-            // Finding SC4 correction (found during post-completion re-verification):
+            // Finding SC4 correction, refined (2026-09-26, third pass):
             // UNABHOR1997 p.245 -- "IT SHOULD BE KNOWN: that from the Sunday of the
             // Publican and the Pharisee, and during all of the holy Great Lent, on
             // all Saturdays at Compline the Kontakion of the Resurrection is not
             // read, but rather the one from the Triodion (except the fifth week of
-            // Lent)..." The troparion itself is unaffected by this rubric -- only
-            // the Kontakion. This engine's season detection covers Great Lent
-            // proper (Clean Monday-Great Friday) but not the earlier pre-Lenten
-            // Triodion weeks the rubric's own start point names, nor the "except
-            // the fifth week" carve-out, nor the separate Pentecost-season rule
-            // for "all days" through All Saints Sunday -- disclosed as a known
-            // remaining gap rather than approximated further.
-            let seasonResult = null;
+            // Lent), as also during the Holy Pentecost season on all days the
+            // kontakion from the Pentecostarion is read, until the Sunday of All
+            // Saints." The troparion itself is unaffected by this rubric -- only
+            // the Kontakion. Now fully covered using the dedicated fasting-season
+            // helpers (_isPreLentenTriodion, _getGreatLentWeekNumber,
+            // _isPentecostSeason): the pre-Lenten Triodion weeks, Great Lent
+            // proper with the fifth-week exception, and the Pentecost season are
+            // all handled; only the exact Pentecostarion/Triodion kontakion texts
+            // themselves remain unsourced (disclosed, not fabricated).
+            let suppressKontakion = false;
+            let seasonLabel = null;
             try {
-                seasonResult = dateObj && _computeLiturgicalSeason(dateObj, toneResult);
+                if (dateObj && _isPreLentenTriodion(dateObj)) {
+                    suppressKontakion = true;
+                    seasonLabel = 'pre-lenten-triodion';
+                } else if (dateObj) {
+                    const lentWeek = _getGreatLentWeekNumber(dateObj);
+                    if (lentWeek !== null && lentWeek !== 5) {
+                        suppressKontakion = true;
+                        seasonLabel = 'great-lent-week-' + lentWeek;
+                    } else if (dateObj && _isPentecostSeason(dateObj)) {
+                        suppressKontakion = true;
+                        seasonLabel = 'pentecost-season';
+                    }
+                }
             } catch (e) { /* non-throwing: falls through to the ordinary case below */ }
 
-            if (seasonResult && seasonResult.season === 'great-lent') {
+            if (suppressKontakion) {
+                const deferredText = seasonLabel === 'pentecost-season'
+                    ? 'During the Pentecost season (through the Sunday of All Saints), the Pentecostarion\'s own Kontakion belongs here in place of the Resurrection Kontakion; not yet sourced in this corpus.'
+                    : 'During this week, the Triodion\'s own Kontakion belongs here in place of the Resurrection Kontakion (the fifth week of Great Lent is the one exception, where the Resurrection Kontakion is retained); not yet sourced in this corpus.';
                 return {
                     type:       'text',
                     key:        'troparion-of-the-day',
                     label:      'Troparion of the Resurrection, Tone ' + tone,
-                    text:       troparionText + '\n\nKontakion: (During Great Lent, the Triodion\'s own Kontakion belongs here in place of the Resurrection Kontakion; not yet sourced in this corpus.)',
+                    text:       troparionText + '\n\nKontakion: (' + deferredText + ')',
                     tone:       tone,
-                    resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone + '-lenten-kontakion-deferred'
+                    resolvedAs: 'small-compline-saturday-fixed-troparion-tone-' + tone + '-' + seasonLabel + '-kontakion-deferred'
                 };
             }
 
@@ -9296,6 +9390,45 @@ async function _loadInterhourFixedData(officeKey) {
 // (now-corrected) skeleton is resolved generically from that office's own
 // -fixed.json file, no per-office key maps or Menaion lookups needed.
 async function _resolveInterhourSlots(officeKey, sections, dateObj) {
+    // Finding IH7 correction (2026-09-26): appointment gate for the Inter-Hours.
+    // UNABHOR1997 p.93 -- "[According to present-day usage, the Inter-Hours are
+    // said only on the first day of the Apostles' Fast, and on the first day of
+    // the Nativity Fast if it begin on a weekday. When the Inter-Hours are said,
+    // there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
+    // not appointed during Great Lent when the kathismata and readings from The
+    // Ladder are appointed at the Hours.]" The Nikolsky exclusion never actually
+    // overlaps either appointed day (the Apostles' Fast begins well after Pascha;
+    // the Nativity Fast begins fixed-calendar Nov. 15) -- it is cited in the
+    // disclosure text below for completeness, not applied as a separate branch.
+    let interhourAppointed = false;
+    try {
+        if (_isApostlesFastFirstDay(dateObj)) {
+            interhourAppointed = true;
+        } else if (_isNativityFastFirstDay(dateObj)) {
+            const dow = dateObj.getDay();
+            interhourAppointed = (dow >= 1 && dow <= 5);
+        }
+    } catch (e) {
+        console.warn('[HorologionEngine] _resolveInterhourSlots: appointment gate failed:', e.message);
+    }
+
+    if (!interhourAppointed) {
+        sections.length = 0;
+        sections.push({
+            id: officeKey + '-not-appointed',
+            label: 'Not Appointed',
+            items: [
+                {
+                    type: 'rubric',
+                    key: 'interhour-not-appointed-rubric',
+                    text: 'Per present-day usage (UNABHOR1997 p.93), the Inter-Hours are appointed only on the first day of the Apostles’ Fast, and on the first day of the Nativity Fast if it falls on a weekday; when the Inter-Hours are said, there is no Divine Liturgy that day. (The Nikolsky Ustav additionally excludes the Inter-Hours during Great Lent, when the kathismata and readings from The Ladder are appointed at the Hours instead -- a condition that does not overlap either appointed day above.) This is not one of those two days.',
+                    resolvedAs: officeKey + '-not-appointed'
+                }
+            ]
+        });
+        return;
+    }
+
     await _loadInterhourFixedData(officeKey);
 
     const fixedData = _interhourFixedDataCache[officeKey] || null;

@@ -51,10 +51,109 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**State as of 2026-09-26, latest of all — second-pass re-verification complete across all 13 other
-offices, not just Great Compline (Josh: "run the second pass on the other ten" — actual count was
-13; corrected below too). Two more real bugs found and fixed; three real gaps found and disclosed,
-not built. Read this entry first.**
+**State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
+build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
+second pass below disclosed rather than built: SC4's remaining imprecision, IH7, T8). Paused here
+because Josh said "pause immediately and write the resume note" — this is that note, written before
+any further work, per his standing correction earlier this session that a request to write the
+resume note is not also a request to finish the task. Read this entry first.**
+
+**Done and verified (uncommitted — see below):**
+1. **SC4 refinement — DONE.** `_resolveSmallComplineFixedTroparion`'s Saturday branch
+   (`js/horologion-engine.js`, ~line 2926) now uses three new helper functions
+   (`_isPreLentenTriodion`, `_getGreatLentWeekNumber`, `_isPentecostSeason` — plus
+   `_isApostlesFastFirstDay`/`_isNativityFastFirstDay` added for IH7 below — all five inserted
+   right after `_computeLiturgicalSeason()`'s closing brace, ~line 2394) to correctly suppress the
+   Resurrection Kontakion across the pre-Lenten Triodion weeks, Great Lent proper (with the
+   fifth-week exception verified to retain it), and the Pentecost season, each with its own
+   `seasonLabel` in the disclosure text and `resolvedAs` string. Re-verified directly against
+   `UNABHOR1997` lines 9104-9202 (p.244-245: "IT SHOULD BE KNOWN: that from the Sunday of the
+   Publican and the Pharisee... except the fifth week of Lent... during the Holy Pentecost season
+   on all days... until the Sunday of All Saints") — confirmed Small Compline's fixed table only
+   ever carries a Resurrection Kontakion on Saturday (Sunday there is Bodiless Powers, not
+   Resurrection), so the "on all days" Pentecost clause needs no additional weekday branch. Tested
+   against 6 real dates in 2026 (pre-Lenten Saturday, Lent week 1, Lent week 5 — confirmed retained,
+   Lazarus Saturday/week 6, Pentecost-season, an ordinary Saturday) — all six matched expectations.
+2. **IH7 (Interhours appointment gate) — DONE.** New gate at the top of `_resolveInterhourSlots`
+   (~line 9392): appointed only on the first day of the Apostles' Fast (`_isApostlesFastFirstDay`)
+   or the first day of the Nativity Fast if it's a weekday (`_isNativityFastFirstDay` + `dow 1-5`);
+   otherwise replaces `sections` with a single `<officeKey>-not-appointed` rubric, same pattern as
+   Great Compline's own `great-compline-not-appointed` gate. Verified verbatim against
+   `UNABHOR1997` p.93, lines 3526-3530 (the First Hour's own bracketed rubric). Tested: appointed on
+   2026-06-08 (Apostles' Fast start) across all four Interhour offices, appointed on 2027-11-15
+   (a Monday), NOT appointed on 2026-11-15 (a Sunday), the day before the Apostles' Fast, an
+   ordinary weekday, and Clean Monday. All matched.
+3. **Both changes pass the full regression sweep** (5-year/14-office/both-calendar-mode,
+   51,156 calls, 0 exceptions, 0 placeholders) after each was applied. `node --check` clean.
+   **Not yet done: live headless-Chromium confirmation of either change** — only the Node harness
+   has exercised them so far.
+4. **NOT YET COMMITTED.** `git status` shows only `js/horologion-engine.js` modified (both fixes
+   above, uncommitted, unpushed) — nothing else touched. Do not lose this diff.
+
+**In progress, not yet touching any file — T8 (Typika's Great Lent structural form) — investigation
+only, no code or data written yet.** Re-read `UNABHOR1997` pp.135-143 (lines 5060-5478) in full to
+scope it properly rather than just the Beatitudes swap the second pass had already flagged. Plan,
+not yet executed:
+- The ordinary Typika sequence (Psalm 102, Psalm 145, "O Only-Begotten Son," then the plain
+  Beatitudes with the triple "Remember us" only at the end) is skipped entirely on Great Lent
+  weekdays; instead, at the conclusion of the Ninth Hour, in the Eighth Tone, the Beatitudes are
+  chanted with "Remember us, O Lord, when Thou comest in Thy kingdom" as a refrain after *each*
+  verse (source lines 5148-5181) — a new fixed-data slot, not yet added to `typika-fixed.json`.
+- After the day's Kontakion (already correctly built as Finding T7), the Lenten form additionally
+  inserts the Prayer of St. Ephrem the Syrian in its full traditional form — three prostration lines,
+  twelve bows ("O God, cleanse me a sinner"), then an abbreviated one-prostration repeat of all
+  three lines together (source lines 5301-5312) — before funneling into the same common ending
+  material both forms share (`page 143`'s "Lord, have mercy. Twelve times..." through Psalm 33 and
+  the dismissal). This app already has the *abbreviated* 3-line/3-prostration form of this same
+  prayer stored verbatim at `data/horologion/interhour-first-fixed.json`'s `prayer-of-ephraim` slot
+  (and the sixth/third/ninth-hour and great-compline fixed-data files) — Typika's own version should
+  be transcribed fresh from the fuller source passage just read (with the twelve bows and the final
+  abbreviated repeat), not copied from the Interhours' shorter form.
+- Established pruning pattern to reuse: Midnight Office's `forDays`-tagged section pruning
+  (`_resolveMidnightOfficeSlots`, ~line 6215, `sections[s].forDays` + `.splice()`) — the plan is the
+  same mechanism with a `forSeason` tag instead: tag the existing `psalmody`/`beatitudes` sections
+  in `typika.json` `forSeason: ["ordinary"]`, add two new sections tagged
+  `forSeason: ["great-lent-weekday"]` (one for the refrained Beatitudes, one for the Ephrem-prayer +
+  a descriptive rubric about the Mon/Tue/Thu-begins-Vespers vs. Wed/Fri-Presanctified-Liturgy
+  branch — described in prose, not modeled as a real office transition), then prune by
+  `isGreatLentWeekday` (the same `_computeLiturgicalSeason(...).season === 'great-lent' && dayOfWeek
+  1-5` test already used by First/Third Hour) before the existing `FIXED_SLOT_KEYS` resolution loop
+  in `_resolveTypikaSlots` (~line 7697).
+- Deliberately out of scope, decided during this investigation, do not re-open without a fresh ask:
+  (a) the Epistle/Gospel readings section's Great-Lent-weekday behavior (the source's ordinary-form
+  Prokeimenon/Epistle/Gospel option is not clearly repeated in the Lenten passage at all, suggesting
+  Lenten-weekday Typika may skip Scripture readings entirely — a real, separate structural question,
+  not part of the disclosed T8 finding, and risky to touch given how much feast-overlay/pre-Lenten
+  lectionary logic already lives in that same code path); (b) the source's Kontakion-order nuance
+  for a Lenten Service ("say first the Kontakion of the Transfiguration, then of the day, and then of
+  the temple," lines 5229-5232) — requires modeling temple dedication, which T7's existing Kontakion
+  table never modeled either; a new feature, not a T8 fix.
+- **No files touched yet for T8** — `typika.json`, `typika-fixed.json`, and
+  `_resolveTypikaSlots` in `js/horologion-engine.js` are all still exactly as they were before this
+  paragraph's investigation began.
+
+**Not started at all:** researching other Orthodox liturgical/prayer apps for reference on how they
+handle these seasonal/appointment-gating conventions (Josh's explicit ask, same message as the "make
+this thing hum" directive) — no web search has been run yet. Also not started: the post-T8
+documentation pass (this note's own next top entry, `AUDIT_GOVERNANCE_LEDGER.md`'s new append-only
+entry, `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s T8/IH7 write-ups moving from "disclosed, not
+built" to "FIXED" and SC4's write-up gaining the full precision detail, `audit-ledger.html`'s
+dashboard row + `SEED_VERSION` bump), the commit, and the push to both
+`claude/jwjeffery-prayerappnew-resume-fbkyf9` and `claude/modest-tesla-n4ofrs` (with the usual
+`git merge-base --is-ancestor` check on both first).
+
+**Next move on resuming:** finish T8 per the plan above (or re-derive it — the source line numbers
+above are exact and re-readable), then the app research, then the documentation/commit/push pass.
+Do not declare any of this "done" without the same independent-re-read-against-source discipline
+used for SC4 and IH7 above, per Josh's standing instruction this session: "Double check everything's
+actually right before you call it done."
+
+---
+
+**State as of 2026-09-26, superseded by the entry above — second-pass re-verification complete
+across all 13 other offices, not just Great Compline (Josh: "run the second pass on the other ten" —
+actual count was 13; corrected below too). Two more real bugs found and fixed; three real gaps found
+and disclosed, not built.**
 
 Re-read the raw source line-by-line against the actual built JSON for Vespers, the four Hours,
 Typika, Orthros/Matins, Midnight Office, Small Compline, and the four Interhours — the same
