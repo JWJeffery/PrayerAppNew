@@ -2806,6 +2806,31 @@ const pascha = _getOrthodoxPascha(year);
 // Sunday-Thursday's own further shared closing (a litany-like block after
 // each night's own troparion) is disclosed but not built here -- out of scope
 // for this finding, which names only the troparion-of-the-day slot itself.
+// Shared by Small Compline's own Saturday (Finding SC4) and Great Compline's
+// Friday (Finding GC2, UNABHOR1997 p.220's cross-reference "the troparion of
+// the Saturday commemoration, [see] page 243") -- both point at this same
+// fixed 8-tone Resurrection troparion/kontakion table.
+const _RESURRECTION_TROPARIA_TONE = {
+    1: 'When the stone had been sealed by the Jews, and the soldiers were guarding Thine immaculate Body, Thou didst arise on the third day, O Saviour, granting life unto the world. Wherefore, the Hosts of the heavens cried out to Thee, O Life-giver: Glory to Thy Resurrection, O Christ. Glory to Thy kingdom. Glory to Thy dispensation, O only Lover of mankind.',
+    2: 'When Thou didst descend unto death, O Life Immortal, then didst Thou slay hades with the lightning of Thy Divinity. And when Thou didst also raise the dead out of the nethermost depths, all the Hosts of the heavens cried out: O Life-giver, Christ our God, glory be to Thee.',
+    3: 'Let the heavens be glad; let earthly things rejoice; for the Lord hath wrought might with His arm. He hath trampled down death by death; the firstborn of the dead hath He become. From the belly of hades hath He delivered us and hath granted to the world great mercy.',
+    4: 'Having learned the joyful proclamation of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the apostles exultantly: death is despoiled and Christ God is risen, granting to the world great mercy.',
+    5: 'Let us, O faithful, praise and worship the Word Who is co-unoriginate with the Father and the Spirit, and Who was born of the Virgin for our salvation; for He was pleased to ascend the Cross in the flesh and to endure death, and to raise the dead by His glorious Resurrection.',
+    6: 'Angelic Hosts were above Thy tomb, and they that guarded Thee became as dead. And Mary stood by the grave seeking Thine immaculate Body. Thou didst despoil hades and wast not tempted by it. Thou didst meet the Virgin and didst grant us life. O Thou Who didst rise from the dead, O Lord, glory be to Thee.',
+    7: 'Thou didst destroy death by Thy Cross, Thou didst open Paradise to the thief. Thou didst change the lamentation of the Myrrh-bearers, and Thou didst command Thine Apostles to proclaim that Thou didst arise, O Christ God, and grantest to the world great mercy.',
+    8: 'From on high didst Thou descend, O Compassionate One; to burial of three days hast Thou submitted that Thou mightest free us from our passions. O our Life and Resurrection, O Lord, glory be to Thee.'
+};
+const _RESURRECTION_KONTAKIA_TONE = {
+    1: 'As God, Thou didst arise from the tomb in glory, and Thou didst raise the world together with Thyself. And mortal nature praiseth Thee as God, and death hath vanished. And Adam danceth, O Master, and Eve, now freed from fetters, rejoiceth as she crieth out: Thou art He, O Christ, that grantest unto all resurrection.',
+    2: 'Thou didst arise from the tomb, O omnipotent Saviour, and hades was terrified on beholding the wonder; and the dead arose, and creation at the sight thereof rejoiceth with Thee. And Adam also is joyful, and the world, O my Saviour, praiseth Thee for ever.',
+    3: 'Thou didst arise today from the tomb, O Merciful One, and didst lead us out of the gates of death. Today Adam danceth and Eve rejoiceth; and together with them both the Prophets and the Patriarchs unceasingly praise the divine might of Thine authority.',
+    4: 'My Saviour and Redeemer hath, as God, raised up the earthborn from the grave and from their fetters, and He hath broken the gates of hades, and, as Master, hath risen on the third day.',
+    5: 'Unto hades, O my Saviour, didst Thou descend, and having broken its gates as One omnipotent, Thou, as Creator, didst raise up the dead together with Thyself. And Thou didst break the sting of death, and didst deliver Adam from the curse, O Lover of mankind. Wherefore, we all cry unto Thee: save us, O Lord.',
+    6: 'Having by His life-bestowing hand raised up all the dead out of the dark abysses, Christ God, the Giver of Life, hath bestowed the Resurrection upon the fallen human race; for He is the Saviour of all, the Resurrection, and the Life, and the God of all.',
+    7: 'No longer will the dominion of death be able to keep men captive; for Christ hath descended, demolishing and destroying the powers thereof. Hades is bound; the Prophets rejoice with one voice, saying: a Saviour hath come for them that have faith. Come forth, ye faithful, for the Resurrection.',
+    8: 'Having arisen from the tomb, Thou didst raise up the dead and didst resurrect Adam. Eve also danceth at Thy Resurrection, and the ends of the world celebrate Thine arising from the dead, O greatly-merciful One.'
+};
+
 function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult) {
     const WEEKDAY_TROPARIA = {
         0: { label: 'Troparion of the Bodiless Powers',
@@ -2821,31 +2846,11 @@ function _resolveSmallComplineFixedTroparion(dayOfWeek, toneResult) {
         5: { label: 'Troparion of All Saints',
              text: 'O Apostles, Martyrs, and Prophets, Hierarchs, Monastics, and Righteous Ones; ye that have accomplished a good labour and kept the faith, that have boldness before the Saviour: O good ones, intercede for us, we pray, that our souls be saved.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nKontakion: With the saints give rest, O Christ, to the souls of Thy servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nTo Thee, O Lord, the Planter of creation, the world doth offer the God-bearing martyrs as the firstfruits of nature. By their intercessions preserve Thy Church, Thy commonwealth, in profound peace, through the Theotokos, O greatly-merciful One.' }
     };
-    const RESURRECTION_TROPARIA_TONE = {
-        1: 'When the stone had been sealed by the Jews, and the soldiers were guarding Thine immaculate Body, Thou didst arise on the third day, O Saviour, granting life unto the world. Wherefore, the Hosts of the heavens cried out to Thee, O Life-giver: Glory to Thy Resurrection, O Christ. Glory to Thy kingdom. Glory to Thy dispensation, O only Lover of mankind.',
-        2: 'When Thou didst descend unto death, O Life Immortal, then didst Thou slay hades with the lightning of Thy Divinity. And when Thou didst also raise the dead out of the nethermost depths, all the Hosts of the heavens cried out: O Life-giver, Christ our God, glory be to Thee.',
-        3: 'Let the heavens be glad; let earthly things rejoice; for the Lord hath wrought might with His arm. He hath trampled down death by death; the firstborn of the dead hath He become. From the belly of hades hath He delivered us and hath granted to the world great mercy.',
-        4: 'Having learned the joyful proclamation of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the apostles exultantly: death is despoiled and Christ God is risen, granting to the world great mercy.',
-        5: 'Let us, O faithful, praise and worship the Word Who is co-unoriginate with the Father and the Spirit, and Who was born of the Virgin for our salvation; for He was pleased to ascend the Cross in the flesh and to endure death, and to raise the dead by His glorious Resurrection.',
-        6: 'Angelic Hosts were above Thy tomb, and they that guarded Thee became as dead. And Mary stood by the grave seeking Thine immaculate Body. Thou didst despoil hades and wast not tempted by it. Thou didst meet the Virgin and didst grant us life. O Thou Who didst rise from the dead, O Lord, glory be to Thee.',
-        7: 'Thou didst destroy death by Thy Cross, Thou didst open Paradise to the thief. Thou didst change the lamentation of the Myrrh-bearers, and Thou didst command Thine Apostles to proclaim that Thou didst arise, O Christ God, and grantest to the world great mercy.',
-        8: 'From on high didst Thou descend, O Compassionate One; to burial of three days hast Thou submitted that Thou mightest free us from our passions. O our Life and Resurrection, O Lord, glory be to Thee.'
-    };
-    const RESURRECTION_KONTAKIA_TONE = {
-        1: 'As God, Thou didst arise from the tomb in glory, and Thou didst raise the world together with Thyself. And mortal nature praiseth Thee as God, and death hath vanished. And Adam danceth, O Master, and Eve, now freed from fetters, rejoiceth as she crieth out: Thou art He, O Christ, that grantest unto all resurrection.',
-        2: 'Thou didst arise from the tomb, O omnipotent Saviour, and hades was terrified on beholding the wonder; and the dead arose, and creation at the sight thereof rejoiceth with Thee. And Adam also is joyful, and the world, O my Saviour, praiseth Thee for ever.',
-        3: 'Thou didst arise today from the tomb, O Merciful One, and didst lead us out of the gates of death. Today Adam danceth and Eve rejoiceth; and together with them both the Prophets and the Patriarchs unceasingly praise the divine might of Thine authority.',
-        4: 'My Saviour and Redeemer hath, as God, raised up the earthborn from the grave and from their fetters, and He hath broken the gates of hades, and, as Master, hath risen on the third day.',
-        5: 'Unto hades, O my Saviour, didst Thou descend, and having broken its gates as One omnipotent, Thou, as Creator, didst raise up the dead together with Thyself. And Thou didst break the sting of death, and didst deliver Adam from the curse, O Lover of mankind. Wherefore, we all cry unto Thee: save us, O Lord.',
-        6: 'Having by His life-bestowing hand raised up all the dead out of the dark abysses, Christ God, the Giver of Life, hath bestowed the Resurrection upon the fallen human race; for He is the Saviour of all, the Resurrection, and the Life, and the God of all.',
-        7: 'No longer will the dominion of death be able to keep men captive; for Christ hath descended, demolishing and destroying the powers thereof. Hades is bound; the Prophets rejoice with one voice, saying: a Saviour hath come for them that have faith. Come forth, ye faithful, for the Resurrection.',
-        8: 'Having arisen from the tomb, Thou didst raise up the dead and didst resurrect Adam. Eve also danceth at Thy Resurrection, and the ends of the world celebrate Thine arising from the dead, O greatly-merciful One.'
-    };
 
     if (dayOfWeek === 6) {
         const tone = toneResult && toneResult.tone;
-        const troparionText = tone && RESURRECTION_TROPARIA_TONE[tone];
-        const kontakionText = tone && RESURRECTION_KONTAKIA_TONE[tone];
+        const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
+        const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
         if (troparionText && kontakionText) {
             return {
                 type:       'text',
@@ -5753,6 +5758,38 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                                : null;
                 const fixedEntry = fixedKey ? _slot(fixedKey) : null;
 
+                // Finding GC2 (audit 2026-09-26): UNABHOR1997 p.220 names Friday's own
+                // substitution explicitly -- "the troparion of the Saturday
+                // commemoration, [see] page 243" -- pointing at the same fixed 8-tone
+                // Resurrection troparion/kontakion table already built for Small
+                // Compline's Finding SC4. Checked first, before the Mon/Wed/Tue/Thu
+                // fixedKey lookup, since Friday has no fixedKey of its own.
+                if (isFriday) {
+                    const fridayToneResult = _computeBaselineTone(dateObj);
+                    const tone = fridayToneResult && fridayToneResult.tone;
+                    const troparionText = tone && _RESURRECTION_TROPARIA_TONE[tone];
+                    const kontakionText = tone && _RESURRECTION_KONTAKIA_TONE[tone];
+                    if (troparionText && kontakionText) {
+                        section.items[i] = {
+                            type: 'text',
+                            key: item.key,
+                            label: 'Troparion and Kontakion of the Resurrection, Tone ' + tone,
+                            text: troparionText + '\n\nKontakion: ' + kontakionText,
+                            tone: tone,
+                            resolvedAs: 'great-compline-friday-saturday-resurrection-tone-' + tone
+                        };
+                    } else {
+                        section.items[i] = {
+                            type: 'rubric',
+                            key: item.key,
+                            label: `Weekday Troparia — ${d}`,
+                            text: 'On Friday evenings, the troparion and kontakion of the Resurrection in the occurring tone belong here (UNABHOR1997 p.220, cross-referencing p.243); the current tone could not be determined for this date.',
+                            resolvedAs: 'great-compline-friday-saturday-resurrection-no-tone'
+                        };
+                    }
+                    continue;
+                }
+
                 if (fixedEntry) {
                     section.items[i] = _applyFixed(section.items[i], fixedKey);
                     section.items[i].resolvedAs = fixedKey === 'gc-weekday-troparia-mon-wed'
@@ -5763,12 +5800,9 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                     if (dayOfWeek === 1 || dayOfWeek === 3) {
                         text = `${d} — Weekday Troparia in Tone 2 (Mon/Wed): "Enlighten mine eyes, O Christ God…" Theotokion follows. Full text deferred to corpus tranche.`;
                         resolvedAs = 'great-compline-weekday-troparia-mon-wed-rubric';
-                    } else if (dayOfWeek === 2 || dayOfWeek === 4) {
+                    } else {
                         text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): "O Lord, You know the unsleeping vigilance…" Theotokion follows. Full text deferred to corpus tranche.`;
                         resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
-                    } else {
-                        text = `Friday Lenten Great Compline is appointed, but the Friday-specific modifications and appointed hymnody are not yet transcribed.`;
-                        resolvedAs = 'great-compline-weekday-troparia-unscheduled';
                     }
                     section.items[i] = {
                         type: 'rubric',
@@ -5964,32 +5998,6 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 continue;
             }
 
-            if (item.key === 'gc-closing-theotokion') {
-                const isTueThu = (dayOfWeek === 2 || dayOfWeek === 4);
-                const theotokKey = isTueThu ? 'gc-theotokion-tue-thu' : 'gc-theotokion-mon-wed-fri';
-                const s = _slot(theotokKey);
-
-                if (s) {
-                    section.items[i] = {
-                        type: 'text',
-                        key: item.key,
-                        label: s.label || 'Closing Theotokion',
-                        text: s.text,
-                        resolvedAs: isTueThu ? 'great-compline-cross-theotokion' : 'great-compline-joy-theotokion'
-                    };
-                } else {
-                    section.items[i] = {
-                        type: 'rubric',
-                        key: item.key,
-                        label: 'Closing Theotokion',
-                        text: isTueThu
-                            ? 'Tue/Thu: Cross Theotokion (Tone 1) — data not loaded.'
-                            : 'Mon/Wed/Fri: Theotokion (Tone 2) — data not loaded.',
-                        resolvedAs: 'great-compline-theotokion-data-unavailable'
-                    };
-                }
-                continue;
-            }
         }
     }
 }
@@ -9216,74 +9224,42 @@ async function _loadInterhourFixedData(officeKey) {
 }
 
 // ── v7.0: _resolveInterhourSlots(officeKey, sections, dateObj) ────────
+//
+// CORRECTED 2026-09-26, Horologion audit fix pass (Findings IH1-IH3): this
+// resolver previously (a) named the wrong three psalms for every one of the
+// four Interhours via PSALM_KEY_MAP, and (b) routed troparion-of-the-day
+// through the Menaion/weekday-theme machinery, though UNABHOR1997 gives each
+// Interhour its own fixed, hour-specific troparia triad with no Menaion
+// dependency at all (same correction pattern as Small Compline's SC4 and
+// Typika's T7). Both are now fixed-data-driven: every placeholder key in the
+// (now-corrected) skeleton is resolved generically from that office's own
+// -fixed.json file, no per-office key maps or Menaion lookups needed.
 async function _resolveInterhourSlots(officeKey, sections, dateObj) {
-    await Promise.all([
-        _loadInterhourFixedData(officeKey),
-        _loadTroparionData(),
-        _loadWeekdayTroparionMeta(),
-        _loadTriodionData()
-    ]);
+    await _loadInterhourFixedData(officeKey);
 
-    const dayOfWeek = dateObj.getDay();
-    const toneResult = _computeBaselineTone(dateObj);
     const fixedData = _interhourFixedDataCache[officeKey] || null;
-
-    const PSALM_KEY_MAP = {
-        'interhour-first': new Set(['psalm-20', 'psalm-21', 'psalm-22']),
-        'interhour-third': new Set(['psalm-34', 'psalm-35', 'psalm-36']),
-        'interhour-sixth': new Set(['psalm-60', 'psalm-61', 'psalm-62']),
-        'interhour-ninth': new Set(['psalm-86', 'psalm-87', 'psalm-88'])
-    };
-
-    const THEOTOKION_KEY_MAP = {
-        'interhour-first': 'interhour-first-theotokion',
-        'interhour-third': 'interhour-third-theotokion',
-        'interhour-sixth': 'interhour-sixth-theotokion',
-        'interhour-ninth': 'interhour-ninth-theotokion'
-    };
-
-    const psalmKeys = PSALM_KEY_MAP[officeKey] || new Set();
-    const theotokionKey = THEOTOKION_KEY_MAP[officeKey] || null;
-
-    const FIXED_SLOT_KEYS = new Set([
-        ...psalmKeys,
-        'trisagion-prayers',
-        theotokionKey
-    ].filter(Boolean));
 
     for (const section of sections) {
         if (!Array.isArray(section.items)) continue;
 
         for (let i = 0; i < section.items.length; i++) {
             const item = section.items[i];
+            if (item.type !== 'placeholder') continue;
 
-            if (FIXED_SLOT_KEYS.has(item.key)) {
-                const slotData = fixedData &&
-                    fixedData.slots &&
-                    fixedData.slots[item.key];
+            const slotData = fixedData &&
+                fixedData.slots &&
+                fixedData.slots[item.key];
 
-                if (slotData) {
-                    section.items[i] = {
-                        type: slotData.type || 'text',
-                        key: item.key,
-                        label: slotData.label || item.label,
-                        text: slotData.text,
-                        lxxNumber: slotData.lxxNumber,
-                        items: Array.isArray(slotData.items) ? slotData.items : undefined,
-                        resolvedAs: officeKey + '-fixed'
-                    };
-                }
-                continue;
-            }
-
-            if (item.key === 'troparion-of-the-day') {
-                const resolved = await _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult);
-                if (resolved) {
-                    section.items[i] = Object.assign({}, resolved, {
-                        key: 'troparion-of-the-day'
-                    });
-                }
-                continue;
+            if (slotData) {
+                section.items[i] = {
+                    type: slotData.type || 'text',
+                    key: item.key,
+                    label: slotData.label || item.label,
+                    text: slotData.text,
+                    lxxNumber: slotData.lxxNumber,
+                    items: Array.isArray(slotData.items) ? slotData.items : undefined,
+                    resolvedAs: officeKey + '-fixed'
+                };
             }
         }
     }

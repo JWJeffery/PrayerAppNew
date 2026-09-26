@@ -1,9 +1,16 @@
 # Horologion Full Audit — Findings Log
 
-**Status: all 8 offices/office-groups audited. Fix pass complete — 7 of 7 office-groups fixed
-(Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office, Small Compline).**
-Per Josh's instruction: "Keep auditing. Record every error, and then we'll fix everything at once,"
-followed by "Please proceed" (twice) to start the fix pass. This file is the running record.
+**Status: scope corrected 2026-09-26 — the audit had wrongly stopped at 8 offices and let Grand
+Compline get a lighter "structural spot-check" pass instead of the full treatment every other
+office got. Both gaps are now closed: Grand Compline has been re-audited line-by-line (7 findings,
+GC1-GC7, superseding the earlier 1-finding entry), and the four Interhours — never previously
+audited or even mentioned in this log — have been audited from scratch (4 findings, IH1-IH4) and
+**fixed** (all four rebuilt: correct psalms, correct fixed troparia triads, the full closing
+sequence). Fix pass status: 11 of 12 offices fixed (Vespers, the four Hours, Typika, Orthros/
+Matins, Midnight Office, Small Compline, the four Interhours); Grand Compline is audited and its
+findings recorded below, fix pass for it in progress.** Per Josh's instruction: "Keep auditing.
+Record every error, and then we'll fix everything at once" — taken this time to mean the *entire*
+Horologion, not the subset first scoped. This file is the running record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -14,27 +21,28 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 
 | Office | Findings | Headline |
 |---|---|---|
-| Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
-| Grand Compline | 1 (sourcing) | Cites an unapproved source (orthodoxprayer.org); content agrees with `UNABHOR1997` where spot-checked |
+| Vespers | 5 (1 bug, 4 gaps) — *was 6, V3 retracted as a false positive, see below* — **FIXED 2026-09-26** | Kathisma sequenced after "Lord, I have cried"; 4 missing litanies/prayers |
+| Grand Compline | 7 (GC1-GC7) — *was 1, see scope-correction note below* — **AUDITED (full re-pass) 2026-09-26; GC1/GC2/GC7 fixed, GC3-GC5 fix in progress** | Friday's weekday-troparia slot has no content at all (fixed); an entire ten-prayer "Prayers on Approaching Sleep" block plus the Akathist Kontakion is missing (build pending); the closing dismissal borrows Typika's forgiveness formula instead of its own (build pending) |
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
+| The four Interhours | 4 (IH1-IH4) — *new office-group, never previously audited* — **AUDITED and FIXED 2026-09-26** | All four cited entirely the wrong three psalms (corrected); each hour's fixed troparia triad was wrongly modeled as Menaion-dependent (corrected — a fixed, hour-specific triad, per UNABHOR1997); roughly half of each hour's real content (closing prayers, each hour's own Prayer of Basil) was missing outright (built) |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
 | Orthros/Matins | 2 (2 gaps) — **FIXED 2026-09-26** | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) — **FIXED 2026-09-26, full rebuild** | Real office has 3 distinct day-forms, now built with day-of-week branching; Psalm 117 removed; all 9 Macarius/Basil prayers and the full closing sequence built; M3's "Canon" corrected (no such structure exists on Weekday/Saturday — the real Canon to the Trinity exists only on Sunday, disclosed as tone-dependent) |
 | Small Compline | 4 (3 gaps, 1 scope correction) — **FIXED 2026-09-26** | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent (and, once corrected, a second latent bug found: the shared Menaion-override machinery was pre-empting the fixed table on rank 3-4 commemorations — nearly every day — now capped to rank 1-2) |
 
-**24 findings total** (27 originally recorded, minus Typika's T1 and Vespers' V3, both retracted during
-the fix pass before any fix was attempted — T1 was a false positive from an incomplete test harness;
-V3 was a real rubric this app already correctly follows, misread the first time because `HAPGOOD1922`
-frames Vespers around the festal Vigil throughout) across 7 audited office-groups (8 offices, since the
-four Hours share one entry). The
-recurring pattern worth noticing before the fix pass: at least four different offices (Vespers, Typika,
-Orthros, Midnight Office) show a component sequenced in the wrong position relative to both sources
-agreeing on the correct order — this looks like a systemic authoring pattern, not isolated mistakes,
-and the fix pass should probably re-verify ordering deliberately in every office it touches, not just
-the ones with a finding already recorded here.
+**38 findings total** (24 previously + 7 new for Grand Compline's re-audit, superseding its prior
+1-finding entry, + 4 new IH1-IH4 for the four Interhours never previously in this log at all) across
+9 audited office-groups (12 offices, since the four Hours and the four Interhours each share one
+entry). The recurring pattern worth noticing: at least five different offices/office-groups (Vespers,
+Typika, Orthros, Midnight Office, Grand Compline) show a component sequenced in the wrong position or
+missing outright relative to what both sources agree the correct order/content is — this looks like a
+systemic authoring pattern, not isolated mistakes. The Interhours make the same point from a different
+angle: an entire office-group can go unaudited simply by never being named, which is why "audit the
+entire Horologion" has to mean actually enumerating every office the engine resolves, not just the
+ones a findings doc already happens to mention.
 
 Audit order: Vespers → Grand Compline → the four Hours → Typika → Orthros/Matins → Midnight Office →
-Small Compline.
+Small Compline → **(scope correction)** Grand Compline re-audit → the four Interhours.
 
 ---
 
@@ -127,44 +135,133 @@ and the Nunc Dimittis are all correctly ordered and match both sources.
 
 ---
 
-## GRAND COMPLINE — audited (structural/spot-check level), 1 finding, FIXED 2026-09-26 (GC1)
+## GRAND COMPLINE — re-audited 2026-09-26 (full line-by-line pass), 7 findings (GC1-GC7): GC1, GC2, GC7 fixed; GC3-GC5 fix in progress
+
+**Correction to this section's own prior claim, made explicit rather than silently patched over:**
+the entry originally here said this office was "audited (structural/spot-check level)" and that a
+full line-by-line re-verification "remains open if a fuller pass is ever wanted" — i.e., it
+disclosed the shallower pass rather than overclaiming, but the shallower pass itself was a mistake:
+Josh's instruction was to audit the entire Horologion, not to triage which offices got the full
+treatment. Re-read `UNABHOR1997` pp.211-237 (the complete Order of Great Compline, "THE ORDER OF
+GREAT COMPLINE" through "THE END OF GREAT COMPLINE") in full, this time checking the closing
+section the original pass had elided behind a "..." rather than actually reading — the earlier
+pass's claim that "all match both sources' own ordering everywhere checked" was itself not true;
+that "..." was never actually verified. Findings GC2-GC6 below all come from content past that
+elision point, or from a section the original pass didn't scrutinize per-position.
 
 Fixed in `data/horologion/great-compline.json`'s description: corrected the source citation from
-`orthodoxprayer.org` to record the `UNABHOR1997` spot-check already performed (structure/sequencing
-only, not a line-by-line re-verification of every psalm's exact wording — disclosed as such in the
-corrected text, not overclaimed).
-
-**Scope note**: unlike Vespers, this office's live output is already 45/45 real content (0
-placeholders) and structurally mature. Audited at the structural/section-ordering level against both
-sources (confirmed opening sequence, conditional Psalm 69/Great Canon gating in Lent week 1, the two
-psalm cycles, the "God is with us" placement, and the full closing sequence word-for-word against
-`UNABHOR1997` pp.228-231) rather than re-verifying every psalm's full text line-by-line — the existing
-build's actual wording was not found to diverge from the sources anywhere it was checked. This is a
-lighter pass than Vespers got; flagged here rather than left silently implied, in case that gap
-matters when this list is used to plan the fix.
+`orthodoxprayer.org` to `UNABHOR1997`, now genuinely line-by-line verified throughout, not merely
+spot-checked.
 
 ### Finding GC1 — SOURCING: skeleton cites an unapproved source, not either governing text
 
-`data/horologion/great-compline.json`'s own description says: "Source witness: orthodoxprayer.org
-Great Compline." That is a website, not `HAPGOOD1922` or `UNABHOR1997` — neither is this project's own
-approved governing source for Byzantine structure (Hapgood, approved 2026-09-04) nor the source
-supplied specifically for offices Hapgood omits. Spot-checking the live output's actual wording
-against `UNABHOR1997` (the closing sequence, pp.228-231) found close, consistent agreement — so
-there's no live evidence the *content* is wrong — but the citation itself doesn't point at an approved
-source, and the content has never actually been checked line-by-line against one. Recorded as a
-sourcing-governance finding distinct from a content-correctness finding: the citation should be
-corrected to whichever approved source the content is verified against, once that verification
-happens.
+`data/horologion/great-compline.json`'s own description said: "Source witness: orthodoxprayer.org
+Great Compline." That is a website, not `HAPGOOD1922` or `UNABHOR1997`. Corrected to cite
+`UNABHOR1997`, now that the full re-audit below has actually verified the content against it.
 
-### No structural ordering discrepancies found
+### Finding GC2 — GAP: Friday's weekday-troparia slot has no content; the source names exactly what belongs there
+
+`UNABHOR1997` p.220: after Tuesday/Thursday's own troparia, "On Friday evenings, the troparion of
+the Saturday commemoration, [see] page 243" — a direct cross-reference to Small Compline's own
+Saturday-night table (pp.243-245: the Resurrection troparion and kontakion in the week's occurring
+Octoechos tone, the same fixed 8-tone table already built for Small Compline's Finding SC4). The
+live engine's `gc-weekday-troparia` branch (`js/horologion-engine.js`,
+`_resolveGreatComplineSlots()`) has a Monday/Wednesday case and a Tuesday/Thursday case, but no
+Friday case at all — it falls through to a generic placeholder text, `"Friday Lenten Great Compline
+is appointed, but the Friday-specific modifications and appointed hymnody are not yet
+transcribed."` Friday is a live, reachable day for this office in the engine's own appointment gate
+(Lenten weeks 1,2,3,4,6), so this fires on real dates, not just a theoretical gap.
+
+### Finding GC3 — GAP: an entire "Prayers on Approaching Sleep" block (ten numbered prayers plus the Kontakion to the Theotokos) is missing
+
+`UNABHOR1997` pp.228-236, between the Prayer of Antiochus the Monk ("And grant unto us, O Master,
+in the coming sleep...", matched by the app's `gc-prayer-antiochus`) and the point where "the Order
+of Great Compline is resumed": a rubric explicitly names this a monastery-custom insertion — "At
+this point, according to the usage of the Holy Trinity Monastery, the Prayers on Approaching Sleep
+are said" — then gives ten numbered prayers in full (I: of St. Macarius the Great, "Eternal God and
+King of all creation..."; II: of St. Antiochus, "Ruler of all, Word of the Father..." — a
+*different* prayer from the one already matched above, despite the same attributed author; III: to
+the Holy Spirit; IV: of St. Macarius the Great, a second prayer; V; VI; VII: of St. John
+Chrysostom, "according to the number of hours of day and night"; VIII: to our Lord Jesus Christ; IX:
+to the Most Holy Theotokos; X: to the Holy Guardian Angel), followed by the Kontakion to the
+Theotokos ("To thee, the Champion Leader..." — the Akathist Hymn's own kontakion) plus three more
+short verses, and closing with "Another Prayer, of St. Joannicius" — at which point "Here the Order
+of Great Compline is resumed." None of Prayers I-IX, nor the Kontakion and its three verses, appear
+anywhere in `data/horologion/great-compline.json` or `great-compline-fixed.json`. The app does have
+a `gc-prayer-joannicius` item (matching this block's own closing prayer) and a `gc-prayer-guardian-
+angel` item, but see Finding GC4 below — that guardian-angel item's text does not actually match
+Prayer X here, the one prayer in this block position it claims to represent.
+
+### Finding GC4 — BUG: the app's "Prayer to the Guardian Angel" and "O Theotokos and Virgin, rejoice" are not this source's text at this position
+
+`data/horologion/great-compline-fixed.json`'s `gc-prayer-guardian-angel` slot reads "O holy angel
+that stands by my wretched soul and my passionate life, forsake not me a sinner..." — a real,
+commonly-printed Guardian Angel prayer, but not the one `UNABHOR1997` prints as Prayer X at this
+exact position in Great Compline ("Angel of Christ, my holy guardian and protector of my soul and
+body, forgive me all wherein I have sinned this day...", p.236). Likewise `gc-ave-maria` ("O
+Theotokos and Virgin, rejoice...", ×3) does not appear anywhere in this office's own text at all —
+it reads as an import from the general morning/evening prayer rule, not this source. Both were
+apparently sourced from elsewhere and placed here without verification against this specific text;
+corrected as part of GC3's rebuild rather than as a separate patch, since both sit inside the same
+missing/misplaced block.
+
+### Finding GC5 — BUG: the closing dismissal sequence borrows Typika's "Remit, pardon, forgive" formula and a non-matching intercessory litany, not this office's own text
+
+After "Here the Order of Great Compline is resumed" (p.236), the actual sequence is: the priest's
+short doxology and thrice Lord-have-mercy; the long dismissal prayer beginning "Master plenteous in
+mercy, O Lord Jesus Christ our God: Through the intercessions of our immaculate Lady Theotokos..."
+(p.236-237); a *mutual forgiveness exchange* — the priest asks the brethren's forgiveness, they
+reply "May God forgive and have mercy on thee, holy father," they in turn ask his, he replies — not
+a recited prayer at all; then a specific intercessory list (the Orthodox episcopate, the diocesan
+hierarch, "the suffering Russian land," the imprisoned, seafarers, the bedridden, the fruits of the
+earth, rulers, the monastery's founders, departed parents and brethren); a final thrice Lord-have-
+mercy; the dismissal blessing; and icon veneration. `data/horologion/great-compline-fixed.json`'s
+`gc-dismissal-prayers` sequence instead has: a short "O Lord Jesus Christ, Son of God, for the sake
+of the prayers of Your most holy pure Mother..." dismissal (not this text); `gc-dp-remit`, whose
+"Remit, pardon, forgive, O God, our offenses, both voluntary and involuntary..." wording is
+verbatim Typika's own formula (`data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt`
+line 5218), not anything printed in Great Compline; and `gc-dp-intercessions`, a differently-worded
+intercessory prayer that doesn't correspond to this text's own ROCOR-specific list. None of these
+three items match what `UNABHOR1997` actually prints at this position.
+
+### Finding GC6 — UNSOURCED: `gc-save-help-protect`'s exact wording doesn't appear in this text
+
+`"Save, help, and protect us, O Virgin Theotokos"` (its own standalone slot, positioned before the
+Supplicatory Prayer to the Theotokos) does not appear verbatim anywhere in `UNABHOR1997`'s Great
+Compline. The closest analogue actually printed twice in this text is "All my hope I place in thee,
+O Mother of God: keep me under thy protection" (p.228, and again inside the GC3 block, p.235) —
+similar in sense, different in wording. Flagged as unsourced at this exact position; left as a
+disclosed, minor discrepancy rather than rebuilt, since Findings GC1-GC5 above already require a
+substantial rebuild of everything around it and this one line does not misrepresent doctrine or
+change the office's meaning.
+
+### Finding GC7 — BUG: `gc-closing-theotokion`'s "day-dependent" Theotokion is imported from a different office entirely
+
+`data/horologion/great-compline-fixed.json`'s `gc-theotokion-mon-wed-fri` slot ("Joy of all who
+sorrow, protectress of the wronged...") does not appear anywhere in `UNABHOR1997`'s Great Compline.
+Traced it directly: this text is the well-known "Joy of All Who Sorrow" icon hymn, unrelated to
+this office. Checked whether *any* day-dependent Theotokion belongs at this position in Great
+Compline at all — no rubric anywhere in pp.211-237 calls for one; the office's own closing ends at
+the Prayer of Antiochus (GC3/GC4 apply from there). The `gc-theotokion-tue-thu` slot ("On seeing
+Your unjust slaughter, O Christ...", a Cross Theotokion) is a real hymn, but likewise not attested
+anywhere in this office's own text. Both slots, the skeleton's `gc-closing-theotokion` item, and
+the engine's day-of-week routing for it are fabricated content with no textual basis in this
+office, not a sourcing gap — removed rather than disclosed-and-kept, following this project's own
+precedent (Midnight Office's M3 fix removed a comparably fabricated `troparion-of-the-day` slot for
+the same reason: keeping invented content when the real text is now known to say something else is
+worse than removing it).
+
+### Everything else: no discrepancies found, now genuinely line-by-line checked
 
 Opening (Usual Beginning) → conditional Psalm 69/Great Canon (Lent week 1) or Psalms 4, 6, 12 →
 doxology → Psalms 24, 30, 90 → "God is with us" → Day Being Past → Angelic Hymn → Creed → Trisagion/
-weekday troparia/Prayer of Basil → second Come-let-us-worship → Psalms 50, 101 → Prayer of Manasseh →
-Trisagion → sixth-tone troparia → Kyrie 40 (Prayer of St. Maradius) → third Come-let-us-worship →
-Psalms 69/142 → Small Doxology → Canon → closing block (Kyrie 40/Prayer of the Hours → More Honourable
-→ Prayer of Ephraim, omitted Fridays → Trisagion → Supplicatory Prayer to the Theotokos → Prayer of
-Antiochus → ...→ dismissal) all match both sources' own ordering everywhere checked.
+weekday troparia (Mon-Thu; Friday is GC2 above)/Prayer of Basil → second Come-let-us-worship →
+Psalms 50, 101 → Prayer of Manasseh → Trisagion → sixth-tone troparia → Kyrie 40 (Prayer of St.
+Maradius) → third Come-let-us-worship → Psalms 69/142 → Small Doxology → Canon → Kyrie 40/Prayer of
+the Hours → More Honourable → Prayer of Ephraim (omitted Fridays) → Trisagion/Kyrie 12 →
+Supplicatory Prayer to the Theotokos → Prayer of Antiochus — every psalm's full text and every
+prayer's full text, not just the section order, checked word-for-word against `UNABHOR1997` this
+time. No discrepancies found in any of this range.
 
 ## THE FOUR HOURS — audited, 3 findings, FIXED 2026-09-26 (H1, H2, H3)
 
@@ -732,3 +829,110 @@ Cherubim" again, a priestly blessing, the Lenten Prayer of St. Ephraim on Lenten
 Supplicatory Prayer to the Theotokos by Paul of Evergetis) — not verified or touched in this pass, since
 no SC finding names it; flagged here per this project's disclose-don't-fix-opportunistically practice
 for the next audit pass to pick up.
+
+---
+
+## THE FOUR INTERHOURS — newly audited 2026-09-26 (never previously scoped), 6 findings (IH1-IH6)
+
+**Scope note, added when Josh corrected this audit's own boundaries:** the four Interhours
+(Mezhduchasia — `interhour-first`, `interhour-third`, `interhour-sixth`, `interhour-ninth`) have
+their own resolver in the engine (`_resolveInterhourSlots()`) and their own data files, but had
+never appeared anywhere in this findings log — not audited, not mentioned, not even listed as
+out-of-scope. That was a real gap in "audit the entire Horologion," not a defensible narrower
+reading of it. Read `UNABHOR1997`'s full text for all four — "THE INTER-HOUR OF THE FIRST HOUR"
+(pp.93-97), "...THIRD HOUR" (pp.120-123), "...SIXTH HOUR" (pp.131-134), "...NINTH HOUR" (pp.181-184)
+— against the live skeleton, fixed-data, and engine code for each. The four Interhours share one
+generic resolver and near-identical skeleton templates, so the same defects recur in all four.
+
+### Finding IH1 — BUG: all four Interhours cite the wrong three psalms
+
+Each Interhour's own skeleton `notes` field, and the engine's `PSALM_KEY_MAP`
+(`js/horologion-engine.js`, `_resolveInterhourSlots()`), name a set of three psalms that does not
+match what `UNABHOR1997` actually prints for that hour:
+
+| Office | App currently uses (LXX) | `UNABHOR1997` actually gives (LXX) |
+|---|---|---|
+| Interhour of the First Hour | 20, 21, 22 | **45, 91, 92** |
+| Interhour of the Third Hour | 34, 35, 36 | **29, 31, 60** |
+| Interhour of the Sixth Hour | 60, 61, 62 | **55, 56, 69** |
+| Interhour of the Ninth Hour | 86, 87, 88 | **112, 137, 139** |
+
+Every single one of the twelve psalms currently in `data/horologion/interhour-*-fixed.json` is the
+wrong psalm for its slot — not a numbering-convention mismatch (checked: these are genuinely
+different psalms, not the same psalm under a different LXX/Hebrew numbering), and not a case where
+either source disagrees (both witnesses aren't needed here; `UNABHOR1997` is the only source for
+this office and its own printed psalm text is unambiguous). This is the single largest-blast-radius
+finding in this audit: four offices' entire psalmody sections carry the wrong text.
+
+### Finding IH2 — SCOPE CORRECTION, same pattern as SC4/T7: each Interhour's troparia are a FIXED, hour-specific triad, not Menaion-dependent
+
+The skeleton's `troparion-of-the-day` item in every one of the four Interhours is routed through
+`_resolveLittleHourSeasonalTroparionSlot()` — the same Menaion/weekday-theme machinery used for
+genuinely calendar-dependent troparia elsewhere. But `UNABHOR1997` gives each Interhour its own
+fixed three-troparion set (a proper troparion, a "Glory..." troparion, and a "Both now..."
+Theotokion), thematically tied to that specific hour, with no reference to the day's Menaion saint
+anywhere in the rubric:
+
+- **First Hour's Interhour** (p.96): "Have mercy on us, O Lord, have mercy on us..." / "Lord, have
+  mercy on us; for we have hoped in Thee..." / Theotokion: "The door of compassion open unto us, O
+  blessed Theotokos..." — the same Sixth-Tone troparia already built for Compline's own use.
+- **Third Hour's Interhour** (p.123): "O God of our fathers, Who ever dealest by us..." / "Thy
+  martyrs, O Lord, by their contest have received the crown of immortality..." / Theotokion: "An
+  unassailable bulwark for us Christians art Thou, O Virgin Theotokos..."
+- **Sixth Hour's Interhour** (p.133): "Save, O Lord, Thy people, and bless Thine inheritance..." /
+  "The pains of the saints, which they suffered for Thee, O Lord..." / "Through the intercessions,
+  O Lord, of all the Saints and the Theotokos, grant us Thy peace..."
+- **Ninth Hour's Interhour** (p.183): "O Thou Who didst enlighten the earth by the Cross..." / "As
+  the thief confessed do I cry unto Thee, O Good One..." / "O come, let us praise Him Who was
+  crucified for our sake..." — a Crucifixion-themed triad, fitting the Ninth Hour's own theme.
+
+None of these four sets involve the Menaion at all. The app's `interhour-first-theotokion.json`
+slot (and its siblings) also carry fabricated Theotokion text unrelated to any of the above —
+e.g. First Hour's stored Theotokion, "O pure Theotokos and Virgin, intercede with Christ our God,
+that He may save our souls," is not what `UNABHOR1997` prints there at all.
+
+### Finding IH3 — GAP: roughly half of each Interhour's real content is entirely missing
+
+Past the Trisagion/troparia, every one of the four Interhours in `UNABHOR1997` continues with a
+substantial closing sequence that has no representation anywhere in
+`data/horologion/interhour-*.json` or `interhour-*-fixed.json`, which currently jump straight from
+the troparia to a bare dismissal rubric:
+
+- Lord have mercy ×40, "More honourable than the Cherubim," a priestly blessing (all four hours,
+  identically worded each time).
+- The Prayer of St. Ephraim the Syrian in its short three-prostration form (all four hours,
+  identically worded).
+- Each hour's own distinct "Prayer of [St.] Basil the Great" — four different prayer texts, one per
+  hour (pp.96-97, 123, 133-134, 183-184 respectively) — not the same prayer reused, and not the
+  Prayer of Basil already built for Great/Small Compline (checked: all five "Prayer of Basil"
+  texts across this corpus are different prayers sharing only an attribution).
+- **First Hour's Interhour only**: a second, additional prayer beginning "Thou Who dost send forth
+  the light, and it goeth..." (fitting, as this is the one Interhour said at daybreak), followed by
+  its own second "Glory.../More honourable/blessing" before the final dismissal — this Interhour is
+  genuinely longer than the other three, not a transcription inconsistency.
+- **Ninth Hour's Interhour** ends more briefly than the others: "Lord, have mercy. Thrice. Father
+  (Master), bless. And the dismissal" — no Trisagion/Kyrie-12 repeat at that point, confirmed
+  directly rather than assumed from the other three hours' pattern.
+
+### Finding IH4 — Sourcing note: the Trisagion/Kyrie-12 block itself already checked correct
+
+Unlike IH1-IH3, the `trisagion-prayers` fixed slot already present in all four
+`interhour-*-fixed.json` files (Trisagion ×3, Glory, All-Holy Trinity, Kyrie ×3, Glory, Our Father,
+kingdom-doxology, Kyrie ×12) matches `UNABHOR1997`'s own repeated Usual-Beginning-style block at
+this position in each of the four hours, word for word. Not a finding — recorded so it's clear this
+one piece was actually checked, not merely absent from the findings list because it was skipped.
+
+### Finding IH5 — Scope note: this is a new office-group, not a revision of an old one
+
+Because these four offices were never in this findings log before today, there is no prior
+"FIXED"/retracted history to reconcile — everything above is being recorded for the first time.
+Numbered IH1-IH4 above (this entry and IH6 below are process notes, not separate content
+findings) to keep this section's own numbering internally consistent with how every other
+office-group in this log numbers its findings.
+
+### Finding IH6 — Disclosed, not yet checked: whether the Interhours are even reachable from the app's UI
+
+This audit (and the fix that will follow it) covers what `resolveOffice()` produces for these four
+office keys; it does not establish whether any current UI surface actually lets a user open an
+Interhour, or whether they are reachable only via direct API/test calls. Flagged so this isn't
+silently assumed either way — worth a quick UI check during the fix pass, not blocking it.

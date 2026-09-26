@@ -20,7 +20,19 @@
     "Transcribed directly from the 1906 text (archive.org), LXX/Vulgate numbering as printed",
     "there (Psalm lxix, iv, vi, xii, xxiv, xxx, xc, l, ci, cxlii), only orthography lightly",
     "modernized (thee/thou left as printed). All non-psalm material (troparia, litanies,",
-    "prayers, rubrics) is unchanged and untouched by this correction."
+    "prayers, rubrics) is unchanged and untouched by this correction.",
+    "",
+    "AUDIT FIX PASS, full re-audit 2026-09-26 (Findings GC1-GC7): gc-theotokion-mon-wed-fri",
+    "and gc-theotokion-tue-thu (Finding GC7) REMOVED -- both were sourced from a different",
+    "office entirely (the Mon-Wed-Fri text is Orthros's own Exaposteilaria Theotokion; the",
+    "Tue-Thu Cross Theotokion is likewise unattested here), and no rubric in UNABHOR1997's own",
+    "Great Compline calls for a closing Theotokion at that position at all. Finding GC2:",
+    "Friday's own weekday-troparia substitution (Resurrection troparion/kontakion by tone,",
+    "same 8-tone table as Small Compline's Finding SC4) is now handled directly in",
+    "_resolveGreatComplineSlots() rather than via a fixed-data slot here, since it's",
+    "tone-dependent, not a fixed text. Findings GC3-GC5 (the missing ten-prayer 'Prayers on",
+    "Approaching Sleep' block and the closing dismissal correction) are tracked separately and",
+    "not yet built as of this comment."
   ],
   "slots": {
     "gc-usual-beginning": {
@@ -368,16 +380,6 @@
         { "type": "text", "key": "gc-dp-intercessions", "text": "Let us pray for peace in the world.\n\nFor our Bishop, our Father, and for all our brotherhood in Christ.\n\nO Lord, Lover of mankind, forgive them that hate and wrong us. Do good to them that do good. Grant our brethren and kindred their saving petitions and life eternal; visit the infirm and grant them healing. Guide those at sea. Journey with them that travel. Help Orthodox Christians to struggle. To them that serve and are kind to us grant remission of sins. On them that have charged us, the unworthy, to pray for them, have mercy according to Your great mercy.\n\nRemember, O Lord, our fathers and brethren departed before us, and grant them rest where the light of Your countenance shall visit them. Remember, O Lord, our brethren in captivity, and deliver them from every misfortune. Remember, O Lord, those that bear fruit and do good works in Your holy churches, and grant them their saving petitions and life eternal.\n\nRemember also, O Lord, us Your lowly and sinful and unworthy servants, and enlighten our minds with the light of Your knowledge, and guide us in the way of Your commandments; through the intercessions of our most pure Lady the Theotokos and Ever-Virgin Mary and of all Your saints, for blessed are You unto the ages of ages. Amen." },
         { "type": "text", "key": "gc-dp-final-kyrie", "text": "Lord, have mercy.", "repeat": 3 }
       ]
-    },
-    "gc-theotokion-mon-wed-fri": {
-      "type": "text",
-      "label": "Closing Theotokion — Monday, Wednesday, Friday (Tone 2)",
-      "text": "Joy of all who sorrow, protectress of the wronged, and nurture of all the poor, comfort unto the estranged, a staff for the blind, visitation of all the sick, a shelter and help unto those brought down by pain, helper of orphans: Mother of God in the highest are You, O Immaculate Maiden; hasten, we beseech You, to redeem Your servants."
-    },
-    "gc-theotokion-tue-thu": {
-      "type": "text",
-      "label": "Closing Theotokion — Tuesday, Thursday (Cross Theotokion, Tone 1)",
-      "text": "On seeing Your unjust slaughter, O Christ, Your pure Mother cried in grief: O most sweet Child, how is it that You died lawlessly? How is it that You, Who suspended all the earth upon the flood of waters, are now Yourself suspended from the Tree? O most merciful Benefactor, do not leave me, Your Mother and handmaid, alone."
     },
     "gc-weekday-troparia-mon-wed": {
       "type": "sequence",
