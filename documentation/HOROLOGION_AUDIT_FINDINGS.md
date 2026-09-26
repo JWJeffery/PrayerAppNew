@@ -1,10 +1,10 @@
 # Horologion Full Audit — Findings Log
 
-**Status: all 8 offices/office-groups audited. Fix pass in progress — 5 of 7 office-groups fixed
-(Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins); Midnight Office next (the big
-one — real architectural work, day-of-week branching).** Per Josh's instruction: "Keep auditing.
-Record every error, and then we'll fix everything at once," followed by "Please proceed" (twice)
-to start the fix pass. This file is the running record.
+**Status: all 8 offices/office-groups audited. Fix pass in progress — 6 of 7 office-groups fixed
+(Vespers, Grand Compline, the four Hours, Typika, Orthros/Matins, Midnight Office); Small Compline
+last.** Per Josh's instruction: "Keep auditing. Record every error, and then we'll fix everything
+at once," followed by "Please proceed" (twice) to start the fix pass. This file is the running
+record.
 Each finding is verified against both `HAPGOOD1922` and `UNABHOR1997`
 (`data/kalendar/source-witnesses/source-index.json`) wherever both cover the office, and against the
 actual live resolver output (`resolveOffice()` in `js/horologion-engine.js`), never against the
@@ -20,7 +20,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
 | Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
 | Orthros/Matins | 2 (2 gaps) — **FIXED 2026-09-26** | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
-| Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) | Real office has 3 distinct day-type forms, app builds one; Psalm 117 doesn't belong; Prayers of Macarius and the whole closing sequence missing |
+| Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) — **FIXED 2026-09-26, full rebuild** | Real office has 3 distinct day-forms, now built with day-of-week branching; Psalm 117 removed; all 9 Macarius/Basil prayers and the full closing sequence built; M3's "Canon" corrected (no such structure exists on Weekday/Saturday — the real Canon to the Trinity exists only on Sunday, disclosed as tone-dependent) |
 | Small Compline | 4 (3 gaps, 1 scope correction) | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent |
 
 **24 findings total** (27 originally recorded, minus Typika's T1 and Vespers' V3, both retracted during
@@ -496,7 +496,7 @@ rubric reads as a reasoned, aware disclosure of real Typikon complexity (weekday
 varies by season), not an error — not investigated further given time, but not flagged as a finding
 either.
 
-## MIDNIGHT OFFICE — audited, 1 major structural finding + 3 specific findings
+## MIDNIGHT OFFICE — audited, 1 major structural finding + 3 specific findings, FIXED 2026-09-26 (M0-M3, full rebuild)
 
 **This is the office `UNABHOR1997` was specifically supplied to source**, since `HAPGOOD1922` omits it
 entirely (confirmed in Phase 1). Read `UNABHOR1997` pp.1-19 (the Weekday form) in full.
@@ -541,6 +541,82 @@ directly to the troparia and a generic closing prayer.
 `UNABHOR1997` rather than patched — the current skeleton represents perhaps a third of the real
 Weekday office's actual content, has one wrong psalm, and doesn't yet account for the Saturday/Sunday
 forms at all.**
+
+### The rebuild, per the user's own direction: read and scope all three forms before building any of them
+
+Read `UNABHOR1997` pp.1-45 in full — the Weekday form again in full depth (not just re-relying on the
+notes above), then the Saturday form (pp.21-39) and the Sunday form (pp.40-45), neither previously read
+at this depth. This surfaced the real relationship between the three forms, corrected M3, and confirmed
+M0-M2 exactly as found.
+
+**What the three day-forms actually share, and where they genuinely diverge (M0 confirmed, precisely
+rather than just "three different forms")**: the Weekday and Saturday forms are **word-for-word
+identical** through their opening (Usual Beginning, risen-from-sleep troparia, two opening prayers,
+Psalm 50) and through all nine Prayers of St. Macarius/St. Basil plus the Final Morning Prayer (M2) —
+they diverge only in which Kathisma is appointed (Weekday: the Seventeenth, i.e. Psalm 118 in full,
+M1; Saturday: the Ninth, Psalms 64-69) and in the troparia sung immediately after it. From there the
+two forms converge again and share their entire closing sequence verbatim (Psalms 120/133, the
+repeated Trisagion, two sets of memorial troparia for the departed, a litany for protection from
+calamity, mutual forgiveness, a closing Ectenia, icon veneration) — Saturday's only addition is its own
+Prayer of St. Eustratius, fitting for the day traditionally kept for the departed. **Sunday differs far
+more substantially**: no Macarius/Basil prayers at all, no Kathisma — instead, immediately after Psalm
+50, a real Canon to the Most Holy Trinity (tone-dependent, from the Octoechos) followed by the fixed
+"Hymns to the Trinity" of Gregory the Sinaite, then the repeated Trisagion, the tone-dependent Hypakoe
+of the Tone, Lord-have-mercy-forty (bare, no Prayer of the Hours), and a long "Prayer to the Most Holy
+Trinity" by Mark the Monk — skipping the Kathisma, Psalms 120/133, and the memorial troparia entirely.
+All three forms converge again on the same closing (mutual forgiveness, Ectenia, icon veneration).
+
+**M3 corrected, not taken on its own wording, once the fuller reading reached it**: there is no "Canon
+(a wise-virgins/oil-lamp Ode structure)" anywhere in the Weekday or Saturday closing. The real content
+at that position is a set of **troparia** — Bridegroom/Ten-Virgins themed, Tone 8, on Weekdays (this is
+where the finding's own "wise virgins" phrase actually belongs, just misattributed to a nonexistent
+Canon; the literal phrase "companion of the wise virgins" is in fact from an unrelated *opening* prayer)
+— or Trinity-praise themed, Tone 2, on Saturdays. Everything else M3 named (Lord-have-mercy-forty with
+the Prayer of the Hours, More Honourable, a second "O come, let us worship," Psalms 120 and 133) **is
+real**, confirmed directly, just further along in the sequence than the first read had reached. The
+*actual* Canon (to the Holy Trinity) exists too, but only on **Sunday**, where M3's own first-pass
+reading never went — confirming M0's own point that the office's real center of gravity per day-form
+is genuinely different, not a paraphrase issue.
+
+**A further correction, not named in M0-M3 at all**: the old skeleton's `troparion-of-the-day` and
+`midnight-office-theotokion` slots — resolved via the same Menaion/Octoechos machinery as every other
+office in this corpus — do not correspond to anything in the real Midnight Office. Checked directly:
+none of the three day-forms ever names the day's commemorated saint or cites a day-of-week/tone-keyed
+Theotokion at a fixed position the way Vespers, the Hours, Typika, and Orthros all genuinely do. This
+office is essentially a private monastic prayer rule with no calendar dependency at all. Both slots
+removed rather than carried forward; the old `midnight-office-theotokion.json` corpus file (one string,
+already correctly sourced but positioned at the wrong point in the office) deleted, its text folded into
+its real position inside the memorial-troparia sequence below.
+
+**Built**: `data/horologion/midnight-office-fixed.json` rebuilt from 6 slots to 28 — the shared
+opening and Sunday's own shorter opening; all nine Macarius/Basil prayers plus the Final Morning
+Prayer; Saturday's Ninth Kathisma (Psalms 64-69, all six in full); the Creed (shared); both day-forms'
+own post-Kathisma troparia; Lord-have-mercy-forty with the Prayer of the Hours (shared) and its bare
+Sunday counterpart; the brief Trinity prayer (shared) and Saturday's own Prayer of St. Eustratius;
+Psalms 120 and 133; the repeated Trisagion; both sets of memorial troparia with their Kontakion and
+Theotokia; the long memorial prayer; the calamity-protection litany and the *real* dismissal (which
+fires mid-sequence in the source, not as a trailing generic rubric the way the app previously modelled
+it); Sunday's own dismissal; the shared closing (mutual forgiveness, Ectenia, icon veneration); and,
+for Sunday, the fixed Hymns to the Trinity (Gregory the Sinaite, built in full) and the Prayer to the
+Most Holy Trinity (Mark the Monk, built in full). `psalm-118` (already correct) kept unchanged;
+`psalm-117` (M1) removed. **Disclosed, not built**: Sunday's own Canon to the Most Holy Trinity and its
+Hypakoe of the Tone are both genuinely tone-dependent, Octoechos-sourced content — an 8-tone corpus for
+each is a separate, substantial sourcing task, not attempted in this pass; both render an honest
+disclosure rubric rather than fabricated text.
+
+`data/horologion/midnight-office.json` rebuilt with 17 sections, each tagged with the day-form(s) it
+belongs to (`forDays`); `js/horologion-engine.js`'s `_resolveMidnightOfficeSlots()` now computes the
+day-form from the date and prunes every section that doesn't apply before resolving anything — the
+same kind of runtime branching this engine already uses for Great Lent/Holy Week/Bright Week, just
+keyed on day-of-week instead of season. The pre-existing Bright Week displacement (which replaces the
+whole office with a Paschal-Office rubric) is unchanged and still fires first.
+
+**Verified**: `node --check` clean; both touched JSON files reparse clean; the rebuilt harness confirms
+all three day-forms (an ordinary Wednesday, a Saturday, a Sunday) resolve `status: "complete"`, 0
+placeholders, each with the correct section set for its day-form; Bright Week displacement re-confirmed
+unaffected; the 5-year, 10-office, both-calendar-mode sweep (36,540 calls) is clean. Live-confirmed in
+headless Chromium against the real dev server under `?shell=v2` for all three day-forms, zero
+non-environmental console errors.
 
 ## SMALL COMPLINE — audited, 4 findings
 

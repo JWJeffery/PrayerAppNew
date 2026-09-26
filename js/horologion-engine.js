@@ -410,15 +410,7 @@ const HorologionEngine = (() => {
     // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
     let _midnightOfficeFixedData = null;
  
-    // ── v6.3: Midnight Office theotokion corpus URL and cache ─────────────
-// Tone × day-of-week grid. null = untranscribed; string = full text.
-// Shape: { tones: { "1": { "0": null|string, … "6": null|string }, … } }
-const MIDNIGHT_OFFICE_THEOTOKION_URL = 'data/horologion/midnight-office-theotokion.json';
-
-// Populated lazily by _loadMidnightOfficeTheotokionData().
-let _midnightOfficeTheotokionData = null;
-
-// ── v6.7: Great Compline fixed text URL and cache ─────────────────────
+    // ── v6.7: Great Compline fixed text URL and cache ─────────────────────
 const GREAT_COMPLINE_FIXED_URL = 'data/horologion/great-compline-fixed.json';
 let _greatComplineFixedData = null;
 
@@ -5297,22 +5289,6 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         }
     
 }
-  // ── v6.3: _loadMidnightOfficeTheotokionData() ─────────────────────────
-    async function _loadMidnightOfficeTheotokionData() {
-        if (_midnightOfficeTheotokionData !== null) return;
- 
-        try {
-            const response = await fetch(MIDNIGHT_OFFICE_THEOTOKION_URL);
-            if (!response.ok) {
-                console.warn(`[HorologionEngine] Could not load Midnight Office theotokion data (HTTP ${response.status}); theotokion slot will use rubric fallback.`);
-                return;
-            }
-            _midnightOfficeTheotokionData = await response.json();
-            console.log('[HorologionEngine] Loaded Midnight Office theotokion data.');
-        } catch (err) {
-            console.warn('[HorologionEngine] _loadMidnightOfficeTheotokionData failed:', err.message, '— theotokion slot will use rubric fallback.');
-        }
-    }
  // ── v6.7: _loadGreatComplineFixedData() ──────────────────────────────
 async function _loadGreatComplineFixedData() {
     if (_greatComplineFixedData !== null) return;
@@ -5932,17 +5908,19 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
         }
     }
  
-    // ── v6.2: _resolveMidnightOfficeSlots(sections, dateObj) ─────────────
+    // ── Audit rebuild 2026-09-26 (Findings M0-M3): _resolveMidnightOfficeSlots
     //
-    // Slot resolution pass for the Midnight Office (Mesoniktikon).
-    //
-    // Fixed slots resolved from midnight-office-fixed.json:
-    //   usual-beginning, psalm-50, psalm-117, psalm-118,
-    //   trisagion-prayers, prayer-of-the-midnight-office
-    //
-    // Variable slots (honest rubric stubs — deferred beyond tranche 1):
-    //   troparion-of-the-day
-    //   midnight-office-theotokion
+    // The Midnight Office has three genuinely distinct day-forms (Finding M0):
+    // Weekday, Saturday, and Sunday. The skeleton (midnight-office.json)
+    // declares every section for every day-form, each tagged with its own
+    // `forDays` array; this function's first real job is to prune the
+    // sections that don't apply to today's day-form before resolving
+    // anything, the same way Bright Week already replaces the whole skeleton
+    // below. All surviving items are fixed text/rubric slots resolved
+    // generically from midnight-office-fixed.json -- this office carries no
+    // troparion-of-the-day or Menaion dependency at all (the old skeleton's
+    // 'troparion-of-the-day'/'midnight-office-theotokion' slots were never
+    // sourced from the real office and are not carried forward).
     //
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ─────────────────────────────────────────────────────────────────────
@@ -5975,96 +5953,43 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
        }
 
        await Promise.all([
-            _loadMidnightOfficeFixedData(),
-            _loadMidnightOfficeTheotokionData(),
-            _loadTroparionData(),
-            _loadWeekdayTroparionMeta(),
-            _loadTriodionData()
+            _loadMidnightOfficeFixedData()
         ]);
- 
-        const dayOfWeek  = dateObj.getDay();
-        const toneResult = _computeBaselineTone(dateObj);
- 
-        const FIXED_SLOT_KEYS = new Set([
-            'usual-beginning',
-            'psalm-50',
-            'psalm-117',
-            'psalm-118',
-            'trisagion-prayers',
-            'prayer-of-the-midnight-office'
-        ]);
- 
+
+        const dayOfWeek = dateObj.getDay();
+        const dayForm = dayOfWeek === 0 ? 'sunday' : (dayOfWeek === 6 ? 'saturday' : 'weekday');
+
+        // Prune every section that doesn't apply to today's day-form. Each
+        // section in the skeleton is tagged with the day-forms it belongs to;
+        // sections with no such tag are treated as universal (defensive
+        // default, not expected to occur in this skeleton).
+        for (let s = sections.length - 1; s >= 0; s--) {
+            const forDays = sections[s].forDays;
+            if (Array.isArray(forDays) && !forDays.includes(dayForm)) {
+                sections.splice(s, 1);
+            }
+        }
+
         for (const section of sections) {
             if (!Array.isArray(section.items)) continue;
- 
+
             for (let i = 0; i < section.items.length; i++) {
                 const item = section.items[i];
- 
-                // ── Fixed slots ───────────────────────────────────────────
-                if (FIXED_SLOT_KEYS.has(item.key)) {
-                    const slotData = _midnightOfficeFixedData &&
-                        _midnightOfficeFixedData.slots &&
-                        _midnightOfficeFixedData.slots[item.key];
- 
-                    if (slotData) {
-    section.items[i] = {
-        ...slotData,
-        key:        item.key,
-        label:      slotData.label || item.label,
-        resolvedAs: 'midnight-office-fixed'
-    };
-}
-                    // If data not loaded: item remains placeholder — correct degradation.
-                    continue;
+                if (item.type !== 'placeholder') continue; // baked rubrics pass through unchanged
+
+                const slotData = _midnightOfficeFixedData &&
+                    _midnightOfficeFixedData.slots &&
+                    _midnightOfficeFixedData.slots[item.key];
+
+                if (slotData) {
+                    section.items[i] = {
+                        ...slotData,
+                        key:        item.key,
+                        label:      slotData.label || item.label,
+                        resolvedAs: 'midnight-office-fixed'
+                    };
                 }
- 
-                // ── troparion-of-the-day — v6.2: delegate to shared stack ─
-                if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveLittleHourSeasonalTroparionSlot(
-                        'midnight-office', dayOfWeek, dateObj, toneResult
-                    );
-                    if (resolved) {
-                        section.items[i] = Object.assign({}, resolved, {
-                            key: 'troparion-of-the-day'
-                        });
-                    }
-                    // If null (data load failed): slot remains placeholder.
-                    continue;
-                }
- 
-                  // ── midnight-office-theotokion — v6.4: fixed-backed positional slot ──
-                if (item.key === 'midnight-office-theotokion') {
-                    // Policy (v6.4): positional, office-specific node.
-                    // No tone, no day-of-week, no feast override, no Stavrotheotokion.
-                    // Probe flat fixed-slot structure: slots["midnight-office-theotokion"].
-                    const entry =
-                        _midnightOfficeTheotokionData &&
-                        _midnightOfficeTheotokionData.slots
-                            ? (_midnightOfficeTheotokionData.slots['midnight-office-theotokion'] ?? null)
-                            : null;
- 
-                    if (typeof entry === 'string' && entry.length > 0) {
-                        section.items[i] = {
-                            type:       'text',
-                            key:        'midnight-office-theotokion',
-                            label:      'Theotokion of the Midnight Office',
-                            text:       entry,
-                            source:     'Horologion',
-                            resolvedAs: 'midnight-office-theotokion-text'
-                        };
-                    } else {
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'midnight-office-theotokion',
-                            label:      'Theotokion of the Midnight Office',
-                            text:       'MIDNIGHT OFFICE — Theotokion: The fixed Theotokion of the Midnight Office has not yet been transcribed.',
-                            resolvedAs: 'midnight-office-theotokion-not-transcribed'
-                        };
-                    }
-                    continue;
-                }
- 
-                // All other items (baked rubrics) pass through unchanged.
+                // If data not loaded, or key not found: item remains placeholder — correct degradation.
             }
         }
     }
