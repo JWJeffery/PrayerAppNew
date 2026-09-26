@@ -1441,6 +1441,47 @@ key `ui:entry-screens-redesigned-regrouped`. SEED_VERSION v339 → v340.
 
 **Phase 5 resumes where it left off — Horologion, lane 3 of 3 — nothing about this detour changes
 that scope**, see the "What that leaves" paragraph below this one.
+**State as of 2026-09-26, latest — Zacchaeus Sunday routed, and the Sundays-of-Luke overflow
+limitation (disclosed in the entry directly below) fully resolved. HEAD before this session's
+commits was `7de6e8e`.** Picked up per Josh's direct order — given on a separate account/session
+earlier the same day — for "the complete audit of the Horologion and its extended elements. ALL OF
+IT." That prior session's four real commits (never opened as a PR) were fast-forward merged onto
+this branch first so the work wasn't stranded, then this session continued into the two things it
+explicitly left open.
+
+**Zacchaeus Sunday**: the entry below's own `tradition_note` ("Greek/Antiochian tradition only; not
+routed until a tradition-variant gate exists") was checked directly against `mcp Orthocal` and found
+wrong — it returns "Sunday of Zacchaeus" with identical citations for both Slavic and Greek
+tradition. The real blocker was one missing map entry (`77: 'zacchaeus'` in `PRE_LENTEN_MAP`,
+`js/horologion-engine.js`) — added, alongside a JSON `type`/`tradition_note` correction. Verified
+live: 2026-01-25 now resolves the correct Epistle/Gospel, text matching Orthocal verbatim; a
+coinciding fixed Great Feast (2020's Zacchaeus falls on the Meeting of the Lord) correctly still
+takes precedence via pre-existing priority ordering.
+
+**The Sundays-of-Luke overflow limitation**: fully resolved, not just narrowed. The shipped
+"Matthean filler" mechanism (a 2-entry cycling array) was checked directly against Orthocal across
+three seasons and found wrong for two of three. A first replacement guess (reuse `sundays[ordinal]`
+directly) also failed the same two seasons, despite matching the third exactly. **The real
+mechanism**: the LAST ordinary Sunday before Zacchaeus each year always uses `sundays["17"]`
+(Matthew 15:21-28), the one before that `sundays["16"]`, counting BACKWARD from that fixed anchor —
+independent of the season's own forward-counted ordinal numbers. Verified across all three
+previously-checked seasons (fifteen individual Sunday citations, all now matching Orthocal exactly)
+plus a final 1,096-call sweep of every Sunday 2015–2035, zero exceptions. Full account:
+`AUDIT_GOVERNANCE_LEDGER.md`, "Session 2026-09-26 continued further still" entry. SEED_VERSION
+`v342 -> v343`.
+
+**What "ALL OF IT" still leaves open** — the concrete next items for continuing this audit: full
+word-for-word verification of every fixed-office prayer/rubric beyond the already-replaced psalms;
+`great-compline-fixed.json`'s ~460 lines of conditional content against Hapgood 1906; the
+kathisma-at-Vespers/Orthros appointment tables against a real published table; the weekday
+(non-Sunday) Typika lectionary entries against Orthocal; the remaining 24 psalms in
+`kathisma-full-text.json` beyond Psalm 9's own verse-by-verse check; the Horologion/whole-Byzantine-
+Office naming conflation (`AUDIT_GOVERNANCE_LEDGER.md` ~line 3412: "'Horologion' is not the name of
+the whole Byzantine Divine Office"); the unsourced Byzantine education-layer content (14 office
+descriptions + 71 section notes flagged `sourceStatus: 'unsourced'`); and the Horologion drawer's
+still-missing day-summary line. Not this audit's concern: the Menaion/Triodion/Pentecostarion
+content-volume gap (missing content, a different class of problem than a defect).
+
 **State as of 2026-09-26 continued further still — Finding 5 (the Sunday Gospel lectionary's**
 **Sundays-of-Luke drift) is now FULLY RESOLVED, not just disclosed.** Josh's direct
 instruction: "typika-lectionary.json's Sunday readings drift from Orthocal starting

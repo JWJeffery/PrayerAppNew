@@ -20678,3 +20678,107 @@ chased further, as it is a distinct question from the one Josh asked to be fixed
 not touched by this fix.
 
 SEED_VERSION bumped to `v342-2026-09-26-typika-sunday-lukan-jump-lectionary-fixed`.
+
+---
+
+## Session 2026-09-26 continued further still -- Zacchaeus Sunday routed, and the "Sundays of
+## Luke overflow" limitation fully resolved (not just disclosed). SEED_VERSION v342 -> v343.
+
+Josh, on a separate account/session earlier this same day, ordered "the complete audit of the
+Horologion and its extended elements. ALL OF IT." This session picked up that work by fast-forward
+merging the unmerged `claude/prayerappnew-horologion-errors-fkrdxx` branch (four real commits,
+findings 3-5 above, never opened as a PR) onto the designated working branch, then continuing
+straight into the two items that branch's own entries explicitly left open.
+
+### 1. Zacchaeus Sunday, routed for the first time
+
+The prior entry's own tradition_note -- "Greek/Antiochian tradition only; not routed until a
+tradition-variant gate exists" -- was checked directly rather than repeated. **It was wrong.**
+`mcp__Orthocal__get_day` for 2026-01-25 (Pascha 2026 minus 77 days) returns `"titles": ["Sunday of
+Zacchaeus"]` with identical Epistle (1 Timothy 4:9-15) and Gospel (Luke 19:1-10) for BOTH
+`tradition: "slavic"` AND `tradition: "greek"` -- this Sunday is observed identically in both
+traditions, not Greek-only. Separately, no "tradition-variant gate" was ever the actual blocker:
+`data/horologion/typika-lectionary.json`'s own `pre_lenten.zacchaeus` entry already carried the
+correct citations; the only reason it never rendered is that `js/horologion-engine.js`'s
+`PRE_LENTEN_MAP` (the lookup that drives `publican-pharisee`/`prodigal-son`/`meatfare`/`cheesefare`,
+keyed by days-before-Pascha) simply never had a `77: 'zacchaeus'` entry. **Fixed**: added the
+missing map entry; corrected the JSON's `type` from `"pre-lenten-deferred"` to `"pre-lenten"` and
+rewrote the false `tradition_note` to record the Orthocal finding. No other code path needed
+touching -- the existing epistle/gospel resolution for `pre_lenten[key]` entries is generic and
+already worked correctly the moment the key was reachable.
+
+**Verified live**, `?shell=v2` against the real dev server: 2026-01-25 now resolves
+`status: "complete"`, Epistle "1 Timothy 4:9-15" (`typika-pre-lenten-epistle-zacchaeus`) and Gospel
+"Luke 19:1-10" (`typika-pre-lenten-gospel-zacchaeus`), text matching Orthocal's own reading verbatim.
+Regression-checked the four neighboring Sundays (two before, two after, across 2026) -- all
+unchanged, all still correct. Also confirmed the fix correctly yields to a coinciding fixed Great
+Feast: 2020's Zacchaeus Sunday falls on Feb. 2 (the Meeting of the Lord), and the existing feast-
+overlay priority ordering (checked before `preLentenKey` is ever consulted) continues to render the
+Meeting of the Lord's own propers on that date, exactly as it did before this fix -- confirmed this
+is pre-existing precedence logic, not something this fix needed to add.
+
+### 2. The Sundays-of-Luke overflow limitation, fully resolved -- two wrong hypotheses tried and
+### falsified against real data before the actual mechanism was found
+
+The prior entry disclosed, but did not solve, what happens in a season with more ordinary Sundays
+than the 13-entry Lukan cycle covers (an early-Pascha year). Its own shipped code used a 2-entry
+"Matthean filler" array (`["Matthew 25:14-30", "Matthew 15:21-28"]`), cycling from ordinal 14
+onward. **Checking this directly against `mcp__Orthocal__get_day` (Slavic tradition) across three
+independent seasons falsified it outright**: 2019-2020 (one excess Sunday, 2020-01-26)
+needed Matthew 15:21-28, but the old code gave Matthew 22:1-14; 2021-2022 (one excess
+Sunday, 2022-01-30) needed Matthew 15:21-28, old code gave Matthew 22:1-14; 2023-2024 (four excess
+Sundays, ordinals 14-17) needed Matthew 22:1-14 / 22:35-46 / 25:14-30 / 15:21-28 in that order for
+2024-01-21 / 01-28 / 02-04 / 02-11 -- the old filler array only happened to be right for the LAST
+two of those four, because `sundays["16"]`/`sundays["17"]` (the pre-existing naive Epistle-and-
+Gospel table already in the same file) coincidentally equal that filler pair.
+
+**A first replacement hypothesis -- "beyond ordinal 13, just reuse `sundays[String(ordinal)])`" --
+was tried and also falsified** before shipping: it matched 2023-2024's four data points exactly
+(ordinal 14 -> `sundays["14"]`, ..., 17 -> `sundays["17"]`) but failed 2019-2020 and 2021-2022 (both
+predicted `sundays["14"]` = Matthew 22:1-14 for their one excess Sunday; Orthocal says Matthew
+15:21-28 = `sundays["17"]` for both).
+
+**The actual mechanism, confirmed consistent across all three seasons**: the LAST ordinary Sunday
+before Zacchaeus each year always uses `sundays["17"]` (Matthew 15:21-28) -- regardless of that
+Sunday's own forward-counted ordinal number -- the one before that always uses `sundays["16"]`, and
+so on counting BACKWARD from that fixed anchor. Equivalently: for a given Sunday's own ordinal
+`ord`, and `lastOrd` = the ordinal of the season's own last-before-Zacchaeus Sunday, the correct
+naive-table index is `17 - (lastOrd - ord)`. This reduces to `sundays["17"]` exactly when `ord ==
+lastOrd` (the anchor case, true in all three checked seasons for their respective final excess
+Sunday) and steps backward correctly for every earlier excess Sunday in the same season (verified
+for all four of 2023-2024's).
+
+**Fixed**: `lukanSundayGospelKey`'s IIFE now also computes and returns `lastOrdinalBeforeZacchaeus`
+(the same ordinal formula applied to `zacchaeusSunday - 7 days`, always itself a Sunday since Pascha
+and therefore Zacchaeus always fall on a Sunday); the consuming resolver computes the backward index
+and looks it up in the pre-existing `sundays[]` table -- no separate filler data structure needed at
+all. The now-dead `matthean_fillers` array was removed from `data/horologion/typika-lectionary.json`
+and its `_comment` block rewritten to describe the real mechanism, record both falsified hypotheses
+(so a future session doesn't retry either), and cite the three seasons this was checked against.
+
+**Verified**, `node --check` clean on the JS, JSON reparses clean, then a live `?shell=v2` re-run of
+all three seasons (2019-2020, 2021-2022, 2023-2024 -- fifteen individual Sunday citations across all
+three, every one now matching Orthocal exactly) plus the two previously-passing regression seasons
+(2016-2017, where the season never exceeds ordinal 13 at all; 2025-2026, the Zacchaeus-routing fix's
+own test season). A broad final sweep -- `resolveOffice(date, 'typika', {})` for every Sunday from
+2015 through 2035, 1,096 calls through the live app -- found zero exceptions and exactly 21 flagged
+dates, every one of them Pascha Sunday itself (which correctly carries no Scripture-lection block at
+Typika at all -- pre-existing, unrelated behavior, confirmed by inspecting one flagged date's full
+resolved content directly rather than assumed).
+
+### What this leaves for "the complete audit... ALL OF IT"
+
+Not chased further this pass, tracked as open work: full word-for-word verification of every
+fixed-office prayer/rubric beyond the already-replaced psalms; `great-compline-fixed.json`'s ~460
+lines of conditional content against Hapgood 1906; the kathisma-at-Vespers/Orthros appointment
+tables (`vespers-kathisma.json`, `orthros-kathisma.json`) against a real published table; the
+weekday (non-Sunday) Typika lectionary entries against Orthocal; the remaining 24 psalms in
+`kathisma-full-text.json` beyond Psalm 9's own verse-by-verse check; the Horologion/whole-Byzantine-
+Office naming conflation (ledger, 2026-09-20ish, "'Horologion' is not the name of the whole
+Byzantine Divine Office"); the unsourced Byzantine education-layer content (14 office descriptions +
+71 section notes flagged `sourceStatus: 'unsourced'`); and the Horologion drawer's still-missing
+day-summary line. Also untouched, per the prior entry: the Menaion/Triodion/Pentecostarion content-
+volume gap (a different class of problem -- missing content, not a defect) and the fixed-office
+psalm citation question (Finding 4, already fully resolved in an earlier entry this same day).
+
+SEED_VERSION bumped to `v343-2026-09-26-zacchaeus-routed-and-lukan-overflow-resolved`.

@@ -7447,6 +7447,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         if (_pascha <= localDate) _pascha = _getOrthodoxPascha(_year + 1);
         const daysUntil = Math.round((_pascha - localDate) / 86400000);
         const PRE_LENTEN_MAP = {
+            77: 'zacchaeus',
             70: 'publican-pharisee',
             63: 'prodigal-son',
             56: 'meatfare',
@@ -7834,12 +7835,33 @@ async function _resolveTypikaSlots(sections, dateObj) {
             sundayInWindow(theoCivil, 1, 7)
         ].filter(Boolean);
 
-        const rawWeek = Math.floor((localDate - seasonStart) / (7 * MS_PER_DAY)) + 1;
-        const excludedBefore = fixedSundays.filter(d => d < localDate).length;
-        const ordinal = rawWeek - excludedBefore;
+        function ordinalFor(d) {
+            const rawWeek = Math.floor((d - seasonStart) / (7 * MS_PER_DAY)) + 1;
+            const excludedBefore = fixedSundays.filter(fd => fd < d).length;
+            return rawWeek - excludedBefore;
+        }
+
+        const ordinal = ordinalFor(localDate);
         if (ordinal < 1) return null;
 
-        return { ordinal };
+        // Ordinal of the LAST ordinary Sunday before Zacchaeus this season -- needed
+        // below (see the resolver call site) whenever ordinal exceeds the 13-entry
+        // Lukan cycle. Confirmed via mcp Orthocal (Slavic tradition) across three
+        // independent seasons with different excess-Sunday counts -- 2019-2020 (one
+        // excess Sunday), 2021-2022 (one excess Sunday), 2023-2024 (four excess
+        // Sundays) -- that the real Byzantine lectionary does NOT resume the naive
+        // sundays[] table at the SAME ordinal number. Instead it counts BACKWARD from
+        // that final pre-Zacchaeus Sunday, which always uses sundays["17"] (Matthew
+        // 15:21-28), the second-to-last uses sundays["16"], and so on -- i.e. the
+        // real index is 17 - (lastOrdinalBeforeZacchaeus - ordinal). This is the
+        // actual mechanism behind what a naive spot-check would misread as a fixed
+        // 2-entry "Matthean filler" cycle (it only looked that way because a filler
+        // pair sampled from sundays["16"]/sundays["17"] happens to match those two
+        // ordinals exactly in a long season).
+        const lastSundayBeforeZacchaeus = new Date(zacchaeusSunday.getTime() - 7 * MS_PER_DAY);
+        const lastOrdinalBeforeZacchaeus = ordinalFor(lastSundayBeforeZacchaeus);
+
+        return { ordinal, lastOrdinalBeforeZacchaeus };
     })();
 
     async function resolveTypikaFeastOverlayReading(entries, field) {
@@ -8814,12 +8836,31 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (lukanSundayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_sunday_gospels) {
                     const lsg = _typikaLectionaryData.lukan_sunday_gospels;
                     const cycle = lsg.cycle || {};
-                    const fillers = lsg.matthean_fillers || [];
                     const ord = lukanSundayGospelKey.ordinal;
+                    const lastOrd = lukanSundayGospelKey.lastOrdinalBeforeZacchaeus;
                     const cycleSize = Object.keys(cycle).length;
+                    // Beyond the Lukan cycle's own 13 positions (an early-Pascha season with
+                    // more ordinary Sundays than that), the real Byzantine lectionary does NOT
+                    // resume the naive sundays[] table at this SAME ordinal number, and it is
+                    // NOT a fixed 2-entry "Matthean filler" cycle either (both were tried and
+                    // falsified). Confirmed via mcp Orthocal (Slavic tradition) across three
+                    // independent seasons -- 2019-2020 and 2021-2022 (one excess Sunday each)
+                    // and 2023-2024 (four excess Sundays, all four cross-checked) -- that the
+                    // LAST ordinary Sunday before Zacchaeus always uses sundays["17"] (Matthew
+                    // 15:21-28), the one before that sundays["16"], and so on counting
+                    // backward. The old "Matthean filler" pair ["Matthew 25:14-30", "Matthew
+                    // 15:21-28"] only looked right because it happened to equal sundays["16"]/
+                    // sundays["17"] and was validated against a long (4-excess-Sunday) season
+                    // where those are exactly the two ordinals used -- a short season (1-2
+                    // excess Sundays, landing on sundays["17"] alone or sundays["16"]+["17"])
+                    // needs a different pair, which the fixed 2-entry array could never supply.
+                    const naiveIndex = (lastOrd != null) ? (17 - (lastOrd - ord)) : null;
+                    const sundaysEntry = (naiveIndex != null && _typikaLectionaryData.sundays)
+                        ? _typikaLectionaryData.sundays[String(naiveIndex)]
+                        : null;
                     const lukanGospelRef = (ord <= cycleSize)
                         ? cycle[String(ord)]
-                        : fillers[(ord - cycleSize - 1) % fillers.length];
+                        : (sundaysEntry && (sundaysEntry.gospel || sundaysEntry.gospel_segments));
 
                     if (lukanGospelRef) {
                         try {
