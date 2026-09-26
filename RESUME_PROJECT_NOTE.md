@@ -22,6 +22,31 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**State as of 2026-09-26 continued further — Finding 4 (below) is now FULLY RESOLVED, not just
+disclosed.** Josh's direct instruction in response to Finding 4: **"If you cant verify it, we need
+to replace it with public domain text."** All fixed psalmody across all 9 `*-fixed.json` Horologion
+files (34 psalm slots total, including the full 176-verse Psalm 118 LXX / 119 Hebrew at the Midnight
+Office) has been replaced with the Coverdale/Book of Common Prayer Psalter, transcribed from two
+verified public-domain witnesses: Isabel F. Hapgood's 1906 Service Book (archive.org — the same
+edition this project already cites and trusts elsewhere) for the Hours, Orthros, Typika, and
+Grand/Great Compline, which her book actually contains; and the 1662 Book of Common Prayer, Scottish
+Episcopal Church edition (Project Gutenberg #29622), for Small Compline and the Midnight Office,
+which Hapgood's book omits entirely (confirmed by reading her own preface, not assumed), and for a
+handful of individual psalms where the 1906 book's two-column OCR was too garbled to extract directly
+(confirmed via a Psalm 3 word-for-word cross-check that Gutenberg's clean text and Hapgood's own
+printed text are identical, before relying on it as a stand-in). Every file's `_comment` citation
+block was rewritten to say exactly what was replaced and why; `orthros-fixed.json`, which previously
+had no `_comment` block at all (only a hedged `note` field), now has one matching its 8 siblings. Non-
+psalm content (troparia, litanies, prayers, rubrics, doxologies, Alleluia refrains) was left untouched
+in every file. Psalms that recur across offices (50, 90, 69, 142, 24) were sourced once and copied
+verbatim everywhere they appear, guaranteeing internal consistency the old, unverifiable citation
+never could. **Verified**: all 9 files reparse as valid JSON; `node --check js/horologion-engine.js`
+passes (no JS touched this pass); a structural walk confirmed all 34 psalm slots still end in the
+closing doxology; Psalm 118/119's all-22-stanza, 176-verse structure confirmed intact, not truncated.
+Full account: `AUDIT_GOVERNANCE_LEDGER.md`, "Session 2026-09-26 continued further" entry.
+SEED_VERSION `v340 -> v341`. **Finding 5 (Sunday-of-Luke lectionary drift) remains open, untouched,
+exactly as the entry below still describes** — not conflated with this citation-replacement work.
+
 **State as of 2026-09-26 continued — Josh directed a full audit of the Horologion, not just the
 two bugs already found and pushed ("I didn't ask for a half-assed audit... The ENTIRE THING needs
 to be audited"). A real, systematic audit followed: every one of the 33 `data/horologion/*.json`

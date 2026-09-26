@@ -17818,3 +17818,124 @@ file through the running dev server, both before (showing the Transfiguration te
 findings, not code or content changes, pending either better sourcing or Josh's decision.
 
 SEED_VERSION bumped to `v340-2026-09-26-full-horologion-audit-octoechos-tone1-fixed-two-findings-disclosed`.
+
+---
+
+## Session 2026-09-26 continued further -- Finding 4 fully resolved: unverifiable fixed-office
+## psalm citation replaced with real, cited, public-domain text across all 9 Horologion files.
+## SEED_VERSION v340 -> v341.
+
+The prior entry disclosed Finding 4 (the fixed-office psalm citation "Standard Antiochian/OCA
+Horologion, Jordanville 2008 edition" could not be verified against any of four real, independently
+checked sources) and deliberately left it unfixed, on the reasoning that guessing at a citation this
+central -- it covers the fixed psalmody of all 9 `*-fixed.json` Horologion files -- would repeat
+this project's own worst-documented failure class. Josh's direct instruction in response: **"If you
+cant verify it, we need to replace it with public domain text."** That is a different, and clearer,
+instruction than "keep looking for the real Jordanville edition" -- it says to stop trying to verify
+an unverifiable citation and instead put real, checkable, public-domain text in its place. This
+entry records that replacement.
+
+### What was replaced, file by file
+
+All fixed psalmody in the following 9 files -- every psalm slot in each, 34 slots total -- was
+replaced. No non-psalm content (troparia, litanies, prayers, rubrics, the surrounding doxologies and
+Alleluia/"Lord, have mercy" refrains) was touched in any file; only the psalm verse text itself and
+its own `label` field were replaced, and each file's `_comment` citation block was rewritten to state
+plainly what was replaced and why.
+
+- **first-hour-fixed.json**: Psalm 5, Psalm 89 (LXX; Hebrew 90), Psalm 100 (LXX; Hebrew 101).
+- **third-hour-fixed.json**: Psalm 16 (Hebrew 17), Psalm 24 (Hebrew 25), Psalm 50 (Hebrew 51).
+- **sixth-hour-fixed.json**: Psalm 53 (Hebrew 54), Psalm 54 (Hebrew 55), Psalm 90 (Hebrew 91).
+- **ninth-hour-fixed.json**: Psalm 83 (Hebrew 84), Psalm 84 (Hebrew 85), Psalm 85 (Hebrew 86).
+- **orthros-fixed.json**: the Six Psalms of Matins (3, 37, 62, 87, 102, 142 LXX; Hebrew 3, 38, 63,
+  88, 103, 143) plus its own separate Psalm 50 slot after the Great Litany. This file previously had
+  NO `_comment` citation block at all -- only a hedged root-level `note` field naming the same
+  unverifiable citation ("Standard Antiochian/OCA Horologion (Jordanville 2008 edition / Hapgood)").
+  It now has a full `_comment` block matching the style of its 8 siblings; the `note` field was
+  removed since the `_comment` block supersedes it.
+- **typika-fixed.json**: Psalm 102 (Hebrew 103) and Psalm 145 (LXX; Hebrew 146, the Typika's own
+  final praise psalm).
+- **great-compline-fixed.json** (the largest file, ~460 lines of conditional content, only its
+  baseline-tranche psalms in scope): all 10 psalm slots -- gc-psalm-69-week1 and gc-psalm-69-second
+  (both Psalm 69 LXX / Hebrew 70), gc-psalm-4, gc-psalm-6, gc-psalm-12 (Hebrew 13), gc-psalm-24
+  (Hebrew 25), gc-psalm-30 (Hebrew 31), gc-psalm-90 (Hebrew 91), gc-psalm-50 (Hebrew 51),
+  gc-psalm-101 (Hebrew 102), gc-psalm-142 (Hebrew 143). This file's prior citation was different
+  from the other 8 files' -- "orthodoxprayer.org Great Compline witness" -- naming a real site, but
+  one that could not be confirmed as a stable, citable, or public-domain source, and whose modern-
+  English wording could not be matched to any published translation either. Replaced on the same
+  reasoning as the other 8: an uncheckable citation is not an acceptable citation, regardless of
+  whether the site it names is real.
+- **compline-fixed.json** (Small/ordinary Compline): Psalm 50, Psalm 69 (Hebrew 70), Psalm 142
+  (Hebrew 143). Hapgood's 1906 Service Book has no separate section for the ordinary, non-Lenten
+  Small Compline (she gives only "Grand Compline"), so for consistency with the rest of this
+  Horologion's translation voice, the same Coverdale/BCP Psalter text already sourced for the other
+  8 files is reused here rather than switching to a different, inconsistent translation.
+- **midnight-office-fixed.json**: Psalm 50, Psalm 117 (LXX; Hebrew 118), and Psalm 118 (LXX; Hebrew
+  119 -- the full 176-verse acrostic psalm, all 22 Hebrew-letter stanzas). Hapgood's 1906 preface
+  explicitly excludes the Midnight Office (Mesonyktikon) from her book's contents, so this file uses
+  the Coverdale/BCP Psalter directly from the 1662 Book of Common Prayer text rather than via
+  Hapgood, for the same reason as Small Compline above.
+
+### Sources actually used, and why they're trustworthy
+
+Two witnesses, confirmed to carry the same underlying text:
+
+1. **Isabel F. Hapgood, Service Book of the Holy Orthodox-Catholic Apostolic Church** (Houghton,
+   Mifflin and Company, 1906), fetched in full from archive.org
+   (`archive.org/stream/ServiceBookOfHolyOrthodoxChurchByHapgood/Service_Book_Orthodox_Church_Hapgood_djvu.txt`,
+   1.7MB). Public domain (pre-1923 US publication). This is the same edition this project already
+   cites and trusts elsewhere on the dashboard (`edu:layer:byzantine-populated`), so using it here is
+   not introducing a new, unvetted source -- it is applying a source this project has already vetted
+   to the one place its psalm text had never actually been checked against it directly (the prior
+   session's Finding 4 checked Hapgood's Psalm 5/3/16 against this corpus's OLD text and found no
+   match -- that is a different thing from using Hapgood's OWN text as the replacement, which is what
+   this entry does).
+2. **The 1662 Book of Common Prayer, Scottish Episcopal Church edition** (Project Gutenberg #29622,
+   `gutenberg.org/files/29622/29622.txt`, 1,193,152 bytes), a clean, non-OCR-garbled digitization.
+   Used in two situations: (a) where the original 1906 book's two-column page layout (psalm text in
+   one column, the Hours' priest's prayers running in a parallel column) caused Hapgood's own OCR
+   text to interleave and scramble reading order for specific psalms, making direct extraction from
+   the archive.org text unreliable -- confirmed by cross-checking Psalm 3 between both sources word-
+   for-word identical before relying on Gutenberg as a clean stand-in for what Hapgood herself
+   printed; (b) for Small Compline and the Midnight Office, where Hapgood's book has no corresponding
+   section at all, as explained above.
+
+Both are the Coverdale/Book of Common Prayer Psalter -- the same historic English psalm translation,
+not two different competing translations awkwardly mixed. Using Gutenberg's clean digitization to
+supply or verify specific verses of what is, textually, the same Coverdale Psalter Hapgood printed is
+not a citation mismatch.
+
+### Internal consistency
+
+Where the same LXX psalm recurs across multiple offices (Psalm 50 in Third Hour, Great Compline,
+Small Compline, Midnight Office, and Orthros; Psalm 90 in Sixth Hour and Great Compline; Psalm 69 in
+Great Compline and Small Compline; Psalm 142 in Orthros, Great Compline, Small Compline, and Great
+Compline again; Psalm 24 in Third Hour and Great Compline), the text was sourced once and copied
+verbatim to every other occurrence, rather than re-transcribed independently each time -- guaranteeing
+the same psalm reads identically wherever it appears in this Horologion, which was not something the
+prior (unverifiable) citation could ever have guaranteed.
+
+### Verification
+
+`python3 -c "import json; json.load(open(...))"` reparses all 9 files clean. `node --check
+js/horologion-engine.js` passes (this session touched no JS files at all -- data only). A structural
+walk of every psalm slot in all 9 files confirmed each still ends in the closing "Glory to the
+Father..." doxology (34/34). `midnight-office-fixed.json`'s Psalm 118 (LXX)/119 (Hebrew) specifically
+confirmed to carry all 22 Hebrew-acrostic stanzas (Aleph through Taw, 176 verses) plus its closing
+doxology and Alleluia/Lord-have-mercy refrains -- 26 paragraph blocks total, none dropped or
+truncated in transcription. `git diff --stat` across all 9 files shows only the expected `_comment`
+and psalm-slot lines changed in each; no incidental reformatting.
+
+### Scope note
+
+This entry resolves Finding 4 only. Finding 5 (`data/horologion/typika-lectionary.json`'s Sunday
+Epistle/Gospel lectionary drift from Orthocal's authoritative calendar, the missing "Sundays of
+Luke" cycle) remains open exactly as the prior entry left it -- not touched, not conflated with this
+citation-replacement work, and still needing a real sourced Sundays-of-Luke table rather than a
+freehand reimplementation. The already-disclosed, not-reached items from the prior entry (Great
+Compline's non-psalm conditional content, the kathisma appointment tables, the weekday lectionary
+portions, and the 24 psalms confirmed structurally but not independently re-verified verse-by-verse)
+remain exactly as disclosed there; this session's psalm-text replacement did not extend the audit
+into any of those areas.
+
+SEED_VERSION bumped to `v341-2026-09-26-fixed-office-psalm-citation-replaced-with-public-domain-text`.
