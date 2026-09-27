@@ -22877,3 +22877,54 @@ live-confirmed in the running app via `HorologionEngine.resolveOffice()` across 
 dates spanning the previously-buggy range. `node --check` clean, zero new console errors.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, working the open-items audit's non-blocked items -- item 2: back-filling missing
+ledger entries for the 2026-09-26 Vespers/Grand-Compline audit fixes (V1/V2/V4-V6, GC1)
+
+Pure record-keeping, no code or data touched. The open-items audit this session found that
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Vespers findings (V1, V2, V4, V5, V6 -- V3 was
+retracted, no fix needed) and Grand Compline's GC1 (sourcing citation) were fixed 2026-09-26 but
+never given their own ledger entries -- GC2 through GC7 all have one, these six don't. Confirmed
+directly against the live data before writing this (per this project's own standing lesson: check
+the repo, don't trust the doc) -- `data/horologion/vespers.json` carries `kathisma-reading` before
+`little-litany-after-kathisma` before the `lord-i-have-cried` slots (V1's reorder), plus
+`vouchsafe-o-lord`, `litany-of-completion`, and `bowing-of-heads-prayer` (V2/V4/V5/V6's additions);
+`data/horologion/great-compline.json`'s description cites `UNABHOR1997`, not the unapproved
+`orthodoxprayer.org` GC1 flagged. All confirmed present in the current data.
+
+**Vespers (`data/horologion/vespers.json`), 6 findings, 5 fixed, 1 retracted:**
+- **V1 -- BUG, fixed**: the Kathisma reading was sequenced after "Lord, I have cried" instead of
+  before it. Both `HAPGOOD1922` (p.5-7) and `UNABHOR1997` (pp.189-190, explicit) agree the order is
+  Great Litany -> Kathisma -> Little Litany -> "Lord, I have cried." Not a placeholder issue -- both
+  slots already resolved real, complete text, so every ordinary Vespers render showed this in the
+  wrong order. Reordered.
+- **V2 -- GAP, fixed**: no Little (Small) Litany existed between the Kathisma and "Lord, I have
+  cried," though both sources place one there (`UNABHOR1997` p.189, "the Small Ectenia... After
+  Blessed is the man or the appointed kathisma"). Added.
+- **V3 -- RETRACTED, no fix needed.** Originally recorded as a missing Augmented Litany. Caught and
+  corrected before any code was touched: `UNABHOR1997` p.194 states the Augmented Litany is
+  vigil/polyeleos-only; on an ordinary weekday ("a simple service") going straight from the
+  Prokeimenon to "Vouchsafe, O Lord" is the correct behavior, which is exactly what the app already
+  did once V4 was fixed. Should not have been recorded as a finding.
+- **V4 -- GAP, fixed**: "Vouchsafe, O Lord, to keep us this night without sin" (Hapgood p.9-10) was
+  entirely absent. Added as `vouchsafe-o-lord`.
+- **V5 -- GAP, fixed**: the Litany of Completion ("Let us complete our evening prayer unto the
+  Lord," Hapgood p.10, a full litany with its own petitions, distinct from the Augmented and
+  Great/Little Litanies) was absent. Added as `litany-of-completion`.
+- **V6 -- GAP, fixed**: the Prayer of the Bowing of Heads before the Aposticha (Hapgood p.10-11)
+  was absent. Added as `bowing-of-heads-prayer`.
+
+Live-verified at the time via the corrected full-script `resolveOffice()` harness: 21/21 slots
+resolve (was 17/17 before the four additions), correct new slot order confirmed, no JSON errors, no
+regressions.
+
+**Grand Compline (`data/horologion/great-compline.json`), Finding GC1 -- SOURCING, fixed:** the
+skeleton's own description cited `orthodoxprayer.org Great Compline` -- a website, not either
+governing text (`HAPGOOD1922` or `UNABHOR1997`). Corrected to cite `UNABHOR1997`, once the fuller
+2026-09-26 line-by-line re-audit (which produced GC1-GC7) had actually verified the content against
+it.
+
+Full detail on all six findings: `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Vespers and Grand
+Compline sections.
