@@ -51,6 +51,14 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**RECORD-KEEPING BACKFILL, 2026-09-27** — `AUDIT_GOVERNANCE_LEDGER.md` given its own entry for the
+2026-09-26 Vespers findings V1/V2/V4-V6 (V3 retracted) and Grand Compline's GC1, which had only ever
+been documented in `documentation/HOROLOGION_AUDIT_FINDINGS.md` (GC2-GC7 already had ledger entries;
+these six didn't). No code or data changed — verified all six fixes are still live in
+`data/horologion/vespers.json`/`great-compline.json` before writing the entry, per this project's
+own "check the repo, don't trust the doc" rule. Second item picked up from this session's
+project-wide open-items audit.
+
 **FIXED 2026-09-27 — `lukanWeekdayGospelKey`'s year-anchoring bug** (disclosed by the 2026-09-26
 Horologion audit as "dead-wrong code... currently harmless... flagged for a future cleanup pass" —
 `documentation/HOROLOGION_AUDIT_FINDINGS.md`, ledger). First task picked up from this session's
