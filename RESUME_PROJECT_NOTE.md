@@ -467,11 +467,64 @@ directions, source-citation and role-taxonomy checks folding LAT into the existi
 loops), plus a dedicated real-emitted-labels check using this lane's own actual header vocabulary in
 both languages. **81 passed, 0 failed.**
 
-**Genuinely still open**: this is 7 entries against the other traditions' 20-38 — a real start, not
-parity. Batiffol's later chapters (V–VII, covering Trent through the 1911 reform) remain unread for
-this purpose; per-hour material (the Little Hours' own character, the Martyrology, the seasonal
-Marian antiphons) is still unsourced. The two Roman Breviary parser-bug entries above are unrelated
-and already closed.
+**Genuinely still open (superseded by the entry directly below)**: this is 7 entries against the
+other traditions' 20-38 — a real start, not parity.
+
+---
+
+**STATE AS OF 2026-09-27, LATER YET STILL AGAIN — Josh: "Keep building out the corpus for the other
+hours."** Second pass on `data/explanations/latin.json`: 7 entries → 12, still all from Batiffol's
+Chapters I/III/IV, still every claim traced to a page actually read.
+
+**Four new entries, sourced from material already read but not yet written up, plus one genuine
+correction found while writing them**:
+- **Lectio** (Ch. III p.79) — the Matins lesson's own closing formula, *Tu autem* / *Deo gratias*,
+  and the respond that follows each of the nocturn's three lessons, which Batiffol is careful to
+  distinguish from the Invitatory's own responsorial singing (a respond is a gradual, not a
+  *psalmus responsorius* — the same kind of terminology drift he traces for "antiphon"). `matchLabels`
+  enumerates `Lectio 1`–`9` and `Reading 1`–`9` explicitly (18 strings): the lookup table is an exact
+  match on the whole rendered label, not a prefix, so a single entry can't cover "Lectio N" as a
+  pattern — it has to name every N this lane actually renders.
+- **Martyrologium/Martyrology** (Ch. III p.85) — the day's roll of saints, historically the reading
+  that *opened* the post-Prime Chapter meeting (see next entry), not a liturgical fixture in its own
+  right originally.
+- **Antiphona finalis B.M.V./Final Antiphon of the Blessed Virgin Mary** (Ch. IV pp.171-172) — the
+  four seasonal Marian antiphons (Alma Redemptoris Mater, Ave Regina Caelorum, Regina Caeli, Salve
+  Regina), traced to their Franciscan reception at Metz in 1349 and Clement VI's 1350 extension to
+  the whole Church (the seasonal rotation this fixed "lasted until the reform of Pius V," per
+  Batiffol's own source, Mercati) plus each antiphon's individual attribution — the Salve Regina
+  actually written by the eleventh-century monk Hermannus Contractus, not by St Bernard, who only
+  popularized it two centuries later.
+
+**A real precision correction, caught before it shipped rather than after**: the first draft added
+one "Capitulum" entry covering both the bare/compound short-reading labels (`Capitulum Hymnus
+Versus`, `Chapter Responsory Verse`, etc.) *and* `De Officio Capituli`/`The Capitular Office`,
+carrying a single story about the monastic Chapter-house meeting. Live-checking it at Prime (where
+`De Officio Capituli` actually renders as its own block) surfaced the problem: Batiffol's material is
+specifically about that separate meeting — Prime itself "originally had no short lesson at all," and
+what followed was a business gathering in the chapter-house, opened by the Martyrology, whose "real
+purpose... was not the raison d'être of this meeting in Chapter." That story does not describe the
+*different* everyday `Capitulum` — the brief verse fixed inside Lauds/Vespers/Compline — and
+attaching it there would have told a reader that an ordinary Vespers reading involved monks
+convening to assign the day's work, which Batiffol never claims. **Split into two entries**:
+`de-officio-capituli` carries the real chapter-house-meeting story; `capitulum` keeps only what's
+actually sourced for the everyday reading — its name's etymology, deliberately not overclaiming a
+structural characterization (shorter than Matins' lessons, no respond, etc.) that Batiffol doesn't
+give. Disclosed in the file's own `_provenanceNote` as a genuinely open gap, not quietly dropped.
+
+**Verified**: extended `scripts/explanations/verify_explanations.js`'s LAT real-emitted-labels check
+with the five new label pairs; **81 passed, 0 failed**. Live-verified in headless Chromium at both
+Matins (9 markers: Incipit, Invitatorium, Hymnus, Psalmi cum lectionibus, Lectio 1/2/3, Oratio,
+Conclusio) and Prime (8 markers, including — checked individually — `De Officio Capituli` and
+`Martyrologium` each carrying their own distinct, correct tooltip text, not a shared or bled-together
+one). Zero console errors.
+
+**Still open**: an accurate, separately-sourced characterization of the everyday `capitulum`'s own
+structure (not yet found in Batiffol); `Lectio brevis`/`Short reading` (Prime's and Compline's short
+lesson, genuinely different from both Matins' numbered lessons and the chapter-house meeting, and not
+yet sourced); the Little Hours' own distinct invariable psalmody (material already read at pp.83-84,
+not yet written up); Chapters V–VII (Trent through 1911) entirely unread for this purpose. The two
+Roman Breviary parser-bug entries from two sessions back are unrelated and already closed.
 
 ---
 

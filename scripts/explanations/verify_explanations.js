@@ -233,7 +233,10 @@ function decoratorTests() {
     // LA/EN header vocabulary recorded in AUDIT_GOVERNANCE_LEDGER.md, not invented.
     const latLabels = [
         'Incipit', 'Start', 'Invitatorium', 'Invitatory', 'Nocturnus I', 'Nocturn I',
-        'Psalmi', 'Psalms', 'Hymnus', 'Hymn', 'Oratio', 'Prayer', 'Conclusio', 'Conclusion'
+        'Psalmi', 'Psalms', 'Hymnus', 'Hymn', 'Oratio', 'Prayer', 'Conclusio', 'Conclusion',
+        'Lectio 1', 'Reading 1', 'Capitulum Hymnus Versus', 'Chapter Hymn Verse',
+        'Martyrologium', 'Martyrology', 'Antiphona finalis B.M.V.', 'Final Antiphon of the Blessed Virgin Mary',
+        'De Officio Capituli', 'The Capitular Office'
     ];
     let latMatched = 0;
     for (const l of latLabels) {
