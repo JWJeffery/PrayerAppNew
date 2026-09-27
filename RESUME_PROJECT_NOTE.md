@@ -51,7 +51,84 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**STATE AS OF 2026-09-27, LATEST OF ALL — Josh: "we are going to audit the Catholic lane."** This
+**STATE AS OF 2026-09-27, LATEST OF ALL — Josh: "wire in the Catholic office to the rest of the
+app."** This directly answers the "next real decision is Josh's" question the audit/build-out
+thread below left open (its own final entry, just below this one). PR #39 (full content audit +
+build-out to the minimum shippable floor) had just merged to `main`; this session fast-forwarded
+onto that tip (empty local branch, clean ancestor, no conflict) before touching anything.
+
+**What "wire in" turned out to mean, concretely**: the lane's data was already complete (all 8
+hours, Roman general calendar, 1960/1962, Latin, 2026-2027), but the UI path to it was still the
+original proof-of-concept island from before the build-out — reachable only via a hidden
+`app-advanced-only` button or `?entry=roman-breviary-dev`, hardcoded to one fixed demo date/hour
+(2026-11-02 Matins) regardless of when a real user opened it, and invisible to
+`resolveEntryTraditionRoute()`/`UNIVERSAL_OFFICE_TRADITION_MODE_MAP` — the functions that make a
+tradition actually reachable from the entry screen and the profile "Default tradition" dropdown.
+Un-gating the entry card alone (flipping `tradition-availability.json`) would have left it
+clickable but broken (no route resolves for `latin-catholic` → falls through to a console warning
+and the plain entry screen), and would have left it forever showing the same one demo day. Fixed
+all three:
+
+1. **`data/tradition-availability.json`**: `latin-catholic.available` → `true`, `permanent`/`reason`
+   removed (it *is* built now). This is the file `index.html`'s entry cards/dropdown and
+   `initializeEntryRouting()`'s stale-default guard read; the admin panel's existing
+   `entry.permanent` branching (the "Not built" badge, the disabled toggle) already falls through
+   correctly to the normal Available/Pause-button row now that the flag is gone — verified by
+   reading `admin/admin.html`'s render logic directly, no code change needed there.
+2. **`index.html`**: un-disabled/un-hid the three static gates this system's own fail-safe design
+   requires stay in sync with the JSON (per `ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md` — the
+   shipped HTML is what a failed JSON fetch falls back to, so it has to already match reality) —
+   the "Catholic" entry card, the "Roman Breviary 1960/1962" mode-grid button (dropped
+   `app-advanced-only`/`hidden`), and the profile dropdown's `<option>`. Copy updated off the
+   "not implemented yet" wording. Cache-bust `office-ui.js v315 → v316`.
+3. **`js/office-ui.js`** — the real gap: added `case 'latin-catholic'` to
+   `resolveEntryTraditionRoute()` (→ `mode: 'roman-breviary-dev'`, going straight to `selectMode()`
+   with no threshold screen, same treatment as `daily`/Anglican — consistent with the existing
+   2026-09-23 comment that already carved out both of those as threshold-free) and a matching entry
+   in `UNIVERSAL_OFFICE_TRADITION_MODE_MAP` (its absence there would have silently nulled the
+   profile dropdown's stored value right back out on the next load — `normalizeUserProfileDefaults()`
+   treats any tradition missing from that map as invalid) plus `UNIVERSAL_OFFICE_TRADITION_LABELS`.
+   Also replaced the hardcoded `date: '2026-11-02', hour: 'matins'` passed into `mountDevSlice()`
+   with real defaults: today's actual date (clamped to 2026-2027, the supported range, via new
+   `_clampRomanBreviaryDateToSupportedRange()`) and a time-of-day-derived hour via new
+   `_defaultRomanBreviaryHourForCurrentTime()` (even 3-hour bands across the canonical Matins→
+   Compline order — same role as the existing `_defaultDailyOfficeForCurrentTime()`/
+   `_defaultHorologionOfficeForCurrentTime()`/`_defaultCopticHourForCurrentTime()` helpers, not a
+   rubrical claim about when each Hour is traditionally prayed).
+
+**Deliberately left alone, and why**: `BOOK_OF_NEEDS_MODE_CONTEXTS` has no `latin-catholic` entry,
+so opening the Book of Needs from inside the Catholic office falls back to `'UNIVERSAL'` scope —
+a graceful, non-broken default, not a bug; giving Catholic its own scoped Book-of-Needs content is
+a separate, larger feature this ask didn't cover. `OFFICE_MODE_HEADER_LABELS`'s existing
+`'Roman Breviary 1960/1962'` header text was left as-is rather than renamed to match the other
+lanes' "named by tradition body" style ("The Episcopal Church", "Eastern Orthodoxy") — a copy
+decision, not a wiring gap. The mode/id strings still literally say `roman-breviary-dev` throughout
+the codebase (CSS classes, the JS module global, `OFFICE_MODE_HEADER_LABELS`'s key) — renaming that
+now that it's no longer a dev slice would be pure churn across many files for zero behavior change,
+so left alone; the mode-dispatch block's own comment was updated in place to say so.
+
+**Verified**: `node --check js/office-ui.js` clean; `data/tradition-availability.json` parses.
+Live-verified in headless Chromium (installed `playwright-core` locally against the pre-installed
+`/opt/pw-browsers/chromium`, not committed): fresh entry screen shows the Catholic card enabled with
+correct subtitle; clicking it renders the real Roman Breviary office for **today's actual date**
+(not the old Nov 2 demo) at a time-correct hour, with zero new console errors (the one console error
+present, `ERR_CERT_AUTHORITY_INVALID` on the Google Fonts preconnect, is pre-existing and unrelated
+— this sandbox's proxy blocks that host, not a regression); the Universal selector's mode-grid
+button, previously hidden behind `app-advanced-only`, renders and routes correctly once revealed;
+the profile dropdown's "Latin Catholic" option round-trips through a page reload and correctly
+auto-opens straight into the Catholic office on return, exactly like every other tradition's default
+already does.
+
+**Next move on resuming this thread**: nothing blocking. If Josh wants Catholic to get the same
+"It is time for X" threshold splash the three Eastern lanes have (instead of `daily`'s/this lane's
+current straight-to-office pattern), that's a `LANE_THRESHOLD_CONFIG` addition, not something this
+ask implied on its own. Otherwise the deferred-and-disclosed items above (Book of Needs scoping,
+the header-label copy question) are the only things left un-touched by design.
+
+---
+
+**STATE AS OF 2026-09-27, Catholic audit/build-out thread (superseded by the wiring entry directly
+above, kept below for its own history) — Josh: "we are going to audit the Catholic lane."** This
 is a **separate thread** from the Horologion entry directly below (still open, still paused exactly
 as that entry describes — T8 untouched, IH7/SC4 done, nothing about this session touches it). Read
 this entry first if resuming Catholic-lane work; read the entry below if resuming Horologion T8.

@@ -22431,3 +22431,50 @@ was. English layer, chant layer, local calendars, and monastic/Dominican variant
 scope per §11, as they always were.
 
 Full detail, file-by-file, phase-by-phase: `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
+
+---
+
+## Session 2026-09-27, continued yet further still again and again and again -- Roman Breviary
+1960/1962 wired into the rest of the app. Josh: "wire in the Catholic office to the rest of the
+app," directly resolving the previous entry's own open governance question (whether to enable this
+lane for real users).
+
+The build-out (previous entry) had made the lane's data complete, but the UI path to it was still
+the original proof-of-concept island: reachable only via a hidden `app-advanced-only` button, gated
+off in `data/tradition-availability.json` as `permanent`-unavailable, invisible to the entry-routing
+functions that make a tradition selectable at all, and hardcoded to one fixed demo date/hour
+(2026-11-02 Matins) regardless of when a real user opened it.
+
+**Fixed, three real gaps, all wired together rather than done piecemeal**:
+1. `data/tradition-availability.json` -- `latin-catholic.available` -> `true`, `permanent`/`reason`
+   removed.
+2. `index.html` -- un-disabled the entry card, the Universal-selector mode-grid button (dropped
+   `app-advanced-only`/`hidden`), and the profile dropdown's `<option>`; copy updated off "not
+   implemented yet." Cache-bust `office-ui.js v315 -> v316`.
+3. `js/office-ui.js` -- added `latin-catholic` to `resolveEntryTraditionRoute()` (-> mode
+   `roman-breviary-dev`, threshold-screen-free, same as `daily`), `UNIVERSAL_OFFICE_TRADITION_MODE_MAP`
+   (without this, `normalizeUserProfileDefaults()` would have silently nulled the profile dropdown's
+   stored value back out), and `UNIVERSAL_OFFICE_TRADITION_LABELS`. Replaced the hardcoded
+   `2026-11-02`/`matins` passed into `mountDevSlice()` with real defaults: today's date (clamped to
+   the supported 2026-2027 range) and a time-of-day-derived hour, via two new helpers
+   (`_clampRomanBreviaryDateToSupportedRange`, `_defaultRomanBreviaryHourForCurrentTime` -- even
+   3-hour bands across the canonical Matins-through-Compline order, the same role the other lanes'
+   existing `_default*ForCurrentTime` helpers already play).
+
+**Deliberately left alone**: `BOOK_OF_NEEDS_MODE_CONTEXTS` has no `latin-catholic` entry -- opening
+the Book of Needs from inside the Catholic office falls back to the `'UNIVERSAL'` scope, a graceful
+default, not a bug; scoping Book-of-Needs content to Catholic specifically is a separate, larger
+feature this ask didn't cover. The mode/id strings still literally say `roman-breviary-dev`
+throughout (CSS classes, the JS module global, a header-label map key) -- renaming that now that
+it's no longer a dev slice would be pure churn for zero behavior change, so left alone.
+
+**Verified**: `node --check js/office-ui.js` clean; JSON parses. Live-verified in headless Chromium
+(`playwright-core` installed locally against the environment's pre-installed Chromium, not
+committed): entry card renders enabled with correct copy; clicking it renders the real office for
+**today's actual date** at a time-correct hour (not the old fixed demo day), zero new console
+errors; the previously-hidden mode-grid button renders and routes correctly once its parent grid is
+shown; the profile dropdown's "Latin Catholic" default round-trips through a page reload and
+correctly auto-opens straight into the Catholic office on return, exactly like every other
+tradition's stored default already does.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

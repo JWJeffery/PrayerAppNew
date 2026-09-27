@@ -17,9 +17,7 @@
       "since": "2026-09-25"
     },
     "latin-catholic": {
-      "available": false,
-      "reason": "Liturgy of the Hours is not implemented yet.",
-      "permanent": true
+      "available": true
     }
   }
 }
