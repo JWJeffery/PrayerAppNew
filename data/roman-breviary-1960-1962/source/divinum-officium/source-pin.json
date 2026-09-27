@@ -4,17 +4,26 @@
   "branch": "master",
   "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
   "mirror_date": "2026-06-20",
-  "file_subset_policy": "dev vertical slice only; not a full mirror",
+  "file_subset_policy": "Roman-general 1960/1962 build-out subset -- the Latin content this lane's minimum shippable floor (architecture doc §10) needs: full Tempora/Sancti/Commune/Psalterium/Appendix, plus the 1960-rubric Martyrologium. Deliberately excludes monastic/Dominican/Cistercian variant directories (TemporaM/SanctiM/CommuneM, TemporaCist/SanctiCist/CommuneCist, TemporaOP/SanctiOP/CommuneOP), the pre-1955/1960 Martyrologium editions (Martyrologium1570, Martyrologium1955R), Regula (Benedictine Rule readings, monastic-only), and Necrologium -- all out of scope per architecture §11's 'no monastic or Dominican variants.'",
   "mirrored_files": [
-    "web/www/horas/Latin/Sancti/11-02.txt",
-    "web/www/horas/Latin/Commune/C9.txt",
     "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
-    "web/www/horas/Latin/Psalterium/Common/Rubricae.txt"
+    "web/www/horas/Latin/Psalterium/Common/Rubricae.txt",
+    "web/www/horas/Latin/Psalterium/Invitatorium.txt",
+    "web/www/horas/Latin/Psalterium/Doxologies.txt",
+    "web/www/horas/Latin/Psalterium/Benedictions.txt",
+    "web/www/horas/Latin/Psalterium/Mariaant.txt"
   ],
-  "mirrored_files_note": "Prayers.txt and Rubricae.txt added 2026-09-27, full-audit pass -- the shared, non-office-specific texts (Gloria Patri, Pater Noster, the 'Pater totum secreto' rubric) that C9.txt/11-02.txt reference by macro ($Requiem, &Gloria) or that the Perl engine (web/cgi-bin/horas/specmatins.pl) pulls in directly rather than storing per-office. Extracted via `git archive <pinned commit>`, same integrity basis as mirrored_directories below.",
+  "mirrored_files_note": "Prayers.txt and Rubricae.txt added 2026-09-27, full-audit pass. Invitatorium.txt/Doxologies.txt/Benedictions.txt/Mariaant.txt added 2026-09-27 continued (full build-out pass) as part of completing the Psalterium common-texts mirror alongside the directory-level entries below. Extracted via `git archive <pinned commit>`, same integrity basis as mirrored_directories below.",
   "mirrored_directories": [
     "web/www/horas/Latin/Psalterium/Psalmorum",
-    "web/www/horas/English/Psalterium/Psalmorum"
+    "web/www/horas/English/Psalterium/Psalmorum",
+    "web/www/horas/Latin/Psalterium/Special",
+    "web/www/horas/Latin/Psalterium/Psalmi",
+    "web/www/horas/Latin/Tempora",
+    "web/www/horas/Latin/Sancti",
+    "web/www/horas/Latin/Commune",
+    "web/www/horas/Latin/Martyrologium1960",
+    "web/www/horas/Latin/Appendix"
   ],
-  "mirrored_directories_note": "Added 2026-09-27 -- the full Latin Vulgate Psalter (150 psalms, 202 files incl. Ps.118's subdivided sections) and its parallel English (Douay-Rheims-style) translation, verse-aligned, already in the Breviary's own native numbering. Extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entry for how these were obtained."
+  "mirrored_directories_note": "Psalmorum (Latin+English) added 2026-09-27 -- the full 150-psalm Vulgate Psalter (202 files incl. Ps.118's subdivided sections) and its parallel English translation, already in the Breviary's own native numbering. Special/Psalmi/Tempora/Sancti/Commune/Martyrologium1960/Appendix added 2026-09-27 continued (full build-out pass, architecture §10's minimum shippable floor: all 8 hours x the Roman general calendar x current+next year) -- the remaining Latin content the oracle-based build pipeline's calendar computation and per-hour common texts depend on. All extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entries for how these were obtained. The build pipeline's actual oracle computation runs against a separate full clone checked out to this same pinned commit (verified by `scripts/roman-breviary-oracle-run.mjs`'s own pin check at every invocation) -- this mirror exists for in-repo provenance/audit purposes per architecture §12 Layer A, not as the pipeline's live input."
 }

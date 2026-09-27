@@ -93,7 +93,7 @@ export function buildBlocksAndUnits(sections, sourceMeta) {
     blocks.push({
       role,
       label: section.label,
-      nocturn: section.nocturn || undefined,
+      ...(section.nocturn ? { nocturn: section.nocturn, nocturnLabel: `Nocturnus ${section.nocturn}` } : {}),
       unit_refs: [key]
     });
   }

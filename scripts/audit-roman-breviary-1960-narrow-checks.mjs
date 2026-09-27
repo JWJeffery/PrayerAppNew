@@ -10,9 +10,19 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const BASE = path.join(ROOT, 'data', 'roman-breviary-1960-1962');
 const PIN_PATH = path.join(BASE, 'source', 'divinum-officium', 'source-pin.json');
-const UNITS_PATH = path.join(BASE, 'units', 'dev-vertical-slice.json');
-const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
 const BIBLE_BINDING_PATH = path.join(BASE, 'bible-bindings', 'dev-vertical-slice.json');
+
+function findManifestYearFiles() {
+  const dir = path.join(BASE, 'manifests');
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(f => /^\d{4}\.json$/.test(f))
+    .map(f => ({ year: f.replace('.json', ''), path: path.join(dir, f) }));
+}
+
+function unitsPathForYear(year) {
+  return path.join(BASE, 'units', `${year}.json`);
+}
 
 // Core Contract §7 -- the closed block-role taxonomy. A lane may not invent a new
 // top-level role on its own; anything that does not fit goes to `other`, not a stretch.
@@ -151,11 +161,19 @@ function checkJsonValidity() {
 }
 
 // --- Check 3: manifest validity -- manifests reference real units, well-formed -----
-function checkManifestValidity(units, manifest) {
-  console.log('\n[3] Manifest validity (unit_refs resolve, no orphans)');
+function checkManifestValidity(year, units, manifest, pin) {
+  console.log(`\n[3] Manifest validity, ${year} (unit_refs resolve, no orphans, oracle commit matches pin)`);
+
+  if (manifest.source_pin && manifest.source_pin.commit !== pin.commit) {
+    fail(`manifest ${year}.json's own source_pin.commit (${manifest.source_pin.commit}) does not match source-pin.json (${pin.commit})`);
+  } else if (manifest.source_pin) {
+    pass(`manifest ${year}.json's oracle-run commit matches the pinned commit`);
+  }
+
   const unitKeys = new Set(Object.keys(units.units));
   const referenced = new Set();
   const missing = [];
+  let dayCount = 0, hourCount = 0;
 
   function walkBlock(block, locationLabel) {
     for (const ref of (block.unit_refs || [])) {
@@ -166,16 +184,19 @@ function checkManifestValidity(units, manifest) {
   }
 
   for (const [date, day] of Object.entries(manifest.days || {})) {
+    dayCount++;
     for (const [hourKey, hour] of Object.entries(day.hours || {})) {
+      hourCount++;
       for (const block of (hour.blocks || [])) walkBlock(block, `${date}/${hourKey}`);
     }
   }
 
-  if (missing.length) missing.forEach(m => fail(`manifest references nonexistent unit -- ${m}`));
-  else pass(`all ${referenced.size} manifest unit_refs resolve to real units`);
+  if (missing.length) missing.slice(0, 20).forEach(m => fail(`manifest references nonexistent unit -- ${m}`));
+  else pass(`all ${referenced.size} manifest unit_refs resolve to real units (${dayCount} days, ${hourCount} office-hours)`);
+  if (missing.length > 20) fail(`... and ${missing.length - 20} more missing unit_refs`);
 
   const orphans = [...unitKeys].filter(k => !referenced.has(k));
-  if (orphans.length) orphans.forEach(u => warn(`unit defined but never referenced by any manifest: ${u}`));
+  if (orphans.length) warn(`${orphans.length} units defined but never referenced by manifest ${year}.json`);
   else pass('no orphan units (every defined unit is referenced)');
 }
 
@@ -219,8 +240,8 @@ function checkReferenceResolution(bibleBinding) {
 }
 
 // --- Check 5: envelope conformance -- valid resolved-office envelope ---------------
-function checkEnvelopeConformance(manifest) {
-  console.log('\n[5] Envelope conformance (Core Contract §4/§7 -- closed block-role taxonomy)');
+function checkEnvelopeConformance(year, manifest) {
+  console.log(`\n[5] Envelope conformance, ${year} (Core Contract §4/§7 -- closed block-role taxonomy)`);
   const nonConformant = [];
 
   function walkBlock(block, locationLabel) {
@@ -237,9 +258,8 @@ function checkEnvelopeConformance(manifest) {
   }
 
   if (nonConformant.length) {
-    nonConformant.forEach(n => fail(n));
-    console.log('       See documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md for the disclosed,');
-    console.log('       not-yet-fixed finding and the established Horologion-lane fix precedent.');
+    nonConformant.slice(0, 20).forEach(n => fail(n));
+    if (nonConformant.length > 20) fail(`... and ${nonConformant.length - 20} more non-conformant blocks`);
   } else {
     pass('every block role is a member of the closed taxonomy');
   }
@@ -248,15 +268,23 @@ function checkEnvelopeConformance(manifest) {
 async function main() {
   console.log('Roman Breviary 1960/1962 -- narrow audit checks (architecture §15)');
   const pin = readJson(PIN_PATH);
-  const units = readJson(UNITS_PATH);
-  const manifest = readJson(MANIFEST_PATH);
   const bibleBinding = fs.existsSync(BIBLE_BINDING_PATH) ? readJson(BIBLE_BINDING_PATH) : null;
 
   await checkImportIntegrity(pin);
   checkJsonValidity();
-  checkManifestValidity(units, manifest);
+
+  const manifestFiles = findManifestYearFiles();
+  if (!manifestFiles.length) fail('no manifest year files found under manifests/');
+  for (const { year, path: manifestPath } of manifestFiles) {
+    const manifest = readJson(manifestPath);
+    const unitsPath = unitsPathForYear(year);
+    if (!fs.existsSync(unitsPath)) { fail(`no units/${year}.json found for manifests/${year}.json`); continue; }
+    const units = readJson(unitsPath);
+    checkManifestValidity(year, units, manifest, pin);
+    checkEnvelopeConformance(year, manifest);
+  }
+
   if (bibleBinding) checkReferenceResolution(bibleBinding);
-  checkEnvelopeConformance(manifest);
 
   console.log(`\n${failures} failing, ${warnings} warning.`);
   if (failures > 0) process.exitCode = 1;

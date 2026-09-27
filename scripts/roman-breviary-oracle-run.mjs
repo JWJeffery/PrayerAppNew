@@ -1,4 +1,7 @@
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { promisify } from 'node:util';
+
+const execFileAsync = promisify(execFile);
 
 const ENGINE_ROOT = '/home/user/divinumofficium/divinum-officium';
 const PINNED_COMMIT = '0ce8747d7dba3276fc05937635e02360b49a60a6';
@@ -26,13 +29,12 @@ function toOfficiumDate(isoDate) {
   return `${m}-${d}-${y}`;
 }
 
-export function runOracle(isoDate, hourKey) {
+function oracleArgs(isoDate, hourKey) {
   const hourCommand = HOUR_COMMANDS[hourKey];
   if (!hourCommand) throw new Error(`Unknown hour key: ${hourKey}`);
-
-  const raw = execFileSync(
-    'perl',
-    [
+  return {
+    hourCommand,
+    args: [
       'web/cgi-bin/horas/officium.pl',
       'version=Rubrics 1960',
       `command=pray${hourCommand}`,
@@ -40,14 +42,16 @@ export function runOracle(isoDate, hourKey) {
       'lang2=Latin',
       'dioecesis=Generale'
     ],
-    {
+    options: {
       cwd: ENGINE_ROOT,
       encoding: 'utf8',
       env: { ...process.env, PERL5LIB: 'web/cgi-bin:web/DivinumOfficium' },
       maxBuffer: 16 * 1024 * 1024
     }
-  );
+  };
+}
 
+function stripHeaders(raw) {
   const lines = raw.split('\n');
   let bodyStart = 0;
   for (let i = 0; i < lines.length; i++) {
@@ -56,7 +60,22 @@ export function runOracle(isoDate, hourKey) {
     bodyStart = i;
     break;
   }
-  return { html: lines.slice(bodyStart).join('\n'), commit: PINNED_COMMIT, hourCommand };
+  return lines.slice(bodyStart).join('\n');
+}
+
+export function runOracle(isoDate, hourKey) {
+  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey);
+  const raw = execFileSync('perl', args, options);
+  return { html: stripHeaders(raw), commit: PINNED_COMMIT, hourCommand };
+}
+
+// Real concurrency requires the child process to run off Node's single thread while we wait --
+// execFileSync blocks it, silently serializing every "concurrent" caller. This is the one the
+// full-sweep pool must use.
+export async function runOracleAsync(isoDate, hourKey) {
+  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey);
+  const { stdout } = await execFileAsync('perl', args, options);
+  return { html: stripHeaders(stdout), commit: PINNED_COMMIT, hourCommand };
 }
 
 export { HOUR_COMMANDS, PINNED_COMMIT, verifyPin };
