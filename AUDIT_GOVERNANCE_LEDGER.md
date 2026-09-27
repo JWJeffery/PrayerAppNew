@@ -22020,6 +22020,61 @@ new `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`. `ROMAN_BREVIARY_1960
 §15 updated with a note recording this as a one-time authorized exception, not a standing repeal of
 its own "no broad campaign" rule.
 
+---
+## Session 2026-09-27, continued yet again -- Josh pushed back hard on an unclear status report,
+## then on wasted effort chasing archive.org scans for the Oratio Matutinum question when the
+## actual answer was sitting in a repo file already on disk. He was right both times. Finding 6
+## (previously "disclosed, genuinely open") is now FIXED, resolved by reading further into the
+## same engine, not from any outside source.
+
+Spent real effort this session hunting archive.org for an independent printed 1960/1962 Breviary
+to verify two disclosed open items (finding 6, and the 3 scripture-reading variants from the prior
+pass) -- checked 6+ scanned editions across 1838-1961, a Cantus Database manuscript citation (real,
+useful, resolved the Job 7:16 wording question with a genuine 13th-century manuscript source: Paris
+BnF NAL 1411, f.127v), a Controlled-Digital-Lending-restricted 1961 Benziger edition (real, right
+edition, requires a human to actually borrow it -- can't script around CDL), and a user-uploaded RTF
+of yet another wrong seasonal volume. Real progress on the text-variant question; no progress on
+finding 6 from any of it, because none of those sources could possibly answer a question about how
+*this specific codebase* structures its output -- that was never a question an outside witness
+could settle.
+
+Josh's correction: the repo is already the primary source, already cloned, already read from
+extensively this session -- going to outside sources for a question about the engine's own
+behavior was backwards. He was right. Went back into the same `web/cgi-bin/horas/` tree already on
+disk and found `specials/orationes.pl`'s `oratio()` sub, which every hour's generic item-processing
+loop calls (not just the hour-specific modules like `specmatins.pl`, which is why the first pass's
+search of `specmatins.pl` alone came back empty and led to a wrong inference). It has an explicit
+`$hora eq 'Matutinum'` branch pulling `[Oratio Matutinum]` -- proof, not inference, that Matins
+prints its own closing collect.
+
+**Real wrinkle found and disclosed, not silently decided, while building the fix**: the collect's
+opening versicle (`&Dominus_vobiscum`, in `horasscripts.pl`) branches on a `$priest` flag this dev
+slice has no concept of at all. Defaulted to the lay form ("Domine, exaudi orationem meam...") as
+the broader-audience case, explicitly flagged for revisit if the lane ever gains a user-role concept
+-- not silently picked as if it were the only option.
+
+**Fixed**: new `oratio-matutinum` unit (`kind: prayer`, combining the lay-form versicle with
+Commune/C9's `[Oratio_Fid]`) and a new `role: prayer` manifest block, placed after Responsorium IX
+and before Gloria Patri/Conclusio, matching where the engine actually fires it. Extended
+`normalizeDivinumDisplayText` with two more universal-macro cases (`$Oremus`, `$Qui vivis`,
+transcribed verbatim from the already-mirrored `Psalterium/Common/Prayers.txt`) -- same treatment
+the pre-existing `$Requiem` case already had, and these will recur in any future office built, not
+just this one.
+
+**Verified**: `node --check` clean; narrow-check audit still 0 failing, all five checks pass; live
+Chromium render confirmed the new "Oratio" block in the correct position with the full resolved
+text, zero new console errors.
+
+**The lesson, stated plainly so it doesn't need re-learning**: a question about what *this specific
+codebase* does is answered by reading more of that codebase, not by finding an external witness --
+external sources are for questions about whether the codebase's content is *authentically correct*
+against outside reality, a genuinely different question. The 3 scripture-reading text variants
+remain the only item still actually open, and only because that second kind of question does
+require an outside source this session still doesn't have.
+
+Full detail in `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`'s finding 6, original
+disclosure preserved in place with the fix recorded underneath it.
+
 **Bugs found and fixed:**
 - **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
   been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the

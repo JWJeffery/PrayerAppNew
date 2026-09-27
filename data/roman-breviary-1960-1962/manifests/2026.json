@@ -289,6 +289,13 @@
               ]
             },
             {
+              "role": "prayer",
+              "label": "Oratio",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.oratio-matutinum"
+              ]
+            },
+            {
               "role": "doxology",
               "label": "Gloria Patri",
               "unit_refs": [

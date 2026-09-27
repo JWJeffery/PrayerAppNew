@@ -46,7 +46,7 @@ this pass went further:
 | 3 | `[Rank]` ambiguity — two candidate ranks, "Duplex" vs "I. classis" | **Investigated — not a defect** |
 | 4 | `[Rule]`'s bare "Responsory9" line | **Investigated — not a defect (inert annotation)** |
 | 5 | `[Initial]`'s Pater/Ave omission under rubric 1960 | **Investigated — confirmed correct as built (by omission)** |
-| 6 | `[Oratio Matutinum]` (Matins' own collect) not built | **Disclosed — genuinely open, engine trace inconclusive** |
+| 6 | `[Oratio Matutinum]` (Matins' own collect) not built | **FIXED** — confirmed via `orationes.pl`'s `oratio()`, not an outside source |
 | 7 | 3 of 6 scripture-reading units differ from the plain Vulgate text | **Disclosed (carried over from the prior pass) — needs a printed source** |
 | 8 | Antiphon-doubling convention (full antiphon before *and* after the psalm on higher ranks) not modeled | **Disclosed — minor, presentational** |
 | 9 | Every unit's extracted text verified against its declared source section | **PASS — no extraction defects found** |
@@ -181,7 +181,52 @@ future reader might wrongly try to "fix" by adding the Pater/Ave back in.
 
 ---
 
-## 6. `[Oratio Matutinum]` (Matins' own closing collect) — disclosed, genuinely open
+## 6. `[Oratio Matutinum]` (Matins' own closing collect) — FIXED, 2026-09-27 continued further
+
+**Originally disclosed as genuinely open** (see the account below, preserved for the record) after
+`specmatins.pl` and `horascommon.pl` turned up no `Oratio`-building call, suggesting the content
+might belong to Lauds' own (not-yet-built) ending instead of standalone Matins.
+
+**Resolved by reading one more file, not by any outside source.** `web/cgi-bin/horas/specials/
+orationes.pl`'s `oratio()` subroutine — the generic per-hour collect builder, called from a shared
+item-processing loop (`specials.pl`) that every hour (including Matins) runs through — contains an
+explicit branch:
+
+```perl
+if ($hora eq 'Matutinum' && exists($winner{'Oratio Matutinum'})) {
+    $w = $w{'Oratio Matutinum'};
+}
+```
+
+This proves Matins does print its own closing collect, resolving `[Oratio Matutinum]` exactly as
+our source file already names it. The earlier "no `Oratio` call in `specmatins.pl`" finding was a
+true observation that led to a wrong inference — the generic collect logic lives in `orationes.pl`
+and is shared across hours, not duplicated inside each hour's own specialized module the way the
+lesson/blessing logic is.
+
+**A genuine wrinkle found while confirming this, disclosed rather than silently decided.**
+`[Oratio Matutinum]`'s own `&Dominus_vobiscum` versicle macro (`web/cgi-bin/horas/horasscripts.pl`)
+branches on a `$priest` flag: the priest form is "V. Dóminus vobíscum. R. Et cum spíritu tuo."; the
+lay form is "V. Dómine, exáudi oratiónem meam. R. Et clamor meus ad te véniat." This dev slice has
+no priest/lay preference concept at all. **Defaulted to the lay form** as the more broadly
+applicable case for a general prayer app audience — an explicit, disclosed simplification, not a
+claim that the priest form doesn't exist or doesn't matter. Revisit this default if/when the lane
+ever gains a user-role concept.
+
+**Fix.** New `rb1960.la.sancti.11-02.oratio-matutinum` unit (`kind: prayer`) combining the lay-form
+versicle with `Commune/C9`'s `[Oratio_Fid]` text, and a new `role: prayer` manifest block
+("Oratio"), placed after the ninth responsory and before the Gloria Patri/Conclusio pair — matching
+where `oratio()` fires relative to the rest of the hour's structure. Extended
+`normalizeDivinumDisplayText` with two more universal-macro cases (`$Oremus`, `$Qui vivis`),
+transcribed verbatim from the already-mirrored `Psalterium/Common/Prayers.txt`, the same treatment
+the pre-existing `$Requiem` case already got — these will recur in any future office built, not just
+this one.
+
+**Verified**: `node --check` clean; the narrow-check audit still passes all five checks; live-verified
+in headless Chromium — the new "Oratio" block renders in the correct position (after Responsorium IX,
+before Gloria Patri) with the full resolved text, zero new console errors.
+
+### Original account, preserved for the record
 
 `Sancti/11-02.txt` defines `[Oratio Matutinum]` (`&Dominus_vobiscum` + `@Commune/C9:Oratio_Fid`,
 resolving to "Fidélium, Deus, ómnium Cónditor et Redémptor..."). No unit or block for it exists in
@@ -200,12 +245,11 @@ code that would confirm it (a broader Perl-engine search than was practical in t
 live oracle that would have settled it definitively was unreachable (Cloudflare-blocked, per the
 Method section above).
 
-**Not fixed, not guessed.** Per Josh's own standing instruction from the prior pass (verify content
-questions against a real source rather than ruling from two competing readings), this is recorded as
-open, not resolved either way. **Proposed next step**: either (a) supply a printed 1960/1962
-Breviarium Romanum or Diurnal that shows whether Matins-alone (not combined with Lauds) prints its
-own closing collect, or (b) find and read the Lauds-building Perl module (not yet needed for this
-one-hour dev slice, but would settle this) before this lane's dev slice grows to include Lauds.
+**Not fixed, not guessed — at the time.** Per Josh's own standing instruction from the prior pass
+(verify content questions against a real source rather than ruling from two competing readings),
+this was recorded as open, not resolved either way. It turned out the actual resolution needed
+neither a printed source nor the Lauds module — just reading one more already-available file
+(`orationes.pl`) that the first pass hadn't opened yet.
 
 ---
 

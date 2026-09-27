@@ -492,6 +492,30 @@
         "section": "Responsory9"
       }
     },
+    "rb1960.la.sancti.11-02.oratio-matutinum": {
+      "key": "rb1960.la.sancti.11-02.oratio-matutinum",
+      "kind": "prayer",
+      "citation": "",
+      "text": "V. Dómine, exáudi oratiónem meam.\nR. Et clamor meus ad te véniat.\nv. Orémus.\nv. Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur:\nr. Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.\nR. Amen.",
+      "raw_text": "&Dominus_vobiscum\n@Commune/C9:Oratio_Fid\n$Oremus\nv. Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur:\n$Qui vivis",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Oratio_Fid",
+        "appointment": {
+          "path": "web/www/horas/Latin/Sancti/11-02.txt",
+          "section": "Oratio Matutinum",
+          "directive": "&Dominus_vobiscum\n@Commune/C9:Oratio_Fid"
+        },
+        "versicle_source": {
+          "path": "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
+          "section": "Dominus",
+          "note": "Lay form used as the default -- no priest/lay preference exists in this dev slice; see the DOMINUS_VOBISCUM_LAY_TEXT comment above."
+        }
+      }
+    },
     "rb1960.la.sancti.11-02.conclusio-doxology": {
       "key": "rb1960.la.sancti.11-02.conclusio-doxology",
       "kind": "doxology",

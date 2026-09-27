@@ -192,13 +192,43 @@ newly-mirrored common-prayer files); live-verified in headless Chromium — 30 b
 rubric + 1 new doxology), correct placement and text, zero new console errors. Full detail in the
 new `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`.
 
-**Next move on resuming this thread:** two genuinely open items remain, both needing a source this
-session didn't have — a printed 1960/1962 Breviarium/Diurnal (or the Lauds Perl module) for the
-Oratio Matutinum question, and a printed source for the 3 scripture-reading variants. Otherwise the
-next real decision is with Josh: whether to grow the dev slice past one day/one hour, which is a
-governance question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-
-calendar/1960-62/all eight hours/current+next year — a long way past today's one-day slice) not
-something to just start building.
+**CONTINUED, same day — Josh pushed back twice, correctly both times.** First on an unclear status
+summary; then, after real effort was spent hunting archive.org for a printed source to answer the
+Oratio Matutinum question (checked 6+ scanned Breviary editions, a Cantus Database manuscript
+citation, a CDL-restricted 1961 edition, a user-uploaded RTF — all wrong volume or genuinely
+requiring a human to borrow), Josh pointed out the obvious thing being missed: **DivinumOfficium is
+already our primary source, already cloned, already read from all session — a question about what
+*this codebase* does doesn't need an outside witness at all, just more reading of the same repo.**
+He was right. Went back into `web/cgi-bin/horas/specials/orationes.pl` (not yet opened this
+session) and found `oratio()`'s explicit `$hora eq 'Matutinum'` branch pulling `[Oratio Matutinum]`
+— proof, not inference, that Matins prints its own closing collect. The earlier "no Oratio call in
+specmatins.pl" finding was true but led to a wrong conclusion: the generic collect logic is shared
+across all hours in `orationes.pl`, not duplicated inside each hour's own specialized module.
+
+**Finding 6 is now FIXED**, not just disclosed. New `oratio-matutinum` unit + `role: prayer`
+manifest block, placed after Responsorium IX and before Gloria Patri/Conclusio. One real wrinkle
+found and disclosed while building it: the collect's opening versicle depends on a `$priest`
+flag this dev slice has no concept of — defaulted to the lay form, explicitly flagged for revisit,
+not silently picked. Extended `normalizeDivinumDisplayText` with `$Oremus`/`$Qui vivis` (same
+treatment as the existing `$Requiem` case) since these will recur in any future office. Verified:
+`node --check` clean, narrow-check audit still all-five-pass, live Chromium render confirmed
+correct placement and text, zero new console errors.
+
+**The lesson worth keeping**: a question about what *this specific codebase* does gets answered by
+reading more of the codebase, not by finding an external witness. External sources are for a
+genuinely different question — whether the codebase's own content is authentically correct against
+outside reality. Only the 3 scripture-reading text variants are still actually open, and only
+because *that* question does need a source this session still doesn't have (real progress was made
+there too: an independent 13th-century manuscript citation, via Cantus Database, confirmed the
+Job 7:16 wording; the two 1 Corinthians variants remain unconfirmed).
+
+**Next move on resuming this thread:** the only genuinely open item left is the 3 scripture-reading
+text variants (specifically the two 1 Corinthians ones now — Job 7:16 has independent manuscript
+corroboration). That needs an outside source, not more engine-reading. Otherwise the next real
+decision is with Josh: whether to grow the dev slice past one day/one hour, which is a governance
+question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/
+all eight hours/current+next year — a long way past today's one-day slice) not something to just
+start building.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

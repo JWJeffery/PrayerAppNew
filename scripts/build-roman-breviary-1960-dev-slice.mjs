@@ -23,6 +23,21 @@ const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
 const GLORIA_PATRI_TEXT = 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.';
 const PATER_TOTUM_SECRETO_TEXT = '« Pater Noster » dicitur totum secreto.';
 
+// Full-audit pass, 2026-09-27 continued -- `web/cgi-bin/horas/specials/orationes.pl`'s `oratio()`
+// sub has an explicit `$hora eq 'Matutinum'` branch that looks up the office's own
+// `[Oratio Matutinum]` section, proving Matins does get its own closing collect (this was
+// previously disclosed as an open question; resolved by reading further into the same engine,
+// not from an outside source). `[Oratio Matutinum]` itself (Sancti/11-02.txt) is a composite:
+// its own `&Dominus_vobiscum` versicle macro, then a pointer to Commune/C9's `[Oratio_Fid]`.
+//
+// `&Dominus_vobiscum` (web/cgi-bin/horas/horasscripts.pl) branches on whether the person praying
+// is a priest (`$priest`): priest form is "Dominus vobiscum / Et cum spiritu tuo"; lay form is
+// "Domine, exaudi orationem meam / Et clamor meus ad te veniat". This dev slice has no
+// priest/lay preference concept at all, so the lay form is used as the default -- a disclosed
+// simplification, not a claim that the priest form doesn't exist. Both forms transcribed
+// verbatim from Psalterium/Common/Prayers.txt's `[Dominus]`.
+const DOMINUS_VOBISCUM_LAY_TEXT = 'V. Dómine, exáudi oratiónem meam.\nR. Et clamor meus ad te véniat.';
+
 function readUtf8(filePath) {
   return fs.readFileSync(filePath, 'utf8');
 }
@@ -95,6 +110,20 @@ function normalizeDivinumDisplayText(rawText) {
     if (trimmed === '$Requiem') {
       displayLines.push('V. Réquiem ætérnam dona eis, Dómine.');
       displayLines.push('R. Et lux perpétua lúceat eis.');
+      continue;
+    }
+
+    // Both added full-audit pass, 2026-09-27 continued, for the new Oratio Matutinum unit --
+    // transcribed verbatim from Psalterium/Common/Prayers.txt's own [Oremus]/[Qui vivis]
+    // sections (already mirrored), same treatment as the pre-existing $Requiem case above.
+    if (trimmed === '$Oremus') {
+      displayLines.push('v. Orémus.');
+      continue;
+    }
+
+    if (trimmed === '$Qui vivis') {
+      displayLines.push('r. Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.');
+      displayLines.push('R. Amen.');
       continue;
     }
 
@@ -418,6 +447,41 @@ function buildPaterSecretoUnit(sourcePin, nocturnIndex) {
   ];
 }
 
+function buildOratioMatutinumUnit(sourcePin, sections, c9Sections) {
+  // [Oratio Matutinum] (Sancti/11-02.txt) is a composite: its own `&Dominus_vobiscum` versicle
+  // macro, then a pointer to Commune/C9's [Oratio_Fid]. Confirmed via web/cgi-bin/horas/specials/
+  // orationes.pl's oratio() sub (its `$hora eq 'Matutinum'` branch) that Matins does resolve and
+  // print this collect -- not a structural gap, just one this dev slice hadn't built yet.
+  const rawDirective = requireSection(sections, 'Oratio Matutinum', SOURCE_REL);
+  const oratioFidRaw = requireSection(c9Sections, 'Oratio_Fid', C9_SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(oratioFidRaw);
+  const text = [DOMINUS_VOBISCUM_LAY_TEXT, normalized.text].join('\n');
+
+  return [
+    'rb1960.la.sancti.11-02.oratio-matutinum',
+    {
+      key: 'rb1960.la.sancti.11-02.oratio-matutinum',
+      kind: 'prayer',
+      citation: '',
+      text,
+      raw_text: rawDirective + '\n' + oratioFidRaw,
+      display_diagnostics: normalized.diagnostics,
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: C9_SOURCE_REL,
+        section: 'Oratio_Fid',
+        appointment: { path: SOURCE_REL, section: 'Oratio Matutinum', directive: '&Dominus_vobiscum\n@Commune/C9:Oratio_Fid' },
+        versicle_source: {
+          path: PRAYERS_SOURCE_REL,
+          section: 'Dominus',
+          note: 'Lay form used as the default -- no priest/lay preference exists in this dev slice; see the DOMINUS_VOBISCUM_LAY_TEXT comment above.'
+        }
+      }
+    }
+  ];
+}
+
 function buildUnits({ sourcePin, sections, c9Sections }) {
   const readingUnits = Object.fromEntries(
     MATINS_READING_SECTIONS.map(([section, citation]) =>
@@ -453,6 +517,7 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
     ])
   ]);
 
+  const oratioMatutinumUnit = buildOratioMatutinumUnit(sourcePin, sections, c9Sections);
   const conclusioGloriaUnit = buildConclusioGloriaUnit(sourcePin);
   const conclusioUnit = buildConclusioUnit(sourcePin, sections);
 
@@ -467,6 +532,7 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
       ...frameworkUnits,
       ...readingUnits,
       ...responsoryUnits,
+      [oratioMatutinumUnit[0]]: oratioMatutinumUnit[1],
       [conclusioGloriaUnit[0]]: conclusioGloriaUnit[1],
       [conclusioUnit[0]]: conclusioUnit[1]
     }
@@ -546,6 +612,14 @@ function buildMatinsBlocks() {
       unit_refs: ['rb1960.la.sancti.11-02.invitatorium']
     },
     ...MATINS_NOCTURNS.flatMap((nocturn, index) => buildNocturnBlocks(nocturn, index + 1)),
+    {
+      // Confirmed via specials/orationes.pl's oratio() sub that Matins prints its own closing
+      // collect (Oratio Matutinum) here, after the nocturns and before the Conclusio. Previously
+      // disclosed as an open question; see buildOratioMatutinumUnit().
+      role: 'prayer',
+      label: 'Oratio',
+      unit_refs: ['rb1960.la.sancti.11-02.oratio-matutinum']
+    },
     {
       // [Conclusio]'s own `&Gloria` macro, resolved to its own doxology-role block/unit rather
       // than left as an unresolved-macro diagnostic. See buildConclusioGloriaUnit().
