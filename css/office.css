@@ -2385,6 +2385,21 @@ body:not(.office-active) {
     }
 }
 
+.rb1960-dev-slice .rb1960-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.rb1960-dev-slice .rb1960-nav label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.85rem;
+}
+
 /* Roman Breviary 1960/1962 office-like render polish */
 .rb1960-dev-slice .rb1960-context {
     margin-top: 1.2rem;

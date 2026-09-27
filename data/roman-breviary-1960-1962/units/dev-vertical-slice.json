@@ -9,8 +9,11 @@
     "file_subset_policy": "dev vertical slice only; not a full mirror",
     "mirrored_files": [
       "web/www/horas/Latin/Sancti/11-02.txt",
-      "web/www/horas/Latin/Commune/C9.txt"
+      "web/www/horas/Latin/Commune/C9.txt",
+      "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
+      "web/www/horas/Latin/Psalterium/Common/Rubricae.txt"
     ],
+    "mirrored_files_note": "Prayers.txt and Rubricae.txt added 2026-09-27, full-audit pass -- the shared, non-office-specific texts (Gloria Patri, Pater Noster, the 'Pater totum secreto' rubric) that C9.txt/11-02.txt reference by macro ($Requiem, &Gloria) or that the Perl engine (web/cgi-bin/horas/specmatins.pl) pulls in directly rather than storing per-office. Extracted via `git archive <pinned commit>`, same integrity basis as mirrored_directories below.",
     "mirrored_directories": [
       "web/www/horas/Latin/Psalterium/Psalmorum",
       "web/www/horas/English/Psalterium/Psalmorum"
@@ -64,6 +67,25 @@
         "section": "Nocturn 1 Versum"
       }
     },
+    "rb1960.la.sancti.11-02.nocturnus1.pater-secreto": {
+      "key": "rb1960.la.sancti.11-02.nocturnus1.pater-secreto",
+      "kind": "rubric",
+      "citation": "",
+      "text": "« Pater Noster » dicitur totum secreto.",
+      "raw_text": "/:« Pater Noster » dicitur totum secreto.:/",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Psalterium/Common/Rubricae.txt",
+        "section": "Pater totum secreto",
+        "appointment": {
+          "path": "web/cgi-bin/horas/specmatins.pl",
+          "section": "lectiones()",
+          "directive": "$rule =~ /Limit.*?Benedictio/i -- our [Rule] contains \"Limit Benedictiones\""
+        }
+      }
+    },
     "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae": {
       "key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
       "kind": "psalmody_appointment",
@@ -92,6 +114,25 @@
         "section": "Nocturn 2 Versum"
       }
     },
+    "rb1960.la.sancti.11-02.nocturnus2.pater-secreto": {
+      "key": "rb1960.la.sancti.11-02.nocturnus2.pater-secreto",
+      "kind": "rubric",
+      "citation": "",
+      "text": "« Pater Noster » dicitur totum secreto.",
+      "raw_text": "/:« Pater Noster » dicitur totum secreto.:/",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Psalterium/Common/Rubricae.txt",
+        "section": "Pater totum secreto",
+        "appointment": {
+          "path": "web/cgi-bin/horas/specmatins.pl",
+          "section": "lectiones()",
+          "directive": "$rule =~ /Limit.*?Benedictio/i -- our [Rule] contains \"Limit Benedictiones\""
+        }
+      }
+    },
     "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae": {
       "key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
       "kind": "psalmody_appointment",
@@ -118,6 +159,25 @@
         "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
         "path": "web/www/horas/Latin/Commune/C9.txt",
         "section": "Nocturn 3 Versum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus3.pater-secreto": {
+      "key": "rb1960.la.sancti.11-02.nocturnus3.pater-secreto",
+      "kind": "rubric",
+      "citation": "",
+      "text": "« Pater Noster » dicitur totum secreto.",
+      "raw_text": "/:« Pater Noster » dicitur totum secreto.:/",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Psalterium/Common/Rubricae.txt",
+        "section": "Pater totum secreto",
+        "appointment": {
+          "path": "web/cgi-bin/horas/specmatins.pl",
+          "section": "lectiones()",
+          "directive": "$rule =~ /Limit.*?Benedictio/i -- our [Rule] contains \"Limit Benedictiones\""
+        }
       }
     },
     "rb1960.la.sancti.11-02.lectio1": {
@@ -432,6 +492,50 @@
         "section": "Responsory9"
       }
     },
+    "rb1960.la.sancti.11-02.oratio-matutinum": {
+      "key": "rb1960.la.sancti.11-02.oratio-matutinum",
+      "kind": "prayer",
+      "citation": "",
+      "text": "V. Dómine, exáudi oratiónem meam.\nR. Et clamor meus ad te véniat.\nv. Orémus.\nv. Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur:\nr. Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.\nR. Amen.",
+      "raw_text": "&Dominus_vobiscum\n@Commune/C9:Oratio_Fid\n$Oremus\nv. Fidélium, Deus, ómnium Cónditor et Redémptor, animábus famulórum famularúmque tuárum remissiónem cunctórum tríbue peccatórum: ut indulgéntiam, quam semper optavérunt, piis supplicatiónibus consequántur:\n$Qui vivis",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Oratio_Fid",
+        "appointment": {
+          "path": "web/www/horas/Latin/Sancti/11-02.txt",
+          "section": "Oratio Matutinum",
+          "directive": "&Dominus_vobiscum\n@Commune/C9:Oratio_Fid"
+        },
+        "versicle_source": {
+          "path": "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
+          "section": "Dominus",
+          "note": "Lay form used as the default -- no priest/lay preference exists in this dev slice; see the DOMINUS_VOBISCUM_LAY_TEXT comment above."
+        }
+      }
+    },
+    "rb1960.la.sancti.11-02.conclusio-doxology": {
+      "key": "rb1960.la.sancti.11-02.conclusio-doxology",
+      "kind": "doxology",
+      "citation": "",
+      "text": "V. Réquiem ætérnam * dona eis, Dómine.\nR. Et lux perpétua * lúceat eis.",
+      "raw_text": "&Gloria",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
+        "section": "Requiem",
+        "appointment": {
+          "path": "web/www/horas/Latin/Sancti/11-02.txt",
+          "section": "Conclusio",
+          "directive": "&Gloria",
+          "rule": "Requiem gloria"
+        }
+      }
+    },
     "rb1960.la.sancti.11-02.conclusio": {
       "key": "rb1960.la.sancti.11-02.conclusio",
       "kind": "dismissal",
@@ -442,10 +546,6 @@
         {
           "type": "divinum-display-marker",
           "message": "Display marker stripped from user-facing text: Conclusio specialis"
-        },
-        {
-          "type": "unresolved-divinum-macro",
-          "message": "Divinum macro not expanded in dev slice: &Gloria"
         }
       ],
       "source": {

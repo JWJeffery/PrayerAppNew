@@ -1,7 +1,7 @@
 # Roman Breviary 1960/1962 — Lane Architecture (Internal)
 
-**Status:** PLANNED — architecture decision record. No corpus, no mirror, no resolver, no parser, no audit, no UI behaviour is created by this document.
-**Last Recorded:** 2026-06-20
+**Status:** PLANNED as of this document's original writing (2026-06-20) — no corpus, no mirror, no resolver, no parser, no audit, no UI behaviour was created by this document itself. **Superseded by implementation, 2026-09-27**: the corpus, mirror, resolver (the hybrid Divinum-oracle pipeline §9 describes), parser, audit, and UI now exist, built to this document's own minimum shippable floor (§10) — see `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` for the full build-out account and §16 below for the governance gates as actually decided.
+**Last Recorded:** 2026-06-20 (architecture); build-out completed 2026-09-27
 **Audience:** Maintainers / Builder / Architect
 **Scope:** A single office-family **lane** document. It records the planned architecture, identity, source triage, and resolver strategy for a Traditional Roman Breviary (Rubrics 1960/1962) lane. It is *not* the Core Contract and does not change any shared layer; it sits beneath the Core Contract as one lane's posture.
 **Canonical constraint:** This lane keeps its own resolver, calendar logic, rank logic, vocabulary, and structure, and meets the Universal Office shell only at the shared resolved-office output contract. Nothing here may be reinterpreted to create a cross-tradition resolver, and nothing here is a rendering, delivery, permission, or copyright control plane (that policy is governed elsewhere and is out of scope — see Core Contract §8, §15).
@@ -215,6 +215,15 @@ This lane runs **no broad audit campaign** and adds none here. When audits are e
 
 Disciplines from Core Contract §14 apply: a strict audit is never weakened to make the lane pass; only genuinely stale expectations are advanced; and **no stale global counters** are introduced.
 
+**Exception, 2026-09-27 (one-time, not a standing repeal).** Josh explicitly authorized a full
+content audit of this lane's existing corpus, overriding the "no broad campaign" restriction above
+for that one pass: "I don't care what the docs say I am authorizing a full complete audit. Document
+every single deficiency, and then propose fixes." That audit is
+`documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`. This §15 restriction remains the default for
+any future session — it is not repealed by this one authorization, which covered the one pass Josh
+asked for, not an ongoing campaign. A future session wanting to run another broad pass should get
+the same explicit authorization again, not cite this paragraph as blanket permission.
+
 ---
 
 ## 16. Governance gates before any corpus import
@@ -226,5 +235,26 @@ No corpus may be mirrored, parsed, normalized, or imported for this lane until t
 3. **Manifest format decision** — the shape of the build-time assembly manifests (Layer D).
 4. **Unit ID convention decision** — the stable `key` convention for normalized source units (Layer C).
 5. **Supported-year range decision** — the precomputed year range (the minimum floor of current year plus next year, §10, confirmed for the actual build).
+
+**All five gates cleared, 2026-09-27, for the full build-out to the minimum shippable floor**
+(Josh: "Yes I want to build out the whole thing"; full account in
+`documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`):
+
+1. Pin stays `0ce8747d7dba3276fc05937635e02360b49a60a6` (unchanged from the original narrow-check
+   pass) — the separate engine clone used to compute the oracle is checked out to this exact commit
+   before every build run, verified programmatically at each invocation.
+2. Mirror path stays `data/roman-breviary-1960-1962/source/divinum-officium/`, now covering the
+   full Roman-general 1960-relevant Latin subset (Tempora/Sancti/Commune/Psalterium/
+   Martyrologium1960/Appendix), explicitly excluding monastic/Dominican/Cistercian variants per §11.
+3. Manifest format: one JSON file per year (`manifests/<year>.json`), `days[date].hours[hourKey] =
+   {label, blocks[], diagnostics[]}` — the shape the original one-day prototype already used,
+   scaled up rather than redesigned.
+4. Unit-key convention: **content-addressed** — `key = "rb1960.la.unit." + sha1(kind + "|" +
+   citation + "|" + text)`, replacing the prototype's day-scoped slugs. Chosen specifically because
+   at full scale (8 hours × ~730 days) a large amount of content repeats verbatim (the weekly
+   psalter cycle, common antiphons, fixed prayers); confirmed effective in practice (3,900-4,000
+   unique units per year against 2,920 office-hours' worth of blocks).
+5. Supported year range: **full calendar years 2026 and 2027** (2026-01-01 through 2027-12-31, 730
+   days), not merely from-the-build-date-forward.
 
 Each gate is a prerequisite to any import work. Clearing these gates is itself outside this documentation-only tranche; this document only records that they exist and must precede corpus work.

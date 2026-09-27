@@ -23,10 +23,7 @@
       throw new Error('Roman Breviary dev slice fixture missing required data.');
     }
 
-    const diagnostics=[
-      ...(h.diagnostics||[]),
-      {type:'coverage-gap',message:'Full Roman Breviary 2026/2027 manifests are not generated yet.'}
-    ];
+    const diagnostics=[...(h.diagnostics||[])];
 
     function composeBlock(block){
       const childBlocks=(block.blocks||[]).map(composeBlock);
@@ -61,14 +58,24 @@
       edition_or_recension:manifestData.edition_or_recension,
       language:manifestData.language,
       source_pin:manifestData.source_pin,
-      context:{
-        date,
-        hour,
-        calendar_scope:manifestData.calendar_scope,
-        native_label:day.liturgical_context&&day.liturgical_context.native_label,
-        rank:day.liturgical_context&&day.liturgical_context.rank,
-        hour_label:h.label||hour
-      },
+      context:(function(){
+        // Core Contract §4's illustrative envelope shape uses calendarSummary/rankSummary; this
+        // lane's own rank line (from Divinum Officium's own rendered output, e.g. "Feria secunda
+        // infra Hebdomadam III post Octavam Pentecostes ~ IV. classis") already carries both
+        // pieces together, tilde-separated, in the lane's own Latin vocabulary (Core Contract §4
+        // rule 1 -- the shell doesn't parse this apart, so a best-effort split for display is a
+        // dev-slice convenience, not a contract requirement).
+        const rankLine=day.rank||(day.liturgical_context&&day.liturgical_context.native_label)||'';
+        const parts=rankLine.split(' ~ ');
+        return {
+          date,hour,
+          calendar_scope:manifestData.calendar_scope,
+          calendarSummary:parts[0]||rankLine,
+          rankSummary:parts[1]||rankLine,
+          native_label:rankLine,
+          hour_label:h.label||hour
+        };
+      })(),
       blocks,
       overlays:[],
       diagnostics
@@ -112,6 +119,22 @@
     return groups;
   }
 
+  const HOUR_OPTIONS=[
+    ['matins','Matins'],['lauds','Lauds'],['prime','Prime'],['terce','Terce'],
+    ['sext','Sext'],['none','None'],['vespers','Vespers'],['compline','Compline']
+  ];
+
+  function renderNavHtml(date,hour){
+    const hourOptionsHtml=HOUR_OPTIONS.map(([key,label])=>
+      `<option value="${esc(key)}"${key===hour?' selected':''}>${esc(label)}</option>`
+    ).join('');
+    return `<form class="rb1960-nav" onsubmit="return false;">`+
+      `<label>Date <input type="date" class="rb1960-nav-date" value="${esc(date)}" min="2026-01-01" max="2027-12-31"></label>`+
+      `<label>Hour <select class="rb1960-nav-hour">${hourOptionsHtml}</select></label>`+
+      `<button type="button" class="rb1960-nav-go">Go</button>`+
+      `</form>`;
+  }
+
   function renderResolvedOfficeHtml(envelope){
     const groups=groupByNocturn(envelope.blocks||[]);
     const groupsHtml=groups.map(group=>{
@@ -122,7 +145,10 @@
       const blocksHtml=group.blocks.map(block=>renderBlockHtml(block,1)).join('');
       return `<div class="rb1960-nocturn-group"><h3 class="rb1960-nocturn-heading">${esc(group.nocturnLabel)}</h3>${blocksHtml}</div>`;
     }).join('');
-    return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2><p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
+    return `<div class="office-container rb1960-dev-slice">`+
+      `<h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2>`+
+      renderNavHtml(envelope.context.date,envelope.context.hour)+
+      `<p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
   }
 
   async function fetchJson(path){
@@ -132,26 +158,37 @@
   }
 
   async function resolveDevSliceOffice(options={}){
-    const year=options.year||2026;
+    const date=options.date||'2026-11-02';
+    const hour=options.hour||'matins';
+    const year=options.year||Number(date.slice(0,4))||2026;
     const [unitsData,manifestData]=await Promise.all([
-      fetchJson(`${DATA_ROOT}/units/dev-vertical-slice.json`),
+      fetchJson(`${DATA_ROOT}/units/${year}.json`),
       fetchJson(`${DATA_ROOT}/manifests/${year}.json`)
     ]);
 
-    return composeResolvedOffice({
-      unitsData,
-      manifestData,
-      date:options.date||'2026-11-02',
-      hour:options.hour||'matins'
-    });
+    return composeResolvedOffice({unitsData,manifestData,date,hour});
   }
 
   async function mountDevSlice(targetId='office-display',options={}){
-    const envelope=await resolveDevSliceOffice(options);
     const target=document.getElementById(targetId);
     if(!target) throw new Error('Target element not found: '+targetId);
-    target.innerHTML=renderResolvedOfficeHtml(envelope);
-    return envelope;
+
+    async function renderFor(opts){
+      target.innerHTML=`<div class="office-container"><h3>Loading...</h3></div>`;
+      const envelope=await resolveDevSliceOffice(opts);
+      target.innerHTML=renderResolvedOfficeHtml(envelope);
+      const goBtn=target.querySelector('.rb1960-nav-go');
+      if(goBtn) goBtn.addEventListener('click',()=>{
+        const dateInput=target.querySelector('.rb1960-nav-date');
+        const hourSelect=target.querySelector('.rb1960-nav-hour');
+        renderFor({date:dateInput.value||opts.date,hour:hourSelect.value||opts.hour}).catch(err=>{
+          target.innerHTML=`<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${esc(err.message)}</p></div>`;
+        });
+      });
+      return envelope;
+    }
+
+    return renderFor(options);
   }
 
   return {

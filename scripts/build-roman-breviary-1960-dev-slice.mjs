@@ -5,11 +5,46 @@ const ROOT = process.cwd();
 const BASE = path.join(ROOT, 'data', 'roman-breviary-1960-1962');
 const SOURCE_REL = 'web/www/horas/Latin/Sancti/11-02.txt';
 const C9_SOURCE_REL = 'web/www/horas/Latin/Commune/C9.txt';
+const PRAYERS_SOURCE_REL = 'web/www/horas/Latin/Psalterium/Common/Prayers.txt';
+const RUBRICAE_SOURCE_REL = 'web/www/horas/Latin/Psalterium/Common/Rubricae.txt';
 const SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', SOURCE_REL);
 const C9_SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', C9_SOURCE_REL);
 const PIN_PATH = path.join(BASE, 'source', 'divinum-officium', 'source-pin.json');
 const UNITS_PATH = path.join(BASE, 'units', 'dev-vertical-slice.json');
 const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
+
+// Full-audit pass, 2026-09-27 -- two macros the office file references but never spells out,
+// because they're universal/common texts, not office-specific ones: `&Gloria` (Conclusio) and
+// the Matins engine's own `$Pater totum secreto` push (web/cgi-bin/horas/specmatins.pl line 671,
+// taken because our [Rule] contains "Limit Benedictiones" -- see
+// documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md's full-audit addendum for the Perl trace that
+// established this). Both texts transcribed verbatim from the shared common-prayers source file,
+// not paraphrased.
+// Full-scale-build pass, 2026-09-27 continued yet further -- the oracle-validation pipeline
+// (scripts/roman-breviary-oracle-run.mjs, running Divinum Officium's own Perl engine offline)
+// showed the real Conclusio has no Gloria Patri text at all. `web/cgi-bin/horas/horasscripts.pl`'s
+// `sub Gloria` explicitly checks `if ($rule =~ /Requiem gloria/i) { return prayer('Requiem', $lang); }`
+// -- and Sancti/11-02.txt's own [Rule] block contains exactly that line. So `&Gloria` in THIS
+// office's Conclusio resolves to the Requiem-substitute text, not the standard Gloria Patri
+// doxology used by non-Requiem offices (this replaces the prior, incorrect fix that used the
+// standard doxology text).
+const REQUIEM_GLORIA_SUBSTITUTE_TEXT = 'V. Réquiem ætérnam * dona eis, Dómine.\nR. Et lux perpétua * lúceat eis.';
+const PATER_TOTUM_SECRETO_TEXT = '« Pater Noster » dicitur totum secreto.';
+
+// Full-audit pass, 2026-09-27 continued -- `web/cgi-bin/horas/specials/orationes.pl`'s `oratio()`
+// sub has an explicit `$hora eq 'Matutinum'` branch that looks up the office's own
+// `[Oratio Matutinum]` section, proving Matins does get its own closing collect (this was
+// previously disclosed as an open question; resolved by reading further into the same engine,
+// not from an outside source). `[Oratio Matutinum]` itself (Sancti/11-02.txt) is a composite:
+// its own `&Dominus_vobiscum` versicle macro, then a pointer to Commune/C9's `[Oratio_Fid]`.
+//
+// `&Dominus_vobiscum` (web/cgi-bin/horas/horasscripts.pl) branches on whether the person praying
+// is a priest (`$priest`): priest form is "Dominus vobiscum / Et cum spiritu tuo"; lay form is
+// "Domine, exaudi orationem meam / Et clamor meus ad te veniat". This dev slice has no
+// priest/lay preference concept at all, so the lay form is used as the default -- a disclosed
+// simplification, not a claim that the priest form doesn't exist. Both forms transcribed
+// verbatim from Psalterium/Common/Prayers.txt's `[Dominus]`.
+const DOMINUS_VOBISCUM_LAY_TEXT = 'V. Dómine, exáudi oratiónem meam.\nR. Et clamor meus ad te véniat.';
 
 function readUtf8(filePath) {
   return fs.readFileSync(filePath, 'utf8');
@@ -83,6 +118,20 @@ function normalizeDivinumDisplayText(rawText) {
     if (trimmed === '$Requiem') {
       displayLines.push('V. Réquiem ætérnam dona eis, Dómine.');
       displayLines.push('R. Et lux perpétua lúceat eis.');
+      continue;
+    }
+
+    // Both added full-audit pass, 2026-09-27 continued, for the new Oratio Matutinum unit --
+    // transcribed verbatim from Psalterium/Common/Prayers.txt's own [Oremus]/[Qui vivis]
+    // sections (already mirrored), same treatment as the pre-existing $Requiem case above.
+    if (trimmed === '$Oremus') {
+      displayLines.push('v. Orémus.');
+      continue;
+    }
+
+    if (trimmed === '$Qui vivis') {
+      displayLines.push('r. Qui vivis et regnas cum Deo Patre, in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.');
+      displayLines.push('R. Amen.');
       continue;
     }
 
@@ -333,6 +382,32 @@ function buildNocturnVersicleUnit(sourcePin, c9Sections, nocturnIndex, section) 
   ];
 }
 
+function buildConclusioGloriaUnit(sourcePin) {
+  // [Conclusio]'s own `&Gloria` macro, resolved: Core Contract §7 added a `doxology` role
+  // specifically for exactly this, so it gets its own unit/block rather than being folded into --
+  // or left as an unresolved-macro diagnostic inside -- the dismissal unit. This office's own
+  // [Rule] contains "Requiem gloria", so per `sub Gloria`'s own branch (see the constant's comment
+  // above) the resolved text is the Requiem substitute, not the standard Gloria Patri doxology.
+  return [
+    'rb1960.la.sancti.11-02.conclusio-doxology',
+    {
+      key: 'rb1960.la.sancti.11-02.conclusio-doxology',
+      kind: 'doxology',
+      citation: '',
+      text: REQUIEM_GLORIA_SUBSTITUTE_TEXT,
+      raw_text: '&Gloria',
+      display_diagnostics: [],
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: PRAYERS_SOURCE_REL,
+        section: 'Requiem',
+        appointment: { path: SOURCE_REL, section: 'Conclusio', directive: '&Gloria', rule: 'Requiem gloria' }
+      }
+    }
+  ];
+}
+
 function buildConclusioUnit(sourcePin, sections) {
   const rawText = requireSection(sections, 'Conclusio', SOURCE_REL);
   const normalized = normalizeDivinumDisplayText(rawText);
@@ -345,8 +420,74 @@ function buildConclusioUnit(sourcePin, sections) {
       citation: 'Conclusio specialis',
       text: normalized.text,
       raw_text: rawText,
-      display_diagnostics: normalized.diagnostics,
+      display_diagnostics: normalized.diagnostics.filter(d => !/&Gloria/.test(d.message)),
       source: unitSource(sourcePin, 'Conclusio')
+    }
+  ];
+}
+
+function buildPaterSecretoUnit(sourcePin, nocturnIndex) {
+  // web/cgi-bin/horas/specmatins.pl's lectiones() sub: because this office's [Rule] contains
+  // "Limit Benedictiones", the usual per-lesson "Jube, domne, benedicere" + blessing-response
+  // ritual (9 exchanges) is skipped entirely, replaced by a single silent complete Pater Noster
+  // once per nocturn (`$Pater totum secreto`, pushed once before that nocturn's lessons begin --
+  // see the same sub's `elsif` branch). This is rubric text (an instruction, not prayed text),
+  // matching its own source formatting (Rubricae.txt's `/:...:/ ` convention for rubric lines).
+  return [
+    `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`,
+    {
+      key: `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`,
+      kind: 'rubric',
+      citation: '',
+      text: PATER_TOTUM_SECRETO_TEXT,
+      raw_text: '/:' + PATER_TOTUM_SECRETO_TEXT + ':/',
+      display_diagnostics: [],
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: RUBRICAE_SOURCE_REL,
+        section: 'Pater totum secreto',
+        appointment: {
+          path: 'web/cgi-bin/horas/specmatins.pl',
+          section: 'lectiones()',
+          directive: '$rule =~ /Limit.*?Benedictio/i -- our [Rule] contains "Limit Benedictiones"'
+        }
+      }
+    }
+  ];
+}
+
+function buildOratioMatutinumUnit(sourcePin, sections, c9Sections) {
+  // [Oratio Matutinum] (Sancti/11-02.txt) is a composite: its own `&Dominus_vobiscum` versicle
+  // macro, then a pointer to Commune/C9's [Oratio_Fid]. Confirmed via web/cgi-bin/horas/specials/
+  // orationes.pl's oratio() sub (its `$hora eq 'Matutinum'` branch) that Matins does resolve and
+  // print this collect -- not a structural gap, just one this dev slice hadn't built yet.
+  const rawDirective = requireSection(sections, 'Oratio Matutinum', SOURCE_REL);
+  const oratioFidRaw = requireSection(c9Sections, 'Oratio_Fid', C9_SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(oratioFidRaw);
+  const text = [DOMINUS_VOBISCUM_LAY_TEXT, normalized.text].join('\n');
+
+  return [
+    'rb1960.la.sancti.11-02.oratio-matutinum',
+    {
+      key: 'rb1960.la.sancti.11-02.oratio-matutinum',
+      kind: 'prayer',
+      citation: '',
+      text,
+      raw_text: rawDirective + '\n' + oratioFidRaw,
+      display_diagnostics: normalized.diagnostics,
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: C9_SOURCE_REL,
+        section: 'Oratio_Fid',
+        appointment: { path: SOURCE_REL, section: 'Oratio Matutinum', directive: '&Dominus_vobiscum\n@Commune/C9:Oratio_Fid' },
+        versicle_source: {
+          path: PRAYERS_SOURCE_REL,
+          section: 'Dominus',
+          note: 'Lay form used as the default -- no priest/lay preference exists in this dev slice; see the DOMINUS_VOBISCUM_LAY_TEXT comment above.'
+        }
+      }
     }
   ];
 }
@@ -381,10 +522,13 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
         index + 1,
         matinsAntiphons.slice(nocturn.antiphonRange[0], nocturn.antiphonRange[1])
       ),
-      buildNocturnVersicleUnit(sourcePin, c9Sections, index + 1, nocturn.versum)
+      buildNocturnVersicleUnit(sourcePin, c9Sections, index + 1, nocturn.versum),
+      buildPaterSecretoUnit(sourcePin, index + 1)
     ])
   ]);
 
+  const oratioMatutinumUnit = buildOratioMatutinumUnit(sourcePin, sections, c9Sections);
+  const conclusioGloriaUnit = buildConclusioGloriaUnit(sourcePin);
   const conclusioUnit = buildConclusioUnit(sourcePin, sections);
 
   return {
@@ -398,6 +542,8 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
       ...frameworkUnits,
       ...readingUnits,
       ...responsoryUnits,
+      [oratioMatutinumUnit[0]]: oratioMatutinumUnit[1],
+      [conclusioGloriaUnit[0]]: conclusioGloriaUnit[1],
       [conclusioUnit[0]]: conclusioUnit[1]
     }
   };
@@ -451,6 +597,16 @@ function buildNocturnBlocks(nocturn, nocturnIndex) {
       nocturnLabel: nocturn.label,
       unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`]
     },
+    {
+      // Placed here, before this nocturn's first Lectio, matching web/cgi-bin/horas/
+      // specmatins.pl's own build order: nocturn() (psalmody+versicle) runs, then lectiones()
+      // is called once per nocturn and pushes this rubric before that nocturn's own readings.
+      role: 'rubric',
+      label: 'Pater Noster',
+      nocturn: nocturnIndex,
+      nocturnLabel: nocturn.label,
+      unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`]
+    },
     ...nocturn.sections.flatMap(section => buildReadingResponsoryBlocks(section, nocturnIndex, nocturn.label))
   ];
 }
@@ -466,6 +622,23 @@ function buildMatinsBlocks() {
       unit_refs: ['rb1960.la.sancti.11-02.invitatorium']
     },
     ...MATINS_NOCTURNS.flatMap((nocturn, index) => buildNocturnBlocks(nocturn, index + 1)),
+    {
+      // Confirmed via specials/orationes.pl's oratio() sub that Matins prints its own closing
+      // collect (Oratio Matutinum) here, after the nocturns and before the Conclusio. Previously
+      // disclosed as an open question; see buildOratioMatutinumUnit().
+      role: 'prayer',
+      label: 'Oratio',
+      unit_refs: ['rb1960.la.sancti.11-02.oratio-matutinum']
+    },
+    {
+      // [Conclusio]'s own `&Gloria` macro, resolved to its own doxology-role block/unit rather
+      // than left as an unresolved-macro diagnostic. See buildConclusioGloriaUnit() -- this
+      // office's "Requiem gloria" rule means the resolved text is the Requiem substitute, not the
+      // Gloria Patri text the label would otherwise suggest.
+      role: 'doxology',
+      label: 'Réquiem ætérnam (in loco Gloria Patri)',
+      unit_refs: ['rb1960.la.sancti.11-02.conclusio-doxology']
+    },
     {
       role: 'dismissal',
       label: 'Conclusio',

@@ -21934,6 +21934,147 @@ Full detail in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s Check 5 secti
 disclosure preserved in place with the fix recorded underneath it, same discipline
 `HOROLOGION_AUDIT_FINDINGS.md` uses for its own corrections.
 
+---
+## Session 2026-09-27, continued once more -- Josh: "Merge the PR I don't care what the docs say I
+## am authorizing a full complete audit. Document every single deficiency, and then propose fixes."
+## PR #38 merged. Full content audit of the Catholic lane's existing corpus, overriding the lane's
+## own §15 "no broad campaign" restriction for this one pass. Two real deficiencies found and
+## fixed; four investigated and resolved as non-defects; two disclosed, genuinely open.
+
+Merged PR #38 (squash) onto `main`. Reset this session's branch onto the new `main` tip per the
+usual squash-merge divergence check (confirmed empty diff before resetting, same discipline as
+earlier this session).
+
+**Went well beyond the mirrored office files this time, on explicit authorization.** Read
+`Sancti/11-02.txt` and `Commune/C9.txt` in full (not spot sections, unlike the narrow-check pass),
+including their own `[Rule]` blocks. Where a `[Rule]` directive's meaning wasn't obvious from the
+data file alone, **cloned and read the actual Divinum Officium Perl engine**
+(`web/cgi-bin/horas/specmatins.pl` and related modules, read-only from the primary source repo, not
+the pinned data-only mirror) rather than guess from rubric-keyword vocabulary. Attempted to
+cross-check the real rendered Nov 2/Rubrics 1960 Matins output from divinumofficium.com directly for
+a definitive answer on two open questions -- blocked by Cloudflare (403) even through headless
+Chromium with a real user agent and TLS trust configured; not pursued further, treated as a genuine
+access boundary rather than something to route around. Also re-verified **every** unit's extracted
+text against its declared source section programmatically (not spot checks) -- zero extraction
+defects found across all units.
+
+**Fixed, both with clean, unambiguous sourcing:**
+1. **Conclusio's `&Gloria` macro was unresolved** -- diagnostic-only, no doxology text shown at all
+   where the Gloria Patri belongs (before "V. Requiéscant in pace."). Not office-specific content,
+   so safely resolved from the same pinned source family: `Psalterium/Common/Prayers.txt`'s
+   `[Gloria]` section, mirrored in for this. New `doxology`-role unit and block (Core Contract §7's
+   own amendment added this role for exactly this kind of case).
+2. **A required "Pater totum secreto" rubric, once per nocturn, was missing entirely** -- not
+   resolvable from the data file alone. `[Rule]`'s "Limit Benedictiones" reads, in isolation, like
+   "a reduced set of blessings"; reading `specmatins.pl`'s `lectiones()` sub directly shows
+   `$rule =~ /Limit.*?Benedictio/i` matching our rule **skips the entire per-lesson "Jube, domne,
+   benedícere" + blessing-response ritual** (9 exchanges it would otherwise be) and substitutes a
+   single silent complete Pater Noster, once per nocturn, before that nocturn's lessons -- confirmed
+   from the calling code's own order (`nocturn(...); lectiones($_, ...)` per nocturn number).
+   `$Pater totum secreto` itself resolves, via the newly-mirrored `Psalterium/Common/Rubricae.txt`,
+   to rubric text (the source's own `/:...:/ ` convention), not prayer text to print in full --
+   transcribed verbatim: "« Pater Noster » dicitur totum secreto." New `rubric`-role unit and block
+   per nocturn (3 total), placed exactly where the engine places them.
+
+**Investigated and resolved as non-defects, not left as open questions:**
+3. **The `[Rank]` ambiguity** (`[Rank]` "Duplex" vs `[Rank] (rubrica 196)` "I. classis," already
+   hardcoded in the generator as "I. classis" with no prior recorded justification) -- grepped the
+   full pinned `DivinumOfficium/divinum-officium` repo: `(rubrica 196)` appears 122 times across
+   unrelated files as a consistent bare 3-digit form (also `(rubrica 195)` x4, `(rubrica 193)` x2),
+   distinct from and alongside fully-specified 4-digit forms (`rubrica 1960` x99, `rubrica 1962`
+   x9) elsewhere including this same file. Conclusion: a genuine decade-family flag, not a
+   truncation, and exactly the family this lane's own 1960/1962 scope falls under. The existing
+   "I. classis" choice is correct; nothing changed, now documented instead of unexplained.
+4. **`[Rule]`'s bare "Responsory9" line** -- grepped `specmatins.pl` for any `$rule =~
+   /Responsory9/` match: none exists; the only code references are `exists($winner{Responsory9})`,
+   a check for a `[Responsory9]` *section* (which correctly resolves already), unrelated to
+   `[Rule]`-text parsing. Reads as a documentary annotation, not an active directive. No action
+   needed.
+5. **`[Initial]`'s omitted Pater/Ave** under "rubrica 1960 aut rubrica innovata" -- confirmed this
+   lane's `rubrics_1960_1962` scope correctly omits it already (no unit ever built for it); now
+   recorded as deliberate-and-correct rather than an unexplained absence a future session might
+   wrongly try to "fix" by adding it back.
+
+**Disclosed, genuinely open, not guessed at:**
+6. **`[Oratio Matutinum]`** (Matins' own closing collect, `@Commune/C9:Oratio_Fid`) has no unit or
+   block built. `specmatins.pl` has no Oratio-building call at all, suggestive that this content
+   belongs to Lauds' own (not-yet-built) closing sequence rather than to standalone Matins -- but
+   this pass could not find the Lauds-side code to confirm it, and the live oracle that would have
+   settled it was Cloudflare-blocked. Proposed next step: a printed 1960/1962 Breviarium/Diurnal
+   confirming whether Matins-alone prints its own collect, or reading the Lauds Perl module before
+   this dev slice grows to include Lauds.
+7. **The three scripture-reading text variants** already disclosed in the prior sourcing pass
+   (`lectio1`/Job 7:16, `lectio7`/1 Cor 15:12, `lectio8`/1 Cor 15:44) remain open -- nothing new
+   resolved them this pass beyond confirming the `lectio()` subroutine machinery exists specifically
+   to carve appointed ranges independent of Vulgate verse boundaries, which supports without proving
+   the "ordinary lesson-trimming" reading already on file. Still needs a printed source.
+
+**Verified after both fixes**: `node --check` clean; `scripts/audit-roman-breviary-1960-narrow-
+checks.mjs` still 0 failing (Check 1 now also verifies the two newly-mirrored common-prayer files);
+live-verified in headless Chromium (`?entry=roman-breviary-dev`) -- 30 blocks (26 + 3 new rubric
+blocks + 1 new doxology block), each "Pater Noster" rubric rendering in the right nocturn with the
+correct text, "Gloria Patri" rendering before "Conclusio," zero new console errors.
+
+Full detail, including the exact Perl code excerpts and source citations for every finding, in the
+new `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`. `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`
+§15 updated with a note recording this as a one-time authorized exception, not a standing repeal of
+its own "no broad campaign" rule.
+
+---
+## Session 2026-09-27, continued yet again -- Josh pushed back hard on an unclear status report,
+## then on wasted effort chasing archive.org scans for the Oratio Matutinum question when the
+## actual answer was sitting in a repo file already on disk. He was right both times. Finding 6
+## (previously "disclosed, genuinely open") is now FIXED, resolved by reading further into the
+## same engine, not from any outside source.
+
+Spent real effort this session hunting archive.org for an independent printed 1960/1962 Breviary
+to verify two disclosed open items (finding 6, and the 3 scripture-reading variants from the prior
+pass) -- checked 6+ scanned editions across 1838-1961, a Cantus Database manuscript citation (real,
+useful, resolved the Job 7:16 wording question with a genuine 13th-century manuscript source: Paris
+BnF NAL 1411, f.127v), a Controlled-Digital-Lending-restricted 1961 Benziger edition (real, right
+edition, requires a human to actually borrow it -- can't script around CDL), and a user-uploaded RTF
+of yet another wrong seasonal volume. Real progress on the text-variant question; no progress on
+finding 6 from any of it, because none of those sources could possibly answer a question about how
+*this specific codebase* structures its output -- that was never a question an outside witness
+could settle.
+
+Josh's correction: the repo is already the primary source, already cloned, already read from
+extensively this session -- going to outside sources for a question about the engine's own
+behavior was backwards. He was right. Went back into the same `web/cgi-bin/horas/` tree already on
+disk and found `specials/orationes.pl`'s `oratio()` sub, which every hour's generic item-processing
+loop calls (not just the hour-specific modules like `specmatins.pl`, which is why the first pass's
+search of `specmatins.pl` alone came back empty and led to a wrong inference). It has an explicit
+`$hora eq 'Matutinum'` branch pulling `[Oratio Matutinum]` -- proof, not inference, that Matins
+prints its own closing collect.
+
+**Real wrinkle found and disclosed, not silently decided, while building the fix**: the collect's
+opening versicle (`&Dominus_vobiscum`, in `horasscripts.pl`) branches on a `$priest` flag this dev
+slice has no concept of at all. Defaulted to the lay form ("Domine, exaudi orationem meam...") as
+the broader-audience case, explicitly flagged for revisit if the lane ever gains a user-role concept
+-- not silently picked as if it were the only option.
+
+**Fixed**: new `oratio-matutinum` unit (`kind: prayer`, combining the lay-form versicle with
+Commune/C9's `[Oratio_Fid]`) and a new `role: prayer` manifest block, placed after Responsorium IX
+and before Gloria Patri/Conclusio, matching where the engine actually fires it. Extended
+`normalizeDivinumDisplayText` with two more universal-macro cases (`$Oremus`, `$Qui vivis`,
+transcribed verbatim from the already-mirrored `Psalterium/Common/Prayers.txt`) -- same treatment
+the pre-existing `$Requiem` case already had, and these will recur in any future office built, not
+just this one.
+
+**Verified**: `node --check` clean; narrow-check audit still 0 failing, all five checks pass; live
+Chromium render confirmed the new "Oratio" block in the correct position with the full resolved
+text, zero new console errors.
+
+**The lesson, stated plainly so it doesn't need re-learning**: a question about what *this specific
+codebase* does is answered by reading more of that codebase, not by finding an external witness --
+external sources are for questions about whether the codebase's content is *authentically correct*
+against outside reality, a genuinely different question. The 3 scripture-reading text variants
+remain the only item still actually open, and only because that second kind of question does
+require an outside source this session still doesn't have.
+
+Full detail in `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`'s finding 6, original
+disclosure preserved in place with the fix recorded underneath it.
+
 **Bugs found and fixed:**
 - **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
   been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the
@@ -22000,3 +22141,293 @@ recorded in place, and new disclosed Findings T8 and IH7. This is not a claim th
 error-free -- it is a claim that this specific, requested second pass is complete, its findings are
 recorded, and the process itself (independent source re-read, not re-trusting automated checks) is
 what caught all of the above.
+
+---
+
+## Session 2026-09-27, continued yet again further -- Roman Breviary finding 7 substantially
+resolved using Josh's second uploaded printed source. SEED_VERSION unchanged (this lane is exempt
+from the SEED_VERSION-tracked broad campaign per architecture §15; no code changed, documentation
+only).
+
+**Context.** Finding 7 of `ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (three scripture-reading text
+variants against the plain Vulgate: `lectio1`/Job 7:16, `lectio7`/1 Cor 15:12, `lectio8`/1 Cor
+15:44) had been carried open across three prior passes for lack of a printed 1960/1962 Breviarium
+Romanum to check against. Josh, after independently confirming divinumofficium.com was reachable
+from his own browser (a fact this session had reported but not exploited, since the live site adds
+nothing over the already-cloned repo -- Josh's own correction, recorded in the prior entry), found
+and uploaded a second archive.org OCR text file: `breviariumromanu04cath_0_hocr_searchtext.txt.gz`,
+identifier `breviariumromanu04cath_0`, a Benziger Brothers *Breviarium Romanum* confirmed via its
+own title-page OCR to be the ***Pars Autumnalis*** -- the correct seasonal volume for a Nov 2
+question (his first upload, `Breviarium_Roman.rtf`, was confirmed to be *Pars Hiemalis et Verna*,
+the wrong season, and could not reach this content at all).
+
+**What was found, decompressed to `/tmp/brev04.txt` (19,658 lines) and searched directly (not
+assumed from title/metadata):**
+
+- The volume's own `Officium Defunctorum` common/votive section (its own printed pages ~187-196,
+  "AD MATUTINUM") prints all nine ferial/votive Matins lessons of the Office of the Dead verbatim,
+  entirely from Job (chapters 7, 10, 10, 13, 11, 14, 17, 19, 10 across Lectiones i-ix) -- this is
+  the *ordinary* daily-recitation form, not the annual All Souls proper.
+- **Lectio i (Job 7:16) matches `Commune/C9.txt`'s own `[Lectio1]` word for word**, including the
+  same absent leading conjunction before "Parce mihi" that was one of the two open wording
+  questions on finding 7's table. This closes that specific sub-question: the text is exactly what
+  an independent, editorially-unrelated 1960s printed Breviarium Romanum prints, not a Divinum
+  Officium transcription error.
+- This same volume's Officium Defunctorum has **no 1 Corinthians 15 content anywhere** -- at first
+  read this looked like it might contradict `Sancti/11-02.txt`'s own `[Lectio7]`-`[Lectio9]` (1 Cor
+  15:12-22, 35-44, 51-58). It doesn't, once the actual difference between the two sections was
+  understood: `Sancti/11-02.txt` is not the votive/ferial office, it is the distinct **proper**
+  office for the annual feast of the Commemoration of All Souls itself (its own `[Rank]`: "Duplex" /
+  "I. classis"), which uses a different nine-lesson set than the votive form.
+- Independent web research (outside this repo and outside Divinum Officium entirely -- a genuinely
+  separate witness, per the standard this session has held to throughout) confirmed why: **Pope St.
+  Pius X's breviary reform (effective 1911-1913, carried forward unchanged into the 1960 rubrics)
+  specifically restructured All Souls Day's own Matins** into three nocturns with three distinct
+  sources -- first nocturn kept the traditional Job lessons, second nocturn newly given extracts
+  from St. Augustine's *De cura pro mortuis gerenda*, third nocturn newly given extracts from 1
+  Corinthians 15 -- a change that left the separate, older, all-Job votive/ferial Office of the Dead
+  completely untouched (source: "St Pius X's New Office of All Souls",
+  musingsofanoldcurmudgeon.blogspot.com, 2021-11; quoted verbatim in the audit doc's updated finding
+  7). `Sancti/11-02.txt`'s `[Lectio4]`-`[Lectio6]` (Augustine) and `[Lectio7]`-`[Lectio9]` (1 Cor 15)
+  are exactly this documented reformed proper scheme -- **genuine, historically-sourced content for
+  this specific feast, not a fabrication or a mismatched section.**
+
+**What remains open, narrower than before finding 7 started.** Neither of Josh's two uploaded
+volumes contains the specific reformed All Souls proper (both give the older votive/ferial all-Job
+form instead), so the exact copy-editing-level wording of the 1 Cor 15 excerpts -- specifically
+whether an authentic printed proper drops "autem" from verse 12 the way `Sancti/11-02.txt` does --
+remains unverified against a printed proper. Given the Job 7:16 exact match above (including its
+own dropped conjunction) and that trimming a lection's opening connective is an ordinary, widely
+attested convention in excerpted lections generally, this reads as the same thing rather than a new
+suspected error, but is disclosed as unverified rather than asserted as certain. The
+scripture-*selection* question (is 1 Cor 15 even supposed to be here) is now closed; only the
+narrower wording-precision question remains, and only for that one word.
+
+**Files changed:** `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 7 rewritten in
+place with both sub-findings and the remaining narrow open item; summary table row updated;
+original open-item framing preserved via the "already disclosed" cross-reference, not deleted).
+`RESUME_PROJECT_NOTE.md`'s Catholic-lane entry gained a new "CONTINUED" paragraph recording the
+same resolution and the narrowed next-move. No code, data, or generated JSON changed -- this was a
+sourcing/documentation pass only, consistent with finding 7 always having been a text-authenticity
+question rather than a structural/build one.
+
+---
+
+## Session 2026-09-27, continued yet further still -- Roman Breviary finding 7 fully closed: found
+a post-1913 Pars Autumnalis, every remaining wording question confirmed correct. SEED_VERSION
+unchanged (lane exempt from the broad-campaign tracking per architecture §15; documentation only).
+
+**Context.** The prior entry (this same session) narrowed finding 7 to a single question -- whether
+`Sancti/11-02.txt`'s 1 Cor 15:12 lesson genuinely drops "autem" the way an authentic printed All
+Souls proper would -- after pinning down that Josh's uploaded 1906 *Pars Autumnalis* predates Pope
+St. Pius X's 1911-1913 breviary reform (the one that created this specific All Souls proper) by
+several years. Josh then asked directly: "See if you can find a post-1913 Pars Autumnalis on
+archive.org."
+
+**What was found.** Queried `archive.org/advancedsearch.php` directly with
+`title:(breviarium romanum autumnalis)` rather than guessing at search phrasing. Result:
+`breviarium-romanum-1942-pars-autumnalis` -- `access-restricted-item` absent from its metadata (no
+CDL gate, unlike the 1961 Benziger item found in an earlier pass), collection `opensource`/
+`community`, plain-text OCR (`..._djvu.txt`, 2.5MB) freely downloadable via `archive.org/download/`
+(needed `-L` to follow the redirect to the regional CDN host -- the first attempt silently produced
+an empty file without it, caught by checking the file size rather than trusting a clean exit code).
+
+Its own title page reads "CURA... Pii Papæ X... AUCTORITATE REFORMATUM" (Desclée & Socii, Rome/
+Tournai/Paris) -- an explicitly Pius-X-reformed edition, confirming it postdates the 1906 volume's
+reform gap. It carries a full, dedicated "In Commemoratione Omnium Fidelium Defunctorum, DUPLEX"
+proper spanning its own printed pages 737-745 -- not a rubric cross-reference to the votive office,
+an actual complete nine-lesson proper.
+
+**Read all nine lessons directly against `Sancti/11-02.txt` + `Commune/C9.txt`. Every one matches
+word for word:**
+- Lectio i (Job 7:16-21): exact match, same absent leading conjunction already confirmed via the
+  1906 volume's votive office in the prior entry.
+- Lectio iv-vi (St. Augustine, *De cura pro mortuis gerenda*, cap. 2-3 / 4 / 18): exact match
+  throughout, including exact line-for-line correspondence on Lectio vi's closing sentence.
+- **Lectio vii (1 Cor 15:12-22) -- the specific open question, now answered definitively.** 1942
+  print: "Si Christus prædicátur quod resurréxit a mórtuis... Si autem resurréctio mortuórum non
+  est, neque Christus resurréxit." No "autem" before "Christus" in the opening clause -- exactly
+  matching `Sancti/11-02.txt`, not the plain Vulgate's "Si autem Christus prædicátur." The print's
+  own following sentence uses "autem" normally, ruling out an OCR-wide dropped word and confirming
+  this is a deliberate convention at the lesson's opening clause specifically (no antecedent for
+  "autem" to refer back to, exactly as reasoned in the prior entry without yet being able to prove
+  it against a printed proper). **Confirmed correct.**
+- **Lectio viii (1 Cor 15:35-44) -- the endpoint question, now answered definitively.** 1942 print's
+  Lectio viii ends at exactly the same point our build's `lectio8` does: "...seminátur corpus
+  animále, surget corpus spiritále." Verse 44, no more, no less. **Confirmed correct, no
+  truncation.**
+- Lectio ix (1 Cor 15:51-58): exact match through to the closing responsory.
+
+**Finding 7 is now fully resolved, not merely narrowed.** All three of the original scripture-text
+variants flagged across three prior passes (`lectio1`/Job 7:16, `lectio7`/1 Cor 15:12,
+`lectio8`/1 Cor 15:44) are confirmed correct against a genuine, independent, Pius-X-reformed printed
+Breviarium Romanum containing the actual All Souls proper. Nothing in this office's scripture-
+reading units needs further sourcing.
+
+**Files changed:** `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 7's header and
+summary-table row updated to FULLY RESOLVED; new sub-finding C recording the 1942 volume's exact
+match in full, with citations, alongside the original open-item framing and sub-findings A/B kept
+in place). `RESUME_PROJECT_NOTE.md`'s Catholic-lane entry gained a new "CONTINUED" paragraph
+recording the same closure and the updated next-move (no scripture-sourcing work remains; the next
+decision is Josh's, on whether to grow the dev slice past one day/one hour). No code, data, or
+generated JSON changed -- sourcing/documentation only, consistent with finding 7 always having been
+a text-authenticity question rather than a structural one.
+
+---
+
+## Session 2026-09-27, continued yet further still -- Roman Breviary build-out begins: Josh
+authorized building the full minimum shippable floor ("I want to build out the whole thing"). Phase
+0+1 of the plan complete and validated; one real defect found and fixed in already-shipped content
+(Conclusio's Gloria Patri, should have been the Requiem substitute).
+
+**The unlock.** Confirmed Divinum Officium's own Perl engine (`web/cgi-bin/horas/officium.pl`) runs
+fully offline from the command line -- no live server, no network -- producing the same real,
+rubrically-correct output the public site does, for any date/hour/rubric-version. Installed missing
+Perl CPAN dependencies (`libcgi-pm-perl` and related) via `apt-get`. Runs in ~0.27s/call; confirmed
+correct occurrence/concurrence handling on a real rank-conflict weekday and Christmas Vespers with
+zero code on our side. This is architecture §9's "hybrid Divinum-oracle manifest strategy" as
+designed, not yet implemented that way -- the prior hand-trace-the-Perl-rubric-by-hand approach used
+for the existing Nov 2 Matins content does not scale to 8 hours x ~730 days and is superseded going
+forward.
+
+**Correctness gate found and fixed before using it as an oracle**: the separate engine clone used
+for tracing (`/home/user/divinumofficium/divinum-officium`) was at a newer commit (`5cf0e7f0`,
+2026-09-26) than the one actually pinned and audited in this repo (`0ce8747d`, 2026-06-20). Checked
+out the pinned commit before running anything, and re-verified the known-good Nov 2 Matins content
+(Job 7:16, 1 Cor 15:12 wording) reproduces identically at that exact commit.
+
+**Governance-gate decisions confirmed with Josh** (architecture §16, full detail in the new
+`ROMAN_BREVIARY_1960_1962_BUILDOUT.md`): source pin unchanged (`0ce8747d...`); unit-key convention
+changed to content-addressed (`sha1(kind|citation|text)`, replacing the day-scoped slug convention,
+so identical content across many days auto-dedups); year range confirmed as full calendar years
+2026+2027 (730 days), not just from-today-forward.
+
+**Built and validated**: `scripts/roman-breviary-oracle-run.mjs` (oracle invocation, pin
+verification), `scripts/parse-officium-html.mjs` (HTML -> structured sections, tracking running
+section/nocturn state, handling omitted sections, rubric interjections that resume the interrupted
+section afterward), `scripts/build-roman-breviary-oracle-blocks.mjs` (sections -> Core Contract role
+taxonomy -> content-addressed units). Ran the full pipeline for 2026-11-02 Matins and diffed its
+real output against every fact already established this session: Job 7:16 wording, 1 Cor 15:12
+wording, the Oratio Matutinum fix, the Invitatorium and Nocturn I antiphons, and the antiphon-
+doubling convention (finding 8) -- all matched exactly.
+
+**One real defect found and fixed, in already-shipped content from an earlier pass this same
+session.** The Conclusio's `&Gloria` macro had been resolved (in the full-audit pass, finding 1) to
+the standard Gloria Patri text, reasoned as "the single fixed doxology said everywhere in the Roman
+rite." That reasoning was wrong -- Requiem offices specifically replace Gloria Patri with "Réquiem
+ætérnam..." throughout, a well-known Roman-rite mourning convention this pass simply didn't check
+for. The oracle's real output has no Gloria Patri text at all; `web/cgi-bin/horas/horasscripts.pl`'s
+`sub Gloria` confirms why (`if ($rule =~ /Requiem gloria/i) { return prayer('Requiem', $lang); }`,
+and `Sancti/11-02.txt`'s own `[Rule]` contains exactly that line). Fixed:
+`scripts/build-roman-breviary-1960-dev-slice.mjs`'s `buildConclusioGloriaUnit` now uses the Requiem
+substitute text (`Psalterium/Common/Prayers.txt`'s `[Requiem]`), and the block's label no longer
+claims "Gloria Patri" when that isn't what's shown. Verified: narrow-check audit still 0 failing,
+live headless-Chromium render shows the corrected text with zero console errors.
+
+**The lesson, worth stating plainly**: "this content is fixed and used everywhere" is exactly the
+kind of claim that needs checking, not assuming -- the same discipline already applied to the
+scripture-text variants (finding 7) should have been applied to the Gloria Patri fix from the start.
+An independent oracle catches this kind of error precisely because it doesn't share the first pass's
+blind spot; a second hand-trace of the same rubric text might easily have repeated the same mistake.
+
+**Files changed**: `scripts/roman-breviary-oracle-run.mjs` (new), `scripts/parse-officium-html.mjs`
+(new), `scripts/build-roman-breviary-oracle-blocks.mjs` (new), `documentation/
+ROMAN_BREVIARY_1960_1962_BUILDOUT.md` (new, tracks the build-out itself), `documentation/
+ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 1 corrected in place, original account preserved),
+`scripts/build-roman-breviary-1960-dev-slice.mjs` (Gloria->Requiem fix), regenerated `units/
+dev-vertical-slice.json` and `manifests/2026.json`.
+
+**Next**: Phase 2 (harden the parser against content diversity across all 8 hours and a varied
+calendar sample) per the session's plan file.
+
+---
+
+## Session 2026-09-27, continued yet further still again -- Roman Breviary build-out Phase 2:
+parser hardened against content diversity across all 8 hours, 3 real bugs found and fixed.
+
+Ran the oracle pipeline across 6 dates x all 8 hours (48 combinations): an ordinary weekday, a
+Sunday, Christmas, the Octave Day of the Nativity, Good Friday, and Easter Sunday -- deliberately
+including the Triduum's special forms, per the plan's own instruction not to skip straight to the
+full 2-year sweep without first testing diversity.
+
+Found and fixed 3 real parser bugs (full detail in `documentation/ROMAN_BREVIARY_1960_1962_
+BUILDOUT.md`'s Phase 2 section): (1) a trailing footnote-index marker on every `Psalmus N` citation
+line was silently breaking citation recognition on every psalm outside the one Requiem case Phase 1
+happened to check -- caught only because this pass tested ordinary days where psalm citations are
+central, not incidental; (2) the day's rank-line color varies (grey/green/no-color-at-all for the
+highest ranks) and was hardcoded to one color, breaking rank extraction on Easter; (3) content
+appearing before any section header (Easter's Vigil-supersedes-Matins rubric notes; Good Friday's
+entire "Completorium singulare," a once-a-year special Compline that never uses the normal header
+convention at all) needed content-aware role classification -- pure prose notes are genuinely
+rubric text, but Good Friday's special Compline contains real psalmody/canticle/prayer content that
+would be mislabeled as a rubric under the same blanket rule.
+
+**Disclosed, not fixed this pass**: Good Friday's special Compline is captured completely and
+correctly as one large `other`-role block rather than split into separately-typed sub-blocks (it
+doesn't use the section-header convention the parser keys on); a `(Gloria omittitur)` rubric
+annotation in Passiontide is currently dropped rather than surfaced as its own diagnostic (harmless
+to the actual prayer text, just an unsurfaced rubric note).
+
+**Verified**: all 48 combinations run with zero crashes and zero role-taxonomy violations.
+
+**Files changed**: `scripts/parse-officium-html.mjs` (footnote-suffix stripping, color-agnostic
+rank-line extraction), `scripts/build-roman-breviary-oracle-blocks.mjs` (content-aware role
+classification for untitled sections), `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` (Phase
+2 section added). The throwaway test-sample harness used to drive this pass was scratch tooling, not
+committed.
+
+**Next**: Phase 3 (full 2026-2027 x 8-hour sweep, content-addressed units) per the plan.
+
+---
+
+## Session 2026-09-27, continued yet further still again and again -- Roman Breviary 1960/1962:
+minimum shippable floor reached. All 6 build-out phases complete: all 8 hours, the Roman general
+calendar, Rubrics 1960/1962, Latin, full calendar years 2026 and 2027 (730 days), precomputed, 0
+errors, 0 audit failures.
+
+**Summary of the whole build-out** (full detail across each phase already recorded in this
+session's earlier entries and in the new `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`,
+which is now the canonical account of this work -- this entry is a closing summary, not a
+duplicate):
+
+- **Phase 0**: pinned the separate engine clone used to compute the oracle to the same commit
+  (`0ce8747d...`) already mirrored and audited in this repo.
+- **Phase 1**: built the oracle pipeline (`roman-breviary-oracle-run.mjs`, `parse-officium-html.mjs`,
+  `build-roman-breviary-oracle-blocks.mjs`) and validated it against every fact already established
+  about the existing Nov 2 Matins content. Found and fixed a real defect from an earlier pass this
+  same session: the Conclusio's Gloria Patri should have been the Requiem substitute (Requiem
+  offices replace it throughout; the earlier fix wrongly assumed universal content without checking).
+- **Phase 2**: hardened the parser across 48 date/hour combinations including the Triduum's special
+  forms. Found and fixed 3 real parser bugs (a footnote-suffix breaking psalm-citation recognition,
+  a hardcoded rank-line color, content-aware role classification for headerless sections).
+- **Phase 3**: ran the full 2026-2027 x 8-hour sweep, 0 errors. Found and fixed a real concurrency
+  bug (`execFileSync` was silently serializing the "16-way" pool); switching to async cut the sweep
+  from ~30 minutes to ~5.
+- **Phase 4**: mirrored the remaining Roman-general 1960-relevant Latin content (~1,800 files, git
+  archive from the pinned commit, explicitly excluding monastic/Dominican/Cistercian variants) and
+  extended the narrow-check audit to cover every manifest year and verify the oracle-run commit
+  matches the pin.
+- **Phase 5**: rewired the UI to the new per-year data files, added a lightweight date/hour
+  navigator, verified live in headless Chromium (default view and a navigated jump to Christmas
+  Vespers, both zero console errors).
+- **Phase 6**: this entry, `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`, architecture §16's gates marked
+  cleared, `RESUME_PROJECT_NOTE.md` updated.
+
+**Total real defects found and fixed across the whole build-out**: 1 content bug (Gloria Patri
+should have been the Requiem substitute), 3 parser bugs, 1 performance bug. All five were caught
+specifically because an independent oracle and a deliberately varied validation sample were used
+instead of trusting a single hand-traced case or an unvalidated assumption -- consistent with the
+discipline held throughout this entire session's audit work.
+
+**Final audit result**: `scripts/audit-roman-breviary-1960-narrow-checks.mjs` -- 0 failing, 7
+warnings (all disclosed spot-check-sampling notices, the same policy the original narrow-check pass
+established, not a new gap). 7,919 manifest unit_refs across 5,840 office-hours (2,920 per year x 2
+years) all resolve correctly; every block role is a member of the closed taxonomy; every manifest's
+own recorded oracle-run commit matches the pin.
+
+**Explicitly not claimed**: this is architecture §10's minimum shippable floor, not a claim that
+every day's content has been individually human-reviewed the way the original one-day prototype
+was. English layer, chant layer, local calendars, and monastic/Dominican variants remain out of
+scope per §11, as they always were.
+
+Full detail, file-by-file, phase-by-phase: `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
