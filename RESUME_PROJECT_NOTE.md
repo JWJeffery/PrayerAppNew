@@ -127,6 +127,132 @@ the header-label copy question) are the only things left un-touched by design.
 
 ---
 
+**STATE AS OF 2026-09-27, LATER STILL — Josh: "finish the UI work, and then begin with the English
+version."** Two threads. This entry covers the first (UI); the English-version thread is a large,
+multi-layer build (source mirror → parsed AST → normalized units → build-time manifests → envelope
+integration → shell language toggle, per §12 of `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`) that has
+only just started — see the open item logged at the end of this entry, not a "done" claim.
+
+**"Finish the UI work" turned out to mean exactly the one deferred item flagged directly above**:
+`BOOK_OF_NEEDS_MODE_CONTEXTS` (`js/office-ui.js`) had no `'roman-breviary-dev'` entry, so opening the
+Book of Needs from inside the Catholic office fell back to the generic `'UNIVERSAL'` scope instead of
+a Catholic-specific one. Checked first, rather than assumed: `js/prayers.js` already has a fully
+populated `LC` ("Latin Catholic") Book-of-Needs context — label, empty-state copy, and real
+LC-tagged devotional prayers (`thanksgiving-aquinas`, `o-salutaris`, `tantum-ergo`, `divine-praises`,
+`anima-christi`, `to-blessed-virgin`, `to-saint-joseph`, `in-sorrow-or-trouble`, `ave-regina`,
+`act-of-contrition`, `after-neglect`) already seeded and governed in
+`documentation/book-of-needs-source-governance.json` (`traditionStatus.LC`). Nothing needed
+building — the content already existed, only the routing table was missing the one line. Fixed:
+added `'roman-breviary-dev': 'LC'` to `BOOK_OF_NEEDS_MODE_CONTEXTS`. That is now the only lane whose
+mode string doesn't match its own tradition code in that table (`daily`→ANG, `coptic-agpeya`→OO,
+`east-syriac`→COE, `horologion`→EO all match their own naming; `roman-breviary-dev`→LC doesn't,
+because the mode id is still the old dev-slice name per the note above) — flagging so a future
+"why doesn't X map to Y" pass isn't puzzled by it again.
+
+**Verified**: `node --check js/office-ui.js` clean. Live-verified in headless Chromium (installed
+`playwright-core` locally against `/opt/pw-browsers/chromium`, not committed, removed after):
+loaded `index.html?entry=roman-breviary-dev`, called `getBookOfNeedsContextForMode('roman-breviary-dev')`
+directly in-page — returns `'LC'` (was `'UNIVERSAL'` before the fix). Zero new console errors (the
+`ERR_CERT_AUTHORITY_INVALID` on the Google Fonts preconnect is the same pre-existing sandbox-proxy
+artifact noted in the entry above, not a regression).
+
+**Now genuinely closed**: the Catholic lane's UI has no more known deferred wiring gaps. The
+remaining items from the entry above (the threshold-splash question, the `roman-breviary-dev`
+naming, the header-label copy style) are disclosed copy/UX decisions for Josh, not defects.
+
+**English version — Layers A–D built and run this same session, past the reconnaissance stage
+recorded above.** That earlier note's premise turned out to understate what upstream actually has:
+the engine itself (`web/cgi-bin/horas/officium.pl`, same pinned commit `0ce8747d` already used for
+Latin) natively renders in English when called with `lang1=English&lang2=English` instead of
+`lang1=Latin&lang2=Latin` — confirmed by running it directly, not assumed from documentation. This
+meant extending the *existing* Latin build pipeline for a second language rather than writing a
+parallel one from scratch.
+
+**What changed, in the three shared pipeline files** (all still produce byte-identical Latin output
+by default — verified below, not assumed):
+- `scripts/roman-breviary-oracle-run.mjs`: `runOracle`/`runOracleAsync` take a `language` param
+  (`'la'` default), mapped to the engine's own language name and passed as both `lang1` and `lang2`
+  (setting only `lang2`, as the original Latin call did, produces a two-column Latin/target
+  side-by-side render instead of a single language — verified live, not assumed from the CGI params'
+  names).
+- `scripts/parse-officium-html.mjs`: the two word-based (not formatting-based) markers —
+  `Psalmus N` / `Nocturnus N` / `{omittitur}` — got English alternates (`Psalm N` / `Nocturn N` /
+  `{omit}`), each confirmed against real engine output across 12+ sample dates spanning all 8 hours,
+  not guessed from the Latin root words.
+- `scripts/build-roman-breviary-oracle-blocks.mjs`: the Latin-only `ROLE_BY_LABEL` section-role table
+  got a same-shape English counterpart (`ROLE_BY_LABEL_EN`) built the same way — by sampling real
+  English headers across 12+ dates/8 hours and finding each Latin label's actual English rendering
+  (`Invitatorium`→`Invitatory`, `Psalmi`→`Psalms`, `Lectio N`→`Reading N`, `Oratio`→`Prayer`,
+  `Conclusio`→`Conclusion`, `Hymnus`→`Hymn`, `Canticum`→`Canticle`, and non-obviously,
+  `Preces Feriales`→`Weekday Intercessions`, found only by locating the one sample date — a Lenten
+  feria — where it actually fires and reading both languages' output for that exact date/hour side
+  by side). Unit keys are now `rb1960.<lang>.unit.<hash>`, not hardcoded to `.la.`.
+
+**A real, pre-existing bug found and fixed, disclosed rather than silently carried forward**:
+`extractTdBlocks()`'s regex required every table row to have an `ID='...'` attribute. A row that
+renders only an omitted-section placeholder (e.g. "Preces Feriales{omittitur}" on a non-feria day)
+has **no ID at all** in this engine's own HTML — so this requirement silently dropped those rows out
+of the parse entirely, no diagnostic, just gone. Found by diffing Latin vs. English block sequences
+for the same 96 sample office-hours and finding count mismatches traceable to this, not by auditing
+Latin on its own. **Fixed the shared regex** (ID now optional) — this is a strict, purely-additive
+change verified against the actual committed `manifests/2026.json`: regenerating the same 28 sample
+Latin office-hours with the fix produces every existing block unchanged, plus newly-surfaced
+omitted-placeholder blocks that weren't there before (e.g. `rubric:Preces Feriales:0 unit_refs` on
+Epiphany's Lauds/Vespers). **Latin's already-committed `manifests/2026.json` / `manifests/2027.json`
+and their units files are NOT regenerated in this session** — that would mean touching data PR #38/#39
+already put through the lane's own narrow-check audit and Josh explicitly authorized as a full
+content audit. Re-running `scripts/audit-roman-breviary-1960-narrow-checks.mjs` against the
+untouched committed files still gives the same "0 failing, 7 warning" as before, confirming nothing
+here regresses what's shipped — but regenerating Latin to pick up this fix is a scope decision left
+open for Josh, not made here.
+
+**A second bug found and deliberately NOT fixed this session, disclosed instead**: a small class of
+single-line rubric instructions rendered as `<FONT SIZE='1' COLOR="red">plain text</FONT>` with
+nothing trailing on the same line (e.g. Compline's opening "There follows an examination of
+conscience, or the Our Father said silently.") get silently swallowed as an empty-text `verse` line
+by `VERSE_RE`, rather than becoming a visible `(rubric)` section — `VERSE_RE` was written for
+`92:1 Dóminus regnávit...`-style verse-number-plus-text lines and is too permissive for a
+tag-free one-line annotation. This affects **both languages** — Latin's specific "Examen
+conscientiæ..." instance happens to be protected only by a coincidental nested `<span>` tag inside
+it, but other bare Latin rubric lines (e.g. "Prima stropha sequentis hymni dicitur flexis genibus.")
+hit the identical bug. Confirmed this is the sole remaining cause of every one of the 12 sample-date
+Compline mismatches left after the ID fix above (all: Latin has one more visible block than English
+at exactly this spot). Not fixed here because a correct fix requires telling this class of line apart
+from the *other* legitimate uses of the same HTML pattern (scripture citations, saint/source
+attributions) sharing the identical tag shape, which needs its own dedicated pass, not a same-turn
+guess under the "begin the English version" ask. Flagged in `AUDIT_GOVERNANCE_LEDGER.md`'s matching
+entry as a shared, pre-existing, cross-language gap for a future narrow-check-style pass — not
+introduced by this session's work, just newly visible because of it.
+
+**What was actually run and committed**: the full 2-year sweep (`LANG_CODE=en node
+scripts/build-roman-breviary-full-sweep.mjs`), both years, **0 errors** — `data/roman-breviary-1960-1962/manifests/en/{2026,2027}.json`
+and `units/en/{2026,2027}.json` (3,940 and 3,985 unique English units respectively). Every block role
+across both years checked against the Core Contract's closed 13-role taxonomy directly — zero
+non-conformant roles. Latin's existing flat `manifests/2026.json` etc. are untouched; English writes
+to a parallel `en/` subdirectory so this can never collide with or silently alter Latin's own files.
+Also mirrored the additional English source directories (`Tempora`/`Sancti`/`Commune`/`Martyrologium`,
+1,463 files, byte-identity spot-checked against the pinned commit) into
+`data/roman-breviary-1960-1962/source/divinum-officium/web/www/horas/English/` for the same in-repo
+provenance Latin's own mirror already provides — `source-pin.json` updated to match, including two
+disclosed gaps: upstream has **no English `Appendix`** directory at all at this pinned commit (Latin
+has one, 9 files), and English's martyrology mirror is only the base `Martyrologium` (369 files, not
+the rubric-year-specific `Martyrologium1960` Latin also carries) — moot for now since the build
+pipeline doesn't read the martyrology at all yet, in either language.
+
+**Explicitly not done, and next**: Layer E (envelope integration) and the shell UI have not been
+touched — `js/roman-breviary-1960-1962-dev-slice.js` still only ever fetches `units/${year}.json`
+and `manifests/${year}.json` (Latin's flat files), with no language parameter and no UI control to
+choose one. Wiring English in means: extending that fetch to accept a language, adding a real
+language-selection control somewhere in the Catholic office's own settings (nothing elsewhere in this
+app is bilingual yet — this would be the first lane where language, not just tradition, is a
+user choice), and deciding the default (Latin, matching the lane's own liturgical-language identity,
+seems the obvious default with English as an explicit opt-in, but that's Josh's call, not assumed
+here). The two disclosed parser bugs above are also both still open. None of this was attempted in
+this session — the ask was to *begin* the English version, and Layers A–D are a real, verified,
+committed beginning, not the whole thing.
+
+---
+
 **STATE AS OF 2026-09-27, Catholic audit/build-out thread (superseded by the wiring entry directly
 above, kept below for its own history) — Josh: "we are going to audit the Catholic lane."** This
 is a **separate thread** from the Horologion entry directly below (still open, still paused exactly

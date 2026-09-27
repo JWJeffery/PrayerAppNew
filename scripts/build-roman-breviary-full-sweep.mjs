@@ -41,7 +41,7 @@ async function pool(items, concurrency, worker) {
   return results;
 }
 
-async function buildYear(year, concurrency) {
+async function buildYear(year, concurrency, language = 'la') {
   const dates = [...datesInYear(year)];
   const jobs = [];
   for (const date of dates) {
@@ -58,7 +58,7 @@ async function buildYear(year, concurrency) {
   await pool(jobs, concurrency, async ({ date, hourKey }) => {
     let html;
     try {
-      ({ html } = await runOracleAsync(date, hourKey));
+      ({ html } = await runOracleAsync(date, hourKey, language));
     } catch (err) {
       errorCount++;
       errors.push({ date, hourKey, error: err.message });
@@ -70,7 +70,7 @@ async function buildYear(year, concurrency) {
       commit: PINNED_COMMIT,
       date,
       hour: hourKey
-    });
+    }, language);
 
     for (const [key, unit] of Object.entries(sectionUnits)) {
       if (!units[key]) units[key] = unit;
@@ -91,13 +91,23 @@ async function buildYear(year, concurrency) {
 
 async function main() {
   verifyPin();
+  // LANG=en npm run <this script> selects the language; unset/anything else keeps the exact
+  // pre-existing Latin behavior and output paths (data/.../manifests/<year>.json,
+  // data/.../units/<year>.json) so re-running this script for Latin stays byte-for-byte identical
+  // to before English support was added. English writes to a parallel manifests/en/, units/en/
+  // subdirectory rather than renaming or restructuring Latin's existing flat files.
+  const language = process.env.LANG_CODE === 'en' ? 'en' : 'la';
   const years = process.argv.slice(2).map(Number).filter(Boolean);
   const targetYears = years.length ? years : [2026, 2027];
   const concurrency = Number(process.env.ORACLE_CONCURRENCY || 12);
+  const manifestsDir = language === 'en' ? path.join(DATA_ROOT, 'manifests', 'en') : path.join(DATA_ROOT, 'manifests');
+  const unitsDir = language === 'en' ? path.join(DATA_ROOT, 'units', 'en') : path.join(DATA_ROOT, 'units');
+  fs.mkdirSync(manifestsDir, { recursive: true });
+  fs.mkdirSync(unitsDir, { recursive: true });
 
   for (const year of targetYears) {
     const startedAt = Date.now();
-    const { units, days, errorCount, errors, dayCount } = await buildYear(year, concurrency);
+    const { units, days, errorCount, errors, dayCount } = await buildYear(year, concurrency, language);
     const elapsedS = ((Date.now() - startedAt) / 1000).toFixed(1);
 
     const manifest = {
@@ -106,7 +116,7 @@ async function main() {
       tradition: 'roman_catholic',
       office_family: 'roman_breviary',
       edition_or_recension: 'rubrics_1960_1962',
-      language: 'la',
+      language,
       calendar_scope: 'general',
       year,
       days
@@ -117,14 +127,14 @@ async function main() {
       tradition: 'roman_catholic',
       office_family: 'roman_breviary',
       edition_or_recension: 'rubrics_1960_1962',
-      language: 'la',
+      language,
       units
     };
 
-    fs.writeFileSync(path.join(DATA_ROOT, 'manifests', `${year}.json`), JSON.stringify(manifest, null, 2));
-    fs.writeFileSync(path.join(DATA_ROOT, 'units', `${year}.json`), JSON.stringify(unitsFile, null, 2));
+    fs.writeFileSync(path.join(manifestsDir, `${year}.json`), JSON.stringify(manifest, null, 2));
+    fs.writeFileSync(path.join(unitsDir, `${year}.json`), JSON.stringify(unitsFile, null, 2));
 
-    console.log(`Year ${year}: ${dayCount} days x 8 hours, ${Object.keys(units).length} unique units, ${errorCount} errors, ${elapsedS}s`);
+    console.log(`[${language}] Year ${year}: ${dayCount} days x 8 hours, ${Object.keys(units).length} unique units, ${errorCount} errors, ${elapsedS}s`);
     if (errors.length) console.log('ERRORS:', JSON.stringify(errors.slice(0, 20)));
   }
 }

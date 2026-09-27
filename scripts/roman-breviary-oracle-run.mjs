@@ -29,9 +29,18 @@ function toOfficiumDate(isoDate) {
   return `${m}-${d}-${y}`;
 }
 
-function oracleArgs(isoDate, hourKey) {
+// Engine language names, not Universal Office's own 'la'/'en' codes -- this is the exact string
+// the Divinum Officium engine expects for lang1/lang2. Both are set to the same value: verified
+// live that setting only lang2 (leaving lang1 at its own default of Latin) produces a two-column
+// side-by-side render instead of the single-language one this pipeline needs (see
+// AUDIT_GOVERNANCE_LEDGER.md's English-lane entry).
+const ENGINE_LANGUAGE_NAME = { la: 'Latin', en: 'English' };
+
+function oracleArgs(isoDate, hourKey, language = 'la') {
   const hourCommand = HOUR_COMMANDS[hourKey];
   if (!hourCommand) throw new Error(`Unknown hour key: ${hourKey}`);
+  const engineLanguage = ENGINE_LANGUAGE_NAME[language];
+  if (!engineLanguage) throw new Error(`Unknown language: ${language}`);
   return {
     hourCommand,
     args: [
@@ -39,7 +48,8 @@ function oracleArgs(isoDate, hourKey) {
       'version=Rubrics 1960',
       `command=pray${hourCommand}`,
       `date=${toOfficiumDate(isoDate)}`,
-      'lang2=Latin',
+      `lang1=${engineLanguage}`,
+      `lang2=${engineLanguage}`,
       'dioecesis=Generale'
     ],
     options: {
@@ -63,8 +73,8 @@ function stripHeaders(raw) {
   return lines.slice(bodyStart).join('\n');
 }
 
-export function runOracle(isoDate, hourKey) {
-  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey);
+export function runOracle(isoDate, hourKey, language = 'la') {
+  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey, language);
   const raw = execFileSync('perl', args, options);
   return { html: stripHeaders(raw), commit: PINNED_COMMIT, hourCommand };
 }
@@ -72,8 +82,8 @@ export function runOracle(isoDate, hourKey) {
 // Real concurrency requires the child process to run off Node's single thread while we wait --
 // execFileSync blocks it, silently serializing every "concurrent" caller. This is the one the
 // full-sweep pool must use.
-export async function runOracleAsync(isoDate, hourKey) {
-  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey);
+export async function runOracleAsync(isoDate, hourKey, language = 'la') {
+  const { hourCommand, args, options } = oracleArgs(isoDate, hourKey, language);
   const { stdout } = await execFileAsync('perl', args, options);
   return { html: stripHeaders(stdout), commit: PINNED_COMMIT, hourCommand };
 }
@@ -82,7 +92,7 @@ export { HOUR_COMMANDS, PINNED_COMMIT, verifyPin };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   verifyPin();
-  const [, , isoDate, hourKey] = process.argv;
-  const { html } = runOracle(isoDate, hourKey);
+  const [, , isoDate, hourKey, language] = process.argv;
+  const { html } = runOracle(isoDate, hourKey, language || 'la');
   process.stdout.write(html);
 }
