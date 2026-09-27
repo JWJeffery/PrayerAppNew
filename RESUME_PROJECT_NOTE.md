@@ -127,6 +127,58 @@ the header-label copy question) are the only things left un-touched by design.
 
 ---
 
+**STATE AS OF 2026-09-27, LATER STILL — Josh: "finish the UI work, and then begin with the English
+version."** Two threads. This entry covers the first (UI); the English-version thread is a large,
+multi-layer build (source mirror → parsed AST → normalized units → build-time manifests → envelope
+integration → shell language toggle, per §12 of `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`) that has
+only just started — see the open item logged at the end of this entry, not a "done" claim.
+
+**"Finish the UI work" turned out to mean exactly the one deferred item flagged directly above**:
+`BOOK_OF_NEEDS_MODE_CONTEXTS` (`js/office-ui.js`) had no `'roman-breviary-dev'` entry, so opening the
+Book of Needs from inside the Catholic office fell back to the generic `'UNIVERSAL'` scope instead of
+a Catholic-specific one. Checked first, rather than assumed: `js/prayers.js` already has a fully
+populated `LC` ("Latin Catholic") Book-of-Needs context — label, empty-state copy, and real
+LC-tagged devotional prayers (`thanksgiving-aquinas`, `o-salutaris`, `tantum-ergo`, `divine-praises`,
+`anima-christi`, `to-blessed-virgin`, `to-saint-joseph`, `in-sorrow-or-trouble`, `ave-regina`,
+`act-of-contrition`, `after-neglect`) already seeded and governed in
+`documentation/book-of-needs-source-governance.json` (`traditionStatus.LC`). Nothing needed
+building — the content already existed, only the routing table was missing the one line. Fixed:
+added `'roman-breviary-dev': 'LC'` to `BOOK_OF_NEEDS_MODE_CONTEXTS`. That is now the only lane whose
+mode string doesn't match its own tradition code in that table (`daily`→ANG, `coptic-agpeya`→OO,
+`east-syriac`→COE, `horologion`→EO all match their own naming; `roman-breviary-dev`→LC doesn't,
+because the mode id is still the old dev-slice name per the note above) — flagging so a future
+"why doesn't X map to Y" pass isn't puzzled by it again.
+
+**Verified**: `node --check js/office-ui.js` clean. Live-verified in headless Chromium (installed
+`playwright-core` locally against `/opt/pw-browsers/chromium`, not committed, removed after):
+loaded `index.html?entry=roman-breviary-dev`, called `getBookOfNeedsContextForMode('roman-breviary-dev')`
+directly in-page — returns `'LC'` (was `'UNIVERSAL'` before the fix). Zero new console errors (the
+`ERR_CERT_AUTHORITY_INVALID` on the Google Fonts preconnect is the same pre-existing sandbox-proxy
+artifact noted in the entry above, not a regression).
+
+**Now genuinely closed**: the Catholic lane's UI has no more known deferred wiring gaps. The
+remaining items from the entry above (the threshold-splash question, the `roman-breviary-dev`
+naming, the header-label copy style) are disclosed copy/UX decisions for Josh, not defects.
+
+**English version — status at hand-off, not started beyond reconnaissance**: confirmed via the
+mirrored source tree (`data/roman-breviary-1960-1962/source/divinum-officium/web/www/horas/English/`)
+that only the **Psalter** (202 files, Douay-Rheims-style psalm text) was ever mirrored in English —
+`Commune`, `Sancti`, `Tempora`, `Martyrologium1960`, and `Appendix` (the propers, hymns, orations,
+lessons — everything but the Psalms) have **no English mirror yet**, unlike Latin's full tree (2,026
+files). Confirmed the upstream `DivinumOfficium/divinum-officium` repo (same pinned source already
+used for the Latin lane) is MIT-licensed at the repo level — the same license terms already relied
+on for the Latin content, so no new licensing gate beyond what Latin already cleared; no separate
+translator/attribution statement for the English horas text was found in-repo, which is worth a
+second look before a large-scale English mirror, but doesn't block starting on it under the same
+terms Latin was built under. **Not yet done, and next**: mirror the remaining English directories
+from the same pinned commit (Layer A, matching §12 of the architecture doc), then repeat Latin's own
+build sequence (AST parse → normalized `en` source units → build-time manifests → envelope
+integration) rather than a one-shot import — this is the same multi-PR scale of effort the Latin
+lane itself took (§ "Session 2026-09-26" through "Session 2026-09-27" entries above), not a small
+follow-on.
+
+---
+
 **STATE AS OF 2026-09-27, Catholic audit/build-out thread (superseded by the wiring entry directly
 above, kept below for its own history) — Josh: "we are going to audit the Catholic lane."** This
 is a **separate thread** from the Horologion entry directly below (still open, still paused exactly

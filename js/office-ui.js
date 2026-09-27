@@ -1813,7 +1813,8 @@ const BOOK_OF_NEEDS_MODE_CONTEXTS = {
     daily: 'ANG',
     'coptic-agpeya': 'OO',
     'east-syriac': 'COE',
-    horologion: 'EO'
+    horologion: 'EO',
+    'roman-breviary-dev': 'LC'
 };
 
 function getBookOfNeedsContextForMode(mode) {

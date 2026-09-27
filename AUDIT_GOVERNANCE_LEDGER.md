@@ -22478,3 +22478,29 @@ correctly auto-opens straight into the Catholic office on return, exactly like e
 tradition's stored default already does.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, later still -- Book of Needs Catholic-context wiring closed; English-version
+reconnaissance started. Josh: "finish the UI work, and then begin with the English version."
+
+**UI work**: the one deferred gap from the previous entry (`BOOK_OF_NEEDS_MODE_CONTEXTS` missing a
+`roman-breviary-dev` entry) is fixed. `js/prayers.js` already had a fully-seeded `LC` Book-of-Needs
+context (label, empty-state copy, real LC-tagged prayers, governed in
+`documentation/book-of-needs-source-governance.json`) -- confirmed before touching anything, so this
+was a one-line routing fix, not new content. Added `'roman-breviary-dev': 'LC'` to
+`BOOK_OF_NEEDS_MODE_CONTEXTS` in `js/office-ui.js`. `node --check` clean; live-verified in headless
+Chromium (`playwright-core`, not committed) that `getBookOfNeedsContextForMode('roman-breviary-dev')`
+now returns `'LC'` instead of falling back to `'UNIVERSAL'`, zero new console errors. The Catholic
+lane's UI has no further known wiring gaps as of this entry.
+
+**English version**: reconnaissance only, not build-out. The English source mirror under
+`data/roman-breviary-1960-1962/source/divinum-officium/web/www/horas/English/` covers only the
+Psalter (202 files) -- `Commune`/`Sancti`/`Tempora`/`Martyrologium1960`/`Appendix` have no English
+mirror, unlike Latin's full 2,026-file tree. Confirmed `DivinumOfficium/divinum-officium` (the same
+pinned source already used for Latin) is MIT-licensed at the repo level, same terms already relied
+on for Latin -- no new licensing blocker, though no separate translator attribution for the English
+horas text was found and is worth a second look before a large mirror. Next step is a Layer A mirror
+of the remaining English directories from the same pinned commit, then the same AST-parse ->
+normalized-units -> build-time-manifest -> envelope-integration sequence Latin went through --
+logged as an open multi-session item, not completed here.
