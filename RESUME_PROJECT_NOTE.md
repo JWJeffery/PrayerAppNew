@@ -51,6 +51,40 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**GOVERNANCE DECISION, 2026-09-27, NEWEST OF ALL — Josh: "The modern LOTH lane is abandoned. We are
+using the 1960s version."** This directly resolves the single biggest open question a full
+project-wide open-items audit surfaced this session (compiled from `RESUME_PROJECT_NOTE.md`,
+`AUDIT_GOVERNANCE_LEDGER.md`, `project_roadmap.json`, and 40+ `documentation/` files, cross-checked
+against the live repo): whether the modern Roman Liturgy of the Hours lane (`roman_loth` — the
+private `JWJeffery/LOTH` corpus/governance track described in
+`documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md` and `project_roadmap.json`'s
+`catholic-first-profile`/`catholic-source-strategy`/`catholic-minimum-baseline` governance
+questions) was still a live goal alongside the Roman Breviary 1960/1962 (`roman_breviary`) work
+that actually shipped in September, or had been quietly superseded by it. Answer: superseded,
+formally, by Josh's own words — `roman_breviary` is the sole Roman Catholic profile going forward,
+not one of two parallel lanes.
+
+**Recorded in the same pass**: `project_roadmap.json`'s three Catholic governance questions marked
+`"status": "superseded"` with a `superseded_note` on each explaining why (kept the original
+`resolution`/`notes` fields intact for history, per this project's usual practice of correcting in
+place rather than deleting); `README.md`'s "Required first-release representation" line for Roman
+Catholic updated from "Divine Office / Liturgy of the Hours" to "Roman Breviary 1960/1962";
+`documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md` given a superseded-header notice so
+its entire roadmap (composition-map UI, ribbon placement, LOTH diagnostics, the future
+public-domain Roman-family track) reads as moot, not as a live backlog — a future session finding
+that document should not treat any of it as pickupable work without Josh explicitly reopening the
+lane.
+
+**Not touched, and why**: `documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §1's own framing
+("an additional, honestly-deferred Latin recension lane, not a replacement") was left as-is rather
+than edited to say "the sole lane" — that document describes `roman_breviary`'s own architecture
+correctly regardless of what happens to `roman_loth`, and rewriting its self-description into a
+claim about a sibling lane's fate is scope creep on an architecture doc. The supersession is
+recorded where the `roman_loth` lane's own governance lives, not retrofitted into the
+`roman_breviary` side.
+
+---
+
 **STATE AS OF 2026-09-27, LATEST OF ALL — Josh: "wire in the Catholic office to the rest of the
 app."** This directly answers the "next real decision is Josh's" question the audit/build-out
 thread below left open (its own final entry, just below this one). PR #39 (full content audit +

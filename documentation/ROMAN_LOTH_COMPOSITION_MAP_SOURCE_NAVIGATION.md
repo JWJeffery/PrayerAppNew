@@ -4,6 +4,16 @@ Status: accepted architecture/governance note
 Date: 2026-05-25  
 Scope: Roman Office / Liturgy of the Hours, source governance, user formation, printed-source navigation, public-domain Roman-family release planning
 
+**SUPERSEDED 2026-09-27 — Josh's direct decision: the modern Roman Liturgy of the Hours lane
+(`roman_loth`, the lane this entire document governs) is ABANDONED.** PrayerAppNew ships the Roman
+Breviary 1960/1962 (`roman_breviary`, sourced from `divinum-officium`) as the sole Roman Catholic
+profile instead — see `documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` and
+`ROMAN_BREVIARY_1960_1962_BUILDOUT.md` ("MINIMUM SHIPPABLE FLOOR REACHED — all 6 phases complete,
+2026-09-27"), live in the app and reachable from the main entry screen as of PR #39/#40. Every
+roadmap item below (composition-map UI, ribbon placement, LOTH diagnostics, the future
+public-domain Roman-family track) is now moot, not open work — do not pick any of it up without a
+fresh decision from Josh reopening the `roman_loth` lane. Kept below for historical record only.
+
 ## Decision
 
 Universal Office should not merely display prayer text. It should disclose liturgical composition.
