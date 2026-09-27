@@ -22960,3 +22960,35 @@ record the closure, matching that file's own established pattern for items found
 untracked.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, working the open-items audit's non-blocked items -- item 4: Horologion
+Finding IH7's own findings doc corrected -- the fix already existed
+
+Fourth item from this session's project-wide open-items audit. `documentation/HOROLOGION_AUDIT_
+FINDINGS.md` disclosed Finding IH7 (no appointment gate on the four Interhours, though `UNABHOR1997`
+p.93 appoints them on only ~2 days a year -- the first day of the Apostles' Fast, and the first day
+of the Nativity Fast if it falls on a weekday -- and never during Great Lent) as "not fixed in this
+pass."
+
+Checked `js/horologion-engine.js` before treating this as buildable work: `_resolveInterhourSlots()`
+already carries a gate with its own comment reading "Finding IH7 correction (2026-09-26)" -- the
+SAME DAY as the disclosure. The fix was made during the same audit session; the findings doc's prose
+was simply never updated to match. `_isApostlesFastFirstDay()` (Pascha + 57 days) and
+`_isNativityFastFirstDay()` (fixed-calendar Nov. 15, eoMode-aware) already existed in the file from
+elsewhere; the gate itself just wires them together plus a Monday-Friday check on the Nativity-Fast
+branch, falling through to an honest "Not Appointed" rubric naming both conditions on every other
+date.
+
+Live-verified in the running app (headless Chromium, `HorologionEngine.resolveOffice()`) across
+2025, 2026, 2027, and 2030: appointed on exactly 2025-06-16; 2026-06-08 (matching the code's own
+cited Orthocal cross-check -- pascha_distance 57 that year carries service_notes "Beginning of
+Apostles' Fast"); 2027-06-28 and 2027-11-15; 2030-06-24 and 2030-11-15. One or two days per year in
+every case, zero appointed days during Great Lent in any tested year.
+
+No code changed. `documentation/HOROLOGION_AUDIT_FINDINGS.md` corrected in place -- both the
+top-level status summary and the IH7 finding itself now read FIXED, with this verification recorded
+inline.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
