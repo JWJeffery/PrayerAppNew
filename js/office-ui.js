@@ -2314,6 +2314,7 @@ function _sharedOfficeNavigatorModeKey() {
     if (selectedMode === "coptic-agpeya") return "coptic";
     if (selectedMode === "east-syriac") return "eastSyriac";
     if (selectedMode === "horologion") return "horologion";
+    if (selectedMode === "roman-breviary-dev") return "romanBreviary";
     if (selectedMode === "daily" || !selectedMode) return "daily";
     return null;
 }

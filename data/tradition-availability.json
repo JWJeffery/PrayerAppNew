@@ -12,9 +12,7 @@
       "available": true
     },
     "eastern-orthodox": {
-      "available": false,
-      "reason": "Byzantine Horologion is paused for a content audit.",
-      "since": "2026-09-25"
+      "available": true
     },
     "latin-catholic": {
       "available": true
