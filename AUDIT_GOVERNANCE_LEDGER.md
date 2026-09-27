@@ -22141,3 +22141,72 @@ recorded in place, and new disclosed Findings T8 and IH7. This is not a claim th
 error-free -- it is a claim that this specific, requested second pass is complete, its findings are
 recorded, and the process itself (independent source re-read, not re-trusting automated checks) is
 what caught all of the above.
+
+---
+
+## Session 2026-09-27, continued yet again further -- Roman Breviary finding 7 substantially
+resolved using Josh's second uploaded printed source. SEED_VERSION unchanged (this lane is exempt
+from the SEED_VERSION-tracked broad campaign per architecture §15; no code changed, documentation
+only).
+
+**Context.** Finding 7 of `ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (three scripture-reading text
+variants against the plain Vulgate: `lectio1`/Job 7:16, `lectio7`/1 Cor 15:12, `lectio8`/1 Cor
+15:44) had been carried open across three prior passes for lack of a printed 1960/1962 Breviarium
+Romanum to check against. Josh, after independently confirming divinumofficium.com was reachable
+from his own browser (a fact this session had reported but not exploited, since the live site adds
+nothing over the already-cloned repo -- Josh's own correction, recorded in the prior entry), found
+and uploaded a second archive.org OCR text file: `breviariumromanu04cath_0_hocr_searchtext.txt.gz`,
+identifier `breviariumromanu04cath_0`, a Benziger Brothers *Breviarium Romanum* confirmed via its
+own title-page OCR to be the ***Pars Autumnalis*** -- the correct seasonal volume for a Nov 2
+question (his first upload, `Breviarium_Roman.rtf`, was confirmed to be *Pars Hiemalis et Verna*,
+the wrong season, and could not reach this content at all).
+
+**What was found, decompressed to `/tmp/brev04.txt` (19,658 lines) and searched directly (not
+assumed from title/metadata):**
+
+- The volume's own `Officium Defunctorum` common/votive section (its own printed pages ~187-196,
+  "AD MATUTINUM") prints all nine ferial/votive Matins lessons of the Office of the Dead verbatim,
+  entirely from Job (chapters 7, 10, 10, 13, 11, 14, 17, 19, 10 across Lectiones i-ix) -- this is
+  the *ordinary* daily-recitation form, not the annual All Souls proper.
+- **Lectio i (Job 7:16) matches `Commune/C9.txt`'s own `[Lectio1]` word for word**, including the
+  same absent leading conjunction before "Parce mihi" that was one of the two open wording
+  questions on finding 7's table. This closes that specific sub-question: the text is exactly what
+  an independent, editorially-unrelated 1960s printed Breviarium Romanum prints, not a Divinum
+  Officium transcription error.
+- This same volume's Officium Defunctorum has **no 1 Corinthians 15 content anywhere** -- at first
+  read this looked like it might contradict `Sancti/11-02.txt`'s own `[Lectio7]`-`[Lectio9]` (1 Cor
+  15:12-22, 35-44, 51-58). It doesn't, once the actual difference between the two sections was
+  understood: `Sancti/11-02.txt` is not the votive/ferial office, it is the distinct **proper**
+  office for the annual feast of the Commemoration of All Souls itself (its own `[Rank]`: "Duplex" /
+  "I. classis"), which uses a different nine-lesson set than the votive form.
+- Independent web research (outside this repo and outside Divinum Officium entirely -- a genuinely
+  separate witness, per the standard this session has held to throughout) confirmed why: **Pope St.
+  Pius X's breviary reform (effective 1911-1913, carried forward unchanged into the 1960 rubrics)
+  specifically restructured All Souls Day's own Matins** into three nocturns with three distinct
+  sources -- first nocturn kept the traditional Job lessons, second nocturn newly given extracts
+  from St. Augustine's *De cura pro mortuis gerenda*, third nocturn newly given extracts from 1
+  Corinthians 15 -- a change that left the separate, older, all-Job votive/ferial Office of the Dead
+  completely untouched (source: "St Pius X's New Office of All Souls",
+  musingsofanoldcurmudgeon.blogspot.com, 2021-11; quoted verbatim in the audit doc's updated finding
+  7). `Sancti/11-02.txt`'s `[Lectio4]`-`[Lectio6]` (Augustine) and `[Lectio7]`-`[Lectio9]` (1 Cor 15)
+  are exactly this documented reformed proper scheme -- **genuine, historically-sourced content for
+  this specific feast, not a fabrication or a mismatched section.**
+
+**What remains open, narrower than before finding 7 started.** Neither of Josh's two uploaded
+volumes contains the specific reformed All Souls proper (both give the older votive/ferial all-Job
+form instead), so the exact copy-editing-level wording of the 1 Cor 15 excerpts -- specifically
+whether an authentic printed proper drops "autem" from verse 12 the way `Sancti/11-02.txt` does --
+remains unverified against a printed proper. Given the Job 7:16 exact match above (including its
+own dropped conjunction) and that trimming a lection's opening connective is an ordinary, widely
+attested convention in excerpted lections generally, this reads as the same thing rather than a new
+suspected error, but is disclosed as unverified rather than asserted as certain. The
+scripture-*selection* question (is 1 Cor 15 even supposed to be here) is now closed; only the
+narrower wording-precision question remains, and only for that one word.
+
+**Files changed:** `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 7 rewritten in
+place with both sub-findings and the remaining narrow open item; summary table row updated;
+original open-item framing preserved via the "already disclosed" cross-reference, not deleted).
+`RESUME_PROJECT_NOTE.md`'s Catholic-lane entry gained a new "CONTINUED" paragraph recording the
+same resolution and the narrowed next-move. No code, data, or generated JSON changed -- this was a
+sourcing/documentation pass only, consistent with finding 7 always having been a text-authenticity
+question rather than a structural/build one.

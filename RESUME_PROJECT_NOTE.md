@@ -230,6 +230,47 @@ question (the minimum-shippable floor in architecture §10 is Latin/Roman-genera
 all eight hours/current+next year — a long way past today's one-day slice) not something to just
 start building.
 
+**CONTINUED, same day — Josh uploaded a second printed source and asked "can you answer it with
+that?" — mostly yes.** After the RTF (`Breviarium_Roman.rtf`, confirmed wrong season, *Pars Hiemalis
+et Verna*) couldn't reach Nov 2 content, Josh found and uploaded
+`breviariumromanu04cath_0_hocr_searchtext.txt.gz` — archive.org item `breviariumromanu04cath_0`, a
+Benziger Brothers Breviarium Romanum confirmed via its own title-page OCR to be the ***Pars
+Autumnalis*** (Autumn volume — the correct season this time). Decompressed and searched directly
+(`/tmp/brev04.txt`, 19,658 lines).
+
+- **Job 7:16 (`lectio1`) — now CONFIRMED CORRECT, byte-for-byte.** This volume's own `Officium
+  Defunctorum` common/votive section prints all nine ferial Matins lessons verbatim, entirely from
+  Job. Lectio i matches `Commune/C9.txt`'s `[Lectio1]` word for word, including the same absent
+  leading conjunction before "Parce" that was one of the two open wording questions. Closed.
+- **The two 1 Cor 15 lessons (`lectio7`/`lectio8`) — the *scripture-selection* question is now
+  closed too, just not by this print volume directly.** That volume's Officium Defunctorum is the
+  older, ferial/votive, all-Job form and has no 1 Corinthians content at all — which looked at first
+  like a contradiction of `Sancti/11-02.txt`'s own `[Lectio7]`-`[Lectio9]` (1 Cor 15). It isn't one:
+  `Sancti/11-02.txt` is the *proper* office for the annual All Souls feast itself, not the votive
+  form, and those are genuinely different 9-lesson sets. Independent web research (not this repo,
+  not Divinum Officium) confirmed why: **Pope St. Pius X's 1911-1913 breviary reform specifically
+  restructured All Souls Day's own Matins** into Job (nocturn 1, unchanged) / St. Augustine's *De
+  cura pro mortuis gerenda* (nocturn 2, new) / 1 Corinthians 15 (nocturn 3, new) — leaving the
+  separate ferial/votive Office of the Dead untouched, which is exactly why this print volume's
+  Officium Defunctorum section stayed all-Job. `Sancti/11-02.txt`'s `[Lectio4]`-`[Lectio9]` are
+  exactly this reformed proper. **Not a fabrication, not a wrong-book mix-up — genuine, sourced,
+  historically-documented content for this specific feast.**
+- **What's still open, narrower than before:** the exact copy-editing-level wording of the 1 Cor 15
+  excerpts (specifically whether an authentic printed proper drops "autem" from v.12 the way
+  `Sancti/11-02.txt` does) — neither uploaded volume contains this specific reformed proper to check
+  against directly. Given Job 7:16's exact match above (including its own dropped conjunction) and
+  that trimming a lection's opening connective is an ordinary, well-attested convention, this reads
+  as the same thing, not a new suspected error — but it's disclosed as unverified against a printed
+  proper, not asserted as certain. Full write-up: `documentation/ROMAN_BREVIARY_1960_1962_FULL_
+  AUDIT.md`, finding 7 (updated in place, original account kept for the record).
+
+**Next move on resuming this thread, updated:** the only genuinely open item left is now this single
+narrow wording question (1 Cor 15:12's "autem"), which needs a printed copy of the *specific* All
+Souls proper (Job/Augustine/1Cor scheme) to fully close — the two volumes in hand both give the
+older ferial/votive form instead. Otherwise unchanged: the next real decision is with Josh, whether
+to grow the dev slice past one day/one hour (a governance question, not something to just start
+building).
+
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
 second pass below disclosed rather than built: SC4's remaining imprecision, IH7, T8). Paused here

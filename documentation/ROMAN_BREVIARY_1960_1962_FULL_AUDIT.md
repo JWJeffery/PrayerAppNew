@@ -47,7 +47,7 @@ this pass went further:
 | 4 | `[Rule]`'s bare "Responsory9" line | **Investigated — not a defect (inert annotation)** |
 | 5 | `[Initial]`'s Pater/Ave omission under rubric 1960 | **Investigated — confirmed correct as built (by omission)** |
 | 6 | `[Oratio Matutinum]` (Matins' own collect) not built | **FIXED** — confirmed via `orationes.pl`'s `oratio()`, not an outside source |
-| 7 | 3 of 6 scripture-reading units differ from the plain Vulgate text | **Disclosed (carried over from the prior pass) — needs a printed source** |
+| 7 | 3 of 6 scripture-reading units differ from the plain Vulgate text | **Substantially resolved, 2026-09-27 continued — see below** |
 | 8 | Antiphon-doubling convention (full antiphon before *and* after the psalm on higher ranks) not modeled | **Disclosed — minor, presentational** |
 | 9 | Every unit's extracted text verified against its declared source section | **PASS — no extraction defects found** |
 
@@ -253,17 +253,79 @@ neither a printed source nor the Lauds module — just reading one more already-
 
 ---
 
-## 7. Three scripture-reading text variants — carried over, still open
+## 7. Three scripture-reading text variants — substantially resolved, 2026-09-27 continued
 
-Already disclosed in the prior narrow-check + sourcing pass
-(`ROMAN_BREVIARY_1960_1962_AUDIT.md`'s addendum): `lectio1` (Job 7:16), `lectio7` (1 Cor 15:12), and
+**Original finding** (from the prior narrow-check + sourcing pass,
+`ROMAN_BREVIARY_1960_1962_AUDIT.md`'s addendum): `lectio1` (Job 7:16), `lectio7` (1 Cor 15:12), and
 `lectio8` (1 Cor 15:44) each differ from the plain Vulgate text now held in
-`data/bible/translations/vulgate-clementine`. Nothing new to add here from this pass beyond
-confirming, via the engine reading above, that Matins lessons in this office are genuinely excerpted
-independently of the Vulgate's own verse boundaries (the whole `lectio()` subroutine machinery
-exists specifically to carve appointed ranges out of fuller source texts) — which supports, without
-proving, the "ordinary lesson-trimming, not an error" reading already recorded. Still needs a printed
-source to actually rule on. Not re-litigated further here.
+`data/bible/translations/vulgate-clementine`, and no independent source had yet been found to rule
+on whether that's ordinary lesson-trimming or a real error. Recorded as open, needing a printed
+source, and left there for two further passes.
+
+**What resolved it.** Josh found and uploaded two real printed sources: a 4.4MB RTF full-text
+download (`Breviarium_Roman.rtf`, confirmed to be the *Pars Hiemalis et Verna* volume — wrong
+season for Nov 2, not usable for this) and, after that, a second file,
+`breviariumromanu04cath_0_hocr_searchtext.txt.gz` — the OCR text of archive.org item
+`breviariumromanu04cath_0`, a Benziger Brothers *Breviarium Romanum*, confirmed by its own title-page
+OCR to be the ***Pars Autumnalis*** (Autumn volume) — the correct season for All Souls' Day.
+Decompressed to `/tmp/brev04.txt` (19,658 lines) and searched directly, this volume's own
+`Officium Defunctorum` common/votive section (starting around its printed page 187, "AD MATUTINUM")
+contains all nine Matins lessons of the ordinary (ferial/votive) Office of the Dead, verbatim,
+entirely from Job (7, 10, 10, 13, 11, 14, 17, 19, 10 — matching `Commune/C9.txt`'s own `Lectio1`
+through `Lectio9` exactly, including the missing-`Domine`-conjunction detail below).
+
+**Sub-finding A — `lectio1` / Job 7:16, now CONFIRMED CORRECT byte-for-byte.** The printed volume's
+Lectio i reads (OCR, with plain-text `d` misreading an initial cap `P`): *"arce mihi, Domine, nihil
+enim sunt dies mei. Quid est homo, quia magnificas eum? ... Ecce nunc in pulvere dormiam: et si mane
+me quaesieris, non subsistam."* This matches `Commune/C9.txt`'s `[Lectio1]` (`"Parce mihi, Dómine;
+nihil enim sunt dies mei..."` through `"...non subsístam."`) word for word, including the *absence*
+of any leading conjunction before "Parce" — which was one of the two specific wording questions on
+the table. **Closed: the lesson text is exactly what an independent 1960s-era printed Breviarium
+Romanum prints.** This also gives real (not merely structural) confidence in `Commune/C9.txt`'s
+overall wording fidelity, since it was checked against a source with no editorial relationship to
+Divinum Officium at all.
+
+**Sub-finding B — `lectio7`-`lectio9` / 1 Cor 15:12-22, 35-44, 51-58: confirmed as authentic content
+for this specific feast, not an error.** The printed Pars Autumnalis volume's own `Officium
+Defunctorum` section — the one just checked above — is the ordinary/ferial/votive Office of the
+Dead, and it uses all-Job lessons throughout (matching pre-reform tradition). It has no 1
+Corinthians 15 lessons anywhere in its Office of the Dead material, which at first reading looks
+like it might contradict `Sancti/11-02.txt`'s own `[Lectio7]`-`[Lectio9]` (which give 1 Cor 15, not
+more Job). It doesn't: `Sancti/11-02.txt` is not the ordinary/votive office, it is the *proper* Office
+for the annual feast of the Commemoration of All Souls itself (`[Rank]`: "Duplex" / "I. classis"),
+and that proper office is not the same nine lessons as the votive one. Independent web research
+(not this repo, not Divinum Officium) confirms why: Pope St. Pius X's breviary reform (effective
+1911-1913, and carried forward unchanged into the 1960 rubrics) specifically restructured *All
+Souls Day's own* Matins into three nocturns with three distinct sources — first nocturn kept the
+traditional Job lessons, second nocturn was newly given extracts from St. Augustine's *De cura pro
+mortuis gerenda*, and third nocturn was newly given extracts from 1 Corinthians 15 — a change that
+did not touch the separate, older, all-Job votive/ferial Office of the Dead said on ordinary days
+(see "St Pius X's New Office of All Souls",
+[musingsofanoldcurmudgeon.blogspot.com](https://musingsofanoldcurmudgeon.blogspot.com/2021/11/nov-mutationes-st-pius-xs-new-office-of.html):
+*"Only the first Nocturn would retain the readings from Job... the second Nocturn [extracts from]
+St Augustine's De cura pro mortuis gerenda, like in the Dominican and Carmelite uses... The lessons
+of the third Nocturn, finally, were extracts from chapter 15 of St Paul's first Epistle to the
+Corinthians"*). `Sancti/11-02.txt`'s `[Lectio4]`-`[Lectio6]` (Augustine, *De cura pro mortuis
+gerenda*, cap. 2-3 / 4 / 18) and `[Lectio7]`-`[Lectio9]` (1 Cor 15) are exactly this reformed proper
+scheme. **Closed: this is genuine, historically-documented content for this specific I. classis
+feast, not a fabrication or a wrong-book mix-up** — the apparent mismatch against the printed
+volume's Job-only Officium Defunctorum was comparing the wrong two things (the annual proper vs. the
+generic votive), not a real discrepancy.
+
+**What is still, narrowly, open.** Neither uploaded volume contains this specific reformed All
+Souls proper (both show the older all-Job votive form only), so the exact wording of the 1 Cor
+15:12-22 / 35-44 / 51-58 excerpts — specifically, whether an authentic 1960/1962 printed proper
+drops the initial "autem" from verse 12 the way `Sancti/11-02.txt` does ("Si Christus prædicátur"
+rather than the plain Vulgate's "Si autem Christus prædicátur") — has not been checked against a
+printed copy of that specific proper office. Given sub-finding A's result (Divinum Officium's Job
+wording for this same office matched an independent print exactly, including dropping its own
+leading conjunction), and that trimming a lection's opening connective is a well-attested general
+convention in Roman lectionaries (a lesson excerpted mid-sentence has no antecedent for "autem"/
+"enim" to refer back to), this reads as the same ordinary convention, not a new suspected error —
+but it is disclosed here as unverified against a printed proper, rather than asserted as certain.
+This is a narrower and lower-stakes question than the finding started as: the scripture-selection
+question (is 1 Cor 15 even supposed to be here) is resolved; only the copy-editing-level wording
+question remains open.
 
 ---
 
