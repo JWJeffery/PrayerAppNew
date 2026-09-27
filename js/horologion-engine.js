@@ -7906,7 +7906,17 @@ async function _resolveTypikaSlots(sections, dateObj) {
             );
         }
 
-        const lukanStart = lukanStartForYear(localDate.getFullYear());
+        // FIXED 2026-09-27 (disclosed as dead-wrong-but-harmless by the 2026-09-26 Horologion
+        // audit, "flagged for a future cleanup pass"): this used to anchor on
+        // localDate.getFullYear() directly, which is only correct for a date actually within
+        // the same calendar year the Lukan season started in (Sept-Dec). For a Jan-June date,
+        // the season started the PREVIOUS calendar year -- lukanSundayGospelKey (below) already
+        // gets this right via the same seasonYear formula; this sibling function never had it.
+        const year  = localDate.getFullYear();
+        const month = localDate.getMonth() + 1;
+        const seasonYear = (month <= 6) ? year - 1 : year;
+
+        const lukanStart = lukanStartForYear(seasonYear);
         if (localDate < lukanStart) return null;
 
         const diffDays = Math.round((localDate - lukanStart) / 86400000);
@@ -9097,12 +9107,25 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
+                // 2026-09-27: lukanWeekdayGospelKey's year-anchoring bug (fixed above) used to
+                // make it null for every Jan-June date, which this file's other two fallback
+                // tiers (post_lukan_weekday_gospels below, and ordinary_weekdays_after_pentecost
+                // further below) had silently come to rely on as their real gating signal --
+                // the corpus only has lukan_weekday_gospels transcribed for weeks 1-12, so a
+                // genuine Jan/Feb date now correctly computes a Lukan week number in the high
+                // teens/twenties with no corpus entry. Track whether an entry was actually FOUND
+                // AND USED, not just whether the key object exists, so the two fallback tiers
+                // below keep firing exactly as before for the weeks the Lukan corpus doesn't
+                // cover -- verified regression-free by Node simulation against ~2.5 years of
+                // dates before this change was made (see the ledger entry, same date).
+                let lukanWeekdayEntryUsed = false;
                 if (!typikaWeekdayCycleBlocked && lukanWeekdayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_weekday_gospels) {
                     const lwWeeks = _typikaLectionaryData.lukan_weekday_gospels.weeks || {};
                     const lwEntry = lwWeeks[lukanWeekdayGospelKey.week] &&
                         lwWeeks[lukanWeekdayGospelKey.week][lukanWeekdayGospelKey.weekday];
 
                     if (lwEntry) {
+                        lukanWeekdayEntryUsed = true;
                         const lwGospelRef = lwEntry.gospel_segments || lwEntry.gospel;
                         try {
                             const result = await resolveScripturePericope(lwGospelRef);
@@ -9175,7 +9198,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
-                if (!typikaWeekdayCycleBlocked && !lukanWeekdayGospelKey && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                if (!typikaWeekdayCycleBlocked && !lukanWeekdayEntryUsed && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
                     const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
                     const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
                         owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];

@@ -51,6 +51,50 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**FIXED 2026-09-27 — `lukanWeekdayGospelKey`'s year-anchoring bug** (disclosed by the 2026-09-26
+Horologion audit as "dead-wrong code... currently harmless... flagged for a future cleanup pass" —
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`, ledger). First task picked up from this session's
+project-wide open-items audit. **Turned out not to be the harmless one-liner the audit's own
+framing suggested** — investigating it properly surfaced a real coupling worth recording so it
+isn't re-broken by a future "just fix the obvious bug" pass.
+
+The bug itself: `lukanWeekdayGospelKey` (`js/horologion-engine.js`) anchored the Lukan weekday
+Gospel season's start on `localDate.getFullYear()` directly — correct only for a Sept-Dec date,
+since for a Jan-June date the season actually started the *previous* calendar year. Its sibling
+`lukanSundayGospelKey` already gets this right via a `seasonYear = (month <= 6) ? year - 1 : year`
+formula; this one never had it, so every Jan-June date wrongly computed a *future* season start
+and fell through to `return null`.
+
+**Why that "harmless" framing needed checking, not trusting**: the corpus's own
+`lukan_weekday_gospels` data only covers weeks 1-12 (confirmed by reading
+`data/horologion/typika-lectionary.json` directly) — the real Lukan weekday season runs 20+ weeks.
+Two other fallback tables exist (`post_lukan_weekday_gospels`, weeks 27-33;
+`ordinary_weekdays_after_pentecost`, the complete weeks 1-33) that the call site
+(`js/horologion-engine.js` ~line 9100-9220) chains through — and the last of those three was
+gated on `!lukanWeekdayGospelKey`, i.e. it was *already relying on the bug* as its real signal for
+"no Lukan-specific data available." A naive year-anchoring-only fix would have made
+`lukanWeekdayGospelKey` non-null-but-dataless for Jan/Feb dates, which would have made that third
+fallback tier — the one table with genuinely complete 1-33 coverage — silently unreachable for
+weeks 13-26, breaking correctly-rendering content into blank/unresolved Gospel citations for a real
+chunk of the winter.
+
+**The actual fix, verified before being trusted**: fixed the year anchoring, and separately
+changed the third tier's gate from `!lukanWeekdayGospelKey` (does the key object exist) to a new
+`!lukanWeekdayEntryUsed` flag (was a Lukan corpus entry actually found and used this render) — the
+semantically correct condition the raw key check was only ever a proxy for. Verified two ways
+before trusting it: (1) a standalone Node simulation reimplementing all three date-key functions
+plus the real data file's actual week coverage, run across ~2.5 years of dates (Sept 2026-Feb
+2029) — zero dates changed resolved/unresolved status, 185 dates now correctly cite the real
+Lukan-specific source (Metropolitan Cantor Institute) instead of falling to a generic table; (2)
+live in the running app via `HorologionEngine.resolveOffice()` for four spot-check dates (a
+previously-buggy January weekday, an unaffected September weekday, a deep mid-range December date,
+and a late pre-Lenten February date) — all four resolve correctly with the right source citation,
+zero new console errors. `node --check` clean.
+
+Full simulation code and live-check transcript: this session's own record; not re-run or
+re-verified by a future session without re-deriving it, per this project's own "distrust any fix
+whose correctness cannot be exercised by a test" rule.
+
 **GOVERNANCE DECISION, 2026-09-27, NEWEST OF ALL — Josh: "The modern LOTH lane is abandoned. We are
 using the 1960s version."** This directly resolves the single biggest open question a full
 project-wide open-items audit surfaced this session (compiled from `RESUME_PROJECT_NOTE.md`,

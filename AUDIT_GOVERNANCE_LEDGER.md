@@ -22857,3 +22857,23 @@ describes that lane's own architecture correctly regardless of roman_loth's fate
 is recorded on the roman_loth side, not retrofitted onto roman_breviary's doc.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, working the open-items audit's non-blocked items -- item 1: lukanWeekdayGospelKey
+
+Fixed the year-anchoring bug the 2026-09-26 Horologion audit disclosed as "dead-wrong code...
+currently harmless" (js/horologion-engine.js). Investigation found the "harmless" framing
+incomplete: a third fallback tier in the Typika weekday-Gospel call site was gated on
+`!lukanWeekdayGospelKey` and had come to rely on the bug (the key being wrongly null for every
+Jan-June date) as its real trigger, because the Lukan corpus itself only has weeks 1-12
+transcribed against a 20+ week real season. Fixed both together: the year anchoring (mirrored from
+the sibling `lukanSundayGospelKey`, which already had it right), and the fallback gate (changed
+from checking whether the key object exists to a new `lukanWeekdayEntryUsed` flag tracking whether
+a corpus entry was actually found). Verified regression-free by Node simulation against the real
+data file's week coverage across ~2.5 years of dates (zero resolved-to-unresolved regressions, 185
+dates newly citing the correct Lukan-specific source instead of a generic fallback table) and
+live-confirmed in the running app via `HorologionEngine.resolveOffice()` across four spot-check
+dates spanning the previously-buggy range. `node --check` clean, zero new console errors.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
