@@ -146,7 +146,31 @@ export function parseOfficiumHtml(html) {
       }
 
       if ((m = VERSE_RE.exec(line))) {
-        current.lines.push({ type: 'verse', num: stripTags(m[1]), text: stripTags(m[2]) });
+        const num = stripTags(m[1]);
+        const text = stripTags(m[2]);
+        // A verse-number-plus-text line (e.g. "92:1 Dóminus regnávit...") keeps its established
+        // shape below. But this exact tag pattern is also how Divinum Officium renders standalone,
+        // no-trailing-text annotations -- and empirically, across every date this build actually
+        // uses (both languages, full 2 years, verified by direct corpus sweep -- see
+        // AUDIT_GOVERNANCE_LEDGER.md), every single one of those is a genuine rubric instruction
+        // ("Gloria omittitur", "The first verse of the following hymn is said genuflecting.", etc),
+        // never a scripture citation slipping through. Before this fix these were silently
+        // swallowed: `text` empty, `lineText()` returns '' for a 'verse' line and it vanishes from
+        // the rendered office with no trace, not even a diagnostic.
+        //
+        // Deliberately NOT routed through PLAIN_RUBRIC_RE's own resume-on-next-dropcap mechanism
+        // below: checked what actually follows each of the 11 distinct real cases in this corpus
+        // (both languages, both years) and it's a genuine mix -- "Gloria omittitur" and "Romæ
+        // præcedens Versus..." are followed by an antiphon/versicle, not a dropcap, so they would
+        // never resume and would silently swallow everything after them into a fake rubric section
+        // until some later dropcap happened to appear. Kept as an inline note in the CURRENT
+        // section instead -- no section-switching, so nothing downstream can be corrupted by what
+        // does or doesn't follow.
+        if (!text) {
+          current.lines.push({ type: 'rubric-note', text: num });
+          continue;
+        }
+        current.lines.push({ type: 'verse', num, text });
         continue;
       }
 
