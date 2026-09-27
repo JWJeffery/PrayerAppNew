@@ -47,7 +47,7 @@ this pass went further:
 | 4 | `[Rule]`'s bare "Responsory9" line | **Investigated — not a defect (inert annotation)** |
 | 5 | `[Initial]`'s Pater/Ave omission under rubric 1960 | **Investigated — confirmed correct as built (by omission)** |
 | 6 | `[Oratio Matutinum]` (Matins' own collect) not built | **FIXED** — confirmed via `orationes.pl`'s `oratio()`, not an outside source |
-| 7 | 3 of 6 scripture-reading units differ from the plain Vulgate text | **Substantially resolved, 2026-09-27 continued — see below** |
+| 7 | 3 of 6 scripture-reading units differ from the plain Vulgate text | **FULLY RESOLVED, 2026-09-27 continued yet further — all three confirmed correct** |
 | 8 | Antiphon-doubling convention (full antiphon before *and* after the psalm on higher ranks) not modeled | **Disclosed — minor, presentational** |
 | 9 | Every unit's extracted text verified against its declared source section | **PASS — no extraction defects found** |
 
@@ -253,7 +253,7 @@ neither a printed source nor the Lauds module — just reading one more already-
 
 ---
 
-## 7. Three scripture-reading text variants — substantially resolved, 2026-09-27 continued
+## 7. Three scripture-reading text variants — FULLY RESOLVED, 2026-09-27 continued yet further
 
 **Original finding** (from the prior narrow-check + sourcing pass,
 `ROMAN_BREVIARY_1960_1962_AUDIT.md`'s addendum): `lectio1` (Job 7:16), `lectio7` (1 Cor 15:12), and
@@ -322,23 +322,44 @@ to contain it, full stop.** That is the whole explanation for why its Nov 2 page
 die infra Oct. Omnium Sanctorum" with a rubric pointing at the plain votive Office of the Dead: in
 1906 there was nothing else to print there yet.
 
-**What is still, narrowly, open.** Neither uploaded volume contains this specific reformed All
-Souls proper — the RTF is the wrong season (*Pars Hiemalis et Verna*) and this Autumn volume is the
-right season but predates the reform by several years — so the exact wording of the 1 Cor
-15:12-22 / 35-44 / 51-58 excerpts — specifically, whether an authentic 1960/1962 printed proper
-drops the initial "autem" from verse 12 the way `Sancti/11-02.txt` does ("Si Christus prædicátur"
-rather than the plain Vulgate's "Si autem Christus prædicátur") — has not been checked against a
-printed copy of that specific proper office. A volume that would settle it needs to be a *Pars
-Autumnalis* printed after ~1913, ideally close to the 1960/1962 rubrics era. Given sub-finding A's
-result (Divinum Officium's Job wording for this same office matched an independent print exactly,
-including dropping its own leading conjunction), and that trimming a lection's opening connective
-is a well-attested general
-convention in Roman lectionaries (a lesson excerpted mid-sentence has no antecedent for "autem"/
-"enim" to refer back to), this reads as the same ordinary convention, not a new suspected error —
-but it is disclosed here as unverified against a printed proper, rather than asserted as certain.
-This is a narrower and lower-stakes question than the finding started as: the scripture-selection
-question (is 1 Cor 15 even supposed to be here) is resolved; only the copy-editing-level wording
-question remains open.
+**Sub-finding C — found the right volume, and it's a complete, exact match. FINDING 7 FULLY
+CLOSED.** Since the 1906 volume predates the reform, the actual object of the search became: a
+*Pars Autumnalis* printed after ~1913. Searched `archive.org`'s own advanced-search API directly
+(`archive.org/advancedsearch.php`, `title:(breviarium romanum autumnalis)`) rather than guessing —
+found `breviarium-romanum-1942-pars-autumnalis`, no access restriction, plain-text OCR
+(`Breviarium_Romanum_1942_-_Pars_Autumnalis_djvu.txt`) freely downloadable. Its own title page reads
+"CURA... Pii Papæ X... AUCTORITATE REFORMATUM" (Desclée & Socii, Rome/Tournai/Paris) — an explicitly
+Pius-X-reformed edition, unlike the 1906 volume — and it has a full, dedicated "In Commemoratione
+Omnium Fidelium Defunctorum, DUPLEX" proper (pp. 737-745), not just a rubric cross-reference.
+
+Read the entire proper's nine lessons directly against `Sancti/11-02.txt` + `Commune/C9.txt`. Every
+one matches, word for word, including the two specific things this finding was still waiting on:
+
+- **Lectio i (Job 7:16-21)** — `"Parce mihi, Dómine; nihil enim sunt dies mei..."` through
+  `"...non subsístam."` — exact match, same absent leading conjunction as sub-finding A already
+  confirmed from the 1906 votive office.
+- **Lectio iv-vi (Augustine, *De cura pro mortuis gerenda*, cap. 2-3 / 4 / 18)** — exact match
+  throughout, including Lectio vi's closing line, `"...sit étiam quodámmodo ejúsdem fídei
+  testimónium!"`
+- **Lectio vii (1 Cor 15:12-22) — the specific "autem" question, now definitively answered.** The
+  1942 print reads: *"Si Christus prædicátur quod resurréxit a mórtuis... Si autem resurréctio
+  mortuórum non est, neque Christus resurréxit."* **No "autem" before "Christus" in the opening
+  clause** — exactly matching `Sancti/11-02.txt`'s `"Si Christus prædicátur..."`, not the plain
+  Vulgate's `"Si autem Christus prædicátur..."`. The print's own very next sentence *does* use
+  "autem" normally ("Si autem resurréctio...") — confirming this isn't sloppy transcription or an
+  OCR artifact dropping the word throughout, but a deliberate, consistent editorial choice at
+  exactly the lesson's opening clause (where there is no antecedent for "autem" to refer back to,
+  the reading sub-finding B already anticipated as the likely explanation). **Confirmed correct.**
+- **Lectio viii (1 Cor 15:35-44) — the endpoint question, now definitively answered.** The 1942
+  print's Lectio viii ends at exactly the same place `lectio8` does: `"...seminátur corpus animále,
+  surget corpus spiritále."` — verse 44, no more, no less. **Confirmed correct**, no truncation.
+- **Lectio ix (1 Cor 15:51-58)** — exact match through to the closing responsory.
+
+**Finding 7 is now fully resolved, not merely narrowed.** All three of the original scripture-text
+variants — `lectio1`/Job 7:16, `lectio7`/1 Cor 15:12, `lectio8`/1 Cor 15:44 — are confirmed correct
+against a genuine, independent, Pius-X-reformed printed Breviarium Romanum containing the actual
+All Souls proper (not the votive stand-in the two earlier volumes offered). Nothing in this office's
+scripture-reading units needs further sourcing or correction.
 
 ---
 

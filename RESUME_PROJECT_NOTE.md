@@ -264,12 +264,34 @@ Autumnalis*** (Autumn volume — the correct season this time). Decompressed and
   proper, not asserted as certain. Full write-up: `documentation/ROMAN_BREVIARY_1960_1962_FULL_
   AUDIT.md`, finding 7 (updated in place, original account kept for the record).
 
-**Next move on resuming this thread, updated:** the only genuinely open item left is now this single
-narrow wording question (1 Cor 15:12's "autem"), which needs a printed copy of the *specific* All
-Souls proper (Job/Augustine/1Cor scheme) to fully close — the two volumes in hand both give the
-older ferial/votive form instead. Otherwise unchanged: the next real decision is with Josh, whether
-to grow the dev slice past one day/one hour (a governance question, not something to just start
-building).
+**CONTINUED, same day — Josh: "See if you can find a post-1913 Pars Autumnalis on archive.org." Found
+one, and finding 7 is now FULLY CLOSED, not just narrowed.** The 1906 volume's own colophon
+(Mechlin/Dessain, Benziger Brothers, approved 24 Feb 1906) confirmed it predates Pius X's 1911-1913
+reform by design, not by bad luck — so the real target was any *Pars Autumnalis* printed after that.
+Searched `archive.org/advancedsearch.php` directly (`title:(breviarium romanum autumnalis)`) rather
+than guessing at search terms, and found `breviarium-romanum-1942-pars-autumnalis` — no access
+restriction, plain-text OCR freely downloadable. Its own title page reads "CURA... Pii Papæ X...
+AUCTORITATE REFORMATUM" (Desclée & Socii) — genuinely post-reform — and it carries a full, dedicated
+"In Commemoratione Omnium Fidelium Defunctorum" proper (pp. 737-745), not just a rubric pointer.
+
+Read all nine of its lessons directly against `Sancti/11-02.txt`/`Commune/C9.txt`. **Every one
+matches word for word**, including the two things still open: Lectio vii (1 Cor 15:12) reads "Si
+Christus prædicátur..." with the same absent "autem" our build has — and the print's very next
+sentence uses "autem" normally, showing this is a deliberate opening-clause convention, not an OCR
+drop or a transcription error. Lectio viii (1 Cor 15:35-44) ends at exactly the same point our build
+does ("...surget corpus spiritale."), confirming no truncation. **Finding 7 is closed in full**:
+all three original scripture-text variants (`lectio1`/Job 7:16, `lectio7`/1 Cor 15:12,
+`lectio8`/1 Cor 15:44) are now confirmed correct against a genuine, independent, reform-era printed
+Breviarium Romanum. `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` finding 7 rewritten to
+record this as fully resolved (sub-finding C), summary table updated.
+
+**Next move on resuming this thread:** finding 7 needs no further sourcing. The lane's entire
+existing corpus (one day, one hour) has now been through a full content audit with every finding
+either fixed, confirmed non-defect, or — for this one — confirmed correct against an independent
+printed source. The next real decision is with Josh: whether to grow the dev slice past one day/one
+hour, which is a governance question (the minimum-shippable floor in architecture §10 is
+Latin/Roman-general-calendar/1960-62/all eight hours/current+next year) not something to just start
+building without his say.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

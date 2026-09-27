@@ -22210,3 +22210,65 @@ original open-item framing preserved via the "already disclosed" cross-reference
 same resolution and the narrowed next-move. No code, data, or generated JSON changed -- this was a
 sourcing/documentation pass only, consistent with finding 7 always having been a text-authenticity
 question rather than a structural/build one.
+
+---
+
+## Session 2026-09-27, continued yet further still -- Roman Breviary finding 7 fully closed: found
+a post-1913 Pars Autumnalis, every remaining wording question confirmed correct. SEED_VERSION
+unchanged (lane exempt from the broad-campaign tracking per architecture §15; documentation only).
+
+**Context.** The prior entry (this same session) narrowed finding 7 to a single question -- whether
+`Sancti/11-02.txt`'s 1 Cor 15:12 lesson genuinely drops "autem" the way an authentic printed All
+Souls proper would -- after pinning down that Josh's uploaded 1906 *Pars Autumnalis* predates Pope
+St. Pius X's 1911-1913 breviary reform (the one that created this specific All Souls proper) by
+several years. Josh then asked directly: "See if you can find a post-1913 Pars Autumnalis on
+archive.org."
+
+**What was found.** Queried `archive.org/advancedsearch.php` directly with
+`title:(breviarium romanum autumnalis)` rather than guessing at search phrasing. Result:
+`breviarium-romanum-1942-pars-autumnalis` -- `access-restricted-item` absent from its metadata (no
+CDL gate, unlike the 1961 Benziger item found in an earlier pass), collection `opensource`/
+`community`, plain-text OCR (`..._djvu.txt`, 2.5MB) freely downloadable via `archive.org/download/`
+(needed `-L` to follow the redirect to the regional CDN host -- the first attempt silently produced
+an empty file without it, caught by checking the file size rather than trusting a clean exit code).
+
+Its own title page reads "CURA... Pii Papæ X... AUCTORITATE REFORMATUM" (Desclée & Socii, Rome/
+Tournai/Paris) -- an explicitly Pius-X-reformed edition, confirming it postdates the 1906 volume's
+reform gap. It carries a full, dedicated "In Commemoratione Omnium Fidelium Defunctorum, DUPLEX"
+proper spanning its own printed pages 737-745 -- not a rubric cross-reference to the votive office,
+an actual complete nine-lesson proper.
+
+**Read all nine lessons directly against `Sancti/11-02.txt` + `Commune/C9.txt`. Every one matches
+word for word:**
+- Lectio i (Job 7:16-21): exact match, same absent leading conjunction already confirmed via the
+  1906 volume's votive office in the prior entry.
+- Lectio iv-vi (St. Augustine, *De cura pro mortuis gerenda*, cap. 2-3 / 4 / 18): exact match
+  throughout, including exact line-for-line correspondence on Lectio vi's closing sentence.
+- **Lectio vii (1 Cor 15:12-22) -- the specific open question, now answered definitively.** 1942
+  print: "Si Christus prædicátur quod resurréxit a mórtuis... Si autem resurréctio mortuórum non
+  est, neque Christus resurréxit." No "autem" before "Christus" in the opening clause -- exactly
+  matching `Sancti/11-02.txt`, not the plain Vulgate's "Si autem Christus prædicátur." The print's
+  own following sentence uses "autem" normally, ruling out an OCR-wide dropped word and confirming
+  this is a deliberate convention at the lesson's opening clause specifically (no antecedent for
+  "autem" to refer back to, exactly as reasoned in the prior entry without yet being able to prove
+  it against a printed proper). **Confirmed correct.**
+- **Lectio viii (1 Cor 15:35-44) -- the endpoint question, now answered definitively.** 1942 print's
+  Lectio viii ends at exactly the same point our build's `lectio8` does: "...seminátur corpus
+  animále, surget corpus spiritále." Verse 44, no more, no less. **Confirmed correct, no
+  truncation.**
+- Lectio ix (1 Cor 15:51-58): exact match through to the closing responsory.
+
+**Finding 7 is now fully resolved, not merely narrowed.** All three of the original scripture-text
+variants flagged across three prior passes (`lectio1`/Job 7:16, `lectio7`/1 Cor 15:12,
+`lectio8`/1 Cor 15:44) are confirmed correct against a genuine, independent, Pius-X-reformed printed
+Breviarium Romanum containing the actual All Souls proper. Nothing in this office's scripture-
+reading units needs further sourcing.
+
+**Files changed:** `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 7's header and
+summary-table row updated to FULLY RESOLVED; new sub-finding C recording the 1942 volume's exact
+match in full, with citations, alongside the original open-item framing and sub-findings A/B kept
+in place). `RESUME_PROJECT_NOTE.md`'s Catholic-lane entry gained a new "CONTINUED" paragraph
+recording the same closure and the updated next-move (no scripture-sourcing work remains; the next
+decision is Josh's, on whether to grow the dev slice past one day/one hour). No code, data, or
+generated JSON changed -- sourcing/documentation only, consistent with finding 7 always having been
+a text-authenticity question rather than a structural one.
