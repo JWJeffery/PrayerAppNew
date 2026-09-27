@@ -51,6 +51,69 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**STATE AS OF 2026-09-27, LATEST OF ALL — Josh: "we are going to audit the Catholic lane."** This
+is a **separate thread** from the Horologion entry directly below (still open, still paused exactly
+as that entry describes — T8 untouched, IH7/SC4 done, nothing about this session touches it). Read
+this entry first if resuming Catholic-lane work; read the entry below if resuming Horologion T8.
+
+**Before starting, checked for the branch-divergence failure mode this file's own BRANCHING RULE
+warns about.** `claude/jwjeffery-prayerappnew-resume-fbkyf9` and `claude/modest-tesla-n4ofrs` both
+sit at a commit 108 `git log` commits "ahead" of `main`, unreachable from it, no open PR — looked
+exactly like the recurring mess. Checked before escalating: `git diff` between that commit and
+`main`'s current tip (`5ddf35c`, PR #37) is **empty**. The 108 commits' content is already inside
+PR #37's squash merge; the two branch names just kept the pre-squash linear history around. Nothing
+was at risk, nothing needed to be flagged. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s
+2026-09-27 entry so the next session doesn't have to redo this check on the same two branch names.
+
+**"Catholic" in this app's own entry screen means the Roman Breviary 1960/1962 lane** (`latin-
+catholic` / "Roman Breviary dev" — currently `disabled`/`hidden`, same pause pattern as Byzantine
+Horologion). Its own architecture doc, `documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`
+§15, is explicit that this lane runs **no broad audit campaign** — only five named narrow checks
+(import integrity, JSON validity, manifest validity, reference resolution, envelope conformance).
+**Do not run a Horologion-style line-by-line liturgical content audit against this lane — its own
+governing document says that's the wrong kind of audit here**, because the content is mirrored/
+normalized from Divinum Officium's own build-time oracle output, not natively authored in this repo.
+
+**This session ran all five checks** (`scripts/audit-roman-breviary-1960-narrow-checks.mjs`, new,
+re-runnable) against the lane's entire existing corpus — the dev vertical slice, one day (2026-11-02,
+All Souls), one hour (Matins). Full findings in the new `documentation/ROMAN_BREVIARY_1960_1962_
+AUDIT.md`.
+
+- **Checks 1-4: clean, one real defect found and fixed.** `source-pin.json`'s `mirrored_files` list
+  was missing `Commune/C9.txt` even though it's mirrored, used, and byte-verified identical to the
+  pinned upstream commit. Fixed the list and regenerated `units/dev-vertical-slice.json` +
+  `manifests/2026.json` via the existing `scripts/build-roman-breviary-1960-dev-slice.mjs` (the real
+  source of truth for both — confirmed by diff that only the `mirrored_files` array changed).
+- **Check 5 (envelope conformance): FAILS, disclosed, not fixed.** 16 of 29 Matins blocks use
+  `role` values (`invitatory`, `nocturn`, `versicle`, `responsory`) outside Core Contract §7's closed
+  taxonomy — the *same* anti-pattern `js/office-ui.js`'s own 2026-09-24 comment already flagged as
+  present in `js/anglican-envelope.js` (including literally `invitatory`) and explicitly warned
+  "not one to copy into a new lane." This lane copied it anyway, independently. The fix pattern
+  already exists (Horologion's `HOR_ROLE_BY_TYPE`, same session as that comment): remap
+  `invitatory`→`opening` (exact fit per §7's own prose), `versicle`/`responsory`→`other` (no fitting
+  role, don't stretch one), and stop giving the `nocturn` grouping its own block/role at all (it's a
+  structural container, not a liturgical unit — same reasoning as Horologion's "sequence" case).
+  **Not fixed this pass**: doing it right means reshaping the manifest's nesting and updating
+  `js/roman-breviary-1960-1962-dev-slice.js` line 87 (currently keys a CSS class off the literal
+  string `'nocturn'`), which is real structural work, not a narrow check — rushing it risked stacking
+  a new defect on top of the one being disclosed.
+
+**Deliberately not touched:** `audit-ledger.html`'s dashboard / `SEED_VERSION` (tracks the broad
+cross-tradition campaign this lane is explicitly exempt from — see §15); any fix for the Check 5
+finding (next task for this lane, clearly scoped above); the paused Horologion T8 item below (a
+different thread, not part of this session's ask).
+
+**Next move on resuming this thread:** fix Check 5 — reshape the Matins manifest to drop the
+`nocturn` block level (fold the nocturn number into each child's native `label`, e.g. "Psalmi et
+antiphonae — Nocturnus I") and remap the remaining roles as above, updating
+`js/roman-breviary-1960-1962-dev-slice.js` line 87's `'nocturn'` check to key off something else
+(e.g. whether a block has nested children) rather than a role string. Re-run
+`scripts/audit-roman-breviary-1960-narrow-checks.mjs` after — it should go from 16 failing to 0.
+Then decide with Josh whether to grow the dev slice past one day/one hour, which is a governance
+question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/
+all eight hours/current+next year — a long way past today's one-day slice) not something to just
+start building.
+
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
 second pass below disclosed rather than built: SC4's remaining imprecision, IH7, T8). Paused here

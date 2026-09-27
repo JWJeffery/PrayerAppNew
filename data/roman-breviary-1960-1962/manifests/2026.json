@@ -8,7 +8,8 @@
     "mirror_date": "2026-06-20",
     "file_subset_policy": "dev vertical slice only; not a full mirror",
     "mirrored_files": [
-      "web/www/horas/Latin/Sancti/11-02.txt"
+      "web/www/horas/Latin/Sancti/11-02.txt",
+      "web/www/horas/Latin/Commune/C9.txt"
     ]
   },
   "tradition": "roman_catholic",
