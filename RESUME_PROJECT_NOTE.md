@@ -239,17 +239,88 @@ has one, 9 files), and English's martyrology mirror is only the base `Martyrolog
 the rubric-year-specific `Martyrologium1960` Latin also carries) — moot for now since the build
 pipeline doesn't read the martyrology at all yet, in either language.
 
-**Explicitly not done, and next**: Layer E (envelope integration) and the shell UI have not been
-touched — `js/roman-breviary-1960-1962-dev-slice.js` still only ever fetches `units/${year}.json`
-and `manifests/${year}.json` (Latin's flat files), with no language parameter and no UI control to
-choose one. Wiring English in means: extending that fetch to accept a language, adding a real
-language-selection control somewhere in the Catholic office's own settings (nothing elsewhere in this
-app is bilingual yet — this would be the first lane where language, not just tradition, is a
-user choice), and deciding the default (Latin, matching the lane's own liturgical-language identity,
-seems the obvious default with English as an explicit opt-in, but that's Josh's call, not assumed
-here). The two disclosed parser bugs above are also both still open. None of this was attempted in
-this session — the ask was to *begin* the English version, and Layers A–D are a real, verified,
-committed beginning, not the whole thing.
+**Explicitly not done, and next (superseded by the entry directly below)**: Layer E (envelope
+integration) and the shell UI have not been touched — `js/roman-breviary-1960-1962-dev-slice.js`
+still only ever fetches `units/${year}.json` and `manifests/${year}.json` (Latin's flat files), with
+no language parameter and no UI control to choose one. The two disclosed parser bugs above are also
+both still open. None of this was attempted in this session — the ask was to *begin* the English
+version, and Layers A–D are a real, verified, committed beginning, not the whole thing.
+
+---
+
+**STATE AS OF 2026-09-27, LATER YET AGAIN — Josh: "open the PR and merge. Finish the English work
+and wire everything, including language selection."** PR #41 (the two threads above) opened and
+squash-merged to `main` as `0850bee`; this session's branch was reset onto that tip before starting
+new work, per this note's own branching rule. Layer E is now built and live-verified — the first
+part of "finish the English work" that was still open.
+
+**`js/roman-breviary-1960-1962-dev-slice.js`** (the Layer E module): `resolveDevSliceOffice()` now
+takes a `language` option (`'la'`/`'en'`, defaulting to `'la'`) and resolves it to the right file
+pair — Latin keeps its original flat paths (`units/${year}.json`, `manifests/${year}.json`) for zero
+disruption to anything already depending on them; English (or any future language) resolves to
+`units/<lang>/${year}.json` instead, matching where the previous session's sweep already wrote it.
+`composeResolvedOffice()` needed no change — it already read `manifestData.language` straight through
+into the envelope. `renderNavHtml()`'s existing Date/Hour/Go form (this lane has never had a sidebar
+— see the "sidebarless dev route" CSS comment in `css/office.css` — so its own controls have always
+lived inline in the rendered content, not in a sidebar panel) gained a third field, a Language
+`<select>`, generated from a new `SUPPORTED_LANGUAGES` map so a third language later is one map entry,
+not a new code path. Unlike Date/Hour (still gated behind the existing "Go" button, unchanged),
+picking a language re-renders immediately — a language choice is one discrete pick, not something
+worth fine-tuning before submitting. `mountDevSlice()` takes an optional `onLanguageChange` callback,
+invoked with the new language code the instant the user picks one, so the shell (not this module) can
+persist it — this module still has no localStorage access of its own and wasn't given one just for
+this.
+
+**`js/office-ui.js`** (the shell side): added `romanBreviaryLanguage: 'la'` to
+`UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` and a `UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES`
+guard set, following the exact pattern already established for `bookOfNeedsScope`/`ministryRole`/
+`oorSubtradition` — normalized in `normalizeUserProfileDefaults()`, a `setUserProfileRomanBreviaryLanguage()`
+setter exposed on `window` the same way its siblings are, and synced into the advanced "Defaults for
+this browser" panel's own select (`syncUserProfileControls()`) so a user who finds the setting there
+instead of in-office sees the same stored value. The `roman-breviary-dev` mode branch in `selectMode()`
+now passes `language: getUserProfileDefaults().romanBreviaryLanguage` and
+`onLanguageChange: setUserProfileRomanBreviaryLanguage` into `mountDevSlice()` — the one call site
+that connects the module's own language state to the shell's persisted profile.
+
+**`index.html`**: added a "Roman Breviary 1960/1962 language" field to the advanced profile-defaults
+panel (Latin default, English opt-in — mirroring every other option's own copy style in that panel),
+bumped `office-ui.js`'s cache-bust (`v316 → v317`), and — a small, disclosed, pre-existing gap fixed
+in passing rather than left — gave `roman-breviary-1960-1962-dev-slice.js` its **first-ever**
+cache-bust param (`?v=1`; it had none at all before this, unlike every other JS file this app loads,
+so a browser could have kept serving a stale cached copy across any future edit to this file until
+now).
+
+**Verified live in headless Chromium** (`playwright-core`, not committed, removed after), across
+three separate test passes:
+1. Fresh session (cleared storage): defaults to Latin, language selector shows `la`, rendered body is
+   genuinely Latin text (`adiutórium` present) — confirms the new default doesn't silently change
+   behavior for anyone who's never touched this control.
+2. Loaded the lane, read the Latin-rendered Vespers text, switched the in-page selector to English —
+   re-rendered immediately with the correct English translation of the same office (confirmed against
+   the exact wording: "V. O God, ✠ come to my assistance; R. O Lord, make haste to help me...").
+   Read the persisted profile from `localStorage` directly: `romanBreviaryLanguage: 'en'`. **Reloaded
+   the page from scratch** — English persisted and rendered automatically on the fresh load, selector
+   correctly pre-set to `en`.
+3. Switched to Matins (the nocturn-bearing hour) in English via the "Go" form — block headings render
+   correctly in English (`Start`, `Invitatory`, `Hymn`, `Psalms with lections`, the silently-said-Pater
+   rubric in English, `Reading 1/2/3`, …), matching the exact vocabulary this lane's own build-out
+   session verified against live engine output. Opened the advanced profile-defaults panel separately
+   and confirmed its own select reflected the same persisted `en` choice, then switched it back to
+   `la` from *that* panel and confirmed the profile updated — the two entry points (in-office selector,
+   advanced panel) genuinely share one stored value, not two independent ones that could drift.
+
+Zero console errors across every pass (the one `ERR_CERT_AUTHORITY_INVALID` on the Google Fonts
+preconnect is the same pre-existing sandbox-proxy artifact disclosed in every earlier entry in this
+note, not a regression).
+
+**Still open, not attempted here**: the two parser bugs disclosed in the entry above (Latin's
+committed data not regenerated with the TD-extraction fix; the `VERSE_RE` empty-trailing-text bug
+affecting both languages). Neither blocks what was asked here — both are pre-existing content-layer
+gaps, not wiring gaps — but they remain real and un-fixed. Separately: `js/prayers.js`'s Book of
+Needs and the sanctoral/commemorations panel below the office display are not language-aware at all
+(they always render in English regardless of which language the office above them is showing) — not
+raised as a defect, since nothing asked for it, just disclosed so a future session doesn't assume it
+was covered.
 
 ---
 

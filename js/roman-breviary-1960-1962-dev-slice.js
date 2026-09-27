@@ -5,6 +5,22 @@
 })(typeof globalThis!=='undefined'?globalThis:this,function(){
   const DATA_ROOT='data/roman-breviary-1960-1962';
 
+  // Latin is the lane's native language and keeps its original flat file paths
+  // (units/${year}.json, manifests/${year}.json) for backward compatibility --
+  // English (and any language added later) lives in its own subdirectory
+  // (units/en/${year}.json) so adding a language can never collide with or
+  // silently alter Latin's own already-shipped files.
+  const SUPPORTED_LANGUAGES=Object.freeze({la:'Latin',en:'English'});
+  function normalizeLanguage(language){
+    return SUPPORTED_LANGUAGES[language]?language:'la';
+  }
+  function unitsPathFor(year,language){
+    return language==='la'?`${DATA_ROOT}/units/${year}.json`:`${DATA_ROOT}/units/${language}/${year}.json`;
+  }
+  function manifestPathFor(year,language){
+    return language==='la'?`${DATA_ROOT}/manifests/${year}.json`:`${DATA_ROOT}/manifests/${language}/${year}.json`;
+  }
+
   function esc(v){
     return String(v??'')
       .replace(/&/g,'&amp;')
@@ -124,13 +140,17 @@
     ['sext','Sext'],['none','None'],['vespers','Vespers'],['compline','Compline']
   ];
 
-  function renderNavHtml(date,hour){
+  function renderNavHtml(date,hour,language){
     const hourOptionsHtml=HOUR_OPTIONS.map(([key,label])=>
       `<option value="${esc(key)}"${key===hour?' selected':''}>${esc(label)}</option>`
+    ).join('');
+    const languageOptionsHtml=Object.keys(SUPPORTED_LANGUAGES).map(code=>
+      `<option value="${esc(code)}"${code===language?' selected':''}>${esc(SUPPORTED_LANGUAGES[code])}</option>`
     ).join('');
     return `<form class="rb1960-nav" onsubmit="return false;">`+
       `<label>Date <input type="date" class="rb1960-nav-date" value="${esc(date)}" min="2026-01-01" max="2027-12-31"></label>`+
       `<label>Hour <select class="rb1960-nav-hour">${hourOptionsHtml}</select></label>`+
+      `<label>Language <select class="rb1960-nav-language">${languageOptionsHtml}</select></label>`+
       `<button type="button" class="rb1960-nav-go">Go</button>`+
       `</form>`;
   }
@@ -147,7 +167,7 @@
     }).join('');
     return `<div class="office-container rb1960-dev-slice">`+
       `<h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2>`+
-      renderNavHtml(envelope.context.date,envelope.context.hour)+
+      renderNavHtml(envelope.context.date,envelope.context.hour,normalizeLanguage(envelope.language))+
       `<p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
   }
 
@@ -161,9 +181,10 @@
     const date=options.date||'2026-11-02';
     const hour=options.hour||'matins';
     const year=options.year||Number(date.slice(0,4))||2026;
+    const language=normalizeLanguage(options.language);
     const [unitsData,manifestData]=await Promise.all([
-      fetchJson(`${DATA_ROOT}/units/${year}.json`),
-      fetchJson(`${DATA_ROOT}/manifests/${year}.json`)
+      fetchJson(unitsPathFor(year,language)),
+      fetchJson(manifestPathFor(year,language))
     ]);
 
     return composeResolvedOffice({unitsData,manifestData,date,hour});
@@ -172,23 +193,40 @@
   async function mountDevSlice(targetId='office-display',options={}){
     const target=document.getElementById(targetId);
     if(!target) throw new Error('Target element not found: '+targetId);
+    // Called whenever the user picks a language from the in-page selector, so the shell can
+    // persist it as the lane's own stored default (js/office-ui.js's user-profile system) --
+    // this module has no localStorage access of its own and shouldn't grow one just for this.
+    const onLanguageChange=typeof options.onLanguageChange==='function'?options.onLanguageChange:null;
 
     async function renderFor(opts){
       target.innerHTML=`<div class="office-container"><h3>Loading...</h3></div>`;
-      const envelope=await resolveDevSliceOffice(opts);
+      let envelope;
+      try{
+        envelope=await resolveDevSliceOffice(opts);
+      }catch(err){
+        target.innerHTML=`<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${esc(err.message)}</p></div>`;
+        throw err;
+      }
       target.innerHTML=renderResolvedOfficeHtml(envelope);
+      const dateInput=target.querySelector('.rb1960-nav-date');
+      const hourSelect=target.querySelector('.rb1960-nav-hour');
+      const languageSelect=target.querySelector('.rb1960-nav-language');
       const goBtn=target.querySelector('.rb1960-nav-go');
+      const currentOpts=()=>({date:dateInput.value||opts.date,hour:hourSelect.value||opts.hour,language:languageSelect.value||opts.language});
       if(goBtn) goBtn.addEventListener('click',()=>{
-        const dateInput=target.querySelector('.rb1960-nav-date');
-        const hourSelect=target.querySelector('.rb1960-nav-hour');
-        renderFor({date:dateInput.value||opts.date,hour:hourSelect.value||opts.hour}).catch(err=>{
-          target.innerHTML=`<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${esc(err.message)}</p></div>`;
-        });
+        renderFor(currentOpts()).catch(()=>{}); // failure already rendered into `target` above
+      });
+      // Immediate switch, not gated behind "Go" -- date/hour stay Go-gated (matches the
+      // existing, already-shipped behavior above) but a language choice is a single discrete
+      // pick, not something a user fine-tunes before submitting.
+      if(languageSelect) languageSelect.addEventListener('change',()=>{
+        if(onLanguageChange) onLanguageChange(languageSelect.value);
+        renderFor(currentOpts()).catch(()=>{});
       });
       return envelope;
     }
 
-    return renderFor(options);
+    return renderFor({...options,language:normalizeLanguage(options.language)});
   }
 
   return {

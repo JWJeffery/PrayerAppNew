@@ -22573,3 +22573,49 @@ still only fetches Latin's flat `units/${year}.json`/`manifests/${year}.json` wi
 parameter, and there is no UI control anywhere to pick a language (this would be the app's first
 lane where language, not just tradition, is a user choice). Both disclosed bugs above remain open.
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, later yet again -- PR #41 merged; English lane Layer E built and wired,
+including a working language selector, persisted and live-verified end to end.
+
+Josh: "open the PR and merge. Finish the English work and wire everything, including language
+selection." PR #41 opened and squash-merged to `main` (`0850bee`); branch reset onto that tip before
+new work, per this note's own branching rule.
+
+**Layer E, `js/roman-breviary-1960-1962-dev-slice.js`**: `resolveDevSliceOffice()` takes a `language`
+option (`'la'`/`'en'`, default `'la'`), resolved via a new `SUPPORTED_LANGUAGES` map to the right file
+pair -- Latin keeps its original flat `units/${year}.json`/`manifests/${year}.json` paths untouched;
+English resolves to `units/en/${year}.json` etc., matching where the previous entry's sweep wrote it.
+`renderNavHtml()`'s existing Date/Hour/Go form (this lane has no sidebar -- it's the documented
+"sidebarless dev route" -- so its controls have always lived inline) gained a Language `<select>`.
+Date/Hour stay Go-gated; language switches immediately on change, a single discrete pick rather than
+something to fine-tune before submitting. `mountDevSlice()` takes an `onLanguageChange` callback so
+the shell, not this module, persists the choice.
+
+**Shell wiring, `js/office-ui.js`**: added `romanBreviaryLanguage: 'la'` to the user-profile defaults
+and a guard set, following the exact pattern `bookOfNeedsScope`/`ministryRole`/`oorSubtradition`
+already established -- normalized, a `setUserProfileRomanBreviaryLanguage()` setter on `window`,
+synced into the advanced profile-defaults panel's own select. The `roman-breviary-dev` mode branch
+now passes the stored language and the setter into `mountDevSlice()`.
+
+**`index.html`**: added the language field to the advanced profile-defaults panel; bumped
+`office-ui.js`'s cache-bust (v316->v317); gave `roman-breviary-1960-1962-dev-slice.js` its
+first-ever cache-bust param (`?v=1` -- it had none before, unlike every other JS file this app
+loads, a small pre-existing gap fixed in passing).
+
+**Verified live in headless Chromium**, three passes: (1) fresh session defaults to Latin, confirmed
+by actual rendered text, not just the stored default; (2) switching the in-page selector to English
+re-renders immediately with correct translation, persists to the profile, and survives a full page
+reload with the selector correctly pre-set; (3) Matins (the nocturn-bearing hour) in English renders
+correct block headings end to end, and the advanced profile-defaults panel and the in-office selector
+were confirmed to share one stored value, not two that could drift, by changing it from the panel and
+re-checking the persisted profile. Zero console errors across all three passes.
+
+**Still open**: the two parser bugs from the previous entry (Latin's committed data not regenerated
+with the TD-extraction fix; the `VERSE_RE` empty-trailing-text bug). Also newly disclosed: the Book
+of Needs and the sanctoral/commemorations panel are not language-aware -- they always render in
+English regardless of which language the office above them shows. Not raised as a defect (nothing
+asked for it), just flagged so a future session doesn't assume it was covered.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
