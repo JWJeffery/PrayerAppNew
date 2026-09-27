@@ -6,8 +6,12 @@ const VERSICLE_RE = /^<FONT COLOR="red"><I>℣\.<\/I><\/FONT>\s*(.*)$/;
 const RESPONSE_RE = /^<FONT COLOR="red"><I>℟\.<\/I><\/FONT>\s*(.*)$/;
 const VERSE_RE = /^<FONT SIZE='1' COLOR="red">([^<]+)<\/FONT>\s*(.*)$/;
 const DROPCAP_RE = /^<FONT SIZE='\+2' COLOR="red"><B><I>([A-ZÆŒ])<\/I><\/B><\/FONT>(.*)$/;
-const PSALMUS_RE = /^Psalmus\s+(.+)$/;
-const NOCTURNUS_RE = /^Nocturnus\s+([IVX]+)$/;
+// Latin and English forms, verified against live engine output for both languages (see
+// AUDIT_GOVERNANCE_LEDGER.md's English-lane reconnaissance entry) rather than assumed -- these are
+// the only two word-based (non-formatting-based) markers in this file, so this is the one place a
+// third language would need a new alternative added.
+const PSALMUS_RE = /^(?:Psalmus|Psalm)\s+(.+)$/;
+const NOCTURNUS_RE = /^(?:Nocturnus|Nocturn)\s+([IVX]+)$/;
 const RUBRIC_PAREN_RE = /^<FONT SIZE='1' COLOR="red">(\(.*?\))<\/FONT>\s*$/;
 const PLAIN_RUBRIC_RE = /^<FONT SIZE='1' COLOR="red">(.*)<\/FONT>\s*$/;
 
@@ -16,6 +20,7 @@ function stripTags(s) {
 }
 
 const OMITTED_RE = /^<FONT SIZE='-1' >(.*?)\{omittitur\}<\/FONT>\s*$/;
+const OMITTED_RE_EN = /^<FONT SIZE='-1' >(.*?)\{omit\}<\/FONT>\s*$/;
 
 function splitLines(tdInnerHtml) {
   const cleaned = tdInnerHtml.replace(/<DIV ALIGN='right'>[\s\S]*?<\/DIV>/g, '');
@@ -27,10 +32,20 @@ function splitLines(tdInnerHtml) {
 
 function extractTdBlocks(html) {
   const blocks = [];
-  const tdRe = /<TR><TD[^>]*ID='([A-Za-z]+)(\d+)'[^>]*>([\s\S]*?)<\/TD>\s*<\/TR>/g;
+  // ID is optional: a row that renders only a "{omittitur}"/"{omit}" placeholder for a
+  // structurally-omitted section (e.g. Preces Feriales on a non-feria day) has no ID='...' attribute
+  // at all in this engine's own HTML, unlike every other row. Requiring one here silently dropped
+  // those placeholder rows out of the parse entirely -- no diagnostic, no omitted-block record, just
+  // gone -- discovered while validating the English lane against the Latin one for the same
+  // date/hour and finding blocks Latin was missing that English happened to pick up only because its
+  // own omitted-placeholder rows for the same sections DO carry an ID. Latin's already-committed
+  // manifests/units were built under this bug and are not regenerated here -- see
+  // AUDIT_GOVERNANCE_LEDGER.md's English-lane entry for what's affected and why it's flagged rather
+  // than silently fixed retroactively.
+  const tdRe = /<TR><TD[^>]*?(?:ID='([A-Za-z]+)(\d+)')?[^>]*>([\s\S]*?)<\/TD>\s*<\/TR>/g;
   let m;
   while ((m = tdRe.exec(html))) {
-    blocks.push({ hourPrefix: m[1], seq: Number(m[2]), rawInner: m[3] });
+    blocks.push({ hourPrefix: m[1] || null, seq: m[2] ? Number(m[2]) : null, rawInner: m[3] });
   }
   return blocks;
 }
@@ -66,7 +81,7 @@ export function parseOfficiumHtml(html) {
       const line = rawLine.replace(FOOTNOTE_SUFFIX_RE, '').trim();
       let m;
 
-      if ((m = OMITTED_RE.exec(line))) {
+      if ((m = OMITTED_RE.exec(line)) || (m = OMITTED_RE_EN.exec(line))) {
         const label = m[1];
         diagnostics.push({ type: 'section-omitted', section: label, note: `${label}{omittitur}` });
         current = ensureSection(label, null);
@@ -78,14 +93,14 @@ export function parseOfficiumHtml(html) {
         const label = m[1];
         const annotation = m[2] || null;
         pendingNocturn = null;
-        if (annotation && /omittitur/i.test(annotation)) {
+        if (annotation && /omittitur|omit/i.test(annotation)) {
           diagnostics.push({ type: 'section-omitted', section: label, note: annotation });
           current = ensureSection(label, annotation);
           current.omitted = true;
           continue;
         }
         current = ensureSection(label, annotation);
-        if (/psalmi/i.test(label)) psalmodyHeader = { label, annotation };
+        if (/psalmi|psalms/i.test(label)) psalmodyHeader = { label, annotation };
         continue;
       }
 
