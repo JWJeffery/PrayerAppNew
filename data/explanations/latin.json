@@ -1,0 +1,69 @@
+{
+  "tradition": "LAT",
+  "traditionLabel": "Latin Catholic — The Roman Breviary (Rubrics of 1960/1962)",
+  "primarySource": "Pierre Batiffol, History of the Roman Breviary, trans. Atwell M. Y. Baylay from the third French edition, with a new chapter on the Decree of Pius X (London: Longmans, Green and Co., 1912). Public domain (archive.org item historyromanbre00baylgoog, digitized from a University of Wisconsin library copy; OCR text carries printed page numbers, confirmed against the running headers 'HISTORY OF THE ROMAN BREVIARY' / chapter titles). Depth-2 and depth-3 content is written from Chapter I ('The Genesis of the Canonical Hours'), Chapter III ('The Roman Office of the Time of Charlemagne'), and Chapter IV ('The Modernum Officium and the Breviaries of the Curia'), which is Batiffol's own historical account of how each Hour and its parts came to have the shape they have.",
+  "sourceStatus": "cited-not-in-repo",
+  "_provenanceNote": "IMPORTANT TEMPORAL SCOPE, disclosed rather than glossed over: Batiffol's book (third French edition, English translation 1912) narrates the Breviary's history up to the Decree of Pius X (1911). It says nothing about the Rubrics of 1960/1962 this lane's own office texts follow -- that later simplification (drastically reducing Preces, simplifying the psalter distribution, etc. -- see documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md for what this lane's own build-out found) postdates this source by roughly half a century. Every entry in this file describes the structural or historical origin of an element (why the Invitatory is sung the way it is, why Vespers has five psalms, why Compline is 'purely conventual') as Batiffol found it -- facts that predate and are not altered by the 1960 rubrical reform -- never a claim about a specific 1960-only rubrical detail (an omission, a simplification, a rank-dependent variation), which this source cannot speak to and which this file does not attempt to source from memory instead.\n\nKNOWN GAP: this is a first tranche, not a complete corpus. The other four traditions each carry 20-40 entries; this file opens with 7, covering the structural elements that recur across every hour this lane renders (Incipit, Invitatorium, Nocturnus, Psalmi, Hymnus, Oratio, Conclusio). Per-hour or per-season elements (the Little Hours' own character, the Martyrology, the seasonal antiphons of the Blessed Virgin, the historical layer separating monastic from secular/curial use in Chapter IV) remain open for a future pass, sourced from the same book's later chapters.",
+  "traditionExplanation": {
+    "text": "The Roman Breviary's eight Hours did not arrive together. Batiffol traces them to three separate groups, each with its own date and its own reason for existing (Ch. I). The oldest is the nocturnal group -- the night Vigil that grew into Matins, and its morning companion Lauds -- which Batiffol derives from the primitive Sunday vigil kept between Saturday evening and Sunday dawn, itself modelled on the Paschal vigil's watch for Christ's return. The second group is the daytime trio of Terce, Sext and None, born separately from monastic and private devotional practice tied to the hours of the Roman working day. The third is Prime and Compline, later additions that Batiffol traces to specifically cenobitic (communal monastic) life: Prime as the monks' formal start to the common day's work, Compline as their bedtime prayer.\n\nThis threefold origin explains a real difference in character that survives into the 1960/1962 Breviary. Lauds and Vespers were, from the earliest centuries Batiffol can document, the two hours attended by the full lay congregation -- he cites the fourth-century Pilgrimage of Egeria's description of the bishop himself presiding at both, with the night Vigil and the day hours drawing only ascetics and clergy. Compline, by contrast, never had a congregational character at all: it is 'purely conventual, the prayer at bedtime of the monks' (Ch. III), and its short lesson before it descends from the reading that once accompanied the monks' evening meal.\n\nA second thread Batiffol traces is the Roman Office's own historic resistance to non-scriptural material, set against the monastic office's freer practice. He documents that Rome had no fixed hymnal of its own into the twelfth century -- unlike monastic use, which had a settled, invariable hymn for each Hour by the eleventh century -- because of a standing principle, enforced by councils, that nothing but psalms and canonical Scripture should be sung in church (Ch. IV). What became the Breviary's own hymnal was a monastic import, not a native Roman feature. The 1960/1962 Breviary's own hymns at Prime, Terce, Sext, None and Compline are the descendants of that originally-monastic layer, not of an unbroken Roman practice.",
+    "source": "Batiffol, History of the Roman Breviary, Ch. I pp.1-3 (the three groups of Hours, their separate dates and origins; the Sunday vigil derived from the Paschal vigil); Ch. III pp.17 (Lauds and Vespers as the congregational hours attended by the bishop, per the Pilgrimage of Egeria/Peregrinatio, versus the ascetic-only nocturnal vigil), pp.74-75 (Compline as 'purely conventual,' the short lesson's origin in the monastic evening meal-reading); Ch. IV p.140 (Rome's lack of a fixed hymnal into the twelfth century, the conciliar principle against non-scriptural chant, and the eleventh-century monastic hymnal later adopted into the Roman Office)."
+  },
+  "entries": {
+    "incipit": {
+      "label": "Incipit",
+      "role": "other",
+      "matchLabels": ["Incipit", "Start"],
+      "micro": "The opening versicle, \"O God, come to my assistance; O Lord, make haste to help me,\" is all that remains of Psalm 69, which was once recited here in full.",
+      "structural": "Batiffol calls this a vestige: Deus in adjutorium meum intende is literally the first verse of Psalm LXIX (Vulgate numbering), and the whole psalm used to be said at this point at the head of every Hour. What survives in the 1960/1962 Breviary -- the one verse, its response, and the Gloria Patri -- is the same kind of reduction that left the Mass's own Introit as a single verse of what was once a complete psalm: the opening formula outlived the full text it once introduced.",
+      "source": "Batiffol, History of the Roman Breviary, Ch. III p.70 (Deus in adjutorium as the surviving opening verse of Psalm LXIX, and the parallel drawn with the Mass's Introit)."
+    },
+    "invitatorium": {
+      "label": "Invitatorium",
+      "role": "opening",
+      "matchLabels": ["Invitatorium", "Invitatory"],
+      "micro": "The psalm \"Venite, exsultemus\" (Psalm 94) that opens Matins, sung responsorially: a soloist chants each verse and the choir repeats a fixed refrain after each one.",
+      "structural": "Batiffol identifies this as the most primitive surviving form of psalm-singing in the Office. An eighth-century commentator on the Rule of St Benedict called it the \"Responsorium orationis\" -- not, as sometimes said, a relic of antiphonal chant, but the older practice of the psalmus responsorius: one voice sings the psalm proper while everyone else does nothing but repeat the same refrain at every pause. Its refrain (Venite exsultemus itself) is not technically an antiphon at all, but what Batiffol's source calls an acrostichion.",
+      "source": "Batiffol, History of the Roman Breviary, Ch. III p.76 (the Invitatory psalm Venite exsultemus, its responsorial form, the \"Responsorium orationis\" attribution to the anonymous eighth-century Rule commentator, and the acrostichion/antiphon distinction)."
+    },
+    "nocturnus": {
+      "label": "Nocturnus",
+      "role": "other",
+      "matchLabels": ["Nocturnus I", "Nocturnus II", "Nocturnus III", "Nocturn I", "Nocturn II", "Nocturn III"],
+      "micro": "One of Matins' subdivisions of psalms and readings -- the surviving structure of the ancient night Vigil, kept by monks and ascetics rather than the wider congregation.",
+      "structural": "The nocturn is, in Batiffol's account, the oldest and least congregational part of the Office: \"an office attended only by a few of the faithful in addition to those who make profession of asceticism,\" unlike the crowded attendance he documents at Lauds and Vespers. Its core shape -- psalms, each historically followed by its own prayer -- matches what Cassian records of the Egyptian monasteries, where twelve psalms made up the night office. On Sundays alone, this office kept its ancient character as a true vigil, with (per the fourth-century Pilgrimage of Egeria) a crowd \"as great as if it were Easter.\"",
+      "source": "Batiffol, History of the Roman Breviary, Ch. I pp.16-17 (the nocturn/night vigil's ascetic-only attendance versus the congregational Lauds and Vespers; the twelve-psalm Egyptian monastic parallel via Cassian; the Sunday exception per the Peregrinatio)."
+    },
+    "psalmi": {
+      "label": "Psalmi",
+      "role": "psalmody",
+      "matchLabels": ["Psalmi", "Psalms", "Psalmi cum lectionibus", "Psalms with lections"],
+      "micro": "The psalms proper to this Hour, sung with an antiphon before and after -- Vespers, for instance, has always had exactly five.",
+      "structural": "Batiffol documents the antiphoned psalm as the Roman Office's standard method: each psalm framed by a short antiphon repeated at its start and end. The count is fixed per Hour by long-standing custom rather than left free -- he quotes the ninth-century commentator Amalarius stating plainly that \"our daily custom holds that we sing five psalms in the evening service ... we are accustomed to sing these five psalms antiphonally,\" a five-psalm Vespers that Batiffol traces as unbroken from Amalarius's own day into the Breviary he is describing.",
+      "source": "Batiffol, History of the Roman Breviary, Ch. III p.70 (antiphoned psalmody as standard practice; Amalarius quoted directly on Vespers' invariable five psalms, sung antiphonally)."
+    },
+    "hymnus": {
+      "label": "Hymnus",
+      "role": "hymn",
+      "matchLabels": ["Hymnus", "Hymn"],
+      "micro": "A metrical, non-scriptural hymn -- a genuinely monastic contribution to the Office, which the Roman Church itself resisted admitting for centuries.",
+      "structural": "Batiffol is explicit that this is a borrowed, not a native Roman, feature. Rome held to a principle -- enforced by councils such as that echoed by Archbishop Agobard of Lyons in the ninth century, that \"nothing poetically composed\" should be sung in church, only psalms and canonical Scripture -- and had no fixed hymn for any Hour as late as the twelfth century, by his account: neither Amalarius, the Micrologus, nor the twelfth-century Roman commentators Canon Benedict and Cencius mention one. The monastic office, by contrast, had already settled an invariable hymn for each Hour by the eleventh century (Iam lucis orto sidere at Prime, Nunc Sancte nobis Spiritus at Terce, and so on, all anonymous compositions no later than the sixth century). What the Breviary now has at each Hour descends from that monastic hymnal, adopted into Roman use only after the Roman Office's own older resistance gave way.",
+      "source": "Batiffol, History of the Roman Breviary, Ch. IV p.140 (Rome's lack of a fixed hymnal into the twelfth century; the conciliar principle against non-scriptural chant, quoting Agobard of Lyons; the eleventh-century monastic hymnal and its named hymns for each Hour, all pre-sixth-century and anonymous)."
+    },
+    "oratio": {
+      "label": "Oratio",
+      "role": "prayer",
+      "matchLabels": ["Oratio", "Prayer"],
+      "micro": "The collect: a single prayer said by the officiant alone, immediately before the Hour's closing formula.",
+      "structural": "In Batiffol's account of Vespers' ending, the collect is the last substantive act of the Hour: after the closing litany, \"the officiant rises, pronounces the Dominus Vobiscum, and says the collect\" -- and only then does the Hour close with Benedicamus Domino. The collect's own position, immediately preceding the Hour's dismissal, is consistent across the Hours he describes: at Compline, similarly, a brief postulatio (\"only a petition for [God's] protection is asked\") stands in the same closing position before the silence that follows.",
+      "source": "Batiffol, History of the Roman Breviary, Ch. III p.74 (the collect's position at the close of Vespers, immediately before Benedicamus Domino) and p.75 (Compline's own closing postulatio in the equivalent position)."
+    },
+    "conclusio": {
+      "label": "Conclusio",
+      "role": "dismissal",
+      "matchLabels": ["Conclusio", "Conclusion"],
+      "micro": "The Hour's closing exchange, \"Let us bless the Lord\" / \"Thanks be to God,\" said immediately after the collect.",
+      "structural": "Batiffol gives this as the fixed final act of Vespers -- and, by the pattern he describes, of the Hours generally: the officiant, having said the collect, \"says Benedicamus Domino, and the choir respond Deo gratias. Thus the office ... is ended.\" Compline's own ending varies this only slightly: no Benedicamus, but a versicle, the canticle Nunc Dimittis, and a brief collect, after which, Batiffol notes from his ninth-century source, come \"entire silence, and sleep, which is death's image.\"",
+      "source": "Batiffol, History of the Roman Breviary, Ch. III p.74 (Vespers' closing Benedicamus Domino / Deo gratias formula) and p.75 (Compline's own variant ending, via Amalarius, and the silence that follows)."
+    }
+  }
+}

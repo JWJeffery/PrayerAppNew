@@ -113,7 +113,11 @@
     const childHtml=(block.blocks||[]).map(child=>renderBlockHtml(child,depth+1)).join('');
     const unitHtml=(block.units||[]).map(renderUnitHtml).join('');
 
-    return `<section class="rb1960-block" data-role="${esc(block.role)}"><${headingTag}>${esc(block.native_label||block.label||block.role)}</${headingTag}>${unitHtml}${childHtml}</section>`;
+    // rubric-heading matches applyExplanationLayer()'s own selector (js/office-ui.js) -- the same
+    // class Horologion's section headings already carry, for the same reason: a structural label,
+    // not a per-element gloss target (.rubric-text), so it gets structural notes but not micro
+    // tooltips meant for shorter inline labels. See data/explanations/latin.json.
+    return `<section class="rb1960-block" data-role="${esc(block.role)}"><${headingTag} class="rubric-heading">${esc(block.native_label||block.label||block.role)}</${headingTag}>${unitHtml}${childHtml}</section>`;
   }
 
   // Nocturnus I/II/III is a structural grouping, not a liturgical unit -- it carries no role of
@@ -208,6 +212,16 @@
         throw err;
       }
       target.innerHTML=renderResolvedOfficeHtml(envelope);
+      // Every render path here (initial mount, Go, and the immediate language switch below) goes
+      // straight to innerHTML and never returns through js/office-ui.js's own selectMode()/
+      // requestRender() flow, which is where every other lane's own render path already calls this
+      // -- so this lane has to call it itself, or the explanatory-depth layer (data/explanations/
+      // latin.json) would never attach to anything rendered here. Guarded: harmless no-op if the
+      // shell hasn't loaded it (or the user has explanations off) — see applyExplanationLayer()'s
+      // own early returns.
+      if(typeof window!=='undefined' && typeof window.applyExplanationLayer==='function'){
+        window.applyExplanationLayer(targetId);
+      }
       const dateInput=target.querySelector('.rb1960-nav-date');
       const hourSelect=target.querySelector('.rb1960-nav-hour');
       const languageSelect=target.querySelector('.rb1960-nav-language');

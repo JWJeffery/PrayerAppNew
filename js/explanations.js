@@ -46,15 +46,30 @@
         ANG:       'data/explanations/anglican.json',
         COE:       'data/explanations/east-syriac.json',
         'OOR-COP': 'data/explanations/coptic.json',
-        BYZC:      'data/explanations/byzantine.json'
+        BYZC:      'data/explanations/byzantine.json',
+        LAT:       'data/explanations/latin.json'
     };
 
-    // selectedMode (js/office-ui.js) -> tradition code.
+    // selectedMode (js/office-ui.js) -> tradition code. 'roman-breviary-dev' is the mode id (the
+    // lane's own id predates it losing its dev-slice status -- see js/office-ui.js's mode-dispatch
+    // comment); LAT is the tradition code data/explanations/schema.json already reserved for it
+    // ("matching data/horologion/schema.json's traditionCodes: ANG, COE, BYZC, ETH, LAT") well
+    // before this file existed.
     var MODE_TO_TRADITION = {
-        'daily-office':  'ANG',
-        'east-syriac':   'COE',
-        'coptic-agpeya': 'OOR-COP',
-        'horologion':    'BYZC'
+        // FIXED 2026-09-27: this key was 'daily-office', which selectMode() never actually sets --
+        // the real mode id for the Daily Office/BCP lane is 'daily' (index.html's own
+        // onclick="selectMode('daily')"). Confirmed live before touching it: with the old key,
+        // Explanations.traditionForMode(selectedMode) returned null for the Daily Office every
+        // time, so applyExplanationLayer() hit its own `if (!tradition) return;` guard and never
+        // attached a single tooltip -- despite data/explanations/anglican.json holding 23 real,
+        // sourced entries and this ledger's own "Charter section 11 is CLOSED, all four traditions
+        // carry all three depths" claim. This one-line key was silently dead code since the layer
+        // shipped; the fix is this line alone, found and fixed while adding the line below it.
+        'daily':             'ANG',
+        'east-syriac':       'COE',
+        'coptic-agpeya':     'OOR-COP',
+        'horologion':        'BYZC',
+        'roman-breviary-dev': 'LAT'
     };
 
     var corpora = {};       // tradition code -> parsed file

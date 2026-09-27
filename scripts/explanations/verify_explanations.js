@@ -93,7 +93,7 @@ function decoratorTests() {
     };
 
     console.log('\n=== 9. Depth 0: the layer must be a complete no-op ===');
-    setState('daily-office', 0);
+    setState('daily', 0);
     el.innerHTML = OFFICE;
     const depth0Before = el.innerHTML;
     eval('(' + fnSrc + ')')('office-display');
@@ -102,7 +102,7 @@ function decoratorTests() {
     check('depth 0 leaves the DOM byte-identical', el.innerHTML === depth0Before);
 
     console.log('\n=== 10. Depth 1: glosses only ===');
-    render('daily-office', 1);
+    render('daily', 1);
     const m1 = el.querySelectorAll('.uo-explanation-marker');
     check('markers added for known labels', m1.length === 3, `got ${m1.length}, expected 3`);
     check('no structural disclosures at depth 1', el.querySelectorAll('.uo-explanation-structural').length === 0);
@@ -118,7 +118,7 @@ function decoratorTests() {
     check('liturgical text is untouched', el.innerHTML.includes('Lord, open our lips...'));
 
     console.log('\n=== 11. Depth 2: glosses + structure ===');
-    render('daily-office', 2);
+    render('daily', 2);
     check('markers still present', el.querySelectorAll('.uo-explanation-marker').length === 3);
     const d2 = el.querySelectorAll('.uo-explanation-structural');
     check('disclosures added', d2.length === 3, `got ${d2.length}`);
@@ -142,7 +142,7 @@ function decoratorTests() {
     }
 
     console.log('\n=== 13. Idempotency: repeated passes must not double-decorate ===');
-    setState('daily-office', 2);
+    setState('daily', 2);
     el.innerHTML = OFFICE;
     const f = eval('(' + fnSrc + ')');
     f('office-display'); f('office-display'); f('office-display');
@@ -173,7 +173,10 @@ function decoratorTests() {
     // As of 2026-09-04 no scaffolds remain: all four traditions are populated.
     // This is asserted explicitly so that a regression emptying any corpus fails
     // rather than passing as "honestly empty" under the old scaffold loop.
-    for (const code of ['ANG', 'BYZC', 'COE', 'OOR-COP']) {
+    // LAT (Latin Catholic / Roman Breviary) added 2026-09-27 as a first tranche (7 entries) --
+    // included in the "must be populated" loop like every other tradition; its smaller entry
+    // count doesn't exempt it from the same non-empty/all-three-depths bar the others clear.
+    for (const code of ['ANG', 'BYZC', 'COE', 'OOR-COP', 'LAT']) {
         check(`${code} corpus loaded and populated`,
             cov[code] && cov[code].state === 'loaded' && cov[code].entries > 0 &&
             cov[code].depth1 > 0 && cov[code].depth2 > 0 && cov[code].depth3 === true,
@@ -193,12 +196,19 @@ function decoratorTests() {
     check('East Syriac depth 1 populated', cov.COE && cov.COE.depth1 > 0, String(cov.COE && cov.COE.depth1));
     check('East Syriac depth 2 populated', cov.COE && cov.COE.depth2 > 0, String(cov.COE && cov.COE.depth2));
     check('East Syriac depth 3 present', cov.COE && cov.COE.depth3 === true);
+    // Latin Catholic populated from Batiffol's History of the Roman Breviary, 2026-09-27.
+    check('Latin Catholic corpus loaded', cov.LAT && cov.LAT.state === 'loaded');
+    check('Latin Catholic has entries', cov.LAT && cov.LAT.entries > 0, String(cov.LAT && cov.LAT.entries));
+    check('Latin Catholic depth 1 populated', cov.LAT && cov.LAT.depth1 > 0, String(cov.LAT && cov.LAT.depth1));
+    check('Latin Catholic depth 2 populated', cov.LAT && cov.LAT.depth2 > 0, String(cov.LAT && cov.LAT.depth2));
+    check('Latin Catholic depth 3 present', cov.LAT && cov.LAT.depth3 === true);
 
     console.log('\n=== 2. Mode -> tradition routing ===');
-    check('daily-office -> ANG', Explanations.traditionForMode('daily-office') === 'ANG');
+    check('daily -> ANG', Explanations.traditionForMode('daily') === 'ANG');
     check('east-syriac -> COE', Explanations.traditionForMode('east-syriac') === 'COE');
     check('coptic-agpeya -> OOR-COP', Explanations.traditionForMode('coptic-agpeya') === 'OOR-COP');
     check('horologion -> BYZC', Explanations.traditionForMode('horologion') === 'BYZC');
+    check('roman-breviary-dev -> LAT', Explanations.traditionForMode('roman-breviary-dev') === 'LAT');
     check('unknown mode -> null', Explanations.traditionForMode('nonsense') === null);
 
     console.log('\n=== 3. Labels the renderers ACTUALLY emit ===');
@@ -218,6 +228,21 @@ function decoratorTests() {
     }
     check('emitted labels resolve', matched >= 15, `${matched}/${realLabels.length}`);
 
+    // Same check for the Roman Breviary lane's own real labels, both languages -- extracted from
+    // js/roman-breviary-1960-1962-dev-slice.js's renderBlockHtml() output and the verified
+    // LA/EN header vocabulary recorded in AUDIT_GOVERNANCE_LEDGER.md, not invented.
+    const latLabels = [
+        'Incipit', 'Start', 'Invitatorium', 'Invitatory', 'Nocturnus I', 'Nocturn I',
+        'Psalmi', 'Psalms', 'Hymnus', 'Hymn', 'Oratio', 'Prayer', 'Conclusio', 'Conclusion'
+    ];
+    let latMatched = 0;
+    for (const l of latLabels) {
+        if (Explanations.lookup('LAT', l)) latMatched++;
+        else console.log(`         (no entry for emitted label: "${l}")`);
+    }
+    check('Roman Breviary emitted labels resolve (both languages)', latMatched === latLabels.length,
+        `${latMatched}/${latLabels.length}`);
+
     console.log('\n=== 4. Curly-apostrophe normalization ===');
     const straight = Explanations.lookup('ANG', "The Apostles' Creed");
     const curly = Explanations.lookup('ANG', 'The Apostles\u2019 Creed');
@@ -228,16 +253,20 @@ function decoratorTests() {
     check('OOR-COP depth 3 resolves', Explanations.traditionExplanation('OOR-COP') !== null);
     check('ANG depth 3 resolves', Explanations.traditionExplanation('ANG') !== null);
     check('BYZC depth 3 resolves', Explanations.traditionExplanation('BYZC') !== null);
+    check('LAT depth 3 resolves', Explanations.traditionExplanation('LAT') !== null);
     check('unknown label returns null, never a guess', Explanations.lookup('ANG', 'Zzz Not A Real Label') === null);
     check('no cross-tradition bleed into COE', Explanations.lookup('COE', 'Opening Sentence') === null);
     check('no cross-tradition bleed into BYZC', Explanations.lookup('BYZC', 'Opening Sentence') === null);
+    check('no cross-tradition bleed into LAT', Explanations.lookup('LAT', 'Opening Sentence') === null);
+    check('no cross-tradition bleed from LAT into ANG', Explanations.lookup('ANG', 'Incipit') === null);
 
     console.log('\n=== 6. Every populated entry carries a source ===');
     const ang = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/anglican.json'), 'utf8'));
     const byz = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/byzantine.json'), 'utf8'));
     const esy = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/east-syriac.json'), 'utf8'));
     const cop = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/coptic.json'), 'utf8'));
-    const ALL = [['anglican', ang], ['byzantine', byz], ['east-syriac', esy], ['coptic', cop]];
+    const lat = JSON.parse(fs.readFileSync(path.join(REPO, 'data/explanations/latin.json'), 'utf8'));
+    const ALL = [['anglican', ang], ['byzantine', byz], ['east-syriac', esy], ['coptic', cop], ['latin', lat]];
     for (const [name, corpus] of ALL) {
         const uncited = Object.entries(corpus.entries)
             .filter(([, e]) => (e.micro || e.structural) && !e.source).map(([k]) => k);
