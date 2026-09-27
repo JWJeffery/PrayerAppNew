@@ -352,14 +352,20 @@ should have been the Requiem substitute; 3 parser bugs; 1 performance bug), each
 because an independent oracle and a deliberately varied validation sample were used rather than
 trusting one hand-traced case.
 
-**What's genuinely still open, if resuming this thread further:** nothing blocking — the floor is
-reached and everything is committed and pushed to PR #39's branch
-(`claude/resume-note-catholic-audit-7hbtx6`). Future-phase items explicitly deferred, matching
-architecture §14 (not part of this floor): English parallel layer, chant/GABC/booklet layer,
-optional native JS resolver research, local calendars, monastic/Dominican variants. The next real
-decision is Josh's: whether to enable this lane for real users (it's currently `disabled`/`hidden`
-in the app's own entry screen, same pause pattern as Byzantine Horologion) — a product/governance
-call, not a build one.
+**MERGED, same day.** Josh asked directly ("Have you not yet merged the pull request back into
+main?"), then confirmed the merge explicitly. PR #39 squash-merged to `main` as `c9c34fa` (title:
+"Roman Breviary 1960/1962: full content audit + full build-out to minimum shippable floor (#39)").
+`main` now carries the entire build-out described above: all 8 hours, the Roman general calendar,
+Rubrics 1960/1962, Latin, full calendar years 2026 and 2027, precomputed, 0 errors, 0 audit
+failures. This resume-note update was made directly on `main` (not a new branch/PR) since it is a
+small, explicitly-requested documentation-only change following the merge.
+
+**What's genuinely still open, if resuming this thread further:** nothing blocking, and nothing
+left on an unmerged branch. Future-phase items explicitly deferred, matching architecture §14 (not
+part of this floor): English parallel layer, chant/GABC/booklet layer, optional native JS resolver
+research, local calendars, monastic/Dominican variants. The next real decision is Josh's: whether to
+enable this lane for real users (it's currently `disabled`/`hidden` in the app's own entry screen,
+same pause pattern as Byzantine Horologion) — a product/governance call, not a build one.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
