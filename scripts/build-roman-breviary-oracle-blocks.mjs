@@ -64,6 +64,10 @@ function lineText(line) {
     case 'response': return `R. ${line.text}`;
     case 'response-cont': return `* ${line.text}`;
     case 'verse': return line.text;
+    // A standalone rubric annotation kept inline in whatever section it occurs in (see
+    // parse-officium-html.mjs's VERSE_RE handling) -- parenthesized so it reads as an aside, not
+    // as a continuation of the surrounding prayer text.
+    case 'rubric-note': return `(${line.text})`;
     case 'para': return line.text;
     case 'text': return line.text;
     default: return line.text || null;

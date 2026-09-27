@@ -22619,3 +22619,57 @@ English regardless of which language the office above them shows. Not raised as 
 asked for it), just flagged so a future session doesn't assume it was covered.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, later still again -- both disclosed Roman Breviary parser bugs fixed, Latin's
+already-certified data regenerated with explicit authorization, English's data regenerated to match.
+
+Josh: "Fix the bugs, then start building out the Catholic explanations corpus." This entry covers the
+bug fixes; the explanations corpus is a separate, much larger effort tracked at the end of this entry.
+
+**Bug 1** (the TD-extraction/omitted-placeholder fix, already coded two entries back but deliberately
+not applied to Latin's shipped data without authorization): this instruction is that authorization.
+Regenerated all four Latin files (`manifests`/`units` x 2026/2027) via the full sweep, 0 errors both
+years. Diffed a 14-date, all-8-hour sample against the pre-regeneration files: every existing block
+byte-identical; only the previously-missing disclosed-omission placeholders newly appear.
+
+**Bug 2** (`VERSE_RE` swallowing standalone rubric annotations with no trailing text): fixed
+evidence-first, not guessed. Ran an instrumented sweep of the entire real corpus (both languages, both
+years, all 8 hours -- 11,680 office-hours) collecting every distinct string hitting this bug before
+writing the fix. Result: 11 distinct strings total (7 Latin, 4 English) across the whole corpus, every
+one a genuine rubric instruction, zero scripture citations affected -- the citation/rubric ambiguity
+worried about when this bug was first disclosed does not actually occur in this corpus.
+
+Checked what follows each of the 11 real cases before picking a fix strategy: routing them through
+`PLAIN_RUBRIC_RE`'s existing resume-on-next-dropcap mechanism (the obvious choice, since one Latin
+case already works that way by coincidence) would have been wrong -- "Gloria omittitur" and the
+Preces diocesan-name rubric are followed by an antiphon or a versicle, not a dropcap, so only 2 of the
+11 cases would ever actually resume; the other 9 would silently absorb everything after them into a
+fake section. Fixed instead with a new `rubric-note` line type in `parse-officium-html.mjs` that stays
+inline in whatever section is already open -- no section-switching, so nothing downstream can be
+corrupted by what does or doesn't follow -- rendered via `build-roman-breviary-oracle-blocks.mjs`'s
+`lineText()` as a parenthesized aside. Verified a real case end to end (Candlemas Vespers' hymn rubric
+now appears correctly right before the hymn it describes) and explicitly re-verified real
+verse-number-plus-text lines (actual psalm body text) are unaffected, not just "nothing crashed."
+
+One disclosed, accepted asymmetry remains, not a bug: Latin's Compline still creates its own separate
+rubric section for "Examen conscientiae..." (the pre-existing, already-certified path, untouched
+because it already works), while English's equivalent is now an inline note in the same reading
+section -- both languages contain the content now, just organized one level differently. Not unified,
+since that would mean changing Latin's own already-correct behavior for symmetry alone.
+
+**Regenerated and recommitted**: all four Latin files and the two English files, 0 errors across all
+four sweeps. `scripts/audit-roman-breviary-1960-narrow-checks.mjs` against regenerated Latin: 0
+failing, 11 warning (was 7 -- the 4 new ones are the audit correctly extending its existing sampling
+disclosure to the English source mirror added previously; not a new gap). Role taxonomy re-checked
+across all four regenerated files -- zero non-conformant. Live-verified through the actual app in
+headless Chromium: Compline in English now visibly shows the previously-missing rubric text, zero
+console errors.
+
+**Next, separate, much larger effort, not started here**: the Catholic explanations corpus (`LAT`
+tradition code, reserved in `data/explanations/schema.json` but never built -- see the schema's own
+`fileShape.tradition` note listing it alongside `ANG`/`COE`/`BYZC`/`ETH`). All four other traditions
+have a fully-sourced three-depth corpus (`data/explanations/{anglican,east-syriac,coptic,byzantine}.json`,
+20-39KB each); the Catholic lane has none, and `js/explanations.js`'s `MODE_TO_TRADITION` map doesn't
+even list `roman-breviary-dev`, so the explanatory-depth system silently no-ops for this lane entirely.

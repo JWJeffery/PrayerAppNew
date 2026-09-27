@@ -313,14 +313,77 @@ Zero console errors across every pass (the one `ERR_CERT_AUTHORITY_INVALID` on t
 preconnect is the same pre-existing sandbox-proxy artifact disclosed in every earlier entry in this
 note, not a regression).
 
-**Still open, not attempted here**: the two parser bugs disclosed in the entry above (Latin's
-committed data not regenerated with the TD-extraction fix; the `VERSE_RE` empty-trailing-text bug
-affecting both languages). Neither blocks what was asked here — both are pre-existing content-layer
-gaps, not wiring gaps — but they remain real and un-fixed. Separately: `js/prayers.js`'s Book of
-Needs and the sanctoral/commemorations panel below the office display are not language-aware at all
-(they always render in English regardless of which language the office above them is showing) — not
-raised as a defect, since nothing asked for it, just disclosed so a future session doesn't assume it
-was covered.
+**Still open, not attempted here (superseded by the entry directly below)**: the two parser bugs
+disclosed in the entry above. Separately: `js/prayers.js`'s Book of Needs and the
+sanctoral/commemorations panel below the office display are not language-aware at all (they always
+render in English regardless of which language the office above them is showing) — not raised as a
+defect, since nothing asked for it, just disclosed so a future session doesn't assume it was covered.
+
+---
+
+**STATE AS OF 2026-09-27, LATER STILL AGAIN — Josh: "Fix the bugs, then start building out the
+Catholic explanations corpus."** Both disclosed parser bugs from the two entries above are now
+fixed, **including regenerating the already-committed, previously-certified Latin data** — something
+the earlier entries explicitly declined to do without Josh's own authorization. This instruction is
+that authorization.
+
+**Bug 1 (the TD-extraction/omitted-placeholder fix)**: already implemented in code two entries back;
+this session actually regenerated the committed files with it. `data/roman-breviary-1960-1962/manifests/{2026,2027}.json`
+and `units/{2026,2027}.json` were re-run through the full 2-year sweep (0 errors both years) and
+overwritten. Re-verified against the actual diff before trusting it: every existing block in a
+14-date, all-8-hour sample stayed byte-identical role-and-label-wise; the only changes were the
+previously-missing disclosed-omission placeholders (`rubric:Preces Feriales`, the Epiphany
+Matins `Incipit`/`Invitatorium`/`Hymnus` omissions, etc.) now correctly present.
+
+**Bug 2 (the `VERSE_RE` empty-trailing-text swallow), actually fixed this time, evidence-first**:
+before writing a single line of the fix, ran an instrumented sweep of the **entire real corpus this
+build uses** (both languages, both years, all 8 hours — 11,680 office-hours total) collecting every
+distinct string that was hitting this bug. The result: **11 distinct strings total** (7 Latin, 4
+English) across the whole two-year corpus — and every single one is a genuine rubric instruction
+("Gloria omittitur", "The first verse of the following hymn is said genuflecting.", the Compline
+examination-of-conscience line, etc.). **Zero scripture citations were ever affected** — the
+citation/rubric-ambiguity this bug's own discovery entry worried about turned out not to exist in
+practice for this corpus, verified rather than assumed.
+
+Before committing to a fix, checked what actually *follows* each of those 11 cases in the real HTML,
+because the obvious fix — route them through `PLAIN_RUBRIC_RE`'s existing resume-on-next-dropcap
+section machinery, same as the one Latin case that already worked by coincidence — would have been
+**wrong**: "Gloria omittitur" and the Preces diocesan-name rubric are followed by an antiphon or a
+versicle, not a dropcap, so they would never resume and would silently absorb everything after them
+into a fake section until some unrelated later dropcap happened to end it. Only 2 of the 11 cases are
+actually followed by a dropcap; the rest are not. **Fixed instead by keeping the annotation as a
+plain, parenthesized inline note in whatever section is already open** (`parse-officium-html.mjs`'s
+new `rubric-note` line type, rendered via `build-roman-breviary-oracle-blocks.mjs`'s `lineText()` as
+`(text)`) — no section-switching at all, so nothing downstream can be corrupted regardless of what
+follows. Verified a real case end to end: Candlemas Vespers' "Prima stropha sequentis hymni dicitur
+flexis genibus." now appears correctly as `(Prima stropha sequentis hymni dicitur flexis genibus.)`
+immediately before the Ave Maris Stella text it describes, exactly where a printed breviary would put
+it. Also explicitly re-verified real verse-number-plus-text lines (e.g. psalm verses like "92:1
+Dóminus regnávit...") are unaffected — checked the actual rendered psalm body text is intact, not
+just that nothing crashed.
+
+One accepted, disclosed, non-bug asymmetry remains: Latin's Compline still creates its own separate
+"(rubric) Examen conscientiæ..." *section* (via the pre-existing, already-working, already-certified
+`PLAIN_RUBRIC_RE` + dropcap-resume path — untouched, because it already works correctly and isn't
+part of this bug), while English's equivalent is now an inline note within "Short reading" rather
+than its own section — both languages now **contain** the instruction, just organized one level
+differently. Not unified, because "unify" would mean changing Latin's own already-correct,
+already-shipped behavior for symmetry's sake alone, which is a different, unrequested change.
+
+**Regenerated and recommitted**: all four data files (`manifests`/`units` × `{2026,2027}` × Latin) and
+the two English equivalents in `manifests/en`/`units/en` — 0 errors across all four sweeps.
+`scripts/audit-roman-breviary-1960-narrow-checks.mjs` against the regenerated Latin files: **0
+failing, 11 warning** (was 7 — the 4 new ones are the audit correctly extending its existing
+"sampling only, not exhaustive" disclosure to the English source-mirror directories added two entries
+back; same policy, not a new gap). Every block role across all four regenerated files re-checked
+against the closed 13-role taxonomy directly — zero non-conformant. Live-verified in headless
+Chromium through the actual app (not just the build scripts): loaded the Catholic office, switched to
+Compline, switched to English — the previously-missing rubric text is now visible in the real
+rendered page, zero console errors.
+
+**Next**: building out the Catholic explanations corpus (Architectural Charter §11's three depths —
+this session's other ask) is tracked as a separate, much larger effort; see the ledger's matching
+entry and `data/explanations/` for where that work starts.
 
 ---
 
