@@ -697,6 +697,7 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'church-of-the-east': 'east-syriac',
     'eastern-orthodox': 'horologion',
     'oriental-orthodox': 'coptic-agpeya',
+    'latin-catholic': 'roman-breviary-dev',
     'universal': 'universal'
 };
 
@@ -705,6 +706,7 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
     'church-of-the-east': 'Church of the East',
     'eastern-orthodox': 'Eastern Orthodoxy',
     'oriental-orthodox': 'Oriental Orthodoxy',
+    'latin-catholic': 'Roman Breviary 1960/1962',
     universal: 'Universal Office selector'
 };
 
@@ -1606,6 +1608,8 @@ function resolveEntryTraditionRoute(tradition) {
             return { storedDefault: 'eastern-orthodox', mode: 'horologion' };
         case 'oriental-orthodox':
             return { storedDefault: 'oriental-orthodox', mode: 'coptic-agpeya' };
+        case 'latin-catholic':
+            return { storedDefault: 'latin-catholic', mode: 'roman-breviary-dev' };
         case 'universal':
             return { storedDefault: 'universal', mode: 'universal' };
         default:
@@ -2051,9 +2055,12 @@ async function selectMode(mode) {
         requestRender();
 
     } else if (mode === 'roman-breviary-dev') {
-        // ── Roman Breviary 1960/1962 — dev vertical slice ─────────────────────
-        // Hidden behind ?advanced=1 in the Universal selector. This route proves
-        // the lane pipeline without claiming full Roman Breviary coverage.
+        // ── Roman Breviary 1960/1962 ────────────────────────────────────────────
+        // Reachable from the entry screen's "Catholic" card and the Universal
+        // selector's own mode grid. The manifest data behind this covers the
+        // full minimum-shippable floor (Roman general calendar, Rubrics
+        // 1960/1962, Latin, all eight hours, 2026-2027) -- the "dev" in the mode
+        // key/id names is now just history, not a coverage disclaimer.
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
@@ -2078,11 +2085,14 @@ async function selectMode(mode) {
             return;
         }
 
+        const _rbNow = new Date();
+        const _rbDate = _clampRomanBreviaryDateToSupportedRange(_sharedOfficeNavigatorIsoDate(_rbNow));
+
         try {
             await window.RomanBreviary1960DevSlice.mountDevSlice('office-display', {
-                year: 2026,
-                date: '2026-11-02',
-                hour: 'matins'
+                year: Number(_rbDate.slice(0, 4)),
+                date: _rbDate,
+                hour: _defaultRomanBreviaryHourForCurrentTime(_rbNow)
             });
             isHydrationComplete = true;
         } catch (err) {
@@ -2652,6 +2662,33 @@ function _defaultCopticHourForCurrentTime(now = new Date()) {
     if (hour >= 15 && hour < 17) return "coptic-ninth-hour";
     if (hour >= 17 && hour < 19) return "coptic-eleventh-hour";
     return "coptic-twelfth-hour";
+}
+
+// Map clock time to one of the Roman Breviary's eight canonical Hours, in
+// their traditional daily order (Matins through Compline). There's no single
+// "correct" clock mapping for the pre-Vatican-II Hours -- Matins and Lauds
+// were historically prayed at night or anticipated the evening before -- so
+// this just picks a reasonable default for a user opening the office cold,
+// the same role the other lanes' _default*ForCurrentTime helpers play.
+function _defaultRomanBreviaryHourForCurrentTime(now = new Date()) {
+    const hour = now.getHours();
+    if (hour >= 0 && hour < 3) return "matins";
+    if (hour >= 3 && hour < 6) return "lauds";
+    if (hour >= 6 && hour < 9) return "prime";
+    if (hour >= 9 && hour < 12) return "terce";
+    if (hour >= 12 && hour < 15) return "sext";
+    if (hour >= 15 && hour < 18) return "none";
+    if (hour >= 18 && hour < 21) return "vespers";
+    return "compline";
+}
+
+// The dev-slice manifests only cover full calendar years 2026-2027
+// (architecture §10's minimum-shippable floor) -- clamp so a clock outside
+// that window still lands on real data instead of a fetch 404.
+function _clampRomanBreviaryDateToSupportedRange(isoDate) {
+    if (isoDate < '2026-01-01') return '2026-01-01';
+    if (isoDate > '2027-12-31') return '2027-12-31';
+    return isoDate;
 }
 
 // Map a date to its Coptic Theotokia rubric id. Unlike the canonical hours
