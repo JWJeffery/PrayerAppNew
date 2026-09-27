@@ -2373,29 +2373,32 @@
       "id": "catholic-first-profile",
       "category": "source_governance",
       "question": "Should first-release Roman Catholic representation use the current Liturgy of the Hours / Divine Office as the first profile?",
-      "status": "answered",
+      "status": "superseded",
       "blocks_beta": true,
       "owner": "Marissa",
       "recommended_default": "Yes. Use the current Roman Liturgy of the Hours / Divine Office ordinary form first; defer 1960 Breviary, Benedictine, and other Latin variants.",
-      "resolution": "Use the current Roman Liturgy of the Hours / Divine Office ordinary form as the first Roman Catholic profile; defer 1960 Breviary, Benedictine, monastic, and other Latin variants."
+      "resolution": "Use the current Roman Liturgy of the Hours / Divine Office ordinary form as the first Roman Catholic profile; defer 1960 Breviary, Benedictine, monastic, and other Latin variants.",
+      "superseded_note": "SUPERSEDED 2026-09-27: Josh's direct decision — the modern Roman Liturgy of the Hours lane (roman_loth, the private LOTH corpus/governance track this question and its resolution describe) is ABANDONED. PrayerAppNew ships the Roman Breviary 1960/1962 (roman_breviary, sourced from divinum-officium) as the sole Roman Catholic profile instead -- built out to a shippable floor and live in the app as of PR #39/#40 (2026-09-27), confirmed reachable from the main entry screen. This roadmap's prior recommendation/resolution (below, kept for history) reflects the earlier, since-abandoned plan and must not be treated as current."
     },
     {
       "id": "catholic-source-strategy",
       "category": "source_governance",
       "question": "What source/copyright strategy governs the Roman Catholic Divine Office baseline?",
-      "status": "partially_answered_source_unresolved",
+      "status": "superseded",
       "blocks_beta": true,
       "owner": "Marissa",
-      "resolution": "Private JWJeffery/LOTH corpus/governance repo holds source identification, source-status records, architecture maps, and synthetic resolver. external Roman LOTH corpus work may continue while deployable-source selection remains unresolved. PrayerAppNew runtime delivery remains disabled until a deployable Roman corpus lane is selected."
+      "resolution": "Private JWJeffery/LOTH corpus/governance repo holds source identification, source-status records, architecture maps, and synthetic resolver. external Roman LOTH corpus work may continue while deployable-source selection remains unresolved. PrayerAppNew runtime delivery remains disabled until a deployable Roman corpus lane is selected.",
+      "superseded_note": "SUPERSEDED 2026-09-27: Josh's direct decision — the modern Roman Liturgy of the Hours lane (roman_loth, the private LOTH corpus/governance track this question and its resolution describe) is ABANDONED. PrayerAppNew ships the Roman Breviary 1960/1962 (roman_breviary, sourced from divinum-officium) as the sole Roman Catholic profile instead -- built out to a shippable floor and live in the app as of PR #39/#40 (2026-09-27), confirmed reachable from the main entry screen. This roadmap's prior recommendation/resolution (below, kept for history) reflects the earlier, since-abandoned plan and must not be treated as current. The 'runtime delivery remains disabled' clause in this question's resolution no longer applies to roman_breviary, which is live."
     },
     {
       "id": "catholic-minimum-baseline",
       "category": "release_governance",
       "question": "What is the minimum Roman Catholic Divine Office baseline that counts as honest Beta Release representation?",
-      "status": "open",
+      "status": "superseded",
       "blocks_beta": true,
       "owner": "Marissa + Lucy",
-      "notes": "Synthetic resolver proves office architecture, not a public baseline. Minimum baseline still requires source-status-authorized text/rendering decision."
+      "notes": "Synthetic resolver proves office architecture, not a public baseline. Minimum baseline still requires source-status-authorized text/rendering decision.",
+      "superseded_note": "SUPERSEDED 2026-09-27: Josh's direct decision — the modern Roman Liturgy of the Hours lane (roman_loth, the private LOTH corpus/governance track this question and its resolution describe) is ABANDONED. PrayerAppNew ships the Roman Breviary 1960/1962 (roman_breviary, sourced from divinum-officium) as the sole Roman Catholic profile instead -- built out to a shippable floor and live in the app as of PR #39/#40 (2026-09-27), confirmed reachable from the main entry screen. This roadmap's prior recommendation/resolution (below, kept for history) reflects the earlier, since-abandoned plan and must not be treated as current. Minimum-baseline question is now answered by roman_breviary's own shippable-floor build (ROMAN_BREVIARY_1960_1962_BUILDOUT.md), not by the synthetic LOTH resolver this question originally referred to."
     },
     {
       "id": "bcp-public-hardening",

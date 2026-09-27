@@ -6,7 +6,7 @@ Current Beta Release focus: BCP-facing Anglican public beta.
 
 Required first-release representation:
 - Anglican — BCP Daily Office
-- Roman Catholic — Divine Office / Liturgy of the Hours
+- Roman Catholic — Roman Breviary 1960/1962 (the modern Liturgy of the Hours lane is abandoned, per Josh's 2026-09-27 decision — see `project_roadmap.json`'s `catholic-first-profile` governance question)
 - Eastern Orthodox — Russian / Slavic Byzantine Horologion
 - Oriental Orthodox — Ethiopian / Tewahedo Sa'atat
 - Church of the East — East Syriac Hudra

@@ -22827,3 +22827,33 @@ also confirmed showing genuine Horologion content (Calendar, Tone, which-office 
 BCP content Thread 2 fixed. Zero console errors beyond the pre-existing, already-documented
 `ERR_CERT_AUTHORITY_INVALID` (Google Fonts preconnect, blocked by this sandbox's proxy, unrelated).
 **Thread 4 is CLOSED.** Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, newest of all -- GOVERNANCE DECISION: modern Roman LOTH lane abandoned
+
+A full project-wide open-items audit this session (RESUME_PROJECT_NOTE.md, this ledger,
+project_roadmap.json, and 40+ documentation/ files, cross-checked against the live repo) surfaced
+one unresolved tension as the single highest-leverage open question: project_roadmap.json's
+Catholic governance questions (catholic-first-profile, catholic-source-strategy,
+catholic-minimum-baseline) recommended the modern Roman Liturgy of the Hours (roman_loth, the
+private JWJeffery/LOTH corpus/governance track) as the first Catholic profile, deferring the 1960
+Breviary -- but September's actual work shipped the Roman Breviary 1960/1962 (roman_breviary)
+instead, with no doc anywhere confirming whether roman_loth was still a live parallel goal or had
+been quietly abandoned.
+
+**Josh's direct answer: "The modern LOTH lane is abandoned. We are using the 1960s version."**
+roman_breviary is now the sole Roman Catholic profile, not one of two parallel lanes.
+
+Recorded same-session: project_roadmap.json's three Catholic governance questions marked
+`status: "superseded"` with a `superseded_note` each (original resolution/notes kept intact for
+history); README.md's required-representation line updated from "Divine Office / Liturgy of the
+Hours" to "Roman Breviary 1960/1962"; documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md
+given a superseded-header notice covering its entire roadmap (composition-map UI, ribbon placement,
+LOTH diagnostics, future public-domain Roman-family track) -- none of it is live backlog without
+Josh explicitly reopening the lane. documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md's own
+"additional lane, not a replacement" self-description was deliberately left unedited -- it
+describes that lane's own architecture correctly regardless of roman_loth's fate; the supersession
+is recorded on the roman_loth side, not retrofitted onto roman_breviary's doc.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
