@@ -381,9 +381,97 @@ Chromium through the actual app (not just the build scripts): loaded the Catholi
 Compline, switched to English — the previously-missing rubric text is now visible in the real
 rendered page, zero console errors.
 
-**Next**: building out the Catholic explanations corpus (Architectural Charter §11's three depths —
-this session's other ask) is tracked as a separate, much larger effort; see the ledger's matching
-entry and `data/explanations/` for where that work starts.
+**Next (superseded by the entry directly below)**: building out the Catholic explanations corpus
+(Architectural Charter §11's three depths) is tracked as a separate, much larger effort.
+
+---
+
+**STATE AS OF 2026-09-27, LATER STILL YET AGAIN — Josh: "start building out the Catholic
+explanations corpus."** A real first tranche is now built, wired end to end, and live-verified —
+plus a significant, unplanned discovery made and fixed along the way: **the Anglican explanations
+layer had never actually activated**, despite this note's own §8 claiming "Charter §11 is CLOSED."
+
+**The Anglican bug, found while wiring the Catholic tradition code, not gone looking for**:
+`js/explanations.js`'s `MODE_TO_TRADITION` map had `'daily-office': 'ANG'` — but `selectMode()`
+never sets `selectedMode` to `'daily-office'`; the real mode id, confirmed directly from
+`index.html`'s own `onclick="selectMode('daily')"`, is `'daily'`. `Explanations.traditionForMode(selectedMode)`
+was therefore returning `null` for the Daily Office every single time, and `applyExplanationLayer()`'s
+own `if (!tradition) return;` guard silently no-opped the entire layer — **zero tooltips, ever**,
+despite `data/explanations/anglican.json` holding 23 real, sourced entries since 2026-09-04.
+Verified this live before touching anything (not just reasoning from the code): loaded the real
+Daily Office, confirmed `Explanations.traditionForMode(selectedMode)` returned `null` and
+`.uo-explanation-marker` count was `0` against 11 real `.rubric-text` spans on the page. Fixed the
+one key. The test harness (`scripts/explanations/verify_explanations.js`) had the **identical**
+wrong string baked into its own fixtures (`setState('daily-office', ...)`, `render('daily-office', ...)`,
+the routing check itself) — meaning it had been asserting the wrong mode against the wrong key and
+passing, for the same reason a scale reads correctly against a weight that's also wrong. Fixed all
+five occurrences to the real `'daily'`; re-ran the suite and it still passes (67/67 before the
+Catholic additions below), now actually testing what the app does. This is exactly the kind of
+matched-wrong-fixture failure the harness's own header comment warns about avoiding (the 2026-09-03
+phantom-failure story) — it just hadn't happened to this specific check before.
+
+**The Catholic corpus itself** (`data/explanations/latin.json`, tradition code `LAT` — already
+reserved for exactly this in `data/explanations/schema.json`'s own `fileShape.tradition` note,
+listed alongside `ANG`/`COE`/`BYZC`/`ETH` since before this file existed, never built until now).
+Governing source: Pierre Batiffol, *History of the Roman Breviary* (trans. Baylay, 1912; public
+domain, archive.org `historyromanbre00baylgoog`) — found by actually searching for, then reading,
+a real public-domain scholarly source on the structure/history of the Roman Office, the same way
+Hapgood/O'Leary/Maclean serve the other three traditions. Downloaded and read the raw OCR text
+directly (not a tool-generated summary) so every citation traces to an actual page read, not a
+paraphrase of a paraphrase. **Disclosed temporal-scope caveat, prominent in the file's own
+`_provenanceNote`**: Batiffol's book covers the Breviary's history up to the 1911 Pius X reform —
+it says nothing about the 1960/1962 rubrics this lane's own texts follow. Every entry describes a
+structural/historical fact (why the Invitatory is sung the way it is, why Vespers has five psalms,
+why Compline is "purely conventual") that predates and is unaffected by the 1960 simplification —
+never a specific 1960-only rubrical detail, which this source can't speak to.
+
+**First tranche, 7 entries, disclosed as a start not a finish** (the other four traditions carry
+20-38 entries each): Incipit/Start (the opening versicle as the surviving fragment of Psalm 69),
+Invitatorium/Invitatory (the responsorial "Responsorium orationis"), Nocturnus/Nocturn (the ascetic-only
+night vigil versus the congregational Lauds/Vespers), Psalmi/Psalms (Amalarius's own testimony on
+Vespers' invariable five antiphoned psalms), Hymnus/Hymn (Rome's centuries-long resistance to
+non-scriptural chant, versus the monastic hymnal it eventually borrowed), Oratio/Prayer and
+Conclusio/Conclusion (the collect and the closing Benedicamus Domino, both fixed final acts before
+each Hour's own dismissal). Every `matchLabels` entry carries **both** the Latin and the English
+form, so the tooltip attaches regardless of which language the office is currently rendering in — a
+consideration none of the other four traditions' own corpora needed, since none of them are
+bilingual.
+
+**Wiring gap found and fixed, not assumed already working**: even with the corpus and the
+`roman-breviary-dev` → `LAT` mode mapping in place, nothing would have attached to anything, because
+`js/roman-breviary-1960-1962-dev-slice.js`'s `renderBlockHtml()` never gave its `<h3>`/`<h4>` block
+headings a `.rubric-text` or `.rubric-heading` class at all — the one selector
+`applyExplanationLayer()` queries. Added `class="rubric-heading"` (the same class Horologion's own
+section headings already carry, for the same reason: a structural label, not a per-element gloss
+target). Also added the actual invocation: this lane's own render path (initial mount, the Go
+button, and the immediate language switch) never routes back through `selectMode()`/`requestRender()`,
+which is where every other lane's own call to `applyExplanationLayer()` already lives — so this
+lane now calls `window.applyExplanationLayer(targetId)` itself, once per render, guarded so it's a
+harmless no-op if the shell hasn't loaded it.
+
+**Verified live in headless Chromium, all three depths, both languages** (a genuine end-to-end
+check, not just the build-time test harness): depth 1 — loaded the real Catholic office, got 5
+markers across 10 rendered headings, and read a real marker's own `data-tip` back out of the DOM,
+matching the exact micro text written above. Switched to English — same 5 markers, correct English
+labels (`Start`/`Psalms`/`Hymn`), confirming the bilingual `matchLabels` actually work, not just
+parse correctly. Depth 2 — forced a genuine fresh render (not a re-run on an already-decorated DOM,
+which is idempotent by design and correctly refuses to re-process elements whose text a marker has
+already altered) and got 5 structural disclosures, each with the real sourced paragraph. Depth 3 —
+called `openTraditionExplanation()` directly and got back the real essay, headed correctly "Latin
+Catholic — The Roman Breviary (Rubrics of 1960/1962)". Zero console errors throughout.
+
+**Test harness extended, not just left to cover four traditions and silently miss the fifth**: added
+explicit Latin Catholic coverage assertions matching the Byzantine/East Syriac pattern already
+established (loaded-and-populated, all three depths, mode routing, cross-tradition isolation both
+directions, source-citation and role-taxonomy checks folding LAT into the existing per-tradition
+loops), plus a dedicated real-emitted-labels check using this lane's own actual header vocabulary in
+both languages. **81 passed, 0 failed.**
+
+**Genuinely still open**: this is 7 entries against the other traditions' 20-38 — a real start, not
+parity. Batiffol's later chapters (V–VII, covering Trent through the 1911 reform) remain unread for
+this purpose; per-hour material (the Little Hours' own character, the Martyrology, the seasonal
+Marian antiphons) is still unsourced. The two Roman Breviary parser-bug entries above are unrelated
+and already closed.
 
 ---
 
