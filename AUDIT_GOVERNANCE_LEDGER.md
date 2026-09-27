@@ -22779,3 +22779,37 @@ Matins' lessons and the Chapter meeting, unsourced); the Little Hours' own invar
 (material already read at pp.83-84, not yet written up); Chapters V-VII entirely unread.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-27, even later still -- cut short at ~90% token budget. Three threads, mixed
+verification status -- see RESUME_PROJECT_NOTE.md's matching entry for full detail before resuming.
+
+1. **"UI reverted" report -- RESOLVED, not a code problem.** Confirmed main's git history and live
+   rendering were both correct; root cause was Josh's Codespace checkout frozen at a9c00e5d (pre-PR
+   #37) from not having fetched in a long time. Fixed by `git pull`, confirmed via his own
+   screenshot. No code change.
+2. **Office Settings drawer showing BCP content in the Roman Breviary lane -- FIXED, LIVE-VERIFIED.**
+   `js/office-drawer.js`'s `currentModeKey()` didn't recognize `roman-breviary-dev` and fell back to
+   `'daily'`; `_sharedOfficeNavigatorModeKey()` had no branch for it either. Fixed both, plus made
+   `ensureEntry()` actively remove/skip the button for this lane (it has no legacy sidebar for the
+   drawer to reflect and manages its own settings inline already). Verified live: Roman Breviary has
+   no button (including after switching there FROM Daily, proving active removal); Daily/Coptic/East
+   Syriac/Horologion all unaffected. Zero console errors.
+3. **"Not a tradition -- tools" -> "Tools" -- DONE, trivial one-line copy change.**
+4. **Re-enable Eastern Orthodoxy/Horologion (audit complete per Josh) -- CODE CHANGES MADE, NOT YET
+   LIVE-VERIFIED END TO END.** Routing (`UNIVERSAL_OFFICE_TRADITION_MODE_MAP`, `resolveEntryTraditionRoute()`,
+   `LANE_THRESHOLD_CONFIG`) was never removed while paused -- only UI surfacing was gated. Flipped
+   `data/tradition-availability.json`'s `eastern-orthodox.available` to true; un-gated the entry card
+   and profile dropdown option in `index.html` (matching PR #40's Catholic pattern exactly); added a
+   NEW mode-grid card (none existed -- structurally absent, not just disabled), routed through
+   `showLaneThreshold('horologion')` rather than a bare `selectMode()` call, since Horologion has a
+   real `LANE_THRESHOLD_CONFIG` entry the entry-screen's own resolver already respects. Confirmed only
+   the entry card's own disabled/subtitle state directly (correct). **Not yet tested**: the actual
+   click-through from entry card to a rendering office, the new mode-grid card's threshold-splash
+   path, and whether the just-fixed Office Settings drawer shows correct Horologion content when
+   reached via these paths rather than a direct `selectMode()` call. Next session must verify this
+   live before treating Thread 4 as done.
+
+Full detail, including exact reasoning and citations for each fix: `RESUME_PROJECT_NOTE.md`'s
+matching entry, same date.

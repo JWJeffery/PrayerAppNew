@@ -54,7 +54,8 @@
     function currentModeKey() {
         var k = (typeof window._sharedOfficeNavigatorModeKey === 'function')
             ? window._sharedOfficeNavigatorModeKey() : null;
-        return (k === 'coptic' || k === 'eastSyriac' || k === 'horologion') ? k : 'daily';
+        return (k === 'coptic' || k === 'eastSyriac' || k === 'horologion' || k === 'romanBreviary')
+            ? k : 'daily';
     }
 
     /* ── Moving real controls ─────────────────────────────────────────────── */
@@ -749,7 +750,27 @@
 
     function ensureEntry() {
         var actions = document.querySelector('#main-content .uo-keeping-actions');
-        if (!actions || actions.querySelector('.uo-drawer-open')) return;
+        if (!actions) return;
+        var existing = actions.querySelector('.uo-drawer-open');
+
+        /* Roman Breviary (found live, 2026-09-27: opening this drawer here showed the Daily
+           Office's own Rite/Officiant/Psalter/Creed/Gospel/Marian/BCP-Only-Mode content, because
+           currentModeKey() didn't recognise this lane and fell back to 'daily'). This lane has no
+           legacy sidebar (#settings-panel/#coptic-settings/#east-syriac-settings/#generic-settings)
+           for the drawer to reflect -- none of those BCP-shaped settings apply to the Roman Rite --
+           and it already manages its own settings inline (Date/Hour/Language, in
+           js/roman-breviary-1960-1962-dev-slice.js's own nav), not through this shared drawer. So
+           this lane gets no entry at all, rather than a drawer with nothing real to show. .uo-keeping-
+           actions is built once by office-shell.js's buildShell() and persists across every lane
+           switch, so a button inserted while in another lane has to be actively removed here, not
+           just skipped on future insertion attempts. */
+        if (currentModeKey() === 'romanBreviary') {
+            if (existing) existing.remove();
+            if (dialog && dialog.open) dialog.close();
+            return;
+        }
+
+        if (existing) return;
         var b = el('button', 'uo-drawer-open', 'Office Settings');
         b.type = 'button';
         b.setAttribute('aria-haspopup', 'dialog');

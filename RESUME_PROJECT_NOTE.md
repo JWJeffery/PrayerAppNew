@@ -528,6 +528,127 @@ Roman Breviary parser-bug entries from two sessions back are unrelated and alrea
 
 ---
 
+**STATE AS OF 2026-09-27, EVEN LATER STILL — session cut short at ~90% token budget. THREE separate
+threads this session, of very different verification status. Read carefully before resuming — the
+git history is NOT yet updated with this session's work as of this note (see "Not yet committed"
+at the very end).**
+
+**Thread 1 — "the UI reverted to the prior version" (Josh's report), RESOLVED, not a code problem.**
+Investigated thoroughly before touching anything: fetched `origin/main` fresh, confirmed all 5 recent
+PRs (#40–#45) present and intact in git history, then did a clean checkout + live browser test
+against that exact committed code — language selector, explanation tooltips, everything from prior
+sessions rendered correctly, zero console errors. **The repository was never broken.** The actual
+cause, found by walking through it with Josh step by step: his Codespace's local checkout of `main`
+had been frozen at `a9c00e5d` — the commit **immediately before PR #37 ever merged** — because that
+Codespace hadn't run `git fetch`/`git pull` in a very long time. `git status` had been reporting
+"up to date with origin/main" the whole time because that claim only checks a *locally cached*
+remote-tracking ref, which was itself stale. Incognito (no browser cache to mask it) showed the
+honest truth of what his stale local server was actually serving; his regular browser tab was still
+displaying an old cached-good render from before the Codespace fell behind. **Fixed by Josh running
+`git pull origin main`** — confirmed resolved from his own follow-up screenshot, which shows the
+current entry screen (Roman Breviary card present and correctly enabled) rendering correctly. No
+code change was needed or made for this thread. If this recurs: check `git log -1` in whatever
+environment is serving the app before assuming the repository itself regressed.
+
+**Thread 2 — Office Settings drawer showing BCP content in the Roman Breviary lane, FOUND, FIXED,
+LIVE-VERIFIED before the interruption.** Josh's own screenshot (mid-Nona, Roman Breviary lane) showed
+a right-hand "OFFICE SETTINGS" drawer with `Rite: RITE II`, `Officiant: LAY`, `Psalter`, `Creed`,
+`Gospel`, `Marian element`, `BCP ONLY MODE` — all Anglican/BCP-specific concepts, meaningless for the
+Roman Rite. Root cause, traced fully: `js/office-drawer.js` (a module I had never touched or even
+known about before this — it's separate from `js/office-ui.js` and my own
+`js/roman-breviary-1960-1962-dev-slice.js`) auto-injects an "Office Settings" button into
+`.uo-keeping-actions`, a container built ONCE by `js/office-shell.js`'s `buildShell()` and reused
+across every lane switch (not rebuilt per lane). The drawer's own `currentModeKey()` recognized only
+`'coptic'`/`'eastSyriac'`/`'horologion'`, falling back to `'daily'` for anything else — and
+`js/office-ui.js`'s `_sharedOfficeNavigatorModeKey()` (the function this reads) had no branch for
+`'roman-breviary-dev'` at all, returning `null`, which the drawer then defaulted straight to `'daily'`
+(BCP). This is a real gap in this session's earlier "no more known wiring gaps" claim for the
+Catholic lane — this shared drawer module was outside what got checked at the time.
+
+**Fixed**: added a `'roman-breviary-dev'` → `'romanBreviary'` branch to `_sharedOfficeNavigatorModeKey()`
+(`js/office-ui.js`); taught `office-drawer.js`'s `currentModeKey()` to recognize that key; and, since
+this lane has no legacy sidebar (`#settings-panel`/`#coptic-settings`/etc.) for the drawer to reflect
+and already manages its own settings inline (the Date/Hour/Language nav built two sessions back),
+made `ensureEntry()` **remove or skip inserting the button entirely** when the active lane is Roman
+Breviary — rather than inventing BCP-shaped settings content that doesn't apply to this rite.
+Cache-bust bumped (`office-drawer.js` v7→v8, `office-ui.js` v317→v318).
+
+**Verified live in headless Chromium, all before the token-budget interruption**: Roman Breviary —
+button absent (confirmed both on direct entry AND after switching there from Daily Office, proving
+the button is actively removed, not just skipped on first insertion, since `.uo-keeping-actions`
+persists across lane switches); Daily Office — button present, opens, shows the correct real BCP
+content (Rite/Officiant/Psalter/Form/Creed…), completely unaffected by this change; Coptic/East
+Syriac/Horologion — button still present in all three (confirmed by direct check), proving the fix
+is additive and doesn't regress the three lanes it was already correct for. Zero console errors
+across every check. **This thread is fully done and verified.**
+
+**Thread 3 — "remove 'Not a tradition — tools', replace with Tools" (Josh), DONE, trivial.**
+`index.html`'s `<div class="app-mode-section-label">Not a tradition — tools</div>` → `Tools`. One
+line, no logic involved, not independently re-verified live but there is nothing here that could
+plausibly break.
+
+**Thread 4 — "we finished auditing the Horologion, add it back in" (Josh), CODE CHANGES MADE,
+**NOT YET LIVE-VERIFIED end to end** — the token-budget interruption landed here specifically, mid
+double-check. Do not assume this thread works without testing it first.**
+
+Confirmed before touching anything: `data/tradition-availability.json` had `eastern-orthodox.available:
+false` (reason: "Byzantine Horologion is paused for a content audit.", since 2026-09-25) — and
+critically, `js/office-ui.js`'s actual routing (`UNIVERSAL_OFFICE_TRADITION_MODE_MAP`,
+`resolveEntryTraditionRoute()`, `LANE_THRESHOLD_CONFIG['horologion']`) was **never touched or
+removed** while paused — only the UI-surfacing layer was gated off. This meant re-enabling was mostly
+a matter of un-gating, not rebuilding.
+
+**Changes made** (matching the exact pattern PR #40 used for Catholic — flip the JSON, un-gate the
+static HTML fallback, since a failed availability-JSON fetch leaves `index.html`'s shipped baseline
+as-is per `applyTraditionAvailabilityToDOM()`'s own design):
+1. `data/tradition-availability.json` — `eastern-orthodox.available` → `true`, `reason`/`since` removed.
+2. `index.html`'s entry card (`data-entry-tradition="eastern-orthodox"`) — removed `is-disabled`
+   class, `disabled` attribute, `aria-disabled` flipped to `"false"`; `<small>` subtitle restored to
+   "Byzantine Horologion offices." (was the paused-reason text).
+3. `index.html`'s profile-defaults dropdown `<option value="eastern-orthodox">` — removed `disabled`,
+   label restored to plain "Eastern Orthodoxy" (was suffixed "— paused for a content audit").
+4. **`index.html`'s Universal Office Selector mode-grid had NO Horologion card at all** — not
+   disabled, structurally absent (confirmed via `git log -S` that the pre-redesign version used
+   completely different plain-text-button markup, not reusable for the current icon+title+subtitle
+   card style). Added a new card matching the other four's exact structure, icon `☧` (chosen fresh —
+   no established Horologion-specific icon survived the redesign to reuse; `☦`, the more obviously
+   "Orthodox cross" glyph, is already claimed by the Church of the East card, apparently a
+   pre-existing quirk, not something to fix here). **Routed via `onclick="showLaneThreshold('horologion')"`,
+   not a direct `selectMode('horologion')`** — caught by checking `LANE_THRESHOLD_CONFIG` first:
+   Horologion has a real threshold-splash entry ("It is time for…", same pattern as Coptic and East
+   Syriac), and the entry-screen's own route resolver already calls `showLaneThreshold()` for any
+   mode with a `LANE_THRESHOLD_CONFIG` entry — a plain `selectMode()` call from the mode-grid would
+   have silently bypassed that splash, inconsistent with how this same tradition is reachable from
+   the primary entry screen.
+
+**Verified so far, before the interruption**: `node --check` clean on both touched JS files (not
+directly touched here, but re-checked after Thread 2's edits landed in the same working tree);
+`tradition-availability.json` and `index.html` both parse. Loaded a fresh (no-cache) session and
+confirmed the entry card directly: `disabled: false`, class no longer contains `is-disabled`,
+subtitle text correctly reads "Byzantine Horologion offices." — **this much is confirmed working.**
+
+**NOT verified — genuinely unknown, check first before trusting this thread**: whether clicking the
+entry card actually completes the full route through to a rendering Horologion office (the live
+click-through test was still running, mid-script, when the interruption hit — it had not reported a
+result either way, positive or negative, before being killed); whether the new mode-grid card's
+`showLaneThreshold('horologion')` call actually renders the threshold splash correctly (never tested
+live at all); whether the Office Settings drawer (Thread 2's own fix) correctly shows real Horologion
+content when opened from a freshly-re-enabled entry vs. the direct `selectMode('horologion')` calls
+used in Thread 2's own testing (which went through `window.selectMode()` directly, not through the
+entry-card/threshold-splash path Thread 4 actually wires up — these are not guaranteed to be the same
+code path end to end). **Next session's first move on this thread: run the full live click-through —
+entry screen → Eastern Orthodoxy card → threshold splash → actual rendered Horologion office, and
+separately the mode-grid card's own path — before treating this as done.**
+
+**Not yet committed as of this note.** Working tree at the time of writing has these four files
+modified, uncommitted: `data/tradition-availability.json`, `index.html`, `js/office-drawer.js`,
+`js/office-ui.js`. This note is being written and committed alongside them in the same push, per
+Josh's explicit instruction ("write the resume note") issued specifically because of the token-budget
+cutoff — resume from a fresh session by pulling this branch, then immediately running the Thread 4
+verification above before doing anything else.
+
+---
+
 **STATE AS OF 2026-09-27, Catholic audit/build-out thread (superseded by the wiring entry directly
 above, kept below for its own history) — Josh: "we are going to audit the Catholic lane."** This
 is a **separate thread** from the Horologion entry directly below (still open, still paused exactly
