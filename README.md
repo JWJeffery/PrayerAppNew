@@ -8,7 +8,9 @@ Required first-release representation:
 - Anglican — BCP Daily Office
 - Roman Catholic — Roman Breviary 1960/1962 (the modern Liturgy of the Hours lane is abandoned, per Josh's 2026-09-27 decision — see `project_roadmap.json`'s `catholic-first-profile` governance question)
 - Eastern Orthodox — Russian / Slavic Byzantine Horologion
-- Oriental Orthodox — Ethiopian / Tewahedo Sa'atat
+- Oriental Orthodox — Coptic Agpeya (the Ethiopian/Tewahedo Sa'atat was removed 2026-08-18 — no
+  adequate free English source for the real Giyorgis Sa'atat was found; this slot was rebuilt
+  honestly as the Coptic Agpeya instead, per `documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md`)
 - Church of the East — East Syriac Hudra
 
 Canonical roadmap source: project_roadmap.json
