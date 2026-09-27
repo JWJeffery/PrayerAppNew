@@ -1,6 +1,6 @@
 # Roman Breviary 1960/1962 — Full Build-Out (Minimum Shippable Floor)
 
-**Status:** IN PROGRESS — Phase 1 complete and validated, 2026-09-27.
+**Status:** IN PROGRESS — Phase 0-2 complete and validated, 2026-09-27.
 **Authorization:** Josh: "Yes I want to build out the whole thing" — the full minimum shippable
 floor per `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §10: all 8 hours, the Roman general calendar,
 Rubrics 1960/1962, Latin only, current+next year precomputed.
@@ -107,11 +107,53 @@ easily have been made again.
 **Phase 1 verdict: the oracle pipeline is trustworthy.** Proceeding to Phase 2 (hardening the parser
 against the full diversity of content across all 8 hours and varied calendar days) per the plan.
 
+## Phase 2 — parser hardened against content diversity, complete
+
+Ran the oracle across 6 dates × all 8 hours (48 combinations): an ordinary weekday (2026-06-15), a
+Sunday (2026-01-04), Christmas (2026-12-25, I. classis), the Octave Day of the Nativity
+(2027-01-01), Good Friday (2026-04-03), and Easter Sunday (2026-04-05, covering the Triduum's own
+special forms). Found and fixed three real parser bugs, none of which affected the Nov 2 Matins
+case Phase 1 validated against (which is exactly why a deliberately varied sample matters — a
+single already-known-good case can't surface these):
+
+1. **Footnote-suffix breaking psalm-citation recognition.** Every `Psalmus N` citation line also
+   carries a trailing `<FONT SIZE='-1' > [k]</FONT>` footnote-index marker on the same line (e.g.
+   `Psalmus 46 [1]`). The citation-only regex required the whole line to end at `</FONT>` with only
+   whitespace after, so this trailing marker silently broke the match on every single psalm citation
+   outside the one Requiem case Phase 1 happened to check less rigorously — the citation fell
+   through to a generic text line instead of being recognized as `Ps. 46`. Fixed by stripping the
+   footnote suffix before line classification.
+2. **Rank-line color varies by rank and was hardcoded to one color.** The day's rank/title line
+   (`<P ALIGN=CENTER><FONT COLOR="...">...</FONT></P>`) uses `grey` for the Requiem case Phase 1
+   validated against, `green` for ordinary ranked days, and **no color attribute at all** for the
+   highest-ranked days (Easter: `<FONT >Dominica Resurrectionis ~ I. classis</FONT>`). Fixed by
+   matching any `<FONT...>` opening tag rather than one specific color.
+3. **Untitled sections needed content-aware role classification, not just label-based.** Content
+   that appears before any bold-italic section header at all (explanatory rubric notes on Easter
+   about the Vigil superseding Matins; Good Friday's entire "Completorium singulare" — a once-a-year
+   special Compline form that never uses the normal header convention) both parse as a labelless
+   "(untitled)" section. These need different roles: pure prose notes are genuinely `rubric`
+   content; Good Friday's special Compline contains real psalmody/canticle/prayer text and would be
+   mislabeled by calling it a rubric. Fixed by classifying untitled sections on their actual line
+   content (any verse/antiphon/response/versicle line present → `other`, not `rubric`) rather than
+   on the absent label alone.
+
+**Not further sub-divided in this pass, disclosed rather than fixed**: Good Friday's "Completorium
+singulare" is captured completely and correctly as one large `other`-role block (all its psalmody,
+Nunc Dimittis, Pater Noster, and collect are present, verified by direct inspection), but not split
+into separately-typed psalmody/canticle/prayer blocks the way an ordinary day's Compline would be,
+since it doesn't use the normal section-header convention this parser keys on. A once-a-year office
+gets lower priority for finer-grained splitting than the other 364 days; revisit if it turns out to
+matter for rendering. Also disclosed: a `(Gloria omittitur)` rubric annotation (styled identically
+to a verse-number marker, appearing after certain psalms in Passiontide) is currently dropped rather
+than captured as its own diagnostic — harmless to the actual prayer text (an empty string is
+filtered out, nothing wrong is shown) but the rubric note itself isn't surfaced.
+
+**Verified**: all 48 combinations run with zero crashes and zero role-taxonomy violations (every
+block's role is a member of Core Contract §7's closed 13-role set).
+
 ## Remaining phases (see the session's plan for full detail; summarized here for continuity)
 
-- **Phase 2** — run the oracle across a deliberately varied sample (ordinary weekday, Sunday,
-  first-class feast, octave day, commemoration, occurrence conflict, Triduum, a Little Hour and
-  Compline) across all 8 hours; harden the parser until all round-trip cleanly.
 - **Phase 3** — full sweep: 2026-01-01 through 2027-12-31 × all 8 hours, emit
   `manifests/2026.json`/`manifests/2027.json` and content-addressed `units/2026.json`/`units/
   2027.json`.

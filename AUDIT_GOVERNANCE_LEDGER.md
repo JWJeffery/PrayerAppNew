@@ -22339,3 +22339,41 @@ dev-vertical-slice.json` and `manifests/2026.json`.
 
 **Next**: Phase 2 (harden the parser against content diversity across all 8 hours and a varied
 calendar sample) per the session's plan file.
+
+---
+
+## Session 2026-09-27, continued yet further still again -- Roman Breviary build-out Phase 2:
+parser hardened against content diversity across all 8 hours, 3 real bugs found and fixed.
+
+Ran the oracle pipeline across 6 dates x all 8 hours (48 combinations): an ordinary weekday, a
+Sunday, Christmas, the Octave Day of the Nativity, Good Friday, and Easter Sunday -- deliberately
+including the Triduum's special forms, per the plan's own instruction not to skip straight to the
+full 2-year sweep without first testing diversity.
+
+Found and fixed 3 real parser bugs (full detail in `documentation/ROMAN_BREVIARY_1960_1962_
+BUILDOUT.md`'s Phase 2 section): (1) a trailing footnote-index marker on every `Psalmus N` citation
+line was silently breaking citation recognition on every psalm outside the one Requiem case Phase 1
+happened to check -- caught only because this pass tested ordinary days where psalm citations are
+central, not incidental; (2) the day's rank-line color varies (grey/green/no-color-at-all for the
+highest ranks) and was hardcoded to one color, breaking rank extraction on Easter; (3) content
+appearing before any section header (Easter's Vigil-supersedes-Matins rubric notes; Good Friday's
+entire "Completorium singulare," a once-a-year special Compline that never uses the normal header
+convention at all) needed content-aware role classification -- pure prose notes are genuinely
+rubric text, but Good Friday's special Compline contains real psalmody/canticle/prayer content that
+would be mislabeled as a rubric under the same blanket rule.
+
+**Disclosed, not fixed this pass**: Good Friday's special Compline is captured completely and
+correctly as one large `other`-role block rather than split into separately-typed sub-blocks (it
+doesn't use the section-header convention the parser keys on); a `(Gloria omittitur)` rubric
+annotation in Passiontide is currently dropped rather than surfaced as its own diagnostic (harmless
+to the actual prayer text, just an unsurfaced rubric note).
+
+**Verified**: all 48 combinations run with zero crashes and zero role-taxonomy violations.
+
+**Files changed**: `scripts/parse-officium-html.mjs` (footnote-suffix stripping, color-agnostic
+rank-line extraction), `scripts/build-roman-breviary-oracle-blocks.mjs` (content-aware role
+classification for untitled sections), `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` (Phase
+2 section added). The throwaway test-sample harness used to drive this pass was scratch tooling, not
+committed.
+
+**Next**: Phase 3 (full 2026-2027 x 8-hour sweep, content-addressed units) per the plan.

@@ -14,8 +14,19 @@ const ROLE_BY_LABEL = [
   [/^Preces/, 'intercession']
 ];
 
-function roleForLabel(label) {
-  for (const [re, role] of ROLE_BY_LABEL) if (re.test(label)) return role;
+function roleForSection(section) {
+  if (section.label === '(untitled)') {
+    // No real header appeared before this content (e.g. explanatory notes before any section, or
+    // a special once-a-year office like Good Friday's "Completorium singulare" that doesn't use
+    // the normal bold-header convention at all). Pure prose notes are genuinely rubric text;
+    // anything with real prayer content (verses, antiphons, responses) is not, and gets the
+    // generic fallback rather than being mislabeled as a rubric.
+    const hasSubstantiveContent = section.lines.some(l =>
+      ['verse', 'para', 'antiphon', 'response', 'versicle'].includes(l.type)
+    );
+    return hasSubstantiveContent ? 'other' : 'rubric';
+  }
+  for (const [re, role] of ROLE_BY_LABEL) if (re.test(section.label)) return role;
   return 'other';
 }
 
@@ -62,7 +73,7 @@ export function buildBlocksAndUnits(sections, sourceMeta) {
     }
     if (section.lines.length === 0) continue;
 
-    const role = roleForLabel(section.label);
+    const role = roleForSection(section);
     const kind = role === 'rubric' ? 'rubric' : role;
     const citation = sectionCitation(section);
     const text = sectionText(section);

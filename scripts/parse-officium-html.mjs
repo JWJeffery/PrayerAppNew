@@ -1,4 +1,5 @@
 const HEADER_RE = /^<FONT SIZE='\+1' COLOR="red"><B><I>(.*?)<\/I><\/B><\/FONT>(?:\s*<FONT SIZE='-1' >\{(.*?)\}<\/FONT>)?\s*$/;
+const FOOTNOTE_SUFFIX_RE = /<FONT SIZE='-1' >\s*\[\d+\]<\/FONT>\s*$/;
 const CITATION_ONLY_RE = /^<FONT COLOR="red"><I>(.*?)<\/I><\/FONT>\s*$/;
 const ANTIPHON_RE = /^<FONT COLOR="red"><I>Ant\.<\/I><\/FONT>\s*(.*)$/;
 const VERSICLE_RE = /^<FONT COLOR="red"><I>℣\.<\/I><\/FONT>\s*(.*)$/;
@@ -35,7 +36,7 @@ function extractTdBlocks(html) {
 }
 
 function extractRankLine(html) {
-  const m = html.match(/<P ALIGN=CENTER><FONT COLOR="grey">(.*?)<\/FONT><\/P>/);
+  const m = html.match(/<P ALIGN=CENTER><FONT[^>]*>(.*?)<\/FONT>/);
   return m ? stripTags(m[1]) : null;
 }
 
@@ -61,7 +62,8 @@ export function parseOfficiumHtml(html) {
   for (const td of tdBlocks) {
     const rawLines = splitLines(td.rawInner);
 
-    for (const line of rawLines) {
+    for (const rawLine of rawLines) {
+      const line = rawLine.replace(FOOTNOTE_SUFFIX_RE, '').trim();
       let m;
 
       if ((m = OMITTED_RE.exec(line))) {
