@@ -2437,21 +2437,24 @@ body.roman-breviary-dev-mode #main-content.sidebar-hidden {
     }
 }
 
-/* Roman Breviary 1960/1962 nocturn grouping */
-.rb1960-nocturn {
+/* Roman Breviary 1960/1962 nocturn grouping -- Nocturnus I/II/III is a lane-native display
+   grouping carried on each block as a `nocturn`/`nocturnLabel` passthrough field, not a role of
+   its own (Core Contract §7 rule 1 forbids a block/role for a structural container that isn't
+   itself a liturgical unit); see js/roman-breviary-1960-1962-dev-slice.js's groupByNocturn(). */
+.rb1960-nocturn-group {
     margin-top: 2.4rem;
     padding-top: 1.4rem;
     border-top: 1px solid rgba(201, 168, 76, 0.24);
 }
 
-.rb1960-nocturn > h3 {
+.rb1960-nocturn-group > .rb1960-nocturn-heading {
     margin-bottom: 1.2rem;
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
-.rb1960-nocturn .rb1960-block h4 {
+.rb1960-nocturn-group .rb1960-block h4 {
     margin: 1.5rem 0 0.6rem;
     font-family: "Cinzel", serif;
     color: var(--gold);

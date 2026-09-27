@@ -403,51 +403,69 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
   };
 }
 
-function buildReadingResponsoryPair(section) {
+// Core Contract §7 -- the block role taxonomy is closed. `versicle` and `responsory` don't fit
+// any of the 13 roles (not a stretch: they're not `antiphon`, not `reading`, not `prayer`) and
+// become `other` with the native label kept, per §7 rule 3. `nocturn` was worse than a wrong
+// role -- it was a structural container (Nocturnus I/II/III grouping psalmody/versicle/reading/
+// responsory) given a block/role of its own at all, which §7 rule 1 forbids for anything that
+// isn't itself a liturgical unit. Fixed the same way the Horologion lane's own `sequence`
+// containers are handled (js/office-ui.js's HOR_ROLE_BY_TYPE, ~line 3556): the container gets no
+// block of its own; each child block instead carries a lane-native `nocturn`/`nocturnLabel`
+// passthrough field (Core Contract §6: "optional lane-native fields the lane needs to render
+// correctly, which the shell passes through untouched"), so the dev-slice's own renderer can still
+// show a "Nocturnus I" heading and group the blocks visually without inventing a role for it.
+function buildReadingResponsoryBlocks(section, nocturnIndex, nocturnLabel) {
   const number = section.replace('Lectio', '');
 
   return [
     {
       role: 'reading',
       label: MATINS_READING_LABELS[section],
+      nocturn: nocturnIndex,
+      nocturnLabel,
       unit_refs: [`rb1960.la.sancti.11-02.${section.toLowerCase()}`]
     },
     {
-      role: 'responsory',
+      role: 'other',
       label: MATINS_RESPONSORY_LABELS[`Responsory${number}`],
+      nocturn: nocturnIndex,
+      nocturnLabel,
       unit_refs: [`rb1960.la.sancti.11-02.responsorium${number}`]
     }
   ];
 }
 
-function buildNocturnBlock(nocturn, nocturnIndex) {
-  return {
-    role: 'nocturn',
-    label: nocturn.label,
-    blocks: [
-      {
-        role: 'psalmody',
-        label: 'Psalmi et antiphonae',
-        unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.psalmi-antiphonae`]
-      },
-      {
-        role: 'versicle',
-        label: 'Versiculum',
-        unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`]
-      },
-      ...nocturn.sections.flatMap(section => buildReadingResponsoryPair(section))
-    ]
-  };
+function buildNocturnBlocks(nocturn, nocturnIndex) {
+  return [
+    {
+      role: 'psalmody',
+      label: 'Psalmi et antiphonae',
+      nocturn: nocturnIndex,
+      nocturnLabel: nocturn.label,
+      unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.psalmi-antiphonae`]
+    },
+    {
+      role: 'other',
+      label: 'Versiculum',
+      nocturn: nocturnIndex,
+      nocturnLabel: nocturn.label,
+      unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`]
+    },
+    ...nocturn.sections.flatMap(section => buildReadingResponsoryBlocks(section, nocturnIndex, nocturn.label))
+  ];
 }
 
 function buildMatinsBlocks() {
   return [
     {
-      role: 'invitatory',
+      // `invitatory` isn't in the closed taxonomy either, but unlike versicle/responsory it has
+      // an exact, non-stretched fit already in §7's own prose: "opening -- Invitatory / opening
+      // versicles / introductory material."
+      role: 'opening',
       label: 'Invitatorium',
       unit_refs: ['rb1960.la.sancti.11-02.invitatorium']
     },
-    ...MATINS_NOCTURNS.map((nocturn, index) => buildNocturnBlock(nocturn, index + 1)),
+    ...MATINS_NOCTURNS.flatMap((nocturn, index) => buildNocturnBlocks(nocturn, index + 1)),
     {
       role: 'dismissal',
       label: 'Conclusio',

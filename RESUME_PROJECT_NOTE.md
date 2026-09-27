@@ -133,24 +133,35 @@ already pinned). What actually moved:
 - Re-ran the full narrow-check suite: checks 1-4 clean against the real sources now; check 5
   unchanged (this pass was sourcing, not that fix).
 
-**Deliberately not touched:** `audit-ledger.html`'s dashboard / `SEED_VERSION` (tracks the broad
-cross-tradition campaign this lane is explicitly exempt from — see §15); any fix for the Check 5
-finding (still the next task for this lane); the disclosed `lectio1`/`lectio7`/`lectio8` text
-questions (need a printed source, not a ruling from here); the paused Horologion T8 item below (a
-different thread, not part of this session's ask).
+**CONTINUED, same day — Josh: "go fix the Check 5 role-taxonomy finding." DONE.** Fixed exactly per
+the plan already disclosed above, nothing re-litigated. `scripts/build-roman-breviary-1960-dev-
+slice.mjs` (the generator, not hand-edited JSON): `invitatory`→`opening`; `versicle`/`responsory`→
+`other` with native labels kept; the `nocturn` container block removed entirely, replaced by
+`nocturn`/`nocturnLabel` lane-native passthrough fields on each former child (Core Contract §6).
+`js/roman-breviary-1960-1962-dev-slice.js`: new `groupByNocturn()` renders the same "Nocturnus N"
+heading + two-level hierarchy as before, now driven by the passthrough field instead of a role.
+`css/office.css` renamed `.rb1960-nocturn`→`.rb1960-nocturn-group`/`.rb1960-nocturn-heading`, same
+rules (cache-bust v227→v228). **Verified**: `node --check` clean; `scripts/audit-roman-
+breviary-1960-narrow-checks.mjs` now **0 failing** (all five checks pass — first time this lane has
+had five green); **live-verified in headless Chromium** (`index.html?entry=roman-breviary-dev`) —
+26 blocks (down from 29, exactly the 3 removed containers), 3 correctly-labeled nocturn groups,
+h3/h4 heading hierarchy visually identical to before the fix, zero new console errors, screenshot
+confirmed. Full detail in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s Check 5 section
+(original disclosure kept in place, fix recorded underneath it).
 
-**Next move on resuming this thread:** fix Check 5 — reshape the Matins manifest to drop the
-`nocturn` block level (fold the nocturn number into each child's native `label`, e.g. "Psalmi et
-antiphonae — Nocturnus I") and remap the remaining roles as above, updating
-`js/roman-breviary-1960-1962-dev-slice.js` line 87's `'nocturn'` check to key off something else
-(e.g. whether a block has nested children) rather than a role string. Re-run
-`scripts/audit-roman-breviary-1960-narrow-checks.mjs` after — it should go from 16 failing to 0. If
-Josh can supply a real printed 1960/1962 Breviary or Vulgate source, resolve the three disclosed
-`lectio1`/`lectio7`/`lectio8` text questions the same way Maclean pages get supplied for the Horologion
-audit. Then decide with Josh whether to grow the dev slice past one day/one hour, which is a
-governance question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-
-calendar/1960-62/all eight hours/current+next year — a long way past today's one-day slice) not
-something to just start building.
+**Deliberately not touched:** `audit-ledger.html`'s dashboard / `SEED_VERSION` (tracks the broad
+cross-tradition campaign this lane is explicitly exempt from — see §15); the disclosed
+`lectio1`/`lectio7`/`lectio8` text questions (need a printed source, not a ruling from here); the
+paused Horologion T8 item below (a different thread, not part of this session's ask).
+
+**Next move on resuming this thread:** all five narrow checks now pass — there is no open
+mechanical finding left for this lane. If Josh can supply a real printed 1960/1962 Breviary or
+Vulgate source, resolve the three disclosed `lectio1`/`lectio7`/`lectio8` text questions the same
+way Maclean pages get supplied for the Horologion audit. Otherwise the next real decision is with
+Josh: whether to grow the dev slice past one day/one hour, which is a governance question (the
+minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/all eight
+hours/current+next year — a long way past today's one-day slice) not something to just start
+building.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

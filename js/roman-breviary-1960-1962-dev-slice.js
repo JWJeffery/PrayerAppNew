@@ -43,7 +43,12 @@
         native_label:block.label||block.role,
         unit_refs:block.unit_refs||[],
         units,
-        blocks:childBlocks
+        blocks:childBlocks,
+        // Lane-native passthrough fields (Core Contract §6) -- not part of the closed role
+        // taxonomy, just carried through so the renderer can still group/label Nocturnus I/II/III
+        // without a `nocturn` block/role of its own. See build-roman-breviary-1960-dev-slice.mjs.
+        nocturn:block.nocturn,
+        nocturnLabel:block.nocturnLabel
       };
     }
 
@@ -84,14 +89,40 @@
     const headingTag=depth===0?'h3':'h4';
     const childHtml=(block.blocks||[]).map(child=>renderBlockHtml(child,depth+1)).join('');
     const unitHtml=(block.units||[]).map(renderUnitHtml).join('');
-    const className=block.role==='nocturn'?'rb1960-block rb1960-nocturn':'rb1960-block';
 
-    return `<section class="${className}" data-role="${esc(block.role)}"><${headingTag}>${esc(block.native_label||block.label||block.role)}</${headingTag}>${unitHtml}${childHtml}</section>`;
+    return `<section class="rb1960-block" data-role="${esc(block.role)}"><${headingTag}>${esc(block.native_label||block.label||block.role)}</${headingTag}>${unitHtml}${childHtml}</section>`;
+  }
+
+  // Nocturnus I/II/III is a structural grouping, not a liturgical unit -- it carries no role of
+  // its own (Core Contract §7 rule 1), so it isn't a block in envelope.blocks at all. Its label
+  // survives as each grouped block's own `nocturnLabel` passthrough field instead. Group here by
+  // consecutive `nocturn` value and render one heading per group, exactly the visual structure
+  // the old (non-conformant) `role: 'nocturn'` container used to provide.
+  function groupByNocturn(blocks){
+    const groups=[];
+    let current=null;
+    for(const block of blocks){
+      if(block.nocturn!=null && current && current.nocturn===block.nocturn){
+        current.blocks.push(block);
+      } else {
+        current={nocturn:block.nocturn,nocturnLabel:block.nocturnLabel,blocks:[block]};
+        groups.push(current);
+      }
+    }
+    return groups;
   }
 
   function renderResolvedOfficeHtml(envelope){
-    const blocksHtml=(envelope.blocks||[]).map(block=>renderBlockHtml(block,0)).join('');
-    return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2><p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${blocksHtml}</div>`;
+    const groups=groupByNocturn(envelope.blocks||[]);
+    const groupsHtml=groups.map(group=>{
+      // Ungrouped blocks (invitatory, conclusio) render at the same top level (h3) as before.
+      // Grouped blocks render one level down (h4), same as when they used to be a nocturn
+      // container's own nested `.blocks` -- only how that nesting is expressed has changed.
+      if(group.nocturn==null) return group.blocks.map(block=>renderBlockHtml(block,0)).join('');
+      const blocksHtml=group.blocks.map(block=>renderBlockHtml(block,1)).join('');
+      return `<div class="rb1960-nocturn-group"><h3 class="rb1960-nocturn-heading">${esc(group.nocturnLabel)}</h3>${blocksHtml}</div>`;
+    }).join('');
+    return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2><p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
   }
 
   async function fetchJson(path){

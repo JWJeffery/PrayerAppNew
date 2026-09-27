@@ -1,6 +1,7 @@
 # Roman Breviary 1960/1962 — Narrow Audit Findings
 
-**Status:** ACTIVE — first pass, 2026-09-27.
+**Status:** ACTIVE — first pass 2026-09-27, sourcing addendum 2026-09-27 continued, Check 5 fixed
+2026-09-27 continued further.
 **Scope discipline:** `documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §15 is explicit that this
 lane "runs no broad audit campaign." Audits here are limited to the five named narrow checks:
 import integrity, JSON validity, manifest validity, reference resolution, and envelope conformance.
@@ -27,7 +28,7 @@ checks are scripted and re-runnable as the slice grows past one day/one hour.
 | 2 | JSON validity | **PASS** — all 5 JSON files parse clean |
 | 3 | Manifest validity | **PASS** — 26/26 `unit_refs` resolve, no orphans |
 | 4 | Reference resolution | **PASS** — all bible-binding path/existence/verse-count claims verified |
-| 5 | Envelope conformance | **FAIL** — 16 blocks use roles outside the closed taxonomy; disclosed, not yet fixed |
+| 5 | Envelope conformance | **PASS** — was FAIL (16 non-conformant blocks), fixed 2026-09-27 continued further (below) |
 
 ---
 
@@ -103,7 +104,14 @@ All were verified directly, not taken on trust:
 
 ---
 
-## Check 5 — Envelope conformance: FAIL, disclosed, not fixed this pass
+## Check 5 — Envelope conformance: FIXED 2026-09-27 continued further
+
+**FIXED — see the "Fix, 2026-09-27 continued further" section below for what actually changed.**
+The account immediately below is preserved exactly as originally written when the defect was found
+and disclosed, not yet fixed, so the record shows what was actually found versus what was later
+done about it — same discipline `HOROLOGION_AUDIT_FINDINGS.md` uses for its own corrections.
+
+### Original finding, disclosed 2026-09-27, not fixed at the time
 
 **The defect.** `manifests/2026.json`'s Matins blocks use four `role` values that are **not**
 members of the Core Contract's closed block-role taxonomy
@@ -155,11 +163,57 @@ structural/rendering work, not a "narrow check," and rushing it risks introducin
 of disclosing this one. Per architecture §13, an honest disclosed gap is preferable to a hasty fix.
 This finding is the concrete next task for this lane.
 
-**Not fixed, not silently accepted either** — tracked here and re-checked automatically by
-`scripts/audit-roman-breviary-1960-narrow-checks.mjs`'s check 5 on every future run, so it cannot go
-stale the way other findings in this repo have (`documentation/OPEN_ITEMS_FIXABILITY.md`'s own
+**At the time of disclosure**: tracked here and re-checked automatically by
+`scripts/audit-roman-breviary-1960-narrow-checks.mjs`'s check 5 on every future run, so it couldn't
+go stale the way other findings in this repo have (`documentation/OPEN_ITEMS_FIXABILITY.md`'s own
 "Standing lessons" section is the precedent for why an automated re-check beats a note that says
 "still open" from memory).
+
+### Fix, 2026-09-27 continued further — Josh: "go fix the Check 5 role-taxonomy finding"
+
+Applied exactly the plan disclosed above, no changes to its reasoning:
+
+- **`scripts/build-roman-breviary-1960-dev-slice.mjs`** (the manifest generator — fixed at the
+  source, not by hand-editing the generated JSON, same discipline as Check 1's fix): `invitatory` →
+  `opening`; `versicle` and `responsory` → `other` with their native `label`s kept unchanged
+  ("Versiculum", "Responsorium I"–"IX"). The `nocturn` container block is gone entirely — each of
+  its former children (`psalmody`, the now-`other` versicle, `reading` ×3, the now-`other`
+  responsory ×3) instead carries two new lane-native passthrough fields, `nocturn` (1/2/3) and
+  `nocturnLabel` ("Nocturnus I/II/III"), exactly option (b) from the disclosed plan — a plain field
+  the shell passes through untouched (Core Contract §6), not a role. `manifests/2026.json` and
+  `units/dev-vertical-slice.json` regenerated from this script, not hand-edited.
+- **`js/roman-breviary-1960-1962-dev-slice.js`**: removed the `block.role==='nocturn'` CSS-class
+  check (dead now — no block ever carries that role again). Added `groupByNocturn()`, which groups
+  the now-flat block list by consecutive `nocturn` value and renders one `<h3>` "Nocturnus N"
+  heading per group in a `.rb1960-nocturn-group` wrapper, with that group's own blocks rendered one
+  level down (`<h4>`) — the exact same two-level heading hierarchy the old nested-block rendering
+  produced, just driven by the passthrough field instead of a role. Ungrouped blocks (Invitatorium,
+  Conclusio) render unchanged, at the top level (`<h3>`).
+- **`css/office.css`**: renamed `.rb1960-nocturn` → `.rb1960-nocturn-group` / `.rb1960-nocturn-
+  heading` to match, no change to the actual rules (same border, spacing, uppercase letter-spacing,
+  gold `h4` sub-heading styling as before). Cache-bust `office.css v227 → v228`.
+
+**Verified, not just asserted:**
+- `node --check` clean on both touched JS files.
+- Re-ran `scripts/audit-roman-breviary-1960-narrow-checks.mjs`: **0 failing, 2 warning** (the 2
+  warnings are Check 1's already-expected "sample, not exhaustive" disclosures, unrelated to this
+  fix) — all five checks pass for the first time this lane has had five to pass.
+- **Live-verified in headless Chromium**, not just Node: served the repo, loaded
+  `index.html?entry=roman-breviary-dev`, inspected the rendered DOM directly. Confirmed: 26 total
+  blocks (1 `opening` + 24 nocturn-grouped + 1 `dismissal`, down from 29 — the 3 removed `nocturn`
+  container blocks, nothing else); exactly 3 `.rb1960-nocturn-group` elements labeled "Nocturnus
+  I"/"II"/"III"; every grouped block's heading renders as `<h4>` and both ungrouped blocks
+  (Invitatorium, Conclusio) render as `<h3>`, matching the pre-fix visual hierarchy exactly; zero
+  console errors beyond the pre-existing sandboxed font-CDN failure this project already documents
+  elsewhere as unrelated. Screenshot confirmed the "NOCTURNUS I" heading, gold sub-headings, and
+  hairline separator all render identically to the intended design — the taxonomy fix produced no
+  visible regression.
+- Re-ran `scripts/build-roman-breviary-1960-bible-binding-report.mjs` afterward: still resolves
+  cleanly (`block_label` lookups walk the now-flat manifest the same way; nothing there depended on
+  the old nesting).
+
+This closes the last open narrow-check finding from this lane's first audit pass. All five checks
+now pass against the dev vertical slice.
 
 ---
 

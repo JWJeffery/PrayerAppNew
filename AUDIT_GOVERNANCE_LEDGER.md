@@ -21898,6 +21898,42 @@ Re-ran `scripts/audit-roman-breviary-1960-narrow-checks.mjs` after all of the ab
 pass clean, now against the real sources; check 5's disclosed role-taxonomy finding is unchanged --
 this pass was sourcing, not that fix.
 
+---
+## Session 2026-09-27, continued yet further -- Josh: "go fix the Check 5 role-taxonomy finding."
+## Fixed exactly per the plan already disclosed two entries above; nothing re-litigated.
+
+Fixed at the source (`scripts/build-roman-breviary-1960-dev-slice.mjs`, the manifest generator),
+not by hand-editing generated JSON: `invitatory` -> `opening` (exact fit already in the taxonomy's
+own prose); `versicle`/`responsory` -> `other` with native labels kept ("Versiculum",
+"Responsorium I"-"IX"); the `nocturn` container block removed entirely, its former children instead
+carrying `nocturn`/`nocturnLabel` lane-native passthrough fields (Core Contract §6) rather than a
+role. Regenerated `manifests/2026.json` and `units/dev-vertical-slice.json` from the fixed script.
+
+`js/roman-breviary-1960-1962-dev-slice.js`: removed the now-dead `block.role==='nocturn'` check;
+added `groupByNocturn()` to group the now-flat block list by the new passthrough field and render
+one "Nocturnus N" heading per group, with that group's blocks one level down -- the same two-level
+heading hierarchy the old nested rendering produced, just driven by a field instead of a role.
+`css/office.css` renamed `.rb1960-nocturn` -> `.rb1960-nocturn-group`/`.rb1960-nocturn-heading` to
+match, same rules, no visual change intended. Cache-bust `office.css v227 -> v228`.
+
+**Verified, not asserted**: `node --check` clean on both touched JS files; re-ran
+`scripts/audit-roman-breviary-1960-narrow-checks.mjs` -- 0 failing, 2 warning (Check 1's already-
+expected sampling disclosures, unrelated). Live-verified in headless Chromium against a served copy
+of the repo (`index.html?entry=roman-breviary-dev`): 26 total blocks (29 minus the 3 removed
+`nocturn` containers, nothing else changed count-wise), exactly 3 `.rb1960-nocturn-group` elements
+correctly labeled, grouped blocks render `<h4>` and ungrouped blocks (Invitatorium, Conclusio)
+render `<h3>` exactly as before the fix, zero console errors beyond the pre-existing sandboxed
+font-CDN failure already documented elsewhere as unrelated. Screenshot confirmed the visual result
+is unchanged from the pre-fix design. Also re-ran
+`scripts/build-roman-breviary-1960-bible-binding-report.mjs` afterward -- still resolves cleanly,
+nothing there depended on the old nesting.
+
+This closes the last open narrow-check finding from this lane's first audit pass. All five checks
+in `scripts/audit-roman-breviary-1960-narrow-checks.mjs` now pass against the dev vertical slice.
+Full detail in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s Check 5 section, original
+disclosure preserved in place with the fix recorded underneath it, same discipline
+`HOROLOGION_AUDIT_FINDINGS.md` uses for its own corrections.
+
 **Bugs found and fixed:**
 - **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
   been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the
