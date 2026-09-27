@@ -5,11 +5,23 @@ const ROOT = process.cwd();
 const BASE = path.join(ROOT, 'data', 'roman-breviary-1960-1962');
 const SOURCE_REL = 'web/www/horas/Latin/Sancti/11-02.txt';
 const C9_SOURCE_REL = 'web/www/horas/Latin/Commune/C9.txt';
+const PRAYERS_SOURCE_REL = 'web/www/horas/Latin/Psalterium/Common/Prayers.txt';
+const RUBRICAE_SOURCE_REL = 'web/www/horas/Latin/Psalterium/Common/Rubricae.txt';
 const SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', SOURCE_REL);
 const C9_SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', C9_SOURCE_REL);
 const PIN_PATH = path.join(BASE, 'source', 'divinum-officium', 'source-pin.json');
 const UNITS_PATH = path.join(BASE, 'units', 'dev-vertical-slice.json');
 const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
+
+// Full-audit pass, 2026-09-27 -- two macros the office file references but never spells out,
+// because they're universal/common texts, not office-specific ones: `&Gloria` (Conclusio) and
+// the Matins engine's own `$Pater totum secreto` push (web/cgi-bin/horas/specmatins.pl line 671,
+// taken because our [Rule] contains "Limit Benedictiones" -- see
+// documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md's full-audit addendum for the Perl trace that
+// established this). Both texts transcribed verbatim from the shared common-prayers source file,
+// not paraphrased.
+const GLORIA_PATRI_TEXT = 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.';
+const PATER_TOTUM_SECRETO_TEXT = '« Pater Noster » dicitur totum secreto.';
 
 function readUtf8(filePath) {
   return fs.readFileSync(filePath, 'utf8');
@@ -333,6 +345,30 @@ function buildNocturnVersicleUnit(sourcePin, c9Sections, nocturnIndex, section) 
   ];
 }
 
+function buildConclusioGloriaUnit(sourcePin) {
+  // [Conclusio]'s own `&Gloria` macro, resolved: Core Contract §7 added a `doxology` role
+  // specifically for exactly this (Gloria Patri), so it gets its own unit/block rather than
+  // being folded into -- or left as an unresolved-macro diagnostic inside -- the dismissal unit.
+  return [
+    'rb1960.la.sancti.11-02.conclusio-doxology',
+    {
+      key: 'rb1960.la.sancti.11-02.conclusio-doxology',
+      kind: 'doxology',
+      citation: '',
+      text: GLORIA_PATRI_TEXT,
+      raw_text: '&Gloria',
+      display_diagnostics: [],
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: PRAYERS_SOURCE_REL,
+        section: 'Gloria',
+        appointment: { path: SOURCE_REL, section: 'Conclusio', directive: '&Gloria' }
+      }
+    }
+  ];
+}
+
 function buildConclusioUnit(sourcePin, sections) {
   const rawText = requireSection(sections, 'Conclusio', SOURCE_REL);
   const normalized = normalizeDivinumDisplayText(rawText);
@@ -345,8 +381,39 @@ function buildConclusioUnit(sourcePin, sections) {
       citation: 'Conclusio specialis',
       text: normalized.text,
       raw_text: rawText,
-      display_diagnostics: normalized.diagnostics,
+      display_diagnostics: normalized.diagnostics.filter(d => !/&Gloria/.test(d.message)),
       source: unitSource(sourcePin, 'Conclusio')
+    }
+  ];
+}
+
+function buildPaterSecretoUnit(sourcePin, nocturnIndex) {
+  // web/cgi-bin/horas/specmatins.pl's lectiones() sub: because this office's [Rule] contains
+  // "Limit Benedictiones", the usual per-lesson "Jube, domne, benedicere" + blessing-response
+  // ritual (9 exchanges) is skipped entirely, replaced by a single silent complete Pater Noster
+  // once per nocturn (`$Pater totum secreto`, pushed once before that nocturn's lessons begin --
+  // see the same sub's `elsif` branch). This is rubric text (an instruction, not prayed text),
+  // matching its own source formatting (Rubricae.txt's `/:...:/ ` convention for rubric lines).
+  return [
+    `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`,
+    {
+      key: `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`,
+      kind: 'rubric',
+      citation: '',
+      text: PATER_TOTUM_SECRETO_TEXT,
+      raw_text: '/:' + PATER_TOTUM_SECRETO_TEXT + ':/',
+      display_diagnostics: [],
+      source: {
+        repo: sourcePin.repo,
+        commit: sourcePin.commit,
+        path: RUBRICAE_SOURCE_REL,
+        section: 'Pater totum secreto',
+        appointment: {
+          path: 'web/cgi-bin/horas/specmatins.pl',
+          section: 'lectiones()',
+          directive: '$rule =~ /Limit.*?Benedictio/i -- our [Rule] contains "Limit Benedictiones"'
+        }
+      }
     }
   ];
 }
@@ -381,10 +448,12 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
         index + 1,
         matinsAntiphons.slice(nocturn.antiphonRange[0], nocturn.antiphonRange[1])
       ),
-      buildNocturnVersicleUnit(sourcePin, c9Sections, index + 1, nocturn.versum)
+      buildNocturnVersicleUnit(sourcePin, c9Sections, index + 1, nocturn.versum),
+      buildPaterSecretoUnit(sourcePin, index + 1)
     ])
   ]);
 
+  const conclusioGloriaUnit = buildConclusioGloriaUnit(sourcePin);
   const conclusioUnit = buildConclusioUnit(sourcePin, sections);
 
   return {
@@ -398,6 +467,7 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
       ...frameworkUnits,
       ...readingUnits,
       ...responsoryUnits,
+      [conclusioGloriaUnit[0]]: conclusioGloriaUnit[1],
       [conclusioUnit[0]]: conclusioUnit[1]
     }
   };
@@ -451,6 +521,16 @@ function buildNocturnBlocks(nocturn, nocturnIndex) {
       nocturnLabel: nocturn.label,
       unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`]
     },
+    {
+      // Placed here, before this nocturn's first Lectio, matching web/cgi-bin/horas/
+      // specmatins.pl's own build order: nocturn() (psalmody+versicle) runs, then lectiones()
+      // is called once per nocturn and pushes this rubric before that nocturn's own readings.
+      role: 'rubric',
+      label: 'Pater Noster',
+      nocturn: nocturnIndex,
+      nocturnLabel: nocturn.label,
+      unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.pater-secreto`]
+    },
     ...nocturn.sections.flatMap(section => buildReadingResponsoryBlocks(section, nocturnIndex, nocturn.label))
   ];
 }
@@ -466,6 +546,13 @@ function buildMatinsBlocks() {
       unit_refs: ['rb1960.la.sancti.11-02.invitatorium']
     },
     ...MATINS_NOCTURNS.flatMap((nocturn, index) => buildNocturnBlocks(nocturn, index + 1)),
+    {
+      // [Conclusio]'s own `&Gloria` macro, resolved to its own doxology-role block/unit rather
+      // than left as an unresolved-macro diagnostic. See buildConclusioGloriaUnit().
+      role: 'doxology',
+      label: 'Gloria Patri',
+      unit_refs: ['rb1960.la.sancti.11-02.conclusio-doxology']
+    },
     {
       role: 'dismissal',
       label: 'Conclusio',

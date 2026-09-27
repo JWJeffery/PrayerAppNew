@@ -154,14 +154,51 @@ cross-tradition campaign this lane is explicitly exempt from — see §15); the 
 `lectio1`/`lectio7`/`lectio8` text questions (need a printed source, not a ruling from here); the
 paused Horologion T8 item below (a different thread, not part of this session's ask).
 
-**Next move on resuming this thread:** all five narrow checks now pass — there is no open
-mechanical finding left for this lane. If Josh can supply a real printed 1960/1962 Breviary or
-Vulgate source, resolve the three disclosed `lectio1`/`lectio7`/`lectio8` text questions the same
-way Maclean pages get supplied for the Horologion audit. Otherwise the next real decision is with
-Josh: whether to grow the dev slice past one day/one hour, which is a governance question (the
-minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/all eight
-hours/current+next year — a long way past today's one-day slice) not something to just start
-building.
+**CONTINUED, same day — Josh: "Merge the PR ... I am authorizing a full complete audit. Document
+every single deficiency, and then propose fixes."** PR #38 merged onto `main` (squash); this
+session's branch reset onto the new tip (empty-diff-confirmed first, same discipline as earlier).
+Then ran a genuinely deeper audit than the narrow-check pass, **overriding architecture §15's "no
+broad campaign" rule on Josh's explicit one-time authorization** (§15 itself now has a note saying
+this doesn't repeal the rule going forward — get authorization again for another broad pass).
+
+**What made this pass different**: reading the mirrored office files alone can't catch a structural
+omission (a missing piece leaves no trace in a file that IS being read). So this pass also **cloned
+and read the actual Divinum Officium Perl engine** (`web/cgi-bin/horas/specmatins.pl`) to resolve
+`[Rule]` directives whose meaning wasn't obvious from the data file, and tried (blocked by
+Cloudflare, not pursued further) to cross-check divinumofficium.com's own live rendered output.
+
+- **2 real deficiencies found and fixed**, both cleanly sourced: (1) Conclusio's `&Gloria` macro was
+  unresolved (no doxology text shown) — fixed with the Gloria Patri text from the same pinned
+  source family (`Psalterium/Common/Prayers.txt`), new `doxology`-role unit/block. (2) A required
+  "Pater totum secreto" rubric (once per nocturn, 3 total) was missing entirely — **this needed the
+  Perl engine, not just the file, to resolve**: `[Rule]`'s "Limit Benedictiones" reads like "reduced
+  blessings" but `specmatins.pl`'s `lectiones()` sub shows it actually **replaces the entire
+  9-exchange per-lesson blessing ritual** with one silent Pater Noster per nocturn. New `rubric`-role
+  unit/block per nocturn, transcribed verbatim from `Psalterium/Common/Rubricae.txt`.
+- **4 more investigated and resolved as non-defects** (not left as open questions): the `[Rank]`
+  "Duplex" vs "I. classis" ambiguity (confirmed "I. classis" correct — `(rubrica 196)` is a real
+  decade-family flag, not a truncation, verified by grepping 122 occurrences across the primary
+  source repo); `[Rule]`'s bare "Responsory9" line (confirmed inert, not an active directive);
+  `[Initial]`'s Pater/Ave omission under 1960 rubrics (confirmed correct as already built).
+- **2 disclosed, genuinely open**: `[Oratio Matutinum]` (Matins' own closing collect) — engine
+  trace suggests it may belong to Lauds' own ending instead, inconclusive; the 3 scripture-reading
+  text variants from the prior pass (`lectio1`/`lectio7`/`lectio8`) — unchanged, still need a
+  printed source.
+- **Re-verified every unit's extraction against source programmatically** (not spot checks): zero
+  extraction defects across the whole corpus.
+
+**Verified**: `node --check` clean; narrow-check audit still 0 failing (now also verifying the 2
+newly-mirrored common-prayer files); live-verified in headless Chromium — 30 blocks (26 + 3 new
+rubric + 1 new doxology), correct placement and text, zero new console errors. Full detail in the
+new `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`.
+
+**Next move on resuming this thread:** two genuinely open items remain, both needing a source this
+session didn't have — a printed 1960/1962 Breviarium/Diurnal (or the Lauds Perl module) for the
+Oratio Matutinum question, and a printed source for the 3 scripture-reading variants. Otherwise the
+next real decision is with Josh: whether to grow the dev slice past one day/one hour, which is a
+governance question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-
+calendar/1960-62/all eight hours/current+next year — a long way past today's one-day slice) not
+something to just start building.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

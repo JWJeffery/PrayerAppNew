@@ -9,8 +9,11 @@
     "file_subset_policy": "dev vertical slice only; not a full mirror",
     "mirrored_files": [
       "web/www/horas/Latin/Sancti/11-02.txt",
-      "web/www/horas/Latin/Commune/C9.txt"
+      "web/www/horas/Latin/Commune/C9.txt",
+      "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
+      "web/www/horas/Latin/Psalterium/Common/Rubricae.txt"
     ],
+    "mirrored_files_note": "Prayers.txt and Rubricae.txt added 2026-09-27, full-audit pass -- the shared, non-office-specific texts (Gloria Patri, Pater Noster, the 'Pater totum secreto' rubric) that C9.txt/11-02.txt reference by macro ($Requiem, &Gloria) or that the Perl engine (web/cgi-bin/horas/specmatins.pl) pulls in directly rather than storing per-office. Extracted via `git archive <pinned commit>`, same integrity basis as mirrored_directories below.",
     "mirrored_directories": [
       "web/www/horas/Latin/Psalterium/Psalmorum",
       "web/www/horas/English/Psalterium/Psalmorum"
@@ -58,6 +61,15 @@
               "nocturnLabel": "Nocturnus I",
               "unit_refs": [
                 "rb1960.la.sancti.11-02.nocturnus1.versiculum"
+              ]
+            },
+            {
+              "role": "rubric",
+              "label": "Pater Noster",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus1.pater-secreto"
               ]
             },
             {
@@ -133,6 +145,15 @@
               ]
             },
             {
+              "role": "rubric",
+              "label": "Pater Noster",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus2.pater-secreto"
+              ]
+            },
+            {
               "role": "reading",
               "label": "Lectio IV",
               "nocturn": 2,
@@ -205,6 +226,15 @@
               ]
             },
             {
+              "role": "rubric",
+              "label": "Pater Noster",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus3.pater-secreto"
+              ]
+            },
+            {
               "role": "reading",
               "label": "Lectio VII",
               "nocturn": 3,
@@ -256,6 +286,13 @@
               "nocturnLabel": "Nocturnus III",
               "unit_refs": [
                 "rb1960.la.sancti.11-02.responsorium9"
+              ]
+            },
+            {
+              "role": "doxology",
+              "label": "Gloria Patri",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.conclusio-doxology"
               ]
             },
             {

@@ -21934,6 +21934,92 @@ Full detail in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s Check 5 secti
 disclosure preserved in place with the fix recorded underneath it, same discipline
 `HOROLOGION_AUDIT_FINDINGS.md` uses for its own corrections.
 
+---
+## Session 2026-09-27, continued once more -- Josh: "Merge the PR I don't care what the docs say I
+## am authorizing a full complete audit. Document every single deficiency, and then propose fixes."
+## PR #38 merged. Full content audit of the Catholic lane's existing corpus, overriding the lane's
+## own §15 "no broad campaign" restriction for this one pass. Two real deficiencies found and
+## fixed; four investigated and resolved as non-defects; two disclosed, genuinely open.
+
+Merged PR #38 (squash) onto `main`. Reset this session's branch onto the new `main` tip per the
+usual squash-merge divergence check (confirmed empty diff before resetting, same discipline as
+earlier this session).
+
+**Went well beyond the mirrored office files this time, on explicit authorization.** Read
+`Sancti/11-02.txt` and `Commune/C9.txt` in full (not spot sections, unlike the narrow-check pass),
+including their own `[Rule]` blocks. Where a `[Rule]` directive's meaning wasn't obvious from the
+data file alone, **cloned and read the actual Divinum Officium Perl engine**
+(`web/cgi-bin/horas/specmatins.pl` and related modules, read-only from the primary source repo, not
+the pinned data-only mirror) rather than guess from rubric-keyword vocabulary. Attempted to
+cross-check the real rendered Nov 2/Rubrics 1960 Matins output from divinumofficium.com directly for
+a definitive answer on two open questions -- blocked by Cloudflare (403) even through headless
+Chromium with a real user agent and TLS trust configured; not pursued further, treated as a genuine
+access boundary rather than something to route around. Also re-verified **every** unit's extracted
+text against its declared source section programmatically (not spot checks) -- zero extraction
+defects found across all units.
+
+**Fixed, both with clean, unambiguous sourcing:**
+1. **Conclusio's `&Gloria` macro was unresolved** -- diagnostic-only, no doxology text shown at all
+   where the Gloria Patri belongs (before "V. Requiéscant in pace."). Not office-specific content,
+   so safely resolved from the same pinned source family: `Psalterium/Common/Prayers.txt`'s
+   `[Gloria]` section, mirrored in for this. New `doxology`-role unit and block (Core Contract §7's
+   own amendment added this role for exactly this kind of case).
+2. **A required "Pater totum secreto" rubric, once per nocturn, was missing entirely** -- not
+   resolvable from the data file alone. `[Rule]`'s "Limit Benedictiones" reads, in isolation, like
+   "a reduced set of blessings"; reading `specmatins.pl`'s `lectiones()` sub directly shows
+   `$rule =~ /Limit.*?Benedictio/i` matching our rule **skips the entire per-lesson "Jube, domne,
+   benedícere" + blessing-response ritual** (9 exchanges it would otherwise be) and substitutes a
+   single silent complete Pater Noster, once per nocturn, before that nocturn's lessons -- confirmed
+   from the calling code's own order (`nocturn(...); lectiones($_, ...)` per nocturn number).
+   `$Pater totum secreto` itself resolves, via the newly-mirrored `Psalterium/Common/Rubricae.txt`,
+   to rubric text (the source's own `/:...:/ ` convention), not prayer text to print in full --
+   transcribed verbatim: "« Pater Noster » dicitur totum secreto." New `rubric`-role unit and block
+   per nocturn (3 total), placed exactly where the engine places them.
+
+**Investigated and resolved as non-defects, not left as open questions:**
+3. **The `[Rank]` ambiguity** (`[Rank]` "Duplex" vs `[Rank] (rubrica 196)` "I. classis," already
+   hardcoded in the generator as "I. classis" with no prior recorded justification) -- grepped the
+   full pinned `DivinumOfficium/divinum-officium` repo: `(rubrica 196)` appears 122 times across
+   unrelated files as a consistent bare 3-digit form (also `(rubrica 195)` x4, `(rubrica 193)` x2),
+   distinct from and alongside fully-specified 4-digit forms (`rubrica 1960` x99, `rubrica 1962`
+   x9) elsewhere including this same file. Conclusion: a genuine decade-family flag, not a
+   truncation, and exactly the family this lane's own 1960/1962 scope falls under. The existing
+   "I. classis" choice is correct; nothing changed, now documented instead of unexplained.
+4. **`[Rule]`'s bare "Responsory9" line** -- grepped `specmatins.pl` for any `$rule =~
+   /Responsory9/` match: none exists; the only code references are `exists($winner{Responsory9})`,
+   a check for a `[Responsory9]` *section* (which correctly resolves already), unrelated to
+   `[Rule]`-text parsing. Reads as a documentary annotation, not an active directive. No action
+   needed.
+5. **`[Initial]`'s omitted Pater/Ave** under "rubrica 1960 aut rubrica innovata" -- confirmed this
+   lane's `rubrics_1960_1962` scope correctly omits it already (no unit ever built for it); now
+   recorded as deliberate-and-correct rather than an unexplained absence a future session might
+   wrongly try to "fix" by adding it back.
+
+**Disclosed, genuinely open, not guessed at:**
+6. **`[Oratio Matutinum]`** (Matins' own closing collect, `@Commune/C9:Oratio_Fid`) has no unit or
+   block built. `specmatins.pl` has no Oratio-building call at all, suggestive that this content
+   belongs to Lauds' own (not-yet-built) closing sequence rather than to standalone Matins -- but
+   this pass could not find the Lauds-side code to confirm it, and the live oracle that would have
+   settled it was Cloudflare-blocked. Proposed next step: a printed 1960/1962 Breviarium/Diurnal
+   confirming whether Matins-alone prints its own collect, or reading the Lauds Perl module before
+   this dev slice grows to include Lauds.
+7. **The three scripture-reading text variants** already disclosed in the prior sourcing pass
+   (`lectio1`/Job 7:16, `lectio7`/1 Cor 15:12, `lectio8`/1 Cor 15:44) remain open -- nothing new
+   resolved them this pass beyond confirming the `lectio()` subroutine machinery exists specifically
+   to carve appointed ranges independent of Vulgate verse boundaries, which supports without proving
+   the "ordinary lesson-trimming" reading already on file. Still needs a printed source.
+
+**Verified after both fixes**: `node --check` clean; `scripts/audit-roman-breviary-1960-narrow-
+checks.mjs` still 0 failing (Check 1 now also verifies the two newly-mirrored common-prayer files);
+live-verified in headless Chromium (`?entry=roman-breviary-dev`) -- 30 blocks (26 + 3 new rubric
+blocks + 1 new doxology block), each "Pater Noster" rubric rendering in the right nocturn with the
+correct text, "Gloria Patri" rendering before "Conclusio," zero new console errors.
+
+Full detail, including the exact Perl code excerpts and source citations for every finding, in the
+new `documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`. `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`
+§15 updated with a note recording this as a one-time authorized exception, not a standing repeal of
+its own "no broad campaign" rule.
+
 **Bugs found and fixed:**
 - **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
   been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the

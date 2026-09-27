@@ -215,6 +215,15 @@ This lane runs **no broad audit campaign** and adds none here. When audits are e
 
 Disciplines from Core Contract §14 apply: a strict audit is never weakened to make the lane pass; only genuinely stale expectations are advanced; and **no stale global counters** are introduced.
 
+**Exception, 2026-09-27 (one-time, not a standing repeal).** Josh explicitly authorized a full
+content audit of this lane's existing corpus, overriding the "no broad campaign" restriction above
+for that one pass: "I don't care what the docs say I am authorizing a full complete audit. Document
+every single deficiency, and then propose fixes." That audit is
+`documentation/ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`. This §15 restriction remains the default for
+any future session — it is not repealed by this one authorization, which covered the one pass Josh
+asked for, not an ongoing campaign. A future session wanting to run another broad pass should get
+the same explicit authorization again, not cite this paragraph as blanket permission.
+
 ---
 
 ## 16. Governance gates before any corpus import
