@@ -15,21 +15,27 @@ const BOOKS = {
     book_id: 'JOB',
     display: 'Job',
     canonical_path: 'data/bible/OT/job.json',
-    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/job.json'
+    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/job.json',
+    vulgate_path: 'data/bible/translations/vulgate-clementine/raw/job.json'
   },
   '1 Cor': {
     book_id: '1_CORINTHIANS',
     display: '1 Corinthians',
     canonical_path: 'data/bible/NT/1corinthians.json',
-    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/1-corinthians.json'
+    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/1-corinthians.json',
+    vulgate_path: 'data/bible/translations/vulgate-clementine/raw/1-corinthians.json'
   },
   Psalms: {
     book_id: 'PSALMS',
     display: 'Psalms',
     canonical_path: 'data/bible/OT/psalms.json',
-    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/psalms.json'
+    drb_path: 'data/bible/translations/drb-original-douay-rheims/raw/psalms.json',
+    vulgate_path: 'data/bible/translations/vulgate-psalter/raw/psalms.json'
   }
 };
+
+const VULGATE_CLEMENTINE_MANIFEST = 'data/bible/translations/vulgate-clementine/manifest.json';
+const VULGATE_PSALTER_MANIFEST = 'data/bible/translations/vulgate-psalter/manifest.json';
 
 function readJson(relPath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relPath), 'utf8'));
@@ -114,6 +120,44 @@ function coverageForDrb(relPath, ref) {
   };
 }
 
+// Same shape as coverageForDrb -- the vulgate-clementine/vulgate-psalter raw files use the
+// same {chapter, verses:[{verse,text}]} shape as the DRB raw files, so the same chapter/verse
+// lookup applies.
+function coverageForVulgate(relPath, ref) {
+  if (!exists(relPath)) return { exists: false, verses_present: 0, verse_count: ref.verse_end - ref.verse_start + 1 };
+  const data = readJson(relPath);
+  let versesPresent = 0;
+  for (let verse = ref.verse_start; verse <= ref.verse_end; verse += 1) {
+    if (drbVerse(data, ref.chapter, verse)) versesPresent += 1;
+  }
+  return {
+    exists: true,
+    verses_present: versesPresent,
+    verse_count: ref.verse_end - ref.verse_start + 1,
+    translation_key: 'Vulgate'
+  };
+}
+
+// Verifies a psalm appointment's cited chapter number is genuinely Vulgate/Gallican numbering
+// by checking the appointed antiphon's opening words actually occur in that psalm's own text
+// in the Vulgate psalter -- a real check, not an assumption, so a future re-numbering (or a
+// citation error) is caught rather than silently trusted.
+function verifyPsalmNumberingAgainstVulgate(psalterPath, chapter, antiphon) {
+  if (!exists(psalterPath)) return { checked: false, matched: false };
+  const data = readJson(psalterPath);
+  const c = (data.chapters || []).find(item => Number(item.chapter ?? item.num) === Number(chapter));
+  if (!c) return { checked: true, matched: false, reason: 'chapter_not_found' };
+  const normalize = s => String(s || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // strip accents so Dírige ~ Dirige
+    .replace(/[^a-z\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const antiphonWords = normalize(antiphon).split(' ').filter(Boolean).slice(0, 4).join(' ');
+  const matched = (c.verses || []).some(v => normalize(v.text).includes(antiphonWords));
+  return { checked: true, matched, antiphon_incipit_checked: antiphonWords };
+}
+
 function walkManifestBlocks(blocks, out = []) {
   for (const block of blocks || []) {
     out.push(block);
@@ -135,24 +179,36 @@ function extractPsalmAppointments(units) {
       const psalmLine = lines[index + 1] || '';
       const psalmMatch = psalmLine.match(/^Ps\.\s*(\d+)$/);
       if (!antLine.startsWith('Ant. ') || !psalmMatch) continue;
+      const antiphon = antLine.replace(/^Ant\.\s*/, '');
+      const chapter = Number(psalmMatch[1]);
+      const numberingCheck = verifyPsalmNumberingAgainstVulgate(BOOKS.Psalms.vulgate_path, chapter, antiphon);
       rows.push({
         unit_key: unit.key,
         nocturn,
-        antiphon: antLine.replace(/^Ant\.\s*/, ''),
+        antiphon,
         bible_ref: {
           book_id: 'PSALMS',
-          chapter: Number(psalmMatch[1]),
+          chapter,
           verse_start: null,
           verse_end: null,
-          numbering_status: 'roman_breviary_source_appointment_numbering_not_yet_normalized'
+          numbering_status: numberingCheck.matched
+            ? 'verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter'
+            : 'roman_breviary_source_appointment_numbering_not_yet_normalized'
         },
-        required_latin_psalter_lane: REQUIRED_LATIN_PSALTER_LANE,
-        body_status: 'appointment_only_no_psalm_body_materialization',
         canonical_corpus: {
           path: BOOKS.Psalms.canonical_path,
           exists: exists(BOOKS.Psalms.canonical_path),
           translation_keys: translationKeysForCanonical(BOOKS.Psalms.canonical_path)
         },
+        required_latin_psalter_lane: REQUIRED_LATIN_PSALTER_LANE,
+        vulgate_psalter_lane: {
+          path: BOOKS.Psalms.vulgate_path,
+          exists: exists(BOOKS.Psalms.vulgate_path),
+          numbering_check: numberingCheck
+        },
+        body_status: exists(BOOKS.Psalms.vulgate_path)
+          ? 'psalm_body_available_in_vulgate_psalter_lane'
+          : 'appointment_only_no_psalm_body_materialization',
         interim_catholic_english_lane: {
           lane_id: INTERIM_CATHOLIC_ENGLISH_LANE,
           path: BOOKS.Psalms.drb_path,
@@ -196,17 +252,26 @@ function buildScriptureBindings(units, manifest) {
 
     const canonical = coverageForCanonical(book.canonical_path, parsed);
     const drb = coverageForDrb(book.drb_path, parsed);
+    const vulgate = coverageForVulgate(book.vulgate_path, parsed);
+    const vulgateFullyCovered = vulgate.exists && vulgate.verses_present === vulgate.verse_count;
 
     bindings.push({
       unit_key: unit.key,
       block_label: labelByUnitRef.get(unit.key) || null,
       bible_ref: ref,
       required_latin_lane: REQUIRED_LATIN_LANE,
-      latin_lane_status: 'missing_required_bible_corpus_lane',
-      current_display_body_status: 'dev_source_witness_body_only_not_forward_corpus_model',
+      latin_lane_status: vulgateFullyCovered ? 'available' : (vulgate.exists ? 'partial_coverage' : 'missing_required_bible_corpus_lane'),
+      current_display_body_status: vulgateFullyCovered
+        ? 'vulgate_clementine_lane_covers_full_citation'
+        : 'dev_source_witness_body_only_not_forward_corpus_model',
       canonical_shared_corpus: {
         path: book.canonical_path,
         ...canonical
+      },
+      vulgate_lane: {
+        lane_id: REQUIRED_LATIN_LANE,
+        path: book.vulgate_path,
+        ...vulgate
       },
       interim_catholic_english_lane: {
         lane_id: INTERIM_CATHOLIC_ENGLISH_LANE,
@@ -241,8 +306,8 @@ const report = {
     interim_catholic_english_lane_available_for_binding_tests: INTERIM_CATHOLIC_ENGLISH_LANE
   },
   lane_status: {
-    vulgate_clementine: 'missing',
-    vulgate_psalter: 'missing',
+    vulgate_clementine: exists(VULGATE_CLEMENTINE_MANIFEST) ? 'available' : 'missing',
+    vulgate_psalter: exists(VULGATE_PSALTER_MANIFEST) ? 'available' : 'missing',
     drb_original: exists('data/bible/translations/drb-original-douay-rheims/manifest.json') ? 'available' : 'missing'
   },
   scripture_readings,
@@ -251,8 +316,13 @@ const report = {
     scripture_reading_count: scripture_readings.length,
     psalm_appointment_count: psalm_appointments.length,
     scripture_readings_with_shared_corpus_coverage: scripture_readings.filter(item => item.canonical_shared_corpus.verses_present === item.canonical_shared_corpus.verse_count).length,
+    scripture_readings_with_vulgate_lane_coverage: scripture_readings.filter(item => item.vulgate_lane.verses_present === item.vulgate_lane.verse_count).length,
     scripture_readings_with_drb_lane_coverage: scripture_readings.filter(item => item.interim_catholic_english_lane.verses_present === item.interim_catholic_english_lane.verse_count).length,
-    required_missing_lanes: [REQUIRED_LATIN_LANE, REQUIRED_LATIN_PSALTER_LANE]
+    psalm_appointments_with_verified_vulgate_numbering: psalm_appointments.filter(item => item.vulgate_psalter_lane.numbering_check.matched).length,
+    required_missing_lanes: [REQUIRED_LATIN_LANE, REQUIRED_LATIN_PSALTER_LANE].filter(laneKey => {
+      const manifestPath = laneKey === REQUIRED_LATIN_LANE ? VULGATE_CLEMENTINE_MANIFEST : VULGATE_PSALTER_MANIFEST;
+      return !exists(manifestPath);
+    })
   }
 };
 

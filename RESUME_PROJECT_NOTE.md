@@ -51,6 +51,118 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**STATE AS OF 2026-09-27, LATEST OF ALL — Josh: "we are going to audit the Catholic lane."** This
+is a **separate thread** from the Horologion entry directly below (still open, still paused exactly
+as that entry describes — T8 untouched, IH7/SC4 done, nothing about this session touches it). Read
+this entry first if resuming Catholic-lane work; read the entry below if resuming Horologion T8.
+
+**Before starting, checked for the branch-divergence failure mode this file's own BRANCHING RULE
+warns about.** `claude/jwjeffery-prayerappnew-resume-fbkyf9` and `claude/modest-tesla-n4ofrs` both
+sit at a commit 108 `git log` commits "ahead" of `main`, unreachable from it, no open PR — looked
+exactly like the recurring mess. Checked before escalating: `git diff` between that commit and
+`main`'s current tip (`5ddf35c`, PR #37) is **empty**. The 108 commits' content is already inside
+PR #37's squash merge; the two branch names just kept the pre-squash linear history around. Nothing
+was at risk, nothing needed to be flagged. Full account in `AUDIT_GOVERNANCE_LEDGER.md`'s
+2026-09-27 entry so the next session doesn't have to redo this check on the same two branch names.
+
+**"Catholic" in this app's own entry screen means the Roman Breviary 1960/1962 lane** (`latin-
+catholic` / "Roman Breviary dev" — currently `disabled`/`hidden`, same pause pattern as Byzantine
+Horologion). Its own architecture doc, `documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md`
+§15, is explicit that this lane runs **no broad audit campaign** — only five named narrow checks
+(import integrity, JSON validity, manifest validity, reference resolution, envelope conformance).
+**Do not run a Horologion-style line-by-line liturgical content audit against this lane — its own
+governing document says that's the wrong kind of audit here**, because the content is mirrored/
+normalized from Divinum Officium's own build-time oracle output, not natively authored in this repo.
+
+**This session ran all five checks** (`scripts/audit-roman-breviary-1960-narrow-checks.mjs`, new,
+re-runnable) against the lane's entire existing corpus — the dev vertical slice, one day (2026-11-02,
+All Souls), one hour (Matins). Full findings in the new `documentation/ROMAN_BREVIARY_1960_1962_
+AUDIT.md`.
+
+- **Checks 1-4: clean, one real defect found and fixed.** `source-pin.json`'s `mirrored_files` list
+  was missing `Commune/C9.txt` even though it's mirrored, used, and byte-verified identical to the
+  pinned upstream commit. Fixed the list and regenerated `units/dev-vertical-slice.json` +
+  `manifests/2026.json` via the existing `scripts/build-roman-breviary-1960-dev-slice.mjs` (the real
+  source of truth for both — confirmed by diff that only the `mirrored_files` array changed).
+- **Check 5 (envelope conformance): FAILS, disclosed, not fixed.** 16 of 29 Matins blocks use
+  `role` values (`invitatory`, `nocturn`, `versicle`, `responsory`) outside Core Contract §7's closed
+  taxonomy — the *same* anti-pattern `js/office-ui.js`'s own 2026-09-24 comment already flagged as
+  present in `js/anglican-envelope.js` (including literally `invitatory`) and explicitly warned
+  "not one to copy into a new lane." This lane copied it anyway, independently. The fix pattern
+  already exists (Horologion's `HOR_ROLE_BY_TYPE`, same session as that comment): remap
+  `invitatory`→`opening` (exact fit per §7's own prose), `versicle`/`responsory`→`other` (no fitting
+  role, don't stretch one), and stop giving the `nocturn` grouping its own block/role at all (it's a
+  structural container, not a liturgical unit — same reasoning as Horologion's "sequence" case).
+  **Not fixed this pass**: doing it right means reshaping the manifest's nesting and updating
+  `js/roman-breviary-1960-1962-dev-slice.js` line 87 (currently keys a CSS class off the literal
+  string `'nocturn'`), which is real structural work, not a narrow check — rushing it risked stacking
+  a new defect on top of the one being disclosed.
+
+**CONTINUED, same day — Josh: "identify sources... have every source in place before we begin the
+audit."** Searched for other Divinum-Officium apps per Josh's premise one might supply missing
+content; found nothing new (every other `divinum-officium` repo on GitHub is a plain fork of the one
+already pinned). What actually moved:
+
+- **Second hardcoded-string bug, same class as the `mirrored_files` one above.**
+  `scripts/build-roman-breviary-1960-bible-binding-report.mjs` had `vulgate_clementine: 'missing'`
+  / `vulgate_psalter: 'missing'` as literal constants, never an `exists()` check — both lanes
+  actually already existed (thin CatholicBible.online pilots, 2026-06-21). Fixed.
+- **Upgraded both thin lanes, confirmed with Josh via `AskUserQuestion` first** (this is a real
+  source-adjudication decision, not a mechanical fix — didn't just swap it unilaterally). Adopted
+  `seven1m/open-bibles` (public domain, pinned commit `f257a3559025c3f873b48a75019f53a9354ed7de`,
+  Vulsearch/Tweedale Clementine Vulgate Project lineage — now recorded in architecture §5). New
+  script `scripts/import-bible-translation-open-bibles-vulgate.mjs` pulled **full** Job (42 ch),
+  full 1 Corinthians (16 ch), and the **full 150-psalm Psalter** — not just today's cited verses, so
+  the lane doesn't need re-sourcing as the dev slice grows. Old CatholicBible.online importer marked
+  superseded in a header comment, kept for history.
+- **Mirrored Divinum Officium's own Latin+English Psalter** (per Josh's confirmation) — it was
+  sitting unmirrored in the already-pinned primary source. `source-pin.json` gained a
+  `mirrored_directories` field for this (202 files/language, too many for a flat list); Check 1
+  extended to verify it (directory presence, file count, a 5-file byte sample against the pin).
+  **Real byproduct**: confirmed Psalm 5 v.1 is the Latin title/v.2+ is the numbered body matching
+  Nocturnus I's antiphon verbatim — Vulgate/Gallican numbering **is** this lane's native numbering,
+  no conversion needed. The binding-report script now verifies this per-appointment for real (7/9
+  match a real incipit check; the other 2 honestly keep `not_yet_normalized` since their antiphons
+  paraphrase rather than quote contiguously — not a numbering bug).
+- **Disclosed, not adjudicated, per Josh's third confirmed decision.** 3 of the 6 scripture readings
+  differ from the now-full Vulgate text (`lectio1`/Job 7:16 and `lectio8`/1 Cor 15:44 look like
+  ordinary Matins-lesson clause trimming; `lectio7`/1 Cor 15:12 is missing one word, "autem," more
+  like a transcription variant). **Not ruled on** — needs a real printed 1960/1962 source to check
+  against, same discipline as Maclean/UNABHOR1997 for the Horologion, not a guess between two
+  digital sources. Full table in `ROMAN_BREVIARY_1960_1962_AUDIT.md`'s new addendum.
+- Re-ran the full narrow-check suite: checks 1-4 clean against the real sources now; check 5
+  unchanged (this pass was sourcing, not that fix).
+
+**CONTINUED, same day — Josh: "go fix the Check 5 role-taxonomy finding." DONE.** Fixed exactly per
+the plan already disclosed above, nothing re-litigated. `scripts/build-roman-breviary-1960-dev-
+slice.mjs` (the generator, not hand-edited JSON): `invitatory`→`opening`; `versicle`/`responsory`→
+`other` with native labels kept; the `nocturn` container block removed entirely, replaced by
+`nocturn`/`nocturnLabel` lane-native passthrough fields on each former child (Core Contract §6).
+`js/roman-breviary-1960-1962-dev-slice.js`: new `groupByNocturn()` renders the same "Nocturnus N"
+heading + two-level hierarchy as before, now driven by the passthrough field instead of a role.
+`css/office.css` renamed `.rb1960-nocturn`→`.rb1960-nocturn-group`/`.rb1960-nocturn-heading`, same
+rules (cache-bust v227→v228). **Verified**: `node --check` clean; `scripts/audit-roman-
+breviary-1960-narrow-checks.mjs` now **0 failing** (all five checks pass — first time this lane has
+had five green); **live-verified in headless Chromium** (`index.html?entry=roman-breviary-dev`) —
+26 blocks (down from 29, exactly the 3 removed containers), 3 correctly-labeled nocturn groups,
+h3/h4 heading hierarchy visually identical to before the fix, zero new console errors, screenshot
+confirmed. Full detail in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s Check 5 section
+(original disclosure kept in place, fix recorded underneath it).
+
+**Deliberately not touched:** `audit-ledger.html`'s dashboard / `SEED_VERSION` (tracks the broad
+cross-tradition campaign this lane is explicitly exempt from — see §15); the disclosed
+`lectio1`/`lectio7`/`lectio8` text questions (need a printed source, not a ruling from here); the
+paused Horologion T8 item below (a different thread, not part of this session's ask).
+
+**Next move on resuming this thread:** all five narrow checks now pass — there is no open
+mechanical finding left for this lane. If Josh can supply a real printed 1960/1962 Breviary or
+Vulgate source, resolve the three disclosed `lectio1`/`lectio7`/`lectio8` text questions the same
+way Maclean pages get supplied for the Horologion audit. Otherwise the next real decision is with
+Josh: whether to grow the dev slice past one day/one hour, which is a governance question (the
+minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/all eight
+hours/current+next year — a long way past today's one-day slice) not something to just start
+building.
+
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
 second pass below disclosed rather than built: SC4's remaining imprecision, IH7, T8). Paused here

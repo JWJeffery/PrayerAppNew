@@ -16,12 +16,14 @@
     "binding_report_path": "data/roman-breviary-1960-1962/bible-bindings/dev-vertical-slice.json",
     "existing_lane_ids": [
       "DRB_ORIGINAL",
+      "VULGATE_CLEMENTINE",
+      "VULGATE_PSALTER",
       "NABRE_INTERNAL"
     ],
     "drb_original_available": true,
     "nabre_internal_available": true,
-    "vulgate_clementine_available": false,
-    "vulgate_psalter_available": false
+    "vulgate_clementine_available": true,
+    "vulgate_psalter_available": true
   },
   "required_lanes": {
     "scripture": "VULGATE_CLEMENTINE",
@@ -53,12 +55,11 @@
     "adapter_path": "js/bible-browser/bible-source-lane-adapter.js",
     "existing_lane_ids": [
       "DRB_ORIGINAL",
+      "VULGATE_CLEMENTINE",
+      "VULGATE_PSALTER",
       "NABRE_INTERNAL"
     ],
-    "required_missing_lane_ids": [
-      "VULGATE_CLEMENTINE",
-      "VULGATE_PSALTER"
-    ],
+    "required_missing_lane_ids": [],
     "insertion_anchor": "after DRB_ORIGINAL lane or before NABRE_INTERNAL lane",
     "book_map_keys_available_from_drb": [
       "1_CHRONICLES",
@@ -241,7 +242,7 @@
         "nocturn": 1,
         "book_id": "PSALMS",
         "psalm": 6,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -250,7 +251,7 @@
         "nocturn": 1,
         "book_id": "PSALMS",
         "psalm": 7,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -259,7 +260,7 @@
         "nocturn": 2,
         "book_id": "PSALMS",
         "psalm": 22,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -268,7 +269,7 @@
         "nocturn": 2,
         "book_id": "PSALMS",
         "psalm": 24,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -277,7 +278,7 @@
         "nocturn": 2,
         "book_id": "PSALMS",
         "psalm": 26,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -286,7 +287,7 @@
         "nocturn": 3,
         "book_id": "PSALMS",
         "psalm": 39,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       },
@@ -304,7 +305,7 @@
         "nocturn": 3,
         "book_id": "PSALMS",
         "psalm": 41,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter",
         "required_lane_id": "VULGATE_PSALTER",
         "required_translation_key": "VulgatePsalter"
       }
@@ -320,7 +321,7 @@
         "target_lane_id": "VULGATE_CLEMENTINE",
         "target_lane_file": "raw/job.json",
         "target_full_path": "data/bible/translations/vulgate-clementine/raw/job.json",
-        "target_exists_now": false
+        "target_exists_now": true
       },
       {
         "book_id": "1_CORINTHIANS",
@@ -330,7 +331,7 @@
         "target_lane_id": "VULGATE_CLEMENTINE",
         "target_lane_file": "raw/1-corinthians.json",
         "target_full_path": "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
-        "target_exists_now": false
+        "target_exists_now": true
       }
     ],
     "psalter_lane_files": [
@@ -342,7 +343,7 @@
         "target_lane_id": "VULGATE_PSALTER",
         "target_lane_file": "raw/psalms.json",
         "target_full_path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
-        "target_exists_now": false
+        "target_exists_now": true
       }
     ]
   },

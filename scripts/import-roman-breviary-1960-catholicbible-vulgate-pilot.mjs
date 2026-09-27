@@ -1,3 +1,12 @@
+// SUPERSEDED 2026-09-27 -- kept for history, do not re-run.
+// The CatholicBible.online website-scrape pilot this script performs was replaced by a properly
+// provenanced full-book import from seven1m/open-bibles (public domain, Vulsearch/Tweedale
+// Clementine Vulgate Project lineage). See scripts/import-bible-translation-open-bibles-
+// vulgate.mjs, data/bible/translations/vulgate-clementine/manifest.json,
+// data/bible/translations/vulgate-psalter/manifest.json, and the 2026-09-27 entry in
+// AUDIT_GOVERNANCE_LEDGER.md. Re-running this script would overwrite the better source with the
+// thinner one it replaced.
+
 import fs from 'node:fs';
 import path from 'node:path';
 import https from 'node:https';

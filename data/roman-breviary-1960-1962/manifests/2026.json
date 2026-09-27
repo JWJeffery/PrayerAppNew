@@ -8,8 +8,14 @@
     "mirror_date": "2026-06-20",
     "file_subset_policy": "dev vertical slice only; not a full mirror",
     "mirrored_files": [
-      "web/www/horas/Latin/Sancti/11-02.txt"
-    ]
+      "web/www/horas/Latin/Sancti/11-02.txt",
+      "web/www/horas/Latin/Commune/C9.txt"
+    ],
+    "mirrored_directories": [
+      "web/www/horas/Latin/Psalterium/Psalmorum",
+      "web/www/horas/English/Psalterium/Psalmorum"
+    ],
+    "mirrored_directories_note": "Added 2026-09-27 -- the full Latin Vulgate Psalter (150 psalms, 202 files incl. Ps.118's subdivided sections) and its parallel English (Douay-Rheims-style) translation, verse-aligned, already in the Breviary's own native numbering. Extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entry for how these were obtained."
   },
   "tradition": "roman_catholic",
   "office_family": "roman_breviary",
@@ -30,196 +36,226 @@
           "label": "Matutinum",
           "blocks": [
             {
-              "role": "invitatory",
+              "role": "opening",
               "label": "Invitatorium",
               "unit_refs": [
                 "rb1960.la.sancti.11-02.invitatorium"
               ]
             },
             {
-              "role": "nocturn",
-              "label": "Nocturnus I",
-              "blocks": [
-                {
-                  "role": "psalmody",
-                  "label": "Psalmi et antiphonae",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae"
-                  ]
-                },
-                {
-                  "role": "versicle",
-                  "label": "Versiculum",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus1.versiculum"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio I",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio1"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium I",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium1"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio II",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio2"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium II",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium2"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio III",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio3"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium III",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium3"
-                  ]
-                }
+              "role": "psalmody",
+              "label": "Psalmi et antiphonae",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae"
               ]
             },
             {
-              "role": "nocturn",
-              "label": "Nocturnus II",
-              "blocks": [
-                {
-                  "role": "psalmody",
-                  "label": "Psalmi et antiphonae",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae"
-                  ]
-                },
-                {
-                  "role": "versicle",
-                  "label": "Versiculum",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus2.versiculum"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio IV",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio4"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium IV",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium4"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio V",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio5"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium V",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium5"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio VI",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio6"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium VI",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium6"
-                  ]
-                }
+              "role": "other",
+              "label": "Versiculum",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus1.versiculum"
               ]
             },
             {
-              "role": "nocturn",
-              "label": "Nocturnus III",
-              "blocks": [
-                {
-                  "role": "psalmody",
-                  "label": "Psalmi et antiphonae",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae"
-                  ]
-                },
-                {
-                  "role": "versicle",
-                  "label": "Versiculum",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.nocturnus3.versiculum"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio VII",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio7"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium VII",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium7"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio VIII",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio8"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium VIII",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium8"
-                  ]
-                },
-                {
-                  "role": "reading",
-                  "label": "Lectio IX",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.lectio9"
-                  ]
-                },
-                {
-                  "role": "responsory",
-                  "label": "Responsorium IX",
-                  "unit_refs": [
-                    "rb1960.la.sancti.11-02.responsorium9"
-                  ]
-                }
+              "role": "reading",
+              "label": "Lectio I",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio1"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium I",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium1"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio II",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio2"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium II",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium2"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio III",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio3"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium III",
+              "nocturn": 1,
+              "nocturnLabel": "Nocturnus I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium3"
+              ]
+            },
+            {
+              "role": "psalmody",
+              "label": "Psalmi et antiphonae",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Versiculum",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus2.versiculum"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio IV",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio4"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium IV",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium4"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio V",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio5"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium V",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium5"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio VI",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio6"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium VI",
+              "nocturn": 2,
+              "nocturnLabel": "Nocturnus II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium6"
+              ]
+            },
+            {
+              "role": "psalmody",
+              "label": "Psalmi et antiphonae",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Versiculum",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.nocturnus3.versiculum"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio VII",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio7"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium VII",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium7"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio VIII",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio8"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium VIII",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium8"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio IX",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio9"
+              ]
+            },
+            {
+              "role": "other",
+              "label": "Responsorium IX",
+              "nocturn": 3,
+              "nocturnLabel": "Nocturnus III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.responsorium9"
               ]
             },
             {

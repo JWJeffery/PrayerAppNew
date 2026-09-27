@@ -14,8 +14,8 @@
     "interim_catholic_english_lane_available_for_binding_tests": "DRB_ORIGINAL"
   },
   "lane_status": {
-    "vulgate_clementine": "missing",
-    "vulgate_psalter": "missing",
+    "vulgate_clementine": "available",
+    "vulgate_psalter": "available",
     "drb_original": "available"
   },
   "scripture_readings": [
@@ -31,19 +31,28 @@
         "citation": "Job 7:16-21"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/OT/job.json",
         "exists": true,
         "verses_present": 6,
         "verse_count": 6,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -66,19 +75,28 @@
         "citation": "Job 14:1-6"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/OT/job.json",
         "exists": true,
         "verses_present": 6,
         "verse_count": 6,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -101,19 +119,28 @@
         "citation": "Job 19:20-27"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/OT/job.json",
         "exists": true,
         "verses_present": 8,
         "verse_count": 8,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/job.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -136,19 +163,28 @@
         "citation": "1 Cor 15:12-22"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/NT/1corinthians.json",
         "exists": true,
         "verses_present": 11,
         "verse_count": 11,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 11,
+        "verse_count": 11,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -171,19 +207,28 @@
         "citation": "1 Cor 15:35-44"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/NT/1corinthians.json",
         "exists": true,
         "verses_present": 10,
         "verse_count": 10,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 10,
+        "verse_count": 10,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -206,19 +251,28 @@
         "citation": "1 Cor 15:51-58"
       },
       "required_latin_lane": "VULGATE_CLEMENTINE",
-      "latin_lane_status": "missing_required_bible_corpus_lane",
-      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "latin_lane_status": "available",
+      "current_display_body_status": "vulgate_clementine_lane_covers_full_citation",
       "canonical_shared_corpus": {
         "path": "data/bible/NT/1corinthians.json",
         "exists": true,
         "verses_present": 8,
         "verse_count": 8,
         "translation_keys": [
+          "DRB",
           "KJV",
           "NABRE",
           "NRSV",
           "Rotherham"
         ]
+      },
+      "vulgate_lane": {
+        "lane_id": "VULGATE_CLEMENTINE",
+        "path": "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_key": "Vulgate"
       },
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
@@ -242,13 +296,22 @@
         "verse_end": null,
         "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": false,
+          "antiphon_incipit_checked": "dirige domine deus meus"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -264,15 +327,24 @@
         "chapter": 6,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "convertere domine et eripe"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -288,15 +360,24 @@
         "chapter": 7,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "nequando rapiat ut leo"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -312,15 +393,24 @@
         "chapter": 22,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "in loco pascu ibi"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -336,15 +426,24 @@
         "chapter": 24,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "delicta juventutis me et"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -360,15 +459,24 @@
         "chapter": 26,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "credo videre bona domini"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -384,15 +492,24 @@
         "chapter": 39,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "complaceat tibi domine ut"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -410,13 +527,22 @@
         "verse_end": null,
         "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": false,
+          "antiphon_incipit_checked": "sana domine animam meam"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -432,15 +558,24 @@
         "chapter": 41,
         "verse_start": null,
         "verse_end": null,
-        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+        "numbering_status": "verified_vulgate_gallican -- antiphon incipit confirmed present in this chapter of the Vulgate psalter"
       },
-      "required_latin_psalter_lane": "VULGATE_PSALTER",
-      "body_status": "appointment_only_no_psalm_body_materialization",
       "canonical_corpus": {
         "path": "data/bible/OT/psalms.json",
         "exists": true,
         "translation_keys": []
       },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "vulgate_psalter_lane": {
+        "path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "exists": true,
+        "numbering_check": {
+          "checked": true,
+          "matched": true,
+          "antiphon_incipit_checked": "sitivit anima mea ad"
+        }
+      },
+      "body_status": "psalm_body_available_in_vulgate_psalter_lane",
       "interim_catholic_english_lane": {
         "lane_id": "DRB_ORIGINAL",
         "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
@@ -452,10 +587,9 @@
     "scripture_reading_count": 6,
     "psalm_appointment_count": 9,
     "scripture_readings_with_shared_corpus_coverage": 6,
+    "scripture_readings_with_vulgate_lane_coverage": 6,
     "scripture_readings_with_drb_lane_coverage": 6,
-    "required_missing_lanes": [
-      "VULGATE_CLEMENTINE",
-      "VULGATE_PSALTER"
-    ]
+    "psalm_appointments_with_verified_vulgate_numbering": 7,
+    "required_missing_lanes": []
   }
 }

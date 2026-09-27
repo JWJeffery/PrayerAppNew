@@ -74,8 +74,9 @@ The lane's source landscape is triaged once here so future work does not relitig
 - **`Geremia/divinum-officium`** — treated as a **fork / pointer only**, not the source of truth. It may be referenced for orientation but the canonical upstream is the primary repository above.
 - **`2br-2b/Open-Breviary`** — **rejected as a corpus**. It is an app wrapper around iBreviary-hosted material rather than a normalizable breviary source corpus, and is not suitable as this lane's source of truth.
 - **`igneus/Editio-Sti-Wolfgangi`** — a **secondary chant / booklet witness**, useful later for a chant/booklet layer (§14), but **not** the daily-office resolver corpus.
+- **`seven1m/open-bibles`** (added 2026-09-27) — the **adopted source for the `VULGATE_CLEMENTINE` and `VULGATE_PSALTER` bible-corpus lanes** the Core Contract's bible-binding policy requires (see `ROMAN_BREVIARY_1960_1962_AUDIT.md`'s 2026-09-27 entry for the full account). Public domain; its `lat-clementine.usfx.xml` traces to the well-known Vulsearch/Tweedale Clementine Vulgate Project (vulsearch.sourceforge.net) — the same lineage `BibleGet-I-O/Clementine-Vulgate` and most other Vulgate-JSON projects draw from. This is a **bible-text corpus for the lane's scripture-body/psalm-body resolution**, not a competing daily-office resolver corpus — it does not change §7's hybrid-strategy decision or the Divinum Officium pin above.
 
-The daily-office resolver path depends on the primary Divinum Officium repository only. The other entries are, respectively, a pointer, a rejection, and a future-phase witness.
+The daily-office resolver path depends on the primary Divinum Officium repository only. Among the others: one is a pointer, one is a rejection, one is a future-phase witness, and one (open-bibles) is the bible-text source for a different, already-anticipated part of this lane (§9 step 5's "controlled manifest/text fallback," and the Core Contract's own bible-corpus-resolution policy) — not an alternative daily-office corpus.
 
 ---
 

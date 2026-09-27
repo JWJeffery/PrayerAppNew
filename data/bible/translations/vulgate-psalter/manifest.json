@@ -1,51 +1,28 @@
 {
   "translation_key": "VulgatePsalter",
-  "source_name": "CatholicBible.online Vulgate Psalter",
-  "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
-  "source_repo": null,
-  "source_path": "https://catholicbible.online/vulgate",
+  "source_name": "seven1m/open-bibles -- lat-clementine.usfx.xml (Psalms)",
+  "source_status": "full_psalter_import_from_public_domain_aggregator",
+  "source_repo": "https://github.com/seven1m/open-bibles",
+  "source_commit": "f257a3559025c3f873b48a75019f53a9354ed7de",
+  "upstream_provenance": "Vulsearch / Tweedale Clementine Vulgate Project (vulsearch.sourceforge.net), public domain",
+  "source_path": "lat-clementine.usfx.xml",
+  "cached_source_copy": "data/roman-breviary-1960-1962/source/open-bibles/lat-clementine.usfx.xml",
   "target_path": "data/bible/translations/vulgate-psalter",
-  "status": "pilot_imported_bounded_source_lane",
-  "note": "Bounded pilot import for Roman Breviary psalm appointment binding only. This lane is not yet a complete Vulgate Psalter corpus.",
-  "imported_at": "2026-06-21T03:23:31.474Z",
+  "status": "full_psalter_imported",
+  "note": "Replaces the 2026-06-21 CatholicBible.online bounded pilot (9 psalms only -- see AUDIT_GOVERNANCE_LEDGER.md 2026-09-27 entry). Now all 150 psalms, not just the 9 the dev slice happens to cite today.",
+  "numbering_status": "vulgate_gallican -- this IS the Roman Breviary's native psalm numbering (the pre-Vatican-II Breviary always used Vulgate/Gallican numbers, never the Hebrew/modern numbering). Confirmed directly: chapter 5 verse 1 is the psalm's Latin inscription/title (\"In finem, pro ea quae haereditatem consequitur. Psalmus David.\"), verses 2+ are the numbered body -- and verse 2 (\"Verba mea auribus percipe, Domine...\") matches the antiphon already appointed in manifests/2026.json's Nocturnus I verbatim. No cross-numbering conversion needed for this lane; the prior 'not yet normalized' status on the individual psalm-appointment rows in bible-bindings/dev-vertical-slice.json can be resolved once that report is regenerated against this import.",
+  "superseded_import_script": "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs (superseded, kept for history)",
+  "import_script": "scripts/import-bible-translation-open-bibles-vulgate.mjs",
+  "imported_at": "2026-09-27T00:00:00Z",
   "book_count": 1,
-  "total_chapter_count": 9,
-  "total_verse_count": 128,
-  "planned_books": [
-    {
-      "book_id": "PSALMS",
-      "file": "raw/psalms.json",
-      "pilot_psalms": [
-        5,
-        6,
-        7,
-        22,
-        24,
-        26,
-        39,
-        40,
-        41
-      ],
-      "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
-    }
-  ],
+  "total_chapter_count": 150,
+  "total_verse_count": 2527,
   "books": [
     {
       "file": "raw/psalms.json",
-      "source_path": "https://catholicbible.online/vulgate",
-      "chapter_count": 9,
-      "verse_count": 128,
-      "imported_chapters": [
-        5,
-        6,
-        7,
-        22,
-        24,
-        26,
-        39,
-        40,
-        41
-      ]
+      "chapter_count": 150,
+      "verse_count": 2527,
+      "note": "All 150 psalms, Vulgate/Gallican numbering, each verse-1 title/inscription line preserved as its own verse per the source's own convention."
     }
   ]
 }
