@@ -688,7 +688,11 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // ADDED 2026-09-12. Which Oriental Orthodox sub-tradition the user keeps.
     // null means "not narrowed": every OOR row renders, which is exactly the
     // behaviour before this field existed, so no existing user loses anything.
-    oorSubtradition: null
+    oorSubtradition: null,
+    // ADDED 2026-09-27. Which language the Roman Breviary 1960/1962 lane renders
+    // in. 'la' (Latin) is the lane's own liturgical-language identity and stays
+    // the default; 'en' is an explicit opt-in, not the other way around.
+    romanBreviaryLanguage: 'la'
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -712,6 +716,7 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
+const UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES = new Set(['la', 'en']);
 
 // The Oriental Orthodox sub-traditions currently represented in the sanctoral.
 // Josh, 2026-09-07: more are coming -- this set is expected to grow, and the
@@ -818,6 +823,10 @@ function normalizeUserProfileDefaults(raw) {
 
     if (!UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(profile.bookOfNeedsScope)) {
         profile.bookOfNeedsScope = 'tradition';
+    }
+
+    if (!UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES.has(profile.romanBreviaryLanguage)) {
+        profile.romanBreviaryLanguage = 'la';
     }
 
     // Migrate the old three-value field (lay/clergy/all), replaced 2026-08-30
@@ -1020,6 +1029,15 @@ function setUserProfileBookOfNeedsScope(value) {
     persistUserProfileDefaults(profile);
 }
 
+function setUserProfileRomanBreviaryLanguage(value) {
+    const profile = getUserProfileDefaults();
+    profile.romanBreviaryLanguage = UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES.has(value)
+        ? value
+        : 'la';
+
+    persistUserProfileDefaults(profile);
+}
+
 function setUserProfileMinistryRole(value) {
     const profile = getUserProfileDefaults();
     profile.ministryRole = UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES.has(value)
@@ -1087,6 +1105,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const bookNeedsSelect = document.getElementById('profile-book-needs-scope');
     const ministryRoleSelect = document.getElementById('profile-ministry-role');
     const oorSubtraditionSelect = document.getElementById('profile-oor-subtradition');
+    const romanBreviaryLanguageSelect = document.getElementById('profile-roman-breviary-language');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -1107,6 +1126,10 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
 
     if (oorSubtraditionSelect) {
         oorSubtraditionSelect.value = normalized.oorSubtradition || '';
+    }
+
+    if (romanBreviaryLanguageSelect) {
+        romanBreviaryLanguageSelect.value = normalized.romanBreviaryLanguage;
     }
 
     if (summary) {
@@ -1781,6 +1804,7 @@ window.setUserProfileEntryPageDefault = setUserProfileEntryPageDefault;
 window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
 window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
 window.setUserProfileMinistryRole = setUserProfileMinistryRole;
+window.setUserProfileRomanBreviaryLanguage = setUserProfileRomanBreviaryLanguage;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
 window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;
@@ -2093,7 +2117,9 @@ async function selectMode(mode) {
             await window.RomanBreviary1960DevSlice.mountDevSlice('office-display', {
                 year: Number(_rbDate.slice(0, 4)),
                 date: _rbDate,
-                hour: _defaultRomanBreviaryHourForCurrentTime(_rbNow)
+                hour: _defaultRomanBreviaryHourForCurrentTime(_rbNow),
+                language: getUserProfileDefaults().romanBreviaryLanguage,
+                onLanguageChange: setUserProfileRomanBreviaryLanguage
             });
             isHydrationComplete = true;
         } catch (err) {
