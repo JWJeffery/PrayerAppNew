@@ -21,8 +21,9 @@ its specific ROCOR-language wording; Small Compline's Saturday Kontakion was app
 where the source requires it suppressed during Great Lent). Found and disclosed three further items
 not fixed in this pass: Typika has its own genuinely distinct, currently-unmodeled Great Lent
 structural form (T8 — comparable in scope to Midnight Office's own M0 finding); none of the four
-Interhours has any appointment gate, though the source restricts them to roughly two days a year and
-never during Great Lent (IH7); and Small Compline's own Saturday-Kontakion fix has known remaining
+Interhours had any appointment gate, though the source restricts them to roughly two days a year and
+never during Great Lent (IH7 — **FIXED 2026-09-26, same day as this disclosure**, see the finding
+below); and Small Compline's own Saturday-Kontakion fix has known remaining
 imprecision around the pre-Lenten Triodion weeks and the Pentecost season, disclosed in place.
 Vespers, Orthros/Matins, and the four Hours were re-checked the same way and found to already match
 the sources exactly, no changes needed. Also corrected in the same pass: this document's own office
@@ -1057,7 +1058,7 @@ office keys; it does not establish whether any current UI surface actually lets 
 Interhour, or whether they are reachable only via direct API/test calls. Flagged so this isn't
 silently assumed either way — worth a quick UI check during the fix pass, not blocking it.
 
-### Finding IH7 — Disclosed, found during second-pass re-verification: no appointment gate exists for any of the four Interhours
+### Finding IH7 — FIXED 2026-09-26 (same day as this disclosure): no appointment gate existed for any of the four Interhours
 
 The First Hour's own Interhour text carries a bracketed usage note not repeated at the other three
 (`UNABHOR1997` p.93): "[According to present-day usage, the Inter-Hours are said only on the first
@@ -1065,10 +1066,20 @@ day of the Apostles' Fast, and on the first day of the Nativity Fast if it begin
 the Inter-Hours are said, there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
 not appointed during Great Lent when the kathismata and readings from The Ladder are appointed at the
 Hours.]" — i.e. in real practice this is one of the rarest offices in the whole Horologion, appointed
-on perhaps two days a year, and explicitly never during Great Lent. `_resolveInterhourSlots()` has no
-appointment gate at all — unlike Great Compline's own `greatComplineAppointed` check, it resolves full
+on perhaps two days a year, and explicitly never during Great Lent. `_resolveInterhourSlots()` had no
+appointment gate at all — unlike Great Compline's own `greatComplineAppointed` check, it resolved full
 content for every date, including every day of Great Lent, where the source says it shouldn't be
-appointed at all. This is a content-accuracy-adjacent but distinct question from IH1-IH4 (whether the
-content shown is *correct*, not whether it should be *shown at all* on a given date) and building the
-gate is a separate, scoped piece of work — disclosed here rather than attempted inside a
-re-verification pass.
+appointed at all.
+
+**Fixed** in `js/horologion-engine.js`'s `_resolveInterhourSlots()`: a date is now appointed only
+when `_isApostlesFastFirstDay()` (Pascha + 57 days — the Monday after All Saints Sunday) is true, or
+`_isNativityFastFirstDay()` (fixed-calendar Nov. 15, `eoMode`-aware) is true AND that date falls
+Monday-Friday. The Nikolsky Ustav's Great Lent exclusion is cited in the disclosure text for
+completeness but never needs its own branch, since neither appointed day can fall during Great Lent.
+Every other date renders an honest "Not Appointed" rubric naming both conditions, rather than the
+full office. **Live-verified 2026-09-27** (this session's open-items audit, item 4) against the
+running app for 2025, 2026, 2027, and 2030: appointed on exactly 2025-06-16; 2026-06-08 (matching
+the code's own cited Orthocal cross-check: pascha_distance 57 that year carries `service_notes`
+"Beginning of Apostles' Fast"); 2027-06-28 and 2027-11-15; 2030-06-24 and 2030-11-15 — one or two
+days per year, zero appointed days during Great Lent in any tested year, matching the source
+exactly.

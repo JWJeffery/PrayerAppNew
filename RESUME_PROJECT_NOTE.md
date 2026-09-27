@@ -51,6 +51,20 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**DOC CORRECTED, 2026-09-27 — Horologion Finding IH7 (Interhours appointment gate) was already fixed
+the same day it was disclosed, but its own findings doc kept calling it not-fixed.** Fourth item from
+this session's open-items audit. `documentation/HOROLOGION_AUDIT_FINDINGS.md` disclosed IH7 (no
+appointment gate on the four Interhours, though the source appoints them on only ~2 days a year and
+never during Great Lent) as "not fixed this pass" — but `js/horologion-engine.js`'s
+`_resolveInterhourSlots()` carries an explicit "Finding IH7 correction (2026-09-26)" comment with a
+working gate (`_isApostlesFastFirstDay()` / `_isNativityFastFirstDay()` + weekday check), dated the
+SAME DAY as the disclosure — the code got fixed but the write-up never caught up. Live-verified
+against the running app across 2025/2026/2027/2030: appointed on exactly 1-2 real dates per year
+(2026-06-08 matches the code's own cited Orthocal cross-check exactly), zero appointed days during
+Great Lent in any year tested. `documentation/HOROLOGION_AUDIT_FINDINGS.md` corrected in place —
+both the top-level status summary and the IH7 finding itself now say FIXED, with the verification
+recorded. No code changed.
+
 **CLOSED (was already fixed, never crossed off), 2026-09-27 — the 2038/2095 East Syriac season
 overlap.** Third item from this session's open-items audit. `documentation/OPEN_ITEMS_FIXABILITY.md`
 had this listed as "genuinely not blocked... self-contained" since 2026-09-04 — checked the repo
