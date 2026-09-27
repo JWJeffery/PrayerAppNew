@@ -41,7 +41,7 @@ this pass went further:
 
 | # | Finding | Status |
 |---|---|---|
-| 1 | Conclusio's `&Gloria` macro was left unresolved (diagnostic-only, no text shown) | **FIXED** |
+| 1 | Conclusio's `&Gloria` macro was left unresolved (diagnostic-only, no text shown) | **FIXED, then CORRECTED, 2026-09-27 continued yet further — the first fix used the wrong text** |
 | 2 | Per-nocturn "Pater totum secreto" rubric (required by `[Rule]`'s "Limit Benedictiones") was missing entirely | **FIXED** |
 | 3 | `[Rank]` ambiguity — two candidate ranks, "Duplex" vs "I. classis" | **Investigated — not a defect** |
 | 4 | `[Rule]`'s bare "Responsory9" line | **Investigated — not a defect (inert annotation)** |
@@ -53,7 +53,7 @@ this pass went further:
 
 ---
 
-## 1. Conclusio's `&Gloria` macro — FIXED
+## 1. Conclusio's `&Gloria` macro — FIXED, then CORRECTED, 2026-09-27 continued yet further
 
 **The defect.** `[Conclusio]` in `Sancti/11-02.txt` reads `!Conclusio specialis / &Gloria / V.
 Requiéscant in pace. / R. Amen.` The `&Gloria` macro was left completely unresolved by the
@@ -61,20 +61,43 @@ generator — not fabricated, but not shown either: the unit's own `display_diag
 `"unresolved-divinum-macro... &Gloria"`, and the rendered Conclusio showed only the two-line
 dismissal, silently missing the doxology that belongs before it.
 
-**Why this is safely fixable, unlike findings 6-7 below.** The Gloria Patri is not office-specific
-or variable content — it is the single fixed doxology said everywhere in the Roman rite. Its exact
-wording lives in the same source family already pinned:
-`web/www/horas/Latin/Psalterium/Common/Prayers.txt`, `[Gloria]`:
-> V. Glória Patri, et Fílio, \* et Spirítui Sancto.
-> R. Sicut erat in princípio, et nunc, et semper, \* et in sǽcula sæculórum. Amen.
+**Original fix (WRONG — see correction below).** This pass originally reasoned: "the Gloria Patri
+is not office-specific or variable content — it is the single fixed doxology said everywhere in the
+Roman rite," and resolved `&Gloria` to the standard Gloria Patri text from
+`Psalterium/Common/Prayers.txt`'s `[Gloria]` section. **That "everywhere" claim was false** — the
+whole point of a Requiem office is that Gloria Patri is *not* said; this is a well-known Roman-rite
+mourning convention this pass simply didn't check for at the time.
 
-**Fix.** Mirrored `Common/Prayers.txt` (and `Common/Rubricae.txt`, needed for finding 2) into
-`source-pin.json`'s `mirrored_files`, verified byte-identical to the pinned commit. Added a new
-`rb1960.la.sancti.11-02.conclusio-doxology` unit (`kind: doxology`) carrying this text verbatim,
-and a new manifest block (`role: doxology`, matching Core Contract §7's amendment that added this
-exact role for cases like this) placed before the existing dismissal block, matching the source's
-own line order (`&Gloria` appears before `V. Requiéscant in pace.`). The dismissal unit's own
-diagnostic list no longer claims an unresolved macro, because there isn't one anymore.
+**How the error was caught.** Building the full oracle-based generation pipeline (see the new
+`ROMAN_BREVIARY_1960_1962_BUILDOUT.md`) — which runs Divinum Officium's own Perl engine offline and
+compares its real output against this hand-built content, rather than trusting a hand-trace of the
+rubric — showed the real, engine-computed Conclusio has **no Gloria Patri text at all**. Reading
+`web/cgi-bin/horas/horasscripts.pl`'s `sub Gloria` directly confirms why:
+```perl
+sub Gloria : ScriptFunc {
+  ...
+  if ($rule =~ /Requiem gloria/i) { return prayer('Requiem', $lang); }
+  ...
+}
+```
+`Sancti/11-02.txt`'s own `[Rule]` block contains exactly the line `Requiem gloria`. So `&Gloria` in
+this specific office resolves to the *Requiem substitute* (`prayer('Requiem', $lang)`), not the
+standard doxology — matching the ordinary Roman-rite practice that a Requiem replaces "Glory be to
+the Father" with "Eternal rest grant unto them, O Lord" throughout.
+
+**Correction.** `REQUIEM_GLORIA_SUBSTITUTE_TEXT` (`Psalterium/Common/Prayers.txt`'s `[Requiem]`
+section: "V. Réquiem ætérnam \* dona eis, Dómine. / R. Et lux perpétua \* lúceat eis.") replaces the
+Gloria Patri text in the `conclusio-doxology` unit; the block's label changed from "Gloria Patri" to
+"Réquiem ætérnam (in loco Gloria Patri)" so the label doesn't claim content that isn't there. The
+unit's `source.section` now cites `Requiem`, not `Gloria`, and records the `Requiem gloria` rule
+that governs the choice. Verified against the oracle's own rendered text (word-for-word match,
+including the `*` mediant markers) and against `checks 1-5` of the narrow-check audit (still 0
+failing) and a live headless-Chromium render (correct text visible, zero console errors).
+
+**The lesson.** "This content is fixed and used everywhere" is exactly the kind of claim that needs
+checking, not assuming — the same discipline already applied to scripture-text variants (finding 7)
+should have been applied here from the start. Caught by building an independent oracle rather than
+trusting a second hand-trace of the same rubric text.
 
 ---
 

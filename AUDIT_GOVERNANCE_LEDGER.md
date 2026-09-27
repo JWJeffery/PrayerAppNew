@@ -22272,3 +22272,70 @@ recording the same closure and the updated next-move (no scripture-sourcing work
 decision is Josh's, on whether to grow the dev slice past one day/one hour). No code, data, or
 generated JSON changed -- sourcing/documentation only, consistent with finding 7 always having been
 a text-authenticity question rather than a structural one.
+
+---
+
+## Session 2026-09-27, continued yet further still -- Roman Breviary build-out begins: Josh
+authorized building the full minimum shippable floor ("I want to build out the whole thing"). Phase
+0+1 of the plan complete and validated; one real defect found and fixed in already-shipped content
+(Conclusio's Gloria Patri, should have been the Requiem substitute).
+
+**The unlock.** Confirmed Divinum Officium's own Perl engine (`web/cgi-bin/horas/officium.pl`) runs
+fully offline from the command line -- no live server, no network -- producing the same real,
+rubrically-correct output the public site does, for any date/hour/rubric-version. Installed missing
+Perl CPAN dependencies (`libcgi-pm-perl` and related) via `apt-get`. Runs in ~0.27s/call; confirmed
+correct occurrence/concurrence handling on a real rank-conflict weekday and Christmas Vespers with
+zero code on our side. This is architecture §9's "hybrid Divinum-oracle manifest strategy" as
+designed, not yet implemented that way -- the prior hand-trace-the-Perl-rubric-by-hand approach used
+for the existing Nov 2 Matins content does not scale to 8 hours x ~730 days and is superseded going
+forward.
+
+**Correctness gate found and fixed before using it as an oracle**: the separate engine clone used
+for tracing (`/home/user/divinumofficium/divinum-officium`) was at a newer commit (`5cf0e7f0`,
+2026-09-26) than the one actually pinned and audited in this repo (`0ce8747d`, 2026-06-20). Checked
+out the pinned commit before running anything, and re-verified the known-good Nov 2 Matins content
+(Job 7:16, 1 Cor 15:12 wording) reproduces identically at that exact commit.
+
+**Governance-gate decisions confirmed with Josh** (architecture §16, full detail in the new
+`ROMAN_BREVIARY_1960_1962_BUILDOUT.md`): source pin unchanged (`0ce8747d...`); unit-key convention
+changed to content-addressed (`sha1(kind|citation|text)`, replacing the day-scoped slug convention,
+so identical content across many days auto-dedups); year range confirmed as full calendar years
+2026+2027 (730 days), not just from-today-forward.
+
+**Built and validated**: `scripts/roman-breviary-oracle-run.mjs` (oracle invocation, pin
+verification), `scripts/parse-officium-html.mjs` (HTML -> structured sections, tracking running
+section/nocturn state, handling omitted sections, rubric interjections that resume the interrupted
+section afterward), `scripts/build-roman-breviary-oracle-blocks.mjs` (sections -> Core Contract role
+taxonomy -> content-addressed units). Ran the full pipeline for 2026-11-02 Matins and diffed its
+real output against every fact already established this session: Job 7:16 wording, 1 Cor 15:12
+wording, the Oratio Matutinum fix, the Invitatorium and Nocturn I antiphons, and the antiphon-
+doubling convention (finding 8) -- all matched exactly.
+
+**One real defect found and fixed, in already-shipped content from an earlier pass this same
+session.** The Conclusio's `&Gloria` macro had been resolved (in the full-audit pass, finding 1) to
+the standard Gloria Patri text, reasoned as "the single fixed doxology said everywhere in the Roman
+rite." That reasoning was wrong -- Requiem offices specifically replace Gloria Patri with "Réquiem
+ætérnam..." throughout, a well-known Roman-rite mourning convention this pass simply didn't check
+for. The oracle's real output has no Gloria Patri text at all; `web/cgi-bin/horas/horasscripts.pl`'s
+`sub Gloria` confirms why (`if ($rule =~ /Requiem gloria/i) { return prayer('Requiem', $lang); }`,
+and `Sancti/11-02.txt`'s own `[Rule]` contains exactly that line). Fixed:
+`scripts/build-roman-breviary-1960-dev-slice.mjs`'s `buildConclusioGloriaUnit` now uses the Requiem
+substitute text (`Psalterium/Common/Prayers.txt`'s `[Requiem]`), and the block's label no longer
+claims "Gloria Patri" when that isn't what's shown. Verified: narrow-check audit still 0 failing,
+live headless-Chromium render shows the corrected text with zero console errors.
+
+**The lesson, worth stating plainly**: "this content is fixed and used everywhere" is exactly the
+kind of claim that needs checking, not assuming -- the same discipline already applied to the
+scripture-text variants (finding 7) should have been applied to the Gloria Patri fix from the start.
+An independent oracle catches this kind of error precisely because it doesn't share the first pass's
+blind spot; a second hand-trace of the same rubric text might easily have repeated the same mistake.
+
+**Files changed**: `scripts/roman-breviary-oracle-run.mjs` (new), `scripts/parse-officium-html.mjs`
+(new), `scripts/build-roman-breviary-oracle-blocks.mjs` (new), `documentation/
+ROMAN_BREVIARY_1960_1962_BUILDOUT.md` (new, tracks the build-out itself), `documentation/
+ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` (finding 1 corrected in place, original account preserved),
+`scripts/build-roman-breviary-1960-dev-slice.mjs` (Gloria->Requiem fix), regenerated `units/
+dev-vertical-slice.json` and `manifests/2026.json`.
+
+**Next**: Phase 2 (harden the parser against content diversity across all 8 hours and a varied
+calendar sample) per the session's plan file.

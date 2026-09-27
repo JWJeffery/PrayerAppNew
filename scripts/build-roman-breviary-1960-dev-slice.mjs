@@ -20,7 +20,15 @@ const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
 // documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md's full-audit addendum for the Perl trace that
 // established this). Both texts transcribed verbatim from the shared common-prayers source file,
 // not paraphrased.
-const GLORIA_PATRI_TEXT = 'V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.';
+// Full-scale-build pass, 2026-09-27 continued yet further -- the oracle-validation pipeline
+// (scripts/roman-breviary-oracle-run.mjs, running Divinum Officium's own Perl engine offline)
+// showed the real Conclusio has no Gloria Patri text at all. `web/cgi-bin/horas/horasscripts.pl`'s
+// `sub Gloria` explicitly checks `if ($rule =~ /Requiem gloria/i) { return prayer('Requiem', $lang); }`
+// -- and Sancti/11-02.txt's own [Rule] block contains exactly that line. So `&Gloria` in THIS
+// office's Conclusio resolves to the Requiem-substitute text, not the standard Gloria Patri
+// doxology used by non-Requiem offices (this replaces the prior, incorrect fix that used the
+// standard doxology text).
+const REQUIEM_GLORIA_SUBSTITUTE_TEXT = 'V. Réquiem ætérnam * dona eis, Dómine.\nR. Et lux perpétua * lúceat eis.';
 const PATER_TOTUM_SECRETO_TEXT = '« Pater Noster » dicitur totum secreto.';
 
 // Full-audit pass, 2026-09-27 continued -- `web/cgi-bin/horas/specials/orationes.pl`'s `oratio()`
@@ -376,23 +384,25 @@ function buildNocturnVersicleUnit(sourcePin, c9Sections, nocturnIndex, section) 
 
 function buildConclusioGloriaUnit(sourcePin) {
   // [Conclusio]'s own `&Gloria` macro, resolved: Core Contract §7 added a `doxology` role
-  // specifically for exactly this (Gloria Patri), so it gets its own unit/block rather than
-  // being folded into -- or left as an unresolved-macro diagnostic inside -- the dismissal unit.
+  // specifically for exactly this, so it gets its own unit/block rather than being folded into --
+  // or left as an unresolved-macro diagnostic inside -- the dismissal unit. This office's own
+  // [Rule] contains "Requiem gloria", so per `sub Gloria`'s own branch (see the constant's comment
+  // above) the resolved text is the Requiem substitute, not the standard Gloria Patri doxology.
   return [
     'rb1960.la.sancti.11-02.conclusio-doxology',
     {
       key: 'rb1960.la.sancti.11-02.conclusio-doxology',
       kind: 'doxology',
       citation: '',
-      text: GLORIA_PATRI_TEXT,
+      text: REQUIEM_GLORIA_SUBSTITUTE_TEXT,
       raw_text: '&Gloria',
       display_diagnostics: [],
       source: {
         repo: sourcePin.repo,
         commit: sourcePin.commit,
         path: PRAYERS_SOURCE_REL,
-        section: 'Gloria',
-        appointment: { path: SOURCE_REL, section: 'Conclusio', directive: '&Gloria' }
+        section: 'Requiem',
+        appointment: { path: SOURCE_REL, section: 'Conclusio', directive: '&Gloria', rule: 'Requiem gloria' }
       }
     }
   ];
@@ -622,9 +632,11 @@ function buildMatinsBlocks() {
     },
     {
       // [Conclusio]'s own `&Gloria` macro, resolved to its own doxology-role block/unit rather
-      // than left as an unresolved-macro diagnostic. See buildConclusioGloriaUnit().
+      // than left as an unresolved-macro diagnostic. See buildConclusioGloriaUnit() -- this
+      // office's "Requiem gloria" rule means the resolved text is the Requiem substitute, not the
+      // Gloria Patri text the label would otherwise suggest.
       role: 'doxology',
-      label: 'Gloria Patri',
+      label: 'Réquiem ætérnam (in loco Gloria Patri)',
       unit_refs: ['rb1960.la.sancti.11-02.conclusio-doxology']
     },
     {

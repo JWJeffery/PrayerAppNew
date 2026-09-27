@@ -293,6 +293,48 @@ hour, which is a governance question (the minimum-shippable floor in architectur
 Latin/Roman-general-calendar/1960-62/all eight hours/current+next year) not something to just start
 building without his say.
 
+**CONTINUED, same day — Josh: "Yes I want to build out the whole thing." Full build-out to the
+minimum shippable floor now underway. Read `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`
+first if resuming this thread — it has the full detail; this is a summary.**
+
+**The unlock**: Divinum Officium's own Perl engine (`web/cgi-bin/horas/officium.pl`) runs fully
+offline from the command line, no live server, no network — real rubrically-correct output for any
+date/hour/rubric-version, ~0.27s/call. This is architecture §9's "hybrid Divinum-oracle manifest
+strategy" as designed, finally implemented that way, replacing the hand-trace-the-Perl-by-hand
+approach used for the existing Nov 2 Matins content (which does not scale to 8 hours × ~730 days).
+
+**Governance-gate decisions confirmed with Josh** (architecture §16): source pin unchanged
+(`0ce8747d...`, the separate engine clone re-checked-out to it since it had drifted to a newer
+commit); unit-key convention changed to **content-addressed** (`sha1(kind|citation|text)`,
+auto-dedups identical content across days); year range confirmed as **full calendar years 2026 and
+2027** (730 days).
+
+**Plan filed and approved**, 6 phases (`/root/.claude/plans/kind-zooming-kazoo.md` if still present
+in this environment; full plan also mirrored into `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`'s
+"Remaining phases" section for continuity across environments): Phase 0 (pin the engine clone) and
+Phase 1 (build the oracle pipeline scripts, validate against the already-audited Matins content) are
+**done**. Phases 2-6 (harden parser across all 8 hours' content diversity, full 2-year sweep, mirror
+completion + audit extension, UI wiring, final documentation/commits) are **not yet started** —
+tracked as tasks #3-#7 in this session's task list if that's still live, otherwise re-derive from
+the plan file/BUILDOUT.md.
+
+**One real defect found and fixed along the way, in already-shipped content from an earlier pass
+this same session**: the Conclusio's `&Gloria` macro had been resolved to standard Gloria Patri
+text, reasoned as "said everywhere in the Roman rite" — wrong, Requiem offices replace it with the
+"Réquiem ætérnam..." substitute throughout, and `Sancti/11-02.txt`'s own `[Rule]` contains
+`Requiem gloria`, which `horasscripts.pl`'s `sub Gloria` explicitly branches on. Fixed and verified
+(narrow-check audit 0 failing, live Chromium render correct, zero console errors). Full account:
+`ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md` finding 1's correction, `ROMAN_BREVIARY_1960_1962_
+BUILDOUT.md`'s Phase 1 section. **The lesson**: "this is fixed/universal content" needs checking,
+not assuming — the same standard already held for scripture-text variants.
+
+**Next move on resuming**: Phase 2 — run the oracle across a deliberately varied calendar/hour
+sample (ordinary weekday, Sunday, first-class feast, octave day, commemoration, occurrence conflict,
+Triduum, a Little Hour, Compline) and harden `scripts/parse-officium-html.mjs` /
+`scripts/build-roman-breviary-oracle-blocks.mjs` until all round-trip cleanly. Do not skip straight
+to the full 2-year sweep (Phase 3) without this — that's exactly how a parser bug or an unhandled
+content shape would go unnoticed across hundreds of days instead of being caught on a handful.
+
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the
 second pass below disclosed rather than built: SC4's remaining imprecision, IH7, T8). Paused here

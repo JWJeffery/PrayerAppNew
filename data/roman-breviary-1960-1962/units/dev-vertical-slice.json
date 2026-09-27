@@ -520,18 +520,19 @@
       "key": "rb1960.la.sancti.11-02.conclusio-doxology",
       "kind": "doxology",
       "citation": "",
-      "text": "V. Glória Patri, et Fílio, * et Spirítui Sancto.\nR. Sicut erat in princípio, et nunc, et semper, * et in sǽcula sæculórum. Amen.",
+      "text": "V. Réquiem ætérnam * dona eis, Dómine.\nR. Et lux perpétua * lúceat eis.",
       "raw_text": "&Gloria",
       "display_diagnostics": [],
       "source": {
         "repo": "DivinumOfficium/divinum-officium",
         "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
         "path": "web/www/horas/Latin/Psalterium/Common/Prayers.txt",
-        "section": "Gloria",
+        "section": "Requiem",
         "appointment": {
           "path": "web/www/horas/Latin/Sancti/11-02.txt",
           "section": "Conclusio",
-          "directive": "&Gloria"
+          "directive": "&Gloria",
+          "rule": "Requiem gloria"
         }
       }
     },
