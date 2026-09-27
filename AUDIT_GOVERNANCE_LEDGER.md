@@ -22813,3 +22813,17 @@ verification status -- see RESUME_PROJECT_NOTE.md's matching entry for full deta
 
 Full detail, including exact reasoning and citations for each fix: `RESUME_PROJECT_NOTE.md`'s
 matching entry, same date.
+
+---
+
+## Session 2026-09-27, later still -- Thread 4 above (Eastern Orthodoxy/Horologion re-enable)
+closed out. A separate session first found the four-file change above sitting uncommitted/unmerged
+with no open PR, opened PR #46, merged it to `main`, then ran the live click-through Thread 4 had
+flagged as not yet tested. Both untested paths (entry-card → threshold splash → Begin → rendered
+office; Universal Office Selector's new mode-grid card → same) confirmed working against the merged
+`main` tip, via headless Chromium. The Office Settings drawer -- the specific gap Thread 4 named,
+since its own live check only exercised a direct `selectMode()` call, not this entry-card route --
+also confirmed showing genuine Horologion content (Calendar, Tone, which-office picker), not the
+BCP content Thread 2 fixed. Zero console errors beyond the pre-existing, already-documented
+`ERR_CERT_AUTHORITY_INVALID` (Google Fonts preconnect, blocked by this sandbox's proxy, unrelated).
+**Thread 4 is CLOSED.** Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

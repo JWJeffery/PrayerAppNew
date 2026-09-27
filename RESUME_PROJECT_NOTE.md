@@ -647,6 +647,43 @@ Josh's explicit instruction ("write the resume note") issued specifically becaus
 cutoff — resume from a fresh session by pulling this branch, then immediately running the Thread 4
 verification above before doing anything else.
 
+**THREAD 4 VERIFICATION — CLOSED 2026-09-27, later still.** The four changes above were committed
+and merged to `main` as PR #46 (a session that found this branch sitting unmerged with no open PR
+and opened one — see `AUDIT_GOVERNANCE_LEDGER.md`'s matching entry). This entry runs the exact live
+click-through Thread 4 above said was still needed, against the merged `main` tip. Ran headless
+Chromium (`playwright-core` installed locally against the pre-installed
+`/opt/pw-browsers/chromium`, not committed) via `npm run start` (`scripts/dev-spa-server.mjs`,
+port 3000), driving both routes end to end:
+
+1. **Entry-card path**: fresh load (cleared localStorage) → "Where do you pray?" → Eastern Christian
+   → Eastern Orthodoxy card. Confirmed the card itself: `aria-disabled="false"`, no `is-disabled`
+   class, subtitle correctly reads "Byzantine Horologion offices." Click correctly calls
+   `setUserTraditionDefault('eastern-orthodox')` → `resolveEntryTraditionRoute()` → since
+   `LANE_THRESHOLD_CONFIG['horologion']` exists, routes through `showLaneThreshold('horologion')`,
+   **not** a bare `selectMode()` — renders the "IT IS TIME FOR / SMALL COMPLINE" threshold splash,
+   correctly time-of-day-derived (11:07 PM → Small Compline), not the old hardcoded demo state.
+   Clicking **Begin** (`beginFromUoThreshold()`) renders the real Horologion office: full Small
+   Compline content (Usual Beginning, Psalms 50/69/142 LXX, Creed, Trisagion prayers, dismissal),
+   correctly dated.
+2. **Office Settings drawer, reached via that same path** (the actual gap Thread 4 flagged as
+   unconfirmed, since Thread 2's own testing went through `selectMode()` directly rather than this
+   entry-card/threshold route): opened the drawer from inside the rendered office. Shows genuine
+   Horologion content — Calendar (New Calendar/Revised Julian), Tone 8, Display depth,
+   Diagnostics, Explanations, and the full which-office picker (Vespers/Small Compline/Great
+   Compline/Midnight Office/Orthros/all Hours/Typika/Interhours). **Not** the BCP
+   Rite/Officiant/Psalter/Creed/Gospel content Thread 2 originally fixed — confirms that fix holds
+   on this specific code path, not just the direct-`selectMode()` path Thread 2 tested.
+3. **Mode-grid card path** (also previously untested): reached the Universal Office Selector's
+   "Another office" grid (via a different lane's threshold splash, to avoid re-testing only the
+   entry-card route) and clicked the new Horologion card
+   (`onclick="showLaneThreshold('horologion')"`). Correctly switches the threshold splash to Small
+   Compline; **Begin** renders the same correct office content as path 1.
+
+Zero console errors on any of the three checks beyond the one pre-existing, already-documented
+`ERR_CERT_AUTHORITY_INVALID` on the Google Fonts preconnect (this sandbox's proxy blocking that
+host, unrelated to the app — see the note on this elsewhere in this file). **Thread 4 is now fully
+verified end to end. Nothing left open on the Eastern Orthodoxy/Horologion re-enable.**
+
 ---
 
 **STATE AS OF 2026-09-27, Catholic audit/build-out thread (superseded by the wiring entry directly
