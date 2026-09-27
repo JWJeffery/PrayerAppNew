@@ -98,9 +98,45 @@ AUDIT.md`.
   string `'nocturn'`), which is real structural work, not a narrow check — rushing it risked stacking
   a new defect on top of the one being disclosed.
 
+**CONTINUED, same day — Josh: "identify sources... have every source in place before we begin the
+audit."** Searched for other Divinum-Officium apps per Josh's premise one might supply missing
+content; found nothing new (every other `divinum-officium` repo on GitHub is a plain fork of the one
+already pinned). What actually moved:
+
+- **Second hardcoded-string bug, same class as the `mirrored_files` one above.**
+  `scripts/build-roman-breviary-1960-bible-binding-report.mjs` had `vulgate_clementine: 'missing'`
+  / `vulgate_psalter: 'missing'` as literal constants, never an `exists()` check — both lanes
+  actually already existed (thin CatholicBible.online pilots, 2026-06-21). Fixed.
+- **Upgraded both thin lanes, confirmed with Josh via `AskUserQuestion` first** (this is a real
+  source-adjudication decision, not a mechanical fix — didn't just swap it unilaterally). Adopted
+  `seven1m/open-bibles` (public domain, pinned commit `f257a3559025c3f873b48a75019f53a9354ed7de`,
+  Vulsearch/Tweedale Clementine Vulgate Project lineage — now recorded in architecture §5). New
+  script `scripts/import-bible-translation-open-bibles-vulgate.mjs` pulled **full** Job (42 ch),
+  full 1 Corinthians (16 ch), and the **full 150-psalm Psalter** — not just today's cited verses, so
+  the lane doesn't need re-sourcing as the dev slice grows. Old CatholicBible.online importer marked
+  superseded in a header comment, kept for history.
+- **Mirrored Divinum Officium's own Latin+English Psalter** (per Josh's confirmation) — it was
+  sitting unmirrored in the already-pinned primary source. `source-pin.json` gained a
+  `mirrored_directories` field for this (202 files/language, too many for a flat list); Check 1
+  extended to verify it (directory presence, file count, a 5-file byte sample against the pin).
+  **Real byproduct**: confirmed Psalm 5 v.1 is the Latin title/v.2+ is the numbered body matching
+  Nocturnus I's antiphon verbatim — Vulgate/Gallican numbering **is** this lane's native numbering,
+  no conversion needed. The binding-report script now verifies this per-appointment for real (7/9
+  match a real incipit check; the other 2 honestly keep `not_yet_normalized` since their antiphons
+  paraphrase rather than quote contiguously — not a numbering bug).
+- **Disclosed, not adjudicated, per Josh's third confirmed decision.** 3 of the 6 scripture readings
+  differ from the now-full Vulgate text (`lectio1`/Job 7:16 and `lectio8`/1 Cor 15:44 look like
+  ordinary Matins-lesson clause trimming; `lectio7`/1 Cor 15:12 is missing one word, "autem," more
+  like a transcription variant). **Not ruled on** — needs a real printed 1960/1962 source to check
+  against, same discipline as Maclean/UNABHOR1997 for the Horologion, not a guess between two
+  digital sources. Full table in `ROMAN_BREVIARY_1960_1962_AUDIT.md`'s new addendum.
+- Re-ran the full narrow-check suite: checks 1-4 clean against the real sources now; check 5
+  unchanged (this pass was sourcing, not that fix).
+
 **Deliberately not touched:** `audit-ledger.html`'s dashboard / `SEED_VERSION` (tracks the broad
 cross-tradition campaign this lane is explicitly exempt from — see §15); any fix for the Check 5
-finding (next task for this lane, clearly scoped above); the paused Horologion T8 item below (a
+finding (still the next task for this lane); the disclosed `lectio1`/`lectio7`/`lectio8` text
+questions (need a printed source, not a ruling from here); the paused Horologion T8 item below (a
 different thread, not part of this session's ask).
 
 **Next move on resuming this thread:** fix Check 5 — reshape the Matins manifest to drop the
@@ -108,11 +144,13 @@ different thread, not part of this session's ask).
 antiphonae — Nocturnus I") and remap the remaining roles as above, updating
 `js/roman-breviary-1960-1962-dev-slice.js` line 87's `'nocturn'` check to key off something else
 (e.g. whether a block has nested children) rather than a role string. Re-run
-`scripts/audit-roman-breviary-1960-narrow-checks.mjs` after — it should go from 16 failing to 0.
-Then decide with Josh whether to grow the dev slice past one day/one hour, which is a governance
-question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-calendar/1960-62/
-all eight hours/current+next year — a long way past today's one-day slice) not something to just
-start building.
+`scripts/audit-roman-breviary-1960-narrow-checks.mjs` after — it should go from 16 failing to 0. If
+Josh can supply a real printed 1960/1962 Breviary or Vulgate source, resolve the three disclosed
+`lectio1`/`lectio7`/`lectio8` text questions the same way Maclean pages get supplied for the Horologion
+audit. Then decide with Josh whether to grow the dev slice past one day/one hour, which is a
+governance question (the minimum-shippable floor in architecture §10 is Latin/Roman-general-
+calendar/1960-62/all eight hours/current+next year — a long way past today's one-day slice) not
+something to just start building.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

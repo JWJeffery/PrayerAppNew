@@ -42,6 +42,16 @@ function findAllJsonFiles(dir) {
   return out;
 }
 
+function walkAllFiles(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walkAllFiles(full));
+    else out.push(full);
+  }
+  return out;
+}
+
 // --- Check 1: import integrity -- the mirror matches the pinned commit -------------
 async function checkImportIntegrity(pin) {
   console.log('\n[1] Import integrity (mirror matches pinned commit ' + pin.commit + ')');
@@ -67,36 +77,63 @@ async function checkImportIntegrity(pin) {
     }
   }
 
-  // Cross-check: every file actually mirrored on disk is declared in the pin, and
-  // vice versa -- catches the class of defect fixed 2026-09-27 (C9.txt was mirrored
-  // and used, but never added to mirrored_files).
+  // mirrored_directories -- bulk mirrors (e.g. the 202-file Psalter). Exhaustively fetching
+  // every file on every audit run doesn't scale, so: verify the directory exists, count its
+  // files, and byte-spot-check a bounded sample against the pinned commit.
+  const SAMPLE_SIZE = 5;
+  for (const rel of (pin.mirrored_directories || [])) {
+    const localDir = path.join(BASE, 'source', 'divinum-officium', rel);
+    if (!fs.existsSync(localDir)) {
+      fail(`declared mirrored directory missing on disk: ${rel}`);
+      continue;
+    }
+    const files = walkAllFiles(localDir).sort();
+    pass(`directory present with ${files.length} files: ${rel}`);
+    const sample = files.slice(0, SAMPLE_SIZE);
+    for (const localPath of sample) {
+      const fileRel = rel + '/' + path.relative(localDir, localPath).split(path.sep).join('/');
+      const local = fs.readFileSync(localPath, 'utf8');
+      const url = `https://raw.githubusercontent.com/${pin.repo}/${pin.commit}/${fileRel}`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) { warn(`could not fetch upstream for comparison (HTTP ${res.status}): ${fileRel}`); continue; }
+        const upstream = await res.text();
+        if (upstream === local) pass(`(sample) byte-identical to pinned commit: ${fileRel}`);
+        else fail(`(sample) mirror DRIFTED from pinned commit: ${fileRel}`);
+      } catch (e) {
+        warn(`network unavailable, could not verify: ${fileRel} (${e.message})`);
+      }
+    }
+    if (files.length > SAMPLE_SIZE) {
+      warn(`only spot-checked ${SAMPLE_SIZE} of ${files.length} files in ${rel} -- not exhaustive`);
+    }
+  }
+
+  // Cross-check: every discrete file actually mirrored on disk is declared in the pin (either
+  // as an exact mirrored_files entry or inside a declared mirrored_directories path), and vice
+  // versa -- catches the class of defect fixed 2026-09-27 (C9.txt was mirrored and used, but
+  // never added to mirrored_files).
   const mirrorRoot = path.join(BASE, 'source', 'divinum-officium', 'web');
-  const onDisk = fs.existsSync(mirrorRoot)
-    ? findAllJsonFiles(mirrorRoot).concat(
-        (function walk(dir) {
-          const out = [];
-          for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-            const full = path.join(dir, entry.name);
-            if (entry.isDirectory()) out.push(...walk(full));
-            else out.push(full);
-          }
-          return out;
-        })(mirrorRoot)
-      )
-    : [];
   const onDiskRel = new Set(
-    onDisk.map(p => path.relative(path.join(BASE, 'source', 'divinum-officium'), p).split(path.sep).join('/'))
+    fs.existsSync(mirrorRoot)
+      ? walkAllFiles(mirrorRoot).map(p => path.relative(path.join(BASE, 'source', 'divinum-officium'), p).split(path.sep).join('/'))
+      : []
   );
-  const declaredRel = new Set(pin.mirrored_files);
+  const declaredFiles = new Set(pin.mirrored_files);
+  const declaredDirs = pin.mirrored_directories || [];
+  const isUnderDeclaredDir = rel => declaredDirs.some(dir => rel === dir || rel.startsWith(dir + '/'));
+
+  let allDeclared = true;
   for (const rel of onDiskRel) {
-    if (!declaredRel.has(rel)) fail(`file mirrored on disk but undeclared in source-pin.json: ${rel}`);
+    if (!declaredFiles.has(rel) && !isUnderDeclaredDir(rel)) {
+      fail(`file mirrored on disk but undeclared in source-pin.json: ${rel}`);
+      allDeclared = false;
+    }
   }
-  for (const rel of declaredRel) {
-    if (!onDiskRel.has(rel)) fail(`source-pin.json declares a mirrored file not on disk: ${rel}`);
+  for (const rel of declaredFiles) {
+    if (!onDiskRel.has(rel)) { fail(`source-pin.json declares a mirrored file not on disk: ${rel}`); allDeclared = false; }
   }
-  if ([...onDiskRel].every(rel => declaredRel.has(rel)) && [...declaredRel].every(rel => onDiskRel.has(rel))) {
-    pass('mirrored_files declaration matches disk contents exactly');
-  }
+  if (allDeclared) pass('every mirrored file on disk is declared (as an exact file or under a declared directory)');
 }
 
 // --- Check 2: JSON validity ---------------------------------------------------------
@@ -159,20 +196,24 @@ function checkReferenceResolution(bibleBinding) {
   }
   for (const r of bibleBinding.scripture_readings || []) {
     check(r.canonical_shared_corpus?.path, r.canonical_shared_corpus?.exists);
+    check(r.vulgate_lane?.path, r.vulgate_lane?.exists);
     check(r.interim_catholic_english_lane?.path, r.interim_catholic_english_lane?.exists);
     const { chapter, verse_start, verse_end } = r.bible_ref || {};
     if (verse_start != null && verse_end != null) {
       const expected = verse_end - verse_start + 1;
-      const claimed = r.canonical_shared_corpus?.verses_present;
-      if (claimed != null && claimed !== expected) {
-        fail(`${r.bible_ref.citation}: claimed verses_present=${claimed}, but ${verse_start}-${verse_end} implies ${expected}`);
-      } else if (claimed != null) {
-        pass(`${r.bible_ref.citation}: verses_present arithmetic matches citation range`);
+      for (const [label, lane] of [['canonical_shared_corpus', r.canonical_shared_corpus], ['vulgate_lane', r.vulgate_lane]]) {
+        const claimed = lane?.verses_present;
+        if (claimed != null && claimed !== expected) {
+          fail(`${r.bible_ref.citation} (${label}): claimed verses_present=${claimed}, but ${verse_start}-${verse_end} implies ${expected}`);
+        } else if (claimed != null) {
+          pass(`${r.bible_ref.citation} (${label}): verses_present arithmetic matches citation range`);
+        }
       }
     }
   }
   for (const p of bibleBinding.psalm_appointments || []) {
     check(p.canonical_corpus?.path, p.canonical_corpus?.exists);
+    check(p.vulgate_psalter_lane?.path, p.vulgate_psalter_lane?.exists);
     check(p.interim_catholic_english_lane?.path, p.interim_catholic_english_lane?.exists);
   }
 }

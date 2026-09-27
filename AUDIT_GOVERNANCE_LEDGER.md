@@ -21818,6 +21818,86 @@ Great Lent (T8) Horologion item from the entry above -- that is a different, alr
 from a different session's task, not part of what Josh asked for this session, and is left exactly
 as the resume note already describes it.
 
+---
+## Session 2026-09-27, continued -- Josh: "identify sources... have every source in place before
+## we begin the audit." A sourcing pass on the Catholic lane, confirmed with Josh via AskUserQuestion
+## before importing anything. One more real bug found; two thin lanes upgraded; one already-pinned
+## source mirrored; a real content question disclosed rather than adjudicated.
+
+Searched for other Divinum-Officium-based apps per Josh's premise that one might supply missing
+content. Found nothing new to add: every other `divinum-officium`-named GitHub repo is a plain
+fork/mirror of the primary one already pinned -- no independent content. `2br-2b/Open-Breviary` was
+already correctly rejected in the architecture doc.
+
+**Found a second hardcoded-string bug, same class as this morning's `mirrored_files` miss.**
+`scripts/build-roman-breviary-1960-bible-binding-report.mjs` had `vulgate_clementine: 'missing'` and
+`vulgate_psalter: 'missing'` as literal constants -- never an `exists()` check, unlike the
+`drb_original` line right next to them which correctly checks the filesystem. Both lanes already
+existed (`data/bible/translations/vulgate-clementine/`, `.../vulgate-psalter/`, imported 2026-06-21),
+just never actually checked for. Fixed both to use the same `exists()` pattern.
+
+**Those two lanes were real but thin.** Their own manifests said so: a bounded scrape of
+`https://catholicbible.online/vulgate`, "pending full adjudication," covering only the exact verses
+(130 for Job/1 Cor, 9 individual psalms) the one-day dev slice happens to cite today. Presented this
+plus a candidate replacement to Josh via `AskUserQuestion` rather than swapping a canonical-text
+source unilaterally; he confirmed adopting it.
+
+**Adopted `seven1m/open-bibles`** (public domain, pinned commit
+`f257a3559025c3f873b48a75019f53a9354ed7de`) -- its `lat-clementine.usfx.xml` is the full 73-book
+Clementine Vulgate, tracing to the
+well-known Vulsearch/Tweedale Clementine Vulgate Project (same lineage as `BibleGet-I-O/Clementine-
+Vulgate` and most other Vulgate-JSON projects). New script,
+`scripts/import-bible-translation-open-bibles-vulgate.mjs`, fetches and caches the pinned XML
+verbatim, then extracts full Job (42 ch, 1070 verses), full 1 Corinthians (16 ch, 437 verses), and
+the full Psalter (150 psalms, 2527 verses) -- not just today's cited passages, so the lane doesn't
+need re-sourcing every time the dev slice grows. Spot-checked the extraction against the raw XML
+directly (Job 7:16-21, Psalm 5 including its own title/inscription line) -- exact. Recorded added to
+`ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §5's source triage, which exists specifically so this
+kind of decision doesn't get relitigated later. The superseded CatholicBible.online importer,
+`scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs`, got a header comment marking it
+superseded (kept for history, not deleted, not to be re-run).
+
+**Mirrored Divinum Officium's own Latin + English Psalter**, per Josh's confirmation -- it was
+already sitting in the pinned primary source, unmirrored (`web/www/horas/Latin/Psalterium/
+Psalmorum/` and the parallel English directory, 150 psalms/202 files apiece, verse-aligned).
+Extracted via `git archive <pinned commit>` from an authenticated fetch of that exact commit SHA, so
+content integrity is already covered by git's own object hashing, not a raw-HTTP scrape needing a
+separate diff. `source-pin.json` gained a new `mirrored_directories` field for bulk mirrors that
+don't fit a flat file list at 202 entries apiece; `scripts/audit-roman-breviary-1960-narrow-checks.
+mjs`'s Check 1 was extended to verify directory presence, file counts, and a bounded 5-file
+byte-for-byte sample against the pin, explicitly logged as a sample rather than claimed exhaustive.
+
+**A genuine byproduct: the psalm-numbering question is now actually checkable.** Confirmed directly
+against the new Vulgate psalter that Psalm 5 verse 1 is the Latin title/inscription and verse 2
+onward is the numbered body matching Nocturnus I's own appointed antiphon verbatim -- Vulgate/
+Gallican numbering **is** this pre-Vatican-II lane's native numbering, no Hebrew/modern-numbering
+conversion needed. The bible-binding-report script now runs a real per-appointment check (the
+antiphon's opening words against the psalm's own text, not an assumption): 7 of 9 current
+appointments verify this way; the other 2 keep the honest `not_yet_normalized` status because their
+antiphons paraphrase rather than quote the psalm's opening contiguously, not because the numbering is
+actually wrong.
+
+**Disclosed, not adjudicated, per Josh's explicit third decision.** Diffed all 6 scripture-reading
+units against the newly-full Vulgate text. Three of six differ: `lectio1` (Job 7:16) and `lectio8`
+(1 Cor 15:44) each look like the ordinary Breviary practice of trimming a Matins lesson to a clause
+boundary rather than the full verse; `lectio7` (1 Cor 15:12) is missing one word ("autem"), which
+reads more like an isolated transcription variant between two digitizations of the same Vulgate
+edition. None of this was ruled on -- per Josh's instruction, that needs a real printed 1960/1962
+Breviary source to check against, the same discipline `HOROLOGION_AUDIT_FINDINGS.md` uses for
+Maclean/UNABHOR1997, not a guess between two competing digital sources. Recorded as a disclosed,
+open question in `documentation/ROMAN_BREVIARY_1960_1962_AUDIT.md`'s new addendum for whoever
+eventually runs this lane's real content audit.
+
+**Found a third stale report while regenerating the second, not a hardcoded bug this time.**
+`bible-bindings/vulgate-source-lane-plan.json` also claimed both Vulgate lanes missing, but its
+generator (`scripts/build-roman-breviary-1960-vulgate-lane-plan.mjs`) reads `js/bible-browser/bible-
+source-lane-adapter.js` directly, and that adapter has carried both lane entries since the original
+2026-06-21 pilot import -- the plan file just was never regenerated since. Re-ran it; now correct.
+
+Re-ran `scripts/audit-roman-breviary-1960-narrow-checks.mjs` after all of the above: checks 1-4 still
+pass clean, now against the real sources; check 5's disclosed role-taxonomy finding is unchanged --
+this pass was sourcing, not that fix.
+
 **Bugs found and fixed:**
 - **Midnight Office's `monastic-ectenia`** (the closing Ectenia shared by all three day-forms) had
   been paraphrased and generalized away from the source during its own M0-M3 rebuild, before the

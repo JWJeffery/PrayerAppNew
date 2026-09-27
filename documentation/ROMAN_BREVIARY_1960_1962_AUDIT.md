@@ -93,12 +93,13 @@ All were verified directly, not taken on trust:
   upstream's own indirection rather than assuming a naive 1-to-1 mapping. Text was compared
   word-for-word against the mirrored source for all six `lectioN` units (1, 2, 3, 7, 8, 9) —
   exact matches, no truncation, no misattribution.
-- **Honest disclosure, not fabrication.** The report's `lane_status` correctly shows
-  `vulgate_clementine: "missing"` and `vulgate_psalter: "missing"` rather than inventing Latin
-  scripture bodies, and every psalm appointment's `numbering_status` is explicitly
-  `"roman_breviary_source_appointment_numbering_not_yet_normalized"` rather than guessing a modern
-  vs. Vulgate psalm number. This is the correct posture per architecture §13 ("honest degradation
-  over fabrication").
+- **Honest disclosure, not fabrication — at the time of this first pass.** The report's
+  `lane_status` at this point in the pass still showed `vulgate_clementine: "missing"` and
+  `vulgate_psalter: "missing"` — not inventing Latin scripture bodies in their place — and every
+  psalm appointment's `numbering_status` was explicitly `"...not_yet_normalized"` rather than
+  guessing a modern vs. Vulgate psalm number. Correct posture per architecture §13 ("honest
+  degradation over fabrication"), even though (see the addendum below) `"missing"` itself turned
+  out to be a report bug rather than the true state of those two lanes.
 
 ---
 
@@ -161,6 +162,115 @@ stale the way other findings in this repo have (`documentation/OPEN_ITEMS_FIXABI
 "still open" from memory).
 
 ---
+
+## Addendum, 2026-09-27 continued — sourcing pass: "have every source in place before we begin"
+
+Josh, before continuing the audit: identify what sources exist for this lane, on the premise that
+other open-source Divinum-Officium-based apps might supply content or fixes this lane is missing.
+Findings below; decisions confirmed with Josh via `AskUserQuestion` before importing anything.
+
+### What was actually found
+
+**No independent "apps" — the Divinum Officium forks are just forks.** A search turned up several
+GitHub repos named `divinum-officium` (ofrades, JorgeRaimundo, ntvangoor, mpdc-p, FAJ-Munich,
+dimon-CH-GE, gustavo-depaula, jjh-servi). All are plain forks/mirrors of the primary repository —
+no independent content, nothing to add to §5's triage. `2br-2b/Open-Breviary` was already correctly
+rejected there.
+
+**A real bug, not a real gap: the bible-binding report hardcoded two lanes as "missing."**
+`scripts/build-roman-breviary-1960-bible-binding-report.mjs` had `vulgate_clementine: 'missing'`
+and `vulgate_psalter: 'missing'` as **literal string constants** (lines 244-245 as found) — never
+an `exists(...)` check, unlike the `drb_original` line right beside them which correctly checks the
+filesystem. Both lanes already existed: `data/bible/translations/vulgate-clementine/` and
+`.../vulgate-psalter/`, imported 2026-06-21, populated with exactly the passages the dev slice cites.
+Fixed: both are now computed with the same `exists(...)` check `drb_original` already used.
+
+**Those existing lanes were real but thin, and said so themselves.** Their manifests carried
+`"source_status": "pilot_source_selected_pending_full_..._adjudication"` — a bounded scrape of
+`https://catholicbible.online/vulgate` (2 books, 4 chapters, 130 verses for Job/1 Corinthians; 9
+individual psalms for the Psalter), explicitly bounded to only the verses the dev slice happened to
+cite. Not something to build a growing audit on.
+
+**Adopted `seven1m/open-bibles`** (public domain, actively maintained, pinned commit
+`f257a3559025c3f873b48a75019f53a9354ed7de`) as the new source for both lanes, per Josh's
+confirmation. Its `lat-clementine.usfx.xml` is the full 73-book Clementine Vulgate, tracing to the
+Vulsearch/Tweedale Clementine Vulgate Project — recorded in `ROMAN_BREVIARY_1960_1962_
+ARCHITECTURE.md` §5. New script `scripts/import-bible-translation-open-bibles-vulgate.mjs` fetches
+the pinned XML, caches it verbatim at `data/roman-breviary-1960-1962/source/open-bibles/lat-
+clementine.usfx.xml`, and extracts:
+
+- **Full Job** (42 chapters, 1070 verses) and **full 1 Corinthians** (16 chapters, 437 verses) into
+  `vulgate-clementine/raw/` — not just the cited chapters, so the lane doesn't need re-sourcing the
+  next time the dev slice grows to a new day.
+- **Full Psalms** (150 psalms, 2527 verses) into `vulgate-psalter/raw/psalms.json` — likewise not
+  just the 9 psalms currently appointed.
+
+Spot-checked the extraction directly against the raw XML for Job 7:16-21 and Psalm 5 (word for word,
+including verse 1's inscription/title line) — exact. The old CatholicBible.online-sourced importer,
+`scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs`, is marked superseded in a
+header comment (kept for history, not deleted, not to be re-run).
+
+**Mirrored Divinum Officium's own Latin + English Psalter** (per Josh's confirmation) — it was
+already sitting in the pinned primary source, unmirrored: `web/www/horas/Latin/Psalterium/
+Psalmorum/` and the parallel `.../English/Psalterium/Psalmorum/` (150 psalms each, 202 files
+apiece counting Ps.118's subdivided sections), verse-aligned Latin/English, already in the
+Breviary's own native numbering. Extracted via `git archive <pinned commit>` from an authenticated
+fetch of that exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by
+git's own object hashing. `source-pin.json` gained a new `mirrored_directories` field (bulk mirrors
+don't fit a flat `mirrored_files` list well at 202 files apiece) and the narrow-check script's
+Check 1 was extended to handle it: directory existence, a file-count, and a bounded byte-for-byte
+sample (5 files) against the pinned commit, explicitly logged as a sample, not exhaustive.
+
+**A real, useful side effect: the psalm-numbering question is now genuinely checkable, not just
+assumed.** `vulgate-psalter/manifest.json` records the confirmation directly: Psalm 5 verse 1 is the
+Latin inscription/title ("In finem, pro ea quae haereditatem consequitur. Psalmus David."), verse 2
+onward is the numbered body, and verse 2 ("Verba mea auribus percipe, Domine...") matches Nocturnus
+I's own appointed antiphon verbatim — Vulgate/Gallican numbering **is** the Breviary's native
+numbering, no Hebrew/modern-numbering conversion needed for this pre-Vatican-II lane. The
+bible-binding-report script now runs a real check for this per appointment (matching the antiphon's
+opening words against the Vulgate psalter's own text, not just asserting it): 7 of 9 current
+appointments verify this way; the other 2 don't match this specific incipit-substring check because
+their antiphons paraphrase/recombine psalm phrases rather than quoting the opening verse
+contiguously (confirmed by inspection, not a numbering problem) — those 2 correctly keep the
+`not_yet_normalized` status rather than being force-marked resolved.
+
+**A real content question, disclosed per Josh's third confirmed decision — do not rule on it without
+a real printed source.** Diffed all 6 scripture-reading units in the dev slice against the newly
+full Vulgate text, verse-range by verse-range:
+
+| Unit | Result |
+|---|---|
+| `lectio1` (Job 7:16-21) | **Differs** — DO's text opens directly with "Parce mihi, Domine..."; the full Vulgate verse 16 opens "Desperavi: nequaquam ultra jam vivam: parce mihi..." — DO's Matins lesson appears to start mid-verse. |
+| `lectio2` (Job 14:1-6) | Differs only by "nunquam" vs "numquam" — an orthographic variant of the same word, not a substantive difference. |
+| `lectio3` (Job 19:20-27) | Identical. |
+| `lectio7` (1 Cor 15:12-22) | **Differs** — verse 12 in DO reads "Si Christus praedicatur..."; the full Vulgate has "Si autem Christus praedicatur..." — DO's text is missing the connective "autem." |
+| `lectio8` (1 Cor 15:35-44) | **Differs** — verse 38 has a variant ("et"/"ut" and different punctuation), and DO's lesson ends at "...surget corpus spiritale," where the full Vulgate verse 44 continues "Si est corpus animale, est et spiritale, sicut scriptum est:" — DO's Matins lesson appears to end mid-verse. |
+| `lectio9` (1 Cor 15:51-58) | Identical. |
+
+**Read together, `lectio1` and `lectio8` look like the same, unremarkable pattern**: Roman Breviary
+Matins lessons are traditionally excerpted to a sensible clause boundary, not mechanically bound to
+the full text of whichever verses their citation names — starting or ending mid-verse to complete a
+thought is normal liturgical practice, not necessarily an error in either source. `lectio7`'s single
+missing "autem" looks more like an isolated transcription variant between two different digitizations
+of the Clementine Vulgate. **None of this was adjudicated here** — per Josh's explicit instruction,
+resolving which reading is authentically what the 1960/1962 Breviary prints needs a real printed
+edition to check against (the same discipline the Horologion audit uses for Maclean/UNABHOR1997),
+not a guess from two competing digital sources. Recorded here as a disclosed, open question for
+whoever runs the actual line-by-line content audit this lane's architecture doc otherwise defers.
+
+**A third stale report, found while regenerating the second.** `bible-bindings/vulgate-source-lane-
+plan.json` (generated by `scripts/build-roman-breviary-1960-vulgate-lane-plan.mjs`) also claimed
+`vulgate_clementine_available: false` / `vulgate_psalter_available: false` and listed both as
+`required_missing_lane_ids` — but its own generator reads `js/bible-browser/bible-source-lane-
+adapter.js` directly, and that adapter has carried both `VULGATE_CLEMENTINE` and `VULGATE_PSALTER`
+lane entries since the original 2026-06-21 pilot import. Not a hardcoded-string bug like the other
+two — just never regenerated after the adapter changed. Re-ran the generator; it now correctly shows
+both lanes available, zero missing, and (since it reads the bible-binding report) picked up the
+psalm-numbering verification improvement automatically.
+
+**Re-ran the full narrow-check suite after all of the above**: checks 1-4 still pass clean (now
+against the real sources, not the thin pilot); check 5's disclosed finding is unchanged (still 16
+non-conformant blocks — this pass didn't touch that).
 
 ## What this pass deliberately did not do
 

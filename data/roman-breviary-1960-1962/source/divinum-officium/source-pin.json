@@ -8,5 +8,10 @@
   "mirrored_files": [
     "web/www/horas/Latin/Sancti/11-02.txt",
     "web/www/horas/Latin/Commune/C9.txt"
-  ]
+  ],
+  "mirrored_directories": [
+    "web/www/horas/Latin/Psalterium/Psalmorum",
+    "web/www/horas/English/Psalterium/Psalmorum"
+  ],
+  "mirrored_directories_note": "Added 2026-09-27 -- the full Latin Vulgate Psalter (150 psalms, 202 files incl. Ps.118's subdivided sections) and its parallel English (Douay-Rheims-style) translation, verse-aligned, already in the Breviary's own native numbering. Extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entry for how these were obtained."
 }

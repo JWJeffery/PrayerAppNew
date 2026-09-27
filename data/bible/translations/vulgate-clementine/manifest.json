@@ -1,56 +1,33 @@
 {
   "translation_key": "Vulgate",
-  "source_name": "CatholicBible.online Vulgate",
-  "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
-  "source_repo": null,
-  "source_path": "https://catholicbible.online/vulgate",
+  "source_name": "seven1m/open-bibles -- lat-clementine.usfx.xml",
+  "source_status": "full_book_import_from_public_domain_aggregator",
+  "source_repo": "https://github.com/seven1m/open-bibles",
+  "source_commit": "f257a3559025c3f873b48a75019f53a9354ed7de",
+  "upstream_provenance": "Vulsearch / Tweedale Clementine Vulgate Project (vulsearch.sourceforge.net), public domain -- same lineage as BibleGet-I-O/Clementine-Vulgate and most other Vulgate-JSON projects",
+  "source_path": "lat-clementine.usfx.xml",
+  "cached_source_copy": "data/roman-breviary-1960-1962/source/open-bibles/lat-clementine.usfx.xml",
   "target_path": "data/bible/translations/vulgate-clementine",
-  "status": "pilot_imported_bounded_source_lane",
-  "note": "Bounded pilot import for Roman Breviary scripture binding only. This lane is not yet a complete Vulgate Bible corpus.",
-  "imported_at": "2026-06-21T03:23:31.473Z",
+  "status": "full_book_imported",
+  "note": "Replaces the 2026-06-21 CatholicBible.online bounded pilot (2 books, 4 chapters, 130 verses -- see AUDIT_GOVERNANCE_LEDGER.md 2026-09-27 entry). Now full books, not just the passages the dev slice happens to cite today. Still only the two books the Roman Breviary lane has needed so far -- not a claim that all 73 Vulgate books are imported into this project.",
+  "superseded_import_script": "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs (superseded, kept for history)",
+  "import_script": "scripts/import-bible-translation-open-bibles-vulgate.mjs",
+  "imported_at": "2026-09-27T00:00:00Z",
   "book_count": 2,
-  "total_chapter_count": 4,
-  "total_verse_count": 130,
-  "planned_books": [
-    {
-      "book_id": "JOB",
-      "file": "raw/job.json",
-      "pilot_passages": [
-        "Job 7:16-21",
-        "Job 14:1-6",
-        "Job 19:20-27"
-      ]
-    },
-    {
-      "book_id": "1_CORINTHIANS",
-      "file": "raw/1-corinthians.json",
-      "pilot_passages": [
-        "1 Cor 15:12-22",
-        "1 Cor 15:35-44",
-        "1 Cor 15:51-58"
-      ]
-    }
-  ],
+  "total_chapter_count": 58,
+  "total_verse_count": 1507,
   "books": [
     {
       "file": "raw/job.json",
-      "source_path": "https://catholicbible.online/vulgate",
-      "chapter_count": 3,
-      "verse_count": 72,
-      "imported_chapters": [
-        7,
-        14,
-        19
-      ]
+      "chapter_count": 42,
+      "verse_count": 1070,
+      "note": "Full book, all 42 chapters -- not just the 3 chapters (7, 14, 19) the dev slice cites."
     },
     {
       "file": "raw/1-corinthians.json",
-      "source_path": "https://catholicbible.online/vulgate",
-      "chapter_count": 1,
-      "verse_count": 58,
-      "imported_chapters": [
-        15
-      ]
+      "chapter_count": 16,
+      "verse_count": 437,
+      "note": "Full book, all 16 chapters -- not just chapter 15."
     }
   ]
 }
