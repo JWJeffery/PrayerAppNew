@@ -51,6 +51,22 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**CLOSED (was already fixed, never crossed off), 2026-09-27 — the 2038/2095 East Syriac season
+overlap.** Third item from this session's open-items audit. `documentation/OPEN_ITEMS_FIXABILITY.md`
+had this listed as "genuinely not blocked... self-contained" since 2026-09-04 — checked the repo
+before starting on it, per that same file's own standing lesson, and found `js/calendar-east-
+syriac.js`'s `getSeason()` boundary between Eliya-Sliwa and Qudash 'Idta was already fixed
+2026-09-25 (clamping `eliyaSliwaEnd` to whichever of `museStart`/`qudashIdtaStart` comes first) — a
+general fix for the whole overlap class that silently also closed this specific named item without
+anyone tracing it back to cross this row off. Verified, didn't just trust the code comment: a Node
+harness scanning `EastSyriacCalendar.getSeason()` day-by-day across 2020-2033 plus 2038 and 2095
+shows zero gap/overlap in every year (Eliya or Muse's last day is always exactly one day before
+Qudash 'Idta's first); a second harness against `SaintsResolver.occursOn()` for
+`mar-augin-saint-eugene` and `mar-micha` (the two Qudash-Idta-week-1 commemorations the original
+finding named as vanishing) confirms both resolve to a real November date in 2038 and 2095 exactly
+as in every other year — they do not disappear. Nothing needed building; `OPEN_ITEMS_FIXABILITY.md`
+updated to strike the row, matching its own established pattern for stale-but-closed items.
+
 **RECORD-KEEPING BACKFILL, 2026-09-27** — `AUDIT_GOVERNANCE_LEDGER.md` given its own entry for the
 2026-09-26 Vespers findings V1/V2/V4-V6 (V3 retracted) and Grand Compline's GC1, which had only ever
 been documented in `documentation/HOROLOGION_AUDIT_FINDINGS.md` (GC2-GC7 already had ledger entries;

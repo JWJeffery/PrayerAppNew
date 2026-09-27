@@ -22928,3 +22928,35 @@ it.
 
 Full detail on all six findings: `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Vespers and Grand
 Compline sections.
+
+---
+
+## Session 2026-09-27, working the open-items audit's non-blocked items -- item 3: the 2038/2095
+East Syriac season overlap (`coe:engine:season-collision-2038`) is CLOSED, was already fixed
+
+Third item from this session's project-wide open-items audit. `documentation/OPEN_ITEMS_FIXABILITY.md`
+had listed this as "genuinely not blocked... self-contained" since 2026-09-04 (earlier entries in
+this ledger, e.g. line ~3030, recorded it as an open engine bug: Eliya-Sliwa built forward from
+Easter could run past Qudash 'Idta's independently-fixed start in 2038 and 2095, swallowing Qudash
+'Idta's first week and vanishing `mar-augin-saint-eugene`/`mar-micha`).
+
+Checked the repo before starting, per this project's own standing lesson (probe, don't recall) --
+`js/calendar-east-syriac.js`'s FIXED-2026-09-25 comment (found during the engine-audit sweep)
+already clamps `eliyaSliwaEnd` to `min(museStart, qudashIdtaStart) - 1`, a general fix for the
+whole overlap class covering every affected year, not just the ones then under test. Nobody had
+traced that general fix back to this specific named item, so it stayed listed as open.
+
+Verified, not just trusted: a Node harness (`global.window = global; require('./js/calendar-east-
+syriac.js')`) scanning `getSeason()` day-by-day across 2020-2033 plus 2038 and 2095 shows the last
+Eliya/Muse date is always exactly one day before the first Qudash-Idta date -- zero gap, zero
+overlap, in every tested year including both collision years. A second harness against
+`js/saints-resolver.js`'s `occursOn()` (loaded the same way) confirms `mar-augin-saint-eugene`
+(Friday, Qudash-Idta week 1) and `mar-micha` (Sunday, Qudash-Idta week 1) -- the two commemorations
+the original finding named as ones that disappear -- both resolve to a real November date in 2038
+and 2095, exactly as in every other tested year.
+
+No code or data changed. `documentation/OPEN_ITEMS_FIXABILITY.md` updated to strike the row and
+record the closure, matching that file's own established pattern for items found closed-but-
+untracked.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
