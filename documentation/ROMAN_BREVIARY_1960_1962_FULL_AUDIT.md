@@ -312,14 +312,27 @@ feast, not a fabrication or a wrong-book mix-up** — the apparent mismatch agai
 volume's Job-only Officium Defunctorum was comparing the wrong two things (the annual proper vs. the
 generic votive), not a real discrepancy.
 
+**Confirmed precisely why the uploaded volume doesn't have it: it predates the reform.** The
+volume's own colophon (searched directly, not assumed) dates it exactly: printed at Mechlin
+(Malines, Belgium) by H. Dessain for Benziger Brothers, "MCMVI" (1906), approved "Ex Secretaria
+Sacrorum Rituum Congregationis, die 24 Februarii 1906." Pius X's reform was 1911-1913. This is not
+a case of having the right kind of book but the wrong section, or a different edition family that
+happens to omit the reformed proper — **this specific printed copy is five to seven years too old
+to contain it, full stop.** That is the whole explanation for why its Nov 2 page shows only "Secunda
+die infra Oct. Omnium Sanctorum" with a rubric pointing at the plain votive Office of the Dead: in
+1906 there was nothing else to print there yet.
+
 **What is still, narrowly, open.** Neither uploaded volume contains this specific reformed All
-Souls proper (both show the older all-Job votive form only), so the exact wording of the 1 Cor
+Souls proper — the RTF is the wrong season (*Pars Hiemalis et Verna*) and this Autumn volume is the
+right season but predates the reform by several years — so the exact wording of the 1 Cor
 15:12-22 / 35-44 / 51-58 excerpts — specifically, whether an authentic 1960/1962 printed proper
 drops the initial "autem" from verse 12 the way `Sancti/11-02.txt` does ("Si Christus prædicátur"
 rather than the plain Vulgate's "Si autem Christus prædicátur") — has not been checked against a
-printed copy of that specific proper office. Given sub-finding A's result (Divinum Officium's Job
-wording for this same office matched an independent print exactly, including dropping its own
-leading conjunction), and that trimming a lection's opening connective is a well-attested general
+printed copy of that specific proper office. A volume that would settle it needs to be a *Pars
+Autumnalis* printed after ~1913, ideally close to the 1960/1962 rubrics era. Given sub-finding A's
+result (Divinum Officium's Job wording for this same office matched an independent print exactly,
+including dropping its own leading conjunction), and that trimming a lection's opening connective
+is a well-attested general
 convention in Roman lectionaries (a lesson excerpted mid-sentence has no antecedent for "autem"/
 "enim" to refer back to), this reads as the same ordinary convention, not a new suspected error —
 but it is disclosed here as unverified against a printed proper, rather than asserted as certain.
