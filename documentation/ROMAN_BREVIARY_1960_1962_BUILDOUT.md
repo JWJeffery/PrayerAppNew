@@ -1,6 +1,7 @@
 # Roman Breviary 1960/1962 — Full Build-Out (Minimum Shippable Floor)
 
-**Status:** IN PROGRESS — Phase 0-2 complete and validated, 2026-09-27.
+**Status:** MINIMUM SHIPPABLE FLOOR REACHED — all 6 phases complete, 2026-09-27. All 8 hours, the
+Roman general calendar, Rubrics 1960/1962, Latin, full calendar years 2026 and 2027, precomputed.
 **Authorization:** Josh: "Yes I want to build out the whole thing" — the full minimum shippable
 floor per `ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §10: all 8 hours, the Roman general calendar,
 Rubrics 1960/1962, Latin only, current+next year precomputed.
@@ -152,15 +153,89 @@ filtered out, nothing wrong is shown) but the rubric note itself isn't surfaced.
 **Verified**: all 48 combinations run with zero crashes and zero role-taxonomy violations (every
 block's role is a member of Core Contract §7's closed 13-role set).
 
-## Remaining phases (see the session's plan for full detail; summarized here for continuity)
+## Phase 3 — full sweep, complete
 
-- **Phase 3** — full sweep: 2026-01-01 through 2027-12-31 × all 8 hours, emit
-  `manifests/2026.json`/`manifests/2027.json` and content-addressed `units/2026.json`/`units/
-  2027.json`.
-- **Phase 4** — mirror the Roman-general 1960-relevant Latin subset (Tempora/Sancti/Commune/
-  Psalterium/Martyrologium+Martyrologium1960/Appendix, excluding monastic/Dominican/Cistercian
-  variants) into the repo; extend the narrow-check audit to the larger corpus.
-- **Phase 5** — generalize the UI beyond the hardcoded 2026-11-02 default; live-verify a
-  representative sample in headless Chromium; reconcile envelope field naming with Core Contract
-  §4/§5.
-- **Phase 6** — documentation, ledger entries, incremental commits.
+Ran the full pipeline for both full calendar years: 2026-01-01 through 2027-12-31 (730 days) × all
+8 hours (5,840 office-hours), against the pinned commit, `dioecesis=Generale`, `version=Rubrics
+1960`, Latin. **0 errors.** 3,937 unique content-addressed units for 2026, 3,982 for 2027 — a large
+reduction from 2920 office-hours' worth of blocks per year, confirming the content-addressing
+decision (§16 gate 2) does what it was chosen for: the weekly psalter cycle, common antiphons, fixed
+prayers, and ordinary-time ferial content collapse into shared units instead of being duplicated
+per day.
+
+**A real performance bug found and fixed along the way**: the first sweep attempt used
+`execFileSync` inside an async worker pool, intending 16-way concurrency. `execFileSync` blocks
+Node's single thread while the child process runs, so every "concurrent" call was actually
+serialized — the pool provided zero real parallelism. Confirmed by observing only 1-2 Perl
+processes ever running simultaneously regardless of the configured concurrency, and by direct
+timing (16 supposedly-concurrent calls taking as long as 16 sequential ones would). Fixed by adding
+`runOracleAsync` (promisified `execFile`) to `scripts/roman-breviary-oracle-run.mjs` for the pool to
+use, keeping the sync `runOracle` for the single-call Phase 1/2 scripts. Cut the full 2-year sweep
+from an estimated ~30 minutes to ~5 minutes (confirmed: 16 real concurrent calls completed in
+~0.97s, matching single-call latency, not 16× it).
+
+**Output**: `manifests/2026.json`/`manifests/2027.json` (year-keyed `days[date].hours[hourKey]`,
+matching the pre-existing convention) and content-addressed `units/2026.json`/`units/2027.json`.
+
+## Phase 4 — mirror completion and audit extension, complete
+
+Mirrored the Roman-general 1960-relevant Latin subset from the pinned commit via `git archive`:
+full `Tempora`, `Sancti`, `Commune`, the remaining `Psalterium` common-text files (`Special`,
+`Psalmi`, `Invitatorium.txt`, `Doxologies.txt`, `Benedictions.txt`, `Mariaant.txt` — the Psalter
+body text itself, `Psalmorum`, was already mirrored in an earlier pass), `Martyrologium1960`, and
+`Appendix` — ~1,800 files, ~10MB. **Deliberately excluded**, per architecture §11's "no monastic or
+Dominican variants": `TemporaM`/`SanctiM`/`CommuneM`, `TemporaCist`/`SanctiCist`/`CommuneCist`,
+`TemporaOP`/`SanctiOP`/`CommuneOP`, the pre-1955/1960 `Martyrologium1570`/`Martyrologium1955R`
+editions, `Regula` (Benedictine Rule readings, monastic-only), and `Necrologium`. `source-pin.json`
+updated with the new declared subset and full rationale.
+
+Extended `scripts/audit-roman-breviary-1960-narrow-checks.mjs`: iterates every `manifests/<year>.json`
+file found on disk rather than one hardcoded year; added a new sub-check verifying each manifest's
+own recorded `source_pin.commit` matches `source-pin.json` (catches the exact class of error Phase 0
+found — an oracle run against a drifted engine clone); scaled checks 2/3/5 to the full corpus.
+**Result: 0 failing, 7 warnings** (all warnings are the expected "not-exhaustive spot-check sample"
+notices for the bulk-mirrored directories — the same disclosed sampling policy this audit has used
+since the original narrow-check pass, not a new gap).
+
+## Phase 5 — UI wiring and verification, complete
+
+`js/roman-breviary-1960-1962-dev-slice.js`: `resolveDevSliceOffice` now fetches `units/<year>.json`
+(content-addressed, matching Phase 3's output) instead of the superseded `units/dev-vertical-
+slice.json` (left on disk as a historical artifact — still referenced by the original bible-binding
+report scripts as their own frozen input, not deleted). Removed the now-false hardcoded diagnostic
+claiming "Full Roman Breviary 2026/2027 manifests are not generated yet." Added a lightweight
+date/hour navigator (a plain `<input type=date>` + `<select>` + button, re-rendering in place) so
+the full 730-day × 8-hour range is actually reachable from the UI, not just present in the data —
+proportionate to this route's own "dev slice" framing, not a full calendar-picker feature. Reconciled
+`context` field naming a step further toward Core Contract §4's illustrative `calendarSummary`/
+`rankSummary` (best-effort split of the lane's own single rank line, since Divinum Officium's
+rendered output doesn't produce those as two separate strings — the shell still receives the lane's
+own vocabulary verbatim, per §4 rule 1, not a re-interpretation of it).
+
+**Verified in headless Chromium**: default view (2026-11-02 Matins) renders with the corrected
+Requiem-substitute doxology inline in the Conclusio block, zero console errors. Date/hour navigation
+tested live (typed 2026-12-25 into the date field, selected Vespers, clicked Go) — correctly
+re-rendered "In Nativitate Domini ~ I. classis" with real Christmas Vespers content (Psalm 109,
+proper antiphons), zero console errors.
+
+## Phase 6 — documentation and commits, complete
+
+This document, `ROMAN_BREVIARY_1960_1962_FULL_AUDIT.md`'s finding 1 correction,
+`ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md` §16's gates marked cleared, `AUDIT_GOVERNANCE_LEDGER.md`
+entries at each phase boundary, and `RESUME_PROJECT_NOTE.md` all updated. Commits made incrementally
+by phase and pushed to PR #39's branch (`claude/resume-note-catholic-audit-7hbtx6`), matching this
+repo's existing commit granularity — not one giant commit for the whole build-out.
+
+## What this build-out does not claim
+
+Per architecture §10's own explicit non-goals: no English layer, no chant layer, no local
+calendars, no monastic or Dominican variants. Per §11: this lane sits alongside `roman_loth` and
+does not replace it. Reaching the minimum shippable floor is not a claim that every rubric edge case
+across 730 days has been individually human-reviewed the way the original one-day Matins prototype
+was — it is a claim that the oracle pipeline producing this corpus has itself been validated (Phase
+1: against every previously-audited fact, including one real bug caught and fixed; Phase 2: against
+a deliberately diverse sample including the Triduum's special forms) and ran cleanly with 0 errors
+across the full range. Any future finding of a genuine defect in a specific day's content should be
+traced to either the parser (fixable once, benefits every day) or an upstream Divinum Officium
+question (out of this lane's own scope to adjudicate, per architecture §7's hybrid-oracle strategy
+trusting Divinum's own rubrical computation).

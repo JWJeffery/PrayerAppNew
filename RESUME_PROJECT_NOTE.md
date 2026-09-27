@@ -328,12 +328,38 @@ text, reasoned as "said everywhere in the Roman rite" — wrong, Requiem offices
 BUILDOUT.md`'s Phase 1 section. **The lesson**: "this is fixed/universal content" needs checking,
 not assuming — the same standard already held for scripture-text variants.
 
-**Next move on resuming**: Phase 2 — run the oracle across a deliberately varied calendar/hour
-sample (ordinary weekday, Sunday, first-class feast, octave day, commemoration, occurrence conflict,
-Triduum, a Little Hour, Compline) and harden `scripts/parse-officium-html.mjs` /
-`scripts/build-roman-breviary-oracle-blocks.mjs` until all round-trip cleanly. Do not skip straight
-to the full 2-year sweep (Phase 3) without this — that's exactly how a parser bug or an unhandled
-content shape would go unnoticed across hundreds of days instead of being caught on a handful.
+**CONTINUED, same day — all 6 phases complete. Minimum shippable floor reached: all 8 hours, the
+Roman general calendar, Rubrics 1960/1962, Latin, full calendar years 2026 and 2027 (730 days),
+precomputed, 0 errors, 0 audit failures.** Full account:
+`documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
+
+- **Phase 2**: hardened the parser across 48 date/hour combos including the Triduum's special
+  forms. Found/fixed 3 parser bugs (footnote-suffix breaking psalm citations, hardcoded rank-line
+  color, content-aware role classification for headerless sections).
+- **Phase 3**: full 2026-2027 × 8-hour sweep, 0 errors, ~3,950 unique content-addressed units/year.
+  Found/fixed a real concurrency bug (`execFileSync` was silently serializing the "16-way" pool) —
+  cut the sweep from ~30 min to ~5.
+- **Phase 4**: mirrored the remaining Roman-general 1960 Latin content (~1,800 files, excluding
+  monastic/Dominican/Cistercian variants); extended the audit to cover every manifest year + verify
+  the oracle-run commit matches the pin.
+- **Phase 5**: rewired the UI to the new per-year files, added a lightweight date/hour navigator,
+  live-verified in headless Chromium (default view + a navigated jump to Christmas Vespers, zero
+  console errors both times).
+- **Phase 6**: this update, the ledger's closing entry, architecture §16's gates marked cleared.
+
+**Five real defects found and fixed across the whole build-out** (1 content bug — Gloria Patri
+should have been the Requiem substitute; 3 parser bugs; 1 performance bug), each caught specifically
+because an independent oracle and a deliberately varied validation sample were used rather than
+trusting one hand-traced case.
+
+**What's genuinely still open, if resuming this thread further:** nothing blocking — the floor is
+reached and everything is committed and pushed to PR #39's branch
+(`claude/resume-note-catholic-audit-7hbtx6`). Future-phase items explicitly deferred, matching
+architecture §14 (not part of this floor): English parallel layer, chant/GABC/booklet layer,
+optional native JS resolver research, local calendars, monastic/Dominican variants. The next real
+decision is Josh's: whether to enable this lane for real users (it's currently `disabled`/`hidden`
+in the app's own entry screen, same pause pattern as Byzantine Horologion) — a product/governance
+call, not a build one.
 
 **State as of 2026-09-26, latest of all — mid-flight on Josh's "address all of these things...
 build the gates, refine the engine logic... make this thing hum" directive (fix the three items the

@@ -22377,3 +22377,57 @@ classification for untitled sections), `documentation/ROMAN_BREVIARY_1960_1962_B
 committed.
 
 **Next**: Phase 3 (full 2026-2027 x 8-hour sweep, content-addressed units) per the plan.
+
+---
+
+## Session 2026-09-27, continued yet further still again and again -- Roman Breviary 1960/1962:
+minimum shippable floor reached. All 6 build-out phases complete: all 8 hours, the Roman general
+calendar, Rubrics 1960/1962, Latin, full calendar years 2026 and 2027 (730 days), precomputed, 0
+errors, 0 audit failures.
+
+**Summary of the whole build-out** (full detail across each phase already recorded in this
+session's earlier entries and in the new `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`,
+which is now the canonical account of this work -- this entry is a closing summary, not a
+duplicate):
+
+- **Phase 0**: pinned the separate engine clone used to compute the oracle to the same commit
+  (`0ce8747d...`) already mirrored and audited in this repo.
+- **Phase 1**: built the oracle pipeline (`roman-breviary-oracle-run.mjs`, `parse-officium-html.mjs`,
+  `build-roman-breviary-oracle-blocks.mjs`) and validated it against every fact already established
+  about the existing Nov 2 Matins content. Found and fixed a real defect from an earlier pass this
+  same session: the Conclusio's Gloria Patri should have been the Requiem substitute (Requiem
+  offices replace it throughout; the earlier fix wrongly assumed universal content without checking).
+- **Phase 2**: hardened the parser across 48 date/hour combinations including the Triduum's special
+  forms. Found and fixed 3 real parser bugs (a footnote-suffix breaking psalm-citation recognition,
+  a hardcoded rank-line color, content-aware role classification for headerless sections).
+- **Phase 3**: ran the full 2026-2027 x 8-hour sweep, 0 errors. Found and fixed a real concurrency
+  bug (`execFileSync` was silently serializing the "16-way" pool); switching to async cut the sweep
+  from ~30 minutes to ~5.
+- **Phase 4**: mirrored the remaining Roman-general 1960-relevant Latin content (~1,800 files, git
+  archive from the pinned commit, explicitly excluding monastic/Dominican/Cistercian variants) and
+  extended the narrow-check audit to cover every manifest year and verify the oracle-run commit
+  matches the pin.
+- **Phase 5**: rewired the UI to the new per-year data files, added a lightweight date/hour
+  navigator, verified live in headless Chromium (default view and a navigated jump to Christmas
+  Vespers, both zero console errors).
+- **Phase 6**: this entry, `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`, architecture §16's gates marked
+  cleared, `RESUME_PROJECT_NOTE.md` updated.
+
+**Total real defects found and fixed across the whole build-out**: 1 content bug (Gloria Patri
+should have been the Requiem substitute), 3 parser bugs, 1 performance bug. All five were caught
+specifically because an independent oracle and a deliberately varied validation sample were used
+instead of trusting a single hand-traced case or an unvalidated assumption -- consistent with the
+discipline held throughout this entire session's audit work.
+
+**Final audit result**: `scripts/audit-roman-breviary-1960-narrow-checks.mjs` -- 0 failing, 7
+warnings (all disclosed spot-check-sampling notices, the same policy the original narrow-check pass
+established, not a new gap). 7,919 manifest unit_refs across 5,840 office-hours (2,920 per year x 2
+years) all resolve correctly; every block role is a member of the closed taxonomy; every manifest's
+own recorded oracle-run commit matches the pin.
+
+**Explicitly not claimed**: this is architecture §10's minimum shippable floor, not a claim that
+every day's content has been individually human-reviewed the way the original one-day prototype
+was. English layer, chant layer, local calendars, and monastic/Dominican variants remain out of
+scope per §11, as they always were.
+
+Full detail, file-by-file, phase-by-phase: `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
