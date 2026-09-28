@@ -1,5 +1,56 @@
 # RESUME_PROJECT_NOTE.md
 
+**DIOCESAN CYCLE OF PRAYER: NEW CORPUS SCHEME BUILT, 2026-09-28 continued yet again.** Josh
+uploaded `Western_Oregon_Diocesan_Cycle_of_Prayer_2026.pdf` (The Episcopal Church in Western
+Oregon's own weekly published prayer rotation -- one or more parishes, or occasionally a
+non-parish category like "Diocesan Staff," per week) and asked for a scheme to record this kind
+of data from multiple dioceses. This is new, general-purpose infrastructure, not part of the
+tradition-audit machinery in `project_roadmap.json` -- deliberately kept separate, closer in kind
+to Book of Needs than to the Horologion/Menaion/etc. audit corpora. Nothing wired into the app UI
+yet; this is the storage scheme only, ready for whenever the actual "authorized intercessions"
+BCP TODO (logged earlier this same session, space built, content still pending) or a similar
+future feature wants to draw on it.
+
+**Built**, following this repo's own established `schema.json`-next-to-its-data convention (the
+same pattern `data/explanations/schema.json` and `data/horologion/schema.json` already use, not a
+new one invented for this):
+- `data/cycles-of-prayer/schema.json` -- documents the file shape (one file per diocese per year,
+  `<body-slug>-<diocese-slug>-<year>.json`), the entry/subject shapes (`parish` subjects carry
+  `place`+`name`; `category` subjects like "Those in the Ordination Process" carry `name` only),
+  and the governing rules -- most importantly: names are transcribed exactly as the source prints
+  them (typos included, disclosed in `notes`, never silently "corrected"), and a blank date cell
+  in the source means "same week as the row above," folded into that entry's `subjects` array.
+  Deliberately cross-body/cross-tradition -- nothing in the schema assumes Episcopal/Anglican.
+- `data/cycles-of-prayer/episcopal-western-oregon-2026.json` -- the first instance, transcribed
+  directly from the PDF. 52 dated weeks (every Sunday of 2026), 67 total subjects (63
+  parishes/missions, 4 categories). Seven weeks group more than one subject where the source's own
+  blank-date rows indicated it (Easter: 4 Eugene congregations; three consecutive August weeks
+  splitting Portland's 12 congregations; etc.) -- verified programmatically that the entry count
+  (52) and subject count add up correctly rather than trusting the transcription by eye alone.
+  One verbatim-preserved apparent typo ("Florence, St, Andrew," comma not period) disclosed in the
+  file's own `notes` rather than silently fixed, per the schema's own rule.
+- `scripts/cycles-of-prayer/validate.mjs` (new `npm run audit:cycles-of-prayer`) -- checks every
+  file in the corpus against the schema: filename matches the document's own declared
+  `bodySlug`/`dioceseShort`/`year` (computed forward from the fields, not parsed backward out of
+  the filename, since both slugs can themselves contain hyphens and a regex split would be
+  ambiguous -- confirmed this the hard way, an early version of this script mis-parsed its own
+  test file), dates are valid ISO and strictly ascending with no duplicates, every subject has a
+  valid `type` and the fields that type requires. **Verified it actually catches errors, not just
+  passing trivially**: ran it against a deliberately broken scratch file (missing `place`, wrong
+  `id`, wrong subject `type`, out-of-order date) before deleting the scratch file -- caught all six
+  injected defects, then re-confirmed a clean pass on the real corpus alone.
+
+**Adding a second diocese, whenever that happens:** read `data/cycles-of-prayer/schema.json`'s own
+rules first, transcribe directly from that diocese's published document (never from memory or
+inference), disclose anything ambiguous in the new file's own `notes`, then run
+`npm run audit:cycles-of-prayer` before committing.
+
+`data/cycles-of-prayer/schema.json`, `data/cycles-of-prayer/episcopal-western-oregon-2026.json`,
+`scripts/cycles-of-prayer/validate.mjs`, and `package.json` (one new script entry) are the only
+files touched.
+
+---
+
 **TASK #14'S NAMING QUESTION, RESOLVED AND FIXED, 2026-09-28 continued yet again.** The broader
 naming inconsistency left open in task #14 (entry-card vs. mode-grid using different names for
 Anglican/Catholic/Oriental Orthodoxy) was reported here as still awaiting Josh's call. Josh's

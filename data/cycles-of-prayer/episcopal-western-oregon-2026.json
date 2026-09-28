@@ -1,0 +1,189 @@
+{
+  "id": "episcopal-western-oregon-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Western Oregon",
+  "dioceseShort": "western-oregon",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer - 2026",
+  "sourceFile": "Western_Oregon_Diocesan_Cycle_of_Prayer_2026.pdf",
+  "ingested": "2026-09-28",
+  "notes": [
+    "April 19, 2026's subject is printed in the source as 'Florence, St, Andrew' (comma, not a period, after 'St'). Preserved verbatim rather than silently corrected, per this corpus's own rule against fixing a diocese's own published document.",
+    "Several weeks group more than one congregation under a single date because the source leaves the date cell blank for the following row(s), meaning 'same week as above': April 5 (four Eugene congregations, Easter), May 17 (two Gresham congregations), May 24 (two Hillsboro congregations, Pentecost), August 16 and August 23 and August 30 (Portland's congregations split across three consecutive weeks, twelve congregations total), September 27 (three Salem congregations).",
+    "May 24's second subject, 'Hillsboro, Misión Todos los Santos', is a Spanish-language congregation; the source gives no further detail on its relationship to the same date's 'Hillsboro, All Saints' entry, so none is asserted here beyond the two printed names."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Albany", "name": "St. Alban" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Ashland", "name": "Trinity" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Astoria", "name": "Grace" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Bandon", "name": "St. John" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Beaverton", "name": "St. Bartholomew" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Brookings", "name": "St. Timothy" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Coos Bay", "name": "Emmanuel" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "1st Sunday in Lent", "subjects": [
+      { "type": "parish", "place": "Coquille", "name": "St. James" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Corvallis", "name": "Church of the Good Samaritan" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Cottage Grove", "name": "St. Andrew" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Dallas", "name": "St. Thomas" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Those in the Ordination Process" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "Hospital Chaplains and School & Campus Ministries" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter", "subjects": [
+      { "type": "parish", "place": "Eugene", "name": "Church of the Resurrection" },
+      { "type": "parish", "place": "Eugene", "name": "St. Mary" },
+      { "type": "parish", "place": "Eugene", "name": "St. Matthew" },
+      { "type": "parish", "place": "Eugene", "name": "St. Thomas" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Forest Grove", "name": "St. Bede" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Florence", "name": "St, Andrew" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Gardiner/Reedsport", "name": "St. Mary" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Gold Beach", "name": "St. Matthew" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Grants Pass", "name": "St. Luke" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Gresham", "name": "Santa Cruz/Holy Cross" },
+      { "type": "parish", "place": "Gresham", "name": "St. Luke" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "parish", "place": "Hillsboro", "name": "All Saints" },
+      { "type": "parish", "place": "Hillsboro", "name": "Misión Todos los Santos" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lake Oswego", "name": "Christ Church" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lebanon", "name": "St. Martin" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lincoln City", "name": "St. James" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Manzanita", "name": "St. Catherine" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "McMinnville", "name": "St. Barnabas" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Medford", "name": "St. Mark" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Milwaukie", "name": "St. John the Evangelist" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Monmouth", "name": "St. Hilda" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Newberg", "name": "St. Michael/San Miguel" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Newport", "name": "St. Stephen" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Oregon City", "name": "St. Paul" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Portland", "name": "All Saints" },
+      { "type": "parish", "place": "Portland", "name": "Ascension" },
+      { "type": "parish", "place": "Portland", "name": "Grace Memorial" },
+      { "type": "parish", "place": "Portland", "name": "St. Andrew" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Portland", "name": "St. Aidan" },
+      { "type": "parish", "place": "Portland", "name": "St. Barnabas" },
+      { "type": "parish", "place": "Portland", "name": "St. David of Wales" },
+      { "type": "parish", "place": "Portland", "name": "St. Gabriel the Archangel" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Portland", "name": "St. John the Baptist" },
+      { "type": "parish", "place": "Portland", "name": "St. Michael & All Angels" },
+      { "type": "parish", "place": "Portland", "name": "St. Philip the Deacon" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Portland", "name": "Trinity Cathedral" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Port Orford", "name": "St. Christopher" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Roseburg", "name": "St. George" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Salem", "name": "Prince of Peace" },
+      { "type": "parish", "place": "Salem", "name": "St. Paul" },
+      { "type": "parish", "place": "Salem", "name": "St. Timothy" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Seaside", "name": "Calvary" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Shady Cove", "name": "St. Martin" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Silverton", "name": "St. Edward" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Springfield", "name": "St. John the Divine" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "St. Helens", "name": "Christ Church" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Sutherlin", "name": "Church of the Holy Spirit" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Tigard", "name": "St. James" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Tillamook", "name": "St. Alban" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "1st Sunday of Advent", "subjects": [
+      { "type": "parish", "place": "Waldport", "name": "St. Luke's by the Sea" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Wilsonville", "name": "St. Francis of Assisi" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Woodburn", "name": "St. Mary" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy & Chaplains" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Staff" }
+    ]}
+  ]
+}

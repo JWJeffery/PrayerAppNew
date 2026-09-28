@@ -23556,3 +23556,44 @@ undecided" until Josh had to repeat the ruling a third time. When Josh answers a
 call, the answer goes in the same ledger entry as the question, immediately, not just the question.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- new corpus scheme: Diocesan Cycle of Prayer, built to
+## hold multiple dioceses; Western Oregon 2026 ingested as the first instance
+
+Josh uploaded The Episcopal Church in Western Oregon's own 2026 Diocesan Cycle of Prayer (a weekly
+published rotation of parishes/missions, and occasionally a non-parish category, to pray for) and
+asked for a scheme to record this kind of data from multiple dioceses. New general-purpose
+infrastructure -- deliberately kept out of `project_roadmap.json`'s tradition-audit machinery,
+closer in kind to Book of Needs. Not wired into the app UI; storage scheme only, for whenever the
+"authorized intercessions" BCP TODO (this same session, space built, content still pending) or a
+similar future feature wants to draw on it.
+
+Followed this repo's own established `schema.json`-next-to-its-data convention
+(`data/explanations/schema.json`, `data/horologion/schema.json`), not a new pattern:
+- `data/cycles-of-prayer/schema.json` -- file shape (one file per diocese per year,
+  `<body-slug>-<diocese-slug>-<year>.json`), entry/subject shapes (`parish` carries `place`+`name`;
+  `category` carries `name` only), governing rules -- most importantly, names transcribed exactly
+  as printed (typos disclosed in `notes`, never silently corrected), and a blank date cell in the
+  source means "same week as the row above." Deliberately cross-body/cross-tradition.
+- `data/cycles-of-prayer/episcopal-western-oregon-2026.json` -- transcribed directly from the PDF.
+  52 dated weeks (every Sunday of 2026), 67 total subjects (63 parishes/missions, 4 categories),
+  seven weeks grouping more than one subject per the source's own blank-date rows (Easter: 4 Eugene
+  congregations; three consecutive August weeks splitting Portland's 12 congregations; etc.) --
+  verified programmatically that entry/subject counts add up rather than trusting transcription by
+  eye alone. One apparent typo ("Florence, St, Andrew," comma not period) preserved verbatim and
+  disclosed in `notes`, not silently fixed, per the schema's own rule.
+- `scripts/cycles-of-prayer/validate.mjs` (new `npm run audit:cycles-of-prayer`) -- checks filename
+  against the document's own declared `bodySlug`/`dioceseShort`/`year`, computed forward from the
+  fields rather than parsed backward out of the filename (both slugs can contain hyphens, making a
+  backward split ambiguous -- an early version of this script mis-parsed its own test filename this
+  way before the fix). Checks ISO dates, strict chronological order, no duplicate dates, and every
+  subject's required fields by type. **Verified it actually catches errors**: ran against a
+  deliberately broken scratch file (six injected defects: missing `place`, wrong `id`, wrong
+  subject `type`, out-of-order date, mismatched slug, mismatched filename) before deleting it --
+  caught all six, then re-confirmed a clean pass on the real corpus alone.
+
+`data/cycles-of-prayer/schema.json`, `data/cycles-of-prayer/episcopal-western-oregon-2026.json`,
+`scripts/cycles-of-prayer/validate.mjs`, and `package.json` (one new script entry) are the only
+files touched.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
