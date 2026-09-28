@@ -374,9 +374,15 @@ writes) — still open, unaddressed. Two other todos (`rite-placeholder-fragilit
 `saints-schema-refactor`) were closed 2026-09-28 as already-fixed/obsolete respectively.
 
 **MISSING FROM THIS LIST UNTIL NOW, per Josh's direct catch 2026-09-28 (continued): the file-system
-refactor — `whole-app-json-to-database-migration`.** Surfaced in `structure.json` the same day this
-note was last rewritten but never carried into this §7 list, so a session reading only this note (not
-also `structure.json` directly) would have missed it entirely. Josh's own words, recorded there: "the
+refactor — `whole-app-json-to-database-migration`.** **GATED, per Josh's explicit instruction the same
+day: this must be done LAST, after everything else on this list, and ONLY when Josh directly authorizes
+it starting — not picked up proactively, not started because it happens to be next in some ordering, no
+exceptions. Reason given: it will probably take a lot of tokens.** Do not begin any part of this item
+(not even the inventory/scoping step below) without that direct authorization, however open-ended a
+session's remaining time or however tempting the size of this todo looks. Surfaced in `structure.json`
+the same day this note was last rewritten but never carried into this §7 list, so a session reading
+only this note (not also `structure.json` directly) would have missed it entirely. Josh's own words,
+recorded there: "the
 refactor needs to cover the whole thing not just the scriptures" — the only prior written record
 (`documentation/BIBLE_REGISTRY_ARCHITECTURE.md`) was Bible-corpus-scoped only; the actual intent is
 broader — migrate `data/bible/`, `data/saints/`, `data/menaion/`, `data/horologion/`, `data/kalendar/`,
