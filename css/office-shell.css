@@ -1104,15 +1104,40 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
        entries, and this media query was dead code until the specificity fix
        just above it, so nothing ever caught that an uncapped rail crowds the
        actual prayer text (.uo-page) down to a sliver on a long office.
-       Capped and independently scrollable, matching how .uo-page already
-       scrolls its own overflow rather than growing past its row. */
+       Capped, matching how .uo-page already scrolls its own overflow rather
+       than growing past its row.
+
+       FIXED 2026-09-28 (Josh, live, screenshot: "The site is completely
+       unusable on mobile" -- the rail showing "Kyrie...Antiphon", near the
+       end of Compline, while the content below sat at "Opening Blessing",
+       the very start): this strip used to be independently touch-scrollable
+       (overflow-y:auto + -webkit-overflow-scrolling:touch). On desktop the
+       rail sits beside .uo-page as its own column, so a reader can freely
+       scroll it by hand without losing their place -- the whole office text
+       stays visible the entire time (the reasoning the 2026-09-25 fix that
+       introduced this recorded, in .uo-rail's own base-rule comment above).
+       On mobile the rail is stacked ABOVE the content instead, filling the
+       top third of a small screen exactly where a thumb naturally lands to
+       swipe up and read on -- an ordinary reading swipe that starts on the
+       strip scrolled the RAIL, not the page, and nothing ever scrolled it
+       back: the strip was left showing wherever the reader's thumb had
+       carried it, silently disconnected from the actual content underneath,
+       with no way back except manually swiping the strip itself back up.
+       overflow-y:hidden still fully supports updateRailCurrent()'s own
+       programmatic scrollIntoView() call (confirmed live: an element does
+       not need a visible scrollbar or user-input-driven scroll for
+       Element.scrollTop / scrollIntoView() to work -- only overflow:visible
+       blocks it) -- so the current item still always scrolls into view
+       within the capped strip exactly as before, driven only by the real
+       content position. What's removed is solely the reader's ability to
+       drag the strip somewhere else by hand on a touch device, which is
+       the accidental trap, not a feature worth keeping at this width. */
     .uo-rail {
         border-right: none;
         border-bottom: 1px solid var(--uo-hairline);
         padding: 14px 18px;
         max-height: 34vh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-y: hidden;
     }
 
     .uo-margin {

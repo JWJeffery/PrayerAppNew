@@ -23377,3 +23377,47 @@ suspicious labels found anywhere. No code changed -- verification only. Task #11
 "already fixed, confirmed clean everywhere."
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, continued -- severe mobile rail/content desync, live-reported and FIXED;
+## task #14 partly fixed (stale LOTH text), partly flagged for Josh; task #15 investigated,
+## root cause found, deliberately not yet fixed
+
+Josh: "The site is completely unusable on mobile," screenshot of BCP Compline showing the rail
+("THE ORDER") near the office's end ("Kyrie"..."Antiphon") while the content below sat at the very
+start ("Opening Blessing"). Confirmed via question to Josh this was panels out of sync, not literal
+text overlap.
+
+Root cause: `.uo-rail` is deliberately independently-scrollable on desktop (2026-09-25 fix, so a
+reader can browse the step list by hand without losing their place -- safe there because the whole
+office text stays visible the entire time). The same independent scrollability carried into the
+mobile media query that stacks the rail as a capped top strip ABOVE the content -- sitting exactly
+where a thumb lands to swipe up and read on. An ordinary reading swipe starting there scrolled the
+rail, not the page, with nothing to scroll it back.
+
+Fixed: `.uo-rail`'s mobile rule changed `overflow-y: auto` (+ `-webkit-overflow-scrolling: touch`)
+to `overflow-y: hidden`. Verified live this does not break `updateRailCurrent()`'s own
+`scrollIntoView()` call (an `overflow:hidden` element still fully supports programmatic
+`scrollTop`/`scrollIntoView()` -- only `overflow:visible` blocks it): a real wheel event targeted at
+the rail no longer moves it; scrolling the content 70% into Compline still correctly auto-scrolled
+the rail to show "A Reading" as current, fully visible in the capped strip. `js/office-shell.css` is
+the only file touched.
+
+Task #14: fixed a real stale-content bug (the "Catholic" entry card still advertised "Liturgy of
+the Hours," contradicting this session's own LOTH-abandoned decision) after sweeping the rest of the
+codebase for other live user-facing LOTH mentions (none found; the roadmap's own mentions are inside
+already-superseded governance entries, correctly left as historical record). Found a broader
+naming-consistency question (entry-card vs. mode-grid names disagree for 3 of 5 traditions) and left
+it for Josh rather than guessing at the taxonomy -- the same class of decision the adjacent
+drawer-heading conflict already needed him for. `index.html` is the only file touched by the fixed
+part.
+
+Task #15: root cause found (a later, equal-specificity `!important` rule -- `office.css`'s own
+"viewport stabilization pass" for mobile safe-area/dvh handling -- overrides the base
+`overflow-y:hidden` rule) but deliberately NOT fixed this pass: having just found a real mobile
+regression from underestimating a mobile CSS interaction in this exact area, a same-day second
+change to the same mobile-splash rule was not risked without full separate verification. No file
+changed for this item.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
