@@ -51,8 +51,24 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
-**THREAD 2 OF THE ENTRY BELOW IS NOW INVESTIGATED AND CONFIRMED, 2026-09-28 continued (still not
-built — a scoping decision, not a content-fill).** The assumption held up under an actual grep, as
+**THREAD 2 IS NOW BUILT AND VERIFIED TOO, 2026-09-28 continued further.** Josh answered the scoping
+question below: bounded list. Built a `parishDedication` field on the user profile
+(`js/office-ui.js`), a dropdown in the profile-defaults panel (`index.html`), a new curated
+`data/horologion/parish-dedications.json` (27 entries — the 8 fixed-date Twelve-Great-Feasts-family
+feasts plus 19 saints, every one already carrying a real Kontakion text in `data/menaion/*.json`,
+reused not transcribed), and a new `MenaionResolver.queryCommemorationById(mmdd, id)`
+(`js/menaion-resolver.js`) so a declared dedication resolves regardless of what else the corpus
+ranks higher on that date. `js/horologion-engine.js`'s Lenten Typika Kontakion branch now appends
+the real text when a declared dedication resolves, and keeps the honest disclosure otherwise. Live-
+verified end to end in headless Chromium (dropdown persists, survives reload, renders the real
+Kontakion) plus direct engine checks of five cases (none declared, a saint, a Great Feast, an
+unknown id, and confirming an ordinary non-Lenten day carries no temple clause at all). Full detail:
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section. **Both threads from the entry
+below are now closed.**
+
+**THREAD 2 OF THE ENTRY BELOW WAS INVESTIGATED AND CONFIRMED, 2026-09-28 continued (superseded by
+the paragraph above — this is left in place only for the record of what was checked before Josh's
+answer came in).** The assumption held up under an actual grep, as
 asked: `js/office-ui.js`'s `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` (~line 682) is the complete
 per-user profile schema — `entryPageDefault`, `traditionDefault`, `bookOfNeedsScope`,
 `ministryRole`, `oorSubtradition`, `romanBreviaryLanguage`. Nothing resembling a parish/dedication

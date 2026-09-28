@@ -23157,3 +23157,30 @@ EOR-tagged entries matching the Twelve Great Feasts family, which would seed a b
 picker if this is ever built. Whether to build it at all, and whether to scope it to that bounded
 list or leave it open-ended, is a product decision put to Josh directly rather than guessed at --
 see the session transcript for his answer.
+
+---
+
+## Session 2026-09-28 continued once more -- Thread 2 built: bounded parish-dedication picker,
+Kontakion of the temple now resolves for real when declared
+
+Josh chose the bounded list. Built: a `parishDedication` field on the user profile
+(`UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS`, `js/office-ui.js`), a dropdown in the profile-defaults
+panel (`index.html`), a new curated `data/horologion/parish-dedications.json` (27 entries: the 8
+fixed-date Twelve-Great-Feasts-family feasts plus 19 saints, every one already carrying a real,
+sourced Kontakion text in `data/menaion/*.json` -- nothing new was transcribed to build this list,
+matching what was told to Josh before he decided), and a new
+`MenaionResolver.queryCommemorationById(mmdd, id)` (`js/menaion-resolver.js`) that looks up one
+named commemoration directly rather than reusing `queryDate()`'s rank-based "best commemoration for
+this date" selection -- a declared dedication must render regardless of what else the corpus ranks
+higher on that same calendar date. `_resolveTypikaSlots()`'s Kontakion branch
+(`js/horologion-engine.js`) now appends the real text when a declared dedication resolves, and keeps
+the same honest disclosure as before when none is declared or the declared one's text isn't in the
+corpus.
+
+Verified: direct engine checks of five cases (no dedication; a saint; a Great Feast; an unknown id;
+an ordinary non-Lenten day confirming no temple clause leaks in at all), then live end-to-end in
+headless Chromium -- the dropdown persists to `localStorage`, survives a page reload, updates the
+profile summary text, and a declared dedication's real Kontakion renders in the live Typika office.
+`node --check` clean on all three touched JS files, zero new console errors. Full detail:
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section and `RESUME_PROJECT_NOTE.md`'s
+matching entry, same date. Both of Finding T8's originally-disclosed gaps are now closed.

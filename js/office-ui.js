@@ -692,7 +692,12 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // ADDED 2026-09-27. Which language the Roman Breviary 1960/1962 lane renders
     // in. 'la' (Latin) is the lane's own liturgical-language identity and stays
     // the default; 'en' is an explicit opt-in, not the other way around.
-    romanBreviaryLanguage: 'la'
+    romanBreviaryLanguage: 'la',
+    // ADDED 2026-09-28. See UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES above.
+    // null means "not declared" -- the Kontakion-of-the-temple clause stays
+    // disclosed-not-modeled, exactly today's behaviour, so no existing user
+    // loses or gains anything until they explicitly pick one.
+    parishDedication: null
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -722,6 +727,27 @@ const UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES = new Set(['la', 'en']);
 // Josh, 2026-09-07: more are coming -- this set is expected to grow, and the
 // resolver treats an unrecognised value the same as null (no narrowing).
 const UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES = new Set(['Coptic', 'Armenian', 'Syriac', 'Ethiopian']);
+
+// ADDED 2026-09-28. A Byzantine parish's own dedication (the commemoration a
+// specific church building is named for), used to resolve the Kontakion "of
+// the temple" clause in the Lenten Typika Kontakion sequence (Finding T8).
+// Kept in sync BY HAND with data/horologion/parish-dedications.json's entry
+// ids -- that file is the single source of truth for what's selectable in
+// the UI; this Set only guards a corrupted/stale localStorage value the same
+// way UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES does above. An unrecognised
+// value falls back to null (no dedication declared), never a guess.
+const UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES = new Set([
+    'presentation-lord', 'annunciation-theotokos', 'transfiguration-lord',
+    'dormition-theotokos', 'nativity-theotokos', 'exaltation-holy-cross',
+    'entrance-theotokos', 'nativity-christ',
+    'basil-great-circumcision', 'seraphim-sarov', 'synaxis-forerunner-john',
+    'anthony-great', 'athanasius-cyril-alexandria', 'ephrem-syrian',
+    'three-hierarchs', 'first-second-finding-head-john-baptist',
+    'george-great-martyr', 'mark-evangelist', 'beheading-john-baptist',
+    'protection-theotokos', 'john-chrysostom', 'apostle-philip',
+    'apostle-andrew-first-called', 'sabas-sanctified', 'nicholas-myra',
+    'spyridon-trimythous', 'protomartyr-stephen'
+]);
 // Self-identified liturgical role, used to gate Book of Needs content this
 // project's own governance says shouldn't reach a default lay view
 // (priestly, sacramental, or administered-by-one-person-over-another
@@ -851,6 +877,11 @@ function normalizeUserProfileDefaults(raw) {
     if (profile.oorSubtradition !== null
         && !UNIVERSAL_OFFICE_OOR_SUBTRADITION_VALUES.has(profile.oorSubtradition)) {
         profile.oorSubtradition = null;
+    }
+
+    if (profile.parishDedication !== null
+        && !UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES.has(profile.parishDedication)) {
+        profile.parishDedication = null;
     }
 
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
@@ -1064,6 +1095,20 @@ function setUserProfileOorSubtradition(value) {
     persistUserProfileDefaults(profile);
 }
 
+function setUserProfileParishDedication(value) {
+    const profile = getUserProfileDefaults();
+
+    // The select's empty option means "not declared" -- null. An unrecognised
+    // stored value degrades the same way, never guessing a dedication for
+    // someone who hasn't picked one.
+    profile.parishDedication = UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES.has(value)
+        ? value
+        : null;
+
+    persistUserProfileDefaults(profile);
+    if (selectedMode === 'horologion') requestRender();
+}
+
 function resetUniversalOfficeUserProfile() {
     clearUserEntryDefault();
     showTraditionEntry();
@@ -1106,6 +1151,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const ministryRoleSelect = document.getElementById('profile-ministry-role');
     const oorSubtraditionSelect = document.getElementById('profile-oor-subtradition');
     const romanBreviaryLanguageSelect = document.getElementById('profile-roman-breviary-language');
+    const parishDedicationSelect = document.getElementById('profile-parish-dedication');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -1130,6 +1176,10 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
 
     if (romanBreviaryLanguageSelect) {
         romanBreviaryLanguageSelect.value = normalized.romanBreviaryLanguage;
+    }
+
+    if (parishDedicationSelect) {
+        parishDedicationSelect.value = normalized.parishDedication || '';
     }
 
     if (summary) {
@@ -1163,7 +1213,16 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             ? `Oriental Orthodox commemorations narrowed to ${normalized.oorSubtradition} use, plus those kept across all the Oriental Orthodox churches`
             : 'Oriental Orthodox commemorations shown for every sub-tradition';
 
-        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}.`;
+        // Labels live once, in the <select>'s own <option> text -- not duplicated
+        // here, so this can never drift from data/horologion/parish-dedications.json.
+        const dedicationOptionText = parishDedicationSelect && parishDedicationSelect.selectedOptions.length
+            ? parishDedicationSelect.selectedOptions[0].textContent
+            : null;
+        const dedicationLabel = normalized.parishDedication && dedicationOptionText
+            ? `home parish dedication set to ${dedicationOptionText}, for the Kontakion "of the temple"`
+            : 'no home parish dedication declared, so the Kontakion "of the temple" stays disclosed rather than resolved';
+
+        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}; ${dedicationLabel}.`;
     }
 }
 
@@ -3476,7 +3535,10 @@ async function renderHorologionOffice(officeKey) {
     if (!display) return;
 
     // resolveOffice() is non-throwing: all failures come back as status:"error"
-    const payload = await HorologionEngine.resolveOffice(currentDate, officeKey, { eoMode: selectedEoMode });
+    const payload = await HorologionEngine.resolveOffice(currentDate, officeKey, {
+        eoMode: selectedEoMode,
+        parishDedication: getUserProfileDefaults().parishDedication
+    });
 
     // ── Error state: surface explicitly, never silently blank ────────────────
     // No envelope is published here -- there is no resolved content to describe,
