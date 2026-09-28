@@ -1,5 +1,34 @@
 # RESUME_PROJECT_NOTE.md
 
+**BCP INTERCESSIONS-SPACE TODO, BUILT, 2026-09-28 continued yet again.** Josh asked to go through
+the standing TODOs; this was the only one on the list. Scope was exactly as logged: the rubric
+SPACE only, no actual intercession content (Josh will supply that in a future session).
+
+First confirmed live, before building anything, exactly what Morning/Evening Prayer currently
+render after "A Prayer for Mission": nothing — straight to "Let Us Bless the Lord." Also confirmed
+this rubric ISN'T something to copy from Compline (the original ask's own wording, "like [some
+office] does," read ambiguously) — `data/explanations/anglican.json`'s own gloss on "A Prayer for
+Mission" already cites BCP 1979 pp.57-58 (Rite I) / pp.100-101 (Rite II) for this exact rubric,
+meaning it's Morning/Evening Prayer's OWN rubric that was simply never implemented, not something
+borrowed from elsewhere.
+
+Built as a new fixed component (`components/anglican.json`: `bcp-hymn-anthem-intercessions-rubric`,
+plain text, not rite-dependent — rubrics don't carry the Rite I/II archaic-vs-modern split real
+prayer text does), inserted into both `morning-office` and `evening-office` sequences in
+`data/rubrics.json` right after `VARIABLE_MISSION_PRAYER`, with a small dedicated handler in
+`js/office-ui.js` using `bcpEmitBare()` (not `bcpEmitBlock()`) — a two-line procedural rubric, not
+a titled prayer, so it correctly gets no rail entry, same "no rail entry for bare content"
+convention already established for `VARIABLE_CLOSING_BLESSING` a few lines above it and for the
+Horologion rubric fix earlier this session.
+
+**Verified live in both offices**: the rubric renders in italics, on its own two lines, in exactly
+the right place (between "A Prayer for Mission" and "Let Us Bless the Lord"), confirmed via a
+direct screenshot; confirmed it does NOT appear as its own rail entry (rail item count unchanged,
+18 in both offices); zero new console errors. `components/anglican.json`, `data/rubrics.json`, and
+`js/office-ui.js` are the only files touched.
+
+---
+
 **TASK #15 FIXED FOR REAL, 2026-09-28 continued once more.** Picked back up after Josh explicitly
 asked to fix it, rather than leaving it deferred as a later entry below records. Implemented the
 exact fix that entry's own arithmetic pointed to: `#mode-selection`/`#tradition-entry`'s `max-height`
@@ -231,15 +260,18 @@ margin/padding budget around it, not the content itself. No file changed for thi
 
 ---
 
-**NEW TODO, LOGGED 2026-09-28, NOT YET BUILT — Josh's own words:** "I would like to add a space
+**BUILT 2026-09-28, see the entry near the top of this file for the full account.** The TODO
+below (originally logged "not started") is done: the rubric space now renders in both BCP Morning
+and Evening Prayer, right after "A Prayer for Mission." Kept here only as the original ask, for
+context.
+
+**Original TODO, logged 2026-09-28 — Josh's own words:** "I would like to add a space
 for authorized intercessions in morning and evening prayer of BCP... We will add those
-intercessions later. Add to todo." He attached a screenshot of an existing BCP office (matches
-Compline's own "Prayers and Thanksgivings" pattern) showing the rubric text this should mirror:
-*"Here may be sung a hymn or anthem."* / *"Authorized intercessions and thanksgivings may
-follow."* — a rubric placeholder, not live content. **Scope, as given: add the equivalent rubric
-space to BCP Morning Prayer and Evening Prayer (`js/office-ui.js`'s `renderBcpOffice()`, near
-where each office's own closing prayers/collects are emitted) — the space only, no actual
-intercession texts, which Josh will supply in a future session.** Not started.
+intercessions later. Add to todo." He attached a screenshot of an existing BCP office showing the
+rubric text this should mirror: *"Here may be sung a hymn or anthem."* / *"Authorized intercessions
+and thanksgivings may follow."* — a rubric placeholder, not live content. **Scope, as given: add
+the equivalent rubric space to BCP Morning Prayer and Evening Prayer — the space only, no actual
+intercession texts, which Josh will supply in a future session.**
 
 **Paste this at the start of a new conversation.** It is a handoff document, not a history. The
 permanent record of every decision lives in `AUDIT_GOVERNANCE_LEDGER.md`; the classification of what

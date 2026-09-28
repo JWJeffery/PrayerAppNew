@@ -23468,3 +23468,27 @@ Files touched: `index.html`; `js/office-ui.js`; `js/office-shell.js`; `component
 8 Horologion office JSON files; `css/office-shell.css` (task #15).
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, continued yet again -- BCP intercessions-space TODO built
+
+Josh asked to work through the standing TODOs; this was the only one logged. Scope exactly as
+given: the rubric SPACE only (no intercession content, which Josh will supply later).
+
+Confirmed live first, before building: Morning/Evening Prayer currently render nothing after "A
+Prayer for Mission" -- straight to the closing versicle. Also confirmed via
+`data/explanations/anglican.json`'s own existing gloss (citing BCP 1979 pp.57-58/pp.100-101) that
+this rubric belongs to Morning/Evening Prayer's own text, not something borrowed from another
+office as the original ask's wording could be read.
+
+Built as a new fixed component (`bcp-hymn-anthem-intercessions-rubric`, plain text, not
+rite-dependent), inserted into both sequences right after `VARIABLE_MISSION_PRAYER`, rendered via
+`bcpEmitBare()` (not `bcpEmitBlock()`) so it correctly gets no rail entry -- a two-line procedural
+rubric, not a titled prayer.
+
+Verified live in both offices: renders in italics in the right place, confirmed via screenshot; no
+rail entry added (rail count unchanged); zero new console errors. `components/anglican.json`,
+`data/rubrics.json`, `js/office-ui.js` are the only files touched.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

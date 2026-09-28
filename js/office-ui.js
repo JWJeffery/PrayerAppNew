@@ -5516,6 +5516,25 @@ async function renderBcpOffice() {
             continue;
         }
 
+        // bcp-hymn-anthem-intercessions-rubric — Josh (2026-09-28): a space for
+        // authorized intercessions in Morning/Evening Prayer, after A Prayer for
+        // Mission, matching BCP 1979 pp.57-58 (Rite I) / pp.100-101 (Rite II) --
+        // the same rubric data/explanations/anglican.json's own "A Prayer for
+        // Mission" gloss already described but that was never actually rendered.
+        // The space only, per Josh's own scope -- no actual intercession texts,
+        // which he'll supply in a future session. bcpEmitBare (not bcpEmitBlock):
+        // a two-line procedural rubric, not a titled prayer, so no rail entry --
+        // same "no rail entry for bare content" convention as VARIABLE_CLOSING_BLESSING
+        // just above.
+        if (item === 'bcp-hymn-anthem-intercessions-rubric') {
+            const comp = appData.components.find(c => c.id === 'bcp-hymn-anthem-intercessions-rubric');
+            if (comp) {
+                const t = resolveText(comp, rite) || comp.text || '';
+                bcpEmitBare(container, t, { italic: true });
+            }
+            continue;
+        }
+
         // ── Generic component lookup ──────────────────────────────────────────
         const DISPLAY_LABELS = {
             'bcp-confession-rite1':           'Confession of Sin',
