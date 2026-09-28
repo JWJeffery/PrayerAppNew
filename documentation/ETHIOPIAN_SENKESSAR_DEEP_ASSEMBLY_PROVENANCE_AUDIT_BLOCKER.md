@@ -1,3 +1,11 @@
+> **RESOLVED, 2026-09-28 (confirmed by Josh) — not by the remediation plan below.** The app does not
+> ship the Ethiopian Sa'atat / Senkessar corpus this document describes. The Oriental Orthodox
+> tradition slot serves the Coptic Agpeya instead — confirmed live in `index.html`
+> (`data-entry-tradition="oriental-orthodox"` resolves to "The Coptic Agpeya, Book of Hours," zero
+> references to Ethiopian Sa'atat or `eth-saints-commemoration` anywhere in the file). The 7-step
+> audit/rebuild plan below was never executed and does not need to be — there is nothing shipped to
+> repair. Kept below as historical record of the decision and its reasoning, not as an open task.
+
 # Production Blocker: Ethiopian Senkessar Deep Assembly Provenance Audit
 
 **Authorized by:** Josh  

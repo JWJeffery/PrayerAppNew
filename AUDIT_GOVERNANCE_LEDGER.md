@@ -23522,6 +23522,443 @@ only files touched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
 
+## Session 2026-09-28, continued yet again -- working the unblocked-todo backlog: Task #15 was
+## already closed (stale row corrected), Gloria Patri/Kyrie "duplication" closed as not a defect
+
+Picked up `structure.json`'s open/unblocked items, cross-checked against the live repo before
+touching anything, per standing practice.
+
+**Task #15 (splash grid scrollability):** the resume note listed this as "not yet picked back up,"
+but `4e0f6d0` ("Fix task #15 for real...") had already shipped the real outer-budget `max-height` fix
+to `css/office-shell.css` and was already an ancestor of `main`'s tip. Re-verified live at 1512x900:
+zero body-level scroll, zero console errors. Corrected the stale resume-note row rather than
+re-doing already-shipped work. No code changed.
+
+**Gloria Patri/Kyrie normalization (`structure.json`'s `gloria-patri-normalization` item, open since
+at least 2026-09-04, "RE-VERIFIED... still accurate" as recently as this same day): CLOSED, the
+premise was wrong.** The prior re-verifications had only checked that the phrase "Gloria Patri"
+appeared in multiple component files, never compared what the text actually said. Direct comparison
+this session found the three traditions' wording is genuinely distinct, not duplicated: `common.json`
+`comm-gloria-patri` carries the 1979 BCP text; `east-syriac.json` `esy-gloria-patri` is a separate
+Maclean 1894 (p.2) text, farced with its own Trisagion-form refrain, correctly source-cited and
+correctly kept apart; `coptic.json` has no standalone Gloria Patri component at all -- its
+O'Leary-1911 wording appears only inline, dozens of times, woven into each Agpeya hour's own
+antiphonal prose, not an extractable fragment. Consolidating any of these into one shared component
+would have meant overwriting tradition-correct, source-cited translations with a single wrong one --
+the opposite of a fix. Also corrected: `comm-gloria-patri` was described as unreferenced/dead; it is
+not -- `js/office-ui.js:5097` looks it up live for the BCP lane's optional after-psalm-doxology
+toggle, and the same file's `comm-kyrie` (line 5501) is referenced directly by sequence item literal.
+Both are working, correctly-shared BCP-only fragments, consistent with `audit-ledger.html`'s own
+existing green row for `comm-gloria-patri` (verified 2026-07-07 against BCP1979.pdf). Updated
+`structure.json`'s `gloria-patri-normalization` item and its `architectural_debt` line 3 to `status:
+closed` with the full finding; corrected `RESUME_PROJECT_NOTE.md`'s matching line. Files touched:
+`structure.json`, `RESUME_PROJECT_NOTE.md`. `node -e "JSON.parse(...)"` confirms `structure.json`
+still parses. SEED_VERSION bumped to v390-2026-09-28-gloria-patri-todo-closed-not-a-defect.
+
+## Session 2026-09-28, continued yet again -- sanctoral.json's "58 duplicate ids" resolved: two real
+## identity collisions found and split, one flagged for Josh, the rest confirmed intentional
+
+Investigated `data/saints/sanctoral.json`'s duplicate-`id` finding (first flagged 2026-09-07,
+carried as "not yet resolved" ever since) properly for the first time, rather than re-checking the
+count. Found 42 duplicate-id groups (87 rows; the count drifted slightly from the original 58 since
+2026-09-07). Checked every group for an exact `(id, date)` collision or a data-disclosed different
+identity, not just repeated id strings. **Zero exact (id, date) collisions.** 40 of the 42 groups are
+this corpus's normal, intentional pattern -- the same historical figure commemorated on genuinely
+different dates across different traditions, already the established design throughout this file.
+
+**Two groups were real id collisions between unrelated identities, both self-disclosed by the data's
+own existing text -- not asserted from outside research:**
+
+1. `saint-boniface` covered the Archbishop of Mainz (ANG/LAT tags, June 5) and an unrelated Roman
+   martyr under Diocletian (EOR tag, Dec 19) -- the EOR row's own description already read "a
+   different figure... same name, unrelated identity," never acted on. Split: the martyr row moved to
+   `saint-boniface-of-tarsus`. Checked repo-wide: nothing outside `sanctoral.json` referenced
+   `saint-boniface`, so no other file needed a change.
+2. `mar-michael` covered a human Abbot (COE tag, moveable date ~Dec 19, Diocese of California) and the
+   Archangel Michael (COE tag, "Sunday of the Sixth Week of the [Great] Fast," verified 7/7 years
+   against the Diocese of Western Europe calendar) -- two identities that can even land on the exact
+   same real date in a given year (both resolve to 2026-03-22), so date alone was never a safe
+   disambiguator either. Split: the Archangel row moved to `mar-michael-archangel`. This id is gated
+   by `js/coe-eligibility.js`'s Layer 3 allowlist (COE-II's audited eligibility gate, "requires no
+   further structural changes at this time" per that file's own governance-status note) -- a bare
+   rename would have silently removed the Archangel from display, since the allowlist only recognised
+   the old shared id. Added `mar-michael-archangel` alongside the still-present `mar-michael` in the
+   allowlist, in the same commit, so neither identity's display changes; this is an id-split of an
+   already-audited identity, not new structural work on the gate's own logic.
+
+No content, date, source citation, or `observance` rule was changed for either split -- id only.
+Also normalized five pure capitalization inconsistencies found in the same duplicate-group review
+(same identity confirmed on both sides in every case, e.g. "Saint James The Brother Of The Lord" ->
+"...the Brother of the Lord", "St. John the Baptist" -> "Saint John the Baptist" to match the
+corpus's dominant style, 533 "Saint" vs. 14 "St." prefixes).
+
+**One further group was deliberately left untouched -- flagged for Josh, not guessed at:**
+`mar-abraham` has two COE-tagged, `fixed`-type rows both dated May 2. One is a thin, uncited legacy
+row ("Catholicos and missionary"). The other, properly sourced to the ACOE Diocese of California
+calendar as "Abraham, Doctor of the School of Nisibis," explicitly distinguishes itself from a
+*third*, separately-sourced identity in this same corpus, `mar-abraham-of-kashkar` (founder of the
+Great Monastery, also dated May 2 from the same source) -- but says nothing about the thin row.
+Resolving whether the thin row is leftover cruft duplicating `mar-abraham-of-kashkar`, a real third
+Abraham who happens to share the date, or superseded-but-never-stripped legacy data needs real
+hagiographical judgement this session isn't positioned to make safely. See `RESUME_PROJECT_NOTE.md`
+§7 for the full writeup.
+
+VERIFIED: `data/saints/sanctoral.json` and `js/coe-eligibility.js` both remain syntactically valid;
+entry count unchanged at 1068 (no rows lost or merged); re-ran the duplicate-group scan after the
+edits and confirmed zero remaining name mismatches and exactly one row each under `mar-michael` /
+`mar-michael-archangel` / `saint-boniface` / `saint-boniface-of-tarsus`; loaded
+`js/coe-eligibility.js` directly in Node and confirmed `CoeEligibility.isEligible()` returns true for
+both `mar-michael` and `mar-michael-archangel` after the allowlist update. Files touched:
+`data/saints/sanctoral.json`, `js/coe-eligibility.js`, `RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped
+to v391-2026-09-28-sanctoral-boniface-michael-id-collision-split.
+
+## Session 2026-09-28, continued yet again -- scripts/ dead-code audit was already done (stale
+## resume-note row corrected); its two open loose ends closed; a real coptic.io lead surfaced
+
+The resume note listed "scripts/ audit for Lucy-era dead validation scripts" as "not yet started."
+It was already done: `eb94c0c` ("Remove 107 dead Bible-corpus-audit scripts from the Lucy era")
+built a real transitive reachability graph from package.json's npm-script entry points (92 of 223
+files genuinely reachable), verified with `node --check` plus an actual post-deletion run of a
+reachable script, and deleted only the 107 unreachable files that were also unambiguously
+Bible-corpus-audit-specific -- matching Josh's own instruction exactly, not a blind sweep. That
+commit deliberately excluded five categories from deletion pending individual judgment rather than
+guessing. Corrected the stale resume-note row instead of redoing this work.
+
+Closed both loose ends that commit left open:
+
+1. **`scripts/parse-officium-html.mjs`** ("no clear closed subsystem, left for individual review"):
+   confirmed live, not dead. Directly imported by `scripts/build-roman-breviary-full-sweep.mjs` and
+   `scripts/build-roman-breviary-oracle-blocks.mjs`, and documented as core Roman Breviary tooling in
+   `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` and several ledger entries. Nothing to delete.
+
+2. **`scripts/coptic-mcp-server.py` vs. root `coptic_mcp_server.py`** ("a likely stale duplicate, not
+   deleted without confirming which one Josh actually runs"): turned out not to be a stale-duplicate
+   question at all. Direct diff shows the two files have genuinely diverged in content: the
+   `scripts/` copy carries the `mcp[cli]>=1.10.1,<2.0.0` pin fix and "verified working end-to-end
+   2026-09-07" notes documented in this ledger's own 2026-09-07 "coptic.io MCP wrapper built, tested,
+   connected" entry; the root copy -- the one this project's own notes have always pointed Josh at as
+   the live wrapper to keep running -- is MISSING that fix entirely and still carries the older,
+   unverified docstring. Since an unpinned `pip install "mcp[cli]"` grabs the SDK's breaking 2.x line
+   and fails at import, this is a plausible real explanation for the coptic.io connector's
+   "broken as of 2026-09-11" status logged elsewhere in this file -- a genuinely new lead, not a
+   re-diagnosis of the same dead end. NOT fixed here: this is Josh's own local Codespace
+   infrastructure (which file he actually runs, and how), outside what a repo-side edit can safely
+   resolve without his confirmation. Flagged with the exact diff finding in
+   `RESUME_PROJECT_NOTE.md`'s source-reachability table rather than guessing which file to delete or
+   overwrite.
+
+No files changed in `scripts/` or at the repo root this pass -- both findings were "this is already
+correct" (parse-officium-html.mjs) and "this needs Josh, not a delete" (the coptic MCP divergence).
+Files touched: `RESUME_PROJECT_NOTE.md` only.
+
+## Session 2026-09-28, continued yet again -- mar-abraham resolved: a fabricated citation found and
+## removed, by primary-source check, not inference
+
+Josh asked directly for the `mar-abraham` flag (left open in the previous entry) to actually be
+researched rather than left for later. Found and corrected a scoping error in that earlier writeup
+first: only one of the two `mar-abraham` rows was genuinely dated May 2 (fixed) -- the properly-sourced
+"Doctor of the School of Nisibis" row is a moveable date (cycle: subara week 3 weekday 5), not May 2,
+so the two rows were never actually a same-id-same-date collision with each other. The real
+question was the thin "Catholicos and missionary" row (fixed May 2) against the separately-sourced
+`mar-abraham-of-kashkar` (also fixed May 2).
+
+**Settled with a primary-source check, per this project's own standard, not left on textual
+inference.** The "Catholicos and missionary" row's own `ruleSource` cited two specific documents
+already held in the repo: the ACOE Diocese of California 2024 and 2026 ecclesiastical calendars
+(`data/kalendar/source-witnesses/2024 full.pdf`, `2026cal.pdf`). Installed a working PDF text
+extractor (the sandbox's system `pypdf`/`cryptography` stack was broken -- worked around with an
+isolated venv rather than touching system packages) and read both PDFs directly. **Neither prints
+any "Catholicos and missionary" commemoration for anyone named Abraham, on May 2 or any other date.**
+Both years print exactly one Abraham entry on May 2: "Commemoration of Mar Abraham of Kashkar" --
+matching `mar-abraham-of-kashkar`'s own entry exactly, nothing else. The row's claimed citation was
+false -- not a defensible reading of a real source, a citation that does not exist in the cited
+document. Independently corroborated by the corpus's own text: `mar-abraham-of-kashkar`'s
+`ruleSource` already said its content was "carried over 2026-09-12 from the superseded duplicate row
+of this same identity before it was removed" -- describing this exact row, which evidently was never
+actually deleted in that cleanup, only orphaned under the bare `mar-abraham` id afterward.
+
+**FIXED: deleted the "Catholicos and missionary" row outright** -- not merged or re-sourced, since it
+held no content worth preserving; `mar-abraham-of-kashkar` already fully and correctly covers this May
+2 commemoration. `mar-abraham` now holds exactly one row (Doctor of the School of Nisibis, confirmed
+printed Dec 18 2026 / Dec 20 2024 in the same two source PDFs). VERIFIED: `data/saints/sanctoral.json`
+still parses; exactly one row remains under `id: "mar-abraham"`.
+
+**Bonus finding surfaced by the same PDF read, not acted on:** both calendars also print
+"Commemoration of Mar Abraham of Qidun" every December 14 -- a distinct, well-known East Syriac
+desert hermit, genuinely absent from this corpus under any id. Not added, since this session's task
+was correcting existing data, not expanding the corpus; flagged in `RESUME_PROJECT_NOTE.md` for a
+future session or Josh's own call. Files touched: `data/saints/sanctoral.json`,
+`RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped to
+v392-2026-09-28-mar-abraham-fabricated-citation-removed.
+
+## Session 2026-09-28, continued yet again -- coptic_mcp_server.py / scripts/coptic-mcp-server.py
+## removed, per Josh's direct instruction: built for the Agpeya build, no longer needed now it's done
+
+Josh: "Coptic-MCP-Server.py was created as a connector for when we were building the agpeya. As the
+agpeya is finished, it is no longer needed." Deleted both `coptic_mcp_server.py` (repo root) and
+`scripts/coptic-mcp-server.py` -- the two diverged copies flagged as a live-infrastructure question
+in the previous scripts/-audit entry are now moot. Confirmed no other file referenced either path
+before deleting (checked repo-wide; the only remaining hits are this ledger's own historical entries
+and `RESUME_PROJECT_NOTE.md`'s dashboard note, both updated to reflect the removal rather than left
+pointing at deleted files). Flagged one thing back to Josh at removal time rather than silently
+dropping it: this connector had a secondary use beyond the Agpeya build, cross-verifying dates during
+the OOR sanctoral gap sweep (`§7`, paused not abandoned since 2026-09-12) -- noted in case that
+affects resuming that work, but proceeded with the removal as instructed since it's a reversible
+git-tracked change. If that sweep resumes and a coptic.io connector is wanted again, the old build's
+documented gotchas (pin `mcp[cli]<2.0.0`; use one consistent Python interpreter for install and run)
+stay on record in this ledger's 2026-09-07 entries even though the code itself is gone. `scripts/`
+file count: 116 -> 115. Files touched: `coptic_mcp_server.py` (deleted),
+`scripts/coptic-mcp-server.py` (deleted), `RESUME_PROJECT_NOTE.md`.
+
+## Session 2026-09-28, continued yet again -- "OOR sweep paused, not active" was wrong; the core
+## 13-month gap-fill sweep was actually done 2026-09-11, confirmed by corpus evidence, not prose
+
+Josh asked directly: "Is OOR sweep done?" The resume note's §7 called the whole "Sanctoral (EOR/OOR)
+confirmation-and-gap-sweep" paused, not active, since 2026-09-12 -- misleading for the largest part of
+it, and in direct contradiction with the SAME note's own §8 ("Settled — do not reopen"), which already
+said "The full OOR calendar-year sweep (Jan-Dec)... CLOSED... as of 2026-09-11." Two sections of the
+same document disagreed with each other; §7 had regressed during a rewrite, §8 hadn't.
+
+**Investigation method, since the obvious first check (git history) turned out to be unusable:**
+`git log --all` shows a complete gap between 2026-06-30 and 2026-09-23 -- no commits at all across the
+whole repo for nearly three months of real, extensively-documented work. `07dd77f` (2026-09-23,
+"Threshold wording...") is a full repository restore (16,640 lines added to this ledger alone in one
+commit), not organic history -- confirms this repo's local git ancestry was reset/reimported at some
+point, so commit dates cannot be used to verify anything from that window. Fell back to checking the
+PRIMARY DATA directly instead of any prose summary, per this project's own standing rule.
+
+**Result: the core 13-month gap-fill sweep (find commemorations missing across all 12 Coptic months
+plus the intercalary Pi Kogi Enavot, add them) is genuinely done.** Four entries in
+`data/saints/sanctoral.json` are directly dated "Date ADDED 2026-09-11, part of the OOR gap sweep
+(Coptic month of Mesori)" and "...(intercalary month Pi Kogi Enavot / Nasie)" -- exactly the two
+sections an earlier same-day (2026-09-07) ledger checkpoint had listed as the only ones still
+remaining, in a clear month-by-month progress trail (11 remaining -> 10 -> 9 -> 7 -> 5 -> 3 -> 1 plus
+Pi Kogi Enavot) that IS still present in this ledger's opening entries. The specific "CLOSED
+2026-09-11" summary line an older version of the resume note once carried did not survive into the
+current ledger or `documentation/project-history/`, but the underlying evidence it was describing
+did.
+
+**What's actually still open, correctly separated now:** (1) 18 gap-sweep additions never upgraded
+from "ADDED" to "CONFIRMED" -- each explicitly flagged in its own `ruleSource` as "NOT YET
+CROSS-CHECKED against coptic.io directly," sourced instead from the Wikipedia/St-Takla.org fallback.
+Now harder to resume, since the coptic.io connector this step depended on was deleted in the previous
+entry (built for the finished Agpeya, not for this). (2) A bounded, already-documented list of
+same-figure-different-day editorial questions needing Josh's judgment, not more research -- these were
+always correctly open, never conflated with the sweep's own completion status.
+
+FIXED: rewrote `RESUME_PROJECT_NOTE.md` §7's sanctoral paragraph to state all three pieces separately
+and accurately, resolving the §7/§8 contradiction. No code or corpus data changed this pass --
+`sanctoral.json` was only read, not edited. Files touched: `RESUME_PROJECT_NOTE.md`.
+
+## Session 2026-09-28, continued yet again -- 17 of 18 "ADDED not CONFIRMED" OOR entries confirmed
+## against coptic.io directly over plain HTTPS, no MCP server needed
+
+Josh asked directly to address both open items from the previous entry. Item 2 first (the "ADDED"
+entries): the `coptic_mcp_server.py` removal turned out not to block this at all. `api.coptic.io`'s
+underlying REST API is reachable directly with `WebFetch` -- no MCP wrapper needed --
+`api.coptic.io/api/synaxarium/<YYYY-MM-DD>` for a date lookup, `.../search/query?q=<name>` for a name
+search. Both endpoints confirmed working against a known entry (`Hezekiah`) before trusting them for
+the other 17.
+
+**17 of 18 confirmed with an exact text match:** hezekiah-the-king, saint-john-the-soldier,
+abba-poemen-the-hermit, saint-barsoma-the-naked, joshua-son-of-nun-the-prophet,
+saint-simon-son-of-clopas-bishop-of-jerusalem, saint-jason-of-the-seventy, king-david-the-prophet-coptic,
+presentation-of-mary-at-the-temple-coptic, saint-takla-haymanot-the-ethiopian (confirmed despite being
+Ethiopian-subtradition content, which coptic.io is normally out of scope for -- this specific
+commemoration turned out to be carried in its data anyway), saint-john-the-evangelist-departure-coptic,
+obadiah-the-prophet-coptic, saint-cleopas-the-apostle-of-emmaus, hannah-the-prophetess-mother-of-samuel,
+saint-timon-the-apostle-of-the-seventy, saint-mercurius-of-caesarea-abu-seifein (confirms the 2026-09-11
+date correction specifically, not the original 2026-09-07 date, which was already known wrong), and
+prophet-isaiah-coptic-departure. Each `ruleSource` updated in place: the old "NOT YET CROSS-CHECKED"
+sentence replaced with the exact coptic.io text matched against, dated 2026-09-28.
+
+**One exception, disclosed rather than forced: `saint-onesiphorus-of-the-seventy` (Apr 3).** coptic.io's
+search returns zero results for "Onesiphorus" or "Onesiphorous" (both spellings tried; the search
+endpoint works correctly for other names -- confirmed against a known-good query). Its date endpoint
+for April 3 returns the same two unrelated commemorations (Crucifixion of Our Lord, St. Macarius the
+Great) across 2024, 2025, and 2026 alike -- no trace of Onesiphorus at any of them. This may mean
+coptic.io's own data genuinely omits this figure, not that the corpus's Wikipedia/St-Takla.org-sourced
+date is wrong -- not independently re-derived here, since that would need the printed Synaxarium or
+St-Takla's own per-day page directly, neither attempted this pass. `ruleSource` updated to state this
+finding plainly (CHECKED, still not CONFIRMED) rather than leaving the old "not yet checked" wording,
+which was no longer accurate either way.
+
+VERIFIED: `data/saints/sanctoral.json` still parses (one edit introduced unescaped literal quotes
+inside a JSON string value, caught immediately by the parse check and fixed before proceeding -- a
+concrete example of why this project validates JSON after every edit, not just before); zero remaining
+occurrences of "NOT YET CROSS-CHECKED against coptic.io" anywhere in the file (`grep -c`, confirms all
+18 were addressed one way or the other); entry count unchanged at 1067 (no rows added, removed, or
+merged -- this was a citation-field update only). Files touched: `data/saints/sanctoral.json`,
+`RESUME_PROJECT_NOTE.md`.
+
+## Session 2026-09-28, continued yet again -- 13 of 15 same-figure-different-day editorial questions
+## closed via traditionObservance, confirmed against coptic.io directly; 2 left for Josh's own call
+
+Item 3 of Josh's "address both open items" request (the second open item was itself two parts; this
+closes the second part). The underlying detail behind the "same-figure-different-day" list had gone
+missing from both this ledger and `documentation/project-history/` -- the note's own "dates and
+specifics in Volume 4" pointer was stale, Volume 4 doesn't have them. Recovered the full 15-item list
+from this session's own earlier reading of an older resume-note version, before it was overwritten by
+a later rewrite -- worth recording since it's a second confirmed instance (after the OOR-sweep-closure
+finding earlier this session) of real detail being lost during a note consolidation, not just summarized.
+
+**3 already resolved, just never crossed off:** Bartholomew, Amos, and Clement of Rome each already
+carry a working `traditionObservance.OOR:Coptic` entry from 2026-09-07 -- the mechanism this whole
+class of question needs, already proven and already in use, just not reflected in the note's own
+tracking.
+
+**10 more resolved this session, same mechanism (`traditionObservance.OOR:Coptic`, an additive field --
+no existing date, tag, or content touched), each confirmed against coptic.io directly before writing
+anything:** Seven Holy Youths of Ephesus (Aug 26, coptic.io: "The Martyrdom of the Seven Young Men of
+Ephesus"), Prophet Micah (Aug 28, "The Departure of Micah, the Prophet"), Prophet Malachias (Sep 5,
+"The Departure of St. Malachi, the Prophet"), Bessarion (Aug 31, "The Departure of St. Bessarion, the
+Great" -- reasonable but not ironclad identity match between EOR's "the Wonderworker" and Coptic's "the
+Great," disclosed as such in the row's own note), Holy Prophet Moses (Sep 18, "The Departure of Moses
+the Prophet" -- distinct from the already-sourced Moses the Black), Hilarion the Great (Nov 3, "The
+Departure of the Righteous Father Abba Hilarion"), Anthony the Great (Jan 30, "The Departure of St.
+Anthony the Great (Antonius)" -- distinct from the existing separate relics-translation row at Sep 25),
+Timothy the Apostle (Jan 31, "The Martyrdom of St. Timothy, the Apostle" -- distinct from four other
+already-sourced Timothy figures in this corpus), and Gregory Thaumaturgus/of Neocaesarea (Nov 30, "The
+Departure of Saint Gregory, the Wonder Worker" -- missed from the original 15-item list, found while
+verifying the others, same fix applied since it's the identical question).
+
+**The Holy Innocents (Jan 11) deserves its own line: this one corrects a real prior mistake, not just
+adds a missing date.** A 2026-09-07 session had written `"tagNote": "OOR TAG WITHDRAWN: no Coptic
+attestation found under any phrasing tried"` -- but coptic.io's own API returns an exact, unambiguous
+match at Jan 11 ("The Commemoration of the Slain Children of Bethlehem by the Order of King Herod").
+The 2026-09-07 search used Wikipedia/St-Takla.org phrasing and simply missed it. OOR tag restored, the
+new date added via `traditionObservance`, and the old withdrawal note kept verbatim inside the new
+note rather than deleted, so the correction is traceable.
+
+**One edit introduced a duplicate `traditionObservance` key on `the-holy-innocents`** (the row already
+had one for `EOR`; the fix initially added a second, separate one instead of merging into it) --
+caught by re-reading the entry after editing, not by the JSON parser (which tolerates duplicate keys,
+silently keeping only the last one -- a real risk if this hadn't been checked by hand). Fixed by
+merging both dates into the single existing `traditionObservance` object. Recorded here as a concrete
+argument for why this project reads back JSON-object edits, not just parses them.
+
+**2 of the 15 genuinely still open, left for Josh rather than forced through the same mechanism:**
+
+1. **Julietta/Cyriacus.** coptic.io's search surfaces three separate Coptic entries: Cyriacus alone (3
+   Hator, matching the corpus's existing `saint-cyriacus` row), Cyriacus and Julietta jointly (15 Epip),
+   and Julietta alone (6 Mesori / Aug 12). The existing corpus row for the pair
+   (`mar-cyriacus-and-julitta`, COE, Jul 15) doesn't cleanly correspond to any one of the three. A
+   structural question -- how many identities this actually is and how they map -- not a single date
+   fix.
+2. **St Anne (Nov 20).** coptic.io confirms Anne alone (not jointly with Joachim) at Nov 20. The
+   existing corpus row is the joint `saint-joachim-and-saint-anne` (already OOR-tagged but with no
+   Coptic-specific override, currently defaulting to the shared Western date for OOR too). Attaching
+   Nov 20 there via `traditionObservance` would be simple but slightly imprecise (the source names Anne
+   alone); a separate Anne-only row would be more precise but adds a new identity. Josh's call on
+   structure, not a research gap.
+
+VERIFIED: `data/saints/sanctoral.json` re-validated after every edit; entry count unchanged at 1067
+throughout (10 field-additions to existing rows, zero new or removed rows). Files touched:
+`data/saints/sanctoral.json`, `RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped to
+v394-2026-09-28-oor-same-figure-different-day-13-of-15-resolved.
+
+## Session 2026-09-28, continued yet again -- Josh's direct decisions on the remaining open items:
+## 3 stale governance questions removed, Horologion rename, two traditionObservance splits, and a
+## correction to an earlier "genuinely absent" claim that turned out to be wrong
+
+Josh worked through the open items shown to him and gave direct decisions on each:
+
+**`project_roadmap.json`'s 3 blocking governance questions removed outright** (`bcp-public-hardening`,
+`ethiopian-release-scope`, `hudra-release-scope`) -- Josh: "Remove all of this trash." All three were
+owned by "Lucy" and/or "Marissa," neither an active role; deleted from `governance_questions` rather
+than marked superseded, per his explicit instruction. `project_roadmap.json` re-validated as JSON after
+the removal.
+
+**Task #14 naming: Eastern Orthodoxy's mode-grid card renamed to "Horologion."** Josh confirmed the
+other four naming pairs (Anglican/Daily Office, Catholic/Roman Breviary 1960/1962, Oriental
+Orthodoxy/Coptic Agpeya, and Church of the East pending below) and asked for this one specifically --
+matches the pattern the other renamed lanes already follow (book/office name, not tradition name) and
+the card's own subtitle already said "Byzantine Horologion offices." `index.html`'s `app-mode-title`
+span for that card changed; the entry-card screen's own separate "Eastern Orthodoxy" label (a different
+element, `#tradition-entry`) and the advanced-panel dropdown option were deliberately left alone --
+neither was part of the naming pair being discussed. **Church of the East's proposed rename ("this
+should be the Ramsha?") not applied** -- flagged back to Josh rather than guessed at: the card's own
+subtitle already names the actual office-book as "Hudra" ("The East Syriac Hudra office stream..."),
+and Ramsha is one specific office (Evening Prayer) within the Hudra, not the book/collection name the
+other four cards all use. Possible he meant Hudra and mistyped, or he genuinely wants a specific-hour
+name here unlike every other card; asked rather than assumed.
+
+**Julietta/Cyriacus -- `traditionObservance` split applied, per Josh: "it sounds like they need a
+tradition observance split."** Added `OOR:Coptic` (Jul 22) to the existing joint
+`mar-cyriacus-and-julitta` row (COE, Jul 15), plus the `OOR` tag. CONFIRMED against coptic.io first:
+Jul 22 (15 Epip) prints "The Martyrdom of St. Cyriacus and St. Julietta His Mother" -- the joint
+commemoration, matching this row's own joint identity exactly. The other two coptic.io entries found
+earlier (Cyriacus alone, ~Nov 12, already covered by the existing separate `saint-cyriacus` row;
+Julietta alone, Aug 12, not covered anywhere) are outside this specific fix's scope, noted in the row's
+own `oorDateNote` so they aren't silently forgotten.
+
+**St Anne (Nov 20) -- `traditionObservance` split applied to the joint row, per Josh: "For the Copts,
+use Nov 20. For the West, use the western date."** Added `OOR:Coptic` (Nov 20) to
+`saint-joachim-and-saint-anne`'s existing `traditionObservance` object, alongside its EOR entry (Sep 9,
+2026-09-07). ANG/LAT keep the shared Jul 26 date, unaffected. The row's own prior `tagNote` (2026-09-07,
+"only a partial match found... left unconfirmed") is superseded, not deleted -- kept in place with a
+pointer to the new `oorDateNote`, so the correction is traceable rather than silently overwriting the
+record of what was tried before.
+
+**Mar Abraham of Qidun -- Josh: "add him." Turned out he's already there.** Before writing a new row,
+checked for an id collision first (standard practice) and found `mar-abraham-of-qidun` already exists
+in the corpus -- correctly sourced (ACOE Diocese of California 2024/2026 calendars, same PDFs already
+confirmed this session), same Dec 14 date, same description distinguishing it from
+`mar-abraham-of-kashkar` and `mar-abraham`. Git blame traces it to `07dd77f`, the 2026-09-23 full-repo
+restore -- meaning it predates that restore and has been in the corpus the whole time. **This corrects
+a wrong claim made earlier this session**, when researching the `mar-abraham` duplicate-id bug: this
+row was called "genuinely absent from this corpus under any id" without actually checking the corpus
+directly for that exact id first -- an assumption stated as a finding, the precise failure mode this
+project's own standing rules exist to catch. No row added; entry count unchanged at 1067. Flagged to
+Josh directly rather than silently creating a duplicate.
+
+VERIFIED: `project_roadmap.json` and `data/saints/sanctoral.json` both re-validated as JSON after every
+edit; `data/saints/sanctoral.json` entry count unchanged at 1067 throughout (two field-additions to
+existing rows, zero new or removed rows, confirming no duplicate was created for Mar Abraham of Qidun).
+Files touched: `project_roadmap.json`, `index.html`, `data/saints/sanctoral.json`.
+
+## Session 2026-09-28, continued yet again -- web release built and delivered (3-way split, same as
+## the prior 2026-09-27 delivery); scripts/prepare-web-release.mjs taught to auto-split so this never
+## has to be done by hand again
+
+Josh: "Please push a web deploy." No auto-deploy pipeline exists in this repo (checked thoroughly --
+no `.github/workflows/`, no Pages config, no ftp/rsync/webhook reference anywhere in `scripts/`); the
+real process, per the prior `c8cb82c` delivery (2026-09-27), is manual: `npm run release:web` builds
+`web-release/` + `web-release.zip`, Josh uploads it to the live host himself. Built it from the current
+branch (30 commits ahead of `main` at the time, everything from this session included) rather than
+`main` itself, since `main` doesn't yet carry this session's fixes and there's no separate merge step
+in the established workflow -- not a deviation from precedent, `release:web` doesn't require a specific
+branch, only a checked-out working tree.
+
+`web-release.zip` came out at 44.3MB, over the ~30MB delivery-channel cap discovered during the prior
+delivery. Split by hand into the same 3 independent zips as before (Roman Breviary data / remaining
+data / app shell) and delivered directly to Josh via the session's file-delivery tool.
+
+**Then automated it, per Josh's follow-up: "There is an auto-deploy script. If you need to update it
+so that it automatically splits this into three, do so."** No literal auto-deploy script was found
+(same search as above, re-confirmed) -- `scripts/prepare-web-release.mjs` (behind `npm run
+release:web`) is the closest match, the one script that actually prepares what gets deployed, so
+extended that one. It now always writes the single `web-release.zip` first (kept for local inspection /
+the under-30MB case), checks its size, and only if it's over the cap, also writes the same 3-way split
+automatically -- Roman Breviary data, remaining data, app shell -- using the exact same boundaries as
+the manual split above. Fails loudly (non-zero exit) if any split part is STILL over the cap after
+splitting, rather than silently shipping something the delivery channel would reject.
+
+**One real bug caught before shipping, not after:** the first version of the app-shell split filtered
+by an empty-string "include everything" prefix using plain string-prefix matching, which never actually
+matches anything (an empty string is not a prefix of `"index.html"` under `startswith(p + "/")` -- it
+would need `rel.startswith("/")`, which real relative paths never do). Result: `web-release-app-shell.zip`
+built as a valid but completely empty (0.0MB) zip on the first run. Caught by checking the actual output
+size, not just checking that the script exited zero -- fixed by special-casing an empty prefix to mean
+"match everything," then re-ran and confirmed all three split zips came out with real content (18.1 +
+13.4 + 12.9 = 44.4MB, matching the 44.3MB combined zip within rounding). **Further verified
+independently of the script's own success/failure output:** unzipped all three split zips' file lists
+and confirmed 4,309 total entries, zero duplicates, exactly matching the single zip's own 4,309-entry
+count -- proof the split has no missing or double-counted files, not just that the script didn't crash.
+`.gitignore` updated (`web-release-*.zip` pattern) so these new split-zip filenames can't be accidentally
+committed. All local `web-release/`/`web-release*.zip` build artifacts deleted after verification --
+gitignored already, never committed. Files touched: `scripts/prepare-web-release.mjs`, `.gitignore`.
+
 ## Session 2026-09-28, continued yet again -- GOVERNANCE DECISION: task #14's naming question
 ## resolved and fixed
 
@@ -23595,5 +24032,142 @@ Followed this repo's own established `schema.json`-next-to-its-data convention
 `data/cycles-of-prayer/schema.json`, `data/cycles-of-prayer/episcopal-western-oregon-2026.json`,
 `scripts/cycles-of-prayer/validate.mjs`, and `package.json` (one new script entry) are the only
 files touched.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Task #14 naming question ACTUALLY, FINALLY closed:
+## full church-body names, confirmed directly by Josh, applied identically to both screens
+
+Two prior fixes on two different branches (`179e38f`'s tradition-name-as-title rule; the other
+session's "Hudra"/"Horologion" rename) each looked complete in isolation but, merged together,
+produced a live mismatch between `#tradition-entry` and `#uo-threshold-grid` for Church of the
+East and Eastern Orthodoxy specifically -- caught only by directly re-reading both screens' actual
+`index.html` markup side by side after the merge, not by trusting either branch's own test claims.
+
+**Josh's actual final answer**, given directly: full communion/church-body names, identical on both
+screens, all five lanes -- Anglican Communion, Catholic Church, Church of the East, Eastern
+Orthodox Church, Oriental Orthodox Church. Applied to all ten locations (five `#tradition-entry`
+`<strong>` labels, five `.app-mode-title` spans in `#uo-threshold-grid`); subtitles/office-name text
+unchanged. Verified live in headless Chromium: both screens list the same five names in the same
+order, `selectMode('daily')` still opens the Anglican office correctly, zero console errors.
+`index.html` is the only file touched.
+
+**Found and deliberately left alone**: a third, older, pre-existing naming set on
+`#profile-tradition-default` (the "Default tradition" profile dropdown) -- "The Episcopal Church,"
+"Latin Catholic," "Oriental Orthodoxy," "Eastern Orthodoxy" -- not part of what Josh was asked
+about this round. Flagged for a future session rather than silently folded in.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Task #14, corrected: the flagged-not-fixed profile
+## dropdown, and five more live spots found by an actual repo-wide grep, all fixed
+
+**The previous entry's own "flagged for a future session" line was the wrong call, called out
+directly** -- finding a live, user-facing instance of the exact bug just fixed and choosing to
+write a paragraph about it instead of fixing it is how known problems sit in a repo instead of
+closing. Went back and grepped every `.js`/`.html` file in the repo for each of the five old
+names (excluding historical ledger/audit-log prose, which this project's own standing rule says
+is never rewritten), instead of trusting the two screens already checked were the only ones.
+
+**Six more live, user-facing spots found and fixed**, all to the same confirmed names (Anglican
+Communion, Catholic Church, Church of the East, Eastern Orthodox Church, Oriental Orthodox
+Church): `#profile-tradition-default` (the originally-flagged dropdown, `index.html`);
+`UNIVERSAL_OFFICE_TRADITION_LABELS` (feeds the profile-summary sentence, `js/office-ui.js`);
+`OFFICE_MODE_HEADER_LABELS` (the office page's own title, `js/office-ui.js`);
+`BOOK_OF_NEEDS_TRADITION_CODES`/`BOOK_OF_NEEDS_CONTEXTS` (`js/prayers.js`); `TA_DISPLAY_NAMES`
+(admin Tradition Availability panel, `admin/admin.html` -- also fixed a second, independent
+staleness bug in the same object: `latin-catholic` still said "(Liturgy of the Hours)," a lane
+abandoned 2026-09-27 for the Roman Breviary 1960/1962); and four `scripts/browser-qc-*.js`
+files whose assertions hard-coded the old strings and would have started silently failing (or
+silently testing the wrong thing) the next time anyone ran them.
+
+Verified live in headless Chromium after every edit: profile dropdown, profile-summary sentence,
+and office header (`#office-mode-title`) all show the new names; both entry screens still match
+each other; `selectMode('daily')` still opens the Anglican office; zero console errors. `node
+--check` clean on every changed `.js` file.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Josh overrode the "deliberately left alone" call on
+## the education-layer traditionLabel fields; fixed, plus a plainly-stated (not buried) list of
+## what's still historical record and untouched
+
+The previous entry's own "separate naming convention, not the same bug" reasoning for
+`data/explanations/*.json`'s `traditionLabel` fields was wrong in the way that matters: a
+different naming SYSTEM showing a DIFFERENT name for the same tradition is still the exact
+problem this whole afternoon has been about, whatever its provenance. Fixed all five: `anglican
+.json` "Anglican" -> Anglican Communion; `byzantine.json` "Byzantine" -> Eastern Orthodox Church;
+`coptic.json` "Coptic Orthodox" -> Oriental Orthodox Church; `latin.json` "Latin Catholic" ->
+Catholic Church; `east-syriac.json` already correct. Only the tradition-name prefix changed --
+the " -- Office (detail)" suffix (source/edition specifics) is untouched. Also normalized
+`js/prayers.js`'s one remaining slash-form "Anglican/Episcopal" to plain "Anglican", matching the
+adjectival pattern already used for the other four traditions in that same object.
+
+Verified live: `Explanations.load(code).traditionLabel` returns the new text for all five codes
+(ANG/BYZC/OOR-COP/COE/LAT) in headless Chromium, zero console errors.
+
+**What's still deliberately untouched, stated here explicitly rather than left to be
+rediscovered:** `structure.json`/`project_roadmap.json`'s `browser_qc.covered` arrays and
+`structure.json`'s onboarding-design `decision` narrative are frozen logs of specific past runs
+and past design reasoning -- the same category as this ledger's own dated entries, which this
+project's standing rule says are never rewritten after the fact. `project_roadmap.json`'s
+`roman_loth` section's `ui_label` is dead metadata inside an already-abandoned, superseded lane,
+unreachable by any live code path. `sanctoral.json`'s two `description` fields quote a Wikipedia
+infobox verbatim as sourcing evidence, not this app's own label. The Cycles of Prayer corpus's
+`body`/`diocese` fields correctly record a real diocese's actual legal name. None of these are a
+live tradition selector; changing any of them anyway is a decision for whoever reads this next to
+make on purpose, not infer from this entry's silence.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- the profile/user system: built, after Josh answered
+## its three open scoping questions directly
+
+The long-open "profile/user system" TODO (role-ladder unification, super-user enforcement, ship
+order all left unresolved by the session that first recorded it) is now built, after Josh answered
+all three directly: role field reuses the existing `ministryRole` ladder; super-user is a soft/
+cosmetic gate for now, real auth deferred; built as one pass.
+
+Extends the EXISTING `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` (`js/office-ui.js`) rather than a
+second parallel system -- `displayName`, `isSuperUser`, `cycleOfPrayerDiocese`/
+`cycleOfPrayerParish`, `onboardingComplete`, all normalized the same defensive way (an unrecognised
+stored value degrades to the safe default, never a guess) as every field already there.
+
+- **Super-user**: soft/cosmetic only, explicitly not real access control -- localStorage is
+  editable by any visitor. Toggle lives ONLY in the Admin Console (`admin/admin.html`'s new panel,
+  reading/writing `universalOffice.userProfile.v1` directly since that page doesn't load
+  `js/office-ui.js`), never on the public profile panel.
+- **Bible Browser** gated to `isSuperUser` -- previously had zero gating at all, unlike the
+  adjacent Admin Console button. Gated at both the button (`syncBibleBrowserSuperUserGate()`) and
+  `openBibleBrowser()`'s own entry point, covering the `/tools/bible` URL auto-restore path too.
+- **Diocese/Parish** picker, wired into the BCP "authorized intercessions" rubric via a rebuilt
+  `js/cycles-of-prayer.js` (an earlier same-session attempt at this exact module was correctly
+  reverted for being unconfirmed at the time -- rebuilt now that it's confirmed in scope).
+  `renderCycleOfPrayerLine()` resolves against the OFFICE's own displayed date, never "today",
+  and flags the reader's own declared home-parish week when it comes up.
+- **One-time onboarding prompt**, shown once per browser after existing tradition-entry routing
+  has already landed -- never re-asks tradition, only name + role. Its role `<select>` clones
+  `#profile-ministry-role`'s real DOM options live rather than a second hard-coded list.
+
+**Verified live in headless Chromium, 19 + 4 checks, zero console errors**: onboarding shows once
+and never again; name/role save and echo correctly; diocese selection populates exactly 63 real
+parishes; two different real office dates (Jan 4 -> Albany St. Alban, Jan 11 -> Ashland Trinity)
+each render their own correct week, with the home-parish note appearing only for the actually-
+matching week; Bible Browser hides/shows/actually-opens/refuses correctly across every
+super-user-flag transition; the Admin Console toggle and `index.html` agree cross-page.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued once more -- audit-user-profile-browser-qc-runner.mjs deleted,
+## per Josh's explicit call after asking what it actually did
+
+The prior entry flagged this script's 4 stale markers (referencing an "Office Defaults" button an
+unrelated, earlier commit had already correctly removed) rather than fixing them blind. Josh asked
+what the script was actually for; on inspection it never ran a browser test at all -- it read
+`scripts/browser-qc-user-profile-defaults-sweep.js` (the real test) as plain text and checked for
+certain phrases, a cheap proxy for "did someone gut this test." Confirmed it is wired into nothing
+(no CI, no pre-commit hook, no other script in this repo runs it) -- its failure had zero real
+consequence, only ongoing upkeep cost. Deleted, per Josh's explicit choice, along with its
+`package.json` entry. The real test file it was checking is untouched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

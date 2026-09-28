@@ -5239,16 +5239,26 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     const _ktKon    = _ktQR.kontakion        || null;
                     const _ktStatus = _ktQR.kontakion_status || null;
                     const _ktName   = _ktQR.name             || 'the feast';
+                    const _ktIkos   = _ktQR.ikos             || null;
 
                     if (_ktKon && _ktKon.text) {
                         section.items[i] = {
                             type:       'text',
                             key:        'kontakion',
                             label:      _ktKon.title || `Kontakion of ${_ktName}`,
-                            text:       _ktKon.text,
+                            // v1.3: append the Ikos immediately after the Kontakion when the
+                            // corpus carries one, matching the pair's own liturgical placement
+                            // (Canon, after Ode 6) rather than a separate rail item -- the
+                            // vast majority of commemorations have no Ikos text in the corpus
+                            // at all, so this stays silent for them exactly as before.
+                            text:       _ktIkos && _ktIkos.text
+                                            ? `${_ktKon.text}\n\nIkos. ${_ktIkos.text}`
+                                            : _ktKon.text,
                             tone:       _ktKon.tone || null,
                             source:     'Menaion',
-                            resolvedAs: 'orthros-menaion-kontakion'
+                            resolvedAs: _ktIkos && _ktIkos.text
+                                            ? 'orthros-menaion-kontakion-ikos'
+                                            : 'orthros-menaion-kontakion'
                         };
                         continue;
                     }
@@ -9593,28 +9603,38 @@ async function _loadInterhourFixedData(officeKey) {
 // Typika's T7). Both are now fixed-data-driven: every placeholder key in the
 // (now-corrected) skeleton is resolved generically from that office's own
 // -fixed.json file, no per-office key maps or Menaion lookups needed.
-async function _resolveInterhourSlots(officeKey, sections, dateObj) {
-    // Finding IH7 correction (2026-09-26): appointment gate for the Inter-Hours.
-    // UNABHOR1997 p.93 -- "[According to present-day usage, the Inter-Hours are
-    // said only on the first day of the Apostles' Fast, and on the first day of
-    // the Nativity Fast if it begin on a weekday. When the Inter-Hours are said,
-    // there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
-    // not appointed during Great Lent when the kathismata and readings from The
-    // Ladder are appointed at the Hours.]" The Nikolsky exclusion never actually
-    // overlaps either appointed day (the Apostles' Fast begins well after Pascha;
-    // the Nativity Fast begins fixed-calendar Nov. 15) -- it is cited in the
-    // disclosure text below for completeness, not applied as a separate branch.
-    let interhourAppointed = false;
+// Finding IH7 correction (2026-09-26): appointment gate for the Inter-Hours.
+// UNABHOR1997 p.93 -- "[According to present-day usage, the Inter-Hours are
+// said only on the first day of the Apostles' Fast, and on the first day of
+// the Nativity Fast if it begin on a weekday. When the Inter-Hours are said,
+// there is no Liturgy. According to the Nikolsky Ustav the Inter-Hours are
+// not appointed during Great Lent when the kathismata and readings from The
+// Ladder are appointed at the Hours.]" The Nikolsky exclusion never actually
+// overlaps either appointed day (the Apostles' Fast begins well after Pascha;
+// the Nativity Fast begins fixed-calendar Nov. 15) -- it is cited in the
+// disclosure text below for completeness, not applied as a separate branch.
+//
+// v7.4: extracted to its own function (was inlined in _resolveInterhourSlots)
+// and exposed on the public API so the office picker (js/office-ui.js) can
+// hide the four Interhour options on days they're not appointed, instead of
+// only disclosing "Not Appointed" after the reader has already picked one.
+function isInterhourAppointed(dateObj) {
     try {
         if (_isApostlesFastFirstDay(dateObj)) {
-            interhourAppointed = true;
-        } else if (_isNativityFastFirstDay(dateObj)) {
+            return true;
+        }
+        if (_isNativityFastFirstDay(dateObj)) {
             const dow = dateObj.getDay();
-            interhourAppointed = (dow >= 1 && dow <= 5);
+            return (dow >= 1 && dow <= 5);
         }
     } catch (e) {
-        console.warn('[HorologionEngine] _resolveInterhourSlots: appointment gate failed:', e.message);
+        console.warn('[HorologionEngine] isInterhourAppointed: appointment gate failed:', e.message);
     }
+    return false;
+}
+
+async function _resolveInterhourSlots(officeKey, sections, dateObj) {
+    const interhourAppointed = isInterhourAppointed(dateObj);
 
     if (!interhourAppointed) {
         sections.length = 0;
@@ -9717,7 +9737,8 @@ return {
     resolveOffice,
     validateOfficePayload,
     getCalendarSummary,
-    getLiturgicalSeason
+    getLiturgicalSeason,
+    isInterhourAppointed
 };
 })();
 

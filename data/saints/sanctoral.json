@@ -21,7 +21,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/12-masra.html), the same witness family (CopticChurch.net/St-Takla.org/1995 printed Synaxarium) used throughout this sweep -- coptic.io itself was unreachable this session (connector down; see resume note). Misra 4 = 10 August (Gregorian, common year) prints: \"Departure of Hezekiah the King.\" A major Old Testament king with no prior entry in this corpus under any name. Confirmed genuinely absent before adding. NOT YET CROSS-CHECKED against coptic.io directly -- confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/12-masra.html), the same witness family (CopticChurch.net/St-Takla.org/1995 printed Synaxarium) used throughout this sweep -- coptic.io itself was unreachable this session (connector down; see resume note). Misra 4 = 10 August (Gregorian, common year) prints: \"Departure of Hezekiah the King.\" A major Old Testament king with no prior entry in this corpus under any name. Confirmed genuinely absent before adding. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"Departure of Hezekiah the King,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -44,7 +44,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table. Misra 5 = 11 August (Gregorian, common year) prints: \"Departure of St. John the Soldier.\" This figure (also venerated in the Byzantine tradition as Righteous John the Warrior/Voin, 30 July Old Style) has no entry anywhere in this corpus under any name or tradition -- confirmed genuinely absent before adding. This addition is scoped to OOR only, on this Coptic-sourced date; a separate EOR date for the same identity, if one exists, is not addressed here. NOT YET CROSS-CHECKED against coptic.io directly.",
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (Coptic month of Mesori) against St-Takla.org's full-month Synaxarium table. Misra 5 = 11 August (Gregorian, common year) prints: \"Departure of St. John the Soldier.\" This figure (also venerated in the Byzantine tradition as Righteous John the Warrior/Voin, 30 July Old Style) has no entry anywhere in this corpus under any name or tradition -- confirmed genuinely absent before adding. This addition is scoped to OOR only, on this Coptic-sourced date; a separate EOR date for the same identity, if one exists, is not addressed here. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of St. John the Soldier,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -67,7 +67,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/13-nasie.html). El-Nasi 4 = 9 September (Gregorian, common year) prints: \"Departure of St. Poimen, the Hermit.\" Abba Poemen is one of the most widely quoted Desert Fathers in the Apophthegmata Patrum and had no entry anywhere in this corpus under any spelling (Poemen/Poimen) -- confirmed genuinely absent before adding, a real gap in a major figure. NOT YET CROSS-CHECKED against coptic.io directly.",
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table (st-takla.org/books/en/church/synaxarium/13-nasie.html). El-Nasi 4 = 9 September (Gregorian, common year) prints: \"Departure of St. Poimen, the Hermit.\" Abba Poemen is one of the most widely quoted Desert Fathers in the Apophthegmata Patrum and had no entry anywhere in this corpus under any spelling (Poemen/Poimen) -- confirmed genuinely absent before adding, a real gap in a major figure. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of St. Poimen, the Hermit,\" exact match (alongside an unrelated second commemoration, St. Leparius of Rome, not addressed here). No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -90,7 +90,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table. El-Nasi 5 = 10 September (Gregorian, common year) prints: \"Departure of St. Barsoma, the 'Naked.'\" Confirmed genuinely absent from this corpus under any spelling before adding. NOTE, left open rather than acted on: the same day's table also lists \"Departure of the Righteous Amos, the Prophet\" -- this corpus's existing Amos row (prophet-amos, EOR+OOR, 15 June) is NOT moved or duplicated here, since that row's OOR tag may already rest on a different, unverified date; this is a same-figure-different-day question for a future pass, not resolved in this one. NOT YET CROSS-CHECKED against coptic.io directly.",
+      "ruleSource": "Date ADDED 2026-09-11, part of the OOR gap sweep (intercalary month Pi Kogi Enavot / Nasie) against St-Takla.org's full-month Synaxarium table. El-Nasi 5 = 10 September (Gregorian, common year) prints: \"Departure of St. Barsoma, the 'Naked.'\" Confirmed genuinely absent from this corpus under any spelling before adding. NOTE, left open rather than acted on: the same day's table also lists \"Departure of the Righteous Amos, the Prophet\" -- this corpus's existing Amos row (prophet-amos, EOR+OOR, 15 June) is NOT moved or duplicated here, since that row's OOR tag may already rest on a different, unverified date; this is a same-figure-different-day question for a future pass, not resolved in this one. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of St. Barsoma, the 'Naked'\" alongside \"The Departure of the Righteous Amos, the Prophet\" (the same open Amos question noted above, still not resolved by this check) and two unrelated entries. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -113,7 +113,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paoni) against Wikipedia's 'Coptic Synaxarium of the month of Paoni' page (episteme.tllm.fr/wiki/Paoni mirror), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Paoni 26 = 3 July (Gregorian, common year) prints: 'Departure of Joshua the Prophet, son of Nun.' Confirmed genuinely absent from THIS corpus (data/saints/sanctoral.json) before being added. NOTE ON A DIFFERENT SYSTEM: Joshua already has a SIN entry in the separate Anglican Kalendar candidate matrix (synaxarium-review/, data/kalendar/july/) for 3 July, added by Josh directly in an earlier session for unrelated reasons (a SIN slot needing a figure, and Joshua being his own namesake) -- that system is entirely distinct from this one (see AUDIT_GOVERNANCE_LEDGER.md, 2026-09-07: 'synaxarium-review/ is a separate project'), and this addition here is independently justified by the Coptic Synaxarium, not derived from or dependent on that other entry. Both systems now correctly carry Joshua on 3 July for their own reasons. NOT YET CROSS-CHECKED against coptic.io directly.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paoni) against Wikipedia's 'Coptic Synaxarium of the month of Paoni' page (episteme.tllm.fr/wiki/Paoni mirror), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Paoni 26 = 3 July (Gregorian, common year) prints: 'Departure of Joshua the Prophet, son of Nun.' Confirmed genuinely absent from THIS corpus (data/saints/sanctoral.json) before being added. NOTE ON A DIFFERENT SYSTEM: Joshua already has a SIN entry in the separate Anglican Kalendar candidate matrix (synaxarium-review/, data/kalendar/july/) for 3 July, added by Josh directly in an earlier session for unrelated reasons (a SIN slot needing a figure, and Joshua being his own namesake) -- that system is entirely distinct from this one (see AUDIT_GOVERNANCE_LEDGER.md, 2026-09-07: 'synaxarium-review/ is a separate project'), and this addition here is independently justified by the Coptic Synaxarium, not derived from or dependent on that other entry. Both systems now correctly carry Joshua on 3 July for their own reasons. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of the Great Prophet Joshua Son of Nun,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -136,7 +136,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Epip) against Wikipedia's 'Coptic Synaxarium of the month of Epip' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Epip 9 = 16 July (Gregorian, common year) prints: 'Martyrdom of St. Simon Cleophas, the Apostle.' Identified as Simon son of Clopas, second Bishop of Jerusalem (successor to James the Just), a distinct figure from Simon Peter and Simon the Zealot, both already present in this corpus under other names and dates. Confirmed genuinely absent under this identity before adding. FURTHER FINDINGS FROM EPIP, not acted on: 'Thaddaeus, the Apostle' (Epip 2 / 9 July) very likely the same figure already carried as 'Saint Jude Thaddeus' (19 June, ANG/LAT/EOR), on a different day -- not added as a second row. Peter and Paul's martyrdom (Epip 5 / 12 July) differs from the existing 29 June entry (ANG/LAT/EOR/OOR, confirmed) -- same figures, different day, not duplicated. Bishoy (Epip 8 / 15 July) and Shenouda (Epip 7 / 14 July) both EXACTLY MATCH existing OOR-confirmed rows -- useful independent validation that those two confirmations are correct. 'Mercurius and Ephraem' (Epip 30 / 6 August): Mercurius is already the corpus's Paopi addition; 'Ephraem' here is a MARTYR, and the corpus's only Ephraim entry is 'Venerable Ephraim the Syrian' (28 January, EOR only, NOT tagged OOR), the great Syriac hymnographer who died peacefully -- these read as two different people sharing a name rather than one figure on two days, and this corpus's own resume note had already flagged Ephrem the Syrian as needing a re-attempted search with different terms; that flag is not resolved by this finding and remains open, since a martyred Ephraem is not evidence about the Syrian father. NOT YET CROSS-CHECKED against coptic.io directly for Simon; confirm before treating as fully CONFIRMED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Epip) against Wikipedia's 'Coptic Synaxarium of the month of Epip' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (1995). Epip 9 = 16 July (Gregorian, common year) prints: 'Martyrdom of St. Simon Cleophas, the Apostle.' Identified as Simon son of Clopas, second Bishop of Jerusalem (successor to James the Just), a distinct figure from Simon Peter and Simon the Zealot, both already present in this corpus under other names and dates. Confirmed genuinely absent under this identity before adding. FURTHER FINDINGS FROM EPIP, not acted on: 'Thaddaeus, the Apostle' (Epip 2 / 9 July) very likely the same figure already carried as 'Saint Jude Thaddeus' (19 June, ANG/LAT/EOR), on a different day -- not added as a second row. Peter and Paul's martyrdom (Epip 5 / 12 July) differs from the existing 29 June entry (ANG/LAT/EOR/OOR, confirmed) -- same figures, different day, not duplicated. Bishoy (Epip 8 / 15 July) and Shenouda (Epip 7 / 14 July) both EXACTLY MATCH existing OOR-confirmed rows -- useful independent validation that those two confirmations are correct. 'Mercurius and Ephraem' (Epip 30 / 6 August): Mercurius is already the corpus's Paopi addition; 'Ephraem' here is a MARTYR, and the corpus's only Ephraim entry is 'Venerable Ephraim the Syrian' (28 January, EOR only, NOT tagged OOR), the great Syriac hymnographer who died peacefully -- these read as two different people sharing a name rather than one figure on two days, and this corpus's own resume note had already flagged Ephrem the Syrian as needing a re-attempted search with different terms; that flag is not resolved by this finding and remains open, since a martyred Ephraem is not evidence about the Syrian father. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Martyrdom of St. Simon Cleophas, the Apostle,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "red",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- confirmed via a Coptic liturgical-vestments researcher who checked the canons directly and found none beyond \"the tunic must be white\", tasbeha.org community discussion): red is the commonly-observed color for martyr commemorations. This entry's own id/name/description identifies it as a martyrdom."
     },
@@ -159,7 +159,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Pashons) against Wikipedia's 'Coptic Synaxarium of the month of Pashons' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Pashons 3 = 11 May (Gregorian, common year) prints: 'The departure of Saint Jason, one of the Seventy Apostles.' Confirmed genuinely absent from this corpus before being added. TWO MONTHS CHECKED TOGETHER (Parmouti 9 Apr - 8 May, Pashons 9 May - 7 Jun): Parmouti yielded no clean additions -- every major figure checked (Aaron the High Priest, James son of Zebedee, Ezekiel, Joachim) is already present on a different day, and 'St. Christopher' in the Parmouti source was left untouched rather than risked, since the corpus's only existing Christopher (Magallanes, a 20th-century Mexican martyr) is clearly a different identity and nothing in the source clarifies which Christopher is meant. Pashons yielded this one addition after two more near-misses were caught by broad search: 'Job' already exists (6 May, EOR); 'Junia' already exists paired with Andronicus (17 May, EOR); 'Shenoute' already exists under the spelling 'Shenouda' (14 July, OOR). NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Pashons) against Wikipedia's 'Coptic Synaxarium of the month of Pashons' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Pashons 3 = 11 May (Gregorian, common year) prints: 'The departure of Saint Jason, one of the Seventy Apostles.' Confirmed genuinely absent from this corpus before being added. TWO MONTHS CHECKED TOGETHER (Parmouti 9 Apr - 8 May, Pashons 9 May - 7 Jun): Parmouti yielded no clean additions -- every major figure checked (Aaron the High Priest, James son of Zebedee, Ezekiel, Joachim) is already present on a different day, and 'St. Christopher' in the Parmouti source was left untouched rather than risked, since the corpus's only existing Christopher (Magallanes, a 20th-century Mexican martyr) is clearly a different identity and nothing in the source clarifies which Christopher is meant. Pashons yielded this one addition after two more near-misses were caught by broad search: 'Job' already exists (6 May, EOR); 'Junia' already exists paired with Andronicus (17 May, EOR); 'Shenoute' already exists under the spelling 'Shenouda' (14 July, OOR). CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of St. Jason, one of the Seventy disciples,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -182,7 +182,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paremhat) against Wikipedia's 'Coptic Synaxarium of the month of Paremhat' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paremhat 25 = 3 April (Gregorian, common year) prints: 'The martyrdom of Saint Onesiphorous, one of the Seventy Apostles.' Confirmed genuinely absent from this corpus before being added. TWO NEAR-MISSES CAUGHT BEFORE WRITING, worth recording as a method note: 'Paul the First Hermit' (Meshir 2 / 9 February) and 'Daniel the Prophet' (Paremhat 23 / 1 April) both looked absent under a narrow phrase search, but are already present as 'Saint Paul of Thebes in Egypt' (15 January, EOR) and 'Prophet Daniel' (1 April, OOR, CONFIRMED) -- the latter an exact date match to this Coptic source, not merely the same identity. Word-order and naming-convention differences defeated the first search; a second, broader check caught both before either was added as a duplicate. NOT YET CROSS-CHECKED against coptic.io directly for Onesiphorus -- found via the compiled Wikipedia table; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paremhat) against Wikipedia's 'Coptic Synaxarium of the month of Paremhat' page, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paremhat 25 = 3 April (Gregorian, common year) prints: 'The martyrdom of Saint Onesiphorous, one of the Seventy Apostles.' Confirmed genuinely absent from this corpus before being added. TWO NEAR-MISSES CAUGHT BEFORE WRITING, worth recording as a method note: 'Paul the First Hermit' (Meshir 2 / 9 February) and 'Daniel the Prophet' (Paremhat 23 / 1 April) both looked absent under a narrow phrase search, but are already present as 'Saint Paul of Thebes in Egypt' (15 January, EOR) and 'Prophet Daniel' (1 April, OOR, CONFIRMED) -- the latter an exact date match to this Coptic source, not merely the same identity. Word-order and naming-convention differences defeated the first search; a second, broader check caught both before either was added as a duplicate. CHECKED against coptic.io 2026-09-28, still not CONFIRMED: api.coptic.io's search endpoint returns zero results for 'Onesiphorus' and 'Onesiphorous' (both spellings tried; the search endpoint works correctly for other names, e.g. returns an exact match for 'Hezekiah'), and its date endpoint for 3 April (2024, 2025, and 2026 alike, all returning the same two unrelated commemorations -- Crucifixion of Our Lord, St. Macarius the Great) shows no trace of this figure either. This may mean api.coptic.io's own data genuinely omits Onesiphorus under any spelling, not that the date is wrong -- not independently re-derived here. Remains ADDED on Wikipedia/St-Takla.org sourcing alone; genuinely unconfirmed by a second source, not merely unchecked. Flag for Josh or a future session with primary-source access (the printed Synaxarium itself, or St-Takla.org's own per-day page directly) before treating this one as settled.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -205,7 +205,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 23 = 1 January (Gregorian, common year) prints: “Departure of David, the Prophet and King”. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout, Paopi and Hathor passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 23 = 1 January (Gregorian, common year) prints: “Departure of David, the Prophet and King”. Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of David, the Prophet and King,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -228,7 +228,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 3 = 12 December (Gregorian, common year) prints: “Entrance of St. Mary into the Temple at Jerusalem”. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout, Paopi and Hathor passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 3 = 12 December (Gregorian, common year) prints: “Entrance of St. Mary into the Temple at Jerusalem”. Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Entrance of Saint Mary into the Temple at Jerusalem,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -251,7 +251,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 24 = 2 January (Gregorian, common year) prints: “Commemoration of the Nativity of St. Takla Haymanot, the Ethiopian”. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout, Paopi and Hathor passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED. Tagged with the existing oorSubtradition:'Ethiopian' field, consistent with the 32 rows already scoped that way for Armenian/Syriac/Ethiopian content coptic.io cannot and should not be asked to confirm."
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Koiak) against Wikipedia's 'Coptic Synaxarium of the month of Koiak' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Koiak 24 = 2 January (Gregorian, common year) prints: “Commemoration of the Nativity of St. Takla Haymanot, the Ethiopian”. Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Birth of St. Takla Haymanot, the Ethiopian\" (Birth = Nativity), exact match despite being outside coptic.io's normal Armenian/Syriac/Ethiopian exclusion -- this specific commemoration is apparently carried in its Coptic Synaxarium data regardless. No longer just ADDED. Tagged with the existing oorSubtradition:'Ethiopian' field, consistent with the 32 rows already scoped that way for Armenian/Syriac/Ethiopian content coptic.io cannot and should not be asked to confirm."
     },
     {
       "id": "saint-john-the-evangelist-departure-coptic",
@@ -272,7 +272,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Tobi) against Wikipedia's 'Coptic Synaxarium of the month of Tobi' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Tobi 4 = 12 January (Gregorian, common year) prints: “Departure of St. John the Evangelist”. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout, Paopi and Hathor passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED. Surprising that a figure this major -- one of the Twelve, author of a Gospel, three Epistles and Revelation -- had no entry under any name in this corpus before this addition.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Tobi) against Wikipedia's 'Coptic Synaxarium of the month of Tobi' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Tobi 4 = 12 January (Gregorian, common year) prints: “Departure of St. John the Evangelist”. Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of St. John the Evangelist and Theologian,\" exact match. No longer just ADDED. Surprising that a figure this major -- one of the Twelve, author of a Gospel, three Epistles and Revelation -- had no entry under any name in this corpus before this addition.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -295,7 +295,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Tobi) against Wikipedia's 'Coptic Synaxarium of the month of Tobi' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Tobi 15 = 23 January (Gregorian, common year) prints: “Departure of Obadiah, the Prophet”. Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout, Paopi and Hathor passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Tobi) against Wikipedia's 'Coptic Synaxarium of the month of Tobi' table, citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Tobi 15 = 23 January (Gregorian, common year) prints: “Departure of Obadiah, the Prophet”. Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of Obadiah, the Prophet,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -318,7 +318,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Hathor) against Wikipedia's 'Coptic Synaxarium of the month of Hathor' table (en.wikipedia.org/wiki/Hathor_(month)), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Hathor 1 = 10 November (Gregorian, common year) prints: 'Commemoration of St. Cleopas the Apostle and His Companion.' A named Gospel figure (Luke 24:13-35) with no entry under any name in this corpus prior to this addition. Confirmed genuinely absent before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout and Paopi passes; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Hathor) against Wikipedia's 'Coptic Synaxarium of the month of Hathor' table (en.wikipedia.org/wiki/Hathor_(month)), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Hathor 1 = 10 November (Gregorian, common year) prints: 'Commemoration of St. Cleopas the Apostle and His Companion.' A named Gospel figure (Luke 24:13-35) with no entry under any name in this corpus prior to this addition. Confirmed genuinely absent before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Commemoration of Saint Cleopas the Apostle and His Companion,\" matching (alongside an unrelated joint martyrdom entry). No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -341,7 +341,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paopi) against Wikipedia's 'Coptic Synaxarium of the month of Paopi' table (en.wikipedia.org/wiki/Paopi), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paopi 6 = 16 October (Gregorian, common year) prints: 'Departure of the Hannah the Prophetess, mother of Samuel, the Prophet.' Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout pass; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paopi) against Wikipedia's 'Coptic Synaxarium of the month of Paopi' table (en.wikipedia.org/wiki/Paopi), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paopi 6 = 16 October (Gregorian, common year) prints: 'Departure of the Hannah the Prophetess, mother of Samuel, the Prophet.' Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of the Righteous Hannah, the Prophetess Mother of Samuel, the Prophet,\" exact match. No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -364,7 +364,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paopi) against Wikipedia's 'Coptic Synaxarium of the month of Paopi' table (en.wikipedia.org/wiki/Paopi), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paopi 26 = 5 November (Gregorian, common year) prints: 'The martyrdom of Saint Timon the Apostle.' Confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io directly -- found via the compiled Wikipedia table, same methodology as the Thout pass; confirm against the primary tool before treating as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, part of the ongoing OOR gap sweep (Coptic month of Paopi) against Wikipedia's 'Coptic Synaxarium of the month of Paopi' table (en.wikipedia.org/wiki/Paopi), citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Paopi 26 = 5 November (Gregorian, common year) prints: 'The martyrdom of Saint Timon the Apostle.' Confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Martyrdom of Saint Timon the Apostle,\" exact match (alongside an unrelated second commemoration). No longer just ADDED.",
       "liturgicalColorOOR": "red",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- confirmed via a Coptic liturgical-vestments researcher who checked the canons directly and found none beyond \"the tunic must be white\", tasbeha.org community discussion): red is the commonly-observed color for martyr commemorations. This entry's own id/name/description identifies it as a martyrdom."
     },
@@ -387,7 +387,7 @@
           }
         ]
       },
-      "ruleSource": "Date CORRECTED 2026-09-11: this row was originally ADDED 2026-09-07 at Paopi 28 / 7 November, sourced from Wikipedia's 'Coptic Synaxarium of the month of Paopi' table, which prints on that day 'Martyrdom of the St. Marcian (Marcianus) & St. Mercurius.' That date is real but is a secondary joint commemoration, not Mercurius's primary feast -- already independently covered by the saint-marcian row (November 7, CONFIRMED against coptic.io 2026-09-07). His famous \"Two Swords\" epithet belongs to his own martyrdom, at Hator 25. Corrected against Wikipedia's per-day page (en.wikipedia.org/wiki/Hathor_25), which prints 'The martyrdom of Saint Philopater Mercurius, known as \"The One with Two Swords\"' and gives Hator 25 = 4 December (Gregorian, common year); cross-checked against the Saint Mercurius Wikipedia article, which lists his Coptic feasts as '25 Hathor/4-5 December (Martyrdom), 9 Paoni/16-17 June (Translation of relics), 25 Epip/1-2 August (Feast)' -- confirming Hathor 25 as the martyrdom proper, not one of the other two. Both pages cite CopticChurch.net, St-Takla.org, and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995), the same witness set used throughout the OOR sweep. NOT YET CROSS-CHECKED against coptic.io directly -- the coptic.io connector returned zero callable tools this session (see resume note); confirm against the primary tool before treating as fully CONFIRMED rather than CORRECTED. Do not re-add a duplicate Mercurius row at November 7 -- that date's commemoration is already carried by saint-marcian.",
+      "ruleSource": "Date CORRECTED 2026-09-11: this row was originally ADDED 2026-09-07 at Paopi 28 / 7 November, sourced from Wikipedia's 'Coptic Synaxarium of the month of Paopi' table, which prints on that day 'Martyrdom of the St. Marcian (Marcianus) & St. Mercurius.' That date is real but is a secondary joint commemoration, not Mercurius's primary feast -- already independently covered by the saint-marcian row (November 7, CONFIRMED against coptic.io 2026-09-07). His famous \"Two Swords\" epithet belongs to his own martyrdom, at Hator 25. Corrected against Wikipedia's per-day page (en.wikipedia.org/wiki/Hathor_25), which prints 'The martyrdom of Saint Philopater Mercurius, known as \"The One with Two Swords\"' and gives Hator 25 = 4 December (Gregorian, common year); cross-checked against the Saint Mercurius Wikipedia article, which lists his Coptic feasts as '25 Hathor/4-5 December (Martyrdom), 9 Paoni/16-17 June (Translation of relics), 25 Epip/1-2 August (Feast)' -- confirming Hathor 25 as the martyrdom proper, not one of the other two. Both pages cite CopticChurch.net, St-Takla.org, and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995), the same witness set used throughout the OOR sweep. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Martyrdom of St. Mercurius Known as the Saint with the Two Swords,\" exact match to the corrected identification. No longer just CORRECTED. Do not re-add a duplicate Mercurius row at November 7 -- that date's commemoration is already carried by saint-marcian.",
       "liturgicalColorOOR": "red",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- confirmed via a Coptic liturgical-vestments researcher who checked the canons directly and found none beyond \"the tunic must be white\", tasbeha.org community discussion): red is the commonly-observed color for martyr commemorations. This entry's own id/name/description identifies it as a martyrdom."
     },
@@ -410,7 +410,7 @@
           }
         ]
       },
-      "ruleSource": "Date ADDED 2026-09-07, one figure of a bounded first-month gap check (Coptic month of Thout) against Wikipedia's 'Coptic Synaxarium of the month of Thout' table (en.wikipedia.org/wiki/Thout), itself citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Thout 6 = 16 September (Gregorian, common year) prints: 'Departure of Isaiah, the Prophet.' Isaiah was confirmed genuinely absent from this corpus under any spelling before being added. NOT YET CROSS-CHECKED against coptic.io or St-Takla's own per-day page directly — found via the compiled Wikipedia table, the same secondary-source methodology used for the EOR gap sweep (see AUDIT_GOVERNANCE_LEDGER.md), and carrying the same caveat: confirm against the primary tool before treating this as fully CONFIRMED rather than ADDED.",
+      "ruleSource": "Date ADDED 2026-09-07, one figure of a bounded first-month gap check (Coptic month of Thout) against Wikipedia's 'Coptic Synaxarium of the month of Thout' table (en.wikipedia.org/wiki/Thout), itself citing CopticChurch.net, St-Takla.org and the printed Coptic Synaxarium (Saint George Coptic Orthodox Church, 1995). Thout 6 = 16 September (Gregorian, common year) prints: 'Departure of Isaiah, the Prophet.' Isaiah was confirmed genuinely absent from this corpus under any spelling before being added. CONFIRMED against coptic.io 2026-09-28: api.coptic.io's synaxarium endpoint for this date returns \"The Departure of Isaiah the Prophet,\" exact match (alongside an unrelated second commemoration). No longer just ADDED.",
       "liturgicalColorOOR": "white",
       "liturgicalColorOORSource": "Coptic folk custom (not canonically codified -- see the martyr entries' own source note): white is the default/predominant color absent a specific martyr commemoration, per every source found, and is the one rule confirmed to exist (\"the tunic must be white\")."
     },
@@ -488,7 +488,7 @@
     },
     {
       "id": "saint-james-the-brother-of-the-lord",
-      "name": "Saint James The Brother Of The Lord",
+      "name": "Saint James the Brother of the Lord",
       "description": "James, brother of the Lord, first Bishop of Jerusalem -- commemorated jointly with the Blessed Virgin Mary. Source: the ACOE Diocese of California 2026 calendar. This is the Church of the East's own distinct commemoration date for this figure, different from (and not intended to replace) the separate Apr.30 and Oct.23 dates already present in this corpus for other traditions -- different traditions commemorating the same figure on different days is normal practice throughout this corpus, not an inconsistency to resolve.",
       "type": "saint",
       "tags": [
@@ -633,7 +633,8 @@
       "description": "Old Testament prophet.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 3",
       "observance": {
@@ -646,6 +647,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Holy Prophet Malachi; Ven. Genevieve of Paris”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 9,
+              "day": 5
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Jan 3) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Malachi, the Prophet\" falls Sep 5 (30 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -1725,7 +1738,8 @@
       "description": "Founder of Christian monasticism.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 17",
       "observance": {
@@ -1738,6 +1752,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Ven. Anthony the Great, the Godbearing”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 30
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('Anthony the Great's Coptic departure'). Shared date (Jan 17) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Anthony the Great (Antonius)\" falls Jan 30 (22 Tobi, common year) -- distinct from this corpus's separate saint-anthony-the-great-relics row (OOR, Sep 25, a translation-of-relics commemoration, not the departure).",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Orthocal: 'Our Holy Godbearing Father Anthony the Great' (father of monasticism)"
     },
@@ -2168,7 +2194,8 @@
       "description": "CHECKED 2026-08-31: Timothy, companion of Paul, first Bishop of Ephesus. His own Wikipedia infobox lists 'Venerated in: Catholic Church, Eastern Orthodox Church, Oriental Orthodoxy, Anglicanism, Lutheranism' -- the Church of the East is not among them, checked across multiple independent sources. Not sourced on that basis. Distinct from mar-timothy-i (the ancient Catholicos-Patriarch, checked separately and also found to have no attested feast day) and mar-timotheus-malabar (already sourced, a modern Metropolitan).",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 22",
       "observance": {
@@ -2181,6 +2208,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Apostle Timothy of the 70”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 31
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('Timothy the Apostle's Coptic martyrdom'). Shared date (Jan 22) is EOR's. CONFIRMED against coptic.io: \"The Martyrdom of St. Timothy, the Apostle\" falls Jan 31 (23 Tobi, common year) -- same NT companion of Paul as this row (both explicitly 'Apostle'/'of the 70'), distinct from timothy-and-titus (Jan 26, ANG/LAT) and venerable-timothy-of-symbola/martyrs-timothy-and-maura/saint-timothy-of-prusa, all separate figures already in this corpus.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "UNCORROBORATED by Orthocal (no match) -- Apostle of the Seventy, disciple of Paul, later Bishop of Ephesus; apostolic rank governs, needs a secondary check"
     },
@@ -9595,7 +9634,8 @@
       "description": "Hermit and wonderworker, 5th century.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "June 6",
       "observance": {
@@ -9608,6 +9648,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Wonderworker of Egypt”. Confirmed by 3 of the six editions (2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 31
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Jun 6) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Bessarion, the Great\" falls Aug 31 (25 Mesori, common year) -- reasonable identity match (both traditions describe the same class of Egyptian desert wonderworker), not an ironclad cross-reference; flag if a future session finds evidence of two distinct Bessarions.",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Venerable', an unambiguous Bulgakov-category marker"
     },
@@ -11823,7 +11875,8 @@
       "description": "Mar Cyriacus (Quriaqus) and his mother Julitta, martyrs. FIXED DATE: listed at 15 July in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
       "type": "saint",
       "tags": [
-        "COE"
+        "COE",
+        "OOR"
       ],
       "dayLegacy": "July 15",
       "observance": {
@@ -11835,7 +11888,19 @@
           }
         ]
       },
-      "ruleSource": "15 July in all seven editions. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions."
+      "ruleSource": "15 July in all seven editions. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 7,
+              "day": 22
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, per Josh's direct instruction after reviewing the same-figure-different-day flag. Shared date (Jul 15) is COE's. CONFIRMED against coptic.io: \"The Martyrdom of St. Cyriacus and St. Julietta His Mother\" falls Jul 22 (15 Epip, common year) -- this is the joint commemoration of both figures together, matching this row's own joint identity exactly. NOT covered by this fix: coptic.io also shows a separate 'Cyriacus alone' entry (3 Hator / ~Nov 12, already matching this corpus's existing OOR-tagged saint-cyriacus row) and a separate 'Julietta alone' entry (6 Mesori / Aug 12), neither of which is this row's concern."
     },
     {
       "id": "mar-saba",
@@ -12594,10 +12659,20 @@
               "day": 9
             }
           ]
+        },
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 20
+            }
+          ]
         }
       },
       "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Jul 26) is ANG/LAT's. CONFIRMED against orthocal.info: Joachim and Anna fall Sept 9 in the Orthodox calendar.",
-      "tagNote": "OOR NOTE 2026-09-07: only a partial match found -- \"The Annunciation of St. Joachim with the Birth of the Virgin Mary\" (Aug 13, 7 Mesra) is about Joachim's annunciation specifically, not a joint Joachim-and-Anne commemoration, and doesn't match the stored Jul 26 date. Left unconfirmed rather than force a match.",
+      "tagNote": "OOR NOTE 2026-09-07 (superseded by oorDateNote below, 2026-09-28): only a partial match found -- \"The Annunciation of St. Joachim with the Birth of the Virgin Mary\" (Aug 13, 7 Mesra) is about Joachim's annunciation specifically, not a joint Joachim-and-Anne commemoration, and doesn't match the stored Jul 26 date. Left unconfirmed rather than force a match. A real match was found later, see oorDateNote.",
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, per Josh's direct instruction: \"For the Copts, use Nov 20. For the West, use the western date.\" CONFIRMED against coptic.io: \"The Departure of St. Anna (Hannah), the mother of the Theotokos\" falls Nov 20 (14 Hator, common year) -- Anne alone, not jointly with Joachim, unlike this row's own Western identity. Attached to this joint row anyway per Josh's direct choice, rather than splitting into a separate Anne-only row. ANG/LAT keep the shared Jul 26 date, EOR keeps its own Sep 9 traditionObservance above, unaffected.",
       "liturgicalColor": "white",
       "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org)",
       "liturgicalColorEOR": "blue",
@@ -13140,7 +13215,8 @@
       "description": "The Seven Sleepers who awoke after centuries.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "August 4",
       "observance": {
@@ -13153,6 +13229,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “St. Metrophanes, first Patriarch of Constantinople Righteous Martha & Mary, the sisters of Lazarus of Crete 7 Holy Youths of Ephesus”. Confirmed by 3 of the six editions (2022, 2023, 2024). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 26
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Aug 4) is EOR's. CONFIRMED against coptic.io: \"The Martyrdom of the Seven Young Men of Ephesus\" falls Aug 26 (20 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Orthocal: 'Holy Seven Youths (the Seven Sleepers) of Ephesus' -- a miraculous-preservation story, not technically martyrdom; tentative gold (righteous/wonder), genuinely uncertain which group applies"
     },
@@ -13718,7 +13806,8 @@
       "description": "Old Testament prophet; foretold Christ's birth in Bethlehem.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "August 14",
       "observance": {
@@ -13731,6 +13820,18 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Prophet Micah” on this date.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 28
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Aug 14) is EOR's. CONFIRMED against coptic.io: \"The Departure of Micah, the Prophet\" falls Aug 28 (22 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -14353,26 +14454,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "mar-abraham",
-      "name": "Mar Abraham",
-      "description": "Catholicos and missionary.",
-      "type": "saint",
-      "dayLegacy": "August 23",
-      "tags": [
-        "COE"
-      ],
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 5,
-            "day": 2
-          }
-        ]
-      },
-      "ruleSource": "Date DERIVED 2026-09-06 from the printed Assyrian Church of the East, Diocese of California ecclesiastical calendars held in data/kalendar/source-witnesses/ (2024 and 2026 in full; the June, August, September and October 2021 pages, read by OCR). This commemoration is printed on: 2024 May 2, 2026 May 2. Across those years it resolves to a FIXED date, identical in every year held, and the rule is stored in that form rather than as a fixed date. WHY THAT MATTERS: this row previously carried a FIXED date, and a fixed date can never match a commemoration that moves — which is why every calendar match run against these rows failed and why they looked unsourceable. The fault was the rule TYPE, not the absence of a source. Derived from 2 printed years; two years can fit a rule by coincidence, so a two-year derivation is weaker than a three-year one and is stated as such here. DIOCESAN SCOPE, established 2026-09-06 and not assumed: this rule is the DIOCESE OF CALIFORNIA's reckoning, not the Church of the East's universally. The Assyrian Diocese of Australia and New Zealand's 2026 calendar (Christ the Good Shepherd, Wakeley) was parsed and compared against California 2026 for the same year, and the two dioceses disagree in two consistent ways. Fixed feasts sit THIRTEEN DAYS later at Wakeley — Epiphany on 19 January against 6, All Saints on 28 November against 15, Mar Jacob on 2 December against 19 — which is the Julian reckoning, and is exactly what the fixedFeastMode option in js/calendar-east-syriac.js already exists to model. Week-anchored commemorations sit ONE WEEK later — Mar Addai, Mar Mari, Mar Ezekiel, Prophet Elijah and the Greek and Assyrian Doctors all +7 days. So a date read from one diocese must not be presented as the Church's, and these rules are labelled Californian rather than left to be mistaken for universal."
     },
     {
       "id": "saint-lupus-of-thessalonica",
@@ -15203,7 +15284,8 @@
       "description": "The Law-giver who beheld God on Mount Sinai.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "September 4",
       "observance": {
@@ -15216,6 +15298,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Orthodox Church in America's Lives of the Saints, https://www.oca.org/saints/lives/2026/09/04, which commemorates on this day: “Holy Prophet and God-seer Moses”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05), on the same principle already applied to the Church of the East: a communion or jurisdictional calendar decides the date. Fetched and read directly, not inferred from a reference work.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 9,
+              "day": 18
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Sep 4) is EOR's. CONFIRMED against coptic.io: \"The Departure of Moses the Prophet\" falls Sep 18 (8 Thout, common year) -- both rows explicitly identify this figure as 'the Prophet'/lawgiver, not the unrelated desert father Moses the Black already sourced elsewhere in this corpus.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -18521,7 +18615,8 @@
       "description": "Hermit of Palestine.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "October 21",
       "observance": {
@@ -18534,6 +18629,18 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Hilarion the Great of Palestine” on this date.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 3
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('a Hilarion date twelve days off the existing entry'). Shared date (Oct 21) is EOR/LAT's. CONFIRMED against coptic.io: \"The Departure of the Righteous Father Abba Hilarion\" falls Nov 3 (24 Baba, common year) -- Hilarion the Great is a singular, well-attested figure with minimal risk of a same-name different-person confusion.",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Venerable', an unambiguous Bulgakov-category marker"
     },
@@ -20320,7 +20427,8 @@
       "description": "The Wonderworker.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "November 17",
       "observance": {
@@ -20333,6 +20441,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “St. Gregory the”. Confirmed by ONE edition only (2024); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 30
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Nov 17) is EOR's. CONFIRMED against coptic.io: \"The Departure of Saint Gregory, the Wonder Worker\" falls Nov 30 (30 Hathor, common year) -- 'Wonder Worker'/'Thaumaturgus' and 'of Neocaesarea' both name the same single well-known 3rd-century bishop-saint, minimal risk of confusion.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Orthocal: 'Our Venerable Father Gregory the Wonderworker, Bishop of Neocaesarea'"
     },
@@ -22237,9 +22357,9 @@
       }
     },
     {
-      "id": "saint-boniface",
+      "id": "saint-boniface-of-tarsus",
       "name": "Saint Boniface and Righteous Aglaida",
-      "description": "Martyr at Rome under Diocletian, 290, with Righteous Aglaida. A different figure from the Archbishop of Mainz commemorated in this corpus at June 5 -- same name, unrelated identity.",
+      "description": "Martyr at Rome under Diocletian, 290, with Righteous Aglaida. A different figure from the Archbishop of Mainz commemorated in this corpus at June 5 -- same name, unrelated identity. ID SPLIT 2026-09-28: this row previously shared id 'saint-boniface' with the Archbishop of Mainz row despite this description's own explicit disclosure that they are two unrelated people -- a real id collision, not the normal same-person-different-tradition-date pattern used throughout this file. Renamed to saint-boniface-of-tarsus (the traditional identification for this figure); checked repo-wide, nothing outside sanctoral.json referenced 'saint-boniface' at all, so nothing else needed updating.",
       "type": "saint",
       "tags": [
         "EOR"
@@ -22752,7 +22872,8 @@
       "tags": [
         "ANG",
         "LAT",
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "December 28",
       "observance": {
@@ -22765,6 +22886,8 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Holy Innocents”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Dec 28) is ANG/LAT's. CONFIRMED against orthocal.info: the Orthodox commemoration falls Dec 29 -- the same date this project's separate 'the-14-000-holy-infants' row already sits at and is confirmed for.",
+      "tagNote": "OOR TAG RESTORED 2026-09-28, superseding the 2026-09-07 withdrawal below: that search used Wikipedia/St-Takla.org phrasing and missed a real entry that coptic.io's own API confirms directly (see oorDateNote). Original 2026-09-07 note, kept for the record: 'OOR TAG WITHDRAWN: no Coptic attestation found under any phrasing tried.'",
       "traditionObservance": {
         "EOR": {
           "type": "fixed",
@@ -22774,10 +22897,18 @@
               "day": 29
             }
           ]
+        },
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 11
+            }
+          ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Dec 28) is ANG/LAT's. CONFIRMED against orthocal.info: the Orthodox commemoration falls Dec 29 -- the same date this project's separate 'the-14-000-holy-infants' row already sits at and is confirmed for.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28. CONFIRMED against coptic.io: \"The Commemoration of the Slain Children of Bethlehem by the Order of King Herod\" falls Jan 11 (5 Tobi, common year) -- an unambiguous match to this identity, no risk of same-name confusion.",
       "liturgicalColorEOR": "red",
       "liturgicalColorEORSource": "The children killed by Herod -- venerated as martyrs (the Church's first martyrs for Christ's sake, even if indirectly)"
     },
@@ -23144,7 +23275,7 @@
     },
     {
       "id": "mar-mari-the-apostle",
-      "name": "St. Mari the Apostle",
+      "name": "Mar Mari the Apostle",
       "description": "Disciple of Mar Addai (Thaddeus), traditional founder of the church at Seleucia-Ctesiphon. (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
       "type": "saint",
       "tags": [
@@ -23177,9 +23308,9 @@
       "ruleSource": "CORRECTED TO CALIFORNIA 2026-09-03. The previous rule (Sunday of Apostles week 4) came from Western Europe. California commemorates Mar Meelis of Tel-Khesh with Bar Qosreh on the WEDNESDAY of Apostles week ONE: 22 May 2024 and 27 May 2026, 2/2. A different weekday AND a different week from Western Europe. Assyrian Church of the East, DIOCESE OF CALIFORNIA ecclesiastical calendars -- the 2026 and 2024 editions in full, plus the June, August, September and October pages of 2021."
     },
     {
-      "id": "mar-michael",
+      "id": "mar-michael-archangel",
       "name": "St. Michael",
-      "description": "Archangel, venerated in the Church of the East as 'Friend of the Angels.' (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.)",
+      "description": "Archangel, venerated in the Church of the East as 'Friend of the Angels.' (ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026.) ID SPLIT 2026-09-28: this row previously shared id 'mar-michael' with the human Abbot row (dayLegacy December 19, Diocese of California) -- a real identity collision between a person and the Archangel, not the normal same-person-different-tradition-date pattern used throughout this file; the two can even fall on the same real-world date in a given year (both resolve to March 22 in 2026), so they were never safely distinguishable by date alone. Renamed to mar-michael-archangel; js/coe-eligibility.js's Layer 3 allowlist (which gated display under the old shared id) updated in the same commit to list this id alongside the still-present 'mar-michael' (Abbot) entry, so neither identity's display changes.",
       "type": "saint",
       "tags": [
         "COE"
@@ -23331,7 +23462,7 @@
     },
     {
       "id": "prophet-elias-elijah",
-      "name": "Prophet Elias Elijah",
+      "name": "Prophet Elias (Elijah)",
       "description": "The Old Testament prophet Elijah the Tishbite. Confirmed at this date by two independent sources: the ACOTE Diocese of Western Europe 2026 calendar ('St. Elijah the Tishbite') and the ACOE Diocese of California 2026 calendar ('Prophet Mar Elijah the Teshbite'). The identity id previously carried other traditions' tags (EOR, OOR) at July 20 with no COE tag or citation -- COE not added there, since the Church of the East's own calendar gives a different date.",
       "type": "saint",
       "tags": [
@@ -23405,7 +23536,7 @@
     },
     {
       "id": "saint-john-the-baptist",
-      "name": "St. John the Baptist",
+      "name": "Saint John the Baptist",
       "description": "Forerunner of Christ. ACOTE Diocese of Western Europe Ecclesiastical Calendar 2026. Distinct from this file's own Jan.7 'Synaxis of John the Baptist' and the June/August/September commemorations of specific events in his life (Nativity, Martyrdom, Conception) already present elsewhere in this corpus -- multiple distinct annual commemorations of the same figure are normal practice, not duplication.",
       "type": "saint",
       "tags": [
@@ -23440,7 +23571,7 @@
     },
     {
       "id": "saints-peter-and-paul-apostles",
-      "name": "Saints Peter And Paul Apostles",
+      "name": "Saints Peter and Paul, Apostles",
       "description": "SS. Peter and Paul. Source: Maclean 1894 (p.282-283, Kashkul MS list) and the ACOTE Diocese of Western Europe 2026 calendar, both independently giving this date -- already gathered in this project's own earlier research but never actually entered into the corpus until now. Distinct from the movable pre-Fast Friday joint commemoration of Peter&Paul with the Four Evangelists (deliberately not sourced here, since that date shifts year to year with the Denkha season length -- see the pre-Fast fold-schedule work).",
       "type": "saint",
       "tags": [

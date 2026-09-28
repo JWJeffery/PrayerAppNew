@@ -6,7 +6,7 @@ const targets = [
   'structure.json',
   'admin/admin.html',
   'documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md',
-  'documentation/structure-archive-2026-05-30-roman-loth-oor-composition.json',
+  'documentation/project-history/structure-snapshot-2026-05-30-roman-loth-oor-composition.json',
   'documentation/structure.hist1.json',
 ].filter(file => fs.existsSync(file));
 

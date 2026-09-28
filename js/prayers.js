@@ -8,11 +8,14 @@ let prayersData = null; // cache
 
 const BOOK_OF_NEEDS_TAXONOMY_VERSION = 1;
 
+// UPDATED 2026-09-28: matches the five church-body names Josh confirmed
+// directly for #tradition-entry/#uo-threshold-grid (see RESUME_PROJECT_NOTE.md's
+// Task #14 entry) -- this file was carrying its own, older set.
 const BOOK_OF_NEEDS_TRADITION_CODES = Object.freeze({
-    ANG: 'The Episcopal Church',
-    LC: 'Latin Catholic',
-    EO: 'Eastern Orthodoxy',
-    OO: 'Oriental Orthodoxy',
+    ANG: 'Anglican Communion',
+    LC: 'Catholic Church',
+    EO: 'Eastern Orthodox Church',
+    OO: 'Oriental Orthodox Church',
     COE: 'Church of the East'
 });
 
@@ -25,19 +28,19 @@ const BOOK_OF_NEEDS_CONTEXTS = {
         returnText: 'Back to Modes'
     },
     ANG: {
-        label: 'The Episcopal Church',
-        note: 'Showing prayers explicitly tagged for Anglican/Episcopal use.',
-        empty: 'No Anglican/Episcopal prayers are available in this section yet.',
+        label: 'Anglican Communion',
+        note: 'Showing prayers explicitly tagged for Anglican use.',
+        empty: 'No Anglican prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     LC: {
-        label: 'Latin Catholic',
-        note: 'Showing prayers explicitly tagged for Latin Catholic use.',
-        empty: 'No Latin Catholic prayers are available in this section yet.',
+        label: 'Catholic Church',
+        note: 'Showing prayers explicitly tagged for Catholic use.',
+        empty: 'No Catholic prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     OO: {
-        label: 'Oriental Orthodoxy',
+        label: 'Oriental Orthodox Church',
         note: 'Showing prayers explicitly tagged for Oriental Orthodox use.',
         empty: 'No Oriental Orthodox prayers are available in this section yet.',
         returnText: 'Back to Office'
@@ -49,7 +52,7 @@ const BOOK_OF_NEEDS_CONTEXTS = {
         returnText: 'Back to Office'
     },
     EO: {
-        label: 'Eastern Orthodoxy',
+        label: 'Eastern Orthodox Church',
         note: 'Showing prayers explicitly tagged for Eastern Orthodox use.',
         empty: 'No Eastern Orthodox prayers are available in this section yet.',
         returnText: 'Back to Office'

@@ -158,6 +158,13 @@
         'mar-zeia',
         'mar-adar',
         'mar-michael',
+
+        // Archangel (id split 2026-09-28 from 'mar-michael' above, which is a
+        // human Abbot -- the two previously shared an id despite being a real
+        // identity collision, not the usual same-person/different-date pattern;
+        // see the matching sanctoral.json entry's own note for the full account)
+        'mar-michael-archangel',
+
         'mar-barsabba',
         'mar-shmon',
         'mar-shimon',

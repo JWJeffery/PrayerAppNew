@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/december.json",
     "version": "1.0.0",
-    "schema_version": "1.1.0",
+    "schema_version": "1.2.0",
     "month_number": 12,
     "month_name": "December",
     "calendar_style": "new-calendar",
@@ -546,8 +546,12 @@
             "text": "Today the Virgin giveth birth to the Transcendent One, and the earth offereth a cave to the Unapproachable One. Angels and shepherds glorify Him, and the wise men journey with the star. For our sake a young Child is born, even He Who is before all ages, God."
           },
           "kontakion_status": "resolved",
+          "ikos": {
+            "title": "Ikos of the Nativity of Christ",
+            "text": "Bethlehem hath opened Eden: O come, let us gaze! We have found nourishment in a secret place: O come, let us receive the things of Paradise within the cavern! There hath appeared the Root Unwatered which buddeth forth remission. There hath been found the Well Undigged, from which David of old longed that he might drink. There a Virgin hath brought forth a Child; and straightway the thirst of Adam and of David hath been assuaged. Wherefore let us go unto him where he is born a little Child, yet is God before the ages."
+          },
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "The Nativity of Christ — one of the Twelve Great Feasts. Rank 1. Highest-rank entry; Octoechos entirely displaced. The troparion is sung throughout the Afterfeast (Dec 26 – Dec 31 / Jan 1 depending on calendar). Kontakion (Tone 3, Romanos the Melodist) likewise sung throughout the Afterfeast. Source: OCA/Antiochian Hapgood tradition."
+          "notes": "The Nativity of Christ — one of the Twelve Great Feasts. Rank 1. Highest-rank entry; Octoechos entirely displaced. The troparion is sung throughout the Afterfeast (Dec 26 – Dec 31 / Jan 1 depending on calendar). Kontakion (Tone 3, Romanos the Melodist) likewise sung throughout the Afterfeast. Source: OCA/Antiochian Hapgood tradition. Ikos added 2026-09-28: exact verbatim transcription (no paraphrase, no modernization) from Isabel Hapgood's 1906 'Service Book of the Holy Orthodox-Catholic Apostolic Church' (public domain, Houghton Mifflin), the same edition already cited for the troparion/kontakion above; verified directly against the raw OCR text at archive.org/download/ServiceBookOfHolyOrthodoxChurchByHapgood/Service_Book_Orthodox_Church_Hapgood_djvu.txt, p.178. Colon/exclamation punctuation preserved as printed. This is the only one of the Twelve Great Feasts for which Hapgood's book includes an Ikos at all — checked directly against the full text, not assumed; the other eight have no Ikos in this source (confirmed by a full-text search for 'Ikos' and 'Collect-Hymn'/'Kondak' across the whole book, not just this feast's own section)."
         }
       ]
     },

@@ -67,14 +67,14 @@
         <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican" data-available-subtitle="TEC 1979 Book of Common Prayer Daily Office.">
             <span class="app-entry-tradition-code">ANG</span>
             <span>
-                <strong>Anglican</strong>
+                <strong>Anglican Communion</strong>
                 <small>TEC 1979 Book of Common Prayer Daily Office.</small>
             </span>
         </button>
         <button class="app-entry-tradition-card" type="button" data-entry-tradition="latin-catholic" data-available-subtitle="Roman Breviary 1960/1962.">
             <span class="app-entry-tradition-code">LC</span>
             <span>
-                <strong>Catholic</strong>
+                <strong>Catholic Church</strong>
                 <small>Roman Breviary 1960/1962.</small>
             </span>
         </button>
@@ -93,14 +93,14 @@
         <button class="app-entry-tradition-card" type="button" aria-disabled="false" data-entry-tradition="eastern-orthodox" data-available-subtitle="Byzantine Horologion offices.">
             <span class="app-entry-tradition-code">EO</span>
             <span>
-                <strong>Eastern Orthodoxy</strong>
+                <strong>Eastern Orthodox Church</strong>
                 <small>Byzantine Horologion offices.</small>
             </span>
         </button>
         <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox" data-available-subtitle="The Coptic Agpeya, Book of Hours.">
             <span class="app-entry-tradition-code">OO</span>
             <span>
-                <strong>Oriental Orthodoxy</strong>
+                <strong>Oriental Orthodox Church</strong>
                 <small>The Coptic Agpeya, Book of Hours.</small>
             </span>
         </button>
@@ -190,7 +190,7 @@
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
             <span class="app-mode-icon">☩</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Anglican</span>
+                <span class="app-mode-title">Anglican Communion</span>
                 <span class="app-mode-subtitle">The Daily Office, according to the 1979 Book of Common Prayer.</span>
             </span>
         </button>
@@ -198,7 +198,7 @@
         <button class="mode-btn app-mode-card" onclick="showLaneThreshold('coptic-agpeya')">
             <span class="app-mode-icon">⳩</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Oriental Orthodoxy</span>
+                <span class="app-mode-title">Oriental Orthodox Church</span>
                 <span class="app-mode-subtitle">The Coptic Agpeya — the seven hours and Theotokia of the Coptic Church.</span>
             </span>
         </button>
@@ -214,7 +214,7 @@
         <button class="mode-btn app-mode-card" type="button" onclick="showLaneThreshold('horologion')">
             <span class="app-mode-icon">☧</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Eastern Orthodoxy</span>
+                <span class="app-mode-title">Eastern Orthodox Church</span>
                 <span class="app-mode-subtitle">Byzantine Horologion offices.</span>
             </span>
         </button>
@@ -222,7 +222,7 @@
         <button class="mode-btn app-mode-card" type="button" onclick="selectMode('roman-breviary-dev')">
             <span class="app-mode-icon">✚</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Catholic</span>
+                <span class="app-mode-title">Catholic Church</span>
                 <span class="app-mode-subtitle">The Roman Breviary 1960/1962 — Roman Rite, Latin, all eight hours.</span>
             </span>
         </button>
@@ -235,7 +235,7 @@
             <small>Prayers, devotions, and occasional offices.</small>
         </button>
 
-        <button class="app-mode-tool-btn" type="button" onclick="openBibleBrowser()">
+        <button class="app-mode-tool-btn" type="button" id="app-bible-browser-btn" hidden aria-hidden="true" onclick="openBibleBrowser()">
             <strong>Bible Browser</strong>
             <small>Read, compare, annotate, and study.</small>
         </button>
@@ -273,11 +273,11 @@
                 <span>Default tradition</span>
                 <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
                     <option value="">No tradition selected</option>
-                    <option value="anglican" data-available-label="The Episcopal Church">The Episcopal Church</option>
-                    <option value="oriental-orthodox" data-available-label="Oriental Orthodoxy">Oriental Orthodoxy</option>
+                    <option value="anglican" data-available-label="Anglican Communion">Anglican Communion</option>
+                    <option value="oriental-orthodox" data-available-label="Oriental Orthodox Church">Oriental Orthodox Church</option>
                     <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
-                    <option value="eastern-orthodox" data-available-label="Eastern Orthodoxy">Eastern Orthodoxy</option>
-                    <option value="latin-catholic" data-available-label="Latin Catholic">Latin Catholic</option>
+                    <option value="eastern-orthodox" data-available-label="Eastern Orthodox Church">Eastern Orthodox Church</option>
+                    <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
                 </select>
             </label>
 
@@ -358,6 +358,26 @@
                         <option value="spyridon-trimythous">St. Spyridon of Trimythous (Dec. 12)</option>
                         <option value="protomartyr-stephen">Holy Protomartyr Stephen (Dec. 27)</option>
                     </optgroup>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-display-name">
+                <span>Your name</span>
+                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
+                <span>Diocesan Cycle of Prayer</span>
+                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
+                    <option value="">Not declared (default)</option>
+                    <option value="episcopal/western-oregon">The Episcopal Church in Western Oregon</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish">
+                <span>Home parish (optional)</span>
+                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
+                    <option value="">Choose a diocese first</option>
                 </select>
             </label>
         </div>
@@ -665,11 +685,19 @@
 
     <!-- Main content area -->
     <div id="main-content" class="app-primary-canvas">
-        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return">Back to Modes</button>
+        <!-- "Defaults" (used to sit here as its own button) and "Back to Modes" both ultimately
+             called backToSplash() -- Defaults just also auto-opened the profile-defaults panel once
+             there. Removed 2026-09-28 per Josh's direct instruction as a redundant duplicate; the
+             defaults panel is still reachable from the splash screen itself. This single button is
+             the one true "leave the office and go elsewhere" control, renamed the same day from
+             "Back to Modes" to "Explore other Offices", and hidden by default -- see
+             #toggle-explore-other-offices in the Office Settings drawer (js/office-drawer.js) and
+             isExploreOtherOfficesVisible()/setExploreOtherOfficesVisible() (js/office-ui.js). -->
+        <button id="app-mode-return-button" onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return" hidden>Explore other Offices</button>
+        <input type="checkbox" id="toggle-explore-other-offices" hidden aria-hidden="true" onchange="setExploreOtherOfficesVisible(this.checked)">
         <h1 id="office-mode-title">The Universal Office</h1>
         <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
             <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
-            <button id="office-profile-defaults-button" class="office-context-action office-profile-defaults-action" type="button" onclick="openLocalProfileDefaultsFromOffice()">Defaults</button>
         </div>
         <div id="office-display"></div>
         <div class="saint-section">
@@ -1088,6 +1116,14 @@
 <div id="uo-tradition-explanation" role="dialog" aria-modal="true"
      aria-label="About this tradition" style="display:none;"></div>
 
+<!-- One-time onboarding prompt (name + role), added 2026-09-28. Host only;
+     content built by maybeShowOnboardingPrompt()/renderOnboardingPrompt() in
+     js/office-ui.js. Shown once per browser profile, after the existing
+     tradition-entry routing has already decided where to land -- it does
+     not ask about tradition again, only name and role. -->
+<div id="uo-onboarding-prompt" role="dialog" aria-modal="true"
+     aria-label="Set up your profile" style="display:none;"></div>
+
 <!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js" defer></script>
 <script src="js/calendar-ethiopian.js" defer></script>
@@ -1095,6 +1131,7 @@
 <script src="js/scripture-resolver.js" defer></script>
 <script src="js/saints-resolver.js?v=269" defer></script>
 <script src="js/menaion-resolver.js" defer></script>
+<script src="js/cycles-of-prayer.js" defer></script>
 <script src="js/octoechos/orthros-praises-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-eothinon.js" defer></script>
