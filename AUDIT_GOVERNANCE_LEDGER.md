@@ -23492,3 +23492,32 @@ rail entry added (rail count unchanged); zero new console errors. `components/an
 `data/rubrics.json`, `js/office-ui.js` are the only files touched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- mobile display audit: prayer window maximized
+
+Josh asked directly whether mobile display had been addressed (it hadn't, beyond the earlier
+same-day desync fix), then gave the brief: the prayer-reading area was too tiny to use; chrome
+(options, navigation) should take minimal room unless the reader is actively using it. Measured
+first on a real 390x844 viewport: the rail alone was 37.4% of the screen, the header 12.6%, leaving
+only 38.2% for `.uo-page` -- and the first screen was pure chrome, no prayer text at all.
+
+Three fixes: (1) the rail now defaults to a 52px tap-to-expand summary bar showing current position
+(was a permanent 34vh strip), expanding to 65vh only when tapped; (2) `.uo-margin` collapses to 0px
+via `:empty` when an office emits no overlay/diagnostic cards (most of them), confirmed to keep its
+full padding/border when cards are actually present; (3) a genuine functional bug found while
+checking the header for trim room -- `.uo-ordo`'s flex row (`flex-wrap:nowrap`) was built for a
+~1200px desktop line and never got a mobile counterpart, so at 390px the theme control and the ONLY
+way back to the mode picker (Back to Modes) ran off the right edge of the screen entirely: not
+clipped, not scrollable, simply unreachable. Fixed with `flex-wrap:wrap`, hiding two purely
+decorative items (the wordmark duplicate, the liturgical day line already shown in-page), and
+letting the title take its own row.
+
+Net result: `.uo-page` grew from 322px/38.2% to 614px/73% of the viewport, prayer text now visible
+on the first screen. Verified live: rail toggle both directions, the earlier touch-scroll-trap fix
+still holds, a 33-item long list and an empty-list edge case both render correctly, Back to Modes is
+now inside the viewport and an actual click returns to the splash screen, all five traditions swept
+on mobile with Back to Modes/theme control reachable on each, desktop completely unaffected on every
+measurement. Zero console errors throughout. `css/office-shell.css`, `js/office-shell.js` are the
+only files touched.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

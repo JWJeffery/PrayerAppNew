@@ -815,6 +815,13 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
     min-height: 0;
 }
 
+/* Mobile-only collapse/expand tap target (see the @media (max-width:768px)
+   block below for its real layout) -- the desktop column has no collapsed
+   state, .uo-rail-head already tells a reader what this panel is. */
+.uo-rail-summary-bar {
+    display: none;
+}
+
 .uo-rail-head,
 .uo-margin-head {
     font-family: var(--uo-face-machine);
@@ -1099,6 +1106,40 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
             "keep";
     }
 
+    /* MOBILE ORDO HEADER FIX, 2026-09-28: this row was built for one wide
+       desktop line -- wordmark, office title, Book of Needs/Defaults, the
+       liturgical day, Auto/Light/Dark, Back to Modes, roughly 1200px of
+       content -- and never got a mobile counterpart. flex-wrap stayed
+       'nowrap' at every width, so at 390px everything past the office
+       title silently ran off the right edge of the screen: not clipped,
+       not scrollable, just gone. Confirmed live (getBoundingClientRect()
+       on every child): the theme control sat at x:838-998 and the ONLY
+       way back to the mode picker (backToSplash) sat at x:1016-1194 --
+       both fully off a 390px viewport, both unreachable on a phone.
+       Fixed by wrapping the row and dropping the two purely decorative
+       items -- the constant "The Universal Office" wordmark, which
+       duplicates the office title sitting right next to it, and the
+       liturgical day line, which the in-page dateline already repeats --
+       so what's left is the title and the three real controls, wrapping
+       onto short rows instead of running off the screen. */
+    .uo-ordo-mark,
+    .uo-ordo-day {
+        display: none;
+    }
+
+    .uo-ordo {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 18px;
+        min-height: 0;
+    }
+
+    .uo-ordo > #office-mode-title {
+        flex: 1 1 100%;
+        font-size: 13px;
+        white-space: normal;
+    }
+
     /* "Top strip" only means anything if it's actually short: an office with
        a long step list (East Syriac, Horologion) has 20-30+ .uo-rail-item
        entries, and this media query was dead code until the specificity fix
@@ -1131,18 +1172,137 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
        within the capped strip exactly as before, driven only by the real
        content position. What's removed is solely the reader's ability to
        drag the strip somewhere else by hand on a touch device, which is
-       the accidental trap, not a feature worth keeping at this width. */
+       the accidental trap, not a feature worth keeping at this width.
+
+       COLLAPSED BY DEFAULT, 2026-09-28 (Josh: "the area where the user
+       could read the prayer... was so tiny, no one would use it... We
+       need to maximize the prayer window, with options and navigational
+       layers... taking up very little room unless necessary for a task").
+       Measured before touching anything, on a 390x844 viewport: the rail
+       alone was consuming 316px (37% of the screen) permanently, on
+       every single office, whether or not the reader ever looked at it --
+       the header (106px) and this strip together left only 322px (38%)
+       for the actual prayer text, and that 38% didn't even start until
+       the SECOND screen's worth of scrolling (the first screen was pure
+       chrome, no prayer text at all). Collapsed to a single-line summary
+       bar (below) showing the current position -- the same tracking this
+       rail already computes for the desktop column and the old capped
+       strip, just displayed compactly -- and expands to the full list,
+       exactly like the old strip, only when the reader actively taps it.
+       Nothing about the tracking logic changes; only when the list is
+       visible does. */
     .uo-rail {
         border-right: none;
         border-bottom: 1px solid var(--uo-hairline);
-        padding: 14px 18px;
-        max-height: 34vh;
+        padding: 0;
+        max-height: 52px;
         overflow-y: hidden;
+        transition: max-height 0.22s ease;
+    }
+
+    .uo-rail.is-expanded {
+        max-height: 65vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* The tap target: always visible, in both states -- doubles as the
+       "what am I currently reading" glance and the expand/collapse
+       control, so there's exactly one thing to learn, not two. Hidden
+       entirely above this width -- the desktop column has no collapsed
+       state at all, .uo-rail-head plays this role there already. */
+    .uo-rail-summary-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        min-height: 24px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
+    .uo-rail-summary-label {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-family: var(--uo-face-title);
+        font-size: 15px;
+        color: var(--uo-ink);
+    }
+
+    .uo-rail-summary-count {
+        flex: 0 0 auto;
+        font-family: var(--uo-face-machine);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--uo-ink-quiet);
+    }
+
+    .uo-rail-summary-chevron {
+        flex: 0 0 auto;
+        width: 9px;
+        height: 9px;
+        border-right: 1.5px solid var(--uo-accent);
+        border-bottom: 1.5px solid var(--uo-accent);
+        transform: rotate(45deg);
+        transition: transform 0.22s ease;
+        margin-top: -4px;
+    }
+
+    .uo-rail.is-expanded .uo-rail-summary-chevron {
+        transform: rotate(-135deg);
+        margin-top: 4px;
+    }
+
+    /* The full list -- identical markup and tracking to the desktop
+       column and the old always-open strip, just hidden until expanded.
+       .uo-rail-placeholder is excluded: it's already a short one-line
+       message for the rare no-blocks-emitted case, nothing to collapse. */
+    .uo-rail-head,
+    .uo-rail-list,
+    .uo-rail-foot {
+        display: none;
+    }
+
+    .uo-rail.is-expanded .uo-rail-head,
+    .uo-rail.is-expanded .uo-rail-list,
+    .uo-rail.is-expanded .uo-rail-foot {
+        display: block;
+    }
+
+    .uo-rail-placeholder {
+        padding: 0 18px 14px;
+    }
+
+    .uo-rail.is-expanded .uo-rail-head,
+    .uo-rail.is-expanded .uo-rail-list,
+    .uo-rail.is-expanded .uo-rail-foot {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .uo-rail.is-expanded .uo-rail-foot {
+        padding-bottom: 14px;
     }
 
     .uo-margin {
         border-left: none;
         border-top: 1px solid var(--uo-hairline);
+    }
+
+    /* Most offices emit no overlay/diagnostic cards, and
+       renderMarginFromEnvelope() leaves the element genuinely empty
+       (margin.textContent = '') in that case -- so the reserved
+       border/padding is pure wasted vertical space on a phone screen
+       when there is nothing in it to separate from the page above. */
+    .uo-margin:empty {
+        border-top: none;
+        padding: 0;
+        margin: 0;
     }
 
     .uo-page { padding: 24px 20px 36px; }

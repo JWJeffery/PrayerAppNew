@@ -1,5 +1,74 @@
 # RESUME_PROJECT_NOTE.md
 
+**MOBILE DISPLAY AUDIT: PRAYER WINDOW MAXIMIZED, 2026-09-28 continued yet again.** Josh, after the
+earlier same-day fix that stopped the rail/content desync ("The site is completely unusable on
+mobile"), asked directly: "Did I have you address display on mobile devices?" — the answer was no,
+only the desync bug. He then gave the actual brief: "the area where the user could read the
+prayer and scroll through it was so tiny, no one would use it. We need to maximize the prayer
+window, with options and navigational layers and such taking up very little room unless necessary
+for a task." Measured first, before touching anything, on a real 390×844 viewport (BCP Morning
+Prayer): `.uo-rail` alone consumed 316px (37.4%), the header another 106px (12.6%), leaving only
+322px (38.2%) for `.uo-page` — and that 38.2% didn't even start on the first screen; the first
+screen was pure chrome, zero prayer text.
+
+Three fixes, each measured before and after:
+
+1. **Rail collapses to a tap-to-expand summary bar.** The rail's old mobile rule (`max-height:34vh;
+   overflow-y:hidden`, from the same-day desync fix above) still reserved over a third of the screen
+   permanently, whether the reader ever looked at it or not. Now defaults to a single 52px line
+   (`.uo-rail-summary-bar`, built fresh in `renderRailFromEnvelope()` in `js/office-shell.js`, always
+   reset to collapsed on every render) showing the current position — the same label/count text the
+   desktop column and the old strip already compute — and expands to `65vh` only when tapped
+   (`.uo-rail.is-expanded`, toggled by a click/keydown handler on the summary bar).
+   `updateRailCurrent()` now also writes into the summary bar's label/count on every scroll tick, so
+   the collapsed line always reflects true reading position, not just render-time state. Hidden
+   entirely above 768px via a `display:none` base rule — the desktop column has no collapsed state.
+2. **`.uo-margin` collapses when genuinely empty.** Most offices emit no overlay/diagnostic cards,
+   and `renderMarginFromEnvelope()` sets `margin.textContent = ''` in that case, making the element
+   match CSS `:empty` exactly — confirmed by reading that function before writing the rule, not
+   assumed. Added `.uo-margin:empty { border-top:none; padding:0; margin:0; }` inside the mobile
+   media query, recovering the ~53px this element reserved even with nothing in it. Verified live in
+   both states: empty (BCP Morning Prayer, plain) collapses to exactly 0px; populated (same office
+   with the Agpeya Opening ecumenical-devotion toggle on, which pushes a real overlay card) keeps its
+   full padding, border, and card content untouched.
+3. **The ordo header's overflow — a real, separate bug, not just a size target.** Set out to check
+   whether the 106px header had any safe trimming room, and found instead that most of its controls
+   were not merely tall, they were *invisible and unreachable*. `.uo-ordo` is a `flex` row with
+   `flex-wrap:nowrap` built for one wide desktop line — wordmark, office title, Book of
+   Needs/Defaults, the liturgical day, Auto/Light/Dark, Back to Modes, roughly 1200px of content —
+   and it never got a mobile counterpart. At 390px, `getBoundingClientRect()` on every child showed
+   the theme control sitting at x:838–998 and the Back to Modes button — the ONLY way back to the
+   mode picker — at x:1016–1194: both fully past the right edge of the screen, not scrolled, not
+   clipped, simply gone. A reader who opened an office on a phone had no visible way back to mode
+   selection at all. Fixed in the mobile media query: `.uo-ordo-mark` (the constant "The Universal
+   Office" wordmark, redundant with the office title sitting right next to it) and `.uo-ordo-day`
+   (the liturgical day line, already repeated in-page as a dateline) are hidden as purely decorative;
+   `.uo-ordo` gets `flex-wrap:wrap` with a tightened `gap:8px`; the office title takes
+   `flex-basis:100%`. What's left — title, Book of Needs/Defaults, the theme control, and Back to
+   Modes — wraps onto three short rows instead of one row that ran off-screen. Verified live: the
+   Back to Modes button now sits fully inside the 390px viewport and an actual click on it correctly
+   returns to the mode-selection splash (confirmed via `daily-office-section` hiding and
+   `mode-selection` becoming visible again). Swept all five traditions' threshold screens on mobile —
+   Back to Modes and the theme control land inside the viewport on every one, zero console errors.
+
+**Net result**, measured the same way as the "before": `.uo-page` grew from 322px/38.2% of a
+390×844 viewport to 614px/73%, with real prayer text now visible from the very first screen instead
+of the second. The header itself grew slightly (106px→130px on the plain case) because it went from
+silently broken to fully functional — every control reachable — which is the correct trade for a
+row that used to hide the only way back to mode selection.
+
+Verified throughout, not just once: rail toggle expand/collapse (53px↔550px, `aria-expanded` flips
+correctly); the earlier touch-scroll-trap fix still holds collapsed (a real wheel event over the
+collapsed rail moves nothing, 0→0); a long list (East Syriac Ramsha, 33 items) scrolls correctly once
+expanded; a short/empty list (Horologion `interhour-first`, correctly "No order available" on an
+ordinary day) renders without error; dark theme renders correctly; desktop (1512×900) is completely
+unaffected on every measurement (`summaryBarDisplay:"none"`, full 788px rail column,
+`.uo-ordo-mark`/`.uo-ordo-day` still `display:block`, `flex-wrap:nowrap`, 65px header). `node --check`
+clean on `js/office-shell.js`; zero console errors across every test. Files touched:
+`css/office-shell.css`, `js/office-shell.js`.
+
+---
+
 **BCP INTERCESSIONS-SPACE TODO, BUILT, 2026-09-28 continued yet again.** Josh asked to go through
 the standing TODOs; this was the only one on the list. Scope was exactly as logged: the rubric
 SPACE only, no actual intercession content (Josh will supply that in a future session).
