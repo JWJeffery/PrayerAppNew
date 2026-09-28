@@ -23521,3 +23521,36 @@ measurement. Zero console errors throughout. `css/office-shell.css`, `js/office-
 only files touched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- working the unblocked-todo backlog: Task #15 was
+## already closed (stale row corrected), Gloria Patri/Kyrie "duplication" closed as not a defect
+
+Picked up `structure.json`'s open/unblocked items, cross-checked against the live repo before
+touching anything, per standing practice.
+
+**Task #15 (splash grid scrollability):** the resume note listed this as "not yet picked back up,"
+but `4e0f6d0` ("Fix task #15 for real...") had already shipped the real outer-budget `max-height` fix
+to `css/office-shell.css` and was already an ancestor of `main`'s tip. Re-verified live at 1512x900:
+zero body-level scroll, zero console errors. Corrected the stale resume-note row rather than
+re-doing already-shipped work. No code changed.
+
+**Gloria Patri/Kyrie normalization (`structure.json`'s `gloria-patri-normalization` item, open since
+at least 2026-09-04, "RE-VERIFIED... still accurate" as recently as this same day): CLOSED, the
+premise was wrong.** The prior re-verifications had only checked that the phrase "Gloria Patri"
+appeared in multiple component files, never compared what the text actually said. Direct comparison
+this session found the three traditions' wording is genuinely distinct, not duplicated: `common.json`
+`comm-gloria-patri` carries the 1979 BCP text; `east-syriac.json` `esy-gloria-patri` is a separate
+Maclean 1894 (p.2) text, farced with its own Trisagion-form refrain, correctly source-cited and
+correctly kept apart; `coptic.json` has no standalone Gloria Patri component at all -- its
+O'Leary-1911 wording appears only inline, dozens of times, woven into each Agpeya hour's own
+antiphonal prose, not an extractable fragment. Consolidating any of these into one shared component
+would have meant overwriting tradition-correct, source-cited translations with a single wrong one --
+the opposite of a fix. Also corrected: `comm-gloria-patri` was described as unreferenced/dead; it is
+not -- `js/office-ui.js:5097` looks it up live for the BCP lane's optional after-psalm-doxology
+toggle, and the same file's `comm-kyrie` (line 5501) is referenced directly by sequence item literal.
+Both are working, correctly-shared BCP-only fragments, consistent with `audit-ledger.html`'s own
+existing green row for `comm-gloria-patri` (verified 2026-07-07 against BCP1979.pdf). Updated
+`structure.json`'s `gloria-patri-normalization` item and its `architectural_debt` line 3 to `status:
+closed` with the full finding; corrected `RESUME_PROJECT_NOTE.md`'s matching line. Files touched:
+`structure.json`, `RESUME_PROJECT_NOTE.md`. `node -e "JSON.parse(...)"` confirms `structure.json`
+still parses. SEED_VERSION bumped to v390-2026-09-28-gloria-patri-todo-closed-not-a-defect.

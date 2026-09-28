@@ -249,11 +249,17 @@ full coverage.
 same session). 223 files under `scripts/`, ~100+ `audit:*` npm scripts in `package.json`. Needs
 cross-referencing against actual recent use before anything is deleted.
 
-**`structure.json`'s other open todos** (re-verified 2026-09-28 against live code, see the file
-itself for full evidence): Gloria Patri/Kyrie text duplicated across `components/east-syriac.json`,
-`coptic.json`, `anglican.json`, unconsolidated — still open. `js/office-ui.js` innerHTML
-string-building (33 raw writes) — still open, unaddressed. Two other todos (`rite-placeholder-
-fragility`, `saints-schema-refactor`) were closed 2026-09-28 as already-fixed/obsolete respectively.
+**`structure.json`'s other open todos** (re-verified 2026-09-28, continued — see the file itself for
+full evidence): the **Gloria Patri/Kyrie "duplication" item is now CLOSED, not open** — the prior
+"still accurate" re-verification only checked that the phrase existed in multiple files, not what it
+actually said. Direct text comparison found each tradition's wording is genuinely distinct and
+source-cited (BCP vs. Maclean-1894-East-Syriac vs. O'Leary-1911-Coptic), and `comm-gloria-patri`/
+`comm-kyrie` in `common.json` are not dead — both are live-referenced by `js/office-ui.js` (line 5097
+and 5501) for the BCP lane's optional after-psalm doxology and short Kyrie versicle. There is no
+cross-tradition duplication to normalize; doing so would have meant overwriting tradition-correct
+translations with one, which is not a fix. `js/office-ui.js` innerHTML string-building (33 raw
+writes) — still open, unaddressed. Two other todos (`rite-placeholder-fragility`,
+`saints-schema-refactor`) were closed 2026-09-28 as already-fixed/obsolete respectively.
 
 **`project_roadmap.json` — verified 2026-09-28:** 3 of 11 governance questions still open, all
 `blocks_beta: true` — `bcp-public-hardening` (what defects remain in the BCP public-beta path),
