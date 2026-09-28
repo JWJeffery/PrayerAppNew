@@ -168,6 +168,232 @@
       "type": "text",
       "label": "Loose, Remit, Pardon, O God, Our Transgressions",
       "text": "Loose, remit, pardon, O God, our transgressions, voluntary and involuntary; whether of word or of deed; whether of knowledge or of ignorance; whether of the day or of the night; whether of the mind or of the intention: forgive us all, for Thou art good and lovest mankind."
+    },
+    "typika-lenten-beatitudes": {
+      "type": "sequence",
+      "label": "The Beatitudes, with the Lenten refrain",
+      "items": [
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitudes-opening-refrain",
+          "text": "In Thy Kingdom remember us, O Lord, when Thou comest in Thy Kingdom.",
+          "repeat": 2
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-1",
+          "text": "Blessed are the poor in spirit, for theirs is the Kingdom of heaven."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-1-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-2",
+          "text": "Blessed are they that mourn, for they shall be comforted."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-2-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-3",
+          "text": "Blessed are the meek, for they shall inherit the earth."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-3-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-4",
+          "text": "Blessed are they which do hunger and thirst after righteousness, for they shall be filled."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-4-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-5",
+          "text": "Blessed are the merciful, for they shall obtain mercy."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-5-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-6",
+          "text": "Blessed are the pure in heart, for they shall see God."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-6-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-7",
+          "text": "Blessed are the peacemakers, for they shall be called the children of God."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-7-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-8",
+          "text": "Blessed are they which are persecuted for righteousness' sake, for theirs is the Kingdom of heaven."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-8-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-9",
+          "text": "Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for My sake."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-9-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-10",
+          "text": "Rejoice, and be exceeding glad, for great is your reward in heaven."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-10-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-11",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-11-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-12",
+          "text": "Both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-beatitude-12-refrain",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        }
+      ]
+    },
+    "typika-lenten-remember-us-prostration": {
+      "type": "sequence",
+      "label": "\"Remember us—\" with a prostration after each",
+      "items": [
+        {
+          "type": "text",
+          "key": "typika-lenten-prostration-rubric",
+          "text": "Then we stand in the middle of the church and chant, in a louder voice, with a prostration after each:"
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-prostration-lord",
+          "text": "Remember us, O Lord, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-prostration-master",
+          "text": "Remember us, O Master, when Thou comest in Thy Kingdom."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-prostration-holy-one",
+          "text": "Remember us, O Holy One, when Thou comest in Thy Kingdom."
+        }
+      ]
+    },
+    "typika-lenten-closing": {
+      "type": "sequence",
+      "label": "Lenten Dismissal (Forty Kyries and the Prayer of St. Ephrem)",
+      "items": [
+        {
+          "type": "text",
+          "key": "typika-lenten-forty-kyries",
+          "text": "Lord, have mercy.",
+          "repeat": 40
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-closing-doxology",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-more-honourable",
+          "text": "More honourable than the Cherubim, and beyond compare more glorious than the Seraphim, who without corruption gavest birth to God the Word, the very Theotokos, thee do we magnify."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-blessing-exchange",
+          "text": "In the name of the Lord, father (master), bless.\n\nPriest: God be gracious unto us and bless us, and cause Thy face to shine upon us and have mercy on us.\n\nReader: Amen."
+        }
+      ]
+    },
+    "typika-lenten-prayer-of-ephrem": {
+      "type": "sequence",
+      "label": "The Prayer of St. Ephrem the Syrian, with prostrations",
+      "items": [
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-1",
+          "text": "Priest: O Lord and Master of my life, a spirit of idleness, despondency, ambition, and idle talking give me not. (Prostration.)"
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-2",
+          "text": "But rather a spirit of chastity, humble-mindedness, patience, and love bestow upon me Thy servant. (Prostration.)"
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-3",
+          "text": "Yea, O Lord King, grant me to see my failings and not condemn my brother; for blessed art Thou unto the ages of ages. Amen. (Prostration.)"
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-twelve-bows",
+          "text": "Then twelve reverences. With each one we say: O God, cleanse me a sinner."
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-repeat",
+          "text": "Priest: O Lord and Master of my life, a spirit of idleness, despondency, ambition, and idle talking give me not. But rather a spirit of chastity, humble-mindedness, patience, and love bestow upon me Thy servant. Yea, O Lord King, grant me to see my failings and not condemn my brother; for blessed art Thou unto the ages of ages. (Prostration.)"
+        },
+        {
+          "type": "text",
+          "key": "typika-lenten-ephrem-amen",
+          "text": "Reader: Amen."
+        }
+      ]
+    },
+    "typika-lenten-transition-rubric": {
+      "type": "text",
+      "label": "What Follows",
+      "text": "On Mondays, Tuesdays, and Thursdays (unless it be the Fifth Thursday of Great Lent or the feast of the Forty Martyrs of Sebaste), Vespers begins directly: \"O come, let us worship,\" and Psalm 103. If there be a Liturgy of the Presanctified Gifts (ordinarily Wednesdays and Fridays), its own pre-communion Trisagion prayers begin instead. UNABHOR1997 p.142-143 (source-cited elsewhere in this corpus as the day-dependent 'stated exception'); the exact Fifth-Thursday/Forty-Martyrs exception and the Presanctified Liturgy's own texts are outside this office's scope and not modeled here."
     }
   }
 }

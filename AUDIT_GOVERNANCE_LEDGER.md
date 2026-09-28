@@ -23029,3 +23029,63 @@ running app, zero new console errors; JSON validity and semantic-content equalit
 git blob for every file before committing.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, working the open-items audit's non-blocked items -- item 6: Finding T8 built,
+Typika's distinct Great Lent structural form
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` called this "the most significant open item from the
+entire second-pass re-verification" -- UNABHOR1997 p.148's Lenten Typika (Psalms 102/145 dropped,
+refrained Beatitudes appended to Ninth Hour instead) disclosed but not attempted, since scoping what
+carries over and how it interacts with the existing Kontakion table (Finding T7) looked like a
+dedicated pass, not a quick patch.
+
+Read the full source through to "THE END OF THE TYPICA" (UNABHOR1997 pp.135-144, not the shorter
+excerpt the original finding quoted) before writing anything, per this project's own audit-then-fix
+discipline. That resolved every open scope question:
+- The Heavenly Choir hymn / Creed / "Loose, remit, pardon" / Lord's Prayer block is printed once in
+  the source, positioned right after the Lenten insert -- confirmed genuinely shared between both
+  forms (cross-checked against what the already-built ordinary form uses), not Lenten-exclusive.
+- The Kontakion table (T7) needed exactly one real change: UNABHOR1997 p.141 states plainly that a
+  Lenten Service says the Kontakion of the Transfiguration first, then of the day, then of the
+  temple. Built: the Transfiguration Kontakion (Seventh Tone, transcribed from p.140) now prepends
+  T7's existing per-weekday table on Great Lent weekdays. "Of the temple" stays disclosed as out of
+  scope (no concept of a specific parish's dedication in this app).
+- The genuinely new content -- refrained Beatitudes (pp.137-138), the same triple "Remember us"
+  repeated louder with a prostration after each, and the closing (forty Kyries, "More honourable than
+  the Cherubim," the Prayer of St. Ephrem the Syrian with its prostrations and twelve bows,
+  pp.141-142) -- was fully transcribable from the primary source already in this repo
+  (`data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt`).
+
+Built: `isGreatLentWeekdayTypikaForm` (`js/horologion-engine.js`) reuses `typikaWeekdayCycleBlocked`'s
+own Clean-Monday-to-Pascha window, restricted to Monday-Friday (Lenten Saturdays/Sundays keep the
+ordinary Divine Liturgy, so Typika keeps its ordinary form then too); five new fixed-data slots added
+to `data/horologion/typika-fixed.json`; two new sections (`lenten-beatitudes`, `lenten-dismissal`)
+added to `data/horologion/typika.json`, tagged `forForm` and pruned via the same section-pruning
+mechanism Midnight Office's Finding M0 already established as this codebase's pattern for a
+genuinely different day-form (`forDays` there, `forForm` here -- same technique).
+
+**Deliberately not built, disclosed rather than fabricated**: the day-dependent handoff at the very
+end (Vespers on Monday/Tuesday/Thursday; the Presanctified Liturgy's own pre-communion prayers
+otherwise, with a Fifth-Thursday/Forty-Martyrs exception the source states but this office doesn't
+compute) is rendered as a rubric naming the source's own words, not as another office's content
+spliced in -- this app's offices render independently, and there's no precedent anywhere in this
+corpus for one office's render embedding another's. Where the already-built ordinary Beatitudes use a
+different English wording than UNABHOR1997's own phrasing (an earlier, unrevisited choice from
+Findings T3/T4), the new Lenten Beatitudes reuse that same existing wording with the refrain
+interspersed, rather than introducing a second competing translation of the same ten verses within
+one office.
+
+Verified live, not just built: `HorologionEngine.resolveOffice()` in the running app across both
+2026's and 2027's Lenten seasons -- a Lenten Tuesday and Wednesday both correctly switch to the new
+sections and the Transfiguration-first Kontakion; a Lenten Saturday, the First Sunday of Lent, and a
+pre-Lent ordinary Friday all correctly stay on the unmodified ordinary form. Every new fixed-data
+slot resolves to real transcribed text, confirmed by direct inspection of the resolved office object,
+not a leftover placeholder. `node --check` clean, zero new console errors.
+
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` corrected in place: the top-level status summary, the
+Typika row in the office-summary table, and the T8 finding itself all now read FIXED, with the fix
+and its verification recorded inline.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

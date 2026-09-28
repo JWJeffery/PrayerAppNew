@@ -8385,6 +8385,54 @@ async function _resolveTypikaSlots(sections, dateObj) {
         return localDate >= cleanMonday && localDate < upcomingPascha;
     })();
 
+    // Finding T8 (audit 2026-09-26, built 2026-09-28): UNABHOR1997 p.148 -- "If it be a
+    // Great Lent, the Typical Psalms are not said, and at the conclusion of the Ninth
+    // Hour we chant... the Beatitudes [with a distinct refrain]" -- an entirely different,
+    // shorter structural form. Reuses the same Clean-Monday-to-Pascha window as
+    // typikaWeekdayCycleBlocked above (same liturgical boundary, independently
+    // recomputed per this file's own established style), but additionally excludes
+    // Saturday: Lenten Saturdays keep the ordinary Divine Liturgy, so Typika would not
+    // take this reduced form then. Sunday is already excluded by both the date window
+    // (Lazarus Saturday/Palm Sunday fall outside "Clean Monday through the eve of
+    // Pascha" in the relevant sense here) and the dayOfWeek check below.
+    const isGreatLentWeekdayTypikaForm = (() => {
+        if (dayOfWeek === 0 || dayOfWeek === 6) return false;
+
+        const MS_PER_DAY = 86400000;
+
+        function orthodoxPascha(year) {
+            const a = year % 4;
+            const b = year % 7;
+            const c = year % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const month = Math.floor((d + e + 114) / 31);
+            const day = ((d + e + 114) % 31) + 1;
+            return new Date(year, month - 1, day + 13);
+        }
+
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const paschaThisYear = orthodoxPascha(localDate.getFullYear());
+        const upcomingPascha = localDate <= paschaThisYear
+            ? paschaThisYear
+            : orthodoxPascha(localDate.getFullYear() + 1);
+        const cleanMonday = new Date(upcomingPascha.getTime() - (48 * MS_PER_DAY));
+
+        return localDate >= cleanMonday && localDate < upcomingPascha;
+    })();
+
+    // Prune whichever set of sections doesn't apply to today's form. Sections with no
+    // forForm tag are universal (shared by both forms, e.g. the Heavenly Choir hymn,
+    // Creed, Lord's Prayer, and the troparion/Kontakion slot) and are never pruned.
+    {
+        const activeForm = isGreatLentWeekdayTypikaForm ? 'great-lent-weekday' : 'ordinary';
+        for (let s = sections.length - 1; s >= 0; s--) {
+            const forForm = sections[s].forForm;
+            if (Array.isArray(forForm) && !forForm.includes(activeForm)) {
+                sections.splice(s, 1);
+            }
+        }
+    }
 
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
@@ -8395,7 +8443,12 @@ async function _resolveTypikaSlots(sections, dateObj) {
         'typika-heavenly-choir-hymn',
         'typika-creed',
         'typika-loose-remit-pardon',
-        'typika-lords-prayer'
+        'typika-lords-prayer',
+        'typika-lenten-beatitudes',
+        'typika-lenten-remember-us-prostration',
+        'typika-lenten-closing',
+        'typika-lenten-prayer-of-ephrem',
+        'typika-lenten-transition-rubric'
     ]);
 
     for (const section of sections) {
@@ -8497,13 +8550,31 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 } else {
                     const dayEntry = WEEKDAY_KONTAKIA[dayOfWeek];
                     if (dayEntry) {
+                        // Finding T8 (built 2026-09-28): UNABHOR1997 p.141 -- "if... it be a
+                        // Lenten Service, say first the Kontakion of the Transfiguration, then
+                        // of the day, and then of the temple." The temple Kontakion is out of
+                        // scope (this app has no concept of a specific parish's dedication);
+                        // disclosed via the label rather than silently dropped.
+                        const TRANSFIGURATION_KONTAKION =
+                            'On the mount Thou wast transfigured, and Thy disciples, as much as they could bear, beheld Thy glory, O Christ God; that when they should see Thee crucified, they would know Thy Passion to be willing, and would preach to the world that Thou, in truth, art the Effulgence of the Father.';
+                        const lentenPrefix = isGreatLentWeekdayTypikaForm
+                            ? TRANSFIGURATION_KONTAKION + '\n\n'
+                            : '';
+                        const lentenLabelPrefix = isGreatLentWeekdayTypikaForm
+                            ? 'Kontakion of the Transfiguration, and '
+                            : '';
                         section.items[i] = {
                             type:       'text',
                             key:        'typika-kontakion-rubric',
-                            label:      dayEntry.label,
-                            text:       dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS,
+                            label:      lentenLabelPrefix + dayEntry.label,
+                            text:       lentenPrefix + dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS +
+                                (isGreatLentWeekdayTypikaForm
+                                    ? '\n\n(The Kontakion of the temple dedication also belongs here, per UNABHOR1997 -- not modeled, this app has no concept of a specific parish’s dedication.)'
+                                    : ''),
                             tone:       dayEntry.tone,
-                            resolvedAs: 'typika-weekday-fixed-kontakion-' + dayOfWeek
+                            resolvedAs: isGreatLentWeekdayTypikaForm
+                                ? 'typika-lenten-weekday-fixed-kontakion-' + dayOfWeek
+                                : 'typika-weekday-fixed-kontakion-' + dayOfWeek
                         };
                     }
                 }

@@ -20,7 +20,8 @@ closing Ectenia had been paraphrased away from the source rather than transcribe
 its specific ROCOR-language wording; Small Compline's Saturday Kontakion was applied unconditionally
 where the source requires it suppressed during Great Lent). Found and disclosed three further items
 not fixed in this pass: Typika has its own genuinely distinct, currently-unmodeled Great Lent
-structural form (T8 — comparable in scope to Midnight Office's own M0 finding); none of the four
+structural form (T8 — comparable in scope to Midnight Office's own M0 finding — **FIXED
+2026-09-28**, see the finding below); none of the four
 Interhours had any appointment gate, though the source restricts them to roughly two days a year and
 never during Great Lent (IH7 — **FIXED 2026-09-26, same day as this disclosure**, see the finding
 below); and Small Compline's own Saturday-Kontakion fix has known remaining
@@ -44,7 +45,7 @@ confirmed live (see the Vespers kathisma/stichera finding below, which required 
 | Grand Compline | 7 (GC1-GC7) — *was 1, see scope-correction note below* — **FIXED 2026-09-26, full re-pass** | Friday's weekday-troparia slot had no content at all (built: routes to the same Resurrection-by-tone table as Small Compline's SC4); an entire ten-prayer "Prayers on Approaching Sleep" block plus the Akathist Kontakion was missing (built); the closing dismissal borrowed Typika's forgiveness formula instead of its own real mutual-forgiveness exchange (rebuilt) |
 | The four Hours | 3 (1 bug, 2 shared gaps) — **FIXED 2026-09-26** | Third Hour renders Lent-only troparion year-round; mid-office Trisagion uses the wrong form; each Hour missing its own fixed verse (not one shared verse — corrected during the fix pass) |
 | The four Interhours | 4 (IH1-IH4) — *new office-group, never previously audited* — **AUDITED and FIXED 2026-09-26** | All four cited entirely the wrong three psalms (corrected); each hour's fixed troparia triad was wrongly modeled as Menaion-dependent (corrected — a fixed, hour-specific triad, per UNABHOR1997); roughly half of each hour's real content (closing prayers, each hour's own Prayer of Basil) was missing outright (built) |
-| Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built |
+| Typika | 6 (2 bugs, 3 gaps, 1 scope correction) — *was 7, T1 retracted as a false positive, see below* — **FIXED 2026-09-26**; plus T8 (Great Lent structural form, found in second-pass re-verification) — **FIXED 2026-09-28** | Beatitudes before the Psalms instead of after; a misplaced Trisagion block duplicates the Lord's Prayer; the Kontakion-of-the-day table (T7) built; the distinct Great Lent weekday form (T8) built: refrained Beatitudes, Transfiguration Kontakion priority, Forty Kyries and the Prayer of St. Ephrem |
 | Orthros/Matins | 2 (2 gaps) — **FIXED 2026-09-26** | Psalms 19/20 missing from the opening; sessional hymns not interleaved per-kathisma |
 | Midnight Office | 4 (1 major structural, 1 bug, 2 gaps) — **FIXED 2026-09-26, full rebuild** | Real office has 3 distinct day-forms, now built with day-of-week branching; Psalm 117 removed; all 9 Macarius/Basil prayers and the full closing sequence built; M3's "Canon" corrected (no such structure exists on Weekday/Saturday — the real Canon to the Trinity exists only on Sunday, disclosed as tone-dependent) |
 | Small Compline | 4 (3 gaps, 1 scope correction) — **FIXED 2026-09-26** | Three fixed prayers missing; day-of-week troparia wrongly modeled as Menaion-dependent (and, once corrected, a second latent bug found: the shared Menaion-override machinery was pre-empting the fixed table on rank 3-4 commemorations — nearly every day — now capped to rank 1-2) |
@@ -559,7 +560,7 @@ order and the correct day-specific Kontakion label, zero non-environmental conso
 Google Fonts/`ERR_CERT_AUTHORITY_INVALID` sandbox-proxy noise already documented, confirmed
 unrelated).
 
-### Finding T8 — Disclosed, found during second-pass re-verification: Typika has its own genuinely distinct Great Lent form, not currently modeled at all
+### Finding T8 — FIXED 2026-09-28: Typika's genuinely distinct Great Lent form, built
 
 `UNABHOR1997` p.148 (immediately after the ordinary-day Beatitudes text T2-T7 already cover): "LENTEN
 SERVICE — If it be a Great Lent, the Typical Psalms are not said, and at the conclusion of the Ninth
@@ -568,16 +569,52 @@ refrain 'Remember us, O Lord, when Thou comest in Thy kingdom']." This describes
 different structural mode during Great Lent: Psalms 102 and 145 (the office's own opening) are
 dropped outright, and what remains of Typika is folded directly onto the end of the Ninth Hour as a
 short Beatitudes-with-refrain unit, rather than standing as its own separate office with the usual
-opening. The current build shows the full Psalm 102/145 opening unconditionally, on every date
-including every Great Lent weekday, with no season check at all (confirmed: `typika-psalm-102`/
-`typika-psalm-145` sit in a plain fixed-slot set in `_resolveTypikaSlots()`, no `_computeLiturgicalSeason`
-call anywhere in that function). This is comparable in scope to Midnight Office's own M0 finding — a
-real, distinct day/season-form the office doesn't model at all, not a small content drift — and
-building it properly (determining exactly what does and doesn't carry over into the Lenten form
-beyond the Beatitudes-and-refrain unit quoted above, and how it interacts with this office's existing
-T7 Kontakion-table fix) is its own dedicated pass, not a quick patch inside a re-verification sweep.
-Disclosed here rather than attempted; flagged as the most significant open item from the entire
-second-pass re-verification.
+opening. The build had shown the full Psalm 102/145 opening unconditionally, on every date
+including every Great Lent weekday, with no season check at all.
+
+**Fixed.** Read the full source through to "THE END OF THE TYPICA" (pp.135-144, not just the
+excerpt above) before building anything, per this project's own audit-then-fix discipline. That full
+read resolved the scope questions the original disclosure raised:
+
+- The Heavenly Choir hymn, Creed, "Loose, remit, pardon," and Lord's Prayer are printed once in the
+  source, positioned right after the Lenten insert — but confirmed (by cross-checking against what
+  this office's own ordinary form already builds) to be genuinely shared content used by both forms,
+  not Lenten-exclusive. Left untouched, unduplicated.
+- The Kontakion table (Finding T7) is likewise shared, with one real Lenten-specific difference
+  UNABHOR1997 p.141 states explicitly: "if... it be a Lenten Service, say first the Kontakion of the
+  Transfiguration, then of the day, and then of the temple." Built: the Transfiguration Kontakion
+  (Seventh Tone, transcribed from p.140) now prepends T7's existing per-weekday table on Great Lent
+  weekdays. The Kontakion "of the temple" (a specific parish's dedication) is out of this app's scope
+  and disclosed as such rather than silently dropped.
+- The genuinely new content — the refrained Beatitudes (p.137-138), the same triple "Remember us"
+  repeated louder with a prostration after each (p.138), and the closing sequence (forty Kyries,
+  "More honourable than the Cherubim," the Prayer of St. Ephrem the Syrian with its prostrations and
+  twelve bows, pp.141-142) — is transcribed in full from the primary source
+  (`data/kalendar/source-witnesses/unabbreviated-horologion-1997.txt`) and built as new fixed-data
+  slots in `data/horologion/typika-fixed.json`, wired into new `lenten-beatitudes`/`lenten-dismissal`
+  sections in `data/horologion/typika.json`, tagged `forForm: ['great-lent-weekday']` and pruned by a
+  new `isGreatLentWeekdayTypikaForm` check in `_resolveTypikaSlots()` (`js/horologion-engine.js`) —
+  the same Clean-Monday-to-Pascha window `typikaWeekdayCycleBlocked` already uses, further restricted
+  to Monday-Friday (Lenten Saturdays and Sundays keep the ordinary Divine Liturgy, so Typika keeps
+  its ordinary form then too).
+- **Deliberately not built, disclosed rather than fabricated**: the day-dependent handoff the closing
+  leads into (Vespers on Monday/Tuesday/Thursday; the Presanctified Liturgy's own pre-communion
+  prayers otherwise, with a Fifth-Thursday/Forty-Martyrs exception the source states but this office
+  doesn't compute) is rendered as an honest rubric naming the source's own words, not as literally
+  embedded Vespers or Presanctified content — consistent with this app's per-office independent-render
+  architecture, which has no precedent for one office's render splicing in another's.
+- Where the ordinary form's own Beatitudes verses use an already-established, slightly different
+  (Coverdale/KJV-style) English wording than UNABHOR1997's own phrasing (a pre-existing choice from
+  Finding T3/T4, not revisited here), the new Lenten Beatitudes reuse that SAME already-built wording
+  with the refrain interspersed, rather than introducing a second, competing translation of the same
+  ten verses within one office.
+
+**Verified live**, not just built: `HorologionEngine.resolveOffice()` in the running app across both
+2026 and 2027's Lenten seasons — a Lenten Tuesday and Wednesday both correctly switch to the new
+sections and the Transfiguration-first Kontakion; a Lenten Saturday, the First Sunday of Lent, and a
+pre-Lent ordinary Friday all correctly stay on the unmodified ordinary form. Every new fixed-data
+slot resolves to real transcribed text, not a leftover placeholder, confirmed by direct inspection of
+the resolved office object. Zero new console errors.
 
 ## ORTHROS/MATINS — audited, 2 findings, FIXED 2026-09-26 (O1, O2)
 
