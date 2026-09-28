@@ -157,27 +157,14 @@
         return "Profile API and controls are present";
     }
 
-    async function verifyOfficeDefaultsActionOpensPanel() {
-        await enterOfficeMode("daily", "The Episcopal Church");
-
-        const button = $("#office-profile-defaults-button");
-        assert(button, "Missing office-page Defaults action.");
-        assert(typeof window.openLocalProfileDefaultsFromOffice === "function", "Missing openLocalProfileDefaultsFromOffice().");
-
-        button.click();
-
-        await waitFor(() => {
-            return isVisible($("#mode-selection")) &&
-                isVisible($("#user-profile-defaults")) &&
-                !document.body.classList.contains("office-active");
-        }, 12000);
-
-        assert(text("#user-profile-defaults-title").includes("Defaults for this browser"), "Office Defaults action did not reveal the local defaults panel.");
-
-        await waitFor(() => document.activeElement === $("#profile-entry-default"), 3000, 50);
-
-        return "Office Defaults action opens and focuses the local browser defaults panel";
-    }
+    // REMOVED 2026-09-28: verifyOfficeDefaultsActionOpensPanel() tested the
+    // in-office "Defaults" button (#office-profile-defaults-button), which
+    // Josh had removed outright as a redundant duplicate of the "Explore
+    // other Offices" button (formerly "Back to Modes") -- both called
+    // backToSplash(); Defaults just also auto-opened this panel once there.
+    // openLocalProfileDefaultsFromOffice() itself is untouched in
+    // js/office-ui.js (unused now, not deleted, in case another entry point
+    // is added later), but the button and this check on it are gone.
 
     async function verifyUniversalDefaultPersists() {
         window.resetUniversalOfficeUserProfile();
@@ -319,7 +306,6 @@
 
         try {
             await runCheck("Profile API and controls exist", verifyProfileApiAndControls);
-            await runCheck("Office Defaults action opens local defaults panel", verifyOfficeDefaultsActionOpensPanel);
             await runCheck("Universal selector default persists", verifyUniversalDefaultPersists);
             await runCheck("Tradition office default persists", verifyTraditionDefaultPersists);
             await runCheck("Book of Needs all-prayers profile override works", verifyBookOfNeedsUniversalScopeOverride);

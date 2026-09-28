@@ -593,6 +593,12 @@
         }
 
         add(explanationRow());
+        /* Global, not lane-specific: #app-mode-return-button and its backing
+           checkbox both live outside any per-tradition template (see
+           index.html's #main-content), so this one row genuinely covers
+           every lane -- added here, unguarded by modeKey, on purpose. */
+        add(checkboxRow('explore-other-offices', 'Explore other Offices link',
+            'toggle-explore-other-offices', 'Hidden', 'Shown'));
         if (typeof window.openTraditionExplanation === 'function') {
             var about = el('button', 'uo-drawer-link', 'About this tradition');
             about.type = 'button';

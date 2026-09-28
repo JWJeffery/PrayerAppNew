@@ -665,11 +665,19 @@
 
     <!-- Main content area -->
     <div id="main-content" class="app-primary-canvas">
-        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return">Back to Modes</button>
+        <!-- "Defaults" (used to sit here as its own button) and "Back to Modes" both ultimately
+             called backToSplash() -- Defaults just also auto-opened the profile-defaults panel once
+             there. Removed 2026-09-28 per Josh's direct instruction as a redundant duplicate; the
+             defaults panel is still reachable from the splash screen itself. This single button is
+             the one true "leave the office and go elsewhere" control, renamed the same day from
+             "Back to Modes" to "Explore other Offices", and hidden by default -- see
+             #toggle-explore-other-offices in the Office Settings drawer (js/office-drawer.js) and
+             isExploreOtherOfficesVisible()/setExploreOtherOfficesVisible() (js/office-ui.js). -->
+        <button id="app-mode-return-button" onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return" hidden>Explore other Offices</button>
+        <input type="checkbox" id="toggle-explore-other-offices" hidden aria-hidden="true" onchange="setExploreOtherOfficesVisible(this.checked)">
         <h1 id="office-mode-title">The Universal Office</h1>
         <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
             <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
-            <button id="office-profile-defaults-button" class="office-context-action office-profile-defaults-action" type="button" onclick="openLocalProfileDefaultsFromOffice()">Defaults</button>
         </div>
         <div id="office-display"></div>
         <div class="saint-section">

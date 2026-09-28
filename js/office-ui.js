@@ -1792,6 +1792,7 @@ async function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
+    setExploreOtherOfficesVisible(isExploreOtherOfficesVisible());
     scheduleSplashForegroundGuard();
 
     // Awaited here, before anything is shown: the entry/mode screens are already
@@ -2239,13 +2240,13 @@ async function init() {
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);
     updateDatePicker();
-  if (selectedMode === 'horologion') updateGenericDateDisplay();
+  if (selectedMode === 'horologion') { updateGenericDateDisplay(); _updateHorologionOfficeButtons(); }
     requestRender();
 }
 function resetDate() {
     currentDate = new Date();
     updateDatePicker();
-  if (selectedMode === 'horologion') updateGenericDateDisplay();
+  if (selectedMode === 'horologion') { updateGenericDateDisplay(); _updateHorologionOfficeButtons(); }
     requestRender();
 }
 function updateDatePicker() {
@@ -2286,7 +2287,7 @@ function setCustomDate(dateStr) {
         currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     }
     updateDatePicker();
-    if (selectedMode === 'horologion') updateGenericDateDisplay();
+    if (selectedMode === 'horologion') { updateGenericDateDisplay(); _updateHorologionOfficeButtons(); }
     requestRender();
 }
 
@@ -2853,6 +2854,39 @@ function applyDarkMode(isDark) {
 window.applyDarkMode = applyDarkMode;
 window._defaultDarkModeForCurrentTime = _defaultDarkModeForCurrentTime;
 
+// ADDED 2026-09-28, per Josh's direct instruction: "Defaults" and "Back to
+// Modes" both ultimately called backToSplash() -- a redundant duplicate.
+// "Defaults" is removed outright; "Back to Modes" is renamed "Explore other
+// Offices" and hidden by default, shown only once the reader opts in via
+// this checkbox (#toggle-explore-other-offices, surfaced in every lane's
+// Office Settings drawer -- see js/office-drawer.js's buildKeep()). One
+// button, one localStorage key, applies globally: the button is a single
+// position:fixed element outside any per-tradition template, not duplicated
+// per lane, so this one toggle genuinely covers every office view.
+const EXPLORE_OTHER_OFFICES_STORAGE_KEY = 'uoExploreOtherOfficesVisible';
+
+function isExploreOtherOfficesVisible() {
+    try {
+        return localStorage.getItem(EXPLORE_OTHER_OFFICES_STORAGE_KEY) === 'true';
+    } catch (e) {
+        return false; // fail closed: hidden by default, matches the feature's own default
+    }
+}
+
+function setExploreOtherOfficesVisible(visible) {
+    try {
+        localStorage.setItem(EXPLORE_OTHER_OFFICES_STORAGE_KEY, visible ? 'true' : 'false');
+    } catch (e) { /* localStorage unavailable (private browsing, quota) -- degrade silently */ }
+
+    const btn = document.getElementById('app-mode-return-button');
+    if (btn) btn.hidden = !visible;
+
+    const box = document.getElementById('toggle-explore-other-offices');
+    if (box) box.checked = !!visible;
+}
+window.isExploreOtherOfficesVisible = isExploreOtherOfficesVisible;
+window.setExploreOtherOfficesVisible = setExploreOtherOfficesVisible;
+
 function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
     const now = new Date();
     currentDate = now;
@@ -2907,6 +2941,8 @@ function selectHorologionOffice(officeKey) {
     requestRender();
 }
 
+const INTERHOUR_OFFICE_KEYS = ['interhour-first', 'interhour-third', 'interhour-sixth', 'interhour-ninth'];
+
 function _updateHorologionOfficeButtons() {
     const keys = [
         'vespers',
@@ -2925,14 +2961,39 @@ function _updateHorologionOfficeButtons() {
         'interhour-ninth'
     ];
 
+    // Interhours are appointed only on two days a year (UNABHOR1997 p.93 --
+    // see HorologionEngine.isInterhourAppointed). Previously all four were
+    // always shown, selecting one on an ordinary day just rendered a "Not
+    // Appointed" disclosure -- hide them instead, so the picker only offers
+    // what's actually appointed today.
+    const interhourAppointed =
+        typeof window !== 'undefined' &&
+        window.HorologionEngine &&
+        typeof window.HorologionEngine.isInterhourAppointed === 'function'
+            ? window.HorologionEngine.isInterhourAppointed(currentDate)
+            : true; // fail open: if the check itself is unavailable, don't hide real options
+
+    // If the currently-selected office is an interhour that's about to be
+    // hidden (e.g. the reader changed the date while one was selected), fall
+    // back to a sensible default rather than leaving no radio checked.
+    if (!interhourAppointed && INTERHOUR_OFFICE_KEYS.includes(selectedHorologionOffice)) {
+        selectedHorologionOffice = _defaultHorologionOfficeForCurrentTime(currentDate);
+    }
+
     keys.forEach(key => {
         const input = document.getElementById(`hor-btn-${key}`);
         if (!input) return;
 
+        const row = input.closest('.hor-office-option');
+        if (INTERHOUR_OFFICE_KEYS.includes(key)) {
+            const hidden = !interhourAppointed;
+            if (row) row.hidden = hidden;
+            input.disabled = hidden;
+        }
+
         const isActive = key === selectedHorologionOffice;
         input.checked = isActive;
 
-        const row = input.closest('.hor-office-option');
         if (row) row.classList.toggle('is-active', isActive);
     });
 }
