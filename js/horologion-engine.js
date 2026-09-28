@@ -259,6 +259,13 @@ const HorologionEngine = (() => {
     // Consumed by _getFixedCalendarMmdd() and feastLectionaryOverlayKeys.
     let _currentEoMode = 'new_calendar';
 
+    // ── v8.1: Declared parish dedication ──────────────────────────────────
+    // Set at the start of each resolveOffice() call from context.parishDedication
+    // (the user-profile field of the same name in js/office-ui.js). null means
+    // "not declared". Consumed by the Lenten Typika Kontakion sequence to
+    // resolve the "of the temple" clause -- see _resolveTypikaSlots().
+    let _currentParishDedication = null;
+
     // ── v7.1: Julian-to-Gregorian offset (century-aware) ──────────────────
     // Mirrors CalendarEngine._julianToGregorianOffset without a cross-module dependency.
     function _juliOffset(y) {
@@ -609,6 +616,15 @@ const _interhourFixedDataCache = {};
         // Invalid or missing values default to 'new_calendar' (non-throwing).
         const _rawEoMode = (context && typeof context.eoMode === 'string') ? context.eoMode : '';
         _currentEoMode   = (_rawEoMode === 'old_calendar') ? 'old_calendar' : 'new_calendar';
+
+        // ── v8.1: normalise parishDedication from caller context ──────────────
+        // Validated again against the real corpus (not just the id set the
+        // caller already checked) inside _resolveTypikaSlots()'s lookup itself,
+        // so a stale/unknown id degrades to the existing disclosure, never a
+        // thrown error or a guessed dedication.
+        _currentParishDedication = (context && typeof context.parishDedication === 'string')
+            ? context.parishDedication
+            : null;
 
         const isoDate = _formatLocalISODate(dateObj);
         const normalizedKey = (officeKey || '').toLowerCase().trim();
@@ -7675,6 +7691,30 @@ async function _loadTypikaFixedData() {
     }
 }
  
+// ── v8.1: _loadParishDedicationsData() ─────────────────────────────────
+// Loads data/horologion/parish-dedications.json — the curated, bounded list
+// of dedications a user's profile parishDedication id can name. See that
+// file's own "note" field for why it holds only pointers (mmdd + menaionId),
+// never a second copy of Kontakion text.
+const PARISH_DEDICATIONS_URL = 'data/horologion/parish-dedications.json';
+let _parishDedicationsData = null;
+async function _loadParishDedicationsData() {
+    if (_parishDedicationsData !== null) return;
+    try {
+        const response = await fetch(PARISH_DEDICATIONS_URL);
+        if (!response.ok) {
+            console.warn(`[HorologionEngine] Could not load parish dedications data (HTTP ${response.status}); Kontakion of the temple stays disclosed, not resolved.`);
+            _parishDedicationsData = { entries: [] };
+            return;
+        }
+        _parishDedicationsData = await response.json();
+        console.log('[HorologionEngine] Loaded parish dedications data (v8.1).');
+    } catch (err) {
+        console.warn('[HorologionEngine] _loadParishDedicationsData failed:', err.message, '— Kontakion of the temple stays disclosed, not resolved.');
+        _parishDedicationsData = { entries: [] };
+    }
+}
+
 // ── v6.10: _loadTypikaLectionaryData() ────────────────────────────────
 async function _loadTypikaLectionaryData() {
     if (_typikaLectionaryData !== null) return;
@@ -7700,7 +7740,8 @@ async function _resolveTypikaSlots(sections, dateObj) {
         _loadTypikaLectionaryData(),
         _loadTroparionData(),
         _loadWeekdayTroparionMeta(),
-        _loadTriodionData()
+        _loadTriodionData(),
+        _loadParishDedicationsData()
     ]);
 
      const dayOfWeek  = dateObj.getDay();
@@ -8447,8 +8488,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         'typika-lenten-beatitudes',
         'typika-lenten-remember-us-prostration',
         'typika-lenten-closing',
-        'typika-lenten-prayer-of-ephrem',
-        'typika-lenten-transition-rubric'
+        'typika-lenten-prayer-of-ephrem'
     ]);
 
     for (const section of sections) {
@@ -8471,6 +8511,50 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         lxxNumber:  slotData.lxxNumber,
                         items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                         resolvedAs: 'typika-fixed'
+                    };
+                }
+                continue;
+            }
+
+            // v8.1: typika-lenten-transition-rubric now resolves the day-dependent
+            // Vespers/Presanctified handoff for real, instead of only disclosing it.
+            // Reachable only inside the Lenten-weekday section (forForm:
+            // ["great-lent-weekday"] in data/horologion/typika.json), so
+            // isGreatLentWeekdayTypikaForm is already known true here.
+            if (item.key === 'typika-lenten-transition-rubric') {
+                const lentWeek = _getGreatLentWeekNumber(dateObj);
+                const isFifthThursday      = (dayOfWeek === 4 && lentWeek === 5);
+                const isFortyMartyrsFeast  = (_getFixedCalendarMmdd(dateObj) === '03-09');
+                const isStatedException    = isFifthThursday || isFortyMartyrsFeast;
+                const isOrdinaryPresanctifiedDay = (dayOfWeek === 3 || dayOfWeek === 5); // Wed/Fri
+                const presanctifiedToday   = isOrdinaryPresanctifiedDay || isStatedException;
+
+                if (!presanctifiedToday) {
+                    // Monday, Tuesday, or Thursday, and not the stated exception --
+                    // Vespers genuinely begins directly, so offer the real switch
+                    // instead of only disclosing that it happens.
+                    section.items[i] = {
+                        type:       'action-rubric',
+                        key:        item.key,
+                        label:      'What Follows',
+                        text:       'Vespers begins directly: "O come, let us worship," and Psalm 103.',
+                        action:     { officeKey: 'vespers', label: 'Begin Vespers now' },
+                        resolvedAs: 'typika-lenten-transition-vespers-action'
+                    };
+                } else {
+                    const reason = isFifthThursday
+                        ? 'today is the Fifth Thursday of Great Lent'
+                        : isFortyMartyrsFeast
+                            ? 'today is the feast of the Forty Martyrs of Sebaste'
+                            : 'today is a Wednesday or Friday of Great Lent';
+                    section.items[i] = {
+                        type:       'text',
+                        key:        item.key,
+                        label:      'What Follows',
+                        text:       `The Liturgy of the Presanctified Gifts is ordinarily appointed today, since ${reason}. ` +
+                                    'Its own pre-communion Trisagion prayers begin instead; the Presanctified Liturgy\'s ' +
+                                    'own texts are outside this office\'s scope and not modeled here. UNABHOR1997 p.142-143.',
+                        resolvedAs: 'typika-lenten-transition-presanctified-disclosure'
                     };
                 }
                 continue;
@@ -8550,11 +8634,17 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 } else {
                     const dayEntry = WEEKDAY_KONTAKIA[dayOfWeek];
                     if (dayEntry) {
-                        // Finding T8 (built 2026-09-28): UNABHOR1997 p.141 -- "if... it be a
-                        // Lenten Service, say first the Kontakion of the Transfiguration, then
-                        // of the day, and then of the temple." The temple Kontakion is out of
-                        // scope (this app has no concept of a specific parish's dedication);
-                        // disclosed via the label rather than silently dropped.
+                        // Finding T8 (built 2026-09-28, temple clause added 2026-09-28
+                        // continued): UNABHOR1997 p.141 -- "if... it be a Lenten Service,
+                        // say first the Kontakion of the Transfiguration, then of the day,
+                        // and then of the temple." The temple Kontakion depends on which
+                        // commemoration a specific parish is dedicated to -- resolved for
+                        // real when the user's profile declares one (parishDedication,
+                        // js/office-ui.js), via data/horologion/parish-dedications.json's
+                        // curated, bounded list, each entry already carrying a real
+                        // Kontakion text in data/menaion/*.json. Still honestly disclosed,
+                        // not fabricated, when no dedication is declared or the declared
+                        // one's text isn't in the corpus.
                         const TRANSFIGURATION_KONTAKION =
                             'On the mount Thou wast transfigured, and Thy disciples, as much as they could bear, beheld Thy glory, O Christ God; that when they should see Thee crucified, they would know Thy Passion to be willing, and would preach to the world that Thou, in truth, art the Effulgence of the Father.';
                         const lentenPrefix = isGreatLentWeekdayTypikaForm
@@ -8563,14 +8653,34 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         const lentenLabelPrefix = isGreatLentWeekdayTypikaForm
                             ? 'Kontakion of the Transfiguration, and '
                             : '';
+
+                        let templeKontakionText = '';
+                        if (isGreatLentWeekdayTypikaForm) {
+                            const dedicationEntry = _currentParishDedication &&
+                                _parishDedicationsData && Array.isArray(_parishDedicationsData.entries)
+                                    ? _parishDedicationsData.entries.find(e => e.id === _currentParishDedication)
+                                    : null;
+
+                            const templeResult = dedicationEntry &&
+                                window.MenaionResolver &&
+                                typeof window.MenaionResolver.queryCommemorationById === 'function'
+                                    ? await window.MenaionResolver.queryCommemorationById(dedicationEntry.mmdd, dedicationEntry.menaionId)
+                                    : null;
+
+                            templeKontakionText = (templeResult && templeResult.status === 'menaion-resolved')
+                                ? '\n\nKontakion of the temple (' + templeResult.name + '): ' + templeResult.kontakion.text
+                                : '\n\n(The Kontakion of the temple dedication also belongs here, per UNABHOR1997 -- not modeled here: ' +
+                                  (_currentParishDedication
+                                      ? 'the declared dedication’s Kontakion text is not yet in this corpus.'
+                                      : 'no home parish dedication is declared in this browser’s profile settings.') +
+                                  ')';
+                        }
+
                         section.items[i] = {
                             type:       'text',
                             key:        'typika-kontakion-rubric',
                             label:      lentenLabelPrefix + dayEntry.label,
-                            text:       lentenPrefix + dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS +
-                                (isGreatLentWeekdayTypikaForm
-                                    ? '\n\n(The Kontakion of the temple dedication also belongs here, per UNABHOR1997 -- not modeled, this app has no concept of a specific parish’s dedication.)'
-                                    : ''),
+                            text:       lentenPrefix + dayEntry.text + '\n\n' + MEMORIAL_KONTAKION + '\n\n' + PROTECTION_OF_CHRISTIANS + templeKontakionText,
                             tone:       dayEntry.tone,
                             resolvedAs: isGreatLentWeekdayTypikaForm
                                 ? 'typika-lenten-weekday-fixed-kontakion-' + dayOfWeek

@@ -51,6 +51,57 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**THREAD 2 IS NOW BUILT AND VERIFIED TOO, 2026-09-28 continued further.** Josh answered the scoping
+question below: bounded list. Built a `parishDedication` field on the user profile
+(`js/office-ui.js`), a dropdown in the profile-defaults panel (`index.html`), a new curated
+`data/horologion/parish-dedications.json` (27 entries — the 8 fixed-date Twelve-Great-Feasts-family
+feasts plus 19 saints, every one already carrying a real Kontakion text in `data/menaion/*.json`,
+reused not transcribed), and a new `MenaionResolver.queryCommemorationById(mmdd, id)`
+(`js/menaion-resolver.js`) so a declared dedication resolves regardless of what else the corpus
+ranks higher on that date. `js/horologion-engine.js`'s Lenten Typika Kontakion branch now appends
+the real text when a declared dedication resolves, and keeps the honest disclosure otherwise. Live-
+verified end to end in headless Chromium (dropdown persists, survives reload, renders the real
+Kontakion) plus direct engine checks of five cases (none declared, a saint, a Great Feast, an
+unknown id, and confirming an ordinary non-Lenten day carries no temple clause at all). Full detail:
+`documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section. **Both threads from the entry
+below are now closed.**
+
+**THREAD 2 OF THE ENTRY BELOW WAS INVESTIGATED AND CONFIRMED, 2026-09-28 continued (superseded by
+the paragraph above — this is left in place only for the record of what was checked before Josh's
+answer came in).** The assumption held up under an actual grep, as
+asked: `js/office-ui.js`'s `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` (~line 682) is the complete
+per-user profile schema — `entryPageDefault`, `traditionDefault`, `bookOfNeedsScope`,
+`ministryRole`, `oorSubtradition`, `romanBreviaryLanguage`. Nothing resembling a parish/dedication
+field exists anywhere in it, nor in `js/saints-resolver.js` or the East Syriac calendar module
+(that file's own "Dedication" hits are the unrelated Qudash 'Idta feast, and its "Patron Saint" hit
+is a Church-of-the-East commemoration name, not a per-user setting). The existing disclosure in
+`js/horologion-engine.js` (search `Kontakion of the temple dedication`, inside the
+`typika-kontakion-rubric` branch of `_resolveTypikaSlots()`) already says this in its own words —
+"this app has no concept of a specific parish's dedication" — so the code-level answer was already
+half-documented in the disclosure text itself, just not cross-checked against the profile schema
+until now. `data/saints/sanctoral.json` does have candidate seed data if this is ever built: 20
+EOR-tagded entries name-match the Twelve Great Feasts family (Transfiguration, Annunciation,
+Ascension, Pentecost, Exaltation, Presentation, Entry, Dormition, Baptism/Theophany, etc.), which
+is the natural starting list for a curated dedication picker rather than open-ended free text.
+**Still a decision for Josh, not something to build blind**: whether to add a "home parish
+dedication" setting at all, and if so, whether to scope it to the Twelve Great Feasts plus a short
+patron-saint list (bounded, reuses existing corpus data, easy to keep honest) or open-ended (harder
+to keep matched against this corpus's actual coverage). Asked Josh this directly rather than
+guessing; see the conversation, not this file, for his answer and whatever gets built as a result.
+
+**THREAD 1 OF THE ENTRY BELOW IS NOW BUILT AND VERIFIED, 2026-09-28 continued.** Both open questions
+this entry left (does `selectHorologionOffice()` have bad side effects when re-entered from Typika;
+are "Fifth Thursday of Great Lent"/"Forty Martyrs" already computable) checked out clean, and the
+"Begin Vespers now" action described as "very plausibly buildable" below is now actually built,
+wired, and live-verified — see `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section
+("UPDATED 2026-09-28" bullets) for the full account, and `js/horologion-engine.js`'s
+`_resolveTypikaSlots()` (search `typika-lenten-transition-rubric`) plus the matching
+`action-rubric` render branch in `js/office-ui.js`'s `_renderHorologionItem()` for the code. Short
+version: `_getGreatLentWeekNumber()` and `_getFixedCalendarMmdd()` were already exactly the helpers
+needed — no new date math was required, both were already used elsewhere in this engine.
+**Thread 2 (Kontakion of the temple) below is still fully open, untouched this pass** — pick up
+there next; nothing in this update bears on it.
+
 **SESSION CUT SHORT AT ~90% TOKEN BUDGET, 2026-09-28 — mid-investigation, NOTHING BUILT OR
 COMMITTED THIS ENTRY, read carefully before resuming.** After Finding T8 shipped (PR #55, entry
 directly below), Josh asked to fully investigate the two things that PR's own description called

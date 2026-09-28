@@ -584,8 +584,9 @@ read resolved the scope questions the original disclosure raised:
   UNABHOR1997 p.141 states explicitly: "if... it be a Lenten Service, say first the Kontakion of the
   Transfiguration, then of the day, and then of the temple." Built: the Transfiguration Kontakion
   (Seventh Tone, transcribed from p.140) now prepends T7's existing per-weekday table on Great Lent
-  weekdays. The Kontakion "of the temple" (a specific parish's dedication) is out of this app's scope
-  and disclosed as such rather than silently dropped.
+  weekdays. The Kontakion "of the temple" (a specific parish's dedication) was originally out of this
+  app's scope and disclosed as such — **UPDATED 2026-09-28, now resolved for real when declared**;
+  see the dedicated bullet below.
 - The genuinely new content — the refrained Beatitudes (p.137-138), the same triple "Remember us"
   repeated louder with a prostration after each (p.138), and the closing sequence (forty Kyries,
   "More honourable than the Cherubim," the Prayer of St. Ephrem the Syrian with its prostrations and
@@ -597,12 +598,33 @@ read resolved the scope questions the original disclosure raised:
   the same Clean-Monday-to-Pascha window `typikaWeekdayCycleBlocked` already uses, further restricted
   to Monday-Friday (Lenten Saturdays and Sundays keep the ordinary Divine Liturgy, so Typika keeps
   its ordinary form then too).
-- **Deliberately not built, disclosed rather than fabricated**: the day-dependent handoff the closing
-  leads into (Vespers on Monday/Tuesday/Thursday; the Presanctified Liturgy's own pre-communion
-  prayers otherwise, with a Fifth-Thursday/Forty-Martyrs exception the source states but this office
-  doesn't compute) is rendered as an honest rubric naming the source's own words, not as literally
-  embedded Vespers or Presanctified content — consistent with this app's per-office independent-render
-  architecture, which has no precedent for one office's render splicing in another's.
+- **UPDATED 2026-09-28**: the day-dependent handoff the closing leads into is now half built, half
+  still honestly disclosed, rather than uniformly disclosed as originally shipped. The original
+  reasoning ("no precedent for one office's render splicing into another's") turned out to be
+  wrong: `js/office-ui.js`'s `setSharedOfficeNavHour()` already switches which Horologion office is
+  showing via `selectHorologionOffice()`, the same mechanism the office picker uses, with no
+  cross-office content embedding involved. On Mondays, Tuesdays, and Thursdays that are *not* the
+  Fifth Thursday of Great Lent or the feast of the Forty Martyrs of Sebaste (March 9) — the two
+  exceptions the source itself states — `typika-lenten-transition-rubric` now resolves to a real
+  "Begin Vespers now" action wired to that same mechanism, computed via the existing
+  `_getGreatLentWeekNumber()` and `_getFixedCalendarMmdd()` helpers already used elsewhere in this
+  engine, not new date math. On Wednesdays and Fridays, and on the two exception days, the rubric
+  still only discloses that the Presanctified Liturgy is appointed instead — this app has no
+  Presanctified office at all, so that half stays deliberately disclosed rather than fabricated.
+- **UPDATED 2026-09-28 continued**: the Kontakion "of the temple" is now resolved for real too, when
+  declared. Confirmed first (by actually reading the code, not assuming) that this app had no
+  per-user "which parish/dedication" field anywhere — put the scoping question to Josh rather than
+  guessing, and built a bounded picker per his answer: a new `parishDedication` field on the user
+  profile (`UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS`, `js/office-ui.js`), a new dropdown in the local
+  profile-defaults panel (`index.html`), and a new curated,
+  reuse-only `data/horologion/parish-dedications.json` — 27 fixed-date commemorations (the 8
+  Twelve-Great-Feasts-family entries that are fixed-date, plus 19 saints), every one already carrying
+  a real, sourced Kontakion text in `data/menaion/*.json`; nothing was transcribed to build this list.
+  A new `MenaionResolver.queryCommemorationById(mmdd, id)` (`js/menaion-resolver.js`) looks up one
+  named commemoration directly, deliberately bypassing `queryDate()`'s rank-based "best commemoration
+  for this date" selection — a declared dedication must render regardless of what else the corpus
+  ranks higher on that same calendar date. When no dedication is declared, or the declared one's
+  Kontakion isn't in the corpus, the rubric still only discloses — nothing fabricated.
 - Where the ordinary form's own Beatitudes verses use an already-established, slightly different
   (Coverdale/KJV-style) English wording than UNABHOR1997's own phrasing (a pre-existing choice from
   Finding T3/T4, not revisited here), the new Lenten Beatitudes reuse that SAME already-built wording
@@ -615,6 +637,30 @@ sections and the Transfiguration-first Kontakion; a Lenten Saturday, the First S
 pre-Lent ordinary Friday all correctly stay on the unmodified ordinary form. Every new fixed-data
 slot resolves to real transcribed text, not a leftover placeholder, confirmed by direct inspection of
 the resolved office object. Zero new console errors.
+
+**UPDATED 2026-09-28, Vespers-handoff action verified live**: in headless Chromium against the real
+running app, a Lenten Monday (2027-03-15) renders the "Begin Vespers now" button and clicking it
+genuinely switches the Horologion view to Vespers; a Lenten Wednesday (2027-03-17) renders the
+Presanctified disclosure with no button; the Fifth Thursday of Great Lent (2027-04-15) and a Forty
+Martyrs falling on a Monday (2026-03-09) both correctly render the Presanctified disclosure with no
+button, confirming the two stated exceptions override the ordinary Monday/Tuesday/Thursday pattern.
+An ordinary (non-Lenten) Typika day is unaffected — the Lenten rubric is absent entirely, as before.
+Also swept every calendar day from 2027-02-01 through 2027-04-30 directly against
+`HorologionEngine.resolveOffice()` to confirm the Vespers-action/Presanctified-disclosure split
+lands on the correct dates across the whole season, not just the four hand-picked spot checks.
+`node --check` clean on both touched files, zero new console errors.
+
+**UPDATED 2026-09-28 continued, temple-dedication feature verified live**: direct engine calls
+confirmed all five cases — no dedication declared (disclosure, unchanged in substance); a saint
+dedication (`nicholas-myra`) resolves its real Kontakion text; a Great-Feast dedication
+(`transfiguration-lord`) also resolves correctly, independent of that same feast's unrelated Lenten
+Transfiguration prefix; an unknown/garbage id degrades to the disclosure, not an error; an ordinary
+(non-Lenten) day carries no temple clause at all regardless of a declared dedication, since the
+clause only ever belongs to the Lenten-weekday Kontakion sequence. Then live-verified in headless
+Chromium against the real running app end to end: setting the dropdown persists the choice to
+`localStorage`, survives a page reload, updates the profile summary text, and a Lenten Monday's
+rendered Typika shows the real Kontakion of St. Nicholas once declared. `node --check` clean on all
+three touched JS files, zero new console errors.
 
 ## ORTHROS/MATINS — audited, 2 findings, FIXED 2026-09-26 (O1, O2)
 

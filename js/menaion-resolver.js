@@ -340,10 +340,74 @@ const MenaionResolver = (() => {
         };
     }
 
+    /**
+     * queryCommemorationById(mmdd, id)
+     *
+     * Looks up ONE specific commemoration on a fixed date BY ITS OWN id,
+     * bypassing the rank-based "which commemoration governs this date's
+     * troparion slot" selection that queryDate()/queryTroparion() perform.
+     *
+     * Needed for callers who already know exactly which commemoration they
+     * want (e.g. a user's declared parish dedication) and must not have it
+     * silently swapped out for a higher-rank commemoration that happens to
+     * share the same calendar date in the corpus.
+     *
+     * Returns: Promise<{ status, mmdd, id, name, kontakion, kontakion_status }>
+     * Status codes reuse queryDate()'s vocabulary, plus 'menaion-unknown-id'
+     * when the date loads fine but no commemoration in it matches `id`.
+     */
+    async function queryCommemorationById(mmdd, id) {
+        if (typeof mmdd !== 'string' || !/^\d{2}-\d{2}$/.test(mmdd) || !id) {
+            return {
+                status: 'menaion-load-error', mmdd, id: id || null,
+                name: null, kontakion: null, kontakion_status: null,
+                note: `MenaionResolver: invalid mmdd/id ('${mmdd}', '${id}')`
+            };
+        }
+
+        const monthNum   = parseInt(mmdd.split('-')[0], 10);
+        const monthState = await _loadMonth(monthNum);
+
+        if (monthState.notImported || monthState.error || !monthState.loaded) {
+            return {
+                status: monthState.notImported ? 'menaion-not-imported' : 'menaion-load-error',
+                mmdd, id, name: null, kontakion: null, kontakion_status: null,
+                note: `Menaion data for month ${monthNum} is unavailable.`
+            };
+        }
+
+        const dateEntry = monthState.data &&
+                          monthState.data.dates &&
+                          monthState.data.dates[mmdd];
+        const match = dateEntry && Array.isArray(dateEntry.commemorations)
+            ? dateEntry.commemorations.find(c => c.id === id)
+            : null;
+
+        if (!match) {
+            return {
+                status: 'menaion-unknown-id', mmdd, id,
+                name: null, kontakion: null, kontakion_status: null,
+                note: `No commemoration with id '${id}' found on ${mmdd}.`
+            };
+        }
+
+        const kontakionResolved = match.kontakion && match.kontakion_status !== 'text-unavailable' && match.kontakion.text;
+
+        return {
+            status:           kontakionResolved ? 'menaion-resolved' : 'menaion-text-unavailable',
+            mmdd, id,
+            name:             match.name || null,
+            kontakion:        kontakionResolved ? match.kontakion : null,
+            kontakion_status: match.kontakion_status || null,
+            note: kontakionResolved ? null : `Commemoration '${id}' found but kontakion text not yet in corpus.`
+        };
+    }
+
     // ── Expose public interface ────────────────────────────────────────────
     return {
         queryTroparion,
         queryDate,
+        queryCommemorationById,
         isMonthImported,
         importedMonths
     };

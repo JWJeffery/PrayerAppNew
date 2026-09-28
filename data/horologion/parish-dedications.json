@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "note": "Curated list of fixed-date commemorations a Byzantine parish is commonly dedicated to, restricted to entries data/menaion/*.json already carries a resolved (real, sourced) Kontakion text for -- reuse only, nothing transcribed to build this list. Used by the 'home parish dedication' user-profile setting so the Typika Lenten Kontakion sequence (UNABHOR1997 p.141: 'Kontakion of the Transfiguration, then of the day, and then of the temple') can resolve its 'of the temple' clause for real instead of only disclosing it. Each entry's kontakion text is looked up live from its menaionId via MenaionResolver.queryCommemorationById(mmdd, menaionId) -- this file is not a second copy of that text, only the pointer to it, so the two can never drift out of sync.",
+  "entries": [
+    { "id": "presentation-lord", "menaionId": "presentation-lord", "mmdd": "02-02", "category": "great-feast", "label": "Presentation of the Lord (Feb. 2)" },
+    { "id": "annunciation-theotokos", "menaionId": "annunciation-theotokos", "mmdd": "03-25", "category": "great-feast", "label": "Annunciation of the Theotokos (Mar. 25)" },
+    { "id": "transfiguration-lord", "menaionId": "transfiguration-lord", "mmdd": "08-06", "category": "great-feast", "label": "Transfiguration of the Lord (Aug. 6)" },
+    { "id": "dormition-theotokos", "menaionId": "dormition-theotokos", "mmdd": "08-15", "category": "great-feast", "label": "Dormition of the Theotokos (Aug. 15)" },
+    { "id": "nativity-theotokos", "menaionId": "nativity-theotokos", "mmdd": "09-08", "category": "great-feast", "label": "Nativity of the Theotokos (Sep. 8)" },
+    { "id": "exaltation-holy-cross", "menaionId": "exaltation-holy-cross", "mmdd": "09-14", "category": "great-feast", "label": "Exaltation of the Holy Cross (Sep. 14)" },
+    { "id": "entrance-theotokos", "menaionId": "entrance-theotokos", "mmdd": "11-21", "category": "great-feast", "label": "Entrance of the Theotokos into the Temple (Nov. 21)" },
+    { "id": "nativity-christ", "menaionId": "nativity-christ", "mmdd": "12-25", "category": "great-feast", "label": "Nativity of Christ (Dec. 25)" },
+
+    { "id": "basil-great-circumcision", "menaionId": "basil-great-circumcision", "mmdd": "01-01", "category": "saint", "label": "St. Basil the Great (Jan. 1)" },
+    { "id": "seraphim-sarov", "menaionId": "seraphim-sarov", "mmdd": "01-02", "category": "saint", "label": "St. Seraphim of Sarov (Jan. 2)" },
+    { "id": "synaxis-forerunner-john", "menaionId": "synaxis-forerunner-john", "mmdd": "01-07", "category": "saint", "label": "St. John the Forerunner and Baptist (Jan. 7)" },
+    { "id": "anthony-great", "menaionId": "anthony-great", "mmdd": "01-17", "category": "saint", "label": "St. Anthony the Great (Jan. 17)" },
+    { "id": "athanasius-cyril-alexandria", "menaionId": "athanasius-cyril-alexandria", "mmdd": "01-18", "category": "saint", "label": "Sts. Athanasius and Cyril of Alexandria (Jan. 18)" },
+    { "id": "ephrem-syrian", "menaionId": "ephrem-syrian", "mmdd": "01-28", "category": "saint", "label": "St. Ephrem the Syrian (Jan. 28)" },
+    { "id": "three-hierarchs", "menaionId": "three-hierarchs", "mmdd": "01-30", "category": "saint", "label": "The Three Hierarchs (Jan. 30)" },
+    { "id": "first-second-finding-head-john-baptist", "menaionId": "first-second-finding-head-john-baptist", "mmdd": "02-24", "category": "saint", "label": "Finding of the Head of St. John the Baptist (Feb. 24)" },
+    { "id": "george-great-martyr", "menaionId": "george-great-martyr", "mmdd": "04-23", "category": "saint", "label": "St. George the Trophy-Bearer (Apr. 23)" },
+    { "id": "mark-evangelist", "menaionId": "mark-evangelist", "mmdd": "04-25", "category": "saint", "label": "Holy Apostle and Evangelist Mark (Apr. 25)" },
+    { "id": "beheading-john-baptist", "menaionId": "beheading-john-baptist", "mmdd": "08-29", "category": "saint", "label": "Beheading of St. John the Baptist (Aug. 29)" },
+    { "id": "protection-theotokos", "menaionId": "protection-theotokos", "mmdd": "10-01", "category": "saint", "label": "Protection of the Theotokos (Oct. 1)" },
+    { "id": "john-chrysostom", "menaionId": "john-chrysostom", "mmdd": "11-13", "category": "saint", "label": "St. John Chrysostom (Nov. 13)" },
+    { "id": "apostle-philip", "menaionId": "apostle-philip", "mmdd": "11-14", "category": "saint", "label": "Holy Apostle Philip (Nov. 14)" },
+    { "id": "apostle-andrew-first-called", "menaionId": "apostle-andrew-first-called", "mmdd": "11-30", "category": "saint", "label": "Holy Apostle Andrew the First-Called (Nov. 30)" },
+    { "id": "sabas-sanctified", "menaionId": "sabas-sanctified", "mmdd": "12-05", "category": "saint", "label": "St. Sabas the Sanctified (Dec. 5)" },
+    { "id": "nicholas-myra", "menaionId": "nicholas-myra", "mmdd": "12-06", "category": "saint", "label": "St. Nicholas of Myra (Dec. 6)" },
+    { "id": "spyridon-trimythous", "menaionId": "spyridon-trimythous", "mmdd": "12-12", "category": "saint", "label": "St. Spyridon of Trimythous (Dec. 12)" },
+    { "id": "protomartyr-stephen", "menaionId": "protomartyr-stephen", "mmdd": "12-27", "category": "saint", "label": "Holy Protomartyr Stephen (Dec. 27)" }
+  ]
+}
