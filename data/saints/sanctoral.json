@@ -633,7 +633,8 @@
       "description": "Old Testament prophet.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 3",
       "observance": {
@@ -646,6 +647,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Holy Prophet Malachi; Ven. Genevieve of Paris”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 9,
+              "day": 5
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Jan 3) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Malachi, the Prophet\" falls Sep 5 (30 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -1725,7 +1738,8 @@
       "description": "Founder of Christian monasticism.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 17",
       "observance": {
@@ -1738,6 +1752,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Ven. Anthony the Great, the Godbearing”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 30
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('Anthony the Great's Coptic departure'). Shared date (Jan 17) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Anthony the Great (Antonius)\" falls Jan 30 (22 Tobi, common year) -- distinct from this corpus's separate saint-anthony-the-great-relics row (OOR, Sep 25, a translation-of-relics commemoration, not the departure).",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Orthocal: 'Our Holy Godbearing Father Anthony the Great' (father of monasticism)"
     },
@@ -2168,7 +2194,8 @@
       "description": "CHECKED 2026-08-31: Timothy, companion of Paul, first Bishop of Ephesus. His own Wikipedia infobox lists 'Venerated in: Catholic Church, Eastern Orthodox Church, Oriental Orthodoxy, Anglicanism, Lutheranism' -- the Church of the East is not among them, checked across multiple independent sources. Not sourced on that basis. Distinct from mar-timothy-i (the ancient Catholicos-Patriarch, checked separately and also found to have no attested feast day) and mar-timotheus-malabar (already sourced, a modern Metropolitan).",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "January 22",
       "observance": {
@@ -2181,6 +2208,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar 2026, published by the Orthodox Church in America, which prints on this day: “Apostle Timothy of the 70”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to the same name. NOTE ON THIS WITNESS: the desk calendar is SELECTIVE — it prints one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names the identity, but its silence is not evidence against one.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 31
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('Timothy the Apostle's Coptic martyrdom'). Shared date (Jan 22) is EOR's. CONFIRMED against coptic.io: \"The Martyrdom of St. Timothy, the Apostle\" falls Jan 31 (23 Tobi, common year) -- same NT companion of Paul as this row (both explicitly 'Apostle'/'of the 70'), distinct from timothy-and-titus (Jan 26, ANG/LAT) and venerable-timothy-of-symbola/martyrs-timothy-and-maura/saint-timothy-of-prusa, all separate figures already in this corpus.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "UNCORROBORATED by Orthocal (no match) -- Apostle of the Seventy, disciple of Paul, later Bishop of Ephesus; apostolic rank governs, needs a secondary check"
     },
@@ -9595,7 +9634,8 @@
       "description": "Hermit and wonderworker, 5th century.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "June 6",
       "observance": {
@@ -9608,6 +9648,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “Wonderworker of Egypt”. Confirmed by 3 of the six editions (2024, 2025, 2026). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 31
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Jun 6) is EOR's. CONFIRMED against coptic.io: \"The Departure of St. Bessarion, the Great\" falls Aug 31 (25 Mesori, common year) -- reasonable identity match (both traditions describe the same class of Egyptian desert wonderworker), not an ironclad cross-reference; flag if a future session finds evidence of two distinct Bessarions.",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Venerable', an unambiguous Bulgakov-category marker"
     },
@@ -13140,7 +13192,8 @@
       "description": "The Seven Sleepers who awoke after centuries.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "August 4",
       "observance": {
@@ -13153,6 +13206,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2022 edition prints on this day: “St. Metrophanes, first Patriarch of Constantinople Righteous Martha & Mary, the sisters of Lazarus of Crete 7 Holy Youths of Ephesus”. Confirmed by 3 of the six editions (2022, 2023, 2024). OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 26
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Aug 4) is EOR's. CONFIRMED against coptic.io: \"The Martyrdom of the Seven Young Men of Ephesus\" falls Aug 26 (20 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Orthocal: 'Holy Seven Youths (the Seven Sleepers) of Ephesus' -- a miraculous-preservation story, not technically martyrdom; tentative gold (righteous/wonder), genuinely uncertain which group applies"
     },
@@ -13718,7 +13783,8 @@
       "description": "Old Testament prophet; foretold Christ's birth in Bethlehem.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "August 14",
       "observance": {
@@ -13731,6 +13797,18 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “Holy Prophet Micah” on this date.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 8,
+              "day": 28
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Aug 14) is EOR's. CONFIRMED against coptic.io: \"The Departure of Micah, the Prophet\" falls Aug 28 (22 Mesori, common year).",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -15183,7 +15261,8 @@
       "description": "The Law-giver who beheld God on Mount Sinai.",
       "type": "prophet",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "September 4",
       "observance": {
@@ -15196,6 +15275,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the Orthodox Church in America's Lives of the Saints, https://www.oca.org/saints/lives/2026/09/04, which commemorates on this day: “Holy Prophet and God-seer Moses”. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05), on the same principle already applied to the Church of the East: a communion or jurisdictional calendar decides the date. Fetched and read directly, not inferred from a reference work.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 9,
+              "day": 18
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Sep 4) is EOR's. CONFIRMED against coptic.io: \"The Departure of Moses the Prophet\" falls Sep 18 (8 Thout, common year) -- both rows explicitly identify this figure as 'the Prophet'/lawgiver, not the unrelated desert father Moses the Black already sourced elsewhere in this corpus.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Prophet', an unambiguous Bulgakov-category marker"
     },
@@ -18501,7 +18592,8 @@
       "description": "Hermit of Palestine.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "October 21",
       "observance": {
@@ -18514,6 +18606,18 @@
         ]
       },
       "ruleSource": "EOR CONFIRMED 2026-09-07 against orthocal.info (Slavic tradition, OCA/ROCOR practice): “St Hilarion the Great of Palestine” on this date.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 3
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep ('a Hilarion date twelve days off the existing entry'). Shared date (Oct 21) is EOR/LAT's. CONFIRMED against coptic.io: \"The Departure of the Righteous Father Abba Hilarion\" falls Nov 3 (24 Baba, common year) -- Hilarion the Great is a singular, well-attested figure with minimal risk of a same-name different-person confusion.",
       "liturgicalColorEOR": "green",
       "liturgicalColorEORSource": "Corpus entry name itself contains 'Venerable', an unambiguous Bulgakov-category marker"
     },
@@ -20300,7 +20404,8 @@
       "description": "The Wonderworker.",
       "type": "saint",
       "tags": [
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "November 17",
       "observance": {
@@ -20313,6 +20418,18 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against the OCA Desk Calendar, published annually by the Orthodox Church in America (data/kalendar/source-witnesses/, editions 2021-2026). The 2024 edition prints on this day: “St. Gregory the”. Confirmed by ONE edition only (2024); the other five either do not cover this day or do not name this identity on it.. OCA is the governing calendar for the EOR tag (Josh, 2026-09-05). Matched on distinctive name tokens with the day held fixed, under a light transliteration fold so that Malachi/Malachias, Simeon/Symeon and Haralambos/Charalampus resolve to one name. TWO LIMITS ON WHAT THIS ESTABLISHES: the desk calendar is SELECTIVE — one or two commemorations per day, not the full daily synaxis — so it confirms a date when it names an identity but its silence is not evidence against one; and the text is OCR'd from a multi-column layout, which is why agreement across editions is recorded rather than a single reading being trusted.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 30
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, resolving a same-figure-different-day question left open since the OOR gap sweep. Shared date (Nov 17) is EOR's. CONFIRMED against coptic.io: \"The Departure of Saint Gregory, the Wonder Worker\" falls Nov 30 (30 Hathor, common year) -- 'Wonder Worker'/'Thaumaturgus' and 'of Neocaesarea' both name the same single well-known 3rd-century bishop-saint, minimal risk of confusion.",
       "liturgicalColorEOR": "gold",
       "liturgicalColorEORSource": "Orthocal: 'Our Venerable Father Gregory the Wonderworker, Bishop of Neocaesarea'"
     },
@@ -22732,7 +22849,8 @@
       "tags": [
         "ANG",
         "LAT",
-        "EOR"
+        "EOR",
+        "OOR"
       ],
       "dayLegacy": "December 28",
       "observance": {
@@ -22745,6 +22863,8 @@
         ]
       },
       "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “Holy Innocents”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
+      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Dec 28) is ANG/LAT's. CONFIRMED against orthocal.info: the Orthodox commemoration falls Dec 29 -- the same date this project's separate 'the-14-000-holy-infants' row already sits at and is confirmed for.",
+      "tagNote": "OOR TAG RESTORED 2026-09-28, superseding the 2026-09-07 withdrawal below: that search used Wikipedia/St-Takla.org phrasing and missed a real entry that coptic.io's own API confirms directly (see oorDateNote). Original 2026-09-07 note, kept for the record: 'OOR TAG WITHDRAWN: no Coptic attestation found under any phrasing tried.'",
       "traditionObservance": {
         "EOR": {
           "type": "fixed",
@@ -22754,10 +22874,18 @@
               "day": 29
             }
           ]
+        },
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 1,
+              "day": 11
+            }
+          ]
         }
       },
-      "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Dec 28) is ANG/LAT's. CONFIRMED against orthocal.info: the Orthodox commemoration falls Dec 29 -- the same date this project's separate 'the-14-000-holy-infants' row already sits at and is confirmed for.",
-      "tagNote": "OOR TAG WITHDRAWN 2026-09-07: no Coptic attestation found under any phrasing tried.",
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28. CONFIRMED against coptic.io: \"The Commemoration of the Slain Children of Bethlehem by the Order of King Herod\" falls Jan 11 (5 Tobi, common year) -- an unambiguous match to this identity, no risk of same-name confusion.",
       "liturgicalColorEOR": "red",
       "liturgicalColorEORSource": "The children killed by Herod -- venerated as martyrs (the Church's first martyrs for Christ's sake, even if indirectly)"
     },

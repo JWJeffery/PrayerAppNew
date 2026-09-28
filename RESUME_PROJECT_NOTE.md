@@ -332,12 +332,51 @@ in that whole window; `07dd77f`, 2026-09-23, is a full repo restore, not organic
    resolved either way. Remains ADDED on Wikipedia/St-Takla.org sourcing alone; its own `ruleSource` now
    states this plainly instead of just "not yet checked." Zero remaining "NOT YET CROSS-CHECKED" strings
    in `sanctoral.json` — verified by direct grep after the edits.
-3. **Genuinely still open, unrelated to sourcing: a set of same-figure-different-day editorial
-   questions** (Seven Holy Youths of Ephesus, Prophet Micah, Prophet Malachias, Bessarion, Amos,
-   Julietta/Cyriacus, Bartholomew, Moses, Hilarion, St Anne, Clement of Rome, Gregory Thaumaturgus, Holy
-   Innocents, Anthony the Great, Timothy the Apostle — dates and specifics in
-   `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`). These need Josh's editorial
-   judgment, not more research.
+3. **RESOLVED 2026-09-28 (continued), by Josh's direct instruction to address it — 13 of 15
+   same-figure-different-day questions closed, 2 genuinely need Josh's own call.** The underlying
+   detail behind this list (what each question actually was) had itself gone missing from both the
+   ledger and `documentation/project-history/` — the "dates and specifics in Volume 4" pointer this
+   note used to carry was stale; Volume 4 doesn't contain them. Recovered the full list from this
+   session's own earlier reading of an older version of this note, before it was overwritten.
+
+   **3 were already resolved, just never crossed off** — Bartholomew, Amos, and Clement of Rome each
+   already carry a working `traditionObservance` entry (`OOR:Coptic`) from earlier sessions (2026-09-07),
+   correctly giving them a separate Coptic-specific date without disturbing their Western/EOR date.
+
+   **10 more resolved this session, same mechanism, each confirmed against coptic.io directly first:**
+   Seven Holy Youths of Ephesus (OOR:Coptic Aug 26), Prophet Micah (Aug 28), Prophet Malachias (Sep 5),
+   Bessarion (Aug 31 — reasonable but not ironclad identity match between "the Wonderworker" (EOR) and
+   "the Great" (Coptic), flag if a future session finds evidence of two distinct Bessarions), Holy
+   Prophet Moses (Sep 18), Hilarion the Great (Nov 3), The Holy Innocents (Jan 11 — this one had been
+   incorrectly marked "OOR TAG WITHDRAWN: no Coptic attestation found" in 2026-09-07; that search just
+   used the wrong phrasing and missed a real, unambiguous entry), Anthony the Great (Jan 30, distinct
+   from the existing separate relics-translation row at Sep 25), Timothy the Apostle (Jan 31), and
+   Gregory Thaumaturgus/of Neocaesarea (Nov 30 — missed from the original list, found while verifying
+   the others, same fix applied). Each row's `oorDateNote` cites the exact coptic.io text matched.
+
+   **2 genuinely still open — structural questions, not mechanical date fixes, left for Josh:**
+   - **Julietta/Cyriacus.** More tangled than a simple two-date question: coptic.io's own search
+     surfaces THREE separate entries — "The Departure of St. Cyriacus" alone (3 Hator / ~Nov 12,
+     matching this corpus's existing OOR-tagged `saint-cyriacus` row already), "The Martyrdom of St.
+     Cyriacus and St. Julietta His Mother" jointly (15 Epip / ~July 22), and "The Martyrdom of St.
+     Julietta" alone (6 Mesori / Aug 12). The existing corpus row for the pair
+     (`mar-cyriacus-and-julitta`, COE only, Jul 15) is close to but not exactly the joint Epip 15 date,
+     and it's unclear whether the Coptic tradition's three separate entries should all attach to one
+     identity or reflect genuinely distinct commemorations. Needs Josh's call on how to structure this,
+     not a single mechanical `traditionObservance` addition.
+   - **St Anne (Nov 20).** coptic.io confirms "The Departure of St. Anna (Hannah), the mother of the
+     Theotokos" at Nov 20 (Coptic) — clearly Anne alone, not jointly with Joachim. The existing corpus
+     row is the joint `saint-joachim-and-saint-anne` (already OOR-tagged, but with no `OOR:Coptic`
+     override — it currently defaults to the shared Jul 26 Western date for OOR too, which is likely
+     wrong for Coptic specifically). Attaching Nov 20 to that joint row via `traditionObservance` would
+     be the simplest fix but is slightly imprecise (asserting the *pair* is commemorated Nov 20 when the
+     source names Anne alone); creating a separate Anne-only OOR row would be more precise but adds a
+     new identity. Josh's call on which structure this project wants.
+
+   VERIFIED: `data/saints/sanctoral.json` re-validated after each edit (one edit introduced a duplicate
+   `traditionObservance` key, caught and fixed immediately by re-reading the entry, not just the parser);
+   entry count unchanged at 1067 throughout — every fix was a field addition to an existing row, never a
+   new or removed row.
 
 **The 58-duplicate-`id` item (found 2026-09-07) is now RESOLVED, 2026-09-28** — investigated
 properly for the first time rather than just re-counted. Found 42 duplicate-id groups (87 rows;
