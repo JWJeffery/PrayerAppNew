@@ -256,62 +256,64 @@ sessional hymns/praises/canon-troparia/exapostilarion for any feast, only a full
 partial Vespers stichera. **Next action, not yet started:** confirm with Josh how to proceed given
 that constraint (see the live conversation this note was written from) before transcribing anything.
 
-**NEW TODO, added 2026-09-28 per Josh's direct instruction — the profile/user system.** Josh: "Create
-the profile / user system that we have talked about multiple times" — this has apparently come up
-repeatedly in prior conversation, not previously written down as a tracked item; recording it now so
-it stops being lost. Requirements, as given directly, not yet elaborated or designed by any session:
+**THE PROFILE/USER SYSTEM — BUILT, 2026-09-28 continued yet again.** The TODO below (originally
+"not designed, not scoped, not estimated") is now built and live-verified end to end, after Josh
+answered its three open scoping questions directly: (1) role field reuses the EXISTING Book of
+Needs role ladder (`ministryRole`) rather than a parallel taxonomy; (2) super-user is a soft/
+cosmetic gate for now, real server-side auth explicitly deferred; (3) built as one pass, not phased.
 
-- **Track, per profile:** the tradition the person selected, and any sub-tradition within it (Josh's
-  own example: Ancient Church of the East vs. Assyrian Church of the East — presumably the existing
-  Church of the East split already wired elsewhere in this app, see COE-era architecture docs, not a
-  new distinction to invent).
-- **Track:** whether the person is ordained, and at what level (deacon/priest/bishop, presumably — not
-  specified further), OR whether they hold a minor order / lay ministry role instead. This almost
-  certainly should reuse the existing role vocabulary already built for the Book of Needs role ladder
-  (`profile-ministry-role` / `book-of-needs-role-access-governance.json` — lay, reader, subdeacon,
-  deacon, priest, bishop, monastic, research/reference, all — see §9's Book of Needs role ladder item)
-  rather than inventing a second, parallel role taxonomy; confirm with Josh whether this profile system
-  and that existing role ladder are meant to be the same underlying data or two different things before
-  building.
-- **First-time open:** the profile should already show whatever tradition/entry info the person has
-  already provided through the app's existing entry flow (the tradition-entry/mode-selection screens,
-  `getUserEntryDefault()` etc. — see §0a/§0b), not ask for it again from scratch, then prompt for name
-  and role type.
-- **Super-user flag:** a way to mark a profile as a super-user (Josh's own account, explicitly —
-  "record a super-user (ME)"). Critically, **only an existing super-user can designate a new one** —
-  not self-assignable by an ordinary visitor. Needs a real design answer for how the very first
-  super-user gets created (a bootstrap problem inherent to this rule), and for whether "super-user" can
-  be enforced with any real integrity given this app currently has no server-side auth or account
-  system at all — everything client-side today is `localStorage`-based user-profile data (see
-  `user-profile-defaults` in `index.html`), which any visitor can edit directly in their own browser's
-  devtools. **Flagging this explicitly, not deciding it:** a purely client-side "super-user" checkbox
-  would not actually gate anything against a visitor who simply flips it themselves; whoever picks this
-  up should research what level of real enforcement this app's architecture can support (a server-side
-  component, a shared secret/passphrase, or accepting that this is a soft/cosmetic gate for a
-  single-maintainer app rather than genuine access control) before building, per this project's own
-  standing practice of researching an architecture question before writing code for it.
-- **Access control:** only super-users should have access to the Bible Browser. Checked this session:
-  the Bible Browser tool button (`index.html`, `openBibleBrowser()`) currently carries NO
-  `app-advanced-only`/`data-advanced-only` gating at all — it's a plain, unrestricted button, unlike the
-  adjacent Admin Console button right next to it, which already uses that exact gating pattern. So this
-  is a genuine net-new restriction, not tightening something partially gated already; the existing
-  `app-advanced-only` mechanism (already used for the Admin Console and the Local Browser Defaults
-  panel) is the obvious pattern to extend to a real super-user check, once that check exists.
-- **Diocese / Parish affiliation — added 2026-09-28 (continued), per Josh's direct follow-up.** The
-  profile needs a way for the person to select which Diocese and Parish they belong to. Purpose, given
-  directly by Josh: this feeds the "authorized intercessions" item immediately below — TEC's own
-  Communion / Provincial / Diocesan / Parish cycles of prayer are each scoped to a specific
-  jurisdiction, so the app needs to know which diocese/parish a person belongs to before it can show
-  the right diocesan- and parish-level cycle content (the Communion- and Province-wide cycles are the
-  same for everyone and don't need this, but Diocesan and Parish do). Not designed further than that:
-  no diocese/parish reference data exists anywhere in this repo yet (checked, zero hits for "cycle of
-  prayer" or "Diocesan Cycle" in any `.json`/`.md` file) — a future session will need to research where
-  authoritative Diocese/Parish lists come from (TEC's own directory, if machine-readable) before
-  building a selector, not invent one.
+**What actually shipped, all on `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS`
+(`js/office-ui.js`) — extending the existing per-browser profile, not a second parallel system:**
+- **`displayName`** — free-text name, set via the onboarding prompt or the profile-defaults panel.
+- **`isSuperUser`** — soft/cosmetic boolean, explicitly NOT real access control (this app has no
+  server-side auth; localStorage is editable by any visitor). The toggle itself lives ONLY in the
+  Admin Console (`admin/admin.html`'s new "Super-user Flag" panel — reads/writes the same
+  `universalOffice.userProfile.v1` key directly, since that page doesn't load `js/office-ui.js`),
+  never on the public onboarding/profile-defaults panel, so a casual visitor doesn't stumble into
+  flipping it for themselves. Real enforcement is still explicitly future work, not solved here.
+- **Bible Browser gated to `isSuperUser`** — it previously had NO gating at all, unlike the
+  adjacent Admin Console button. The button (`#app-bible-browser-btn`) is now `hidden` by default
+  and only shown when `isSuperUser` is true (`syncBibleBrowserSuperUserGate()`); `openBibleBrowser()`
+  itself also refuses at its own entry point (covers the `/tools/bible` URL auto-restore path too,
+  which never went through the button).
+- **`cycleOfPrayerDiocese`/`cycleOfPrayerParish`** — diocese/parish selection, resolving against
+  the `data/cycles-of-prayer/` corpus built earlier this session. Diocese picker + dynamically-
+  populated parish picker in the profile-defaults panel (`js/cycles-of-prayer.js` handles
+  load/cache/resolve — reused, not rebuilt, from an earlier same-session attempt that was correctly
+  reverted for being unconfirmed at the time). Wired into the BCP "authorized intercessions" rubric
+  (`renderCycleOfPrayerLine()`): when a diocese is set, the OFFICE's own displayed date (never
+  "today") resolves that week's real subject(s) and renders them right after the static rubric
+  line, with a "This is your own parish's week" note when the resolved week names the declared
+  home parish. No diocese declared -> renders nothing extra, exactly today's prior behavior.
+- **One-time onboarding prompt** (`#uo-onboarding-prompt`) — shown once per browser profile, after
+  the existing tradition-entry routing has already decided where to land (never races it, never
+  re-asks the tradition question). Echoes back whatever tradition is already on file, then asks
+  name + role (the role `<select>` clones its own `<option>` list live from
+  `#profile-ministry-role`'s real DOM, so it can never drift out of sync with it). `Save` and
+  `Skip for now` both set `onboardingComplete: true`, so it never reappears on its own; the person
+  can still edit name/role any time from the profile-defaults panel afterward.
 
-Not designed, not scoped into phases, not estimated — this is Josh's request recorded as given, for a
-future session to plan properly (research existing patterns in this codebase first, per standing
-practice) before any code is written.
+**Verified live in headless Chromium, 19 checks + 4 admin-console checks, all passing, zero
+console errors:** fresh-load onboarding prompt appears once and never again after submit/skip/
+reload; name+role save and echo back correctly in the profile panel; diocese selection populates
+exactly 63 real parishes; a real office date (Jan 4 2026) renders the real Cycle of Prayer line
+("Albany, St. Alban") with the home-parish note; a *different* date (Jan 11 2026, Ashland Trinity)
+renders correctly without falsely claiming the home-parish match; Bible Browser is hidden by
+default, becomes visible and actually opens once `isSuperUser` is set, hides again and refuses a
+direct `openBibleBrowser()` call once unset; the Admin Console toggle writes the same localStorage
+key index.html reads, confirmed cross-page. `node --check` clean on every changed `.js` file.
+
+**One pre-existing, unrelated gap found and left alone, not silently**:
+`npm run audit:user-profile-browser-qc-runner` still fails on four markers ("Office Defaults action
+opens local defaults panel," etc.) that reference the "Office Defaults" button removed by an
+earlier, different commit (`eb2aa9c`, "remove Defaults, rename/gate Back-to-Modes") — that commit
+never updated this static meta-audit to match. Not touched here: understanding what replaced that
+flow well enough to write correct new markers is its own small investigation, unrelated to the
+profile system. (Fixed, in the same pass, the two markers in this same audit that WERE this
+session's own doing — stale "The Episcopal Church" text left over from the earlier Task #14 sweep.)
+
+Files touched: `js/office-ui.js`, `js/cycles-of-prayer.js` (new), `js/bible-browser/bible-browser.js`,
+`index.html`, `css/office.css`, `admin/admin.html`, `scripts/audit-user-profile-browser-qc-runner.mjs`.
 
 **NEW TODO, added 2026-09-28 (continued) per Josh's direct instruction — Authorized Intercessions
 content, after A Prayer for Mission in BCP Morning/Evening Prayer.** Josh: "Add the 'authorized

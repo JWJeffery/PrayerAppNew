@@ -697,7 +697,53 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // null means "not declared" -- the Kontakion-of-the-temple clause stays
     // disclosed-not-modeled, exactly today's behaviour, so no existing user
     // loses or gains anything until they explicitly pick one.
-    parishDedication: null
+    parishDedication: null,
+    // ADDED 2026-09-28, per Josh's direct instruction -- "the profile/user
+    // system." The person's own name, collected by the first-time onboarding
+    // prompt below and echoed back in the profile-defaults summary. null
+    // until they actually enter one -- never inferred or defaulted.
+    displayName: null,
+    // Whether the first-time onboarding prompt (name + role) has already run
+    // for this browser. Starts false for a fresh profile; a profile migrated
+    // from an existing (pre-onboarding) install is ALSO seeded false the
+    // first time it's normalized, per the spec's own "should already show
+    // whatever tradition/entry info they've already provided, not ask again,
+    // then prompt for name and role" -- see deriveProfileFromLegacyEntryDefault's
+    // sibling handling below. Once true, it stays true; the prompt never
+    // reappears on its own.
+    onboardingComplete: false,
+    // Soft/cosmetic super-user flag -- Josh's own explicit call, 2026-09-28:
+    // "build a soft/cosmetic gate for now, and later we will address users /
+    // permissions." This app has NO server-side auth; localStorage is
+    // editable by any visitor in their own browser's devtools, so this flag
+    // gates visibility (which buttons/panels render) exactly the same trust
+    // tier as the existing `?advanced=1`/`data-advanced-only` mechanism --
+    // it does not and cannot gate real access to anything. The toggle itself
+    // is NOT exposed on the public onboarding/profile-defaults panel; it
+    // lives in the Admin Console (already gated behind advanced-tools), so a
+    // casual visitor doesn't stumble into flipping it for themselves. Real
+    // enforcement (a server, a shared secret checked somewhere that isn't
+    // this same editable localStorage) is explicitly deferred, not solved
+    // here -- do not treat this flag as actual access control.
+    isSuperUser: false,
+    // ADDED 2026-09-28. Which diocese's published Cycle of Prayer (see
+    // data/cycles-of-prayer/schema.json) surfaces in the BCP "authorized
+    // intercessions" space. A "bodySlug/dioceseShort" key (js/cycles-of-
+    // prayer.js's cycleOfPrayerDioceseKey), NOT year-scoped -- the diocese
+    // stays the same user choice year over year, even though the actual
+    // corpus file resolved for it changes every January. null means "not
+    // declared", the same as parishDedication: no existing user loses or
+    // gains anything, and the rubric renders exactly as it did before this
+    // field existed.
+    cycleOfPrayerDiocese: null,
+    // ADDED 2026-09-28. The user's own home parish within cycleOfPrayerDiocese,
+    // as a slug from js/cycles-of-prayer.js's cycleOfPrayerParishSlug (the
+    // corpus itself assigns no stable id -- see that file's own comment).
+    // Optional even when a diocese IS declared -- highlights the week that
+    // names the user's own parish, but the diocese-wide line renders either
+    // way. Meaningless without cycleOfPrayerDiocese also set; normalization
+    // clears it whenever the diocese is cleared.
+    cycleOfPrayerParish: null
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -821,6 +867,25 @@ function syncUniversalOfficeAdvancedToolsVisibility(enabled = isUniversalOfficeA
     }
 }
 
+// ADDED 2026-09-28. The Bible Browser previously had NO gating at all,
+// unlike the adjacent Admin Console button, which already used
+// data-advanced-only. Josh's own instruction: only super-users should have
+// access to it. Deliberately a SEPARATE gate from the advanced-tools one
+// above -- a browser can have advanced tools enabled (`?advanced=1`)
+// without being marked super-user, and vice versa; they answer different
+// questions (dev/debug visibility vs. this specific restriction). Soft/
+// cosmetic, per profile.isSuperUser's own comment: this hides the button,
+// it does not and cannot enforce anything against a visitor who edits their
+// own localStorage directly.
+function syncBibleBrowserSuperUserGate() {
+    const button = document.getElementById('app-bible-browser-btn');
+    if (!button) return;
+
+    const isSuperUser = getUserProfileDefaults().isSuperUser === true;
+    button.hidden = !isSuperUser;
+    button.setAttribute('aria-hidden', isSuperUser ? 'false' : 'true');
+}
+
 function readLegacyEntryDefault() {
     try {
         return localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
@@ -888,6 +953,40 @@ function normalizeUserProfileDefaults(raw) {
     if (profile.parishDedication !== null
         && !UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES.has(profile.parishDedication)) {
         profile.parishDedication = null;
+    }
+
+    // displayName: any non-empty string is accepted as-is (a person's own
+    // name is not a closed vocabulary to validate against); anything else
+    // (a corrupted non-string value) degrades to null, never a guess.
+    if (typeof profile.displayName !== 'string' || !profile.displayName.trim()) {
+        profile.displayName = null;
+    }
+
+    // onboardingComplete/isSuperUser: plain booleans, no closed value set to
+    // check against -- coerce a corrupted stored value to its safe default
+    // (an onboarding prompt that wrongly stays hidden, or a super-user flag
+    // that wrongly stays off, are both the safe-by-default direction; a
+    // truthy value only sticks when it's actually the literal boolean true).
+    profile.onboardingComplete = profile.onboardingComplete === true;
+    profile.isSuperUser = profile.isSuperUser === true;
+
+    // isValidCycleOfPrayerDioceseKey lives in js/cycles-of-prayer.js, loaded
+    // before this file -- guarded the same way the OOR-subtradition/parish-
+    // dedication checks above are, in case that script somehow failed to
+    // load: an unrecognised value degrades to null, never a guess.
+    if (profile.cycleOfPrayerDiocese !== null
+        && (typeof isValidCycleOfPrayerDioceseKey !== 'function'
+            || !isValidCycleOfPrayerDioceseKey(profile.cycleOfPrayerDiocese))) {
+        profile.cycleOfPrayerDiocese = null;
+    }
+
+    // A parish only means something scoped to its own diocese. Full
+    // validation against the diocese's actual parish list needs the corpus
+    // loaded (async), so this only enforces the synchronous invariant --
+    // render/UI call sites treat an unrecognised-but-nonempty slug as "no
+    // match this week", never as an error.
+    if (profile.cycleOfPrayerDiocese === null || typeof profile.cycleOfPrayerParish !== 'string' || !profile.cycleOfPrayerParish) {
+        profile.cycleOfPrayerParish = null;
     }
 
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
@@ -1115,6 +1214,124 @@ function setUserProfileParishDedication(value) {
     if (selectedMode === 'horologion') requestRender();
 }
 
+function setUserProfileDisplayName(value) {
+    const profile = getUserProfileDefaults();
+    profile.displayName = (typeof value === 'string' && value.trim()) ? value.trim() : null;
+    persistUserProfileDefaults(profile);
+}
+
+// Soft/cosmetic only -- see UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS.isSuperUser's
+// own comment. Called only from the Admin Console's own toggle
+// (already gated behind advanced-tools), never from the public onboarding
+// or profile-defaults panel.
+function setUserProfileSuperUser(value) {
+    const profile = getUserProfileDefaults();
+    profile.isSuperUser = value === true;
+    persistUserProfileDefaults(profile);
+    syncBibleBrowserSuperUserGate();
+}
+
+function setUserProfileCycleOfPrayerDiocese(value) {
+    const profile = getUserProfileDefaults();
+
+    // The select's empty option means "not declared" -- null, same convention
+    // as every other profile picker in this panel.
+    const key = (typeof isValidCycleOfPrayerDioceseKey === 'function' && isValidCycleOfPrayerDioceseKey(value))
+        ? value
+        : null;
+
+    profile.cycleOfPrayerDiocese = key;
+    // A parish slug is meaningless outside the diocese it was picked from --
+    // changing diocese always clears it, matching normalizeUserProfileDefaults'
+    // own invariant rather than leaving a stale cross-diocese value around.
+    profile.cycleOfPrayerParish = null;
+    persistUserProfileDefaults(profile);
+
+    populateCycleOfPrayerParishSelect(key, null);
+    refreshCycleOfPrayerForCurrentYear(key);
+}
+
+function setUserProfileCycleOfPrayerParish(value) {
+    const profile = getUserProfileDefaults();
+    profile.cycleOfPrayerParish = value || null;
+    persistUserProfileDefaults(profile);
+    if (selectedMode === 'daily') requestRender();
+}
+
+/**
+ * Loads (or reuses the cache for) the given diocese's current-year cycle
+ * file, then repaints whatever depends on it: the parish picker (if the
+ * profile-defaults panel happens to be open) and the daily office itself
+ * (if it's the currently-showing view and a diocese is actually declared).
+ * A no-op, harmlessly, when `dioceseKey` is null (diocese cleared) or the
+ * supporting functions from js/cycles-of-prayer.js aren't available.
+ */
+function refreshCycleOfPrayerForCurrentYear(dioceseKey) {
+    if (!dioceseKey || typeof loadCycleOfPrayerYear !== 'function') return;
+
+    loadCycleOfPrayerYear(dioceseKey, new Date().getFullYear()).then((corpus) => {
+        populateCycleOfPrayerParishSelect(dioceseKey, getUserProfileDefaults().cycleOfPrayerParish);
+        if (corpus && selectedMode === 'daily') requestRender();
+    });
+}
+
+/**
+ * Rebuilds the home-parish <select>'s options from an already-loaded (or
+ * still-loading) diocese corpus. Built via DOM APIs rather than an HTML
+ * string -- no escaping helper needed, and consistent with how this file
+ * builds every other data-driven element. Restores `currentSlug` as the
+ * selected value only if it's still a real parish in the freshly-built list
+ * (a stale slug from a prior diocese, or one that no longer matches after a
+ * corpus re-ingest, silently falls back to "not declared" rather than
+ * leaving a dangling selection).
+ */
+function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug) {
+    const select = document.getElementById('profile-cycle-of-prayer-parish');
+    if (!select) return;
+
+    select.textContent = '';
+
+    if (!dioceseKey) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'Choose a diocese first';
+        select.appendChild(opt);
+        select.disabled = true;
+        return;
+    }
+
+    const corpus = typeof getCachedCycleOfPrayerYear === 'function'
+        ? getCachedCycleOfPrayerYear(dioceseKey, new Date().getFullYear())
+        : null;
+
+    if (!corpus) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'Loading parishes...';
+        select.appendChild(opt);
+        select.disabled = true;
+        return;
+    }
+
+    const notDeclared = document.createElement('option');
+    notDeclared.value = '';
+    notDeclared.textContent = 'Not declared (optional)';
+    select.appendChild(notDeclared);
+
+    const parishes = listCycleOfPrayerParishes(corpus);
+    let matchedCurrent = false;
+    for (const parish of parishes) {
+        const opt = document.createElement('option');
+        opt.value = parish.slug;
+        opt.textContent = parish.place + ', ' + parish.name;
+        select.appendChild(opt);
+        if (parish.slug === currentSlug) matchedCurrent = true;
+    }
+
+    select.disabled = false;
+    select.value = matchedCurrent ? currentSlug : '';
+}
+
 function resetUniversalOfficeUserProfile() {
     clearUserEntryDefault();
     showTraditionEntry();
@@ -1158,6 +1375,8 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const oorSubtraditionSelect = document.getElementById('profile-oor-subtradition');
     const romanBreviaryLanguageSelect = document.getElementById('profile-roman-breviary-language');
     const parishDedicationSelect = document.getElementById('profile-parish-dedication');
+    const displayNameInput = document.getElementById('profile-display-name');
+    const cycleOfPrayerDioceseSelect = document.getElementById('profile-cycle-of-prayer-diocese');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -1187,6 +1406,19 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     if (parishDedicationSelect) {
         parishDedicationSelect.value = normalized.parishDedication || '';
     }
+
+    if (displayNameInput && document.activeElement !== displayNameInput) {
+        displayNameInput.value = normalized.displayName || '';
+    }
+
+    if (cycleOfPrayerDioceseSelect) {
+        cycleOfPrayerDioceseSelect.value = normalized.cycleOfPrayerDiocese || '';
+    }
+    // Populated every sync, not only on change, so returning to this panel
+    // (or a fresh page load) shows real parish options if the corpus is
+    // already cached, rather than only after the diocese select fires its
+    // own onchange again.
+    populateCycleOfPrayerParishSelect(normalized.cycleOfPrayerDiocese, normalized.cycleOfPrayerParish);
 
     if (summary) {
         const entryLabel = normalized.entryPageDefault === 'universal'
@@ -1228,7 +1460,26 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             ? `home parish dedication set to ${dedicationOptionText}, for the Kontakion "of the temple"`
             : 'no home parish dedication declared, so the Kontakion "of the temple" stays disclosed rather than resolved';
 
-        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}; ${dedicationLabel}.`;
+        // Diocese label lives in the registry (js/cycles-of-prayer.js), same
+        // "one place, not duplicated" rule the dedication label above follows.
+        const dioceseEntry = normalized.cycleOfPrayerDiocese && typeof findCycleOfPrayerDiocese === 'function'
+            ? findCycleOfPrayerDiocese(normalized.cycleOfPrayerDiocese)
+            : null;
+        const parishSelect = document.getElementById('profile-cycle-of-prayer-parish');
+        const parishOptionText = normalized.cycleOfPrayerParish && parishSelect && parishSelect.selectedOptions.length
+            ? parishSelect.selectedOptions[0].textContent
+            : null;
+        const cycleOfPrayerLabel = dioceseEntry
+            ? (parishOptionText
+                ? `the Diocesan Cycle of Prayer follows ${dioceseEntry.label}, highlighting ${parishOptionText}'s own week`
+                : `the Diocesan Cycle of Prayer follows ${dioceseEntry.label}`)
+            : 'no diocese declared, so the Diocesan Cycle of Prayer space stays a plain rubric';
+
+        const nameLabel = normalized.displayName
+            ? `saved for ${normalized.displayName}`
+            : 'no name entered yet';
+
+        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}; ${dedicationLabel}; ${cycleOfPrayerLabel}; ${nameLabel}.`;
     }
 }
 
@@ -1800,6 +2051,19 @@ async function initializeEntryRouting() {
     syncUniversalOfficeAdvancedToolsVisibility();
     setExploreOtherOfficesVisible(isExploreOtherOfficesVisible());
     scheduleSplashForegroundGuard();
+    syncBibleBrowserSuperUserGate();
+
+    // Warm the Cycle of Prayer cache on load if the user already has a
+    // diocese declared, so the BCP intercessions space has real content on
+    // the very first render of the day rather than only after the profile
+    // panel is opened once. Fire-and-forget -- refreshCycleOfPrayerForCurrentYear
+    // repaints on its own once the fetch resolves. Independent of the routing
+    // decision below, so it runs regardless of which branch this function
+    // takes.
+    const startupProfile = getUserProfileDefaults();
+    if (startupProfile.cycleOfPrayerDiocese) {
+        refreshCycleOfPrayerForCurrentYear(startupProfile.cycleOfPrayerDiocese);
+    }
 
     // Awaited here, before anything is shown: the entry/mode screens are already
     // hidden-by-default until this function decides which one to display (see the
@@ -1871,12 +2135,18 @@ window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
 window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
 window.setUserProfileMinistryRole = setUserProfileMinistryRole;
 window.setUserProfileRomanBreviaryLanguage = setUserProfileRomanBreviaryLanguage;
+window.setUserProfileDisplayName = setUserProfileDisplayName;
+window.setUserProfileSuperUser = setUserProfileSuperUser;
+window.setUserProfileCycleOfPrayerDiocese = setUserProfileCycleOfPrayerDiocese;
+window.setUserProfileCycleOfPrayerParish = setUserProfileCycleOfPrayerParish;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
 window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;
 window.syncUniversalOfficeAdvancedToolsVisibility = syncUniversalOfficeAdvancedToolsVisibility;
 
-document.addEventListener('DOMContentLoaded', initializeEntryRouting);
+document.addEventListener('DOMContentLoaded', function () {
+    initializeEntryRouting().then(maybeShowOnboardingPrompt);
+});
 
 
 // ── Office mode headers ──────────────────────────────────────────────────────
@@ -4331,6 +4601,98 @@ function closeTraditionExplanation() {
     if (host) { host.style.display = 'none'; host.innerHTML = ''; }
 }
 
+/**
+ * ADDED 2026-09-28, per Josh's direct instruction -- "the profile/user
+ * system." One-time prompt for name + role, shown after
+ * initializeEntryRouting() has already decided where to land (so it never
+ * races the existing tradition-entry/mode-selection routing, and never
+ * re-asks the tradition question that routing already answered). Shown
+ * exactly once per browser profile: `Save` and `Skip` both mark
+ * `onboardingComplete: true`, so it never reappears on its own afterward --
+ * the person can still change name/role any time from the profile-defaults
+ * panel, this is only the one-time introduction.
+ */
+function maybeShowOnboardingPrompt() {
+    const profile = getUserProfileDefaults();
+    if (profile.onboardingComplete) return;
+    renderOnboardingPrompt(profile);
+}
+
+function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
+    const host = document.getElementById('uo-onboarding-prompt');
+    if (!host) return;
+
+    const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    // Echoes back whatever tradition the person has already chosen through
+    // the existing entry flow, per the spec's own "should already show
+    // whatever tradition/entry info the person has already provided... not
+    // ask for it again" -- read-only here, never a second picker for it.
+    const traditionLine = profile.traditionDefault && UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault]
+        ? `Tradition on file: <strong>${esc(UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault])}</strong>`
+        : 'No tradition selected yet -- you can set one any time from "Where do you pray?".';
+
+    // Reuses the SAME <option> list already in index.html's
+    // #profile-ministry-role, cloned live from the DOM rather than a second
+    // hard-coded copy that could drift from it -- that select always exists
+    // in the DOM (it's only visually hidden behind the advanced-only panel,
+    // never removed), so this is safe to read at any point after page load.
+    const roleSelectSource = document.getElementById('profile-ministry-role');
+    const roleOptionsHtml = roleSelectSource ? roleSelectSource.innerHTML : '<option value="lay">Lay use (default)</option>';
+
+    host.innerHTML =
+        '<div class="uo-tradition-explanation-inner">' +
+        '<h3>Set up your profile</h3>' +
+        '<p class="uo-explanation-body">' + traditionLine + '</p>' +
+        '<div class="uo-onboarding-field">' +
+        '<label for="uo-onboarding-name">Your name (optional)</label>' +
+        '<input type="text" id="uo-onboarding-name" autocomplete="name" value="' + esc(profile.displayName || '') + '">' +
+        '</div>' +
+        '<div class="uo-onboarding-field">' +
+        '<label for="uo-onboarding-role">Your role</label>' +
+        '<select id="uo-onboarding-role">' + roleOptionsHtml + '</select>' +
+        '</div>' +
+        '<div class="uo-onboarding-actions">' +
+        '<button type="button" class="uo-onboarding-save" onclick="submitOnboardingPrompt()">Save</button>' +
+        '<button type="button" class="uo-onboarding-skip" onclick="skipOnboardingPrompt()">Skip for now</button>' +
+        '</div>' +
+        '</div>';
+
+    const roleSelect = document.getElementById('uo-onboarding-role');
+    if (roleSelect) roleSelect.value = profile.ministryRole;
+
+    host.style.display = 'block';
+}
+
+function submitOnboardingPrompt() {
+    const nameInput = document.getElementById('uo-onboarding-name');
+    const roleSelect = document.getElementById('uo-onboarding-role');
+
+    if (nameInput) setUserProfileDisplayName(nameInput.value);
+    if (roleSelect) setUserProfileMinistryRole(roleSelect.value);
+
+    completeOnboardingPrompt();
+}
+
+function skipOnboardingPrompt() {
+    completeOnboardingPrompt();
+}
+
+function completeOnboardingPrompt() {
+    const profile = getUserProfileDefaults();
+    profile.onboardingComplete = true;
+    persistUserProfileDefaults(profile);
+
+    const host = document.getElementById('uo-onboarding-prompt');
+    if (host) { host.style.display = 'none'; host.innerHTML = ''; }
+
+    // In case the profile-defaults panel happens to be visible already
+    // (e.g. reached via a direct URL with ?advanced=1), reflect whatever
+    // was just saved there too, rather than leaving it stale until the next
+    // unrelated sync.
+    syncUserProfileControls(profile);
+}
+
 function setExplanationDepth(value) {
     const depth = parseInt(value, 10);
     selectedExplanationDepth = [0, 1, 2].includes(depth) ? depth : 1;
@@ -4342,6 +4704,8 @@ window.applyExplanationLayer      = applyExplanationLayer;
 window.openTraditionExplanation   = openTraditionExplanation;
 window.closeTraditionExplanation  = closeTraditionExplanation;
 window.setExplanationDepth        = setExplanationDepth;
+window.submitOnboardingPrompt     = submitOnboardingPrompt;
+window.skipOnboardingPrompt       = skipOnboardingPrompt;
 
 /**
  * Real provenance for an ecumenical/cross-tradition component, for the
@@ -4628,6 +4992,40 @@ function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
    other block on the page rather than sitting flush against the margin. */
 function bcpEmitBare(container, text, opts) {
     bcpWrapInGutter(container, '', [bcpMakeSpan('component-text', text, opts)]);
+}
+
+/**
+ * ADDED 2026-09-28. Appends the user's declared diocese's real Cycle of
+ * Prayer subject(s) for the OFFICE'S OWN date (`date`, the date being
+ * rendered -- never `new Date()`/today, so an office rendered for a past or
+ * future date shows that date's own week, not today's) right after the
+ * static "Here may be sung a hymn or anthem..." rubric. Renders nothing at
+ * all when no diocese is declared, or when that date's corpus isn't loaded
+ * yet -- cache-only read, never blocks this render on a network fetch; see
+ * js/cycles-of-prayer.js's own getCachedCycleOfPrayerWeek comment for the
+ * prefetch-then-repaint pattern that eventually populates it.
+ */
+function renderCycleOfPrayerLine(container, date) {
+    const profile = getUserProfileDefaults();
+    if (!profile.cycleOfPrayerDiocese || typeof getCachedCycleOfPrayerWeek !== 'function') return;
+
+    const weekEntry = getCachedCycleOfPrayerWeek(profile.cycleOfPrayerDiocese, date);
+    if (!weekEntry) return;
+
+    const subjectNames = weekEntry.subjects.map(subject =>
+        subject.type === 'parish' ? `${subject.place}, ${subject.name}` : subject.name
+    );
+    const subjectPhrase = subjectNames.length === 1
+        ? subjectNames[0]
+        : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
+
+    const isHomeParishWeek = Boolean(profile.cycleOfPrayerParish) &&
+        weekEntry.subjects.some(subject => cycleOfPrayerParishSlug(subject) === profile.cycleOfPrayerParish);
+
+    const line = `This week, the Diocesan Cycle of Prayer asks us to pray for ${subjectPhrase}.` +
+        (isHomeParishWeek ? ' This is your own parish’s week.' : '');
+
+    bcpEmitBare(container, line, { italic: true });
 }
 
 function bcpEmitDivider(container) {
@@ -5603,6 +6001,7 @@ async function renderBcpOffice() {
             if (comp) {
                 const t = resolveText(comp, rite) || comp.text || '';
                 bcpEmitBare(container, t, { italic: true });
+                renderCycleOfPrayerLine(container, currentDate);
             }
             continue;
         }

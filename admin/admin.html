@@ -1287,6 +1287,33 @@ header {
       </div>
     </div>
 
+    <!-- Super-user flag, added 2026-09-28. Soft/cosmetic only -- this app has no
+         server-side auth, so this toggle edits the SAME browser-local profile
+         localStorage (universalOffice.userProfile.v1) that index.html itself
+         reads, on THIS browser only. It does not create an account, does not
+         affect any other visitor, and is not real access control -- see
+         js/office-ui.js's UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS.isSuperUser
+         comment. Reaching this page at all already requires knowing the admin
+         console's own URL, the same trust tier as the rest of this console. -->
+    <div class="panel" id="panel-super-user">
+      <div class="panel-head">
+        <span class="panel-title">Super-user Flag (this browser)</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">soft gate only -- see comment</span>
+      </div>
+      <div class="panel-body" id="super-user-body">
+        <label style="display:flex; align-items:center; gap:8px; font-size:0.85em;">
+          <input type="checkbox" id="super-user-toggle" onchange="onSuperUserToggle(this.checked)">
+          Mark this browser's profile as a super-user
+        </label>
+        <p style="font-size:0.72em; color:var(--text-dim); margin-top:8px;">
+          Cosmetic only: hides/shows super-user-gated UI (currently the Bible Browser) on this
+          browser. Anyone who can open this console's URL and this checkbox can set it for
+          themselves -- it is not real authentication. Real access control is a later,
+          separate piece of work.
+        </p>
+      </div>
+    </div>
+
     <!-- Byzantine Release Roadmap (legacy cockpit — source: structure.json → governance.byzantine_release_roadmap) -->
     <div class="panel" id="panel-release-roadmap">
       <div class="panel-head">
@@ -2566,6 +2593,46 @@ function taEsc(s) {
   return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+// Super-user flag panel, added 2026-09-28. This page does not load
+// js/office-ui.js (too heavy, wrong context -- see its own script tags,
+// only the calendar/saints engines this dashboard needs). So this reads and
+// writes the SAME localStorage key (UNIVERSAL_OFFICE_USER_PROFILE_KEY in
+// js/office-ui.js) directly, with its own minimal, self-contained
+// read-modify-write -- merging into whatever profile JSON already exists
+// rather than overwriting it, since this page has no access to
+// normalizeUserProfileDefaults() or the rest of that file's defaults/
+// validation. A missing or corrupt stored profile is treated as an empty
+// object, matching the same "never crash, degrade to the safe default"
+// posture the rest of this app uses for a bad localStorage value.
+const SUPER_USER_PROFILE_KEY = 'universalOffice.userProfile.v1';
+
+function readSuperUserFlag() {
+  try {
+    const raw = localStorage.getItem(SUPER_USER_PROFILE_KEY);
+    const parsed = raw ? JSON.parse(raw) : null;
+    return Boolean(parsed && parsed.isSuperUser === true);
+  } catch (_error) {
+    return false;
+  }
+}
+
+function onSuperUserToggle(checked) {
+  try {
+    const raw = localStorage.getItem(SUPER_USER_PROFILE_KEY);
+    const profile = (raw ? JSON.parse(raw) : null) || {};
+    profile.isSuperUser = checked === true;
+    localStorage.setItem(SUPER_USER_PROFILE_KEY, JSON.stringify(profile));
+  } catch (_error) {
+    window.alert('Could not save the super-user flag -- localStorage may be unavailable in this browser.');
+  }
+}
+
+function loadSuperUserPanel() {
+  const toggle = document.getElementById('super-user-toggle');
+  if (!toggle) return;
+  toggle.checked = readSuperUserFlag();
+}
+
 function loadTraditionAvailabilityPanel() {
   const body = document.getElementById('tradition-availability-body');
   if (!body) return;
@@ -2767,6 +2834,9 @@ renderRepoHygiene();
 
   // Load Tradition Availability panel
   loadTraditionAvailabilityPanel();
+
+  // Load Super-user flag panel
+  loadSuperUserPanel();
 
   // Load Byzantine release roadmap (legacy cockpit)
   renderReleaseRoadmap();

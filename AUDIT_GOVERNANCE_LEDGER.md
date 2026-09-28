@@ -24119,3 +24119,48 @@ live tradition selector; changing any of them anyway is a decision for whoever r
 make on purpose, not infer from this entry's silence.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- the profile/user system: built, after Josh answered
+## its three open scoping questions directly
+
+The long-open "profile/user system" TODO (role-ladder unification, super-user enforcement, ship
+order all left unresolved by the session that first recorded it) is now built, after Josh answered
+all three directly: role field reuses the existing `ministryRole` ladder; super-user is a soft/
+cosmetic gate for now, real auth deferred; built as one pass.
+
+Extends the EXISTING `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` (`js/office-ui.js`) rather than a
+second parallel system -- `displayName`, `isSuperUser`, `cycleOfPrayerDiocese`/
+`cycleOfPrayerParish`, `onboardingComplete`, all normalized the same defensive way (an unrecognised
+stored value degrades to the safe default, never a guess) as every field already there.
+
+- **Super-user**: soft/cosmetic only, explicitly not real access control -- localStorage is
+  editable by any visitor. Toggle lives ONLY in the Admin Console (`admin/admin.html`'s new panel,
+  reading/writing `universalOffice.userProfile.v1` directly since that page doesn't load
+  `js/office-ui.js`), never on the public profile panel.
+- **Bible Browser** gated to `isSuperUser` -- previously had zero gating at all, unlike the
+  adjacent Admin Console button. Gated at both the button (`syncBibleBrowserSuperUserGate()`) and
+  `openBibleBrowser()`'s own entry point, covering the `/tools/bible` URL auto-restore path too.
+- **Diocese/Parish** picker, wired into the BCP "authorized intercessions" rubric via a rebuilt
+  `js/cycles-of-prayer.js` (an earlier same-session attempt at this exact module was correctly
+  reverted for being unconfirmed at the time -- rebuilt now that it's confirmed in scope).
+  `renderCycleOfPrayerLine()` resolves against the OFFICE's own displayed date, never "today",
+  and flags the reader's own declared home-parish week when it comes up.
+- **One-time onboarding prompt**, shown once per browser after existing tradition-entry routing
+  has already landed -- never re-asks tradition, only name + role. Its role `<select>` clones
+  `#profile-ministry-role`'s real DOM options live rather than a second hard-coded list.
+
+**Verified live in headless Chromium, 19 + 4 checks, zero console errors**: onboarding shows once
+and never again; name/role save and echo correctly; diocese selection populates exactly 63 real
+parishes; two different real office dates (Jan 4 -> Albany St. Alban, Jan 11 -> Ashland Trinity)
+each render their own correct week, with the home-parish note appearing only for the actually-
+matching week; Bible Browser hides/shows/actually-opens/refuses correctly across every
+super-user-flag transition; the Admin Console toggle and `index.html` agree cross-page.
+
+**One pre-existing, unrelated gap found, left alone, stated plainly**: `npm run
+audit:user-profile-browser-qc-runner` still fails four markers referencing an "Office Defaults"
+button an earlier, different commit (`eb2aa9c`) removed without updating this meta-audit -- not
+this session's to fix blind. Did fix, in the same pass, the two markers in that same audit file
+that were this session's own earlier doing (stale "The Episcopal Church" text from the Task #14
+sweep).
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

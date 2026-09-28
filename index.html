@@ -235,7 +235,7 @@
             <small>Prayers, devotions, and occasional offices.</small>
         </button>
 
-        <button class="app-mode-tool-btn" type="button" onclick="openBibleBrowser()">
+        <button class="app-mode-tool-btn" type="button" id="app-bible-browser-btn" hidden aria-hidden="true" onclick="openBibleBrowser()">
             <strong>Bible Browser</strong>
             <small>Read, compare, annotate, and study.</small>
         </button>
@@ -358,6 +358,26 @@
                         <option value="spyridon-trimythous">St. Spyridon of Trimythous (Dec. 12)</option>
                         <option value="protomartyr-stephen">Holy Protomartyr Stephen (Dec. 27)</option>
                     </optgroup>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-display-name">
+                <span>Your name</span>
+                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
+                <span>Diocesan Cycle of Prayer</span>
+                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
+                    <option value="">Not declared (default)</option>
+                    <option value="episcopal/western-oregon">The Episcopal Church in Western Oregon</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish">
+                <span>Home parish (optional)</span>
+                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
+                    <option value="">Choose a diocese first</option>
                 </select>
             </label>
         </div>
@@ -1096,6 +1116,14 @@
 <div id="uo-tradition-explanation" role="dialog" aria-modal="true"
      aria-label="About this tradition" style="display:none;"></div>
 
+<!-- One-time onboarding prompt (name + role), added 2026-09-28. Host only;
+     content built by maybeShowOnboardingPrompt()/renderOnboardingPrompt() in
+     js/office-ui.js. Shown once per browser profile, after the existing
+     tradition-entry routing has already decided where to land -- it does
+     not ask about tradition again, only name and role. -->
+<div id="uo-onboarding-prompt" role="dialog" aria-modal="true"
+     aria-label="Set up your profile" style="display:none;"></div>
+
 <!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js" defer></script>
 <script src="js/calendar-ethiopian.js" defer></script>
@@ -1103,6 +1131,7 @@
 <script src="js/scripture-resolver.js" defer></script>
 <script src="js/saints-resolver.js?v=269" defer></script>
 <script src="js/menaion-resolver.js" defer></script>
+<script src="js/cycles-of-prayer.js" defer></script>
 <script src="js/octoechos/orthros-praises-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-eothinon.js" defer></script>

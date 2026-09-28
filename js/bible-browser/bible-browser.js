@@ -2588,6 +2588,22 @@ async function initializeBibleBrowser() {
     }
 
     function openBibleBrowser(options = {}) {
+        // ADDED 2026-09-28: super-user gate, guarded at this single entry
+        // point so it covers both the button click (index.html, now
+        // hidden by default -- see js/office-ui.js's
+        // syncBibleBrowserSuperUserGate) and the /tools/bible URL
+        // auto-restore path just above, which never went through that
+        // button at all. Soft/cosmetic only, matching the profile flag's
+        // own comment in js/office-ui.js -- this stops the ordinary path
+        // into this view, it is not real access control.
+        const isSuperUser = (typeof getUserProfileDefaults === 'function')
+            ? getUserProfileDefaults().isSuperUser === true
+            : false;
+        if (!isSuperUser) {
+            if (typeof showUniversalModeSelection === 'function') showUniversalModeSelection(false);
+            return;
+        }
+
         const splash = $("splash-bg");
         const modeSelection = $("mode-selection");
         const daily = $("daily-office-section");
