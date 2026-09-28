@@ -266,7 +266,7 @@ const MenaionResolver = (() => {
                 status: 'menaion-load-error', mmdd,
                 name: null, rank: null, type: null,
                 troparion: null, troparion_tone: null, troparion_status: null,
-                kontakion: null, kontakion_status: null,
+                kontakion: null, kontakion_status: null, ikos: null,
                 note: `MenaionResolver: invalid mmdd format '${mmdd}'`
             };
         }
@@ -279,7 +279,7 @@ const MenaionResolver = (() => {
                 status: 'menaion-not-imported', mmdd,
                 name: null, rank: null, type: null,
                 troparion: null, troparion_tone: null, troparion_status: null,
-                kontakion: null, kontakion_status: null,
+                kontakion: null, kontakion_status: null, ikos: null,
                 note: `Menaion data for month ${monthNum} has not been imported.`
             };
         }
@@ -289,7 +289,7 @@ const MenaionResolver = (() => {
                 status: 'menaion-load-error', mmdd,
                 name: null, rank: null, type: null,
                 troparion: null, troparion_tone: null, troparion_status: null,
-                kontakion: null, kontakion_status: null,
+                kontakion: null, kontakion_status: null, ikos: null,
                 note: `Menaion data for month ${monthNum} could not be loaded.`
             };
         }
@@ -303,7 +303,7 @@ const MenaionResolver = (() => {
                 status: 'menaion-no-ranked-commemoration', mmdd,
                 name: null, rank: null, type: null,
                 troparion: null, troparion_tone: null, troparion_status: null,
-                kontakion: null, kontakion_status: null,
+                kontakion: null, kontakion_status: null, ikos: null,
                 note: `No ranked commemoration recorded for ${mmdd}.`
             };
         }
@@ -314,7 +314,7 @@ const MenaionResolver = (() => {
                 status: 'menaion-no-ranked-commemoration', mmdd,
                 name: null, rank: null, type: null,
                 troparion: null, troparion_tone: null, troparion_status: null,
-                kontakion: null, kontakion_status: null,
+                kontakion: null, kontakion_status: null, ikos: null,
                 note: `No valid-rank commemoration found for ${mmdd}.`
             };
         }
@@ -335,6 +335,7 @@ const MenaionResolver = (() => {
             troparion_status: best.troparion_status || null,
             kontakion:        best.kontakion        || null,
             kontakion_status: best.kontakion_status || null,
+            ikos:             best.ikos              || null,
             note: troparionResolved ? null
                 : `Commemoration recorded for ${mmdd} but troparion text not yet in corpus.`
         };

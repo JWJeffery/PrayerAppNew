@@ -5239,16 +5239,26 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     const _ktKon    = _ktQR.kontakion        || null;
                     const _ktStatus = _ktQR.kontakion_status || null;
                     const _ktName   = _ktQR.name             || 'the feast';
+                    const _ktIkos   = _ktQR.ikos             || null;
 
                     if (_ktKon && _ktKon.text) {
                         section.items[i] = {
                             type:       'text',
                             key:        'kontakion',
                             label:      _ktKon.title || `Kontakion of ${_ktName}`,
-                            text:       _ktKon.text,
+                            // v1.3: append the Ikos immediately after the Kontakion when the
+                            // corpus carries one, matching the pair's own liturgical placement
+                            // (Canon, after Ode 6) rather than a separate rail item -- the
+                            // vast majority of commemorations have no Ikos text in the corpus
+                            // at all, so this stays silent for them exactly as before.
+                            text:       _ktIkos && _ktIkos.text
+                                            ? `${_ktKon.text}\n\nIkos. ${_ktIkos.text}`
+                                            : _ktKon.text,
                             tone:       _ktKon.tone || null,
                             source:     'Menaion',
-                            resolvedAs: 'orthros-menaion-kontakion'
+                            resolvedAs: _ktIkos && _ktIkos.text
+                                            ? 'orthros-menaion-kontakion-ikos'
+                                            : 'orthros-menaion-kontakion'
                         };
                         continue;
                     }

@@ -1,6 +1,6 @@
 {
   "_comment": [
-    "data/menaion/schema.json — Menaion v1.1",
+    "data/menaion/schema.json — Menaion v1.2",
     "",
     "CONTRACT: This schema governs all files under data/menaion/.",
     "Every monthly file must conform to this structure.",
@@ -11,8 +11,17 @@
     "  - Troparion/apolytikion text is stored for all commemorations.",
     "  - Kontakion and kontakion_status fields are declared in the schema",
     "    and are in active use for selected commemorations (v1.1).",
+    "  - ikos (v1.2, 2026-09-28): declared and in use for exactly ONE",
+    "    commemoration (12-25 nativity-christ) -- the only Great Feast for",
+    "    which the corpus's own public-domain source (Hapgood 1906) carries",
+    "    an Ikos at all. Not a general Ikos corpus; do not assume other",
+    "    entries will get one without a source that actually has it.",
     "  - Full stichera corpus, exapostilarion, canon, sessional hymns,",
-    "    praises, Theotokion, ikos, and broader hymn-family expansion are deferred.",
+    "    praises, and Theotokion remain deferred -- ikos is the one",
+    "    exception, and only because the same already-approved source",
+    "    happened to carry it for one feast. See structure.json's",
+    "    menaion-hymn-corpus-transcription todo for the real state of the",
+    "    broader hymn-family branches, which this does not change.",
     "",
     "RANK MODEL (v1 — four ranks only):",
     "  rank 1 — Great Feast / Feast of the Lord / Feast of the Theotokos.",
@@ -60,7 +69,7 @@
     "  require a version bump and a note in the monthly files' _meta.schema_version.",
     "  Do not add fields to monthly files that are not declared here."
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "monthShape": {
     "_meta": {
       "file": "string — data/menaion/<monthname>.json",
@@ -89,6 +98,7 @@
     "troparion_status": "string — 'resolved' | 'text-unavailable' | 'deferred'",
     "kontakion": "OPTIONAL — null | kontakionShape. Absent key = not in scope for this commemoration.",
     "kontakion_status": "OPTIONAL — 'resolved' | 'text-unavailable' | 'deferred'. Required when kontakion key is present.",
+    "ikos": "OPTIONAL — null | ikosShape. Absent key = not in scope (the overwhelming majority of commemorations, and all but ONE Great Feast, even where a kontakion is present). No ikos_status field — presence of ikos.text is itself the signal; this is not a general corpus with a not-yet-attempted state to track, unlike kontakion's hundreds of entries.",
     "tradition_tags": "array of strings — ['EOR', 'OOR', 'ANG', 'LAT', 'COE']. EOR = Eastern Orthodox. 'BYZC' commemorations use 'EOR'.",
     "notes": "string | null — liturgical notes, alternate names, usage notes"
   },
@@ -101,6 +111,10 @@
     "tone": "integer 1–8",
     "title": "string — e.g. 'Kontakion of the Nativity of Christ, Tone 3'",
     "text": "string — full kontakion text"
+  },
+  "ikosShape": {
+    "title": "string — e.g. 'Ikos of the Nativity of Christ'",
+    "text": "string — full ikos text. No tone field: the Ikos is chanted to the same melody as its paired Kontakion, not independently toned."
   },
   "resolutionContract": {
     "resolved": {
