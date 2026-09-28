@@ -2,7 +2,7 @@
   "officeKey": "typika",
   "label": "Typika (Obednitsa)",
   "tradition": "BYZC",
-  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy, in place of the Divine Liturgy itself, most often on days when Communion would otherwise be received. Consists of Psalms 102 and 145 with the \"O Only-begotten Son\" hymn, the Beatitudes, the Heavenly Choir hymn, the Symbol of Faith, \"Loose, remit, pardon,\" the Lord's Prayer, the day's Kontakion, and appointed Epistle and Gospel readings. CORRECTED 2026-09-28: on Great Lent weekdays, UNABHOR1997 p.148 directs an entirely different, shorter Lenten form -- Psalms 102/145 are not said at all, and only the Beatitudes (with a distinct refrain) are appended to the end of the Ninth Hour instead -- not currently modeled (Finding T8, disclosed, not fixed). What this skeleton renders is the Sunday/feast-day form described above; it should not be read as this office's only occasion of use.",
+  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy, in place of the Divine Liturgy itself, most often on days when Communion would otherwise be received. On ordinary days (Sundays, feasts, and days outside the Great Lent weekday cycle) it consists of Psalms 102 and 145 with the \"O Only-begotten Son\" hymn, the Beatitudes, the Heavenly Choir hymn, the Symbol of Faith, \"Loose, remit, pardon,\" the Lord's Prayer, the day's Kontakion, and appointed Epistle and Gospel readings. BUILT 2026-09-28 (Finding T8, previously disclosed as unmodeled): on Great Lent weekdays (Monday-Friday, Clean Monday through the eve of Pascha; Lenten Saturdays and Sundays keep the ordinary form above, since the usual Divine Liturgy is celebrated then), UNABHOR1997 pp.137-143 directs a genuinely different, shorter form instead -- Psalms 102/145 and the ordinary Beatitudes are not said; only the Beatitudes with the interspersed refrain \"Remember us, O Lord, when Thou comest in Thy Kingdom\" are said, followed by the same triple repeated louder with a prostration after each; the Kontakion selection puts the Kontakion of the Transfiguration first; and the office closes with forty Kyries, \"More honourable than the Cherubim,\" and the Prayer of St. Ephrem the Syrian with its prostrations, rather than the ordinary dismissal. Deliberately NOT modeled, disclosed rather than fabricated: the day-dependent handoff this closing leads into (Vespers on Monday/Tuesday/Thursday; the Presanctified Liturgy's own pre-communion prayers otherwise, with a Fifth-Thursday/Forty-Martyrs exception the source states but this office doesn't compute) is described in a rubric, not rendered as another office's actual content; and the Kontakion \"of the temple,\" which depends on a specific parish's dedication, a concept this app has no model for.",
   "descriptionSource": "UNABHOR1997, \"The Order of the Typica,\" p.135ff. The Church Slavonic/Greek parenthetical name in this description (e.g. \"Obednitsa\") is standard traditional terminology, not itself found verbatim in UNABHOR1997 or Hapgood 1906 -- neither book's own glossary (UNABHOR1997 pp.399-410; Hapgood's front matter) carries it. Disclosed here rather than presented as sourced to either governing text.",
   "sections": [
     {
@@ -50,6 +50,9 @@
           "status": "unresolved",
           "note": "Resolved from typika-fixed.json by HorologionEngine."
         }
+      ],
+      "forForm": [
+        "ordinary"
       ]
     },
     {
@@ -63,6 +66,28 @@
           "label": "The Beatitudes (Matthew 5:3–12)",
           "status": "unresolved",
           "note": "Fixed text, including its own closing refrain (\"Remember us, O Lord/Master/Holy One\"). Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ],
+      "forForm": [
+        "ordinary"
+      ]
+    },
+    {
+      "id": "lenten-beatitudes",
+      "label": "The Beatitudes, with the Lenten Refrain",
+      "forForm": [
+        "great-lent-weekday"
+      ],
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-lenten-beatitudes",
+          "label": "The Beatitudes, with the Lenten refrain"
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-lenten-remember-us-prostration",
+          "label": "\"Remember us\" with a prostration after each"
         }
       ]
     },
@@ -151,6 +176,33 @@
           "key": "typika-gospel-rubric",
           "text": "GOSPEL: The appointed Gospel reading for the day from the Evangelist is read here. Consult the Evangelist for the appointed pericope according to the day and tone."
         }
+      ],
+      "forForm": [
+        "ordinary"
+      ]
+    },
+    {
+      "id": "lenten-dismissal",
+      "label": "Lenten Dismissal",
+      "forForm": [
+        "great-lent-weekday"
+      ],
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-lenten-closing",
+          "label": "Forty Kyries and the Prayer of St. Ephrem"
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-lenten-prayer-of-ephrem",
+          "label": "The Prayer of St. Ephrem the Syrian, with prostrations"
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-lenten-transition-rubric",
+          "label": "What Follows"
+        }
       ]
     },
     {
@@ -163,6 +215,9 @@
           "key": "typika-dismissal-rubric",
           "text": "Lord, have mercy. (×3)\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nIf a Priest is present: the Priest gives the dismissal according to the day and feast.\nIf no Priest is present: Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen."
         }
+      ],
+      "forForm": [
+        "ordinary"
       ]
     }
   ]

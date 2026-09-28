@@ -51,6 +51,40 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**SIXTH ITEM, 2026-09-28 — Finding T8 built: Typika's distinct Great Lent structural form.**
+`documentation/HOROLOGION_AUDIT_FINDINGS.md` had called this "the most significant open item from
+the entire second-pass re-verification," disclosed rather than attempted, since determining exactly
+what carries over into the Lenten form and how it interacts with the existing Kontakion table looked
+like "its own dedicated pass, not a quick patch." Read the FULL source through to "THE END OF THE
+TYPICA" (UNABHOR1997 pp.135-144, not just the excerpt the original finding quoted) before building
+anything — that full read resolved every scope question: the Heavenly Choir/Creed/Lord's Prayer
+block turned out to be shared content printed once, not Lenten-exclusive; the Kontakion table
+(Finding T7) needed exactly one real change (prepend the Transfiguration Kontakion on Lenten
+weekdays, per the source's own explicit priority rule); and the genuinely new content (refrained
+Beatitudes, the louder prostration-repeat, forty Kyries, the Prayer of St. Ephrem) was fully
+transcribable from the primary source already in this repo.
+
+Built: `isGreatLentWeekdayTypikaForm` (new, `js/horologion-engine.js`) reuses
+`typikaWeekdayCycleBlocked`'s own Clean-Monday-to-Pascha window, restricted to Monday-Friday (Lenten
+Saturdays/Sundays keep the ordinary Divine Liturgy and thus Typika's ordinary form too); five new
+fixed-data slots in `data/horologion/typika-fixed.json`; two new sections in
+`data/horologion/typika.json` (`lenten-beatitudes`, `lenten-dismissal`), tagged `forForm` and pruned
+via the same `forDays`-style mechanism Midnight Office's M0 fix already established as this
+codebase's pattern for a genuinely different day-form. Deliberately disclosed rather than built: the
+day-dependent Vespers/Presanctified handoff at the very end (a rubric naming it, not another office's
+content spliced in — this app has no precedent for that), and the Kontakion "of the temple" (no
+concept of a specific parish here). Where the ordinary Beatitudes already used a different English
+wording than UNABHOR1997's own phrasing (an earlier, unrevisited choice from Findings T3/T4), the new
+Lenten Beatitudes reuse that same existing wording rather than introducing a second translation of
+the same ten verses.
+
+**Verified live**, both 2026 and 2027's Lenten seasons, via `HorologionEngine.resolveOffice()` in the
+running app: Lenten weekdays correctly switch structure and Kontakion priority; Lenten Saturdays, the
+First Sunday of Lent, and pre-Lent ordinary days all correctly stay unmodified. Every new slot
+resolves to real transcribed text. Zero new console errors. `documentation/HOROLOGION_AUDIT_
+FINDINGS.md` corrected in place (top-level summary, office table, and the T8 finding itself all now
+read FIXED).
+
 **FIFTH ITEM, 2026-09-28 — cited all 14 Horologion office `description` fields, and fixed a real
 error one of them had.** `AUDIT_GOVERNANCE_LEDGER.md` (2026-09-26) flagged `data/horologion/*.json`'s
 14 office descriptions and 71 section notes as "uncited... must not be promoted into the education
