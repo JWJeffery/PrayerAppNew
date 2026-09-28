@@ -597,12 +597,19 @@ read resolved the scope questions the original disclosure raised:
   the same Clean-Monday-to-Pascha window `typikaWeekdayCycleBlocked` already uses, further restricted
   to Monday-Friday (Lenten Saturdays and Sundays keep the ordinary Divine Liturgy, so Typika keeps
   its ordinary form then too).
-- **Deliberately not built, disclosed rather than fabricated**: the day-dependent handoff the closing
-  leads into (Vespers on Monday/Tuesday/Thursday; the Presanctified Liturgy's own pre-communion
-  prayers otherwise, with a Fifth-Thursday/Forty-Martyrs exception the source states but this office
-  doesn't compute) is rendered as an honest rubric naming the source's own words, not as literally
-  embedded Vespers or Presanctified content — consistent with this app's per-office independent-render
-  architecture, which has no precedent for one office's render splicing in another's.
+- **UPDATED 2026-09-28**: the day-dependent handoff the closing leads into is now half built, half
+  still honestly disclosed, rather than uniformly disclosed as originally shipped. The original
+  reasoning ("no precedent for one office's render splicing into another's") turned out to be
+  wrong: `js/office-ui.js`'s `setSharedOfficeNavHour()` already switches which Horologion office is
+  showing via `selectHorologionOffice()`, the same mechanism the office picker uses, with no
+  cross-office content embedding involved. On Mondays, Tuesdays, and Thursdays that are *not* the
+  Fifth Thursday of Great Lent or the feast of the Forty Martyrs of Sebaste (March 9) — the two
+  exceptions the source itself states — `typika-lenten-transition-rubric` now resolves to a real
+  "Begin Vespers now" action wired to that same mechanism, computed via the existing
+  `_getGreatLentWeekNumber()` and `_getFixedCalendarMmdd()` helpers already used elsewhere in this
+  engine, not new date math. On Wednesdays and Fridays, and on the two exception days, the rubric
+  still only discloses that the Presanctified Liturgy is appointed instead — this app has no
+  Presanctified office at all, so that half stays deliberately disclosed rather than fabricated.
 - Where the ordinary form's own Beatitudes verses use an already-established, slightly different
   (Coverdale/KJV-style) English wording than UNABHOR1997's own phrasing (a pre-existing choice from
   Finding T3/T4, not revisited here), the new Lenten Beatitudes reuse that SAME already-built wording
@@ -615,6 +622,18 @@ sections and the Transfiguration-first Kontakion; a Lenten Saturday, the First S
 pre-Lent ordinary Friday all correctly stay on the unmodified ordinary form. Every new fixed-data
 slot resolves to real transcribed text, not a leftover placeholder, confirmed by direct inspection of
 the resolved office object. Zero new console errors.
+
+**UPDATED 2026-09-28, Vespers-handoff action verified live**: in headless Chromium against the real
+running app, a Lenten Monday (2027-03-15) renders the "Begin Vespers now" button and clicking it
+genuinely switches the Horologion view to Vespers; a Lenten Wednesday (2027-03-17) renders the
+Presanctified disclosure with no button; the Fifth Thursday of Great Lent (2027-04-15) and a Forty
+Martyrs falling on a Monday (2026-03-09) both correctly render the Presanctified disclosure with no
+button, confirming the two stated exceptions override the ordinary Monday/Tuesday/Thursday pattern.
+An ordinary (non-Lenten) Typika day is unaffected — the Lenten rubric is absent entirely, as before.
+Also swept every calendar day from 2027-02-01 through 2027-04-30 directly against
+`HorologionEngine.resolveOffice()` to confirm the Vespers-action/Presanctified-disclosure split
+lands on the correct dates across the whole season, not just the four hand-picked spot checks.
+`node --check` clean on both touched files, zero new console errors.
 
 ## ORTHROS/MATINS — audited, 2 findings, FIXED 2026-09-26 (O1, O2)
 

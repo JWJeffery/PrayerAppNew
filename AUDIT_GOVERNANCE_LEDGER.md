@@ -23111,3 +23111,34 @@ not the assumption this entry (and the resume note) currently rests on.
 
 No files changed, `git status` clean. Full detail, exact next steps, and file/line pointers:
 `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28 continued -- Thread 1 of the above (Vespers/Presanctified handoff) built and
+live-verified; Thread 2 (Kontakion of the temple) still untouched
+
+Both open questions the prior entry left were checked and cleared: `selectHorologionOffice()` is a
+three-line state setter with no side effects unsafe to call from inside a Typika render, and
+`_getGreatLentWeekNumber()` / `_getFixedCalendarMmdd()` -- both already used elsewhere in
+`js/horologion-engine.js` -- are exactly what's needed to compute the Fifth Thursday of Great Lent
+and the Forty Martyrs of Sebaste (March 9) exceptions. No new date math was written.
+
+Built: `typika-lenten-transition-rubric` (`_resolveTypikaSlots()`, `js/horologion-engine.js`) now
+resolves to a real `action-rubric` item with a "Begin Vespers now" button (wired to the same
+`setSharedOfficeNavHour()`/`selectHorologionOffice()` mechanism the office picker already uses) on
+Mondays, Tuesdays, and Thursdays that are not one of the two stated exceptions, and to a plain-text
+Presanctified disclosure (unchanged in substance, only reworded to name the specific reason) on
+Wednesdays, Fridays, and the two exceptions. `js/office-ui.js`'s `_renderHorologionItem()` gained
+the matching `action-rubric` render branch. The Presanctified Liturgy's own content stays out of
+scope and disclosed, not fabricated -- this app has no Presanctified office at all.
+
+Verified live in headless Chromium against the real running app (Monday/Wednesday spot checks plus
+the Fifth-Thursday and Forty-Martyrs exception dates), not just built, and separately swept every
+day from 2027-02-01 through 2027-04-30 directly against `HorologionEngine.resolveOffice()` to
+confirm the split lands on the correct dates across the whole season. `node --check` clean, zero
+new console errors. Full detail: `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section
+and `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+Thread 2 (whether this app's profile/settings system already has a per-user "parish dedication"
+field, needed for the Kontakion "of the temple") was not investigated this pass -- still open,
+exactly as the prior entry left it.

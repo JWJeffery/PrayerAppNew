@@ -3770,6 +3770,21 @@ function _renderHorologionItem(item) {
         return base + _renderHorologionDiagnostics(item, escapeHtml);
     }
 
+    // v8.1: "text plus a real switch-office action" — used by the Lenten Typika
+    // closing rubric to offer "Begin Vespers now" on days Vespers genuinely
+    // follows directly, instead of only disclosing that it happens.
+    if (item.type === 'action-rubric') {
+        const label   = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
+        const body    = `<div class="horologion-text"><p>${formatParagraphText(item.text || '')}</p></div>`;
+        let actionHtml = '';
+        if (item.action && item.action.officeKey) {
+            const actionLabel = escapeHtml(item.action.label || 'Begin');
+            actionHtml = `<button type="button" style="margin-top:8px;" ` +
+                `onclick="setSharedOfficeNavHour('horologion', '${item.action.officeKey}')">${actionLabel}</button>`;
+        }
+        return label + body + actionHtml + _renderHorologionDiagnostics(item, escapeHtml);
+    }
+
     // New: ordered liturgical sequence container.
     // Each child item is rendered recursively through the same renderer.
     if (item.type === 'sequence') {

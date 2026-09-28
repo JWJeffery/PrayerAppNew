@@ -8447,8 +8447,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         'typika-lenten-beatitudes',
         'typika-lenten-remember-us-prostration',
         'typika-lenten-closing',
-        'typika-lenten-prayer-of-ephrem',
-        'typika-lenten-transition-rubric'
+        'typika-lenten-prayer-of-ephrem'
     ]);
 
     for (const section of sections) {
@@ -8471,6 +8470,50 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         lxxNumber:  slotData.lxxNumber,
                         items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                         resolvedAs: 'typika-fixed'
+                    };
+                }
+                continue;
+            }
+
+            // v8.1: typika-lenten-transition-rubric now resolves the day-dependent
+            // Vespers/Presanctified handoff for real, instead of only disclosing it.
+            // Reachable only inside the Lenten-weekday section (forForm:
+            // ["great-lent-weekday"] in data/horologion/typika.json), so
+            // isGreatLentWeekdayTypikaForm is already known true here.
+            if (item.key === 'typika-lenten-transition-rubric') {
+                const lentWeek = _getGreatLentWeekNumber(dateObj);
+                const isFifthThursday      = (dayOfWeek === 4 && lentWeek === 5);
+                const isFortyMartyrsFeast  = (_getFixedCalendarMmdd(dateObj) === '03-09');
+                const isStatedException    = isFifthThursday || isFortyMartyrsFeast;
+                const isOrdinaryPresanctifiedDay = (dayOfWeek === 3 || dayOfWeek === 5); // Wed/Fri
+                const presanctifiedToday   = isOrdinaryPresanctifiedDay || isStatedException;
+
+                if (!presanctifiedToday) {
+                    // Monday, Tuesday, or Thursday, and not the stated exception --
+                    // Vespers genuinely begins directly, so offer the real switch
+                    // instead of only disclosing that it happens.
+                    section.items[i] = {
+                        type:       'action-rubric',
+                        key:        item.key,
+                        label:      'What Follows',
+                        text:       'Vespers begins directly: "O come, let us worship," and Psalm 103.',
+                        action:     { officeKey: 'vespers', label: 'Begin Vespers now' },
+                        resolvedAs: 'typika-lenten-transition-vespers-action'
+                    };
+                } else {
+                    const reason = isFifthThursday
+                        ? 'today is the Fifth Thursday of Great Lent'
+                        : isFortyMartyrsFeast
+                            ? 'today is the feast of the Forty Martyrs of Sebaste'
+                            : 'today is a Wednesday or Friday of Great Lent';
+                    section.items[i] = {
+                        type:       'text',
+                        key:        item.key,
+                        label:      'What Follows',
+                        text:       `The Liturgy of the Presanctified Gifts is ordinarily appointed today, since ${reason}. ` +
+                                    'Its own pre-communion Trisagion prayers begin instead; the Presanctified Liturgy\'s ' +
+                                    'own texts are outside this office\'s scope and not modeled here. UNABHOR1997 p.142-143.',
+                        resolvedAs: 'typika-lenten-transition-presanctified-disclosure'
                     };
                 }
                 continue;

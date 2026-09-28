@@ -51,6 +51,19 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**THREAD 1 OF THE ENTRY BELOW IS NOW BUILT AND VERIFIED, 2026-09-28 continued.** Both open questions
+this entry left (does `selectHorologionOffice()` have bad side effects when re-entered from Typika;
+are "Fifth Thursday of Great Lent"/"Forty Martyrs" already computable) checked out clean, and the
+"Begin Vespers now" action described as "very plausibly buildable" below is now actually built,
+wired, and live-verified — see `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section
+("UPDATED 2026-09-28" bullets) for the full account, and `js/horologion-engine.js`'s
+`_resolveTypikaSlots()` (search `typika-lenten-transition-rubric`) plus the matching
+`action-rubric` render branch in `js/office-ui.js`'s `_renderHorologionItem()` for the code. Short
+version: `_getGreatLentWeekNumber()` and `_getFixedCalendarMmdd()` were already exactly the helpers
+needed — no new date math was required, both were already used elsewhere in this engine.
+**Thread 2 (Kontakion of the temple) below is still fully open, untouched this pass** — pick up
+there next; nothing in this update bears on it.
+
 **SESSION CUT SHORT AT ~90% TOKEN BUDGET, 2026-09-28 — mid-investigation, NOTHING BUILT OR
 COMMITTED THIS ENTRY, read carefully before resuming.** After Finding T8 shipped (PR #55, entry
 directly below), Josh asked to fully investigate the two things that PR's own description called
