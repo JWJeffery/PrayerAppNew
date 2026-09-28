@@ -1561,26 +1561,18 @@
     "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress), area (code-area or file), and optionally phase. When a todo reaches status done, move it to the archive.",
     "todos": [
       {
-        "id": "saints-schema-refactor",
-        "title": "Saints resolver: normalized-source runtime adapter",
-        "description": "Resolver boundary complete (v2.8.6). Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: implement normalized-source runtime adapter in saints-resolver.js so SaintsResolver queries identities.json + commemorations.json directly rather than generated monthly cache files at runtime.",
-        "severity": "LOW",
-        "status": "in-progress",
-        "area": "js/saints-resolver.js + data/saints/",
-        "phase": "Phase TBD"
-      },
-      {
-        "id": "rite-placeholder-fragility",
-        "title": "Fix [rite] placeholder resolution fragility",
-        "description": "Rubric [rite] interpolation in rubrics.json is fragile and prone to null returns. Audit all sequence entries that use [rite] and add null-safe fallback handling.",
-        "severity": "LOW",
+        "id": "menaion-hymn-corpus-transcription",
+        "title": "PRIORITY 1 — Menaion hymn-family corpus transcription (Orthros)",
+        "description": "VERIFIED CURRENT STATE (2026-09-28, re-audited directly against live code after the stale 2026-07-04 version of this entry caused a real miscommunication — see RESUME_PROJECT_NOTE.md's 2026-09-28 terminology-correction entry for the full account. Do not shortcut this verification again; read the actual engine code, not this description, before reporting status).\n\nTerminology, stated explicitly because conflating these two is exactly what went wrong: 'Horologion' means EITHER (a) the physical liturgical book containing only the ordinary fixed weekly cycle (Vespers, Compline, the Hours, Typika, Orthros's skeleton, Midnight Office), OR (b) js/horologion-engine.js, the single engine file that renders ALL EO offices including every Menaion integration point. The 2026-09-26 'Horologion full audit COMPLETE, 14 of 14 offices' claim was scope (a) only — verified against the book UNABHOR1997. It never covered the Menaion (a separate book) and was never intended to. That distinction must be stated explicitly every time completion is discussed, not left implicit.\n\nBRANCH CLASSIFICATION — DONE. Every Orthros Menaion hymn branch (sessional hymns, praises, exapostilarion, feast Theotokion) already has explicit rank-tiered honest-rubric handling in js/horologion-engine.js (e.g. orthros-rank3-menaion-sessional-hymns-deferred-rubric, orthros-menaion-feast-exapostilarion-rubric, orthros-feast-theotokion-rubric). Canon has a coarser single isFeast branch (orthros-feast-canon-rubric) — not yet rank-tiered like the others; worth aligning for consistency, not a correctness bug.\n\nCORPUS TEXT — NOT DONE. Confirmed by reading the literal live rubric strings: sessional hymns, praises, canon, exapostilarion, and feast Theotokion all currently render 'not yet text-backed in the corpus' / 'not yet embedded in this path' / 'is deferred' for every feast, rank 1 through 4. Zero real hymn text exists for any of these branches. The only Menaion layer with real resolved text is troparion + targeted kontakion (data/menaion/*.json, full year, resolved via js/menaion-resolver.js) — kontakion is frozen at exactly 27 entries, unchanged since the 2026-04-25 census despite ~5 months and ~150 commits since. A single-entry Great Compline canon scaffold (js/octoechos/gc-canon-menaion.js, one date: 04-23) exists but is a different office (Great Compline, not Orthros) and not part of this branch's scope.\n\nSOURCE (already established in data/menaion/schema.json, used successfully for the existing troparion corpus): published Orthodox service books in the Antiochian/OCA Hapgood tradition, or equivalent published liturgical translations (Jordanville, etc.). Texts must not be fabricated — confirm the specific source/edition for the broader hymn families (sessional hymns, praises, canon, exapostilarion, feast Theotokion — these are longer texts than troparia, not all editions carry them) with Josh before transcription begins, per this project's own standing source-governance rule.\n\nNEXT ACTION: confirm source edition/coverage with Josh, then transcribe corpus text branch by branch and feast by feast, same resumable-ledger discipline as AUDIT_SOURCE_VERIFICATION.md and the Bible corpus work — a durable tracking file, one branch/section closed fully before the next, every finding recorded in the same session it's found.",
+        "severity": "HIGH",
         "status": "open",
-        "area": "data/rubrics.json + js/office-ui.js"
+        "area": "js/horologion-engine.js + js/octoechos/gc-canon-menaion.js + data/menaion/",
+        "phase": "Menaion corpus buildout"
       },
       {
         "id": "gloria-patri-normalization",
         "title": "Normalize duplicated liturgical fragments",
-        "description": "Gloria Patri and Kyrie appear in multiple tradition JSON files. Consolidate into common.json with tradition-specific rendering where needed.",
+        "description": "RE-VERIFIED 2026-09-28 against live files: still accurate. Gloria Patri text is duplicated verbatim across components/east-syriac.json, components/coptic.json, and components/anglican.json, plus its own unreferenced copy in components/common.json (id: comm-gloria-patri) that none of the tradition files actually point to. Consolidate into common.json with tradition-specific rendering where needed.",
         "severity": "LOW",
         "status": "open",
         "area": "components/common.json + components/*.json"
@@ -1588,19 +1580,27 @@
       {
         "id": "innerHTML-architecture",
         "title": "Migrate from innerHTML string-building",
-        "description": "Heavy reliance on .innerHTML string building in office-ui.js creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
+        "description": "RE-VERIFIED 2026-09-28 against live files: still accurate. 33 raw .innerHTML writes confirmed in js/office-ui.js alone. Heavy reliance on .innerHTML string building creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
         "severity": "LOW",
         "status": "open",
         "area": "js/office-ui.js"
       },
       {
-        "id": "horologion-monastic-audit",
-        "title": "Horologion: post-blocker polish and Menaion branch planning",
-        "description": "Monastic-discipline audit triage complete (2026-05-16): no current public-beta release blockers identified in the governed daily-cycle scope. The Horologion is release-honest for the governed scope. \n\nCOMPLETED / CLOSED audit targets (not active investigation items):\n- Typika lectionary expansion: RELEASE-GRADE as of 2026-05-10 for ordinary post-Pentecost Sundays, Pentecostarion Sundays, pre-Lenten and Great Lent Sundays, Palm Sunday, Bright Week, ordinary weekday readings Weeks 1-33, Lukan weekday Gospel Weeks 1-12, interruption gates, pre-Lenten weekdays, feast_lectionary_overlays winter-cycle and fixed-cycle, guarded Annunciation overlay, and final Typika release regression. Deferred (non-release-blocking): Annunciation Sunday/Holy Week/Pascha/Bright collision policy, broader Menaion/fixed-feast overlay expansion, forefeast/afterfeast coverage, Royal Hours/office-reading handling.\n- Great Lent / Holy Week kathisma seasonal full-text whitelist: COMPLETE 2026-05-07. K1, K2, K4-K17, K19-K20 whitelisted. All QC passes recorded. Ordinary non-seasonal Saturday policy unchanged.\n- Great Compline Great Canon and bounded feast-eve Menaion canon (04-23, 08-15, 09-08, 09-14, 11-21): runtime-verified complete. No current bounded Great Compline gate remains open. Broader Great Compline Menaion corpus expansion is deferred data work, not an active audit target.\n- Orthros core Octoechos/Triodion routing: pre-Menaion-ready as of 2026-04-24. No further weekday corpus transcription on the release-critical path.\n\nACTIVE NEXT TARGET:\nOrthros Menaion hymn-family branch-planning audit. Classify the following branches as honest-rubric, wrong-fallback, or data-depth deferred before any corpus transcription: sessional hymns, praises, canon, exapostilarion, feast Theotokion. Menaion kontakion layer is live (27 resolved targeted kontakia per 2026-04-25 census); further kontakion expansion and remaining branch families are the next scoped work. Rank 3 non-Sunday visibility guards for sessional hymns, praises, and exapostilarion now implemented 2026-05-16; canon already covered; feast Theotokion deferred (rank 1–2 only for now).\n\nHIGH-PRIORITY PUBLIC-BETA POLISH:\n- Reduction settings / public-beta explanation layer\n- Deferred-rubric UX normalization\n- Vespers Menaion-tone Theotokion conflict resolution (Theotokion arbitration)\n\nDEFERRED GOVERNANCE:\n- Annual Typikon collision policy (fixed vs movable cycle overlaps)\n- Royal Hours / office-reading handling\n- Forefeast / afterfeast / special-cycle coverage\n\nDEFERRED CORPUS DEPTH:\n- Broader Menaion hymn-family corpus expansion (Orthros)\n- Broader Great Compline Menaion corpus expansion\n- Paschal Hours / Paschal Office full text where current displacement rubrics are honest",
-        "severity": "HIGH",
-        "status": "in-progress",
-        "area": "js/horologion-engine.js + data/horologion/ + structure.json",
-        "phase": "Post-Pentecost stabilization"
+        "id": "rite-placeholder-fragility",
+        "title": "Fix [rite] placeholder resolution fragility",
+        "description": "CLOSED 2026-09-28 — re-verified against live code and found already fixed, apparently sometime after this todo was written and never marked closed. js/office-ui.js's `rite` variable is defined with a null-safe fallback (`document.querySelector('input[name=\"rite\"]:checked')?.value || 'rite2'`) at all three render sites (BCP, East Syriac, Coptic), and resolveText() already chains `t[rite] || t['rite2'] || t['rite1'] || null`. No unguarded null path found. Left in the ledger as history per this file's own convention (done todos are not deleted).",
+        "severity": "LOW",
+        "status": "done",
+        "area": "data/rubrics.json + js/office-ui.js"
+      },
+      {
+        "id": "saints-schema-refactor",
+        "title": "Saints resolver: normalized-source runtime adapter",
+        "description": "CLOSED 2026-09-28 — obsolete, not merely stale. The 2026-09-02 commit 'Remove Lucy-era saints generator/CI-gate architecture entirely' (7a06484) deleted identities.json, commemorations.json, and the whole generator toolchain outright, because they were a fabricated/unaudited data source from the dismissed prior architect. js/saints-resolver.js already reads data/saints/saints-{month}.json directly, confirmed by re-reading the live file 2026-09-28. There is nothing left for a 'normalized-source runtime adapter' to adapt to. Left in the ledger as history per this file's own convention.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/saints-resolver.js + data/saints/",
+        "phase": "Phase TBD"
       }
     ],
     "_completed_todos_archive": "documentation/structure.hist1.json → archived_completed_todos"

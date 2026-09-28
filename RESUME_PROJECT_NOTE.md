@@ -1,5 +1,35 @@
 # RESUME_PROJECT_NOTE.md
 
+**TERMINOLOGY CORRECTION AND ACCOUNTABILITY NOTE, 2026-09-28 continued yet again once more.** Josh
+asked directly, more than once, in plain terms: does "Horologion" mean the complete whole of
+everything the Eastern Orthodox office touches, or does it mean the specific book of that title.
+That question was not answered plainly when asked. Instead the distinction existed only as an
+implicit scope note buried in this file's 2026-09-26 "Horologion full audit COMPLETE" entry and in
+`project_roadmap.json`'s EO family `deferred_depth` list — and got treated, later, as if having
+written it down somewhere constituted having told him. It did not. A scope clarification filed in a
+doc is not an answer to a person asking a direct question in conversation. Josh's own comparison
+stands: this is the same category of failure — disclosure without honest, direct answer to a direct
+question — that he fired Lucy for. Recorded here without euphemism, not to be quietly dropped later.
+
+**Stated plainly, for the record, going forward:** "Horologion" has two referents in this project
+and they must never be conflated without saying so out loud:
+1. **The book** — the physical liturgical text (cross-referenced here as `UNABHOR1997`), containing
+   only the ordinary fixed weekly cycle: Vespers, Grand Compline, the four Hours, Typika, Orthros's
+   *skeleton*, Midnight Office, Small Compline, the four Interhours. The 2026-09-26 "full audit
+   COMPLETE, 14 of 14 offices" entry above is scoped to exactly this and nothing more.
+2. **The engine** — `js/horologion-engine.js`, the single file that renders every EO office,
+   including every Menaion integration point. Its completeness is NOT implied by (1)'s completeness.
+
+**Menaion status, verified directly against live code 2026-09-28** (see `structure.json`'s
+`menaion-hymn-corpus-transcription` todo, now PRIORITY 1, for the full evidence): branch
+classification (honest-rubric vs. deferred vs. data-depth) for Orthros's Menaion hymn families —
+sessional hymns, praises, canon, exapostilarion, feast Theotokion — is done. The actual corpus text
+for every one of those branches is not. Only troparion + targeted kontakion (27 entries, unchanged
+since the 2026-04-25 census) has real resolved text. Menaion was never part of the 2026-09-26
+"complete" claim, and is not done by any reading of that term.
+
+---
+
 **MOBILE DISPLAY AUDIT: PRAYER WINDOW MAXIMIZED, 2026-09-28 continued yet again.** Josh, after the
 earlier same-day fix that stopped the rail/content desync ("The site is completely unusable on
 mobile"), asked directly: "Did I have you address display on mobile devices?" — the answer was no,
