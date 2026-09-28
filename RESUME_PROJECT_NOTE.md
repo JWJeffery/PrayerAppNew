@@ -33,6 +33,14 @@ shipped work, including things this note was tracking as still-open TODOs, was i
 time). A prose reminder to "check for unmerged PRs" was not enough to actually stop this from
 recurring; a literal command is.
 
+**UNMERGED WORK, as of the commit that wrote this line: `claude/prayerappnew-resume-note-cn456a`
+(commit `003c244`) is 1 commit ahead of `origin/main`, 0 behind, and has NO open PR.** It holds the
+five-diocese Cycles-of-Prayer batch (Alaska/Arizona/Albany/Alabama/Arkansas) and the
+`cycleType`/monthly-recurring schema extension described in §7 below. If you are reading this from a
+fresh clone and don't see that work on `main`, this is why — check that branch directly
+(`git log --oneline origin/claude/prayerappnew-resume-note-cn456a`) and merge/PR it rather than
+re-doing or re-discovering it. Delete this paragraph once that branch is actually merged into `main`.
+
 ---
 
 ## Defaults/Modes consolidation and Interhour gating — CLOSED 2026-09-28 (continued)
