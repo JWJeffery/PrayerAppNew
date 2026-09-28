@@ -17,8 +17,21 @@ not wait for Josh to ask a fourth time.
 check `SEED_VERSION` in `audit-ledger.html`. Josh runs multiple Claude accounts/sessions against this
 repo concurrently, so never trust this note's HEAD, SEED_VERSION, or "what's open" at face value —
 verify against the live repo. Cache-bust params likewise: read them out of `index.html` rather than
-trusting a number written here. Check for open, unmerged PRs before assuming your assigned branch is
-the only work in flight — a branch has piled up unmerged before (2026-09-26) purely from not checking.
+trusting a number written here.
+
+**Run this exact check before reading or editing anything else in this file — not "consider checking
+for unmerged PRs," run the command:**
+```
+git fetch origin main <your-branch> && git merge-base --is-ancestor <your-branch> origin/main
+```
+If it does NOT print success (i.e. your branch is missing commits from `main`), **merge `origin/main`
+in and reconcile before doing anything else** — do not audit, edit, or trust a single line of this
+note until your branch actually contains all of `main`. This exact failure happened twice
+(2026-09-26, and again 2026-09-28 when two separate "audit the note" passes both checked the note's
+internal consistency but never checked whether the branch itself was 40 commits behind `main` — real
+shipped work, including things this note was tracking as still-open TODOs, was invisible the whole
+time). A prose reminder to "check for unmerged PRs" was not enough to actually stop this from
+recurring; a literal command is.
 
 ---
 
