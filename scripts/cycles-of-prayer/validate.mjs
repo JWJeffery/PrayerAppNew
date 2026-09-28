@@ -6,6 +6,7 @@ const SCHEMA_FILE = 'schema.json';
 const KEBAB_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const VALID_SUBJECT_TYPES = new Set(['parish', 'category']);
+const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring']);
 
 const verbose = process.argv.includes('--verbose');
 
@@ -20,6 +21,34 @@ function readJson(filePath) {
 const findings = [];
 function add(severity, file, detail) {
   findings.push({ severity, file, detail });
+}
+
+function validateSubjects(name, where, subjects) {
+  if (!Array.isArray(subjects) || subjects.length === 0) {
+    add('CRITICAL', name, `${where}.subjects must be a non-empty array`);
+    return;
+  }
+  for (const [subjectIndex, subject] of subjects.entries()) {
+    const subjectWhere = `${where}.subjects[${subjectIndex}]`;
+
+    if (!VALID_SUBJECT_TYPES.has(subject.type)) {
+      add('CRITICAL', name, `${subjectWhere}.type must be "parish" or "category", got ${JSON.stringify(subject.type)}`);
+      continue;
+    }
+    if (typeof subject.name !== 'string' || subject.name.length === 0) {
+      add('CRITICAL', name, `${subjectWhere}.name must be a non-empty string`);
+    }
+    if (subject.type === 'parish') {
+      if (typeof subject.place !== 'string' || subject.place.length === 0) {
+        add('CRITICAL', name, `${subjectWhere} is type "parish" but has no non-empty "place"`);
+      }
+    } else if (subject.place !== undefined) {
+      add('MEDIUM', name, `${subjectWhere} is type "category" but carries a "place" field (categories are not tied to a congregation)`);
+    }
+    if (subject.note !== undefined && typeof subject.note !== 'string') {
+      add('MEDIUM', name, `${subjectWhere}.note, when present, must be a string`);
+    }
+  }
 }
 
 function main() {
@@ -42,16 +71,23 @@ function main() {
       continue;
     }
 
-    // Filenames are <body-slug>-<diocese-slug>-<year>.json, but both slugs may
-    // themselves contain hyphens (e.g. "western-oregon"), which makes the
-    // filename ambiguous to parse back apart. So validation runs the other
-    // direction: build the expected filename FROM the document's own
-    // declared fields and compare it to the actual filename, rather than
-    // trying to split the filename and guess which hyphen belongs to what.
+    // Filenames are <body-slug>-<diocese-slug>-<year>.json (cycleType
+    // 'dated') or <body-slug>-<diocese-slug>.json (cycleType
+    // 'monthly-recurring'), but both slugs may themselves contain hyphens
+    // (e.g. "western-oregon"), which makes the filename ambiguous to parse
+    // back apart. So validation runs the other direction: build the
+    // expected filename FROM the document's own declared fields and compare
+    // it to the actual filename, rather than trying to split the filename
+    // and guess which hyphen belongs to what.
     for (const field of ['bodySlug', 'dioceseShort']) {
       if (typeof doc[field] !== 'string' || !KEBAB_SLUG_PATTERN.test(doc[field])) {
         add('CRITICAL', name, `"${field}" must be a non-empty kebab-case slug, got ${JSON.stringify(doc[field])}`);
       }
+    }
+
+    const cycleType = doc.cycleType === undefined ? 'dated' : doc.cycleType;
+    if (!VALID_CYCLE_TYPES.has(cycleType)) {
+      add('CRITICAL', name, `"cycleType", when present, must be "dated" or "monthly-recurring", got ${JSON.stringify(doc.cycleType)}`);
     }
 
     const expectedId = name.slice(0, -'.json'.length);
@@ -59,9 +95,11 @@ function main() {
       add('HIGH', name, `id "${doc.id}" does not match filename (expected "${expectedId}")`);
     }
     if (typeof doc.bodySlug === 'string' && typeof doc.dioceseShort === 'string') {
-      const expectedName = `${doc.bodySlug}-${doc.dioceseShort}-${doc.year}.json`;
+      const expectedName = cycleType === 'monthly-recurring'
+        ? `${doc.bodySlug}-${doc.dioceseShort}.json`
+        : `${doc.bodySlug}-${doc.dioceseShort}-${doc.year}.json`;
       if (name !== expectedName) {
-        add('HIGH', name, `filename does not match bodySlug-dioceseShort-year.json (expected "${expectedName}")`);
+        add('HIGH', name, `filename does not match expected pattern for cycleType "${cycleType}" (expected "${expectedName}")`);
       }
     }
 
@@ -70,7 +108,11 @@ function main() {
         add('CRITICAL', name, `missing or empty required string field "${field}"`);
       }
     }
-    if (!Number.isInteger(doc.year)) {
+    if (cycleType === 'monthly-recurring') {
+      if (doc.year !== undefined) {
+        add('HIGH', name, '"year" must be absent for cycleType "monthly-recurring" (a standing monthly cycle has no year)');
+      }
+    } else if (!Number.isInteger(doc.year)) {
       add('CRITICAL', name, '"year" must be an integer');
     }
     if (doc.notes !== undefined && !Array.isArray(doc.notes)) {
@@ -79,6 +121,34 @@ function main() {
 
     if (!Array.isArray(doc.entries) || doc.entries.length === 0) {
       add('CRITICAL', name, '"entries" must be a non-empty array');
+      continue;
+    }
+
+    if (cycleType === 'monthly-recurring') {
+      let previousDay = null;
+      const seenDays = new Set();
+      for (const [index, entry] of doc.entries.entries()) {
+        const where = `entries[${index}]`;
+
+        if (!Number.isInteger(entry.day) || entry.day < 1 || entry.day > 31) {
+          add('CRITICAL', name, `${where}.day must be an integer 1-31, got ${JSON.stringify(entry.day)}`);
+        } else {
+          if (seenDays.has(entry.day)) {
+            add('HIGH', name, `${where}.day "${entry.day}" is a duplicate of an earlier entry`);
+          }
+          seenDays.add(entry.day);
+          if (previousDay !== null && entry.day < previousDay) {
+            add('HIGH', name, `${where}.day "${entry.day}" is out of ascending order (previous entry was "${previousDay}")`);
+          }
+          previousDay = entry.day;
+        }
+
+        if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {
+          add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
+        }
+
+        validateSubjects(name, where, entry.subjects);
+      }
       continue;
     }
 
@@ -104,32 +174,7 @@ function main() {
         add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
       }
 
-      if (!Array.isArray(entry.subjects) || entry.subjects.length === 0) {
-        add('CRITICAL', name, `${where}.subjects must be a non-empty array`);
-        continue;
-      }
-
-      for (const [subjectIndex, subject] of entry.subjects.entries()) {
-        const subjectWhere = `${where}.subjects[${subjectIndex}]`;
-
-        if (!VALID_SUBJECT_TYPES.has(subject.type)) {
-          add('CRITICAL', name, `${subjectWhere}.type must be "parish" or "category", got ${JSON.stringify(subject.type)}`);
-          continue;
-        }
-        if (typeof subject.name !== 'string' || subject.name.length === 0) {
-          add('CRITICAL', name, `${subjectWhere}.name must be a non-empty string`);
-        }
-        if (subject.type === 'parish') {
-          if (typeof subject.place !== 'string' || subject.place.length === 0) {
-            add('CRITICAL', name, `${subjectWhere} is type "parish" but has no non-empty "place"`);
-          }
-        } else if (subject.place !== undefined) {
-          add('MEDIUM', name, `${subjectWhere} is type "category" but carries a "place" field (categories are not tied to a congregation)`);
-        }
-        if (subject.note !== undefined && typeof subject.note !== 'string') {
-          add('MEDIUM', name, `${subjectWhere}.note, when present, must be a string`);
-        }
-      }
+      validateSubjects(name, where, entry.subjects);
     }
   }
 

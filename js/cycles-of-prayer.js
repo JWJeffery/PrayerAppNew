@@ -17,8 +17,20 @@
 // query time, against whatever year is actually being asked about), so a
 // user's saved diocese choice does not go stale every January the way a
 // year-embedded id would.
+// `cycleType` mirrors the same field in each diocese's own JSON file (see
+// data/cycles-of-prayer/schema.json) -- 'dated' (the default, omitted below)
+// for a file keyed by specific ISO calendar dates within a stated `year`,
+// 'monthly-recurring' for a standing cycle keyed by bare day-of-month (1-31)
+// with no year at all. Kept here too (duplicated with the file's own field)
+// because this registry has to pick a load path and cache key BEFORE
+// fetching the file -- see loadCycleOfPrayerYear/getCachedCycleOfPrayerWeek.
 const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
-    { bodySlug: 'episcopal', dioceseShort: 'western-oregon', label: 'The Episcopal Church in Western Oregon' }
+    { bodySlug: 'episcopal', dioceseShort: 'western-oregon', label: 'The Episcopal Church in Western Oregon' },
+    { bodySlug: 'episcopal', dioceseShort: 'alabama', label: 'The Episcopal Diocese of Alabama' },
+    { bodySlug: 'episcopal', dioceseShort: 'alaska', label: 'The Episcopal Diocese of Alaska' },
+    { bodySlug: 'episcopal', dioceseShort: 'albany', label: 'The Episcopal Diocese of Albany' },
+    { bodySlug: 'episcopal', dioceseShort: 'arizona', label: 'The Episcopal Diocese of Arizona' },
+    { bodySlug: 'episcopal', dioceseShort: 'arkansas', label: 'The Episcopal Diocese of Arkansas', cycleType: 'monthly-recurring' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
@@ -34,28 +46,42 @@ function findCycleOfPrayerDiocese(key) {
     return CYCLES_OF_PRAYER_DIOCESES.find(d => cycleOfPrayerDioceseKey(d.bodySlug, d.dioceseShort) === key) || null;
 }
 
-// dioceseKey + ':' + year -> parsed JSON, or null if that year's file does
-// not exist / failed to load. A miss (key not present at all) means "not
-// requested yet or still loading" -- render call sites must treat that as
-// "nothing to show yet", never as "confirmed absent".
+// Cache key is dioceseKey + ':' + year for a 'dated' diocese, or just
+// dioceseKey for a 'monthly-recurring' one (its file has no year, so there
+// is only ever one cache entry per diocese, not one per year). Value is the
+// parsed JSON, or null if the file does not exist / failed to load. A miss
+// (key not present at all) means "not requested yet or still loading" --
+// render call sites must treat that as "nothing to show yet", never as
+// "confirmed absent".
 const _cyclesOfPrayerCache = new Map();
 
+function cycleOfPrayerCacheKey(diocese, dioceseKey, year) {
+    return diocese.cycleType === 'monthly-recurring' ? dioceseKey : (dioceseKey + ':' + year);
+}
+
+function cycleOfPrayerFilePath(diocese, year) {
+    const base = 'data/cycles-of-prayer/' + diocese.bodySlug + '-' + diocese.dioceseShort;
+    return diocese.cycleType === 'monthly-recurring' ? (base + '.json') : (base + '-' + year + '.json');
+}
+
 /**
- * Fetches (and caches) the diocese's cycle file for a specific year. Returns
- * null, never throws, when that year's file does not exist yet (a diocese
- * with a 2026 file but no 2027 file yet is the expected, honest case every
- * January until next year's cycle is ingested -- not an error).
+ * Fetches (and caches) the diocese's cycle file. `year` is only meaningful
+ * for a 'dated' diocese (ignored, but harmless to pass, for a
+ * 'monthly-recurring' one, which has a single standing file with no year).
+ * Returns null, never throws, when that file does not exist yet (a 'dated'
+ * diocese with a 2026 file but no 2027 file yet is the expected, honest case
+ * every January until next year's cycle is ingested -- not an error).
  */
 async function loadCycleOfPrayerYear(dioceseKey, year) {
     const diocese = findCycleOfPrayerDiocese(dioceseKey);
     if (!diocese) return null;
 
-    const cacheKey = dioceseKey + ':' + year;
+    const cacheKey = cycleOfPrayerCacheKey(diocese, dioceseKey, year);
     if (_cyclesOfPrayerCache.has(cacheKey)) {
         return _cyclesOfPrayerCache.get(cacheKey);
     }
 
-    const path = 'data/cycles-of-prayer/' + diocese.bodySlug + '-' + diocese.dioceseShort + '-' + year + '.json';
+    const path = cycleOfPrayerFilePath(diocese, year);
 
     try {
         const response = await fetch(path);
@@ -76,7 +102,9 @@ async function loadCycleOfPrayerYear(dioceseKey, year) {
 
 /** Synchronous read of whatever is already cached -- never triggers a fetch. */
 function getCachedCycleOfPrayerYear(dioceseKey, year) {
-    return _cyclesOfPrayerCache.get(dioceseKey + ':' + year) || null;
+    const diocese = findCycleOfPrayerDiocese(dioceseKey);
+    if (!diocese) return null;
+    return _cyclesOfPrayerCache.get(cycleOfPrayerCacheKey(diocese, dioceseKey, year)) || null;
 }
 
 function toIsoDateString(date) {
@@ -110,19 +138,48 @@ function resolveCycleOfPrayerEntry(corpus, date) {
 }
 
 /**
- * Synchronous, cache-only resolution of "this week's" cycle-of-prayer entry
- * for a given diocese and date. Returns null when the corpus for that exact
- * year isn't loaded (or doesn't exist) yet -- callers render nothing in that
- * case, the same "null = not yet available, never substitute" convention
- * used throughout this app, and rely on prefetchCycleOfPrayerYear (below)
- * having been kicked off elsewhere to eventually populate the cache and
- * trigger a repaint.
+ * Resolves "the current day-of-month's" entry from an already-loaded
+ * 'monthly-recurring' corpus: the entry whose `day` is the latest one on or
+ * before `date`'s day-of-month, wrapping around to the entry with the
+ * highest `day` if `date` falls before the first entry (the cycle repeats
+ * every month, so there is no "before the first entry" the way a dated,
+ * non-repeating corpus has -- e.g. on the 1st, with no day-1 entry, the
+ * correct subject is still whatever the end of last month's cycle was, not
+ * nothing). Mirrors resolveCycleOfPrayerEntry's "latest on-or-before"
+ * semantics for the dated case.
+ */
+function resolveMonthlyRecurringEntry(corpus, date) {
+    if (!corpus || !Array.isArray(corpus.entries) || corpus.entries.length === 0) return null;
+
+    const day = date.getDate();
+    let best = null;
+    for (const entry of corpus.entries) {
+        if (entry.day > day) break;
+        best = entry;
+    }
+    return best || corpus.entries[corpus.entries.length - 1];
+}
+
+/**
+ * Synchronous, cache-only resolution of "this week's" (or, for a
+ * 'monthly-recurring' diocese, "this day's") cycle-of-prayer entry for a
+ * given diocese and date. Returns null when the relevant corpus isn't loaded
+ * (or doesn't exist) yet -- callers render nothing in that case, the same
+ * "null = not yet available, never substitute" convention used throughout
+ * this app, and rely on prefetchCycleOfPrayerYear (below) having been
+ * kicked off elsewhere to eventually populate the cache and trigger a
+ * repaint.
  */
 function getCachedCycleOfPrayerWeek(dioceseKey, date) {
     if (!isValidCycleOfPrayerDioceseKey(dioceseKey)) return null;
+    const diocese = findCycleOfPrayerDiocese(dioceseKey);
 
     const corpus = getCachedCycleOfPrayerYear(dioceseKey, date.getFullYear());
     if (!corpus) return null;
+
+    if (diocese.cycleType === 'monthly-recurring') {
+        return resolveMonthlyRecurringEntry(corpus, date);
+    }
 
     // The corpus's own declared year, not just the filename, gates use --
     // belt and suspenders against a future mis-filed file.

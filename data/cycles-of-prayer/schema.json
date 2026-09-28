@@ -1,27 +1,36 @@
 {
-  "_comment": "Diocesan Cycle of Prayer corpus schema v1. Records the weekly rotation of prayer subjects (parishes/missions, plus non-parish categories like diocesan staff or those in the ordination process) that a diocese publishes, usually annually, for use in the Prayers of the People/intercessions. One file per diocese per year -- NOT one shared file per diocese -- because a diocese republishes its own cycle every year and the week-to-subject mapping is not guaranteed stable year over year (parish counts change, some years have 53 Sundays, etc.). Designed to hold cycles from multiple dioceses and multiple ecclesial bodies side by side without forcing them into a single body's own conventions.",
-  "version": "1.0",
+  "_comment": "Diocesan Cycle of Prayer corpus schema v1.1. Records the rotation of prayer subjects (parishes/missions, plus non-parish categories like diocesan staff or those in the ordination process) that a diocese publishes for use in the Prayers of the People/intercessions. Two cycleTypes are supported -- see `cycleType` below -- because not every diocese's cycle is anchored to specific calendar dates: some republish a dated cycle annually, others publish a standing monthly-recurring cycle (\"pray for the parishes under day N every month\") with no year at all. Designed to hold cycles from multiple dioceses and multiple ecclesial bodies side by side without forcing them into a single body's own conventions.",
+  "version": "1.1",
 
-  "namingConvention": "<body-slug>-<diocese-slug>-<year>.json, e.g. episcopal-western-oregon-2026.json. body-slug and diocese-slug are both kebab-case and must match this file's own `body`/`dioceseShort` fields exactly (checked by scripts/cycles-of-prayer/validate.mjs).",
+  "namingConvention": "For cycleType 'dated' (the default): <body-slug>-<diocese-slug>-<year>.json, e.g. episcopal-western-oregon-2026.json -- one file per diocese per year, because a diocese republishes its own dated cycle every year and the week-to-subject mapping is not guaranteed stable year over year. For cycleType 'monthly-recurring': <body-slug>-<diocese-slug>.json, e.g. episcopal-arkansas.json -- no year suffix, because a standing monthly cycle has no year and is not expected to need a new file every year the way a dated cycle does. body-slug and diocese-slug are both kebab-case and must match this file's own `body`/`dioceseShort` fields exactly (checked by scripts/cycles-of-prayer/validate.mjs).",
 
   "fileShape": {
-    "id":            { "type": "string", "required": true,  "note": "Matches the filename (without .json). <body-slug>-<diocese-slug>-<year>." },
+    "id":            { "type": "string", "required": true,  "note": "Matches the filename (without .json). <body-slug>-<diocese-slug>-<year>.json for 'dated', <body-slug>-<diocese-slug>.json for 'monthly-recurring'." },
     "body":           { "type": "string", "required": true,  "note": "The ecclesial body/communion, e.g. 'The Episcopal Church', 'Roman Catholic Church', 'Anglican Church in North America'. Free text, not a closed list -- this corpus is deliberately cross-body." },
     "bodySlug":       { "type": "string", "required": true,  "note": "Kebab-case slug of `body`, e.g. 'episcopal'. Used in the filename." },
     "diocese":        { "type": "string", "required": true,  "note": "Full published name of the diocese, exactly as the source document gives it, e.g. 'The Episcopal Church in Western Oregon'." },
     "dioceseShort":   { "type": "string", "required": true,  "note": "Kebab-case slug used in the filename, e.g. 'western-oregon'." },
-    "year":           { "type": "integer", "required": true, "note": "Calendar year this specific cycle covers. A diocese that republishes yearly gets a new file each year, not an update to this one." },
+    "cycleType":      { "type": "string", "required": false, "values": ["dated", "monthly-recurring"], "note": "'dated' (the default when this field is absent, for every file predating this field's addition): entries are keyed by a specific ISO calendar date within `year`, per entryShape. 'monthly-recurring': entries are keyed by a bare day-of-month (1-31) that repeats every month with no year at all, per monthlyRecurringEntryShape -- see `year` below." },
+    "year":           { "type": "integer", "required": true, "when": "cycleType == dated (or absent)", "note": "Calendar year this specific cycle covers. A diocese that republishes yearly gets a new file each year, not an update to this one. Must be ABSENT for cycleType 'monthly-recurring' -- a standing monthly cycle is not scoped to any one year, and the source itself states none; do not invent one." },
     "source":         { "type": "string", "required": true,  "note": "Title of the source document exactly as published, e.g. 'Diocesan Cycle of Prayer - 2026'." },
     "sourceFile":     { "type": "string", "required": true,  "note": "Filename of the original document this was transcribed from, kept for provenance even though the file itself is not committed." },
     "ingested":       { "type": "string", "required": true,  "note": "ISO date this file was built, for provenance." },
     "notes":          { "type": "array",  "required": false, "note": "Free-text disclosures about the source -- OCR-adjacent oddities, apparent typos preserved verbatim rather than silently corrected, ambiguous groupings, etc. Empty/absent when there is nothing to disclose." },
-    "entries":        { "type": "array",  "required": true,  "note": "One entry per calendar date the source names. See entryShape. Ordered exactly as the source orders them (chronological, in every source seen so far)." }
+    "entries":        { "type": "array",  "required": true,  "note": "One entry per date (cycleType 'dated') or day-of-month (cycleType 'monthly-recurring') the source names. Ordered exactly as the source orders them (ascending, in every source seen so far)." }
   },
 
   "entryShape": {
+    "_appliesWhen": "cycleType is 'dated' or absent.",
     "date":            { "type": "string", "required": true,  "note": "ISO date (YYYY-MM-DD), the date printed in the source for this row. Not computed/derived -- taken directly from the source, which is itself often (but not always) every Sunday of the year." },
     "liturgicalNote":  { "type": "string", "required": false, "note": "The source's own liturgical annotation for this date if it printed one (e.g. 'Palm Sunday', 'Pentecost', '1st Sunday in Lent'). null when the source printed none. This is a disclosed label from the source, not something this app computes or verifies against its own calendar engines -- do not treat it as authoritative for date arithmetic." },
     "subjects":        { "type": "array",  "required": true,  "note": "One or more prayer subjects for this date. Most dates carry one; some carry several when the source groups multiple parishes (or, occasionally, a whole city's remaining parishes) under a single week. See subjectShape. Order preserved from the source." }
+  },
+
+  "monthlyRecurringEntryShape": {
+    "_appliesWhen": "cycleType is 'monthly-recurring'.",
+    "day":             { "type": "integer", "required": true,  "note": "Day-of-month (1-31) as printed in the source, e.g. under the heading 'On the corresponding day of each month, pray for'. Must be unique across the file's entries and strictly ascending. Not every month has a day this high (e.g. day 31 in a 30-day month) -- resolution against a real calendar date is this app's own runtime concern (see js/cycles-of-prayer.js), not something this file encodes." },
+    "liturgicalNote":  { "type": "string", "required": false, "note": "Same meaning as entryShape.liturgicalNote, but expected to be null/absent in practice -- a day-of-month recurring cycle is not usually annotated with a liturgical label, since it isn't tied to one calendar date." },
+    "subjects":        { "type": "array",  "required": true,  "note": "Same as entryShape.subjects." }
   },
 
   "subjectShape": {
@@ -35,8 +44,9 @@
     "Every name is transcribed exactly as the source prints it, including apparent typos (e.g. a stray comma for a period in an abbreviation). This corpus does not silently correct a diocese's own published document -- if something looks like an error, it is preserved as printed and disclosed in the file's own `notes`, never quietly fixed.",
     "A blank date cell in the source's own table means 'same date as the row above' -- it is NOT a separate week. All such rows are folded into the preceding date's `subjects` array, in the order printed, per this schema's grouping rule.",
     "`liturgicalNote` is a disclosed label copied from the source, not a computed value. It must never be used as an input to this app's own liturgical-calendar engines, and this app's own calendar engines must never be used to 'correct' or override it -- the two are deliberately kept apart.",
-    "One file per diocese per year. Do not update a prior year's file in place when a new cycle is published; add a new file with the new year in its id and filename.",
+    "One file per diocese per year for cycleType 'dated'. Do not update a prior year's file in place when a new cycle is published; add a new file with the new year in its id and filename. A 'monthly-recurring' file has no year and is instead updated in place if/when the diocese republishes its standing cycle with different subjects, since there is no per-year identity to preserve.",
     "A diocese/body not yet held in this corpus is added the same way this file's own precedent (episcopal-western-oregon-2026.json) was: transcribe directly from the diocese's own published document, disclose anything ambiguous in `notes`, and validate with scripts/cycles-of-prayer/validate.mjs before committing.",
-    "This corpus is deliberately cross-body and cross-tradition (Episcopal, Roman Catholic, or any other body that publishes a cycle of prayer may be added) -- do not assume every file in this directory is Anglican/Episcopal."
+    "This corpus is deliberately cross-body and cross-tradition (Episcopal, Roman Catholic, or any other body that publishes a cycle of prayer may be added) -- do not assume every file in this directory is Anglican/Episcopal.",
+    "Before transcribing a new diocese, check whether its own source is actually date-anchored (weekly/daily, cycleType 'dated') or a standing day-of-month/day-of-week recurring cycle with no year (cycleType 'monthly-recurring') -- do not force one shape into the other (e.g. do not fabricate 12 months of concrete dates to avoid using 'monthly-recurring')."
   ]
 }

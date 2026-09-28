@@ -1,0 +1,342 @@
+{
+  "id": "episcopal-alabama-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Alabama",
+  "dioceseShort": "alabama",
+  "year": 2026,
+  "source": "Diocese of Alabama Cycle of Prayer 2025-2026 (Year A)",
+  "sourceFile": "DIOCESE-OF-ALABAMA-CYCLE-OF-PRAYER-2025-2026.pdf",
+  "ingested": "2026-09-28",
+  "notes": [
+    "The source's own cycle runs a full liturgical year, Advent 2025 (30 November 2025) through Christ the King 2026 (22 November 2026) -- per this corpus's one-file-per-diocese-per-year rule, only the 2026 portion (4 January - 22 November, 46 weeks) is transcribed here. The five 2025 dates (30 Nov, 7/14/21/28 Dec 2025) belong in a future episcopal-alabama-2025.json file, not added this pass.",
+    "Every single week's entry in the source opens with the identical standing line 'We pray for our Companion Diocese of Honduras and their bishop, Lloyd.' (one week, 1 March, additionally and separately names 'the Diocese of Jerusalem'). Rather than omitting this as decorative boilerplate, it is recorded as the first category subject of every entry -- it is a real, substantive weekly intention, just a repeated one.",
+    "This source is a two-column PDF; several weeks' entries continue past a page break, splitting into the top of the next page before the next dated heading. Reconstructed carefully by reading each page in visual column order and checking that no entry's content was dropped at a page boundary (specifically verified for 12 April and 2 August, both of which continue onto the following page).",
+    "One line (25 January) reads as a single unbroken phrase in the extracted text -- 'Episcopal Relief and Development Episcopal Ministries' -- with no punctuation separating what may be two distinct items ('Episcopal Relief and Development' the well-known agency, and a separate 'Episcopal Ministries' line) that could have been merged by the two-column PDF extraction. Not confident enough to split it without guessing, so it is preserved as printed, as one category subject.",
+    "27 June is printed as '5TH SUNDAY AFTER PENTECOST' continuing the source's own weekly Sunday sequence, but 27 June 2026 is actually a Saturday (checked against the calendar) -- every other date in this file was independently verified to fall on a Sunday. This is very likely a misprint for 28 June in the source's own document; preserved exactly as printed rather than silently corrected, matching this corpus's standing rule.",
+    "Per this schema's own definition that a 'parish' subject is specifically a congregation (a parish, mission, or cathedral), several 'Name, City'-shaped lines that are clinics, retirement/senior communities, camps, or other ministries rather than worshipping congregations (e.g. 'Good Samaritan Health Clinic, Cullman'; 'Episcopal Place, Birmingham'; 'St. Martin's in the Pines, Birmingham') are recorded as `category` subjects with the full name preserved, not as `parish` subjects, even though their printed shape matches the diocese's own 'Name, City' parish format. This is an editorial classification judgment, disclosed here as such; the underlying text is unchanged either way.",
+    "A small number of longer, list-like intentions that read as one continuous sentence in the source (e.g. 8 March's ministries-to-the-hungry line, 16 August's Diocesan Campus Ministries line) are kept as a single category subject rather than split into several, since the source does not present them as a clean list of independent names."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": "2nd Sunday of Christmas", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "parish", "place": "Decatur", "name": "St John's" },
+      { "type": "parish", "place": "Montgomery", "name": "St John's" },
+      { "type": "parish", "place": "Forkland", "name": "St John's in the Prairie" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "1st Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Cursillo Secretariat" },
+      { "type": "category", "name": "Vocare Steering Committee" },
+      { "type": "category", "name": "Happening Steering Committee" },
+      { "type": "parish", "place": "Guntersville", "name": "Epiphany" },
+      { "type": "parish", "place": "Leeds", "name": "Epiphany" },
+      { "type": "parish", "place": "Tallassee", "name": "Epiphany" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "2nd Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Good Samaritan Health Clinic, Cullman" },
+      { "type": "category", "name": "Community Free Clinic of Morgan County, Decatur" },
+      { "type": "category", "name": "St. Michael's Community Service Center, Anniston" },
+      { "type": "parish", "place": "Anniston", "name": "Grace Church" },
+      { "type": "parish", "place": "Pike Road", "name": "Grace Church" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "3rd Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Episcopal Relief and Development Episcopal Ministries" },
+      { "type": "parish", "place": "Athens", "name": "St Timothy's" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "4th Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Diocesan Convention" },
+      { "type": "category", "name": "Department of Mission and Outreach" },
+      { "type": "category", "name": "Parish Administrators" },
+      { "type": "category", "name": "Parish Vestries" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "5th Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Retired clergy" },
+      { "type": "category", "name": "Deceased clergy, their widows, widowers, and children" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "6th Sunday of Epiphany (Sunday next before Lent)", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Congregational Vitality Committee and Consultants" },
+      { "type": "category", "name": "University of the South, Sewanee, Tennessee" },
+      { "type": "category", "name": "Metagem" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "1st Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Episcopal Church World Mission" },
+      { "type": "category", "name": "Diocesan Pastoral Counseling Center" },
+      { "type": "category", "name": "Military, Institutional, Hospice, and Hospital Chaplains" },
+      { "type": "parish", "place": "Tuscaloosa", "name": "St. Matthias" },
+      { "type": "category", "name": "Task Force for Stewardship of Creation" },
+      { "type": "category", "name": "Bethany Village at Camp McDowell" },
+      { "type": "category", "name": "Laundry Love Ministries" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "2nd Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Diocese of Jerusalem" },
+      { "type": "category", "name": "Community Garden, Auburn" },
+      { "type": "category", "name": "Community Market, Opelika" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "3rd Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "For all ministries to the hungry, especially: Holy Comforter Montgomery, Grace Food Pantry in Birmingham, Deacon's Deli Food Ministry at Canterbury Chapel, and all other Parish Food Pantries; Parish Beans and Rice Ministries, Grace by Day (Birmingham), Community Kitchens (Birmingham), The Soup Bowl (Anniston), Bread for the World, and Rise Against Hunger" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "4th Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "For all who plan and lead Christian Formation in the parishes" },
+      { "type": "category", "name": "Episcopal Retreat Houses and places of spiritual refreshment" },
+      { "type": "parish", "place": "Mentone", "name": "St. Joseph on the Mountain" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "5th Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Cursillo #236, Pilgrims and Staff" },
+      { "type": "parish", "place": "Oneonta", "name": "Calvary" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "parish", "place": "Rainbow City", "name": "Church of the Resurrection" },
+      { "type": "parish", "place": "Heflin", "name": "Messiah" },
+      { "type": "parish", "place": "Cullman", "name": "Grace Church" },
+      { "type": "parish", "place": "Sheffield", "name": "Grace Church" },
+      { "type": "parish", "place": "Woodlawn", "name": "Grace Church" },
+      { "type": "category", "name": "For all clergy spouses" },
+      { "type": "category", "name": "For all who seek to be faithful to the call of Jesus Christ in their lives" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Pray for the Peace of Jerusalem" },
+      { "type": "parish", "place": "Gadsden", "name": "Holy Comforter" },
+      { "type": "parish", "place": "Montgomery", "name": "Holy Comforter" },
+      { "type": "parish", "place": "McCalla", "name": "Riverside" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "2nd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "All victims of violence, hatred, prejudice, and oppression, and the agencies that advocate for their safety, dignity, and respect" },
+      { "type": "parish", "place": "Oneonta", "name": "Calvary" },
+      { "type": "category", "name": "Seminarians completing second year of study" },
+      { "type": "category", "name": "Renascence Halfway House, Montgomery, and all prison reformation and re-entry ministries" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "3rd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Bridge Ministries, Birmingham" },
+      { "type": "category", "name": "St. Anne's Home, Birmingham" },
+      { "type": "category", "name": "Welcome Center, Millbrook" },
+      { "type": "parish", "place": "Birmingham", "name": "St. Mark's" },
+      { "type": "parish", "place": "Boligee", "name": "St. Mark's" },
+      { "type": "parish", "place": "Prattville", "name": "St. Mark's" },
+      { "type": "parish", "place": "Chelsea", "name": "St. Catherine's" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "4th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Chancellors, Treasurers and Secretary of the Diocese of Alabama" },
+      { "type": "category", "name": "Diocesan Ecumenical/Interfaith Commission" },
+      { "type": "parish", "place": "Alexander City", "name": "St. James" },
+      { "type": "parish", "place": "Fort Payne", "name": "St. Phillip's" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "5th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Seminarians graduating in May" },
+      { "type": "category", "name": "El Hogar and Farm School, Honduras" },
+      { "type": "parish", "place": "Auburn", "name": "St. Dunstan's" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "6th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Voices for Alabama's Children" },
+      { "type": "category", "name": "YouthServe, Birmingham" },
+      { "type": "category", "name": "GraceWorks, Birmingham" },
+      { "type": "category", "name": "Sawyerville Commission and Day Camps" },
+      { "type": "category", "name": "Foothills Day Camp" },
+      { "type": "parish", "place": "Birmingham", "name": "Church of the Ascension" },
+      { "type": "parish", "place": "Montgomery", "name": "Church of the Ascension" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "Sunday after Ascension", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Department of Camp McDowell" },
+      { "type": "parish", "place": "Alabaster", "name": "Church of the Holy Spirit" },
+      { "type": "parish", "place": "Hoover", "name": "Church of the Holy Apostles" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Cursillo #240, pilgrims and staff" },
+      { "type": "category", "name": "Parish and Diocesan Communications and their work to keep us connected to one another and the needs and hopes of the world" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "1st Sunday after Pentecost, Trinity Sunday", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "parish", "place": "Alpine", "name": "Trinity" },
+      { "type": "parish", "place": "Auburn", "name": "Holy Trinity" },
+      { "type": "parish", "place": "Bessemer", "name": "Trinity" },
+      { "type": "parish", "place": "Clanton", "name": "Trinity" },
+      { "type": "parish", "place": "Demopolis", "name": "Trinity" },
+      { "type": "parish", "place": "Florence", "name": "Trinity" },
+      { "type": "parish", "place": "Wetumpka", "name": "Trinity" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "2nd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Clergy and Staff of Carpenter House" },
+      { "type": "parish", "place": "Hartselle", "name": "St. Barnabas" },
+      { "type": "parish", "place": "Roanoke", "name": "St. Barnabas" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "3rd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "parish", "place": "Birmingham", "name": "St. Alban's" },
+      { "type": "parish", "place": "Gainesville", "name": "St. Alban's" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "4th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Ministry of the University of the South, College, Seminary, and EfM" },
+      { "type": "parish", "place": "Greensboro", "name": "St. Paul's" },
+      { "type": "parish", "place": "Lowndesboro", "name": "St. Paul's" },
+      { "type": "parish", "place": "Minter", "name": "St. Paul's" },
+      { "type": "parish", "place": "Selma", "name": "St. Paul's" },
+      { "type": "parish", "place": "Pell City", "name": "St. Simon-Peter" },
+      { "type": "parish", "place": "Talladega", "name": "St. Peter's" }
+    ]},
+    { "date": "2026-06-27", "liturgicalNote": "5th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "For the gift of liberty, and for those oppressed and voiceless, who long for freedom" },
+      { "type": "category", "name": "Ministries for displaced persons and refugees" },
+      { "type": "category", "name": "Global Episcopal Mission Network" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "6th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Alabama Episcopal Foundation Board of Directors" },
+      { "type": "category", "name": "Diocesan Department of Architecture" },
+      { "type": "parish", "place": "Decatur", "name": "Good Shepherd" },
+      { "type": "parish", "place": "Montgomery", "name": "Good Shepherd" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "7th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Commission on Truth, Justice and Racial Reconciliation, and all who work for racial healing and reconciliation" },
+      { "type": "category", "name": "Beloved Community Committee" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "8th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Ministries to the mentally ill and those with intellectual disabilities" },
+      { "type": "category", "name": "Episcopal Kyle Home (Gadsden)" },
+      { "type": "category", "name": "Grace Place (Cullman)" },
+      { "type": "category", "name": "Founders Place (St. Luke's Birmingham)" },
+      { "type": "category", "name": "For ministries to all caregivers and families they serve" },
+      { "type": "parish", "place": "Livingston", "name": "St. James" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "9th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Ministries to Young Adults in Alabama" },
+      { "type": "category", "name": "Jubilee Ministry and all Jubilee Centers" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "10th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Interfaith Mission Services, Huntsville" },
+      { "type": "category", "name": "Christian Center of Concern, Fayette" },
+      { "type": "category", "name": "Grace Harbor, Pell City" },
+      { "type": "category", "name": "Greater Birmingham Ministries" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "11th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Seminarians entering the first year of study" },
+      { "type": "parish", "place": "Birmingham", "name": "St. Mary's on the Highlands" },
+      { "type": "parish", "place": "Childersburg", "name": "St. Mary's" },
+      { "type": "parish", "place": "Jasper", "name": "St. Mary's" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "12th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Department of Ministry for Higher Education" },
+      { "type": "category", "name": "Boards, Faculty, Staff and students of all Episcopal Seminaries" },
+      { "type": "category", "name": "Diocesan Campus Ministries in: Huntsville, Jacksonville, Florence, Montgomery and Tuskegee; Canterbury, Montevallo; Canterbury, Tuscaloosa; St. Dunstan's, Auburn; Trinity Commons, Birmingham" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "13th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "The Clergy and people of the Evangelical Lutheran Church" },
+      { "type": "category", "name": "Diocesan Department of Recovery Ministries" },
+      { "type": "parish", "place": "Trussville", "name": "Holy Cross" },
+      { "type": "parish", "place": "Uniontown", "name": "Holy Cross" },
+      { "type": "parish", "place": "Florence", "name": "St. Bartholomew's" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "14th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Department of Stewardship" },
+      { "type": "category", "name": "For all who suffer from addiction or effects of addiction" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "15th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Trustees of the Diocesan Trust Funds" },
+      { "type": "category", "name": "Board and Staff of Church Fund" },
+      { "type": "category", "name": "Bridge Ministries, Birmingham" },
+      { "type": "category", "name": "St. Anne's Home, Birmingham" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "16th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Commission on Spirituality" },
+      { "type": "category", "name": "Daughters of the King" },
+      { "type": "parish", "place": "Madison", "name": "St. Matthew's" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "17th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Persons with AIDS, and other difficult-to-manage diseases and conditions, and their families" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "18th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Alabama Faith Council and its work" },
+      { "type": "parish", "place": "Anniston", "name": "St. Michael and All Angels" },
+      { "type": "parish", "place": "Millbrook", "name": "St. Michael and All Angels" },
+      { "type": "parish", "place": "Faunsdale", "name": "St. Michael's" },
+      { "type": "parish", "place": "Fayette", "name": "St. Michael's" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "19th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Cursillo #241, Pilgrims and Staff" },
+      { "type": "category", "name": "Alabama Coalition Against Domestic Violence and Domestic Violence shelters" },
+      { "type": "parish", "place": "Indian Springs", "name": "St. Francis of Assisi" },
+      { "type": "category", "name": "St. Francis Chapel, Camp McDowell" },
+      { "type": "parish", "place": "Marion", "name": "St. Wilfrid" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "20th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Family Promise (Interfaith Hospitality Network)" },
+      { "type": "category", "name": "Homeless Shelters and Agencies that assist the poor and homeless" },
+      { "type": "parish", "place": "Birmingham", "name": "St. Luke's" },
+      { "type": "parish", "place": "Jacksonville", "name": "St. Luke's" },
+      { "type": "parish", "place": "Scottsboro", "name": "St. Luke's" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "21st Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "All victims of violence, hatred, prejudice, and oppression and the agencies and ministries that advocate for their safety, dignity, equality, and respect" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "22nd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "parish", "place": "Aliceville", "name": "All Saints" },
+      { "type": "parish", "place": "Birmingham", "name": "All Saints" },
+      { "type": "category", "name": "Episcopal Place, Birmingham" },
+      { "type": "category", "name": "St. Martin's in the Pines, Birmingham" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "23rd Sunday after Pentecost, All Saint's Sunday", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "Commission on Ministry" },
+      { "type": "category", "name": "Companion Diocese Commission" },
+      { "type": "category", "name": "Episcopal Church Women" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "24th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "The Commission on Aging and those who work to serve those communities" },
+      { "type": "category", "name": "Habitat for Humanity and all programs for the promotion of safe and affordable housing for low income persons" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "25th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "St. Cecilia and the Ministry of all church musicians and choir members" },
+      { "type": "category", "name": "Hand-in-Paw and all animal assisted ministries" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Last Sunday after Pentecost, Christ the King", "subjects": [
+      { "type": "category", "name": "Companion Diocese of Honduras and their bishop, Lloyd" },
+      { "type": "category", "name": "The Brotherhood of St. Andrew" },
+      { "type": "parish", "place": "Fairfield", "name": "Christ Church" },
+      { "type": "parish", "place": "Tuscaloosa", "name": "Christ Church" },
+      { "type": "parish", "place": "Albertville", "name": "Christ Church" },
+      { "type": "parish", "place": "Birmingham", "name": "St. Andrew's" },
+      { "type": "parish", "place": "Montevallo", "name": "St. Andrews" },
+      { "type": "parish", "place": "Sylacauga", "name": "St. Andrews" },
+      { "type": "parish", "place": "Tuskegee", "name": "St. Andrews" }
+    ]}
+  ]
+}

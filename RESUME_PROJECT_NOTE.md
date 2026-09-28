@@ -33,6 +33,17 @@ shipped work, including things this note was tracking as still-open TODOs, was i
 time). A prose reminder to "check for unmerged PRs" was not enough to actually stop this from
 recurring; a literal command is.
 
+**UNMERGED WORK: `claude/prayerappnew-resume-note-cn456a` is ahead of `origin/main` and has NO open
+PR (verify the exact count yourself — `git rev-list --left-right --count
+origin/claude/prayerappnew-resume-note-cn456a...origin/main` — rather than trusting a number written
+here, per this section's own rule).** It holds the five-diocese Cycles-of-Prayer batch
+(Alaska/Arizona/Albany/Alabama/Arkansas) and the `cycleType`/monthly-recurring schema extension
+described in §7 below. If you are reading this from a fresh clone and don't see that work on
+`main`, this is why — check that branch directly
+(`git log --oneline origin/claude/prayerappnew-resume-note-cn456a`) and merge/PR it rather than
+re-doing or re-discovering it. Delete this paragraph once that branch is actually merged into
+`main`.
+
 ---
 
 ## Defaults/Modes consolidation and Interhour gating — CLOSED 2026-09-28 (continued)
@@ -342,19 +353,72 @@ this up should decide (with Josh) whether to ship the Communion/Province tiers f
 independent of the profile system, or wait and do all four tiers together once Diocese/Parish selection
 exists. No source text for any tier gathered yet — Josh said he'll supply it.
 
-**Storage scheme for Diocesan-tier data now exists — built 2026-09-28 (continued) on `main`, merged
-into this branch after the fact.** Josh uploaded The Episcopal Church in Western Oregon's own 2026
-Diocesan Cycle of Prayer (a weekly rotation of parishes/missions/categories to pray for) and asked for
-a general-purpose scheme to hold this kind of data from multiple dioceses — deliberately separate from
-`project_roadmap.json`'s tradition-audit machinery, closer in kind to Book of Needs. **Not wired into
-the app UI yet — storage only.** `data/cycles-of-prayer/schema.json` (file-shape and content rules,
-including "transcribe names exactly as printed, disclose typos rather than fix them"),
-`data/cycles-of-prayer/episcopal-western-oregon-2026.json` (the first instance, 52 weeks/67 subjects,
-verified programmatically), and `scripts/cycles-of-prayer/validate.mjs` (`npm run audit:cycles-of-prayer`,
-verified to actually catch injected errors before being trusted). Whoever builds the Diocesan-tier
-Authorized Intercessions content should read `schema.json` first and use this as the source rather than
-inventing a second storage pattern. Adding a second diocese: transcribe directly from that diocese's own
-published document, never from memory, then run the validator before committing.
+**Storage scheme for Diocesan-tier data exists AND is now wired into the app UI (see the PROFILE/USER
+SYSTEM entry above) — this paragraph previously said "storage only, not wired in yet," which is now
+stale; corrected 2026-09-28 (continued).** Josh uploaded The Episcopal Church in Western Oregon's own
+2026 Diocesan Cycle of Prayer (a weekly rotation of parishes/missions/categories to pray for) and asked
+for a general-purpose scheme to hold this kind of data from multiple dioceses — deliberately separate
+from `project_roadmap.json`'s tradition-audit machinery, closer in kind to Book of Needs.
+`data/cycles-of-prayer/schema.json` (file-shape and content rules, including "transcribe names exactly
+as printed, disclose typos rather than fix them") and `scripts/cycles-of-prayer/validate.mjs`
+(`npm run audit:cycles-of-prayer`, verified to actually catch injected errors before being trusted) are
+the governing spec/tooling; the profile picker and BCP rubric rendering read the corpus through
+`js/cycles-of-prayer.js`'s own `CYCLES_OF_PRAYER_DIOCESES` registry, which must be hand-kept in sync with
+whatever diocese files actually exist under `data/cycles-of-prayer/` (a new file with no matching
+registry entry, or vice versa, silently does nothing).
+
+**Five more dioceses ingested 2026-09-28 (continued), from Josh's Google Drive TEC roster (a
+spreadsheet listing 88 total dioceses; only these first five, alphabetically, were requested this
+pass — the other 83 are a future task, not started):** Alaska, Arizona, Albany, Alabama, Arkansas.
+Each transcribed directly from that diocese's own published source (never from memory), validated, and
+live-verified via headless Chromium that `getCachedCycleOfPrayerWeek`/the profile parish picker resolve
+real dates correctly against each file. All five, plus the original Western Oregon file, currently pass
+`npm run audit:cycles-of-prayer` (6 files, 0 blocking findings).
+- **Alaska, Arizona** — straightforward weekly-Sunday cycles, same shape as Western Oregon. Arizona's
+  source spans Aug 2026-Aug 2027 as one continuous cycle; only the 2026 portion (22 weeks) is in this
+  file, per the one-file-per-diocese-per-year rule — the Jan-Aug 2027 portion is deferred to a future
+  `episcopal-arizona-2027.json`, not built yet.
+- **Albany** — genuinely DAILY, not weekly (61 entries, Sept-Oct 2026 only, the only two months the
+  diocese has published as of ingest) — disclosed in the file's own `notes`, since every other dated
+  file in this corpus so far is weekly.
+- **Alabama** — most complex of the five: two-column source PDF, cross-liturgical-year source (only the
+  46 weeks landing in calendar 2026 are here; the ~5 weeks in late 2025 are deferred to a future
+  `episcopal-alabama-2025.json`), a recurring "Companion Diocese of Honduras and their bishop, Lloyd"
+  line woven into every single week (included as the first subject of every entry, by design, disclosed
+  in `notes`), and one disclosed source misprint (27 June entry is dated as if a Sunday but 27 June 2026
+  is actually a Saturday — preserved verbatim, not corrected, per this corpus's own governing rule).
+- **Arkansas — required a real schema extension, not just a transcription.** Its own source is not
+  date-anchored at all: headed "On the corresponding day of each month, pray for," entries numbered
+  1-31, no year stated anywhere, repeating every month indefinitely (plus a separate, non-rotating
+  "Pray daily for" preamble of 4 items, deliberately excluded from the day-keyed entries and disclosed
+  instead in the file's own `notes`, since it applies every day regardless of which day-of-month entry
+  is current). Raised to Josh directly rather than guessed at (options: extend the schema, force it into
+  fabricated concrete dates, or defer) — **Josh chose to extend the schema.** `schema.json` gained a
+  `cycleType` field (`"dated"`, the implicit default for every pre-existing file, vs.
+  `"monthly-recurring"`); a monthly-recurring file has no `year` field, no year in its filename
+  (`episcopal-arkansas.json`, not `episcopal-arkansas-2026.json`), and entries keyed by `day` (1-31)
+  instead of `date`. `scripts/cycles-of-prayer/validate.mjs` now branches its filename/year/entry
+  validation on `cycleType` (extracted a shared `validateSubjects()` helper so both branches validate
+  subjects identically). `js/cycles-of-prayer.js` gained `resolveMonthlyRecurringEntry()` (same
+  "latest on-or-before" semantics as the dated resolver, but wraps around to the highest `day` instead
+  of returning null before the first entry, since the cycle repeats forever) and both
+  `loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek` now branch on the diocese's own `cycleType` —
+  callers (`js/office-ui.js`) needed zero changes, since both functions keep their original signatures.
+  **Other dioceses in the 88-diocese roster are noted (by the roster itself) to use this same
+  standing/monthly/daily-recurring pattern, so this will recur** — the schema is now ready for that,
+  not a one-off Arkansas special case.
+- All five added to `CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`) and the profile diocese
+  `<select>` (`index.html`) — before this, a diocese file existing on disk with no matching registry/UI
+  entry would have been silently unreachable from the app; this is why registering both matters as much
+  as writing the JSON itself.
+
+Whoever builds the Diocesan-tier Authorized Intercessions content, or ingests more of the 88-diocese
+roster, should read `schema.json` first (both cycleType shapes) and use this as the source rather than
+inventing a second storage pattern. Adding another diocese: transcribe directly from that diocese's own
+published document, check whether its source is actually date-anchored or a standing recurring cycle
+BEFORE choosing a cycleType (do not force one shape into the other), disclose anything ambiguous in
+`notes`, run the validator, and add the registry/UI entries — a file with no registry entry does
+nothing.
 
 **A screenshot of the Venite app (Forward Movement's Episcopal daily office app) was shown 2026-09-28
 (continued) as a location reference, NOT a design to copy — confirmed explicitly by Josh: "I know that
