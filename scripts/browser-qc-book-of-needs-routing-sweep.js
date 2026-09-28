@@ -194,30 +194,30 @@
     }
 
     async function verifyDailyOfficeBookOfNeedsPath() {
-        const state = await openBookOfNeedsFromOffice("daily", "The Episcopal Church", "ANG");
+        const state = await openBookOfNeedsFromOffice("daily", "Anglican Communion", "ANG");
 
-        assert(state.label === "The Episcopal Church", `Daily Office Book of Needs label was ${state.label || "blank"}.`);
+        assert(state.label === "Anglican Communion", `Daily Office Book of Needs label was ${state.label || "blank"}.`);
         assert(state.visibleCount > 0, "Daily Office Book of Needs should show at least one Anglican/Episcopal prayer.");
         assert(isPrayerOptionVisible("prayer-humble-access"), "Daily Office Book of Needs should show prayer-humble-access.");
         assert(isPrayerOptionHidden("thanksgiving-aquinas"), "Daily Office Book of Needs should hide Latin thanksgiving-aquinas.");
         assert(isPrayerOptionHidden("minister-journey-orthodox"), "Daily Office Book of Needs should hide Orthodox minister-journey-orthodox.");
 
-        const backDetail = await clickBookNeedsBackAndWaitForOffice("The Episcopal Church");
+        const backDetail = await clickBookNeedsBackAndWaitForOffice("Anglican Communion");
 
         return `ANG context showed ${state.visibleCount} visible prayers and ${backDetail}`;
     }
 
     async function verifyHorologionBookOfNeedsPath() {
-        const state = await openBookOfNeedsFromOffice("horologion", "Eastern Orthodoxy", "EO");
+        const state = await openBookOfNeedsFromOffice("horologion", "Eastern Orthodox Church", "EO");
 
-        assert(state.label === "Eastern Orthodoxy", `Horologion Book of Needs label was ${state.label || "blank"}.`);
+        assert(state.label === "Eastern Orthodox Church", `Horologion Book of Needs label was ${state.label || "blank"}.`);
         assert(state.visibleCount > 0, "Horologion Book of Needs should show at least one Eastern Orthodox prayer.");
         assert(isPrayerOptionVisible("minister-journey-orthodox"), "Horologion Book of Needs should show minister-journey-orthodox.");
         assert(isPrayerOptionVisible("vesting-orthodox-full"), "Horologion Book of Needs should show vesting-orthodox-full.");
         assert(isPrayerOptionHidden("prayer-humble-access"), "Horologion Book of Needs should hide Anglican prayer-humble-access.");
         assert(isPrayerOptionHidden("thanksgiving-aquinas"), "Horologion Book of Needs should hide Latin thanksgiving-aquinas.");
 
-        const backDetail = await clickBookNeedsBackAndWaitForOffice("Eastern Orthodoxy");
+        const backDetail = await clickBookNeedsBackAndWaitForOffice("Eastern Orthodox Church");
 
         return `EO context showed ${state.visibleCount} visible prayers and ${backDetail}`;
     }

@@ -154,7 +154,7 @@
         await waitForOfficeTextReady();
 
         await waitFor(() => {
-            return text("#office-mode-title").includes("Eastern Orthodoxy") &&
+            return text("#office-mode-title").includes("Eastern Orthodox Church") &&
                 isVisible($("#daily-office-section"));
         }, 20000);
 

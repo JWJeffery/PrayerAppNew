@@ -199,7 +199,7 @@
         assert(stored?.traditionDefault === "eastern-orthodox", "Stored profile did not persist Eastern Orthodox default.");
         assert(localStorage.getItem(LEGACY_ENTRY_KEY) === "eastern-orthodox", "Legacy entry default key did not preserve Eastern Orthodox default.");
         assert($("#profile-tradition-default")?.value === "eastern-orthodox", "Profile tradition select did not sync to Eastern Orthodox.");
-        assert(/Eastern Orthodoxy/i.test(text("#profile-defaults-summary")), "Profile summary does not mention Eastern Orthodoxy.");
+        assert(/Eastern Orthodox Church/i.test(text("#profile-defaults-summary")), "Profile summary does not mention the Eastern Orthodox Church.");
 
         return "Eastern Orthodox tradition default persisted without changing public first-screen choices";
     }
@@ -213,7 +213,7 @@
         const profile = window.getUniversalOfficeUserProfile();
         assert(profile.bookOfNeedsScope === "universal", `Expected Book of Needs scope universal, got ${profile.bookOfNeedsScope}.`);
 
-        const state = await openOfficeBookOfNeeds("daily", "The Episcopal Church", "UNIVERSAL");
+        const state = await openOfficeBookOfNeeds("daily", "Anglican Communion", "UNIVERSAL");
 
         assert(state.returnText === "Back to Office", `Expected contextual Back to Office, got ${state.returnText || "blank"}.`);
         assert(state.visibleCount >= 20, `Expected all-prayers override to show broad list, saw ${state.visibleCount}.`);
@@ -226,7 +226,7 @@
         await waitFor(() => {
             return isVisible($("#daily-office-section")) &&
                 !isVisible($("#individual-prayers-section")) &&
-                text("#office-mode-title").includes("The Episcopal Church");
+                text("#office-mode-title").includes("Anglican Communion");
         }, 12000);
 
         return `Book of Needs all-prayers override showed ${state.visibleCount} prayers from Daily Office access`;
@@ -238,7 +238,7 @@
         const profile = window.getUniversalOfficeUserProfile();
         assert(profile.bookOfNeedsScope === "tradition", `Expected Book of Needs scope tradition, got ${profile.bookOfNeedsScope}.`);
 
-        const state = await openOfficeBookOfNeeds("daily", "The Episcopal Church", "ANG");
+        const state = await openOfficeBookOfNeeds("daily", "Anglican Communion", "ANG");
 
         assert(state.visibleCount > 0, "Tradition-filtered Book of Needs should show Anglican prayers.");
         assert(isPrayerOptionVisible("prayer-humble-access"), "Tradition-filtered Daily Office Book of Needs should show Anglican prayer-humble-access.");
@@ -250,7 +250,7 @@
         await waitFor(() => {
             return isVisible($("#daily-office-section")) &&
                 !isVisible($("#individual-prayers-section")) &&
-                text("#office-mode-title").includes("The Episcopal Church");
+                text("#office-mode-title").includes("Anglican Communion");
         }, 12000);
 
         return `Book of Needs tradition scope restored with ${state.visibleCount} Anglican prayers`;

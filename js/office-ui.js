@@ -710,12 +710,18 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'universal': 'universal'
 };
 
+// UPDATED 2026-09-28: matches the same five names Josh confirmed directly for
+// #tradition-entry and #uo-threshold-grid's own labels (see RESUME_PROJECT_NOTE.md's
+// Task #14 entry) -- this object was a fourth place quietly carrying its own,
+// older naming ('The Episcopal Church', 'Roman Breviary 1960/1962' as a
+// TRADITION label rather than an office name), found and fixed in the same
+// pass rather than left as a still-open inconsistency.
 const UNIVERSAL_OFFICE_TRADITION_LABELS = {
-    anglican: 'The Episcopal Church',
+    anglican: 'Anglican Communion',
     'church-of-the-east': 'Church of the East',
-    'eastern-orthodox': 'Eastern Orthodoxy',
-    'oriental-orthodox': 'Oriental Orthodoxy',
-    'latin-catholic': 'Roman Breviary 1960/1962',
+    'eastern-orthodox': 'Eastern Orthodox Church',
+    'oriental-orthodox': 'Oriental Orthodox Church',
+    'latin-catholic': 'Catholic Church',
     universal: 'Universal Office selector'
 };
 
@@ -1876,12 +1882,17 @@ document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 // ── Office mode headers ──────────────────────────────────────────────────────
 // The app shell must name the active office family. "The Universal Office" is
 // the selector/project shell, not the title of every tradition page.
+// UPDATED 2026-09-28: matches the same five church-body names Josh confirmed
+// directly elsewhere (see UNIVERSAL_OFFICE_TRADITION_LABELS above and
+// RESUME_PROJECT_NOTE.md's Task #14 entry) -- this was a further, still-older
+// spot carrying its own naming ('The Episcopal Church', a bare office name for
+// Catholic) found and fixed in the same pass.
 const OFFICE_MODE_HEADER_LABELS = {
-    daily: 'The Episcopal Church',
-    'coptic-agpeya': 'Oriental Orthodoxy',
+    daily: 'Anglican Communion',
+    'coptic-agpeya': 'Oriental Orthodox Church',
     'east-syriac': 'Church of the East',
-    horologion: 'Eastern Orthodoxy',
-    'roman-breviary-dev': 'Roman Breviary 1960/1962',
+    horologion: 'Eastern Orthodox Church',
+    'roman-breviary-dev': 'Catholic Church',
     prayers: 'The Book of Needs'
 };
 

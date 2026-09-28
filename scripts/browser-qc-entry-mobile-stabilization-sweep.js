@@ -91,7 +91,7 @@
     const MODE_CASES = [
         { label: "BCP Daily Office", mode: "daily", panelId: "settings-panel", navKey: "daily" },
         { label: "Church of the East", mode: "east-syriac", panelId: "east-syriac-settings", navKey: "eastSyriac" },
-        { label: "Eastern Orthodoxy / Horologion", mode: "horologion", panelId: "generic-settings", navKey: "horologion" }
+        { label: "Eastern Orthodox Church / Horologion", mode: "horologion", panelId: "generic-settings", navKey: "horologion" }
     ];
 
     function assertExclusiveOfficeDrawer(test) {

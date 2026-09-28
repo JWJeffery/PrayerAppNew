@@ -2546,12 +2546,18 @@ function renderGovernanceQuestionBoard(govQs, esc) {
 // output is the JSON box below the rows, which has to be copied back into the
 // real file and deployed like any other content change -- it does not change
 // what testers see by itself.
+// UPDATED 2026-09-28: matches the five church-body names Josh confirmed
+// directly for the entry-card/mode-grid screens (see RESUME_PROJECT_NOTE.md's
+// Task #14 entry) -- also corrects 'latin-catholic''s stale "Liturgy of the
+// Hours" parenthetical, which was already wrong on its own: that lane was
+// abandoned 2026-09-27 in favor of the Roman Breviary 1960/1962 (see
+// project_roadmap.json's 'catholic-first-profile' superseded_note).
 const TA_DISPLAY_NAMES = {
-  'anglican':           'Anglican (The Episcopal Church)',
+  'anglican':           'Anglican Communion (Daily Office, BCP 1979)',
   'church-of-the-east':  'Church of the East',
-  'oriental-orthodox':   'Oriental Orthodoxy (Coptic Agpeya)',
-  'eastern-orthodox':    'Eastern Orthodoxy (Byzantine Horologion)',
-  'latin-catholic':      'Latin Catholic (Liturgy of the Hours)',
+  'oriental-orthodox':   'Oriental Orthodox Church (Coptic Agpeya)',
+  'eastern-orthodox':    'Eastern Orthodox Church (Byzantine Horologion)',
+  'latin-catholic':      'Catholic Church (Roman Breviary 1960/1962)',
 };
 let taState = null;    // in-memory { traditions: {...} }, edited by toggles
 let taDirty = false;   // true once it diverges from the fetched file

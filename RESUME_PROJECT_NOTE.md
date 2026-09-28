@@ -494,14 +494,47 @@ in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
   - **Oriental Orthodox Church** (was "Oriental Orthodoxy" on both screens)
   Subtitles (the specific office/book name — "The Daily Office...", "Roman Breviary 1960/1962...",
   "Byzantine Horologion offices.", etc.) are unchanged; only the `<strong>`/`.app-mode-title` text
-  changed on both screens. Verified live in headless Chromium after the edit: both screens list the
-  same five names in the same order, `selectMode('daily')` still correctly opens the Anglican
-  office, zero console errors. `index.html` is the only file touched. **A separate, older, still-
-  unaddressed inconsistency was found and deliberately left alone**: the "Default tradition" profile
-  dropdown (`#profile-tradition-default`, `index.html`) uses a third set of names again ("The
-  Episcopal Church," "Latin Catholic," "Oriental Orthodoxy," "Eastern Orthodoxy") — pre-existing,
-  not part of what Josh was asked about this time, flagged for a future session rather than guessed
-  at silently.
+  changed on both screens.
+
+  **First pass only fixed the two screens Josh had just been asked about and left a third,
+  already-found inconsistency as a "flag it, don't fix it" note — correctly called out as
+  burying a known problem instead of closing it.** Went back and grepped the entire repo (`.js`,
+  `.html`, excluding historical ledger/audit-log prose, which is never rewritten) for every one of
+  the old names, rather than trusting the two screens already checked were the only ones. Found and
+  fixed **six more live, user-facing spots** carrying one of the old names:
+  - `#profile-tradition-default` (`index.html`) — the "Default tradition" profile dropdown, the
+    original buried finding. Had its own THIRD naming set ("The Episcopal Church," "Latin
+    Catholic," "Oriental Orthodoxy," "Eastern Orthodoxy").
+  - `UNIVERSAL_OFFICE_TRADITION_LABELS` (`js/office-ui.js`) — feeds the "This browser opens to
+    &lt;X&gt;" profile-summary sentence.
+  - `OFFICE_MODE_HEADER_LABELS` (`js/office-ui.js`) — the app shell's page title while an office is
+    open (`#office-mode-title`).
+  - `BOOK_OF_NEEDS_TRADITION_CODES` and `BOOK_OF_NEEDS_CONTEXTS`'s `label`/`note`/`empty` fields
+    (`js/prayers.js`) — Book of Needs' own tradition-scoped headers and copy.
+  - `TA_DISPLAY_NAMES` (`admin/admin.html`) — the admin Tradition Availability panel. Also fixed a
+    second, independent staleness bug found in the same object while touching it: `latin-catholic`
+    still said "(Liturgy of the Hours)," a lane abandoned 2026-09-27 in favor of the Roman Breviary
+    1960/1962 (`project_roadmap.json`'s `catholic-first-profile` `superseded_note`) — left alone,
+    this would have kept lying to whoever reads that admin panel next.
+  - Four `scripts/browser-qc-*.js` files whose assertions hard-coded the old rendered strings —
+    left as-is, these would have started failing (or worse, silently stopped testing what they
+    claimed to) the next time anyone actually ran them against the renamed UI.
+
+  **Deliberately left alone, on purpose, not by oversight — checked and reasoned about, not
+  skipped**: `data/explanations/*.json`'s `traditionLabel` fields (e.g. "Byzantine — The
+  Horologion," "Coptic Orthodox — The Agpeya") are a separate, pre-existing education-layer
+  naming convention for tooltip headings, combined with a source citation — they don't match
+  either screen's naming even before today and aren't the same kind of thing (a bare "pick your
+  tradition" selector) as the six fixed above. `structure.json`/`project_roadmap.json`'s internal
+  QC-checklist item names, `data/saints/sanctoral.json`'s quoted Wikipedia-infobox research notes,
+  and `data/cycles-of-prayer/*.json`'s own `body`/`diocese` fields (the diocese's real, correct
+  legal name) are not user-facing tradition selectors at all.
+
+  Verified live in headless Chromium after every edit: both screens list the same five names in the
+  same order; the profile dropdown, profile-summary sentence, and office header (`#office-mode-title`)
+  all show the new names; `selectMode('daily')` still opens the Anglican office correctly; zero
+  console errors. `node --check` clean on every changed `.js` file. `index.html`, `admin/admin.html`,
+  `js/office-ui.js`, `js/prayers.js`, and four `scripts/browser-qc-*.js` files are the files touched.
 - Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
   `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
   `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).

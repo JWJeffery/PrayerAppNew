@@ -24058,3 +24058,41 @@ order, `selectMode('daily')` still opens the Anglican office correctly, zero con
 about this round. Flagged for a future session rather than silently folded in.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Task #14, corrected: the flagged-not-fixed profile
+## dropdown, and five more live spots found by an actual repo-wide grep, all fixed
+
+**The previous entry's own "flagged for a future session" line was the wrong call, called out
+directly** -- finding a live, user-facing instance of the exact bug just fixed and choosing to
+write a paragraph about it instead of fixing it is how known problems sit in a repo instead of
+closing. Went back and grepped every `.js`/`.html` file in the repo for each of the five old
+names (excluding historical ledger/audit-log prose, which this project's own standing rule says
+is never rewritten), instead of trusting the two screens already checked were the only ones.
+
+**Six more live, user-facing spots found and fixed**, all to the same confirmed names (Anglican
+Communion, Catholic Church, Church of the East, Eastern Orthodox Church, Oriental Orthodox
+Church): `#profile-tradition-default` (the originally-flagged dropdown, `index.html`);
+`UNIVERSAL_OFFICE_TRADITION_LABELS` (feeds the profile-summary sentence, `js/office-ui.js`);
+`OFFICE_MODE_HEADER_LABELS` (the office page's own title, `js/office-ui.js`);
+`BOOK_OF_NEEDS_TRADITION_CODES`/`BOOK_OF_NEEDS_CONTEXTS` (`js/prayers.js`); `TA_DISPLAY_NAMES`
+(admin Tradition Availability panel, `admin/admin.html` -- also fixed a second, independent
+staleness bug in the same object: `latin-catholic` still said "(Liturgy of the Hours)," a lane
+abandoned 2026-09-27 for the Roman Breviary 1960/1962); and four `scripts/browser-qc-*.js`
+files whose assertions hard-coded the old strings and would have started silently failing (or
+silently testing the wrong thing) the next time anyone ran them.
+
+**Deliberately left alone, reasoned about rather than skipped**: `data/explanations/*.json`'s
+`traditionLabel` fields ("Byzantine -- The Horologion," etc.) are a separate, pre-existing
+education-layer naming convention for tooltips, combined with a source citation -- not the same
+kind of thing (a bare tradition selector) as the six fixed above, and didn't match either screen's
+naming even before today. `structure.json`/`project_roadmap.json`'s internal QC-checklist item
+names, `sanctoral.json`'s quoted Wikipedia-infobox research notes, and the Cycles of Prayer
+corpus's own `body`/`diocese` fields (a real diocese's actual legal name) are not user-facing
+tradition selectors at all.
+
+Verified live in headless Chromium after every edit: profile dropdown, profile-summary sentence,
+and office header (`#office-mode-title`) all show the new names; both entry screens still match
+each other; `selectMode('daily')` still opens the Anglican office; zero console errors. `node
+--check` clean on every changed `.js` file.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
