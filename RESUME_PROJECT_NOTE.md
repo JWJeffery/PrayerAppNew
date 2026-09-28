@@ -1,5 +1,92 @@
 # RESUME_PROJECT_NOTE.md
 
+**DIOCESAN CYCLE OF PRAYER: NEW CORPUS SCHEME BUILT, 2026-09-28 continued yet again.** Josh
+uploaded `Western_Oregon_Diocesan_Cycle_of_Prayer_2026.pdf` (The Episcopal Church in Western
+Oregon's own weekly published prayer rotation -- one or more parishes, or occasionally a
+non-parish category like "Diocesan Staff," per week) and asked for a scheme to record this kind
+of data from multiple dioceses. This is new, general-purpose infrastructure, not part of the
+tradition-audit machinery in `project_roadmap.json` -- deliberately kept separate, closer in kind
+to Book of Needs than to the Horologion/Menaion/etc. audit corpora. Nothing wired into the app UI
+yet; this is the storage scheme only, ready for whenever the actual "authorized intercessions"
+BCP TODO (logged earlier this same session, space built, content still pending) or a similar
+future feature wants to draw on it.
+
+**Built**, following this repo's own established `schema.json`-next-to-its-data convention (the
+same pattern `data/explanations/schema.json` and `data/horologion/schema.json` already use, not a
+new one invented for this):
+- `data/cycles-of-prayer/schema.json` -- documents the file shape (one file per diocese per year,
+  `<body-slug>-<diocese-slug>-<year>.json`), the entry/subject shapes (`parish` subjects carry
+  `place`+`name`; `category` subjects like "Those in the Ordination Process" carry `name` only),
+  and the governing rules -- most importantly: names are transcribed exactly as the source prints
+  them (typos included, disclosed in `notes`, never silently "corrected"), and a blank date cell
+  in the source means "same week as the row above," folded into that entry's `subjects` array.
+  Deliberately cross-body/cross-tradition -- nothing in the schema assumes Episcopal/Anglican.
+- `data/cycles-of-prayer/episcopal-western-oregon-2026.json` -- the first instance, transcribed
+  directly from the PDF. 52 dated weeks (every Sunday of 2026), 67 total subjects (63
+  parishes/missions, 4 categories). Seven weeks group more than one subject where the source's own
+  blank-date rows indicated it (Easter: 4 Eugene congregations; three consecutive August weeks
+  splitting Portland's 12 congregations; etc.) -- verified programmatically that the entry count
+  (52) and subject count add up correctly rather than trusting the transcription by eye alone.
+  One verbatim-preserved apparent typo ("Florence, St, Andrew," comma not period) disclosed in the
+  file's own `notes` rather than silently fixed, per the schema's own rule.
+- `scripts/cycles-of-prayer/validate.mjs` (new `npm run audit:cycles-of-prayer`) -- checks every
+  file in the corpus against the schema: filename matches the document's own declared
+  `bodySlug`/`dioceseShort`/`year` (computed forward from the fields, not parsed backward out of
+  the filename, since both slugs can themselves contain hyphens and a regex split would be
+  ambiguous -- confirmed this the hard way, an early version of this script mis-parsed its own
+  test file), dates are valid ISO and strictly ascending with no duplicates, every subject has a
+  valid `type` and the fields that type requires. **Verified it actually catches errors, not just
+  passing trivially**: ran it against a deliberately broken scratch file (missing `place`, wrong
+  `id`, wrong subject `type`, out-of-order date) before deleting the scratch file -- caught all six
+  injected defects, then re-confirmed a clean pass on the real corpus alone.
+
+**Adding a second diocese, whenever that happens:** read `data/cycles-of-prayer/schema.json`'s own
+rules first, transcribe directly from that diocese's published document (never from memory or
+inference), disclose anything ambiguous in the new file's own `notes`, then run
+`npm run audit:cycles-of-prayer` before committing.
+
+`data/cycles-of-prayer/schema.json`, `data/cycles-of-prayer/episcopal-western-oregon-2026.json`,
+`scripts/cycles-of-prayer/validate.mjs`, and `package.json` (one new script entry) are the only
+files touched.
+
+---
+
+**TASK #14'S NAMING QUESTION, RESOLVED AND FIXED, 2026-09-28 continued yet again.** The broader
+naming inconsistency left open in task #14 (entry-card vs. mode-grid using different names for
+Anglican/Catholic/Oriental Orthodoxy) was reported here as still awaiting Josh's call. Josh's
+ruling, stated directly: **ecclesial-tradition name in the title, specific office name in the
+subtitle** — the pattern the entry-card screen (`#tradition-entry`) already used. Fixed the
+mode-grid (`#uo-threshold-grid` in `index.html`) to match it: the three mismatched cards' titles
+changed from the office name to the tradition name, with the office name preserved in the
+subtitle so it isn't lost — "Daily Office" → **Anglican** (subtitle: "The Daily Office, according
+to the 1979 Book of Common Prayer."), "Coptic Agpeya" → **Oriental Orthodoxy** (subtitle: "The
+Coptic Agpeya — the seven hours and Theotokia of the Coptic Church."), "Roman Breviary 1960/1962"
+→ **Catholic** (subtitle: "The Roman Breviary 1960/1962 — Roman Rite, Latin, all eight hours.").
+Church of the East and Eastern Orthodoxy already used the tradition name as the title on both
+screens and needed no change. Only the display text (the `.app-mode-title`/`.app-mode-subtitle`
+spans) was touched — every `onclick` handler and `data-mode`/`data-entry-tradition` key is
+untouched, moved not rebuilt, matching the same convention used for the earlier mode-grid
+title-style fix. Confirmed via `grep` that no JS reads these title/subtitle strings by text match
+(only internal mode-key → label constants exist elsewhere, unrelated to these DOM spans) before
+touching anything, so this is a pure display change with no behavioral risk.
+
+**Verified live**, not just reasoned about: installed `playwright-core` temporarily, started
+`scripts/dev-spa-server.mjs`, called `showUoThresholdGrid()` and read all five cards' rendered
+title/subtitle text directly from the DOM — all five match the target text exactly. Confirmed the
+click path still works: `selectMode('daily')` still correctly shows `#daily-office-section`. Zero
+console errors. Cleanup confirmed: `playwright-core` uninstalled, dev server killed, scratch
+script removed, `git status` clean except the one file actually meant to change.
+**`index.html` is the only file touched.**
+
+Note on how this got flagged as still-open in the first place: PR #63 (task #14) deliberately left
+this as an editorial call for Josh rather than guessing — correct caution in general, but the
+ledger and this note both record only that it was *asked*, never that it was *answered*, across
+every session since. If Josh gives a naming ruling like this again, record the answer here
+immediately, in the same entry as the question, not just the question — that's what "for the 3rd
+time" was catching.
+
+---
+
 **MOBILE DISPLAY AUDIT: PRAYER WINDOW MAXIMIZED, 2026-09-28 continued yet again.** Josh, after the
 earlier same-day fix that stopped the rail/content desync ("The site is completely unusable on
 mobile"), asked directly: "Did I have you address display on mobile devices?" — the answer was no,

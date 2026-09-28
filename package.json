@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node scripts/dev-spa-server.mjs",
+    "audit:cycles-of-prayer": "node scripts/cycles-of-prayer/validate.mjs",
     "audit:bible-corpus-structure": "node scripts/audit-bible-corpus-structure.mjs",
     "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs",
     "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs",
