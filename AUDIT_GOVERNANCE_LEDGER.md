@@ -23278,3 +23278,39 @@ guessed at.
 
 `js/office-ui.js` and `data/explanations/byzantine.json` are the only files touched. Full detail:
 `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, one more -- Roman Breviary's "The Order" sidebar, permanently empty since
+that lane was wired in, FIXED
+
+Josh reported it from a live screenshot of theuniversaloffice.com (Roman Breviary, Vespers,
+2026-09-27): the rail under "The Order" showed only its own placeholder text, never real content.
+
+Not a rendering crash -- a genuine, previously-unclosed integration gap. `js/office-shell.js`'s
+`renderRailFromEnvelope()` only draws the rail once a lane publishes a `universal-office-envelope`
+DOM event. Anglican/BCP, Coptic, East Syriac, and Horologion all publish one (Phase 5, closed
+2026-09-24). `js/roman-breviary-1960-1962-dev-slice.js` -- wired into the entry screen afterward,
+in PR #40 -- never did; confirmed by reading the file, not assuming, that it has zero references
+to `AnglicanEnvelope` or `universal-office-envelope` anywhere.
+
+The fix stayed small because the data was already shaped for it: this module's own
+`composeResolvedOffice()` already produces an object named
+`schema_version: 'universal_office_resolved_envelope_v0_dev'`, with `blocks[]` already carrying
+`{role, label, ...}` per item and `context.calendarSummary` already split from the lane's own rank
+line. Added one `AnglicanEnvelope.publish()` call at the same point every other lane calls it,
+reusing the exact tradition-neutral pattern already established for Coptic/East Syriac/Horologion
+in `js/office-ui.js`: `tradition: 'LAT'` (this lane's established shell code), `blocks`/`overlays`/
+`diagnostics` passed straight through. Confirmed against the actual manifest data, not assumed,
+that `blocks` needed no flattening first -- Nocturn grouping is a passthrough label on otherwise-
+flat blocks, not real nesting.
+
+Verified live: the rail now shows real per-hour content for both Matins and Vespers, the latter on
+2026-09-27 reproducing Josh's own screenshot exactly (same ordo-day text, "Dominica XVIII Post
+Pentecosten IV. Septembris", same "Canticum: Magnificat" rail item). Switching away to Horologion
+and back confirmed the rail actually updates rather than leaving this lane's content stuck.
+`node --check` clean. Zero new console errors beyond the pre-existing, already-documented
+sandbox-proxy `ERR_CERT_AUTHORITY_INVALID`.
+
+`js/roman-breviary-1960-1962-dev-slice.js` is the only file touched. Full detail:
+`RESUME_PROJECT_NOTE.md`'s matching entry, same date.

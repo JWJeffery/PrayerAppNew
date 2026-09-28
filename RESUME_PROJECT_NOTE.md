@@ -51,6 +51,37 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**ROMAN BREVIARY'S "THE ORDER" SIDEBAR WAS PERMANENTLY EMPTY, 2026-09-28 continued once more —
+FIXED.** Josh reported it from a live screenshot of theuniversaloffice.com (Roman Breviary Vespers,
+2026-09-27): the left rail under "The Order" showed only its placeholder text ("...appears here
+once the lane emits its blocks"), never real content. **Not a rendering crash — a genuine, well-
+understood integration gap, not previously closed out.** `js/office-shell.js`'s
+`renderRailFromEnvelope()` only draws the rail when a lane publishes a `universal-office-envelope`
+DOM event; Anglican/BCP, Coptic, East Syriac, and Horologion all do this (Phase 5, closed
+2026-09-24 per this file's own earlier entries) — `js/roman-breviary-1960-1962-dev-slice.js`, wired
+into the entry screen only afterward (PR #40), never did. Confirmed by reading the file, not
+assuming: zero references to `AnglicanEnvelope`/`universal-office-envelope` anywhere in it.
+
+**The fix was small because the data was already shaped right.** This module's own
+`composeResolvedOffice()` already builds an object explicitly named
+`schema_version: 'universal_office_resolved_envelope_v0_dev'`, with `blocks[]` already carrying
+`{role, label, ...}` per item and a `context.calendarSummary` already split out from the lane's own
+rank line — almost exactly what `renderRailFromEnvelope()` needs. Added one `AnglicanEnvelope.publish()`
+call at the same point every other lane calls it (right after the office finishes rendering),
+reusing the exact tradition-neutral pattern Coptic/East Syriac/Horologion already established in
+`js/office-ui.js` — `tradition: 'LAT'` (the shell's own established code for this lane), the
+lane's own `blocks`/`overlays`/`diagnostics` passed straight through. Confirmed first, not assumed,
+that `blocks` needed no flattening pass first: read the actual manifest data directly and confirmed
+Nocturn grouping is a passthrough label on otherwise-flat blocks, never real nesting.
+
+**Verified live**, not just reasoned about: rail now shows real per-hour content (Matins:
+"Incipit, Psalmi, Capitulum Hymnus Versus, Canticum: Benedictus, Preces Feriales, Oratio"; Vespers,
+2026-09-27, reproducing Josh's own screenshot exactly: "...Canticum: Magnificat...", ordo-day line
+reading "Dominica XVIII Post Pentecosten IV. Septembris" — the identical text from the screenshot).
+Switching from this lane to Horologion and back was also checked, to confirm the rail actually
+updates rather than leaving stale content behind (it does). Zero new console errors beyond the
+pre-existing, already-documented sandbox-proxy `ERR_CERT_AUTHORITY_INVALID`.
+
 **THE RENDER BUG BELOW IS NOW FIXED, 2026-09-28 continued once more.** `js/office-ui.js`'s
 `_renderHorologionItem()` had THREE branches that dropped `item.label` entirely, not just the one
 originally characterized below: the `'rubric'` branch (by far the most common item type in the
