@@ -543,12 +543,63 @@ distinct, well-known East Syriac desert hermit) — genuinely absent from this c
 Not added here since it's new content, not a correction of what's already in the file; flagged for a
 future session or Josh's call on whether to add it.
 
-**Carried forward, not independently re-verified this session** — Formation prose editor-name strip,
-Education-layer coverage extension, Royal Anthem sourcing (genuinely unsourced after four leads across
-two sessions — do not re-research the same ones without a new lead), Cathedral/Monastic content axis
-(control is live, content question open, see `documentation/OPEN_ITEMS_FIXABILITY.md`), Coptic Prayer
-of the Veil, Horologion splash wiring, the Anglican Kalendar remainder via `synaxarium-review/`. Full
-detail on each in `documentation/project-history/` Volumes 3-4.
+**The old "carried forward, not independently re-verified" bucket — actually checked and properly
+categorized 2026-09-28 (continued), per Josh's direct instruction.** These seven items had been sitting
+in one undifferentiated list; they're not all the same kind of blocked. Re-verified each against the
+live repo, not just re-copied from the old note.
+
+*Genuinely unblocked — need no research and no decision, can be started any session, per
+`documentation/OPEN_ITEMS_FIXABILITY.md` Part 4:*
+- **Formation prose: strip the editor's name from the explanation-layer prose.** Josh's own direction
+  (2026-09-05): sources must not appear in the user-facing education text at all — the underlying fact
+  should survive, the attribution shouldn't. Confirmed still present and unfixed: at least 23 exact
+  instances of the pattern ("Hapgood explains," "O'Leary records," "Maclean's table shows," etc.) remain
+  across `data/explanations/byzantine.json` (15), `coptic.json` (7), `east-syriac.json` (1) — the true
+  count is likely higher, since this only caught a few exact phrasings, not every way an editor's name
+  could appear. Purely mechanical rewriting, not blocked on anything.
+- **Education-layer coverage extension.** Coverage currently ~49% of Coptic titles to ~57% of East
+  Syriac components (last measured 2026-09-05/09-12, not re-measured this session). Deliberately
+  excludes generic section headings and individual psalm citations. Content work within sources already
+  held in the repo — no new source needed.
+
+*Blocked on Josh's decision, not research:*
+- **Royal Anthem sourcing.** Copyright. Two live options, neither authorized: an OIRSI/Moolan
+  permission request, or a disclosed machine translation from Bedjan's public-domain Syriac. Genuinely
+  unsourced after four leads across two sessions — do not re-research the same two routes without a new
+  lead; this needs Josh to pick one, not more searching.
+
+*Blocked on research (not a decision, not a missing page — a real unanswered historical question):*
+- **Cathedral/Monastic content axis.** The **control** is live and working
+  (`isEastSyriacCathedralMode()`, five call sites) — do not report this as broken. The **content**
+  question is separate and open: `rubrics.json` itself records that the old two-parallel-hour-forms
+  content axis was deliberately deleted because Maclean doesn't actually describe East Syriac hours that
+  way (he describes one ferial form, separately from festival/Sunday/memorial forms) — rebuilding it
+  needs that distinction actually researched, not assumed back into existence.
+
+*Blocked on source availability — none identified yet:*
+- **Coptic Prayer of the Veil.** O'Leary's seven-hour Coptic Agpeya translation (this project's main
+  Coptic source) does not contain it. Needs a different Coptic liturgical edition; none found so far.
+
+*Vague and likely stale — needs re-scoping before any work starts, not ready to pick up as-is:*
+- **Horologion splash wiring.** The only record found: "Josh: needs a full audit, not there yet"
+  (2026-09-04). No further detail exists anywhere in the ledger or project history. The splash/threshold
+  screen has been substantially rebuilt since then (the `#uo-threshold` system dates to 2026-09-22-23,
+  weeks after this was flagged) — whatever prompted this note may no longer apply to the current UI at
+  all. Whoever picks this up should re-establish what "full audit" was even supposed to cover before
+  starting, likely by asking Josh directly, not by guessing from this thin a record.
+
+*Not Claude's work at all — a separate, already-built tool waiting on Josh's own hands-on review:*
+- **The Anglican Kalendar remainder via `synaxarium-review/`.** Checked directly this session:
+  `synaxarium-review/validation-report.md` confirms all twelve monthly candidate matrices are
+  structurally complete (1,194 candidate rows total, full date coverage, zero missing SIN joins, zero
+  malformed rows) — the tool itself is done and ready. But **zero rows have been reviewed**: "Rows where
+  decision_status != 'Pending': 0" and "Rows where final_primary is non-blank: 0," confirmed directly
+  against the data. This is the entire remaining task — Josh going through all 1,194 candidate rows
+  himself in the tool's own browser UI (`cd synaxarium-review && python3 -m http.server 8000`) and
+  concurring/overriding/recording a decision for each civil date. Per standing project rule,
+  `synaxarium-review/` is a separate project from the EOR/OOR sanctoral work elsewhere in this note —
+  do not extend it, do not build a parallel tool, and this specific review work is Josh's own editorial
+  judgment to exercise, not something a session should attempt on his behalf.
 
 ---
 
