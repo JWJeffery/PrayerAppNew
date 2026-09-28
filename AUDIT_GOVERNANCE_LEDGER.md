@@ -23749,3 +23749,44 @@ always correctly open, never conflated with the sweep's own completion status.
 FIXED: rewrote `RESUME_PROJECT_NOTE.md` §7's sanctoral paragraph to state all three pieces separately
 and accurately, resolving the §7/§8 contradiction. No code or corpus data changed this pass --
 `sanctoral.json` was only read, not edited. Files touched: `RESUME_PROJECT_NOTE.md`.
+
+## Session 2026-09-28, continued yet again -- 17 of 18 "ADDED not CONFIRMED" OOR entries confirmed
+## against coptic.io directly over plain HTTPS, no MCP server needed
+
+Josh asked directly to address both open items from the previous entry. Item 2 first (the "ADDED"
+entries): the `coptic_mcp_server.py` removal turned out not to block this at all. `api.coptic.io`'s
+underlying REST API is reachable directly with `WebFetch` -- no MCP wrapper needed --
+`api.coptic.io/api/synaxarium/<YYYY-MM-DD>` for a date lookup, `.../search/query?q=<name>` for a name
+search. Both endpoints confirmed working against a known entry (`Hezekiah`) before trusting them for
+the other 17.
+
+**17 of 18 confirmed with an exact text match:** hezekiah-the-king, saint-john-the-soldier,
+abba-poemen-the-hermit, saint-barsoma-the-naked, joshua-son-of-nun-the-prophet,
+saint-simon-son-of-clopas-bishop-of-jerusalem, saint-jason-of-the-seventy, king-david-the-prophet-coptic,
+presentation-of-mary-at-the-temple-coptic, saint-takla-haymanot-the-ethiopian (confirmed despite being
+Ethiopian-subtradition content, which coptic.io is normally out of scope for -- this specific
+commemoration turned out to be carried in its data anyway), saint-john-the-evangelist-departure-coptic,
+obadiah-the-prophet-coptic, saint-cleopas-the-apostle-of-emmaus, hannah-the-prophetess-mother-of-samuel,
+saint-timon-the-apostle-of-the-seventy, saint-mercurius-of-caesarea-abu-seifein (confirms the 2026-09-11
+date correction specifically, not the original 2026-09-07 date, which was already known wrong), and
+prophet-isaiah-coptic-departure. Each `ruleSource` updated in place: the old "NOT YET CROSS-CHECKED"
+sentence replaced with the exact coptic.io text matched against, dated 2026-09-28.
+
+**One exception, disclosed rather than forced: `saint-onesiphorus-of-the-seventy` (Apr 3).** coptic.io's
+search returns zero results for "Onesiphorus" or "Onesiphorous" (both spellings tried; the search
+endpoint works correctly for other names -- confirmed against a known-good query). Its date endpoint
+for April 3 returns the same two unrelated commemorations (Crucifixion of Our Lord, St. Macarius the
+Great) across 2024, 2025, and 2026 alike -- no trace of Onesiphorus at any of them. This may mean
+coptic.io's own data genuinely omits this figure, not that the corpus's Wikipedia/St-Takla.org-sourced
+date is wrong -- not independently re-derived here, since that would need the printed Synaxarium or
+St-Takla's own per-day page directly, neither attempted this pass. `ruleSource` updated to state this
+finding plainly (CHECKED, still not CONFIRMED) rather than leaving the old "not yet checked" wording,
+which was no longer accurate either way.
+
+VERIFIED: `data/saints/sanctoral.json` still parses (one edit introduced unescaped literal quotes
+inside a JSON string value, caught immediately by the parse check and fixed before proceeding -- a
+concrete example of why this project validates JSON after every edit, not just before); zero remaining
+occurrences of "NOT YET CROSS-CHECKED against coptic.io" anywhere in the file (`grep -c`, confirms all
+18 were addressed one way or the other); entry count unchanged at 1067 (no rows added, removed, or
+merged -- this was a citation-field update only). Files touched: `data/saints/sanctoral.json`,
+`RESUME_PROJECT_NOTE.md`.

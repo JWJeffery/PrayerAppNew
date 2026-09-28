@@ -318,15 +318,20 @@ in that whole window; `07dd77f`, 2026-09-23, is a full repo restore, not organic
    (Coptic month of Mesori)" and "...(intercalary month Pi Kogi Enavot / Nasie)" — the exact two
    sections an earlier ledger checkpoint (same day, 2026-09-07) had listed as the only ones still
    remaining. Stop treating this as unstarted or resumable-from-scratch; it's finished.
-2. **Genuinely still open: 18 of those gap-sweep additions are stuck at "ADDED," never upgraded to
-   "CONFIRMED."** Every one was sourced from Wikipedia/St-Takla.org (the fallback method, since
-   coptic.io was unreachable during the sweep) and explicitly says "NOT YET CROSS-CHECKED against
-   coptic.io directly — confirm against the primary tool before treating as fully CONFIRMED rather than
-   ADDED." This is real, bounded remaining work — search `sanctoral.json` for that exact phrase to find
-   all 18. **Complicated by this session's own coptic.io connector removal (§6, per Josh's instruction —
-   it was built for the now-finished Agpeya, not for this)**: the connector this confirmation step
-   depended on is gone. Resuming this needs either rebuilding a coptic.io connector or finding another
-   independent second source for the same 18 dates.
+2. **RESOLVED 2026-09-28 (continued), by Josh's direct instruction to address it.** 17 of the 18
+   "ADDED" gap-sweep entries are now CONFIRMED. The `coptic_mcp_server.py` removal (§6) turned out not
+   to block this: `api.coptic.io`'s underlying REST API is still directly reachable over plain HTTPS
+   without any MCP wrapper (`WebFetch` against `api.coptic.io/api/synaxarium/<YYYY-MM-DD>` and
+   `.../search/query?q=<name>` both work). Checked all 18 against it directly; 17 matched exactly and
+   their `ruleSource` fields now say `CONFIRMED against coptic.io 2026-09-28` instead of "NOT YET
+   CROSS-CHECKED." **One exception, disclosed rather than forced to match: `saint-onesiphorus-of-the-
+   seventy`** (Apr 3) — coptic.io's search returns zero results for "Onesiphorus" or "Onesiphorous"
+   (the search endpoint works correctly for other names, confirmed against 'Hezekiah'), and its date
+   endpoint for April 3 shows two unrelated commemorations across 2024/2025/2026 alike, no trace of this
+   figure. May mean coptic.io's own data genuinely omits him, not that the corpus's date is wrong — not
+   resolved either way. Remains ADDED on Wikipedia/St-Takla.org sourcing alone; its own `ruleSource` now
+   states this plainly instead of just "not yet checked." Zero remaining "NOT YET CROSS-CHECKED" strings
+   in `sanctoral.json` — verified by direct grep after the edits.
 3. **Genuinely still open, unrelated to sourcing: a set of same-figure-different-day editorial
    questions** (Seven Holy Youths of Ephesus, Prophet Micah, Prophet Malachias, Bessarion, Amos,
    Julietta/Cyriacus, Bartholomew, Moses, Hilarion, St Anne, Clement of Rome, Gregory Thaumaturgus, Holy
