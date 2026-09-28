@@ -3719,8 +3719,25 @@ function _pushHorologionEnvelopeEntries(env, item) {
     }
 
     if (item.type === 'sequence') {
+        // FIXED 2026-09-28, Josh's live report (raw keys like
+        // "usual-beginning-1".."usual-beginning-11" listed in the rail): a
+        // sequence's own children are frequently small unlabeled fragments of
+        // one continuous passage (e.g. the Usual Beginning's line-by-line
+        // exchange) -- recursing into every one of them, unconditionally,
+        // pushed each fragment's raw item.key as its own rail entry once the
+        // generic fallback below ran out of anything better to call it. A
+        // labeled sequence now gets exactly one rail entry, using its own
+        // label, matching what the page itself shows as this section's one
+        // heading. Recursion into children still happens, but only for a
+        // child that carries a genuine label of its own -- never for one
+        // that would otherwise fall through to a raw key or a bare "Text".
+        if (item.label) {
+            env.blocks.push({ label: item.label, role: 'other', units: [] });
+        }
         if (Array.isArray(item.items)) {
-            item.items.forEach(function (child) { _pushHorologionEnvelopeEntries(env, child); });
+            item.items.forEach(function (child) {
+                if (child && child.label) _pushHorologionEnvelopeEntries(env, child);
+            });
         }
         return;
     }

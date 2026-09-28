@@ -18,6 +18,7 @@
         {
           "type": "sequence",
           "key": "usual-beginning",
+          "label": "The Usual Beginning",
           "items": [
             {
               "type": "text",

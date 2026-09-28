@@ -562,7 +562,13 @@ body.uo-day {
 body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="ANG"]::before {
     background-image: url('/images/chartres-rose.png');
     filter: blur(9px) saturate(0.35) brightness(0.7);
-    opacity: 0.22;
+    /* ADJUSTED 2026-09-28, Josh's live report ("in light mode, the
+       background has disappeared"): the rule was applying correctly
+       (confirmed live, computed style unchanged) -- 0.22 opacity against
+       this theme's near-white ground was simply too faint to register as
+       present rather than absent. Raised to make it reliably perceptible;
+       still well under the day-mode ceiling other lanes' own day rules use. */
+    opacity: 0.38;
 }
 
 /* Coptic (OOR) -- Walters W.739, fol. 1r: a Coptic parchment fragment of the
@@ -1425,7 +1431,17 @@ body.uo-day .uo-drawer-datepick { color-scheme: light; }
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
-    max-width: 60%;
+    /* FIXED 2026-09-28, Josh's report ("menu options should not be cut off"):
+       a long selected option (e.g. Horologion's Calendar row, "New Calendar
+       (Revised Julian Fixed Feasts)") simply hard-clipped at the old 60%
+       cap with no overflow indicator at all. Widened the cap and added an
+       ellipsis so long values degrade visibly instead of vanishing
+       mid-word; short values (most rows) are unaffected either way. */
+    max-width: 72%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .uo-drawer-row-value option {
     background: var(--uo-ground-raised);
