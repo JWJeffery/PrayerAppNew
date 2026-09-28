@@ -322,6 +322,20 @@ this up should decide (with Josh) whether to ship the Communion/Province tiers f
 independent of the profile system, or wait and do all four tiers together once Diocese/Parish selection
 exists. No source text for any tier gathered yet — Josh said he'll supply it.
 
+**Storage scheme for Diocesan-tier data now exists — built 2026-09-28 (continued) on `main`, merged
+into this branch after the fact.** Josh uploaded The Episcopal Church in Western Oregon's own 2026
+Diocesan Cycle of Prayer (a weekly rotation of parishes/missions/categories to pray for) and asked for
+a general-purpose scheme to hold this kind of data from multiple dioceses — deliberately separate from
+`project_roadmap.json`'s tradition-audit machinery, closer in kind to Book of Needs. **Not wired into
+the app UI yet — storage only.** `data/cycles-of-prayer/schema.json` (file-shape and content rules,
+including "transcribe names exactly as printed, disclose typos rather than fix them"),
+`data/cycles-of-prayer/episcopal-western-oregon-2026.json` (the first instance, 52 weeks/67 subjects,
+verified programmatically), and `scripts/cycles-of-prayer/validate.mjs` (`npm run audit:cycles-of-prayer`,
+verified to actually catch injected errors before being trusted). Whoever builds the Diocesan-tier
+Authorized Intercessions content should read `schema.json` first and use this as the source rather than
+inventing a second storage pattern. Adding a second diocese: transcribe directly from that diocese's own
+published document, never from memory, then run the validator before committing.
+
 **A screenshot of the Venite app (Forward Movement's Episcopal daily office app) was shown 2026-09-28
 (continued) as a location reference, NOT a design to copy — confirmed explicitly by Josh: "I know that
 Venite does not fill it with prayer text. But that is where I want it."** In Venite, immediately after
@@ -450,14 +464,21 @@ the East Hudra closeout, cross-family hardening, final beta gate) are all `not_s
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions) — as of the last entries
 in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
 - Task #14 — tradition-selector naming: one real bug fixed (stale LOTH text). The broader
-  naming-consistency question is **fully resolved 2026-09-28 (continued), Josh's direct call on each
-  pair.** Anglican ("Anglican" / "Daily Office"), Catholic ("Catholic" / "Roman Breviary 1960/1962"),
-  and Oriental Orthodoxy ("Oriental Orthodoxy" / "Coptic Agpeya") are fine as-is, no change. Eastern
-  Orthodoxy's mode-grid card renamed "Eastern Orthodoxy" → **"Horologion"**. Church of the East's
-  mode-grid card renamed "Church of the East" → **"Hudra"** — confirmed: Josh meant Hudra, not Ramsha
-  (Ramsha is one specific office within the Hudra, not the whole book, as flagged). Both renames done in
-  `index.html`; the entry-card screen's own separate labels (`#tradition-entry`) were deliberately left
-  untouched in every case, not part of this naming pair. Nothing left open on this item.
+  naming-consistency question is **fully resolved, across two separate fixes that both landed
+  2026-09-28 (continued) and are now merged together.** Governance ruling (Josh, applied in `179e38f`
+  on `main`): **mode-grid title = ecclesial-tradition name, subtitle = specific office name** — the
+  pattern `#tradition-entry` already used. That fix swapped the three mismatched cards: "Daily Office"
+  → title **Anglican** (subtitle "The Daily Office, according to the 1979 Book of Common Prayer.");
+  "Coptic Agpeya" → title **Oriental Orthodoxy** (subtitle "The Coptic Agpeya — the seven hours and
+  Theotokia of the Coptic Church."); "Roman Breviary 1960/1962" → title **Catholic** (subtitle "The
+  Roman Breviary 1960/1962 — Roman Rite, Latin, all eight hours."). Separately, this branch renamed the
+  remaining two cards, which already used the tradition name as their title and only needed the name
+  itself corrected: Eastern Orthodoxy's mode-grid card → **"Horologion"**; Church of the East's
+  mode-grid card → **"Hudra"** (confirmed: Josh meant Hudra, not Ramsha — Ramsha is one specific office
+  within the Hudra, not the whole book, as flagged). All five mode-grid cards now follow the same
+  tradition-name-as-title convention; verified live in `index.html` post-merge. The entry-card screen's
+  own separate labels (`#tradition-entry`) were deliberately left untouched in every case, not part of
+  this naming pair. Nothing left open on this item.
 - Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
   `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
   `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).
@@ -671,6 +692,15 @@ live repo, not just re-copied from the old note.
   DONE** — confirmed by Josh directly, 2026-09-28. Any document (there were several: a "HISTORICAL"
   note, `SESSION_START_SCRIPT.md`) suggesting otherwise or implying it's still in progress is stale;
   do not resume it without Josh explicitly reopening it.
+- **Mobile prayer-reading window maximized, 2026-09-28 (continued) — landed on `main`, merged into
+  this branch after the fact.** Josh: "the area where the user could read the prayer and scroll through
+  it was so tiny, no one would use it." Measured before touching anything on a real 390×844 viewport
+  (BCP Morning Prayer): `.uo-rail` alone consumed 316px (37.4%), the header another 106px (12.6%),
+  leaving only 322px (38.2%) for `.uo-page` — and the first screen was pure chrome, zero prayer text.
+  Fixed so `.uo-page` now takes 614px/73% of the viewport, prayer text visible on the first screen.
+  Verified live: rail toggle both directions, an earlier touch-scroll-trap fix still holds, long-list and
+  empty-list edge cases both render correctly, Back to Modes stays reachable, all five traditions swept
+  on mobile, desktop unaffected. `css/office-shell.css`, `js/office-shell.js` only files touched.
 - **The ordinary-cycle Horologion office audit (Vespers, Grand Compline, the four Hours, Typika,
   Orthros's skeleton, Midnight Office, Small Compline, the four Interhours — 14 offices) is DONE**,
   verified line-by-line against Maclean-equivalent primary sources as of 2026-09-26. **"Horologion" has
