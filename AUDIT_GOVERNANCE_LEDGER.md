@@ -23314,3 +23314,40 @@ sandbox-proxy `ERR_CERT_AUTHORITY_INVALID`.
 
 `js/roman-breviary-1960-1962-dev-slice.js` is the only file touched. Full detail:
 `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, continued yet again -- task #10 (Horologion rail raw-key leak) live-verified;
+## task #9 (Coptic Agpeya sidebar not tracking scroll) investigated and fixed
+
+Task #10, left by a prior session as "code fix is in, not yet live-browser-tested": confirmed live
+in headless Chromium via the real click path. Vespers' rail shows exactly one "The Usual Beginning"
+entry, zero raw `usual-beginning-N` keys, footer "I OF XXI". Closed for real.
+
+Task #9, left as "not started": investigated from scratch. First ruled out a repeat of the
+2026-09-25 tooltip-text matching bug -- the scroll listener and label-matching algorithm both work
+correctly. Real root cause, confirmed by reading the code: `bcpEmitPsalmBlock()` (`js/office-ui.js`,
+shared by Anglican/BCP and Coptic Agpeya) pushes one combined rail entry for an ENTIRE multi-psalm
+reading regardless of count. Coptic's Morning Office appoints 12 psalms under one "The Psalms" rail
+item -- a single waypoint spanning 51% of that office's total page height, during which the rail dot
+cannot move. Horologion's own Typika already gives each psalm its own rail item; this convention was
+never applied to `bcpEmitPsalmBlock`. The pre-Phase-3 scraping envelope (`js/anglican-envelope.js`)
+already recognized `.passage-reference` citations as block boundaries -- the direct-construction
+refactor (Phase 3, 2026-09-20) most likely narrowed a behavior that used to exist.
+
+Fixed: `bcpEmitPsalmBlock` now pushes one `env.blocks` entry per psalm when there's more than one,
+each labelled with its own citation; single-psalm calls (the antiphonal psalm, the Midnight Office's
+first-nocturn psalm) are unchanged. `computeRailWaypoints()` (`js/office-shell.js`) extended to also
+match `.uo-gutter-label` text (each psalm's citation was already rendered there, visibly, at the
+correct position) alongside `.rubric-text`; `.passage-reference` itself is screen-hidden
+(`display:none`) so was never usable as a match target. No new DOM element added.
+
+Verified live: Coptic Agpeya's Morning Office rail grew from 22 to 33 items; scrolling now advances
+the dot through each individual psalm, closing the dead zone (worst remaining gap ~5,000px, Psalm
+18's own real length). Confirmed the same fix also benefits Anglican/BCP (Compline's four psalms
+now four rail items) and confirmed the two genuinely single-psalm Coptic cases are unaffected.
+`node --check` clean on both files. Zero new console errors beyond the pre-existing sandbox-proxy
+`ERR_CERT_AUTHORITY_INVALID`.
+
+`js/office-ui.js` and `js/office-shell.js` are the only files touched. Full detail:
+`RESUME_PROJECT_NOTE.md`'s matching entry, same date.
