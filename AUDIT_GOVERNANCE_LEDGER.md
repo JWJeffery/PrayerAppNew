@@ -23611,3 +23611,42 @@ edits and confirmed zero remaining name mismatches and exactly one row each unde
 both `mar-michael` and `mar-michael-archangel` after the allowlist update. Files touched:
 `data/saints/sanctoral.json`, `js/coe-eligibility.js`, `RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped
 to v391-2026-09-28-sanctoral-boniface-michael-id-collision-split.
+
+## Session 2026-09-28, continued yet again -- scripts/ dead-code audit was already done (stale
+## resume-note row corrected); its two open loose ends closed; a real coptic.io lead surfaced
+
+The resume note listed "scripts/ audit for Lucy-era dead validation scripts" as "not yet started."
+It was already done: `eb94c0c` ("Remove 107 dead Bible-corpus-audit scripts from the Lucy era")
+built a real transitive reachability graph from package.json's npm-script entry points (92 of 223
+files genuinely reachable), verified with `node --check` plus an actual post-deletion run of a
+reachable script, and deleted only the 107 unreachable files that were also unambiguously
+Bible-corpus-audit-specific -- matching Josh's own instruction exactly, not a blind sweep. That
+commit deliberately excluded five categories from deletion pending individual judgment rather than
+guessing. Corrected the stale resume-note row instead of redoing this work.
+
+Closed both loose ends that commit left open:
+
+1. **`scripts/parse-officium-html.mjs`** ("no clear closed subsystem, left for individual review"):
+   confirmed live, not dead. Directly imported by `scripts/build-roman-breviary-full-sweep.mjs` and
+   `scripts/build-roman-breviary-oracle-blocks.mjs`, and documented as core Roman Breviary tooling in
+   `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` and several ledger entries. Nothing to delete.
+
+2. **`scripts/coptic-mcp-server.py` vs. root `coptic_mcp_server.py`** ("a likely stale duplicate, not
+   deleted without confirming which one Josh actually runs"): turned out not to be a stale-duplicate
+   question at all. Direct diff shows the two files have genuinely diverged in content: the
+   `scripts/` copy carries the `mcp[cli]>=1.10.1,<2.0.0` pin fix and "verified working end-to-end
+   2026-09-07" notes documented in this ledger's own 2026-09-07 "coptic.io MCP wrapper built, tested,
+   connected" entry; the root copy -- the one this project's own notes have always pointed Josh at as
+   the live wrapper to keep running -- is MISSING that fix entirely and still carries the older,
+   unverified docstring. Since an unpinned `pip install "mcp[cli]"` grabs the SDK's breaking 2.x line
+   and fails at import, this is a plausible real explanation for the coptic.io connector's
+   "broken as of 2026-09-11" status logged elsewhere in this file -- a genuinely new lead, not a
+   re-diagnosis of the same dead end. NOT fixed here: this is Josh's own local Codespace
+   infrastructure (which file he actually runs, and how), outside what a repo-side edit can safely
+   resolve without his confirmation. Flagged with the exact diff finding in
+   `RESUME_PROJECT_NOTE.md`'s source-reachability table rather than guessing which file to delete or
+   overwrite.
+
+No files changed in `scripts/` or at the repo root this pass -- both findings were "this is already
+correct" (parse-officium-html.mjs) and "this needs Josh, not a delete" (the coptic MCP divergence).
+Files touched: `RESUME_PROJECT_NOTE.md` only.

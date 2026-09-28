@@ -218,7 +218,7 @@ already exists or is already finished, check before asserting it, and say plainl
 | **ODCC** | In repo but **no text layer at all**. Do not re-propose. |
 | **Lambertsen Octoechos** | In copyright to ~2087; citable, not reproducible |
 | **orthocal.info** (EOR, Slavic/OCA + Greek/Antiochian beta) | Direct MCP tools `search_saints` / `get_day` -- connector has been flaky across sessions, sometimes simply absent from the tool list for a whole turn with no error beyond "not available in this turn." When that happens: do not retry in the same turn; fall back to Wikipedia's compiled "Month Day (Eastern Orthodox liturgics)" pages rather than stalling. |
-| **coptic.io** (OOR, Coptic) | MCP tools `search_saints` / `get_day` / `get_day_coptic`, same flakiness pattern -- `coptic_mcp_server.py` (repo root) is a live wrapper Josh must keep running and port-forwarded (Public) in his Codespace for this connector to work at all. Not persistent. Last known status: broken as of 2026-09-11 (Josh has a support reference code), not rechecked since. Fallback: Wikipedia's per-Coptic-day pages, sourced from copticchurch.net/st-takla.org. |
+| **coptic.io** (OOR, Coptic) | MCP tools `search_saints` / `get_day` / `get_day_coptic`, same flakiness pattern -- `coptic_mcp_server.py` (repo root) is a live wrapper Josh must keep running and port-forwarded (Public) in his Codespace for this connector to work at all. Not persistent. Last known status: broken as of 2026-09-11 (Josh has a support reference code), not rechecked since. **NEW LEAD, found 2026-09-28 during the scripts/ audit below, not yet acted on:** there are TWO copies of this wrapper that have silently diverged -- `coptic_mcp_server.py` (repo root, the one this note has always pointed at) and `scripts/coptic-mcp-server.py` (the one actually documented as built/fixed/verified, per `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-07 "coptic.io MCP wrapper built, tested, connected" entry). Direct diff shows the root copy is MISSING the critical fix from that entry -- pinning `mcp[cli]>=1.10.1,<2.0.0` (the unpinned installer grabs the SDK's 2.x line, which renamed `FastMCP` and breaks this script's v1-API code at import) -- and is missing the "verified working end-to-end" notes the scripts/ copy carries. If Josh has been running the root copy, that dependency mismatch is a plausible real cause of "broken," not necessarily coptic.io itself. Not fixed here: this is Josh's own local Codespace infrastructure, outside what a repo edit can verify or safely change unilaterally -- flagging with the exact diff finding rather than guessing which file to touch. Fallback: Wikipedia's per-Coptic-day pages, sourced from copticchurch.net/st-takla.org. |
 
 **Any item needing Maclean past p.45 is blocked on Josh supplying pages.** Retrying will not change
 it.
@@ -248,9 +248,24 @@ full line-by-line inventory of every todo across `AUDIT_GOVERNANCE_LEDGER.md` (2
 "fully done" claim — not yet reconciled). What's below is what's been verified so far, not a claim of
 full coverage.
 
-**`scripts/` audit for Lucy-era dead validation scripts — not yet started** (Josh's third instruction,
-same session). 223 files under `scripts/`, ~100+ `audit:*` npm scripts in `package.json`. Needs
-cross-referencing against actual recent use before anything is deleted.
+**`scripts/` audit for Lucy-era dead validation scripts — DONE, not "not yet started."** This note had
+it wrong. `eb94c0c` ("Remove 107 dead Bible-corpus-audit scripts from the Lucy era") already did the
+real work: built a transitive reachability graph from package.json's actual npm-script entry points
+(92 of 223 files genuinely reachable), verified with `node --check` and by actually running a
+reachable script post-deletion, then deleted only the 107 unreachable files that were also
+unambiguously Bible-corpus-audit-specific — the exact category Josh named. Five categories of
+unreachable-but-not-obviously-dead files were deliberately excluded pending individual judgment
+rather than swept blind; see that commit's own message for the full list (Vulgate/Roman-Breviary
+boundary scripts, `scripts/saints/*`, `scripts/coe-calendar/*`, Roman Breviary build/import scripts,
+`scripts/explanations/verify_explanations.js`). **Both remaining loose ends from that list closed out
+2026-09-28 (continued):** `scripts/parse-officium-html.mjs` ("no clear closed subsystem, left for
+individual review") is confirmed live — imported directly by `scripts/build-roman-breviary-full-sweep.mjs`
+and `scripts/build-roman-breviary-oracle-blocks.mjs`, documented as core Roman Breviary tooling in
+`documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` and multiple ledger entries. Nothing to delete.
+`scripts/coptic-mcp-server.py` vs. root `coptic_mcp_server.py` ("a likely stale duplicate, not deleted
+without confirming which one Josh actually runs") is NOT a stale-duplicate cleanup question — see the
+coptic.io row in the source-reachability table above for what it actually turned out to be (a real
+divergence, not dead code). 116 files remain in `scripts/`, all now accounted for.
 
 **`structure.json`'s other open todos** (re-verified 2026-09-28, continued — see the file itself for
 full evidence): the **Gloria Patri/Kyrie "duplication" item is now CLOSED, not open** — the prior
