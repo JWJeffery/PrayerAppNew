@@ -607,8 +607,30 @@
         // querySelectorAll keeps document order across the combined
         // selector, so this doesn't disturb matching for every other item,
         // which still resolves through .rubric-text exactly as before.
+        //
+        // EXTENDED AGAIN 2026-09-28 (Josh, live: "Sidebar is not tracking on
+        // the Catholic side" -- the rail permanently pinned to the LAST
+        // item, "Final Antiphon of the Blessed Virgin Mary", regardless of
+        // real scroll position). Root cause: Roman Breviary's own renderer
+        // (js/roman-breviary-1960-1962-dev-slice.js's renderBlockHtml())
+        // labels every block with a plain .rubric-heading element -- never
+        // .rubric-text or .uo-gutter-label, by deliberate design (its own
+        // comment: shares Horologion's SECTION-level heading class so it
+        // gets structural notes but not per-item tooltips). That left this
+        // lane with zero matchable candidates at all: every waypoint fell
+        // back to the initial lastY (0), so the "last y <= scrollY"
+        // comparison in updateRailCurrent() below was trivially true for
+        // every item on every scroll position, and the loop's own "keep
+        // advancing until the condition fails" logic always ended on the
+        // final item -- not a real "current" position, a degenerate
+        // fallback that only ever looked like one. Added .rubric-heading as
+        // a third match source. Confirmed this carries no real collision
+        // risk for Horologion, the other lane using that class: there it
+        // labels coarser SECTION groupings ("OPENING", "PSALMODY"), never
+        // text identical to an actual rail item's own label, so it simply
+        // never gets consumed by this matching loop in practice.
         var rubrics = Array.prototype.slice.call(
-            document.querySelectorAll('#office-display .rubric-text, #office-display .uo-gutter-label'));
+            document.querySelectorAll('#office-display .rubric-text, #office-display .uo-gutter-label, #office-display .rubric-heading'));
         var pageTop = page.getBoundingClientRect().top - page.scrollTop;
         var rubricPointer = 0;
         var lastY = 0;

@@ -3744,7 +3744,24 @@ function _pushHorologionEnvelopeEntries(env, item) {
 
     if (item.type === 'rubric') {
         // An instruction, not source content -- no unit to attribute.
-        env.blocks.push({ label: item.text || item.label || 'Rubric', role: 'rubric', units: [] });
+        // FIXED 2026-09-28 (Josh, live: "The Priest blesses: Blessed is our
+        // God, always, now and ever..." and several others showing up as
+        // rail entries verbatim). This used to fall back to the rubric's
+        // own full body TEXT as the rail label whenever no distinct label
+        // was set -- backwards: a rubric's text is body content, never a
+        // title, and most rubrics (confirmed: 27 of 31 in the Horologion
+        // skeleton files) have no label at all, being short procedural
+        // asides (a blessing, a censing note) rather than named sections
+        // worth their own row. Only a rubric with a REAL label (e.g. the
+        // interhours' own "Dismissal") gets a rail entry now, matching the
+        // "no rail entry for bare content" convention already established
+        // for BCP's own bcpEmitBare(). The rubric's own text still renders
+        // normally on the page either way -- _renderHorologionItem() (the
+        // sibling call next to this one) is untouched; this only concerns
+        // what becomes a rail entry.
+        if (item.label) {
+            env.blocks.push({ label: item.label, role: 'rubric', units: [] });
+        }
         return;
     }
 

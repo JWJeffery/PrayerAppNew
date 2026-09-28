@@ -1,5 +1,120 @@
 # RESUME_PROJECT_NOTE.md
 
+**TASK #15 FIXED FOR REAL, 2026-09-28 continued once more.** Picked back up after Josh explicitly
+asked to fix it, rather than leaving it deferred as a later entry below records. Implemented the
+exact fix that entry's own arithmetic pointed to: `#mode-selection`/`#tradition-entry`'s `max-height`
+used to subtract a flat constant (40px / 48px) that never accounted for the real space this box's
+own margin and body's own padding actually consume outside it, so content could sit comfortably
+under its own cap while the real total still exceeded the viewport, and body's `overflow-y:auto` (a
+deliberate mobile-safety fallback, correctly left untouched) absorbed the difference as unwanted
+page scroll. Corrected `max-height` to subtract the FULL outer budget -- body's padding (with its
+own `env(safe-area-inset-*)` terms) plus this box's own margin-top/bottom, spelled out via the
+identical `clamp()` expressions the margin itself uses -- at the base rule and at every breakpoint
+that changes margin-top (`<=860px` width, `<=760px` width, `<=760px` height), so each restates the
+matching formula rather than letting a stale flat value win later in the cascade.
+
+**Verified live across 9 viewports** (1512x900, 1280x800, 1440x750, 820x1180, 820x860, 700x900,
+412x892, 375x667, 1200x650): the reported screen (`#mode-selection`/`#uo-threshold-grid`, the
+"Another office" five-card grid) no longer triggers `body`-level scroll at ANY of them -- its own
+`overflow-y:auto` now correctly engages internally instead wherever content doesn't fit. One known,
+accepted residual: `#tradition-entry` still scrolls the body at 375x667 specifically -- its own
+deliberate `max-height:none` at `<=760px` width, untouched here (see the later entry for why that's
+intentional, tested behavior, not part of this bug). `css/office-shell.css` is the only file
+touched.
+
+---
+
+**THREE MORE LIVE-REPORTED BUGS, ALL FIXED, 2026-09-28 continued yet again.** Josh sent a dense
+batch of screenshots across three different traditions in one message. All four issues below are
+real; none needed a decision.
+
+**1. Mode-grid title-style inconsistency, fixed.** "The Daily Office" / "The Coptic Agpeya" carried
+"The" while "Church of the East" / "Eastern Orthodoxy" / "Roman Breviary 1960/1962" didn't, within
+the SAME five-card screen. Majority pattern (3 of 5) wins: dropped "The" from the two outliers.
+`index.html` only. (Distinct from the earlier, still-undecided finding about the entry-card screen
+using DIFFERENT NAMES than the mode-grid for the same traditions -- that cross-screen question is
+untouched, still Josh's call.)
+
+**2. Rail labels leaking raw rubric/refrain text instead of a real title -- a systemic bug across
+Byzantine AND East Syriac, fixed at its root.** Josh's screenshots showed, verbatim, as rail
+entries: "The Priest blesses: Blessed is our God, always, now and ever..." (Byzantine opening),
+"CANON: A canon from the Menaion..." and "On ordinary days, the proper Theotokion appointment..."
+(Byzantine disclosure rubrics), "Priest: Glory to Thee, O Christ our God..." (Byzantine dismissal),
+plus "And let all the people say Amen and Amen" and "The same, further farced on Feasts of our
+Lord" (East Syriac).
+
+Byzantine root cause, found reading `_pushHorologionEnvelopeEntries()` (`js/office-ui.js`): a
+`type:'rubric'` item's rail label was built as `item.text || item.label || 'Rubric'` -- TEXT first,
+backwards. A rubric's text is body content, never a title. Confirmed via a full sweep of the
+Horologion skeleton files: 27 of 31 top-level rubrics carry no label at all (short procedural
+asides -- a blessing, a censing note -- genuinely not worth their own rail row), and even the 4 that
+DID have a proper label (e.g. the interhours' "Dismissal") were having it silently overridden by
+their own text under the old priority. Fixed: a rubric with a real label gets exactly that label;
+a rubric with none gets NO rail entry at all now, matching the "no rail entry for bare content"
+convention `bcpEmitBare()` already established for BCP. The rubric's own text still renders
+normally on the page either way (`_renderHorologionItem()`, the sibling call, is untouched).
+Then added the one missing piece the fix by itself couldn't supply: a real `"label": "Dismissal"`
+to the 8 offices whose closing rubric had none (`first-hour`, `ninth-hour`, `orthros`, `sixth-hour`,
+`small-compline`, `third-hour`, `vespers`, `typika` -- all now match the interhours' own precedent),
+so the office's own dismissal is a real, findable rail row again instead of silently disappearing.
+
+East Syriac root cause, different: these ARE the components' own literal `title` fields in
+`components/east-syriac.json` -- not a code bug, a corpus wording choice. `esy-festival-lakhumara-note`
+was titled bare "Lakhumara", sitting right after three items already named around "Lakhumara"
+("Prayer of the Lakhumara" / "The Lakhumara" / "Prayer after the Lakhumara") and reading as a
+confusing fourth Lakhumara rather than the clarifying festival-repetition footnote it actually is
+(said five times on Feasts of our Lord) -- retitled "Lakhumara Rubric (Feasts of Our Lord)". Two
+components (`esy-festival-royal-anthem-mary-refrain`, `esy-sunday-lelya-closing-verse`) were titled
+with their own opening refrain line, "And let all the people say Amen and Amen" -- a real phrase
+from the source, but an 8-word sentence is not a navigation label, and BOTH different prayers
+shared the identical title, making them indistinguishable in the rail. Retitled to "Prayer" and
+"Closing Prayer" respectively, matching the plain "Prayer" label already used throughout this same
+office for structurally identical short units.
+
+**3. "'farced' should never be something the user reads" -- fixed corpus-wide, not just the one
+instance flagged.** Swept every East Syriac component `title` field (not `text`/`note` -- the
+historical term stays exactly as Maclean wrote it in the actual prayer/scholarly content, correctly
+untouched) for the word: 20 titles across the whole corpus used "farced"/"unfarced" as a technical
+liturgical term (verses textually expanded with interpolated material) a general reader has no way
+to know. Replaced with "expanded"/"unexpanded" everywhere it appeared as a title, word-boundary-safe
+so "unfarced" didn't collide with the "farced" replacement. Precise text-level substitution, not a
+JSON parse/re-dump (confirmed the first attempt reformatted 188 unrelated lines; reverted and redid
+it as an exact string-replace instead) -- diff is exactly the 20 changed title lines, nothing else.
+
+**4. "Sidebar is not tracking on the Catholic side" -- a third rail-desync bug, different root cause
+again, fixed.** Roman Breviary's rail was permanently pinned to the LAST item ("Final Antiphon of
+the Blessed Virgin Mary") regardless of real scroll position -- confirmed live: at the very top of
+Compline, content showing "Start," the rail still highlighted the last item. Root cause: Roman
+Breviary's own renderer (`js/roman-breviary-1960-1962-dev-slice.js`'s `renderBlockHtml()`) labels
+every block with a `.rubric-heading` element -- deliberately, by its own comment, sharing
+Horologion's coarser SECTION-heading class rather than `.rubric-text`/`.uo-gutter-label`. That left
+`computeRailWaypoints()` (`js/office-shell.js`) with ZERO matchable candidates for this lane at all:
+every waypoint fell back to its initial y=0, making the "last y <= scrollY" comparison trivially
+true for every item at every scroll position, so the loop's own "keep advancing while true" logic
+always landed on the final item -- a degenerate fallback that only looked like real tracking.
+Fixed: added `.rubric-heading` as a third match source alongside the existing two. Confirmed this
+carries no collision risk for Horologion (the only other lane using that class): there it labels
+coarse groupings ("OPENING", "PSALMODY") that never match an actual rail item's own label text, so
+it's never consumed by this matching loop in practice.
+
+**Verified live, every fix, not just reasoned about:** Byzantine -- Small Compline's rail confirmed
+clean (opening/canon/Theotokion-disclosure rubrics correctly gone; "Theotokion of Compline" and
+"Dismissal" correctly restored with their real labels, not raw text). East Syriac -- Ramsha's rail
+re-checked against the exact Sunday (2026-09-27) Josh's own screenshot showed: the Lakhumara
+sequence, the "expanded" wording, and the "Prayer"/"Closing Prayer" retitling all confirmed correct
+in place. Roman Breviary -- Compline's rail advances correctly through all 10 items as the content
+is scrolled in 5 steps (Incipit -> Lectio brevis -> Psalmi -> Hymnus -> Canticum: Nunc dimittis ->
+Antiphona finalis B.M.V., the last only at the true end of scroll, not permanently). Regression
+swept across all four other lanes (Horologion/Orthros, BCP/Compline, Coptic/Morning Office, East
+Syriac/Ramsha) after the shared `.rubric-heading` selector change: all four still correctly advance
+their own rail tracking. Zero new console errors throughout.
+
+Files touched: `index.html`; `js/office-ui.js`; `js/office-shell.js`; `components/east-syriac.json`;
+`data/horologion/{first-hour,ninth-hour,orthros,sixth-hour,small-compline,third-hour,typika,
+vespers}.json`.
+
+---
+
 **WEB RELEASE REBUILT AND DELIVERED, 2026-09-28**, after the mobile rail/content desync fix,
 task #14's stale-LOTH fix, and tasks #9/#10/#11 above -- item #2 from the prior session's pending
 list. `npm run release:web` (`scripts/prepare-web-release.mjs`) against `main` @ `49a5a3d`: 4,308

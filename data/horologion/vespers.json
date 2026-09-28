@@ -263,6 +263,7 @@
         {
           "type": "rubric",
           "key": "dismissal-rubric",
+          "label": "Dismissal",
           "text": "Priest: Wisdom!\nChoir: Father, bless.\nPriest: He that is blessed, Christ our God, always, now and ever, and unto ages of ages.\nChoir: Amen. Preserve, O God, the holy Orthodox Faith and all Orthodox Christians, unto ages of ages.\nPriest: [Dismissal according to the feast or day]"
         }
       ]
