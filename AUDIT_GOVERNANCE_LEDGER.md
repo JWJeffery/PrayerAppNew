@@ -24171,3 +24171,67 @@ consequence, only ongoing upkeep cost. Deleted, per Josh's explicit choice, alon
 `package.json` entry. The real test file it was checking is untouched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued once more -- five more dioceses ingested into the Cycles of
+## Prayer corpus (Alaska, Arizona, Albany, Alabama, Arkansas), plus a real schema extension
+## Arkansas's own source forced
+
+Josh located a Google Drive roster spreadsheet of 88 TEC dioceses' own Cycle of Prayer documents
+and asked for the first five, alphabetically, transcribed into this corpus (built earlier this
+session for Western Oregon). Each transcribed directly from that diocese's own published source --
+never from memory -- with every date independently checked against the real calendar before being
+trusted, and every apparent source error preserved verbatim and disclosed rather than silently
+fixed, same discipline as the Western Oregon precedent.
+
+- **Alaska, Arizona**: same weekly-Sunday shape as Western Oregon. Arizona's own source spans Aug
+  2026-Aug 2027 as one continuous cycle; only the 22 weeks landing in calendar 2026 are in this
+  file, per the corpus's one-file-per-diocese-per-year rule -- the Jan-Aug 2027 portion is a future
+  `episcopal-arizona-2027.json`, not built.
+- **Albany**: genuinely daily, not weekly (61 entries, Sept-Oct 2026 only -- the only two months
+  the diocese has published as of ingest) -- disclosed, since it's the first non-weekly dated file
+  in this corpus.
+- **Alabama**: two-column source PDF (page-boundary reconstruction double-checked, nothing dropped
+  at a page break); a recurring "Companion Diocese of Honduras and their bishop, Lloyd" line the
+  source itself repeats at the start of every week, included as every entry's first subject by
+  design; one disclosed source misprint (27 June entry printed as a Sunday, but 27 June 2026 is
+  actually a Saturday -- preserved verbatim, not corrected); only the 46 weeks landing in calendar
+  2026 are in this file, the ~5 weeks in late 2025 deferred to a future
+  `episcopal-alabama-2025.json`.
+- **Arkansas -- did not fit the existing schema at all, raised to Josh rather than forced.** Its
+  source has no year and is not date-anchored: headed "On the corresponding day of each month,
+  pray for," entries numbered 1-31, repeating every month forever, plus a separate always-current
+  "Pray daily for" preamble (4 items) that is NOT part of the day-keyed rotation and is disclosed
+  in this file's own `notes` instead of folded into every entry. Presented Josh three options
+  (extend the schema, fabricate concrete dates to force the existing shape, or defer) -- **Josh
+  chose to extend the schema**, since the 88-diocese roster itself notes several other dioceses use
+  this same standing/recurring pattern, so this was never going to be a one-off.
+
+**Schema extension (`data/cycles-of-prayer/schema.json` v1.0 -> v1.1):** new optional `cycleType`
+field, `"dated"` (the implicit default for every file predating this field, including all four
+other files added this same session) or `"monthly-recurring"`. A monthly-recurring file has no
+`year` field, no year in its filename (`episcopal-arkansas.json`, not `-2026.json`), and entries
+keyed by `day` (1-31) instead of `date`. `scripts/cycles-of-prayer/validate.mjs` now branches its
+filename/year/entry-shape checks on `cycleType` (extracted a shared `validateSubjects()` helper so
+subject-level validation -- parish/category, place-when-parish, etc. -- stays identical for both
+branches, verified by re-running the validator against all 5 pre-existing/other files after the
+refactor: same PASS, same file count, before writing anything new). `js/cycles-of-prayer.js` gained
+`resolveMonthlyRecurringEntry()` -- same "latest on-or-before" semantics as the existing dated
+resolver, but wraps around to the corpus's highest `day` instead of returning null before the first
+entry, since a monthly-recurring cycle has no "before the first entry" the way a non-repeating dated
+one does. Both `loadCycleOfPrayerYear` and `getCachedCycleOfPrayerWeek` now branch internally on the
+diocese's own `cycleType` (cache key and fetch path differ) while keeping their original call
+signatures -- `js/office-ui.js`'s existing call sites needed zero changes.
+
+All five new files added to `CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`) and the profile
+diocese `<select>` (`index.html`); a diocese file with no matching registry/UI entry would otherwise
+sit on disk unreachable from the app. `npm run audit:cycles-of-prayer` passes on all 6 files (0
+blocking). Verified live in headless Chromium: all five new diocese options exist in the select;
+the parish picker populates the correct count for each; `getCachedCycleOfPrayerWeek` resolves the
+correct real subjects for sample dates in every dated file, and correctly resolves Arkansas's
+day-of-month entries (e.g. Jan 5 -> day 5's own subjects, Mar 29 -> day 29's), confirming the new
+monthly-recurring code path actually works end to end, not just at the data layer. Also confirmed,
+re-reading `RESUME_PROJECT_NOTE.md`'s own prior "not wired into the app UI yet -- storage only"
+line for the Cycles of Prayer corpus was stale (the profile/user system entry two sessions ago
+already wired it in) -- corrected in that note rather than left to mislead the next reader.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

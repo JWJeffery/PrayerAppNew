@@ -1,0 +1,223 @@
+{
+  "id": "episcopal-albany-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Albany",
+  "dioceseShort": "albany",
+  "year": 2026,
+  "source": "Diocesan Prayer Cycle, September 2026 and October 2026 (two separate monthly PDFs)",
+  "sourceFile": "September-Prayer-List-4.pdf and October-Prayer-List-1.pdf, both linked from albanyepiscopaldiocese.org/prayer/",
+  "ingested": "2026-09-28",
+  "notes": [
+    "This diocese's cycle is DAILY, not weekly -- every calendar day of the month has its own entry, unlike every other diocese in this corpus so far. Only September and October 2026 are transcribed here because those are the only two months the diocese had published/linked as of this ingest (per the roster's own 'September-October 2026' coverage note); November and December entries do not yet exist as a source to transcribe from.",
+    "Most daily entries name one or more individual clergy by name (e.g. 'The Rev. Albert Moser') rather than a parish or a generic category. These are recorded as `category` subjects, the same convention already used elsewhere in this corpus for a named person or office with no parish/place of their own (e.g. Alaska's 'Presiding Bishop Rowe'). When an entry combines a parish AND a named clergy person (e.g. 'St. Andrew's Church, Scotia -- The Rev. Dr. Dean Kellerhouse'), both are recorded as separate subjects in the same entry -- the source's own dash construction is not asserted to mean the named person is that parish's rector, only that both are named together on that date.",
+    "Two apparent typos in the source are preserved verbatim, not corrected: 'Chris the King' (September 5, almost certainly 'Christ the King') and 'Sactuary Task Force' (October 21, almost certainly 'Sanctuary').",
+    "The September PDF's printed weekday names match the real 2026 calendar exactly (checked: September 1, 2026 is in fact a Tuesday, as printed). The October PDF's printed weekday names do NOT match the real 2026 calendar -- they are internally consistent with each other (a regular repeating 7-day sequence) but shifted one day early throughout (e.g. October 1, 2026 is printed as 'Wednesday' but is actually a Thursday). The day-of-month numbers themselves are used as given for this file's `date` fields regardless, since this schema stores ISO dates, not weekday labels; the weekday-label error is disclosed here for the record, not treated as a reason to alter the dates."
+  ],
+  "entries": [
+    { "date": "2026-09-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all those attending school at any level this academic year" }
+    ]},
+    { "date": "2026-09-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Schenectady", "name": "St. Stephen's" },
+      { "type": "category", "name": "The Rev. Lisa Busby" },
+      { "type": "category", "name": "The Rev. Gregory Bailey" }
+    ]},
+    { "date": "2026-09-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Albert Moser" }
+    ]},
+    { "date": "2026-09-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Dr. David Culbertson" }
+    ]},
+    { "date": "2026-09-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For those participating in the School of Spiritual Formation & Education at Chris the King" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Schenevus", "name": "Church of the Holy Spirit" },
+      { "type": "category", "name": "The Rev. Nancy Truscott" }
+    ]},
+    { "date": "2026-09-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Schuylerville", "name": "St. Stephens" }
+    ]},
+    { "date": "2026-09-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For first responders in our communities" }
+    ]},
+    { "date": "2026-09-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Scotia", "name": "St. Andrew's Church" },
+      { "type": "category", "name": "The Rev. Dr. Dean Kellerhouse" }
+    ]},
+    { "date": "2026-09-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For those leading, volunteering, and attending the 158th Diocesan Convention" }
+    ]},
+    { "date": "2026-09-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "In remembrance of those killed in the attacks on 9/11/2001" }
+    ]},
+    { "date": "2026-09-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Very Rev. Nancy Goff" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Sidney", "name": "St. Paul's" }
+    ]},
+    { "date": "2026-09-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. John Bartle" },
+      { "type": "category", "name": "The Rev. Ludwig Wallner" }
+    ]},
+    { "date": "2026-09-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Robert Witt" },
+      { "type": "category", "name": "The Rev. Joseph Famulare" }
+    ]},
+    { "date": "2026-09-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Springfield Center", "name": "St. Mary's Church" }
+    ]},
+    { "date": "2026-09-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For parishes engaged in the search process" },
+      { "type": "category", "name": "The Rev. Donna Reidt" }
+    ]},
+    { "date": "2026-09-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For those participating in the School of Healing Prayer" }
+    ]},
+    { "date": "2026-09-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Ticonderoga", "name": "Church of the Cross" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Diocesan Mission Committee" }
+    ]},
+    { "date": "2026-09-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all those leading Sunday School" },
+      { "type": "category", "name": "The Rev. Eric Olsen" }
+    ]},
+    { "date": "2026-09-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For clergy spouses" }
+    ]},
+    { "date": "2026-09-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Troy", "name": "St. John's" },
+      { "type": "category", "name": "The Rev. Paul Carney" }
+    ]},
+    { "date": "2026-09-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. David Carlson" }
+    ]},
+    { "date": "2026-09-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Troy", "name": "St. Paul's" },
+      { "type": "category", "name": "The Rev. Cn. Martin Yost" }
+    ]},
+    { "date": "2026-09-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Trustees of the Diocese" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For Diocesan Council" }
+    ]},
+    { "date": "2026-09-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. James Clarke" }
+    ]},
+    { "date": "2026-09-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Tupper Lake", "name": "St. Thomas" }
+    ]},
+    { "date": "2026-09-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Twilight Park", "name": "All Angels Chapel" }
+    ]},
+    { "date": "2026-10-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Marian Sive" }
+    ]},
+    { "date": "2026-10-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Walton", "name": "Christ Church" },
+      { "type": "category", "name": "The Rev. William Wright" }
+    ]},
+    { "date": "2026-10-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Derik Roy" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "St. Francis Day", "subjects": [
+      { "type": "category", "name": "The Franciscan Community of The Holy Cross" },
+      { "type": "category", "name": "The Franciscan Orders of the Anglican Communion" }
+    ]},
+    { "date": "2026-10-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Trustees of the Diocese" }
+    ]},
+    { "date": "2026-10-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Warrensburg", "name": "Church of the Holy Cross" }
+    ]},
+    { "date": "2026-10-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Joseph Caron" }
+    ]},
+    { "date": "2026-10-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For first responders in our communities" }
+    ]},
+    { "date": "2026-10-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For postulants and those discerning a call to holy orders" },
+      { "type": "category", "name": "The Rev. Scott Evans" }
+    ]},
+    { "date": "2026-10-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the staff, volunteers, and participants of Beaver Cross Fall Edition" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Waterford", "name": "Grace Church" },
+      { "type": "category", "name": "The Rev. Katherine Alonge-Coons" },
+      { "type": "category", "name": "The Rev. Denise Moore" }
+    ]},
+    { "date": "2026-10-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For a heart for the unchurched in our communities" }
+    ]},
+    { "date": "2026-10-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For a widespread use of the Daily Office among our people" }
+    ]},
+    { "date": "2026-10-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the Healing Ministry at CtK" }
+    ]},
+    { "date": "2026-10-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For clergy spouses and children" }
+    ]},
+    { "date": "2026-10-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For parishes engaged in the search process" }
+    ]},
+    { "date": "2026-10-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. William Pearson" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. John Scott" },
+      { "type": "category", "name": "The Rev. Mary Carol Hart" }
+    ]},
+    { "date": "2026-10-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For Domestic Violence awareness and the ministry of Healing a Woman's soul" }
+    ]},
+    { "date": "2026-10-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Julia Mudge" },
+      { "type": "category", "name": "The Rev. Tracy Wells Miller" }
+    ]},
+    { "date": "2026-10-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the Sactuary Task Force" }
+    ]},
+    { "date": "2026-10-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the deans" },
+      { "type": "category", "name": "The Rev. Thomas Higman" }
+    ]},
+    { "date": "2026-10-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the raising up of missionaries in our Diocese" }
+    ]},
+    { "date": "2026-10-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Evette Austin" },
+      { "type": "category", "name": "The Rev. Deborah Beach" },
+      { "type": "category", "name": "The Rev. Paul Hunter" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Lorrie Hart" },
+      { "type": "category", "name": "The Rev. Sue Troiano" }
+    ]},
+    { "date": "2026-10-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For Daughters of the King chapters in the Diocese" }
+    ]},
+    { "date": "2026-10-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For persecuted Christians" }
+    ]},
+    { "date": "2026-10-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Kathy Alonge-Coons" }
+    ]},
+    { "date": "2026-10-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Charles Bailey" }
+    ]},
+    { "date": "2026-10-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all church wardens and vestries" }
+    ]},
+    { "date": "2026-10-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the Bible Symposium at The Cathedral of All Saints" }
+    ]}
+  ]
+}

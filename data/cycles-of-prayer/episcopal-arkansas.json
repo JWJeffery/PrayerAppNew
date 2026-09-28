@@ -1,0 +1,167 @@
+{
+  "id": "episcopal-arkansas",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Arkansas",
+  "dioceseShort": "arkansas",
+  "cycleType": "monthly-recurring",
+  "source": "Diocesan Cycle of Prayer",
+  "sourceFile": "episcopalarkansas.org /prayer-cycle page (collection id 62c87878b7c91c0680af1e9b); the page also links a PDF copy at /s/Prayer-cycle-1.pdf, not separately fetched since the page's own HTML carries the identical text.",
+  "ingested": "2026-09-28",
+  "notes": [
+    "This diocese's own source is NOT a dated weekly/annual cycle like every other diocese in this corpus so far -- it is headed 'On the corresponding day of each month, pray for' and lists entries numbered 1-31, with no year stated anywhere on the page. It repeats every month indefinitely. This file therefore uses cycleType 'monthly-recurring' (see schema.json) instead of the corpus's original dated shape: entries are keyed by `day` (1-31), not `date`, and there is no `year` field.",
+    "Above the day-of-month list, the source separately prints a standing 'Pray daily for' block that is NOT part of the day-of-month rotation (it is a single preamble, not repeated per numbered day the way e.g. episcopal-alabama-2026.json's companion-diocese line is woven into every week): 'Sean (Rowe), our Presiding Bishop and Primate', 'John (Harmon), our Diocesan Bishop', 'St. Francis House and its ministries', 'Camp Mitchell'. Deliberately excluded from this file's `entries` (which hold only the day-of-month-keyed rotation) rather than folded into every one of the 31 entries, since the source itself structures it as a separate, unconditional, always-current list rather than a per-day line item.",
+    "Typographic curly apostrophes in the source (e.g. 'All Saints’') are transcribed as plain ASCII apostrophes for consistency with every other file in this corpus -- a font/typography normalization, not a content correction.",
+    "'Pea Ridge preaching station' (day 5), 'St. Martin's University Center, Fayetteville' (day 8), 'The University of the South' (day 19), and 'The School of Christian Studies' (day 31) are classified as `category` rather than `parish`: a preaching station, a university campus-ministry center, and two educational institutions are not congregations (a parish, mission, or cathedral) under this schema's own definition of `parish`, even though some are formatted 'Name, City' like a parish subject. Disclosed as a judgment call, consistent with the same institution-vs-parish classification rule already applied in episcopal-alabama-2026.json.",
+    "'Larry Benfield, retired bishop' and 'Larry Maze, retired bishop' are named individuals (former diocesan bishops), not congregations; recorded as `category` subjects exactly as printed."
+  ],
+  "entries": [
+    { "day": 1, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lake Village", "name": "Emmanuel" },
+      { "type": "parish", "place": "Bentonville", "name": "All Saints'" },
+      { "type": "category", "name": "Commission on Ministry" }
+    ]},
+    { "day": 2, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Bella Vista", "name": "St. Theodore's" },
+      { "type": "parish", "place": "Benton", "name": "St. Matthew's" },
+      { "type": "category", "name": "The Standing Committee" }
+    ]},
+    { "day": 3, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Blytheville", "name": "St. Stephen's" },
+      { "type": "parish", "place": "Osceola", "name": "Calvary" },
+      { "type": "category", "name": "Executive Council" }
+    ]},
+    { "day": 4, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Camden", "name": "St. John's" },
+      { "type": "parish", "place": "Maumelle", "name": "St. Nicholas'" },
+      { "type": "category", "name": "Larry Benfield, retired bishop" }
+    ]},
+    { "day": 5, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Conway", "name": "St. Peter's" },
+      { "type": "category", "name": "Latino Community" },
+      { "type": "category", "name": "Larry Maze, retired bishop" },
+      { "type": "category", "name": "Pea Ridge preaching station" }
+    ]},
+    { "day": 6, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Crossett", "name": "St. Mark's" },
+      { "type": "parish", "place": "El Dorado", "name": "St. Mary's" },
+      { "type": "category", "name": "Larry Benfield, retired bishop" }
+    ]},
+    { "day": 7, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Eureka Springs", "name": "St. James'" },
+      { "type": "parish", "place": "Siloam Springs", "name": "Grace" },
+      { "type": "parish", "place": "Springdale", "name": "St. Thomas'" }
+    ]},
+    { "day": 8, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Fayetteville", "name": "St. Paul's" },
+      { "type": "category", "name": "St. Martin's University Center, Fayetteville" }
+    ]},
+    { "day": 9, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Foreman", "name": "St. Barnabas'" },
+      { "type": "parish", "place": "Fort Smith", "name": "St. Augustine's" },
+      { "type": "category", "name": "Prison ministries" }
+    ]},
+    { "day": 10, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Forrest City", "name": "Christ Church" },
+      { "type": "parish", "place": "Forrest City", "name": "Good Shepherd" },
+      { "type": "category", "name": "Lay professionals in the church" }
+    ]},
+    { "day": 11, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Fort Smith", "name": "St. Bartholomew's" },
+      { "type": "parish", "place": "Fort Smith", "name": "St. John's" },
+      { "type": "category", "name": "Daughters of the King" }
+    ]},
+    { "day": 12, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Harrison", "name": "St. John's" },
+      { "type": "parish", "place": "Heber Springs", "name": "St. Francis'" },
+      { "type": "category", "name": "People living with substance abuse and their families" }
+    ]},
+    { "day": 13, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Helena", "name": "St. John's" },
+      { "type": "parish", "place": "Hope", "name": "St. Mark's" },
+      { "type": "category", "name": "People living with chronic illnesses" }
+    ]},
+    { "day": 14, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Horseshoe Bend", "name": "St. Stephen's" },
+      { "type": "parish", "place": "Hot Springs", "name": "St. Luke's" },
+      { "type": "category", "name": "Historiographer Michael McNeely" }
+    ]},
+    { "day": 15, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Hot Springs Village", "name": "Holy Trinity" },
+      { "type": "parish", "place": "Jacksonville", "name": "St. Stephen's" },
+      { "type": "category", "name": "Diocesan youth ministries" }
+    ]},
+    { "day": 16, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Jonesboro", "name": "St. Mark's" },
+      { "type": "parish", "place": "Little Rock", "name": "Christ Church" },
+      { "type": "category", "name": "Chancellor Megan Hargraves" }
+    ]},
+    { "day": 17, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Little Rock", "name": "St. Margaret's" },
+      { "type": "parish", "place": "Batesville", "name": "St. Paul's" },
+      { "type": "category", "name": "Those who suffer for conscience sake" }
+    ]},
+    { "day": 18, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Little Rock", "name": "St. Mark's" },
+      { "type": "parish", "place": "Little Rock", "name": "St. Michael's" }
+    ]},
+    { "day": 19, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Little Rock", "name": "Trinity Cathedral" },
+      { "type": "parish", "place": "Magnolia", "name": "St. James'" },
+      { "type": "category", "name": "The University of the South" }
+    ]},
+    { "day": 20, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Marianna", "name": "St. Andrew's" },
+      { "type": "parish", "place": "Mena", "name": "Christ Church" },
+      { "type": "category", "name": "Commission on Church Architecture and Allied Arts" }
+    ]},
+    { "day": 21, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Monticello", "name": "St. Mary's" },
+      { "type": "parish", "place": "Mountain Home", "name": "St. Andrew's" },
+      { "type": "category", "name": "Commission on Constitution and Canons" }
+    ]},
+    { "day": 22, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Newport", "name": "St. Paul's" },
+      { "type": "parish", "place": "North Little Rock", "name": "St. Luke's" }
+    ]},
+    { "day": 23, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Paragould", "name": "All Saints'" },
+      { "type": "parish", "place": "Pine Bluff", "name": "Grace" },
+      { "type": "category", "name": "Individuals doing social ministries" }
+    ]},
+    { "day": 24, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Pine Bluff", "name": "Trinity" },
+      { "type": "parish", "place": "Rogers", "name": "St. Andrew's" }
+    ]},
+    { "day": 25, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Russellville", "name": "All Saints'" },
+      { "type": "parish", "place": "Searcy", "name": "Trinity Church" },
+      { "type": "category", "name": "Episcopal Church Women" }
+    ]},
+    { "day": 26, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Stuttgart", "name": "St. Alban's" },
+      { "type": "parish", "place": "Tollville", "name": "St. Peter's" },
+      { "type": "category", "name": "All Episcopal day schools" }
+    ]},
+    { "day": 27, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Van Buren", "name": "Trinity" },
+      { "type": "parish", "place": "West Memphis", "name": "Holy Cross" }
+    ]},
+    { "day": 28, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Little Rock", "name": "Good Shepherd" },
+      { "type": "category", "name": "Racial healing" }
+    ]},
+    { "day": 29, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan office staff" },
+      { "type": "category", "name": "Deans of the Convocations" }
+    ]},
+    { "day": 30, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Commission on Liturgy and Music" },
+      { "type": "category", "name": "Diocesan Board of Trustees" }
+    ]},
+    { "day": 31, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Keller Fund for Ministry board" },
+      { "type": "category", "name": "The School of Christian Studies" }
+    ]}
+  ]
+}

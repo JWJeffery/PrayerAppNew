@@ -1,0 +1,84 @@
+{
+  "id": "episcopal-arizona-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Arizona",
+  "dioceseShort": "arizona",
+  "year": 2026,
+  "source": "Cycle of Prayer Aug 2026 - Aug 2027",
+  "sourceFile": "azdiocese.org Cycle-of-Prayer-Aug-2026-Aug-2027.pdf (direct diocesan URL returns HTTP 403; ingested from the diocese's own user-uploaded Google Drive copy of the identical file)",
+  "ingested": "2026-09-28",
+  "notes": [
+    "The source document's own coverage runs August 2026 through August 2027 (one continuous 53-week cycle) -- per this corpus's own one-file-per-diocese-per-year rule, only the 2026 portion (Aug 2 - Dec 27, 2026, 22 weeks) is transcribed here. The Jan-Aug 2027 portion belongs in a future episcopal-arizona-2027.json file, not added this pass.",
+    "Every date in the 2026 portion was independently checked against the actual calendar and confirmed to fall on a Sunday.",
+    "The direct diocesan URL for this file (https://azdiocese.org/wp-content/uploads/2026/07/Cycle-of-Prayer-Aug-2026-Aug-2027.pdf) returns HTTP 403 when fetched directly; this transcription is from the identical PDF as uploaded to Google Drive (matches the roster's own note that this is a verified, matched copy)."
+  ],
+  "entries": [
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Flagstaff", "name": "LCM Canterbury" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Gilbert", "name": "Resurrection Episcopal Church" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Glendale", "name": "St. Andrew's" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Glendale", "name": "St. John the Baptist" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Globe", "name": "St. John's" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Green Valley", "name": "St Francis-in-the-Valley" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Holbrook", "name": "St George's" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Kingman", "name": "Trinity Church" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lakeside", "name": "Church of Our Saviour Episcopal-Lutheran" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Litchfield Park", "name": "St Peter's" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lake Havasu City", "name": "Grace Church" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Mesa", "name": "Church of the Transfiguration" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Mesa", "name": "St Mark's" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Nogales", "name": "St Andrew's" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Oro Valley", "name": "Church of the Apostles" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Paradise Valley", "name": "Christ Church of the Ascension" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Payson", "name": "St Paul's" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "1st Sunday of Advent", "subjects": [
+      { "type": "parish", "place": "Phoenix", "name": "All Saints' Church & Day School" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Phoenix", "name": "Iglesia Episcopal de San Pablo" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Phoenix", "name": "Santa Maria Episcopal Church" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Phoenix", "name": "St Luke's at the Mountain" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Phoenix", "name": "St Mary's" }
+    ]}
+  ]
+}

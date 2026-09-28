@@ -1,0 +1,174 @@
+{
+  "id": "episcopal-alaska-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Alaska",
+  "dioceseShort": "alaska",
+  "year": 2026,
+  "source": "The Episcopal Diocese of Alaska Cycle of Prayer 2026",
+  "sourceFile": "episcopalak.org download 4490 (Alaska Cycle of Prayer 2026).pdf",
+  "ingested": "2026-09-28",
+  "notes": [
+    "Every date in this file was independently checked against the actual calendar and confirmed to fall on a Sunday (this diocese's cycle is not itself dated to specific weekdays in the PDF, only by month and day-of-month, e.g. 'January 4' -- the Sunday alignment was verified, not assumed).",
+    "Two subjects are plain intercessions rather than a parish or a named office, transcribed exactly as printed: 'All who are lonley or grieving' (Feb. 8 -- the source's own spelling of 'lonely' preserved verbatim, not corrected) and 'The Hungry and all who face food insecurity' (Nov. 15).",
+    "'Walter Harper & John Fredson' (June 7) are two named historical/commemorated persons, not a parish or a place; recorded as a single category subject exactly as printed, joined by the source's own ampersand."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Valdez", "name": "Epiphany Lutheran Church" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Kivalina", "name": "Epiphany Church" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Chalkyitsik", "name": "St. Timothy's" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Tananacross", "name": "St. Timmothy's" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Arctic Village", "name": "Bishop Rowe Chapel" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All who are lonley or grieving" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Staff" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Presiding Bishop Rowe" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Wasilla", "name": "St. David's Church" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Standing Committee" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Sitka", "name": "St. Peter's Church" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Grayling", "name": "St. Paul's Church" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "parish", "place": "Seward", "name": "St. Peter's Church" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter", "subjects": [
+      { "type": "parish", "place": "Huslia", "name": "Good Shepheard Church" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Cordova", "name": "St. George's Church" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Kotzebue", "name": "St. George's Church" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Venetie", "name": "Good Shepherd Church" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Wrangell", "name": "St. Phillip's Church" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Circle", "name": "Holy Trinity Church" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Juneau", "name": "St. Brendan's Church" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "parish", "place": "Juneau", "name": "Holy Trinity Church" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Minto", "name": "St. Barnabas' Church" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Walter Harper & John Fredson" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Eagle River", "name": "Holy Spirit Church" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Point Lay", "name": "St. Alban's in the Arctic" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Allakaket", "name": "St. John's in the Wilderness" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Hughes", "name": "St. Paul's Church" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Birch Creek", "name": "St. Peter's Church" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Tanana", "name": "St. James Church" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Anchorage", "name": "St. Christopher's Church" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Nenana", "name": "St. Mark's Church" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Anchorage", "name": "Christ Church" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Anchorage", "name": "St. Mary's Church" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Palmer", "name": "St. Bartholomew's Church" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Homer", "name": "St. Augustine's Church" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Beaver", "name": "St. Matthew's Mission" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Anvik", "name": "Christ Church" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Fairbanks", "name": "St. Matthew's Church" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Haines", "name": "St. Michael's & All Angels" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Kenai", "name": "St. Francis by the Sea" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Kodiak", "name": "St. James" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Shageluk", "name": "St. Luke's Church" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "North Pole", "name": "St. Jude's Church" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Anchorage", "name": "All Saint's Church" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Talkeetna", "name": "Denali Episcopal Church" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Hungry and all who face food insecurity" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Petersburg", "name": "St. Andrew's Church" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "1st Sunday of Advent", "subjects": [
+      { "type": "parish", "place": "Stevens Village", "name": "St. Andrew's Church" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Ketchikan", "name": "St. John's Church" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Point Hope", "name": "St. Thomas Church" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Ft. Yukon", "name": "St. Stephen's Church" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Eagle", "name": "St. John's Church" }
+    ]}
+  ]
+}
