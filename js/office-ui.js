@@ -3828,8 +3828,17 @@ function _renderHorologionItem(item) {
     }
 
     if (item.type === 'rubric') {
+        // FIXED 2026-09-28: item.label was silently discarded here -- only
+        // item.text ever reached the page. Many rubric-type items carry a real,
+        // distinct label ("Troparion of the Day", "Theotokion of Compline", the
+        // Sessional Hymn slots, etc.) that had never been visible in the running
+        // app at any display-depth setting. Same fix, same reasoning, as the
+        // 'litany' branch and the fallback branch below.
+        const label = item.label
+            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
+            : '';
         const base = `<span class="rubric-text">${item.text || ''}</span>`;
-        return base + _renderHorologionDiagnostics(item, escapeHtml);
+        return label + base + _renderHorologionDiagnostics(item, escapeHtml);
     }
 
     // v8.1: "text plus a real switch-office action" — used by the Lenten Typika
@@ -3929,8 +3938,14 @@ function _renderHorologionItem(item) {
 
     // type: "litany" — render each line role-tagged.
     if (item.type === 'litany') {
+        // FIXED 2026-09-28: item.label (e.g. "The Great Litany", "The Small
+        // Litany") was never rendered anywhere in this branch -- only the
+        // dialogue lines showed. Same fix as the 'rubric' branch above.
+        const label = item.label
+            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
+            : '';
         const lines = String(item.text || '').split('\n');
-        let out = '<div class="horologion-litany">';
+        let out = label + '<div class="horologion-litany">';
         for (const line of lines) {
             const trimmed = line.trim();
             if (!trimmed) {
@@ -3955,10 +3970,21 @@ function _renderHorologionItem(item) {
         return `${label}${_horologionBodyWrap(renderRepeatedText(item.text || '', item.repeat), item, item.label || 'Text')}`;
     }
 
-    // Fallback: type "text" or any other resolved item.
+    // Fallback: type "text" or any other resolved item (also covers the
+    // engine's 'hymn'/'hymn-group'/'prokeimenon' item types, which have no
+    // dedicated branch of their own).
+    // FIXED 2026-09-28: item.label was passed to _horologionBodyWrap() only as
+    // the <details> summary text for the 'reader'/'educational' display-depth
+    // profiles -- under the default 'full' profile (what most users see) it
+    // never appeared anywhere. Same fix as the 'rubric' and 'litany' branches
+    // above, and the same pattern the 'text'-with-repeat branch just above
+    // already used correctly.
+    const label = item.label
+        ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
+        : '';
     const formatted = formatParagraphText(item.text || '');
     const baseHtml  = `<div class="horologion-text"><p>${formatted}</p></div>`;
-    return _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
+    return label + _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
            _renderHorologionDiagnostics(item, escapeHtml);
 }
 
