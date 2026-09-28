@@ -445,16 +445,14 @@ the East Hudra closeout, cross-family hardening, final beta gate) are all `not_s
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions) — as of the last entries
 in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
 - Task #14 — tradition-selector naming: one real bug fixed (stale LOTH text). The broader
-  naming-consistency question is **mostly resolved 2026-09-28 (continued), Josh's direct call on each
+  naming-consistency question is **fully resolved 2026-09-28 (continued), Josh's direct call on each
   pair.** Anglican ("Anglican" / "Daily Office"), Catholic ("Catholic" / "Roman Breviary 1960/1962"),
   and Oriental Orthodoxy ("Oriental Orthodoxy" / "Coptic Agpeya") are fine as-is, no change. Eastern
-  Orthodoxy's mode-grid card renamed "Eastern Orthodoxy" → **"Horologion"** (`index.html`, done). **Church
-  of the East is the one still open:** Josh proposed renaming its mode-grid card to "the Ramsha" but
-  wrote it with a question mark; flagged back rather than applied, since the card's own subtitle already
-  names the actual office-book as "Hudra" ("The East Syriac Hudra office stream...") and Ramsha is one
-  specific office (Evening Prayer) within the Hudra, not the whole-book name every other renamed card
-  uses — possible he meant "Hudra," or he genuinely wants a specific-hour name here unlike every other
-  lane. **Needs Josh to confirm which before this gets touched.**
+  Orthodoxy's mode-grid card renamed "Eastern Orthodoxy" → **"Horologion"**. Church of the East's
+  mode-grid card renamed "Church of the East" → **"Hudra"** — confirmed: Josh meant Hudra, not Ramsha
+  (Ramsha is one specific office within the Hudra, not the whole book, as flagged). Both renames done in
+  `index.html`; the entry-card screen's own separate labels (`#tradition-entry`) were deliberately left
+  untouched in every case, not part of this naming pair. Nothing left open on this item.
 - Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
   `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
   `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).
