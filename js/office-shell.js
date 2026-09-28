@@ -527,9 +527,41 @@
 
         var head = rail.querySelector('.uo-rail-head');
         rail.textContent = '';
+        // Always collapsed on a fresh render -- see the summary bar built
+        // just below. A rebuild (office/date/hour change) starting expanded
+        // would be a surprise, not a convenience.
+        rail.classList.remove('is-expanded');
+
+        // Mobile-only tap target (see css/office-shell.css's @media
+        // (max-width:768px) block for its layout; hidden entirely above that
+        // width via the base .uo-rail-summary-bar rule). Built and wired
+        // fresh on every render since rail.textContent = '' above just threw
+        // the previous one away along with its listener.
+        var summaryBar = el('div', 'uo-rail-summary-bar');
+        summaryBar.setAttribute('role', 'button');
+        summaryBar.setAttribute('tabindex', '0');
+        summaryBar.setAttribute('aria-expanded', 'false');
+        summaryBar.setAttribute('aria-label', 'Show the order of this office');
+        var summaryLabel = el('span', 'uo-rail-summary-label', '');
+        var summaryCount = el('span', 'uo-rail-summary-count', '');
+        var summaryChevron = el('span', 'uo-rail-summary-chevron');
+        summaryBar.appendChild(summaryLabel);
+        summaryBar.appendChild(summaryCount);
+        summaryBar.appendChild(summaryChevron);
+        function toggleRailExpanded() {
+            var expanded = rail.classList.toggle('is-expanded');
+            summaryBar.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+        summaryBar.addEventListener('click', toggleRailExpanded);
+        summaryBar.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleRailExpanded(); }
+        });
+        rail.appendChild(summaryBar);
+
         rail.appendChild(head || el('div', 'uo-rail-head', 'The Order'));
 
         if (!env.blocks.length) {
+            summaryLabel.textContent = 'No order available';
             rail.appendChild(el('p', 'uo-rail-placeholder',
                 'This office resolved with no blocks. Nothing has been substituted.'));
             return;
@@ -555,6 +587,12 @@
         var foot = el('div', 'uo-rail-foot',
             toRoman(1) + ' of ' + toRoman(env.blocks.length));
         rail.appendChild(foot);
+
+        // Summary bar starts matching the same first item the dot/foot above
+        // do -- computeRailWaypoints()/updateRailCurrent() (below) take over
+        // keeping all three in sync with real reading position from here on.
+        summaryLabel.textContent = env.blocks[0].label;
+        summaryCount.textContent = toRoman(1) + ' / ' + toRoman(env.blocks.length);
 
         // FIXED 2026-09-25, found via Josh's direct report ("that never moves as the
         // user scrolls... it seems to me that it ought to"): the dot and the "I of N"
@@ -723,6 +761,15 @@
         if (foot) {
             foot.textContent = toRoman(currentIndex + 1) + ' of ' + toRoman(railWaypoints.length);
         }
+
+        // Mobile collapsed summary bar -- same position this office's foot line
+        // above already carries, just also mirrored into the compact bar a
+        // reader actually sees by default. Harmless to update on desktop too
+        // (the bar just stays display:none there).
+        var summaryLabel = rail ? rail.querySelector('.uo-rail-summary-label') : null;
+        var summaryCount = rail ? rail.querySelector('.uo-rail-summary-count') : null;
+        if (summaryLabel) summaryLabel.textContent = current.item.querySelector('.uo-rail-label').textContent;
+        if (summaryCount) summaryCount.textContent = toRoman(currentIndex + 1) + ' / ' + toRoman(railWaypoints.length);
 
         // FIXED 2026-09-25, per Josh's own wording live: "it needs to scroll
         // with the content on the right." Making .uo-rail scrollable (see its
