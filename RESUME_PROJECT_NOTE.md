@@ -51,6 +51,53 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**BYZANTINE EDUCATION-LAYER COVERAGE EXTENSION, STARTED 2026-09-28 continued yet again — and a
+real render bug found along the way, not yet fixed.** Picked up the open item this session's own
+earlier answer flagged as "genuinely open and unblocked": `data/kalendar/source-witnesses/
+hapgood-service-book-1922.txt`'s Appendix B is fully reachable locally (confirmed 2026-09-26), and
+`data/explanations/byzantine.json` only had 38 entries against it. **Before adding anything, read
+`js/explanations.js`'s own architecture note closely: attachment is by exact rendered label
+(`.rubric-text`/`.rubric-heading` textContent, normalized), never by component id or body-text
+substring.** This means most of Appendix B — everything explaining the Divine Liturgy proper
+(Section IV items 19-24), the Presanctified Liturgy (Section V), Royal/Imperial Hours, and two
+Matins items (censing, icon veneration) — has **no live render target in this app at all** (no
+Eucharistic office is rendered; those two Matins moments aren't modeled as separate labeled items)
+and would sit as inert, unreachable JSON if transcribed now. Did not transcribe them. Left as a
+real, disclosed gap for whenever this app ever renders that content, rather than padding the file.
+
+**What was actually done, all of it label-matching only, zero new Hapgood transcription**: widened
+`matchLabels` on 10 of the 38 existing entries (`usual-beginning`, `kathisma`, `canon`, `praises`,
+`great-doxology`, `beatitudes`, `trisagion-prayers`, `troparion`, `kontakion`, `dismissal`) to also
+match label *variants* this app already renders across Great Compline, Midnight Office, the Hours,
+Interhours, Orthros and Typika — the same already-approved, already-cited Hapgood content was
+simply never attaching there because the rendered label text differs slightly from what
+`matchLabels` listed (tone-qualified, day-qualified, or parenthetical variants). 18 additions
+survive; a first attempt added 32, but a live-render check caught 14 that looked plausible from a
+static label scan and were not actually reachable — see the bug below for why, and don't repeat the
+mistake of trusting a label found in a data file without checking what it renders as.
+
+**THE BUG FOUND ALONG THE WAY, disclosed not fixed — a future session's task**:
+`js/office-ui.js`'s `_renderHorologionItem()`, the fallback branch for any resolved item whose
+`type` is plain `'text'` (no `repeat` field), silently **drops `item.label` entirely** — it's passed
+only as a `<details>` summary label to `_horologionBodyWrap()`, which only shows it when the
+display-depth profile is 'reader'/'educational' AND the item qualifies as collapsible; under the
+default 'full' profile (what nearly everyone sees) the label vanishes with no `.rubric-text` element
+at all. Confirmed directly, live: `data/horologion/third-hour-fixed.json`'s `third-hour-fixed-verse`
+slot (label "Fixed Verse of the Third Hour") renders its `text` but never its label, on all four
+Hours; same for Great Compline's weekday-troparia/psalm-50/sixth-tone slots (label survives only
+where the ENGINE overwrites the placeholder's label with a fresh one at resolution time, e.g. the
+Typika Kontakion branch this session's own Finding-T8 Thread 1 work touched — meaning **that code
+likely has this same problem**, not yet checked). This is a real, live-verified rendering gap
+affecting potentially many items across the whole Horologion lane, not something this pass
+introduced — it predates this session. Not fixed here: fixing it means deciding whether plain-text
+items should always show their label (a behavior change touching every office), which is a design
+decision, not a content-authorship task, and out of scope for what was asked this pass.
+
+Full detail and the exact test methodology (headless Chromium against the real running app,
+re-testing every single addition after the first pass's errors were found): `AUDIT_GOVERNANCE_LEDGER.md`,
+same date. The complete before/after is in `data/explanations/byzantine.json`'s own git history —
+a 10-line diff, not reproduced here.
+
 **THREAD 2 IS NOW BUILT AND VERIFIED TOO, 2026-09-28 continued further.** Josh answered the scoping
 question below: bounded list. Built a `parishDedication` field on the user profile
 (`js/office-ui.js`), a dropdown in the profile-defaults panel (`index.html`), a new curated

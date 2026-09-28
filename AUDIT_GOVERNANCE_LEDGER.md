@@ -23184,3 +23184,60 @@ profile summary text, and a declared dedication's real Kontakion renders in the 
 `node --check` clean on all three touched JS files, zero new console errors. Full detail:
 `documentation/HOROLOGION_AUDIT_FINDINGS.md`'s Finding T8 section and `RESUME_PROJECT_NOTE.md`'s
 matching entry, same date. Both of Finding T8's originally-disclosed gaps are now closed.
+
+---
+
+## Session 2026-09-28 continued yet again -- Byzantine education-layer coverage extension started;
+a real rendering bug found and disclosed, not fixed
+
+Picked up the item flagged as genuinely open and unblocked: Hapgood Appendix B is fully reachable
+locally (`data/kalendar/source-witnesses/hapgood-service-book-1922.txt`, confirmed 2026-09-26), and
+`data/explanations/byzantine.json` held only 38 entries against it.
+
+**Read `js/explanations.js`'s architecture note before touching the file**: attachment is by exact
+rendered label (`.rubric-text`/`.rubric-heading` textContent, normalized) only -- never by
+component id or by scanning rubric body text. This ruled out most of Appendix B as a target for
+this pass: the Divine Liturgy proper (Section IV items 19-24), the Presanctified Liturgy
+(Section V), Royal/Imperial Hours, and two Matins items (the opening censing, the icon
+veneration) have no live render target anywhere in this app -- no Eucharistic office is rendered
+at all, and those two Matins moments aren't modeled as their own labeled items. Transcribing them
+now would add real, correctly-sourced, permanently unreachable JSON. Left disclosed as a gap
+instead of padding the file with content nothing can ever show.
+
+**What shipped**: widened `matchLabels` on 10 of the 38 existing entries (`usual-beginning`,
+`kathisma`, `canon`, `praises`, `great-doxology`, `beatitudes`, `trisagion-prayers`, `troparion`,
+`kontakion`, `dismissal`) so the same already-approved, already-cited content also attaches to
+label variants this app renders across Great Compline, Midnight Office, the four Hours, the
+Interhours, Orthros, and Typika -- tone-qualified, day-qualified, and parenthetical forms the
+original `matchLabels` arrays didn't list. Zero new Hapgood transcription; this only extends the
+reach of content already on the record.
+
+**Verification caught real errors before they shipped**: a first pass, built from a static scan of
+every `label` field across `data/horologion/*.json` diffed against existing `matchLabels`, produced
+32 candidate additions. Live-testing every one in headless Chromium (not just the plausible-looking
+ones) found 14 were not actually reachable -- some because the skeleton's placeholder label gets
+silently overwritten by the resolver at render time (a "Weekday Troparia (day-dependent)"
+placeholder resolves to "Weekday Troparia -- Monday and Wednesday (Tone 2)" or "...Tuesday and
+Thursday (Tone 8)", never the placeholder's own text), others because of the rendering bug below.
+Fixed the wording on the ones that were close but wrong (e.g. "Kontakion to the Theotokos" ->
+never renders; "O Lord of Hosts (kontakion; omitted on Fridays)" -> actually renders as "...(Tone 6;
+omitted on Fridays)") and dropped the ones with no confirmed live match. Final 18 additions were
+each individually re-confirmed live, on the specific date/office each one requires (including
+Sunday-only and Saturday-only forms) before this entry was written.
+
+**A real, live-verified rendering bug, disclosed here rather than fixed**: `js/office-ui.js`'s
+`_renderHorologionItem()` fallback branch, taken by any resolved item whose `type` is plain `'text'`
+with no `repeat` field, never prints `item.label` as a `.rubric-text` element at all -- it's passed
+only as a `<details>` summary label to `_horologionBodyWrap()`, shown only under the 'reader'/
+'educational' display-depth profile when the item also qualifies as collapsible. Under the default
+'full' profile the label is silently discarded. Confirmed directly: `third-hour-fixed.json`'s
+`third-hour-fixed-verse` slot (and its First/Sixth/Ninth Hour counterparts) render their text but
+never their label; same for several Great Compline slots. This predates this session and likely
+affects Finding T8 Thread 1's own new Kontakion labels (`js/horologion-engine.js`, same `type:
+'text'` pattern) -- not yet checked. Fixing it is a rendering-behavior decision touching every
+office, not a content-authorship task, so it was left for a future session rather than
+unilaterally changed here.
+
+No code changed. `data/explanations/byzantine.json` is the only file touched: a 10-line diff, all
+additive, zero collisions in the lookup table (checked programmatically before and after). Full
+detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

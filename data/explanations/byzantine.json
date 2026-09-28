@@ -24,7 +24,7 @@
     "usual-beginning": {
       "label": "The Usual Beginning",
       "role": "opening",
-      "matchLabels": ["The Usual Beginning"],
+      "matchLabels": ["The Usual Beginning", "The Usual Beginning (Sunday)"],
       "micro": "The fixed opening prayers with which the Byzantine offices begin.",
       "structural": "Hapgood records that the opening exclamation is uttered by the priest after the deacon has said to the assembled brethren, who are seated, 'Stand,' and has asked a blessing on the service with the words 'Bless, Master.' The exclamations the priest makes after the litanies are not detached formulas either: they bear a close relation to the litany just said, to the prayers the priest has read secretly, or to what the singers have chanted.",
       "source": "Hapgood 1906, Appendix B I (2) and (5), pp.592-593."
@@ -60,7 +60,7 @@
     "kathisma": {
       "label": "Kathisma",
       "role": "psalmody",
-      "matchLabels": ["Kathisma Reading", "Kathisma / Lamp-Lighting Psalms", "Psalter Kathismata", "First Kathisma", "Second Kathisma", "Third Kathisma", "Kathisma"],
+      "matchLabels": ["Kathisma Reading", "Kathisma / Lamp-Lighting Psalms", "Psalter Kathismata", "First Kathisma", "Second Kathisma", "Third Kathisma", "Kathisma", "The Ninth Kathisma"],
       "micro": "A division of the Psalter. The name means 'sitting' — the people may sit while it is read.",
       "structural": "Hapgood gives the etymology directly: Kafisma signifies sitting, and the term may have arisen because sitting was appointed while certain parts were read verse by verse, though at some points standing was enjoined; in ancient times these verses were chanted. She also reads the opening verses theologically: they express two thoughts, Adam's repentance for his sins with his regret for the Paradise he has lost, and the exhortation from Adam's mouth to his posterity that they utterly obey the will of God.",
       "source": "Hapgood 1906, Appendix B I (6) and (7), p.593."
@@ -186,7 +186,7 @@
     "canon": {
       "label": "The Canon",
       "role": "hymn",
-      "matchLabels": ["The Canon (Nine Odes)", "The Canon", "Canon"],
+      "matchLabels": ["The Canon (Nine Odes)", "The Canon", "Canon", "The Canon to the Holy Trinity"],
       "micro": "Nine odes of hymnody sung at Matins, each built on a scriptural song.",
       "structural": "Hapgood explains that as joy expresses itself in song, the Church appointed the Nine Songs of the Canon to be sung after the salutation of the Gospel Book, representing the hymns of praise of the nine ranks of the heavenly hierarchy at the Resurrection. The canon also contains the hymns of those godly persons of the Old Testament, from Moses to Zacharias, who magnified God in spiritual songs — in conformity with our Lord's own expounding to his disciples, after the Resurrection, of the things in all the Scriptures concerning himself. Each ode is inspired by the scripture hymn appointed to precede it, though these scripture hymns are now generally omitted, except the Song of the Birth-giver of God which precedes Ode IX. The second ode is normally absent for a stated reason: Deuteronomy 32 is not properly a hymn so much as a denunciation of God's judgments upon the Israelites, and is said only on the Tuesdays of the Great Fast, so in imitation of this the Second Song of every canon likewise consists of denunciations and is also omitted.",
       "source": "Hapgood 1906, Appendix B II (10), p.596."
@@ -204,7 +204,7 @@
     "praises": {
       "label": "The Praises",
       "role": "psalmody",
-      "matchLabels": ["Praises (Ainoi) / Lauds", "Psalms of Praise (148–150 LXX)", "The Praises", "Praises"],
+      "matchLabels": ["Praises (Ainoi) / Lauds", "Psalms of Praise (148–150 LXX)", "The Praises", "Praises", "Stichera at the Praises"],
       "micro": "Psalms 148-150, the psalms of praise, sung towards the end of Matins with proper verses.",
       "structural": "These are among the invariable morning psalms. As at 'Lord, I have cried' in the evening, the psalms are fixed and what changes are the stichera sung between their closing verses, drawn from the Octoechos for the tone and from the Menaion for the day. Hapgood notes in passing that the Byzantine and East Syriac rites agree here: both say Psalms 148, 149 and 150 in the morning.",
       "source": "Hapgood 1906, Introduction, p.xxiii (the shared morning psalms); Preface pp.iv-v (the Oktoikh and the Monthly Mineya)."
@@ -213,7 +213,7 @@
     "great-doxology": {
       "label": "The Great Doxology",
       "role": "doxology",
-      "matchLabels": ["Great Doxology and Dismissal", "The Great Doxology", "Great Doxology", "Gloria in excelsis"],
+      "matchLabels": ["Great Doxology and Dismissal", "The Great Doxology", "Great Doxology", "Gloria in excelsis", "Great Doxology (Gloria in Excelsis)"],
       "micro": "The morning hymn of glory, sung at the close of Matins as the day breaks.",
       "structural": "Its position is tied to the dawn. Hapgood explains that in ancient times the singing of the Canon lasted until daybreak, and that it is therefore still the custom for the priest, shortly after the Canon is finished, to make the exclamation here in an outburst of joy and thanksgiving, beholding as it were the dawn of day. The Hymns of Light immediately before it stand where they do for the same reason — their singing precedes the break of day and the Gloria in excelsis.",
       "source": "Hapgood 1906, Appendix B II (11) and (12), p.596."
@@ -267,7 +267,7 @@
     "beatitudes": {
       "label": "The Beatitudes",
       "role": "reading",
-      "matchLabels": ["The Beatitudes (Matthew 5:3–12)", "The Beatitudes", "Beatitudes"],
+      "matchLabels": ["The Beatitudes (Matthew 5:3–12)", "The Beatitudes", "Beatitudes", "The Beatitudes, with the Lenten refrain"],
       "micro": "Christ's beatitudes from the Sermon on the Mount, sung near the opening of the Typika.",
       "structural": "They stand within the Typika, the office whose prayers and songs typify the Divine Liturgy and which is sometimes used in place of it, or as the continuation and conclusion of the Hours during the Great Fast. In the Liturgy itself the Beatitudes occupy the corresponding position, which is why the Typika can stand in for it.",
       "source": "Hapgood 1906, Appendix B III, p.597."
@@ -276,7 +276,7 @@
     "trisagion-prayers": {
       "label": "The Trisagion Prayers",
       "role": "prayer",
-      "matchLabels": ["Trisagion Prayers", "The Trisagion Prayers", "Trisagion"],
+      "matchLabels": ["Trisagion Prayers", "The Trisagion Prayers", "Trisagion", "Trisagion and the Lord's Prayer (repeated)", "Trisagion and Our Father", "Trisagion and Our Father (after Manasseh)", "Trisagion, Our Father, and Lord have mercy × 12 (after prostrations)"],
       "micro": "A short fixed block — the Thrice-Holy, Glory, the Lord's Prayer — recurring throughout the offices.",
       "structural": "This block recurs at the same structural point in nearly every office, which is why it grows familiar long before it is deliberately learned. Hapgood describes how the Thrice-Holy itself is sung: first the choir sings the whole hymn three times, then 'Glory ... now, and ever ... Holy Immortal One, have mercy upon us,' and then the whole hymn again, very slowly.",
       "source": "Hapgood 1906, Appendix B IV (9), p.598."
@@ -285,7 +285,7 @@
     "troparion": {
       "label": "The Troparion",
       "role": "hymn",
-      "matchLabels": ["Troparion of the Day", "Troparion / Apolytikion of the Day", "Troparion(s) / Apolytikion", "The Troparion", "Troparion", "Troparia"],
+      "matchLabels": ["Troparion of the Day", "Troparion / Apolytikion of the Day", "Troparion(s) / Apolytikion", "The Troparion", "Troparion", "Troparia", "Troparia: The Day Being Past", "Weekday Troparia — Monday and Wednesday (Tone 2)", "Weekday Troparia — Tuesday and Thursday (Tone 8)", "Troparia in the Sixth Tone", "Troparia, Tone 8 (the Bridegroom)", "Troparia, Tone 2", "Troparia, Tone 2, for the Departed", "Troparia, Tone 6"],
       "micro": "A short hymn naming the day's feast or saint — the most compact statement of what is kept today.",
       "structural": "The troparion is the hinge between the fixed office and the calendar: the frame around it does not change, but this hymn does, drawn from the Octoechos for the tone of the week or from the Menaion for the day. Hapgood's account of the books explains the mechanism — the Octoechos carries eight complete sets of hymns, one per tone, covering each day of the week, and the hymn for the day together with the collect-hymn from the canons is used again at the Liturgy the following morning; the twelve volumes of the Menaion supply the proper hymns for the saint of each fixed day.",
       "source": "Hapgood 1906, Preface pp.iv-v (the Oktoikh and the Monthly Mineya)."
@@ -294,7 +294,7 @@
     "kontakion": {
       "label": "The Kontakion",
       "role": "hymn",
-      "matchLabels": ["Kontakion", "The Kontakion"],
+      "matchLabels": ["Kontakion", "The Kontakion", "O Lord of Hosts (Tone 6; omitted on Fridays)"],
       "micro": "A short hymn paired with the troparion, drawn from the canon of the day.",
       "structural": "Hapgood calls it the collect-hymn from the canons, and notes that it travels with the hymn for the day out of the Octoechos into the Liturgy on the following morning — so the pair heard at Matins returns at the Liturgy, binding the office and the Liturgy of one day together.",
       "source": "Hapgood 1906, Preface p.iv (the Oktoikh)."
@@ -339,7 +339,7 @@
     "dismissal": {
       "label": "The Dismissal",
       "role": "dismissal",
-      "matchLabels": ["Dismissal", "The Dismissal"],
+      "matchLabels": ["Dismissal", "The Dismissal", "Resumption of the Order, Dismissal, Mutual Forgiveness, and Intercessions", "Final Kyrie and Dismissal", "The Litany and Dismissal"],
       "micro": "The blessing that closes the office, naming the saints commemorated that day.",
       "structural": "The dismissal names whom the day has kept — the Theotokos, the saint of the temple, the saint of the day — so it works as a summary of the commemoration. Hapgood records the form of blessing the priest gives, and notes that bishops and priests hold the fingers so as to represent the Greek letters IC XC, the first and last letters of Jesus Christ.",
       "source": "Hapgood 1906, The Symbolism of the Church, p.xxxiv (the form of the benediction); Great Vespers, pp.14-15."
