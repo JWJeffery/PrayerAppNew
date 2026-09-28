@@ -222,6 +222,33 @@
       if(typeof window!=='undefined' && typeof window.applyExplanationLayer==='function'){
         window.applyExplanationLayer(targetId);
       }
+      // FIXED 2026-09-28: this lane never published a shell envelope, so "The
+      // Order" rail permanently showed its placeholder ("...once the lane
+      // emits its blocks") for every Roman Breviary render -- reported live
+      // via a screenshot. Same reason and same reused window.AnglicanEnvelope.
+      // publish() call as Coptic/East Syriac/Horologion (js/office-ui.js) --
+      // a plain, tradition-neutral event dispatch, not Anglican-specific
+      // logic. `envelope.blocks` here is already flat (Nocturnus grouping is
+      // a passthrough label, not real nesting -- confirmed against the actual
+      // manifest data, not assumed), so it needs no flattening pass before
+      // publishing, unlike Horologion's own tree-shaped payload.
+      if(typeof window!=='undefined' && window.AnglicanEnvelope){
+        try{
+          window.AnglicanEnvelope.publish({
+            tradition:'LAT',
+            officeFamily:envelope.context.hour||null,
+            context:{
+              calendarSummary:envelope.context.calendarSummary||null,
+              rankSummary:envelope.context.rankSummary||null
+            },
+            blocks:envelope.blocks||[],
+            overlays:envelope.overlays||[],
+            diagnostics:envelope.diagnostics||[]
+          });
+        }catch(e){
+          // Never let envelope publication break a rendered office.
+        }
+      }
       const dateInput=target.querySelector('.rb1960-nav-date');
       const hourSelect=target.querySelector('.rb1960-nav-hour');
       const languageSelect=target.querySelector('.rb1960-nav-language');
