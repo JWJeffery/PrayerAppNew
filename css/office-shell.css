@@ -2184,7 +2184,28 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
     position: relative;
     width: min(1080px, calc(100vw - 40px));
     max-width: 1080px;
-    max-height: calc(100vh - 40px);
+    /* FIXED 2026-09-28, task #15 (Josh: "It's this screen that scrolls..." --
+       the "Another office" five-card grid causing the whole PAGE to scroll
+       on an ordinary desktop window). Root cause: this cap only ever
+       subtracted a flat 40px, never the real space this box's own margin
+       (below) and body's own padding (css/office.css's "viewport
+       stabilization pass") actually consume outside it. At 1512x900 this
+       card's content (756.625px) sat comfortably under the old 860px cap,
+       so this box's own overflow-y:auto never engaged -- yet body padding
+       (18+26=44px) plus this box's own margin (117+54=171px at 900px
+       viewport height) pushed the real total past the viewport by ~72px,
+       which body's own overflow-y:auto (a deliberate mobile-safety fallback,
+       not touched here) then absorbed as page-level scroll. Corrected to
+       subtract the FULL outer budget -- body's padding (with its own
+       safe-area-inset terms, kept in sync with that rule) plus this box's
+       own margin-top/bottom, spelled out via the identical clamp()
+       expressions below -- so this box's own internal overflow-y:auto is
+       now what engages whenever content genuinely cannot fit (a normal
+       contained scrollbar within the card, not the whole page moving).
+       Every breakpoint below that changes this box's own margin-top
+       restates this same formula with the matching margin-top value, kept
+       immediately next to it for this reason. */
+    max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(82px, 13vh, 172px) - clamp(28px, 6vh, 72px));
     overflow-y: auto;
     padding: clamp(28px, 4.5vw, 58px);
     box-sizing: border-box;
@@ -2196,9 +2217,14 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
 #tradition-entry.app-tradition-entry {
     width: min(860px, calc(100vw - 48px));
     max-width: 860px;
-    max-height: calc(100vh - 48px);
-    max-height: calc(100svh - 48px);
-    max-height: calc(100dvh - 48px);
+    /* FIXED 2026-09-28, task #15, same fix and same reasoning as
+       #mode-selection's own max-height just above -- this used to subtract
+       a flat 48px, never the real space this box's own margin (right
+       below) and body's own padding actually consume outside it. See that
+       rule's own long comment for the full explanation. */
+    max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(82px, 13vh, 172px) - clamp(28px, 6vh, 72px));
+    max-height: calc(100svh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(82px, 13vh, 172px) - clamp(28px, 6vh, 72px));
+    max-height: calc(100dvh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(82px, 13vh, 172px) - clamp(28px, 6vh, 72px));
     margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
     overflow-y: auto;
     -webkit-backdrop-filter: blur(5px);
@@ -2221,12 +2247,28 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
     #mode-selection.app-mode-shell {
         margin-top: clamp(72px, 11vh, 128px);
     }
+
+    /* Task #15 fix, continued: margin-top just above is narrower at this
+       width, so the outer-budget max-height on both boxes (set at the base
+       rule above) has to restate that narrower value too, or the wider
+       base-rule cap would keep winning and under-count the real budget.
+       #tradition-entry only actually uses this in the 761-860px band --
+       the next block drops it to max-height:none at <=760px regardless. */
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(72px, 11vh, 128px) - clamp(28px, 6vh, 72px));
+    }
 }
 
 @media (max-width: 760px) {
     #mode-selection.app-mode-shell {
         width: min(100vw - 24px, 560px);
-        max-height: calc(100vh - 24px);
+        /* Task #15 fix, continued: same outer-budget formula as the 860px
+           block just above (margin-top is still that same narrower clamp
+           down here, since <=760px implies <=860px too) -- restated because
+           the stale flat calc(100vh - 24px) this used to be would otherwise
+           win here (later in the cascade) and undo the corrected budget. */
+        max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - clamp(72px, 11vh, 128px) - clamp(28px, 6vh, 72px));
         padding: 28px 22px;
     }
 
@@ -2241,5 +2283,24 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
     #tradition-entry.app-tradition-entry,
     #mode-selection.app-mode-shell {
         margin-top: 38px;
+    }
+
+    /* Task #15 fix, continued: margin-top just above is a flat 38px at
+       this height regardless of width, so #mode-selection's outer-budget
+       max-height needs to restate that too. #tradition-entry is
+       deliberately NOT included here: at width<=760px it already gets
+       max-height:none from the width-based block above (own overflow-y:auto
+       stays the only safety net there, as it was before this fix, by
+       design -- see that block's own comment) -- adding it here would win
+       over that "none" on a device matching both queries and silently
+       undo it. At width>760px with a short height (a narrow, genuinely
+       uncommon combination -- an unusually short desktop window, not a
+       normal phone in either orientation), #tradition-entry keeps a
+       slightly wider cap than this exact height technically allows; its
+       own overflow-y:auto still contains the excess within its own box in
+       the vast majority of realistic cases, short of chasing this one
+       corner further. */
+    #mode-selection.app-mode-shell {
+        max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - 38px - clamp(28px, 6vh, 72px));
     }
 }

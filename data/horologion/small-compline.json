@@ -156,6 +156,7 @@
         {
           "type": "rubric",
           "key": "dismissal-rubric",
+          "label": "Dismissal",
           "text": "Priest: Glory to Thee, O Christ our God, our hope, glory to Thee.\nChoir: Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen. Lord, have mercy. (×3) Father, bless.\nPriest: [Dismissal according to the day and feast]"
         }
       ]

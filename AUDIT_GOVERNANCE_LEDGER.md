@@ -23421,3 +23421,50 @@ change to the same mobile-splash rule was not risked without full separate verif
 changed for this item.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, continued once more -- task #15 fixed for real (budget-aware max-height);
+## four more live-reported bugs fixed: mode-grid title consistency, systemic rail-label leaks
+## (Byzantine + East Syriac), "farced" corpus-wide, Roman Breviary rail desync
+
+Task #15, picked back up after Josh asked directly: implemented the outer-budget max-height fix
+the prior entry's own arithmetic pointed to. `#mode-selection`/`#tradition-entry`'s cap used to
+subtract a flat constant, never the real margin + body-padding space consumed outside the box.
+Corrected to subtract the full budget via the same clamp() expressions the margin itself uses, at
+every breakpoint that changes margin-top. Verified across 9 viewports: zero body-level scroll on
+the reported screen anywhere. One known, accepted residual left alone: tradition-entry's own
+deliberate max-height:none at <=760px width.
+
+Four more bugs from one dense batch of live screenshots across three traditions:
+
+1. Mode-grid title inconsistency ("The Daily Office"/"The Coptic Agpeya" vs. three bare titles)
+   fixed -- dropped "The" from the two outliers to match the majority.
+2. Systemic rail-label bug: rubric/refrain body text leaking into rail labels verbatim, across
+   Byzantine and East Syriac. Byzantine root cause: `_pushHorologionEnvelopeEntries()` built a
+   rubric's rail label as `item.text || item.label` -- text first, backwards. Fixed to only use a
+   real label, never text; rubrics with no label (27 of 31 in the skeleton files) now correctly get
+   no rail entry, matching bcpEmitBare()'s existing convention. Added the missing `"label":
+   "Dismissal"` to 8 offices whose closing rubric had none. East Syriac root cause: literal
+   corpus title fields -- a festival note titled bare "Lakhumara" duplicating three already-Lakhumara
+   items, and two different prayers both titled with their own 8-word opening refrain, "And let all
+   the people say Amen and Amen". Retitled all three.
+3. "farced"/"unfarced" (a real liturgical term, unhelpful as a navigation label) swept from all 20
+   East Syriac component titles where it appeared, replaced with "expanded"/"unexpanded" -- body
+   text and scholarly notes correctly left untouched, term intact there.
+4. Roman Breviary's rail permanently pinned to the last item regardless of real scroll position.
+   Root cause: its renderer labels every block with `.rubric-heading`, never `.rubric-text`/
+   `.uo-gutter-label`, so computeRailWaypoints() had zero matchable candidates -- every waypoint
+   fell back to y=0, making the last item always win the "keep advancing while true" loop. Fixed by
+   adding `.rubric-heading` as a third match source; confirmed no collision risk for Horologion,
+   the only other lane using that class for coarser section groupings.
+
+All four verified live: Byzantine Small Compline's rail clean; East Syriac Ramsha's rail rechecked
+against the exact date/screenshot Josh sent; Roman Breviary Compline's rail advances correctly
+through all 10 items across a 5-step scroll; regression swept across all four other lanes after the
+shared selector change, all still track correctly. Zero new console errors throughout.
+
+Files touched: `index.html`; `js/office-ui.js`; `js/office-shell.js`; `components/east-syriac.json`;
+8 Horologion office JSON files; `css/office-shell.css` (task #15).
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

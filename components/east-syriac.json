@@ -70,7 +70,7 @@
   },
   {
     "id": "esy-lords-prayer-farced",
-    "title": "The Lord's Prayer (farced with the Qanona)",
+    "title": "The Lord's Prayer (expanded with the Qanona)",
     "meta": {
       "source": "Maclean 1894, p.1-2.",
       "note": "\"Farced\" = interpolated with the refrain \"Holy, holy, holy art thou, Our Father which art in heaven...\" after the opening line, then said through in full a second time. This exact farced form (opening line + refrain, then the whole prayer) recurs at every ferial service (Evening, Night, Morning) per Maclean's structural summary in the Introduction, p.xiii."
@@ -2329,7 +2329,7 @@
   },
   {
     "id": "esy-sapra-psalm-100",
-    "title": "Psalm 100, farced",
+    "title": "Psalm 100, expanded",
     "meta": {
       "source": "Maclean 1894, p.103."
     },
@@ -2346,7 +2346,7 @@
   },
   {
     "id": "esy-sapra-psalm-91",
-    "title": "Psalm 91, farced",
+    "title": "Psalm 91, expanded",
     "meta": {
       "source": "Maclean 1894, p.104.",
       "note": "Farced 'as before, with Glorious is thy confident hope, O Christ our Saviour' -- following the same farcing pattern as Psalm 100."
@@ -2364,7 +2364,7 @@
   },
   {
     "id": "esy-sapra-psalm-104",
-    "title": "Psalm 104:1-16, farced",
+    "title": "Psalm 104:1-16, expanded",
     "meta": {
       "source": "Maclean 1894, p.104.",
       "note": "\"To full of sap\" -- Maclean's marker for the endpoint of this farced portion (v.16). No Gloria."
@@ -2374,7 +2374,7 @@
   },
   {
     "id": "esy-sapra-psalm-113",
-    "title": "Psalm 113, farced",
+    "title": "Psalm 113, expanded",
     "meta": {
       "source": "Maclean 1894, p.104.",
       "note": "No Gloria."
@@ -2425,7 +2425,7 @@
   },
   {
     "id": "esy-sapra-psalm-51",
-    "title": "Psalm 51:1-18, farced",
+    "title": "Psalm 51:1-18, expanded",
     "meta": {
       "source": "Maclean 1894, p.105.",
       "note": "Each choir says two clauses at a time."
@@ -2576,7 +2576,7 @@
   },
   {
     "id": "esy-festival-lakhumara-note",
-    "title": "Lakhumara",
+    "title": "Lakhumara Rubric (Feasts of Our Lord)",
     "text": "<p class=\"rubric-text\">Prayer of the Lakhumara. For all thy helps, etc., as on First Monday.</p><p class=\"rubric-text\">They say the Lakhumara. On Festivals of our Lord it is said five times.</p><p class=\"rubric-text\">Prayer after the Lakhumara. Thou, O my Lord, as on First Monday.</p>",
     "meta": {
       "source": "Maclean 1894, p.70.",
@@ -2692,7 +2692,7 @@
   },
   {
     "id": "esy-festival-royal-anthem-mary-refrain",
-    "title": "And let all the people say Amen and Amen",
+    "title": "Prayer",
     "text": "<p class=\"rubric-text\">And let all the people say Amen and Amen.</p><p class=\"component-text\">O Mary, the holy Virgin. Mother of Jesus our Saviour. Beseech and beg for mercy. Of the Child who shone forth from thy bosom. That he make to pass from us in his lovingkindness. Times full of tribulations. And settle among us peace and tranquillity. And by thy prayers may the Church and her children be preserved from the Evil one. And in the glorious day when his majesty is revealed. May we be worthy with thee to have joy in the bridechamber of light.</p>",
     "meta": {
       "source": "Maclean 1894, p.79.",
@@ -2810,7 +2810,7 @@
   },
   {
     "id": "esy-fast-sapra-psalm-91-farced",
-    "title": "Psalm 91 (farced, in the Fast)",
+    "title": "Psalm 91 (expanded, in the Fast)",
     "text": "<p class=\"component-text\">Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>Thou art my confident hope: O Christ, may I never be confounded.</em> Whoso dwelleth ... and show him my salvation (two clauses by each side). <em>Thou art my confident hope, etc.</em> Glory be. From everlasting. <em>When thou didst create the light which is poured forth, the spiritual ones glorified thee. And it was made known to them that he who created the light, created them also.</em> Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>By angels thou art glorified. And by the sons of men thou art praised. And all together with one accord cry and say, Blessed is thy fast, O Christ our Saviour.</em> Let us pray, Peace be with us.</p>",
     "meta": {
       "source": "Maclean 1894, p.208-209.",
@@ -2828,7 +2828,7 @@
   },
   {
     "id": "esy-fast-sapra-psalm-civ-farced",
-    "title": "Psalm 104:1-15a (farced, in the Fast)",
+    "title": "Psalm 104:1-15a (expanded, in the Fast)",
     "text": "<p class=\"component-text\">Bless the Lord, O my soul. O Lord my God, thou art become exceeding great. <em>The glory of the Lord shall be for ever.</em> Bless the Lord, O my soul ... out of the earth (two clauses at a time). <em>The glory, etc.</em> Glory be. From everlasting. <em>The glory of the Lord shall be for ever.</em></p>",
     "meta": {
       "source": "Maclean 1894, p.209.",
@@ -2845,7 +2845,7 @@
   },
   {
     "id": "esy-fast-sapra-mysteries-psalm-block",
-    "title": "Psalms 113, 93, 148, 149, 150, 117 (farced, Weeks of the Mysteries)",
+    "title": "Psalms 113, 93, 148, 149, 150, 117 (expanded, Weeks of the Mysteries)",
     "text": "<p class=\"component-text\">Ps. cxiii. Praise the Lord, ye his servants. O praise the Name of the Lord. <em>Glory to him who created the light.</em> Praise the Lord, ye his servants ... joyful mother of children. (No Gloria.) <em>Glory to him who created the light.</em> Ps. xciii. The Lord is King, and hath put on glorious apparel. The Lord hath put on strength and hath waxed strong. <em>We worship thy Godhead, O my Lord.</em> The Lord is King ... becometh thine house. O Lord, for ever. (No Gloria.) <em>We worship, etc.</em> Ps. cxlviii. 1-7. O praise the Lord of heaven. Praise him in the height. <em>Let them praise God.</em> O praise the Lord of heaven ... shall not be broken. (No Gloria.) <em>Let them praise God.</em> Ps. cxlviii. 7—end. Praise the Lord upon earth. Ye dragons and all deeps. <em>Give praise to God.</em> Praise the Lord upon earth ... even the people that draweth near to him. (No Gloria.) <em>Give praise to God.</em> Ps. cxlix. O praise the Lord with a new song of praise. His song of praise in the congregation of the saints. <em>For him praise is meet.</em> O praise the Lord with a new song of praise ... all his saints. (No Gloria.) <em>O Son of God, have pity on us.</em> Ps. cl. O praise the Lord in his holiness. Praise him in the firmament of his power. <em>Father, Son, and Holy Ghost.</em> O praise the Lord in his holiness ... praise the Lord. (No Gloria.) <em>Father, Son, and Holy Ghost.</em> Ps. cxvii. O praise the Lord, all ye heathen. Praise him, all ye nations. <em>O Christ the Light, we praise thee.</em> O praise the Lord, all ye heathen. Praise him, all ye nations. For his merciful kindness is strong upon us. Truly he is the Lord for ever. <em>O Christ the Light, we praise thee.</em> Glory be, etc. From everlasting, etc. <em>O Christ the Light, we praise thee.</em> They add, Glorify the Lord, all the whole earth. O Giver of light, O Lord, even to thee do we lift up glory.</p>",
     "meta": {
       "source": "Maclean 1894, p.209-210.",
@@ -3290,7 +3290,7 @@
   },
   {
     "id": "esy-compline-psalm-91-farced",
-    "title": "Psalm 91 (farced)",
+    "title": "Psalm 91 (expanded)",
     "text": "<p class=\"component-text\"><em>Protect me, O God, and From the Evil one and his hosts</em> -- farced alternately after each clause.</p>",
     "meta": {
       "source": "Maclean 1894, p.187.",
@@ -3299,7 +3299,7 @@
   },
   {
     "id": "esy-compline-psalms-150-117-farced",
-    "title": "Psalms 150 and 117 (farced)",
+    "title": "Psalms 150 and 117 (expanded)",
     "text": "<p class=\"component-text\">Both farced after each clause with <em>Glory be to thee, O God.</em> They say, Glory be to the Father, etc. <em>Glory be to thee, O God.</em> From everlasting to everlasting, Amen. <em>Glory be to thee, O God.</em></p>",
     "meta": {
       "source": "Maclean 1894, p.187.",
@@ -3325,7 +3325,7 @@
   },
   {
     "id": "esy-compline-psalm-121-farced",
-    "title": "Psalm 121 (farced)",
+    "title": "Psalm 121 (expanded)",
     "text": "<p class=\"component-text\">Farced after each clause with <em>Preserve me, O God.</em></p>",
     "meta": {
       "source": "Maclean 1894, p.187.",
@@ -3351,7 +3351,7 @@
   },
   {
     "id": "esy-compline-psalm-51-farced-christ-the-king",
-    "title": "Psalm 51 (farced)",
+    "title": "Psalm 51 (expanded)",
     "text": "<p class=\"component-text\">Farced alternately, after each clause, with <em>O Christ the King, have mercy upon us,</em> and <em>O Christ the King, glory to thy Name.</em> (In the last clause substitute offerings for young bullocks.)</p>",
     "meta": {
       "source": "Maclean 1894, p.188.",
@@ -3674,7 +3674,7 @@
   },
   {
     "id": "esy-sunday-lelya-closing-verse",
-    "title": "And let all the people say Amen and Amen",
+    "title": "Closing Prayer",
     "text": "<p class=\"rubric-text\">And let all the people say Amen and Amen.</p><p class=\"component-text\">O Mary, the holy Virgin, Mother of Jesus our Saviour, beseech with us of Christ, that he make his peace to dwell among us, and keep us from all harm by night and by day.</p>",
     "meta": {
       "source": "Maclean 1894, p.161.",
@@ -3743,7 +3743,7 @@
   },
   {
     "id": "esy-sunday-sapra-psalm-100-farced-rubric",
-    "title": "Psalm 100 (farced with 'In the beginning')",
+    "title": "Psalm 100 (expanded with 'In the beginning')",
     "text": "<p class=\"component-text\">Ps. c. farced with 'In the beginning,' if noted in the Khudhra. If not, as on ferias, but the farcing is said after the second as well as after the first clause.</p>",
     "meta": {
       "source": "Maclean 1894, p.165.",
@@ -3761,7 +3761,7 @@
   },
   {
     "id": "esy-sunday-sapra-psalm-91-farced",
-    "title": "Psalm 91 (farced)",
+    "title": "Psalm 91 (expanded)",
     "text": "<p class=\"component-text\">[If it be a day on which 'In the beginning' is not said, the psalm is sung in the order of the ferial service; otherwise thus.] Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>When the Creator established the light the angels wondered at it. And when it shineth forth each morning let them and us give him glory.</em> Whoso dwelleth . . . and show him my salvation. <em>When the Creator established, etc.</em> Glory be. From everlasting. <em>When thou didst create the light which is poured forth, the spiritual ones glorified thee. And it was made known to them that he who created the light, created them also.</em> Whoso dwelleth under the defence of the Most High. And is made glorious in the shadow of God. <em>By angels thou art glorified, and by the sons of men thou art praised. And all together with one accord cry and say, Blessed is thy Annunciation [or Nativity, or Baptism, or Ascension, or Descent of thy Holy Spirit], O Christ our Saviour.</em> Let us pray, Peace be with us.</p>",
     "meta": {
       "source": "Maclean 1894, p.165-166.",
@@ -3779,7 +3779,7 @@
   },
   {
     "id": "esy-sunday-sapra-psalm-civ-farced",
-    "title": "Psalm 104:1-16a (farced)",
+    "title": "Psalm 104:1-16a (expanded)",
     "text": "<p class=\"component-text\">Bless the Lord, O my soul. <em>Glory becometh thee, O God.</em> Bless the Lord, O my soul . . . full of sap. (No Gloria.) Add, <em>Glory becometh, etc.</em></p>",
     "meta": {
       "source": "Maclean 1894, p.166."
@@ -3787,7 +3787,7 @@
   },
   {
     "id": "esy-sunday-sapra-psalm-cxiii-farced",
-    "title": "Psalm 113 (farced)",
+    "title": "Psalm 113 (expanded)",
     "text": "<p class=\"component-text\">Praise the Lord ye his servants. O praise the Name of the Lord. <em>Glory becometh thee, O God, for thou art the Creator of the light.</em> Praise the Lord ye his servants . . . mother of children. Glory be. From everlasting. <em>Praise the Lord ye his servants.</em> Glory becometh, etc. Praise the Lord ye his servants. O praise the Name of the Lord. <em>Glory becometh, etc.</em></p>",
     "meta": {
       "source": "Maclean 1894, p.166."
@@ -3819,7 +3819,7 @@
   },
   {
     "id": "esy-sunday-sapra-psalms-cxlviii-cxlix-cl-cxvii",
-    "title": "Psalms 148, 149, 150, 117 (unfarced, one Gloria)",
+    "title": "Psalms 148, 149, 150, 117 (unexpanded, one Gloria)",
     "text": "<p class=\"component-text\">Ps. cxlviii., cxlix., cl., cxvii., without farcing and all under one Gloria. Add, Glorify the Lord, all the whole earth. O Giver of light, O Lord, even to thee do we lift up glory. Let us pray, Peace be with us.</p>",
     "meta": {
       "source": "Maclean 1894, p.167.",
@@ -4472,7 +4472,7 @@
   },
   {
     "id": "esy-feast-lelya-ps78-farcing-gap",
-    "title": "Psalm 78, farced for the feast",
+    "title": "Psalm 78, expanded for the feast",
     "meta": {
       "source": "Maclean 1894, p.152.",
       "note": "GAP, disclosed rather than guessed at: 'They say Ps. lxxviii., farced thus: between each pair of clauses Hallelu, four times, Hallelujah in the Nativity of Christ [or Baptism, etc.]' -- the bracketed name of the feast is a genuine variable in the source itself, and this project has no existing mechanism anywhere for substituting a feast's own name into farcing text (the same unresolved gap already sits, unaddressed, in the Ramsha farcing for Ps.cxli -- 'glorious is thy Nativity, or Epiphany, or Entrance, or Resurrection...' -- so this is not a new problem introduced here, but the same systemic one surfacing again). Not invented or guessed at for any single feast; left as a disclosed citation only. Psalm 78 itself is already correctly included within esy-hulala-11's first section, farced with its own ordinary prayer ('We beseech thee, O wise Ruler...') -- only this additional feast-specific refrain is missing."
@@ -4598,7 +4598,7 @@
   },
   {
     "id": "esy-festival-incense-psalms-feast-farcing",
-    "title": "The same, further farced on Feasts of our Lord",
+    "title": "The same, further expanded on Feasts of our Lord",
     "meta": {
       "source": "Maclean 1894, p.72-73.",
       "note": "GENUINE, DISCLOSED AMBIGUITY where six of the eight terms resolve dynamically: same eight-term list already researched for esy-feast-lelya-ps78-farcing-gap (Nativity, Epiphany/Baptism, Entrance, Resurrection, Ascension, Descent, Revelation, Cross) -- see that component's own note for the research (the modern Assyrian Church of the East's own seven Feasts of our Lord confirmed against this project's calendar engine; 'Entrance' and 'Revelation' left unresolved, Maclean's own footnote on 'Entrance' shows he wasn't sure either). The wording pattern here differs from the Night Service's ('glorious is thy X' rather than 'Hallelujah in X'), so this is its own component and its own render-time substitution using the FEAST_PS78_TERMS table already built, not a duplicate of the Night Service one."
