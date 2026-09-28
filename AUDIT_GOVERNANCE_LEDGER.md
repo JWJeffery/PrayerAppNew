@@ -23521,3 +23521,38 @@ measurement. Zero console errors throughout. `css/office-shell.css`, `js/office-
 only files touched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- GOVERNANCE DECISION: task #14's naming question
+## resolved and fixed
+
+**GOVERNANCE DECISION (Josh, 2026-09-28): on the entry-card and mode-grid screens, the card title
+is the ecclesial-tradition name and the card subtitle is the specific office name** -- the pattern
+`#tradition-entry` already used. This resolves the naming mismatch task #14 (PR #63) flagged but
+deliberately left unresolved: the entry-card screen and the "Another office" mode-grid named three
+of five traditions differently (e.g. entry-card "Anglican" vs. mode-grid "Daily Office").
+
+Fixed `#uo-threshold-grid` in `index.html` to match `#tradition-entry`'s existing convention:
+"Daily Office" -> title **Anglican**, subtitle "The Daily Office, according to the 1979 Book of
+Common Prayer."; "Coptic Agpeya" -> title **Oriental Orthodoxy**, subtitle "The Coptic Agpeya --
+the seven hours and Theotokia of the Coptic Church."; "Roman Breviary 1960/1962" -> title
+**Catholic**, subtitle "The Roman Breviary 1960/1962 -- Roman Rite, Latin, all eight hours." Church
+of the East and Eastern Orthodoxy already used the tradition name as the mode-grid title and needed
+no change. Only the display spans (`.app-mode-title`/`.app-mode-subtitle`) were touched -- every
+`onclick` handler and `data-mode` key is untouched, moved not rebuilt. Confirmed via `grep` first
+that no JS reads these strings by text match (only unrelated internal mode-key -> label constants
+exist elsewhere).
+
+Verified live: installed `playwright-core` temporarily, ran `scripts/dev-spa-server.mjs`, read all
+five mode-grid cards' rendered title/subtitle text directly from the DOM -- all five match exactly;
+confirmed `selectMode('daily')` still correctly shows `#daily-office-section`; zero console errors.
+Cleanup confirmed: `playwright-core` uninstalled, dev server killed, scratch script removed,
+`git status` clean except `index.html`. **`index.html` is the only file touched.**
+
+**Process note, recorded because it caused real frustration:** PR #63 correctly declined to guess
+at this naming call and left it for Josh. But neither that PR, this ledger, nor
+`RESUME_PROJECT_NOTE.md` recorded an answer once Josh gave one verbally in a later session -- only
+the open question got carried forward, session after session, so it kept surfacing as "still
+undecided" until Josh had to repeat the ruling a third time. When Josh answers an open editorial
+call, the answer goes in the same ledger entry as the question, immediately, not just the question.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

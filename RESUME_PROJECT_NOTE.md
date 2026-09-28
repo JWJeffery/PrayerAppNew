@@ -1,5 +1,41 @@
 # RESUME_PROJECT_NOTE.md
 
+**TASK #14'S NAMING QUESTION, RESOLVED AND FIXED, 2026-09-28 continued yet again.** The broader
+naming inconsistency left open in task #14 (entry-card vs. mode-grid using different names for
+Anglican/Catholic/Oriental Orthodoxy) was reported here as still awaiting Josh's call. Josh's
+ruling, stated directly: **ecclesial-tradition name in the title, specific office name in the
+subtitle** — the pattern the entry-card screen (`#tradition-entry`) already used. Fixed the
+mode-grid (`#uo-threshold-grid` in `index.html`) to match it: the three mismatched cards' titles
+changed from the office name to the tradition name, with the office name preserved in the
+subtitle so it isn't lost — "Daily Office" → **Anglican** (subtitle: "The Daily Office, according
+to the 1979 Book of Common Prayer."), "Coptic Agpeya" → **Oriental Orthodoxy** (subtitle: "The
+Coptic Agpeya — the seven hours and Theotokia of the Coptic Church."), "Roman Breviary 1960/1962"
+→ **Catholic** (subtitle: "The Roman Breviary 1960/1962 — Roman Rite, Latin, all eight hours.").
+Church of the East and Eastern Orthodoxy already used the tradition name as the title on both
+screens and needed no change. Only the display text (the `.app-mode-title`/`.app-mode-subtitle`
+spans) was touched — every `onclick` handler and `data-mode`/`data-entry-tradition` key is
+untouched, moved not rebuilt, matching the same convention used for the earlier mode-grid
+title-style fix. Confirmed via `grep` that no JS reads these title/subtitle strings by text match
+(only internal mode-key → label constants exist elsewhere, unrelated to these DOM spans) before
+touching anything, so this is a pure display change with no behavioral risk.
+
+**Verified live**, not just reasoned about: installed `playwright-core` temporarily, started
+`scripts/dev-spa-server.mjs`, called `showUoThresholdGrid()` and read all five cards' rendered
+title/subtitle text directly from the DOM — all five match the target text exactly. Confirmed the
+click path still works: `selectMode('daily')` still correctly shows `#daily-office-section`. Zero
+console errors. Cleanup confirmed: `playwright-core` uninstalled, dev server killed, scratch
+script removed, `git status` clean except the one file actually meant to change.
+**`index.html` is the only file touched.**
+
+Note on how this got flagged as still-open in the first place: PR #63 (task #14) deliberately left
+this as an editorial call for Josh rather than guessing — correct caution in general, but the
+ledger and this note both record only that it was *asked*, never that it was *answered*, across
+every session since. If Josh gives a naming ruling like this again, record the answer here
+immediately, in the same entry as the question, not just the question — that's what "for the 3rd
+time" was catching.
+
+---
+
 **MOBILE DISPLAY AUDIT: PRAYER WINDOW MAXIMIZED, 2026-09-28 continued yet again.** Josh, after the
 earlier same-day fix that stopped the rail/content desync ("The site is completely unusable on
 mobile"), asked directly: "Did I have you address display on mobile devices?" — the answer was no,
