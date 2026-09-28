@@ -238,6 +238,52 @@ sessional hymns/praises/canon-troparia/exapostilarion for any feast, only a full
 partial Vespers stichera. **Next action, not yet started:** confirm with Josh how to proceed given
 that constraint (see the live conversation this note was written from) before transcribing anything.
 
+**NEW TODO, added 2026-09-28 per Josh's direct instruction — the profile/user system.** Josh: "Create
+the profile / user system that we have talked about multiple times" — this has apparently come up
+repeatedly in prior conversation, not previously written down as a tracked item; recording it now so
+it stops being lost. Requirements, as given directly, not yet elaborated or designed by any session:
+
+- **Track, per profile:** the tradition the person selected, and any sub-tradition within it (Josh's
+  own example: Ancient Church of the East vs. Assyrian Church of the East — presumably the existing
+  Church of the East split already wired elsewhere in this app, see COE-era architecture docs, not a
+  new distinction to invent).
+- **Track:** whether the person is ordained, and at what level (deacon/priest/bishop, presumably — not
+  specified further), OR whether they hold a minor order / lay ministry role instead. This almost
+  certainly should reuse the existing role vocabulary already built for the Book of Needs role ladder
+  (`profile-ministry-role` / `book-of-needs-role-access-governance.json` — lay, reader, subdeacon,
+  deacon, priest, bishop, monastic, research/reference, all — see §9's Book of Needs role ladder item)
+  rather than inventing a second, parallel role taxonomy; confirm with Josh whether this profile system
+  and that existing role ladder are meant to be the same underlying data or two different things before
+  building.
+- **First-time open:** the profile should already show whatever tradition/entry info the person has
+  already provided through the app's existing entry flow (the tradition-entry/mode-selection screens,
+  `getUserEntryDefault()` etc. — see §0a/§0b), not ask for it again from scratch, then prompt for name
+  and role type.
+- **Super-user flag:** a way to mark a profile as a super-user (Josh's own account, explicitly —
+  "record a super-user (ME)"). Critically, **only an existing super-user can designate a new one** —
+  not self-assignable by an ordinary visitor. Needs a real design answer for how the very first
+  super-user gets created (a bootstrap problem inherent to this rule), and for whether "super-user" can
+  be enforced with any real integrity given this app currently has no server-side auth or account
+  system at all — everything client-side today is `localStorage`-based user-profile data (see
+  `user-profile-defaults` in `index.html`), which any visitor can edit directly in their own browser's
+  devtools. **Flagging this explicitly, not deciding it:** a purely client-side "super-user" checkbox
+  would not actually gate anything against a visitor who simply flips it themselves; whoever picks this
+  up should research what level of real enforcement this app's architecture can support (a server-side
+  component, a shared secret/passphrase, or accepting that this is a soft/cosmetic gate for a
+  single-maintainer app rather than genuine access control) before building, per this project's own
+  standing practice of researching an architecture question before writing code for it.
+- **Access control:** only super-users should have access to the Bible Browser. Checked this session:
+  the Bible Browser tool button (`index.html`, `openBibleBrowser()`) currently carries NO
+  `app-advanced-only`/`data-advanced-only` gating at all — it's a plain, unrestricted button, unlike the
+  adjacent Admin Console button right next to it, which already uses that exact gating pattern. So this
+  is a genuine net-new restriction, not tightening something partially gated already; the existing
+  `app-advanced-only` mechanism (already used for the Admin Console and the Local Browser Defaults
+  panel) is the obvious pattern to extend to a real super-user check, once that check exists.
+
+Not designed, not scoped into phases, not estimated — this is Josh's request recorded as given, for a
+future session to plan properly (research existing patterns in this codebase first, per standing
+practice) before any code is written.
+
 **Documentation/governance cleanup, in progress as of 2026-09-28** (Josh's direction, same session as
 the Menaion work above): scattered continuity/status documents (this note's own prior sprawl, dated
 archive files, ad hoc structure snapshots) are being consolidated into `documentation/project-history/`
