@@ -60,7 +60,7 @@
     "kathisma": {
       "label": "Kathisma",
       "role": "psalmody",
-      "matchLabels": ["Kathisma Reading", "Kathisma / Lamp-Lighting Psalms", "Psalter Kathismata", "First Kathisma", "Second Kathisma", "Third Kathisma", "Kathisma", "The Ninth Kathisma"],
+      "matchLabels": ["Kathisma Reading", "Kathisma / Lamp-Lighting Psalms", "Psalter Kathismata", "First Kathisma", "Second Kathisma", "Third Kathisma", "Kathisma", "The Ninth Kathisma", "Sessional Hymn After the First Kathisma", "Sessional Hymn After the Second Kathisma"],
       "micro": "A division of the Psalter. The name means 'sitting' — the people may sit while it is read.",
       "structural": "Hapgood gives the etymology directly: Kafisma signifies sitting, and the term may have arisen because sitting was appointed while certain parts were read verse by verse, though at some points standing was enjoined; in ancient times these verses were chanted. She also reads the opening verses theologically: they express two thoughts, Adam's repentance for his sins with his regret for the Paradise he has lost, and the exhortation from Adam's mouth to his posterity that they utterly obey the will of God.",
       "source": "Hapgood 1906, Appendix B I (6) and (7), p.593."
@@ -78,7 +78,7 @@
     "theotokion": {
       "label": "Theotokion",
       "role": "hymn",
-      "matchLabels": ["Theotokion", "Theotokion (Matins)", "Theotokion of the First Hour", "Theotokion of the Third Hour", "Theotokion of the Sixth Hour", "Theotokion of the Ninth Hour", "Dogmatikon"],
+      "matchLabels": ["Theotokion", "Theotokion (Matins)", "Theotokion of the First Hour", "Theotokion of the Third Hour", "Theotokion of the Sixth Hour", "Theotokion of the Ninth Hour", "Dogmatikon", "Theotokion of Compline", "Theotokion of the Interhour of the First Hour", "Theotokion of the Interhour of the Third Hour", "Theotokion of the Interhour of the Sixth Hour", "Theotokion of the Interhour of the Ninth Hour"],
       "micro": "A hymn to the Mother of God closing a set of verses. At Vespers it also carries doctrine.",
       "structural": "The Theotokia at Great Vespers are also called Dogmatiki, from the Greek word for doctrine, and Hapgood explains why: together with the praise of the Birth-giver of God they contain dogmatic teaching about the person of Jesus Christ, and in particular about the Incarnation and the union in his person of two natures, the divine and the human. It is sung at this point to recall that she was the Mediatrix through whom, by the birth of her Son, the life of those under the dispensation of the law was assuaged. A Theotokion here is therefore never only a devotional coda — it is where the office states its Christology.",
       "source": "Hapgood 1906, Appendix B I (8), p.593."
@@ -222,7 +222,7 @@
     "first-hour": {
       "label": "The First Hour",
       "role": "opening",
-      "matchLabels": ["The First Hour", "First Hour", "Prayer of the First Hour", "Prayer of the First Hour and Dismissal"],
+      "matchLabels": ["The First Hour", "First Hour", "Prayer of the First Hour", "Prayer of the First Hour and Dismissal", "Fixed Verse of the First Hour"],
       "micro": "The office of the first hour of the day, about seven in the morning.",
       "structural": "Hapgood states its theme plainly: in the First Hour we thank God for the light of day which he has given us, and pray that we may pass the day without sin. According to the ecclesiastical reckoning it corresponds with the present seven o'clock in the morning. It is customarily joined to the end of Matins rather than said separately.",
       "source": "Hapgood 1906, Appendix B III, p.596."
@@ -231,7 +231,7 @@
     "third-hour": {
       "label": "The Third Hour",
       "role": "opening",
-      "matchLabels": ["The Third Hour", "Third Hour", "Prayer of the Third Hour", "Prayer of the Third Hour and Dismissal"],
+      "matchLabels": ["The Third Hour", "Third Hour", "Prayer of the Third Hour", "Prayer of the Third Hour and Dismissal", "Fixed Verse of the Third Hour"],
       "micro": "The office of the third hour, mid-morning, commemorating the descent of the Holy Spirit.",
       "structural": "Each of the four Hours fixes on one event, and the Third Hour's is Pentecost: in it we commemorate the descent of the Holy Spirit upon the Apostles. It corresponds to the present nine o'clock in the morning.",
       "source": "Hapgood 1906, Appendix B III, p.596."
@@ -240,7 +240,7 @@
     "sixth-hour": {
       "label": "The Sixth Hour",
       "role": "opening",
-      "matchLabels": ["The Sixth Hour", "Sixth Hour", "Prayer of the Sixth Hour", "Prayer of the Sixth Hour and Dismissal"],
+      "matchLabels": ["The Sixth Hour", "Sixth Hour", "Prayer of the Sixth Hour", "Prayer of the Sixth Hour and Dismissal", "Fixed Verse of the Sixth Hour"],
       "micro": "The office of the sixth hour, noon, commemorating the Crucifixion.",
       "structural": "The Sixth Hour corresponds to twelve o'clock, noon, and in it the Crucifixion of Jesus Christ is commemorated. It is commonly joined with the Third Hour before the Liturgy.",
       "source": "Hapgood 1906, Appendix B III, p.596."
@@ -249,7 +249,7 @@
     "ninth-hour": {
       "label": "The Ninth Hour",
       "role": "opening",
-      "matchLabels": ["The Ninth Hour", "Ninth Hour", "Prayer of the Ninth Hour", "Prayer of the Ninth Hour and Dismissal"],
+      "matchLabels": ["The Ninth Hour", "Ninth Hour", "Prayer of the Ninth Hour", "Prayer of the Ninth Hour and Dismissal", "Fixed Verse of the Ninth Hour"],
       "micro": "The office of the ninth hour, mid-afternoon, commemorating the death of Christ.",
       "structural": "The Ninth Hour corresponds to three o'clock in the afternoon and commemorates the death of Jesus Christ, our Lord. Because the liturgical day begins at sunset, it is often read immediately before Vespers, so that it closes the day now ending rather than opening the one about to begin.",
       "source": "Hapgood 1906, Appendix B III, pp.596-597."

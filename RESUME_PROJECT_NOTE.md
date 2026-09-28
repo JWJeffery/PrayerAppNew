@@ -51,6 +51,32 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**THE RENDER BUG BELOW IS NOW FIXED, 2026-09-28 continued once more.** `js/office-ui.js`'s
+`_renderHorologionItem()` had THREE branches that dropped `item.label` entirely, not just the one
+originally characterized below: the `'rubric'` branch (by far the most common item type in the
+engine, 118+ uses, many carrying real distinct labels like "Troparion of the Day" or "Theotokion
+of Compline"), the `'litany'` branch ("The Great Litany", "The Small Litany" never showed), and the
+generic fallback (bare `type: 'text'`, plus the engine's unhandled `'hymn'`/`'hymn-group'`/
+`'prokeimenon'` types). Fixed all three the same way, each mirroring the exact pattern already
+proven correct in the `psalm`/`stichera`/`kathisma`/`sequence` branches: `item.label`, when present,
+now always renders as its own `<p class="rubric-text">` line before the body, regardless of
+display-depth profile.
+
+**Verified before trusting it, not just reasoned about**: captured full rendered HTML for all 14
+Horologion offices across 9 dates (126 combinations) before and after the fix and diffed
+programmatically — 90 of 126 combinations changed, all additive (735 new short label lines
+appeared, zero large-growth outliers that would indicate duplicated body text). Spot-checked
+several in context (`Theotokion of Compline`, `The Great Litany (Mirnaya Ektenia)`, `Prayer I, of
+St. Macarius the Great`) to confirm clean caption-then-body rendering, no redundancy or garbling.
+Live in headless Chromium: zero new console errors (only the pre-existing, already-documented
+sandbox-proxy `ERR_CERT_AUTHORITY_INVALID` on Google Fonts). Then re-confirmed, one by one, that
+11 of the 12 labels the education-layer entry below had to drop as unreachable are now genuinely
+reachable (`Fixed Verse of the First/Third/Sixth/Ninth Hour`, `Theotokion of Compline`,
+`Theotokion of the Interhour of the First/Third/Sixth/Ninth Hour`, `Sessional Hymn After the
+First/Second Kathisma`) and restored their `matchLabels` entries in `data/explanations/
+byzantine.json` — checked for lookup collisions before and after (none). The twelfth, `The Creed
+(Nicene-Constantinopolitan)` in Small Compline, is still not reachable; left out, not guessed at.
+
 **BYZANTINE EDUCATION-LAYER COVERAGE EXTENSION, STARTED 2026-09-28 continued yet again — and a
 real render bug found along the way, not yet fixed.** Picked up the open item this session's own
 earlier answer flagged as "genuinely open and unblocked": `data/kalendar/source-witnesses/
