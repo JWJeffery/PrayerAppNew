@@ -51,6 +51,28 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**THREAD 2 OF THE ENTRY BELOW IS NOW INVESTIGATED AND CONFIRMED, 2026-09-28 continued (still not
+built — a scoping decision, not a content-fill).** The assumption held up under an actual grep, as
+asked: `js/office-ui.js`'s `UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS` (~line 682) is the complete
+per-user profile schema — `entryPageDefault`, `traditionDefault`, `bookOfNeedsScope`,
+`ministryRole`, `oorSubtradition`, `romanBreviaryLanguage`. Nothing resembling a parish/dedication
+field exists anywhere in it, nor in `js/saints-resolver.js` or the East Syriac calendar module
+(that file's own "Dedication" hits are the unrelated Qudash 'Idta feast, and its "Patron Saint" hit
+is a Church-of-the-East commemoration name, not a per-user setting). The existing disclosure in
+`js/horologion-engine.js` (search `Kontakion of the temple dedication`, inside the
+`typika-kontakion-rubric` branch of `_resolveTypikaSlots()`) already says this in its own words —
+"this app has no concept of a specific parish's dedication" — so the code-level answer was already
+half-documented in the disclosure text itself, just not cross-checked against the profile schema
+until now. `data/saints/sanctoral.json` does have candidate seed data if this is ever built: 20
+EOR-tagded entries name-match the Twelve Great Feasts family (Transfiguration, Annunciation,
+Ascension, Pentecost, Exaltation, Presentation, Entry, Dormition, Baptism/Theophany, etc.), which
+is the natural starting list for a curated dedication picker rather than open-ended free text.
+**Still a decision for Josh, not something to build blind**: whether to add a "home parish
+dedication" setting at all, and if so, whether to scope it to the Twelve Great Feasts plus a short
+patron-saint list (bounded, reuses existing corpus data, easy to keep honest) or open-ended (harder
+to keep matched against this corpus's actual coverage). Asked Josh this directly rather than
+guessing; see the conversation, not this file, for his answer and whatever gets built as a result.
+
 **THREAD 1 OF THE ENTRY BELOW IS NOW BUILT AND VERIFIED, 2026-09-28 continued.** Both open questions
 this entry left (does `selectHorologionOffice()` have bad side effects when re-entered from Typika;
 are "Fifth Thursday of Great Lent"/"Forty Martyrs" already computable) checked out clean, and the
