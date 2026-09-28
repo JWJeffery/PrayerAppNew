@@ -1,5 +1,115 @@
 # RESUME_PROJECT_NOTE.md
 
+**MOBILE RAIL/CONTENT DESYNC — SEVERE, LIVE-REPORTED, FIXED 2026-09-28.** Josh: "The site is
+completely unusable on mobile," with a live screenshot of BCP Compline on a phone: the rail
+("THE ORDER") showed "Kyrie" through "Antiphon" (near the very end of the office) while the
+content below sat at "Opening Blessing" (the very start) — two panels showing unrelated
+positions. Confirmed via `AskUserQuestion` this was the panels-out-of-sync symptom, not literal
+overlapping text.
+
+**Root cause, found by reasoning through the architecture, not guessing:** `.uo-rail` (the "THE
+ORDER" step list) is independently scrollable by design (`css/office-shell.css`, a 2026-09-25
+fix, its own comment: "a reader who is manually browsing the rail by hand isn't fought on every
+scroll frame"). On desktop this is safe — the rail is a side column, the whole office text stays
+visible the entire time you're browsing it by hand. On mobile the SAME independently-scrollable
+behavior was carried into the `@media (max-width: 768px)` rule that collapses the rail into a
+capped top strip stacked ABOVE the content (`max-height: 34vh; overflow-y: auto;
+-webkit-overflow-scrolling: touch;`) — sitting exactly where a thumb lands to swipe up and read
+on. An ordinary reading swipe that starts on that strip scrolls the RAIL, not the page, and
+nothing ever scrolled it back: the strip was left showing wherever the reader's thumb carried it,
+silently disconnected from the real content underneath.
+
+**Fixed**: `.uo-rail`'s mobile rule changed from `overflow-y: auto` (+ removed
+`-webkit-overflow-scrolling: touch`) to `overflow-y: hidden`. Confirmed live before shipping that
+this does NOT break the rail's own "keep the current item visible" feature
+(`updateRailCurrent()`'s `scrollIntoView()` call, `js/office-shell.css`) — an element with
+`overflow:hidden` still fully supports `Element.scrollTop`/`scrollIntoView()` programmatically;
+only `overflow:visible` blocks that. Verified two ways in headless Chromium at a real mobile
+viewport (412×892, touch-enabled): (1) a real wheel event targeted directly at the rail strip no
+longer moves its `scrollTop` at all (was freely scrollable before); (2) scrolling the CONTENT 70%
+into Compline still correctly auto-scrolled the rail to show "A Reading" as current, fully visible
+within the still-capped 34vh strip — the programmatic sync path is untouched. Screenshotted the
+result: rail and content agree.
+
+**`js/office-shell.css` is the only file touched by this fix.** Nothing else in the rail/content
+architecture was changed — reachability for long offices (20-30+ items, East Syriac/Horologion,
+the reason the strip is capped+scrollable at all) is preserved exactly as before; what's removed
+is solely the reader's ability to drag the strip out of sync by hand on a touch device.
+
+---
+
+**TASK #14 (tradition-selector card naming/description consistency) — ONE REAL BUG FOUND AND
+FIXED; A BROADER NAMING QUESTION FOUND AND LEFT FOR JOSH, 2026-09-28.** Checked
+`documentation/OPEN_ITEMS_FIXABILITY.md`'s "Navigation governance conflict" note first, per the
+task's own instruction — that conflict is about DRAWER/PANEL headings ("uniform vs. locally
+named"), already settled elsewhere in this file (§8: "Sidebar headings are uniformly 'Office
+Settings'"), and doesn't block this narrower entry-card question.
+
+**Real bug, fixed:** the "Catholic" tradition-entry card (`index.html`, the "Where do you pray?"
+drill-down, `data-entry-tradition="latin-catholic"`) still read "Roman Breviary 1960/1962,
+**Liturgy of the Hours**." — directly contradicting this session's own earlier governance decision
+("The modern LOTH lane is abandoned. We are using the 1960s version."). Swept the rest of the
+codebase for other live, user-facing LOTH mentions first (not just this one): `project_roadmap.json`'s
+are all inside already-`superseded`-tagged governance entries (historical record, correctly left
+alone); `documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md`'s is inside an illustrative
+example, not live data; `data/tradition-availability.json` itself (the actual live-read file) is
+clean. This one card was the only real, live, user-facing staleness. Fixed both the visible
+`<small>` text and its `data-available-subtitle` mirror attribute (confirmed via `js/office-ui.js`
+line ~1663 that the two must stay in sync — the attribute is the fallback restore-text after an
+"unavailable" message).
+
+**Broader finding, NOT acted on — flagged for Josh's own call, not guessed at:** the entry-card
+screen and the "Another office" five-card mode-grid name three of the five traditions
+differently from each other for the exact same lane — entry-card "Anglican" vs. mode-grid "The
+Daily Office"; entry-card "Catholic" vs. mode-grid "Roman Breviary 1960/1962"; entry-card "Oriental
+Orthodoxy" vs. mode-grid "The Coptic Agpeya" — while the other two (Church of the East, Eastern
+Orthodoxy) already use the same name on both screens. Whether this should be unified, and if so
+which name should win (the ecclesial-tradition name or the specific office/book name), is a real
+editorial call — the same *class* of decision the drawer-heading conflict already needed Josh for,
+not something to guess at silently. Left exactly as found.
+
+**`index.html` is the only file touched by the fixed part.**
+
+---
+
+**TASK #15 ("splash screen shouldn't be scrollable") — INVESTIGATED, ROOT CAUSE FOUND, NOT YET
+FIXED — deliberately deferred, 2026-09-28.** Josh: "It's this screen that scrolls..." with a
+screenshot of the "Another office" five-card grid (`#uo-threshold-grid` inside `#mode-selection`)
+scrolled partway down on an ordinary desktop-width browser window — confirmed live: at 1512×900,
+`document.body` genuinely can scroll (`scrollHeight` 972 vs. `innerHeight` 900) while this grid is
+showing.
+
+**Root cause found, not yet fixed:** the base `body { overflow-y: hidden; }` rule
+(`css/office.css`) is overridden by a LATER rule with equal specificity and its own
+`!important` — `css/office.css`'s own "Entry splash stained-glass viewport stabilization pass"
+(`body:not(.office-active) { ... overflow-y: auto !important; ... }`), which cascades later in the
+same file and wins. That rule is itself a deliberate, documented mobile-safety fix (dynamic
+viewport units, `env(safe-area-inset-*)` padding, `align-items:flex-start` instead of centering)
+— almost certainly built to stop tall splash content from being unreachably clipped on real mobile
+devices. **Given this exact session just found a severe mobile regression (the rail/content desync
+above) from underestimating a mobile-specific CSS interaction, a second same-day change to this
+same "mobile splash viewport" rule was not risked without safely verifying it end-to-end on actual
+small viewports first — deliberately deferred rather than rushed.** Next session: the actual body-
+level overflow only needs to trigger when content genuinely exceeds the viewport (a 900px-tall
+desktop window showing five cards should never need it) — the arithmetic is already worked out
+here: body's own `padding-top`(18px) + `#mode-selection`'s `margin-top`(clamp 82-172px, vh-based)
++ content height + `margin-bottom`(clamp 28-72px) + body's `padding-bottom`(26px) together exceed
+900px on this specific viewport even though `#mode-selection`'s own content (756.625px) sits
+comfortably under its own `max-height` cap (860px) — the overflow is coming from the "invisible"
+margin/padding budget around it, not the content itself. No file changed for this item.
+
+---
+
+**NEW TODO, LOGGED 2026-09-28, NOT YET BUILT — Josh's own words:** "I would like to add a space
+for authorized intercessions in morning and evening prayer of BCP... We will add those
+intercessions later. Add to todo." He attached a screenshot of an existing BCP office (matches
+Compline's own "Prayers and Thanksgivings" pattern) showing the rubric text this should mirror:
+*"Here may be sung a hymn or anthem."* / *"Authorized intercessions and thanksgivings may
+follow."* — a rubric placeholder, not live content. **Scope, as given: add the equivalent rubric
+space to BCP Morning Prayer and Evening Prayer (`js/office-ui.js`'s `renderBcpOffice()`, near
+where each office's own closing prayers/collects are emitted) — the space only, no actual
+intercession texts, which Josh will supply in a future session.** Not started.
+
 **Paste this at the start of a new conversation.** It is a handoff document, not a history. The
 permanent record of every decision lives in `AUDIT_GOVERNANCE_LEDGER.md`; the classification of what
 blocks each open item lives in `documentation/OPEN_ITEMS_FIXABILITY.md`. **Where this note and the
