@@ -138,8 +138,11 @@ warrants asking first, per Claude Code's own standing judgment on risky actions.
   review** — prefer targeted edits. **Validate JSON before writing**, not after
   (`node -e "JSON.parse(...)"` is cheap insurance).
 - **When scripting a bulk edit against `data/saints/sanctoral.json`, key on `(id, month, day)`, never
-  `id` alone.** At least 58 duplicate `id` values existed in the file as of 2026-09-07 (status not
-  re-verified since — check before assuming resolved). A blind id-keyed write silently clobbered
+  `id` alone.** 40 duplicate `id` values remain as of 2026-09-28 (down from the 58 first found
+  2026-09-07, after that count was finally investigated rather than just re-checked for size — see
+  §7). All 40 are the corpus's normal same-figure/different-tradition-date pattern, re-confirmed to
+  have zero exact (id, date) collisions; two genuine identity collisions found in the same pass
+  (`saint-boniface`, `mar-michael`) were fixed by id split. A blind id-keyed write silently clobbered
   unrelated rows once already; full-file backup before any bulk sanctoral edit, and re-verify with a
   fresh read after, every time.
 - Cache-bust params in `index.html` (`?v=NNN`) must be **bumped manually** whenever the corresponding
@@ -288,8 +291,46 @@ re-checked since first flagged — see `documentation/project-history/VOLUME-4-2
 for the full per-item list): a set of same-figure-different-day editorial questions (Seven Holy Youths
 of Ephesus, Prophet Micah, Prophet Malachias, Bessarion, Amos, Julietta/Cyriacus, Bartholomew, Moses,
 Hilarion, St Anne, Clement of Rome, Gregory Thaumaturgus, Holy Innocents, Anthony the Great, Timothy
-the Apostle — dates and specifics in Volume 4); the `coptic.io` connector's broken status (§6); at
-least 58 duplicate `id` values in `data/saints/sanctoral.json` (found 2026-09-07, not yet resolved).
+the Apostle — dates and specifics in Volume 4); the `coptic.io` connector's broken status (§6).
+
+**The 58-duplicate-`id` item (found 2026-09-07) is now RESOLVED, 2026-09-28** — investigated
+properly for the first time rather than just re-counted. Found 42 duplicate-id groups (87 rows;
+count differs slightly from the original 58, likely file drift since 2026-09-07). Checked every
+group for the one thing that would make a shared id a real bug — an exact (id, date) collision, or
+the id secretly covering two different people — not just presence of the same id string. **Zero
+exact (id, date) collisions.** All but two groups are the corpus's normal, intentional pattern: the
+same historical figure commemorated on genuinely different dates in different traditions (already
+documented throughout this file's own entries as expected, not a defect). **Two groups were real id
+collisions between different identities, both self-disclosed by the data's own text, not asserted
+from outside research:** `saint-boniface` covered both the Archbishop of Mainz (ANG/LAT, June 5) and
+an unrelated Roman martyr under Diocletian (EOR, Dec 19) — the EOR row's own description already said
+"a different figure... same name, unrelated identity." `mar-michael` covered both a human Abbot (COE,
+Dec 19-ish, moveable) and the Archangel Michael (COE, "Sunday of the Sixth Week of the Fast" —
+verified 7/7 years against the Diocese of Western Europe calendar) — these can even land on the exact
+same real date in a given year (both resolve to 2026-03-22). **Fixed:** split into
+`saint-boniface-of-tarsus` and `mar-michael-archangel` respectively (no content/date changed, id only);
+`js/coe-eligibility.js`'s Layer 3 allowlist updated to keep `mar-michael-archangel` displaying (the
+allowlist gates by id, so a bare rename would have silently hidden the Archangel). Verified:
+`data/saints/sanctoral.json` and `js/coe-eligibility.js` remain valid; entry count unchanged at 1068
+(no rows lost); `CoeEligibility.isEligible()` confirmed true for both `mar-michael` and
+`mar-michael-archangel` after the allowlist update. Also normalized five pure capitalization
+inconsistencies found in the same pass (e.g. "Saint James The Brother Of The Lord" →
+"...the Brother of the Lord", "St. John the Baptist" → "Saint John the Baptist" to match this
+corpus's dominant style) — cosmetic only, same identity confirmed on both sides in every case.
+
+**One further group looks like the same bug pattern but was deliberately NOT touched — needs Josh's
+call, not a guess:** `mar-abraham` has two rows, both COE-tagged, both `type: 'fixed'`, both dated
+May 2 — the exact same day. One is a thin, uncited legacy row ("Catholicos and missionary"). The
+other, properly sourced to the ACOE Diocese of California calendar, is explicitly "Abraham, Doctor of
+the School of Nisibis" and its own note distinguishes it from a *third*, separately-sourced identity
+at the same corpus, `mar-abraham-of-kashkar` (founder of the Great Monastery, also May 2, per the same
+source). Unlike Boniface/Michael, nothing in this file discloses whether the thin "Catholicos and
+missionary" row is (a) genuine leftover cruft duplicating `mar-abraham-of-kashkar`'s own May 2 entry
+under the wrong id, (b) a real third distinct Abraham who happens to share the date, or (c) an old,
+uncited attempt at the same Doctor-of-Nisibis identity that the properly-sourced row already
+superseded and should have stripped. Resolving this needs real hagiographical judgment (multiple
+historical East Syriac figures are named Abraham) that this session doesn't have the sourcing to make
+safely — flagging with full evidence rather than guessing, per this project's standing practice.
 
 **Carried forward, not independently re-verified this session** — Formation prose editor-name strip,
 Education-layer coverage extension, Royal Anthem sourcing (genuinely unsourced after four leads across

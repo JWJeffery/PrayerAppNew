@@ -23554,3 +23554,60 @@ existing green row for `comm-gloria-patri` (verified 2026-07-07 against BCP1979.
 closed` with the full finding; corrected `RESUME_PROJECT_NOTE.md`'s matching line. Files touched:
 `structure.json`, `RESUME_PROJECT_NOTE.md`. `node -e "JSON.parse(...)"` confirms `structure.json`
 still parses. SEED_VERSION bumped to v390-2026-09-28-gloria-patri-todo-closed-not-a-defect.
+
+## Session 2026-09-28, continued yet again -- sanctoral.json's "58 duplicate ids" resolved: two real
+## identity collisions found and split, one flagged for Josh, the rest confirmed intentional
+
+Investigated `data/saints/sanctoral.json`'s duplicate-`id` finding (first flagged 2026-09-07,
+carried as "not yet resolved" ever since) properly for the first time, rather than re-checking the
+count. Found 42 duplicate-id groups (87 rows; the count drifted slightly from the original 58 since
+2026-09-07). Checked every group for an exact `(id, date)` collision or a data-disclosed different
+identity, not just repeated id strings. **Zero exact (id, date) collisions.** 40 of the 42 groups are
+this corpus's normal, intentional pattern -- the same historical figure commemorated on genuinely
+different dates across different traditions, already the established design throughout this file.
+
+**Two groups were real id collisions between unrelated identities, both self-disclosed by the data's
+own existing text -- not asserted from outside research:**
+
+1. `saint-boniface` covered the Archbishop of Mainz (ANG/LAT tags, June 5) and an unrelated Roman
+   martyr under Diocletian (EOR tag, Dec 19) -- the EOR row's own description already read "a
+   different figure... same name, unrelated identity," never acted on. Split: the martyr row moved to
+   `saint-boniface-of-tarsus`. Checked repo-wide: nothing outside `sanctoral.json` referenced
+   `saint-boniface`, so no other file needed a change.
+2. `mar-michael` covered a human Abbot (COE tag, moveable date ~Dec 19, Diocese of California) and the
+   Archangel Michael (COE tag, "Sunday of the Sixth Week of the [Great] Fast," verified 7/7 years
+   against the Diocese of Western Europe calendar) -- two identities that can even land on the exact
+   same real date in a given year (both resolve to 2026-03-22), so date alone was never a safe
+   disambiguator either. Split: the Archangel row moved to `mar-michael-archangel`. This id is gated
+   by `js/coe-eligibility.js`'s Layer 3 allowlist (COE-II's audited eligibility gate, "requires no
+   further structural changes at this time" per that file's own governance-status note) -- a bare
+   rename would have silently removed the Archangel from display, since the allowlist only recognised
+   the old shared id. Added `mar-michael-archangel` alongside the still-present `mar-michael` in the
+   allowlist, in the same commit, so neither identity's display changes; this is an id-split of an
+   already-audited identity, not new structural work on the gate's own logic.
+
+No content, date, source citation, or `observance` rule was changed for either split -- id only.
+Also normalized five pure capitalization inconsistencies found in the same duplicate-group review
+(same identity confirmed on both sides in every case, e.g. "Saint James The Brother Of The Lord" ->
+"...the Brother of the Lord", "St. John the Baptist" -> "Saint John the Baptist" to match the
+corpus's dominant style, 533 "Saint" vs. 14 "St." prefixes).
+
+**One further group was deliberately left untouched -- flagged for Josh, not guessed at:**
+`mar-abraham` has two COE-tagged, `fixed`-type rows both dated May 2. One is a thin, uncited legacy
+row ("Catholicos and missionary"). The other, properly sourced to the ACOE Diocese of California
+calendar as "Abraham, Doctor of the School of Nisibis," explicitly distinguishes itself from a
+*third*, separately-sourced identity in this same corpus, `mar-abraham-of-kashkar` (founder of the
+Great Monastery, also dated May 2 from the same source) -- but says nothing about the thin row.
+Resolving whether the thin row is leftover cruft duplicating `mar-abraham-of-kashkar`, a real third
+Abraham who happens to share the date, or superseded-but-never-stripped legacy data needs real
+hagiographical judgement this session isn't positioned to make safely. See `RESUME_PROJECT_NOTE.md`
+§7 for the full writeup.
+
+VERIFIED: `data/saints/sanctoral.json` and `js/coe-eligibility.js` both remain syntactically valid;
+entry count unchanged at 1068 (no rows lost or merged); re-ran the duplicate-group scan after the
+edits and confirmed zero remaining name mismatches and exactly one row each under `mar-michael` /
+`mar-michael-archangel` / `saint-boniface` / `saint-boniface-of-tarsus`; loaded
+`js/coe-eligibility.js` directly in Node and confirmed `CoeEligibility.isEligible()` returns true for
+both `mar-michael` and `mar-michael-archangel` after the allowlist update. Files touched:
+`data/saints/sanctoral.json`, `js/coe-eligibility.js`, `RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped
+to v391-2026-09-28-sanctoral-boniface-michael-id-collision-split.
