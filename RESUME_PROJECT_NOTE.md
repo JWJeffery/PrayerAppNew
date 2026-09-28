@@ -218,7 +218,7 @@ already exists or is already finished, check before asserting it, and say plainl
 | **ODCC** | In repo but **no text layer at all**. Do not re-propose. |
 | **Lambertsen Octoechos** | In copyright to ~2087; citable, not reproducible |
 | **orthocal.info** (EOR, Slavic/OCA + Greek/Antiochian beta) | Direct MCP tools `search_saints` / `get_day` -- connector has been flaky across sessions, sometimes simply absent from the tool list for a whole turn with no error beyond "not available in this turn." When that happens: do not retry in the same turn; fall back to Wikipedia's compiled "Month Day (Eastern Orthodox liturgics)" pages rather than stalling. |
-| **coptic.io** (OOR, Coptic) | MCP tools `search_saints` / `get_day` / `get_day_coptic`, same flakiness pattern -- `coptic_mcp_server.py` (repo root) is a live wrapper Josh must keep running and port-forwarded (Public) in his Codespace for this connector to work at all. Not persistent. Last known status: broken as of 2026-09-11 (Josh has a support reference code), not rechecked since. **NEW LEAD, found 2026-09-28 during the scripts/ audit below, not yet acted on:** there are TWO copies of this wrapper that have silently diverged -- `coptic_mcp_server.py` (repo root, the one this note has always pointed at) and `scripts/coptic-mcp-server.py` (the one actually documented as built/fixed/verified, per `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-07 "coptic.io MCP wrapper built, tested, connected" entry). Direct diff shows the root copy is MISSING the critical fix from that entry -- pinning `mcp[cli]>=1.10.1,<2.0.0` (the unpinned installer grabs the SDK's 2.x line, which renamed `FastMCP` and breaks this script's v1-API code at import) -- and is missing the "verified working end-to-end" notes the scripts/ copy carries. If Josh has been running the root copy, that dependency mismatch is a plausible real cause of "broken," not necessarily coptic.io itself. Not fixed here: this is Josh's own local Codespace infrastructure, outside what a repo edit can verify or safely change unilaterally -- flagging with the exact diff finding rather than guessing which file to touch. Fallback: Wikipedia's per-Coptic-day pages, sourced from copticchurch.net/st-takla.org. |
+| **coptic.io** (OOR, Coptic) | **REMOVED 2026-09-28, per Josh's direct instruction: the `coptic_mcp_server.py` wrapper (both the repo-root copy and the `scripts/coptic-mcp-server.py` copy it had silently diverged from -- see the scripts/-audit entry below for that finding) was built specifically to support the Coptic Agpeya build; now that the Agpeya is finished, it is no longer needed, and both files were deleted.** It had also seen secondary use as an OOR sanctoral-sweep verification tool (§7's "paused, not active" gap sweep) -- flagged to Josh at removal time in case that affects resuming that work, but the removal stands as instructed. If OOR sourcing work resumes and a coptic.io connector is wanted again, it would need to be rebuilt from scratch; the old build's own documented gotchas (the `mcp[cli]<2.0.0` pin, matching interpreter paths) are preserved in `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-07 entries even though the code is gone. Fallback, unaffected by the removal: Wikipedia's per-Coptic-day pages, sourced from copticchurch.net/st-takla.org. |
 
 **Any item needing Maclean past p.45 is blocked on Josh supplying pages.** Retrying will not change
 it.
@@ -263,9 +263,12 @@ individual review") is confirmed live — imported directly by `scripts/build-ro
 and `scripts/build-roman-breviary-oracle-blocks.mjs`, documented as core Roman Breviary tooling in
 `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md` and multiple ledger entries. Nothing to delete.
 `scripts/coptic-mcp-server.py` vs. root `coptic_mcp_server.py` ("a likely stale duplicate, not deleted
-without confirming which one Josh actually runs") is NOT a stale-duplicate cleanup question — see the
-coptic.io row in the source-reachability table above for what it actually turned out to be (a real
-divergence, not dead code). 116 files remain in `scripts/`, all now accounted for.
+without confirming which one Josh actually runs") turned out not to be a stale-duplicate cleanup
+question at all — the two copies had genuinely diverged in content (see this note's own git history
+for that finding). Moot now regardless: Josh confirmed both were built specifically for the Coptic
+Agpeya build and, with the Agpeya finished, had both deleted 2026-09-28 — see the coptic.io row in the
+source-reachability table above (the root copy, `coptic_mcp_server.py`, was never part of the
+`scripts/` count). 115 files remain in `scripts/`, all now accounted for.
 
 **`structure.json`'s other open todos** (re-verified 2026-09-28, continued — see the file itself for
 full evidence): the **Gloria Patri/Kyrie "duplication" item is now CLOSED, not open** — the prior
@@ -333,19 +336,31 @@ inconsistencies found in the same pass (e.g. "Saint James The Brother Of The Lor
 "...the Brother of the Lord", "St. John the Baptist" → "Saint John the Baptist" to match this
 corpus's dominant style) — cosmetic only, same identity confirmed on both sides in every case.
 
-**One further group looks like the same bug pattern but was deliberately NOT touched — needs Josh's
-call, not a guess:** `mar-abraham` has two rows, both COE-tagged, both `type: 'fixed'`, both dated
-May 2 — the exact same day. One is a thin, uncited legacy row ("Catholicos and missionary"). The
-other, properly sourced to the ACOE Diocese of California calendar, is explicitly "Abraham, Doctor of
-the School of Nisibis" and its own note distinguishes it from a *third*, separately-sourced identity
-at the same corpus, `mar-abraham-of-kashkar` (founder of the Great Monastery, also May 2, per the same
-source). Unlike Boniface/Michael, nothing in this file discloses whether the thin "Catholicos and
-missionary" row is (a) genuine leftover cruft duplicating `mar-abraham-of-kashkar`'s own May 2 entry
-under the wrong id, (b) a real third distinct Abraham who happens to share the date, or (c) an old,
-uncited attempt at the same Doctor-of-Nisibis identity that the properly-sourced row already
-superseded and should have stripped. Resolving this needs real hagiographical judgment (multiple
-historical East Syriac figures are named Abraham) that this session doesn't have the sourcing to make
-safely — flagging with full evidence rather than guessing, per this project's standing practice.
+**`mar-abraham` — RESOLVED 2026-09-28 (continued), by Josh's direct request to research it rather
+than leave it flagged.** Corrected a mis-scoped first pass: only ONE of the two `mar-abraham` rows was
+actually dated May 2 (fixed) — the properly-sourced "Doctor of the School of Nisibis" row is a
+moveable date (cycle: subara week 3, weekday 5, dayLegacy Dec 18/20), not May 2 at all; the earlier
+write-up here wrongly said both rows shared the date. The real collision was between the thin
+"Catholicos and missionary" row (fixed May 2, dayLegacy inconsistently "August 23" — a leftover field
+that never matched its own May 2 date) and the separately-sourced `mar-abraham-of-kashkar` (also fixed
+May 2). Settled with a primary-source check, not textual inference alone: both years the "Catholicos
+and missionary" row cited as its own evidence — the actual ACOE Diocese of California 2024 and 2026
+calendar PDFs already held in `data/kalendar/source-witnesses/` (`2024 full.pdf`, `2026cal.pdf`) —
+were read directly. **Neither prints any "Catholicos and missionary" commemoration on May 2, or
+anywhere else, for anyone named Abraham.** Both years print exactly one Abraham entry on that date:
+"Commemoration of Mar Abraham of Kashkar" — nothing else. The claimed citation was false. Textual
+history corroborates the same conclusion independently: `mar-abraham-of-kashkar`'s own `ruleSource`
+says its content was "carried over 2026-09-12 from the superseded duplicate row of this same identity
+before it was removed" — describing exactly this row, which evidently never actually got deleted in
+that 2026-09-12 cleanup, just orphaned under the bare `mar-abraham` id. **FIXED: the "Catholicos and
+missionary" row deleted outright** (not merged, not re-sourced — it had no real content to preserve;
+`mar-abraham-of-kashkar` already fully and correctly covers this May 2 commemoration). `mar-abraham`
+now holds exactly one row (Doctor of the School of Nisibis, Dec 18/20, confirmed printed in both
+years). Entry count and JSON validity re-verified after the edit. **Bonus finding, not acted on:**
+the same two calendar PDFs also print "Commemoration of Mar Abraham of Qidun" every December 14 (a
+distinct, well-known East Syriac desert hermit) — genuinely absent from this corpus under any id.
+Not added here since it's new content, not a correction of what's already in the file; flagged for a
+future session or Josh's call on whether to add it.
 
 **Carried forward, not independently re-verified this session** — Formation prose editor-name strip,
 Education-layer coverage extension, Royal Anthem sourcing (genuinely unsourced after four leads across

@@ -23650,3 +23650,62 @@ Closed both loose ends that commit left open:
 No files changed in `scripts/` or at the repo root this pass -- both findings were "this is already
 correct" (parse-officium-html.mjs) and "this needs Josh, not a delete" (the coptic MCP divergence).
 Files touched: `RESUME_PROJECT_NOTE.md` only.
+
+## Session 2026-09-28, continued yet again -- mar-abraham resolved: a fabricated citation found and
+## removed, by primary-source check, not inference
+
+Josh asked directly for the `mar-abraham` flag (left open in the previous entry) to actually be
+researched rather than left for later. Found and corrected a scoping error in that earlier writeup
+first: only one of the two `mar-abraham` rows was genuinely dated May 2 (fixed) -- the properly-sourced
+"Doctor of the School of Nisibis" row is a moveable date (cycle: subara week 3 weekday 5), not May 2,
+so the two rows were never actually a same-id-same-date collision with each other. The real
+question was the thin "Catholicos and missionary" row (fixed May 2) against the separately-sourced
+`mar-abraham-of-kashkar` (also fixed May 2).
+
+**Settled with a primary-source check, per this project's own standard, not left on textual
+inference.** The "Catholicos and missionary" row's own `ruleSource` cited two specific documents
+already held in the repo: the ACOE Diocese of California 2024 and 2026 ecclesiastical calendars
+(`data/kalendar/source-witnesses/2024 full.pdf`, `2026cal.pdf`). Installed a working PDF text
+extractor (the sandbox's system `pypdf`/`cryptography` stack was broken -- worked around with an
+isolated venv rather than touching system packages) and read both PDFs directly. **Neither prints
+any "Catholicos and missionary" commemoration for anyone named Abraham, on May 2 or any other date.**
+Both years print exactly one Abraham entry on May 2: "Commemoration of Mar Abraham of Kashkar" --
+matching `mar-abraham-of-kashkar`'s own entry exactly, nothing else. The row's claimed citation was
+false -- not a defensible reading of a real source, a citation that does not exist in the cited
+document. Independently corroborated by the corpus's own text: `mar-abraham-of-kashkar`'s
+`ruleSource` already said its content was "carried over 2026-09-12 from the superseded duplicate row
+of this same identity before it was removed" -- describing this exact row, which evidently was never
+actually deleted in that cleanup, only orphaned under the bare `mar-abraham` id afterward.
+
+**FIXED: deleted the "Catholicos and missionary" row outright** -- not merged or re-sourced, since it
+held no content worth preserving; `mar-abraham-of-kashkar` already fully and correctly covers this May
+2 commemoration. `mar-abraham` now holds exactly one row (Doctor of the School of Nisibis, confirmed
+printed Dec 18 2026 / Dec 20 2024 in the same two source PDFs). VERIFIED: `data/saints/sanctoral.json`
+still parses; exactly one row remains under `id: "mar-abraham"`.
+
+**Bonus finding surfaced by the same PDF read, not acted on:** both calendars also print
+"Commemoration of Mar Abraham of Qidun" every December 14 -- a distinct, well-known East Syriac
+desert hermit, genuinely absent from this corpus under any id. Not added, since this session's task
+was correcting existing data, not expanding the corpus; flagged in `RESUME_PROJECT_NOTE.md` for a
+future session or Josh's own call. Files touched: `data/saints/sanctoral.json`,
+`RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped to
+v392-2026-09-28-mar-abraham-fabricated-citation-removed.
+
+## Session 2026-09-28, continued yet again -- coptic_mcp_server.py / scripts/coptic-mcp-server.py
+## removed, per Josh's direct instruction: built for the Agpeya build, no longer needed now it's done
+
+Josh: "Coptic-MCP-Server.py was created as a connector for when we were building the agpeya. As the
+agpeya is finished, it is no longer needed." Deleted both `coptic_mcp_server.py` (repo root) and
+`scripts/coptic-mcp-server.py` -- the two diverged copies flagged as a live-infrastructure question
+in the previous scripts/-audit entry are now moot. Confirmed no other file referenced either path
+before deleting (checked repo-wide; the only remaining hits are this ledger's own historical entries
+and `RESUME_PROJECT_NOTE.md`'s dashboard note, both updated to reflect the removal rather than left
+pointing at deleted files). Flagged one thing back to Josh at removal time rather than silently
+dropping it: this connector had a secondary use beyond the Agpeya build, cross-verifying dates during
+the OOR sanctoral gap sweep (`§7`, paused not abandoned since 2026-09-12) -- noted in case that
+affects resuming that work, but proceeded with the removal as instructed since it's a reversible
+git-tracked change. If that sweep resumes and a coptic.io connector is wanted again, the old build's
+documented gotchas (pin `mcp[cli]<2.0.0`; use one consistent Python interpreter for install and run)
+stay on record in this ledger's 2026-09-07 entries even though the code itself is gone. `scripts/`
+file count: 116 -> 115. Files touched: `coptic_mcp_server.py` (deleted),
+`scripts/coptic-mcp-server.py` (deleted), `RESUME_PROJECT_NOTE.md`.
