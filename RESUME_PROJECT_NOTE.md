@@ -463,22 +463,32 @@ the East Hudra closeout, cross-family hardening, final beta gate) are all `not_s
 
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions) — as of the last entries
 in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
-- Task #14 — tradition-selector naming: one real bug fixed (stale LOTH text). The broader
-  naming-consistency question is **fully resolved, across two separate fixes that both landed
-  2026-09-28 (continued) and are now merged together.** Governance ruling (Josh, applied in `179e38f`
-  on `main`): **mode-grid title = ecclesial-tradition name, subtitle = specific office name** — the
-  pattern `#tradition-entry` already used. That fix swapped the three mismatched cards: "Daily Office"
-  → title **Anglican** (subtitle "The Daily Office, according to the 1979 Book of Common Prayer.");
-  "Coptic Agpeya" → title **Oriental Orthodoxy** (subtitle "The Coptic Agpeya — the seven hours and
-  Theotokia of the Coptic Church."); "Roman Breviary 1960/1962" → title **Catholic** (subtitle "The
-  Roman Breviary 1960/1962 — Roman Rite, Latin, all eight hours."). Separately, this branch renamed the
-  remaining two cards, which already used the tradition name as their title and only needed the name
-  itself corrected: Eastern Orthodoxy's mode-grid card → **"Horologion"**; Church of the East's
-  mode-grid card → **"Hudra"** (confirmed: Josh meant Hudra, not Ramsha — Ramsha is one specific office
-  within the Hudra, not the whole book, as flagged). All five mode-grid cards now follow the same
-  tradition-name-as-title convention; verified live in `index.html` post-merge. The entry-card screen's
-  own separate labels (`#tradition-entry`) were deliberately left untouched in every case, not part of
-  this naming pair. Nothing left open on this item.
+- Task #14 — tradition-selector naming: **now genuinely, fully closed — final wording confirmed
+  directly by Josh, all five lanes identical on both screens.** This went through several wrong
+  intermediate states before landing here, worth recording so it doesn't get re-litigated: an
+  earlier fix (`179e38f`) set mode-grid titles to the bare tradition name (Anglican, Oriental
+  Orthodoxy, Catholic) while leaving Church of the East/Eastern Orthodoxy's mode-grid cards as
+  "Hudra"/"Horologion" (office-book names, from a different concurrent session, still on
+  `#tradition-entry` as "Church of the East"/"Eastern Orthodoxy") — a real, live mismatch that
+  wasn't caught by that fix's own testing. Josh's actual final answer, given directly and applied
+  now: full communion/church-body names, identical on **both** `#tradition-entry` and
+  `#uo-threshold-grid`, for all five lanes —
+  - **Anglican Communion** (was "Anglican")
+  - **Catholic Church** (was "Catholic")
+  - **Church of the East** (unchanged on the entry-card; mode-grid corrected back from "Hudra")
+  - **Eastern Orthodox Church** (was "Eastern Orthodoxy" on the entry-card, "Horologion" on the
+    mode-grid — both corrected to the same new name)
+  - **Oriental Orthodox Church** (was "Oriental Orthodoxy" on both screens)
+  Subtitles (the specific office/book name — "The Daily Office...", "Roman Breviary 1960/1962...",
+  "Byzantine Horologion offices.", etc.) are unchanged; only the `<strong>`/`.app-mode-title` text
+  changed on both screens. Verified live in headless Chromium after the edit: both screens list the
+  same five names in the same order, `selectMode('daily')` still correctly opens the Anglican
+  office, zero console errors. `index.html` is the only file touched. **A separate, older, still-
+  unaddressed inconsistency was found and deliberately left alone**: the "Default tradition" profile
+  dropdown (`#profile-tradition-default`, `index.html`) uses a third set of names again ("The
+  Episcopal Church," "Latin Catholic," "Oriental Orthodoxy," "Eastern Orthodoxy") — pre-existing,
+  not part of what Josh was asked about this time, flagged for a future session rather than guessed
+  at silently.
 - Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
   `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
   `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).

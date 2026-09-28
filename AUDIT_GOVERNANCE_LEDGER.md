@@ -24034,3 +24034,27 @@ Followed this repo's own established `schema.json`-next-to-its-data convention
 files touched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Task #14 naming question ACTUALLY, FINALLY closed:
+## full church-body names, confirmed directly by Josh, applied identically to both screens
+
+Two prior fixes on two different branches (`179e38f`'s tradition-name-as-title rule; the other
+session's "Hudra"/"Horologion" rename) each looked complete in isolation but, merged together,
+produced a live mismatch between `#tradition-entry` and `#uo-threshold-grid` for Church of the
+East and Eastern Orthodoxy specifically -- caught only by directly re-reading both screens' actual
+`index.html` markup side by side after the merge, not by trusting either branch's own test claims.
+
+**Josh's actual final answer**, given directly: full communion/church-body names, identical on both
+screens, all five lanes -- Anglican Communion, Catholic Church, Church of the East, Eastern
+Orthodox Church, Oriental Orthodox Church. Applied to all ten locations (five `#tradition-entry`
+`<strong>` labels, five `.app-mode-title` spans in `#uo-threshold-grid`); subtitles/office-name text
+unchanged. Verified live in headless Chromium: both screens list the same five names in the same
+order, `selectMode('daily')` still opens the Anglican office correctly, zero console errors.
+`index.html` is the only file touched.
+
+**Found and deliberately left alone**: a third, older, pre-existing naming set on
+`#profile-tradition-default` (the "Default tradition" profile dropdown) -- "The Episcopal Church,"
+"Latin Catholic," "Oriental Orthodoxy," "Eastern Orthodoxy" -- not part of what Josh was asked
+about this round. Flagged for a future session rather than silently folded in.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
