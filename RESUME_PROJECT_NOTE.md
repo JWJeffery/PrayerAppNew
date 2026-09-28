@@ -303,17 +303,22 @@ default, becomes visible and actually opens once `isSuperUser` is set, hides aga
 direct `openBibleBrowser()` call once unset; the Admin Console toggle writes the same localStorage
 key index.html reads, confirmed cross-page. `node --check` clean on every changed `.js` file.
 
-**One pre-existing, unrelated gap found and left alone, not silently**:
-`npm run audit:user-profile-browser-qc-runner` still fails on four markers ("Office Defaults action
-opens local defaults panel," etc.) that reference the "Office Defaults" button removed by an
-earlier, different commit (`eb2aa9c`, "remove Defaults, rename/gate Back-to-Modes") — that commit
-never updated this static meta-audit to match. Not touched here: understanding what replaced that
-flow well enough to write correct new markers is its own small investigation, unrelated to the
-profile system. (Fixed, in the same pass, the two markers in this same audit that WERE this
-session's own doing — stale "The Episcopal Church" text left over from the earlier Task #14 sweep.)
+**`scripts/audit-user-profile-browser-qc-runner.mjs` deleted, 2026-09-28 continued once more,
+per Josh's explicit call after asking what it was for.** It never actually ran a browser test —
+it opened `scripts/browser-qc-user-profile-defaults-sweep.js` (the real test, meant to be run in
+an actual browser) as plain text and checked that certain phrases/code snippets were still present
+in it, as a cheap proxy for "did someone quietly gut this test." It was flagging 4 markers
+("Office Defaults action opens local defaults panel," etc.) referencing a button an unrelated,
+earlier commit (`eb2aa9c`) had already correctly removed — so it was actively wrong, and checked
+confirmed it wasn't wired into anything (no CI, no pre-commit hook, nothing else in this repo runs
+it) — its failure had zero real consequence, only cost of upkeep every time the real test
+legitimately changed. Removed the script and its `npm run audit:user-profile-browser-qc-runner`
+entry in `package.json`; the real test file (`browser-qc-user-profile-defaults-sweep.js`) is
+untouched and still exists to be run in an actual browser.
 
 Files touched: `js/office-ui.js`, `js/cycles-of-prayer.js` (new), `js/bible-browser/bible-browser.js`,
-`index.html`, `css/office.css`, `admin/admin.html`, `scripts/audit-user-profile-browser-qc-runner.mjs`.
+`index.html`, `css/office.css`, `admin/admin.html`, `package.json`; `scripts/audit-user-profile-
+browser-qc-runner.mjs` deleted.
 
 **NEW TODO, added 2026-09-28 (continued) per Josh's direct instruction — Authorized Intercessions
 content, after A Prayer for Mission in BCP Morning/Evening Prayer.** Josh: "Add the 'authorized

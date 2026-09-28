@@ -24156,11 +24156,18 @@ each render their own correct week, with the home-parish note appearing only for
 matching week; Bible Browser hides/shows/actually-opens/refuses correctly across every
 super-user-flag transition; the Admin Console toggle and `index.html` agree cross-page.
 
-**One pre-existing, unrelated gap found, left alone, stated plainly**: `npm run
-audit:user-profile-browser-qc-runner` still fails four markers referencing an "Office Defaults"
-button an earlier, different commit (`eb2aa9c`) removed without updating this meta-audit -- not
-this session's to fix blind. Did fix, in the same pass, the two markers in that same audit file
-that were this session's own earlier doing (stale "The Episcopal Church" text from the Task #14
-sweep).
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued once more -- audit-user-profile-browser-qc-runner.mjs deleted,
+## per Josh's explicit call after asking what it actually did
+
+The prior entry flagged this script's 4 stale markers (referencing an "Office Defaults" button an
+unrelated, earlier commit had already correctly removed) rather than fixing them blind. Josh asked
+what the script was actually for; on inspection it never ran a browser test at all -- it read
+`scripts/browser-qc-user-profile-defaults-sweep.js` (the real test) as plain text and checked for
+certain phrases, a cheap proxy for "did someone gut this test." Confirmed it is wired into nothing
+(no CI, no pre-commit hook, no other script in this repo runs it) -- its failure had zero real
+consequence, only ongoing upkeep cost. Deleted, per Josh's explicit choice, along with its
+`package.json` entry. The real test file it was checking is untouched.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
