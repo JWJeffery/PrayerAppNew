@@ -23089,3 +23089,25 @@ Typika row in the office-summary table, and the T8 finding itself all now read F
 and its verification recorded inline.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, cut short at ~90% token budget -- mid-investigation of T8's two disclosed
+gaps (Vespers/Presanctified handoff, Kontakion of the temple), nothing built or committed
+
+Josh asked to fully investigate the two things PR #55 (Finding T8) disclosed as deliberately not
+built. Found before running out of budget: the "no architecture for cross-office handoff" reasoning
+in that PR's own description was wrong or incomplete -- `js/office-ui.js`'s
+`setSharedOfficeNavHour()`, for the Horologion lane, already calls `selectHorologionOffice(value)`
+to switch which office is showing without embedding one office's render inside another's. A "Begin
+Vespers now" link from the Lenten Typika closing is very plausibly buildable using this existing
+mechanism. Not yet confirmed: whether `selectHorologionOffice('vespers')` is safe to call from
+this context, whether "Fifth Thursday of Great Lent" / "Forty Martyrs" are already computable
+somewhere in this engine (one live lead: Grand Compline's Great Canon of St. Andrew machinery, not
+yet checked), and where to wire the actual clickable action in. The Kontakion-of-the-temple
+question was only reasoned about, not checked in code -- whether this app's profile/settings
+system already has anything resembling a per-user "parish dedication" field needs an actual grep,
+not the assumption this entry (and the resume note) currently rests on.
+
+No files changed, `git status` clean. Full detail, exact next steps, and file/line pointers:
+`RESUME_PROJECT_NOTE.md`'s matching entry, same date.
