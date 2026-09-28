@@ -94,7 +94,8 @@ Josh.
 Josh (GitHub `JWJeffery`) owns **PrayerAppNew** / "The Universal Office" — a free, non-commercial
 multi-tradition liturgical prayer web app at theuniversaloffice.com. He is not a coder. Four
 traditions currently live: Anglican (BCP 1979), Coptic (Agpeya), Church of the East (East Syriac),
-Byzantine (Horologion). Roman Breviary 1960/1962 is in active buildout (see §7).
+Byzantine (Horologion). Roman Breviary 1960/1962 is in active buildout — no dedicated §7 status item
+exists for it; the only current pointer is `project_roadmap.json`'s phase plan (§7, phase_3 "active").
 
 A prior assistant, **Lucy**, was dismissed for falsely certifying content as accurate — the standing
 comparison point for what NOT to do. All Lucy-era certifications are void and must be independently
@@ -102,7 +103,8 @@ re-derived. Nothing in this repo's own docs or `structure.json` counts as eviden
 against primary sources. The Lucy-era saints generator/CI-gate architecture (identities.json,
 commemorations.json, the whole build/import/validate toolchain) was removed entirely 2026-09-02 —
 `js/saints-resolver.js` now reads `data/saints/saints-{month}.json` directly, no generation layer.
-A broader audit of Lucy-era one-off validation scripts under `scripts/` is in progress (see §7).
+A broader audit of Lucy-era one-off validation scripts under `scripts/` is DONE (see §7) — 107 dead
+files removed, all remaining loose ends closed 2026-09-28.
 
 **`synaxarium-review/` is a separate project — do not touch it, do not extend it, do not build
 anything parallel to it either without asking first.** It is a review UI (data build script, browser
@@ -138,12 +140,15 @@ warrants asking first, per Claude Code's own standing judgment on risky actions.
   review** — prefer targeted edits. **Validate JSON before writing**, not after
   (`node -e "JSON.parse(...)"` is cheap insurance).
 - **When scripting a bulk edit against `data/saints/sanctoral.json`, key on `(id, month, day)`, never
-  `id` alone.** 40 duplicate `id` values remain as of 2026-09-28 (down from the 58 first found
-  2026-09-07, after that count was finally investigated rather than just re-checked for size — see
-  §7). All 40 are the corpus's normal same-figure/different-tradition-date pattern, re-confirmed to
-  have zero exact (id, date) collisions; two genuine identity collisions found in the same pass
-  (`saint-boniface`, `mar-michael`) were fixed by id split. A blind id-keyed write silently clobbered
-  unrelated rows once already; full-file backup before any bulk sanctoral edit, and re-verify with a
+  `id` alone.** 39 duplicate `id` values remain as of 2026-09-28, continued (down from 40 once the
+  `mar-abraham` fix below removed one group entirely, down from the 58 first found 2026-09-07, after
+  that count was finally investigated rather than just re-checked for size — see §7). All 39 are the
+  corpus's normal same-figure/different-tradition-date pattern, re-confirmed to have zero exact (id,
+  date) collisions; two genuine identity collisions found in the same pass (`saint-boniface`,
+  `mar-michael`) were fixed by id split. Re-verify this count directly (`node`, group `data.entries` by
+  `id`, filter length > 1) rather than trusting this number — it will drift again the next time
+  sanctoral.json changes. A blind id-keyed write silently clobbered unrelated rows once already;
+  full-file backup before any bulk sanctoral edit, and re-verify with a
   fresh read after, every time.
 - Cache-bust params in `index.html` (`?v=NNN`) must be **bumped manually** whenever the corresponding
   JS file changes.
@@ -696,6 +701,13 @@ live repo, not just re-copied from the old note.
 - The Fast Ramsha sequences use placeholders resolved in `js/office-ui.js` by substring match against
   the day's own ordinary ramsha sequence -- not a hardcoded map. An unresolvable marker fails loudly
   by design.
+- **Web release: `npm run release:web`** (`scripts/prepare-web-release.mjs`) builds a deployable static
+  export for Josh to manually upload to theuniversaloffice.com -- there is no auto-deploy pipeline, this
+  is the closest thing to one. As of 2026-09-28, it automatically splits into 3 independent zips
+  (Roman Breviary data / remaining data / app shell) whenever the combined zip exceeds the ~30MB
+  delivery-channel cap, instead of that being a manual step. Last run 2026-09-28: 4,308 files, 44.3MB
+  combined, delivered as 3 zips (18.1/13.4/12.9MB) directly to Josh via the session's file-delivery
+  tool.
 - **For old narrative detail this note used to carry**, start at
   `documentation/project-history/INDEX.md` — four chronological volumes, 2026-07-06 through
   2026-09-28, plus two point-in-time `structure.json` snapshots.
