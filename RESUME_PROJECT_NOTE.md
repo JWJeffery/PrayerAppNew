@@ -22,41 +22,45 @@ the only work in flight — a branch has piled up unmerged before (2026-09-26) p
 
 ---
 
-## IMMEDIATE NEXT STEP — session ended 2026-09-28 at 96% context, mid-verification
+## Defaults/Modes consolidation and Interhour gating — CLOSED 2026-09-28 (continued)
 
-Everything below is **committed and pushed** (`eb2aa9c`, branch `claude/prayerappnew-project-4mvez9`)
-— nothing is sitting unpushed. What's incomplete is *verification*, not code.
+**Branch-tracking gap, worth flagging so it doesn't happen again:** the session that built this
+(commits `eb2aa9c`/`85c96ad`) worked on `claude/prayerappnew-project-4mvez9`. That branch was never
+opened as a PR and was not merged into `main` before a *different*, parallel same-day session (the
+mobile prayer-window audit, `97a0374`) merged straight to `main`. So for a few hours `main` and this
+note disagreed about what was actually done — Josh asked about it and had to be walked through the
+history to find the unmerged branch. **Fixed this session**: `claude/prayerappnew-project-4mvez9` was
+fast-forward-merged into the current session branch (no conflicts — it already contained `main`'s tip
+as an ancestor), so both pieces of work are now together on top of `main`. **Lesson for future
+sessions**: before telling Josh something is "done and pushed," confirm it's pushed to a branch that
+either *is* `main` or has an open PR against it — a push to an orphan feature branch with no PR is
+easy to lose track of.
 
-**Two fixes just landed, from Josh's screenshot of the Byzantine office picker:**
+**Both fixes from Josh's screenshot of the Byzantine office picker are now fully done and verified:**
 
-1. **Interhours hidden when not appointed.** New `HorologionEngine.isInterhourAppointed(dateObj)`
-   (`js/horologion-engine.js`, extracted from `_resolveInterhourSlots`'s existing UNABHOR1997 p.93
-   gate) + `js/office-ui.js`'s `_updateHorologionOfficeButtons()` now hides/disables the four
-   Interhour rows on ordinary days, with a fallback to `_defaultHorologionOfficeForCurrentTime()` if
-   the hidden office was selected. **FULLY LIVE-VERIFIED** (headless Chromium against `npm run
-   start:spa`): hidden 2026-09-28, visible 2026-06-08 (Apostles' Fast day 1), correctly re-hides and
-   falls back when navigating back. Nothing left to do on this one.
+1. **Interhours hidden when not appointed.** `HorologionEngine.isInterhourAppointed(dateObj)`
+   (`js/horologion-engine.js`) + `js/office-ui.js`'s `_updateHorologionOfficeButtons()` hide/disable
+   the four Interhour rows on ordinary days, falling back to
+   `_defaultHorologionOfficeForCurrentTime()` if the hidden office was selected. Live-verified:
+   hidden 2026-09-28, visible 2026-06-08 (Apostles' Fast day 1), correctly re-hides and falls back
+   when navigating back.
 
-2. **"Defaults" removed, "Back to Modes" renamed to "Explore other Offices" and hidden by default.**
-   Josh: both buttons called `backToSplash()`, Defaults was a redundant shortcut. Removed
-   `office-profile-defaults-button` outright. The single global button (`#app-mode-return-button`,
-   `position:fixed`, one instance for the whole app) is renamed and now hidden unless
-   `isExploreOtherOfficesVisible()` (new localStorage key `uoExploreOtherOfficesVisible`) is true — a
-   new checkbox row was added to `js/office-drawer.js`'s `buildKeep()` (unguarded by `modeKey`, since
-   the button is global), wired to a real backing `<input type="checkbox"
-   id="toggle-explore-other-offices">` in `index.html`. **VERIFIED LIVE:** button hidden by default,
-   correct text, old Defaults button gone. **NOT YET VERIFIED:** actually opening the Office Settings
-   drawer (`.uo-drawer-open` button, labeled "Office Settings") and clicking the new checkbox
-   end-to-end — the session was interrupted for a context-budget reason right before this check ran.
-   The code was written to match the existing `checkboxRow(key, label, id, offText, onText)` pattern
-   exactly (same function every other drawer row uses), so it's very likely fine, but **the very next
-   thing a new session should do is open the drawer live and click that checkbox** before treating
-   this as done. Playwright scripts used for the verification so far are scratch files under
-   `/tmp/.../scratchpad/verify_ui*.mjs` (session-local, won't persist) — rewrite rather than hunt for
-   them.
+2. **"Defaults" removed, "Back to Modes" renamed to "Explore other Offices," hidden by default,
+   toggled from Office Settings.** `office-profile-defaults-button` is gone from the DOM entirely.
+   The single global button (`#app-mode-return-button`) is renamed and hidden unless
+   `isExploreOtherOfficesVisible()` (localStorage key `uoExploreOtherOfficesVisible`) is true, via a
+   checkbox row in `js/office-drawer.js`'s `buildKeep()` wired to `#toggle-explore-other-offices` in
+   `index.html`. **The one previously-unverified step — opening the Office Settings drawer and
+   actually clicking the new checkbox — was completed this session** (headless Chromium against
+   `npm run start:spa`, script at `/tmp/.../scratchpad/verify-explore-toggle.mjs`, session-local):
+   confirmed the drawer row renders, toggling it on both flips the hidden checkbox and makes the
+   button visible with the correct label, clicking the button correctly returns to the mode-selection
+   splash, the setting persists across leaving and re-entering an office, and toggling back off hides
+   the button again. No console errors beyond the pre-existing, already-documented sandbox-proxy
+   `ERR_CERT_AUTHORITY_INVALID`. Nothing left open on either fix.
 
-Also relevant, not yet acted on: `scripts/browser-qc-user-profile-defaults-sweep.js` had its
-now-obsolete Defaults-button check removed; a handful of *other* `scripts/audit-*.mjs` files
+Still not acted on: `scripts/browser-qc-user-profile-defaults-sweep.js` had its now-obsolete
+Defaults-button check removed; a handful of *other* `scripts/audit-*.mjs` files
 (`audit-shared-mode-navigation-grammar`, `audit-app-navigation-architecture`,
 `audit-shared-office-sidebars`) were run to confirm no *new* regressions from this change — they do
 have pre-existing, unrelated failures (stale `ethiopian-saatat` mode references, missing CSS
