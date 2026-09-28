@@ -1,5 +1,21 @@
 # RESUME_PROJECT_NOTE.md
 
+**WEB RELEASE REBUILT AND DELIVERED, 2026-09-28**, after the mobile rail/content desync fix,
+task #14's stale-LOTH fix, and tasks #9/#10/#11 above -- item #2 from the prior session's pending
+list. `npm run release:web` (`scripts/prepare-web-release.mjs`) against `main` @ `49a5a3d`: 4,308
+files, `web-release.zip` 45MB. Confirmed clean before delivery: no `source-witnesses/` (the
+copyrighted-PDF directory excluded since the 2026-07-25 incident) or other denied roots leaked in.
+Single zip exceeds the delivery channel's 30MB cap, so split into 3 independent zips by directory
+(not a byte-split needing reassembly -- each is its own valid archive, extract all three into one
+folder before uploading): `web-release-part1-roman-breviary.zip` (18.0MB, `data/roman-breviary-
+1960-1962` alone -- the single largest corpus), `web-release-part2-bible-and-data.zip` (13.4MB,
+every other `data/` subdirectory), `web-release-part3-app-shell.zip` (12.8MB, everything outside
+`data/`: `index.html`, `admin`, `components`, `css`, `images`, `js`, `scripts`,
+`DEPLOYMENT_MANIFEST.json`, `structure.json`, `project_roadmap.json`, `.htaccess`). All three
+delivered to Josh directly; none of the build artifacts (`web-release/`, `web-release.zip`, the
+three part zips) were committed -- cleaned up after delivery, matching `.gitignore`'s existing
+exclusion of the single-zip build output.
+
 **MOBILE RAIL/CONTENT DESYNC — SEVERE, LIVE-REPORTED, FIXED 2026-09-28.** Josh: "The site is
 completely unusable on mobile," with a live screenshot of BCP Compline on a phone: the rail
 ("THE ORDER") showed "Kyrie" through "Antiphon" (near the very end of the office) while the
