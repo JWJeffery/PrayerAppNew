@@ -51,6 +51,68 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**SESSION CUT SHORT AT ~90% TOKEN BUDGET, 2026-09-28 — mid-investigation, NOTHING BUILT OR
+COMMITTED THIS ENTRY, read carefully before resuming.** After Finding T8 shipped (PR #55, entry
+directly below), Josh asked to fully investigate the two things that PR's own description called
+"deliberately disclosed rather than built": (1) the day-dependent Vespers/Presanctified handoff at
+the end of Lenten Typika, and (2) the Kontakion "of the temple." Investigation was still in
+progress, read-only (no file edits made), when the token budget forced a stop. `git status` is
+clean — there is nothing uncommitted to lose, only research findings to hand off.
+
+**Thread 1 — the Vespers/Presanctified handoff. Turned out PR #55's own reasoning ("no
+architecture for one office's render splicing into another's") was WRONG, or at least
+incomplete — found a real counter-example before running out of budget.** `js/office-ui.js`'s
+`setSharedOfficeNavHour(modeKey, value)` (line ~2525), for `modeKey === 'horologion'`, calls
+`selectHorologionOffice(value)` (line 2845) — this is the SAME mechanism the "III · Which Office"
+drawer picker already uses to switch which Horologion office is showing, WITHOUT embedding one
+office's content inside another's render. This means a "Begin Vespers now" link/button in the
+Lenten Typika closing rubric, wired to call `selectHorologologionOffice('vespers')` [sic — real
+name is `selectHorologionOffice`], is very plausibly buildable as a genuine UI affordance rather
+than a static disclosure — a materially different (better) answer than what PR #55 shipped with.
+
+**Not yet done, exactly where to pick this up:**
+1. Read `selectHorologionOffice()` in full (`js/office-ui.js:2845`) — confirm it accepts
+   `'vespers'` as a valid target `officeKey` and does what's expected (switches the active
+   Horologion office and re-renders) with no side effects that would be wrong to trigger from
+   inside a Typika render (e.g. does it reset the date? does it fight with Typika's own
+   `isGreatLentWeekdayTypikaForm` gate if re-entered?).
+2. Check whether "the Fifth Thursday of Great Lent" or "the Forty Martyrs" (March 9 fixed feast)
+   are already computable anywhere in this engine before deciding whether to model the real
+   exception or keep disclosing it as text. One live lead, not yet followed: grep hits for "Great
+   Canon of St. Andrew of Crete" (`js/horologion-engine.js`, e.g. near a comment mentioning it's
+   read at specific points including a Thursday) suggest some Lenten-week/Thursday-of-Lent
+   machinery may already exist for Grand Compline's GC3 build — check whether it's reusable here
+   before writing new date logic. Forty Martyrs (March 9): check `data/saints/sanctoral.json` for
+   an existing fixed entry to key off of, same pattern used elsewhere in this corpus (reuse a
+   sanctoral row rather than hardcoding a bare month/day).
+3. If both check out, wire an actual clickable action into `typika-lenten-transition-rubric`
+   (currently a plain `type: 'text'` item, `data/horologion/typika-fixed.json`) — decide whether
+   that means changing its `type` to something the renderer treats specially (check how other
+   rubric items with real UI actions attached, if any exist elsewhere in this corpus, are modeled
+   — not yet checked) or leaving the text as pure disclosure and adding the actual link/button at
+   the `js/office-ui.js` render layer instead (`_renderHorologionItem()` or wherever
+   `typika-lenten-transition-rubric` specifically gets painted — not yet located). Presanctified
+   Liturgy itself is still correctly out of scope (this app has no Presanctified office at all) —
+   only the Vespers half of the handoff is plausibly winnable; the Presanctified half should stay
+   disclosed-not-built regardless, and that split should be stated honestly in whatever ships.
+4. Live-verify in the running app exactly like Finding T8 was verified, before calling this done.
+
+**Thread 2 — the Kontakion "of the temple." Not yet investigated in code — only reasoned about,
+not verified.** Tentative read, needs checking before trusting it: the "temple" Kontakion depends
+on which saint/feast a specific PHYSICAL parish is dedicated to — information this app has no
+per-user profile field for today (not yet confirmed by actually reading the profile/settings code;
+assumed from general familiarity with what's been built this session, not verified). If that
+assumption holds, this is a real product-scope question (add a "home parish dedication" setting?
+how many dedications to support — the 12 Great Feasts plus a short list of common patron saints
+already in this corpus, or open-ended?) — a decision for Josh, not a content-fill an agent should
+just start building. **Before presenting it that way to Josh, actually check**: grep the profile/
+settings code (`js/office-ui.js`, search terms like `profile-`, `setUserProfile`, the pattern used
+for `oorSubtradition`/Book-of-Needs-role/eoMode elsewhere) for anything already resembling a
+per-user "which parish/dedication" field, in case this is more built-out than assumed.
+
+Full detail on what's already shipped this session (7 merged PRs, #49-#55) is in the entries
+below, still accurate and complete.
+
 **SIXTH ITEM, 2026-09-28 — Finding T8 built: Typika's distinct Great Lent structural form.**
 `documentation/HOROLOGION_AUDIT_FINDINGS.md` had called this "the most significant open item from
 the entire second-pass re-verification," disclosed rather than attempted, since determining exactly
