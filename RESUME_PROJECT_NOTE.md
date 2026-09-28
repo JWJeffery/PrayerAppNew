@@ -268,10 +268,11 @@ in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
   still open and explicitly left for Josh: the entry-card screen and the mode-grid name three of five
   traditions differently for the same lane (e.g. entry-card "Catholic" vs. mode-grid "Roman Breviary
   1960/1962") — whether to unify, and which name should win, is Josh's editorial call.
-- Task #15 — splash screen (`#uo-threshold-grid`) shouldn't be scrollable at some viewport sizes: root
-  cause found (a later CSS rule with `!important` overrides the base `overflow-y:hidden`), deliberately
-  NOT fixed same-day as a related mobile-CSS regression, to avoid stacking two same-day changes to the
-  same fragile area without separately verifying each. Not yet picked back up.
+- Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
+  `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
+  `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).
+  Re-verified live 2026-09-28 (continued): zero body-level scroll on `#uo-threshold-grid` at
+  1512×900, zero console errors. Nothing left to do here.
 - All other numbered tasks (#2, #9, #10, #11) from that queue are closed as of 2026-09-28 — see Volume
   4 for evidence per item.
 
