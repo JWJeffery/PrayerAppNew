@@ -303,13 +303,36 @@ in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
 - All other numbered tasks (#2, #9, #10, #11) from that queue are closed as of 2026-09-28 — see Volume
   4 for evidence per item.
 
-**Sanctoral (EOR/OOR) confirmation-and-gap-sweep — paused, not active, since 2026-09-12** (the project
-moved to UI redesign work and hasn't returned). Genuinely still-open items (never resolved, not
-re-checked since first flagged — see `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`
-for the full per-item list): a set of same-figure-different-day editorial questions (Seven Holy Youths
-of Ephesus, Prophet Micah, Prophet Malachias, Bessarion, Amos, Julietta/Cyriacus, Bartholomew, Moses,
-Hilarion, St Anne, Clement of Rome, Gregory Thaumaturgus, Holy Innocents, Anthony the Great, Timothy
-the Apostle — dates and specifics in Volume 4); the `coptic.io` connector's broken status (§6).
+**Sanctoral (EOR/OOR) sweep — CORRECTED 2026-09-28 (continued), by Josh's direct question. This was
+three different things bundled under one "paused, not active" label, and that label was wrong for the
+biggest of the three.** Checked directly against the corpus, not against prose claims, after finding
+the ledger's own detailed record of this had a gap (no session headers at all between 2026-06-30 and
+2026-09-23 anywhere in `AUDIT_GOVERNANCE_LEDGER.md` — git history has the same gap, nothing committed
+in that whole window; `07dd77f`, 2026-09-23, is a full repo restore, not organic history).
+
+1. **The core 13-month gap-fill sweep (find commemorations missing from all 12 Coptic months plus the
+   intercalary Pi Kogi Enavot, add them) — ACTUALLY DONE, 2026-09-11. Not open.** An older version of
+   this note said so explicitly ("OOR 13-month gap sweep — CLOSED 2026-09-11") and that specific line
+   didn't survive into the current ledger/history, but the primary evidence still does: four entries in
+   `data/saints/sanctoral.json` are directly dated "Date ADDED 2026-09-11, part of the OOR gap sweep
+   (Coptic month of Mesori)" and "...(intercalary month Pi Kogi Enavot / Nasie)" — the exact two
+   sections an earlier ledger checkpoint (same day, 2026-09-07) had listed as the only ones still
+   remaining. Stop treating this as unstarted or resumable-from-scratch; it's finished.
+2. **Genuinely still open: 18 of those gap-sweep additions are stuck at "ADDED," never upgraded to
+   "CONFIRMED."** Every one was sourced from Wikipedia/St-Takla.org (the fallback method, since
+   coptic.io was unreachable during the sweep) and explicitly says "NOT YET CROSS-CHECKED against
+   coptic.io directly — confirm against the primary tool before treating as fully CONFIRMED rather than
+   ADDED." This is real, bounded remaining work — search `sanctoral.json` for that exact phrase to find
+   all 18. **Complicated by this session's own coptic.io connector removal (§6, per Josh's instruction —
+   it was built for the now-finished Agpeya, not for this)**: the connector this confirmation step
+   depended on is gone. Resuming this needs either rebuilding a coptic.io connector or finding another
+   independent second source for the same 18 dates.
+3. **Genuinely still open, unrelated to sourcing: a set of same-figure-different-day editorial
+   questions** (Seven Holy Youths of Ephesus, Prophet Micah, Prophet Malachias, Bessarion, Amos,
+   Julietta/Cyriacus, Bartholomew, Moses, Hilarion, St Anne, Clement of Rome, Gregory Thaumaturgus, Holy
+   Innocents, Anthony the Great, Timothy the Apostle — dates and specifics in
+   `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`). These need Josh's editorial
+   judgment, not more research.
 
 **The 58-duplicate-`id` item (found 2026-09-07) is now RESOLVED, 2026-09-28** — investigated
 properly for the first time rather than just re-counted. Found 42 duplicate-id groups (87 rows;

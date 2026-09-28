@@ -23709,3 +23709,43 @@ documented gotchas (pin `mcp[cli]<2.0.0`; use one consistent Python interpreter 
 stay on record in this ledger's 2026-09-07 entries even though the code itself is gone. `scripts/`
 file count: 116 -> 115. Files touched: `coptic_mcp_server.py` (deleted),
 `scripts/coptic-mcp-server.py` (deleted), `RESUME_PROJECT_NOTE.md`.
+
+## Session 2026-09-28, continued yet again -- "OOR sweep paused, not active" was wrong; the core
+## 13-month gap-fill sweep was actually done 2026-09-11, confirmed by corpus evidence, not prose
+
+Josh asked directly: "Is OOR sweep done?" The resume note's §7 called the whole "Sanctoral (EOR/OOR)
+confirmation-and-gap-sweep" paused, not active, since 2026-09-12 -- misleading for the largest part of
+it, and in direct contradiction with the SAME note's own §8 ("Settled — do not reopen"), which already
+said "The full OOR calendar-year sweep (Jan-Dec)... CLOSED... as of 2026-09-11." Two sections of the
+same document disagreed with each other; §7 had regressed during a rewrite, §8 hadn't.
+
+**Investigation method, since the obvious first check (git history) turned out to be unusable:**
+`git log --all` shows a complete gap between 2026-06-30 and 2026-09-23 -- no commits at all across the
+whole repo for nearly three months of real, extensively-documented work. `07dd77f` (2026-09-23,
+"Threshold wording...") is a full repository restore (16,640 lines added to this ledger alone in one
+commit), not organic history -- confirms this repo's local git ancestry was reset/reimported at some
+point, so commit dates cannot be used to verify anything from that window. Fell back to checking the
+PRIMARY DATA directly instead of any prose summary, per this project's own standing rule.
+
+**Result: the core 13-month gap-fill sweep (find commemorations missing across all 12 Coptic months
+plus the intercalary Pi Kogi Enavot, add them) is genuinely done.** Four entries in
+`data/saints/sanctoral.json` are directly dated "Date ADDED 2026-09-11, part of the OOR gap sweep
+(Coptic month of Mesori)" and "...(intercalary month Pi Kogi Enavot / Nasie)" -- exactly the two
+sections an earlier same-day (2026-09-07) ledger checkpoint had listed as the only ones still
+remaining, in a clear month-by-month progress trail (11 remaining -> 10 -> 9 -> 7 -> 5 -> 3 -> 1 plus
+Pi Kogi Enavot) that IS still present in this ledger's opening entries. The specific "CLOSED
+2026-09-11" summary line an older version of the resume note once carried did not survive into the
+current ledger or `documentation/project-history/`, but the underlying evidence it was describing
+did.
+
+**What's actually still open, correctly separated now:** (1) 18 gap-sweep additions never upgraded
+from "ADDED" to "CONFIRMED" -- each explicitly flagged in its own `ruleSource` as "NOT YET
+CROSS-CHECKED against coptic.io directly," sourced instead from the Wikipedia/St-Takla.org fallback.
+Now harder to resume, since the coptic.io connector this step depended on was deleted in the previous
+entry (built for the finished Agpeya, not for this). (2) A bounded, already-documented list of
+same-figure-different-day editorial questions needing Josh's judgment, not more research -- these were
+always correctly open, never conflated with the sweep's own completion status.
+
+FIXED: rewrote `RESUME_PROJECT_NOTE.md` §7's sanctoral paragraph to state all three pieces separately
+and accurately, resolving the §7/§8 contradiction. No code or corpus data changed this pass --
+`sanctoral.json` was only read, not edited. Files touched: `RESUME_PROJECT_NOTE.md`.
