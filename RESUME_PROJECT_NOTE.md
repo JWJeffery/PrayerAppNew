@@ -117,13 +117,15 @@ decide." To start it: `cd synaxarium-review && python3 -m http.server 8000`, the
 
 ## 3. Workflow — non-negotiable
 
-**Current practice (verify this is still current — workflow has changed before and could again):**
-Claude works on an assigned git branch, commits directly, and pushes with `git push -u origin
-<branch>`. Claude does NOT wait for Josh to apply a patch — this supersedes an older `git
-format-patch`/`git am` workflow that was standing instruction earlier in the project (through at
-least 2026-09-07) and is preserved below only as history in case that ever reverts. **If in doubt,
-this session's own system/harness instructions on how to push are the current source of truth, not
-this note** — check those first.
+**Claude works on an assigned git branch, commits directly, and pushes with `git push -u origin
+<branch>`.** Confirmed directly by Josh, 2026-09-28: the older `git format-patch`/`git am` workflow
+(standing instruction through at least 2026-09-07, where Claude committed but never pushed and Josh
+applied the patch himself) belonged to a different product — Claude Chat/Work — not Claude Code, which
+is what's actually being used now and pushes directly as part of its normal operation. It is not a
+stricter-vs-looser policy choice to revisit; it's a different tool with a different mechanism. Don't
+re-flag this as a contradiction or ask before pushing to your assigned branch — just push. (Pushing to
+`main` itself, force-pushing, or anything else genuinely destructive is a separate question and still
+warrants asking first, per Claude Code's own standing judgment on risky actions.)
 
 - **Every commit that's meant to land gets pushed in the same turn it's made — no exceptions.** The
   old-workflow version of this rule was violated once, 2026-09-07 (six commits made and reported
