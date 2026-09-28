@@ -3,6 +3,7 @@
   "label": "Sixth Hour (Sexta)",
   "tradition": "BYZC",
   "description": "The Byzantine Sixth Hour is sung at the sixth hour of the day (approximately noon). It consists of fixed psalmody (Psalms 53, 54, 90 LXX), the Trisagion prayer sequence, a troparion of the day, the Theotokion of the hour, and the Prayer of the Sixth Hour.",
+  "descriptionSource": "UNABHOR1997, \"The Sixth Hour,\" p.124ff.",
   "sections": [
     {
       "id": "opening",

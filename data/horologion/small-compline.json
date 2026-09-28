@@ -3,6 +3,7 @@
   "label": "Small Compline (Mikron Apodeipnon)",
   "tradition": "BYZC",
   "description": "The Byzantine Night Office. Small Compline (Mikron Apodeipnon) is the shorter form of Compline in the Byzantine rite, appointed for ordinary weekdays and seasons outside Great Lent.",
+  "descriptionSource": "UNABHOR1997, \"The Order of Small Compline,\" p.238ff. The Church Slavonic/Greek parenthetical name in this description (e.g. \"Mikron Apodeipnon\") is standard traditional terminology, not itself found verbatim in UNABHOR1997 or Hapgood 1906 -- neither book's own glossary (UNABHOR1997 pp.399-410; Hapgood's front matter) carries it. Disclosed here rather than presented as sourced to either governing text.",
   "sections": [
     {
       "id": "opening",

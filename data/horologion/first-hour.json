@@ -3,6 +3,7 @@
   "label": "First Hour (Prima)",
   "tradition": "BYZC",
   "description": "The Byzantine First Hour (Prima) is the morning office concluding the all-night vigil cycle, sung at dawn after Orthros. On ordinary days without a vigil it follows immediately after Orthros. It sanctifies the first hour of the day with fixed psalmody, a troparion of the day, the Theotokion of the hour, and the Prayer of the First Hour.",
+  "descriptionSource": "UNABHOR1997, \"The First Hour,\" p.86ff.",
   "sections": [
     {
       "id": "opening",

@@ -2,7 +2,8 @@
   "officeKey": "typika",
   "label": "Typika (Obednitsa)",
   "tradition": "BYZC",
-  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy on Sundays and feasts, in place of Holy Communion. Consists of Psalms 102 and 145 with the \"O Only-begotten Son\" hymn, the Beatitudes, the Heavenly Choir hymn, the Symbol of Faith, \"Loose, remit, pardon,\" the Lord's Prayer, the day's Kontakion, and appointed Epistle and Gospel readings.",
+  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy, in place of the Divine Liturgy itself, most often on days when Communion would otherwise be received. Consists of Psalms 102 and 145 with the \"O Only-begotten Son\" hymn, the Beatitudes, the Heavenly Choir hymn, the Symbol of Faith, \"Loose, remit, pardon,\" the Lord's Prayer, the day's Kontakion, and appointed Epistle and Gospel readings. CORRECTED 2026-09-28: on Great Lent weekdays, UNABHOR1997 p.148 directs an entirely different, shorter Lenten form -- Psalms 102/145 are not said at all, and only the Beatitudes (with a distinct refrain) are appended to the end of the Ninth Hour instead -- not currently modeled (Finding T8, disclosed, not fixed). What this skeleton renders is the Sunday/feast-day form described above; it should not be read as this office's only occasion of use.",
+  "descriptionSource": "UNABHOR1997, \"The Order of the Typica,\" p.135ff. The Church Slavonic/Greek parenthetical name in this description (e.g. \"Obednitsa\") is standard traditional terminology, not itself found verbatim in UNABHOR1997 or Hapgood 1906 -- neither book's own glossary (UNABHOR1997 pp.399-410; Hapgood's front matter) carries it. Disclosed here rather than presented as sourced to either governing text.",
   "sections": [
     {
       "id": "opening",

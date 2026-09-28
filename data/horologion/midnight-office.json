@@ -3,6 +3,7 @@
   "label": "Midnight Office (Mesoniktikon)",
   "tradition": "BYZC",
   "description": "The Byzantine Midnight Office (Mesoniktikon), appointed for the midnight hour. UNABHOR1997 gives three genuinely distinct day-forms -- Weekday, Saturday, and Sunday -- differing in their psalmody, closing prayers, and (on Sunday) a real Canon to the Holy Trinity in place of the Weekday/Saturday Kathisma and its prayers (Finding M0). The correct day-form is resolved from the date. Full festal and Lenten variations, and the Octoechos-dependent Canon to the Holy Trinity and Hypakoe of the Tone on Sunday, are deferred beyond this baseline.",
+  "descriptionSource": "UNABHOR1997, \"The Midnight Office for Weekdays\" p.1, \"...for Saturdays\" p.21, \"...for Sundays\" p.40 -- the three day-forms Finding M0 (above) is built from. The Church Slavonic/Greek parenthetical name in this description (e.g. \"Mesoniktikon\") is standard traditional terminology, not itself found verbatim in UNABHOR1997 or Hapgood 1906 -- neither book's own glossary (UNABHOR1997 pp.399-410; Hapgood's front matter) carries it. Disclosed here rather than presented as sourced to either governing text.",
   "sections": [
     {
       "id": "opening-weekday-saturday",

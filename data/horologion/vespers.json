@@ -2,7 +2,8 @@
   "officeKey": "vespers",
   "label": "Vespers",
   "tradition": "BYZC",
-  "description": "The Byzantine Evening Office (Hesperinos). Sections follow the standard order of Great Vespers in the Constantinopolitan rite.",
+  "description": "The Byzantine Evening Office (Hesperinos). CORRECTED 2026-09-28: this used to say \"Great Vespers\" -- wrong. UNABHOR1997's own text distinguishes the two by their opening (\"The daily Vespers beginneth thus... but if there be a vigil, the Great Vespers beginneth thus\": Great Vespers opens with the deacon's \"Arise! O Lord, bless!\" and the priest's Trinitarian doxology, neither of which this skeleton has). This office's own opening (the Priest's blessing straight into Psalm 103) and its absence of the vigil-only Litiya and Blessing of Loaves both match daily/ordinary Vespers, not the festal vigil form. Sections follow the standard order of the daily (ordinary) Vespers of the Constantinopolitan rite.",
+  "descriptionSource": "UNABHOR1997, \"The Order of the Vespers,\" p.185ff.",
   "sections": [
     {
       "id": "opening",
@@ -30,9 +31,9 @@
             },
             {
               "type": "text",
-               "key": "usual-beginning-3",
-               "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-               "repeat": 3
+              "key": "usual-beginning-3",
+              "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+              "repeat": 3
             },
             {
               "type": "text",
@@ -46,10 +47,10 @@
             },
             {
               "type": "text",
-             "key": "usual-beginning-6",
+              "key": "usual-beginning-6",
               "text": "Lord, have mercy.",
               "repeat": 3
-},
+            },
             {
               "type": "text",
               "key": "usual-beginning-7",
@@ -66,9 +67,9 @@
               "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
             },
             {
-             "type": "text",
-             "key": "usual-beginning-10",
-             "text": "Lord, have mercy.",
+              "type": "text",
+              "key": "usual-beginning-10",
+              "text": "Lord, have mercy.",
               "repeat": 12
             },
             {
@@ -215,28 +216,28 @@
           "note": "Variable stichera with psalm verses, appointed by day of week or feast. Requires Octoechos or Menaion resolution. Not yet implemented."
         },
         {
-  "type": "sequence",
-  "key": "nunc-dimittis",
-  "label": "Song of Simeon (Nunc Dimittis)",
-  "items": [
-    {
-      "type": "text",
-      "key": "nunc-dimittis-1",
-      "text": "Lord, now lettest Thou Thy servant depart in peace, according to Thy word; for mine eyes have seen Thy salvation, which Thou hast prepared before the face of all peoples: a light of revelation for the Gentiles, and the glory of Thy people Israel."
-    },
-    {
-      "type": "text",
-      "key": "nunc-dimittis-2",
-      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-      "repeat": 3
-    },
-    {
-      "type": "text",
-      "key": "nunc-dimittis-3",
-      "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-    }
-  ]
-}
+          "type": "sequence",
+          "key": "nunc-dimittis",
+          "label": "Song of Simeon (Nunc Dimittis)",
+          "items": [
+            {
+              "type": "text",
+              "key": "nunc-dimittis-1",
+              "text": "Lord, now lettest Thou Thy servant depart in peace, according to Thy word; for mine eyes have seen Thy salvation, which Thou hast prepared before the face of all peoples: a light of revelation for the Gentiles, and the glory of Thy people Israel."
+            },
+            {
+              "type": "text",
+              "key": "nunc-dimittis-2",
+              "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+              "repeat": 3
+            },
+            {
+              "type": "text",
+              "key": "nunc-dimittis-3",
+              "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+            }
+          ]
+        }
       ]
     },
     {
