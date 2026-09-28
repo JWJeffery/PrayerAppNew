@@ -3,6 +3,7 @@ dist/
 *.log
 web-release/
 web-release.zip
+web-release-*.zip
 
 # Local Claude Code tooling scratch space (e.g. isolated worktrees created
 # for background subagents) -- never repository content, self-cleans once

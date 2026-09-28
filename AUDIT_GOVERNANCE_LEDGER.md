@@ -23916,3 +23916,45 @@ VERIFIED: `project_roadmap.json` and `data/saints/sanctoral.json` both re-valida
 edit; `data/saints/sanctoral.json` entry count unchanged at 1067 throughout (two field-additions to
 existing rows, zero new or removed rows, confirming no duplicate was created for Mar Abraham of Qidun).
 Files touched: `project_roadmap.json`, `index.html`, `data/saints/sanctoral.json`.
+
+## Session 2026-09-28, continued yet again -- web release built and delivered (3-way split, same as
+## the prior 2026-09-27 delivery); scripts/prepare-web-release.mjs taught to auto-split so this never
+## has to be done by hand again
+
+Josh: "Please push a web deploy." No auto-deploy pipeline exists in this repo (checked thoroughly --
+no `.github/workflows/`, no Pages config, no ftp/rsync/webhook reference anywhere in `scripts/`); the
+real process, per the prior `c8cb82c` delivery (2026-09-27), is manual: `npm run release:web` builds
+`web-release/` + `web-release.zip`, Josh uploads it to the live host himself. Built it from the current
+branch (30 commits ahead of `main` at the time, everything from this session included) rather than
+`main` itself, since `main` doesn't yet carry this session's fixes and there's no separate merge step
+in the established workflow -- not a deviation from precedent, `release:web` doesn't require a specific
+branch, only a checked-out working tree.
+
+`web-release.zip` came out at 44.3MB, over the ~30MB delivery-channel cap discovered during the prior
+delivery. Split by hand into the same 3 independent zips as before (Roman Breviary data / remaining
+data / app shell) and delivered directly to Josh via the session's file-delivery tool.
+
+**Then automated it, per Josh's follow-up: "There is an auto-deploy script. If you need to update it
+so that it automatically splits this into three, do so."** No literal auto-deploy script was found
+(same search as above, re-confirmed) -- `scripts/prepare-web-release.mjs` (behind `npm run
+release:web`) is the closest match, the one script that actually prepares what gets deployed, so
+extended that one. It now always writes the single `web-release.zip` first (kept for local inspection /
+the under-30MB case), checks its size, and only if it's over the cap, also writes the same 3-way split
+automatically -- Roman Breviary data, remaining data, app shell -- using the exact same boundaries as
+the manual split above. Fails loudly (non-zero exit) if any split part is STILL over the cap after
+splitting, rather than silently shipping something the delivery channel would reject.
+
+**One real bug caught before shipping, not after:** the first version of the app-shell split filtered
+by an empty-string "include everything" prefix using plain string-prefix matching, which never actually
+matches anything (an empty string is not a prefix of `"index.html"` under `startswith(p + "/")` -- it
+would need `rel.startswith("/")`, which real relative paths never do). Result: `web-release-app-shell.zip`
+built as a valid but completely empty (0.0MB) zip on the first run. Caught by checking the actual output
+size, not just checking that the script exited zero -- fixed by special-casing an empty prefix to mean
+"match everything," then re-ran and confirmed all three split zips came out with real content (18.1 +
+13.4 + 12.9 = 44.4MB, matching the 44.3MB combined zip within rounding). **Further verified
+independently of the script's own success/failure output:** unzipped all three split zips' file lists
+and confirmed 4,309 total entries, zero duplicates, exactly matching the single zip's own 4,309-entry
+count -- proof the split has no missing or double-counted files, not just that the script didn't crash.
+`.gitignore` updated (`web-release-*.zip` pattern) so these new split-zip filenames can't be accidentally
+committed. All local `web-release/`/`web-release*.zip` build artifacts deleted after verification --
+gitignored already, never committed. Files touched: `scripts/prepare-web-release.mjs`, `.gitignore`.
