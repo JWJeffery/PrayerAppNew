@@ -317,25 +317,17 @@ this up should decide (with Josh) whether to ship the Communion/Province tiers f
 independent of the profile system, or wait and do all four tiers together once Diocese/Parish selection
 exists. No source text for any tier gathered yet — Josh said he'll supply it.
 
-**Concrete UX reference given 2026-09-28 (continued): a screenshot of the Venite app (Forward
-Movement's Episcopal daily office app) rendering this exact same slot.** This changes what "add the
-authorized intercessions" likely means — not inserting fixed prayer text, but building an interactive
-section. In Venite, immediately after the same two rubric lines this project already has ("Here may be
-sung a hymn or anthem." / "Authorized intercessions and thanksgivings may follow."), it shows:
-1. A **"PRAYERS AND THANKSGIVINGS"** section header (styled as a link/button, not plain text) —
-   plausibly a link into the BCP's own "Prayers and Thanksgivings" collection (BCP 1979 pp.810-841),
-   though this is inferred from the label, not confirmed from the screenshot alone.
-2. A **"MEDITATE FOR [N] minutes" control** — a blue button with an editable number field (shown at 5),
-   i.e. a silent timed meditation/free-intercession period, not printed text at all.
-3. Then the rubric "Before the close of the Office one or both of the following may be used," followed
-   by The General Thanksgiving (BCP p.101) — already present in this project's own sequence separately,
-   not part of this new slot.
-
-**Not yet confirmed with Josh: whether this is the design he wants copied, or just an example of how
-one other app handled the same rubric.** Whoever picks this up should ask before building — the
-Diocese/Parish-driven cycle-of-prayer text described above and this timer-based "free intercession"
-UX are two different, not mutually exclusive, ways of filling the same rubric slot, and Venite's
-choice doesn't resolve which (or both) this project should build.
+**A screenshot of the Venite app (Forward Movement's Episcopal daily office app) was shown 2026-09-28
+(continued) as a location reference, NOT a design to copy — confirmed explicitly by Josh: "I know that
+Venite does not fill it with prayer text. But that is where I want it."** In Venite, immediately after
+the same two rubric lines this project already has ("Here may be sung a hymn or anthem." / "Authorized
+intercessions and thanksgivings may follow."), it shows a "PRAYERS AND THANKSGIVINGS" link and a
+"MEDITATE FOR [N] minutes" timer control — that is Venite's own choice for how to fill this rubric slot
+and is explicitly NOT what this project should build. **What Josh wants at this exact slot (same
+location, after "A Prayer for Mission," same two rubric lines already in place) is actual prayer
+text** — the Diocese/Parish-driven Communion/Provincial/Diocesan/Parish cycle-of-prayer content
+described above, not a link or a timer. The screenshot's only purpose was to confirm the insertion
+point, which this project already has correct.
 
 **Documentation/governance cleanup, in progress as of 2026-09-28** (Josh's direction, same session as
 the Menaion work above): scattered continuity/status documents (this note's own prior sprawl, dated
@@ -380,6 +372,23 @@ cross-tradition duplication to normalize; doing so would have meant overwriting 
 translations with one, which is not a fix. `js/office-ui.js` innerHTML string-building (33 raw
 writes) — still open, unaddressed. Two other todos (`rite-placeholder-fragility`,
 `saints-schema-refactor`) were closed 2026-09-28 as already-fixed/obsolete respectively.
+
+**MISSING FROM THIS LIST UNTIL NOW, per Josh's direct catch 2026-09-28 (continued): the file-system
+refactor — `whole-app-json-to-database-migration`.** Surfaced in `structure.json` the same day this
+note was last rewritten but never carried into this §7 list, so a session reading only this note (not
+also `structure.json` directly) would have missed it entirely. Josh's own words, recorded there: "the
+refactor needs to cover the whole thing not just the scriptures" — the only prior written record
+(`documentation/BIBLE_REGISTRY_ARCHITECTURE.md`) was Bible-corpus-scoped only; the actual intent is
+broader — migrate `data/bible/`, `data/saints/`, `data/menaion/`, `data/horologion/`, `data/kalendar/`,
+`components/`, and every other JSON corpus in the app off flat JSON files to a database-backed storage
+model, since JSON is not an efficient use of space for this project generally. **NOT STARTED. Nothing
+chosen yet** — no database technology, no timeline, no migration plan, for any domain. Before scoping
+begins: (1) confirm with Josh whether the Bible registry doc's conceptual model (book identity / text
+form / canon profile / translation witness / versification / reference map / resolver contract) is the
+template every domain should mirror, or each domain gets its own; (2) inventory every JSON corpus under
+`data/` and `components/` with rough size/entry-count first. Full detail in `structure.json`'s
+`known_outstanding_issues` (id `whole-app-json-to-database-migration`, severity MEDIUM) — read that
+entry directly rather than just this summary before starting any work on it.
 
 **`project_roadmap.json` — verified 2026-09-28:** 3 of 11 governance questions still open, all
 `blocks_beta: true` — `bcp-public-hardening` (what defects remain in the BCP public-beta path),
