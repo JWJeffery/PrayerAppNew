@@ -18,12 +18,20 @@ narrative detail, not current state.
 | `VOLUME-1-2026-07-06-to-08-18.md` | 2026-07-06 – 2026-08-18 | was `RESUME_PROJECT_NOTE_HISTORICAL.md` | Anglican/BCP Daily Office work, Biblical Corpus remediation session detail, Coptic Agpeya rebuild |
 | `VOLUME-2-2026-08-18-to-09-04.md` | 2026-08-18 – 2026-09-04 | was `documentation/RESUME_NOTE_ARCHIVE_2026-09-04.md` | 94 session entries archived when the live note was rewritten 2026-09-04 |
 | `VOLUME-3-2026-09-04-to-09-07.md` | 2026-09-04 – 2026-09-07 | was `documentation/RESUME_NOTE_ARCHIVE_2026-09-07.md` | Was itself the live `RESUME_PROJECT_NOTE.md` for this window |
-| `VOLUME-4-2026-09-07-to-09-28.md` | 2026-09-07 – 2026-09-28 | split out of the live `RESUME_PROJECT_NOTE.md` | **Pending** — see status note below |
+| `VOLUME-4-2026-09-07-to-09-28.md` | 2026-09-07 – 2026-09-28 | split out of the live `RESUME_PROJECT_NOTE.md` | The full session-log narrative, plus the 2026-09-07-dated standing-reference section that preceded this cleanup |
 
 Each volume's content is preserved verbatim from its source file, not rewritten — only a short
 banner was added at the top of each pointing back here. Boundaries were verified directly (checked
 each volume's actual first/last dated entries, and checked for date overlap) before moving anything,
 not assumed from filenames.
+
+## Other superseded documents folded in
+
+- `SESSION_START_SCRIPT-superseded-2026-07-14.md` — was root `SESSION_START_SCRIPT.md`. Written
+  2026-07-14, never updated; by 2026-09-28 it actively misled a session at the start of this one
+  (named Lucy as still active — she was dismissed 2026-07-05, before this file was written — and
+  framed the Bible-corpus audit as still in progress, contradicted by Josh directly). Moved here
+  rather than left at the root where a future session would read it first and be misled the same way.
 
 ## Structure/governance snapshots (not narrative, kept for reference)
 
@@ -57,5 +65,9 @@ handled as part of the full todo-inventory pass, not decided here.
 ## Status note, 2026-09-28
 
 This package was built as part of a larger cleanup (see the live `RESUME_PROJECT_NOTE.md` for
-current status). Volume 4 — splitting the live note's own now-closed material out of it — and the
-full cross-document todo inventory are still in progress as of this writing.
+current status). All four volumes are now in place, and the live note has been rewritten down to
+current material only (5507 lines to ~300). **Not yet done as of this writing:** a full
+line-by-line inventory of every todo across `AUDIT_GOVERNANCE_LEDGER.md` (23,523 lines),
+`AUDIT_SOURCE_VERIFICATION.md`, and `data/bible/registry/bible-corpus-remediation-ledger.md` — the
+live note's §7 reflects what's been verified so far (`structure.json`, `project_roadmap.json`, the
+session-log split, today's live bug-report queue), not full coverage of those three documents.

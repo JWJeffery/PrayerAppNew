@@ -918,7 +918,7 @@
       "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization."
     },
     "archive_policy": {
-      "latest_archive": "documentation/structure-archive-2026-05-30-roman-loth-oor-composition.json",
+      "latest_archive": "documentation/project-history/structure-snapshot-2026-05-30-roman-loth-oor-composition.json",
       "last_archived_at": "2026-05-30",
       "recent_logic_changes_retained_live": 12,
       "operational_status_policy": "current-state summary only; append-only history belongs in documentation archive files"

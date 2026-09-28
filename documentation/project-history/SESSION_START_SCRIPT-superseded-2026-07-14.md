@@ -1,3 +1,12 @@
+> **SUPERSEDED, moved into `documentation/project-history/` 2026-09-28. Do not follow this file's
+> instructions.** Written 2026-07-14 and never updated since; by 2026-09-28 every substantive claim
+> in it was stale or wrong, including in ways that actively misled a session at the start of this
+> one — it names Lucy as still doing active work (she was dismissed 2026-07-05, before this file was
+> even written) and frames the Bible-corpus translation audit as ongoing ("Next book in sequence:
+> Job") when Josh confirmed 2026-09-28 that audit has been done for months. For current status, read
+> the live `RESUME_PROJECT_NOTE.md` at the repo root. Kept here only as a historical snapshot of
+> project state as of 2026-07-14, not as instructions.
+
 # SESSION START SCRIPT — read this before doing anything else
 
 This is a compact "start here" checklist, separate from `RESUME_PROJECT_NOTE.md` (the full
