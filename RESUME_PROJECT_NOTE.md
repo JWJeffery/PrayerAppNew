@@ -22,6 +22,48 @@ the only work in flight — a branch has piled up unmerged before (2026-09-26) p
 
 ---
 
+## IMMEDIATE NEXT STEP — session ended 2026-09-28 at 96% context, mid-verification
+
+Everything below is **committed and pushed** (`eb2aa9c`, branch `claude/prayerappnew-project-4mvez9`)
+— nothing is sitting unpushed. What's incomplete is *verification*, not code.
+
+**Two fixes just landed, from Josh's screenshot of the Byzantine office picker:**
+
+1. **Interhours hidden when not appointed.** New `HorologionEngine.isInterhourAppointed(dateObj)`
+   (`js/horologion-engine.js`, extracted from `_resolveInterhourSlots`'s existing UNABHOR1997 p.93
+   gate) + `js/office-ui.js`'s `_updateHorologionOfficeButtons()` now hides/disables the four
+   Interhour rows on ordinary days, with a fallback to `_defaultHorologionOfficeForCurrentTime()` if
+   the hidden office was selected. **FULLY LIVE-VERIFIED** (headless Chromium against `npm run
+   start:spa`): hidden 2026-09-28, visible 2026-06-08 (Apostles' Fast day 1), correctly re-hides and
+   falls back when navigating back. Nothing left to do on this one.
+
+2. **"Defaults" removed, "Back to Modes" renamed to "Explore other Offices" and hidden by default.**
+   Josh: both buttons called `backToSplash()`, Defaults was a redundant shortcut. Removed
+   `office-profile-defaults-button` outright. The single global button (`#app-mode-return-button`,
+   `position:fixed`, one instance for the whole app) is renamed and now hidden unless
+   `isExploreOtherOfficesVisible()` (new localStorage key `uoExploreOtherOfficesVisible`) is true — a
+   new checkbox row was added to `js/office-drawer.js`'s `buildKeep()` (unguarded by `modeKey`, since
+   the button is global), wired to a real backing `<input type="checkbox"
+   id="toggle-explore-other-offices">` in `index.html`. **VERIFIED LIVE:** button hidden by default,
+   correct text, old Defaults button gone. **NOT YET VERIFIED:** actually opening the Office Settings
+   drawer (`.uo-drawer-open` button, labeled "Office Settings") and clicking the new checkbox
+   end-to-end — the session was interrupted for a context-budget reason right before this check ran.
+   The code was written to match the existing `checkboxRow(key, label, id, offText, onText)` pattern
+   exactly (same function every other drawer row uses), so it's very likely fine, but **the very next
+   thing a new session should do is open the drawer live and click that checkbox** before treating
+   this as done. Playwright scripts used for the verification so far are scratch files under
+   `/tmp/.../scratchpad/verify_ui*.mjs` (session-local, won't persist) — rewrite rather than hunt for
+   them.
+
+Also relevant, not yet acted on: `scripts/browser-qc-user-profile-defaults-sweep.js` had its
+now-obsolete Defaults-button check removed; a handful of *other* `scripts/audit-*.mjs` files
+(`audit-shared-mode-navigation-grammar`, `audit-app-navigation-architecture`,
+`audit-shared-office-sidebars`) were run to confirm no *new* regressions from this change — they do
+have pre-existing, unrelated failures (stale `ethiopian-saatat` mode references, missing CSS
+markers) that predate this session and were not touched or investigated further.
+
+---
+
 ## 1. First thing to do, every session
 
 **Read the full repo and the governance documentation before any analysis or build work.** This is
