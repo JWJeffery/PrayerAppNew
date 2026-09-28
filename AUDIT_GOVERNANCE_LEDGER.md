@@ -23856,3 +23856,63 @@ VERIFIED: `data/saints/sanctoral.json` re-validated after every edit; entry coun
 throughout (10 field-additions to existing rows, zero new or removed rows). Files touched:
 `data/saints/sanctoral.json`, `RESUME_PROJECT_NOTE.md`. SEED_VERSION bumped to
 v394-2026-09-28-oor-same-figure-different-day-13-of-15-resolved.
+
+## Session 2026-09-28, continued yet again -- Josh's direct decisions on the remaining open items:
+## 3 stale governance questions removed, Horologion rename, two traditionObservance splits, and a
+## correction to an earlier "genuinely absent" claim that turned out to be wrong
+
+Josh worked through the open items shown to him and gave direct decisions on each:
+
+**`project_roadmap.json`'s 3 blocking governance questions removed outright** (`bcp-public-hardening`,
+`ethiopian-release-scope`, `hudra-release-scope`) -- Josh: "Remove all of this trash." All three were
+owned by "Lucy" and/or "Marissa," neither an active role; deleted from `governance_questions` rather
+than marked superseded, per his explicit instruction. `project_roadmap.json` re-validated as JSON after
+the removal.
+
+**Task #14 naming: Eastern Orthodoxy's mode-grid card renamed to "Horologion."** Josh confirmed the
+other four naming pairs (Anglican/Daily Office, Catholic/Roman Breviary 1960/1962, Oriental
+Orthodoxy/Coptic Agpeya, and Church of the East pending below) and asked for this one specifically --
+matches the pattern the other renamed lanes already follow (book/office name, not tradition name) and
+the card's own subtitle already said "Byzantine Horologion offices." `index.html`'s `app-mode-title`
+span for that card changed; the entry-card screen's own separate "Eastern Orthodoxy" label (a different
+element, `#tradition-entry`) and the advanced-panel dropdown option were deliberately left alone --
+neither was part of the naming pair being discussed. **Church of the East's proposed rename ("this
+should be the Ramsha?") not applied** -- flagged back to Josh rather than guessed at: the card's own
+subtitle already names the actual office-book as "Hudra" ("The East Syriac Hudra office stream..."),
+and Ramsha is one specific office (Evening Prayer) within the Hudra, not the book/collection name the
+other four cards all use. Possible he meant Hudra and mistyped, or he genuinely wants a specific-hour
+name here unlike every other card; asked rather than assumed.
+
+**Julietta/Cyriacus -- `traditionObservance` split applied, per Josh: "it sounds like they need a
+tradition observance split."** Added `OOR:Coptic` (Jul 22) to the existing joint
+`mar-cyriacus-and-julitta` row (COE, Jul 15), plus the `OOR` tag. CONFIRMED against coptic.io first:
+Jul 22 (15 Epip) prints "The Martyrdom of St. Cyriacus and St. Julietta His Mother" -- the joint
+commemoration, matching this row's own joint identity exactly. The other two coptic.io entries found
+earlier (Cyriacus alone, ~Nov 12, already covered by the existing separate `saint-cyriacus` row;
+Julietta alone, Aug 12, not covered anywhere) are outside this specific fix's scope, noted in the row's
+own `oorDateNote` so they aren't silently forgotten.
+
+**St Anne (Nov 20) -- `traditionObservance` split applied to the joint row, per Josh: "For the Copts,
+use Nov 20. For the West, use the western date."** Added `OOR:Coptic` (Nov 20) to
+`saint-joachim-and-saint-anne`'s existing `traditionObservance` object, alongside its EOR entry (Sep 9,
+2026-09-07). ANG/LAT keep the shared Jul 26 date, unaffected. The row's own prior `tagNote` (2026-09-07,
+"only a partial match found... left unconfirmed") is superseded, not deleted -- kept in place with a
+pointer to the new `oorDateNote`, so the correction is traceable rather than silently overwriting the
+record of what was tried before.
+
+**Mar Abraham of Qidun -- Josh: "add him." Turned out he's already there.** Before writing a new row,
+checked for an id collision first (standard practice) and found `mar-abraham-of-qidun` already exists
+in the corpus -- correctly sourced (ACOE Diocese of California 2024/2026 calendars, same PDFs already
+confirmed this session), same Dec 14 date, same description distinguishing it from
+`mar-abraham-of-kashkar` and `mar-abraham`. Git blame traces it to `07dd77f`, the 2026-09-23 full-repo
+restore -- meaning it predates that restore and has been in the corpus the whole time. **This corrects
+a wrong claim made earlier this session**, when researching the `mar-abraham` duplicate-id bug: this
+row was called "genuinely absent from this corpus under any id" without actually checking the corpus
+directly for that exact id first -- an assumption stated as a finding, the precise failure mode this
+project's own standing rules exist to catch. No row added; entry count unchanged at 1067. Flagged to
+Josh directly rather than silently creating a duplicate.
+
+VERIFIED: `project_roadmap.json` and `data/saints/sanctoral.json` both re-validated as JSON after every
+edit; `data/saints/sanctoral.json` entry count unchanged at 1067 throughout (two field-additions to
+existing rows, zero new or removed rows, confirming no duplicate was created for Mar Abraham of Qidun).
+Files touched: `project_roadmap.json`, `index.html`, `data/saints/sanctoral.json`.

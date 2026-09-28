@@ -329,15 +329,51 @@ text** — the Diocese/Parish-driven Communion/Provincial/Diocesan/Parish cycle-
 described above, not a link or a timer. The screenshot's only purpose was to confirm the insertion
 point, which this project already has correct.
 
-**Documentation/governance cleanup, in progress as of 2026-09-28** (Josh's direction, same session as
-the Menaion work above): scattered continuity/status documents (this note's own prior sprawl, dated
-archive files, ad hoc structure snapshots) are being consolidated into `documentation/project-history/`
-— see its `INDEX.md`. This note has just been rewritten as part of that effort. **Not yet done:** a
-full line-by-line inventory of every todo across `AUDIT_GOVERNANCE_LEDGER.md` (23,523 lines),
-`AUDIT_SOURCE_VERIFICATION.md`, `project_roadmap.json`'s governance questions, and
-`data/bible/registry/bible-corpus-remediation-ledger.md` (already known stale, contradicted by a later
-"fully done" claim — not yet reconciled). What's below is what's been verified so far, not a claim of
-full coverage.
+**NEW TODO, added 2026-09-28 (continued) per Josh's direct instruction — make the Google Drive
+"Anglican Synaxarium" decision file the controlling TEC commemoration calendar.** Josh: "For TEC
+saints / commemoration, incorporate the decision file in Google Drive (Anglican Synaxarium) and make
+that data the controlling commemoration calendar for TEC in the app." **Located, not yet read or
+incorporated** — a Google Drive search this session found a whole "Anglican Synaxarium" production
+project, not a single file, in a Drive folder (`1MKGp9HIUS_y3y5LnSvcG3dlqjRvn1RAu`) owned by
+`josh@jwjeffery.org`:
+- **`synaxarium-decisions-2026-09-07-cleaned.json`** (~600KB, created 2026-09-08, last modified
+  2026-09-07) — the most likely candidate for "the decision file" Josh means; a cleaned JSON export,
+  presumably of actual decided (not pending) commemorations.
+- **"An Anglican Synaxarium — Editorial Rules"** (Google Doc) and **"An Anglican Synaxarium —
+  Production Workflow"** (Google Doc) — read these FIRST, before touching the decisions file itself;
+  they almost certainly explain the methodology behind how those decisions were reached and what the
+  data actually represents.
+- **"An Anglican Synaxarium — November 2026 Production Tracker"** (Google Sheet) — likely tracks
+  in-progress/ongoing production status, separate from the finished decisions file.
+- An `instructions.txt` and further per-date working documents (e.g. "November 10–12 — Commission and
+  QC") also exist in and around this folder — this looks like an actively-maintained external
+  production pipeline, not a one-off export.
+
+**This appears to be a separate, more developed effort than `synaxarium-review/`'s own candidate CSVs
+(§7 below) — relationship between the two not yet established.** Both concern TEC/Anglican sanctoral
+data; whether the Drive project supersedes, feeds, or is entirely independent of the
+`synaxarium-review/` tool's candidate-matrix review needs to be understood before building an
+incorporation, not assumed. **Not started:** no file content read, no schema comparison against this
+app's own `data/saints/sanctoral.json` ANG rows, no plan for how "controlling calendar" should actually
+be implemented (replace ANG-tagged sanctoral rows outright, layer on top via `traditionObservance`-style
+override, or something else). Whoever picks this up should read the Editorial Rules and Production
+Workflow docs first, then the decisions JSON, before writing any code.
+
+**Documentation/governance cleanup — SCOPE REDUCED 2026-09-28 (continued), per Josh's direct
+instruction: "AUDIT_GOVERNANCE_LEDGER.md (23,500+ lines), AUDIT_SOURCE_VERIFICATION.md can be skipped
+as part of this."** Scattered continuity/status documents (this note's own prior sprawl, dated archive
+files, ad hoc structure snapshots) are being consolidated into `documentation/project-history/` — see
+its `INDEX.md`. This note has been rewritten repeatedly as part of that effort. **Within the reduced
+scope, both remaining pieces are now handled:** `project_roadmap.json`'s governance questions were
+inventoried this session (3 stale `blocks_beta` questions removed outright, see above); the
+`data/bible/registry/bible-corpus-remediation-ledger.md` stale-vs-"fully done" contradiction is already
+resolved — §8 below already states the Bible-corpus translation audit is DONE, confirmed by Josh
+directly 2026-09-28, and that any document suggesting otherwise (this ledger file included) is stale
+and not to be treated as current. **Do not line-by-line reconcile that 1,031-line file against the
+audit** — the outcome is already settled by Josh's own direct word; reconciling it further would just
+be re-litigating a closed question. `AUDIT_GOVERNANCE_LEDGER.md` and `AUDIT_SOURCE_VERIFICATION.md`
+remain explicitly out of scope for this cleanup effort — do not audit them as part of this without
+Josh separately asking for that.
 
 **`scripts/` audit for Lucy-era dead validation scripts — DONE, not "not yet started."** This note had
 it wrong. `eb94c0c` ("Remove 107 dead Bible-corpus-audit scripts from the Lucy era") already did the
@@ -396,19 +432,29 @@ template every domain should mirror, or each domain gets its own; (2) inventory 
 `known_outstanding_issues` (id `whole-app-json-to-database-migration`, severity MEDIUM) — read that
 entry directly rather than just this summary before starting any work on it.
 
-**`project_roadmap.json` — verified 2026-09-28:** 3 of 11 governance questions still open, all
-`blocks_beta: true` — `bcp-public-hardening` (what defects remain in the BCP public-beta path),
-`ethiopian-release-scope` (what Sa'atat depth is required), `hudra-release-scope` (what East Syriac
-Hudra depth is required). Phase plan: phase_3 (Roman Catholic Divine Office private control corpus) is
-`active`; phases 4-8 (EO Russian/Slavic closeout, OO Ethiopian closeout, Church of the East Hudra
-closeout, cross-family hardening, final beta gate) are all `not_started`.
+**`project_roadmap.json` — the 3 `blocks_beta: true` questions REMOVED outright 2026-09-28
+(continued), per Josh's direct instruction ("Remove all of this trash").** `bcp-public-hardening`,
+`ethiopian-release-scope`, and `hudra-release-scope` — all three orphaned (owned by "Lucy" and/or
+"Marissa," neither an active role) — are deleted from `governance_questions`, not marked superseded.
+Nothing left open in that file requiring an owner who no longer exists. 8 governance questions remain
+in the file, none `blocks_beta: true` and open (the rest are `superseded`, `deferred`, or `answered` —
+see the file itself, not re-summarized here). Phase plan: phase_3 (Roman Catholic Divine Office private
+control corpus) is `active`; phases 4-8 (EO Russian/Slavic closeout, OO Ethiopian closeout, Church of
+the East Hudra closeout, cross-family hardening, final beta gate) are all `not_started`.
 
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions) — as of the last entries
 in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
-- Task #14 — tradition-selector naming: one real bug fixed (stale LOTH text). A broader question is
-  still open and explicitly left for Josh: the entry-card screen and the mode-grid name three of five
-  traditions differently for the same lane (e.g. entry-card "Catholic" vs. mode-grid "Roman Breviary
-  1960/1962") — whether to unify, and which name should win, is Josh's editorial call.
+- Task #14 — tradition-selector naming: one real bug fixed (stale LOTH text). The broader
+  naming-consistency question is **mostly resolved 2026-09-28 (continued), Josh's direct call on each
+  pair.** Anglican ("Anglican" / "Daily Office"), Catholic ("Catholic" / "Roman Breviary 1960/1962"),
+  and Oriental Orthodoxy ("Oriental Orthodoxy" / "Coptic Agpeya") are fine as-is, no change. Eastern
+  Orthodoxy's mode-grid card renamed "Eastern Orthodoxy" → **"Horologion"** (`index.html`, done). **Church
+  of the East is the one still open:** Josh proposed renaming its mode-grid card to "the Ramsha" but
+  wrote it with a question mark; flagged back rather than applied, since the card's own subtitle already
+  names the actual office-book as "Hudra" ("The East Syriac Hudra office stream...") and Ramsha is one
+  specific office (Evening Prayer) within the Hudra, not the whole-book name every other renamed card
+  uses — possible he meant "Hudra," or he genuinely wants a specific-hour name here unlike every other
+  lane. **Needs Josh to confirm which before this gets touched.**
 - Task #15 — **stale row, actually CLOSED.** This note had it as "not yet picked back up," but
   `4e0f6d0` ("Fix task #15 for real...") already shipped the outer-budget `max-height` fix to
   `css/office-shell.css` and is already on `main` (an ancestor of the mobile-audit merge, `97a0374`).
@@ -468,24 +514,19 @@ in that whole window; `07dd77f`, 2026-09-23, is a full repo restore, not organic
    Gregory Thaumaturgus/of Neocaesarea (Nov 30 — missed from the original list, found while verifying
    the others, same fix applied). Each row's `oorDateNote` cites the exact coptic.io text matched.
 
-   **2 genuinely still open — structural questions, not mechanical date fixes, left for Josh:**
-   - **Julietta/Cyriacus.** More tangled than a simple two-date question: coptic.io's own search
-     surfaces THREE separate entries — "The Departure of St. Cyriacus" alone (3 Hator / ~Nov 12,
-     matching this corpus's existing OOR-tagged `saint-cyriacus` row already), "The Martyrdom of St.
-     Cyriacus and St. Julietta His Mother" jointly (15 Epip / ~July 22), and "The Martyrdom of St.
-     Julietta" alone (6 Mesori / Aug 12). The existing corpus row for the pair
-     (`mar-cyriacus-and-julitta`, COE only, Jul 15) is close to but not exactly the joint Epip 15 date,
-     and it's unclear whether the Coptic tradition's three separate entries should all attach to one
-     identity or reflect genuinely distinct commemorations. Needs Josh's call on how to structure this,
-     not a single mechanical `traditionObservance` addition.
-   - **St Anne (Nov 20).** coptic.io confirms "The Departure of St. Anna (Hannah), the mother of the
-     Theotokos" at Nov 20 (Coptic) — clearly Anne alone, not jointly with Joachim. The existing corpus
-     row is the joint `saint-joachim-and-saint-anne` (already OOR-tagged, but with no `OOR:Coptic`
-     override — it currently defaults to the shared Jul 26 Western date for OOR too, which is likely
-     wrong for Coptic specifically). Attaching Nov 20 to that joint row via `traditionObservance` would
-     be the simplest fix but is slightly imprecise (asserting the *pair* is commemorated Nov 20 when the
-     source names Anne alone); creating a separate Anne-only OOR row would be more precise but adds a
-     new identity. Josh's call on which structure this project wants.
+   **Both resolved 2026-09-28 (continued), Josh's direct decisions:**
+   - **Julietta/Cyriacus — RESOLVED.** Josh: "it sounds like they need a tradition observance split."
+     Added `OOR:Coptic` (Jul 22) to the existing joint `mar-cyriacus-and-julitta` row (COE, Jul 15), plus
+     the `OOR` tag — CONFIRMED against coptic.io: Jul 22 (15 Epip) is "The Martyrdom of St. Cyriacus and
+     St. Julietta His Mother," the joint commemoration, matching this row's own joint identity exactly.
+     Not touched, deliberately out of scope for this fix: coptic.io's other two entries — Cyriacus alone
+     (~Nov 12, already covered by the existing separate `saint-cyriacus` row) and Julietta alone (Aug
+     12, not covered anywhere) — noted in the row's own `oorDateNote` so they aren't lost.
+   - **St Anne (Nov 20) — RESOLVED.** Josh: "For the Copts, use Nov 20. For the West, use the western
+     date." Added `OOR:Coptic` (Nov 20) to `saint-joachim-and-saint-anne`'s existing
+     `traditionObservance` object, alongside its EOR entry (Sep 9). ANG/LAT keep the shared Jul 26 date,
+     unaffected — attached to the joint row per Josh's explicit choice, not split into a separate
+     Anne-only row.
 
    VERIFIED: `data/saints/sanctoral.json` re-validated after each edit (one edit introduced a duplicate
    `traditionObservance` key, caught and fixed immediately by re-reading the entry, not just the parser);
@@ -537,11 +578,15 @@ that 2026-09-12 cleanup, just orphaned under the bare `mar-abraham` id. **FIXED:
 missionary" row deleted outright** (not merged, not re-sourced — it had no real content to preserve;
 `mar-abraham-of-kashkar` already fully and correctly covers this May 2 commemoration). `mar-abraham`
 now holds exactly one row (Doctor of the School of Nisibis, Dec 18/20, confirmed printed in both
-years). Entry count and JSON validity re-verified after the edit. **Bonus finding, not acted on:**
-the same two calendar PDFs also print "Commemoration of Mar Abraham of Qidun" every December 14 (a
-distinct, well-known East Syriac desert hermit) — genuinely absent from this corpus under any id.
-Not added here since it's new content, not a correction of what's already in the file; flagged for a
-future session or Josh's call on whether to add it.
+years). Entry count and JSON validity re-verified after the edit.
+
+**CORRECTION 2026-09-28 (continued): "Mar Abraham of Qidun... genuinely absent from this corpus under
+any id" above was wrong — it's already there.** Josh said "add him"; before writing a new row, checked
+for an id collision first and found `mar-abraham-of-qidun` already exists, correctly sourced (same two
+ACOE Diocese of California PDFs, same Dec 14 date), predating the 2026-09-23 full-repo restore per git
+blame. The earlier claim was an unverified assumption stated as a finding — exactly the failure mode
+this project's own standing rules exist to catch — not a check that was actually run against the
+corpus at the time. No row added; nothing to do here.
 
 **The old "carried forward, not independently re-verified" bucket — actually checked and properly
 categorized 2026-09-28 (continued), per Josh's direct instruction.** These seven items had been sitting

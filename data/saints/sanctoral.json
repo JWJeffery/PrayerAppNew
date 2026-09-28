@@ -11875,7 +11875,8 @@
       "description": "Mar Cyriacus (Quriaqus) and his mother Julitta, martyrs. FIXED DATE: listed at 15 July in both the 2025 and 2026 editions. Source: Assyrian Church of the East, Diocese of Western Europe, Diocesan Ecclesiastical Calendar (English), acote.church/ecclesiastical-calendar",
       "type": "saint",
       "tags": [
-        "COE"
+        "COE",
+        "OOR"
       ],
       "dayLegacy": "July 15",
       "observance": {
@@ -11887,7 +11888,19 @@
           }
         ]
       },
-      "ruleSource": "15 July in all seven editions. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions."
+      "ruleSource": "15 July in all seven editions. Verified against the Assyrian Church of the East, Diocese of Western Europe published ecclesiastical calendars 2020-2026, all seven editions.",
+      "traditionObservance": {
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 7,
+              "day": 22
+            }
+          ]
+        }
+      },
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, per Josh's direct instruction after reviewing the same-figure-different-day flag. Shared date (Jul 15) is COE's. CONFIRMED against coptic.io: \"The Martyrdom of St. Cyriacus and St. Julietta His Mother\" falls Jul 22 (15 Epip, common year) -- this is the joint commemoration of both figures together, matching this row's own joint identity exactly. NOT covered by this fix: coptic.io also shows a separate 'Cyriacus alone' entry (3 Hator / ~Nov 12, already matching this corpus's existing OOR-tagged saint-cyriacus row) and a separate 'Julietta alone' entry (6 Mesori / Aug 12), neither of which is this row's concern."
     },
     {
       "id": "mar-saba",
@@ -12646,10 +12659,20 @@
               "day": 9
             }
           ]
+        },
+        "OOR:Coptic": {
+          "type": "fixed",
+          "dates": [
+            {
+              "month": 11,
+              "day": 20
+            }
+          ]
         }
       },
       "eorDateNote": "EOR date CORRECTED via traditionObservance 2026-09-07. Shared date (Jul 26) is ANG/LAT's. CONFIRMED against orthocal.info: Joachim and Anna fall Sept 9 in the Orthodox calendar.",
-      "tagNote": "OOR NOTE 2026-09-07: only a partial match found -- \"The Annunciation of St. Joachim with the Birth of the Virgin Mary\" (Aug 13, 7 Mesra) is about Joachim's annunciation specifically, not a joint Joachim-and-Anne commemoration, and doesn't match the stored Jul 26 date. Left unconfirmed rather than force a match.",
+      "tagNote": "OOR NOTE 2026-09-07 (superseded by oorDateNote below, 2026-09-28): only a partial match found -- \"The Annunciation of St. Joachim with the Birth of the Virgin Mary\" (Aug 13, 7 Mesra) is about Joachim's annunciation specifically, not a joint Joachim-and-Anne commemoration, and doesn't match the stored Jul 26 date. Left unconfirmed rather than force a match. A real match was found later, see oorDateNote.",
+      "oorDateNote": "OOR date ADDED via traditionObservance 2026-09-28, per Josh's direct instruction: \"For the Copts, use Nov 20. For the West, use the western date.\" CONFIRMED against coptic.io: \"The Departure of St. Anna (Hannah), the mother of the Theotokos\" falls Nov 20 (14 Hator, common year) -- Anne alone, not jointly with Joachim, unlike this row's own Western identity. Attached to this joint row anyway per Josh's direct choice, rather than splitting into a separate Anne-only row. ANG/LAT keep the shared Jul 26 date, EOR keeps its own Sep 9 traditionObservance above, unaffected.",
       "liturgicalColor": "white",
       "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org)",
       "liturgicalColorEOR": "blue",
