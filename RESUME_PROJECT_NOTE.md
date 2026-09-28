@@ -51,6 +51,41 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**FIFTH ITEM, 2026-09-28 — cited all 14 Horologion office `description` fields, and fixed a real
+error one of them had.** `AUDIT_GOVERNANCE_LEDGER.md` (2026-09-26) flagged `data/horologion/*.json`'s
+14 office descriptions and 71 section notes as "uncited... must not be promoted into the education
+layer on the strength of sounding right." Confirmed these are internal-only (grep across
+`js/office-ui.js`/`office-drawer.js`/`horologion-engine.js` finds zero renders of `.description`
+anywhere — not currently user-facing), so the fix is citation + accuracy, not new authorship.
+
+Added a `descriptionSource` field to all 14 (`vespers`, `great-compline`, `first-hour`,
+`third-hour`, `sixth-hour`, `ninth-hour`, `typika`, `orthros`, `midnight-office`, `small-compline`,
+`interhour-first/-third/-sixth/-ninth`), citing exact `UNABHOR1997` pages via that source's own
+section-map JSON (`unabbreviated-horologion-1997-section-map.json` — hand-transcribed from the
+book's own Table of Contents, not guessed). Verified rather than rubber-stamped: read the actual
+anchor page for each office, confirmed the Third/Ninth Hour psalm-number claims by direct page read,
+and confirmed the interhour/midnight-office/great-compline transliterated names (Mezhduchasiye,
+Mesoniktikon, Mega/Mikron Apodeipnon) don't appear in either governing source's own glossary —
+disclosed as standard traditional terminology rather than presented as sourced.
+
+**Found and fixed a real error in the process**: `vespers.json`'s description claimed this office
+models "Great Vespers." It doesn't — UNABHOR1997 itself distinguishes "the daily Vespers" (opens
+straight into Psalm 103) from "the Great Vespers" (opens with "Arise! O Lord, bless!" and a
+Trinitarian doxology, used at vigils); this skeleton's own opening, and its absence of the
+vigil-only Litiya and Blessing of Loaves, both match daily/ordinary Vespers exactly. Corrected in
+place, with the reasoning kept in the description itself so it can't drift back unnoticed. Also
+corrected `typika.json`'s description ("in place of Holy Communion" → "in place of the Divine
+Liturgy," the more precise framing) and added an honest note that the Great Lent weekday form is a
+different, currently-unbuilt structure (Finding T8, still open — see the entry above; not attempted
+this pass, its own multi-branch structure needs a dedicated session, not a citation-pass detour).
+Extended the four Interhour descriptions with IH7's exact appointment rule (previously just said
+"monastic practice," which undersold how rare the office actually is: ~1-2 days a year, never Lent).
+
+**Verified live**: all 14 offices resolve correctly via `HorologionEngine.resolveOffice()` in the
+running app (headless Chromium) with no new console errors; JSON validity and semantic-content
+equality (sections unchanged, only `description`/`descriptionSource` touched) confirmed for every
+file via direct comparison against the pre-edit git blob before committing.
+
 **DOC CORRECTED, 2026-09-27 — Horologion Finding IH7 (Interhours appointment gate) was already fixed
 the same day it was disclosed, but its own findings doc kept calling it not-fixed.** Fourth item from
 this session's open-items audit. `documentation/HOROLOGION_AUDIT_FINDINGS.md` disclosed IH7 (no

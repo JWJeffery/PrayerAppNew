@@ -3,6 +3,7 @@
   "label": "Orthros (Matins)",
   "tradition": "BYZC",
   "description": "The Byzantine Morning Office (Orthros / Matins). Preceded by the Midnight Office on solemn occasions and followed by the First Hour. The structure presented here is the ordinary Orthros of the Constantinopolitan Horologion, as it continues directly from Vespers or the Midnight Office (Psalms 19 and 20 read here, per that entry point). Full festal, resurrectional, and Lenten Matins corpora are deferred beyond this baseline.",
+  "descriptionSource": "UNABHOR1997, \"The Order of the Matins,\" p.46ff.",
   "sections": [
     {
       "id": "opening",

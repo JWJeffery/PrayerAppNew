@@ -22992,3 +22992,40 @@ top-level status summary and the IH7 finding itself now read FIXED, with this ve
 inline.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, working the open-items audit's non-blocked items -- item 5: cite all 14
+Horologion office descriptions, one real error found and fixed
+
+This ledger's own 2026-09-26 entry flagged `data/horologion/*.json`'s 14 office descriptions and 71
+section notes as "uncited... must not be promoted into the education layer on the strength of
+sounding right." Confirmed these are internal-only first (grepped `js/office-ui.js`,
+`office-drawer.js`, `horologion-engine.js` for any render of `.description` -- zero hits, not
+user-facing today), so this pass is citation-and-accuracy work, not new authorship.
+
+Added `descriptionSource` to all 14 office files, citing exact UNABHOR1997 pages via that source's
+own hand-transcribed section-map JSON, not guessed. Spot-verified rather than trusted: read each
+office's actual anchor page; confirmed the Third and Ninth Hour psalm-number claims (16/24/50 and
+83/84/85) by direct page read; confirmed the transliterated Church-Slavonic/Greek names used in
+several descriptions (Mezhduchasiye, Mesoniktikon, Mega/Mikron Apodeipnon) do not appear in either
+governing source's own glossary -- disclosed as standard traditional terminology, not presented as
+sourced to either book.
+
+**Real error found and fixed**: `vespers.json` claimed to model "Great Vespers." UNABHOR1997 itself
+distinguishes "the daily Vespers" (opens straight into Psalm 103) from "the Great Vespers" (opens
+with "Arise! O Lord, bless!" and a Trinitarian doxology, the vigil form) -- this skeleton's own
+opening and its absence of the vigil-only Litiya and Blessing of Loaves both match daily/ordinary
+Vespers exactly, not Great Vespers. Corrected in place. Also corrected `typika.json`'s "in place of
+Holy Communion" to the more precise "in place of the Divine Liturgy," and added an honest note that
+the Great Lent weekday form is a different, currently-unbuilt structure (Finding T8, still open --
+not attempted this pass; its multi-branch structure needs a dedicated session). Extended all four
+Interhour descriptions with IH7's exact appointment rule, since "monastic practice" alone understated
+how rare the office actually is.
+
+Verified live: all 14 offices resolve correctly via `HorologionEngine.resolveOffice()` in the
+running app, zero new console errors; JSON validity and semantic-content equality (only
+`description`/`descriptionSource` changed, `sections` byte-identical) confirmed against the pre-edit
+git blob for every file before committing.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
