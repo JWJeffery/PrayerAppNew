@@ -546,8 +546,14 @@
         });
         rail.appendChild(list);
 
+        // FIXED 2026-09-28, found via Josh's live screenshot ("mixing roman and
+        // Arabic numerals"): this line and the scroll-synced one below it in
+        // watchRailScroll() disagreed with each other -- this one spelled out
+        // the position (Roman) but left the total as a plain Arabic count;
+        // watchRailScroll() converted the position via toRoman() but forgot to
+        // convert the total too. Both numbers are now Roman in both places.
         var foot = el('div', 'uo-rail-foot',
-            'I of ' + env.blocks.length);
+            toRoman(1) + ' of ' + toRoman(env.blocks.length));
         rail.appendChild(foot);
 
         // FIXED 2026-09-25, found via Josh's direct report ("that never moves as the
@@ -684,7 +690,7 @@
         var rail = document.querySelector('.uo-rail');
         var foot = rail ? rail.querySelector('.uo-rail-foot') : null;
         if (foot) {
-            foot.textContent = toRoman(currentIndex + 1) + ' of ' + railWaypoints.length;
+            foot.textContent = toRoman(currentIndex + 1) + ' of ' + toRoman(railWaypoints.length);
         }
 
         // FIXED 2026-09-25, per Josh's own wording live: "it needs to scroll

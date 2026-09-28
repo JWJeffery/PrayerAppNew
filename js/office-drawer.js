@@ -137,6 +137,18 @@
          altGroup
         ].forEach(function (n) { if (n) hosts.further.appendChild(n); });
 
+        /* FIXED 2026-09-28, per Josh's follow-up report on the reorder above
+           ("seasonal variations that are rarely used" still weren't all last):
+           "Pascha Nostrum All Easter Season" is a once-a-year seasonal toggle,
+           same category as altGroup above, but lived inside
+           invitatory-settings-group (moved wholesale with during-office-section)
+           sandwiched between two everyday rotation toggles. Plucked out
+           individually, same technique BORROWED_IDS already uses, and appended
+           after altGroup so every single-season/single-day toggle now sits
+           together at the true end of the list. */
+        var paschaNostrum = labelOf('toggle-pascha-nostrum-all-season');
+        if (paschaNostrum) hosts.further.appendChild(paschaNostrum);
+
         /* BCP Only Mode: the real checkbox, at the foot (§5, §3.7). */
         var bcp = labelOf('toggle-bcp-only');
         if (bcp) hosts.bcpOnly.appendChild(bcp);
@@ -571,18 +583,13 @@
         } else if (modeKey === 'horologion') {
             add(selectRow('hor-cal', 'Calendar', 'hor-eo-calendar-select'));
             add(selectRow('hor-depth', 'Display depth', 'hor-depth-select'));
-            var diag = document.getElementById('hor-btn-diag');
-            if (diag) {
-                var r = el('div', 'uo-drawer-row');
-                r.appendChild(el('span', 'uo-drawer-row-label', 'Diagnostics'));
-                var b = el('button', 'uo-drawer-row-value uo-drawer-toggle-value',
-                    /ON/.test(diag.textContent) ? 'On' : 'Off');
-                b.type = 'button';
-                b.setAttribute('data-uo-key', 'hor-diag');
-                b.onclick = function () { diag.click(); refreshSoon(); };
-                r.appendChild(b);
-                rows.appendChild(r);
-            }
+            // REMOVED 2026-09-28, per Josh's direct request ("Diagnostics
+            // should not be an option"): this row exposed a dev-only display
+            // toggle (resolvedAs/type/layer annotations under each rendered
+            // item) to real users. The underlying #hor-btn-diag control and
+            // its click handler are untouched elsewhere -- only this
+            // user-facing drawer row is gone, so nothing here can turn
+            // diagnostics on again from the UI.
         }
 
         add(explanationRow());
@@ -605,10 +612,14 @@
         var names = borrowedSummary();
         hosts.borrowedValue.textContent = bcpOnly ? 'BCP only'
             : (names.length ? names.length + ' on' : 'None');
+        // REMOVED 2026-09-28, per Josh's direct request: the "None" value badge
+        // above (hosts.borrowedValue) already states the nothing-selected case;
+        // this line's own explanatory sentence for it was redundant and is gone.
+        // The BCP Only Mode sentence stays -- a distinct, still-useful state
+        // Josh did not ask to remove.
         hosts.borrowedList.textContent = names.length
             ? names.join(' \u00B7 ') + '.'
-            : (bcpOnly ? 'BCP Only Mode is on; nothing additional is included.'
-                       : 'Nothing additional. The office is the Prayer Book\u2019s alone.');
+            : (bcpOnly ? 'BCP Only Mode is on; nothing additional is included.' : '');
         /* When every borrowed row is hidden (BCP Only, or this office offers
            none), the expander has nothing to show and is not offered. */
         var anyShown = BORROWED_IDS.some(function (id) {
