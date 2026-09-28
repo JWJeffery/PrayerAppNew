@@ -279,10 +279,63 @@ it stops being lost. Requirements, as given directly, not yet elaborated or desi
   is a genuine net-new restriction, not tightening something partially gated already; the existing
   `app-advanced-only` mechanism (already used for the Admin Console and the Local Browser Defaults
   panel) is the obvious pattern to extend to a real super-user check, once that check exists.
+- **Diocese / Parish affiliation — added 2026-09-28 (continued), per Josh's direct follow-up.** The
+  profile needs a way for the person to select which Diocese and Parish they belong to. Purpose, given
+  directly by Josh: this feeds the "authorized intercessions" item immediately below — TEC's own
+  Communion / Provincial / Diocesan / Parish cycles of prayer are each scoped to a specific
+  jurisdiction, so the app needs to know which diocese/parish a person belongs to before it can show
+  the right diocesan- and parish-level cycle content (the Communion- and Province-wide cycles are the
+  same for everyone and don't need this, but Diocesan and Parish do). Not designed further than that:
+  no diocese/parish reference data exists anywhere in this repo yet (checked, zero hits for "cycle of
+  prayer" or "Diocesan Cycle" in any `.json`/`.md` file) — a future session will need to research where
+  authoritative Diocese/Parish lists come from (TEC's own directory, if machine-readable) before
+  building a selector, not invent one.
 
 Not designed, not scoped into phases, not estimated — this is Josh's request recorded as given, for a
 future session to plan properly (research existing patterns in this codebase first, per standing
 practice) before any code is written.
+
+**NEW TODO, added 2026-09-28 (continued) per Josh's direct instruction — Authorized Intercessions
+content, after A Prayer for Mission in BCP Morning/Evening Prayer.** Josh: "Add the 'authorized
+intercessions' after the Prayer for Mission that I asked for yesterday." **The insertion point already
+exists and is not new work** — `e6b301c` ("Add the authorized-intercessions rubric space to BCP
+Morning/Evening Prayer") already built the placeholder: a new fixed component
+`bcp-hymn-anthem-intercessions-rubric` (`components/anglican.json`) reading "Here may be sung a hymn or
+anthem.\nAuthorized intercessions and thanksgivings may follow.", inserted into both the Morning and
+Evening Prayer sequences immediately after "A Prayer for Mission" via `bcpEmitBare()` (so it correctly
+gets no rail entry, as a procedural rubric rather than a titled prayer). That commit's own message is
+explicit that it was deliberately the rubric space ONLY, "no intercession texts, which he'll supply in
+a future session" — **this TODO is that future session's work: add the actual Authorized Intercessions
+prayer text(s) at that same slot**, not rebuild the slot itself.
+
+**Directly tied to the Diocese/Parish item above:** per Josh's own framing, "authorized intercessions"
+in TEC practice are the Communion / Provincial / Diocesan / Parish cycles of prayer, which is why the
+profile system needs to know a person's Diocese/Parish before it can render the diocesan- and
+parish-level tiers correctly — the Communion-wide and Province-wide tiers presumably don't vary by
+person and could ship without the profile work, but the Diocesan/Parish tiers cannot. Whoever picks
+this up should decide (with Josh) whether to ship the Communion/Province tiers first as static content
+independent of the profile system, or wait and do all four tiers together once Diocese/Parish selection
+exists. No source text for any tier gathered yet — Josh said he'll supply it.
+
+**Concrete UX reference given 2026-09-28 (continued): a screenshot of the Venite app (Forward
+Movement's Episcopal daily office app) rendering this exact same slot.** This changes what "add the
+authorized intercessions" likely means — not inserting fixed prayer text, but building an interactive
+section. In Venite, immediately after the same two rubric lines this project already has ("Here may be
+sung a hymn or anthem." / "Authorized intercessions and thanksgivings may follow."), it shows:
+1. A **"PRAYERS AND THANKSGIVINGS"** section header (styled as a link/button, not plain text) —
+   plausibly a link into the BCP's own "Prayers and Thanksgivings" collection (BCP 1979 pp.810-841),
+   though this is inferred from the label, not confirmed from the screenshot alone.
+2. A **"MEDITATE FOR [N] minutes" control** — a blue button with an editable number field (shown at 5),
+   i.e. a silent timed meditation/free-intercession period, not printed text at all.
+3. Then the rubric "Before the close of the Office one or both of the following may be used," followed
+   by The General Thanksgiving (BCP p.101) — already present in this project's own sequence separately,
+   not part of this new slot.
+
+**Not yet confirmed with Josh: whether this is the design he wants copied, or just an example of how
+one other app handled the same rubric.** Whoever picks this up should ask before building — the
+Diocese/Parish-driven cycle-of-prayer text described above and this timer-based "free intercession"
+UX are two different, not mutually exclusive, ways of filling the same rubric slot, and Venite's
+choice doesn't resolve which (or both) this project should build.
 
 **Documentation/governance cleanup, in progress as of 2026-09-28** (Josh's direction, same session as
 the Menaion work above): scattered continuity/status documents (this note's own prior sprawl, dated
