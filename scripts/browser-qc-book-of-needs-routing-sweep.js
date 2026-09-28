@@ -197,7 +197,7 @@
         const state = await openBookOfNeedsFromOffice("daily", "Anglican Communion", "ANG");
 
         assert(state.label === "Anglican Communion", `Daily Office Book of Needs label was ${state.label || "blank"}.`);
-        assert(state.visibleCount > 0, "Daily Office Book of Needs should show at least one Anglican/Episcopal prayer.");
+        assert(state.visibleCount > 0, "Daily Office Book of Needs should show at least one Anglican prayer.");
         assert(isPrayerOptionVisible("prayer-humble-access"), "Daily Office Book of Needs should show prayer-humble-access.");
         assert(isPrayerOptionHidden("thanksgiving-aquinas"), "Daily Office Book of Needs should hide Latin thanksgiving-aquinas.");
         assert(isPrayerOptionHidden("minister-journey-orthodox"), "Daily Office Book of Needs should hide Orthodox minister-journey-orthodox.");
@@ -256,7 +256,7 @@
             assert(document.getElementById("prayer-select-list"), "Missing Book of Needs prayer list.");
 
             await runCheck("Universal selector: Book of Needs shows all prayers and Back returns to selector", verifyUniversalBookOfNeedsPath);
-            await runCheck("Daily Office: Book of Needs filters Anglican/Episcopal and Back returns to office", verifyDailyOfficeBookOfNeedsPath);
+            await runCheck("Daily Office: Book of Needs filters Anglican and Back returns to office", verifyDailyOfficeBookOfNeedsPath);
             await runCheck("Horologion: Book of Needs filters Eastern Orthodox and Back returns to office", verifyHorologionBookOfNeedsPath);
         } finally {
             if (restoreState) restoreLocalStorage(snapshot);

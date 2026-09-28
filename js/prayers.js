@@ -29,8 +29,8 @@ const BOOK_OF_NEEDS_CONTEXTS = {
     },
     ANG: {
         label: 'Anglican Communion',
-        note: 'Showing prayers explicitly tagged for Anglican/Episcopal use.',
-        empty: 'No Anglican/Episcopal prayers are available in this section yet.',
+        note: 'Showing prayers explicitly tagged for Anglican use.',
+        empty: 'No Anglican prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     LC: {

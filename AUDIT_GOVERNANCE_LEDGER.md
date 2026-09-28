@@ -24081,18 +24081,41 @@ abandoned 2026-09-27 for the Roman Breviary 1960/1962); and four `scripts/browse
 files whose assertions hard-coded the old strings and would have started silently failing (or
 silently testing the wrong thing) the next time anyone ran them.
 
-**Deliberately left alone, reasoned about rather than skipped**: `data/explanations/*.json`'s
-`traditionLabel` fields ("Byzantine -- The Horologion," etc.) are a separate, pre-existing
-education-layer naming convention for tooltips, combined with a source citation -- not the same
-kind of thing (a bare tradition selector) as the six fixed above, and didn't match either screen's
-naming even before today. `structure.json`/`project_roadmap.json`'s internal QC-checklist item
-names, `sanctoral.json`'s quoted Wikipedia-infobox research notes, and the Cycles of Prayer
-corpus's own `body`/`diocese` fields (a real diocese's actual legal name) are not user-facing
-tradition selectors at all.
-
 Verified live in headless Chromium after every edit: profile dropdown, profile-summary sentence,
 and office header (`#office-mode-title`) all show the new names; both entry screens still match
 each other; `selectMode('daily')` still opens the Anglican office; zero console errors. `node
 --check` clean on every changed `.js` file.
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-28, continued yet again -- Josh overrode the "deliberately left alone" call on
+## the education-layer traditionLabel fields; fixed, plus a plainly-stated (not buried) list of
+## what's still historical record and untouched
+
+The previous entry's own "separate naming convention, not the same bug" reasoning for
+`data/explanations/*.json`'s `traditionLabel` fields was wrong in the way that matters: a
+different naming SYSTEM showing a DIFFERENT name for the same tradition is still the exact
+problem this whole afternoon has been about, whatever its provenance. Fixed all five: `anglican
+.json` "Anglican" -> Anglican Communion; `byzantine.json` "Byzantine" -> Eastern Orthodox Church;
+`coptic.json` "Coptic Orthodox" -> Oriental Orthodox Church; `latin.json` "Latin Catholic" ->
+Catholic Church; `east-syriac.json` already correct. Only the tradition-name prefix changed --
+the " -- Office (detail)" suffix (source/edition specifics) is untouched. Also normalized
+`js/prayers.js`'s one remaining slash-form "Anglican/Episcopal" to plain "Anglican", matching the
+adjectival pattern already used for the other four traditions in that same object.
+
+Verified live: `Explanations.load(code).traditionLabel` returns the new text for all five codes
+(ANG/BYZC/OOR-COP/COE/LAT) in headless Chromium, zero console errors.
+
+**What's still deliberately untouched, stated here explicitly rather than left to be
+rediscovered:** `structure.json`/`project_roadmap.json`'s `browser_qc.covered` arrays and
+`structure.json`'s onboarding-design `decision` narrative are frozen logs of specific past runs
+and past design reasoning -- the same category as this ledger's own dated entries, which this
+project's standing rule says are never rewritten after the fact. `project_roadmap.json`'s
+`roman_loth` section's `ui_label` is dead metadata inside an already-abandoned, superseded lane,
+unreachable by any live code path. `sanctoral.json`'s two `description` fields quote a Wikipedia
+infobox verbatim as sourcing evidence, not this app's own label. The Cycles of Prayer corpus's
+`body`/`diocese` fields correctly record a real diocese's actual legal name. None of these are a
+live tradition selector; changing any of them anyway is a decision for whoever reads this next to
+make on purpose, not infer from this entry's silence.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.

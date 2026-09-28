@@ -520,15 +520,35 @@ in `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md`:**
     left as-is, these would have started failing (or worse, silently stopped testing what they
     claimed to) the next time anyone actually ran them against the renamed UI.
 
-  **Deliberately left alone, on purpose, not by oversight — checked and reasoned about, not
-  skipped**: `data/explanations/*.json`'s `traditionLabel` fields (e.g. "Byzantine — The
-  Horologion," "Coptic Orthodox — The Agpeya") are a separate, pre-existing education-layer
-  naming convention for tooltip headings, combined with a source citation — they don't match
-  either screen's naming even before today and aren't the same kind of thing (a bare "pick your
-  tradition" selector) as the six fixed above. `structure.json`/`project_roadmap.json`'s internal
-  QC-checklist item names, `data/saints/sanctoral.json`'s quoted Wikipedia-infobox research notes,
-  and `data/cycles-of-prayer/*.json`'s own `body`/`diocese` fields (the diocese's real, correct
-  legal name) are not user-facing tradition selectors at all.
+  **Josh overrode the "deliberately left alone" call above for `data/explanations/*.json`'s
+  `traditionLabel` fields — correctly: a separate naming convention is still the same naming
+  problem if a user can see two different names for their own tradition anywhere in this app.**
+  Fixed all five: `anglican.json` "Anglican" → **Anglican Communion**; `byzantine.json` "Byzantine"
+  → **Eastern Orthodox Church**; `coptic.json` "Coptic Orthodox" → **Oriental Orthodox Church**;
+  `latin.json` "Latin Catholic" → **Catholic Church**; `east-syriac.json` already said "Church of
+  the East", unchanged. The " — Office (detail)" suffix (e.g. "— The Horologion (Slavic
+  recension)") is untouched; only the tradition-name prefix changed. Also normalized
+  `js/prayers.js`'s Book of Needs prose that used the slash form "Anglican/Episcopal" to plain
+  "Anglican", matching the adjectival pattern the other four traditions already used there.
+  Verified live: `Explanations.load(code).traditionLabel` returns the new text for all five codes
+  (ANG/BYZC/OOR-COP/COE/LAT), zero console errors. `data/explanations/{anglican,byzantine,coptic,
+  latin}.json`, `js/prayers.js`, and `scripts/browser-qc-book-of-needs-routing-sweep.js` are the
+  files touched in this pass.
+
+  **Still deliberately left alone — stated here plainly, not buried, so it's a known, visible
+  carve-out rather than a silently-skipped item:** `structure.json`/`project_roadmap.json`'s
+  `browser_qc.covered` arrays (e.g. "Eastern Orthodoxy / Horologion sidebar close/restore") are
+  frozen result logs of specific past QC runs, and `structure.json`'s top-level `decision` field
+  is the original onboarding-design narrative — both are historical record of what was true/tested
+  *at the time*, the same category as this ledger's own dated session entries, which this project's
+  standing rule says are never rewritten after the fact. `project_roadmap.json`'s `roman_loth`
+  section's `"ui_label": "Latin Catholic"` is dead metadata inside an already-`SUPERSEDED`/abandoned
+  lane (see the `catholic-first-profile` governance question), never reached by any live code path.
+  `data/saints/sanctoral.json`'s two `description` fields quote a Wikipedia infobox verbatim as
+  sourcing evidence — not this app's own label. `data/cycles-of-prayer/*.json`'s `body`/`diocese`
+  fields correctly record a real diocese's actual legal name, a different kind of field entirely.
+  None of these are a user-facing tradition selector; if any should change anyway, that's a call
+  for whoever reads this next to make explicitly, not infer from silence.
 
   Verified live in headless Chromium after every edit: both screens list the same five names in the
   same order; the profile dropdown, profile-summary sentence, and office header (`#office-mode-title`)
