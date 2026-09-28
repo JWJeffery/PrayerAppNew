@@ -51,6 +51,39 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**TASK #11 ("Eastern Orthodoxy sidebar 'bleed through'") INVESTIGATED, 2026-09-28 continued once
+more — NOT A NEW BUG, ALREADY FIXED; CONFIRMED GLOBALLY.** Josh clarified mid-investigation that
+"bleed through" meant inappropriate CONTENT in the rail, not a CSS/opacity defect (an earlier line
+of investigation into the Office Settings drawer's opacity was a false start on the wrong reading
+of the report — abandoned once corrected, no code touched by it). Josh then supplied screenshots of
+theuniversaloffice.com's live Small Compline office, timestamped ~9:28PM 2026-09-27: the rail
+showing raw internal keys (`usual-beginning-1` through `-11`, `doxology-1` through `-6`, `scnp-1`
+through `-3`, `scv-1` through `-3`) instead of real labels — the exact class of bug task #10 (PR
+#60) fixed for Vespers.
+
+**Reproduced against the CURRENT repo to check whether this is a live gap or a stale screenshot:
+it is stale.** Live in headless Chromium, Small Compline's rail today shows exactly the clean
+labels expected ("The Usual Beginning", "The Lesser Doxology", "Night Prayers", "Vouchsafe, O
+Lord") — 17 clean items, zero raw keys. Confirmed why the JSON already looked correct when checked
+directly (`compline-fixed.json`'s `usual-beginning`/`doxology`/`sc-night-prayers`/`sc-vouchsafe`
+slots all already carry `type: "sequence"` and a proper `label`, unlike Vespers' pre-fix gap) — the
+screenshot's timestamp lands within minutes of PR #60's own merge (04:12 UTC), so this reads as a
+production deploy caught mid-rollout, not a code gap that survived it.
+
+**Per Josh's follow-up ask, swept every office across every tradition/lane live, not just Small
+Compline**, to confirm PR #60's fix is actually global rather than trusting its own "data audit
+script" claim a second time on faith: all 14 Horologion offices (vespers, small-compline,
+great-compline, all four Hours, orthros, midnight-office, typika, all four Interhours), all 8
+Coptic Agpeya hours, all 14 East Syriac hour/mode combinations, Anglican/BCP's four main offices
+plus devotion mode, and all 8 Roman Breviary hours (via its own `.rb1960-nav-hour` selector, a
+separate mechanism from the shared radio navigator) — checked programmatically for any rail label
+matching a bare lowercase-hyphenated pattern (`usual-beginning-1`-shaped), which real rendered
+labels never are. **Zero suspicious labels found anywhere.** Zero new console errors. No code
+changed — this was a verification pass, not a fix; task #11 is closed as "already fixed, confirmed
+clean everywhere," not reopened.
+
+---
+
 **TASK #10 (Horologion rail raw-key leak, PR #60) LIVE-VERIFIED; TASK #9 (Coptic Agpeya sidebar not
 tracking scroll) INVESTIGATED AND FIXED, 2026-09-28 continued yet again.** Picked up the pending
 list a prior session's resume note left ("First thing next session: ... confirm the rail shows one

@@ -23351,3 +23351,29 @@ now four rail items) and confirmed the two genuinely single-psalm Coptic cases a
 
 `js/office-ui.js` and `js/office-shell.js` are the only files touched. Full detail:
 `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+---
+
+## Session 2026-09-28, continued once more -- task #11 ("Eastern Orthodoxy sidebar bleed through")
+## investigated: not a new bug, already fixed, confirmed globally
+
+Josh clarified the report meant inappropriate rail CONTENT, not a CSS defect -- an earlier false
+start investigating drawer opacity is abandoned, no code touched. Screenshots of the live production
+site (~9:28PM 2026-09-27) showed Small Compline's rail leaking raw internal keys
+(`usual-beginning-1..11`, `doxology-1..6`, `scnp-1..3`, `scv-1..3`) -- the same class of bug task #10
+(PR #60) fixed for Vespers.
+
+Reproduced against the current repo: NOT reproducible. Small Compline's rail today shows clean
+labels, 17 items, zero raw keys. `compline-fixed.json`'s relevant slots already carried `type:
+"sequence"` and a proper `label` when checked directly. The screenshot's timestamp lands within
+minutes of PR #60's own merge (04:12 UTC) -- read as a production deploy caught mid-rollout, not a
+surviving code gap.
+
+Per Josh's follow-up ask, swept every office across every tradition live (not trusting PR #60's own
+audit-script claim a second time on faith): all 14 Horologion offices, all 8 Coptic Agpeya hours,
+all 14 East Syriac hour/mode combinations, Anglican/BCP's offices, all 8 Roman Breviary hours.
+Checked programmatically for any rail label matching a bare lowercase-hyphenated key pattern. Zero
+suspicious labels found anywhere. No code changed -- verification only. Task #11 closed as
+"already fixed, confirmed clean everywhere."
+
+Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
