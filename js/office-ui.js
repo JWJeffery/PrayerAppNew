@@ -4477,10 +4477,28 @@ function bcpEmitReading(container, env, title, citation, bodyText) {
    own unit granularity, §8: "one psalm" is the smallest attributable
    piece), no divider (matches the original exactly). */
 function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
-    var labelSpan = document.createElement('span');
-    labelSpan.className = 'rubric-text';
-    labelSpan.textContent = label;
-    container.appendChild(labelSpan);
+    /* FIXED 2026-09-28, found live-testing Coptic Agpeya's rail (Josh: "the
+       sidebar isn't tracking scroll position" -- confirmed NOT a repeat of
+       the 2026-09-25 tooltip-text matching bug; the scroll listener and the
+       matching algorithm both work correctly). Root cause: every psalm in
+       psalmEntries rendered under this ONE combined rail entry, so a
+       multi-psalm reading (Coptic's Morning Office appoints 12: Psalm 51
+       plus a set of 11 more) left a single waypoint spanning the entire
+       group -- 15,194 of 29,642px on that office, over half the page, with
+       the rail dot unable to move at all until the reader scrolled past the
+       whole thing. Horologion's Typika already gives each psalm its own rail
+       item (typika-psalm-102, typika-psalm-145 as separate placeholders);
+       this only extends that same one-item-per-psalm convention here.
+       Multi-psalm groups now push one blocks[] entry per psalm, each
+       labelled with its own citation; a single-psalm call (the antiphonal
+       psalm, the Midnight Office's first-nocturn psalm) is unchanged --
+       nothing to split, same one combined entry as before. */
+    if (psalmEntries.length <= 1) {
+        var labelSpan = document.createElement('span');
+        labelSpan.className = 'rubric-text';
+        labelSpan.textContent = label;
+        container.appendChild(labelSpan);
+    }
 
     var units = [];
     psalmEntries.forEach(function (p) {
@@ -4499,7 +4517,20 @@ function bcpEmitPsalmBlock(container, env, label, psalmEntries) {
         bcpWrapInGutter(container, citationText, bodyNodes);
         units.push({ kind: 'scripture', citation: citationText });
     });
-    env.blocks.push({ label: label, role: bcpRoleFor(label), units: units });
+
+    if (psalmEntries.length > 1) {
+        /* One rail entry per psalm, labelled with its own citation --
+           matched by computeRailWaypoints() against the SAME .uo-gutter-label
+           text each psalm's own bcpWrapInGutter() call above already wrote,
+           visibly, at the correct scroll position. No new DOM element added;
+           the citation was already there, the rail just never looked. */
+        psalmEntries.forEach(function (p) {
+            var citationText = 'Psalm ' + p.displayNumber;
+            env.blocks.push({ label: citationText, role: bcpRoleFor(label), units: [{ kind: 'scripture', citation: citationText }] });
+        });
+    } else {
+        env.blocks.push({ label: label, role: bcpRoleFor(label), units: units });
+    }
 }
 
 /* Shape 6: bare text, no label -- never a rail entry, matching the original

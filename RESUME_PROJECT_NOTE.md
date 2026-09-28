@@ -51,6 +51,62 @@ specifically the settings-drawer target.**
 started" is no longer true — see the entry directly below. Left here only so the correction is
 visible in place; do not re-cite the old claim.**
 
+**TASK #10 (Horologion rail raw-key leak, PR #60) LIVE-VERIFIED; TASK #9 (Coptic Agpeya sidebar not
+tracking scroll) INVESTIGATED AND FIXED, 2026-09-28 continued yet again.** Picked up the pending
+list a prior session's resume note left ("First thing next session: ... confirm the rail shows one
+clean 'The Usual Beginning' entry"). Live in headless Chromium via the real click path
+(`showLaneThreshold('horologion')` → `beginFromUoThreshold()` → `selectHorologionOffice('vespers')`):
+exactly one "The Usual Beginning" entry, zero raw `usual-beginning-N` leaks, footer correctly "I OF
+XXI". Task #10 closed for real, not just logically verified.
+
+**Task #9, "not started" in that note, was investigated from scratch.** First confirmed this was
+NOT a repeat of the 2026-09-25 tooltip-text matching bug (`computeRailWaypoints()`'s `ownText()`
+fix) — the scroll listener and the label-matching algorithm both work correctly; live-tested by
+scrolling `.uo-page` in six steps and watching `.uo-rail-item.is-current` change. **Real root cause,
+confirmed by reading the code, not assumed:** `bcpEmitPsalmBlock()` (`js/office-ui.js`, shared by
+Anglican/BCP and Coptic Agpeya) pushes exactly ONE `env.blocks` entry for an entire multi-psalm
+reading, regardless of how many psalms it contains. Coptic's Morning Office appoints 12 (Psalm 51
+plus a set of 11 more, O'Leary p.89) all under one "The Psalms" rail item — a single waypoint
+spanning 15,194 of 29,642px on that office, 51% of the whole page, during which the rail dot
+cannot move at all. Horologion's own Typika already gives each psalm its own rail item
+(`typika-psalm-102`, `typika-psalm-145` as separate placeholders in `typika.json`) — confirmed this
+one-item-per-psalm convention was simply never applied to `bcpEmitPsalmBlock`. Confirmed further:
+the pre-Phase-3 scraping envelope (`js/anglican-envelope.js`'s now-superseded regex) already
+recognized `.passage-reference` citations as block boundaries alongside `.rubric-text` — this reads
+as the direct-construction refactor (Phase 3, 2026-09-20) narrowing a behavior that used to exist,
+not a deliberate design choice being reversed.
+
+**Fixed, not worked around.** `bcpEmitPsalmBlock` now pushes one `env.blocks` entry per psalm when
+`psalmEntries.length > 1`, each labelled with its own citation ("Psalm 51", "Psalm 1", ...); a
+single-psalm call (the antiphonal psalm, the Midnight Office's first-nocturn psalm) is byte-for-byte
+unchanged — nothing to split. `computeRailWaypoints()` (`js/office-shell.js`) extended to also match
+against `.uo-gutter-label` text, not just `.rubric-text` — each psalm's own citation was already
+rendered there, visibly, at the correct scroll position (bcpWrapInGutter's existing gutter cell);
+`.passage-reference` itself is screen-hidden (`display:none`, confirmed in `css/office-shell.css`)
+so it was never a usable match target. No new DOM element added anywhere.
+
+**Verified live, not just reasoned about.** Coptic Agpeya's Morning Office: rail grew from 22 to 33
+items (12 psalms, each individually labelled and tracked); scrolling now advances the dot through
+"Psalm 1" → "Psalm 6" → "Psalm 18" as the reader progresses, closing the dead zone (worst remaining
+gap ~5,000px, Psalm 18's own body length — unavoidable, a real psalm's real length, not a bug).
+Confirmed the SAME shared-helper improvement also applies to Anglican/BCP (Compline's four psalms —
+4, 31:1-5, 91, 134:1-2 — now four rail items instead of one), and confirmed the two genuinely
+single-psalm Coptic cases (Sixth Hour's antiphonal Psalm 55, Midnight Office's First Nocturn "The
+Psalm") are completely unaffected — checked directly via `setSharedOfficeNavHour('coptic', ...)`.
+Zero new console errors beyond the pre-existing, already-documented sandbox-proxy
+`ERR_CERT_AUTHORITY_INVALID`. `node --check` clean on both files.
+
+`js/office-ui.js` and `js/office-shell.js` are the only files touched.
+
+**Still pending, in order (unchanged from the prior note except #9/#10 now closed):**
+- #11 — Eastern Orthodoxy sidebar "bleed through" (not investigated)
+- #14 — tradition-selector card naming/description consistency (check
+  `documentation/OPEN_ITEMS_FIXABILITY.md`'s "Navigation governance conflict" note first)
+- #15 — splash screen shouldn't be scrollable
+- #2 — rebuild and deliver the web release (deliberately deferred until everything above is done)
+
+---
+
 **ROMAN BREVIARY'S "THE ORDER" SIDEBAR WAS PERMANENTLY EMPTY, 2026-09-28 continued once more —
 FIXED.** Josh reported it from a live screenshot of theuniversaloffice.com (Roman Breviary Vespers,
 2026-09-27): the left rail under "The Order" showed only its placeholder text ("...appears here

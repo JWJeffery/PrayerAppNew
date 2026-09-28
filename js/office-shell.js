@@ -598,8 +598,17 @@
         var items = Array.prototype.slice.call(rail.querySelectorAll('.uo-rail-item'));
         if (!items.length) return;
 
+        // EXTENDED 2026-09-28: per-psalm rail entries (bcpEmitPsalmBlock's
+        // multi-psalm split, js/office-ui.js) are labelled with a citation
+        // like "Psalm 51" that lives in a .uo-gutter-label, not a
+        // .rubric-text span -- the gutter citation is the one already
+        // visible at the correct scroll position (its .passage-reference
+        // twin is display:none, screen-only, see css/office-shell.css).
+        // querySelectorAll keeps document order across the combined
+        // selector, so this doesn't disturb matching for every other item,
+        // which still resolves through .rubric-text exactly as before.
         var rubrics = Array.prototype.slice.call(
-            document.querySelectorAll('#office-display .rubric-text'));
+            document.querySelectorAll('#office-display .rubric-text, #office-display .uo-gutter-label'));
         var pageTop = page.getBoundingClientRect().top - page.scrollTop;
         var rubricPointer = 0;
         var lastY = 0;
