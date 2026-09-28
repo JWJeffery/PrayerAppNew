@@ -363,6 +363,12 @@
     "type": "Litany"
   },
   {
+    "id": "bcp-hymn-anthem-intercessions-rubric",
+    "title": "Hymn, Anthem, and Intercessions",
+    "text": "Here may be sung a hymn or anthem.\nAuthorized intercessions and thanksgivings may follow.",
+    "type": "Rubric"
+  },
+  {
     "id": "bcp-suffrages-rite1",
     "title": "The Suffrages (Rite I)",
     "text": "V. O Lord, show thy mercy upon us;\nR. And grant us thy salvation.\nV. Endue thy ministers with righteousness;\nR. And make thy chosen people joyful.\nV. Give peace, O Lord, in all the world;\nR. For only in thee can we live in safety.\nV. Lord, keep this nation under thy care;\nR. And guide us in the way of justice and truth.\nV. Let thy way be known upon earth;\nR. Thy saving health among all nations.\nV. Let not the needy, O Lord, be forgotten;\nR. Nor the hope of the poor be taken away.\nV. Create in us clean hearts, O God;\nR. And sustain us with thy Holy Spirit.",
