@@ -1,0 +1,241 @@
+{
+  "id": "episcopal-ohio-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Ohio",
+  "dioceseShort": "ohio",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"2026diocesancycleofprayerfinal.pdf\", fetched directly from https://www.dohio.org/files/assets/2026diocesancycleofprayerfinal.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The direct PDF URL fetched successfully via curl with a browser User-Agent header (HTTP 200, a 3-page PDF) despite the roster's own note that its automated web-text checker had failed on this same URL -- no workaround via the diocesan resource page was needed.",
+    "The PDF has no cover page or embedded document title (its own PDF metadata Title field is blank, and the only header text printed on the table is 'Date' / 'Prayer Petition'); it never states its own diocese's full formal name, referring to itself only as 'the Diocese of Ohio' throughout the running text. The `diocese` field ('The Episcopal Diocese of Ohio') is instead taken from the diocesan website's own page title at the resource page dohio.org/the-episcopal-faith/diocesan-cycle-of-prayer ('Diocesan Cycle of Prayer | The Episcopal Diocese of Ohio').",
+    "Unlike most other diocese files in this corpus, this source publishes each week as ONE full narrative sentence per date (e.g. 'In the Diocese of Ohio, we pray for X; Y; and Z, and their surrounding communities.') rather than an itemized subject list. All 52 Sundays of 2026 (Jan 4 - Dec 27) are covered, confirmed by rendering all 3 pages as images and visually comparing every row against the extracted text before trusting it -- single-column layout throughout, no interleaving risk.",
+    "Every named congregation (always formatted 'Name, Place') is split into its own `parish` subject, one per congregation, the same convention used elsewhere in this corpus for semicolon/comma-separated parish lists.",
+    "For non-parish ('category') weeks, this source names its subject(s) inside a full sentence rather than a printed list, requiring a judgment call on how to segment it: each independently-nameable body/group joined by 'and' in the sentence is recorded as its own `category` subject, with its name trimmed of the 'we pray for' lead-in and any trailing 'and their surrounding communities' boilerplate, but otherwise verbatim from the source. A sentence naming ONE class of subject with an internal enumeration of its own members/sub-types (introduced by a colon or 'including', or where splitting would require fabricating a shared prefix/suffix that is not actually printed at the split point, e.g. 'our Companion Dioceses of Belize and Tanga, Tanzania') is instead kept as a single `category` subject, verbatim including its own enumeration.",
+    "Additional descriptive context this source states about a specific subject beyond its bare name (e.g. a congregation's closure, an event's own timing) is preserved in that subject's own `note` field rather than folded into `name`, so `name` stays a clean noun phrase while none of the source's stated content is lost: Feb 8 (Church of Our Saviour, Salem and Holy Trinity, Lisbon -- the source states they 'conclude their life as faith communities, with their final services held yesterday'), Feb 15 (St. James, Boardman -- 'their final service, which is being held today'), Mar 22 (Trinity Cathedral, Cleveland -- 'for its ministry as the cathedral church of the diocese'), Jun 7 (Bellwether Farm Summer Camp -- 'as the camp season begins'), Jul 26 (the Big Provincial Gathering -- 'as it prepares to meet this coming week'), Nov 15 (the 210th Diocesan Convention -- 'as it prepares to gather').",
+    "Feb 8 and Feb 15's congregations (Church of Our Saviour/Salem, Holy Trinity/Lisbon, St. James/Boardman) are transcribed as ordinary `parish` subjects since the source itself still names them as congregations of the diocese being prayed for on these dates, notwithstanding their announced closures.",
+    "Jun 28's 'St. Andrew Church, Mentor' is printed without the possessive apostrophe-s that every other 'St. Andrew' congregation in this source carries (e.g. 'St. Andrew's Church, Elyria', 'St. Andrew's Church, Cleveland', 'St. Andrew's Church, Toledo') -- preserved verbatim per this corpus's standing rule against silently correcting a diocese's own published document.",
+    "Oct 11's entry reads 'we give thanks and pray for Bishop Anne B. Jolly and the diocesan staff' -- the only week using 'give thanks and pray for' rather than this source's usual 'we pray for'; preserved as printed, not treated as an error.",
+    "Dec 27's petition itself names 'the Diocese of Southern Ohio' as a prayer subject, alongside neighboring dioceses in Indiana, Michigan, Pennsylvania, and West Virginia. This is the source's own content and refers to a distinct diocese (Southern Ohio) from the Diocese of Ohio being transcribed in this file (dioceseShort 'ohio') -- the two are not the same diocese and are not to be confused.",
+    "No liturgical Sunday names or season labels (e.g. 'Proper 15', 'Advent') are printed anywhere in this source -- `liturgicalNote` is null on every entry."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Akron" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Akron" },
+      { "type": "parish", "name": "St. Philip's Church", "place": "Akron" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Alliance" },
+      { "type": "parish", "name": "St. Matthew's Church", "place": "Ashland" },
+      { "type": "parish", "name": "St. Peter's Church", "place": "Ashtabula" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Barberton" },
+      { "type": "parish", "name": "St. Barnabas Church", "place": "Bay Village" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Bellevue" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the vestries and leadership of our faith communities" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas Church", "place": "Berea" },
+      { "type": "parish", "name": "St. Matthew's Church", "place": "Brecksville" },
+      { "type": "parish", "name": "St. Patrick's Church", "place": "Brunswick" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Salem", "note": "Source states this congregation and Holy Trinity, Lisbon 'conclude their life as faith communities, with their final services held yesterday.'" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Lisbon", "note": "Source states this congregation and Church of Our Saviour, Salem 'conclude their life as faith communities, with their final services held yesterday.'" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Boardman", "note": "Source states 'their final service, which is being held today.'" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "efforts at Becoming Beloved Community" },
+      { "type": "category", "name": "our anti-racism trainers" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's Church", "place": "Canton" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Canton" },
+      { "type": "parish", "name": "St. Martin's Church", "place": "Chagrin Falls" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "licensed lay ministers: Eucharistic Ministers and Visitors, Lay Preachers, and Lay Worship Leaders" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's Church", "place": "Chardon" },
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Cleveland" },
+      { "type": "parish", "name": "St. Luke's Church", "place": "Cleveland" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Cathedral", "place": "Cleveland", "note": "Source adds 'for its ministry as the cathedral church of the diocese.'" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the formation of new Episcopal communities" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "Cleveland Heights" },
+      { "type": "parish", "name": "Trinity Church", "place": "Coshocton" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Commission on Ministry" },
+      { "type": "category", "name": "those in our diocese in discernment and formation" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Church", "place": "Cuyahoga Falls" },
+      { "type": "parish", "name": "Grace Church", "place": "Defiance" },
+      { "type": "parish", "name": "St. Stephen's Church", "place": "East Liverpool" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Elyria" },
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Euclid" },
+      { "type": "parish", "name": "Trinity Church", "place": "Findlay" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "Fremont" },
+      { "type": "parish", "name": "Harcourt Parish", "place": "Gambier" },
+      { "type": "parish", "name": "St. Christopher-by-the-River Church", "place": "Gates Mills" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Regional Disciplinary Board" },
+      { "type": "category", "name": "our intake officers" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Geneva" },
+      { "type": "parish", "name": "Christ Church", "place": "Hudson" },
+      { "type": "parish", "name": "Christ Church", "place": "Huron" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Kent" },
+      { "type": "parish", "name": "St. Hubert's Church", "place": "Kirtland Hills" },
+      { "type": "parish", "name": "Church of the Ascension", "place": "Lakewood" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's Church", "place": "Lakewood" },
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Lorain" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Lyndhurst" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Bellwether Farm Summer Camp", "note": "Source adds 'as the camp season begins.'" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy's Church", "place": "Macedonia" },
+      { "type": "parish", "name": "Grace Church", "place": "Mansfield" },
+      { "type": "parish", "name": "St. Timothy's Church", "place": "Massillon" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "Maumee" },
+      { "type": "parish", "name": "St. Bartholomew's Church", "place": "Mayfield Village" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Medina" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew Church", "place": "Mentor" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Mount Vernon" },
+      { "type": "parish", "name": "St. John the Evangelist", "place": "Napoleon" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "our Companion Dioceses of Belize and Tanga, Tanzania" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "New Philadelphia" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Norwalk" },
+      { "type": "parish", "name": "Christ Church", "place": "Oberlin" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "Oregon" },
+      { "type": "parish", "name": "St. James' Church", "place": "Painesville" },
+      { "type": "parish", "name": "All Saints Church", "place": "Parma" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Province Five Synod" },
+      { "type": "category", "name": "our Provincial Partnerships" },
+      { "type": "category", "name": "the Big Provincial Gathering", "note": "Source adds 'as it prepares to meet this coming week.'" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the College for Congregational Development" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy's Church", "place": "Perrysburg" },
+      { "type": "parish", "name": "St. Thomas' Church", "place": "Port Clinton" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Put-in-Bay" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Ravenna" },
+      { "type": "parish", "name": "Grace Church", "place": "Sandusky" },
+      { "type": "parish", "name": "Christ Church", "place": "Shaker Heights" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's Church", "place": "Shelby" },
+      { "type": "parish", "name": "St. Mark's Church", "place": "Sidney" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "Steubenville" },
+      { "type": "parish", "name": "St. Stephen's Church", "place": "Steubenville" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the staff and ministries of Bellwether Farm" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Old Trinity Church", "place": "Tiffin" },
+      { "type": "parish", "name": "All Saints Church", "place": "Toledo" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Toledo" },
+      { "type": "parish", "name": "St. Matthew's Church", "place": "Toledo" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "those members of our diocese in seminary" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "all faith communities in discernment, seeking their new partners in ministry" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Bishop Anne B. Jolly", "note": "This week's entry reads 'we give thanks and pray for' rather than this source's usual 'we pray for.'" },
+      { "type": "category", "name": "the diocesan staff" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's-in-the-Hills Church", "place": "Toledo" },
+      { "type": "parish", "name": "Trinity Church", "place": "Toledo" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Treasurer and Vice-Treasurers, and the Chancellor and Vice-Chancellors of the Diocese" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "New Life Church", "place": "Uniontown" },
+      { "type": "parish", "name": "Christ Church", "place": "Warren" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Community Services" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the 210th Diocesan Convention", "note": "Source adds 'as it prepares to gather.'" },
+      { "type": "category", "name": "the Secretary of Convention, convention delegates, and all who support the work of convention" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Advent Episcopal Church", "place": "Westlake" },
+      { "type": "parish", "name": "Grace Church", "place": "Willoughby" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James' Church", "place": "Wooster" },
+      { "type": "parish", "name": "St. John's Church", "place": "Youngstown" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the governing bodies of the diocese, including the Standing Committee, Diocesan Council, Board of Trustees, and all who share in diocesan leadership" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "clergy spouses, partners, and families" },
+      { "type": "category", "name": "our clergy spouse convener" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "all active and retired clergy in the diocese" },
+      { "type": "category", "name": "our retired clergy chaplains" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Diocese of Southern Ohio" },
+      { "type": "category", "name": "our neighboring Dioceses in Indiana, Michigan, Pennsylvania, and West Virginia" }
+    ]}
+  ]
+}

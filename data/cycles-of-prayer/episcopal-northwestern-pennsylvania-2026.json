@@ -1,0 +1,574 @@
+{
+  "id": "episcopal-northwestern-pennsylvania-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Northwestern Pennsylvania",
+  "dioceseShort": "northwestern-pennsylvania",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer 2026",
+  "sourceFile": "\"NWPA-DIOCESAN-CYCLE-OF-PRAYER-2026.pdf\", fetched directly from https://dionwpa.org/wp-content/uploads/2025/12/NWPA-DIOCESAN-CYCLE-OF-PRAYER-2026.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27. Each week's row in the source pairs an \"NWPA\" line (this diocese's own cycle-of-prayer subject) with an \"ANGLICAN COP\" line (that week's entry from the separate worldwide Anglican Cycle of Prayer, e.g. \"The Church of the Province of Central Africa\"). Only the NWPA line is transcribed here as this file's subject, per this corpus's own scope distinction between a diocese-level file and the single scope-'communion' worldwide file; the ANGLICAN COP line is out of scope for this file and not recorded.",
+    "No date in the source carries its own liturgical Sunday name (no 'Proper N' or similar label anywhere in the document), so `liturgicalNote` is null on every entry.",
+    "Congregations are recorded as `parish` subjects (place taken from the source's own trailing \", City\" on the same line); diocesan offices, commissions, councils, preschools/academies, and named ministries or causes not tied to one congregation (e.g. \"Diocesan Staff\", \"St. Stephen’s Preschool\", \"St. John's Academy\", \"Healthcare workers and caregivers\") are recorded as `category` subjects.",
+    "The source itself is typographically inconsistent about the apostrophe in several possessive congregation/entry names, mixing a curly apostrophe (as in \"St. John’s Episcopal Church, Kane/Sharon/Franklin\", \"St. Luke’s\", \"St. Mary’s\", \"St. Mark’s\", \"St. Peter’s\", \"St. Andrew’s\", \"St. Clement’s\", \"St. Stephen’s Preschool\") with a straight apostrophe elsewhere (\"Presiding Bishop's Office and Staff\", \"St. Stephen's Episcopal Church, Fairview\", \"St. John's Academy\") -- preserved exactly as printed in each instance per this corpus's standing rule against silently normalizing a source's own document, not unified to one style.",
+    "\"Homeless shelters and transitional housing programs\" (August 23 and September 20) is the source's own repeated subject, appearing twice with two different ANGLICAN COP pairings -- transcribed as printed both times, not deduplicated or treated as an error.",
+    "Confirmed against the source's own rendered page images (all 7 pages), not merely the linearized text extraction, per this corpus's standing rule -- the source is a single-column layout with no multi-column interleaving risk, and the extraction matched the rendered pages exactly."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral of St. Paul",
+          "place": "Erie"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Meadville"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Oil City"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Presiding Bishop's Office and Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Ascension",
+          "place": "Bradford"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Epiphany",
+          "place": "Grove City"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Holy Trinity",
+          "place": "Houtzdale"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Seminaries and Theological Schools"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Holy Trinity",
+          "place": "Brookville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those in discernment and formation for ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "DuBois"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Stephen’s Preschool"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Corry"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Emporium"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Healthcare workers and caregivers"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Lake City"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission to Dismantle Racism and Discrimination"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Ridgway"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Episcopal Church",
+          "place": "North East"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Memorial Church of Our Father",
+          "place": "Foxburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection Church",
+          "place": "Hermitage"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Agnes Episcopal Church",
+          "place": "St. Marys"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s Church",
+          "place": "Clearfield"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Youth"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine of Canterbury Church",
+          "place": "Edinboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Greenville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "College campuses in our region"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi Episcopal Church",
+          "place": "Youngsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Homeless shelters and transitional housing programs"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Memorial Episcopal Church",
+          "place": "Titusville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Episcopal Church",
+          "place": "Fairview"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Episcopal Church",
+          "place": "Kane"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Homeless shelters and transitional housing programs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Episcopal Church",
+          "place": "Sharon"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Joint Commission on Recovery Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Episcopal Church",
+          "place": "Franklin"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph Church",
+          "place": "Port Alleghany"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John's Academy"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s Episcopal Church",
+          "place": "Smethport"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s Episcopal Church",
+          "place": "Lawrence Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Erie"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter’s Church",
+          "place": "Waterford"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ascension Preschool"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "New Castle"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Local food pantries and meal ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Memorial Episcopal Church",
+          "place": "Warren"
+        }
+      ]
+    }
+  ]
+}

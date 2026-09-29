@@ -1,0 +1,180 @@
+{
+  "id": "episcopal-northern-michigan-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Northern Michigan",
+  "dioceseShort": "northern-michigan",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocese of Northern Michigan Cycle of Prayer 2026",
+  "sourceFile": "Diocesan resource page, fetched directly from https://upepiscopal.org/diocesan-cycle-of-prayer/ (12 month sections, each headed by a bare month name and a bulleted list giving only the day-of-month plus subject -- no year or weekday name printed anywhere on the page).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "IMPORTANT: this is the Episcopal Diocese of NORTHERN Michigan (Marquette, covering the Upper Peninsula), a separate diocese from the Diocese of Michigan already held in this corpus as episcopal-michigan-2026.json. dioceseShort is 'northern-michigan', deliberately distinct from that file's 'michigan'. The cycle's own February 15 entry even names 'Diocese of Michigan' as a separate prayer subject -- see below -- confirming the two dioceses are distinct in the source's own eyes, not a naming collision introduced here.",
+    "The source page prints no calendar year or weekday name on any entry -- only a month heading (e.g. 'January') followed by a bulleted list of bare day-of-month numbers (e.g. '4', '11', '18', '25'). cycleType 'dated' was used, not 'monthly-recurring' or 'ordinal-sunday-monthly', because every one of the 52 (month, day-of-month) pairs the source prints resolves to an actual Sunday of calendar year 2026 when checked (verified programmatically against a real calendar before transcribing) -- i.e. this is a real dated 52-Sunday cycle for 2026, the source is simply printing each date as 'day-of-month under its month heading' rather than spelling out 'January 4, 2026'. The `date` field in each entry below is this app's own resolution of that pairing to ISO form, not an invention of content the source didn't provide.",
+    "Congregation names are transcribed exactly as this cycle-of-prayer page itself prints them, which for several entries is a shorter/less formal form than the diocese's own separate 'Churches' page (upepiscopal.org/churches/): e.g. this cycle says 'Trinity Church, Iron Mountain' where the Churches page gives 'Holy Trinity Episcopal Church' for Iron Mountain; this cycle says 'St. Stephen's Church, DeTour' where the Churches page gives 'De Tour Village, St. Stephen's Episcopal Church'. Per this corpus's standing rule, the cycle-of-prayer document's own wording is transcribed as printed, not normalized/expanded to match the separate Churches page.",
+    "May 3, 'Breaking Bread at Jack's, Rapid River', is recorded as a `category` subject (not `parish`) with the full string as its `name`, not split into name+place: per the diocese's own 'Churches' page, this is listed under 'Our Communities' as 'a dinner fellowship called Breaking Bread' at Rapid River, distinct from the page's 19 listed congregations under 'Our Congregations' -- it is a named ministry, not a specific congregation, even though (like a parish) it names a town.",
+    "April 19, 'UP Wild', is recorded as a `category` subject for the same reason: the diocese's 'Churches' page lists 'U.P. Wild' groups (outdoor prayer communities in several counties) under 'Our Communities', not 'Our Congregations'.",
+    "Every other subject not naming one of the diocese's 19 listed congregations (diocesan-wide ministries/offices, Indigenous tribal communities in the diocese's territory, ecumenical/civic observances, other dioceses named for prayer, etc.) is recorded as `category` with the source's own text as `name` verbatim, including its own internal punctuation (e.g. 'Neighboring Diocese: Algoma (Ontario)', 'International Day for Peace, Sept. 21 (U.N.)').",
+    "Minor HTML markup artifacts in the source (double spaces before some subjects, e.g. '28  Our Nation'; a subject's text occasionally wrapped in a stray inline <span> tag with its own trailing space, e.g. after 'UP Wild ' and 'St. Mark's Church, Crystal Falls ') are collapsed/trimmed as ordinary whitespace formatting, not treated as a content typo to preserve -- the wording itself is transcribed unchanged.",
+    "November 15 ('Christ Church, Calumet') duplicates June 21's entry -- the same congregation is simply named twice in the source's own 52-week rotation; transcribed as printed both times, not deduplicated."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Menominee" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All ecumenical partners" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s Church", "place": "Marquette" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All engaged in theological education" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Neighboring Diocese: Algoma (Ontario)" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Transfiguration", "place": "Ironwood" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Michigan" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Visitors, travelers & pilgrims among us & our ministries of welcome" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "House of Bishops" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of the Great Lakes" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Youth ministries of the diocese" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All diocesan outreach ministries" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Keweenaw Bay Indian Community" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Baptismal Ministry of every Episcopalian in the diocese" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s Church", "place": "Negaunee" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "UP Wild" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s Church", "place": "Crystal Falls" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Breaking Bread at Jack’s, Rapid River" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Houghton" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Mackinac Island" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all veterans who have died and all those whom we remember" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Iron Mountain" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Gladstone" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban’s Church", "place": "Manistique" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Calumet" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Nation" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Hannahville Indian Community" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Service organizations in our communities (Lions Club, Kiwanis, Rotary, Exchange Club)" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the work of community foundations and private foundations serving our communities" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’ Church", "place": "Sault Ste. Marie" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Transfiguration", "place": "Pte. Aux Pins (Bois Blanc Island)" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Work of the Church in Community Colleges" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Work of the Church in Private Colleges" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Work of the Church in State Universities" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For students and teachers beginning a new school year" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all who labor" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Hospital chaplains & mutual care ministries" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "International Day for Peace, Sept. 21 (U.N.)" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Sault Ste. Marie Tribe of Chippewa Indians" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All diocesan committees" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints Church", "place": "Newberry" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan convention" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s Church", "place": "Munising" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Innocents", "place": "Little Lake" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all veterans and all currently serving in the armed forces" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Calumet" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For our families and friends at this time of Thanksgiving" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen’s Church", "place": "DeTour" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen’s Church", "place": "Escanaba" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Organizations working to relieve poverty, hunger, homelessness, etc." }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all Christians celebrating the birth of Jesus" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the World as we begin a New Year" }
+    ]}
+  ]
+}

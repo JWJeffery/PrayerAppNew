@@ -1,0 +1,91 @@
+{
+  "id": "episcopal-north-dakota-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of North Dakota",
+  "dioceseShort": "north-dakota",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "3rd Quarter 2026 Cycle of Prayer PDF (the only quarter currently posted on the diocesan site), fetched via the r.jina.ai text-extraction proxy from https://ndepiscopal.org/wp-content/uploads/2026/06/ND-Cycle-of-Prayer-Q3-July-5-through-September-27.pdf, since direct requests to ndepiscopal.org (including via curl and this session's WebFetch tool) return HTTP 403 from Cloudflare bot protection; cross-checked against the diocese's own Forms & Resources page, which as of ingestion still links this same Q3 PDF as its 'Cycle of Prayer' resource with no Q4 PDF yet posted.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "ndepiscopal.org blocks direct automated fetches of every path on the domain (root, robots.txt, the PDF itself, and the /cycle-of-prayer/ page all returned HTTP 403 from a Cloudflare challenge to curl and to this session's WebFetch tool alike). The PDF's own text was instead retrieved through the third-party reader/text-extraction service https://r.jina.ai/, prefixed onto the PDF's URL, which returned a clean linearized transcription of both pages.",
+    "Web search turned up filenames suggesting a Q1 2026 (January 4 - March 29) and a Q2 2026 (April 5 - June 28) PDF also existed on this site at some point, matching the same file-naming pattern as the Q3 PDF used here. Both specific URLs (tried with and without the www subdomain, and as .docx) currently return the diocesan site's own 404 'Page Not Found' page rather than the document, so those quarters are not retrievable now (removed or superseded rather than currently published). The diocesan site's own Forms & Resources navigation menu (fetched 2026-09-29) links only the Q3 PDF used here as 'Cycle of Prayer', with no Q4 PDF linked anywhere on the site yet -- so this file's July 5 - September 27, 2026 coverage is the diocese's full currently-published cycle, not a partial extract of a fuller document, matching the roster's own pre-fetch research note for this diocese.",
+    "Because the PDF itself could not be fetched directly, this file's own rendered-page-image visual check (this corpus's standing rule for multi-column layouts) could not be performed the usual way; the r.jina.ai text extraction was relied on instead. Its output is a strictly sequential, one-entry-per-week list with no interleaving or misordering artifacts characteristic of a misread multi-column layout, and reads as a simple single-column newsletter document, so it is judged reliable -- but this is disclosed since it was not independently confirmed by rendering the actual PDF pages as images.",
+    "The source document prints no liturgical Sunday label anywhere (no 'Proper N' or 'N Sunday after Pentecost') -- `liturgicalNote` is set to null on every entry accordingly (required by this corpus's own validator), not a disclosed label omitted by oversight.",
+    "Each week's paragraph names, in order: (1) a province/member church of the Anglican Communion, and (2) one or two North Dakota diocesan subjects (a specific congregation and/or a diocesan-wide ministry, committee, or group). The Anglican Communion subject is recorded as a `category` subject (this corpus's `diocese`/`province` subject types are reserved for scope:'communion' files, per schema and existing precedent in episcopal-missouri-2026.json), transcribed exactly as printed -- including the source's own inconsistent use of a leading 'The' (e.g. 'The Anglican Church of Tanzania' vs. 'Province of the Episcopal Church of Sudan') and its unusual bracketed insertion on September 6, 'The Episcopal [Anglican] Province of Alexandria'.",
+    "Where the source's own sentence joins two North Dakota subjects with the connector '; and for ...', that connector ('and for') is stripped as non-substantive lead-in text (matching this corpus's existing convention for Missouri's similar lead-ins), and only the first letter of the remaining text is capitalized to read as a standalone subject name; no other wording is changed. On September 6 and September 13 the source additionally prefixes the second subject with a descriptive filler clause ('the work and ministry of...', 'the work of...') before the actual subject name; that filler is stripped the same way, leaving 'The Mothers' Union and the Daughters of the King' and 'The Diocesan Reconciliation and Creation Care Committee' respectively as the recorded names.",
+    "Clergy, warden, and other leadership detail that follows a subject's own name in the source is recorded in that subject's `note` field rather than folded into `name`, matching this corpus's existing convention (see episcopal-missouri-2026.json's clergy-detail notes).",
+    "Preserved source typos/oddities, transcribed verbatim rather than corrected: 'St. Peter's, Williston; George Abdilnour, Senior Warden' (August 9) uses a semicolon where every other week's parish line uses a colon after the town name; 'St. James, Cannon Ball: ... Elaine McLaughlin; Senior Warden' (September 27) likewise uses a semicolon where a comma is expected before the office title; 'the diocesan Ministry Support Team' (August 23) prints a lowercase 'diocesan' unlike every other diocesan-wide category name in this file.",
+    "'St. Gabriel's Camp, Solen' (August 16) is recorded as a `parish` subject -- it is a specific named place with its own clergy and town, like this file's congregations, even though it is a camp rather than a conventional congregation. A judgment call, disclosed here rather than inventing a different subject shape for it.",
+    "The diocese's own full name is not printed inside the PDF itself (its only heading is 'Anglican and Diocesan Cycle of Prayer'); 'Episcopal Diocese of North Dakota' is taken from the diocesan website's own branding/page title (ndepiscopal.org), which does not use a leading 'The'."
+  ],
+  "entries": [
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anglican Church of South America" },
+      { "type": "parish", "name": "All Saints", "place": "Minot", "note": "Kathy Hintz, Senior Warden." },
+      { "type": "category", "name": "The North Dakota Council on Indian Ministries", "note": "Tyrrell DeCoteau, chair." }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Province of the Episcopal Church of South Sudan" },
+      { "type": "parish", "name": "St. John the Divine", "place": "Moorhead", "note": "Peter Akicmeir, Priest; Barbara Olson & Hellen Lodu, Deacons; Oliver Mogga, Senior Warden." },
+      { "type": "category", "name": "The Worship Leaders and Lay Readers of the Diocese" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Province of the Episcopal Church of Sudan" },
+      { "type": "parish", "name": "Church of the Cross", "place": "Selfridge", "note": "John Floberg, Rector; Sylvia Culbertson, Senior Warden." },
+      { "type": "category", "name": "The Diocesan Chancellor", "note": "Leo Wilking." }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anglican Church of Tanzania" },
+      { "type": "parish", "name": "St. Peter's", "place": "Walhalla", "note": "Elsie Magnus, Deacon; Ross Blair, Senior Warden." },
+      { "type": "category", "name": "The youth in the diocese and those who lead them" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Church of the Province of Uganda" },
+      { "type": "parish", "name": "St. Paul's", "place": "White Shield", "note": "Wes Fox, Senior Warden." },
+      { "type": "category", "name": "The Catechists and Church School Teachers of the Diocese" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Episcopal Church" },
+      { "type": "parish", "name": "St. Peter's", "place": "Williston", "note": "George Abdilnour, Senior Warden." },
+      { "type": "category", "name": "The Eucharistic Ministers and Eucharistic Visitors of the Diocese" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Church in Wales" },
+      { "type": "parish", "name": "St. Gabriel's Camp", "place": "Solen", "note": "John Floberg, Priest." },
+      { "type": "category", "name": "Episcopal Relief and Development" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Church of the Province of West Africa" },
+      { "type": "category", "name": "The diocesan Ministry Support Team", "note": "The Rt. Rev. Shay Craig, Dn. Jessica Krzewina, and The Rev. Dn. Ashley Hubbard." },
+      { "type": "category", "name": "The Diocesan Safe Church Team" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Church in the Province of the West Indies" },
+      { "type": "category", "name": "Widowed Clergy Spouses", "note": "Alice Hauan, Patricia Sauer, Gary Towne, Del Peterson, Ron Walters, Sandy Bukhardt, Joann Keehn." },
+      { "type": "category", "name": "The Diocesan Finance Committee", "note": "John Floberg, Diocesan Treasurer." }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Episcopal [Anglican] Province of Alexandria" },
+      { "type": "category", "name": "Retired Clergy", "note": "Alan Broadhead, Charles Cherry, Bonniejean Christensen, Wes Fox, George Schulenberg, George Slanger, Cherian Mathew, Mike Horn, Bart Davis, Mary Johnson." },
+      { "type": "category", "name": "The Mothers' Union and the Daughters of the King" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anglican Church in Aotearoa, New Zealand, and Polynesia" },
+      { "type": "category", "name": "Clergy Serving Elsewhere or on Leave", "note": "Matthew Coomber, Mary Gokey, Alex Lodu-Kenyi, Gadi Edward, Sally Smythe, Erin Richards, Zechariah Reng, Brandon Mauai, Crystal Towers." },
+      { "type": "category", "name": "The Diocesan Reconciliation and Creation Care Committee" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anglican Church of Australia" },
+      { "type": "parish", "name": "St. George's", "place": "Bismarck", "note": "Hal Weidman, Rector; Beth Lipp, Ed Wos, Deacons; Jane White, Senior Warden." },
+      { "type": "category", "name": "United Thank Offering", "note": "Vanessa Strobel and Mary Massad, co-coordinators." }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Church of Bangladesh" },
+      { "type": "parish", "name": "St. James", "place": "Cannon Ball", "note": "John Floberg, Rector; Sloane Floberg, Deacon; Elaine McLaughlin; Senior Warden." },
+      { "type": "category", "name": "The North Dakota Episcopal Foundation", "note": "Beth Lipp, president." }
+    ]}
+  ]
+}

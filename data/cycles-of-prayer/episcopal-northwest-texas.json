@@ -1,0 +1,155 @@
+{
+  "id": "episcopal-northwest-texas",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of Northwest Texas",
+  "dioceseShort": "northwest-texas",
+  "cycleType": "monthly-recurring",
+  "source": "2026 Diocese of Northwest Texas Prayer Calendar",
+  "sourceFile": "\"Prayer_Calendar_As_Of_06012026\", a 2-page landscape PDF fetched directly from https://www.dionwt.org/documents/Prayer_Calendar_As_Of_06012026, footer-stamped 'updated as of June 1, 2026'.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own title reads '2026 Diocese of Northwest Texas Prayer Calendar' and its footer 'updated as of June 1, 2026', which look at first glance like a dated cycle. But the table itself is headed 'Day of the Month' and lists a single continuous rotation numbered 1-31 with no calendar dates or month names anywhere in either column -- a standing day-of-month recurring cycle, not a dated one. Confirmed by rendering both pages as images (150 dpi) and visually checking the table structure, not just the linearized text extraction, per this corpus's standing rule. This file therefore uses cycleType 'monthly-recurring' with no `year` field, per schema.json.",
+    "The diocese's own name is transcribed exactly as the source prints it in both its title and its day-25 entry: 'Diocese of Northwest Texas' (no 'The Episcopal' prefix, even though the diocese's own website and other TEC materials commonly style it 'The Episcopal Diocese of Northwest Texas'). Recorded here as printed, not expanded.",
+    "Typographic curly apostrophes in the source (e.g. 'St. Andrew’s', 'St. Mark’s') are transcribed as plain ASCII apostrophes for consistency with every other file in this corpus, the same font/typography normalization (not a content correction) already disclosed in episcopal-arkansas.json. The source itself mixes curly and straight apostrophes inconsistently (e.g. 'Odessa, St. Barnabasʼ' and 'St. Stephen's, Sweetwater' already use straight ones) -- both forms are normalized to the same plain apostrophe.",
+    "The source's 'Other Ministries' column often lists more than one named prayer topic (each with its own Book of Common Prayer or diocesan-canon page/number citation) separated by '/' or ';' within a single cell, e.g. day 4's 'The Aged p. 830, #49 / The Poor and Neglected p. 826, #35'. Each such distinct cited topic is transcribed as its own `category` subject rather than one combined name string, since each is independently named and cited -- a judgment call disclosed here. Where a cell's internal '&' or ',' joins words into a single topic's own title (e.g. day 6's 'Church Musicians & Artists, p. 819, #17', day 9's 'Episcopal Seminaries & Seminarians & School of Ordained Ministry Students, p.256', day 8's 'Stewardship of the Environment, p. 827, #40 & 41'), it is NOT split, since it is one topic's own printed name, not a separator between two different cited topics.",
+    "Day 21 ('ASU Campus Ministries') and day 26's two sub-rows ('Lubbock, Canterbury' and 'Lubbock, All Saints School') are recorded as `category` subjects rather than `parish`: a university/campus ministry and a school are not congregations (a parish, mission, or cathedral) under this schema's own definition of `parish`, even though day 26's two sub-rows are formatted 'City, Name' like a parish subject -- consistent with the same institution-vs-parish classification judgment call already applied to campus ministries and schools in episcopal-arkansas.json. Since `category` has no `place` field, each one's town ('Lubbock') is instead carried in that subject's own `note`, alongside its listed clergy/staff.",
+    "Day 26 pairs two institutions under one day number, each with its own separate staff person, both prefaced by 'Lubbock,' and both under the single Other Ministries topic 'Schools and Colleges, p. 824, #31' (recorded as a third, day-level category subject, not duplicated per institution). A rendered page image shows what looks like a stray 'l' character immediately before 'Leann Wigner' (Canterbury's listed staff); the underlying PDF text layer shows only 'Leann Wigner' with no such character, so this is assessed as a table-border rendering artifact of the image render, not a printed character, and 'Leann Wigner' is transcribed as the clean form.",
+    "Day 10 combines two congregations under one day number and one shared clergyperson, Edson Way: 'Colorado City, All Saints’ &' / 'St. Stephen's, Sweetwater'. Transcribed as two separate `parish` subjects (All Saints', Colorado City; St. Stephen's, Sweetwater), each carrying the same 'Edson Way' in its own `note` exactly as printed, since the source gives one shared clergy line for both.",
+    "Day 25's Other Ministries cell reads 'The Diocese, p. 817, #10;' with a trailing semicolon and nothing following it on either the rendered page or the text layer -- preserved verbatim as printed rather than silently dropping the stray punctuation.",
+    "Days 30 and 31 print no 'Other Ministries' column entry at all (both cells are blank in the source); no category subject is fabricated for either day.",
+    "Day 30's own heading, 'Special ministries / not canonically resident / non-parochial clergy/postulants, candidates, transitional deacons', wraps across four lines in the source's cell; transcribed here as one continuous `category` name exactly as printed (including its own internal '/' characters, which are part of this heading's own text, not treated as topic separators the way the Other Ministries column's '/' characters are elsewhere in this file)."
+  ],
+  "entries": [
+    { "day": 1, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Abilene", "name": "Heavenly Rest", "note": "David Romanik, Amanda Watson, Karen Boyd, Ashley Powers, Russell Dickerson, Joe Biles, Bikole Mulanda" },
+      { "type": "category", "name": "Our Country p. 820, #18" }
+    ]},
+    { "day": 2, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Abilene", "name": "St. Mark's", "note": "Mary Glover, Jim Smart, Peggy Valentine" },
+      { "type": "category", "name": "Those Preparing for Baptism, Confirmation, and Renewal p. 819, #15" }
+    ]},
+    { "day": 3, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Albany", "name": "Trinity", "note": "Doug Thomas" },
+      { "type": "category", "name": "Standing Committee, p. 257, #16" }
+    ]},
+    { "day": 4, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Amarillo", "name": "St. Andrew's", "note": "Jared Houze, Miriam Scott, Dave Blakley, Dede Ballou, Tammy Breitbarth, Mildred Rugger, Chris Wrampelmeier" },
+      { "type": "category", "name": "The Aged p. 830, #49" },
+      { "type": "category", "name": "The Poor and Neglected p. 826, #35" }
+    ]},
+    { "day": 5, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Amarillo", "name": "St. Peter's", "note": "Todd Baxley" },
+      { "type": "category", "name": "The Future of the Human Race, p. 828, #44" }
+    ]},
+    { "day": 6, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Big Spring", "name": "St. Mary's", "note": "Christopher Simpson" },
+      { "type": "category", "name": "Commission on Ministry p. 256, II" },
+      { "type": "category", "name": "Church Musicians & Artists, p. 819, #17" }
+    ]},
+    { "day": 7, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Borger", "name": "St. Peter's", "note": "David Williams" },
+      { "type": "category", "name": "Missions of the Diocese p. 825, #34" }
+    ]},
+    { "day": 8, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Clarendon", "name": "St. John the Baptist", "note": "Jim Aveni" },
+      { "type": "category", "name": "Stewardship of the Environment, p. 827, #40 & 41" }
+    ]},
+    { "day": 9, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Coleman", "name": "St. Mark's" },
+      { "type": "category", "name": "Episcopal Seminaries & Seminarians & School of Ordained Ministry Students, p.256" }
+    ]},
+    { "day": 10, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Colorado City", "name": "All Saints'", "note": "Edson Way" },
+      { "type": "parish", "place": "Sweetwater", "name": "St. Stephen's", "note": "Edson Way" },
+      { "type": "category", "name": "Those Who Live Alone, p. 829, #48" },
+      { "type": "category", "name": "Prisons & Correctional Institutions, p. 826, #37" },
+      { "type": "category", "name": "The Unemployed, p. 824, #30" }
+    ]},
+    { "day": 11, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lubbock", "name": "St. Christopher's", "note": "Rachel Petty, Melissa Wafer-Cross, Dann Wigner" },
+      { "type": "category", "name": "Courts of Justice, p. 821, #21" }
+    ]},
+    { "day": 12, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lubbock", "name": "St. Paul's", "note": "Jim Haney V, Becky Orem" },
+      { "type": "category", "name": "Local Government, p. 822, #23" }
+    ]},
+    { "day": 13, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Lubbock", "name": "St. Stephen's", "note": "Justin Gibson, Debbie Womack" },
+      { "type": "category", "name": "The Nation, p. 838, #5" }
+    ]},
+    { "day": 14, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Midland", "name": "Holy Trinity", "note": "Bob Hennagin" },
+      { "type": "category", "name": "Families, p. 828, #45" }
+    ]},
+    { "day": 15, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Midland", "name": "St. Nicholas'", "note": "Amy Haynie, Tom Burns" },
+      { "type": "category", "name": "Hospital Ministries, p. 460, 3rd collect" }
+    ]},
+    { "day": 16, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Odessa", "name": "St. Barnabas'", "note": "Leroy Morrison" },
+      { "type": "category", "name": "Peace, p. 816, #5" },
+      { "type": "category", "name": "Episcopal Schools, p. 829, #46" }
+    ]},
+    { "day": 17, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Odessa", "name": "St. John's", "note": "Ricardo Lopez, Lilly Plummer" },
+      { "type": "category", "name": "Social Justice, p. 823, #27" },
+      { "type": "category", "name": "Victims of Addiction, p. 831, #56" }
+    ]},
+    { "day": 18, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Pampa", "name": "St. Matthew's" },
+      { "type": "category", "name": "Trustees of the Diocese, p. 827, #38" }
+    ]},
+    { "day": 19, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Plainview", "name": "St. Mark's" },
+      { "type": "category", "name": "Religious Orders, p. 819, #16" }
+    ]},
+    { "day": 20, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "San Angelo", "name": "Emmanuel", "note": "Matt Rowe, Bill Wright" },
+      { "type": "category", "name": "Executive Council, p. 816, #7" }
+    ]},
+    { "day": 21, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "ASU Campus Ministries" },
+      { "type": "category", "name": "Young Persons, p. 829, #47" }
+    ]},
+    { "day": 22, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "San Angelo", "name": "Good Shepherd", "note": "Cole Jodon" },
+      { "type": "category", "name": "Military Forces, p. 823, #25" }
+    ]},
+    { "day": 23, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Shamrock", "name": "St. Michael & All Angels'" },
+      { "type": "category", "name": "Joy in God's Creation, p. 814, #1" }
+    ]},
+    { "day": 24, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "place": "Vernon", "name": "Grace" },
+      { "type": "category", "name": "Self-Dedication p. 832, #61" }
+    ]},
+    { "day": 25, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northwest Texas", "note": "Scott Mayer, Elizabeth Jones, Anna Mora, Martha Garcia, Renee Haney" },
+      { "type": "category", "name": "The Diocese, p. 817, #10;" }
+    ]},
+    { "day": 26, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Canterbury", "note": "Lubbock; Leann Wigner" },
+      { "type": "category", "name": "All Saints School", "note": "Lubbock; Paige McKay" },
+      { "type": "category", "name": "Schools and Colleges, p. 824, #31" }
+    ]},
+    { "day": 27, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Episcopal Church", "note": "Sean Rowe" },
+      { "type": "category", "name": "The Mission of the Church, p. 816, #8" }
+    ]},
+    { "day": 28, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anglican Communion", "note": "Sarah Elisabeth Mullally" },
+      { "type": "category", "name": "Christian Unity, Ecumenism, p. 818, #14" }
+    ]},
+    { "day": 29, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Seventh Province", "note": "President: Ms. Andrea Petrosh, Vice-President: The Rt. Rev. Jake Owensby, Secretary: The Rev. Mark Nabors, Treasurer: The Rev. Jim McDonald" },
+      { "type": "category", "name": "Episcopal Church Women, p. 815, #3" }
+    ]},
+    { "day": 30, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Special ministries / not canonically resident / non-parochial clergy/postulants, candidates, transitional deacons", "note": "Gary Bilby, Sister Brigit-Carol, Tami Logsdon; Ricky Bowman, Kay Brizzolara, Jack Dupy, Austin Hackel, Jimmy Haney, Monica Hart Smith, Denise Sanders, Luke Waters, Heather Watson, David Christianson, Kate Menaul" }
+    ]},
+    { "day": 31, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy:", "note": "Fran Bessire, Mike Bernard, Judy Cobb, Beverly Couzzourt, Jo Craig, Mike Ehmer, Celia Ellery, Connie Fowler, Calvin Girvin, Jim Haney IV, William Houghton, Ruth Jones, Linda Kelly, Mark Lang, Jim Liggett, Bernardo Martinez, Wallis Ohl, David Perdue, Pat Russell, Jean Pearson Scott, Charles Smith, Frank Swindle, David Veal, Jim Walker, John Wedgwood-Greenhow, Ingrid Zeeck" }
+    ]}
+  ]
+}
