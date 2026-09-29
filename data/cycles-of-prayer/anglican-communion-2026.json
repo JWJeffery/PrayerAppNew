@@ -1,0 +1,1346 @@
+{
+  "id": "anglican-communion-2026",
+  "body": "The Anglican Communion",
+  "bodySlug": "anglican-communion",
+  "scope": "communion",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "The Anglican Cycle of Prayer",
+  "sourceFile": "\"September 2026-December 2026 Anglican Cycle of Prayer.pdf\", provided directly by Josh via Google Drive (file id 1PnFqfTnD3ZEjzU3-ZCinNxRb5LObO1xQ, folder \"TEC Cycle of Prayer\", id 1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is the single scope-'communion' file: the worldwide Anglican Cycle of Prayer, published by the Anglican Communion Office, rotating daily through the Communion's dioceses and provinces -- the 'Communion' tier of the four-tier Communion/Provincial/Diocesan/Parish Authorized Intercessions structure Josh described. It is not scoped to any one diocese (no `diocese`/`dioceseShort` fields, per schema.json).",
+    "Coverage is PARTIAL-YEAR by design, not an error: the source document itself only covers 2026-09-01 through 2026-12-31 (Josh's own Drive file is titled \"September 2026-December 2026 Anglican Cycle of Prayer\"). The January-August 2026 portion of this same annual cycle was not supplied and is not fabricated here, consistent with this corpus's existing partial-year precedent (e.g. episcopal-alabama-2026.json, episcopal-arizona-2026.json).",
+    "Each day names either a specific diocese together with the member church/province it belongs to (subject type 'diocese', e.g. 'The Diocese of Belize' / 'The Church in the Province of the West Indies'), or an entire member church/province with no specific diocese singled out (subject type 'province', e.g. 'The Anglican Church of Tanzania' alone) -- this is the source's own distinction, not an inconsistency introduced in transcription. Every Sunday in the source names a province rather than a specific diocese.",
+    "The source PDF is a multi-column monthly grid (three columns of dates per page). A linearized copy-pasted text extraction of it silently swapped which diocese/province belonged to which day within the same week (concretely: an initial extraction attributed 'The Anglican Church of Tanzania' to Friday 4 September, when the source's own rendered page layout shows that belongs to Friday 11 September's Diocese of Biharamulo entry, with Friday 4 September actually naming the Diocese of Benin). This file was transcribed only after downloading the actual PDF and reading its rendered page layout, per the corresponding rule added to schema.json's own `rules` array.",
+    "Diocese/province names, and the liturgical annotations (Season of Creation, Sunday-after-Trinity labels, etc.) in `liturgicalNote`, are transcribed exactly as printed, including inconsistent internal capitalization/punctuation across entries (e.g. 'The Church of Nigeria (Anglican Communion)' vs. 'Province of the Episcopal Church of South Sudan' vs. 'Eglise Anglicane du Rwanda' with no definite article) and the source's own apparent duplicate-name case ('The Diocese of Christ the King' appears twice, Nov 18 and Nov 19, naming two different provinces -- Mozambique & Angola, then Southern Africa -- preserved as printed rather than treated as an error, since two dioceses sharing a name across different provinces is unremarkable and not this corpus's place to adjudicate).",
+    "Not yet wired into any UI or rendering -- this file exists in the corpus but js/cycles-of-prayer.js has no loader/registry concept for scope-'communion' files yet (its current registry and cache-key logic are diocese-centric). Surfacing this as the 'Communion' line in the BCP Authorized Intercessions rubric slot is a separate, not-yet-done step."
+  ],
+  "entries": [
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Belize",
+          "province": "The Church in the Province of the West Indies"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bendigo",
+          "province": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Beni",
+          "province": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Benin",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bentiu",
+          "province": "Province of the Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "14th Sunday after Trinity; Season of Creation",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Episcopal/Anglican Province of Alexandria"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bermuda",
+          "province": "(Extra Provincial)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bethlehem",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bhopal",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bida",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Biharamulo",
+          "province": "The Anglican Church of Tanzania"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Birmingham",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "15th Sunday after Trinity; Season of Creation",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Blackburn",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bo",
+          "province": "The Church of the Province of West Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Boga",
+          "province": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bolivia",
+          "province": "The Anglican Church of South America"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bondo",
+          "province": "The Anglican Church of Kenya"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bor",
+          "province": "Province of the Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "16th Sunday after Trinity; Season of Creation",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Botswana",
+          "province": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Brandon",
+          "province": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Brechin",
+          "province": "The Scottish Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Brisbane",
+          "province": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bristol",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of British Columbia",
+          "province": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "17th Sunday after Trinity",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Church of Bangladesh"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Central Buganda",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of West Buganda",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Buhiga",
+          "province": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bujumbura",
+          "province": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bukavu",
+          "province": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "liturgicalNote": "Season of Creation",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bukedi",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "18th Sunday after Trinity; Season of Creation",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "Igreja Episcopal Anglicana do Brasil"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bukuru",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bunbury",
+          "province": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bungoma",
+          "province": "The Anglican Church of Kenya"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Bunyoro-Kitara",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Busan",
+          "province": "The Anglican Church of Korea"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Busoga",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "19th Sunday after Trinity",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Central Busoga",
+          "province": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Butare",
+          "province": "Eglise Anglicane du Rwanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Butere",
+          "province": "The Anglican Church of Kenya"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Buye",
+          "province": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Byumba",
+          "province": "Eglise Anglicane du Rwanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Calabar",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "20th Sunday after Trinity",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Calcutta",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Caledonia",
+          "province": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Calgary",
+          "province": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of California",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Northern California",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cameroon",
+          "province": "The Church of the Province of West Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "21st Sunday after Trinity",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of El Camino Real",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Canberra and Goulburn",
+          "province": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Canterbury",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cape Coast",
+          "province": "The Church of the Province of West Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cape Town",
+          "province": "The Anglican Church of Southern Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of North Eastern Caribbean and Aruba",
+          "province": "The Church in the Province of the West Indies"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints' Day; 4th Sunday before Advent",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Carlisle",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of East Carolina",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of North Carolina",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of South Carolina",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Upper South Carolina",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Western North Carolina",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "3rd Sunday before Advent",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cashel, Ferns and Ossory",
+          "province": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chandigarh",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chelmsford",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chester",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chhattisgarh",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chicago",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "2nd Sunday before Advent",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "Iglesia Anglicana de Chile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chichester",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chotanagpur",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Christ the King",
+          "province": "Igreja Anglicana de Mocambique e Angola"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Christ the King",
+          "province": "The Anglican Church of Southern Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Christchurch",
+          "province": "The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Chubu",
+          "province": "The Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Christ the King",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Clogher",
+          "province": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese on the Coast",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cochin",
+          "province": "The Church of South India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Coimbatore",
+          "province": "The Church of South India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Colombia",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Colombo",
+          "province": "The Church of Ceylon (Extra Provincial)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "Advent 1",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "Hong Kong Sheng Kung Hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Colorado",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Congo Brazzaville",
+          "province": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Connecticut",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Connor",
+          "province": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cork, Cloyne and Ross",
+          "province": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Costa Rica",
+          "province": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": "Advent 2",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Church of the Province of the Indian Ocean"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Coventry",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cuba",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cueibet",
+          "province": "Province of the Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cuernavaca",
+          "province": "La Iglesia Anglicana de Mexico"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cuttack",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cyangugu",
+          "province": "Eglise Anglicane du Rwanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": "Advent 3",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Cyprus and the Gulf",
+          "province": "The Episcopal Church in Jerusalem and The Middle East"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Daejeon",
+          "province": "The Anglican Church of Korea"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of North Dakota",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of South Dakota",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Dallas",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Damaturu",
+          "province": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": "Advent 4",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Dar-es-Salaam",
+          "province": "The Anglican Church of Tanzania"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Davao",
+          "province": "The Episcopal Church in the Philippines"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Saint Davids",
+          "province": "The Church in Wales"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Delaware",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "liturgicalNote": "Christmas Day",
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Delhi",
+          "province": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Derby",
+          "province": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": "Sunday of Christmas",
+      "subjects": [
+        {
+          "type": "province",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Derry and Raphoe",
+          "province": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Dhaka",
+          "province": "The Church of Bangladesh"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of San Diego",
+          "province": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "diocese",
+          "name": "The Diocese of Divine Hope",
+          "province": "Igreja Anglicana de Mocambique e Angola"
+        }
+      ]
+    }
+  ]
+}

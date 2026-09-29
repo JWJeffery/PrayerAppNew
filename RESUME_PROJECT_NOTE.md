@@ -254,39 +254,55 @@ whoever picks this up should decide with Josh whether to ship those first or wai
 tiers together. **A Venite-app screenshot Josh showed was a location reference only, not a design to
 copy** — confirmed explicitly: "I know that Venite does not fill it with prayer text. But that is
 where I want it" (Venite fills the same rubric slot with a "PRAYERS AND THANKSGIVINGS" link and a
-meditation timer; Josh wants actual prayer text at that slot instead). **Communion-tier source text
-LOCATED 2026-09-29, not yet parsed or wired into the rubric:** "September 2026-December 2026 Anglican
-Cycle of Prayer.pdf" in Josh's "TEC Cycle of Prayer" Drive folder (see below) is the actual worldwide
-Anglican Communion Cycle of Prayer — a daily rotation naming one diocese/province at a time. No
-Provincial-tier (TEC-wide, as distinct from the worldwide Communion cycle) source located yet.
-Diocesan/Parish tiers: see the corpus entry directly below.
+meditation timer; Josh wants actual prayer text at that slot instead). **Communion tier INGESTED
+2026-09-29, not yet wired into the rubric:** `data/cycles-of-prayer/anglican-communion-2026.json`
+(`scope: "communion"`, the new third scope added this same session) is the actual worldwide Anglican
+Cycle of Prayer, transcribed from "September 2026-December 2026 Anglican Cycle of Prayer.pdf" in Josh's
+"TEC Cycle of Prayer" Drive folder (see below) — a daily rotation naming one diocese+province (or, on
+Sundays, one whole province alone) at a time, Sept 1-Dec 31 2026 only (the source itself is partial-year
+— disclosed in the file's own `notes`, not a gap in this session's work). **Still not done:** parsing
+this into the actual BCP rubric line — `js/cycles-of-prayer.js` has no loader/registry concept for
+scope-`"communion"` files yet, only diocese-centric ones. No Provincial-tier (TEC-wide, as distinct from
+this worldwide Communion cycle) source located yet. Diocesan/Parish tiers: see the corpus entry below.
 
-**Diocesan Cycle of Prayer corpus (`data/cycles-of-prayer/`) — storage, schema, and app-UI wiring all
-exist; content ingestion is ongoing, most of the roster still to do.** `data/cycles-of-prayer/
-schema.json` is the governing spec: file/entry/subject shapes; `cycleType` — `"dated"` for a
-weekly/daily cycle keyed by ISO date within a stated `year`, `"monthly-recurring"` for a standing
-day-of-month cycle with no year (added 2026-09-28 when Arkansas's own source turned out not to be
-date-anchored at all); `scope` — `"diocese"` (default) for a diocese's own cycle of its parishes, or
-`"parish"` for one parish's own internal cycle of its individual members/households (added 2026-09-29
-alongside subject type `"household"` — see St. Bede's entry below). Read it before adding another
-diocese or parish. `scripts/cycles-of-prayer/validate.mjs` (`npm run audit:cycles-of-prayer`) validates
-every file; `js/cycles-of-prayer.js`'s `CYCLES_OF_PRAYER_DIOCESES` registry and the profile diocese
-`<select>` in `index.html` must both be hand-kept in sync with whatever diocese-level `.json` files
-actually exist — **a file with no matching registry/UI entry silently does nothing** (this has not yet
-been extended to cover scope-`"parish"` files at all — see below).
+**Cycle of Prayer corpus (`data/cycles-of-prayer/`) — storage/schema exist for all three tiers now;
+app-UI wiring exists ONLY for the diocese tier; content ingestion is ongoing, most of the roster still
+to do.** `data/cycles-of-prayer/schema.json` (v1.2) is the governing spec: file/entry/subject shapes;
+`cycleType` — `"dated"` for a weekly/daily cycle keyed by ISO date within a stated `year`,
+`"monthly-recurring"` for a standing day-of-month cycle with no year (added 2026-09-28 when Arkansas's
+own source turned out not to be date-anchored at all); `scope` — `"diocese"` (default) for a diocese's
+own cycle of its parishes, `"parish"` for one parish's own internal cycle of its individual
+members/households, or `"communion"` for the single worldwide Anglican cycle of dioceses/provinces (the
+latter two, plus subject types `"household"`/`"diocese"`/`"province"`, all added 2026-09-29 — see the
+St. Bede's and Communion-tier entries above). Read it before adding another diocese, parish, or
+touching the Communion file. `scripts/cycles-of-prayer/validate.mjs` (`npm run audit:cycles-of-prayer`)
+validates every file across all three scopes; `js/cycles-of-prayer.js`'s `CYCLES_OF_PRAYER_DIOCESES`
+registry and the profile diocese `<select>` in `index.html` must both be hand-kept in sync with
+whatever diocese-level `.json` files actually exist — **a file with no matching registry/UI entry
+silently does nothing** (this registry/loader has NOT been extended to cover scope-`"parish"` or
+scope-`"communion"` files at all yet — both exist as data but neither is reachable from the app).
 
-**7 files currently in the corpus, all passing the validator:** 6 diocese-level — Western Oregon,
-Alaska, Arizona, Albany, Alabama (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus the
-first-ever parish-level file, `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational
-Cycle of Prayer — Josh's own parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29
-directly from a Drive PDF Josh supplied; transcribed from the PDF's own rendered page layout rather
-than its linearized text extraction, which interleaves two printed columns into one run-on line and
-would have misassigned names to the wrong day — see the file's own `notes`). St. Bede's already
-separately appears as a diocese-level `"parish"` subject inside Western Oregon's own file (its week is
-2026-04-12) — the two are not duplicates or in conflict; see schema.json's own `rules` for why. **The
-parish-level file is not yet wired into any UI or registry** — surfacing a household's own "this is my
-family's day" the way the diocese tier surfaces "this is my parish's week" is a real, undecided product
-question (how would the app know which household is the user's?), not yet raised with Josh.
+**8 files currently in the corpus, all passing the validator:** 6 diocese-level — Western Oregon,
+Alaska, Arizona, Albany, Alabama (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus one
+parish-level and one communion-level file, neither wired into any UI or registry yet:
+- `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
+  parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
+  St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
+  own file (its week is 2026-04-12) — the two are not duplicates; see schema.json's own `rules` for why.
+  Surfacing a household's own "this is my family's day" the way the diocese tier surfaces "this is my
+  parish's week" is a real, undecided product question (how would the app know which household is the
+  user's?), not yet raised with Josh.
+- `anglican-communion-2026.json` (the worldwide Anglican Cycle of Prayer, `scope: "communion"`,
+  `"dated"`, ingested 2026-09-29, 122 daily entries covering only Sept 1-Dec 31 2026 since that's all
+  the source document itself covers). This is the Communion tier of the Authorized Intercessions TODO
+  above. Surfacing it just needs a render hook reading "today's" entry and showing it in the rubric slot
+  — simpler than the parish tier's open question, since it's the same for every user regardless of
+  profile, but still not built.
+
+Both new files were transcribed only after downloading the actual source PDF and reading its rendered
+page layout rather than trusting Drive's own linearized text extraction, which interleaves multi-column
+grids into one run-on line and silently misassigns entries to the wrong day/date if trusted as-is (see
+schema.json's own `rules` for the concrete near-misses this caught in both files).
 
 **LOCATED 2026-09-29: Josh's "TEC Cycle of Prayer" Drive folder actually holds ~24 raw files, not just
 the roster spreadsheet** — the Communion-tier PDF and St. Bede's file above came from it, and so does
