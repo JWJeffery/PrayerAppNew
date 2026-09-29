@@ -1,0 +1,795 @@
+{
+  "id": "episcopal-idaho-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of Idaho",
+  "dioceseShort": "idaho",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Prayer Calendar for the Diocese of Idaho",
+  "sourceFile": "\"2026 Prayer Calendar for the Diocese of Idaho.xlsx\", provided directly by Josh via Google Drive (file id 1xMZWFpVrKnHqPWYkmrttFn9koK9vt9vR, folder \"TEC Cycle of Prayer\"); original diocesan source per Josh's own roster (a live Google Sheet): https://docs.google.com/spreadsheets/d/1fJVztvWOsW_aAT4hsjY92njRCJY67al2yWxujznO7ww/edit",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The diocese's own full name is not printed within the spreadsheet's body (it refers to itself only as 'our Diocese', 'our Bishop', etc.); 'Diocese of Idaho' is taken from Josh's own filename for this document, not fabricated, but disclosed here as coming from the filename rather than the document's own printed text.",
+    "The source has a fourth 'Anglican Communion Prayer Cycle' column reproducing the worldwide Anglican Communion Cycle of Prayer's province name for that week -- deliberately NOT transcribed into this file's `entries`, since that content is the separate, already-ingested scope-'communion' corpus (anglican-communion-2026.json), matching the same decision made for episcopal-connecticut-2026.json.",
+    "The source's third column, a weekly Social Justice intercession theme, IS included here as a `category` subject per week (not a named group/congregation in the usual sense of this schema's `category` type, but the diocese's own stated second half of its weekly cycle of prayer, disclosed as such rather than silently dropped).",
+    "CORRECTED, not preserved as printed: the source prints four consecutive weeks as 'Sunday, June 5 Proper 9', 'Sunday, June 12 Proper 10', 'Sunday, June 19 Proper 11', and 'Sunday, June 26 Proper 12' -- immediately AFTER an already-printed 'Sunday, June 28 Proper 8' and immediately BEFORE 'Sunday, August 2 Proper 13'. None of June 5/12/19/26, 2026 are Sundays (verified directly: Sunday, January 4, 2026, the source's own first date, is exactly 21 weeks before June 28 and 26 weeks before July 5, confirming July 5/12/19/26 are the real Sundays, not June); the Proper-number sequence (8, then 9-10-11-12, then 13) is otherwise perfectly consistent with the surrounding weeks and only resolves if these four are July, not June. This is a source-side labeling error (most likely an entire block mislabeled by one month), not an ambiguous name -- corrected to July 5/12/19/26 per this project's own standing rule that a verifiably wrong date is fixed, not merely flagged (the same rule already applied to EOR/OOR sanctoral dates elsewhere in this corpus). If Josh's own copy of this spreadsheet is later revised to read 'July' directly, this file will already match it."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "The Second Sunday of Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Redeemer Episcopal Church",
+          "place": "Salmon"
+        },
+        {
+          "type": "category",
+          "name": "For a new year shaped by justice: that every community may have safe housing, food, and hope."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "The First Sunday after the Epiphany: The Baptism of Our Lord",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's Episcopal Church",
+          "place": "Caldwell"
+        },
+        {
+          "type": "category",
+          "name": "For survivors of human trafficking and exploitation, and for courageous action to protect the vulnerable and prosecute abuse."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "The Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Nampa"
+        },
+        {
+          "type": "category",
+          "name": "For racial justice and reconciliation—especially where systems harm Black, Indigenous, and people of color—and for hearts brave enough to change."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Idaho Falls"
+        },
+        {
+          "type": "category",
+          "name": "For unity across divides: among Christian traditions and with our neighbors of other faiths, that we may seek the common good together."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "The Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Episcopal Church",
+          "place": "Rupert"
+        },
+        {
+          "type": "category",
+          "name": "For those living in poverty and without stable housing, and for policies and neighbors that make dignity affordable and real."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "The Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Blackfoot"
+        },
+        {
+          "type": "category",
+          "name": "For equitable healthcare and mental health support, so no one is denied care because of cost, stigma, or geography."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "The Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Paradise Point Camp"
+        },
+        {
+          "type": "category",
+          "name": "For workers: fair wages, safe workplaces, and the right to organize, especially for those in low-paid and invisible labor."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Pocatello"
+        },
+        {
+          "type": "category",
+          "name": "For those impacted by mass incarceration, and for restorative justice that heals victims, repairs harm, and offers true paths home."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "The Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Sun Valley"
+        },
+        {
+          "type": "category",
+          "name": "For migrants and refugees on the move, that borders may be met with mercy, and families may be protected and reunited."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "The Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Emmett"
+        },
+        {
+          "type": "category",
+          "name": "For women and girls worldwide: safety from violence, equal opportunity, and voices honored in every home and workplace."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "The Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Mountain Home"
+        },
+        {
+          "type": "category",
+          "name": "For people living with disabilities, that communities remove barriers and build belonging, access, and respect."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "The Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "McCall"
+        },
+        {
+          "type": "category",
+          "name": "For clean and affordable water for all, and for wise stewardship where scarcity, pollution, and inequity threaten life."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "The Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Weiser"
+        },
+        {
+          "type": "category",
+          "name": "For those facing hunger and food insecurity, and for fair systems that support farmers, workers, and nutritious food for every table."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "The Sunday of the Resurrection: Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Shoshone"
+        },
+        {
+          "type": "category",
+          "name": "For peace in places of war and unrest, for protection of civilians, and for leaders willing to choose diplomacy over domination."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "The Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Episcopal Church",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For climate action rooted in justice—so that those least responsible are no longer forced to bear the greatest burdens."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "The Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Hailey"
+        },
+        {
+          "type": "category",
+          "name": "For Indigenous peoples: protection of land and language, honoring of treaties, and healing from historic and ongoing harms."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "The Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ministry of our Bishop, the Rt. Rev. Jos Tharakan"
+        },
+        {
+          "type": "category",
+          "name": "For education equity, that every child—regardless of zip code—has excellent schools, supportive teachers, and safe learning spaces."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "The Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Placerville"
+        },
+        {
+          "type": "category",
+          "name": "For children in vulnerable situations—foster care, detention, or unstable homes—and for adults who will advocate fiercely for them."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "The Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Ascension",
+          "place": "Twin Falls"
+        },
+        {
+          "type": "category",
+          "name": "For caregivers and parents, especially those raising children with limited resources, that they receive support, rest, and respect."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "The Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Staff of our Diocesan Office in Boise"
+        },
+        {
+          "type": "category",
+          "name": "For the dignity and safety of LGBTQ+ people, that bullying and violence end, and that every person may flourish without fear."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "The Day of Pentecost: Whitsunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Episcopal Church",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For communities scarred by gun violence, and for courageous peacemaking that reduces harm and protects life."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "The First Sunday after Pentecost: Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd Episcopal Church",
+          "place": "Fort Hall"
+        },
+        {
+          "type": "category",
+          "name": "For compassionate responses to addiction: prevention, treatment, recovery support, and an end to shame that isolates."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Proper 5: The Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's Cathedral",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For people persecuted for their faith or identity, and for the freedom to worship, speak, and live without violence."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Proper 6: The Third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Nativity Episcopal Church",
+          "place": "Meridian"
+        },
+        {
+          "type": "category",
+          "name": "For integrity in public life: truthful speech, fair elections, and civic courage that resists corruption and dehumanization."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Proper 7: The Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Glenns Ferry"
+        },
+        {
+          "type": "category",
+          "name": "For refugees and displaced people rebuilding after conflict and disaster, and for welcoming communities that share resources generously."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Proper 8: The Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Buhl"
+        },
+        {
+          "type": "category",
+          "name": "For oceans, rivers, and coasts, and for environmental justice where pollution and extraction endanger the poor first."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Proper 9: The Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany Episcopal Church",
+          "place": "Arco"
+        },
+        {
+          "type": "category",
+          "name": "For freedom that includes everyone: that patriotism becomes care for neighbors, and that rights are matched by responsibility."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Proper 10: The Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Episcopal Church",
+          "place": "Jerome"
+        },
+        {
+          "type": "category",
+          "name": "For those returning from prison and detention, that communities offer work, housing, mentoring, and mercy instead of rejection."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Proper 11: The Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of the Tetons",
+          "place": "Alta"
+        },
+        {
+          "type": "category",
+          "name": "For elders and those who are isolated, that loneliness be met with friendship, accessible care, and intergenerational community."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Proper 12: The Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Redeemer Episcopal Church",
+          "place": "Salmon"
+        },
+        {
+          "type": "category",
+          "name": "For communities facing extreme heat, storms, and wildfire, especially those without resources to recover, and for resilient, just rebuilding."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Proper 13: The Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's Episcopal Church",
+          "place": "Caldwell"
+        },
+        {
+          "type": "category",
+          "name": "For families separated by immigration systems, and for humane pathways that honor safety, work, and belonging."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Proper 14: The Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Nampa"
+        },
+        {
+          "type": "category",
+          "name": "For nonviolent peacemakers—teachers, organizers, and neighbors—who interrupt hatred and model brave, practical compassion."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Proper 15: The Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Idaho Falls"
+        },
+        {
+          "type": "category",
+          "name": "For economic justice: relief from crushing debt, fair taxation, and systems that reward work without exploiting workers."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Proper 16: The Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Episcopal Church",
+          "place": "Rupert"
+        },
+        {
+          "type": "category",
+          "name": "For students and educators as a new school season approaches, that learning be safe, inclusive, and supported with adequate resources."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Proper 17: The Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Blackfoot"
+        },
+        {
+          "type": "category",
+          "name": "For laborers and job seekers, especially those underpaid or unemployed, that dignified work and just benefits be available to all."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Proper 18: The Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Pocatello"
+        },
+        {
+          "type": "category",
+          "name": "For the healing of creation: that our churches and households reduce waste, conserve energy, and protect the earth we share."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Proper 19: The Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Committees and Commissions of our Diocese"
+        },
+        {
+          "type": "category",
+          "name": "For fair trade and ethical supply chains, that farmers and workers receive just compensation and safe conditions."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Proper 20: The Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Sun Valley"
+        },
+        {
+          "type": "category",
+          "name": "For peacebuilding in our neighborhoods and nations, that conflicts be handled without violence and with a commitment to human dignity."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Proper 21: The Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Emmett"
+        },
+        {
+          "type": "category",
+          "name": "For those sleeping outside or in unstable housing, and for affordable homes, supportive services, and communities that refuse to look away."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Proper 22: The Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Mountain Home"
+        },
+        {
+          "type": "category",
+          "name": "For care of animals and the web of life, and for stewardship that rejects cruelty and protects habitats for future generations."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Proper 23: The Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "McCall"
+        },
+        {
+          "type": "category",
+          "name": "For Indigenous communities today: for cultural renewal, land protection, and justice for missing and murdered Indigenous people."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Proper 24: The Twenty-First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Weiser"
+        },
+        {
+          "type": "category",
+          "name": "For food justice worldwide, that harvests be shared fairly, hunger ends, and farmers are protected from exploitation and climate shocks."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Proper 25: The Twenty-Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Shoshone"
+        },
+        {
+          "type": "category",
+          "name": "For survivors of domestic violence and coercive control, and for safe shelters, legal protection, and healing that lasts."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Episcopal Church",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For those we remember who died through violence, neglect, or injustice, and for the living who carry grief and trauma."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Proper 27: The Twenty-Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Hailey"
+        },
+        {
+          "type": "category",
+          "name": "For humane immigration reform, an end to dehumanizing rhetoric, and practical welcome rooted in solidarity."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Proper 28: The Twenty-Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ministry of our Archdeacon, the Ven. Eileen O'Shea"
+        },
+        {
+          "type": "category",
+          "name": "For climate and environmental justice in the decisions of nations and corporations, that profit never outweighs human life."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "The Last Sunday after Pentecost: Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Placerville"
+        },
+        {
+          "type": "category",
+          "name": "For an end to violence against women and gender-based violence everywhere, and for cultures that honor consent and equality."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "The First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of The Ascension",
+          "place": "Twin Falls"
+        },
+        {
+          "type": "category",
+          "name": "For Advent hope that is active: that we prepare room through generosity, advocacy, and attention to those pushed to the margins."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": "The Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Episcopal Church",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For global peace and disarmament, that resources be turned from weapons toward health, education, and human flourishing."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": "The Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd Episcopal Church",
+          "place": "Fort Hall"
+        },
+        {
+          "type": "category",
+          "name": "For an end to antisemitism, Islamophobia, and every form of religious hatred, and for communities that protect one another with courage."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": "The Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's Cathedral",
+          "place": "Boise"
+        },
+        {
+          "type": "category",
+          "name": "For those displaced or homeless during the holidays, that they find warmth, community, and pathways to stable, dignified living."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": "The First Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Nativity Episcopal Church",
+          "place": "Meridian"
+        },
+        {
+          "type": "category",
+          "name": "We pray in gratitude for the year’s lessons, and we commit ourselves anew to justice, mercy, and humble walking with God and neighbor."
+        }
+      ]
+    }
+  ]
+}
