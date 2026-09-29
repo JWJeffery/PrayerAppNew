@@ -1,0 +1,4249 @@
+{
+  "id": "episcopal-south-dakota-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of South Dakota",
+  "dioceseShort": "south-dakota",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"REVISED_by_LRS_Cycle_of_Prayer_24-25_v.2.pdf\" (25 pages, titled internally \"CYCLE OF PRAYER 2025 - 2026\"), fetched via curl from https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/3308/Edsd/504fa799-f956-49bf-b648-9e5a6a60f12a/REVISED_by_LRS_Cycle_of_Prayer_24-25_v.2.pdf?disposition=inline and cross-checked against rendered page images.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "URL note: the source URL's own filename (\"REVISED_by_LRS_Cycle_of_Prayer_24-25_v.2.pdf\") reads \"24-25\", but the PDF's own title page and every internal heading read \"CYCLE OF PRAYER 2025 - 2026\" / \"2025- 2026\" -- confirming the prayer-roster's own research note that the filename is stale. This file transcribes the document's actual printed content (2025-2026), not the filename.",
+    "Granularity: unlike the roster's own pre-fetch research note (which described the source as week-range-keyed, one subject per week), the actual 25-page PDF is a genuine DAILY cycle. Each printed weekly heading (e.g. \"November 30 - December 06, 2025\") is only a page-layout grouping; within it, every individual calendar day is separately numbered and carries its own distinct content -- usually a Sunday's parish list, but every other day of the week also has its own subject(s): a clergy birthday/ordination-anniversary line, a saint's day, a BCP prayer topic, a diocesan committee/deanery, etc. This file therefore records cycleType 'dated' with one entry per actual calendar date (`date` is that date itself, taken directly from the day's own printed day-of-month digit plus the week heading's month/year), not one entry per week.",
+    "Year-boundary handling: the source is one continuous daily cycle running from Advent 2025 (Sunday, November 30, 2025) through Christ the King Sunday 2026 (November 22, 2026), continuing in smaller print through November 27, 2026 before a blank 'For your personal Prayers and Concerns' page. This is the identical 'Advent [year-1] through Christ the King [year]' shape as this corpus's existing episcopal-atlanta-2026.json, episcopal-north-carolina-2026.json, and episcopal-oklahoma-2026.json, which all defer/exclude a similarly lopsided late-prior-year Advent lead-in rather than splitting into two files. Following that precedent: this file's `entries` begin at January 1, 2026 and the 2025 portion (Sunday, November 30, 2025 through Wednesday, December 31, 2025 -- 32 days, all falling within Advent/Christmas) is deferred/excluded entirely, not fabricated or merged into 2026. A future episcopal-south-dakota-2025.json could hold that excluded portion if wanted.",
+    "`liturgicalNote` records the day's own printed calendar/commemoration headline exactly as printed (Sunday titles, saints' days, 'Ash Wednesday', 'Ember Day', etc.) -- and, since the source does not typographically distinguish them from liturgical commemorations, this also includes the handful of civil/secular observances the source prints in that same headline slot on their own date: 'Labor Day', 'Memorial Day', 'Native American Day', 'United Nations Day', 'Thanksgiving Day'. When a headline is immediately joined on the same source line to an instructional clause (e.g. 'Labor Day, We give thanks to all types of workers...'; 'Ember Day-Pray for those in the ordination process.'; 'THE SIXTH SUNDAY OF EASTER (MOTHER'S DAY) & (Rogation Sunday) Pray for Mothers BCP p. 815 & for the Human Family'), the calendar name itself is recorded as `liturgicalNote` and the instructional clause is split out as its own `category` subject, rather than folding a full sentence into `liturgicalNote`.",
+    "On 16 dates the source's only printed content for that day is a bare calendar/commemoration headline with no separate prayer-focus line beneath it (e.g. 'THE PRESENTATION of our Lord Jesus Christ in the Temple', 'Ash Wednesday', 'St. Joseph', 'ASCENSION DAY', 'Thanksgiving Day'). Since this schema requires a non-empty `subjects` array, that same headline text is recorded both as `liturgicalNote` and, once, as a `category` subject on those dates, rather than inventing unrelated content or leaving `subjects` empty. Affected dates: Feb 2, Feb 18, Feb 24, Mar 19, Mar 25, Apr 25, May 14, Jul 22, Jul 25, Aug 6, Aug 15, Aug 24, Sep 14, Sep 21, Sep 28, Nov 26, 2026.",
+    "Two calendar days have no printed content in the source at all (confirmed by viewing the rendered PDF pages as images, not an extraction loss): March 9, 2026 (the source jumps from March 8 directly to March 10) and July 31, 2026 (the source jumps from July 30 directly to August 1). No entry is fabricated for either date.",
+    "Three day-numbering overflow/mislabeling errors in the source's own printed day-of-month digits were resolved by folding the misdated content into the nearest date it actually belongs to, rather than fabricating an impossible or duplicate date: (1) the 'December 28, 2025 - January 03, 2026' week block's final line, printed under day number '04' ('Pray for the Nation, BCP p. 838'), falls outside that block's own stated range and duplicates the following week's own Sunday date -- folded into the January 4, 2026 entry, appended after that Sunday's own parish content. (2) Likewise, the 'June 21-27, 2026' week block's final line, printed under day number '28' ('The Rev. Jean Mornard (o), Grace, Huron'), duplicates the next week's own Sunday (June 28) -- folded into the June 28, 2026 entry. (3) The 'July 12-18, 2026' week block prints day numbers 12 (Sunday), then 11, 12, 13, 14, 15, 16, 17, 18 -- i.e. after the Sunday (already day 12), the source re-prints '11' and '12' before correctly resuming at '13'. Both mislabeled items ('Pray for the Eastern Deanery' and 'Pray for the Northwest Deanery' + its TEC camp note) are folded into the July 12, 2026 Sunday entry; the remaining items (Rosebud Deanery, Central Deanery, Northeast Deanery, Standing Committee, Thunderhead Committee, St. Mary's Board) are recorded on July 13-18 respectively, matching their own correctly-printed day numbers.",
+    "Sunday-ordinal-count errors preserved as printed, not corrected: August 30, 2026 is headlined 'THE 12TH SUNDAY AFTER PENTECOST' even though the preceding Sunday (August 23) was already 'THE 13TH SUNDAY AFTER PENTECOST' (an apparent regression in the source's own count); and October 4, 2026 is headlined 'THE 19TH SUNDAY AFTER PENTECOST' immediately after September 27's 'THE 16TH SUNDAY AFTER PENTECOST' (skipping the 17th and 18th Sundays after Pentecost entirely in the source's own numbering). Both transcribed exactly as printed.",
+    "Two stray trailing digits, disclosed here rather than folded into transcribed `place` text: 'St. John's, Browns Valley, MN 31' (March 30) prints a trailing '31' with nothing following it (no separate March 31 entry exists -- see the missing-day note above); and 'Holy Spirit, Firesteel & Mediator, Kyle 04' (April 4, Holy Saturday) prints a trailing '04' self-referencing that same date. Both are dropped from this file's `place` values as apparent page-layout artifacts, not parish-name content. A few other lines carry a similar self-referential day-number in parentheses appended after other content; those are preserved verbatim rather than dropped, since they read as part of the sentence rather than a stray line-break artifact: 'Deacon Robyn Shores-Foster (o), Calvary Cathedral (05)' (January 5) and 'The Rev. Claude Vershure (o), Retired (23)' (July 23).",
+    "Companion Diocese of East Tennessee: nearly every Sunday's parish list pairs one or more Diocese of South Dakota congregations with a congregation of the companion Diocese of East Tennessee (marked 'TN' in the source). Every individually named congregation, from either diocese, is recorded here as a `parish` subject (name + place, including the Tennessee congregation's state abbreviation exactly as printed) rather than as `category`, since each is a specific, individually named congregation per this schema's own subjectShape definition of 'parish' -- not a diocese- or Communion-wide subject.",
+    "A few parish lists name a second congregation with no place of its own immediately after a first congregation that does name a place (e.g. 'St Peter's, Ft. Pierre, St. Mary's,  & Trinity, Gatlinburg, TN', September 20, 2026, where 'St. Mary's' has no town printed for it at all). In each such case this file infers the same town as the immediately preceding named congregation (here, St. Mary's is recorded at 'Ft. Pierre') rather than leaving the schema's required `place` field blank. This is a disclosed judgment call, not independently confirmed against the diocese's own parish roster.",
+    "The source's own legend reads 'Legend: (b)...birthday (o)...ordination' -- these abbreviations mark a clergy or lay leader's birthday or ordination anniversary, and a further name after '&' is typically that person's spouse. Both are preserved exactly as printed (not expanded or split out) within each affected `category` subject's `name`.",
+    "Excluded front/back matter: the PDF's first two pages (a standing prayer request for the Truth, Justice & Healing Commission on Native Boarding Schools, naming its members, followed by 'A Prayer to Remember the Innocents') are not date-keyed and are excluded from `entries`, consistent with this corpus's existing treatment of undated standing front matter (cf. episcopal-southwestern-virginia-2026.json's excluded standing companion-diocese sentence). The final 'For your personal Prayers and Concerns :' page (blank space for the reader's own notes) is likewise excluded as it carries no dated content.",
+    "Preserved typos/oddities transcribed verbatim rather than corrected: 'St. John the Baptist, Bullshead' (September 22) for 'Bullhead' elsewhere in the source; 'Thankful Memorial, Chatanooga, TN' (October 4) for 'Chattanooga'; 'Deacon Tom Regan, (b),' with a stray comma before '(b)' (January 19); a doubled '(b)' in 'The Rev. Dr. Ramona Hayes (b), St. Paul's, Brookings (b) and Tim' (February 9); a missing space in 'the 142ndDiocesan Convention' (October 3); and the same place named inconsistently across two separate occurrences -- 'Blessed Redeemer, Howe Creek' with no state (March 8) versus 'Blessed Redeemer, Howe Creek, NE' (November 23). Minor incidental comma/space formatting within a `place` value (e.g. 'Ooltewah,TN' vs. 'Ooltewah, TN' on different occurrences) has been normalized to a consistent 'City, ST' spacing without altering any wording.",
+    "The February 1, 2026 Sunday headline, 'The Fourth Sunday after the Epiphany', is printed in mixed case rather than the ALL-CAPS style used for every other Sunday headline in this source; preserved exactly as printed rather than normalized to match the others.",
+    "'The Diocese of South Dakota' is the source's own title-page name for itself ('The Diocese of South Dakota Cycle of Prayer'); the body of the document elsewhere refers to it without the leading 'The' ('Diocese of South Dakota')."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "liturgicalNote": "THE HOLY NAME OF OUR LORD JESUS CHRIST",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon John Mayen (b), Holy Apostles"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Congress and State Legislature, BCP p. 821"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Hugh L. Burleson, IV South Dakota, 1916-1931"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "THE SECOND SUNDAY AFTER CHRISTMAS DAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Thunder Butte"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Chattanooga, TN"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the Nation, BCP p. 838"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Linda Valandra (b), St. Luke's, Hot Springs"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Robyn Shores-Foster (o), Calvary Cathedral (05)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "liturgicalNote": "The Epiphany of Our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Sound Government, BCP p. 821"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. William Hobart Hare, 1st Bishop of the Niobrara & So.Dak. 1873-1909"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Kim Fonder (b), Mni Sose Mission, & Tammy"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. William P. Remington, Bp. Suffragan, So. Dak. 1918-1922"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ven. J. Clay Riley (o), All Angels, Spearfish"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Chamberlain"
+        },
+        {
+          "type": "category",
+          "name": "St. Mary's Scholarship Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "THE FIRST SUNDAY, THE EPIPHANY OF OUR LORD JESUS CHRIST: THE BAPTISM OF OUR LORD JESUS CHRIST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Yankton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Vermillion"
+        },
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Johnson City, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Fort Thompson"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Name",
+          "place": "Ft. George"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Conrad Ciesel (o), Retired, Sisseton Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Lead"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Unity of our Church, BCP p. 818"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Milbank"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Peace and Love in Times of Conflict, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Angels",
+          "place": "Spearfish"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "THE SECOND SUNDAY AFTER THE EPIPHANY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Rapid City"
+        },
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "liturgicalNote": "The Confession of St. Peter the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Tom Regan, (b), All Angels, Spearfish & Diana"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Tom Newman (b), Retired, OK"
+        },
+        {
+          "type": "category",
+          "name": "Vice Chancellor Lee Dayton (b), & Michelle"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ven. Paul Sneve (b), Tiospaye Wakan, Sioux Falls & Tally Salisbury"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Kurt Huber (o), Cheyenne River Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan and National Archives"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Local Governments, BCP p. 823"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Judy Spruhan (b), Retired, VA"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Okreek"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Cathedral",
+          "place": "Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Social Justice, BCP p. 823"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "THE THIRD SUNDAY AFTER THE EPIPHANY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Messiah",
+          "place": "Iron Nation"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Fort Hale"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Norris, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Evelyn Weaver (b), St. James, Belle Fourche, & Mike"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Barb Simpson (o), Tiospaye Wakan, Sioux Falls"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Brenda Lewis (o), St. Mary's & OBR, Flandreau"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "liturgicalNote": "The Conversion of St. Paul the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Charley Chan (b), Sisseton Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Norris"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Widows of Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Daughters of the King and their Chapters in South Dakota"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Dr. Jonathan H. Folts (b), Diocese of South Dakota & Kim"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Leigh Vicens (o), Calvary Cathedral, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Diocese, BCP p. 817"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "The Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Our Most Merciful Savior",
+          "place": "Santee, NE"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew",
+          "place": "Maryville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "liturgicalNote": "THE PRESENTATION of our Lord Jesus Christ in the Temple",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "THE PRESENTATION of our Lord Jesus Christ in the Temple"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Brookings"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the discernment process for lay ministries."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dioceses of Province III—N.W. Pennsylvania, Central Pennsylvania, Pittsburgh, Pennsylvania, Bethlehem, Delaware, Maryland, Eastern Maryland, Washington, Virginia, Southern Virginia, S.W. Virginia and West Virginia"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "THE FIFTH SUNDAY AFTER THE EPIPHANY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Gethsemane",
+          "place": "Wanblee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clare",
+          "place": "Lafollette, TN"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Soldier Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Huron"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Ramona Hayes (b), St. Paul's, Brookings (b) and Tim"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "A Prayer attributed to St. Francis, BCP p. 833"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Harold Jones, Bp. Suffragan, So. Dak., 1971-1976"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Evelyn Weaver (o), St. James, Belle Fourche"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Sandy Williams (o), Retired"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Barb Simpson (b), Tiospaye Wakan, Sioux Falls & Ward"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Michelle Dayton (o), Pine Ridge Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those we love, BCP p. 831"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "LAST SUNDAY AFTER THE EPIPHANY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Sioux Falls"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Crow Creek"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Knoxville, TN"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Robyn Shores-Foster (b), Calvary Cathedral, Sioux Falls & James"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Marty Garwood (b), St. Andrew's, Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Little Eagle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Vermillion"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "liturgicalNote": "Ash Wednesday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ash Wednesday"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Annie Henninger (o), Rosebud Mission East"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "General Theological Seminary, New York City"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Sandy Williams (b), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "THE FIRST SUNDAY IN LENT",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Johns",
+          "place": "Eagle Butte"
+        },
+        {
+          "type": "parish",
+          "name": "St. Johns",
+          "place": "Browns Valley"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke",
+          "place": "Cleveland, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Little Oak Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "liturgicalNote": "St. Matthias the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Matthias the Apostle"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for persons in Trouble or Bereavement, BCP p. 831"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for all sorts and conditions of man, BCP p. 814"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Gethsemane",
+          "place": "Sisseton"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "THE SECOND SUNDAY IN LENT",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Station",
+          "place": "On the Tree"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Knoxville, TN"
+        },
+        {
+          "type": "parish",
+          "name": "Mediator",
+          "place": "Kyle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew",
+          "place": "Harriman, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Harold Eagle Bull (o), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Convocation of American Churches in Europe- Belgium, Brussels, France, Paris, Germany, Frankfurt, Wiesbaden, Munich, Switzerland, Geneva, Italy, Florence, Rome—Province II"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Haiti and Virgin Islands— Province II"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Enemies, BCP p. 816"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Peace, BCP p. 815"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Agriculture, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Julia's",
+          "place": "Porcupine"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "THE THIRD SUNDAY IN LENT",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Lower Brule"
+        },
+        {
+          "type": "parish",
+          "name": "Blessed Redeemer",
+          "place": "Howe Creek"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Rugby, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Tony Buquor (b), Retired, Sioux Falls, & Lou Ann"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those who live alone, BCP p. 829"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Peace and Love in Times of Conflict, BCP p. 824"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Bears Creek (Lantry)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Peace among all Nations, BCP p. 816"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. David Cameron (o), Retired"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Margaret Watson (b), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "THE FOURTH SUNDAY IN LENT",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Red Shirt Table"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clare",
+          "place": "Lafollette, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. James Marrs Jr.(b), Santee/Yankton Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. James Pearson (o), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "liturgicalNote": "Patrick of Ireland, Bishop & Missionary",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those listening to God's call."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dioceses of Province IV—Kentucky, Lexington, West Tennessee, Tennessee, East Tennessee, Western North Carolina, North Carolina, East Carolina, Mississippi, Alabama, Central Gulf Coast, Atlanta, Georgia, Louisiana, Florida, Central Florida, Southwest Florida, Southeast Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "liturgicalNote": "St. Joseph",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Joseph"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Joy in God's creation, BCP p. 814"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Monastic Orders and Vocations, BCP p. 819"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "THE FIFTH SUNDAY IN LENT",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Advent",
+          "place": "Calico"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph the Carpenter",
+          "place": "Sevierville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Bullhead"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Sturgis"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Bishop and the Diocese, BCP p. 817"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "liturgicalNote": "The Annunciation of our Lord Jesus Christ to the Blessed Virgin Mary",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Annunciation of our Lord Jesus Christ to the Blessed Virgin Mary"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Diocesan Staff \"Faith in action, Love without limits\""
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Diocese: “Being the Church that many don’t expect us to be.”"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the Oppressed, BCP p. 826"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Historical Society of the Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Julian “Bunker” Hill (o), Retired, CO"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "THE SUNDAY OF THE PASSION (PALM SUNDAY)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Madison"
+        },
+        {
+          "type": "parish",
+          "name": "St. Julia's",
+          "place": "Porcupine"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Elizabethton, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Very Rev. Ward Simpson (b), Calvary Cathedral, Sioux Falls, & Barb"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Browns Valley, MN"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Young Persons, BCP p. 829"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Robin Pierre (b), Christ Church, Lead & St. Thomas, Sturgis, & Marie"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "liturgicalNote": "MAUNDY THURSDAY",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon David Potts (b), Retired & Cheryl"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "liturgicalNote": "GOOD FRIDAY",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for The Episcopal Church in Jerusalem & the Middle East"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "liturgicalNote": "HOLY SATURDAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Firesteel"
+        },
+        {
+          "type": "parish",
+          "name": "Mediator",
+          "place": "Kyle"
+        },
+        {
+          "type": "category",
+          "name": "Ellen Walker (b), Diocesan Treasurer, & Dave"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "THE SUNDAY OF THE RESURRECTION (EASTER SUNDAY)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Katharine's",
+          "place": "Martin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clare",
+          "place": "LaFollette, TN"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Jo Hedin (o), Retired, FL"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Station",
+          "place": "On the Tree"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Schools & Colleges, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Ideal"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Enemies, BCP p. 816"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the School of Theology, Bexley & Seabury Center"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Knowledge of God's Creation, BCP p. 827"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the victims of Addiction, BCP p. 831"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Senior Catechists in our Diocese."
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Belle Fourche"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "THE SECOND SUNDAY OF EASTER",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Chamberlain"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip",
+          "place": "Dupree"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Ft. Oglethorpe, GA"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Marion Rectenwald (b), Retired, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Mercy Hobbs (o), Trinity, Pierre"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. George Parmeter (b), Retired, Northeast Deanery, & Gayle"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Indigenous Ministries Office"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Episcopal Church Women (ECW)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Protection, BCP p. 832"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "THE THIRD SUNDAY OF EASTER",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Aberdeen"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip & St. James",
+          "place": "White River"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Lookout Mountain, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Enemy Swim"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Lauren R. Stanley (o), Canon to the Ordinary"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Ryan Hall (b), Retired, NE"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Jerry Vander Lee (o), Calvary Cathedral, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thanksgiving for the Diversity of Race & Cultures, BCP p. 840"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Church Secretaries and Diocesan Administrators"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "liturgicalNote": "St. Mark the Evangelist",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mark the Evangelist"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "THE FOURTH SUNDAY OF EASTER",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip the Deacon",
+          "place": "Lake Andes"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Kingsport, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Poor and the Neglected, BCP p. 826"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocese of Province I-Maine, Vermont, New Hampshire, Massachusetts, Western Massachusetts, Rhode Island, and Connecticut."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Christina O'Hara (b), Good Shepherd, Sioux Falls & David"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. J.D. Barnes (b), Emmanuel, Rapid City, & Amanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "liturgicalNote": "The Apostles St. Philip & St. James",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Michael Newago (o), Christ Church, Yankton"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Conrad H. Gesner, VI South Dakota (1954-1970)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "THE FIFTH SUNDAY OF EASTER",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Flandreau"
+        },
+        {
+          "type": "parish",
+          "name": "Our Blessed Redeemer",
+          "place": "Flandreau"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Commission for Ministry in our Diocese (COM)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Julian “Bunker” Hill (b), Retired, CO, & Jane"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Virginia Theological Seminary, Alexandria, VA"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Spouses and families of the clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Social Justice, BCP p. 823"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Mitchell"
+        },
+        {
+          "type": "category",
+          "name": "New Home Lutheran, Mitchell"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "THE SIXTH SUNDAY OF EASTER (MOTHER’S DAY) & (Rogation Sunday)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Mothers BCP p. 815 & for the Human Family"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Watertown"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Webster"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Woniya Wakan (Holy Spirit)",
+          "place": "Wagner"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Kim Folts (o), Diocese of South Dakota"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "liturgicalNote": "ASCENSION DAY",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "ASCENSION DAY"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Blackfoot/Moreau"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those graduating."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "THE SEVENTH SUNDAY OF EASTER: THE SUNDAY AFTER ASCENSION DAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "White Horse"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Virginia Bird (o), Emmanuel, Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Agriculture, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Canon Maggie Riley (b), Finance & Property, & Clay"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Our Most Merciful Savior",
+          "place": "Santee, NE"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Liz Powers (b), Retired, OR, & Sam Robertson"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Bonnie Slusher (o), All Angels, Spearfish"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Chaplains to people in health care, prisons, first responders & the Armed Forces"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "THE DAY OF PENTECOST: WHITSUNDAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Marys",
+          "place": "Webster"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "liturgicalNote": "Memorial Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the faithful departed, BCP p. 838"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Towns and Rural Areas, BCP p. 825"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the ordination process."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Cities, BCP pg. 825"
+        },
+        {
+          "type": "category",
+          "name": "Pray for People who are in Trouble or Bereavement, BCP p. 831"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our South Dakota Communication System"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Courts of Justice, BCP p. 821"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "THE 1ST SUNDAY AFTER PENTECOST: TRINITY SUNDAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Cathedral",
+          "place": "Sioux Falls"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "Resurrection",
+          "place": "Laudon, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalNote": "The Visitation of the Blessed Virgin Mary",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for TEC's staff training, May 31-June 5"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Ellen Huber (b), Cheyenne River Mission, & Kurt"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the Armed Forces of Our Country, BCP p. 823"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Albans",
+          "place": "Fort Hale"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Red Shirt Table"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Winner"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Marion Rectenwald (o), Retired, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Tom Newman (o), Retired, OK"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Prisons & Correctional Institutions, BCP p. 826"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "THE 2ND SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Little Eagle"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Morristown, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Niobrara Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Pray for TEC Counselors training, June 7-12"
+        },
+        {
+          "type": "category",
+          "name": "Pray for CREM Horse and Pony Camp (June 8-11)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Joy in God's Creation, BCP p. 814."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the discernment process."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "liturgicalNote": "St. Barnabas the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Mike Weaver (o), Retired, St. James', Belle Fourche"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Linda Valandra (o), St. Luke's, Hot Springs"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Elizabeth Bryan-Rhode (o), Retired"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Bitsey Ciesel (o), Retired, Sisseton Mission"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Arlene Pearsall (o), Retired, Calvary Cathedral, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The First Book of Common Prayer, 1549"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Virginia Bird (b), Emmanuel, Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "THE 3RD SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Winner"
+        },
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Blackfoot/Moreau"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "South Pittsburg, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Abraham Kok (b), Holy Apostles, Sioux Falls, & Monica"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Elizabeth Bryan-Rhode (b), Retired, & Bill"
+        },
+        {
+          "type": "category",
+          "name": "Pray for TEC's Family Camp, June 7-12"
+        },
+        {
+          "type": "category",
+          "name": "Pray for CREM Horse and Pony Camp (June 15-18)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Marty Garwood (o), St. Andrew's & St. Matthew's, Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Pierre"
+        },
+        {
+          "type": "category",
+          "name": "the Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Chancellor Steve Sanford (b), & Kathy"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Pat White Horse-Carda (o), Retired, Eastern & Rosebud Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Jo Hedin (b), Retired, FL, & Nyle"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Travelers, BCP p. 831"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "THE 4TH SUNDAY AFTER PENTECOST: FATHERS DAY",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Father's Day BCP p. 815 & for the Human Family"
+        },
+        {
+          "type": "parish",
+          "name": "St. Johns",
+          "place": "Bullhead"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Milks Camp"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Morristown, TN"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Lead"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban",
+          "place": "Hixson, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Beatrice Skinner (o), Retired"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Susan Lyman (o), Retired, WY"
+        },
+        {
+          "type": "category",
+          "name": "Pray for TEC's Elementary Camp, June 21-25"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Bonnie Slusher (b), All Angels, Spearfish, & Tim"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "liturgicalNote": "The Nativity of St. John the Baptist",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Larry Ort (o), Retired, Northeast Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Twilla Two Bulls (o), Christ Church, Red Shirt Table & St. Johns, Oglala"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Cordelia Red Owl (o), Retired"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Judy Spruhan (o), Retired, VA"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Ramona Hayes (o), St. Pauls, Brookings"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Niobrara Convocation, St. Michaels, Bastesland (PREM)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Walter H. Jones, VII South Dakota, 1970-1983"
+        },
+        {
+          "type": "category",
+          "name": "A Prayer to Remember the Innocents"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ven. Paul Sneve (o), Tiospaye Wakan, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "THE 5TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Ft. Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy's Church",
+          "place": "Kingsport, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Jean Mornard (o), Grace, Huron"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "liturgicalNote": "The Apostles St. Peter and St. Paul",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for TEC's Middle School Camp, June 28-July 3"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. George Parmeter (o), Retired, Northeast Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for a sound Government, BCP p. 821"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the Armed Forces of our Country, BCP p. 823"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Country, BCP p. 820"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "liturgicalNote": "INDEPENDENCE DAY",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Courts of Justice, BCP p. 821"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The 6TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Gethsemane",
+          "place": "Sisseton"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Oglala"
+        },
+        {
+          "type": "parish",
+          "name": "St. Raphael",
+          "place": "Crossville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for TEC's High School Camp, July 5-10"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the President of the United States & All in Civil Authority, BCP p. 820"
+        },
+        {
+          "type": "category",
+          "name": "Pray for CREM Horse and Pony Camp July 6-9"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Black Hills Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Michael Newago (b), Christ Church, Yankton, & Karen"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Mike Weaver (b), Retired, St. James, Belle Fourche, & Evelyn"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Pine Ridge Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "THE 7TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Promise"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Knoxville, TN"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the Eastern Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the Northwest Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Pray for TEC's Environmental Camp, July 12-17"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Rosebud Deanery"
+        },
+        {
+          "type": "category",
+          "name": "Pray for CREM Horse and Pony Camp (July 13-16)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Central Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Northeast Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Thunderhead Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the St. Mary's Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "THE 8TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Sioux Falls"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy",
+          "place": "Signal Mountain, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. “Shaneequa” Brokenleg (o), Interim Indigenous Missioner"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Church Musicians & Artists, BCP p. 819"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "liturgicalNote": "St. Mary Magdalene",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary Magdalene"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Claude Vershure (o), Retired (23)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Education for Ministry (EFM)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "liturgicalNote": "James the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "James the Apostle"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "THE 9TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Enemy Swim"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin",
+          "place": "Chattanooga, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Kim Folts (b), Diocese of South Dakota, & Jonathan"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Cordelia Red Owl (b), Retired"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Arlene Pearsall (b), Retired, Calvary Cathedral, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Lower Brule"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Craig Anderson, VIII South Dakota, 1984-1992"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dioceses of Province V-Northern Michigan, Wisconsin, Western Michigan, Eastern Michigan, Michigan, Ohio, Southern Ohio, Indianapolis, Northern Indiana, Springfield, Chicago, Quincy, Missouri"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Susan Lyman (b), Retired, WY"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Judy Graves (b), Retired, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Niobrara School for Ministry for all instructors and students"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "THE 10TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Mitchell"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Little Oak Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter",
+          "place": "Chattanooga, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Bishop Hare Center, Rosebud Mission"
+        },
+        {
+          "type": "category",
+          "name": "Pray for the Harvest of Lands and Waters, BCP p. 828"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Church of England"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Schools & Colleges, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrews",
+          "place": "Cherry Creek"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "White Horse"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "liturgicalNote": "The Transfiguration of our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Transfiguration of our Lord Jesus Christ"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon John Keyes (b), Retired, & Jo Neubauer"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Conservation of Natural Resources, BCP p. 827"
+        },
+        {
+          "type": "parish",
+          "name": "Tiospaye Wakan",
+          "place": "Sioux Falls",
+          "note": "@ the Cathedral"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "THE 11TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Milbank"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark",
+          "place": "Copperhill, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's",
+          "place": "Wakpala"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Mary Husby (b), Retired, Calvary Cathedral, & Milt"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Twilla Two Bulls (b), Christ Church, Red Shirt Table & St. Johns, Oglala"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. David Cameron (b), Retired, & Connie Lane"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Larry Ort (b), Retired, Northeast Deanery & Judy"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Bear Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "liturgicalNote": "St Mary the Virgin Mother of our Lord Jesus Christ.",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St Mary the Virgin Mother of our Lord Jesus Christ."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "THE 12TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Cherry Creek"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bristol, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Agriculture, BCP p. 824"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Wayne Meidinger (b), St Mary's & New Home Luthern, Mitchell"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Bitsey Ciesel (b), Retired, Sisseton Mission, & Conrad"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church of Sudan & The Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Michelle Dayton (b), Pine Ridge Mission & Lee"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. James Foster (b), Grace, Madison, & Robyn"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the St. Mary's Scholarship Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Periodical Club"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "THE 13TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Brookings"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "Athens, TN"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Mary Husby (o), Retired, Calvary Cathedral"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Wayne Meidinger (o), St Mary's & New Home Luthern, Mitchell"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "liturgicalNote": "St. Bartholomew the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Bartholomew the Apostle"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Iva Traversie (o), Cheyenne River Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Divinity School, New York City"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ven. J. Clay Riley (b), All Angels, Spearfish, & Maggie"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Diocese's Investment Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Thunderhead Episcopal Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "THE 12TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Jesus",
+          "place": "Rosebud"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalNote": "Labor Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "We give thanks to all types of workers and bless their labors. And we pray for the unemployed and underemployed."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for all types of Schools, Colleges, & Universities, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Claude Vershure (b), Retired, & Dorothy"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Oglala"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Soldier Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Berkley Divinity School at Yale, New Haven, CT"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "THE 13TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Pine Ridge"
+        },
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Lay Leaders in the Diocese."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church, United States of America"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Rapid City"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Batesland"
+        },
+        {
+          "type": "parish",
+          "name": "Gethsemane",
+          "place": "Wanblee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Leigh Vicens (b), Calvary Cathedral, Sioux Falls, & George Logino"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Beatrice Skinner (b), Retired"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Jean Mornard (b), Grace, Huron, & Michael"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "THE 14TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Bear Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Old Agency, Peever"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all Grandparents"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": "Holy Cross Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Cross Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. George Biller, Jr., III South Dakota, 1912-1915"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the ordination process."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Clergy and People, BCP p. 817"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the ordination process."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for those in the ordination process."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Mercy Hobbs (b), Trinity, Pierre, & David"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "THE 15TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St Peter's",
+          "place": "Ft. Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Ft. Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Gatlinburg, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": "St. Matthew the Apostle & Evangelist",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Matthew the Apostle & Evangelist"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Bullshead"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Those Who Live Alone, BCP p. 829"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Diocese, BCP p. 817"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Crow Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Evangelist",
+          "place": "Eagle Butte"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "THE 16TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Angels",
+          "place": "Spearfish"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Knoxville, TN"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Batesland"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi",
+          "place": "Ooltewah, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": "St. Michael & All Angels",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Michael & All Angels"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Innocents",
+          "place": "Parmelee"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Deadwood"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for our Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for all Clergy attending the Diocesan Clergy Conference."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Niobrara Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the 142ndDiocesan Convention & the Unity of the Church, BCP pg. 818"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "THE 19TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "McLaughlin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's",
+          "place": "Wakpala"
+        },
+        {
+          "type": "parish",
+          "name": "Thankful Memorial",
+          "place": "Chatanooga, TN"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Johannas Asmussen (o), Retired, SD"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Board of Examining Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip & St. James",
+          "place": "White River"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Ellen Lang (o), Retired, Calvary Cathedral"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Brenda Lewis (b), St. Mary's & OBR, Flandreau"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Vancouver School of Theology's Native Ministries Program."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. David Hussey (b), Retired, Diocese of South Dakota, & Mercy"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the Monastic Orders & Vocations, BCP p. 819"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Abraham Kok (o), Holy Apostles, Sioux Falls"
+        },
+        {
+          "type": "category",
+          "name": "Canon Sierra Kacher (b), Canon for TEC & Youth Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "THE 20TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Hot Springs"
+        },
+        {
+          "type": "parish",
+          "name": "Annunciation",
+          "place": "Newport, TN"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Iron Lightning"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Chattanooga, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalNote": "Native American Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. James Pearson (b), Retired & Gloria"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Harold Eagle Bull (b), Retired, & Charlette"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Corn Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip the Deacon",
+          "place": "Lake Andes"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Linda Kramer (b), Retired"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Mark Marion (o), St. Mary's, Webster"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brotherhood of Christian Unity"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "THE 21ST SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Mobridge"
+        },
+        {
+          "type": "parish",
+          "name": "St.James",
+          "place": "Bears Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Belle Fourche"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. David Hussey (o), Diocese of South Dakota"
+        },
+        {
+          "type": "category",
+          "name": "Marlys Fratzke (b), Diocesan Administrator, & Bob"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalNote": "St. Luke the Evangelist (TX from 10/18)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Hot Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Promise"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the World and for Peace, BCP p. 814 & 815"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dioceses of Province VI—South Dakota, North Dakota, Minnesota, Iowa, Nebraska, Colorado, Wyoming, & Montana"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalNote": "St. James of Jerusalem, Brother of our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Judy Flagstad (o), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "liturgicalNote": "United Nations Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Pat White Horse-Carda (b), Retired, Eastern & Rosebud Deanery"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Johanna Asmussen (b), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "THE 22ND SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Milks Camp"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints Chapel",
+          "place": "Sioux Falls",
+          "note": "@ Waterford"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dioceses of Province VII-- Arkansas, Dallas, Kansas, Northwest Texas, Oklahoma, Rio Grande, Texas, West Missouri, West Texas, Western Kansas, Western Louisiana"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's Chapel",
+          "place": "Thunderhead"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "liturgicalNote": "St. Simon & St. Jude, Apostles",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Charley Chan (o), Sisseton Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Tiwahe ed Wacekiyapi/Family Worship",
+          "place": "Norris"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Corn Creek"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. John T. Tarrant, X South Dakota (2009-2019)"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Kurt Huber (b), Cheyenne River Mission, & Ellen"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Fort Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Firesteel"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary the Virgin",
+          "place": "Jonesborough, TN"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Jerry Vander Lee (b), Calvary Cathedral, Sioux Falls & Nancy"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "liturgicalNote": "All Souls/All Faithful Departed",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Dr. Jonathan H. Folts, XI South Dakota (2019- )"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Messiah",
+          "place": "Iron Nation"
+        },
+        {
+          "type": "category",
+          "name": "Pray for Schools & Colleges, BCP p. 824"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Lauren R. Stanley (b), Canon to the Ordinary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Jesus",
+          "place": "Rosebud"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon John Mayen (o), Holy Apostles, Sioux Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip",
+          "place": "Dupree"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "McLaughlin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "THE 24TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Woniya Wakan",
+          "place": "Wagner"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Kingsport, TN"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Ideal"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi",
+          "place": "Ooltewah, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Mark Marion (b), St. Mary's, Webster, & Mary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Yankton"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Tony Buquor (o), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Advent",
+          "place": "Calico"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Milks Camp, Herrick"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peters",
+          "place": "Thunder Butte"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "THE 25TH SUNDAY AFTER PENTECOST",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Fort Thompson"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Deadwood"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen",
+          "place": "Oak Ridge, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Aberdeen"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Old Agency, Peever"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Annie Henninger (b), Rosebud Mission East"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Iva Traversie (b), Cheyenne River Mission"
+        },
+        {
+          "type": "category",
+          "name": "Deacon David Potts (o), Retired"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Katharine's",
+          "place": "Martin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Flandreau"
+        },
+        {
+          "type": "parish",
+          "name": "Our Blessed Redeemer",
+          "place": "Flandreau"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "THE LAST SUNDAY IN PENTECOST: CHRIST THE KING SUNDAY",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrews",
+          "place": "Rapid City"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthews",
+          "place": "Rapid City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John Cathedral",
+          "place": "Knoxville, TN"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Blessed Redeemer",
+          "place": "Howe Creek, NE"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Madison"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Fort Pierre"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalNote": "Thanksgiving Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thanksgiving Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Iron Lightning"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "id": "episcopal-southeast-florida-2027",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Southeast Florida",
+  "dioceseShort": "southeast-florida",
+  "cycleType": "dated",
+  "year": 2027,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan Cycle of Prayer 2026-27 table, fetched directly from https://www.diosef.org/diocesan-cycle-of-prayers.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source is the diocese's own live web page at https://www.diosef.org/diocesan-cycle-of-prayers (\"Diocesan Cycle of Prayer 2026-27\"), a Next.js/Material-UI page whose cycle table is rendered directly as HTML (a <table> with one <tr> per week and a nested <ul>/<li> list of subjects per week) -- fetched with curl and parsed from that rendered markup, not from a linearized PDF text dump, so this corpus's standing PDF multi-column-interleaving caveat does not apply here: each week's subjects were already unambiguously grouped by the page's own per-row list markup.",
+    "The diocese's own site (this cycle page and its homepage, https://www.diosef.org/) consistently and exclusively self-identifies as \"The Episcopal Church in Southeast Florida\" in its <title>, page headings, and copyright footer -- it never uses the phrasing \"Episcopal Diocese of Southeast Florida\" or \"Diocese of Southeast Florida\" anywhere on the page. The `diocese` field here uses the source's own consistent self-identification, \"The Episcopal Church in Southeast Florida\", matching this corpus's convention (see episcopal-delaware-2026.json's `diocese` field, \"The Episcopal Church in Delaware\") of using the diocese's own published full name.",
+    "This single source page spans two calendar years (Sunday, September 6, 2026 through Sunday, August 22, 2027, 51 weekly entries total). Per this schema's own 'one file per diocese per year' rule, and following the precedent set by episcopal-delaware-2026.json/episcopal-delaware-2027.json (the same Sept-to-Aug shape), it is split into two files: this one, covering the 17 entries from September 6 through December 27, 2026, and a companion episcopal-southeast-florida-2027.json covering the remaining 34 entries, January 3 through August 22, 2027 -- both transcribed from the identical source page. The split is roughly a third/two-thirds rather than even, simply because the source's own Sept-Aug range crosses the calendar-year boundary partway through; both halves are substantial (17 and 34 weeks respectively), not a small lead-in on either side, so this is a genuine two-file split for app resolvability (the app's own year-keyed file lookup, `cycleOfPrayerFilePath` in js/cycles-of-prayer.js, would never find the 2027 dates if they stayed in a file named/keyed 2026), not a gap or omission in either direction.",
+    "The three dates given in this task's own research note were independently re-verified directly against the fetched page: September 27, 2026 names \"Christ Memorial Chapel, Hobe Sound\"; December 27, 2026 names \"The Episcopal Church Women (ECW)\"; and August 22, 2027 names \"The Brotherhood of St. Andrew\" -- all three match exactly.",
+    "The source's own table has no separate liturgical-note column; `liturgicalNote` is null throughout both files.",
+    "November 1, 2026: \"All Saints, Jensen beach\" preserves the source's own lower-case \"beach\" verbatim (every other 'beach' place name in this source is capitalized, e.g. \"Jensen Beach\" would be the conventional spelling) -- an apparent typo kept as printed rather than silently corrected, per this corpus's standing rule.",
+    "November 15, 2026: the source lists \"Holy Redeemer & Palanca Pantry, and Blessed T. Holly Episcopal Mission, Lake Worth Beach\" as a single list item (one <li>, not two) naming what appear to be two distinct entities (a parish with an attached food-pantry ministry, and a separately-named Episcopal mission) sharing one place at the end. Since the source groups them as one list entry with only one trailing place, this is transcribed as a single `parish` subject with the full compound string (minus the trailing place) as `name`, rather than split into two subjects -- unlike this file's June 20/August 15, 2027 items below, which were split because each of those single list items names two internally complete name+place units.",
+    "December 13, 2026: \"St. Andrew's School, and Chapel, Boca Raton\" preserves the source's own comma before \"and Chapel\" verbatim (most likely a stray typo for \"St. Andrew's School and Chapel\") -- recorded as `parish` (not `category`), consistent with this corpus's existing Delaware precedent that an explicitly-named school chapel is a `parish`-type subject (a chapel), distinguishing it from a bare school with no chapel named.",
+    "January 17, 2027: \"St. Paul's Episcopal Church, Church and School, Delray Beach\" preserves the source's own apparently duplicated \"Church\" (\"...Church, Church and School...\") verbatim, rather than silently correcting what looks like a copy-paste artifact in the diocese's own document.",
+    "June 20, 2027: the source's first list item that week, \"St. Andrew's, Miami and St. Andrew's Early Learning Center, Palmetto Bay\", names two internally complete name+place units joined by \"and\" with no comma (a parish in Miami, and a same-named early-learning-center ministry in the different town of Palmetto Bay) -- split here into two subjects, a `parish` (\"St. Andrew's\", Miami) and a `category` (\"St. Andrew's Early Learning Center, Palmetto Bay\", an institution/ministry rather than a congregation, so its place is folded into `name` per this corpus's `category`-type convention, matching Delaware's \"St. Anne's School, Middletown\" precedent). The week's second list item, \"Palmer Trinity School, Miami\" (an independent Episcopal school, not a congregation), is likewise recorded as `category` with its place folded into `name`.",
+    "August 15, 2027: the source's single list item \"St. Paul's, Key West and St. Peter's, Key West\" names two internally complete parish+place units (each already carrying its own \"Key West\") joined by \"and\" -- split here into two separate `parish` subjects, both placed in Key West, rather than forced into one subject's `name` with a place awkwardly appearing twice.",
+    "August 1, 2027: by contrast, \"St. James the Fisherman and the St. James Children's Center, Islamorada\" (one list item, one trailing place) is kept as a single `parish` subject rather than split, since it names only one place for the pair -- following the same one-place-keeps-together / two-places-splits logic applied throughout this file.",
+    "All apostrophes in the source are the plain straight ' character (HTML entity &#x27; throughout); no curly apostrophe variant appears anywhere in this source, unlike Delaware's single curly-quote exception.",
+    "This file covers the second (2027) portion of the source's September 2026 - August 2027 cycle -- see episcopal-southeast-florida-2026.json for the September-December 2026 portion transcribed from the same page."
+  ],
+  "entries": [
+    {
+      "date": "2027-01-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop's Staff"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Hallandale Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Fort Lauderdale"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church, Church and School",
+          "place": "Delray Beach"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia Episcopal Santísima Trinidad",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's et Les Martyrs d'Haiti",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Atonement",
+          "place": "Lauderdale Lakes"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Sacrament",
+          "place": "Pembroke Pines"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ambrose",
+          "place": "Fort Lauderdale"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Hollywood"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene and St. Martin Church and School",
+          "place": "Coral Springs"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Deerfield Beach"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Benedict's",
+          "place": "Plantation"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James-in-the-Hills",
+          "place": "Hollywood"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Hollywood"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Chapel of the Venerable Bede and the students they serve",
+          "place": "Coral Gables"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark the Evangelist Church and School",
+          "place": "Fort Lauderdale"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Miami Lakes"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels'",
+          "place": "Miami Springs"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Pompano Beach"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Santa Cruz-Resurrection",
+          "place": "Biscayne Park"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Family",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Incarnation",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Retired Bishops"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Historic St. Agnes'",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bernard de Clairvaux",
+          "place": "North Miami Beach"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Kevin's Episcopal Church",
+          "place": "Opa-Locka"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Miami Gardens"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Cathedral",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Miami"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew's Early Learning Center, Palmetto Bay"
+        },
+        {
+          "type": "category",
+          "name": "Palmer Trinity School, Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher-By-the-Sea Church and School",
+          "place": "Key Biscayne"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Faith's",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church and School",
+          "place": "Homestead"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke the Physician",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "St. Simon's",
+          "place": "Miami"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew the Apostle",
+          "place": "Miami"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's Church and School",
+          "place": "Coral Gables"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church and School",
+          "place": "Coconut Grove"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas Church and School",
+          "place": "Coral Gables"
+        }
+      ]
+    },
+    {
+      "date": "2027-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Fisherman and the St. James Children's Center",
+          "place": "Islamorada"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis in the Keys",
+          "place": "Big Pine Key"
+        }
+      ]
+    },
+    {
+      "date": "2027-08-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Columba Episcopal Church",
+          "place": "Marathon"
+        }
+      ]
+    },
+    {
+      "date": "2027-08-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Key West"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Key West"
+        }
+      ]
+    },
+    {
+      "date": "2027-08-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Brotherhood of St. Andrew"
+        }
+      ]
+    }
+  ]
+}

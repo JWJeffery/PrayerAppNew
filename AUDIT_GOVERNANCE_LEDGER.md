@@ -25853,3 +25853,105 @@ correctly, both Cycle of Prayer tiers present in the sidebar) -- applying the Mo
 technique established in batch 10 up front this time, rather than discovering the time-of-day
 auto-routing issue again. Zero new console errors beyond the pre-documented sandbox font-CDN block.
 `js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 12: San Diego, South Carolina, South
+## Dakota, Southeast Florida, Southern Ohio (5 dioceses, 6 files; Southern Virginia blocked)
+
+Josh: "Please continue." Sixth batch of parallel-subagent-dispatched ingestion, continuing alphabetically
+after Rhode Island. Six agents dispatched (five succeeded, one blocked); each scoped to write only its
+own new JSON file, with all registry/validation/docs/git work done centrally afterward, per the pattern
+established in batch 7 onward.
+
+**San Diego** (`episcopal-san-diego-2026.json`, source: diocesan PDF "Cycle of Prayer"). 53 entries. The
+source's own document deliberately spans a full liturgical year across two calendar years (cover line:
+"Last Sunday after Pentecost, 2025 -- Advent I, 2026"), opening November 23, 2025 and closing November 22,
+2026 -- per the existing `episcopal-california-2026.json` precedent for a source whose own declared range
+spans a year boundary, the pre-2026 entries are included in this `-2026` file rather than split out.
+**Eleven of the 53 entries carry a verifiably wrong printed year**, caught by checking each entry's
+printed month/day against the real day-of-week (every entry in this cycle is a Sunday): five entries
+headed "the week of November 30" through "December 28" were printed 2026 but are Sundays only in 2025;
+six entries headed "October 18" through "November 22" were printed 2025 but are Sundays only in 2026.
+Corrected per this corpus's established "verifiably wrong date" rule (same class as Idaho's earlier
+fix) -- only the `date` field's year was changed, every word of each entry's own printed content left
+untouched, and both directions of the correction are disclosed with the exact printed-vs-corrected years
+for the record. Several other source-level oddities (a duplicated near-identical prayer line left in
+by the diocese's own drafting process, an inconsistent congregation-name separator, a straight-vs-curly
+apostrophe inconsistency, one entry combining two subjects into a single sentence and split apart here
+for consistency) are each disclosed individually in the file's own `notes`.
+
+**South Carolina** (`episcopal-south-carolina-2026.json`, source: "Diocesan Cycle of Prayer 2026" PDF).
+52 entries, full year. Each week's source prints two items -- the diocese's own local congregation/
+institution AND that week's entry from the worldwide Anglican Cycle of Prayer (in blue italics) -- both
+recorded as this entry's `subjects` in the order printed; the Anglican Cycle of Prayer item is recorded
+as `type: "category"` rather than `"province"`, since this schema restricts `"province"`/`"diocese"`
+subject types to `scope: "communion"` files only, and this file's scope is the default `"diocese"`.
+Bishop's-visitation markers (printed in green with "(visitation)" appended) are stripped from `name`
+and disclosed in that subject's own `note` instead. Several institutional subjects outside South Carolina
+itself (Kanuga Camp in North Carolina, Sewanee in Tennessee) are transcribed as printed, being the
+diocese's own named subjects for that week. Confirmed distinct from the separate Diocese of Upper South
+Carolina, not yet in this corpus.
+
+**South Dakota** (`episcopal-south-dakota-2026.json`, source: diocesan PDF, filename stale-dated
+"24-25" but internally titled "2025-2026"). **328 entries -- a genuine DAILY cycle**, not weekly as the
+roster's own pre-fetch research had assumed: every calendar day carries its own printed content (a
+Sunday's parish list, or on other days a clergy birthday/ordination anniversary, a saint's day, a BCP
+prayer topic, or a diocesan committee/deanery). Year-boundary handling follows the established Atlanta/
+North Carolina/Oklahoma "Advent [year-1] through Christ the King [year]" precedent: the 32-day 2025
+Advent lead-in is disclosed-and-excluded, `entries` beginning January 1, 2026. Sixteen dates have only a
+bare calendar-headline with no separate prayer-focus line, so that headline is recorded as both
+`liturgicalNote` and a `category` subject rather than leaving `subjects` empty or fabricating content;
+two calendar days (March 9, July 31) have no printed content at all in the source (confirmed by viewing
+rendered page images) and were left out entirely rather than invented. Three day-numbering overflow
+errors in the source's own printed digits were resolved by folding misdated content into the nearest
+date it actually belongs to; two Sunday-ordinal-count regressions in the source's own printed headlines
+were preserved exactly as printed, not corrected. Every named congregation, including the companion
+Diocese of East Tennessee's congregations that appear paired with South Dakota's own most Sundays, is
+recorded as `parish` (not `category`), per subjectShape's definition of a specific, individually named
+congregation. A handful of typos, a stray trailing page-layout digit dropped from two `place` values,
+and one Sunday headline's mixed-case anomaly are each disclosed rather than silently corrected.
+
+**Southeast Florida** (`episcopal-southeast-florida-2026.json` + `episcopal-southeast-florida-2027.json`,
+source: the diocese's own live Next.js web page, fetched and parsed directly from its rendered HTML
+table/list markup rather than a PDF -- so the corpus's standing PDF multi-column-interleaving caveat
+does not apply here). The page's own single cycle spans September 6, 2026 through August 22, 2027 (51
+weekly entries) -- split into two files per the established Delaware two-file-split precedent for the
+same Sept-to-Aug shape: 17 entries (Sept-Dec 2026) and 34 entries (Jan-Aug 2027), both substantial
+halves rather than a lopsided lead-in, needed for the app's own year-keyed file lookup to find the 2027
+dates at all. The three roster-supplied spot-check dates (Sept 27 2026 "Christ Memorial Chapel, Hobe
+Sound"; Dec 27 2026 "The Episcopal Church Women (ECW)"; Aug 22 2027 "The Brotherhood of St. Andrew")
+were independently re-verified against the live page and matched exactly. Several list items naming two
+distinct entities were split into separate subjects only when each named its own complete place;
+one-place compound items were kept as a single subject -- both patterns disclosed with worked examples
+in `notes`. `diocese` field uses the diocese's own consistent self-identification, "The Episcopal Church
+in Southeast Florida" (never "Diocese of Southeast Florida" anywhere on its own site).
+
+**Southern Ohio** (`episcopal-southern-ohio-2026.json`, source: "2026 Cycle of Prayer" PDF, a single-page
+table with "Congregation 1"/"Congregation 2"/"DSO Commission, Entity or Partner" columns). 52 entries,
+full year, Jan 4-Dec 27. Congregation cells recorded as `parish`; the commission/entity column and three
+weeks naming "Our bishops"/"Our priests"/"Our deacons" recorded as `category`. Two congregation names
+that wrap across two printed lines in the source were rejoined into a single name, confirmed against
+rendered page images (not just the linearized text extraction) before trusting the join. One entry
+("Indian Hill Church") gives no separate city because the congregation's own name IS the village name --
+`place` inferred from that name, disclosed as a judgment call. No liturgical Sunday names appear anywhere
+in this source; `liturgicalNote` is null throughout.
+
+**Southern Virginia: BLOCKED.** SiteGround's own "Robot Challenge Screen" JS proof-of-work bot protection
+confirmed via curl, WebFetch, AND the r.jina.ai reader-proxy workaround from batch 10 -- all three blocked
+identically. No Drive mirror exists for this diocese in the roster's own uploaded-files list. Reported to
+Josh; no file created, nothing fabricated or worked around further.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All five (`san-diego`, `south-carolina`, `south-dakota`, `southeast-florida`, `southern-ohio`) already
+matched the directory's own slugs exactly, no renaming needed. All 5 registered in
+`CYCLES_OF_PRAYER_DIOCESES` (6 files, since Southeast Florida split in two). `npm run audit:cycles-of-
+prayer`: PASS, 68 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`. All three standing
+audit scripts unchanged at their 13/3/9 baselines. San Diego's inclusion of five tail-end 2025 dates
+within a `year: 2026`-labeled file was checked against the already-shipped `episcopal-california-2026.json`
+and confirmed to match that established, working precedent rather than being a new issue. Live-verified
+all 5 dioceses (7 sample points, including South Dakota's Jan 1/Nov 27 boundary dates and both Southeast
+Florida files' roster-verified spot-check dates, which matched exactly) in headless Chromium against the
+app's own actual runtime. Screenshot-verified South Dakota rendering correctly in an actual Morning
+Prayer office (correct date commemoration "Saint Michael and All Angels", both Cycle of Prayer tiers
+present in the sidebar, drop-cap intact) -- applying the Morning-Prayer-forcing technique established in
+batch 10 up front. Zero new console errors beyond the pre-documented sandbox font-CDN block.
+`js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).

@@ -1,0 +1,227 @@
+{
+  "id": "episcopal-san-diego-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of San Diego",
+  "dioceseShort": "san-diego",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"2026-Diocesan-Cycle-of-Prayer.pdf\", fetched directly from https://edsd.org/wp-content/uploads/2025/11/2026-Diocesan-Cycle-of-Prayer.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own document deliberately spans a full liturgical year across two calendar years, titled 'Last Sunday after Pentecost, 2025 – Advent I, 2026' on its own cover line: it opens with the week of November 23, 2025 (Christ the King) and closes with the week of November 22, 2026 (also Christ the King, the Sunday immediately before Advent I 2026). Per this corpus's existing precedent for a source whose own declared range spans a year boundary (episcopal-california-2026.json), the entries that fall before January 1, 2026 are included in this '-2026' file rather than split out or dropped.",
+    "The source's own printed year is wrong for eleven of its 53 entries, verified against the real day-of-week for each printed month/day (every entry in this cycle is a Sunday). The five entries headed 'The week of November 30, 2026' through 'The week of December 28, 2026' are printed with year 2026, but November 30 / December 7 / 14 / 21 / 28 are Sundays only in 2025 (they fall on a Monday in 2026) -- corrected here to 2025, which also makes them fall immediately before the January 4, 2026 entry that follows (itself printed correctly and a real Sunday). Symmetrically, the six entries headed 'The week of October 18, 2025' through 'The week of November 22, 2025' are printed with year 2025, but October 18 / 25 and November 1 / 8 / 15 / 22 are Sundays only in 2026 (they fall on a Saturday in 2025) -- corrected here to 2026, continuing directly from the October 11, 2026 entry that precedes them. This reads as a leftover, not-fully-updated year label carried over from an earlier edition of the same template rather than a deliberate date choice; correcting only the `date` field's year (while leaving every printed word of each entry's own content untouched) preserves this schema's required ascending-date ordering and keeps `date` a genuine calendar Sunday, which the source's own printed year would not. Printed-vs-corrected years, for the record: Nov 30 / Dec 7 / Dec 14 / Dec 21 / Dec 28 printed '2026', corrected to 2025; Oct 18 / Oct 25 / Nov 1 / Nov 8 / Nov 15 / Nov 22 printed '2025', corrected to 2026.",
+    "Non-congregation prayer subjects (diocesan ministries, named intentions, general reflections with no specific congregation) are recorded as `category` subjects using the source's own full printed sentence as `name`, verbatim, including its own leading 'For' where the source has one -- following this corpus's existing Idaho precedent (episcopal-idaho-2026.json) for treating a full printed intercession sentence as a category name rather than manufacturing a shorter label.",
+    "Five entries (March 8, June 7, September 6, October 11, October 25) carry the source's own extended, one-time collect-style prayer running well beyond a single sentence ('Camp Stevens Sunday', 'For Gun Violence Prevention', 'For the care of all of creation', 'For Deacons throughout the Church', 'For migrants and all who minister to them'). Rather than putting the entire paragraph into `name`, the source's own short heading (the text before its own colon) is used as that category subject's `name`, and the full prayer text that follows is preserved verbatim in that subject's `note` field so no content is lost. Each prayer's own closing 'Amen'/'Amen.' punctuation is preserved exactly as printed -- some of the source's own prayers end with a trailing period, some do not.",
+    "The week of March 1, 2026 (Second Sunday in Lent) prints two near-identical lines back to back -- 'For all the presenters and participants in Leadership Academy at Trinity, Escondido' and 'For all the presenters and participants in Leadership Academy' -- the second missing only the location clause. This reads as a leftover draft line not removed when the entry was finalized, but both are preserved verbatim as separate category subjects per this corpus's rule against silently dropping source content.",
+    "'Clergy and people of Christ Church Coronado' (January 25) omits the comma the source otherwise consistently uses between a congregation's name and its place; parsed here as parish name 'Christ Church', place 'Coronado'. 'Clergy and people of St. Brigid's in Oceanside' (November 15, 2026) uses 'in' rather than a comma; parsed as parish name 'St. Brigid's', place 'Oceanside'.",
+    "The source's own Deacons prayer (October 11 entry) prints 'Christ's service' with a straight apostrophe, two sentences after printing 'Christ’s redemptive love' with the curly apostrophe used everywhere else in the source. Preserved exactly as printed in each case rather than normalized to match.",
+    "The week of March 22, 2026 (Fifth Sunday in Lent) has no separate 'Clergy and people of' congregation line; its sole subject names the Nightwatch youth event, with St. Bartholomew's, Poway mentioned only as that event's host location for the morning, not given its own weekly rotation entry that week.",
+    "May 24, 2026's source line joins its parish and a second subject into one sentence ('Clergy and people of St. Thomas of Canterbury, Temecula and the children and teachers of St. Thomas Preschool'), unlike the source's usual pattern of two separate sentences (compare August 9 and 16's 'The children and teachers of St. ... Preschool', each its own capitalized sentence). Split here into two subjects for consistency with this file's parish/category separation elsewhere; the second subject's name is kept lowercase ('the children and teachers of St. Thomas Preschool') exactly as it reads mid-sentence in the source, not capitalized to match the other weeks' phrasing.",
+    "The phrase introducing each week's named congregation varies across the source ('Clergy and people of', 'Clergy and people of:', 'For the clergy and people of', 'Leadership and people of'). This boilerplate is not part of the congregation's own name and is excluded from `name` consistently throughout, regardless of which variant introduces a given week.",
+    "Verified against the source's own rendered PDF pages (not only the linearized text extraction), per this corpus's standing rule: the document is a single-column layout with no multi-column interleaving risk, and every entry below was visually cross-checked against the rendered pages before this file was finalized."
+  ],
+  "entries": [
+    { "date": "2025-11-23", "liturgicalNote": "Last Sunday after Pentecost/Christ the King", "subjects": [
+      { "type": "parish", "name": "Resurrection", "place": "Ocean Beach" },
+      { "type": "category", "name": "Let us give thanks this week for blessings we have received" }
+    ]},
+    { "date": "2025-11-30", "liturgicalNote": "First Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Christ the King", "place": "Alpine" },
+      { "type": "category", "name": "For the growth of service in the diocese" }
+    ]},
+    { "date": "2025-12-07", "liturgicalNote": "Second Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Bonita" }
+    ]},
+    { "date": "2025-12-14", "liturgicalNote": "Third Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Michael’s by-the-Sea", "place": "Carlsbad" }
+    ]},
+    { "date": "2025-12-21", "liturgicalNote": "Fourth Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Borrego Springs" },
+      { "type": "category", "name": "For those experiencing homelessness and those who journey at their side" }
+    ]},
+    { "date": "2025-12-28", "liturgicalNote": "First Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "Holy Cross", "place": "Carlsbad" },
+      { "type": "category", "name": "For the growth of evangelism in the diocese" }
+    ]},
+    { "date": "2026-01-04", "liturgicalNote": "Second Sunday after Christmas", "subjects": [
+      { "type": "category", "name": "On this first Sunday of the year, intercessions will be offered for each congregation, for the clergy and wardens, and for all disciples in Christ—as it is the first Sunday in The Year of Evangelism—with particular petitions for sharing our Christian faith and deepening relationships with God and one another." }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "First Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Chula Vista" },
+      { "type": "category", "name": "For all those being baptized and those renewing their baptismal covenant in our diocese" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "Second Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Escondido" },
+      { "type": "category", "name": "For the children and leaders at Epiphany Camp at Camp Stevens" },
+      { "type": "category", "name": "For our Ecumenical partnerships during the Week of Christian Unity" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "Third Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Coronado", "note": "Source prints 'Clergy and people of Christ Church Coronado' with no comma between name and place, unlike every other week." },
+      { "type": "category", "name": "The students, teachers, and leadership of Christ Church Day School" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "Fourth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Fallbrook" },
+      { "type": "category", "name": "For all who are discerning a call to holy orders" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "Fifth Sunday after Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Peter’s", "place": "Del Mar" },
+      { "type": "category", "name": "For our President, for the leaders of the nations, and for all in authority" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "Last Sunday after Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Alban’s", "place": "El Cajon" },
+      { "type": "category", "name": "For the youth and leaders at the Epiphany Retreat at Camp Stevens" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "First Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "Sts. Peter and Paul", "place": "El Centro" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "Second Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Andrew the Apostle", "place": "Encinitas" },
+      { "type": "category", "name": "For all the presenters and participants in Leadership Academy at Trinity, Escondido" },
+      { "type": "category", "name": "For all the presenters and participants in Leadership Academy", "note": "Printed as a separate, near-duplicate line immediately after the entry above (missing only its location clause) -- kept as printed rather than merged or dropped; see file-level notes." }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "Third Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Hugh’s", "place": "Idyllwild" },
+      { "type": "category", "name": "Camp Stevens Sunday", "note": "God of the oak and the pine, of sunrise and sunset, and of healing and love, hear our prayers. Celebrate those who love Camp Stevens and those who are discovering camp today for the first time. Keep us mindful of the rights and needs of others through Camp Stevens’ mission work of transformation grounded in the values of openness, connection, gratitude, and wonder. Amen." }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "Fourth Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Hemet" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "Fifth Sunday in Lent", "subjects": [
+      { "type": "category", "name": "For the youth and leadership of Nightwatch-- waking up in St. Bartholomew’s, Poway this morning.", "note": "No separate congregation line this week; St. Bartholomew's, Poway is named only as this event's host location, not given its own rotation entry." }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "Members of Religious Orders, especially the Society of St. Paul" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter", "subjects": [
+      { "type": "category", "name": "“Christ is risen, the Lord is risen indeed!”" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "Second Sunday after Easter", "subjects": [
+      { "type": "category", "name": "For the women, children and leadership of Comunidad de Luz" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "Third Sunday after Easter", "subjects": [
+      { "type": "parish", "name": "St. James by-the-Sea", "place": "La Jolla" },
+      { "type": "category", "name": "The students, teachers, and staff of The Bishop’s School, La Jolla" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "Fourth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s by-the-Lake", "place": "Lake Elsinore" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "Fifth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Philip the Apostle", "place": "Lemon Grove" },
+      { "type": "category", "name": "For all our retired clergy and their spouses, all clergy widows and widowers" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "Sixth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Indio" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "Seventh Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Matthew’s", "place": "National City" },
+      { "type": "category", "name": "For the richness and diverse cultures in the church and the essential role of intercultural dialogue and development" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Thomas of Canterbury", "place": "Temecula" },
+      { "type": "category", "name": "the children and teachers of St. Thomas Preschool", "note": "Printed joined to the same sentence as the St. Thomas of Canterbury entry ('...and the children and teachers of St. Thomas Preschool'); split out here as its own subject, name kept lowercase as printed mid-sentence." },
+      { "type": "category", "name": "For the Anglican Communion and the ministries of all its provinces" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "First Sunday After Pentecost", "subjects": [
+      { "type": "parish", "name": "All Souls’", "place": "San Diego" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "Second Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Intercessions are offered by each congregation for its own corporate life, clergy and lay leadership, and its organizations; and for the city and civic leadership in its community" },
+      { "type": "category", "name": "For Gun Violence Prevention", "note": "God of Justice, help us, your church, find our voice. Empower us to change this broken world and to protest the needless deaths caused by gun violence. Give us power to rise above our fear that nothing can be done and grant us the conviction to advocate for change. Amen." }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "Third Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The fifth bishop of San Diego, the Standing Committee, and the Diocesan Staff" },
+      { "type": "category", "name": "The Episcopal Church Center in Ocean Beach, its various ministries, and the people it serves." }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "Fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Margaret’s", "place": "Palm Desert" },
+      { "type": "category", "name": "For all doing the work of racial healing and reconciliation, especially in our diocese" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "Fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Paul in the Desert", "place": "Palm Springs" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "Sixth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Francis", "place": "Pauma Valley" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "Seventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Bartholomew’s", "place": "Poway" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "Eighth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Mary’s in-the-Valley", "place": "Ramona" },
+      { "type": "category", "name": "For the LGBTQIA+ Inclusion Task Force and for all those celebrating PRIDE throughout the Episcopal Diocese of San Diego" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "Ninth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "San Diego" },
+      { "type": "category", "name": "For the EDSD youth delegation to the Province VIII Youth Pilgrimage in Hawaii" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "Tenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Good Samaritan", "place": "San Diego" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "Eleventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s by-the-Sea", "place": "San Diego" },
+      { "type": "category", "name": "The children and teachers of St. Andrew’s Preschool" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "Twelfth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. David’s", "place": "San Diego" },
+      { "type": "category", "name": "The children and teachers of St. David’s Preschool" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "Thirteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Dunstan’s", "place": "San Diego" },
+      { "type": "category", "name": "For Agape House, its ministries, and the students of SDSU and UCSD" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "Fourteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "San Diego" },
+      { "type": "category", "name": "Diocesan Institutions & Organizations, especially Episcopal Community Services, RefugeeNet, Vida Joven, and St. Paul’s Senior Services" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "Fifteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "San Diego" },
+      { "type": "category", "name": "For the care of all of creation", "note": "Almighty and Everliving God, you bring forth and sustain every living thing; help us grow in compassion and care for the multitude of your creatures, that we may see them not as objects for our use, but as brothers and sisters that sing your never-ending praise. Through Jesus Christ, our Shepherd and guide, who with you and the Spirit lives and reigns, one God, now and forever. Amen" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "Sixteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Paul’s Cathedral", "place": "San Diego" },
+      { "type": "category", "name": "Executive Council, Standing Committee, Commission on Ministry, Diocesan Committees and Ministries" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "Seventeenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Timothy’s", "place": "San Diego" },
+      { "type": "category", "name": "Our diocesan clergy as they gather for Clergy Conference" },
+      { "type": "category", "name": "For our Ecumenical partnerships on the International Day of Peace, September 21" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "Eighteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Grace", "place": "San Marcos" },
+      { "type": "category", "name": "For our campus ministry at Cal State University San Marcos, its students and leaders" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "For the Episcopal Schools Celebration" },
+      { "type": "category", "name": "Dioceses of Province VIII: Alaska, Arizona, California, Eastern Oregon, El Camino Real, Hawaii, Idaho, Los Angeles, Micronesia, Navajoland, Nevada, Northern California, Olympia, San Diego, San Joaquin, Spokane, Taiwan, Utah, and Western Oregon." }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "La Mesa" },
+      { "type": "category", "name": "For Deacons throughout the Church", "note": "We pray for Deacons: Gracious God, we praise you for sending your Son Jesus Christ, who took on himself the form of a servant, and humbled himself, becoming obedient even to death on the cross. We praise you that you have highly exalted him, and made him Lord of all; and that, through him, we know that whoever would be great must be servant of all. Today we thank you for raising up among us faithful servants for the ministry of your Word and Sacraments, and especially those called to serve as deacons in your Church. We give thanks for all deacons, for their example in word and action, in love and patience, and in holiness of life. We thank you for your ministry of making Christ’s redemptive love known to us; for the ways they interpret the needs, concerns, and hopes of the world to us; for their proclamation of your Word; and for their leadership in our sacramental life. As your Son came not to be served but to serve, may our deacons continue to share in Christ's service, and come to the unending glory of him who, with you and the Holy Spirit, lives and reigns, one God, for ever and ever. Amen." }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "Twenty-First Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Vista" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "Twenty-Second Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Yuma" },
+      { "type": "category", "name": "For migrants and all who minister to them", "note": "Lord Jesus, when you multiplied the loaves and fishes, you provided more than food for the body, you offered us the gift of yourself, the gift which satisfies every hunger and quenches every thirst! Your disciples were filled with fear and doubt, but you poured out your love and compassion on the migrant crowd, welcoming them as brothers and sisters. Amen" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints Sunday", "subjects": [
+      { "type": "category", "name": "The faculty and students of the West Coast Collaborative" },
+      { "type": "category", "name": "Clergy, Delegates, and official youth presence to the 53rd Annual Diocesan Convention" },
+      { "type": "category", "name": "For our nation’s elections and all elected officials" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "Twenty-Fourth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Chaplains and ministries of the Armed Forces" },
+      { "type": "category", "name": "For all Veterans of the Armed Services" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "Twenty-Fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Brigid’s", "place": "Oceanside", "note": "Source prints 'Clergy and people of St. Brigid's in Oceanside' -- 'in' rather than the comma used elsewhere." },
+      { "type": "category", "name": "For musicians and those that bring art into our lives" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Last Sunday after Pentecost/Christ the King", "subjects": [
+      { "type": "parish", "name": "Resurrection", "place": "Ocean Beach" },
+      { "type": "category", "name": "Let us give thanks this week for blessings we have received" }
+    ]}
+  ]
+}

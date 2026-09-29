@@ -492,28 +492,41 @@ Pittsburgh's PDF filename claimed September-December coverage but its own conten
 confirmed from the content, not the filename. Full per-diocese detail:
 `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 11" entry.
 
+**Batch 12 (San Diego, South Carolina, South Dakota, Southeast Florida, Southern Ohio): DONE 2026-09-29 —
+5 of 6, Southern Virginia blocked.** South Dakota's source turned out to be a genuine DAILY cycle (328
+entries, not weekly as the roster's own pre-fetch note assumed). Southeast Florida's source is the
+diocese's own live Next.js web page (parsed from rendered HTML, not a PDF) and spans Sept 2026-Aug 2027,
+split into two files per the established Delaware two-file-split precedent. San Diego's source had 11
+entries with a verifiably wrong printed year (corrected per the established "verifiably wrong date" rule,
+same class as Idaho). **Southern Virginia blocked**: SiteGround's own "Robot Challenge Screen" bot
+protection defeated curl, WebFetch, AND the r.jina.ai reader-proxy workaround alike; no Drive mirror
+exists for it. Full per-diocese detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion
+batch 12" entry.
+
 **Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time.
-Alphabetically, the next batch starts after Rhode Island (~San Diego onward — wait, San Diego and San
-Joaquin are alphabetically between Rhode Island and South Carolina but San Joaquin is already ingested;
-check San Diego specifically, then South Carolina onward; Mississippi/Navajoland deliberately skipped,
-see above; check the roster/registry directly rather than trusting this note's ordering). No blocked
-links remain open as of this writing; if a future fetch gets blocked, report the exact URL to Josh per
-his standing offer rather than working around it — though try the reader-service/user-agent tricks from
-batch 10 first, since both resolved what looked like genuine blocks without needing Josh.
+Alphabetically, the next batch starts after Southern Ohio (Southern Virginia is blocked, see above —
+skip it and continue to Southwest Florida/Southwestern Virginia is already ingested, so check the
+roster/registry directly rather than trusting this note's ordering; Mississippi/Navajoland deliberately
+skipped, see above). **Southern Virginia is the one open blocked link** as of this writing — hold it and
+report the exact URL to Josh the next time he asks to see blocked links, per his standing preference,
+rather than surfacing it unprompted; if a future fetch gets blocked, try the reader-service/user-agent
+tricks from batch 10 first, since both resolved what looked like genuine blocks without needing Josh.
 
 **~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 59 are now ingested into this corpus, ~28 remain** (separately, 18 dioceses have no verified
+historical); 64 are now ingested into this corpus, ~23 remain** (separately, 18 dioceses have no verified
 source at all per Josh's own research — see `tecDioceseRoster.noSourceFound` in schema.json — those
 won't get ingested unless a source turns up).
 
-**62 files currently in the corpus, all passing the validator:** 55 diocese-level, `cycleType: "dated"`
-— Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
-Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton,
-Florida, Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine,
-Maryland, Massachusetts, Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina,
-North Dakota, Northern California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia,
-Pennsylvania, Pittsburgh, Puerto Rico, Rhode Island, Nebraska, Newark, New Jersey, Rio Grande, San
-Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 4 diocese-level, `cycleType:
+**68 files currently in the corpus, all passing the validator:** 60 diocese-level, `cycleType: "dated"`
+(58 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
+Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf Coast, Central New
+York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton, Florida, Georgia,
+Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland, Massachusetts,
+Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, North Dakota, Northern
+California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia, Pennsylvania,
+Pittsburgh, Puerto Rico, Rhode Island, San Diego, South Carolina, South Dakota, Southeast Florida (2
+files, 2026+2027), Southern Ohio, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
+Virginia, Western Massachusetts, Colorado; 4 diocese-level, `cycleType:
 "monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas; 1 diocese-level, `cycleType:
 "annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
 (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
