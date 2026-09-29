@@ -266,16 +266,22 @@ file); `js/office-ui.js` gained `renderCommunionCycleOfPrayerLine`/
 `refreshCommunionCycleOfPrayerForCurrentYear`, called unconditionally (no profile gate, unlike the
 diocese tier) right alongside the existing diocese-tier render/prefetch. Renders "Today, the Anglican
 Cycle of Prayer asks us to pray for X." as its own line, appearing BEFORE the existing "This week, the
-Diocesan Cycle of Prayer..." line, matching the Communion-then-Diocesan tier order (Provincial/Parish
-tiers still don't render anything). **Live-verified in headless Chromium** (BCP Morning AND Evening Prayer,
+Diocesan Cycle of Prayer..." line, matching the Communion-then-Diocesan tier order (the Parish tier
+still doesn't render anything; see below — the Provincial tier turned out not to exist, see below too).
+**Live-verified in headless Chromium** (BCP Morning AND Evening Prayer,
 Western Oregon diocese declared): 2026-10-05 correctly shows "The Diocese of Bukuru (The Church of
 Nigeria (Anglican Communion))"; 2026-09-13 (a Sunday, `type: "province"` subject) correctly shows just
 "The Anglican Church in Aotearoa, New Zealand and Polynesia" with no parenthetical; dates outside the
 file's Sept-Dec coverage (2026-04-12, 2026-01-15) correctly show no Communion line at all while the
 existing Diocesan line (including the "This is your own parish's week" note) is unaffected; zero new
-console errors. `index.html`'s `js/office-ui.js` cache-bust bumped to `?v=319`. No Provincial-tier
-(TEC-wide, as distinct from this worldwide Communion cycle) source located yet. Diocesan/Parish tiers:
-see the corpus entry below.
+console errors. `index.html`'s `js/office-ui.js` cache-bust bumped to `?v=319`. **Provincial tier
+(TEC-wide, as distinct from the worldwide Communion cycle) — RESOLVED 2026-09-29, per Josh's own direct
+observation: no such thing appears to exist.** TEC does not separately publish its own province-wide
+cycle of prayer distinct from the worldwide Anglican Cycle of Prayer above (which already rotates
+through TEC's own dioceses as part of its worldwide cycle, e.g. the Diocese of California entry above).
+Not a gap in this work — there is nothing further to search for here. The four-tier framing in Josh's
+original framing effectively collapses to three working tiers for this app: Communion, Diocesan, Parish.
+Diocesan/Parish tiers: see the corpus entry below.
 
 **Cycle of Prayer corpus (`data/cycles-of-prayer/`) — storage/schema exist for all three tiers;
 app-UI wiring exists for the diocese AND communion tiers, NOT the parish tier; content ingestion is

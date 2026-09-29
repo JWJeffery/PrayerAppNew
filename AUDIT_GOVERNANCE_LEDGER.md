@@ -24533,7 +24533,24 @@ existing diocese/parish-note logic was not rewritten, only prefixed. `index.html
 0 findings -- this was a rendering change only, no corpus file touched). Files touched: `js/cycles-of-
 prayer.js`, `js/office-ui.js`, `index.html`.
 
-**Still not done, unchanged from before:** the Provincial tier (no source) and the Parish tier
-(`episcopal-western-oregon-st-bede.json` -- ingested 2026-09-29 but still has no loader, registry, or
-render hook at all; surfacing "this is my household's day" remains an unraised product question, not a
-build task, per the entry above).
+**Still not done, unchanged from before:** the Parish tier (`episcopal-western-oregon-st-bede.json` --
+ingested 2026-09-29 but still has no loader, registry, or render hook at all; surfacing "this is my
+household's day" remains an unraised product question, not a build task, per the entry above). The
+Provincial tier is a separate case -- see the entry directly below.
+
+## 2026-09-29 (continued) -- Provincial tier RESOLVED: no separate TEC-wide cycle exists
+
+Josh, after seeing the Communion tier working live: "There does not appear to be a provincial cycle of
+prayer." This settles what the earlier entries in this file and `RESUME_PROJECT_NOTE.md` had carried as
+"not yet located" -- it is not a research gap to keep searching. The Episcopal Church (the Province)
+does not separately publish its own province-wide cycle of prayer distinct from the worldwide Anglican
+Cycle of Prayer already ingested (`anglican-communion-2026.json`) -- that worldwide cycle already rotates
+through TEC's own dioceses as part of its normal rotation (e.g. this same file's own "The Diocese of
+California - The Episcopal Church" entry, Oct 22), which is presumably why a separate provincial layer
+was never found: there isn't a gap for it to fill. Per this project's own standing rule (disclose,
+don't guess, and don't keep re-searching a question Josh has directly answered), this is now closed, not
+merely deprioritized. The four-tier "Communion / Provincial / Diocesan / Parish" framing Josh originally
+used to describe TEC's Authorized Intercessions practice effectively collapses to three working tiers
+for this app going forward: Communion (done, rendering live), Diocesan (done, rendering live, content
+ongoing), Parish (ingested for St. Bede's, not yet wired in). `RESUME_PROJECT_NOTE.md` updated to match
+-- no code change, this is a documentation-only correction.
