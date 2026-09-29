@@ -1,0 +1,179 @@
+{
+  "id": "episcopal-san-joaquin-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of San Joaquin",
+  "dioceseShort": "san-joaquin",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer 2026",
+  "sourceFile": "\"dioceasn cycle of prayer 2026.docx\" [sic, source's own filename typo], provided directly by Josh via Google Drive (file id 13OwPvF9Uhr1hZqwk1D3-c1xPh8eUZv0E, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, Jan 4 - Dec 27 (52 weeks). The source's own header warns 'this might have changes throughout the year' -- several individual weeks also carry their own '(this may change)' parenthetical, preserved verbatim on those subjects rather than stripped.",
+    "TWO DATE ERRORS FOUND AND CORRECTED, same method as episcopal-idaho-2026.json's (batch 2): the source's weekly dates otherwise form an unbroken Sunday sequence anchored on the confirmed Sunday Jan 4, 2026 (...Sep 6, 13, 20, [next]...; ...Oct 4, [next], 18, 25...). 'September 28 -- Holy Trinity...' breaks that sequence (28 is a Monday) and is corrected here to **September 27**. 'October 12 -- St Francis...' likewise breaks the sequence (12 is a Monday) and is corrected here to **October 11**. Both are checkable against the confirmed Sunday anchor, not guesses.",
+    "Each week's clergy/lay-leader description is folded into that week's own `parish` subject as its `note` field, per the source's own single-sentence phrasing ('St X in City, and their priest, the Rev. Y') rather than split into a separate `category` subject -- matching this session's own working decision for this diocese specifically (distinct from Great Lakes/Kentucky's own convention, where a subject's note is a short title, not a full clause). The source's own leading 'and'/connector before the clergy clause is trimmed from each `note` (e.g. printed 'and their priest, the Rev. Bob Woods' becomes note 'their priest, the Rev. Bob Woods') since it reads as a dangling conjunction once separated into its own field -- no name, title, or fact is altered by this trim, only the connective word joining it to the parish name.",
+    "Several weeks (diocesan leadership, commissions, seminarians, Retired Priests, the bishop transition) name no specific parish at all -- recorded as `category` subjects, their `name` the source's own sentence verbatim.",
+    "The diocese's own bishop changed mid-year: January 11 and July 19/26 name 'Bishop David Rice, our Bishop' vs. 'The Rt Rev Greg Kimura, our Bishop' -- both are the source's own real, different wording for different weeks (April 19's own entry is 'The ordination, consecration and installation of our new Bishop, The Rt. Rev. Greg Kimura'), not a transcription inconsistency.",
+    "Two source typos preserved verbatim, per this corpus's standing rule against silently correcting a diocese's own published document: 'Ms Cindy Smmith' (July 12, evidently 'Smith') and 'Ant-Racism' (December 13, evidently 'Anti-Racism' -- notably the source itself spells it correctly, 'Anti-Racism Commission', on June 14, so this is a one-off typo, not the diocese's own preferred spelling).",
+    "A trailing comma after November 8's clergy clause ('...the Rev. Christian Hagan,') is dropped as a plain punctuation/extraction artifact, not a content change."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Presiding Bishop, Sean Rowe, and his staff, and Julia Alaya Harris, the President of the House of Deputies and her staff" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Bishop David Rice, our Bishop, Canon Anna Carmichael, our Canon to the Ordinary, and Padre Nelson Serrano, our Latino Missioner" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Sherrian's Episcopal Church", "place": "Kernville", "note": "their priest, the Rev. Bob Woods" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Michael's Episcopal Church", "place": "Ridgecrest", "note": "their priest, the Rev. Jorge Pallares and their deacon, the Rev. Cathy Kline" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Bakersfield", "note": "their priest, the Rev. Luis Rodriguez" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Saviour", "place": "Hanford", "note": "their priest, the Rev. Luke Martinez" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John's Episcopal Church", "place": "Tulare", "note": "their deacon, the Rev. Terry March, their priest, the Rev. Luke Martinez & the Rev. Nelson Serrano, church planter of the Spanish speaking congregation" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Visalia", "note": "their priest, the Rev. Suzy Ward" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St James Cathedral", "place": "Fresno", "note": "their deacon, the Rev. Nancy Key, and Rev. Nelson Serrano the church planter of the Spanish speaking congregation" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Raphael's Episcopal Church", "place": "Oakhurst", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity Episcopal Church", "place": "Madera", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Resurrection", "place": "Merced", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Francis Episcopal Church", "place": "Turlock", "note": "their supply priest, the Rev. Lyn Morlan and their deacon, the Rev. Marilee Muncey" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Modesto", "note": "their priest, the Rev. Brian Dawson and their deacon, the Rev. Greg Masztal" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John the Baptist Episcopal Church", "place": "Lodi", "note": "their priest, the Rev. Betsy McElroy" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The ordination, consecration and installation of our new Bishop, The Rt. Rev. Greg Kimura" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Anne's Episcopal Church", "place": "Stockton", "note": "their priest, the Rev. Rebecca Blair, and their assisting priest, the Rev. Christian Hagan" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Clare's Episcopal Church", "place": "Avery", "note": "their lay leaders and supply priest, the Rev. Lyn Morlan" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St James Episcopal Church", "place": "Sonora", "note": "their priest, the Rev. Karen Matthews and their deacons, the Rev. Amy Larsen & the Rev. Carolyn Woodall" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Matthew's Episcopal Church", "place": "San Andreas", "note": "their priest Rev. Karen Matthews" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John the Evangelist Episcopal Church", "place": "Stockton", "note": "their deacon, the Rev. Steve Bentley and their lay leaders" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For our seminarians, Mr Martin Brown and Ms Emily Burnias, and those in discernment for Holy Orders" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Immigration Commission, SJRAISE, and their co-chairs, Mr Jonathan Partridge and Deacon Cathy Kline" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Anti-Racism Commission, and their co-chairs, Dr Barbara Vassell and Deacon Steve Bentley" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Creation Care Commission, and their chair, Ms Charlene Martin" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Commission on Ministry, and their co-chairs, Rev. Luke Martinez and Dr Nancy Silva" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Diocesan Council, and their Vice-Chair, Ms Jan Dunlap" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Standing Committee, and their President, Ms Cindy Smmith" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Presiding Bishop, Sean Rowe, and his staff, and Julia Alaya Harris, the President of the House of Deputies and her staff" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rt Rev Greg Kimura, our Bishop, Canon Anna Carmichael, our Canon to the Ordinary, and Padre Nelson Serrano, our Latino Missioner" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Sherrian's Episcopal Church", "place": "Kernville", "note": "their priest, the Rev. Bob Woods" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Michael's Episcopal Church", "place": "Ridgecrest", "note": "their priest, the Rev. Jorge Pallares and their deacon, the Rev. Cathy Kline" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Bakersfield", "note": "their priest, the Rev. Luis Rodriguez" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Saviour", "place": "Hanford", "note": "their priest, the Rev. Luke Martinez" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John's Episcopal Church", "place": "Tulare", "note": "their deacon, the Rev. Terry March, their priest, the Rev. Luke Martinez, and the Rev. Nelson Serrano, the church planter of the Spanish speaking congregation" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Visalia", "note": "their supply priest, the Rev. Gail Bernthal (this may change)" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St James Cathedral", "place": "Fresno", "note": "their deacon, the Rev. Nancy Key, and Rev. Nelson Serrano the church planter of the Spanish speaking congregation" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Raphael's Episcopal Church", "place": "Oakhurst", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity Episcopal Church", "place": "Madera", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Resurrection", "place": "Merced", "note": "their lay leaders and supply priest, the Rev. Kathie Galicia" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Francis Episcopal Church", "place": "Turlock", "note": "their supply priest, the Rev. Lyn Morlan and their deacon, the Rev. Marilee Muncey (this may change)" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Paul's Episcopal Church", "place": "Modesto", "note": "their priest, the Rev. Brian Dawson and their deacon, the Rev. Greg Masztal" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John the Baptist Episcopal Church", "place": "Lodi", "note": "their priest, the Rev. Betsy McElroy" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St John the Evangelist Episcopal Church", "place": "Stockton", "note": "their deacon, the Rev. Steve Bentley and their lay leaders (this may change if they get a priest)" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Anne's Episcopal Church", "place": "Stockton", "note": "their priest, the Rev. Rebecca Blair, and their assisting priest, the Rev. Christian Hagan" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Clare's Episcopal Church", "place": "Avery", "note": "their lay leaders and supply priest, the Rev. Lyn Morlan" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St James Episcopal Church", "place": "Sonora", "note": "their priest, the Rev. Karen Matthews and their deacons, the Rev. Amy Larsen & the Rev. Carolyn Woodall" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Matthew's Episcopal Church", "place": "San Andreas", "note": "their priest Rev. Karen Matthews" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the ministry and service of our Retired Priests" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the ministry of our social justice commissions, SJRAISE, Ant-Racism and Creation Care, and their chairs, members, and partner organizations" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For Commission on Ministry, their co-chairs, Rev. Luke Martinez and Dr Nancy Silva, and all those in discernment and the ordination process" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For Diocesan Council and Standing Committee and their guidance and ministry to the diocese" }
+    ]}
+  ]
+}

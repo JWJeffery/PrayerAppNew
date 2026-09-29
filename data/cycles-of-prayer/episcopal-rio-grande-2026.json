@@ -1,0 +1,207 @@
+{
+  "id": "episcopal-rio-grande-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of the Rio Grande",
+  "dioceseShort": "rio-grande",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocese of the Rio Grande 2026 Weekly Cycle of Prayer",
+  "sourceFile": "\"Weekly Cycle of Prayer 2026.pdf\", provided directly by Josh via Google Drive (file id 1DTuMBQq3vNVw2AXOVSnlBXROs3L8apiF, folder \"TEC Cycle of Prayer\"). A companion daily-cadence file for the same diocese also exists in the same folder (file id 1ALpNslzzYggcEUQWZJRwYGKQ5cINKfGq, \"Daily Cycle of Prayer 2026.pdf\") -- the roster spreadsheet lists this weekly file as primary and the daily one as an additional upload; only the weekly file is ingested here, matching this corpus's one-file-per-diocese convention. Reconsider with Josh if a diocese having both cadences turns out to matter.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained Jan 4 - Dec 20, 2026 (51 weeks) -- the source's own real scope, ending three weeks before the calendar year does; not a gap trimmed by this transcription.",
+    "'Diocesan Sta]-The Rev'd Canon Kristin Kopren...' (August 30) is a PDF text-extraction ligature corruption ('ff' misread) -- corrected to 'Diocesan Staff', per this corpus's own standing distinction between a source's own typo (preserved) and an extraction artifact (fixed), same rule already applied to this same source document's companion daily file.",
+    "Four weeks (March 22, May 31, December 6, December 13) print a named heading with a bulleted sub-list of member congregations/missions underneath it in the source's own layout -- each is recorded as ONE `category` subject (the heading as `name`) with its bulleted members preserved verbatim, semicolon-joined, in that subject's own `note`, per this session's working decision that a bullet-under-heading grouping signals one united ministry that week, distinct from the plain multi-line weeks elsewhere in the same file (which ARE split into separate subjects, one per line).",
+    "The source's own PDF line-wrapping occasionally split one sentence across a page/column break (e.g. 'Diocesan Youth Program/Camp Stoney,' wrapping onto the next line before 'The Rev'd Le Anna Brun-Missioner...'). Rejoined into complete sentences by ordinary reading, not treated as separate subjects, EXCEPT where the source's own blank-line spacing between adjacent short lines (e.g. 'Hispanic Ministries' / 'Ministry to the Displaced') signals genuinely separate subjects rather than one wrapped sentence -- judgment applied per week, not a single mechanical rule; flagged here for spot-checking.",
+    "October 11 required the most judgment of any week: the source's raw text runs 'Diocesan Youth Program/Camp Stoney, / The Rev'd Le Anna Brun-Missioner for Christian Formation The Safety and Care of all Children Bishop's Ridge, Christopher Jewell- Director' together with no reliable separator. Parsed here as three distinct `category` subjects -- 'Diocesan Youth Program/Camp Stoney, The Rev'd Le Anna Brun - Missioner for Christian Formation', 'The Safety and Care of all Children', 'Bishop's Ridge, Christopher Jewell - Director' -- by ordinary reading of where one clause/program ends and the next begins; worth a second look against the actual PDF page layout if this diocese is ever spot-checked.",
+    "Weeks naming a specific congregation ('X, City') are recorded as `parish` subjects; weeks naming a deanery, diocesan committee, ministry, or individual officer (no city given) are recorded as `category` subjects, matching this corpus's existing type distinction."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Michael Buerkel Hunn, Bishop" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Cathedral of St. John", "place": "Albuquerque" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Alamogordo" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Hope in the Desert", "place": "Albuquerque" },
+      { "type": "parish", "name": "St. Chad's", "place": "Albuquerque" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Albuquerque" },
+      { "type": "parish", "name": "St. Mary's", "place": "Albuquerque" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael & All Angels", "place": "Albuquerque" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Hispanic Ministries" },
+      { "type": "category", "name": "Ministry to the Displaced" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas of Canterbury", "place": "Albuquerque" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Artesia" },
+      { "type": "parish", "name": "St. Philip's", "place": "Belen" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity on the Hill", "place": "Los Alamos" },
+      { "type": "parish", "name": "St. Jerome's", "place": "Chama" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Española" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Carlsbad" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Big Bend Episcopal Mission", "note": "St. Paul's, Marfa; St. James', Alpine; Santa Inez, Terlingua; Saints Mary & Joseph, Lajitas" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Deming" },
+      { "type": "parish", "name": "Holy Cross", "place": "Edgewood" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "El Paso" },
+      { "type": "parish", "name": "Holy Spirit", "place": "El Paso" },
+      { "type": "parish", "name": "St. Alban's", "place": "El Paso" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "El Paso" },
+      { "type": "parish", "name": "St. Francis on the Hill", "place": "El Paso" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Farmington" },
+      { "type": "parish", "name": "Holy Spirit", "place": "Gallup" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "Hobbs" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "La Union" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Clovis" },
+      { "type": "parish", "name": "Trinity", "place": "Portales" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Las Cruces" },
+      { "type": "parish", "name": "St. James'", "place": "Las Cruces" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's/Peace", "place": "Las Vegas" },
+      { "type": "parish", "name": "St. Matthew's", "place": "Los Lunas" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Church in Lincoln County", "note": "Holy Mount, Ruidoso; St. Anne's, Glencoe; St. Matthias', Carrizozo" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Raton" },
+      { "type": "parish", "name": "St. Michael's", "place": "Tucumcari" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Ft. Stockton" },
+      { "type": "parish", "name": "Epiphany", "place": "Socorro" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis", "place": "Rio Rancho" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Roswell" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Faith", "place": "Santa Fe" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Bede's", "place": "Santa Fe" },
+      { "type": "parish", "name": "Holy Family", "place": "Santa Fe" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Taos" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Silver City" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Truth or Consequences" },
+      { "type": "parish", "name": "Christ Church", "place": "Hillsboro" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "La Sierra Encantada Deanery" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Southeast Deanery" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Northwest Deanery" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Borderland Deanery" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Staff - The Rev'd Canon Kristin Kopren, The Rev'd Canon JP Arrossa, Mary Jewell, The Venerable Patricia Soukup, Annette Chavez y De La Cruz, Church Administrators & Lay Assistants" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Convention" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Standing Committee and Trustees of the Property" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Council" },
+      { "type": "category", "name": "Congregations in Transition" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Commission on Ministry of the Baptized" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Committees & Organizations" },
+      { "type": "category", "name": "Wardens, Vestries & Bishop's Committees" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Youth Program/Camp Stoney, The Rev'd Le Anna Brun - Missioner for Christian Formation" },
+      { "type": "category", "name": "The Safety and Care of all Children" },
+      { "type": "category", "name": "Bishop's Ridge, Christopher Jewell - Director" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Rio Grande Borderland Ministries" },
+      { "type": "category", "name": "Immigrants and those seeking asylum in the U.S., Ana Reza - Bridge Chaplain" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Bishop's School for Ministries, The Very Rev'd Canon Simone Drinkwater - Dean" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Ministry of Men" },
+      { "type": "category", "name": "Brotherhood of St. Andrew" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Missionaries" },
+      { "type": "category", "name": "Congregational Life and Development" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Lay Liturgical Ministers" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired & Non-Parochial Clergy, Spouses & Widows" },
+      { "type": "category", "name": "Ministry of the Chaplain for Retired Clergy & Surviving Spouses" },
+      { "type": "category", "name": "The Health & Well-Being of Elders" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Women's Ministry" },
+      { "type": "category", "name": "Daughters of the King" },
+      { "type": "category", "name": "Ministry of Diocesan Canons" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Parish Schools", "note": "All Angels, Albuquerque; St. Mark's Montessori School, Albuquerque; St. John's, Alamogordo" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Emerging Congregations", "note": "Angel Fire; Magdalena" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Hospital, Military, & Prison Chaplains" },
+      { "type": "category", "name": "Campus Ministry" },
+      { "type": "category", "name": "Urban Native American Fellowship" }
+    ]}
+  ]
+}

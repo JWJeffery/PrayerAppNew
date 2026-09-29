@@ -336,85 +336,23 @@ the spreadsheet" for an unfetchable roster URL (Josh's own instruction for that 
 to happen in this note/ledger instead, flagged to Josh — raise this with him before relying on it
 silently.
 
-**Batch 3 (New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin): source text FULLY FETCHED
-and transcription approach FULLY DECIDED for 4 of 5, but NO BUILD SCRIPTS WRITTEN and NO JSON FILES
-CREATED YET** — this session got pulled onto the urgent UI bug reports in section 7's Priority 0 entry
-before finishing the build step. Do not re-fetch from Drive before checking this note; re-fetching
-would waste real effort (the initial title-based search for these 5 dioceses came back empty — none of
-their filenames mention the diocese name — and took a full investigative pass to resolve).
+**Batch 3 (New Jersey, Newark, Rio Grande, San Joaquin): DONE 2026-09-29 — built, validated, registered,
+live-verified.** The 4 tractable dioceses (all but Northern Indiana) were re-fetched fresh from Drive
+(the prior session's own transcription reasoning had never been written to a file, so it was re-derived
+against the live source rather than trusted from memory) and shipped as
+`episcopal-newark-2026.json`, `episcopal-new-jersey-2026.json`, `episcopal-rio-grande-2026.json`,
+`episcopal-san-joaquin-2026.json` — all `cycleType: "dated"`, `year: 2026`, all registered in
+`CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`). `npm run audit:cycles-of-prayer`: PASS, 22
+files, 0 findings. Live-verified end to end in headless Chromium against the app's own actual runtime
+(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`), not a standalone harness. Full per-diocese
+transcription detail (every disclosed judgment call): `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29
+"Diocese ingestion batch 3" entry — not repeated here. New Jersey (365-entry full daily cycle, the
+most structurally unusual file in the corpus so far) was built via a one-off Node parsing script
+(scratch-only, not committed) rather than hand-listed, then spot-checked against the source at every
+structurally ambiguous date before being trusted.
 
-- **First surprise, save yourself the rediscovery**: searching Josh's "TEC Cycle of Prayer" Drive
-  folder (id `1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew`) by diocese name found NOTHING for any of these 5 —
-  all their filenames are generic ("Diocesan Cycle of Prayer - Current.pdf", etc.), not named after
-  the diocese. Resolved by cross-referencing the roster spreadsheet
-  (`TEC Diocesan Cycles of Prayer 2026 - CURRENT 88 located.xlsx`, Drive id
-  `1F5-ylNoYBx5ecfxvdmPNv4uZTTRPf6CR`) against each generic file's actual content.
-- **Newark** — Drive id `1pzQxvQKN0H-MF4KaXtgtvMYDdret594o`
-  ("Diocesan-Cycle-of-Prayer-2026-May-Dec-updated-4-22-2026.docx"). Clean DOCX, full text already
-  read. Weekly, `cycleType: "dated"`, May 3 – Dec 27, 2026 only (35 weeks; source itself starts in
-  May, not a cross-year issue to trim, just its own real scope). Each week: 1-2 parishes (split into
-  separate `parish` subjects the same way Kentucky/Lexington's "X and Y" pairs were handled), a
-  "ministries of [clergy list]" `category` subject, a "work of [committee/ministry]" `category`
-  subject. Several weeks add a "churches in the [Saint]'s Regional Ministry Network" category with a
-  "Patron saint commemorated on [date]" note, and several November weeks add "In thanksgiving for the
-  ministry of the Rt. Rev. [name]" with a "Consecrated/Became Nth Bishop..." note — same subject/note
-  pattern already used successfully in Great Lakes (batch 1). Full 35-week transcription was already
-  worked out week-by-week in this session's own reasoning (not yet written to a file) — re-fetch the
-  source and it will transcribe quickly following the pattern above; nothing about it is ambiguous.
-- **Rio Grande (weekly)** — Drive id `1DTuMBQq3vNVw2AXOVSnlBXROs3L8apiF`
-  ("Weekly Cycle of Prayer 2026.pdf"). Clean text, one minor extraction ligature corruption confirmed
-  ("Diocesan Sta]" → "Diocesan Staff", an extraction artifact, not a diocese typo — fix it, don't
-  preserve it, per the schema's own distinction between source typos (preserve) and extraction
-  corruption (fix)). Weekly, `dated`, Jan 4 – Dec 20, 2026 (51 weeks, self-contained, doesn't reach
-  Dec 27 — that's the source's own scope, not a gap to fill). Most weeks are plain parish/category
-  lists (split multi-line weeks into separate subjects); FOUR weeks use a bulleted sub-list under one
-  named heading (Big Bend Episcopal Mission; Church in Lincoln County; Parish Schools; Emerging
-  Congregations) — treat the heading as ONE `category` subject with the bulleted members preserved
-  verbatim in that subject's own `note`, not as separate subjects (the source's own bullet-under-
-  heading formatting signals a single united ministry that week, distinct from the plain flat
-  multi-line weeks elsewhere in the same file). There is ALSO a companion **Rio Grande (daily)** file
-  (Drive id `1ALpNslzzYggcEUQWZJRwYGKQ5cINKfGq`, "Daily Cycle of Prayer 2026.pdf", numbered 1-31,
-  minor ligature corruption e.g. "Ma[hias'") — the roster spreadsheet lists the weekly file as
-  primary and the daily as an "Additional uploaded file"; this session's working decision was to
-  ingest the weekly one only (matching the corpus's one-file-per-diocese convention), not both —
-  reconsider with Josh if a diocese having both cadences turns out to matter.
-- **New Jersey** — Drive id `1eZJGIuXP4zeYXWHMsm9vjV7pUwIBarHI`
-  ("2026DiocesanCycleOfPrayer_2026May_UPDATED.pdf" per the roster). Clean text, full 365-day text
-  already read and transcribed day-by-day in this session's own reasoning (not yet written to a
-  file). **This is a genuinely different shape from every other file in the corpus**: a full-year
-  DAILY cycle (not weekly), each day naming either a parish, a ministry/committee, or (most days) a
-  list of clergy under "The Rev(s):" being commemorated on their ordination/consecration anniversary
-  — a dense, compound, inconsistent mix that does not cleanly split into parish-vs-category the way
-  every other diocese's weekly file does. **Working decision, not yet executed**: record each day as
-  ONE `category` subject whose `name` is the source's own day-text verbatim (not attempting to
-  auto-split parish names out from clergy-name lists, which risks mis-parsing at this density) —
-  recognized liturgical day-names (Ash Wednesday, Palm/Passion Sunday, Maundy Thursday, Good Friday,
-  Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day) also get `liturgicalNote` set. One
-  real source quirk already found: April has no standalone "21" line — the day-21 content
-  ("Church of the Resurrection in Millville") sits unlabeled between the "20" and "22" lines; it IS
-  day 21, positionally, not a continuation of day 20 (confirmed against the surrounding sequential
-  day numbers). This is the single biggest remaining build effort in this batch (365 entries) — a
-  parsing script driven from the already-transcribed day-by-day text would be faster than re-hand-
-  listing 365 `add()` calls; the raw source is clean enough that a careful line-based parser (split
-  on `^\d{1,2}\.?\s`) should work, but verify its output against a sample by eye before trusting it
-  wholesale, the same discipline used everywhere else in this corpus.
-- **San Joaquin** — Drive id `13OwPvF9Uhr1hZqwk1D3-c1xPh8eUZv0E` (a `.docx`, titled with the source's
-  own typo "dioceasn cycle of prayer 2026.docx" — NOT a native Google Doc as originally assumed;
-  `read_file_content` still handles it cleanly). Clean text, full year already read and transcribed
-  week-by-week in this session's own reasoning (not yet written to a file). Weekly, `dated`, self-
-  contained Jan 4 – Dec 27, 2026 (52 weeks). Each week: one parish with clergy names folded into that
-  subject's own `note` (not split into a separate category, since the source phrases it as one
-  continuous sentence — "St X, and their priest, the Rev. Y"), except several weeks are pure
-  category subjects (diocesan commissions, the Presiding Bishop, the diocesan bishop). **Two real
-  source date errors found and correctable the same way as Idaho's (batch 2)**: "28— Holy Trinity..."
-  under September should be **27** (breaks an otherwise unbroken Sunday sequence: Sep 6, 13, 20, then
-  27 — not 28, which is a Monday; Jan 4, 2026 is a confirmed Sunday, so this is checkable, not a
-  guess), and "12— St Francis..." under October should be **11** for the identical reason (Oct 4,
-  then 11, 18, 25 — all confirmed Sundays; "12" breaks the pattern by one day). Also preserve the
-  source's own typo "Ant-Racism" (missing "i") verbatim per the standing typo-preservation rule,
-  disclosed in notes rather than silently corrected — this is a spelling typo, not a date, so it
-  gets the OPPOSITE treatment from the two date errors above.
-- **Northern Indiana — DOES NOT FIT THE EXISTING SCHEMA, genuinely flagged, not started.** Source
+- **Northern Indiana — DOES NOT FIT THE EXISTING SCHEMA, genuinely flagged, still not started, raised
+  with Josh.** Source
   (Drive id `1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`, "Diocesan Cycle of Prayer - Current.pdf") is a
   repeating **1-through-37** numbered list (not tied to any calendar day-of-month, not tied to any
   month name — genuinely just a flat sequential rotation that repeats forever, unrelated to how many
@@ -430,17 +368,17 @@ their filenames mention the diocese name — and took a full investigative pass 
   architecture unilaterally. Full raw source text for all 37 entries was already captured in this
   session's own reasoning if useful once the schema question is settled.
 
-Once batch 3's 4 tractable dioceses are built/validated/registered and Northern Indiana's schema
-question is raised with Josh, remaining Drive-identified dioceses: Southwestern Virginia, Western
-Massachusetts (batch 4, only 2 — end of the Drive-identified list), then the roster spreadsheet's
-remaining ~65 via their own URLs (per Josh's original instruction: fetch 5 at a time, flag anything
-unfetchable in this note/ledger rather than endlessly retrying, since there is no Drive/Sheets write
-tool to literally annotate the spreadsheet itself).
+Batch 3 is done except Northern Indiana, which stays blocked on Josh's schema decision (raised, not yet
+answered). Next up, once that's settled: batch 4 — Southwestern Virginia, Western Massachusetts (only
+2 — end of the Drive-identified list) — then the roster spreadsheet's remaining ~65 via their own URLs
+(per Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this note/ledger
+rather than endlessly retrying, since there is no Drive/Sheets write tool to literally annotate the
+spreadsheet itself).
 
-**18 files currently in the corpus, all passing the validator:** 16 diocese-level — Western Oregon,
+**22 files currently in the corpus, all passing the validator:** 20 diocese-level — Western Oregon,
 Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes,
-Idaho, Kentucky, Lexington, Maine, Nebraska (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) —
-plus:
+Idaho, Kentucky, Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin
+(`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

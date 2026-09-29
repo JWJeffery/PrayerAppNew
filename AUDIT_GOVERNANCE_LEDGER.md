@@ -24931,3 +24931,161 @@ Playwright confirmed `#app-profile-icon-btn` renders `position:static` inside `.
 bounding-box overlap against `.uo-ordo-mark`, `#office-mode-title` reads "The Episcopal Church", and
 the modal opens over a live BCP office page with real profile data and closes via all three methods
 with zero console errors.
+
+## 2026-09-29 (continued once more) -- Profile field reordering + tradition gating, expanded TEC
+## ministry roles, Roman Breviary defaulted to English (PR #89); Parish tier of the Cycle of Prayer
+## wired in, all three tiers given their own rubric heading (PR #90)
+
+Two rounds of live UI bug reports from Josh, both merged directly, neither logged here at the time --
+recorded now, retroactively, per the standing rule that this ledger is updated in the same commit as
+the fix (a gap this entry closes rather than repeats going forward).
+
+**PR #89.** Josh, from a screenshot of the Profile panel: *"'Your name' should be first. Diocese
+second. Parish third. You have subtradition, but not tradition. That's silly. They are dependencies.
+Weird to have a question about oriental subtradition when TEC is Anglican. Roman breviery default
+language for an Angiican? That is silly. Roman Brev should also default to English, btw."* Followed by
+an interrupt: *"Lay reader is just ONE licensed ministry in TEC."* Fixed: the Profile field grid in
+`index.html` reordered to Name → Default tradition → Diocese → Home parish → Opening behavior → Book of
+Needs scope/role → [conditionally shown: OOR sub-tradition / Roman Breviary language / Byzantine parish
+dedication] → checkbox. New `data-tradition-field="anglican"`/`"oriental-orthodox"`/`"latin-catholic"`/
+`"eastern-orthodox"` attributes plus a new `syncProfileFieldVisibilityForTradition(traditionKey)`
+(`js/office-ui.js`) show only the field matching the user's declared tradition, called from
+`syncUserProfileControls()` -- so an Anglican user no longer sees an Oriental Orthodox sub-tradition
+question. Roman Breviary's default language flipped from Latin to English. `UNIVERSAL_OFFICE_MINISTRY_
+ROLE_OPTIONS.anglican` expanded beyond "reader" alone to the fuller set of TEC's own Canon III.4
+licensed ministries (catechist, eucharistic minister, eucharistic visitor, pastoral leader, preacher,
+worship leader, plus the ordained/monastic/research-reference/all options already present) with matching
+entries added to `UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES`/`_ROLE_ORDER`. **A real CSS bug found live,
+same failure class as the pre-existing `#uo-threshold` precedent documented elsewhere in this file**:
+`.app-profile-default-field { display: grid; }` (an author-stylesheet rule with no `[hidden]`
+qualifier) silently defeated the browser's own `[hidden] { display: none }` UA rule, so a field marked
+hidden in the DOM stayed visually laid out in the grid -- caught only by actually looking at a rendered
+screenshot, since the JS-level DOM assertions all passed. Fixed with an explicit
+`.app-profile-default-field[hidden] { display: none; }` override in `css/office.css`. Verified: `node
+--check`, all three standing audit scripts at their unchanged 13/3/9 baselines, and a live headless
+Playwright screenshot pass confirming the field order, the tradition-gated visibility (including the
+fixed CSS), and the Roman Breviary English default. `index.html` cache-bust: `office-ui.js?v=326`,
+`office.css?v=231`, `office-shell.js?v=303`.
+
+**PR #90.** Josh, from a screenshot of the BCP "Authorized Intercessions" section: *"The parish cycle of
+prayer is missing. Also, the communion / diocesan / parish cycles of prayer should appear under their
+own rubric heading."* St. Bede's own household-cycle file
+(`data/cycles-of-prayer/episcopal-western-oregon-st-bede.json`, ingested 2026-09-29 but never wired
+into any loader -- see that file's own header) now has real infrastructure: a `CYCLES_OF_PRAYER_
+PARISHES` registry entry, a `loadCycleOfPrayerParishMonth`/`getCachedCycleOfPrayerParishMonth`
+fetch/cache pair in `js/cycles-of-prayer.js` mirroring the diocese tier's own (reusing
+`resolveMonthlyRecurringEntry` unchanged), and `renderParishCycleOfPrayerLine` in `js/office-ui.js`,
+gated on a real corpus-matched `profile.cycleOfPrayerParish` (never on the free-text
+`cycleOfPrayerParishOther` fallback, since there is no household file to key off a typed name). The old
+single `renderCycleOfPrayerLine` was split into three named tier functions (`renderCommunionCycleOf
+PrayerLine`, `renderDiocesanCycleOfPrayerLine`, `renderParishCycleOfPrayerLine`) plus a shared
+`bcpEmitRubricHeading(container, label)` helper (mirrors `bcpEmitBlock`'s own `rubric-text` span
+construction exactly, so it renders identically to every other in-page heading like "Let Us Bless the
+Lord") -- each tier now prints "The Anglican Cycle of Prayer" / "The Diocesan Cycle of Prayer" / "The
+Parish Cycle of Prayer" as its own heading before its content line. Wired into the existing
+prefetch-then-repaint pattern (`refreshCycleOfPrayerParishForCurrentMonth`, called on profile parish
+selection and on app startup when a parish is already declared). Verified: `node --check` on both
+touched JS files, all three audit scripts unchanged at 13/3/9, and a live headless Playwright pass
+against a real BCP Morning Prayer render (profile set to Western Oregon / Forest Grove, St. Bede)
+confirming all three headings render in the correct order with real content, including the Parish
+tier correctly resolving that day's household entries ("Kerry VanderZanden and Art & Sydell Voeller"
+for day 29) -- screenshot reviewed directly, not just DOM assertions. `index.html` cache-bust:
+`office-ui.js?v=327`.
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 3: Newark, New Jersey, Rio Grande, San
+## Joaquin built and registered; Northern Indiana confirmed genuinely blocked on a schema decision
+
+Resuming batch 3 exactly where the prior session's own resume note (`RESUME_PROJECT_NOTE.md`) left it:
+source text for 4 of 5 dioceses had already been fetched and a transcription approach decided in a
+PRIOR session's own reasoning, but never written to a file (that session got pulled onto the five UI
+bug-fix rounds logged just above before finishing the build step). Re-fetched all four sources fresh
+from Drive (per the note's own warning not to trust unwritten "already decided" reasoning without
+re-verifying against the live source) and built each file from scratch. All 4 are `scope: "diocese"`,
+`cycleType: "dated"`, `year: 2026`, registered in `CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`).
+
+**Newark** (`episcopal-newark-2026.json`, source: "Diocesan-Cycle-of-Prayer-2026-May-Dec-updated-
+4-22-2026.docx", Drive id `1pzQxvQKN0H-MF4KaXtgtvMYDdret594o`). Clean DOCX extraction, no rendering
+needed. 35 entries, May 3-Dec 27 2026 (the source's own real scope -- it is itself titled
+"May-Dec-updated"). Each week carries 1-2 `parish` subjects plus a standing "The ministries of [clergy
+list]" `category` and "The work of [committee]" `category`; several weeks substitute a "churches in the
+[Saint] Regional Ministry Network" category (with a "Patron saint commemorated on [date]" note) or a
+bishop-thanksgiving category in place of the "work of" line. "The Community of St. John Baptist,
+Mendham" (June 7) -- an Episcopal religious order, not a parish -- recorded as a `category` subject with
+place folded into its own name, matching the established Great Lakes precedent (Emmaus Monastery/St.
+Gregory's Abbey) for a religious community. November 8 uniquely carries three category subjects (the
+usual clergy-ministries line, a bishop-thanksgiving line, AND a separate Annual Diocesan Convention
+line), both genuinely present in the source, not merged.
+
+**San Joaquin** (`episcopal-san-joaquin-2026.json`, source: "dioceasn cycle of prayer 2026.docx" [sic],
+Drive id `13OwPvF9Uhr1hZqwk1D3-c1xPh8eUZv0E`). 52 entries, self-contained Jan 4-Dec 27 2026. Each week's
+clergy/lay-leader description is folded into that week's own `parish` subject's `note` (a genuine
+per-diocese working decision distinct from Great Lakes/Kentucky's short-title convention, since this
+source phrases it as one continuous sentence: "St X in City, and their priest, the Rev. Y" -- the
+source's own leading "and" is trimmed from each `note` since it reads as a dangling conjunction once
+isolated into its own field, no name/fact altered). **Two real source date errors found and corrected,
+same method as Idaho's (batch 2)**: the weekly dates otherwise form an unbroken Sunday sequence anchored
+on the confirmed Sunday Jan 4, 2026; "September 28 -- Holy Trinity..." breaks that sequence (28 is a
+Monday) and is corrected to **September 27**; "October 12 -- St Francis..." likewise breaks it (12 is a
+Monday) and is corrected to **October 11**. Two source typos preserved verbatim per standing policy:
+"Ms Cindy Smmith" (July 12) and "Ant-Racism" (December 13, though the same source correctly spells
+"Anti-Racism" on June 14 -- a one-off typo, not the diocese's preferred spelling). The diocese's own
+bishop changed mid-year (David Rice → Greg Kimura, ordained April 19) -- both are the source's own real,
+different wording for different weeks, not a transcription inconsistency.
+
+**Rio Grande (weekly)** (`episcopal-rio-grande-2026.json`, source: "Weekly Cycle of Prayer 2026.pdf",
+Drive id `1DTuMBQq3vNVw2AXOVSnlBXROs3L8apiF`). 51 entries, self-contained Jan 4-Dec 20 2026 (the source's
+own real scope, three weeks short of the calendar year). A companion daily-cadence file for the same
+diocese also exists in Drive (id `1ALpNslzzYggcEUQWZJRwYGKQ5cINKfGq`) -- per the roster spreadsheet's own
+"weekly is primary" listing, only the weekly file is ingested, matching this corpus's one-file-per-
+diocese convention. "Diocesan Sta]-The Rev'd Canon Kristin Kopren..." (August 30) is a PDF ligature-
+extraction corruption ("ff" misread) -- corrected to "Diocesan Staff" per the standing typo-vs-
+extraction-artifact distinction. Four weeks (March 22, May 31, December 6, December 13) print a named
+heading with a bulleted sub-list of member congregations underneath it -- each recorded as ONE `category`
+subject with its bulleted members semicolon-joined into that subject's own `note`, distinct from the
+plain multi-line weeks elsewhere in the same file (which ARE split into separate subjects). October 11
+required the most judgment of the batch: three run-together program/ministry mentions with no reliable
+separator in the source's own raw text, parsed into three distinct `category` subjects by ordinary
+reading -- flagged in the file's own `notes` as worth a second look against the actual PDF page layout
+if this diocese is ever spot-checked further.
+
+**New Jersey** (`episcopal-new-jersey-2026.json`, source: "2026DiocesanCycleOfPrayer_2026May_
+UPDATED.pdf", Drive id `1eZJGIuXP4zeYXWHMsm9vjV7pUwIBarHI`). **Genuinely different shape from every other
+file in this corpus**: a full calendar-year 2026 DAILY cycle (365 entries, not weekly) naming a parish,
+a diocesan ministry, an observance day, or (most days) a dense clergy list under "The Rev(s):" being
+commemorated on an ordination/consecration/diaconate anniversary, per the source's own stated purpose.
+Per the working decision already reasoned out in the prior session (re-confirmed, not just trusted):
+each day recorded as ONE `category` subject holding the source's own day-text verbatim, rather than
+attempting to auto-split a parish name out of a dense clergy list. Built by a Node.js parsing script
+(`parse-nj.mjs`, scratch-only, not committed) against the source's own extracted text -- day boundaries
+found by scanning for a strictly-ascending sequence of 1-2-digit numbers (1, 2, 3, ... N) rather than any
+bare digit match, specifically to avoid false splits on unrelated numbers embedded in a day's own content
+(confirmed safe against "242nd Diocesan Convention"/"243rd Diocesan Convention", November 20-21). Output
+spot-checked against the original source text at every structurally ambiguous date before being trusted:
+April has no standalone "21" line at all in the source (day 21's content, "Church of the Resurrection in
+Millville," sits unlabeled between the "20" and "22" lines -- confirmed positionally, not a continuation
+of day 20); June 21's source text runs "21Rev. Todd Foster" with the day-number/name space dropped by
+the source's own extraction. Eight recognized liturgical observance days (Ash Wednesday, Palm/Passion
+Sunday, Maundy Thursday, Good Friday, Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day) get
+that entry's `liturgicalNote` set, per this corpus's existing convention (episcopal-alabama-2026.json);
+on the two days pairing an observance with a named cleric (Ash Wednesday + The Rev. Canon Bruce W.
+Woodcock, Feb 18; Maundy Thursday + The Rev. Andrew C. Hamersley, Apr 2) the observance name is stripped
+out of the subject since it already lives in `liturgicalNote`.
+
+All four live-verified end to end in a headless Chromium session against the app's own actual runtime
+(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`, not a standalone test harness): each diocese's
+file loads with the correct entry count (365/35/51/52) and resolves a real sample date's subjects
+correctly. `npm run audit:cycles-of-prayer`: PASS, 22 files, 0 findings. All three standing UI audit
+scripts unchanged at their 13/3/9 baselines (only `data/` and `js/cycles-of-prayer.js` touched this
+round, not any UI file the scripts assert against).
+
+**Northern Indiana confirmed still genuinely blocked, not attempted**: its source (Drive id
+`1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`) is a repeating 1-through-37 numbered list with no calendar
+anchoring at all -- neither existing `cycleType` fits (`"dated"` needs real dates the source never
+gives; `"monthly-recurring"` is 1-31 day-of-month and would strand days 32-37's real content). This
+needs a genuine schema decision from Josh (most likely a third `cycleType`, something like
+`"sequential"`) before any file gets built -- not something to guess at unilaterally. Raised directly
+with Josh rather than worked around.
+
+**Next:** once Northern Indiana's schema question is settled, batch 4 (Southwestern Virginia, Western
+Massachusetts, the last two Drive-identified dioceses), then the roster spreadsheet's remaining ~65
+dioceses via their own URLs, 5 at a time.

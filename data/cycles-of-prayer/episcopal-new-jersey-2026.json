@@ -1,0 +1,3673 @@
+{
+  "id": "episcopal-new-jersey-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of New Jersey",
+  "dioceseShort": "new-jersey",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "The Diocesan Cycle of Prayer for the People and Clergy of 2026",
+  "sourceFile": "\"2026DiocesanCycleOfPrayer_2026May_UPDATED.pdf\", provided directly by Josh via Google Drive (file id 1eZJGIuXP4zeYXWHMsm9vjV7pUwIBarHI, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Genuinely different shape from every other file in this corpus: a full calendar-year 2026 DAILY cycle (365 entries), not weekly -- each day names either a specific congregation, a diocesan ministry/committee, an observance day, or (most days) a dense list of clergy under \"The Rev(s):\" being commemorated on their ordination/consecration/diaconate anniversary, per the source's own stated purpose (see its Preface). This dense, compound, inconsistent mix does not cleanly split into parish-vs-category the way every other diocese's weekly file does.",
+    "Working decision, per this session's own reasoning: each day is recorded as ONE  subject whose  is the source's own day-text verbatim (not attempting to auto-split a parish name out from a clergy-name list, which risks mis-parsing at this density) -- built by a Node parsing script driven from the source's own rendered text, not hand-listed, then spot-checked against the source at the known-tricky dates before being trusted (see below). This means a day naming BOTH a parish and its clergy (e.g. \"Calvary Church in Flemington / The Rev James N. Wilson, II\", January 1) is one combined subject, not split into separate parish/category subjects the way a weekly diocese file would.",
+    "Eight recognized liturgical observance days (Ash Wednesday, Palm/Passion Sunday, Maundy Thursday, Good Friday, Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day) get that entry's  set, per this corpus's existing convention (see e.g. episcopal-alabama-2026.json). On a day naming ONLY the observance with nothing else printed (Palm/Passion Sunday, Good Friday, Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day), the observance name is also kept as the sole subject's , since entryShape requires a non-empty subjects array and the source genuinely prints nothing else that day; on the two days that pair an observance with a named cleric (Ash Wednesday + The Rev. Canon Bruce W. Woodcock, February 18; Maundy Thursday + The Rev. Andrew C. Hamersley, April 2), the observance name is stripped out of the subject (it already lives in ) and only the cleric's name remains as the subject.",
+    "April has no standalone \"21\" line in the source's own raw text -- day 21's content (\"Church of the Resurrection in Millville\") sits unlabeled between the \"20 Clergy in Transition\" line and the \"22 Members and Ministry of the Environmental Commission\" line. Confirmed positionally (it is day 21, not a continuation of day 20's content) against the surrounding sequential day numbers, and against the source's own PDF page layout -- treated as day 21's own entry here, not folded into day 20.",
+    "June 21's source text runs \"21Rev. Todd Foster\" with no space between the day number and the name (a PDF text-extraction spacing artifact) -- read as day 21, \"Rev. Todd Foster\", the same way every other day boundary in this file is read, not a separate/different day.",
+    "Two spelling variants of an apostrophe (straight ' and curly ’, plus one instance of the reversed curly opening-quote ‘ in \"St. Mary‘s Church\", August 15) appear inconsistently across the source's own text -- each preserved exactly as the source prints it at that specific point, not normalized to one style throughout, per this corpus's standing rule against silently correcting a source document.",
+    "Built via a Node.js parsing script (not hand-transcribed line by line) against the source's own already-extracted text: day boundaries were found by scanning for a strictly-ascending sequence of 1-2 digit numbers (1, 2, 3, ... N) rather than any bare digit match, specifically to avoid false splits on unrelated numbers embedded in that day's own content (committee ordinal names like \"242nd Diocesan Convention\"/\"243rd Diocesan Convention\", November 20-21, were confirmed NOT to cause a false split). Output was spot-checked against the original source text at every structurally ambiguous date named in these notes, plus a normal sample across multiple months, before being trusted; the full parsed set was not individually eyeballed entry-by-entry beyond that."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Calvary Church in Flemington The Rev James N. Wilson, II"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Intake Officer"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Edward B. Gammons, Jr., Elizabeth K. Golub"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Anti-Racism Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Allen Mitsuo Wakabayashi, Diane Carole Mumma-Wakabayashi"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev Canon Dr. Peter B. Stube"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Matthew D. Bollinger, Emmanuel Kojo Kwegyir-Aggrey, Donald Wiesner"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Ophelia G. Laughlin, Antoinette Tackkett"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Ann C. Holt"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Alan C. French, Ramon Antonio Liz, Susan B.P. Norris"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: David Code, Abigail B. King, Aaron Oliver, Juan Pastor Reyes"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Linda Carlson Scholer, Gerald A. Skillicorn"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Retired Clergy Convocation Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Louise L. Kingston"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Edward E. Martin, Jr., Dr. Edward J. Murphy, Petrina M. Pyatt, Valerie T. Redpath, Dirk C. Reinken, Edmund W. Zelley, Lawrence Civale"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Congregational Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev: J. Michael McHugh"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Martha Blacklock, Mary Frances Schjonberg, The Rev. Paul Jeanes, III"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Joyce M. Scheyer, The Rev. Dcns: Kenneth Carpinelli, Joseph Luzardo, Michelleleslie Maltese-Nehrbass, The Ven. Dcn. Brigitte Pincelli"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Lisa G. E. Caton, Paul W. Runner"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Emily Mellott, Alistair So-Schoos"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Lydia A. Edwards, Dr. Thomas Haverly"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Nancy Hite Speck"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Retired Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Sylvestre D. Romero"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those in the Ordination Process"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Episcopal Mental and Spiritual Health Crisis Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Richard A. D. Benedict"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Daphne W. P. Hawkes"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Kent R. Walley"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry the Convention Operations Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Lynnette Fuller, Canon Dr. Kevin J. Moroney, Jay Angerer"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Simeon-by-the-Sea Church in North Wildwood The Revs: Theodore L. Anderson, Jr., W. Joseph Leigh, George F. Rambow"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcn. Elizabeth A. Ohlson"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Churches in Transition"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Frances B. Bickerton, Desmond A. Williams"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Wardens and Vestries"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Laity"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Acolytes, The Rev. Charlene Snder, Dcn."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Priests"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church at Princeton University, The Episcopal Campus Ministry at Rutgers"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Bishops"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Lay Readers"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Angela Cipolla"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Robert L. Counselman"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Glenn E. Druce"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Eucharistic Ministers"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "liturgicalNote": "Ash Wednesday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Bruce W. Woodcock"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev: Sister Barbara Jean Packer"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Eucharistic Visitors"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Loan and Grant Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Charles E. Bennison, Jr."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of College Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Paul A. Van Sant, Sr."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Juan Monge-Santiago"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Heath Dewrell"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Earlie Roland Clemons, Alice L. Downs, Philip W. Stowell"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Church Sextons"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. David’s Church in Cranbury, The Revs: Dr. J. Elizabeth Eddy, Joseph H. Gauvin, Dr. James W. Jones, III"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Maxine J. Cleghorn"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Worship Leaders"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dean Henry"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Youth Council Youth"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. T. James Hargrove"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Lois Schembs"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Church Attorney"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Georgia S. Cohen"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Interim Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Transition Consultants"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Henry C. Galganowicz"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Anti-Racism Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Girls’ Friendly Society"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Anti-Racism Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Disciplinary Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Church Discernment Committees"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev’s. Dr. Franklin E. Vilas, George Anne McDonnell"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Iglesia San José in Elizabeth"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Joan E. Fleming"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Douglas J. Reans"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of Church Altar Guilds"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Lisa S. Mitchell"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev Gretchen Zimmerman"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Spiritual Directors"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Marcel Tabone"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Shelton N. Radix"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm / Passion Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Palm / Passion Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Philip B. Carr-Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Archdeacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "liturgicalNote": "Maundy Thursday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Andrew C. Hamersley"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "liturgicalNote": "Good Friday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Good Friday"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "liturgicalNote": "Holy Saturday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Saturday"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Easter Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Deceased Members"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Board of Consultation"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Episcopal Church Women"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. William R. Speer"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Karl F. Morrison"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Reparations Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Formation Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Gail L. Bennett, Louise Cressman, W. Keith McCoy, Frederick R. Pray, Mary Jo Smith, Susan B. Taylor"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Board of Missions"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Lifelong Christian Formation"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Day Schools"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Benefits Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. James T. Kollin"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Corporation for the Relief of Widows, Widowers and Orphans of Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy in Transition"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Resurrection in Millville"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Environmental Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. George’s Church in Pennsville and Rumson Grace Church in Haddonfield, Merchantville, Pemberton, and Plainfield Grace-St. Paul’s Church in Mercerville"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Wilfrid’s Church in Camden"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of St. Mark and All Saints in Galloway; St. Mark’s Church in Basking Ridge, Keansburg, Plainfield, and Williamstown"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Flower Guilds"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Trustees of Diocesan Investment Trust"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Jayne J. Oasin The Rev. Dcn. Karen B. Lewis"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on the Priesthood"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. John B. M. Frederick, Canon Dr. Virginia M. Sheay"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Frederick S. Baldwin, George L. Campbell, Jacob David, Johan Johnson, E. F. Michael Morgan, Ph.D, Wectnick Paul, Dr. Leslie Smith, Mary Ruth Stone, The Very Rev. Diane Nancekivell"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Refugee Response Teams"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Convocations"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ven. Dcn. Carol Ann Pepe; Members and Ministry of Episcopal Community Services New Jersey"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Henry P. Bristol, II, Janet Daniels, Carlton Dunn, The Ven. Dcn. Theodore A. Foley"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Daphne Roberts, Rocco Sherman, Jane Carol Wilson"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Patricia D. Pierce"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Very Rev. Michael Panzarella"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. John M. Lock, The Rev. Dcns: Magdalena Aders, William Balmer, Dr. Carolyn A. Bradley, Eve Y. Chamberlain, Naomi M. Cressman, Dorothea N. Hospador, Chizoba U. Nwankwo, Karen E. B. Reeman"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Fresh Start Program"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Good Shepherd in Berlin and Pitman The Revs: Marco Serrano, Margaret Sterchi"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Clergy Sabbatical Fund Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Reginald Nuamah, Peter K. Stimpson, Canon José Ramon Ubiera Torres"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Companion Diocese Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the New Jersey Ministry to the Imprisoned"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Rosemarie Broderick, Christopher Cox, Susan E. Cushinotto, Dr. Judith Krom, David Lawson- Beck, Joseph Sweeney"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Charles N. Lochner"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Planned Giving Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of Church Choirs; College Graduates"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Transition Officers"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Glenn M. Matis"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Bishop’s Advisory Commission on Liturgy and Music"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Archives Department"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Candidates and Postulants"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Parish Administrators"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Linus C Amonu, Frank M. Goss"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Dr. Francis A. Hubbard"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Parish Secretaries"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Ascension, Gloucester; The Rev. Fabian Villalbos; Members and Ministry of the Trustees of Diocesan Trust Funds"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Dr. Timothy B. Cogan, Bruce Montgomery, Dr. Jean R. Smith"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Pastoral Response Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Elly S. Brown, J. Patrick Hunt, Bernard Maguire, III, J.R. Peter Nelson, Ph.D., Agostino Rivolta"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Donald R. Caron"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Ronny W. Dower, John A. Golden, Nicole Kurkowski, Ayden Petrone, Rachel Tyler"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Thomas A. Bartlett, Elizabeth Marshall Casasola"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. John D. Alexander, Canon Henry L. Atkins, Jr."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. David L. Snyder"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Task Force on the Review of the Sexual Misconduct Policy"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Holy Spirit in Bellmawr, Lebanon, and Tuckerton; The Revs: Dr. Patrick R. Close, Terrence O’Connor"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. David Lyall Jones The Rev. Dcns: P. Frank Castellon, Karen Ann Jaenke, Lewis McCrum, Richard J. Wisniewski"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Charles N. Arlin"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Barnabas’ Church in Monmouth Junction and Villas The Revs: Allan B. King, Justin Lanier, Margaret H. Raven The Rev. Dcns: Dr. Cipher Deavours, Martha M. Dooley, Catherine P. Esposito, Carol B. Gilbert, Canon Theodore E. Moore"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Toribio Rodriguez Santos"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Very Rev. Benjamin B. Maddison"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Amy S. Cornell"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Trinity Church in Collingswood, Ocean City, South River, Spring Lake, and Wenonah; Trinity Cathedral in Trenton; Trinity Church in Asbury Park, Cranford, Matawan, Moorestown, Princeton, Red Bank, Rocky Hill, Swedesboro, Vincentown, and Woodbridge"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Steven E. Carroll, Austin B. Murray"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev Genevieve R. Bishop; The Very Rev Marshall Shelly"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Megan E. Thomas, Ann K. Urinosk"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Edwin T. Chinery, Robert W. Mikol, Maria B. Sanzo, Stephanie E. Shockley, The Rev. Robert Fitzpatrick"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee of the Church Pension Fund"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Todd Foster"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Alban’s Church in New Brunswick"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt Rev Sally J. French, The Rev. Robert B. Haller"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John’s Church in Linden and Salem The Rev. Canons: Dr. Francisco Pozo"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Ivan P. Alberts"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee for Ministry with Older Adults"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon James E. Wynn,"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "High School Graduates"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Peter’s Church in Barnegat Light, Cape May Point, Clarksboro, Freehold, Hamilton, Medford, Perth Amboy, and Spotswood; St. Paul’s Church in Bound Brook, Camden, and Westfield; Holy Apostles Church in Yardville The Very Rev. Allison Burns-LaGreca The Ven. Dr. Alson B. H. Percival"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Stephen Connor, Lisa A. Hoffman, Andrew Reinholz, Kimberly Reinholz, Jeffrey Roy ,"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Terrence W. Rosheuvel, Canon Dr. Kara Nicole Slade, Derrick Wedderburn, Felipe Rojas,"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Francis S. Cho, Robert M. Kahl, Okwunna Nketa Nwogu, Vernal S. Savage"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Andrea Rose-Marie Hayden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Church Historians"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Andrew T. Gordon"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Pastoral Response Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Prison Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Jane T. Brady-Close, Augustine Obinna Okafor"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Black Clergy Caucus"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Linus C. Amonu"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Peter J. Bridge"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Migrant Ministry: The Rev. Leslie Hague"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Churches in Transition"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Jubilee Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Stewardship Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Anti-Racism Training Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcn. Charles Wesley Rubendall, III"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Urban Revitalization Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Leroy A. Lyons"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of Episcopal Community Services of New Jersey"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Commission on Alcohol and Drug Abuse"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Wardens and Vestries"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Cathedral Chapter of Trinity Cathedral"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Seasonal Chapels"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. James’ Church in Bradley Beach, Eatontown, Edison, and Long Branch The Rev. Hewitt V. Johnston"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Immigration Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Leadership Initiative"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Union of Black Episcopalians"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Haitian Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Supply Priests"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Choir Camp"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Timothy J. Mulder"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Sudan Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Susanna Paige Cates"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Convocation Deans"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Bishops"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Board of Consultation"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Altar Guild"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Archdeacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Pedro S. Guzman"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Hispanic Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Hospital Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Treasurer"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary‘s Church in Burlington, Clementon, Haddon Heights, Pleasantville, Point Pleasant Beach, and Stone Harbor Iglesia Santa Maria in Keyport"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Very Rev. Andrew J. Hanyzewski"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Officers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Episcopal Servant Ministry Program"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Bernard’s Church in Bernardsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Bruce Cecchini, Carol Ellen Rodgers Patterson, Vasu Subramani, Geraldine Welch"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Convocation Secretaries"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Bartholomew’s Church in Cherry Hill"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Women’s Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Kwabena Owusu-Afriyie"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the School for Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Augustine’s Church in Asbury Park, Atlantic City, and Camden"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Global Goals Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Deacons’ Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "United Thank Offering Coordinator"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Hugh Brown, III. Terence A. Lee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Emergency Response Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Provincial Synod"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Trustees of the Van Duzer Scholarship Fund"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. John Sosnowski"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Transition Officers"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Christian Educators"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Ministry with the Disabled"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Very Rev. Neil K. Raman"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Congregational Stewardship Committees"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Jorge Liriano Martinez"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcn. Carol Kerbel"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Holy Cross in North Plainfield"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. James T. Yarsiah"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Campus Ministry Foundation"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Human Trafficking Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Audit Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Church Musicians"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Andrew Calandriello"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Matthew’s Church in Pennington The Revs: Dr. Brian A. Jemmott, Canon Andy J. Moore, The Rev. Angelo Wildgoose The Rev. Dcns: Catherine E. Brunson, Frances Clark, Debra M. Clarke, Dr. John H. Hanson, Barbara Jensen"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Jesse Lassiter"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Finance and Budget Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Health and Safety in the Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Ryan Paetzold"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Standing Committee on Constitution and Canons"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Retired Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Frank B. Crumbaugh, III"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Michael’s Church in Trenton; St. Raphael the Archangel Church in Brick; Church of St. Michael the Archangel in Wall; Church of St. Uriel the Archangel in Sea Girt"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Neil C. Turton"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Robert J. Critelli, Henry C. Englund, Dr. W. Kenneth Gorman, Otto W. Immel, Charles R. Sakin"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Clergy Spouses"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Constable Grant Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Francis' Church in Dunellen Members and Ministry of the Animal Welfare Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Jane O. P. Turner Fund"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Daniel C. Gunn, Anne McRae Wrede"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Nominating Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Standing Commission on Clerical Compensation"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Priests"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Lutheran Episcopal Advocacy Ministry of New Jersey (LEAMNJ)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Youth and Young Adult Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Parish Treasurers"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Validation of the Minutes"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Presiding Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Church Treasurers and Financial Officers"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Jubilee Officer"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the New Jersey Institute of Social Justice"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Luke’s Church in Ewing, Gladstone, Metuchen, and Woodstown; St. Luke and All Saints’ Church in Union;"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Subcommittee on Ordination and Reception of Spanish-speaking Persons"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Carmen Viola"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dcns: Emily C. Holman, Arthur J. Knight, Anne Lemay, Eddie L. Lillard, Sr., Frederick B. May, Helen M. Orlando, Lynn H. Johnson; The Ven. Dcn. Denise B. Cavaliere"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Youth Council Adults"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon John C. Belmont, J. Hyvenson Joseph, Larry Morrison, Donald R. Page, Stephen Wisner; The Rev. Dcn. Christina Wible"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Black Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Evergreens in Moorestown"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Credentials of Lay Deputies"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Joanne Epply-Schmidt, John F. Salmon, Jr."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Simon-by-the-Sea Church in Mantoloking The Rev. G. Richard Civalier"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Congregational Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Resolutions"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Joe Morris Doss The Rev. Dcns: Kathleen DeJohn, Margaret A.K. Forsythe, Leslie G. Mazzacano, Margaret F. Smyth, Colleen G. Spaeth"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Saints’ Church in Bay Head, Lakewood, Navesink, Princeton, and Scotch Plains The Revs: Canon Jonathan Deacon, Canon John T. Morrow, Frank C. Strasburger"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Most Rev Sean Rowe; The Rt Rev William H. Stokes; The Rev. Edwin R. Sumner, Jr.,"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Secretary of Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Convention Officers"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Salvador Ros"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Charles A. Cesaretti; Members and Ministry of the Committee on Classification of Congregations,"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. David L. Laquintano"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Committee on Credentials of Lay Deputies: The Revs. Joseph Luzardo, Kevin Thompson; Dcns Mark Hernandez, Roberto Ubel Rojas Siguas"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Diocesan Finance Team"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Martin’s Church in Bridgewater; St. Martin-in-the Field in Lumberton"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Dr. Paul S. Rimassa; Members and Ministry of the Committee on Rules of Order,"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Paul S. Chalakani"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Task Force on the Review of Canons"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Standing Committee on Constitution and Canons"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Douglas C. Halvorsen, Canon Robert H. Legnani"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Jane L. Rockman; Members and Ministry of the Balloting Committee,"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Rosemarie C. Hassan"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Elisabeth’s Chapel by-the-Sea in Ortley Beach St. Elizabeth’s Church in Elizabeth The Rev. Micah Connor Cronin"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy and Lay Deputies to the 242nd Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "243rd Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Diocesan Chancellor"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ Church in Bordentown, Magnolia, Middletown, Millville, New Brunswick, Palmyra, Riverton, Shrewsbury, Somers Point, South Amboy, Toms River, Trenton, and Woodbury; Christ the King Church in Willingboro; Church of the Redeemer in Longport The Rev. Dorothy K. Auer"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Pastoral Response Coordinators"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Newly Elected to Diocesan Ministries and Committees"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Andrew David Kruger"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalNote": "Thanksgiving Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thanksgiving Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Peter A. French"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the LGBTQ+ Concerns Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Advent in Cape May; St. Andrew’s Church in Allenhurst, Camden, Lambertville, Mount Holly, and New Providence; The Very Rev. René R. John"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Shawn A. Armington, William Boatwright, Thomas B. Conway, J. Rodney Croes, Herbert G. Draesel, Jr., Dr. James A. Fisher, Suzanne L. Harris, Walter F. Hartt, Muriel S. Hubert deBussy, John W. Inman, Kathryn L. King, Martin Lavengood, Dwight L. Neglia, Ronald W. Parker, Joseph R. Parrish, Jr., John E. Troncale, Bruce Webber"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Dr. Robert E. Droste, Dr. Jon C. Graves, Lisa Graves, Dr. Stephen L. White"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Thomas R. May"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members and Ministry of the Commission on Church Architecture"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Julia McKay McKeon"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Kyle Cuperwich, Peter De Franco, Jr., Dr. Molly Dale Smith, Mark R. Van Sant, Canon Richard C. Wrede"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: M. Mantelle Bradley, Philip H. Kasey, Margaret Otterburn, The Rev. Canon Clive Sang; The Rev. Canon James M. Tucker"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Edward Lowe, Dr. William K. Ndishabandi"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Idalia S. Craig, Jefferson Hulet"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Henry A. Chan, Joanna P. Hollis, Harry Mazujian, Canon Arthur P. Powell, Ricardo W. Sheppard, John V. Zamboni; The Very Rev Elizabeth Rauen Sciaino"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Terence Blackburn, Canon Elizabeth R. Geitz, Dr. Henrietta Lavengood, Canon Lee Powers, Eugene W. Zeilfelder"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Dr. Robert J. Laws, III, Canon Joan M. Pettit Mason"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: J. Connor Haynes, Martha M. McKee, Canon Dr. John P. Mitchell"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Tinh Trang Huynh, John T. Koenig, Paul Shoaf Kozak, Canon Dr. Donald J. Muller, Tammy M. Young"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Henry Alan Leonard, Susan E. Osborne- Mott"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Kathleen G. Bishop, Dr. Debra Brewin-Wilson, Canon Carol J. Horton, Ellen C. Rutherford"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Valerie L. Balling, Barton Brown, The Very Rev. Nicholas Chase Danford, Kristen Foley, Frederick Galano, Rosemary H. Lillis, Robert A. Nagy, Canon Dr. Martin U. N. Oguike, Fernando Paiva, III, Canon Ronald N. Pollock, C. Scott Trull, James C. Walworth"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Canon Dr. Noel Amadi, John Sidney Luttrell, Anna C. Noon, Christopher R. Sherrill"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: G. David Deppen, Francis N. Hebert, William Thiele, Alexandra Van Kuiken"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Susan R. Carney, Robert E. Sullivan, Sharon L. Sutton"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Thomas’ Church in Alexandria, Glassboro, and Red Bank; The Revs: Russell A. Griffin, Canon Karin R. Mitchell, C. Thomas Myers, Jonathan B. Percival, Jacquelyn Rowe"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Revs: Sharon Patterson, Daniel Scott Russell The Very Rev. Deborah A. Cook"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. G. Douglas Eberly"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rev. Canon Martin Gutwein"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "liturgicalNote": "Christmas Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christmas Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Stephen’s Church in Beverly, Mullica Hill, Riverside, Waretown, and Whiting Church of Saints Stephen and Barnabas, Florence"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John’s Church in Avalon, Avon-by-the-Sea, Bernardsville, Chews Landing, Elizabeth, Little Silver, Maple Shade, New Brunswick, Somerville, and Woodbridge The Rev. Dr. Jeffrey M. Kirk"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Holy Innocents in Beach Haven"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Episcopal Migration Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Holy Family in Laurel Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of the Laity"
+        }
+      ]
+    }
+  ]
+}

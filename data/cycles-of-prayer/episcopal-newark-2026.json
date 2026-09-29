@@ -1,0 +1,219 @@
+{
+  "id": "episcopal-newark-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Newark",
+  "dioceseShort": "newark",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer 2026 (May-December)",
+  "sourceFile": "\"Diocesan-Cycle-of-Prayer-2026-May-Dec-updated-4-22-2026.docx\", provided directly by Josh via Google Drive (file id 1pzQxvQKN0H-MF4KaXtgtvMYDdret594o, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This source only covers May 3 through December 27, 2026 (35 weeks) -- it is itself titled 'May-Dec-updated' and its own text begins at May. This is the source's own real scope, not a gap trimmed by this transcription; no January-April 2026 weeks exist to ingest.",
+    "Each week prints three or four lines beyond the parish name(s): a 'The ministries of [clergy list]' line (a rotating roll of clergy, not tied to the week's own named parish) and a 'The work of [committee/ministry]' line, both recorded as their own `category` subjects, per this corpus's established pattern for a diocese-wide standing-intercession line that isn't itself a parish. Several weeks substitute a 'The churches in the [Saint] Regional Ministry Network' category (with a 'Patron saint commemorated on [date]' `note`) or an 'In thanksgiving for the ministry of the Rt. Rev. [name]' / 'The ministry of the Rt. Rev. [name]' category (with a 'Consecrated/Became/Installed Nth Bishop...' `note`) in place of the 'work of' line -- both are the source's own substitution, not this transcription's choice.",
+    "'The Community of St. John Baptist, Mendham' (June 7) is an Episcopal religious order (an Anglican convent), not a parish -- recorded as a `category` subject with the place folded into its own name, matching this corpus's existing precedent for a religious community (see episcopal-great-lakes-2026.json's Emmaus Monastery/St. Gregory's Abbey entries) rather than as a `parish` subject.",
+    "November 8 is the only week with three category subjects instead of two: alongside the usual clergy-ministries line, the source prints both a bishop-thanksgiving line ('In thanksgiving for the ministry of the Rt. Rev. William H. Odenheimer... upon the founding of this diocese') AND a separate 'The work of the Annual Diocesan Convention' line noting its own dates ('Friday & Saturday, November 13 & 14') -- both preserved as distinct subjects rather than merged.",
+    "All punctuation (en dashes, curly apostrophes, ampersands within a single parish's own name such as 'St. Paul's & Resurrection' or 'Epiphany & Christ Church') is transcribed exactly as the source prints it."
+  ],
+  "entries": [
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of St. Paul and Incarnation", "place": "Jersey City" },
+      { "type": "parish", "name": "Grace Church Van Vorst", "place": "Jersey City" },
+      { "type": "category", "name": "The ministries of the Rev. Beth Glover, the Rev. Liz Golub, the Rev. Canon Robert Griner, and the Rev. Bill Guthrie" },
+      { "type": "category", "name": "The work of the Commission on Aging" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. David's", "place": "Kinnelon" },
+      { "type": "parish", "name": "All Saints'", "place": "Leonia" },
+      { "type": "category", "name": "The ministries of the Rev. John Habecker, the Rev. Melissa Hall, the Rev. Deacon Nancy Hansen, and the Rev. Fletcher Harper" },
+      { "type": "category", "name": "The work of the Diocesan Council" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Madison" },
+      { "type": "category", "name": "The ministries of the Rev. Deacon Barbara Harriman, the Rev. Lorraine Harris, the Rev. Canon John Hartnett, and the Rev. Rose Hassan" },
+      { "type": "category", "name": "The work of All the Way Up – Adult Education Center" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George's", "place": "Maplewood" },
+      { "type": "category", "name": "The ministries of the Rev. Ed Hasse, the Rev. Audrey Hasselbrook, the Rev. Sharon Hausman, and the Rev. Dr. Miguel Hernandez" },
+      { "type": "category", "name": "The work of the Bishop's Staff" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Martin's", "place": "Maywood" },
+      { "type": "category", "name": "The ministries of the Rev. Deacon Jeanette Hile, the Rev. Kim Holtman, the Rev. Beverly Huck, and the Rev. Susan Ironside" },
+      { "type": "category", "name": "The work of the Commission on Justice, Peace, and Racial Reconciliation" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Mendham" },
+      { "type": "category", "name": "The Community of St. John Baptist, Mendham" },
+      { "type": "category", "name": "The ministries of the Rev. Elizabeth Ivell, the Rev. Deacon Peter Jackson, the Rev. Deacon Virginia Jenkins-Whatley, and the Rev. Ruben Jurado" },
+      { "type": "category", "name": "The work of The Oasis – LGBTi Ministry" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Millburn" },
+      { "type": "category", "name": "The ministries of the Rev. Dr. Elizabeth Kaeton, the Rev. Briggett Keith, the Rev. David Kern, and the Rev. Deacon Gail Kertland" },
+      { "type": "category", "name": "The churches in the Evelyn Underhill Regional Ministry Network", "note": "Patron saint commemorated on June 15" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "Millington" },
+      { "type": "category", "name": "The ministries of the Rev. Alexei Khamin, the Rev. Abigail King, the Rev. Anne Kitch, the Rev. Anne Koehler, and the Rev. Bambi Koeniger" },
+      { "type": "category", "name": "The work of the Cathedral Chapter of Trinity & St. Philip's" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Montclair" },
+      { "type": "parish", "name": "St. Luke's", "place": "Montclair" },
+      { "type": "category", "name": "The ministries of the Rev. Ellen Kohn-Perry, the Rev. Daniel Kreller, the Rev. Brian Laffler, and the Rev. Hosea Lee" },
+      { "type": "category", "name": "The work of the First Third of Life Commission" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Morris Plains" },
+      { "type": "category", "name": "The ministries of the Rev. Mark Lewis, the Rev. Dr. Walter Lewis, the Rev. Thomas Lincoln, and the Rev. Martin Malzahn" },
+      { "type": "category", "name": "The churches in the Benedict of Nursia Regional Ministry Network", "note": "Patron saint commemorated on July 11" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Redeemer", "place": "Morristown" },
+      { "type": "parish", "name": "St. Peter's", "place": "Morristown" },
+      { "type": "category", "name": "The ministries of the Rev. Grant Mansfield, the Rev. Laurie Matarazzo, the Rev. Tom Mathews, and the Rev. Joyce McGirr" },
+      { "type": "category", "name": "The work of Cross Roads Camp & Retreat Center" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Mount Arlington" },
+      { "type": "parish", "name": "St. Peter's", "place": "Mountain Lakes" },
+      { "type": "category", "name": "The ministries of the Rev. Vicki McGrath, the Rev. Kendra McIntosh, the Rev. Deacon Jacqueline McLeod, and the Rev. John Mennell" },
+      { "type": "category", "name": "The work of the Commission on Ministry" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Newark" },
+      { "type": "parish", "name": "House of Prayer", "place": "Newark" },
+      { "type": "category", "name": "The ministries of the Rev. Bob Morris, the Rev. Dr. Tim Mulder, the Rev. Michael Muller, and the Rev. Dwight Neglia" },
+      { "type": "category", "name": "The work of our parishes’ Food Ministries and Thrift Shops" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity & St. Philip's Cathedral", "place": "Newark" },
+      { "type": "category", "name": "The ministries of the Rev. David Oh, the Rev. Andy Olivo, the Rev. Deacon Joanne O'Neill, and the Rev. Margaret Otterburn" },
+      { "type": "category", "name": "The work of the Standing Committee" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Newark" },
+      { "type": "parish", "name": "Christ Church", "place": "Newton" },
+      { "type": "category", "name": "The ministries of the Rev. Sr. Barbara Jean Packer, the Rev. Dr. Christine Pae, the Rev. Archie Palmer, and the Rev. Rod Perez-Vega" },
+      { "type": "category", "name": "The work of the Episcopal Church Women" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Nutley" },
+      { "type": "parish", "name": "Holy Communion", "place": "Norwood" },
+      { "type": "category", "name": "The ministries of the Rev. Jim Petroccione, the Rev. Dr. Shane Phelan, the Rev. Deacon Lind Phillips, the Rev. Joe Pickard" },
+      { "type": "category", "name": "The work of the Diocesan Investment Trust" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Annunciation", "place": "Oradell" },
+      { "type": "parish", "name": "St. Alban's", "place": "Oakland/Franklin Lakes" },
+      { "type": "category", "name": "The ministries of the Rev. Canon Robert Picken, the Rev. Deacon Annie Pike, the Rev. Deacon Sr. Monica Clare Powell, and the Rev. Anthony Puca" },
+      { "type": "category", "name": "The churches in the Augustine of Hippo Regional Ministry Network", "note": "Patron saint commemorated on August 28" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Epiphany & Christ Church", "place": "Orange" },
+      { "type": "parish", "name": "St. Matthew's", "place": "Paramus" },
+      { "type": "category", "name": "The ministries of the Rev. Jerry Racioppi, the Very Rev. Katherine Ragsdale, and the Rev. Dr. Paul Rajan" },
+      { "type": "category", "name": "The work of the Prison Ministry" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Gregory's", "place": "Parsippany" },
+      { "type": "category", "name": "The ministries of the Rev. William Rawson, the Rev. Deacon Nancy Read, the Rev. Margaret Reinfeld Haridis, and the Rev. Canon Wade Renn" },
+      { "type": "category", "name": "The churches in the Constance and Her Companions Regional Ministry Network", "note": "Patron saint commemorated on September 9" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Passaic" },
+      { "type": "parish", "name": "St. Paul's", "place": "Paterson" },
+      { "type": "category", "name": "The ministries of the Rev. Sr. Eleanor Francis Reynolds, the Rev. Dr. Karen Rezach, the Venerable Diane Riley, and the Rev. Deacon Dr. Len Roberts" },
+      { "type": "category", "name": "The work of the Commission on Hispanic/Latino Ministry - Comisión de Ministerio Hispano/Latino" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Phillipsburg" },
+      { "type": "parish", "name": "Christ Church", "place": "Pompton" },
+      { "type": "category", "name": "The ministries of the Rev. John Rollins, the Rev. Katherine Rollo, and the Rev. Dr. Joy Rose" },
+      { "type": "category", "name": "The ministry of the Rt. Rev. Carlye J. Hughes", "note": "Consecrated 11th Bishop Diocesan on September 22, 2018" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Ramsey" },
+      { "type": "parish", "name": "St. James'", "place": "Ridgefield" },
+      { "type": "category", "name": "The ministries of the Rev. David Rude, the Rev. John Salmon, the Rev. Candace Sandfort, and the Rev. Lois Schembs" },
+      { "type": "category", "name": "The work of the Episcopal Relief & Development Fund" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Ridgewood" },
+      { "type": "parish", "name": "St. Elizabeth's", "place": "Ridgewood" },
+      { "type": "category", "name": "The ministries of the Rev. Susan Schink, the Rev. Mary Frances Schjonberg, the Rev. Liz Searle, and the Rev. Wayne Sherrer" },
+      { "type": "category", "name": "The work of the Disciplinary Board" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Ringwood" },
+      { "type": "category", "name": "The ministries of the Rev. Deacon Sheila Shuford, the Rev. Susan Sica, the Rev. Deacon Jill Singleton, and the Rev. Deacon Lizabeth Smith" },
+      { "type": "category", "name": "The work of GreenFaith" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Secaucus" },
+      { "type": "parish", "name": "Grace", "place": "Rutherford" },
+      { "type": "category", "name": "The ministries of the Rev. Stuart Smith, the Rev. Willie Smith, and the Rev. Bowie Snodgrass" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. Donald MacAdie", "note": "Consecrated 2nd Bishop Suffragan on October 22, 1958" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Short Hills" },
+      { "type": "parish", "name": "St. Andrew & Holy Communion", "place": "South Orange" },
+      { "type": "category", "name": "The ministries of the Rev. Deacon Erik Soldwedel, the Rev. Barry Stopfel, and the Rev. Dr. Ronnie Stout-Kopp" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. Wilson R. Stearly", "note": "Became 4th Bishop Diocesan on October 25, 1927, upon the death of his predecessor" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Dunstan's", "place": "Succasunna" },
+      { "type": "category", "name": "The ministries of the Rev. Christopher Streeter, the Rev. Dr. Cathie Studwell, and the Rev. Margaret Swetman" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. Benjamin M. Washburn", "note": "Became 5th Bishop Diocesan on November 6, 1935, upon the retirement of his predecessor" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Calvary", "place": "Summit" },
+      { "type": "category", "name": "The ministries of the Rev. David Taylor, the Rev. Anne Thatcher, and the Rev. Bill Thiele" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. William H. Odenheimer", "note": "Became 1st Bishop Diocesan on November 12, 1874, upon the founding of this diocese" },
+      { "type": "category", "name": "The work of the Annual Diocesan Convention", "note": "Friday & Saturday, November 13 & 14" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Teaneck" },
+      { "type": "parish", "name": "St. Mark's", "place": "Teaneck" },
+      { "type": "category", "name": "The ministries of the Rev. David Thomas, the Rev. Dr. Darlene Tittle, and the Rev. Paula Toland" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. Edwin S. Lines", "note": "Consecrated 3rd Bishop Diocesan on November 18, 1903" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Towaco" },
+      { "type": "parish", "name": "Atonement", "place": "Tenafly" },
+      { "type": "category", "name": "The ministries of the Rev. Dr. Jane Tomaine, the Rev. Deacon John Van Dine, and the Rev. Dr. Skip Vilas" },
+      { "type": "category", "name": "In thanksgiving for the ministry of the Rt. Rev. Leland Stark", "note": "Installed 6th Bishop Diocesan on November 23, 1958" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Union City" },
+      { "type": "category", "name": "The ministries of the Rev. Theresa Wajnert and the Rev. Mark Waldon" },
+      { "type": "category", "name": "The work of the Human Resources Advisory Committee" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Upper Montclair" },
+      { "type": "parish", "name": "Holy Spirit", "place": "Verona" },
+      { "type": "category", "name": "The ministries of the Rev. Fain Webb, the Rev. Dean Weber, and the Rev. Lynne Weber" },
+      { "type": "category", "name": "The work of Interweave Center for Holistic Living" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Wantage" },
+      { "type": "category", "name": "The ministries of the Rev. Stephanie Wethered, the Rev. Dr. Michelle White, and the Rev. Elizabeth Wigg-Maxwell" },
+      { "type": "category", "name": "The work of the Marge Christie Fund Board" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Innocents", "place": "West Orange" },
+      { "type": "parish", "name": "Holy Trinity", "place": "West Orange" },
+      { "type": "category", "name": "The ministries of the Rev. Diana Wilcox, the Rev. Phillip Wilson, and the Rev. Hilary Won" },
+      { "type": "category", "name": "The work of Seamen’s Church Institute of NY/NJ" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Westwood" },
+      { "type": "parish", "name": "St. Paul's & Resurrection", "place": "Wood-Ridge" },
+      { "type": "category", "name": "The ministries of the Rev. Lorna Woodham, the Rev. Canon Andrew Wright, and the Rev. Paul Yoon" },
+      { "type": "category", "name": "The work of the Ward J. Herbert Fund Board" }
+    ]}
+  ]
+}
