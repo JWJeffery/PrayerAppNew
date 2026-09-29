@@ -24741,3 +24741,86 @@ week, confirming `note` is harmlessly ignored by the existing renderer (which wa
 
 **Next:** batch 2 (Idaho, Kentucky, Lexington, Maine, Nebraska), continuing the same Drive-first order
 before moving to the roster spreadsheet's remaining URLs.
+
+## 2026-09-29 (continued) -- Diocese ingestion batch 2 of many: Idaho, Kentucky, Lexington, Maine, Nebraska
+
+Continuing the same 5-at-a-time Drive-first ingestion per Josh's standing instruction. All 5 are
+`scope: "diocese"`, `cycleType: "dated"`, `year: 2026`.
+
+**Idaho** (`episcopal-idaho-2026.json`, source: "2026 Prayer Calendar for the Diocese of Idaho.xlsx",
+Drive id `1xMZWFpVrKnHqPWYkmrttFn9koK9vt9vR`). Clean CSV-style extraction via `read_file_content`, no
+page rendering needed. 52 dated entries, Jan 4-Dec 27 2026 (self-contained calendar year). Excludes the
+source's own "Anglican Communion Prayer Cycle" column (separate scope-`communion` corpus, per the
+Connecticut precedent) and includes its "Social Justice Prayer Cycle" column as a second `category`
+subject each week. **A genuine source error, corrected rather than flagged:** the source prints four
+consecutive Sundays as "June 5/12/19/26, Proper 9/10/11/12" immediately after "June 28, Proper 8" and
+before "August 2, Proper 13." Jan 4, 2026 is independently confirmed a Sunday; 26 weeks later lands on
+July 5, not June 5, and the Proper sequence (8, then 9-12, then 13) is only continuous under a July
+reading. Corrected to July 5/12/19/26 with full disclosure of the verification method in the file's own
+`notes`, per this corpus's standing rule (from the earlier EOR/OOR sanctoral-date precedent) that a
+verifiably wrong date gets fixed, not just documented. Diocese name "Diocese of Idaho" is taken from
+Josh's own filename, not printed in the document body -- disclosed as such.
+
+**Kentucky** (`episcopal-kentucky-2026.json`, source: "Cycle_of_Prayer_-_Weekly_2026.xlsx_-_Sheet1-2.pdf",
+Drive id `1cOgPOYwZxznZNflxBLrkl5_SN_Rndips`). Linearized text extraction was garbled (several fixed-date
+commemorations pulled out of row order), but the main Sunday-by-Sunday sequence itself reads cleanly and
+in order, so full page rendering was not needed. **Architecturally distinct from every prior file in
+this corpus: the source prints NO calendar dates anywhere, only lectionary Sunday names** ("First Sunday
+of Advent" ... "Last Sunday after Pentecost: Christ the King"), Advent 2025 through Christ the King 2026.
+Calendar dates for the 47 Sundays landing in 2026 (Jan 4-Nov 22) were determined by cross-referencing the
+Diocese of Lexington's own companion file (below), ingested in this same batch, which covers the
+identical Advent-2025-to-Christ-the-King-2026 span under the same TEC "Year A / Daily Office Year Two"
+lectionary and prints an explicit date for every one of the same Sunday names in the same order. Since
+both dioceses observe the same fixed Western liturgical calendar for the same civil year, this is a
+reliable cross-document date determination, not an independent computation -- disclosed at length in the
+file's own `notes` as a judgment call rather than presented as source-printed. Four fixed-date
+commemorations the source interleaves between Sundays (Thomas Merton, Dec 10, 2025, out of range; Anne
+Braden, March 6; Sister Emily Cooper, April 16; A.H. McNeil, October 10) are not attached to any specific
+Sunday's own entry, to avoid mis-attributing a fixed date to the wrong week, and are instead disclosed in
+full in the file's `notes`. Diocese name "The Diocese of Kentucky" is inferred (not printed in the
+source), same situation as Atlanta in batch 1.
+
+**Lexington** (`episcopal-lexington-2026.json`, source: "intercessory_25-26_4-14-2026.pdf", Drive id
+`11SpVIKTeODLXHI5h6O4WB0fd9epvMZ6-`). The main Sunday cycle extracted cleanly with explicit printed
+dates for every lectionary Sunday name (this is the file that let Kentucky's dates be determined, per
+above); two appendix sections -- a "Clergy Spouses and Surviving Clergy Spouses" name list (embedded
+under March 8's entry) and an "ANNIVERSARIES" section (ordination/consecration dates by month) -- were
+garbled multi-column extractions and are excluded from `entries` entirely as out of scope for the
+per-Sunday rotation (March 8's own category subject, "Clergy Spouses and Surviving Clergy Spouses," is
+retained; its member roster is not). 47 entries, Jan 4-Nov 22 2026 (the four 2025 Advent Sundays are out
+of range). Several subjects with no city given in the source (Christ Church Cathedral, July 12; St.
+Augustine's Chapel/Campus Ministry, August 16; St. Philip's Episcopal Church, April 19) are handled per
+this corpus's no-fabrication rule: Christ Church Cathedral's Lexington seat is disclosed as an inference
+rather than silently added as a `place`, and St. Philip's -- with no city at all -- is recorded as
+`category` rather than `parish`. "St. Andrew's Episcopal Church, Lexintgon" (September 6) preserves the
+source's own apparent typo verbatim.
+
+**Maine** (`episcopal-maine-2026.json`, source: "Cycle of Prayer 2025-2026.pdf", Drive id
+`1YKKXg5T-Ld-hkPPzhFdIFwAp9CgtRAFG`). Cleanest extraction of the batch -- fully linear, one row per
+Sunday, no rendering needed. 48 entries, Jan 4-Nov 29 2026 (five 2025 Sundays out of range). The source's
+own header discloses a standing weekly addition (a Resolution-1 foster-care prayer, every Sunday through
+Christ the King 2026) which is quoted in full in this file's `notes` rather than repeated into every
+entry. April 5 (Easter) has no parish named, only the acclamation "Christ is Risen! He is Risen Indeed!"
+-- recorded as a `category` rather than fabricating a parish. November 21, 2026 is printed in the source
+as a Saturday (not the usual Sunday) and preserved as printed, since unlike a wrong date there is no
+independent way to verify whether this is deliberate or a typo.
+
+**Nebraska** (`episcopal-nebraska-2026.json`, source: "Weekly_Prayer_Cycle_Calendar_2026.pdf", Drive id
+`19azf190vjQrGgRuht5cUF1m9T4A1ROYt`). Linearized text extraction badly garbled the Jan-Aug portion
+(all 17 dates dumped together, then one undifferentiated paragraph of content with no way to reattach
+subjects to specific weeks) -- downloaded, decoded, rendered to page images at 150dpi with `pdftoppm`,
+and transcribed directly from the rendered 3-page grid table per the standing PDF-rendering rule. 52
+entries, Jan 4-Dec 27 2026 (self-contained calendar year, no cross-year issue). Most weeks carry two or
+three subjects side by side from the source's own table row; several are the source's own monthly
+heritage-month/observance sentences (e.g. "During Black History Month: In thanksgiving for...") recorded
+as `category` subjects using the full sentence, since the schema has no separate observance field.
+"Holy Host, Omaha" (June 21) is preserved exactly as printed from the rendered image (not an OCR
+artifact -- read directly off the page).
+
+All 5 registered in `CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`). `npm run audit:cycles-of-prayer`:
+PASS, 18 files, 0 findings. Not yet live-verified in a browser this batch (batch 1 was) -- worth a spot
+check next session, though the renderer itself was not touched and batch 1's live check already confirmed
+`note` and category-only weeks render without error.
+
+**Next:** batch 3 (New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin), continuing the same
+Drive-first order before moving to the roster spreadsheet's remaining URLs.

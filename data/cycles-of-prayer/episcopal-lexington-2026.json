@@ -1,0 +1,587 @@
+{
+  "id": "episcopal-lexington-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Lexington",
+  "dioceseShort": "lexington",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Intercessory Prayer List, Advent 2025 - Christ the King Sunday 2026",
+  "sourceFile": "\"intercessory_25-26_4-14-2026.pdf\", provided directly by Josh via Google Drive (file id 11SpVIKTeODLXHI5h6O4WB0fd9epvMZ6-, folder \"TEC Cycle of Prayer\")",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own cycle runs Advent 2025 (Sunday, November 30, 2025) through Christ the King Sunday (Sunday, November 22, 2026), keyed to lectionary Sunday names with explicit calendar dates printed alongside each one. Only the portion landing in calendar year 2026 (January 4, 2026 through November 22, 2026, inclusive -- 47 Sundays) is included here; the four Advent-through-Christmas 2025 Sundays are out of this file's calendar-year scope and not included.",
+    "Two appendix sections in the source are not part of the weekly Sunday cycle and are excluded from `entries` entirely: a 'Clergy Spouses and Surviving Clergy Spouses' name roster (embedded under March 8's entry, whose category subject IS retained) and an 'ANNIVERSARIES' section (ordination/consecration anniversary dates for clergy, organized by month, unrelated to the per-Sunday rotation). Both sections' internal column layout was also garbled in this file's text extraction and could not be reliably re-ordered.",
+    "The August 9 entry's 'Non-Parochial, Non-Stipendiary, Non-Resident Licensed, Resident/Non-Geographical and Retired Clergy' category likewise omits the source's attached name list.",
+    "Several category subjects (Christ Church Cathedral, July 12; St. Augustine's Chapel/Campus Ministry, August 16) have their city inferred or omitted per this corpus's rule against fabricating an unstated place -- disclosed on each such subject's own `note` field. 'St. Philip's Episcopal Church' (April 19) is recorded as a `category` rather than `parish` for the same reason: no city was given.",
+    "January 4's 'Emmanuel Episcopal Church' place ('Winchester') is inferred from this same source's own later, more complete listing of the identical parish name on November 15, 2026; the city is not repeated in the January 4 line itself.",
+    "'St. Andrew's Episcopal Church, Lexintgon' (September 6) preserves the source's own apparent typo for 'Lexington' verbatim, per this corpus's standing rule against silently correcting spelling.",
+    "Each parish/category subject's `note` field holds the specific clergy/warden name(s) and title(s) the source prints alongside that entry that week -- the source's own per-week content, not an editorial annotation."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday after Christmas Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Winchester",
+          "note": "The Rev. Ryan Bloyd-Wiseman, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany, Baptism of Our Lord",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Youth Community"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King, Diocesan Chapter"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Prestonsburg",
+          "note": "The Rev. Rob Musick, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Paris",
+          "note": "The Rev. Izak McKenzie, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Beattyville",
+          "note": "David Jennings, Bishop's Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Madison County (Richmond)",
+          "note": "David Wade, Senior Warden; The Rev. Dcn. Emily Cardwell"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women",
+          "note": "Cynthia Fassler, President"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Men of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Harlan",
+          "note": "Marye Boggs, Senior Warden; The Rev. Bruce Cory, Priest-in-Partnership"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Seminarians, Postulants and Candidates of the Diocese of Lexington",
+          "note": "Theological Education Sunday; the source also prints the diocesan vision statement 'Be the Church, Be the Change' alongside this entry"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy Spouses and Surviving Clergy Spouses",
+          "note": "The source prints an extensive name list here; the list's own column layout was garbled in extraction and is not reproduced -- see file notes"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick Episcopal Church",
+          "place": "Somerset",
+          "note": "The Rev. Chris Brannock, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Florence",
+          "note": "Mike Davis, Bishop's Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Jessamine County",
+          "note": "The Rev. Anna Baumann, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Lexington",
+          "note": "The Rev. G. Hendree Harrison, Rector; The Rev. Emily Badgett, Assistant to the Rector; The Rev. Anisa Willis, MSW, Assisting Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Episcopal Church",
+          "place": "Ashland",
+          "note": "Rick Waddle, Senior Warden; The Rev. Dcn. Tina Mussetter, Deacon"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Philip's Episcopal Church",
+          "note": "No city/town was given for this parish in the source; recorded as a category rather than fabricating a place. Jamie Wince, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Cathedral Domain",
+          "note": "Justin Vogel, Director; Elena Vogel, Administrative & Program Assistant"
+        },
+        {
+          "type": "parish",
+          "name": "The Cathedral Church of St. George the Martyr",
+          "place": "Lexington",
+          "note": "The Very Rev. Jason Leo, Dean; Kathleen Luchtefeld, Lay Canon"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province IV of The Episcopal Church",
+          "note": "Angela Daniel, President; The Rt. Rev. Brian Cole, Diocese of East Tennessee, Vice-President"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Mount Sterling",
+          "note": "The Rev. Dr. Rob Slocum, Priest-In-Partnership"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Frankfort",
+          "note": "The Rev. Peter Doddema, Rector; The Rev. Dr. William Brown, Assistant Priest; The Rev. Dcn. Rebecca Saager, Curate; The Rev. Dcn. Sue Kurtz, Deacon"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost/Whitsunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Mark Van Koevering, VIII Bishop of Lexington",
+          "note": "In gratitude for his ministry; the source notes he retires at the end of this month"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday After Pentecost/Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Covington",
+          "note": "Josh Mitchell, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Proper 5, Second Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The University of the South",
+          "note": "The Rt. Rev. Dr. Jacob W. Owensby, 26th Chancellor; Dr. Robert W. Pearigen, 18th Vice-Chancellor; The Rev. Cn. James F. Turrell, Ph.D., Dean, School of Theology"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Proper 6, Third Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Danville",
+          "note": "Cindy Turcea, Senior Warden; The Rev. Dcn. Mark Richard, Deacon"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Proper 7, Fourth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kentucky Council of Churches",
+          "note": "Pastor Rich Gianzero, Executive Director"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Proper 8, Fifth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Episcopal Church",
+          "place": "Georgetown",
+          "note": "The Rev. Karen Booth, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Proper 9, Sixth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Active Deacons of the Diocese of Lexington",
+          "note": "The Rev. Dcn. Emily Cardwell; The Rev. Dcn. Susan Kurtz; The Rev. Dcn. Tina Mussetter; The Rev. Dcn. Mark Richard; The Rev. Dcn. Tom Runge; The Rev. Dcn. Rebecca Saager"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Proper 10, Seventh Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ Church Cathedral",
+          "note": "The diocese's cathedral, seated in Lexington, KY (city not repeated alongside this entry in the source); The Very Rev. Carol Wade, Dean & Rector; The Rev. Charles Halton, Associate Rector; The Rev. Kenny Pierce, Associate Rector; The Rev. Anne Fore, Daughters of the King Chaplain"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Proper 11, Eighth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Communion",
+          "note": "The Most Rev. Sarah Mullally, 106th Archbishop of Canterbury; the Lambeth Conference; Primates of the Anglican Communion; the Anglican Consultative Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Proper 12, Ninth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Special Convention to Elect the IX Bishop of Lexington"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Proper 13, Tenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace United Lutheran Episcopal Church",
+          "place": "Lexington",
+          "note": "The Rev. Laura Altman, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Proper 14, Eleventh Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Non-Parochial, Non-Stipendiary, Non-Resident Licensed, Resident/Non-Geographical and Retired Clergy",
+          "note": "The source lists an extensive clergy name roster here, not reproduced -- see file notes"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Proper 15, Twelfth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Augustine's Chapel/Campus Ministry",
+          "note": "Rob Coulston, Lay Chaplain"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Proper 16, Thirteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Hubert's Episcopal Church",
+          "place": "Clark County",
+          "note": "The Rev. Duane Smith, Rector; The Rev. Charles Ellestad, Assisting Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Proper 17, Fourteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Michael the Archangel",
+          "place": "Lexington",
+          "note": "The Ven. Laurie Brock, Rector; The Rev. Jessee Neat, Assisting Priest; The Rev. Margaret Shanks, Assisting Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Proper 18, Fifteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "Lexintgon",
+          "note": "The Rev. Michael Henderson, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Proper 19, Sixteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis' Church",
+          "place": "Flemingsburg",
+          "note": "Joan Bumgardner, Bishop's Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Proper 20, Seventeenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Walnut Hill Church",
+          "place": "Lexington",
+          "note": "The Rev. Shawn E. Barkley, Minister"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Proper 21, Eighteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Raphael's Episcopal Church",
+          "place": "Lexington",
+          "note": "The Rev. Canon Helen Van Koevering, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Proper 22, Nineteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Hazard",
+          "note": "Lisa Townes, Bishop's Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Proper 23, Twentieth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's Episcopal Church",
+          "place": "Morehead",
+          "note": "Judith Yancy, Bishop's Warden; The Rev. Mary Kilbourn-Huey, Regular Supply"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Proper 24, Twenty-First Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Versailles",
+          "note": "The Rev. Keila Thomas, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Proper 25, Twenty-Second Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Middlesboro",
+          "note": "Sue Granger, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "Proper 26, All Saints Day, Twenty-Third Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Executive Council"
+        },
+        {
+          "type": "category",
+          "name": "Standing Committee"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Proper 27, Twenty-Fourth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Corbin",
+          "note": "The Rev. Bruce Cory, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Proper 28, Twenty-Fifth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "130th Annual Convention of the Diocese of Lexington",
+          "note": "Hosted by Emmanuel Episcopal Church, Winchester"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Proper 29, Christ the King, Last Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Archdeacons of the Diocese of Lexington",
+          "note": "The Ven. Laurie Brock, Bluegrass Region; The Ven. Jeff Queen, Ohio Valley Region"
+        }
+      ]
+    }
+  ]
+}

@@ -40,6 +40,10 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'east-carolina', label: 'Episcopal Diocese of East Carolina' },
     { bodySlug: 'episcopal', dioceseShort: 'great-lakes', label: 'The Episcopal Diocese of the Great Lakes' },
     { bodySlug: 'episcopal', dioceseShort: 'idaho', label: 'The Episcopal Diocese of Idaho' },
+    { bodySlug: 'episcopal', dioceseShort: 'kentucky', label: 'The Diocese of Kentucky' },
+    { bodySlug: 'episcopal', dioceseShort: 'lexington', label: 'The Diocese of Lexington' },
+    { bodySlug: 'episcopal', dioceseShort: 'maine', label: 'The Episcopal Diocese of Maine' },
+    { bodySlug: 'episcopal', dioceseShort: 'nebraska', label: 'The Episcopal Diocese of Nebraska' },
     { bodySlug: 'episcopal', dioceseShort: 'arkansas', label: 'The Episcopal Diocese of Arkansas', cycleType: 'monthly-recurring' }
 ]);
 

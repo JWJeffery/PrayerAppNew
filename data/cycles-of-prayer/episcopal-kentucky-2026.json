@@ -1,0 +1,518 @@
+{
+  "id": "episcopal-kentucky-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Kentucky",
+  "dioceseShort": "kentucky",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer, weekly (2026)",
+  "sourceFile": "\"Cycle_of_Prayer_-_Weekly_2026.xlsx_-_Sheet1-2.pdf\", provided directly by Josh via Google Drive (file id 1cOgPOYwZxznZNflxBLrkl5_SN_Rndips, folder \"TEC Cycle of Prayer\")",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The diocese name 'The Diocese of Kentucky' is inferred from Josh's own filename/roster identification, not printed anywhere in the source document's body -- same situation as this corpus's earlier Atlanta file.",
+    "The source keys every entry to a liturgical Sunday name (e.g. 'First Sunday after the Epiphany'), Advent 2025 through Christ the King 2026, with NO calendar dates printed anywhere in the document. Calendar dates for the 2026 portion were determined by cross-referencing the Diocese of Lexington's own companion cycle-of-prayer document (also ingested in this same batch, file id 11SpVIKTeODLXHI5h6O4WB0fd9epvMZ6-), which covers the identical Advent 2025-Christ the King 2026 span using the same TEC 'Year A / Daily Office Year Two' lectionary and explicitly prints a calendar date for every one of the same Sunday names in the same order. Since both dioceses observe the same fixed Western liturgical calendar for the same civil year, this is a reliable date determination and not an independent computation -- it is disclosed here per this corpus's standing rule to flag any judgment call rather than presenting it as source-printed.",
+    "Only the portion landing in calendar year 2026 (Second Sunday after Christmas through Christ the King, 47 Sundays, January 4 - November 22, 2026) is included; the four Advent 2025 Sundays and First Sunday after Christmas (2025) are out of this file's calendar-year scope.",
+    "The source also prints four fixed-date commemorations interleaved between the weekly Sunday entries, unconnected to any specific Sunday's own subject: 'Thomas Merton is commemorated December 10' (2025, out of scope), 'Anne Braden, Civil Rights Activist is commemorated March 6' (2026, falls between the Second and Third Sundays in Lent), 'Sister Emily Cooper, Deaconess is commemorated on April 16' (2026, falls between the Second and Third Sundays of Easter), and 'A.H. McNeil, priest and educator, commemorated October 10' (2026, falls between the Eighteenth and Nineteenth Sundays after Pentecost). None is attached to a specific Sunday entry above, to avoid mis-attributing a fixed commemoration date to the wrong week; all are disclosed here in full instead.",
+    "'Resurrection, Louisville' (May 31) and 'The School of Theology at Sewanee -- The University of the South' (April 26) are transcribed exactly as printed, including the source's own em-dash-style phrasing.",
+    "Kentucky labels the Sunday before Lent 'Sixth Sunday after the Epiphany' where the BCP calendar and the Diocese of Lexington's own document instead call the same date 'Last Sunday after the Epiphany' -- both are the source's own choice of label for the identical date and are preserved as each diocese printed them."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Home of the Innocents"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Murray State Campus Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Racial Healing Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Henderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kentucky Refugee Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Sixth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Church",
+          "place": "Brandenburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Paducah"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Hickman"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Elizabethtown"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Messiah Trinity Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Merciful Saviour",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Fulton"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday in Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Western Kentucky University Campus Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The School of Theology at Sewanee -- The University of the South"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Bardstown"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Cathedral",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development (ERD)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theological Education and Seminaries of the Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kentucky Council of Churches (KCC)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Russellville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Home and Episcopal Retirement Services"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Hopkinsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parish Health Ministries and Norton Healthcare"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Pewee Valley"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. George's Scholar Institute"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All those in the discernment process in our Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. George's Community Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Madisonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "University of Louisville Campus Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bowling Green"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Church",
+          "place": "Louisville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Luke's Chapel at the Episcopal Church Home"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis in the Fields Church",
+          "place": "Harrod's Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Aaron McNeil Community Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Anchorage"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty-first Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Shelbyville"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty-second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Owensboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints' Day / Twenty-third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Saints Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty-fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Urban Partnership"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty-fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For those serving on diocesan bodies and in licensed lay ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost: Christ the King",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province IV of the Episcopal Church"
+        }
+      ]
+    }
+  ]
+}
