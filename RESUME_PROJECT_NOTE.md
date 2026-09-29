@@ -446,27 +446,46 @@ still no Drive/Sheets write tool to literally annotate the spreadsheet itself). 
 for a multi-diocese batch when the session has capacity for it — use it again rather than fetching
 serially; **always cross-check each new diocese's chosen slug against `TEC_DIOCESE_DIRECTORY` before
 registering, not after.** For a JS-only calendar-widget source, try the embedded-Google-Calendar ICS
-trick (above) before giving up. Alphabetically, the next batch starts after North Carolina (~North
-Dakota onward; Mississippi/Navajoland deliberately skipped, see above; check the roster/registry directly
-rather than trusting this note's ordering). Easton, El Camino Real (batch 5/6), and Massachusetts (batch
-8) remain attempted-but-set-aside/blocked, not yet retried — Massachusetts specifically is waiting on
-Josh to supply the PDF the way he did for Delaware and Central New York; **Josh has asked to have all
-currently-blocked links surfaced to him together "in a little while"** — when he asks, gather every
-still-open blocked URL from batches 5/6, 8, and this note before replying, not just the most recent one.
+trick (above) before giving up.
 
-**~88 dioceses have a located, verified current cycle per the roster; 45 are now ingested into this
-corpus, ~43 remain** (separately, 18 dioceses have no verified source at all per Josh's own research —
-see `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
+**Easton and Massachusetts: DONE 2026-09-29, both unblocked by Josh directly, per his own standing
+"send me the link and I'll fetch it" offer.** Josh supplied both PDFs after being sent the exact blocked
+URLs. `episcopal-easton-2026.json` (13 entries, July-Sept 2026 only — a quarterly document; "Recheck for
+Q4" per the roster's own note, same pattern as Missouri/Springfield). `episcopal-massachusetts-2026.json`
+(47 entries, Jan 4-Nov 22 2026 — a 52-week source spanning Advent 2025 through Pentecost 2026; the 5
+weeks falling in calendar 2025 were disclosed-and-excluded per the Atlanta/North Carolina precedent, not
+Delaware's even-split precedent, since the balance is heavily lopsided 5-vs-47). A genuine date-ordering
+anomaly in the Massachusetts source itself (its printed "Sixth Sunday of Easter" week is dated AFTER its
+"Seventh Sunday of Easter" week, and neither Sunday-after-Easter number matches the real 2026 calendar
+for either date) was disclosed and the entry order corrected to satisfy this schema's chronological rule,
+without touching either week's own printed content/label. **El Camino Real: REMOVED from
+`TEC_DIOCESE_DIRECTORY` entirely, per Josh's direct instruction ("El Camino Real is historical only.
+Remove it.")** — this diocese merged into the Diocese of California and no longer exists independently;
+it is no longer a selectable profile option, not merely skipped for ingestion. Full detail:
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Easton, Massachusetts ingested; El Camino Real removed" entry.
 
-**48 files currently in the corpus, all passing the validator:** 41 diocese-level, `cycleType: "dated"`
+**Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time.
+Alphabetically, the next batch starts after North Carolina (~North Dakota onward; Mississippi/Navajoland
+deliberately skipped, see above; check the roster/registry directly rather than trusting this note's
+ordering). No blocked links remain open as of this writing — Josh has now supplied both Easton and
+Massachusetts; if a future fetch gets blocked, report the exact URL to Josh per his standing offer rather
+than working around it.
+
+**~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
+historical); 47 are now ingested into this corpus, ~40 remain** (separately, 18 dioceses have no verified
+source at all per Josh's own research — see `tecDioceseRoster.noSourceFound` in schema.json — those
+won't get ingested unless a source turns up).
+
+**50 files currently in the corpus, all passing the validator:** 43 diocese-level, `cycleType: "dated"`
 — Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
-Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Florida,
-Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland,
-Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, Nebraska, Newark, New
-Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 3 diocese-level,
-`cycleType: "monthly-recurring"` — Arkansas, Northern Indiana, Iowa; 1 diocese-level, `cycleType:
-"annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
-(`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
+Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton,
+Florida, Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine,
+Maryland, Massachusetts, Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina,
+Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts,
+Colorado; 3 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana, Iowa; 1
+diocese-level, `cycleType: "annual-recurring"` — Long Island; 1 diocese-level, `cycleType:
+"ordinal-sunday-monthly"` — Hawai'i (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match
+`TEC_DIOCESE_DIRECTORY`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
@@ -481,8 +500,11 @@ full TEC roster rather than just the ~6 dioceses this app has cycle content for.
 diocese `<select>` only listed the handful of dioceses `CYCLES_OF_PRAYER_DIOCESES` had real files
 for — a user in any of the other ~100 TEC dioceses simply couldn't declare one at all. Added
 `TEC_DIOCESE_DIRECTORY` (`js/cycles-of-prayer.js`) — all 106 TEC dioceses/jurisdictions from Josh's own
-roster (88 located + 18 no-verified-cycle), name-only, independent of whether this app has ingested
-that diocese's content — and widened `isValidCycleOfPrayerDioceseKey` to validate against it instead of
+roster (88 located + 18 no-verified-cycle) as it stood that day, name-only, independent of whether this
+app has ingested that diocese's content — **now 105, since El Camino Real was removed entirely
+2026-09-29 per Josh's direct instruction ("El Camino Real is historical only. Remove it.") — it merged
+into the Diocese of California and is no longer a selectable profile option, not merely unfetched** —
+and widened `isValidCycleOfPrayerDioceseKey` to validate against it instead of
 the much shorter has-content list (which stays exactly as it was, still governing what actually gets
 fetched/rendered). The diocese `<select>` in `index.html` is now populated at runtime from this
 directory (`populateCycleOfPrayerDioceseSelect(s)`) rather than hand-listed in the markup, which would
