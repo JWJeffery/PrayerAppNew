@@ -526,21 +526,30 @@ questions remain in the file, none `blocks_beta: true` and open.
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions): nothing outstanding.**
 Every numbered task through #15 is closed as of 2026-09-28 (naming consistency, mobile scroll,
 others) — see `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md` and Volume 5 for
-per-item evidence if a future report seems to contradict this. **Two more closed 2026-09-29, both
-from a live screenshot**: the one-time onboarding prompt was firing before a tradition was even
-chosen (on a brand-new/Incognito visit, immediately after page load, blocking the splash itself) --
-`maybeShowOnboardingPrompt()` now refuses to render until `profile.traditionDefault` is actually set,
-and `setUserTraditionDefault()` calls it right after persisting a real tradition choice instead; a
-floated drop-cap (`.component-text::first-letter`) was causing a long paragraph's later lines to
-revert to a further-left, un-indented margin than the lines still wrapping beside the cap -- fixed
-with a matched `padding-left`/negative-`margin-left` pair on `.component-text`/`::first-letter` so
-every line's start position is governed by padding (which a float can never protrude past) rather
-than the float's own height. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entry. **Caveat
-for whoever picks this up next**: this session's sandbox cannot reach fonts.googleapis.com (confirmed
-via a console `ERR_CERT_AUTHORITY_INVALID`), so the drop-cap fix could not be pixel-verified against
-the app's real fonts locally -- verified only structurally (the padding/margin cancel out exactly by
-construction, proportionally, regardless of actual font metrics) and via a fallback-font screenshot
-showing no regression. Ask Josh to confirm live if this comes up again.
+per-item evidence if a future report seems to contradict this. **Four more closed 2026-09-29, all
+from live screenshots/reports, two of them in two rounds (Josh corrected the first fix's own
+mechanism once it still wasn't quite right):**
+- **Onboarding prompt trigger.** FINAL state: fires from exactly two places, both user-initiated,
+  neither "before prayer" — `openUserProfilePanel()` (a first profile-button click, from either the
+  per-office icon or the splash's "Your Profile" button) and `office-shell.js`'s `updateRailCurrent()`
+  (the first time a reader scrolls to the very bottom of an office, Josh's own suggested trigger). It
+  no longer auto-fires on page load OR right after a tradition is chosen — an intermediate same-day
+  fix tried the latter, but Josh's own follow-up ("Not before prayer") ruled that out too.
+- **Drop-cap line-wrap misalignment.** A floated `.component-text::first-letter` was causing a long
+  paragraph's later lines to revert to a further-left, un-indented margin than the lines still
+  wrapping beside the cap — fixed with a matched `padding-left`/negative-`margin-left` pair so every
+  line's start position is governed by padding (which a float can never protrude past) rather than
+  the float's own height. **Caveat for whoever picks this up next**: this session's sandbox cannot
+  reach fonts.googleapis.com (confirmed via a console `ERR_CERT_AUTHORITY_INVALID`), so this could
+  only be verified structurally (the padding/margin cancel out exactly by construction, proportionally,
+  regardless of actual font metrics) plus a fallback-font screenshot showing no regression, not a real
+  before/after against the app's actual fonts. Ask Josh to confirm live if this comes up again.
+- **Cycle of Prayer sidebar entries.** The three tiers (Communion/Diocesan/Parish) render their own
+  rubric headings (PR #90) but never got a matching sidebar ("The Order") entry, since
+  `bcpEmitRubricHeading` never pushed to `env.blocks` — fixed by threading `env` through and pushing
+  the same `{label, role, units:[]}` shape every other titled section already pushes.
+
+Full per-fix detail for all four: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entries.
 
 **Sanctoral (EOR/OOR) work: fully closed as of 2026-09-28 — the 13-month Coptic gap sweep, the
 18-entry coptic.io cross-check (17 confirmed, 1 disclosed exception — `saint-onesiphorus-of-the-
