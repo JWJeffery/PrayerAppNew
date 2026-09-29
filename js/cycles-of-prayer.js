@@ -25,9 +25,14 @@
 // data/cycles-of-prayer/schema.json) -- 'dated' (the default, omitted below)
 // for a file keyed by specific ISO calendar dates within a stated `year`,
 // 'monthly-recurring' for a standing cycle keyed by bare day-of-month (1-31)
-// with no year at all. Kept here too (duplicated with the file's own field)
-// because this registry has to pick a load path and cache key BEFORE
-// fetching the file -- see loadCycleOfPrayerYear/getCachedCycleOfPrayerWeek.
+// with no year at all, 'annual-recurring' for a standing cycle keyed by
+// month+day-of-month (different content on every day of the year, including
+// a possible Feb 29) with no year, 'ordinal-sunday-monthly' for a standing
+// cycle keyed by month + which Sunday of that month (1st-5th) with no year
+// and no calendar date printed in the source at all. Kept here too
+// (duplicated with the file's own field) because this registry has to pick a
+// load path and cache key BEFORE fetching the file -- see
+// loadCycleOfPrayerYear/getCachedCycleOfPrayerWeek.
 const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'western-oregon', label: 'The Episcopal Church in Western Oregon' },
     { bodySlug: 'episcopal', dioceseShort: 'alabama', label: 'The Episcopal Diocese of Alabama' },
@@ -57,7 +62,14 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'central-new-york', label: 'The Episcopal Diocese of Central New York' },
     { bodySlug: 'episcopal', dioceseShort: 'chicago', label: 'The Episcopal Diocese of Chicago' },
     { bodySlug: 'episcopal', dioceseShort: 'colorado', label: 'The Episcopal Church in Colorado' },
-    { bodySlug: 'episcopal', dioceseShort: 'florida', label: 'The Episcopal Diocese of Florida' }
+    { bodySlug: 'episcopal', dioceseShort: 'florida', label: 'The Episcopal Diocese of Florida' },
+    { bodySlug: 'episcopal', dioceseShort: 'delaware', label: 'The Episcopal Church in Delaware' },
+    { bodySlug: 'episcopal', dioceseShort: 'georgia', label: 'Episcopal Diocese of Georgia' },
+    { bodySlug: 'episcopal', dioceseShort: 'hawai-i', label: "The Episcopal Diocese of Hawai'i", cycleType: 'ordinal-sunday-monthly' },
+    { bodySlug: 'episcopal', dioceseShort: 'indianapolis', label: 'The Episcopal Diocese of Indianapolis' },
+    { bodySlug: 'episcopal', dioceseShort: 'iowa', label: 'The Diocese of Iowa', cycleType: 'monthly-recurring' },
+    { bodySlug: 'episcopal', dioceseShort: 'kansas', label: 'The Episcopal Diocese of Kansas' },
+    { bodySlug: 'episcopal', dioceseShort: 'long-island', label: 'Episcopal Diocese of Long Island', cycleType: 'annual-recurring' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
@@ -213,22 +225,28 @@ function findCycleOfPrayerDiocese(key) {
     return CYCLES_OF_PRAYER_DIOCESES.find(d => cycleOfPrayerDioceseKey(d.bodySlug, d.dioceseShort) === key) || null;
 }
 
+// The three cycleTypes with no `year` field at all in their own JSON file --
+// each has exactly one standing file, not one per year. Kept as a single set
+// so cache-key/file-path logic (and getCachedCycleOfPrayerWeek's dispatch)
+// don't have to enumerate all three separately at every call site.
+const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
+
 // Cache key is dioceseKey + ':' + year for a 'dated' diocese, or just
-// dioceseKey for a 'monthly-recurring' one (its file has no year, so there
-// is only ever one cache entry per diocese, not one per year). Value is the
-// parsed JSON, or null if the file does not exist / failed to load. A miss
-// (key not present at all) means "not requested yet or still loading" --
-// render call sites must treat that as "nothing to show yet", never as
-// "confirmed absent".
+// dioceseKey for a no-year cycleType (its file has no year, so there is only
+// ever one cache entry per diocese, not one per year). Value is the parsed
+// JSON, or null if the file does not exist / failed to load. A miss (key not
+// present at all) means "not requested yet or still loading" -- render call
+// sites must treat that as "nothing to show yet", never as "confirmed
+// absent".
 const _cyclesOfPrayerCache = new Map();
 
 function cycleOfPrayerCacheKey(diocese, dioceseKey, year) {
-    return diocese.cycleType === 'monthly-recurring' ? dioceseKey : (dioceseKey + ':' + year);
+    return NO_YEAR_CYCLE_TYPES.has(diocese.cycleType) ? dioceseKey : (dioceseKey + ':' + year);
 }
 
 function cycleOfPrayerFilePath(diocese, year) {
     const base = 'data/cycles-of-prayer/' + diocese.bodySlug + '-' + diocese.dioceseShort;
-    return diocese.cycleType === 'monthly-recurring' ? (base + '.json') : (base + '-' + year + '.json');
+    return NO_YEAR_CYCLE_TYPES.has(diocese.cycleType) ? (base + '.json') : (base + '-' + year + '.json');
 }
 
 /**
@@ -328,6 +346,82 @@ function resolveMonthlyRecurringEntry(corpus, date) {
 }
 
 /**
+ * Resolves the current entry from an already-loaded 'annual-recurring'
+ * corpus: the entry whose (month, day) is the latest one on or before
+ * `date`'s own (month, day), wrapping around to the entry with the highest
+ * (month, day) if `date` falls before the file's first entry -- same
+ * "latest on-or-before, wrapping" semantics as resolveMonthlyRecurringEntry,
+ * just keyed on two fields instead of one. A Feb 29 entry only ever gets
+ * selected when `date` itself is genuinely Feb 29 (a real Date object can't
+ * produce that value in a non-leap year), so no leap-year check is needed
+ * here -- ordinary comparison already does the right thing.
+ */
+function resolveAnnualRecurringEntry(corpus, date) {
+    if (!corpus || !Array.isArray(corpus.entries) || corpus.entries.length === 0) return null;
+
+    const key = (date.getMonth() + 1) * 100 + date.getDate();
+    let best = null;
+    for (const entry of corpus.entries) {
+        if ((entry.month * 100 + entry.day) > key) break;
+        best = entry;
+    }
+    return best || corpus.entries[corpus.entries.length - 1];
+}
+
+/** Sunday=0 ... Saturday=6, same as Date.prototype.getDay(). */
+function mostRecentSundayOnOrBefore(date) {
+    const result = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    result.setDate(result.getDate() - result.getDay());
+    return result;
+}
+
+/**
+ * Which Sunday-of-its-own-month `sunday` is (1 = 1st Sunday of that month,
+ * up to 5). `sunday` must actually be a Sunday (callers pass the result of
+ * mostRecentSundayOnOrBefore, never a raw date) -- this is ordinary calendar
+ * arithmetic on an already-known real date, not a computation of WHICH
+ * subject applies (that's still entirely up to the source's own printed
+ * ordinal label, looked up afterward).
+ */
+function ordinalSundayOfMonth(sunday) {
+    return Math.floor((sunday.getDate() - 1) / 7) + 1;
+}
+
+/**
+ * Resolves the current entry from an already-loaded 'ordinal-sunday-monthly'
+ * corpus. The source names no calendar date at all, only "the Nth Sunday of
+ * month M" -- so "today's" entry is the one introduced on the most recent
+ * real Sunday on or before `date` (matching how every other weekly cycle in
+ * this corpus treats "this week's" entry as staying current until the next
+ * Sunday). Wraps to the corpus's own last entry if that Sunday's (month,
+ * ordinal) isn't present (e.g. a file that happens not to include a given
+ * month yet), same "wrap rather than show nothing" behavior as the other
+ * no-year resolvers.
+ */
+function resolveOrdinalSundayMonthlyEntry(corpus, date) {
+    if (!corpus || !Array.isArray(corpus.entries) || corpus.entries.length === 0) return null;
+
+    const sunday = mostRecentSundayOnOrBefore(date);
+    const month = sunday.getMonth() + 1;
+    const ordinal = ordinalSundayOfMonth(sunday);
+
+    const exact = corpus.entries.find(entry => entry.month === month && entry.ordinal === ordinal);
+    if (exact) return exact;
+
+    // No entry for this exact (month, ordinal) -- e.g. a 5th-Sunday month
+    // the source didn't separately annotate. Fall back to the latest entry
+    // at or before this (month, ordinal), wrapping to the corpus's own last
+    // entry, same semantics as the other two no-year resolvers.
+    const key = month * 10 + ordinal;
+    let best = null;
+    for (const entry of corpus.entries) {
+        if ((entry.month * 10 + entry.ordinal) > key) break;
+        best = entry;
+    }
+    return best || corpus.entries[corpus.entries.length - 1];
+}
+
+/**
  * Synchronous, cache-only resolution of "this week's" (or, for a
  * 'monthly-recurring' diocese, "this day's") cycle-of-prayer entry for a
  * given diocese and date. Returns null when the relevant corpus isn't loaded
@@ -346,6 +440,12 @@ function getCachedCycleOfPrayerWeek(dioceseKey, date) {
 
     if (diocese.cycleType === 'monthly-recurring') {
         return resolveMonthlyRecurringEntry(corpus, date);
+    }
+    if (diocese.cycleType === 'annual-recurring') {
+        return resolveAnnualRecurringEntry(corpus, date);
+    }
+    if (diocese.cycleType === 'ordinal-sunday-monthly') {
+        return resolveOrdinalSundayMonthlyEntry(corpus, date);
     }
 
     // The corpus's own declared year, not just the filename, gates use --

@@ -25368,3 +25368,131 @@ corpus JSON data and the diocese registry array, no entry-routing/profile/mobile
 `js/cycles-of-prayer.js` has no `?v=` cache-bust parameter in `index.html` (loaded via plain
 `<script defer>`, unlike `office-ui.js`/`office-shell.js`/`office.css`), so no cache-bust bump was
 needed for this batch.
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 7: Delaware, Georgia, Hawai'i,
+## Indianapolis, Iowa, Kansas, Long Island (7 dioceses) -- first batch using parallel subagents;
+## two new cycleTypes added to the schema
+
+Josh: *"Please continue with the next batch."* Continuing the roster-spreadsheet phase alphabetically
+from Chicago/Colorado/Florida. Mid-batch, Josh said *"Looks like we have been given some credits.
+Please feel free to dispatch more than one agent to work on this more quickly"* -- this batch is the
+first to use the `Agent` tool in parallel (one background agent per diocese, each scoped to write only
+its own new JSON file, never the shared registry/ledger/git state) rather than fetching every diocese
+serially in the main session. Five agents ran concurrently (Georgia, Hawai'i, Indianapolis, Iowa,
+Kansas); Delaware and Long Island were finished directly in the main session (see below for why).
+
+**Delaware -- blocked, then unblocked by Josh directly.** The diocese's own hosted cycle
+(`https://www.flipsnack.com/diodel/ecd-cycle-of-prayer/full-view.html`) is a JS-rendered Flipsnack
+flipbook: only its cover-page image is fetchable directly (every other page image returns HTTP 403 from
+CloudFront even by direct URL), and a headless-Chromium render hit the same `ERR_CERT_AUTHORITY_INVALID`
+block this sandbox already has on other external asset CDNs (documented earlier in this same file for
+fonts.googleapis.com). Reported the blocked link to Josh per his own standing instruction from the prior
+batch (*"Send me the link anytime you get blocked, and I'll fetch it"*); Josh uploaded the actual 4-page
+PDF directly. Built `episcopal-delaware-2026.json` (17 entries, Sept 6-Dec 27, 2026) AND
+`episcopal-delaware-2027.json` (35 entries, Jan 3-Aug 29, 2027) -- the source's own single document spans
+Sept 6, 2026-Aug 31, 2027, one continuous 52-week cycle, but per this schema's own "one file per diocese
+per year" rule it is split into two files at the year boundary rather than left in one file (which would
+make the 2027 dates permanently unreachable by the app's own year-keyed file lookup -- confirmed by
+reading `cycleOfPrayerFilePath` directly before deciding). Every parish subject's clergy/warden line is
+recorded in that subject's own `note` field, matching this batch's own Great Lakes/Indianapolis/Kansas
+precedent. December 13, 2026 names two congregations sharing one clergy team ("All Saints' Church,
+Rehoboth Beach, and St. George's Chapel, Harbeson") -- transcribed as two separate `parish` subjects
+(not folded into one), since these are two distinct, currently-existing congregations, unlike Chicago's
+earlier "Trinity (formerly St. Ann...)" merger precedent. Full disclosure list in the files' own `notes`.
+
+**Georgia, Indianapolis, Iowa, Kansas -- built by parallel background agents, each independently
+validated.** `episcopal-georgia-2026.json` (52 weekly entries, Dec 28 2025-Dec 20 2026 -- the diocese's
+own 52-week grid starts the last Sunday of the prior December; chose the diocese's separately-linked
+"One Year Prayer Cycle for 2026" PDF over its own page's day-of-month list, since the weekly PDF is the
+diocese's real Sunday-by-Sunday cycle matching this corpus's established shape). `episcopal-
+indianapolis-2026.json` (12 entries, a rolling Sept-Nov 2026 window only, matching the roster's own
+coverage note). `episcopal-iowa.json` (`cycleType: "monthly-recurring"`, 31 entries -- confirmed genuine
+by rendering 9 of 16 PDF pages as images and visually reading the day-of-month structure, not trusting
+`pdftotext` alone; this is a JOINT intercession list shared with three companion dioceses (Brechin/
+Scottish Episcopal Church, Eswatini/Anglican Church of Southern Africa, Nzara/Episcopal Church of South
+Sudan) printed side-by-side each day -- only Iowa's own items are `parish`, every companion-diocese item
+is `category`, tagged "(Companion Diocese of X)" matching Chicago's own naming convention). `episcopal-
+kansas-2026.json` (13 entries, Oct 4-Dec 27, 2026 -- the source page separately prints a full 2027
+section immediately after the 2026 one; only 2026 was transcribed into this file, the 2027 section left
+for a future file rather than mixed in). Each agent ran `npm run audit:cycles-of-prayer` itself before
+reporting back; all passed with zero findings against the corpus as it stood when that agent finished.
+
+**Two dioceses hit shapes that fit neither existing cycleType -- raised to Josh directly rather than
+guessed, the same kind of call that added `monthly-recurring` for Arkansas.** Hawai'i's own page groups
+prayer subjects by "1st Sunday" through "5th Sunday" of each month, with NO calendar date printed
+anywhere at all. Long Island's own page is a 366-entry (Jan 1-Dec 31, including a Feb 29 leap-day entry)
+annual cycle with different content on every single day and no year stated, clearly meant to repeat every
+year. Neither agent guessed a resolution -- both stopped and reported back per their own instructions.
+Asked Josh directly via two targeted questions; he chose "add a new cycle type for this" for both.
+**Schema v1.2 -> v1.3**: added `cycleType` values `"annual-recurring"` (month+day, no year, repeats every
+calendar year including Feb 29) and `"ordinal-sunday-monthly"` (month + which Sunday 1st-5th, no year, no
+calendar date in the source at all) to `data/cycles-of-prayer/schema.json`, with new
+`annualRecurringEntryShape`/`ordinalSundayMonthlyEntryShape` blocks and a new `rules` entry documenting
+the decision. **`scripts/cycles-of-prayer/validate.mjs`**: `VALID_CYCLE_TYPES`/`NO_YEAR_CYCLE_TYPES` sets
+updated; two new entry-shape validation branches added (month/day bounds-checked against real days-per-
+month including Feb 29; month/ordinal bounds-checked 1-12/1-5), both with the same duplicate/ascending-
+order checks the existing `dated`/`monthly-recurring` branches already have. **`js/cycles-of-prayer.js`**:
+`NO_YEAR_CYCLE_TYPES` set (shared by `cycleOfPrayerCacheKey`/`cycleOfPrayerFilePath`, generalizing what
+was single-cased to `'monthly-recurring'` only); `resolveAnnualRecurringEntry` (2D month+day "latest
+on-or-before, wrapping" resolution, the same semantics as `resolveMonthlyRecurringEntry` generalized to
+two fields -- a Feb 29 entry is only ever selected when `date` itself is genuinely Feb 29, which a real
+`Date` object can only produce in an actual leap year, so no separate leap-year check is needed);
+`resolveOrdinalSundayMonthlyEntry` (finds the most recent real calendar Sunday on or before `date` via a
+new `mostRecentSundayOnOrBefore` helper, computes which Sunday-of-its-own-month that real Sunday is via a
+new `ordinalSundayOfMonth` helper, then looks up that `(month, ordinal)` in the corpus -- this is ordinary
+calendar arithmetic resolving WHICH real date an already-disclosed ordinal label refers to, never an
+invention of new content, matching how every other weekly cycle in this corpus treats "this week's"
+entry as staying current until the next Sunday); `getCachedCycleOfPrayerWeek` gained two new dispatch
+branches.
+
+**`episcopal-hawai-i.json`** (`ordinal-sunday-monthly`, 52 entries): every congregation-named entry is
+introduced by the source's own recurring formula "The clergy, staff, congregation, families, and
+community of X" -- the wrapper is dropped, only X transcribed, per this corpus's existing formulaic-
+wrapper precedent (Southwestern Virginia). Only 5 of 52 entries carry an explicit place and are recorded
+as `parish`; the rest are `category` even though most plainly name a real congregation, since the source
+gives no place to transcribe (matching this same batch's Long Island precedent for the identical
+situation). One entry (May, 5th Sunday) nests a 7-school list under one wrapper sentence in the source's
+own HTML -- recorded as one `category` subject with the schools listed in its own `note`, not fabricated
+into 7 separate weekly entries the source itself doesn't give each its own Sunday. Full disclosure list
+in the file's own `notes`.
+
+**`episcopal-long-island.json`** (`annual-recurring`, 366 entries): built with a small Node parser
+against the diocese's own Drupal accordion-widget HTML (12 `<ol>` lists, one per month, item count per
+month exactly matching real calendar day-counts including Feb 29). 250 of 366 entries follow one
+consistent "Congregation Name, Place" comma format, split on the FIRST comma (name = before, place =
+after, preserving a two-part place like "Carroll Street, Brooklyn" as printed). One entry (Dec 25) uses a
+colon-introduced descriptive list rather than the name/place pattern -- kept as one `category` subject,
+not split on its internal commas. Two entries ("St. Mary's Shelter Island", Aug 15 and Aug 29) are
+missing the source's own usual comma before the place -- transcribed as `parish` since "Shelter Island"
+is an unambiguous, specific Long Island place name with no other plausible reading, disclosed as a
+judgment call rather than silently guessed. Three entries appear to be real congregations but carry no
+place at all ("Iglesia de la Santa Cruz"/"Iglesia de San Francisco") -- recorded as `category` rather than
+inventing a place. Full disclosure list in the file's own `notes`.
+
+**Slug-mismatch bug caught before shipping, not after.** Live verification (headless Chromium, calling
+the app's own `loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek` directly) initially showed Hawai'i
+resolving `null` for every real sample date despite its corpus loading correctly. Root cause:
+`getCachedCycleOfPrayerWeek` gates every lookup on `isValidCycleOfPrayerDioceseKey`, which checks against
+`TEC_DIOCESE_DIRECTORY` (the 106-diocese profile-picker roster, added 2026-09-29 earlier this session)
+-- and that directory already had Hawai'i listed under `dioceseShort: 'hawai-i'` (with the 'okina
+represented as a hyphen), while the newly-added `CYCLES_OF_PRAYER_DIOCESES` entry and the file itself
+used `'hawaii'`. Renamed the file to `episcopal-hawai-i.json` and corrected its own `id`/`dioceseShort`
+fields plus the registry entry to match the pre-existing directory slug, rather than the other way
+around, since the directory is what a real user's profile selection actually produces. The other six
+new dioceses this batch were checked against the same directory and found consistent already. **Lesson
+for future batches: cross-check a new diocese's chosen slug against `TEC_DIOCESE_DIRECTORY` BEFORE
+finalizing the registry entry, not just after a live-verification failure surfaces it.**
+
+All 7 new dioceses registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 39
+files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js` and
+`scripts/cycles-of-prayer/validate.mjs`. All three standing audit scripts unchanged at their 13/3/9
+baselines (no entry-routing/profile/mobile-stabilization logic touched). Live-verified all 7 in headless
+Chromium against the app's own actual runtime, including the two new resolvers specifically: Hawai'i's
+3rd Sunday of March 2026 (a real calendar Sunday, March 15) correctly resolves to "Hālau Wa'a" and its
+5th Sunday of May 2026 (May 31) correctly resolves to the nested schools entry; Long Island's Feb 29,
+2026 request correctly auto-normalizes (2026 is not a leap year) to March 1 and resolves to that day's
+real entry, confirming the wrap/rollover math is correct without any special-cased leap-year check.
+Screenshot-verified Hawai'i rendering in an actual office (today's real date, Sept 29 2026, correctly
+resolves to "St. Luke's" -- the 4th Sunday of September). Zero new console errors beyond the
+pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to bump
+(same as prior batches).

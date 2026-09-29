@@ -1,0 +1,63 @@
+{
+  "id": "episcopal-kansas-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Kansas",
+  "dioceseShort": "kansas",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer 2026",
+  "sourceFile": "Diocesan resource page, fetched directly from https://episcopal-ks.org/diocesan-cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is the Episcopal Diocese of Kansas (eastern Kansas, seated in Topeka), not the separate Episcopal Diocese of Western Kansas -- confirmed by the page's own footer address ('835 SW Polk St., Topeka, KS') and diocesan seal.",
+    "The page shows a rolling window, not a full-year document -- under the heading 'Diocesan Cycle of Prayer 2026' only October 4 through December 27, 2026 (13 dated entries) was present when fetched, matching the roster's own coverage note for this diocese. The same page also carries a complete 'Diocesan Cycle of Prayer 2027' cycle (January 3 - December 26, 2027) immediately below the 2026 section; that 2027 content is out of scope for this file (episcopal-kansas-2026.json, year 2026) and is excluded here entirely, not a gap in this transcription of the 2026 section.",
+    "Every dated entry carries the source's own liturgical Sunday name (e.g. 'The Nineteenth Sunday after Pentecost') -- recorded in `liturgicalNote`, a disclosed label from the source, not computed by this app.",
+    "October 18, 2026's entry reads as one sentence naming three distinct diocesan-wide subjects: 'Pray for the diocesan staff, the Council of Trustees, and the upcoming Diocesan Convention.' -- split here into three separate `category` subjects (one per named item, order preserved), consistent with how this corpus already splits a source's own multi-item week (see e.g. episcopal-colorado-2026.json) rather than folding them into a single subject's name.",
+    "December 20 and December 27, 2026 each carry a parenthetical/italicized aside about a nearby fixed feast day printed directly under that week's 'Pray for' line ('(The Feast of St. Thomas the Apostle is Dec. 21)' and '(The Feast of St. Stephen is Dec. 26)' respectively) -- recorded as that week's parish subject's own `note`, since each is explicitly tied to the named parish's own entry rather than being a standalone weekday note interspersed between Sundays (contrast the excluded weekday notes in episcopal-colorado-2026.json's own notes).",
+    "Apostrophes in parish names are preserved exactly as the source prints them, using its own curly right single quotation mark (’), e.g. 'St. Paul’s', not straightened to a plain ASCII apostrophe."
+  ],
+  "entries": [
+    { "date": "2026-10-04", "liturgicalNote": "The Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Leavenworth" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "The Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Wamego" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "The Twenty-first Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "the diocesan staff" },
+      { "type": "category", "name": "the Council of Trustees" },
+      { "type": "category", "name": "the upcoming Diocesan Convention" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "The Twenty-second Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Jude’s", "place": "Wellington" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "The Twenty-third Sunday after Pentecost (All Saints Sunday)", "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Wichita" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "The Twenty-fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Winfield" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "The Twenty-fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Parsons" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost: Christ the King", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Derby" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "The First Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Shawnee" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": "The Second Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Calvary", "place": "Yates Center" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": "The Third Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Grace Cathedral", "place": "Topeka" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": "The Fourth Sunday of Advent / Christmas Eve", "subjects": [
+      { "type": "parish", "name": "St. Thomas the Apostle", "place": "Overland Park", "note": "The Feast of St. Thomas the Apostle is Dec. 21" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": "The First Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "St. Stephen’s", "place": "Wichita", "note": "The Feast of St. Stephen is Dec. 26" }
+    ]}
+  ]
+}

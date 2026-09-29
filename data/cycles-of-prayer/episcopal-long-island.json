@@ -1,0 +1,4300 @@
+{
+  "id": "episcopal-long-island",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Long Island",
+  "dioceseShort": "long-island",
+  "cycleType": "annual-recurring",
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan resource page, fetched directly from https://www.dioceseli.org/cycle-prayer (a 12-month accordion widget, one <ol> of daily entries per month, Jan 1 - Dec 31 including a Feb 29 entry -- 366 entries total, no year stated anywhere on the page, evidently meant to repeat annually including in leap years).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This source fits neither this schema's 'dated' nor 'monthly-recurring' cycleType -- it is a full annual cycle (366 distinct daily entries, different content on every single day) with no calendar year stated anywhere, explicitly including a Feb 29 entry ('The Black Clergy Caucus') for leap years. Per Josh's direct decision 2026-09-29 (the same kind of call that added 'monthly-recurring' for Arkansas), a new cycleType 'annual-recurring' (month+day, no year) was added to the schema for this shape rather than forcing it into either existing one.",
+    "The overwhelming majority of entries (250 of 366) follow one consistent 'Congregation Name, Place' comma format (place sometimes itself two-part, e.g. 'St. Paul's, Carroll Street, Brooklyn' -- Congregation, Neighborhood, Borough); these are transcribed as `parish` subjects, split on the FIRST comma (name = before, place = everything after, preserving a two-part place as printed).",
+    "One entry (December 25: 'Diocesan Convention: The Bishop, Convention Officers, Clerical and Lay Delegates') uses a colon-introduced descriptive list rather than the usual name/place comma pattern -- recorded as a single `category` subject with the full text preserved, not split on its internal commas.",
+    "Two entries (August 15 and August 29, both 'St. Mary's Shelter Island') are missing the source's own usual comma before the place, evidently a formatting slip -- transcribed as `parish` ('St. Mary's', place 'Shelter Island') since Shelter Island is a specific, unambiguous Long Island place name with no other plausible reading, not a guess.",
+    "Three entries appear to be congregation names but carry no place at all, in a source that otherwise always appends one for a real congregation (September 14 'Iglesia de la Santa Cruz'; October 5 and December 11, two slightly different renderings of 'Iglesia de San Francisco'/'Iglesia San Francisco') -- rather than inventing a place, these are recorded as `category` subjects with the name preserved exactly as printed (including the October/December spelling difference, itself preserved as a possible source inconsistency, not corrected).",
+    "Cross-referenced dioceses of the same TEC ecclesiastical province ('Province II - The Diocese of X') are recorded as `category` subjects, not `parish` (they are not Long Island's own congregations) -- the source's own inconsistent spacing/hyphenation across occurrences ('Province II - The Diocese of Western New York' vs 'Province II-Diocese of Western New York' vs 'Province II -  The Diocese of Haiti' with a double space) is preserved exactly as printed in each individual entry, not normalized to one style.",
+    "Two entries name a school/hospital bearing a saint's name rather than a congregation (April 7 \"St. Mark's Day School\"; October 25 \"St. John's Episcopal Hospital\") -- recorded as `category`, consistent with this corpus's existing precedent (Delaware's St. Anne's School, Chicago's campus ministries) that an institution is not a `parish` merely because its own name includes a saint's name or 'Church'/'Chapel'.",
+    "Apostrophes preserved exactly as printed in the source (a straight ' throughout, e.g. \"St. John's\")."
+  ],
+  "entries": [
+    {
+      "month": 1,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Chapter of Cathedral of the Incarnation"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Retired Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Migration Ministries"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Souls' Church",
+          "place": "Stony Brook"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those suffering from addiction"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Huntington"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Congregational Choirs"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Great Neck"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Oyster Bay"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Rockville Centre"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral of the Incarnation",
+          "place": "Garden City"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Directors of the Mercer School"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Port Jefferson"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Elmhurst"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia Episcopal de San Andrés (St. Andrew's)",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Bridgehampton"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Center Moriches"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Urban Caucus"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Canons of the Cathedral"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Lake Ronkonkoma"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Sayville"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Port Washington"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Guests of the Walker Hospitality House"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "House of Deputies"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Park Slope, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Richmond Hill"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Jackson Heights"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Saltaire"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Standing Committee of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Bayside"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Westbury"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bushwick Abbey"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Babylon"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Brentwood"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany and St. Simon",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Apostles",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Peace Fellowship"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Committee on Dispatch of Business"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishops of Long Island"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia Episcopal de San Andrés (St. Andrew's)",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Reparations Committee"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hispanic Ministry Commission"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas'",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brotherhood of St. Andrew"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Bellerose"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Park Slope, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke and St. Matthew",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rural & Migrant Ministry"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Safe Church Training Teams"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Black Clergy Caucus"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Mark's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Carroll Street, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Flatbush, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Dyker Heights, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sacred Ground Cohorts"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "MacDonough Street, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Chaplaincy"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Primates of the Anglican Communion"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel's",
+          "place": "Hollis"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Mission in Sunnyside"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Baldwin"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Western New York"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Lindenhurst"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Cuba"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Deer Park"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Union of Black Episcopalians"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Springfield Gardens"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Brookhaven"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Evangelist",
+          "place": "South Ozone Park"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Cold Spring Harbor"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "East Hampton"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Hicksville"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Islip"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James of Jerusalem",
+          "place": "Long Beach"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen & St.Martin",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Newark"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Whitestone"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Great Neck"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Managers of Camp DeWolfe"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Mattituck"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "East Hampton"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mark's Day School"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Rochester"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity-St. John's",
+          "place": "Hewlett"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Southampton"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Massapequa"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Douglaston"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Long Island Farm Workers"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Roosevelt"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Nurses and Healthcare Providers"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Amagansett"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Companion Diocese of Torit"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Creation Care Community"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's of Lattingtown",
+          "place": "Locust Valley"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Service Corps"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Cambria Heights"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired Bishops & Retired Bishops Suffragan"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Acolytes & Lectors"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Williston Park"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Caroline Church",
+          "place": "Setauket"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Cobble Hill, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Flatbush, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Directors of Episcopal Ministries"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Glen Cove"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Roslyn"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Greenport"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Altar Guilds"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Rosedale"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parish Administrators Exchange"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Hospital",
+          "place": "Far Rockaway"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Hempstead"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Society of St. Francis"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Garden City"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Jamaica"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Williston Park"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Juneteenth Jubilee"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Albany"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "North Brooklyn Angels"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "House of Bishops"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Manhasset"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Sea Cliff"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia de la Santa Cruz",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Jamaica"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Patchogue"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Northport"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Forest Hills"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Cathedral Chancellor"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Chapel",
+          "place": "East Hampton"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of New Jersey"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Jude's",
+          "place": "Wantagh"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Westbury"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - Convocation of Episcopal Churches in Europe"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Richmond Hill"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Amagansett"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Amityville"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Babylon"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Bay Shore"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Chancellor"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bellport"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Brentwood"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Bridgehampton"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Brookhaven"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Center Moriches"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Central New York"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Central Islip"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Shelter Island"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Deans of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "East Hampton"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Companion Diocese of Cape Coast",
+          "place": "Ghana"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Greenport"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Directors of Episcopal Ministries"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Hampton Bays"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Huntington"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Islip"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Lake Ronkonkoma"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Lindenhurst"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Managers of Camp DeWolfe"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "First Responders"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Spouses of Diocesan Clergy"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Mattituck"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trustees of the Estate Belonging to the Diocese of LI"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Northport"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Oakdale"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Center for Spiritual Imagination"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Patchogue"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Port Jefferson"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Atonement",
+          "place": "Quogue"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II -  The Diocese of Haiti"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Companion Diocese of Ecuador Central"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sag Harbor"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "St. James"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Saltaire"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Sayville"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Evangelist",
+          "place": "South Ozone Park"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Treasurer"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Caroline Church",
+          "place": "Setauket"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Shelter Island"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anselm's",
+          "place": "Shoreham"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas of Canterbury",
+          "place": "Smithtown"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia de la Santa Cruz",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Southampton"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sag Harbor"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Souls' Church",
+          "place": "Stony Brook"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Westhampton Beach"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Yaphank"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Community Justice Ministry"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary & St. Cyprian's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bay Ridge"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Cobble Hill, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Saltaire"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Great River"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff of the Episcopal Church Center"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Fishers Island"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Atonement",
+          "place": "Quogue"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Freeport"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Apostles",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Real Estate of Long Island"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Central Islip"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Astoria"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Youth and Young Adult Ministry"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban the Martyr",
+          "place": "Saint Alban's"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Yaphank"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Shelter Island"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anselm's",
+          "place": "Shoreham"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II-Diocese of Haiti"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas'",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elisabeth's",
+          "place": "Floral Park"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Astoria"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those in recovery from addiction"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Great River"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Westhampton Beach"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Jude's",
+          "place": "Wantagh"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Chapel",
+          "place": "East Hampton"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Grace and Resurrection",
+          "place": "East Elmhurst"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Deer Park"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Shelter Island"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Carroll Street, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Spouses of Diocesan Clergy"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Retired Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "MacDonough Street, Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen & St. Martin",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "Queens Village"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Astoria"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann and the Holy Trinity",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Mark's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary & St. Cyprian's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Bayside"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "First Responders"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Cambria Heights"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bushwick Abbey"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Iglesia de la Santa Cruz"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Eucharistic Ministers and Visitors"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Douglaston"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II-Diocese of Western New York"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Elmhurst"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Managers of Episcopal Health Services"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Forest Hills"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Committee on Canons"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Public Policy Network"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel's",
+          "place": "Hollis"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Jackson Heights"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Staff & Board of Directors of the Mercer School"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Seaford"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Seminarians and Inquirers"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Less",
+          "place": "Jamaica"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Jamaica"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of Puerto Rico"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Migration Ministries"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Iglesia de San Francisco"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Woodhaven"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Richmond Hill"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Rosedale"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban the Martyr",
+          "place": "Saint Alban's"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of the Virgin Islands"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trustees of the Estate Belonging to the Diocese of LI"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Springfield Gardens"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Whitestone"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Deacons of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province II - The Diocese of New York"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Woodside"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Baldwin"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Bellerose"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Long Island Cursillo Community"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Staff of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Cold Spring Harbor"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Farmingdale"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elisabeth's",
+          "place": "Floral Park"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John's Episcopal Hospital"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy Widows/Widowers"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Freeport"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral of the Incarnation",
+          "place": "Garden City"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Garden City"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Glen Cove"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Great Neck"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Freeport"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Great Neck"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Hempstead"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Incarnation Chapel",
+          "place": "Carle Place"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity-St. John's",
+          "place": "Hewlett"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Hicksville"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip & St. James",
+          "place": "Lake Success"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Center for Spiritual Imagination"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's of Lattingtown",
+          "place": "Locust Valley"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James of Jerusalem",
+          "place": "Long Beach"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Mission in Sunnyside"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Farmingdale"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Deputies to General Convention"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Manhasset"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Massapequa"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Mother and Child Center"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Long Island Immigration Clinic"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mary Brennan Inn"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Spouses of Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany and St. Simon",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Oyster Bay"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret's",
+          "place": "Plainview"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Seekers",
+          "place": "Candidates and Postulants"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Port Washington"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Rockville Centre"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Roosevelt"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Roslyn"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Sea Cliff"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Asian-American Ministry Commission"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members of Diocesan Council"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Bay Shore"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Musicians"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Standing Committee of the Diocese"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "Queens Village"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Flushing"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St.Mark's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rural & Migrant Ministry"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas of Canterbury",
+          "place": "Smithtown"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Westhampton Beach"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Iglesia San Francisco"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Woodside"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bay Ridge"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bellport"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann and the Holy Trinity",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Less",
+          "place": "Jamaica"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "St. James"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parish Staff and Volunteers"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all churches in the Diocese closed or merged"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Communicators"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke and St. Matthew",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Disciplinary Board"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Convention: The Bishop, Convention Officers, Clerical and Lay Delegates"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Incarnation Chapel",
+          "place": "Carle Place"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret's",
+          "place": "Plainview"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Hampton Bays"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's",
+          "place": "Brooklyn"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Long Island Council of Churches Food Pantry"
+        }
+      ]
+    }
+  ]
+}

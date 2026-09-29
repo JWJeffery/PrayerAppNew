@@ -1,0 +1,1489 @@
+{
+  "id": "episcopal-georgia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Georgia",
+  "dioceseShort": "georgia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "One Year Prayer Cycle for the Diocese of Georgia for 2026",
+  "sourceFile": "\"OneYearPrayerCycle2026.pdf\", fetched directly from https://gaepiscopal.org/wp-content/uploads/2025/12/OneYearPrayerCycle2026.pdf, linked from the diocese's own Diocese of Georgia Prayer Cycle page at https://gaepiscopal.org/diocese-of-georgia-prayer-cycle/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The diocese's own web page (https://gaepiscopal.org/diocese-of-georgia-prayer-cycle/) offers two distinct cycles: a day-of-month (1-31) “Diocese of Georgia Prayer Cycle” list embedded directly in the page (also offered as a printable PDF, and as a separate clergy-spouses variant), and a linked “One Year Prayer Cycle for the Diocese of Georgia for 2026” PDF (https://gaepiscopal.org/wp-content/uploads/2025/12/OneYearPrayerCycle2026.pdf) explicitly “for use in weekly worship,” organized as 52 dated Sunday-anchored weeks. This file transcribes the latter, since it is the diocese's actual Sunday-by-Sunday cycle matching this corpus's other diocese-level 'dated' files; the day-of-month list is a separate product of the same diocese and is not transcribed here.",
+    "The source labels each week by a Sunday-Saturday date range (e.g. “December 28 - January 3”) rather than a single date. Per this corpus's convention of one date per entry, `date` records the first day of that range (the Sunday), which is also the day the week's Prayers of the People would actually be used. Every one of the 52 ranges was confirmed to begin on a Sunday and run exactly 7 days.",
+    "Week 1's range (“December 28 - January 3”) begins Sunday, December 28, 2025, not in calendar year 2026, because the diocese's 52-week grid starts on the last Sunday of the prior December rather than on January 1. This is transcribed as printed, not an error or a gap; the file's `year` field (2026) records the calendar year this “One Year Prayer Cycle for 2026” document as a whole is titled/published for, per this corpus's per-year filing convention.",
+    "Each week's source text is prose, not a directory list, and names three distinct layers of prayer: (1) the Diocese of Georgia's own congregations/bishops/offices (“In our diocesan cycle of prayer…”), (2) that week's local ecumenical partner congregations of other traditions (“We also pray for our ecumenical partners…”), and (3) named congregations/institutions of the companion Diocese of the Dominican Republic (“In our companion diocese of the Dominican Republic…”). Only layer (1)'s actual Georgia congregations are recorded as `parish` subjects (with `place` = the city/town as given); bishops, diocesan offices/programs, ecumenical-partner congregations, and companion-diocese congregations/institutions are all recorded as `category` subjects, since the schema's `place` field is defined only for `parish` subjects — for these, the source's own contextual framing (the city/town given, “ecumenical partner,” “Catholic”/“Lutheran,” “companion diocese of the Dominican Republic,” and any Spanish-language parenthetical translation) is preserved in that subject's own `note` field instead. Grammatical framing immediately surrounding a name in the source's prose (e.g. “we pray for our congregation in Albany,” or “especially”) is not itself transcribed as part of any subject's `name`.",
+    "Where the source capitalizes a leading “The” as part of a name printed mid-sentence (e.g. “…and The Church of the Resurrection Lutheran Church,” “we pray for The Ascension (La Ascensión)”), that capital “The” is kept as part of the transcribed `name`. Where the source instead uses a lowercase “the” as ordinary sentence grammar (e.g. “…especially, the Church of the Atonement”, “our congregation in Vidalia, the Church of the Annunciation”), that grammatical article is dropped from `name` (e.g. “Church of the Atonement”, “Church of the Annunciation”) rather than transcribed, since it is not part of how the source capitalizes the name itself.",
+    "Diocese's own full name transcribed exactly as printed on the source PDF and the diocesan website: “Episcopal Diocese of Georgia” (no leading “The”).",
+    "Week 18's ecumenical-partner sentence (“our ecumenical partners in the Catholic churches in Cuthbert and Donalsonville—St. Luke's and the Church of the Incarnation”) names two cities and two churches but never states which church is in which city; both subjects' `note` fields disclose this rather than guessing a pairing.",
+    "Week 2's source PDF text carries a stray space before a comma in “St. John & St. Mark’s ,” — a PDF text-layer extraction artifact, not a printed character, so it was not preserved literally; the name is transcribed as “St. John & St. Mark’s”.",
+    "Apparent typos/oddities in the source, preserved verbatim rather than silently corrected: Week 12's “Holy Word (Verbo Divina)” (Spanish grammar would expect “Verbo Divino”); Weeks 22 and 26 both print “Apostól” with the accent on the wrong syllable (elsewhere in the same document, Weeks 2, 32, and 46, the same word is correctly printed “Apóstol”); Week 23's “The Encarnation (La Encarnación)” (the expected English word is “Incarnation”); Week 34's “St. Barthlomew (San Bartolomé)” (expected “Bartholomew”); Week 35's “The Good Samartian (El Buen Samaritano)” (expected “Samaritan”); Week 37's “San Pedro de Marorís” (likely intended “San Pedro de Macorís”, by comparison with Week 35's “San Francisco de Macorís”); Week 38 names the same congregation “St. Matthew” in English but “(San Matías)” in Spanish, which actually translates to “St. Matthias”, not “St. Matthew” — an apparent English/Spanish name mismatch in the source itself; Week 41's “The Annunciation (La Annunciación)” (standard Spanish spelling is “La Anunciación”, one “n”); Week 49 prints a lowercase “our Lady of the Assumption Catholic Church” (likely intended “Our”); Week 4's companion-diocese place name is printed “Banî” (circumflex), likely intended “Baní” (acute accent, the standard spelling of this Dominican Republic town); Week 50's “Holy Trinity (Santísma Trinidad)” (standard Spanish spelling is “Santísima”). Week 18 also prints “St. Luke's” with a plain/straight apostrophe — the only such instance anywhere in the document, every other apostrophe being the curly ’ form — preserved exactly as printed rather than normalized to match the rest of the file.",
+    "Week 51's “our Episcopal Campus Ministries at Augusta, Valdosta State, and Georgia Southern Universities” is recorded as a single `category` subject (“Episcopal Campus Ministries”) covering all three universities, since the source does not present three separately named ministries."
+  ],
+  "entries": [
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Frank Logue",
+          "note": "Bishop (Diocesan) of the Episcopal Diocese of Georgia."
+        },
+        {
+          "type": "category",
+          "name": "Scott Benhase",
+          "note": "Retired Bishop of the Episcopal Diocese of Georgia."
+        },
+        {
+          "type": "category",
+          "name": "The Roman Catholic Diocese of Savannah",
+          "note": "Ecumenical partner; their Bishop, Stephen Parks."
+        },
+        {
+          "type": "category",
+          "name": "The Evangelical Lutheran Church’s Southeast Synod",
+          "note": "Ecumenical partner; their Bishop, Kevin Strickland."
+        },
+        {
+          "type": "category",
+          "name": "Moisés Quezada",
+          "note": "Bishop of the companion Diocese of the Dominican Republic."
+        },
+        {
+          "type": "category",
+          "name": "Julio Holguin and William Skilton",
+          "note": "Retired Bishops of the companion Diocese of the Dominican Republic."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John & St. Mark’s",
+          "place": "Albany"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick’s",
+          "place": "Albany"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Albany"
+        },
+        {
+          "type": "category",
+          "name": "St. Teresa Catholic Church",
+          "note": "Ecumenical partner in Albany."
+        },
+        {
+          "type": "category",
+          "name": "St. James the Apostle (Santiago Apóstol)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Angelina."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Americus"
+        },
+        {
+          "type": "category",
+          "name": "St. Mary’s Catholic Church",
+          "note": "Ecumenical partner in Americus."
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew’s Lutheran Church",
+          "note": "Ecumenical partner in Plains."
+        },
+        {
+          "type": "category",
+          "name": "Reconciliation (La Reconciliación)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Azua."
+        },
+        {
+          "type": "category",
+          "name": "St. George (San Jorge)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Azua."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Atonement",
+          "place": "Augusta"
+        },
+        {
+          "type": "category",
+          "name": "Byllesby Center",
+          "note": "Diocesan ministry in Augusta (source: “the ministry of the Byllesby Center”)."
+        },
+        {
+          "type": "category",
+          "name": "Advent Lutheran Church",
+          "note": "Ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "Most Holy Trinity Catholic Church",
+          "note": "Ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Resurrection Lutheran Church",
+          "note": "Ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "Church of the Transfiguration (La Transfiguración)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Banî."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Augusta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban’s",
+          "place": "Augusta"
+        },
+        {
+          "type": "category",
+          "name": "St. Ignatius of Antioch",
+          "note": "Catholic ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph",
+          "note": "Catholic ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "St. Mary on the Hill",
+          "note": "Catholic ecumenical partner in Augusta."
+        },
+        {
+          "type": "category",
+          "name": "Jesus the Pilgrim (Jesús Peregrino)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Barahona."
+        },
+        {
+          "type": "category",
+          "name": "Redemption (La Redención)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Barahona."
+        },
+        {
+          "type": "category",
+          "name": "Lamb of God (Cordero de Dios)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Barahona."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine’s",
+          "place": "Augusta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Augusta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Augusta"
+        },
+        {
+          "type": "category",
+          "name": "St. Margaret Mary Catholic Church",
+          "note": "Ecumenical partner in Adel."
+        },
+        {
+          "type": "category",
+          "name": "St. Ann Catholic Church",
+          "note": "Ecumenical partner in Alapaha."
+        },
+        {
+          "type": "category",
+          "name": "Grace (De la Gracia)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Boca Chica."
+        },
+        {
+          "type": "category",
+          "name": "Mount Zion (Monte de Sión)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Boca Chica."
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph (San José)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Boca Chica."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Bainbridge"
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph Catholic Church",
+          "note": "Ecumenical partner in Bainbridge."
+        },
+        {
+          "type": "category",
+          "name": "Pentecost (Pentecostes)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Bonao."
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph of Arimathea (San José de Arimatea)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Bonao."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Aquinas",
+          "place": "Baxley"
+        },
+        {
+          "type": "category",
+          "name": "St. Rose of Lima Catholic Church",
+          "note": "Ecumenical partner in Baxley."
+        },
+        {
+          "type": "category",
+          "name": "St. John the Baptist (San Juan Bautista)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Bonao."
+        },
+        {
+          "type": "category",
+          "name": "St. Nicodemus (San Nicodemo)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Bonao."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Blakely"
+        },
+        {
+          "type": "category",
+          "name": "Holy Family Catholic Church",
+          "note": "Ecumenical partner in Blakely."
+        },
+        {
+          "type": "category",
+          "name": "St. Cornelius (San Cornelio)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Cabarete."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Brunswick"
+        },
+        {
+          "type": "parish",
+          "name": "St. Athanasius’",
+          "place": "Brunswick"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Brunswick"
+        },
+        {
+          "type": "category",
+          "name": "St. Francis Xavier Catholic Church",
+          "note": "Ecumenical partner in Brunswick."
+        },
+        {
+          "type": "category",
+          "name": "St. James Lutheran Church",
+          "note": "Ecumenical partner in Brunswick."
+        },
+        {
+          "type": "category",
+          "name": "Church of the Holy Name (El Santo Nombre)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Catalina."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Cochran"
+        },
+        {
+          "type": "category",
+          "name": "St. Elizabeth Ann Seton Catholic Church",
+          "note": "Ecumenical partner in Cairo."
+        },
+        {
+          "type": "category",
+          "name": "St. Gabriel (San Gabriel)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Consuelo."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Cordele"
+        },
+        {
+          "type": "category",
+          "name": "St. Theresa Catholic Church",
+          "note": "Ecumenical partner in Cordele."
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit the Comforter (Espíritu Consolador)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Dajabon."
+        },
+        {
+          "type": "category",
+          "name": "Holy Word (Verbo Divina)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Dajabon."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Dawson"
+        },
+        {
+          "type": "category",
+          "name": "St. John Vianney Catholic Church",
+          "note": "Ecumenical partner in Camilla."
+        },
+        {
+          "type": "category",
+          "name": "St. Christopher Catholic Church",
+          "note": "Ecumenical partner in Claxton."
+        },
+        {
+          "type": "category",
+          "name": "St. Michael’s (San Miguel)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Doña Ana."
+        },
+        {
+          "type": "category",
+          "name": "The Grand Commission (La Gran Comisión)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Doña Lila."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Darien"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian’s",
+          "place": "Darien"
+        },
+        {
+          "type": "category",
+          "name": "Nativity of Our Lady Catholic Church",
+          "note": "Ecumenical partner in Darien."
+        },
+        {
+          "type": "category",
+          "name": "St. Anthony of Padua (San Antonio de Padua)",
+          "note": "Companion diocese of the Dominican Republic congregation, in El Carreton."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Douglas"
+        },
+        {
+          "type": "category",
+          "name": "St. Paul’s Catholic Church",
+          "note": "Ecumenical partner in Douglas."
+        },
+        {
+          "type": "category",
+          "name": "The Ascension (La Ascensión)",
+          "note": "Companion diocese of the Dominican Republic congregation, in El Seibo."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Dublin"
+        },
+        {
+          "type": "category",
+          "name": "Immaculate Conception Catholic Church",
+          "note": "Ecumenical partner in Dublin."
+        },
+        {
+          "type": "category",
+          "name": "St. Thomas (Santo Tomás)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Gautier."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Fitzgerald"
+        },
+        {
+          "type": "category",
+          "name": "St. William’s Catholic Church",
+          "note": "Ecumenical partner in Fitzgerald."
+        },
+        {
+          "type": "category",
+          "name": "St. John the Evangelist (San Juan Evangelista)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Haina."
+        },
+        {
+          "type": "category",
+          "name": "St. Mark (San Marcos)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Haina."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grovetown Episcopal-Lutheran Mission",
+          "place": "Grovetown"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's",
+          "note": "Ecumenical partner (a Catholic church in either Cuthbert or Donalsonville; the source names both cities and both churches but does not specify which church is in which city)."
+        },
+        {
+          "type": "category",
+          "name": "Church of the Incarnation",
+          "note": "Ecumenical partner (a Catholic church in either Cuthbert or Donalsonville; the source names both cities and both churches but does not specify which church is in which city)."
+        },
+        {
+          "type": "category",
+          "name": "Christ the Liberator (Cristo Libertador)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Hato Mayor."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Hawkinsville"
+        },
+        {
+          "type": "category",
+          "name": "St. Mark’s Catholic Church",
+          "note": "Ecumenical partner in Eastman."
+        },
+        {
+          "type": "category",
+          "name": "Jesus the Messiah (Jesús Mesías)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Imbert."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s",
+          "place": "Hinesville"
+        },
+        {
+          "type": "category",
+          "name": "St. Stephen’s Catholic Church",
+          "note": "Ecumenical partner in Hinesville."
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew (San Mateo)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Jalonga."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Jesup"
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph’s Catholic Church",
+          "note": "Ecumenical partner in Jesup."
+        },
+        {
+          "type": "category",
+          "name": "Mount of the Transfiguration (Monte de la Transfiguración)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Jarabacoa."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "King of Peace",
+          "place": "Kingsland"
+        },
+        {
+          "type": "category",
+          "name": "St. Francis of Assisi Catholic Church",
+          "note": "Ecumenical partner in Folkston."
+        },
+        {
+          "type": "category",
+          "name": "St. Paul the Apostle (San Pablo Apostól)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Jimaní."
+        },
+        {
+          "type": "category",
+          "name": "St. Titus (San Tito)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Jimaní."
+        },
+        {
+          "type": "category",
+          "name": "St. Ignatius (San Ignacio)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Jimaní."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Louisville"
+        },
+        {
+          "type": "category",
+          "name": "St. Joan of Arc Catholic Church",
+          "note": "Ecumenical partner in Louisville."
+        },
+        {
+          "type": "category",
+          "name": "The Encarnation (La Encarnación)",
+          "note": "Companion diocese of the Dominican Republic congregation, in La Romana."
+        },
+        {
+          "type": "category",
+          "name": "All Saints (Todos los Santos)",
+          "note": "Companion diocese of the Dominican Republic congregation, in La Romana."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Martinez"
+        },
+        {
+          "type": "parish",
+          "name": "Our Savior",
+          "place": "Martinez"
+        },
+        {
+          "type": "category",
+          "name": "St. Teresa of Avila Catholic Church",
+          "note": "Ecumenical partner in Grovetown."
+        },
+        {
+          "type": "category",
+          "name": "Christ Resurrected (Cristo Resucitado)",
+          "note": "Companion diocese of the Dominican Republic congregation, in La Vega."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Moultrie"
+        },
+        {
+          "type": "category",
+          "name": "Immaculate Conception Catholic Church",
+          "note": "Ecumenical partner in Moultrie."
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit (Espíritu Santo)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Las Carreras."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Quitman"
+        },
+        {
+          "type": "category",
+          "name": "St. Jude Catholic Church",
+          "note": "Ecumenical partner in Glennville."
+        },
+        {
+          "type": "category",
+          "name": "St. Peter the Apostle (San Pedro Apostól)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Los Conucos."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick’s",
+          "place": "Pooler"
+        },
+        {
+          "type": "category",
+          "name": "Good Shepherd Lutheran Church",
+          "note": "Ecumenical partner in Garden City."
+        },
+        {
+          "type": "category",
+          "name": "Our Lady of Lourdes Catholic Church",
+          "note": "Ecumenical partner in Port Wentworth."
+        },
+        {
+          "type": "category",
+          "name": "St. Mary, Full of Grace (Santa María Llena de Gracia)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Mao."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elizabeth of Hungary",
+          "place": "Richmond Hill"
+        },
+        {
+          "type": "category",
+          "name": "Spirit of Peace Lutheran Church",
+          "note": "Ecumenical partner in Richmond Hill."
+        },
+        {
+          "type": "category",
+          "name": "St. Anne’s Catholic Church",
+          "note": "Ecumenical partner in Richmond Hill."
+        },
+        {
+          "type": "category",
+          "name": "St. Mary the Virgin (Santa María Virgen)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Monte Llano."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Rincon"
+        },
+        {
+          "type": "category",
+          "name": "Jerusalem",
+          "note": "Lutheran ecumenical partner in Rincon."
+        },
+        {
+          "type": "category",
+          "name": "St. John’s",
+          "note": "Lutheran ecumenical partner in Rincon."
+        },
+        {
+          "type": "category",
+          "name": "Divine Grace (Divina Gracia)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Mozovi."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "St. Marys"
+        },
+        {
+          "type": "category",
+          "name": "Our Lady Star of the Sea Catholic Church",
+          "note": "Ecumenical partner in St. Marys."
+        },
+        {
+          "type": "category",
+          "name": "St. Timothy (San Timoteo)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Nizao."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "St. Simons Island"
+        },
+        {
+          "type": "category",
+          "name": "Lord of Life Lutheran Church",
+          "note": "Ecumenical partner in St. Simons Island."
+        },
+        {
+          "type": "category",
+          "name": "St. William’s Catholic Church",
+          "note": "Ecumenical partner in St. Simons Island."
+        },
+        {
+          "type": "category",
+          "name": "St. Barnabas (San Bernabé)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Pizarrete."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Nativity",
+          "place": "St. Simons Island"
+        },
+        {
+          "type": "category",
+          "name": "Jekyll Island Methodist Church",
+          "note": "Ecumenical partner in Jekyll Island."
+        },
+        {
+          "type": "category",
+          "name": "St. Francis Xavier Catholic Church",
+          "note": "Ecumenical partner in Jekyll Island."
+        },
+        {
+          "type": "category",
+          "name": "Christ the King (Cristo Rey)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Puerto Plata."
+        },
+        {
+          "type": "category",
+          "name": "St. Francis of Assisi (San Francisco de Asís)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Puerto Plata."
+        },
+        {
+          "type": "category",
+          "name": "St. Simon the Apostle (San Simón Apóstol)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Puerto Plata."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Sandersville"
+        },
+        {
+          "type": "category",
+          "name": "St. William Catholic Church",
+          "note": "Ecumenical partner in Sandersville."
+        },
+        {
+          "type": "category",
+          "name": "Divine Providence (Divina Providencia)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Antonio de Guerra."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Savannah",
+          "note": "The source describes this congregation as “the Mother Church of Georgia.”"
+        },
+        {
+          "type": "category",
+          "name": "Catholic Cathedral of St. John the Baptist",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "Ascension Lutheran Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Barthlomew (San Bartolomé)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Cristobal."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of the Islands",
+          "place": "Savannah"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Savannah"
+        },
+        {
+          "type": "category",
+          "name": "Redeemer",
+          "note": "Lutheran ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke’s",
+          "note": "Lutheran ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "The Good Samartian (El Buen Samaritano)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Francisco de Macorís."
+        },
+        {
+          "type": "category",
+          "name": "Jesus the Nazarene (Jesús Nazareno)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Francisco de Macorís."
+        },
+        {
+          "type": "category",
+          "name": "The Nativity (La Natividad)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Francisco de Macorís."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Savannah"
+        },
+        {
+          "type": "category",
+          "name": "Blessed Sacrament",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "Resurrection of our Lord",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "Sacred Heart",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. James",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Paul and St. Luke (San Pablo y San Lucas)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Isidro."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Isle of Hope",
+          "place": "Savannah"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Savannah"
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit Lutheran Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Benedict the Moor Catholic Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "The Good Shepherd (El Buen Pastor)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Pedro de Marorís."
+        },
+        {
+          "type": "category",
+          "name": "St. Stephen (San Esteban)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Pedro de Marorís."
+        },
+        {
+          "type": "category",
+          "name": "Holy Cross (Santa Cruz)",
+          "note": "Companion diocese of the Dominican Republic congregation, in San Pedro de Marorís."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Savannah"
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Savannah"
+        },
+        {
+          "type": "category",
+          "name": "Messiah Lutheran Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Peter the Apostle Catholic Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew (San Matías)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santana."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul the Apostle",
+          "place": "Savannah"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s Chapel",
+          "place": "Savannah"
+        },
+        {
+          "type": "category",
+          "name": "St. Frances Cabrini",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "Saints Peter and Paul",
+          "note": "Catholic ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "St. Paul’s Lutheran Church",
+          "note": "Ecumenical partner in Savannah."
+        },
+        {
+          "type": "category",
+          "name": "Christ the Savior (Cristo Salvador)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santiago."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Swainsboro"
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity Catholic Church",
+          "note": "Ecumenical partner in Swainsboro."
+        },
+        {
+          "type": "category",
+          "name": "Emmanuel (Emmanuel)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santiago."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Statesboro"
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew’s Catholic Church",
+          "note": "Ecumenical partner in Statesboro."
+        },
+        {
+          "type": "category",
+          "name": "The Annunciation (La Annunciación)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santiago."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Thomasville"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Thomasville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Thomasville"
+        },
+        {
+          "type": "category",
+          "name": "St. Augustine’s Catholic Church",
+          "note": "Ecumenical partner in Thomasville."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke (San Lucas)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santiago."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Thomson"
+        },
+        {
+          "type": "category",
+          "name": "Zion Lutheran Church",
+          "note": "Ecumenical partner in Guyton."
+        },
+        {
+          "type": "category",
+          "name": "Queen of Peace Catholic Church",
+          "note": "Ecumenical partner in Lakeland."
+        },
+        {
+          "type": "category",
+          "name": "Cathedral of the Epiphany (La Catedral de la Epifanía)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne’s",
+          "place": "Tifton"
+        },
+        {
+          "type": "category",
+          "name": "Our Divine Saviour Catholic Church",
+          "note": "Ecumenical partner in Tifton."
+        },
+        {
+          "type": "category",
+          "name": "Holy Family Catholic Church",
+          "note": "Ecumenical partner in Willacoochee."
+        },
+        {
+          "type": "category",
+          "name": "Holy Family (Sagrada Familia)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Tybee Island"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael’s Catholic Church",
+          "note": "Ecumenical partner in Tybee Island."
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew (San Andrés)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Valdosta"
+        },
+        {
+          "type": "parish",
+          "name": "Christ the King",
+          "place": "Valdosta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Valdosta"
+        },
+        {
+          "type": "category",
+          "name": "St. John the Evangelist Catholic Church",
+          "note": "Ecumenical partner in Valdosta."
+        },
+        {
+          "type": "category",
+          "name": "St. Philip the Apostle (San Felipe Apóstol)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Vidalia"
+        },
+        {
+          "type": "category",
+          "name": "Sacred Heart Catholic Church",
+          "note": "Ecumenical partner in Vidalia."
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew the Apostle Catholic Church",
+          "note": "Ecumenical partner in Reidsville."
+        },
+        {
+          "type": "category",
+          "name": "St. Peter and St. Paul (San Pedro y San Pablo)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Waycross"
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph’s Catholic Church",
+          "note": "Ecumenical partner in Waycross."
+        },
+        {
+          "type": "category",
+          "name": "St. Ann’s (Santa Ana)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael’s",
+          "place": "Waynesboro"
+        },
+        {
+          "type": "category",
+          "name": "Sacred Heart Catholic Church",
+          "note": "Ecumenical partner in Waynesboro."
+        },
+        {
+          "type": "category",
+          "name": "our Lady of the Assumption Catholic Church",
+          "note": "Ecumenical partner in Sylvania."
+        },
+        {
+          "type": "category",
+          "name": "St. Margaret (Santa Margarita)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Woodbine"
+        },
+        {
+          "type": "category",
+          "name": "Holy Family",
+          "note": "Catholic ecumenical partner in Metter."
+        },
+        {
+          "type": "category",
+          "name": "St. Bernadette",
+          "note": "Catholic ecumenical partner in Millen."
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity (Santísma Trinidad)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Santo Domingo."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Youth Programs",
+          "note": "Diocesan program."
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Campus Ministries",
+          "note": "At Augusta, Valdosta State, and Georgia Southern Universities."
+        },
+        {
+          "type": "category",
+          "name": "St. Paul’s Lutheran Church",
+          "note": "Ecumenical partner in Springfield."
+        },
+        {
+          "type": "category",
+          "name": "St. Boniface Catholic Church",
+          "note": "Ecumenical partner in Springfield."
+        },
+        {
+          "type": "category",
+          "name": "Jesus the Teacher (Jesús Maestro)",
+          "note": "Companion diocese of the Dominican Republic congregation, in Tamboril."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Honey Creek",
+          "note": "Diocesan conference center."
+        },
+        {
+          "type": "category",
+          "name": "RacialJusticeGA",
+          "note": "Diocesan program."
+        },
+        {
+          "type": "category",
+          "name": "Our Lady of Guadalupe",
+          "note": "Catholic ecumenical partner in Sandhill."
+        },
+        {
+          "type": "category",
+          "name": "San José",
+          "note": "Catholic ecumenical partner in Twin Lakes."
+        },
+        {
+          "type": "category",
+          "name": "Holy Redeemer",
+          "note": "Catholic ecumenical partner in McRae."
+        },
+        {
+          "type": "category",
+          "name": "Holy Cross",
+          "note": "Catholic ecumenical partner in Pembroke."
+        },
+        {
+          "type": "category",
+          "name": "Diocese of the Dominican Republic Parochial Schools",
+          "note": "Companion diocese of the Dominican Republic institution."
+        }
+      ]
+    }
+  ]
+}
