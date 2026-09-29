@@ -1,0 +1,274 @@
+{
+  "id": "episcopal-virginia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Virginia",
+  "dioceseShort": "virginia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer",
+  "sourceFile": "ev-cycle-prayer-july-december-2026-updated-6-18.pdf (\"Diocesan Cycle of Prayer -- June, 2026 - December, 2026\"), fetched from the PDF link on https://episcopalvirginia.org/resources/administration/cycle/ (the resource page itself labels this download \"Virginia Cycle of Prayer July - December 2026\", and its filename likewise says \"july-december\", even though the document's own title and its first dated entry both begin in June -- see notes).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Confirmed this is The Episcopal Diocese of Virginia (the large diocese centered on Richmond/Alexandria/Arlington, whose Bishop Diocesan as of this document is The Rt. Rev. E. Mark Stevenson) and not Southern Virginia, Southwestern Virginia (already a separate file in this corpus, episcopal-southwestern-virginia-2026.json), or West Virginia: the source document's own header reads \"The Diocese of Virginia\" throughout, it was fetched from episcopalvirginia.org, and its named congregations/towns (Richmond, Alexandria, Arlington, Fairfax, McLean, Leesburg, Manassas, etc.) are consistent with that diocese's own territory, not the other three Virginia-named jurisdictions.",
+    "The source document's own title (\"Diocesan Cycle of Prayer -- June, 2026 - December, 2026\") and its first dated entry (June 7, 2026) both cover more than the \"July-December 2026\" the diocese's resource page and this file's download URL both describe it as -- that description appears to be stale relative to the live document. Per this task's instruction to transcribe only the date range the live source actually covers, this file transcribes the whole document as fetched: every dated entry from June 7, 2026 through December 27, 2026 (30 weekly entries plus one mid-week feast-day entry, November 11 -- see below), which is the entirety of this one PDF. Nothing from January-May 2026 is covered by this source and nothing is fabricated for it.",
+    "The source is a two-page table headed by a standing instruction (\"Pray each week for the Lutheran, Anglican, Roman Catholic and United Methodist diocese, synods and conferences in Virginia and their bishops...\") that is not itself a dated prayer subject and is not transcribed as an entry. The table's own repeated page header/title (reprinted atop page 2) is likewise not a new entry.",
+    "A blank date cell means 'same date as the row above,' per this schema's own grouping rule -- including the one case where that continuation crosses the page break: September 20's row ends page 1 with \"St. Luke's, Simeon / Charlottesville,\" and \"The Falls Church / Falls Church\" reopens page 2 with a blank date cell, so both are folded into the single September 20, 2026 entry, confirmed by viewing the rendered PDF pages as images (not just the linearized text) to rule out a misread page break.",
+    "This source's table is single-column throughout (one row per congregation/subject, not a multi-column grid), confirmed by rendering both pages as images and visually comparing them to the pdftotext -layout extraction -- no interleaving risk was found, unlike the multi-column sources this corpus has flagged elsewhere.",
+    "Several weeks name something other than a specific congregation and are recorded as `category` subjects (no `place`), per this corpus's rule: June 21's added row \"All Fathers\" (Father's Day, June 21, 2026); July 5's \"Shrine Mont Camps, their Leaders and Campers\"; July 12's \"Diocese of Virginia Conference Centers: Shrine Mont, Orkney Springs and Roslyn, Richmond\" (kept as one subject since the source presents both named centers in a single flowing sentence rather than separate table rows); July 19's Racial Reconciliation/Outreach/Mission/Creation Care committees; July 26's \"The Episcopal Church and the Anglican Communion and all Bishops, Priests, Deacons, and Lay Leaders\"; August 2's added row on Continuing Care Communities; August 9's \"The Episcopal Church (Anglican Cycle of Prayer)\"; August 16's Altar and Flower Guilds/Choirs/Ushers/Acolytes/Eucharistic Ministers/Lay Readers; August 23's Diocesan Church Schools paragraph (five schools named in one sentence, kept as a single subject rather than split, since the source itself does not table them the way it tables congregations); August 30's added row on Diocesan Campus Ministries (six ministries/chaplaincies named in one sentence, same reasoning); September 6's Sunday School teachers/Youth leaders/Adult Christian Formation leaders; September 27's named bishops at the House of Bishops meeting; November 8's Clergy and Lay Delegates to Annual Convention; November 29's \"In thanksgiving for God's Creation and those who care for it\"; and December 27's \"All the Baptized into Christ.\"",
+    "August 30's first row prints \"Shrine Mont\" / \"Orkney Springs\" in the same two-column congregation-name/place table format used for actual parishes elsewhere in this document. Shrine Mont is the diocese's own camp and conference center, not a specific congregation, so per this corpus's type rule it is recorded as `category` rather than `parish` despite the table formatting; since `category` subjects carry no separate `place` field, the location is folded into `name` as \"Shrine Mont, Orkney Springs\" rather than dropped.",
+    "Two rows embed an apparent sub-locality inside the name cell itself, distinct from the (larger, nearby town) place cell next to it, rather than the name being simply the congregation and the place simply its town: September 20's \"St. Luke's, Simeon\" (place cell: \"Charlottesville\") and October 11's \"St. Stephen's & The Good Shepherd, Rocky Bar\" (place cell: \"Elkton\"). Both are transcribed exactly as the source's own two columns split them, without moving text between `name` and `place` or otherwise resolving the ambiguity.",
+    "\"St. Aiden's\" (October 25, Alexandria) is transcribed exactly as printed; a real Alexandria, VA parish of nearly the same name is commonly spelled \"St. Aidan's\", so this may be a source typo, but it is preserved verbatim rather than silently corrected.",
+    "Many congregations are printed in the source using short-form names rather than a fuller legal/formal name (e.g. \"Trinity\", \"Epiphany\", \"Creator\", \"Pohick\", \"Varina\", \"N. Farnham\", \"Calvary\"), and bilingual/hyphenated names are printed as-is (\"St. Gabriel's-San Gabriel's\", \"Cristo Rey\", \"San Jose\", \"Santa Maria\"). All are transcribed exactly as printed with no expansion or normalization.",
+    "November 11, 2026 (a Wednesday -- the Feast of St. Martin of Tours) is a genuine mid-week insertion into an otherwise weekly-Sunday cycle, sitting between the Sunday entries for November 8 and November 15; transcribed as printed rather than shifted to the nearest Sunday.",
+    "Curly right-single-quotation-mark apostrophes in the source PDF (e.g. in \"St. Paul's\", \"St. David's\") are transcribed as straight ASCII apostrophes, consistent with this corpus's own existing convention (see episcopal-missouri-2026.json), since this is a typographic rendering difference rather than a wording difference.",
+    "Built from the source PDF's pdftotext -layout extraction, cross-checked against both pages rendered as images at 200 DPI to confirm the single-column layout, the page-break continuation on September 20, and the exact wording of the longer category paragraphs."
+  ],
+  "entries": [
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Paul's", "place": "Richmond" },
+        { "type": "parish", "name": "Christ Church", "place": "Lucketts" }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "Pohick", "place": "Lorton" },
+        { "type": "parish", "name": "Wicomico Parish", "place": "Wicomico" },
+        { "type": "parish", "name": "St. Peter's", "place": "Arlington" }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. David's", "place": "Ashburn" },
+        { "type": "parish", "name": "Varina", "place": "Richmond" },
+        { "type": "parish", "name": "N. Farnham", "place": "Farnham" },
+        { "type": "parish", "name": "St. John's", "place": "Warsaw" },
+        { "type": "category", "name": "All Fathers" }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Peter's", "place": "Port Royal" }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Shrine Mont Camps, their Leaders and Campers" }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Diocese of Virginia Conference Centers: Shrine Mont, Orkney Springs and Roslyn, Richmond" }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Members of Racial Reconciliation/Outreach/Mission/Creation Care committees and all those for whom they labor" }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "The Episcopal Church and the Anglican Communion and all Bishops, Priests, Deacons, and Lay Leaders" }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Mary's", "place": "Colonial Beach" },
+        { "type": "category", "name": "Continuing Care Communities within the Diocese and their Residents and Staff" }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "The Episcopal Church (Anglican Cycle of Prayer)" }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Altar and Flower Guilds, Choirs, Ushers, Acolytes, Eucharistic Ministers and Lay Readers" }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Students, Faculty, and Administrators at Diocesan Church Schools: Christchurch, Saluda; St. Catherine's, Richmond; St. Christopher's, Richmond; St. Stephen's & St. Agnes, Alexandria; and Stuart Hall, Staunton" }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Shrine Mont, Orkney Springs", "note": "Printed in the source's two-column congregation-name/place table format, like an actual parish row, but Shrine Mont is the diocese's own camp/conference center rather than a congregation; recorded as category with the place folded into name -- see this file's own notes." },
+        { "type": "category", "name": "Diocesan Campus Ministries: The University Fellowship at University of Virginia, Charlottesville; Pace Center at Virginia Commonwealth University, Richmond; the House at University of Mary Washington, Fredericksburg; Canterbury at James Madison University, Bridgewater College, and Eastern Mennonite University, Harrisonburg; and Arise at George Mason University, Fairfax" }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Sunday School teachers, Youth leaders and Adult Christian Formation leaders" }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. James", "place": "Leesburg" },
+        { "type": "parish", "name": "Trinity", "place": "Fredericksburg" },
+        { "type": "parish", "name": "St. Martin de Porres", "place": "Alexandria" }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Luke's, Simeon", "place": "Charlottesville" },
+        { "type": "parish", "name": "The Falls Church", "place": "Falls Church" }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "The Rt. Rev. E. Mark Stevenson, The Rt. Rev. Gayle E. Harris, The Rt. Rev. Mark Bourlakas and all Bishops participating in the House of Bishops meeting" }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "Trinity", "place": "Manassas" },
+        { "type": "parish", "name": "St. Gabriel's-San Gabriel's", "place": "Leesburg" }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Stephen's & The Good Shepherd, Rocky Bar", "place": "Elkton" },
+        { "type": "parish", "name": "Calvary", "place": "Front Royal" }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "Cristo Rey", "place": "Springfield" },
+        { "type": "parish", "name": "San Jose", "place": "Arlington" },
+        { "type": "parish", "name": "Epiphany", "place": "Henrico" },
+        { "type": "parish", "name": "St. Paul's", "place": "Ivy" },
+        { "type": "parish", "name": "Calvary", "place": "Hanover" }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Aiden's", "place": "Alexandria" },
+        { "type": "parish", "name": "St. Martin's", "place": "Richmond" },
+        { "type": "parish", "name": "St. Peter's", "place": "New Kent" }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints Day",
+      "subjects": [
+        { "type": "parish", "name": "St. Thomas", "place": "McLean" }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "Clergy and Lay Delegates and Alternates to Annual Convention and members of all Diocesan Committees" }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalNote": "Feast of St. Martin of Tours",
+      "subjects": [
+        { "type": "parish", "name": "The Fork Church", "place": "Doswell" }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Matthew's", "place": "Richmond" }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. Thomas", "place": "Orange" },
+        { "type": "parish", "name": "The Little Fork", "place": "Rixeyville" },
+        { "type": "parish", "name": "St. James", "place": "Warrenton" },
+        { "type": "parish", "name": "St. Andrew's", "place": "Burke" }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "In thanksgiving for God's Creation and those who care for it" }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "Christ Church", "place": "Gordonsville" },
+        { "type": "parish", "name": "Emmanuel", "place": "Rapidan" },
+        { "type": "parish", "name": "Emmanuel", "place": "Middleburg" }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "St. James", "place": "Mt. Vernon" },
+        { "type": "parish", "name": "St. James the Less", "place": "Ashland" },
+        { "type": "parish", "name": "Santa Maria", "place": "Falls Church" }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "parish", "name": "Grace Church", "place": "Bremo Bluff" },
+        { "type": "parish", "name": "Creator", "place": "Mechanicsville" }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        { "type": "category", "name": "All the Baptized into Christ" }
+      ]
+    }
+  ]
+}
