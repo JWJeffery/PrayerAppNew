@@ -1,0 +1,221 @@
+{
+  "id": "episcopal-california-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of California",
+  "dioceseShort": "california",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer, Advent 2025 - Pentecost Season 2026",
+  "sourceFile": "\"Diocesan-Cycle-of-Prayer-25-26-Final.pdf\", fetched directly from https://www.diocal.org/wp-content/uploads/2025/11/Diocesan-Cycle-of-Prayer-25-26-Final.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source covers Advent 2025 (November 30, 2025) through the Last Sunday after Pentecost/Christ the King (November 22, 2026) -- the November 30, 2025 entry is the only one before calendar year 2026 and is included since the source's own declared range begins there, matching this corpus's existing precedent for a cycle whose own stated scope spans a year boundary.",
+    "Every dated entry carries the source's own liturgical Sunday name (e.g. 'First Sunday of Advent', 'Palm Sunday') -- recorded in `liturgicalNote`, a disclosed label from the source, not computed by this app.",
+    "A real source anomaly, disclosed rather than silently merged or corrected: between 'Sunday, April 12, 2026' and 'Sunday, April 19, 2026' the source ALSO prints two entries dated 'Sunday, April 20, 2025' and 'Sunday, April 27, 2025' (year 2025, not 2026) with the identical liturgical labels 'Easter Day' and 'Second Sunday of Easter' and overlapping-but-not-identical subjects (Church of the Resurrection, Pleasant Hill + St. Anselm's, Lafayette; and St. Mark's, Berkeley/Palo Alto/Crockett). April 20, 2025 was independently confirmed a real Easter Sunday, and the entries are internally self-consistent for THAT year -- these are evidently leftover 2025-cycle entries from an earlier version of this document that were not fully removed when it was updated for 2025-26, not typos of 2026 dates (the document's own 2026 Easter season, April 5/12/19/26, is already separately and completely present). Excluded from `entries` here since they fall entirely outside this file's own declared 'Advent 2025 - Pentecost Season 2026' range (April 2025 predates Advent 2025) -- not fabricated content, not a gap in this transcription.",
+    "A footnote in the source discloses two commemoration sources for April 12, 2026's own subjects, quoted here rather than attached piecemeal to that entry: 'The commemoration of Rev. Daniel Gee Ching Wu can be found in \"Great Cloud of Witnesses\" -- an alternative book of remembrances on the Episcopal Calendar. The commemoration of Rev. Peter Williams Cassey and Annie Besant Cassey can be found in \"Lesser Feasts and Fasts\" -- a publication of the Episcopal Church.'"
+  ],
+  "entries": [
+    { "date": "2025-11-30", "liturgicalNote": "First Sunday of Advent", "subjects": [
+      { "type": "category", "name": "Religious Orders in this diocese", "note": "The sisters at the Community of St. Francis, the brothers at the Society of St. Francis, San Damiano Friary, and those who belong to the Brotherhood of Saint Gregory" }
+    ]},
+    { "date": "2025-12-07", "liturgicalNote": "Second Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Clement's", "place": "Berkeley" },
+      { "type": "parish", "name": "St. Ambrose", "place": "Foster City" }
+    ]},
+    { "date": "2025-12-14", "liturgicalNote": "Third Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Lucy's", "place": "East Bay" }
+    ]},
+    { "date": "2025-12-21", "liturgicalNote": "Fourth Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Incarnation", "place": "San Francisco" },
+      { "type": "parish", "name": "Nativity", "place": "San Rafael" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Belvedere" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Orinda" }
+    ]},
+    { "date": "2025-12-28", "liturgicalNote": "First Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "St. John the Evangelist", "place": "San Francisco" },
+      { "type": "parish", "name": "St. John's", "place": "Oakland" },
+      { "type": "parish", "name": "St. John's", "place": "Ross" },
+      { "type": "parish", "name": "Holy Innocents", "place": "San Francisco" },
+      { "type": "parish", "name": "Holy Family", "place": "Half Moon Bay" }
+    ]},
+    { "date": "2026-01-04", "liturgicalNote": "Second Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "Epiphany", "place": "San Carlos" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "First Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "True Sunshine", "place": "San Francisco" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "Second Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Redwood City" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "Third Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Oakland" },
+      { "type": "parish", "name": "St. Paul's", "place": "Burlingame" },
+      { "type": "parish", "name": "St. Paul's", "place": "San Rafael" },
+      { "type": "parish", "name": "St. Paul's", "place": "Walnut Creek" },
+      { "type": "parish", "name": "St. Timothy's", "place": "Danville" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "Fourth Sunday after the Epiphany", "subjects": [
+      { "type": "category", "name": "The Strategic Vision Plan for the diocese, Bishop Austin Rios, the diocesan staff, the diocesan chancellor, the Executive Council and the Standing Committee of the diocese" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "Fifth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "SEA Episcopal Church", "place": "San Bruno & South San Francisco" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "Last Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Oakland" },
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Mill Valley" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "First Sunday in Lent", "subjects": [
+      { "type": "category", "name": "The Commission on Ministry, diocesan Days of Discernment, local discernment committees, and all those discerning God's call to ministry and service in their lives" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "Second Sunday in Lent", "subjects": [
+      { "type": "category", "name": "All church wardens, vestry and bishop's committee members, and treasurers" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "Third Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Gregory of Nyssa", "place": "San Francisco" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "Fourth Sunday in Lent", "subjects": [
+      { "type": "category", "name": "Churches and ministries in the San Francisco Deanery and for the Dean, the Very Rev. Dr. Cameron Partridge" },
+      { "type": "category", "name": "Churches and ministries in the Southern Alameda Deanery and for the Dean, the Very Rev. Jeff Dodge-Hogarth" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "Fifth Sunday in Lent", "subjects": [
+      { "type": "category", "name": "Churches and ministries in the Alameda Deanery and for the Dean, the Very Rev. Bruce O'Neill" },
+      { "type": "category", "name": "Churches and ministries in the Contra Costa Deanery and for the Dean, the Very Rev. Dr. Deborah White" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "Churches and ministries in the Marin Deanery and for the Dean, the Very Rev. Chip Larrimore" },
+      { "type": "category", "name": "Churches and ministries in the Peninsula Deanery and for the Dean, the Very Rev. Rebecca Goldberg" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Day", "subjects": [
+      { "type": "parish", "name": "Church of the Resurrection", "place": "Pleasant Hill" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "Second Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The work of justice ministries of the congregations, and celebrate the feasts of local civil rights activists: Rev. Daniel Gee Ching Wu, first Chinese American Priest, and Rev. Peter Williams Cassey and Annie Besant Cassey, 19th century African American educators and activists" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "Third Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "San Rafael" },
+      { "type": "parish", "name": "St. Anselm's", "place": "Lafayette" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "Fourth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Berkeley" },
+      { "type": "parish", "name": "St. Mark's", "place": "Palo Alto" },
+      { "type": "parish", "name": "St. Mark's", "place": "Crockett" },
+      { "type": "parish", "name": "Iglesia El Buen Pastor", "place": "Redwood City" },
+      { "type": "parish", "name": "Good Shepherd", "place": "Belmont" },
+      { "type": "parish", "name": "Good Shepherd", "place": "Berkeley" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "Fifth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Martinez" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "Sixth Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Diocesan Camps and Retreat Centers: Saint Dorothy's Rest, The Bishop's Ranch, and St. Columba Retreat House; and summer camp programs for youth" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "Seventh Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Episcopal Impact Fund, which works to break the cycle of poverty for families, youth and young adults by creating pathways out of poverty" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "parish", "name": "Holy Spirit Church", "place": "Concord" },
+      { "type": "parish", "name": "St. Bede's", "place": "Menlo Park" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "Trinity Sunday", "subjects": [
+      { "type": "parish", "name": "Holy Trinity/La Santisima Trinidad", "place": "Richmond" },
+      { "type": "parish", "name": "Trinity + St. Peter's", "place": "San Francisco" },
+      { "type": "parish", "name": "Trinity", "place": "Menlo Park" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "Second Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Columba's", "place": "Inverness" },
+      { "type": "parish", "name": "Christ Church", "place": "Sausalito" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "Third Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Good Samaritan Family Resource Center providing bilingual emergency services and support for immigrant families" },
+      { "type": "category", "name": "Braid Mission, a diocesan mission which offers team-based mentoring for Foster Youth" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "Fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Alban's", "place": "Albany" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "Fifth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Ohlhoff House, a ministry of the diocese which offers Addiction Recovery programs in San Francisco" },
+      { "type": "category", "name": "Clausen House, a diocesan ministry that provides housing, wellness programs, and advocacy for developmentally disabled adults in Oakland" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "Sixth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Bayview Mission, a specialized mission of the diocese providing needed services, food, and supplies to residents of the Bayview/Hunters Point neighborhoods in San Francisco" },
+      { "type": "category", "name": "Sojourn Chaplaincy at SF General Hospital offering comprehensive spiritual and emotional support" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "Seventh Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Episcopal Community Services, which provides essential services to individuals and families experiencing homelessness in San Francisco" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "Eighth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Those working in prison ministries across the diocese -- in county jails, federal prisons, and with those on death row" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "Ninth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Fremont" },
+      { "type": "parish", "name": "St. James", "place": "San Francisco" },
+      { "type": "parish", "name": "Santiago/St. James'", "place": "Oakland" },
+      { "type": "parish", "name": "St. Anne's", "place": "Fremont" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "Tenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Diocesan Schools including the Cathedral School for Boys, St. Matthew's Episcopal Day School, St. Paul's Episcopal School, Trinity School, and the Ventana School; and the preschools, daycare programs, and after-school programs housed in our churches" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "Eleventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Transfiguration", "place": "San Mateo" },
+      { "type": "parish", "name": "St. Clare's", "place": "Pleasanton" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "Twelfth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Mary the Virgin", "place": "San Francisco" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "Thirteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Bartholomew's", "place": "Livermore" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "Fourteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Augustine's", "place": "Oakland" },
+      { "type": "parish", "name": "St. Aidan's", "place": "San Francisco" },
+      { "type": "parish", "name": "St. Aidan's", "place": "Bolinas" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "Fifteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Diocesan Campus Ministries and campus chaplains at Stanford University, UC Berkeley, and San Francisco State" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "Sixteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Cyprian's", "place": "San Francisco" },
+      { "type": "parish", "name": "Holy Cross", "place": "Castro Valley" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "Seventeenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "San Mateo" },
+      { "type": "parish", "name": "St. Anna's", "place": "Antioch" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "Eighteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Grace Cathedral", "place": "San Francisco" },
+      { "type": "parish", "name": "Christ Church", "place": "Alameda" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Francis of Assisi", "place": "Novato" },
+      { "type": "parish", "name": "St. Francis", "place": "San Francisco" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Diocesan Convention, for the work of the Dispatch Committee, for the work of the Nominations and Resolutions committees, for those running for office, for volunteers and staff making the event happen, and for the unity and mission of the diocese of California" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "Twenty-First Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "San Francisco" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "Twenty-Second Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The School for Deacons, the Archdeacons, all deacons of the diocese and their ministries, and those discerning a call to diaconal ministry" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints Day (Nov. 1)", "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "San Leandro" },
+      { "type": "parish", "name": "All Saints'", "place": "San Francisco" },
+      { "type": "parish", "name": "All Souls", "place": "Berkeley" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "Twenty-Fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Holy Child and St. Martin's", "place": "Daly City" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "Twenty-Fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Edmund's", "place": "Pacifica" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Last Sunday after Pentecost: Christ the King", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Los Altos" },
+      { "type": "parish", "name": "Christ Church", "place": "Portola Valley" },
+      { "type": "parish", "name": "Christ Church, Sei Ko Kai", "place": "San Francisco" },
+      { "type": "parish", "name": "Christ the Lord", "place": "Pinole" },
+      { "type": "parish", "name": "Advent of Christ the King", "place": "San Francisco" }
+    ]}
+  ]
+}

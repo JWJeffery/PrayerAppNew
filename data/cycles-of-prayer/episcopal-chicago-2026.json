@@ -1,0 +1,1517 @@
+{
+  "id": "episcopal-chicago-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Chicago",
+  "dioceseShort": "chicago",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "PDF fetched directly from https://episcopalchicago.org/wp-content/uploads/2026/01/2026-Cycle-of-Prayer.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This diocese's cycle names congregations by deanery for the first ~33 weeks (January 4 - August 16), then shifts for the rest of the year to institutional/thematic intercessions (Province Five dioceses, General Convention bodies, diocesan agencies, commissions, retired clergy, diocesan institutions, ecumenical partners) with no named congregations. Both halves are transcribed as printed.",
+    "Every week also names two Companion Diocese congregations (Diocese of Southeast Mexico and Diocese of Renk, South Sudan) -- recorded as `category` subjects rather than `parish`, since they are not domestic congregations of this diocese. On August 9 and 16, the source names the companion dioceses generally with no specific congregations that week; transcribed as printed.",
+    "January 11: 'Incarnation and, St. Luke's Philippine Independent Church in Bloomingdale' is transcribed as one shared-space congregation entry (a comma after 'and' in the source is treated as an extraction artifact, not a third entity).",
+    "August 9: 'Trinity, McHenry (formerly St. Ann in Woodstock, St. Mary in Crystal Lake; St. Paul in McHenry)' is transcribed as a single merged congregation, per the source's own parenthetical.",
+    "March 22 and March 29 depart from the deanery pattern entirely with general intercession text (for the spouses/families of clergy and each congregation's own life; and for the diocese, its bishop, and its two companion bishops by name) -- transcribed as `category` subjects summarizing the printed text, with no companion-congregation pairing those two weeks since the source names none.",
+    "August 23 - December 27 institutional-era entries have no `parish` subjects (Province Five dioceses, General Convention bodies, diocesan commissions/agencies/institutions, ecumenical partners, etc. are all recorded as `category` subjects, consistent with this diocese's own scope -- `diocese`/`province` subject types are reserved for scope:\"communion\" files).",
+    "September 6 names 'Chicago' itself among the Province Five dioceses prayed for that week; transcribed as printed even though it is this diocese's own name.",
+    "Campus ministries (Brent House at the University of Chicago; Canterbury House at Northwestern University) and the chaplaincy at Montgomery Place are recorded as `category` subjects rather than `parish`, since they are not parish congregations with a civil place name in the conventional sense."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David",
+          "place": "Aurora"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Aurora"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Batavia"
+        },
+        {
+          "type": "category",
+          "name": "San Juan Evangelista in Acayucan (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew Cathedral in Renk (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Incarnation and St. Luke's Philippine Independent Church",
+          "place": "Bloomingdale"
+        },
+        {
+          "type": "parish",
+          "name": "St. Benedict",
+          "place": "Bolingbrook"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Nativity",
+          "place": "Clarendon Hills"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew",
+          "place": "Downers Grove"
+        },
+        {
+          "type": "category",
+          "name": "San Pedro in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "Glory Church in Renk (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark",
+          "place": "Geneva"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Glen Ellyn"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark",
+          "place": "Glen Ellyn"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael and All Angels in Cancun (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. James in Lathbior (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Observance of Religious Life Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Lombard"
+        },
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Naperville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Charles",
+          "place": "St. Charles"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Wheaton"
+        },
+        {
+          "type": "category",
+          "name": "San Juan in Chogota (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter in Wun-Kur (Companion Diocese of Renk)"
+        },
+        {
+          "type": "category",
+          "name": "All vowed religious orders and communities, that their witness may inspire faith and service in the church"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral Church of St. James",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Atonement",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Cristo Rey",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "La Divina Providencia in El Camalotal (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew in Wadakona (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Chrysostom",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church-by-the-Lake",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "Jesús de Nazaret near Tuxtepec (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Mark in Jelhak (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brent House Campus Ministry at the University of Chicago"
+        },
+        {
+          "type": "category",
+          "name": "The Chapel at Montgomery Place"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "La Santa Cruz in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter in Geiger Centre (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "Migration with Dignity Sunday, as observed in the Diocese of Chicago",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Messiah-St. Bartholomew",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Edmund",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Saints George & Matthias",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "San Marcos in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Barnabas in Geiger South (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul & the Redeemer",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Santa Teresa",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "La Ascención in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael in Geiger Centre (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Nativity",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "La Transfiguración in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "Jarbanat Sub-Parish (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin",
+          "place": "Chicago"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Chicago"
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. John in Melut (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The spouses, partners, and children of our bishops, priests, and deacons, that their relationships would be strengthened and their own ministries to their families and the church be blessed by the Holy Spirit"
+        },
+        {
+          "type": "category",
+          "name": "Each congregation's own corporate life, clergy and lay leadership, and its organizations, and the city or town in which it is located and its civic leadership"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Chicago and our Bishop, The Rt. Rev. Paula E. Clark"
+        },
+        {
+          "type": "category",
+          "name": "Archbishop Joseph Atem of the Upper Nile Province in South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Simon Chuang Ayok of the Diocese of Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Simon",
+          "place": "Arlington Heights"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael",
+          "place": "Barrington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark",
+          "place": "Barrington Hills"
+        },
+        {
+          "type": "category",
+          "name": "San Andrés in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael in Paloch (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip",
+          "place": "Palatine"
+        },
+        {
+          "type": "parish",
+          "name": "One in Christ",
+          "place": "Prospect Heights"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary",
+          "place": "Park Ridge"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "West Dundee"
+        },
+        {
+          "type": "category",
+          "name": "San Juan Bautista in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Bartholomew in Thiangrial (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Redeemer",
+          "place": "Elgin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Hugh of Lincoln",
+          "place": "Elgin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nicholas",
+          "place": "Elk Grove Village"
+        },
+        {
+          "type": "parish",
+          "name": "St. Columba of Iona",
+          "place": "Hanover Park"
+        },
+        {
+          "type": "category",
+          "name": "St. Mark in Yucatán (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke in Khor Adaar (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Canterbury House Campus Ministry at Northwestern University"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew Pentecost",
+          "place": "Evanston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke",
+          "place": "Evanston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark",
+          "place": "Evanston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew",
+          "place": "Evanston"
+        },
+        {
+          "type": "category",
+          "name": "San Francisco de Asís in Tuxtepec (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "Panomsit Sub-Parish (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elisabeth",
+          "place": "Glencoe"
+        },
+        {
+          "type": "parish",
+          "name": "St. David",
+          "place": "Glenview"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Kenilworth"
+        },
+        {
+          "type": "parish",
+          "name": "St. Giles",
+          "place": "Northbrook"
+        },
+        {
+          "type": "category",
+          "name": "San Jorge in Tabasco (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew Cathedral (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Less",
+          "place": "Northfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine",
+          "place": "Wilmette"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Winnetka"
+        },
+        {
+          "type": "category",
+          "name": "Santa María Virgen in Xalapa (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "Glory Church (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph & St. Aidan",
+          "place": "Blue Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Evangelist",
+          "place": "Flossmoor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement",
+          "place": "Harvey"
+        },
+        {
+          "type": "parish",
+          "name": "St. Edward and Christ",
+          "place": "Joliet"
+        },
+        {
+          "type": "category",
+          "name": "San Juan Evangelista in Acayucan (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. James in Lathbior (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "Kankakee"
+        },
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Lockport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Morris"
+        },
+        {
+          "type": "category",
+          "name": "San Pedro in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter in Wun-Kur (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "New Lenox"
+        },
+        {
+          "type": "parish",
+          "name": "Transfiguration",
+          "place": "Palos Park"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Family",
+          "place": "Park Forest"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Pontiac"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael and All Angels in Cancun (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew in Wadakona (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Berwyn"
+        },
+        {
+          "type": "parish",
+          "name": "St. Helena",
+          "place": "Burr Ridge"
+        },
+        {
+          "type": "parish",
+          "name": "Our Saviour",
+          "place": "Elmhurst"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Hinsdale"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "La Grange"
+        },
+        {
+          "type": "category",
+          "name": "San Juan in Chogota (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Mark in Jelhak (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Oak Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Oak Park"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "River Forest"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "Riverside"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Western Springs"
+        },
+        {
+          "type": "category",
+          "name": "La Divina Providencia in El Camalotal (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter in Geiger North (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Galesburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Kewanee"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Lewiston"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Macomb"
+        },
+        {
+          "type": "category",
+          "name": "Jesús de Nazaret near Tuxtepec (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Barnabas in Geiger South (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Rock Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Peoria"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Warsaw"
+        },
+        {
+          "type": "category",
+          "name": "La Santa Cruz in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael in Geiger Centre (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bride",
+          "place": "Oregon"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Rockford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anskar",
+          "place": "Rockford"
+        },
+        {
+          "type": "category",
+          "name": "San Marcos in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "Jarbanat Sub-Parish (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Sterling"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Streator"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter",
+          "place": "Sycamore"
+        },
+        {
+          "type": "category",
+          "name": "La Ascención in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. John in Melut (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Belvidere"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "DeKalb"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke",
+          "place": "Dixon"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Freeport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's-in-the-Fields",
+          "place": "Farm Ridge"
+        },
+        {
+          "type": "category",
+          "name": "La Transfiguración in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Michael in Paloch (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Galena"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter Chapel",
+          "place": "Grand Detour"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "LaSalle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne",
+          "place": "Morrison"
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity in Oaxaca (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke in Khor Adaar (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Wauconda"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Waukegan"
+        },
+        {
+          "type": "parish",
+          "name": "Nuestra Senora de Guadalupe",
+          "place": "Waukegan"
+        },
+        {
+          "type": "parish",
+          "name": "St. Ignatius of Antioch",
+          "place": "Antioch"
+        },
+        {
+          "type": "category",
+          "name": "San Andrés in Veracruz (Companion Diocese of SE Mexico)"
+        },
+        {
+          "type": "category",
+          "name": "St. Bartholomew in Thiangrial (Companion Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity (formerly St. Ann in Woodstock, St. Mary in Crystal Lake, and St. Paul in McHenry)",
+          "place": "McHenry"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew",
+          "place": "Grayslake"
+        },
+        {
+          "type": "parish",
+          "name": "Annunciation of Our Lady",
+          "place": "Gurnee"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Highland Park"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Lake Forest"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Family/Sagrada Familia",
+          "place": "Lake Villa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Lawrence",
+          "place": "Libertyville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gregory",
+          "place": "Deerfield"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The leadership of Province Five of the Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Springfield (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Missouri (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Wisconsin (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Southern Ohio (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Ohio (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Michigan (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Indianapolis (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Northern Indiana (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Northern Michigan (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Great Lakes (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Chicago (Province Five)"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The General Convention of the Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "The House of Bishops"
+        },
+        {
+          "type": "category",
+          "name": "The House of Lay & Clerical Deputies"
+        },
+        {
+          "type": "category",
+          "name": "The Executive Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop & Trustees"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Council"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Foundation"
+        },
+        {
+          "type": "category",
+          "name": "Trustees of the Endowment Fund"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Charities"
+        },
+        {
+          "type": "category",
+          "name": "Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission on Ministry"
+        },
+        {
+          "type": "category",
+          "name": "The Antiracism Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop's Staff at St. James Commons"
+        },
+        {
+          "type": "category",
+          "name": "The staff of our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Task Forces, Committees, and Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Dioceses of SE Mexico and the Diocese of Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All retired clergy in our diocese, and surviving spouses of clergy"
+        },
+        {
+          "type": "category",
+          "name": "Ministries in our Companion Dioceses of SE Mexico and Mothers' Union in the Diocese of Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The growth and vitality of our congregations"
+        },
+        {
+          "type": "category",
+          "name": "Ministries in our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brotherhood of St. Andrew"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        },
+        {
+          "type": "category",
+          "name": "Brotherhood of St. Gregory"
+        },
+        {
+          "type": "category",
+          "name": "The Community of the Mother of Jesus"
+        },
+        {
+          "type": "category",
+          "name": "Sisters of St. Gregory"
+        },
+        {
+          "type": "category",
+          "name": "Community of Francis and Clare"
+        },
+        {
+          "type": "category",
+          "name": "Other religious life communities active in the Diocese of Chicago"
+        },
+        {
+          "type": "category",
+          "name": "Ministries in our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Peace Fellowship"
+        },
+        {
+          "type": "category",
+          "name": "Jubilee Centers"
+        },
+        {
+          "type": "category",
+          "name": "Bexley-Seabury Seminary"
+        },
+        {
+          "type": "category",
+          "name": "St. Augustine College"
+        },
+        {
+          "type": "category",
+          "name": "St. Augustine Center for Native Americans"
+        },
+        {
+          "type": "category",
+          "name": "The Union of Black Episcopalians"
+        },
+        {
+          "type": "category",
+          "name": "Geiger Primary School (Diocese of Renk)"
+        },
+        {
+          "type": "category",
+          "name": "Renk Bible School (Diocese of Renk)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our annual Diocesan Convention"
+        },
+        {
+          "type": "category",
+          "name": "Clergy and lay delegates attending our Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The clergy of our diocese: our Bishops, Priests, and Deacons, and their ministries in parishes, as well as our clergy in specialized ministries such as chaplaincies, teaching, and hospice care"
+        },
+        {
+          "type": "category",
+          "name": "Our relationship with our companion Dioceses of Renk, Sudan and SE Mexico"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The lay members and leaders of our Diocese: governing bodies and committees of our congregations"
+        },
+        {
+          "type": "category",
+          "name": "Leaders in our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Anderson House"
+        },
+        {
+          "type": "category",
+          "name": "ReVive Center"
+        },
+        {
+          "type": "category",
+          "name": "Lawrence Hall"
+        },
+        {
+          "type": "category",
+          "name": "Care for Friends"
+        },
+        {
+          "type": "category",
+          "name": "The Church Home at Montgomery Place"
+        },
+        {
+          "type": "category",
+          "name": "Primo Center for Women & Children"
+        },
+        {
+          "type": "category",
+          "name": "Youth Guidance"
+        },
+        {
+          "type": "category",
+          "name": "Organizations of our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ravenswood Community Services"
+        },
+        {
+          "type": "category",
+          "name": "Shelter Care Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Holy Family School"
+        },
+        {
+          "type": "category",
+          "name": "St. Leonard's Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Hopeful Beginnings"
+        },
+        {
+          "type": "category",
+          "name": "Waukegan to College"
+        },
+        {
+          "type": "category",
+          "name": "ElderCare Lake County"
+        },
+        {
+          "type": "category",
+          "name": "Organizations of our Companion Dioceses of SE Mexico and Renk"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Evangelical Lutheran Church in America"
+        },
+        {
+          "type": "category",
+          "name": "The Church of North India"
+        },
+        {
+          "type": "category",
+          "name": "The Church of South India"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Pakistan"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Bangladesh"
+        },
+        {
+          "type": "category",
+          "name": "The Old Catholic Churches"
+        },
+        {
+          "type": "category",
+          "name": "The Philippine Independent Church"
+        },
+        {
+          "type": "category",
+          "name": "The Mar Thoma Syrian Church of Malabar"
+        },
+        {
+          "type": "category",
+          "name": "The Moravian Church in America, Northern and Southern Provinces"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those who are the victims of hunger, fear, injustice, and oppression, or are in danger, sorrow, or any kind of trouble, and those who minister to the sick, the friendless, and the needy (Prayers of the People, Form VI, BCP p. 392)"
+        },
+        {
+          "type": "category",
+          "name": "The youth in our cities and communities affected by violence, and the perpetrators of violence in our communities"
+        }
+      ]
+    }
+  ]
+}

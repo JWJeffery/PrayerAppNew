@@ -25277,3 +25277,94 @@ onboarding prompt. Zero console errors across all of it.
 `node --check` clean on both touched files (`office-ui.js`, `office-shell.js`); all three standing
 audit scripts unchanged at 13/3/9. `index.html` cache-bust bumped: `office-ui.js?v=329`,
 `office-shell.js?v=304`.
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 5/6: the first batch drawn from the
+## roster spreadsheet's own diocesan URLs -- California, Central Florida, Central New York, Chicago,
+## Colorado, Florida (6 dioceses)
+
+Josh: *"Much better, thank you. Please continue with the next batch."* First batch of the new
+roster-spreadsheet phase (fetching each diocese's own source URL directly, rather than a Drive file
+Josh had pre-uploaded). All six `scope: "diocese"`, `cycleType: "dated"`, `year: 2026`, registered in
+`CYCLES_OF_PRAYER_DIOCESES`.
+
+**California** (`episcopal-california-2026.json`, source: diocesan page). 45 entries, Nov 30, 2025 --
+Nov 22, 2026. Every entry carries a real `liturgicalNote` from the source. Two stale 2025-leftover
+entries on the source page were excluded from the transcription and disclosed in `notes`.
+
+**Central New York** (`episcopal-central-new-york-2026.json`). The page
+(`cnyepiscopal.org/events/category/prayer/list/`) returned an HTTP 202 bot-protection challenge page
+(a 205-byte `sgcaptcha` redirect) rather than real content -- reported to Josh rather than retried, per
+his own standing instruction going forward: *"Send me the link anytime you get blocked, and I'll fetch
+it."* Josh pasted the real page content directly. 13 entries, Oct 4 -- Dec 27, 2026. Each entry carries
+2 `parish` subjects plus 2 `category` subjects (the diocese's own cross-referenced TEC companion
+diocese and Anglican Communion province) -- deliberately `category`, not this schema's `diocese`/
+`province` subject types, since those are reserved for `scope: "communion"` files, and this file's
+scope is `diocese`. A standing gun-violence intercession repeated on every entry was excluded and
+disclosed once, per the established repeated-constant precedent.
+
+**Colorado** (`episcopal-colorado-2026.json`, source: `episcopalcolorado.org/congregational-
+resources/cycle-of-prayer/`). 14 entries, Aug 16 -- Nov 22, 2026 -- a rolling display window, not a
+full-year document; matches the roster's own coverage note for this diocese. Standalone weekday
+saint/commemoration notes interspersed in the source (e.g. "September 14: Holy Cross Day") are
+excluded as general liturgical-calendar reference, not part of the diocese's own weekly cycle content.
+
+**Florida** (`episcopal-florida-2026.json`, source: `diocesefl.org/forms-guidelines-resources/cycle-
+of-prayer/`). This diocese publishes a standing 11-week repeating rotation, each slot labeled with TWO
+real calendar dates it currently applies to roughly 11 weeks apart -- transcribed as two separate dated
+`entries` per rotation slot, both carrying the identical subject list, since the source itself names two
+distinct real dates, not this transcription inventing a repeat. 22 entries total (11 slots x 2 dates),
+July 5 -- Nov 29, 2026. Caught and fixed during validation: entries were written in the source's own
+slot order (all July dates, then all their paired autumn dates), which the validator correctly flagged
+as 10 out-of-chronological-order findings -- fixed with a one-line `entries.sort()` by date string, not
+by re-transcribing; re-validated clean.
+
+**Central Florida** (`episcopal-central-florida-2026.json`, source: `cfdiocese.org` PDF, "2026 Sunday
+Cycle of Prayer Revised 9.4.2026"). 52 entries, Jan 4 -- Dec 27, 2026, all `parish` subjects (one
+congregation per Sunday). Built via a small Node parser script (`parse-cf.mjs`) against a cleaned
+linearized extraction, splitting each "Name, Place" line on its LAST comma and sorting by date, since
+the source's own two-column PDF layout meant lines were extracted out of chronological order.
+
+**Chicago** (`episcopal-chicago-2026.json`, source: `episcopalchicago.org` PDF, "2026 Cycle of
+Prayer"). The largest and most structurally complex file in the corpus so far: 52 entries in two
+distinct halves. Jan 4 -- Aug 16 (~33 weeks) names domestic congregations by Deanery (`parish`
+subjects) plus, on every one of those weeks, two named congregations of the diocese's Companion
+Dioceses of Southeast Mexico and Renk, South Sudan (recorded as `category`, not `parish`, since they
+are not domestic congregations of this diocese -- Aug 9 and Aug 16 name the companion dioceses only
+generally, with no specific congregations that week, transcribed as printed). March 22 and March 29
+break the deanery pattern entirely with general intercession text (spouses/families of clergy and each
+congregation's own life; the diocese, its bishop, and its two companion bishops by name) -- transcribed
+as `category` subjects summarizing the printed text. Aug 23 -- Dec 27 (~19 weeks) shifts to
+institutional/thematic content with no named congregations at all: Province Five dioceses (Sept 6 names
+"Chicago" itself among its own Province Five peers -- transcribed as printed even though it is this
+diocese's own name), General Convention bodies, diocesan agencies/commissions/task forces, retired
+clergy, diocesan institutions and organizations (long enumerated lists), ecumenical full-communion
+partners, and a final Dec 27 general justice reflection quoting BCP Form VI (p. 392) -- all recorded as
+`category` subjects, consistent with this file's own `diocese` scope. Two small merged-entity
+transcription calls, both disclosed in `notes`: Jan 11's "Incarnation and, St. Luke's Philippine
+Independent Church in Bloomingdale" treated as one shared-space congregation (the stray comma after
+"and" read as an extraction artifact); Aug 9's "Trinity, McHenry (formerly St. Ann in Woodstock, St.
+Mary in Crystal Lake; St. Paul in McHenry)" treated as one merged congregation, per the source's own
+parenthetical. Campus ministries (Brent House at U. Chicago, Canterbury House at Northwestern) and the
+Montgomery Place chaplaincy recorded as `category`, not `parish`.
+
+**Two candidates set aside, not formally logged as unfetchable.** Easton's page
+(`dioceseofeaston.org/communications/cycle-of-prayer/`) only linked to PDFs whose direct URLs weren't
+locatable in the raw HTML (apparent JS-generated download links). El Camino Real's page
+(`realepiscopal.org/category/news-events/diocesan-cycle-of-prayer/`) is a blog archive showing only
+truncated per-week excerpts, which would require ~52 separate per-post fetches. Both were set aside in
+favor of cleaner alternatives (Florida, Chicago) within this same batch rather than spending the batch's
+budget forcing either one; neither has been retried since.
+
+**Bash tool outage mid-batch.** The sandbox's Bash classifier began failing ("server-side auto mode
+classifier gave no verdict") partway through building Central Florida's file. Retried once per
+standing protocol, then fell back to Read/Write tools exclusively to finish Colorado and Florida's JSON
+directly (validation deferred). Bash recovered on the next attempt at the start of the following
+session turn; all three previously-unvalidated files (Central Florida, Colorado, Florida) plus Chicago
+were then validated together in one pass, with the Florida chronological-order fix described above.
+
+`npm run audit:cycles-of-prayer`: PASS, 31 files, 0 findings. `node --check js/cycles-of-prayer.js`
+clean. All three standing audit scripts unchanged at their 13/3/9 baselines (this batch touched only
+corpus JSON data and the diocese registry array, no entry-routing/profile/mobile-stabilization logic).
+`js/cycles-of-prayer.js` has no `?v=` cache-bust parameter in `index.html` (loaded via plain
+`<script defer>`, unlike `office-ui.js`/`office-shell.js`/`office.css`), so no cache-bust bump was
+needed for this batch.

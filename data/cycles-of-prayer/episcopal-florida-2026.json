@@ -1,0 +1,845 @@
+{
+  "id": "episcopal-florida-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Florida",
+  "dioceseShort": "florida",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan resource page, fetched directly from https://www.diocesefl.org/forms-guidelines-resources/cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This diocese publishes a standing 11-week repeating rotation rather than one dated line per week -- the page itself explicitly labels each rotation slot with BOTH real calendar dates it currently applies to (e.g. 'July 5 and Sep 20, 2026'), roughly 11 weeks apart. Transcribed here as TWO separate dated `entries` per rotation slot (one per named date), each with the identical subject list, since the source itself names two distinct real calendar dates sharing the same content -- not this transcription inventing a repeat.",
+    "Only the window the page currently displays was captured: July 5 - November 29, 2026 (22 dated entries from 11 rotation slots). This is a rolling display of a longer-running cycle; earlier-2026 dates (January-June) are not shown on the page as fetched and are not transcribed here, matching the roster's own coverage note ('September-December 2026').",
+    "Congregations are recorded as `parish` subjects (place taken from the source's own 'in City'/', City' phrasing); prison chaplaincies, correctional-facility worshipping communities, and the companion Diocese of Cuba are recorded as `category` subjects since they are not conventional parish congregations with a civil place name in the same sense."
+  ],
+  "entries": [
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Parish Episcopal Church",
+          "place": "Saint Augustine"
+        },
+        {
+          "type": "category",
+          "name": "St. Teresa Prison Ministry at Wakulla Correctional Institution"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's by the Sea Episcopal Church",
+          "place": "Jacksonville Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Mission Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's Episcopal Mission",
+          "place": "Flagler Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Welaka"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Mediator",
+          "place": "Micanopy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis in the Field Episcopal Church",
+          "place": "Ponte Vedra"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph's Episcopal Church",
+          "place": "Newberry"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Tallahassee"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Ponte Vedra Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Starke"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael & All Angel's Episcopal Church",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas Episcopal Church",
+          "place": "Williston"
+        },
+        {
+          "type": "category",
+          "name": "Osprey Episcopalians, University of North Florida, Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Ascension",
+          "place": "Carrabelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Fernandina Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Green Cove Springs"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Comforter",
+          "place": "Crescent City"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Cedar Key"
+        },
+        {
+          "type": "category",
+          "name": "All Saint's Chapel, Hastings Youth Academy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Madison"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Diocese of Cuba"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's Episcopal Church",
+          "place": "Saint Johns"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Federal Point"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's Episcopal Church",
+          "place": "Chiefland"
+        },
+        {
+          "type": "category",
+          "name": "All Souls' Chapel, Union Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mathew's Episcopal Church",
+          "place": "Mayo"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints' Episcopal Church",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Bethany Episcopal Church",
+          "place": "Hilliard"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Palm Coast"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity Episcopal Church",
+          "place": "Gainesville"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of St. Dismas, Baker Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Monticello"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of Our Saviour",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Communion",
+          "place": "Hawthorne"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of the Incarnation, Gainesville"
+        },
+        {
+          "type": "category",
+          "name": "Community of St. Paul at Liberty Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Perry"
+        },
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "Interlachen"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Florida State Prison, Starke"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Quincy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Palatka"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's Episcopal Church",
+          "place": "High Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Orange Park"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. George Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Palatka"
+        },
+        {
+          "type": "category",
+          "name": "Community of the Transformation, St. John's Detention Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chapel of the Resurrection, Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gabriel's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Redeemer",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Lake City"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Mission Episcopal Church",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "category",
+          "name": "St. Columba's Correctional at Baker Work Camp"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Cathedral",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "category",
+          "name": "Community of St. Philip at Suwanee Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian's Episcopal Church",
+          "place": "Saint Augustine"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Live Oak"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Melrose"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Comforter",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "San Jose Episcopal Church",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Parish Episcopal Church",
+          "place": "Saint Augustine"
+        },
+        {
+          "type": "category",
+          "name": "St. Teresa Prison Ministry at Wakulla Correctional Institution"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's by the Sea Episcopal Church",
+          "place": "Jacksonville Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Mission Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's Episcopal Mission",
+          "place": "Flagler Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Welaka"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Mediator",
+          "place": "Micanopy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis in the Field Episcopal Church",
+          "place": "Ponte Vedra"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph's Episcopal Church",
+          "place": "Newberry"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Tallahassee"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Ponte Vedra Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Starke"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael & All Angel's Episcopal Church",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas Episcopal Church",
+          "place": "Williston"
+        },
+        {
+          "type": "category",
+          "name": "Osprey Episcopalians, University of North Florida, Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Ascension",
+          "place": "Carrabelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Fernandina Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Green Cove Springs"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Comforter",
+          "place": "Crescent City"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Cedar Key"
+        },
+        {
+          "type": "category",
+          "name": "All Saint's Chapel, Hastings Youth Academy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Madison"
+        },
+        {
+          "type": "category",
+          "name": "Our Companion Diocese of Cuba"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's Episcopal Church",
+          "place": "Saint Johns"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Federal Point"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's Episcopal Church",
+          "place": "Chiefland"
+        },
+        {
+          "type": "category",
+          "name": "All Souls' Chapel, Union Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mathew's Episcopal Church",
+          "place": "Mayo"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints' Episcopal Church",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Bethany Episcopal Church",
+          "place": "Hilliard"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Palm Coast"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity Episcopal Church",
+          "place": "Gainesville"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of St. Dismas, Baker Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Monticello"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of Our Saviour",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Communion",
+          "place": "Hawthorne"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of the Incarnation, Gainesville"
+        },
+        {
+          "type": "category",
+          "name": "Community of St. Paul at Liberty Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Perry"
+        },
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "Interlachen"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Florida State Prison, Starke"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Quincy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Palatka"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's Episcopal Church",
+          "place": "High Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Orange Park"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. George Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Episcopal Church",
+          "place": "Palatka"
+        },
+        {
+          "type": "category",
+          "name": "Community of the Transformation, St. John's Detention Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chapel of the Resurrection, Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gabriel's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Redeemer",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Lake City"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Mission Episcopal Church",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "category",
+          "name": "St. Columba's Correctional at Baker Work Camp"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Cathedral",
+          "place": "Jacksonville"
+        },
+        {
+          "type": "category",
+          "name": "Community of St. Philip at Suwanee Correctional"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian's Episcopal Church",
+          "place": "Saint Augustine"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Church",
+          "place": "Live Oak"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Melrose"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Holy Comforter",
+          "place": "Tallahassee"
+        },
+        {
+          "type": "parish",
+          "name": "San Jose Episcopal Church",
+          "place": "Jacksonville"
+        }
+      ]
+    }
+  ]
+}
