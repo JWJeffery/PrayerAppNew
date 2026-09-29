@@ -1,0 +1,833 @@
+{
+  "id": "episcopal-south-carolina-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of South Carolina",
+  "dioceseShort": "south-carolina",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer 2026",
+  "sourceFile": "\"2026-Diocesan-Prayer-Calendar-Full-Year-FINAL.pdf\", fetched directly from https://episcopalchurchsc.org/wp-content/uploads/2026/07/2026-Diocesan-Prayer-Calendar-Full-Year-FINAL.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source is a single-column, one-week-per-Sunday layout (confirmed by rendering and visually comparing pages 1, 2, 3, 4 and 5 against the linearized `pdftotext -layout` extraction before trusting it) -- no multi-column interleaving risk was found.",
+    "The source's own introduction states: \"The Anglican Cycle of Prayer is noted in blue. Visitations by the bishop have been noted on the calendar in green. On other Sundays, we pray for other congregations and institutions of the diocese, along with other ministries.\" Every week in the source prints two items: (1) the diocese's own local subject (a congregation or diocesan institution/ministry/office), and (2) that week's entry from the worldwide Anglican Cycle of Prayer (printed in blue italics). Both are recorded here as this entry's `subjects`, in the order printed (diocesan subject first, Anglican Cycle of Prayer entry second). The Anglican Cycle of Prayer entry is recorded as `type: \"category\"` rather than `type: \"diocese\"`/`\"province\"`, because this schema restricts those two types to scope-'communion' files only; this file's scope is the default 'diocese', so `category` is used instead, exactly as the source's own printed name for that province/church.",
+    "A subject printed in green in the source, with \"(visitation)\" appended after its name/place (marking a bishop's visitation that week), has that parenthetical stripped from `name` and recorded instead as a disclosure in that subject's own `note` field (\"Marked as a bishop's visitation in the source (printed in green).\"), since it is a status marker rather than part of the congregation's own printed name. It is NOT recorded as `liturgicalNote`, since `liturgicalNote` is reserved for the source's own liturgical/calendar label for the date (e.g. \"Palm Sunday\"), not a bishop-visitation marker, and this source printed no liturgical Sunday names at all.",
+    "Nearly every week's diocesan subject is followed in the source by 1-5 lines naming that congregation's/group's rector, vicar, priest-in-charge, warden(s), or (for a non-parish subject) its chairman/executive director/president -- this schema's subjectShape has no dedicated field for these, so they are preserved verbatim in that subject's own `note` field (each line joined with \"; \"), rather than being dropped.",
+    "Subjects that are an institution rather than a specific worshipping congregation -- a camp/conference center, school, university, or retirement community (e.g. \"St. Christopher Camp and Conference Center\", \"Kanuga Camp and Conference Center, Hendersonville, NC\", \"Voorhees University\", \"Porter-Gaud Episcopal School\", \"Still Hopes Episcopal Retirement Community\", \"Bishop Gadsden Episcopal Retirement Community\", \"Sewanee: The University of the South\") -- are recorded as `type: \"category\"`, not `\"parish\"`, per subjectShape (\"category\" covers anything \"not tied to one congregation\"); several of these are outside South Carolina (Kanuga in Hendersonville, NC; Sewanee in Tennessee) but are the diocese's own named subjects for that week, transcribed as printed.",
+    "February 15's subject, \"St. Philip's Chapel, Denmark, on the campus of Voorhees University\", was split into `name`: \"St. Philip's Chapel\", `place`: \"Denmark\", with the campus descriptor (\"On the campus of Voorhees University.\") preserved in that subject's own `note` field, since `place` per this schema is meant to hold only the town/city.",
+    "November 1's diocesan subject, \"Calvary Episcopal Church (visitation)\", is printed with no city/town at all -- the only congregation entry in the whole source missing one. Rather than fabricating a place, this subject is recorded as `type: \"category\"` (which carries no `place`) instead of `\"parish\"`; the visitation marker and officer names are preserved in its `note` field, and this judgment call is disclosed there as well.",
+    "\"The Episcopal Church of the Good Shepherd\" is printed as the diocesan subject on two different, non-adjacent weeks for two different towns -- June 7 (Sumter) and September 20 (Summerville) -- transcribed as printed both times; this is the source's own content (two distinct congregations sharing a name), not a duplicate entry or a transcription error.",
+    "\"The Rev. Shawn Griffth, Associate Chaplain\" (November 22) preserves the source's own apparent typo (\"Griffth\" for \"Griffith\") verbatim, per this corpus's standing rule against silently correcting a diocese's own published document.",
+    "November 8's subject line reads \"Interim Rector\" with no person's name given (unlike every other officer line in the source, which names an individual) -- preserved exactly as printed.",
+    "The Anglican Cycle of Prayer entries begin repeating partway through the year (e.g. October 25's \"The Church of the Province of Central Africa\" matches January 4's; November 1 through December 27 each repeat an entry from January 4 through March 8) -- this is the source's own printed content on each date, not a transcription error or an intentional loop constructed here.",
+    "The diocese's own cover page gives its short title as \"The Diocese of South Carolina\", but its body text refers to itself repeatedly and more formally as \"The Episcopal Diocese of South Carolina\" (e.g. in the January 18, April 12, July 12, October 25 and December 27 entries) -- this fuller form is used for this file's `diocese` field, consistent with this corpus's naming convention for other TEC dioceses' files.",
+    "This diocese (The Episcopal Diocese of South Carolina) is distinct from the Episcopal Diocese of Upper South Carolina, a separate diocese not yet held in this corpus; `dioceseShort` is set to \"south-carolina\" accordingly."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Canterbury House",
+          "note": "Mr. Fred Fabian, Chairman; Mr. Robert Wright, Executive Director."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Episcopal Church",
+          "place": "Hampton",
+          "note": "Mr. Sam Crews, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Standing Committee, Diocesan Council, and Trustees of the Episcopal Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "Province de L’Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Heavenly Rest",
+          "place": "Estill",
+          "note": "Ms. Laura Marshall, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis Episcopal Church",
+          "place": "Edisto Island",
+          "note": "The Very Rev. Joseph Smith, Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "North Charleston",
+          "note": "The Rev. Matthew McCormick, Rector. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "Hong Kong Sheng Kung Hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s Chapel",
+          "place": "Denmark",
+          "note": "On the campus of Voorhees University. The Rev. Marie-Carmel Chery, Vicar; Dr. Gerald Wright, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of the Indian Ocean"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church in Okatie",
+          "place": "Ridgeland",
+          "note": "The Rev. Pam Fahrner, Interim Priest-in-charge."
+        },
+        {
+          "type": "category",
+          "name": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David’s Episcopal Church",
+          "place": "Cheraw",
+          "note": "The Rev. Michael Bye, Priest-in-charge. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "James Island",
+          "note": "Mr. Steve Johnston, Sr. Warden. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Dominican Development Group",
+          "note": "Christy Wallace, Executive Director."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Kenya"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The House of Bishops of The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Korea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Denmark",
+          "note": "Mr. Larry Watt, Sr. Warden. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Melanesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s Episcopal Church",
+          "place": "Port Royal",
+          "note": "The Rev. Jenny Newman, Rector."
+        },
+        {
+          "type": "category",
+          "name": "La Iglesia Anglicana de México"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Racial Justice and Reconciliation Commission of the Episcopal Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "Igreja Anglicana de Moçambique e Angola"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James-Santee Episcopal Church",
+          "place": "McClellanville",
+          "note": "The Rev. John West, Priest-in-charge."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Myanmar (Burma)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Mt. Pleasant",
+          "note": "The Rev. Furman Buchanan, Rector; The Rev. Brooks Boylan, Associate Rector. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Church of Nigeria (Anglican Communion)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church Cathedral",
+          "place": "Charleston",
+          "note": "The Very Rev. Michael Wright, Rector and Dean; The Rev. Cn. Rob Donehue, Sub-Dean; The Rev. Ross Tortora, Priest Associate; The Rev. Randy Boone, Priest Associate; The Rev. Cn. Mac Magee, Deacon. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Church of North India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s Episcopal Church",
+          "place": "Charleston",
+          "note": "The Rev. Adam Shoemaker, Rector; The Rev. Will Berry, Associate Rector for Families & Formation; The Rev. Julia Madden, Associate Rector for Pastoral Care & Parish Life; The Rev. James Pecoy, Deacon. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Church of Pakistan (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George’s Episcopal Church",
+          "place": "Summerville",
+          "note": "The Rev. Michael Crandall, Rector; The Rev. Marivel Milien, Associate Priest for Family and Spanish Ministries. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Papua, New Guinea"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Episcopal Church",
+          "place": "Johns Island",
+          "note": "The Rev. Callie Walpole, Rector; The Rev. Chris Huff, Priest Associate. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in the Philippines"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Christopher Camp and Conference Center",
+          "note": "The Rev. Laura Rezac, Executive Director."
+        },
+        {
+          "type": "category",
+          "name": "Eglise Anglicane du Rwanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church of the Good Shepherd",
+          "place": "Sumter",
+          "note": "Mr. Tommy Bultman, Sr. Warden. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Scottish Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Catherine’s Episcopal Church",
+          "place": "Florence",
+          "note": "The Rev. Eunice Dunlap, Vicar. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "Church of the Province of South East Asia"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kanuga Camp and Conference Center, Hendersonville, NC",
+          "note": "The Rev. Michael R. Sullivan, President."
+        },
+        {
+          "type": "category",
+          "name": "The Church of South India (United)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Executive Council of The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Southern Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Still Hopes Episcopal Retirement Community",
+          "note": "Mr. Donald Lilly, CEO."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of South America"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission on Ministry of the Episcopal Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Holy Communion",
+          "place": "Allendale"
+        },
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter’s Episcopal Church",
+          "place": "Charleston",
+          "note": "The Rev. Courtney Davis-Shoemaker, Priest-in-charge; The Rev. Marionette Bennett, Deacon."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Tanzania"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church of the Messiah",
+          "place": "Myrtle Beach",
+          "note": "The Rev. Roy Tripp, Priest-in-charge."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Voorhees University",
+          "note": "Dr. Ronnie Hopkins, President; The Rev. Marie-Carmel Chery, Dean of the Chapel & Spiritual Engagement."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Porter-Gaud Episcopal School",
+          "note": "Mr. DuBose Egleston, Headmaster."
+        },
+        {
+          "type": "category",
+          "name": "The Church in Wales"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s Episcopal Church",
+          "place": "North Myrtle Beach",
+          "note": "The Very Rev. Cn. Wilmot T. Merchant II, Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of West Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Youth and Campus Ministries of The Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "The Church in the Province of the West Indies"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Communion",
+          "place": "Charleston",
+          "note": "The Rev. Jordan Trendelman, Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal / Anglican Province of Alexandria"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Faith Memorial",
+          "place": "Pawleys Island",
+          "note": "The Rev. Wil Keith, Rector. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church in Aotearoa, New Zealand, and Polynesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church of the Good Shepherd",
+          "place": "Summerville",
+          "note": "The Rev. Dow Sanderson, Priest-in-charge. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine’s Episcopal Church",
+          "place": "Pinewood (Wedgefield)",
+          "note": "Mr. Julius Murray III, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "The Church of Bangladesh"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Companion Diocese of the Dominican Republic",
+          "note": "The Rt. Rev. Moisés Quezada Mota, Bishop Diocesan."
+        },
+        {
+          "type": "category",
+          "name": "Igreja Episcopal Anglicana do Brasil"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Summerville",
+          "note": "The Rev. Rob Spainhour, Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s Episcopal Church",
+          "place": "St. Stephen",
+          "note": "The Rev. Dan Clarke, Supply Priest; Mr. Scott Sauls, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Staff of The Episcopal Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Calvary Episcopal Church",
+          "note": "Unlike every other congregation entry in this source, no city/town was printed here; recorded as type \"category\" rather than \"parish\" (which requires a non-empty place) rather than inventing one not printed in the source. The Rev. Ricardo Bailey, Rector; The Rev. Marionette Bennett, Deacon. Marked as a bishop's visitation in the source (printed in green)."
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Episcopal Church",
+          "place": "Hilton Head Island",
+          "note": "Interim Rector; The Rev. Eric Bash, Associate Rector."
+        },
+        {
+          "type": "category",
+          "name": "Province de L’Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s Episcopal Church",
+          "place": "Hartsville",
+          "note": "The Rev. Ned Mulligan, Priest-in-charge."
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Gadsden Episcopal Retirement Community",
+          "note": "Ms. Sarah Tipton, President and Chief Executive Officer; The Rev. Charles Jenkins, Chaplain; The Rev. Shawn Griffth, Associate Chaplain."
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne’s Episcopal Church",
+          "place": "Conway",
+          "note": "The Rev. Kevin Sparrow, Rector."
+        },
+        {
+          "type": "category",
+          "name": "Hong Kong Sheng Kung Hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s Episcopal Church",
+          "place": "Charleston",
+          "note": "The Rev. Michael Shaffer, Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of the Indian Ocean"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban’s Episcopal Church",
+          "place": "Kingstree",
+          "note": "Mr. Melvin McFadden, Sr. Warden."
+        },
+        {
+          "type": "category",
+          "name": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sewanee: The University of the South",
+          "note": "Rob Pearigen, Vice-Chancellor and President."
+        },
+        {
+          "type": "category",
+          "name": "The Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All priests and deacons, retired clergy, spouses, and surviving spouses of The Episcopal Diocese of South Carolina"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        }
+      ]
+    }
+  ]
+}

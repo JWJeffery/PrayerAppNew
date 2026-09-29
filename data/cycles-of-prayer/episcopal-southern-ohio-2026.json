@@ -1,0 +1,237 @@
+{
+  "id": "episcopal-southern-ohio-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of Southern Ohio",
+  "dioceseShort": "southern-ohio",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Cycle of Prayer",
+  "sourceFile": "\"2026-Cycle-of-Prayer_final.pdf\", fetched directly from https://diosohio.org/wp-content/uploads/2025/12/2026-Cycle-of-Prayer_final.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays (Week of), January 4 - December 27, transcribed from a single-page table with columns 'Congregation 1', 'Congregation 2', and 'DSO Commission, Entity or Partner'. Congregation 1/2 cells are recorded as `parish` subjects (place taken from the source's own comma-separated city/place); the DSO Commission/Entity/Partner column, and the three weeks naming 'Our bishops', 'Our priests', or 'Our deacons', are recorded as `category` subjects.",
+    "The document itself prints only 'Diocese of Southern Ohio' as its own name (in the page header logo, next to '2026 Cycle of Prayer') -- no fuller form such as 'The Episcopal Diocese of Southern Ohio' appears anywhere in this source, so `diocese` is transcribed exactly as printed.",
+    "The source prints 'St Patrick's' (no period after 'St') for both St Patrick's, Lebanon (Mar 15) and St Patrick's, Dublin (May 3), inconsistent with 'St.' (with period) used for every other 'St.'-prefixed congregation in the same document -- preserved verbatim per this corpus's standing rule against silently correcting a source.",
+    "Several congregation names are printed without a following apostrophe-s where it might be expected elsewhere (e.g. 'All Saints, Cincinnati', 'All Saints, New Albany', 'All Saints, Portsmouth', 'All Saints, Washington Court House', 'St. Anne, West Chester', 'St. Philip, Columbus', 'St. James, Clintonville'/'Westwood'/'Zanesville'/'Piqua') -- preserved exactly as printed, not normalized to a possessive form.",
+    "The July 12 (2026-07-12) Congregation 2 cell reads only 'Indian Hill Church', with no comma-separated city the way every other congregation in this source is given -- 'Indian Hill' is itself the name of the village in Hamilton County, Ohio, so it is used here as `place` by inference from the congregation's own name, not printed separately by the source; disclosed here as a judgment call rather than silently matching the pattern of the other rows.",
+    "November 15 (2026-11-15) Congregation 1 wraps across two printed lines as 'Church of Our Saviour/La Iglesia de Nuestro' / 'Salvador, Cincinnati' -- rejoined here as the single name 'Church of Our Saviour/La Iglesia de Nuestro Salvador' with place 'Cincinnati', confirmed against the rendered PDF page image (not just the linearized text extraction) before trusting the line join.",
+    "April 19 (2026-04-19)'s category cell wraps across two printed lines, 'Explorers, Postulants, Candidates for the' / 'Diaconate and Priesthood' -- rejoined here as the single category name 'Explorers, Postulants, Candidates for the Diaconate and Priesthood', likewise confirmed against the rendered page image.",
+    "This is a single-page, single-table PDF (not a multi-column/multi-story layout), so a linearized 'pdftotext -layout' extraction carried no column-interleaving risk of the kind flagged elsewhere in this corpus for parish- or communion-level multi-column sources -- confirmed anyway by rendering the full page as an image (in four overlapping strips at 2x) and visually comparing every row against the extracted text before trusting it.",
+    "No liturgical Sunday names (e.g. 'Proper 15', 'Advent') are printed anywhere in this source -- `liturgicalNote` is null on every entry."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Gallipolis" },
+      { "type": "parish", "name": "St. James", "place": "Clintonville" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Urbana" },
+      { "type": "category", "name": "Budget Committee" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Greenville" },
+      { "type": "category", "name": "Episcopal Community Ministries" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Samaritan", "place": "Amelia" },
+      { "type": "parish", "name": "St. Luke's", "place": "Granville" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Oakwood" },
+      { "type": "category", "name": "Society of St. Simeon and St. Anna" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Hyde Park" },
+      { "type": "category", "name": "Commission on Reparative Justice" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Westerville" },
+      { "type": "category", "name": "Bishop's Staff" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Pomeroy" },
+      { "type": "category", "name": "Lawrence Home Association" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Dayton" },
+      { "type": "category", "name": "Chaplains to Retired Clergy and Spouses" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Cincinnati" },
+      { "type": "category", "name": "Episcopal Relief & Development" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Patrick's", "place": "Lebanon" },
+      { "type": "category", "name": "Bethany School" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "New Albany" },
+      { "type": "category", "name": "Commission on Ministry" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anne", "place": "West Chester" },
+      { "type": "category", "name": "Commission on Congregational Life" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Troy" },
+      { "type": "parish", "name": "St. Luke's", "place": "Marietta" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church Cathedral", "place": "Cincinnati" },
+      { "type": "category", "name": "Faith in Life Committee" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Portsmouth" },
+      { "type": "category", "name": "Explorers, Postulants, Candidates for the Diaconate and Priesthood" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Dayton" },
+      { "type": "category", "name": "Education for Ministry" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Patrick's", "place": "Dublin" },
+      { "type": "category", "name": "Our bishops" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Athens" },
+      { "type": "parish", "name": "St. John's", "place": "Columbus" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Upper Arlington" },
+      { "type": "category", "name": "Our priests" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Ascension", "place": "Middletown" },
+      { "type": "category", "name": "Diocesan Council" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Newark" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Oxford" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Washington Court House" },
+      { "type": "category", "name": "Procter Center/Procter Summer Camp" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "McArthur" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Evanston" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Philip", "place": "Columbus" },
+      { "type": "category", "name": "LGBTQ+ Ministries Task Force" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Ascension and Holy Trinity", "place": "Wyoming" },
+      { "type": "parish", "name": "St. John's", "place": "Worthington" },
+      { "type": "category", "name": "Forward Movement" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "London" },
+      { "type": "category", "name": "Episcopal Retirement Services" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Chillicothe" },
+      { "type": "parish", "name": "Indian Hill Church", "place": "Indian Hill", "note": "Source prints only 'Indian Hill Church' with no comma-separated city; `place` is inferred from the congregation's own name (see file-level `notes`)." }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Delaware" },
+      { "type": "category", "name": "Standing Committee" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Hillsboro" },
+      { "type": "category", "name": "College for Congregational Development" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Hamilton" },
+      { "type": "parish", "name": "St. John's", "place": "Lancaster" },
+      { "type": "category", "name": "Community of the Transfiguration" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Glendale" },
+      { "type": "category", "name": "Trustees of the Diocese" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Columbus" },
+      { "type": "parish", "name": "St. Alban's", "place": "Bexley" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Ironton" },
+      { "type": "category", "name": "Trustees of the Church Foundation" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy's", "place": "Anderson Township" },
+      { "type": "parish", "name": "St. John's", "place": "Cambridge" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Waynesville" },
+      { "type": "category", "name": "Episcopal Seminaries" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Calvary", "place": "Clifton" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Pickerington" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Logan" },
+      { "type": "category", "name": "Task Force on Creation Care Ministry" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Springfield" },
+      { "type": "parish", "name": "St. James", "place": "Westwood" },
+      { "type": "category", "name": "Ohio Council of Churches" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "Fairborn" },
+      { "type": "category", "name": "Procter Center Advisory Board" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Terrace Park" },
+      { "type": "parish", "name": "St. Francis", "place": "Springboro" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of St. Edward", "place": "Whitehall" },
+      { "type": "category", "name": "Campus Ministry" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Xenia" },
+      { "type": "category", "name": "Beloved Community Commission" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Columbus" },
+      { "type": "parish", "name": "Grace", "place": "College Hill" },
+      { "type": "category", "name": "Finance Committee" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Montgomery" },
+      { "type": "category", "name": "152nd Diocesan Convention" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour/La Iglesia de Nuestro Salvador", "place": "Cincinnati" },
+      { "type": "parish", "name": "St. George's", "place": "Dayton" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Margaret's", "place": "Dayton" },
+      { "type": "category", "name": "Regional Disciplinary Board" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Simon of Cyrene", "place": "Lincoln Heights" },
+      { "type": "parish", "name": "St. James", "place": "Zanesville" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Walnut Hills" },
+      { "type": "category", "name": "Minority Empowerment Initiative Trust" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Mechanicsburg" },
+      { "type": "parish", "name": "St. James", "place": "Piqua" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Philip's", "place": "Circleville" },
+      { "type": "category", "name": "Our deacons" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Nelsonville" },
+      { "type": "category", "name": "Episcopal Church Women" }
+    ]}
+  ]
+}
