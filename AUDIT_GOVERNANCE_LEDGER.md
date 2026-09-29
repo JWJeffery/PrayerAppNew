@@ -24235,3 +24235,119 @@ line for the Cycles of Prayer corpus was stale (the profile/user system entry tw
 already wired it in) -- corrected in that note rather than left to mislead the next reader.
 
 Full detail: `RESUME_PROJECT_NOTE.md`'s matching entry, same date.
+
+## Session 2026-09-29 -- the TEC diocese roster spreadsheet's own location and content were never
+## recorded anywhere, and it turns out to already pre-solve most of what the next 83 dioceses need
+
+Josh caught this directly: "you did not include information about the process we used building the
+schema and filling it using the spreadsheet and attached data?" He was right -- neither
+`RESUME_PROJECT_NOTE.md` nor this ledger's own prior entry for the five-diocese batch recorded
+*where* the roster spreadsheet actually is, only that Josh had supplied one. Re-fetched it directly
+(`mcp__Google_Drive__get_file_metadata` + `read_file_content`) rather than relying on memory, to
+document it accurately.
+
+**Location:** Google Drive, file id `1F5-ylNoYBx5ecfxvdmPNv4uZTTRPf6CR`, titled "TEC Diocesan Cycles
+of Prayer 2026 - CURRENT 88 located.xlsx", in Drive folder id `1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew`
+("TEC Cycle of Prayer"), owned by `josh@jwjeffery.org`. Its own header states its own methodology:
+sourced from `https://www.episcopalassetmap.org/dioceses`, checked 2026-09-28.
+
+**Structure -- three tables, all far more useful than "a list of 88 dioceses" implies:**
+
+1. **The 88-diocese "located" table** (columns: Diocese, Cycle/uploaded-Drive-file, Coverage, Format,
+   Verification note, Checked, Original diocesan source, Additional uploaded file). Critically, the
+   *first* URL column is NOT always the diocese's own site -- for roughly 20 dioceses where the
+   diocesan site itself is blocked or awkward to fetch programmatically, Josh had already located and
+   uploaded a working Drive-hosted copy, and put THAT in the primary column, with the original
+   diocesan URL preserved in the "Original diocesan source" column for provenance. **This is exactly
+   the same 403-workaround this session independently rediscovered for Arizona** (`azdiocese.org`
+   blocked direct fetch; the ingested file came from a Drive-uploaded copy) -- except the roster had
+   already done that legwork and simply handed over the Drive URL. A future session should check this
+   column FIRST rather than re-discovering each diocese's accessibility quirks from scratch the way
+   this session did for Arizona and Albany.
+2. **A second "Uploaded files" table**, 20 rows, cross-referencing the same Drive-hosted copies against
+   their original diocesan sources, for the specific dioceses needing that workaround: Arizona,
+   Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes, Idaho, Kentucky, Lexington,
+   Maine, Nebraska, New Jersey, Newark, Northern Indiana, Rio Grande (2 files -- separate weekly and
+   daily cycles), San Joaquin, Southwestern Virginia, Western Massachusetts, Western Oregon.
+3. **An "Unopened candidates" table**, 3 URLs across 2 dioceses that could NOT be verified even with
+   Josh's own research: **East Tennessee** (a 2026-27 bishop's-visitation-schedule PDF that would not
+   open in the available viewers) and **Rochester** (2 URLs, both return "Authorization Needed" --
+   require a diocesan login Josh does not have). Do not re-attempt these the same way; either try a
+   different fetch path/tool, or these need Josh's own login/access.
+
+**18 dioceses have NO verified current cycle at all, per the roster's own research (not this session's
+own search, Josh's):** Colombia, Cuba, Dallas, Dominican Republic, East Tennessee, Eastern Oregon,
+Ecuador Central, Ecuador Litoral, Haiti, Honduras, Los Angeles, Minnesota, Rochester, Spokane, Taiwan,
+Utah, Venezuela, Virgin Islands. Do not spend a future session re-searching these from scratch on the
+strength of "maybe I'll find something Josh missed" -- the roster's own per-diocese notes already
+record what was tried and why it came up empty (a stale/superseded cycle, a page requiring diocesan
+login, a linked PDF that is actually an old year, etc.) -- read that diocese's own note in the roster
+before concluding there's nothing there, since a couple of these already have a *near*-match noted
+(e.g. Los Angeles has January/May 2026 entries but the September page is mislabeled 2025; Minnesota's
+resource directory covers only through Easter 2026).
+
+**The roster ALSO already flags, in its own Coverage/Verification-note columns, several dioceses whose
+cycle is NOT date-anchored the way Western Oregon/Alaska/Arizona/Albany/Alabama are -- exactly the
+shape Arkansas turned out to have, discovered independently this session before this roster detail was
+re-read closely.** A future session should expect these to need `cycleType: "monthly-recurring"` (or a
+genuinely new cycleType -- see below) rather than being surprised the way this session was surprised by
+Arkansas:
+- **Iowa** -- "2026, daily 1-31 recurring" (a 16-page "Joint Intercession List" that also covers
+  companion dioceses -- may need the same kind of single-diocese-portion extraction Alabama/Arizona
+  needed for their own multi-scope sources).
+- **Long Island** -- "Standing daily cycle... no year stated."
+- **Mississippi** -- "Standing weekly cycle... 51-week calendar... no year stated." **This does NOT fit
+  the existing `monthly-recurring` cycleType either** -- Arkansas's shape is day-of-month (1-31);
+  Mississippi's is week-number (1-51) with no year. A genuine THIRD cycleType (something like
+  `"weekly-recurring"`, keyed by week-number rather than day-of-month) will likely be needed here --
+  raise it to Josh the same way Arkansas's mismatch was raised, don't force it into `monthly-recurring`
+  just because both are "recurring."
+- **Navajoland** -- "Undated recurring Sunday-Saturday cycle," a 7-entry-per-week chart (day-of-week,
+  not day-of-month) -- a FOURTH distinct shape again. Also carries a live pastoral complication the
+  roster discloses: the chart still names former Bishop Barry Beisner, whose ministry ended 2026-06-21
+  and whose office is currently vacant with the Standing Committee as ecclesiastical authority; the
+  roster's own instruction is to read that entry as "prayer for the vacant bishop's office," not to
+  silently substitute or drop it.
+- **Northern Indiana** -- "Standing daily cycle; revised May 20, 2026."
+- **Northwest Texas** -- Coverage says "2026, updated June 1" but the verification note clarifies
+  "recurring days 1-31" -- another day-of-month monthly-recurring candidate.
+- **Western Louisiana** -- "2026; daily 1-31" -- another day-of-month monthly-recurring candidate.
+- **Southwest Florida** -- "Quarterly repeating cycle, updated for 2026" -- ambiguous; may just mean
+  "republished every quarter" while still being date-anchored per entry (like the several other
+  quarterly-published dioceses below), or may be a genuine repeating-without-year shape like the above.
+  Check carefully when reached rather than assuming either way.
+
+**Other disclosed quirks worth knowing before building the affected diocese, so as not to rediscover
+them the hard way:**
+- **Pennsylvania** -- the source spreadsheet's own trailing rows after Nov 28, 2026 are stale template
+  entries, not real 2026 dates; do not transcribe them as such.
+- **South Dakota** -- the working PDF's own filename/URL says "24-25" but the content is the current
+  2025-26 cycle; an obsolete-looking filename does not mean an obsolete file here.
+- **Wyoming** -- the diocese's own search-indexed page is stale; the live diocesan page links the
+  actually-current PDF. Use the live page, not a search result.
+- **Ohio** -- some automated fetch tooling failed to retrieve the PDF directly even though a browser
+  could open it (same general class of problem as Arizona's 403, may need a similar Drive-copy-style
+  workaround, though none is pre-supplied for Ohio in the roster).
+- **Georgia** and **Rio Grande** each publish two parallel cycles (daily+weekly for Georgia; separate
+  weekly and daily PDFs for Rio Grande) -- decide which to build, or whether to build both, rather than
+  assuming there's a single canonical document.
+- **Puerto Rico**'s source is in Spanish -- a translation/transcription-fidelity consideration the
+  other dioceses so far haven't required.
+- **Montana** uses a live embedded Google Calendar with ~63 individually named events per month
+  (parishes, clergy, and lay people together), a structurally different sourcing shape from every
+  other diocese ingested so far -- worth a deliberate decision on how (or whether) to fit it into this
+  schema rather than assuming it transcribes the same way a PDF does.
+- Several dioceses (**Easton, Missouri, North Dakota, Springfield**, and others) publish quarterly and
+  only the current quarter is verified in the roster -- a file covering less than a full year for these
+  is the expected, correct state, not a sign of incomplete work.
+
+**Where this now lives:** the roster's exact location and a condensed version of the above is in
+`data/cycles-of-prayer/schema.json`'s own notes (the file whoever adds the next diocese is already
+told to read first) and in `RESUME_PROJECT_NOTE.md` §7's Cycles of Prayer entry. This ledger entry is
+the full, detailed version; do not duplicate all of it into either of those again if it needs
+updating later -- update it here and shorten the pointer instead.
+
+Full detail: this entry is itself the full detail (no matching narrative was added to
+`RESUME_PROJECT_NOTE.md` beyond a short pointer, deliberately, per that note's own "handoff document,
+not a history" rule -- see the 2026-09-28 entry above about why that note was just split back down
+after re-bloating).
