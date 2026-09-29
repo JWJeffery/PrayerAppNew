@@ -1,0 +1,873 @@
+{
+  "id": "episcopal-nebraska-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Nebraska",
+  "dioceseShort": "nebraska",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Weekly Prayer Cycle Calendar 2026",
+  "sourceFile": "\"Weekly_Prayer_Cycle_Calendar_2026.pdf\", provided directly by Josh via Google Drive (file id 19azf190vjQrGgRuht5cUF1m9T4A1ROYt, folder \"TEC Cycle of Prayer\"). This PDF's linear text extraction interleaved dates and content unreliably for large stretches of the calendar; it was downloaded, rendered to page images at 150dpi, and transcribed directly from the rendered grid table.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is a full, self-contained calendar-year 2026 cycle (January 4 through December 27), one entry per week.",
+    "Most weeks list two or three prayer subjects side by side in the source's own table row; all are preserved as separate subjects in the order printed. A subject with no clergy/leader name in the source's own adjoining column has no `note` field, rather than a fabricated one.",
+    "Several subjects are the source's own monthly heritage-month or awareness-observance texts (e.g. 'During Black History Month: In thanksgiving for...') rather than a parish or named ministry; these are recorded as `category` subjects using the source's full sentence as the name, since this corpus has no separate field for an observance.",
+    "'Holy Host, Omaha' (June 21) and 'St. Peter's in the Valley, Lexington' (August 30, the Nebraska town, not the Kentucky diocese also in this corpus) are preserved exactly as printed.",
+    "Several subjects naming a specific diocesan office-holder or observance by sentence (e.g. 'The retired Bishop of our Diocese: James E. Krotz', 'Our Diocesan Archivist: Jo Behrens, and all ministries which celebrate and remember the history of the Church') are recorded as `category` subjects using the full sentence as printed, since they are not a parish, and splitting out just the person's name would lose the source's own framing."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Bishop J. Scott Barker"
+        },
+        {
+          "type": "category",
+          "name": "Clarkson College"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Lincoln",
+          "note": "The Rev. Claire Elser, The Rev. Steve Lahey, The Rev. Mary Hendricks"
+        },
+        {
+          "type": "category",
+          "name": "Education for Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Omaha",
+          "note": "The Rev. Keith Winton, The Rev. Kaitlin Reece"
+        },
+        {
+          "type": "category",
+          "name": "Members of the Standing Committee and Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Diocesan Staff and the Work of the Diocese",
+          "note": "Bishop J. Scott Barker, Canon Elizabeth Easton, Br. James Dowd, Beth Byrne, Lachisha Baskin, Megan Griffiths, The Venerable Roy Phillips"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin of Tours",
+          "place": "Omaha",
+          "note": "The Rev. Deacon Mark Kowalski"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Creation Care Ministries"
+        },
+        {
+          "type": "category",
+          "name": "During Black History Month: In thanksgiving for the leadership and legacies of Black Americans in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Magdalene Omaha and Magdalene Nebraska"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine of Canterbury",
+          "place": "Elkhorn",
+          "note": "The Rev. Benedict Varnum, The Rev. Lisa Aguilar, The Rev. Deacon Rebecca Smith"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Scottsbluff"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Racial Reconciliation & Sacred Ground Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Trinity",
+          "place": "Lincoln",
+          "note": "The Rev. Clay Lein, The Rev. Deacon John Long, The Rev. Verneda Kelly"
+        },
+        {
+          "type": "category",
+          "name": "Clergy Retreat"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our State of Nebraska"
+        },
+        {
+          "type": "category",
+          "name": "Women's History Month: In thanksgiving for the leadership and legacies of women in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Bellevue",
+          "note": "The Rev. Margaret Brack, The Rev. Deacon Terri Storm"
+        },
+        {
+          "type": "category",
+          "name": "The Order of the Daughters of the King"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Church Women (ECW)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Grand Island",
+          "note": "The Rev. Dr. Jeffrey Nelson"
+        },
+        {
+          "type": "category",
+          "name": "House of Bishops Meeting"
+        },
+        {
+          "type": "category",
+          "name": "The Presiding Bishop of the Episcopal Church, The Most Rev. Sean Rowe"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members of the Bishop and Trustees",
+          "note": "The Rev. Deacon Bryan Peterson, Treasurer; Woody Bradford, Chancellor"
+        },
+        {
+          "type": "category",
+          "name": "All first responders and those who care for our communities"
+        },
+        {
+          "type": "category",
+          "name": "Diocese Women's Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Alliance",
+          "note": "The Rev. Kimberly Culp"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "Hyannis"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Kemper School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "During Arab American Heritage Month: In thanksgiving for the leadership and legacies of Arab Americans in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Savior",
+          "place": "North Platte",
+          "note": "The Rev. Steve Meysing"
+        },
+        {
+          "type": "category",
+          "name": "Western Residency"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martha's",
+          "place": "Papillion",
+          "note": "The Rev. Emily Schnabl, The Rev. Joseph Alaack, The Rev. Deacon Wes Agar"
+        },
+        {
+          "type": "category",
+          "name": "For the Diocese and people of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Diocesan Mission Trip in the Dominican Republic",
+          "note": "The Rev. Tom Jones, The Rev. Dr. John Schaefer"
+        },
+        {
+          "type": "category",
+          "name": "Our Vicars for Mission and our Companion Diocese in the Dominican Republic"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sidney"
+        },
+        {
+          "type": "category",
+          "name": "During Asian American, Native Hawaiian, and Pacific Islander Heritage Month: In thanksgiving for the leadership and legacies of the AANHPI community in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Omaha",
+          "note": "The Rev. Alison Lee, The Ven. Roy Phillips, The Rev. Deacon Bryan Peterson, The Rev. Deacon Mark Fredrickson"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Arapahoe",
+          "note": "The Rev. Rick Moon"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development Global Mission"
+        },
+        {
+          "type": "category",
+          "name": "Diocese Disaster Preparedness"
+        },
+        {
+          "type": "category",
+          "name": "For the victims of natural disasters around the world"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd of the Plains",
+          "place": "Harrisburg"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Mitchell",
+          "note": "The Rev. Deacon Angela Jones, The Rev. Ed Hunzeker"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Chadron"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Cathedral",
+          "place": "Omaha",
+          "note": "The Very Rev. Vanessa E. B. Clark, The Rev. Dr. Kate Hennessy-Keimig, The Rev. Deacon Ellen Ross"
+        },
+        {
+          "type": "category",
+          "name": "Diocese Recovery Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Monica's Home for Women"
+        },
+        {
+          "type": "category",
+          "name": "During Pride Month: In thanksgiving for the leadership and legacies of the LGBTQ+ community in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Omaha",
+          "note": "The Rev. Toni Anderson, Rev. Deacon Joan Wood, The Rev. Deacon Dorothia Seldon"
+        },
+        {
+          "type": "category",
+          "name": "For the victims of natural disasters around the world"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Host",
+          "place": "Omaha",
+          "note": "The Rev. Mark Selvey, Noelle Ptomey"
+        },
+        {
+          "type": "category",
+          "name": "Queerly Beloved Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Youth of our Diocese"
+        },
+        {
+          "type": "category",
+          "name": "Our Diocesan Youth Mission Trip in the Dominican Republic"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Balancing the Scales of Justice Task Force",
+          "note": "The Rev. Kaitlin Reece, Dario Ghersi"
+        },
+        {
+          "type": "category",
+          "name": "United Thank Offering"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Oshkosh",
+          "note": "The Rev. Joan Phillips"
+        },
+        {
+          "type": "category",
+          "name": "Camp Canterbury: Our Campers, Camp Staff, and Directors"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Broken Bow",
+          "note": "The Rev. Randy Goeke"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Central City",
+          "note": "The Rev. Dr. Jeffrey Nelson"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "McCook"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Memorial",
+          "place": "Crete"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Fremont",
+          "note": "The Rev. Jerry Thompson"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's on the Campus",
+          "place": "Lincoln",
+          "note": "The Rev. Robert Magoola, The Rev. Deacon Rich Kelly"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Pro-Cathedral",
+          "place": "Hastings",
+          "note": "The Very Rev. Katie Hargis, The Rev. Deacon Greg Burke"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Harvard",
+          "note": "The Very Rev. Katie Hargis"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Women's Retreat"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "Mullen",
+          "note": "The Rev. Steve Meysing"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Ogallala",
+          "note": "The Rev. Anne Durboraw"
+        },
+        {
+          "type": "category",
+          "name": "All Students and Teachers"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elizabeth",
+          "place": "Holdrege",
+          "note": "The Rev. Rick Moon"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Tecumseh"
+        },
+        {
+          "type": "category",
+          "name": "University and College outreach"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's in the Valley",
+          "place": "Lexington",
+          "note": "The Rev. Aurilla Walker"
+        },
+        {
+          "type": "parish",
+          "name": "St. John",
+          "place": "Valentine",
+          "note": "The Rev. Steve Meysing"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all Refugees and Immigrants"
+        },
+        {
+          "type": "category",
+          "name": "During Hispanic Heritage Month: In thanksgiving for the leadership and legacies of the Hispanic community in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal",
+          "place": "Norfolk",
+          "note": "The Rev. Peter Jark-Swain"
+        },
+        {
+          "type": "category",
+          "name": "The Benedictine Way",
+          "note": "Br. James Dowd, OSB"
+        },
+        {
+          "type": "category",
+          "name": "St. Benedict Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Falls City"
+        },
+        {
+          "type": "category",
+          "name": "Bishop's Society to Advance Clergy Excellence"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the Mission of the Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "For the Tri-Faith Initiative"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Beatrice",
+          "note": "The Rev. Robert Schlismann, The Rev. Deacon Frank Smith"
+        },
+        {
+          "type": "category",
+          "name": "For all Victims of Violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Commission on Scouting"
+        },
+        {
+          "type": "category",
+          "name": "For Our Nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Kearney",
+          "note": "The Rev. Christopher Szarke, The Rev. Deacon Colleen Lewis"
+        },
+        {
+          "type": "category",
+          "name": "159th Annual Council of the Diocese of Nebraska"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Non-Parochial and Retired Clergy & Surviving Clergy Spouses"
+        },
+        {
+          "type": "category",
+          "name": "For all Seminarians, Postulants and Candidates for the Diaconate, Postulants and Candidates for the Priesthood & Lay leaders"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Plattsmouth",
+          "note": "The Rev. Mavis Hall, The Rev. Deacon Ellen Olson"
+        },
+        {
+          "type": "category",
+          "name": "During Native American Heritage Month: In thanksgiving for the leadership and legacies of Indigenous communities in the Episcopal Church and in our nation"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The retired Bishop of our Diocese: James E. Krotz"
+        },
+        {
+          "type": "category",
+          "name": "Members of the military and their families"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Nebraska City",
+          "note": "The Rev. Mavis Hall"
+        },
+        {
+          "type": "category",
+          "name": "University and College outreach"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Seward",
+          "note": "The Rev. David Stock"
+        },
+        {
+          "type": "category",
+          "name": "Our Diocesan Archivist: Jo Behrens, and all ministries which celebrate and remember the history of the Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Altar Guilds"
+        },
+        {
+          "type": "category",
+          "name": "For Province VI of the Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Columbus",
+          "note": "The Rev. Gordon Braun"
+        },
+        {
+          "type": "category",
+          "name": "All Episcopal Youth"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Lincoln",
+          "note": "The Rev. David Stock"
+        },
+        {
+          "type": "category",
+          "name": "Nebraska's Saint, Father Hiram Hisanori Kano"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Blair",
+          "note": "The Rev. Dr. John Schaefer"
+        },
+        {
+          "type": "category",
+          "name": "For all wardens and members of Vestries"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the Anglican Communion"
+        },
+        {
+          "type": "category",
+          "name": "For the Archbishop of Canterbury, The Most Rev. Sarah Mullally"
+        }
+      ]
+    }
+  ]
+}

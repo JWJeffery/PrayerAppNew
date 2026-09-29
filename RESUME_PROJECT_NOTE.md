@@ -306,18 +306,30 @@ bodySlug).
 5 at a time, starting with the ones already sitting as files in Josh's "TEC Cycle of Prayer" Drive
 folder, then moving to fetching each remaining diocese's own URL from the roster spreadsheet directly.
 Anything unfetchable gets flagged in the roster (not endlessly retried) for Josh to pull himself.**
-First batch of 5 done: **Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes** — all
-`cycleType: "dated"`, all transcribed from the actual rendered PDF/DOCX content (not linearized text
-where that risked column-interleaving errors, per the standing rule added 2026-09-29), all validated,
-all live-verified rendering correctly. Full per-diocese transcription detail (every disclosed judgment
-call, typo, ambiguous grouping): `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entry for this batch — not
-repeated here. Remaining Drive-identified dioceses still to do: Idaho, Kentucky, Lexington, Maine,
-Nebraska, New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin, Southwestern Virginia, Western
-Massachusetts (12 more, then the roster spreadsheet's remaining ~65).
+Batch 1 done: **Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes**. Batch 2 done:
+**Idaho, Kentucky, Lexington, Maine, Nebraska** — all `cycleType: "dated"`, all transcribed from the
+actual rendered PDF/DOCX/spreadsheet content (not linearized text where that risked column-interleaving
+errors, per the standing rule added 2026-09-29), all validated, none yet live-verified in a browser
+(batch 1 was; batch 2 was validator-checked only — worth a spot check next session). Two notable
+judgment calls in batch 2, both fully disclosed in each file's own `notes`: Idaho's source printed four
+consecutive Sundays as June 5/12/19/26 that the Proper numbering and weekday math prove must be July
+5/12/19/26 (corrected, not just flagged, per the project's standing "fix a verifiably wrong date" rule);
+Kentucky's own source prints no calendar dates at all, only lectionary Sunday names, so its 2026 dates
+were derived by cross-referencing the Diocese of Lexington's companion file (ingested in the same
+batch), which prints explicit dates for the identical sequence of Sunday names under the same TEC
+"Year A / Daily Office Year Two" lectionary. Full per-diocese transcription detail (every disclosed
+judgment call, typo, ambiguous grouping) for both batches: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29
+entries — not repeated here. Remaining Drive-identified dioceses still to do: New Jersey, Newark,
+Northern Indiana, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts (7 more, then
+the roster spreadsheet's remaining ~65). Note: this session has no Google Drive/Sheets *write* tool, so
+"note it on the spreadsheet" for an unfetchable roster URL (Josh's own instruction for that later phase)
+will need to happen in this note/ledger instead, flagged to Josh — raise this with him before relying on
+it silently.
 
-**13 files currently in the corpus, all passing the validator:** 11 diocese-level — Western Oregon,
-Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes
-(`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus:
+**18 files currently in the corpus, all passing the validator:** 16 diocese-level — Western Oregon,
+Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes,
+Idaho, Kentucky, Lexington, Maine, Nebraska (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) —
+plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

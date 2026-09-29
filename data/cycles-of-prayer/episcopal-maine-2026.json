@@ -1,0 +1,867 @@
+{
+  "id": "episcopal-maine-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Maine",
+  "dioceseShort": "maine",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Episcopal Diocese of Maine 2025-2026 Cycle of Prayer",
+  "sourceFile": "\"Cycle of Prayer 2025-2026.pdf\", provided directly by Josh via Google Drive (file id 1YKKXg5T-Ld-hkPPzhFdIFwAp9CgtRAFG, folder \"TEC Cycle of Prayer\")",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own cycle runs November 30, 2025 through November 29, 2026. Only the portion landing in calendar year 2026 (January 4 - November 29, 2026) is included here; the five 2025 Sundays (Nov 30, Dec 7, 14, 21, 28) are out of this file's calendar-year scope.",
+    "The source's own header explains a standing addition for this liturgical year: per the 206th Diocesan Convention's Resolution 1 (Foster Care Advocacy in Maine), a prayer for children in foster care is to be offered every Sunday from Advent 2025 through Christ the King 2026, in addition to that week's own specific intention below. The suggested text: 'We pray for all those impacted by the imperfect systems meant to care for children who cannot remain with their families of origin. We pray especially for these children, and for judges and social workers, foster and biological families, school and community members, that healing and peace may be found.' This standing weekly addition is not repeated into every entry's `subjects` and is disclosed here instead.",
+    "November 21, 2026 is printed in the source as a Saturday (not the usual Sunday) -- preserved as printed rather than corrected, since (unlike a wrong date) there is no independent way to verify whether this is deliberate (e.g. tied to a specific parish or diocesan event that day) or a typo.",
+    "April 5 (Easter Day) has no parish named in the source, only the acclamation 'Christ is Risen! He is Risen Indeed!' -- recorded as a category subject rather than fabricating a parish.",
+    "Most weeks combine one or more named parishes with one or more separate prayer intentions (e.g. for a ministry, a diocesan body, or a cause); both are recorded as subjects in the order printed, with prayer intentions as `category` subjects using the intention's own text (minus the source's leading 'For') as the name."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "Camden"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Norway"
+        },
+        {
+          "type": "category",
+          "name": "St. Elizabeth's Essentials Pantry in Portland"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Wilton"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Bangor"
+        },
+        {
+          "type": "category",
+          "name": "New members of the church, penitents, and seekers"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Calais"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Kennebunk"
+        },
+        {
+          "type": "category",
+          "name": "Immigrants, refugees, and asylees and the ministries that serve them"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Old Town"
+        },
+        {
+          "type": "category",
+          "name": "Our retired clergy, their spouses, and surviving spouses"
+        },
+        {
+          "type": "category",
+          "name": "Trinity Jubilee Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Castine"
+        },
+        {
+          "type": "category",
+          "name": "Our siblings in common mission in the Evangelical Lutheran Church in America"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Father",
+          "place": "Hulls Cove"
+        },
+        {
+          "type": "category",
+          "name": "The work of United Thank Offering"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Waterville"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Sanford"
+        },
+        {
+          "type": "category",
+          "name": "Victims of domestic violence"
+        },
+        {
+          "type": "category",
+          "name": "The ministry of Walking Together"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas'",
+          "place": "Rumford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Windham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis by the Sea",
+          "place": "Blue Hill"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's",
+          "place": "Palmyra"
+        },
+        {
+          "type": "category",
+          "name": "The staff and volunteers who attend to the administrative needs of our churches"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Dover-Foxcroft"
+        },
+        {
+          "type": "category",
+          "name": "Those struggling with addiction"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Brendan the Navigator",
+          "place": "Deer Isle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Newcastle"
+        },
+        {
+          "type": "category",
+          "name": "Parishes in transition"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Brunswick"
+        },
+        {
+          "type": "category",
+          "name": "Safety, strength, courage, wisdom and connection for those serving in the role as foster parent"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Bath"
+        },
+        {
+          "type": "parish",
+          "name": "St. Saviour",
+          "place": "Bar Harbor"
+        },
+        {
+          "type": "category",
+          "name": "All church musicians and choirs"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ is Risen! He is Risen Indeed!",
+          "note": "The source prints no specific parish for this date, only this Easter acclamation"
+        },
+        {
+          "type": "category",
+          "name": "The spread of the Gospel to all the world"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary & St. Jude",
+          "place": "Northeast Harbor"
+        },
+        {
+          "type": "category",
+          "name": "New life in our homes, our families, and our communities"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Millinocket"
+        },
+        {
+          "type": "category",
+          "name": "Our Creation Care Team and parish Earth Keepers"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Giles",
+          "place": "Jefferson"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Saco"
+        },
+        {
+          "type": "category",
+          "name": "Mainers who are food insecure"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Brewer"
+        },
+        {
+          "type": "category",
+          "name": "The Diocesan Council, Trustees, Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Brownville Junction"
+        },
+        {
+          "type": "category",
+          "name": "Members of the Commission on Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Children in foster care"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Rangeley"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Lutheran Episcopal",
+          "place": "Augusta"
+        },
+        {
+          "type": "category",
+          "name": "Those who advocate for the poor and the oppressed"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Skowhegan"
+        },
+        {
+          "type": "category",
+          "name": "The victims of human trafficking and those working to combat it"
+        },
+        {
+          "type": "category",
+          "name": "Students who are graduating"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral of St. Luke",
+          "place": "Portland"
+        },
+        {
+          "type": "category",
+          "name": "All LGBTQ+ people struggling for acceptance"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Nicholas",
+          "place": "Scarborough"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Peace Fellowship"
+        },
+        {
+          "type": "category",
+          "name": "An end to gun violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Sorrento"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints by-the-Sea",
+          "place": "Southport"
+        },
+        {
+          "type": "category",
+          "name": "Community gardens and those who tend them"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints by the Sea",
+          "place": "Bailey Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin's in the Field",
+          "place": "Biddeford Pool"
+        },
+        {
+          "type": "category",
+          "name": "The deacons of the Diocese of Maine"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James' Chapel",
+          "place": "Prouts Neck"
+        },
+        {
+          "type": "category",
+          "name": "Youth throughout the church who will be attending the Youth Climate Justice Event in Winter Harbor"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's by the Sea",
+          "place": "Cape Neddick"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Winter Harbor"
+        },
+        {
+          "type": "category",
+          "name": "All victims of war"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Tenants Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cuthbert's",
+          "place": "MacMahan Island"
+        },
+        {
+          "type": "category",
+          "name": "Those who make their living from the land and the sea"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Dark Harbor",
+          "place": "Isleboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Kennebunkport"
+        },
+        {
+          "type": "category",
+          "name": "The mission and ministry of Camp Bishopswood"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "North Haven Summer Services"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Shannon MacVean-Brown (VT) and Bishop Rob Hirschfeld (NH)"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's by the Sea",
+          "place": "Fortunes Rocks"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Chapel",
+          "place": "York Harbor"
+        },
+        {
+          "type": "category",
+          "name": "Our Council on Indigenous Relations"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Chapel",
+          "place": "Kennebunk Beach"
+        },
+        {
+          "type": "category",
+          "name": "Postulants and candidates for Holy Orders in the Diocese of Maine"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Chapel",
+          "place": "Orr's Island"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lewiston"
+        },
+        {
+          "type": "category",
+          "name": "The ministry of Bridging the Gap in Augusta"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Our Lady of the Evergreens",
+          "place": "Harborside"
+        },
+        {
+          "type": "category",
+          "name": "Students and educators as they begin a new school year"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All who labor and work and for all who seek the dignity of meaningful employment"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew & St. John",
+          "place": "Southwest Harbor"
+        },
+        {
+          "type": "category",
+          "name": "Christian Education programs"
+        },
+        {
+          "type": "category",
+          "name": "The reverent care of all creation"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Gardiner"
+        },
+        {
+          "type": "category",
+          "name": "All those suffering ill health in body or in mind"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "York Harbor"
+        },
+        {
+          "type": "category",
+          "name": "Those incarcerated, those who love them and those who minister to them"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Auburn"
+        },
+        {
+          "type": "category",
+          "name": "Farmers and the harvest"
+        },
+        {
+          "type": "category",
+          "name": "Those in recovery"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Portland"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Machias"
+        },
+        {
+          "type": "category",
+          "name": "Presiding Bishop Sean Rowe"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Winn"
+        },
+        {
+          "type": "parish",
+          "name": "Saint Mary's",
+          "place": "Falmouth"
+        },
+        {
+          "type": "category",
+          "name": "The sick and those who care for them"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's",
+          "place": "Yarmouth"
+        },
+        {
+          "type": "category",
+          "name": "Our Liturgical Commission"
+        },
+        {
+          "type": "category",
+          "name": "The wardens and vestries and committees of our parishes"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John Baptist",
+          "place": "Thomaston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Winthrop"
+        },
+        {
+          "type": "category",
+          "name": "The priests of our diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Bridgton"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Eastport"
+        },
+        {
+          "type": "category",
+          "name": "All preparing for our diocesan convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Wiscasset"
+        },
+        {
+          "type": "category",
+          "name": "All who serve and have served in the armed forces of our country"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Cape Elizabeth"
+        },
+        {
+          "type": "category",
+          "name": "Those serving in lay liturgical ministries"
+        },
+        {
+          "type": "category",
+          "name": "Seeds of Hope Neighborhood Center in Biddeford"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalNote": "Printed in the source as a Saturday entry, not a Sunday -- preserved as printed, not corrected",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret's",
+          "place": "Belfast"
+        },
+        {
+          "type": "category",
+          "name": "The spouses, companions, and families of clergy in the diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Aroostook Cluster: St. John, St. Paul, and the Church of the Good Shepherd"
+        }
+      ]
+    }
+  ]
+}
