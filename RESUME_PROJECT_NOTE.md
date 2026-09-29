@@ -526,7 +526,21 @@ questions remain in the file, none `blocks_beta: true` and open.
 **Live UI bug queue (the ad hoc "Task #N" reports Josh sends during sessions): nothing outstanding.**
 Every numbered task through #15 is closed as of 2026-09-28 (naming consistency, mobile scroll,
 others) — see `documentation/project-history/VOLUME-4-2026-09-07-to-09-28.md` and Volume 5 for
-per-item evidence if a future report seems to contradict this.
+per-item evidence if a future report seems to contradict this. **Two more closed 2026-09-29, both
+from a live screenshot**: the one-time onboarding prompt was firing before a tradition was even
+chosen (on a brand-new/Incognito visit, immediately after page load, blocking the splash itself) --
+`maybeShowOnboardingPrompt()` now refuses to render until `profile.traditionDefault` is actually set,
+and `setUserTraditionDefault()` calls it right after persisting a real tradition choice instead; a
+floated drop-cap (`.component-text::first-letter`) was causing a long paragraph's later lines to
+revert to a further-left, un-indented margin than the lines still wrapping beside the cap -- fixed
+with a matched `padding-left`/negative-`margin-left` pair on `.component-text`/`::first-letter` so
+every line's start position is governed by padding (which a float can never protrude past) rather
+than the float's own height. Full detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entry. **Caveat
+for whoever picks this up next**: this session's sandbox cannot reach fonts.googleapis.com (confirmed
+via a console `ERR_CERT_AUTHORITY_INVALID`), so the drop-cap fix could not be pixel-verified against
+the app's real fonts locally -- verified only structurally (the padding/margin cancel out exactly by
+construction, proportionally, regardless of actual font metrics) and via a fallback-font screenshot
+showing no regression. Ask Josh to confirm live if this comes up again.
 
 **Sanctoral (EOR/OOR) work: fully closed as of 2026-09-28 — the 13-month Coptic gap sweep, the
 18-entry coptic.io cross-check (17 confirmed, 1 disclosed exception — `saint-onesiphorus-of-the-

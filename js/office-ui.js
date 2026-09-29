@@ -2434,6 +2434,23 @@ function setUserTraditionDefault(tradition) {
 
     persistUserEntryDefault(route.storedDefault);
 
+    // FIXED 2026-09-29, per Josh's direct live report: the one-time onboarding
+    // prompt was firing unconditionally right after initializeEntryRouting()
+    // resolved, which for a brand-new visitor IS the moment the tradition-entry
+    // splash itself first renders -- so "Set up your profile" was appearing
+    // before the person had chosen a tradition at all, on top of an unrelated
+    // screen, with the role dropdown correctly (but confusingly) showing the
+    // tradition-neutral fallback list rather than anything actually stale. See
+    // maybeShowOnboardingPrompt's own updated gate below -- it now only fires
+    // once a real tradition is on file, so this call here (right after the
+    // splash's own tradition choice is persisted, mode === 'universal' aside,
+    // since that path never sets a traditionDefault at all) is what actually
+    // shows it for a first-time visitor, layered over whatever the routing
+    // below navigates into next.
+    if (route.mode !== 'universal') {
+        maybeShowOnboardingPrompt();
+    }
+
     if (route.mode === 'universal') {
         showUniversalModeSelection(false);
         return;
@@ -5093,10 +5110,29 @@ function closeTraditionExplanation() {
  * `onboardingComplete: true`, so it never reappears on its own afterward --
  * the person can still change name/role any time from the profile-defaults
  * panel, this is only the one-time introduction.
+ *
+ * FIXED 2026-09-29, per Josh's direct live report (a screenshot of this
+ * prompt appearing as the very first thing shown on a brand-new Incognito
+ * visit, before the tradition-entry splash had been touched at all): the
+ * original call site (`initializeEntryRouting().then(maybeShowOnboardingPrompt)`,
+ * still below) fires as soon as routing resolves, which for a first-time
+ * visitor IS the moment the "ask for a tradition" splash itself renders --
+ * this function had no gate against that, so it popped immediately on top
+ * of an unrelated screen. Now requires a real `traditionDefault` already on
+ * file before rendering at all; the splash's own tradition-entry click
+ * handler (`setUserTraditionDefault`) calls this function itself right
+ * after persisting that choice, which is what actually shows the prompt for
+ * a first-time visitor now, layered over wherever routing lands next rather
+ * than pre-empting the choice itself. A returning visitor who already has a
+ * tradition on file (from a prior session, before ever completing
+ * onboarding) is unaffected -- the original initializeEntryRouting() call
+ * site still fires normally in that case, since the gate is satisfied
+ * immediately.
  */
 function maybeShowOnboardingPrompt() {
     const profile = getUserProfileDefaults();
     if (profile.onboardingComplete) return;
+    if (!profile.traditionDefault) return;
     renderOnboardingPrompt(profile);
 }
 
@@ -5110,6 +5146,11 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
     // the existing entry flow, per the spec's own "should already show
     // whatever tradition/entry info the person has already provided... not
     // ask for it again" -- read-only here, never a second picker for it.
+    // The "no tradition" branch is defensive only as of 2026-09-29:
+    // maybeShowOnboardingPrompt (this function's only caller) now refuses to
+    // call it at all until profile.traditionDefault is set, so this line is
+    // never actually shown through the normal flow -- kept in case this
+    // function is ever invoked directly some other way in the future.
     const traditionLine = profile.traditionDefault && UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault]
         ? `Tradition on file: <strong>${esc(UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault])}</strong>`
         : 'No tradition selected yet -- you can set one any time from "Where do you pray?".';
