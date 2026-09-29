@@ -313,6 +313,52 @@ Alaska, Arizona, Albany, Alabama (`cycleType: "dated"`), Arkansas (`"monthly-rec
   would the app know which household is the user's?), not yet raised with Josh.
 - `anglican-communion-2026.json` — see the Communion-tier paragraph above. **Wired in and live.**
 
+**Profile diocese/parish picker overhauled 2026-09-29, per Josh's direct instruction, to cover the
+full TEC roster rather than just the ~6 dioceses this app has cycle content for.** Previously the
+diocese `<select>` only listed the handful of dioceses `CYCLES_OF_PRAYER_DIOCESES` had real files
+for — a user in any of the other ~100 TEC dioceses simply couldn't declare one at all. Added
+`TEC_DIOCESE_DIRECTORY` (`js/cycles-of-prayer.js`) — all 106 TEC dioceses/jurisdictions from Josh's own
+roster (88 located + 18 no-verified-cycle), name-only, independent of whether this app has ingested
+that diocese's content — and widened `isValidCycleOfPrayerDioceseKey` to validate against it instead of
+the much shorter has-content list (which stays exactly as it was, still governing what actually gets
+fetched/rendered). The diocese `<select>` in `index.html` is now populated at runtime from this
+directory (`populateCycleOfPrayerDioceseSelect(s)`) rather than hand-listed in the markup, which would
+have needed 106 hand-typed `<option>`s.
+
+**Parish picker now has an "Other" fallback, per Josh's own spec: "a drop down box for that diocese if
+we have a pair of cycle of prayer on file, otherwise 'other' and provide fill in the blank."** New
+profile field `cycleOfPrayerParishOther` (mutually exclusive with `cycleOfPrayerParish` — setting one
+always clears the other). `populateCycleOfPrayerParishSelect` now has three states: no diocese declared
+("choose a diocese first"); diocese declared but this app has no ingested content for it (~100 of 106) —
+skips straight to a disabled single-option "Other" select with the free-text field already visible,
+never a permanent "Loading parishes..." for a fetch that will never happen; diocese has real content —
+the actual parish list plus a trailing "Other (type below)" option, for a parish that diocese's own file
+doesn't happen to list.
+
+**Wired into BOTH the profile-defaults panel AND the one-time onboarding prompt, per Josh's direct
+instruction** ("When they open their profile for the first time, it should ask them..."). The onboarding
+prompt (`renderOnboardingPrompt`) now asks for diocese + parish, but ONLY when `traditionDefault ===
+'anglican'` (this corpus is TEC-specific) — never shown for any other tradition. Both surfaces share the
+exact same population functions (`populateCycleOfPrayerDioceseSelects`/`populateCycleOfPrayerParishSelect`,
+looping over both surfaces' element ids) and the exact same setters
+(`setUserProfileCycleOfPrayerDiocese`/`Parish`/`ParishOther`), so they can never drift into two different
+diocese lists or disagree about state — saving on one surface immediately reflects on the other whenever
+both happen to be mounted. The profile-defaults panel's own summary line now names the declared diocese
+even when this app has no content for it yet (previously would have wrongly said "no diocese declared").
+
+**Live-verified in headless Chromium:** onboarding diocese select has 107 options (106 + "Not
+declared"); selecting Western Oregon (has content) populates 65 real parish options ending in "Other";
+selecting St. Bede's and saving persists `episcopal/western-oregon` / `forest-grove-st-bede` correctly;
+selecting Texas (no content) collapses the parish select to a single disabled "Other" option with the
+text field already visible; typing a free-text name persists as `cycleOfPrayerParishOther` with `parish`
+staying null; the profile-defaults panel, opened afterward, shows the identical state (diocese label,
+disabled Other-only select, the typed text, and a summary line reading "diocese on file: Texas (parish:
+St. Mark's, Anytown), but this app has no Cycle of Prayer content for it yet"); switching diocese in
+either surface correctly clears both `cycleOfPrayerParish` and `cycleOfPrayerParishOther`; a non-Anglican
+tradition's onboarding prompt correctly omits the diocese/parish fields entirely; zero console errors.
+`index.html`'s `js/office-ui.js` cache-bust bumped to `?v=320`. Files touched: `js/cycles-of-prayer.js`,
+`js/office-ui.js`, `index.html`.
+
 Both new files were transcribed only after downloading the actual source PDF and reading its rendered
 page layout rather than trusting Drive's own linearized text extraction, which interleaves multi-column
 grids into one run-on line and silently misassigns entries to the wrong day/date if trusted as-is (see

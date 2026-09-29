@@ -367,15 +367,16 @@
             </label>
 
             <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
-                <span>Diocesan Cycle of Prayer</span>
+                <span>Diocese</span>
+                <!-- Options beyond "Not declared" are populated at load time by
+                     populateCycleOfPrayerDioceseSelect() (js/office-ui.js) from
+                     TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- all 106 TEC
+                     dioceses/jurisdictions Josh's own roster names, not just the
+                     handful this app has real Cycle of Prayer content for. Never
+                     hand-list options here again; they would silently drift from
+                     that registry. -->
                 <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
                     <option value="">Not declared (default)</option>
-                    <option value="episcopal/western-oregon">The Episcopal Church in Western Oregon</option>
-                    <option value="episcopal/alabama">The Episcopal Diocese of Alabama</option>
-                    <option value="episcopal/alaska">The Episcopal Diocese of Alaska</option>
-                    <option value="episcopal/albany">The Episcopal Diocese of Albany</option>
-                    <option value="episcopal/arizona">The Episcopal Diocese of Arizona</option>
-                    <option value="episcopal/arkansas">The Episcopal Diocese of Arkansas</option>
                 </select>
             </label>
 
@@ -384,6 +385,8 @@
                 <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
                     <option value="">Choose a diocese first</option>
                 </select>
+                <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
+                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
             </label>
         </div>
 
@@ -1121,11 +1124,12 @@
 <div id="uo-tradition-explanation" role="dialog" aria-modal="true"
      aria-label="About this tradition" style="display:none;"></div>
 
-<!-- One-time onboarding prompt (name + role), added 2026-09-28. Host only;
-     content built by maybeShowOnboardingPrompt()/renderOnboardingPrompt() in
-     js/office-ui.js. Shown once per browser profile, after the existing
+<!-- One-time onboarding prompt (name + role, plus diocese/parish for an
+     Anglican tradition -- added 2026-09-29), first added 2026-09-28. Host
+     only; content built by maybeShowOnboardingPrompt()/renderOnboardingPrompt()
+     in js/office-ui.js. Shown once per browser profile, after the existing
      tradition-entry routing has already decided where to land -- it does
-     not ask about tradition again, only name and role. -->
+     not ask about tradition again, only echoes it back. -->
 <div id="uo-onboarding-prompt" role="dialog" aria-modal="true"
      aria-label="Set up your profile" style="display:none;"></div>
 
@@ -1167,7 +1171,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=319" defer></script>
+<script src="js/office-ui.js?v=320" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 

@@ -743,7 +743,19 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // names the user's own parish, but the diocese-wide line renders either
     // way. Meaningless without cycleOfPrayerDiocese also set; normalization
     // clears it whenever the diocese is cleared.
-    cycleOfPrayerParish: null
+    cycleOfPrayerParish: null,
+    // ADDED 2026-09-29. Free-text fallback for a parish this app has no real
+    // Cycle of Prayer entry for -- either because cycleOfPrayerDiocese has no
+    // ingested content at all yet (see TEC_DIOCESE_DIRECTORY vs.
+    // CYCLES_OF_PRAYER_DIOCESES in js/cycles-of-prayer.js), or because the
+    // declared diocese DOES have content but doesn't happen to list this
+    // specific parish. Mutually exclusive with cycleOfPrayerParish -- setting
+    // one always clears the other, since a real corpus match and a free-text
+    // name can't both be "the" answer at once. Never resolved against the
+    // corpus (there is nothing to match); purely a record of what the person
+    // typed, for their own profile summary and for a future session to build
+    // on once that diocese's own cycle is eventually ingested.
+    cycleOfPrayerParishOther: null
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -989,6 +1001,17 @@ function normalizeUserProfileDefaults(raw) {
         profile.cycleOfPrayerParish = null;
     }
 
+    // Same diocese-scoping rule as cycleOfPrayerParish just above, plus
+    // mutual exclusion with it: a free-text name is meaningless with no
+    // diocese declared, and a real corpus match already answers the
+    // question, so a stray "other" value never lingers alongside one.
+    if (profile.cycleOfPrayerDiocese === null
+        || profile.cycleOfPrayerParish !== null
+        || typeof profile.cycleOfPrayerParishOther !== 'string'
+        || !profile.cycleOfPrayerParishOther.trim()) {
+        profile.cycleOfPrayerParishOther = null;
+    }
+
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
         profile.traditionDefault = null;
     }
@@ -1231,46 +1254,97 @@ function setUserProfileSuperUser(value) {
     syncBibleBrowserSuperUserGate();
 }
 
+// ADDED 2026-09-29. Sentinel <option> value for "I don't see my parish
+// listed (or this diocese has no list at all) -- let me type it." Shared by
+// every surface that offers the home-parish picker, so the setter and the
+// populate function agree on what it means without either hard-coding the
+// other's string.
+const CYCLE_OF_PRAYER_OTHER_PARISH_VALUE = '__other__';
+
+// Every element id pair (select id -> its sibling free-text input id) that
+// offers diocese/parish pickers -- currently the profile-defaults panel and
+// the one-time onboarding prompt. Kept as one list so a picker fires the
+// same setter regardless of which surface it lives on, and every surface
+// stays in sync with the others automatically (harmless no-op for whichever
+// one isn't currently mounted -- document.getElementById returns null and
+// the loop below just skips it).
+const CYCLE_OF_PRAYER_PARISH_SELECT_IDS = ['profile-cycle-of-prayer-parish', 'uo-onboarding-cycle-of-prayer-parish'];
+const CYCLE_OF_PRAYER_DIOCESE_SELECT_IDS = ['profile-cycle-of-prayer-diocese', 'uo-onboarding-cycle-of-prayer-diocese'];
+
 function setUserProfileCycleOfPrayerDiocese(value) {
     const profile = getUserProfileDefaults();
 
     // The select's empty option means "not declared" -- null, same convention
-    // as every other profile picker in this panel.
+    // as every other profile picker in this panel. Validity is now the much
+    // larger TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js), not just the
+    // dioceses this app has real cycle content for -- see that function's
+    // own comment.
     const key = (typeof isValidCycleOfPrayerDioceseKey === 'function' && isValidCycleOfPrayerDioceseKey(value))
         ? value
         : null;
 
     profile.cycleOfPrayerDiocese = key;
-    // A parish slug is meaningless outside the diocese it was picked from --
-    // changing diocese always clears it, matching normalizeUserProfileDefaults'
-    // own invariant rather than leaving a stale cross-diocese value around.
+    // A parish slug/free-text name is meaningless outside the diocese it was
+    // picked from -- changing diocese always clears both, matching
+    // normalizeUserProfileDefaults' own invariant rather than leaving a
+    // stale cross-diocese value around.
     profile.cycleOfPrayerParish = null;
+    profile.cycleOfPrayerParishOther = null;
     persistUserProfileDefaults(profile);
 
-    populateCycleOfPrayerParishSelect(key, null);
+    populateCycleOfPrayerDioceseSelects(key);
+    populateCycleOfPrayerParishSelect(key, null, null);
     refreshCycleOfPrayerForCurrentYear(key);
 }
 
 function setUserProfileCycleOfPrayerParish(value) {
     const profile = getUserProfileDefaults();
+
+    if (value === CYCLE_OF_PRAYER_OTHER_PARISH_VALUE) {
+        // Picking "Other" doesn't by itself record a name -- the sibling
+        // text input's own onchange (setUserProfileCycleOfPrayerParishOther)
+        // does that. Just reveal it, keeping whatever was typed there
+        // before if the person is toggling back to "Other" after briefly
+        // picking a real parish.
+        populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, null, profile.cycleOfPrayerParishOther);
+        return;
+    }
+
     profile.cycleOfPrayerParish = value || null;
+    profile.cycleOfPrayerParishOther = null;
     persistUserProfileDefaults(profile);
+    populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, profile.cycleOfPrayerParish, null);
     if (selectedMode === 'daily') requestRender();
+}
+
+function setUserProfileCycleOfPrayerParishOther(value) {
+    const profile = getUserProfileDefaults();
+    const trimmed = (value || '').trim();
+    profile.cycleOfPrayerParishOther = trimmed || null;
+    // A typed name and a real corpus match can't both be "the" answer --
+    // same mutual-exclusion invariant normalizeUserProfileDefaults enforces.
+    profile.cycleOfPrayerParish = null;
+    persistUserProfileDefaults(profile);
+    populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, null, profile.cycleOfPrayerParishOther);
 }
 
 /**
  * Loads (or reuses the cache for) the given diocese's current-year cycle
- * file, then repaints whatever depends on it: the parish picker (if the
- * profile-defaults panel happens to be open) and the daily office itself
+ * file, then repaints whatever depends on it: the parish picker(s) (on
+ * whichever surfaces are currently mounted) and the daily office itself
  * (if it's the currently-showing view and a diocese is actually declared).
- * A no-op, harmlessly, when `dioceseKey` is null (diocese cleared) or the
- * supporting functions from js/cycles-of-prayer.js aren't available.
+ * A no-op, harmlessly, when `dioceseKey` is null (diocese cleared), the
+ * declared diocese has no ingested cycle content at all (see
+ * findCycleOfPrayerDiocese's own contract in js/cycles-of-prayer.js -- no
+ * fetch is even attempted in that case), or the supporting functions from
+ * that file aren't available.
  */
 function refreshCycleOfPrayerForCurrentYear(dioceseKey) {
     if (!dioceseKey || typeof loadCycleOfPrayerYear !== 'function') return;
 
     loadCycleOfPrayerYear(dioceseKey, new Date().getFullYear()).then((corpus) => {
-        populateCycleOfPrayerParishSelect(dioceseKey, getUserProfileDefaults().cycleOfPrayerParish);
+        const profile = getUserProfileDefaults();
+        populateCycleOfPrayerParishSelect(dioceseKey, profile.cycleOfPrayerParish, profile.cycleOfPrayerParishOther);
         if (corpus && selectedMode === 'daily') requestRender();
     });
 }
@@ -1292,20 +1366,46 @@ function refreshCommunionCycleOfPrayerForCurrentYear() {
 }
 
 /**
- * Rebuilds the home-parish <select>'s options from an already-loaded (or
- * still-loading) diocese corpus. Built via DOM APIs rather than an HTML
- * string -- no escaping helper needed, and consistent with how this file
- * builds every other data-driven element. Restores `currentSlug` as the
- * selected value only if it's still a real parish in the freshly-built list
- * (a stale slug from a prior diocese, or one that no longer matches after a
- * corpus re-ingest, silently falls back to "not declared" rather than
- * leaving a dangling selection).
+ * Rebuilds every mounted home-parish <select>'s options (see
+ * CYCLE_OF_PRAYER_PARISH_SELECT_IDS) from an already-loaded (or
+ * still-loading, or nonexistent) diocese corpus, and shows/hides that
+ * select's sibling free-text "other" input to match. Built via DOM APIs
+ * rather than an HTML string -- no escaping helper needed, and consistent
+ * with how this file builds every other data-driven element.
+ *
+ * Three distinct states, per Josh's own direct instruction (2026-09-29):
+ * 1. `dioceseKey` null -- "choose a diocese first", select disabled, no
+ *    free-text field.
+ * 2. `dioceseKey` set but this app has NO ingested cycle content for it at
+ *    all (see findCycleOfPrayerDiocese in js/cycles-of-prayer.js -- true for
+ *    100 of the 106 TEC_DIOCESE_DIRECTORY entries as of this writing) --
+ *    never shows "Loading parishes..." for a fetch that will never happen;
+ *    goes straight to a single disabled "Other" option with the free-text
+ *    field already visible.
+ * 3. `dioceseKey` set AND this app has content for it -- real parish list
+ *    (once the corpus finishes loading; "Loading parishes..." meanwhile) plus
+ *    a trailing "Other" option, for a parish that diocese's own file happens
+ *    not to list. `currentSlug` (a real corpus match) and `currentOther` (a
+ *    typed name) are mutually exclusive, matching the profile's own
+ *    invariant -- whichever is non-null wins the select's displayed value.
  */
-function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug) {
-    const select = document.getElementById('profile-cycle-of-prayer-parish');
-    if (!select) return;
+function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug, currentOther) {
+    for (const selectId of CYCLE_OF_PRAYER_PARISH_SELECT_IDS) {
+        const select = document.getElementById(selectId);
+        if (!select) continue;
+        const otherInput = document.getElementById(selectId + '-other');
+        _populateOneCycleOfPrayerParishSelect(select, otherInput, dioceseKey, currentSlug, currentOther);
+    }
+}
 
+function _populateOneCycleOfPrayerParishSelect(select, otherInput, dioceseKey, currentSlug, currentOther) {
     select.textContent = '';
+
+    const showOther = (visible, value) => {
+        if (!otherInput) return;
+        otherInput.style.display = visible ? '' : 'none';
+        otherInput.value = visible ? (value || '') : '';
+    };
 
     if (!dioceseKey) {
         const opt = document.createElement('option');
@@ -1313,6 +1413,21 @@ function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug) {
         opt.textContent = 'Choose a diocese first';
         select.appendChild(opt);
         select.disabled = true;
+        showOther(false);
+        return;
+    }
+
+    const dioceseHasCycleContent = typeof findCycleOfPrayerDiocese === 'function'
+        && findCycleOfPrayerDiocese(dioceseKey) !== null;
+
+    if (!dioceseHasCycleContent) {
+        const opt = document.createElement('option');
+        opt.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
+        opt.textContent = 'Other (type below)';
+        select.appendChild(opt);
+        select.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
+        select.disabled = true; // nothing else to choose from
+        showOther(true, currentOther);
         return;
     }
 
@@ -1326,6 +1441,7 @@ function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug) {
         opt.textContent = 'Loading parishes...';
         select.appendChild(opt);
         select.disabled = true;
+        showOther(false);
         return;
     }
 
@@ -1344,8 +1460,55 @@ function populateCycleOfPrayerParishSelect(dioceseKey, currentSlug) {
         if (parish.slug === currentSlug) matchedCurrent = true;
     }
 
+    const otherOpt = document.createElement('option');
+    otherOpt.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
+    otherOpt.textContent = 'Other (type below)';
+    select.appendChild(otherOpt);
+
     select.disabled = false;
-    select.value = matchedCurrent ? currentSlug : '';
+
+    if (matchedCurrent) {
+        select.value = currentSlug;
+        showOther(false);
+    } else if (currentOther) {
+        select.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
+        showOther(true, currentOther);
+    } else {
+        select.value = '';
+        showOther(false);
+    }
+}
+
+/**
+ * ADDED 2026-09-29. Rebuilds a single diocese <select>'s options from
+ * TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- every TEC
+ * diocese/jurisdiction Josh's own roster names, not just the handful this
+ * app has real Cycle of Prayer content for (see that file's own comment).
+ * Keeps the markup's own first option (value "", "Not declared") and
+ * rebuilds everything after it, so that fallback option's exact wording
+ * stays wherever each surface's own HTML puts it rather than being
+ * duplicated here.
+ */
+function populateCycleOfPrayerDioceseSelect(selectEl, currentKey) {
+    if (!selectEl || typeof TEC_DIOCESE_DIRECTORY === 'undefined') return;
+
+    while (selectEl.options.length > 1) selectEl.remove(1);
+
+    for (const entry of TEC_DIOCESE_DIRECTORY) {
+        const opt = document.createElement('option');
+        opt.value = cycleOfPrayerDioceseKey(TEC_DIOCESE_DIRECTORY_BODY_SLUG, entry.dioceseShort);
+        opt.textContent = entry.label;
+        selectEl.appendChild(opt);
+    }
+
+    selectEl.value = currentKey || '';
+}
+
+/** Same "every mounted surface" pattern as populateCycleOfPrayerParishSelect. */
+function populateCycleOfPrayerDioceseSelects(currentKey) {
+    for (const selectId of CYCLE_OF_PRAYER_DIOCESE_SELECT_IDS) {
+        populateCycleOfPrayerDioceseSelect(document.getElementById(selectId), currentKey);
+    }
 }
 
 function resetUniversalOfficeUserProfile() {
@@ -1392,7 +1555,6 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const romanBreviaryLanguageSelect = document.getElementById('profile-roman-breviary-language');
     const parishDedicationSelect = document.getElementById('profile-parish-dedication');
     const displayNameInput = document.getElementById('profile-display-name');
-    const cycleOfPrayerDioceseSelect = document.getElementById('profile-cycle-of-prayer-diocese');
     const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
@@ -1427,14 +1589,12 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
         displayNameInput.value = normalized.displayName || '';
     }
 
-    if (cycleOfPrayerDioceseSelect) {
-        cycleOfPrayerDioceseSelect.value = normalized.cycleOfPrayerDiocese || '';
-    }
-    // Populated every sync, not only on change, so returning to this panel
-    // (or a fresh page load) shows real parish options if the corpus is
-    // already cached, rather than only after the diocese select fires its
-    // own onchange again.
-    populateCycleOfPrayerParishSelect(normalized.cycleOfPrayerDiocese, normalized.cycleOfPrayerParish);
+    // Both populated every sync, not only on change, so returning to this
+    // panel (or a fresh page load, or the onboarding prompt appearing) shows
+    // the full directory and real parish options (if the corpus is already
+    // cached) rather than only after a select fires its own onchange again.
+    populateCycleOfPrayerDioceseSelects(normalized.cycleOfPrayerDiocese);
+    populateCycleOfPrayerParishSelect(normalized.cycleOfPrayerDiocese, normalized.cycleOfPrayerParish, normalized.cycleOfPrayerParishOther);
 
     if (summary) {
         const entryLabel = normalized.entryPageDefault === 'universal'
@@ -1476,20 +1636,30 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             ? `home parish dedication set to ${dedicationOptionText}, for the Kontakion "of the temple"`
             : 'no home parish dedication declared, so the Kontakion "of the temple" stays disclosed rather than resolved';
 
-        // Diocese label lives in the registry (js/cycles-of-prayer.js), same
-        // "one place, not duplicated" rule the dedication label above follows.
-        const dioceseEntry = normalized.cycleOfPrayerDiocese && typeof findCycleOfPrayerDiocese === 'function'
-            ? findCycleOfPrayerDiocese(normalized.cycleOfPrayerDiocese)
+        // Diocese label lives in TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js),
+        // same "one place, not duplicated" rule the dedication label above
+        // follows -- the FULL directory, not just findCycleOfPrayerDiocese's
+        // much shorter "has real content" list, so a declared diocese this
+        // app has no cycle file for still gets its real name in the summary
+        // rather than being reported as "no diocese declared".
+        const dioceseDirectoryEntry = normalized.cycleOfPrayerDiocese && typeof findTecDioceseDirectoryEntry === 'function'
+            ? findTecDioceseDirectoryEntry(normalized.cycleOfPrayerDiocese)
             : null;
+        const dioceseHasCycleContent = normalized.cycleOfPrayerDiocese && typeof findCycleOfPrayerDiocese === 'function'
+            && findCycleOfPrayerDiocese(normalized.cycleOfPrayerDiocese) !== null;
         const parishSelect = document.getElementById('profile-cycle-of-prayer-parish');
         const parishOptionText = normalized.cycleOfPrayerParish && parishSelect && parishSelect.selectedOptions.length
             ? parishSelect.selectedOptions[0].textContent
             : null;
-        const cycleOfPrayerLabel = dioceseEntry
-            ? (parishOptionText
-                ? `the Diocesan Cycle of Prayer follows ${dioceseEntry.label}, highlighting ${parishOptionText}'s own week`
-                : `the Diocesan Cycle of Prayer follows ${dioceseEntry.label}`)
-            : 'no diocese declared, so the Diocesan Cycle of Prayer space stays a plain rubric';
+        const cycleOfPrayerLabel = !dioceseDirectoryEntry
+            ? 'no diocese declared, so the Diocesan Cycle of Prayer space stays a plain rubric'
+            : !dioceseHasCycleContent
+                ? `diocese on file: ${dioceseDirectoryEntry.label}${normalized.cycleOfPrayerParishOther ? ` (parish: ${normalized.cycleOfPrayerParishOther})` : ''}, but this app has no Cycle of Prayer content for it yet`
+                : parishOptionText
+                    ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}, highlighting ${parishOptionText}'s own week`
+                    : normalized.cycleOfPrayerParishOther
+                        ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label} (parish: ${normalized.cycleOfPrayerParishOther}, not in that diocese's own list)`
+                        : `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}`;
 
         const nameLabel = normalized.displayName
             ? `saved for ${normalized.displayName}`
@@ -4662,6 +4832,35 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
     const roleSelectSource = document.getElementById('profile-ministry-role');
     const roleOptionsHtml = roleSelectSource ? roleSelectSource.innerHTML : '<option value="lay">Lay use (default)</option>';
 
+    // ADDED 2026-09-29, per Josh's direct instruction: "If the user selects
+    // anglican, then obviously that needs to be recorded" -- asked here, at
+    // first-profile-open, rather than only later from the profile-defaults
+    // panel. Anglican-only (this corpus is TEC-specific), and only once the
+    // person actually has that tradition on file -- never a second tradition
+    // picker, matching this prompt's own existing "don't re-ask what's
+    // already been answered" rule. The diocese/parish <select>s start with
+    // only their own default option in this markup; populateCycleOfPrayer-
+    // DioceseSelects/populateCycleOfPrayerParishSelect (js/office-ui.js) fill
+    // in the rest below, same shared population functions the profile-
+    // defaults panel's own pickers use, so the two surfaces can never drift
+    // apart into two different diocese lists.
+    const cycleOfPrayerFieldsHtml = profile.traditionDefault === 'anglican'
+        ? '<div class="uo-onboarding-field">' +
+          '<label for="uo-onboarding-cycle-of-prayer-diocese">Your diocese (optional)</label>' +
+          '<select id="uo-onboarding-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">' +
+          '<option value="">Not declared</option>' +
+          '</select>' +
+          '</div>' +
+          '<div class="uo-onboarding-field">' +
+          '<label for="uo-onboarding-cycle-of-prayer-parish">Your parish (optional)</label>' +
+          '<select id="uo-onboarding-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>' +
+          '<option value="">Choose a diocese first</option>' +
+          '</select>' +
+          '<input type="text" id="uo-onboarding-cycle-of-prayer-parish-other" placeholder="Your parish\'s name" ' +
+          'style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">' +
+          '</div>'
+        : '';
+
     host.innerHTML =
         '<div class="uo-tradition-explanation-inner">' +
         '<h3>Set up your profile</h3>' +
@@ -4674,6 +4873,7 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
         '<label for="uo-onboarding-role">Your role</label>' +
         '<select id="uo-onboarding-role">' + roleOptionsHtml + '</select>' +
         '</div>' +
+        cycleOfPrayerFieldsHtml +
         '<div class="uo-onboarding-actions">' +
         '<button type="button" class="uo-onboarding-save" onclick="submitOnboardingPrompt()">Save</button>' +
         '<button type="button" class="uo-onboarding-skip" onclick="skipOnboardingPrompt()">Skip for now</button>' +
@@ -4682,6 +4882,11 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
 
     const roleSelect = document.getElementById('uo-onboarding-role');
     if (roleSelect) roleSelect.value = profile.ministryRole;
+
+    if (profile.traditionDefault === 'anglican') {
+        populateCycleOfPrayerDioceseSelects(profile.cycleOfPrayerDiocese);
+        populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, profile.cycleOfPrayerParish, profile.cycleOfPrayerParishOther);
+    }
 
     host.style.display = 'block';
 }
@@ -4692,6 +4897,11 @@ function submitOnboardingPrompt() {
 
     if (nameInput) setUserProfileDisplayName(nameInput.value);
     if (roleSelect) setUserProfileMinistryRole(roleSelect.value);
+
+    // Diocese/parish/parish-other are already live-saved by their own
+    // onchange handlers as the person interacts with them (same as every
+    // other picker in this prompt and in the profile-defaults panel) --
+    // nothing further to read/save here for those fields.
 
     completeOnboardingPrompt();
 }
