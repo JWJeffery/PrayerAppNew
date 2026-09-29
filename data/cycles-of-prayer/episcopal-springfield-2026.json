@@ -1,0 +1,1496 @@
+{
+  "id": "episcopal-springfield-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Springfield",
+  "dioceseShort": "springfield",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer - July-September 2026",
+  "sourceFile": "Diocesan_Cycle_of_Prayer_July_-_September_2026_v.2_Final.pdf, downloaded from the “PDF version” link on https://episcopalspringfield.org/resources/prayer-calendar.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The diocese's own prayer-calendar page (https://episcopalspringfield.org/resources/prayer-calendar) currently publishes only the third-quarter 2026 PDF (\"Diocesan_Cycle_of_Prayer_July_-_September_2026_v.2_Final.pdf\"), confirmed by fetching the live page directly on 2026-09-29 (no Q4/Oct-Dec link present in the page's HTML). This file therefore covers only July 1 - September 30, 2026 (92 daily entries); January-June and October-December 2026 are not covered and are not fabricated here. A future file update (or a new file, per this corpus's own per-year convention) will be needed once the diocese publishes its next quarter.",
+    "This source is a DAILY cycle (one entry per calendar day of the quarter, not the weekly-Sunday pattern most other files in this corpus use), and every day's text is split into two parallel, separately-labeled cycles printed one after another: an \"ANGLICAN CYCLE\" line (the worldwide Anglican Cycle of Prayer, reprinted verbatim day-by-day into Springfield's own document) and a \"DIOCESAN CYCLE\" line (Springfield's own local commemorations). Both are transcribed for all 92 days.",
+    "Every day's ANGLICAN CYCLE line is recorded as a `category` subject (never `diocese`/`province`, which this schema reserves for scope-'communion' files) since this is a scope-'diocese' file reprinting outside Anglican Communion content verbatim -- the same treatment episcopal-missouri-2026.json gives its own reprinted Anglican Communion line.",
+    "The DIOCESAN CYCLE line is a genuine mix of content, handled as follows: (1) a day naming one or more specific Springfield congregations gets a `parish` subject per congregation (name + place), with any immediately-associated clergy names/roles or anniversary/consecration/admission detail folded into that subject's own `note`, exactly as this corpus's existing convention already folds founding-year/clergy detail into `note` (see episcopal-missouri-2026.json, episcopal-nebraska-2026.json); (2) a mention of the diocese's companion Diocese of Tabora, Tanzania's own parish/mission is recorded as a `category` subject (not `parish`), matching how Missouri's file already treats its own companion Diocese of Puerto Rico's institutions as `category` rather than `parish`; (3) the large majority of days name no congregation at all -- only a clergy birthday, wedding anniversary, or ordination anniversary tied to a person and their town (not a congregation), or a short original written prayer/collect with no proper noun in it whatsoever -- and each such day is recorded as a single `category` subject holding that day's full diocesan-cycle text verbatim; (4) when a day's text combines a named congregation with other, unrelated content in the same sentence or paragraph (a companion-diocese mission, an unrelated clergy birthday, a historical/administrative note tied to no single parish), each element was separated into its own subject in the source's own order, with nothing dropped -- verified subject-by-subject against the source text for every one of the 23 days this applied to.",
+    "Two Sundays (August 9 and August 16, \"Bishops Sunday\") break the otherwise-consistent every-Sunday pattern of naming one current Springfield congregation plus its Tabora companion parish/mission: neither names a specific congregation at all (August 9 is a general prayer for \"all priests and lay people in the Dioceses of Springfield and Tabora\"; August 16 names only the two dioceses' bishops). Both are transcribed as a single `category` subject per this file's usual no-congregation rule, not forced into a `parish` shape.",
+    "The source itself prints the SAME two congregations under two different names on different dates, both preserved verbatim rather than normalized to one spelling: \"St. Thomas', Salem\" (July 5) vs. \"St. Thomas' Episcopal Church, Salem\" (September 15); \"Church of the Redeemer, Cairo\" (August 6 and September 20) vs. \"Redeemer Episcopal Church, Cairo\" (September 15).",
+    "Preserved verbatim typos/oddities, confirmed against the rendered PDF page images (not just the extracted text) rather than assumed to be extraction artifacts: \"The Diocese of Saint Andrews, Dunkeld and DunblaneThe Scottish Episcopal Church\" (July 7 Anglican Cycle line -- missing comma/space before \"The Scottish\"); \"The Diocese of BeniProvince de L'Eglise Anglicane Du Congo\" (September 3 Anglican Cycle line -- same missing comma/space pattern); \"The Rev Canon Shawn Denney\" (within the July 12 Cathedral Church of St. Paul entry's note -- missing period after \"Rev\").",
+    "`liturgicalNote` is transcribed exactly as the source prints it for each date, which includes federal holidays the source itself annotated in the very same position as its liturgical labels (\"Independence Day\", \"Labor Day\") alongside genuine liturgical observances (saints' days, Ember Days, Sundays after Pentecost); both are disclosed source labels per this schema's own rule and neither is treated as authoritative for this app's calendar engines.",
+    "The diocese's own site footer self-identifies in all capitals (\"THE EPISCOPAL DIOCESE OF SPRINGFIELD\"); this file's `diocese` field uses standard title case, matching this corpus's existing convention for how other dioceses' all-caps site branding is recorded.",
+    "Built by extracting the source PDF's text with pdftotext -layout, then confirming single-column layout (no multi-column interleaving risk) by rendering and visually checking all 10 of the source's pages against the extracted text -- not just a sample -- given this source's daily granularity made a misattribution between adjacent days or between the Anglican/Diocesan lines especially easy to miss."
+  ],
+  "entries": [
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Aluakluak, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. John R. Henry, Plainview, IL"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Amazônia, Igreja Episcopal Anglicana do Brasil"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Very Rev. Sheryl (Sherry) L. Black, Whittington, IL; and of The Rev. Canon Elliot H. Blackburn, Mason City, IA."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Amichi, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lincoln",
+          "note": "Admitted to the Diocese, 1871."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "liturgicalNote": "Independence Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Amritsar, The Church of North India (United)"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Alton",
+          "note": "Consecration of present church building, 1857."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. David J. Boase, Godfrey, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Church of South America"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "Salem"
+        },
+        {
+          "type": "category",
+          "name": "Usigara Mission, Burundian Refugee Settlement, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Joel J. Morsch, Maryville, Tennessee, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Andaman and Car Nicobar Islands, The Church of North India (United)"
+        },
+        {
+          "type": "category",
+          "name": "Give Thanks for the risen Life of Jesus Christ, our Lord."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Saint Andrews, Dunkeld and DunblaneThe Scottish Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Strengthen the faith of us who believe in you, O Lord, and sow the seed of faith into the hearts of those who do not believe in you, O Lord."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Missionary Diocese of Central and South Angola, Igreja Anglicana de Mocambique e Angola"
+        },
+        {
+          "type": "category",
+          "name": "Have mercy on us, Lord. Heal our lives and your world."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Ankole, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Chloe Groth, Wife of The Rev. John Conner, Edwardsville, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of North Ankole, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Steven T. Thorp, Champaign, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Northwest Ankole, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. John D. Richmond, Bloomington, IL; Birthday of Byron, husband of The Rev. Cynthia A. Sever, Alton, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "parish",
+          "name": "Cathedral Church of St. Paul",
+          "place": "Springfield",
+          "note": "The Very Rev. Andrew S. Hook, Dean, The Rev. Canon Eugene Stormer, Canon; The Rev Canon Shawn Denney, Canon."
+        },
+        {
+          "type": "category",
+          "name": "Usinge Parish, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Steven T. and Jael Thorp, Champaign, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of South Ankole, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Canon Mark E. Evans, Wausau, WI, and The Rev. Thomas D. Patton, Traverse City, MI."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of West Ankole, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Hope is born today in the birthing of our Lord and Savior Jesus Christ!"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Antananarivo, The Church of the Province of the Indian Ocean"
+        },
+        {
+          "type": "category",
+          "name": "Give us grace, O Lord, to answer readily the call of our Savior Jesus Christ and proclaim to all people the Good News of his salvation."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Antsiranana, The Church of the Province of the Indian Ocean"
+        },
+        {
+          "type": "category",
+          "name": "Lord Jesus, come, set us free to worship without fear and guide us on the pathway of peace."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Te Pihopatanga o Aotearoa, The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        },
+        {
+          "type": "category",
+          "name": "The things, good Lord, that we pray for, give us the grace to labor for."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Araucanía, Iglesia Anglicana de Chile"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, make us gentle and courteous in word and deed."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of Sudan"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Springfield",
+          "note": "The Rev. Dr. Gregory A. Tournoux, Rector."
+        },
+        {
+          "type": "category",
+          "name": "Choma Mission, Tanzania."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of the Arctic, The Anglican Church of Canada"
+        },
+        {
+          "type": "category",
+          "name": "Give us grace, O Lord, to answer readily the call of our Savior Jesus Christ and proclaim to all people the Good News of his salvation."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Argentina, The Anglican Church of South America"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Zachary and Melissa Guiliano, Champaign, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "liturgicalNote": "Saint Mary Magdalene",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Northern Argentina, The Anglican Church of South America"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Garron Daniels, Alton, IL, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Argyll and The Isles, The Scottish Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Lord of creation, show us your purpose for our life that we may not live to be useless."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Arizona, The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Revs. Brian T. and Laurie R. Kellington, Central Point, OR."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "liturgicalNote": "Saint James the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Arkansas, The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. G. Timothy Leighton, Bloomington, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Church of Tanzania"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Springfield",
+          "note": "The Rev. Canon David L. Wells, Interim Priest."
+        },
+        {
+          "type": "category",
+          "name": "Goweko Parish, Tabora, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Kathryn “K-Lou”, wife of The Rev. Christopher L. Ashmore, Jacksonville, IL."
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher’s",
+          "place": "Rantoul",
+          "note": "Patronal Feast."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Armagh, The Church of Ireland"
+        },
+        {
+          "type": "category",
+          "name": "Give us insight, Lord, to understand and feel as others feel."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Armidale, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, give us grace to cast away the works of darkness and put on the armor of light."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Arochukwu / Ohafia, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Canon Mark E. Evans and Sandy Moore, Wausau, WI."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Aru, Province de L'Eglise Anglicane Du Congo"
+        },
+        {
+          "type": "category",
+          "name": "Lord, bless the work that we do; bless it, and keep us in your power."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Asaba, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, help us to not worry about tomorrow, and to realize that you are already there!"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Asante-Mampong, The Church of the Province of West Africa"
+        },
+        {
+          "type": "category",
+          "name": "The Very Rev. Benjamin D. Hankinson, Jr. Nashotah, WI, Ordination to the Priesthood; Wedding Anniversary of The Rev. John D. and Barbara Richmond, Bloomington, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church of the Province of Uganda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "West Frankfort",
+          "note": "The Very Rev. Sheryl L. Black, Priest in Charge, The Rev. Casandra Beattie, Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Igagala Parish, Tanzania."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Saint Asaph, The Church in Wales"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Jane Kamau, wife of The Rev. James K. Muriuki, Cape Girardeau, MO; Wedding Anniversary of The Very Rev. Zachary D. and Leah Brooks, Jacksonville, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Athabasca, The Anglican Church of Canada"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, make us gentle and courteous in word and deed."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Atlanta, The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Dr. Greg Shaw, husband of The Rev. Mary Christine “Mollie” Ward, Bloomington, IL; Wedding Anniversary of The Rev. Canon Robert Brien and Terry Koehler, San Antonio, TX; and of The Rev. Charles J. and Gina Reischman, Littleton, CO."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "liturgicalNote": "The Transfiguration of Our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Attooch, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Cairo",
+          "note": "Feast of Title."
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Springfield",
+          "note": "Feast of Title."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Auckland, The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        },
+        {
+          "type": "category",
+          "name": "Grant, O Lord, that from the written word, and by our spoken word, men and women may catch a vision of the Incarnate Word, through the power of the Holy Spirit. D.Coggan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of North West Australia, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, make us gentle and courteous in word and deed."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "We pray for all priests and lay people in the Dioceses of Springfield and Tabora who labor in love unceasingly for the glory of our Lord, the King of Kings; Birthday of Suzanne, wife of The Rev. Dr. John F. Wall, West Columbia, SC."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Aweil, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. John Conner and Chloe Groth, Edwardsville, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Awerial, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. T. Larison and Patricia Phillips, Champaign, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Awgu / Aninri, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Garron Daniels, Alton, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Awka, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Joan Coleman, Roseburg, OR."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Awori, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Lord, grant us the fullness of your grace, that we may obtain your promises and become partakers of your heavenly kingdom."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "liturgicalNote": "Saint Mary the Virgin, Mother of Our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Ayod, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Bloomington",
+          "note": "dedication of original church building, 1876."
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary",
+          "place": "Robinson",
+          "note": "Feast of Title."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church in Wales"
+        },
+        {
+          "type": "category",
+          "name": "Bishops Sunday, Diocese of Springfield, The Rt. Rev. Brian K. Burgess, Diocese of Tabora, The Rt. Rev. Elias Chakupewa."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Badagry, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit, give us hearts to understand."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bahamas and The Turks and Caicos Islands, The Church in the Province of the West Indies"
+        },
+        {
+          "type": "category",
+          "name": "Almighty God, to truly know you is everlasting life."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Ballarat, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Dr. Arnold R. Hoffman, Sebring, FL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bangor, The Church in Wales"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Gregory Wilde, Belleville, IL, Ordination to the Priesthood; Wedding Anniversary of The Very Rev. Richard I. and Patricia Lewis, Danville, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Banks and Torres, The Anglican Church of Melanesia"
+        },
+        {
+          "type": "category",
+          "name": "Have mercy on us, Lord. Heal our lives and your world."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Barbados, The Church in the Province of the West Indies"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Elisabeth, wife of The Rev. Dr. Thomas W. Langford, Springfield, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church of the Province of West Africa"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Albion",
+          "note": "The Rev. George W. Howard III, Vicar."
+        },
+        {
+          "type": "category",
+          "name": "Igunga Mission, Tanzania."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "liturgicalNote": "Saint Bartholomew the Apostle",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bari, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Admission of Diocese of Illinois by General Convention, 1835."
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "Granite City",
+          "note": "Feast of Title."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Jon E. Griffin, West Frankfort, IL, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Baringo, The Anglican Church of Kenya"
+        },
+        {
+          "type": "category",
+          "name": "Everlasting God, you have ordained and constituted in a wonderful order the ministries of angels and mortals."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Barisal, The Church of Bangladesh"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Canon Robert Brien Koehler, San Antonio, TX."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Barrackpore, The Church of North India (United)"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Mark Dirksen, husband of The Rev. Beth H. Maynard, Beverly, MA; Wedding Anniversary of The Rt. Rev. Daniel H. and Brenda Martins, Chicago, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bath and Wells, The Church of England"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Late Rev. Donald H. and Rikke Langlois, Chandler, AZ."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bathurst, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Dr. Arnold and Sharon Hoffman, Sebring, FL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church in the Province of the West Indies"
+        },
+        {
+          "type": "parish",
+          "name": "Episcopal Parish of Alton (St. Paul’s and Trinity Chapel)",
+          "place": "Alton",
+          "note": "The Rev. Garron Daniels, Rector."
+        },
+        {
+          "type": "category",
+          "name": "Ilalwansimba Parish, Tabora, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. James Muriuki, Cape Girardeau, MO, Ordination to the Priesthood."
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Dr. Gregory A. and Nada Tournoux, Springfield, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bauchi, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "God, fill us with your grace, for the sake of your anointed Son."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Belize, The Church in the Province of the West Indies"
+        },
+        {
+          "type": "category",
+          "name": "Father of all, accept our thanks for the joys of family and life."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bendigo, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Danté and Erin Anglin, Havana, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of BeniProvince de L'Eglise Anglicane Du Congo"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Jonathan and Amy Butcher."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Benin, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Heavenly Father, may we rediscover those deep things on which our life depends."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bentiu, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Bloomington",
+          "note": "Admitted to the Diocese of Illinois, 1853."
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. James Muriuki and Jane Kamau, Cape Girardeau, MO."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal / Anglican Province of Alexandria"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Belleville",
+          "note": "The Very Rev. Mark W. Ohlemeier, Rector, The Rev. Canon Elliot H. Blackburn, Rector Emeritus."
+        },
+        {
+          "type": "category",
+          "name": "Isevya Parish, Tanzania."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": "Labor Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bermuda, (Extra Provincial)"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rt. Rev. Daniel H. Martins, Chicago, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bethlehem, The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Wedding Anniversary of The Rev. Scott Hoogerhyde and Catherine Salmon, St. Louis, MO."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bhopal, The Church of North India (United)"
+        },
+        {
+          "type": "category",
+          "name": "May we know Lord that your love has forgiven us."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bida, The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Lord, help us and your whole church to walk as children of the light."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Biharamulo, The Anglican Church of Tanzania"
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit, guide us in our work for the Church."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Birmingham, The Church of England"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Centralia",
+          "note": "Admitted to the Diocese of Illinois, 1860."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Bloomington",
+          "note": "The Rev. Thomas Reeves, Rector."
+        },
+        {
+          "type": "category",
+          "name": "Kabuhima Parish, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Synod of Illinois ratified the establishment of the Diocese of Springfield, 1877."
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Danville",
+          "note": "Admitted to the Diocese of Illinois, 1866."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": "Holy Cross Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Blackburn, The Church of England"
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit, open the heavens for us to see Jesus interceding for us."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bo, The Church of the Province of West Africa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’ Episcopal Church",
+          "place": "Salem",
+          "note": "Admitted to the Diocese of Illinois, 1859."
+        },
+        {
+          "type": "parish",
+          "name": "Redeemer Episcopal Church",
+          "place": "Cairo",
+          "note": "Admitted to the Diocese of Illinois, 1864."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Boga, Province de L'Eglise Anglicane Du Congo"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. Richard A. Swan, Cincinnati, OH."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bolivia, The Anglican Church of South America"
+        },
+        {
+          "type": "category",
+          "name": "Lord, help me not be too busy to listen to anyone who is in trouble and to help anyone who is in difficulty."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bondo, The Anglican Church of Kenya"
+        },
+        {
+          "type": "category",
+          "name": "Holy Spirit, guide us in our work for the Church."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalNote": "Ember Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bor, Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Lord, renew our spirits, that our work may not be to us a burden but a delight."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Church of Australia"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Cairo",
+          "note": "The Rev. James K. Muriuki, Priest in Charge."
+        },
+        {
+          "type": "category",
+          "name": "Kahama Parish, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Mary Ann “Marv”, wife of The Rev. Richard A. Swan, Cincinnati, OH."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": "Saint Matthew, Apostle and Evangelist",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Botswana, The Church of the Province of Central Africa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Bloomington",
+          "note": "Feast of Title."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Laura, wife of The Rev. Parker Asplin, Mt. Vernon, IL."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Brandon, The Anglican Church of Canada"
+        },
+        {
+          "type": "category",
+          "name": "The Rev. David J. Boase, Godfrey, IL, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Brechin, The Scottish Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "God, fill us with your grace, for the sake of your anointed Son."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Brisbane, The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Gina, wife of The Rev. Charles Reischman, Littleton, CO."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Bristol, The Church of England"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Jacksonville",
+          "note": "Consecration of present church building, 1921."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of British Columbia, The Anglican Church of Canada"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "Granite City",
+          "note": "Consecration of present church building, 1906."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of Terry, wife of The Rev. Canon Robert B. Koehler, San Antonio, TX."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church of Bangladesh"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Carbondale"
+        },
+        {
+          "type": "category",
+          "name": "Kalemela Parish, Urambo, Tanzania."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Canon Dale D. Coleman, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Central Buganda, The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Grant us the grace of your holy spirit to devote our heart to you."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": "Saint Michael and All Angels",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of West Buganda, The Church of the Province of Uganda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael’s",
+          "place": "O’Fallon",
+          "note": "Feast of Title."
+        },
+        {
+          "type": "category",
+          "name": "Birthday of The Rev. J. Mark Klamer, Clayton, MO."
+        },
+        {
+          "type": "category",
+          "name": "The Rev. Steven T. Thorp, Champaign, IL, and The Rev. Danté Anglin, Havana, IL, Ordination to the Priesthood."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Buhiga, The Anglican Church of Burundi"
+        },
+        {
+          "type": "category",
+          "name": "Jesus, illuminate and brighten the entire world."
+        }
+      ]
+    }
+  ]
+}
