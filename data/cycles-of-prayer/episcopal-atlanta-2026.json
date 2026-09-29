@@ -1,0 +1,1335 @@
+{
+  "id": "episcopal-atlanta-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of Atlanta",
+  "dioceseShort": "atlanta",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Parish Cycle of Prayer (2025-2026)",
+  "sourceFile": "\"25-26-Cycle-of-Prayer.pdf\", provided directly by Josh via Google Drive (file id 12IQpC4lm4qxzP154oUlGMoTdsDepTFCy, folder \"TEC Cycle of Prayer\"); original diocesan source per Josh's own roster: https://episcopalatlanta.org/wp-content/uploads/2025/11/25-26-Cycle-of-Prayer.pdf",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source interleaves fixed-date commemorations/saints' days (e.g. 'Nicholas, Bishop of Myra, c. 342', 'Saint Thomas the Apostle') with no prayer-cycle subject attached to them at all. Only the Sunday-dated cycle rows (bishop attribution + that week's parish/ministry list + the companion-diocese line) are represented in `entries` -- the commemoration-only lines are excluded entirely, not fabricated into empty subject lists.",
+    "The source is one continuous cycle, November 30, 2025 through November 29, 2026 (its own title: 'Parish Cycle of Prayer'). Only the 48 weeks landing in calendar 2026 (January 4 through November 29) are in this file, per this corpus's existing cross-liturgical-year convention (see episcopal-alabama-2026.json). The 5 weeks in late 2025 (Nov 30, Dec 7/14/21/28) are deferred to a future episcopal-atlanta-2025.json, not fabricated or force-fit here.",
+    "The diocesan bishop's name is printed inconsistently across weeks in the source itself -- 'Bishop Rob Wright' (January 4 and 11 entries only) versus 'Bishop Robert Wright' (every week from January 18 onward) -- preserved exactly as printed per week, not silently normalized to one form.",
+    "The companion Diocese of Cape Coast (Church of the Province of West Africa) line -- including any specific companion congregations named that week -- is kept as ONE category subject per week, verbatim, rather than split into separate foreign-parish entries. These are a partner diocese's own congregations in Ghana, not part of the Diocese of Atlanta's own directory the way this schema's 'parish' type is used elsewhere in this corpus.",
+    "Several weeks' source text runs a convocation/ministry name directly into the following parish name with no visible separator -- a formatting/line-break loss in the PDF's own text layer, not an error introduced by this transcription (e.g. the source's own run-on 'Marietta Convocation Christ Church, Kennesaw' was split into a 'Mid Atlanta Convocation' category subject and a separate 'Christ Church, Griffin' parish subject once the Easter Sunday entry's own repeated 'The Clergy and people of' phrasing confirmed the boundary). Where a compound phrase's internal structure could not be confidently recovered this way, it was kept as a single verbatim category subject (e.g. 'Ministry of Society of St. Anna the Prophet Church Musicians', February 1) rather than force a guessed split.",
+    "Several apparent typos are preserved verbatim per this corpus's standing rule, not silently corrected: 'Ft. Andrew's, Hartwell' (November 29 -- likely 'St. Andrew's'), 'Grace-Calary, Clarkesville' (March 29 -- likely 'Grace-Calvary'), 'St. Luke's, Fort Vally' (October 18 -- likely 'Fort Valley'), and July 5's own liturgical label 'The Fourth Sunday after Pentecost, Proper 9' (numerically inconsistent with the surrounding weekly sequence, which already used 'The Fourth Sunday after Pentecost' for June 21 -- likely should read 'Sixth Sunday').",
+    "The diocese's own full published name is not printed anywhere in the source text itself. 'Diocese of Atlanta' is inferred from Bishop Robert Wright's own diocese and the uniformly Georgia place names throughout, not fabricated from nothing, but disclosed here as an inference rather than a directly-quoted title -- unlike the 6 dioceses this corpus ingested first, whose `diocese` field was taken verbatim from each one's own source.",
+    "'Cathedral of St. Philip' and 'Cathedral Towers' (May 3 entry) are recorded as category subjects rather than parish subjects because this row of the source names no city for them (this schema's 'parish' type requires an explicit place, and one is not invented here even though the Cathedral's Atlanta location is well known)."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday after Christmas (Epiphany celebrated?)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Rob Wright"
+        },
+        {
+          "type": "parish",
+          "name": "The Church of the Epiphany",
+          "place": "Atlanta"
+        },
+        {
+          "type": "category",
+          "name": "East Atlanta Convocation Christian Educators, Parish staffs, choirs, acolytes North Atlanta Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany: The Baptism of Our Lord Jesus Christ",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Rob Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the clergy and people of St. Peter, Gomoa Ofaso"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anthony",
+          "place": "Winder"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter",
+          "place": "Rome"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the Anglican Congregation in Gomoa Benso/Aboso"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Macon"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Newnan"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Decatur"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Calhoun"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Paul the Apostle Parish, Apewosika; St. Paul, Agona Nyakrom; St. Paul, Awutu Bewuanum"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "Ministry of Society of St. Anna the Prophet Church Musicians"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the Anglican Congregation in Agona Asafo"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "The Ministries of the Absalom Jones Center, Atlanta"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the Anglican Congregation in Ekwamkrom"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday after Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the Anglican Congregation in Chocho"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthias",
+          "place": "Toccoa"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the Anglican Congregation in Osimpo"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Roswell"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Bishop Ackon Memorial Congregation, Beyeden"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "The ministry of New Hope House, Griffin"
+        },
+        {
+          "type": "category",
+          "name": "Oconee Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gregory the Great",
+          "place": "Athens"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially William Hutton-Mensah Church, Nkanfoa"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "McDonough"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Marietta"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Sacred Heart Parish, Low Cost, Winneba"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "Grace-Calary",
+          "place": "Clarkesville"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Gainesville"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Sunday: The resurrection of Our Lord",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Sautee"
+        },
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Atlanta"
+        },
+        {
+          "type": "category",
+          "name": "Mid Atlanta Convocation"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Griffin"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Griffin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Dalton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "LaGrange"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine's",
+          "place": "Marietta"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "El Buen Pastor",
+          "place": "Austell"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Covington"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast Good Shepherd Parish, Eguase and Holy Redeemer Parish, Agona Kwanyaku"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "Cathedral of St. Philip"
+        },
+        {
+          "type": "category",
+          "name": "Cathedral Towers"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Julian's",
+          "place": "Douglasville"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Dunstan's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Cartersville"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost, Whitsunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Cumming"
+        },
+        {
+          "type": "category",
+          "name": "The clergy & people of the SW Atlanta Convocation"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bede's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Morrow"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Augustine Parish, Kwaprow"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday after Pentecost; Trinity Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Columbus"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Decatur"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "The Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Montezuma"
+        },
+        {
+          "type": "parish",
+          "name": "Santa Maria",
+          "place": "East Point"
+        },
+        {
+          "type": "parish",
+          "name": "St. Columba's",
+          "place": "Suwanee"
+        },
+        {
+          "type": "category",
+          "name": "The clergy & people of the Congregations & Ministries of the Chattahoochee Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Mary, Agona Abodom, and St. Mary, Akweley"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "The Third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Trion"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Barnabas Parish, Twifo Praso"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "The Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Elberton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Monroe"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "The Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter and St. Paul",
+          "place": "Marietta"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Sts. Peter & Paul Parish, Saltpond; Sts. Peter & Paul Parish, Awutu Beraku"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The Fourth Sunday after Pentecost, Proper 9",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "NW GA Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "The Seventh Sunday after Pentecost, Proper 10",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Benedict's",
+          "place": "Smyrna"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "The Eighth Sunday after Pentecost, Proper 11",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Columbus"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "The Ninth Sunday after Pentecost, Proper 12",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Perry"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Cedartown"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Clayton"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Marietta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary & St. Martha of Bethany",
+          "place": "Buford"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. James Parish, Elmina; St. James Parish, Agona Swedru; St. Anne Congregation, Nkwanta"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "The Tenth Sunday after Pentecost, Proper 13",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "Middle Georgia Convocation"
+        },
+        {
+          "type": "category",
+          "name": "Chattahoochee Valley Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "The Eleventh Sunday after Pentecost, Proper 14",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clare's",
+          "place": "Blairsville"
+        },
+        {
+          "type": "category",
+          "name": "GA Mountains Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "The Twelfth Sunday after Pentecost, Proper 15",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the clergy and people of St. Mary the Virgin parish in Ayifas"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "The Thirteenth Sunday after Pentecost, Proper 16",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew",
+          "place": "Atlanta"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the clergy and people of St. Monica's Parish, Aboom"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "The Fourteenth Sunday after Pentecost, Proper 17",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Milton"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "The Fifteenth Sunday after Pentecost, Proper 18",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Cyprian Congregation, Effutu Koforidua"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "The Sixteenth Sunday after Pentecost, Proper 19",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Cross",
+          "place": "Decatur"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost (St. Matthew)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Snellville"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Matthew the Apostle Parish, Abease Dominase"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "The Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Stone Mountain"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels'",
+          "place": "Eatonton"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Michael & All Angel Parish, Apam; St. Michael & All Angel Parish, Jukwa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "The Nineteenth Sunday after Pentecost, Proper 22",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Macon"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Ataabadze Congregation, Elmina"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "The Twentieth Sunday after Pentecost, Proper 23",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Edward's",
+          "place": "Lawrenceville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Teresa",
+          "place": "Acworth"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially the clergy and people of St. Teresa of Avila Parish, Brofoyedur"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "The Twenty-First Sunday after Pentecost, Proper 24",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Fort Vally"
+        },
+        {
+          "type": "category",
+          "name": "Northeast Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Luke the Evangelist Parish, Ajumako Biscase, and Thomas Thompson Parish, OLA and Philip Quaque Parish, Adissadel"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "The Twenty-Second Sunday after Pentecost, Proper 25",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Simon's",
+          "place": "Conyers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Jude's",
+          "place": "Marietta"
+        },
+        {
+          "type": "category",
+          "name": "Northeast Metro Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "The Twenty-Third Sunday after Pentecost, Proper 26, or All Saints' (white)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Atlanta"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Warner Robins"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially All Souls Parish, Mankessim"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost, Proper 27",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin in the Fields",
+          "place": "Atlanta"
+        },
+        {
+          "type": "category",
+          "name": "MidAtlanta Convocation"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost, Proper 28",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret's",
+          "place": "Carrollton"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "The Last Sunday after Pentecost, Christ the King",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's",
+          "place": "Dahlonega"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement's",
+          "place": "Canton"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Kennesaw"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Macon"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Norcross"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially Christ Church Cathedral, Cape Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "The First Sunday of Advent, 2026-2027",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Robert Wright"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew in the Pines",
+          "place": "Peachtree City"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Fort Valley"
+        },
+        {
+          "type": "parish",
+          "name": "Ft. Andrew's",
+          "place": "Hartwell"
+        },
+        {
+          "type": "category",
+          "name": "The Brotherhood of St Andrew"
+        },
+        {
+          "type": "category",
+          "name": "For all congregations seeking new or renewed direction"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Victor and the people of our companion and partner, Diocese of Cape Coast especially St. Andrew the Apostle Parish, Greenhill; St. Andrew's Parish, Bawjiase; St. Andrew, Agona Bobikuma"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,733 @@
+{
+  "id": "episcopal-east-carolina-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of East Carolina",
+  "dioceseShort": "east-carolina",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer 2026",
+  "sourceFile": "\"2026-Cycle-of-Prayer-4.pdf\", provided directly by Josh via Google Drive (file id 1pJattfHc4Ol7D2VTyx6Ix3kUdwQj-NQE, folder \"TEC Cycle of Prayer\"); original diocesan source per Josh's own roster: https://www.diocese-eastcarolina.org/diocesan-cycle-of-prayer/",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Unlike most files in this corpus, this source is a single self-contained calendar-year 2026 cycle (January 4 through December 27) -- no cross-liturgical-year boundary to reconcile, and no future -2025.json is implied.",
+    "Sunday, May 31, 2026 has no entry at all in the source (the calendar jumps from May 24 directly to June 7) -- confirmed by rendering the actual page images, not a transcription gap. Nothing is fabricated to fill it.",
+    "The source visually distinguishes most parish/congregation entries (teal/blue text) from diocesan administrative or ministry entries (black text), which this file's own parish-vs-category classification follows in most cases -- but content, not color alone, decided borderline cases: 'Trinity Center' (June 21) is East Carolina's own diocesan retreat/conference center, not a congregation, and is recorded as a `category` subject despite being printed in the same teal color as every parish name, since no place is given and it names a facility rather than a congregation.",
+    "September 13's 'Grace Episcopal & Christ the King Lutheran Church, Whiteville' is a shared/ecumenical building (an Episcopal and a Lutheran congregation sharing one facility) -- preserved as one combined parish name rather than split, since the source prints it as a single line.",
+    "October 18's 'St. Lukes Episcopal Mission' (no apostrophe) is preserved exactly as printed, per this corpus's standing rule against silently correcting apparent typos.",
+    "May 10's entry names the Presiding Bishop and President of the House of Deputies together with 'Staff of The Episcopal Church' as one combined line in the source; kept as a single category subject rather than split, since the source gives no clear boundary between the two officers' names and the trailing 'and Staff' clause."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Ahoskie"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Bath"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Beaufort"
+        },
+        {
+          "type": "parish",
+          "name": "LaSagrada Familia",
+          "place": "Newton Grove"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Belhaven"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Burgaw"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop & Staff of the Diocese of East Carolina"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's On the Sound",
+          "place": "Wilmington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Wilmington"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Holly Ridge"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Wilmington"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Fisherman",
+          "place": "Shallotte"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Wilmington"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and Candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Sunbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Elizabethtown"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Elizabeth City"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Innocents",
+          "place": "Seven Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Farmville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Fayetteville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Southport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Gatesville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Goldsboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Kinston"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Blessings this Easter Sunday and for the Easter season!"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Havelock"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Campus Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Goldsboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Edenton"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Roxobel"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Goldsboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Greenville"
+        },
+        {
+          "type": "category",
+          "name": "Pamlico Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Most Rev. Sean Rowe, Presiding Bishop, Julia Ayala Harris, President of the House of Deputies, and Staff of The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Greenville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Grifton"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Morehead City"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian's",
+          "place": "New Bern"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Kinston"
+        },
+        {
+          "type": "category",
+          "name": "Upper Cape Fear Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis by the Sea",
+          "place": "Salter Path"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Hampstead"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Windsor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's by the Sea",
+          "place": "Nags Head"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls",
+          "place": "Northwest"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "New Bern"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Wilmington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "Fayetteville"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's in the Pines",
+          "place": "Fayetteville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Oriental"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lumberton"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Plymouth"
+        },
+        {
+          "type": "category",
+          "name": "Interfaith Refugee Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Lower Cape Fear Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Englehard"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Fayetteville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Albemarle Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Clinton"
+        },
+        {
+          "type": "category",
+          "name": "Trinity Deanery"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Washington"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal & Christ the King Lutheran Church",
+          "place": "Whiteville"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Farmworker Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Fayetteville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Columbia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Lewiston-Woodville"
+        },
+        {
+          "type": "category",
+          "name": "Retired Clergy of the Diocese of East Carolina"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Wilmington"
+        },
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Washington"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chaplains and All Non-Parochial Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries, Committees & Commissions of the Diocese of East Carolina"
+        },
+        {
+          "type": "parish",
+          "name": "St. Lukes Episcopal Mission",
+          "place": "Currituck"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Southern Shores"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Wilmington"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "143rd Convention of the Diocese of East Carolina"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Servant",
+          "place": "Wilmington"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church & Galilee Mission",
+          "place": "Creswell"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's & St. Anne's",
+          "place": "Roper"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "Advent 1",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Williamston"
+        },
+        {
+          "type": "category",
+          "name": "Vestry Elections & Annual Parish Meetings"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's by the Sea",
+          "place": "Swansboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Chocowinity"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chaplains of the Armed Forces"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Give thanks, and pray for the new year ahead!"
+        }
+      ]
+    }
+  ]
+}
