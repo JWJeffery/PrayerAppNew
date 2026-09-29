@@ -1534,6 +1534,7 @@ function setUserProfileCycleOfPrayerParish(value) {
     profile.cycleOfPrayerParishOther = null;
     persistUserProfileDefaults(profile);
     populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, profile.cycleOfPrayerParish, null);
+    refreshCycleOfPrayerParishForCurrentMonth(profile.cycleOfPrayerDiocese, profile.cycleOfPrayerParish);
     if (selectedMode === 'daily') requestRender();
 }
 
@@ -1581,6 +1582,23 @@ function refreshCommunionCycleOfPrayerForCurrentYear() {
     if (typeof loadCommunionCycleOfPrayerYear !== 'function') return;
 
     loadCommunionCycleOfPrayerYear(new Date().getFullYear()).then((corpus) => {
+        if (corpus && selectedMode === 'daily') requestRender();
+    });
+}
+
+/**
+ * ADDED 2026-09-29. Same warm-then-repaint pattern as
+ * refreshCycleOfPrayerForCurrentYear above, for the Parish tier -- a no-op,
+ * harmlessly, when either `dioceseKey` or `parishSlug` is missing (no home
+ * parish declared, or that diocese's own parish list wasn't picked from at
+ * all) or when this app has no ingested household-cycle file for that
+ * parish (see findCycleOfPrayerParishEntry in js/cycles-of-prayer.js -- no
+ * fetch is even attempted in that case).
+ */
+function refreshCycleOfPrayerParishForCurrentMonth(dioceseKey, parishSlug) {
+    if (!dioceseKey || !parishSlug || typeof loadCycleOfPrayerParishMonth !== 'function') return;
+
+    loadCycleOfPrayerParishMonth(dioceseKey, parishSlug).then((corpus) => {
         if (corpus && selectedMode === 'daily') requestRender();
     });
 }
@@ -2514,11 +2532,14 @@ async function initializeEntryRouting() {
     if (startupProfile.cycleOfPrayerDiocese) {
         refreshCycleOfPrayerForCurrentYear(startupProfile.cycleOfPrayerDiocese);
     }
+    if (startupProfile.cycleOfPrayerDiocese && startupProfile.cycleOfPrayerParish) {
+        refreshCycleOfPrayerParishForCurrentMonth(startupProfile.cycleOfPrayerDiocese, startupProfile.cycleOfPrayerParish);
+    }
 
     // Same warming, unconditionally: the worldwide Anglican Cycle of Prayer
     // (scope 'communion' in data/cycles-of-prayer/schema.json) applies to
-    // every user identically, so unlike the diocese warm-up just above this
-    // is never gated on any profile field.
+    // every user identically, so unlike the diocese/parish warm-ups just
+    // above this is never gated on any profile field.
     refreshCommunionCycleOfPrayerForCurrentYear();
 
     // Awaited here, before anything is shown: the entry/mode screens are already
@@ -5501,24 +5522,76 @@ function bcpEmitBare(container, text, opts) {
     bcpWrapInGutter(container, '', [bcpMakeSpan('component-text', text, opts)]);
 }
 
+/* Shared rubric-text heading for a bare-content block that wants one but
+   isn't a full bcpEmitBlock shape (no gutter kind, no env/rail entry).
+   ADDED 2026-09-29, per Josh's direct request that the Communion/Diocesan/
+   Parish Cycle of Prayer tiers "appear under their own rubric heading" --
+   mirrors bcpEmitBlock's own labelSpan construction (above) exactly, so it
+   renders identically to every other in-page rubric heading (e.g. "Let Us
+   Bless the Lord"). */
+function bcpEmitRubricHeading(container, label) {
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'rubric-text';
+    labelSpan.textContent = label;
+    container.appendChild(labelSpan);
+}
+
 /**
- * ADDED 2026-09-28 (diocese tier); ADDED 2026-09-29 (Communion tier).
- * Appends, after the static "Here may be sung a hymn or anthem..." rubric,
- * up to two independent lines for the OFFICE'S OWN date (`date` -- never
- * `new Date()`/today, so an office rendered for a past or future date shows
- * that date's own entries, not today's): the worldwide Anglican Cycle of
- * Prayer's entry (unconditional -- the same for every user, no profile
- * dependency) via renderCommunionCycleOfPrayerLine, then the user's declared
- * diocese's own weekly Cycle of Prayer entry (gated on
- * profile.cycleOfPrayerDiocese, unchanged from before this Communion-tier
- * addition). Either, both, or neither may render depending on what's
- * declared/loaded -- each is an independent cache-only read, never blocking
- * on a network fetch; see js/cycles-of-prayer.js's own comments on the
- * prefetch-then-repaint pattern that eventually populates each cache.
+ * ADDED 2026-09-28 (diocese tier); ADDED 2026-09-29 (Communion tier, then
+ * Parish tier + per-tier rubric headings same day). Appends, after the
+ * static "Here may be sung a hymn or anthem..." rubric, up to three
+ * independent tiers for the OFFICE'S OWN date (`date` -- never `new
+ * Date()`/today, so an office rendered for a past or future date shows that
+ * date's own entries, not today's): the worldwide Anglican Cycle of Prayer
+ * (unconditional -- the same for every user), the user's declared diocese's
+ * own weekly cycle (gated on profile.cycleOfPrayerDiocese), and the user's
+ * declared parish's own household cycle (gated on profile.cycleOfPrayerParish
+ * matching a real ingested corpus -- see renderParishCycleOfPrayerLine).
+ * Any, all, or none may render depending on what's declared/loaded -- each
+ * is an independent cache-only read, never blocking on a network fetch; see
+ * js/cycles-of-prayer.js's own comments on the prefetch-then-repaint pattern
+ * that eventually populates each cache.
  */
 function renderCycleOfPrayerLine(container, date) {
     renderCommunionCycleOfPrayerLine(container, date);
+    renderDiocesanCycleOfPrayerLine(container, date);
+    renderParishCycleOfPrayerLine(container, date);
+}
 
+/**
+ * The Communion tier: the worldwide Anglican Cycle of Prayer's own entry for
+ * `date`, independent of any profile field -- every user sees the same line
+ * for the same office date. Renders nothing when that date's entry isn't
+ * loaded/covered yet (see js/cycles-of-prayer.js's
+ * getCachedCommunionCycleOfPrayerDay -- notably, "not covered" is the
+ * correct, honest state for any date outside whatever partial-year range the
+ * current file happens to cover, not a bug).
+ */
+function renderCommunionCycleOfPrayerLine(container, date) {
+    if (typeof getCachedCommunionCycleOfPrayerDay !== 'function') return;
+
+    const dayEntry = getCachedCommunionCycleOfPrayerDay(date);
+    if (!dayEntry) return;
+
+    const subjectNames = dayEntry.subjects.map(subject =>
+        subject.type === 'diocese' ? `${subject.name} (${subject.province})` : subject.name
+    );
+    const subjectPhrase = subjectNames.length === 1
+        ? subjectNames[0]
+        : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
+
+    bcpEmitRubricHeading(container, 'The Anglican Cycle of Prayer');
+    bcpEmitBare(container, `Today, the Anglican Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
+}
+
+/**
+ * The Diocesan tier: the user's declared diocese's own weekly Cycle of
+ * Prayer entry (gated on profile.cycleOfPrayerDiocese). Unchanged in
+ * substance from before the 2026-09-29 Communion/Parish-tier split, now
+ * under its own name and a rubric heading rather than living directly
+ * inside renderCycleOfPrayerLine.
+ */
+function renderDiocesanCycleOfPrayerLine(container, date) {
     const profile = getUserProfileDefaults();
     if (!profile.cycleOfPrayerDiocese || typeof getCachedCycleOfPrayerWeek !== 'function') return;
 
@@ -5538,32 +5611,42 @@ function renderCycleOfPrayerLine(container, date) {
     const line = `This week, the Diocesan Cycle of Prayer asks us to pray for ${subjectPhrase}.` +
         (isHomeParishWeek ? ' This is your own parish’s week.' : '');
 
+    bcpEmitRubricHeading(container, 'The Diocesan Cycle of Prayer');
     bcpEmitBare(container, line, { italic: true });
 }
 
 /**
- * ADDED 2026-09-29. The Communion tier of renderCycleOfPrayerLine above: the
- * worldwide Anglican Cycle of Prayer's own entry for `date`, independent of
- * any profile field -- every user sees the same line for the same office
- * date. Renders nothing when that date's entry isn't loaded/covered yet (see
- * js/cycles-of-prayer.js's getCachedCommunionCycleOfPrayerDay -- notably,
- * "not covered" is the correct, honest state for any date outside whatever
- * partial-year range the current file happens to cover, not a bug).
+ * ADDED 2026-09-29, per Josh's direct report that "the parish cycle of
+ * prayer is missing" after St. Bede's own household-cycle file was ingested
+ * but never wired into any loader (see
+ * data/cycles-of-prayer/episcopal-western-oregon-st-bede.json's own header
+ * comment). The Parish tier: a congregation's own household-by-household
+ * prayer cycle (scope 'parish', subject type 'household'). Gated on a real
+ * corpus-matched parish (profile.cycleOfPrayerParish, the slug set by
+ * picking a parish from the diocese's own list) -- never on
+ * cycleOfPrayerParishOther's free-text fallback, since there is no household
+ * file to key off a typed name that doesn't match any ingested corpus.
+ * Renders nothing when this app hasn't ingested that parish's own household
+ * cycle yet -- same honest "no data yet" convention as the other two tiers,
+ * not an error. "Today" (not "this week"), matching the corpus's own
+ * day-of-month granularity (see resolveMonthlyRecurringEntry in
+ * js/cycles-of-prayer.js).
  */
-function renderCommunionCycleOfPrayerLine(container, date) {
-    if (typeof getCachedCommunionCycleOfPrayerDay !== 'function') return;
+function renderParishCycleOfPrayerLine(container, date) {
+    const profile = getUserProfileDefaults();
+    if (!profile.cycleOfPrayerDiocese || !profile.cycleOfPrayerParish) return;
+    if (typeof getCachedCycleOfPrayerParishMonth !== 'function') return;
 
-    const dayEntry = getCachedCommunionCycleOfPrayerDay(date);
-    if (!dayEntry) return;
+    const monthEntry = getCachedCycleOfPrayerParishMonth(profile.cycleOfPrayerDiocese, profile.cycleOfPrayerParish, date);
+    if (!monthEntry) return;
 
-    const subjectNames = dayEntry.subjects.map(subject =>
-        subject.type === 'diocese' ? `${subject.name} (${subject.province})` : subject.name
-    );
+    const subjectNames = monthEntry.subjects.map(subject => subject.name);
     const subjectPhrase = subjectNames.length === 1
         ? subjectNames[0]
         : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
 
-    bcpEmitBare(container, `Today, the Anglican Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
+    bcpEmitRubricHeading(container, 'The Parish Cycle of Prayer');
+    bcpEmitBare(container, `Today, your Parish Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
 }
 
 function bcpEmitDivider(container) {
