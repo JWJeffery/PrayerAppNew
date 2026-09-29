@@ -2148,6 +2148,18 @@ body.dark-mode .app-profile-defaults {
     letter-spacing: 0.08em;
 }
 
+/* ADDED 2026-09-29: same bug class already found and fixed once this session
+   for #uo-threshold -- an author stylesheet rule with `display: grid` and no
+   `[hidden]` qualifier overrides the browser's own `[hidden] { display: none }`
+   UA rule (author styles beat UA styles regardless of specificity), so
+   syncProfileFieldVisibilityForTradition() setting `.hidden = true` on a
+   tradition-specific field had no visible effect -- the field stayed laid
+   out in the grid, just as if it were shown. Explicit override restores
+   `[hidden]`'s actual meaning for this class. */
+.app-profile-default-field[hidden] {
+    display: none;
+}
+
 .app-profile-default-field select,
 .app-profile-default-field input[type="text"] {
     width: 100%;
