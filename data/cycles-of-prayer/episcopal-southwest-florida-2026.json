@@ -1,0 +1,1983 @@
+{
+  "id": "episcopal-southwest-florida-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of Southwest Florida",
+  "dioceseShort": "southwest-florida",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Diocesan Cycle of Prayer",
+  "sourceFile": "\"Diocesan Cycle of Prayer\" page, fetched directly from https://episcopalswfl.org/resources/diocesan-cycle-of-prayer/ (page footer states “Last Updated: 9-27-23” even though its own heading and content are captioned “2026 Diocesan Cycle of Prayer”).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "SOURCE SHAPE (the main judgment call for this file): the page describes its own cycle as “quarterly repeating” (“The cycle of prayer is the same every quarter, as each congregation is offered up in prayer four times each year”), which could have meant a non-dated repeating pattern. In fact the page prints concrete calendar dates for every entry — 14 distinct groups of subjects (11 deanery groups plus 3 non-deanery category clusters), each recurring on a strict 14-week cycle, with real dates spelled out from Dec. 28, 2025 through Dec. 27, 2026. Laid end to end these dates cover every one of the 52 Sundays of calendar year 2026 (Jan. 4 – Dec. 27) exactly once each, so this file uses cycleType ‘dated’/year 2026 rather than a no-year recurring type, the same way this corpus's Missouri file resolved its own initially-ambiguous source description.",
+    "The source's own “four times each year” claim does not hold exactly for all 14 groups: because the underlying period is 14 weeks (not 13), the 11 deanery groups (Clearwater through Naples) each land on 4 Sundays within the Dec. 28, 2025 – Dec. 27, 2026 span, but the 3 non-deanery category clusters (Mar. 15/Jun. 21/Sep. 27 DaySpring-and-ministries group; Mar. 22/Jun. 28/Oct. 4 School-for-Ministry/chaplaincies group; Mar. 29/Jul. 5/Oct. 11 retired-clergy/spouses/schools/seminarians group) land on only 3 Sundays each within calendar year 2026. Transcribed exactly as printed; the page's own generalization is not corrected here.",
+    "The source's first listed date, Dec. 28, 2025, is excluded from this 2026 file as a prior-year date (per this corpus's standing year-boundary convention); the same Clearwater Deanery congregation group it names otherwise recurs on April 5, July 12, and Oct. 18, 2026, all three of which are included below.",
+    "The page's “Every Sunday:” block (“Diocese of Southwest Florida — The Rt. Rev. Douglas F. Scharf; Companion Diocese of the Dominican Republic; Companion Diocese of Georgia; Companion Diocese of South Carolina; Companion Diocese of Western Louisiana”) is printed once, as front matter above the dated list, not tied to any specific date or to the rotation itself. Following this corpus's existing Michigan-file precedent for a standing weekly intention printed once as front matter (rather than repeated inline in each week's own text, cf. this corpus's Alabama file), it is disclosed here rather than fabricated into every one of the 52 entries below.",
+    "Each dated group is headed in the source with a deanery name (Clearwater, St. Petersburg, Tampa, Manasota, Venice, Ft. Myers, or Naples Deanery); this schema has no field for that administrative grouping, so it is omitted from `subjects` (each congregation is still recorded individually with its own `place`). For reference, the deanery-to-date mapping is: Clearwater Deanery — Apr. 5, Jul. 12, Oct. 18, 2026 (7-count group) and Jan. 4, Apr. 12, Jul. 19, Oct. 25, 2026 (6-count group); St. Petersburg Deanery — Jan. 11, Apr. 19, Jul. 26, Nov. 1 and Jan. 18, Apr. 26, Aug. 2, Nov. 8; Tampa Deanery — Jan. 25, May 3, Aug. 9, Nov. 15 and Feb. 1, May 10, Aug. 16, Nov. 22; Manasota Deanery — Feb. 8, May 17, Aug. 23, Nov. 29 and Feb. 15, May 24, Aug. 30, Dec. 6; Venice Deanery — Feb. 22, May 31, Sep. 6, Dec. 13; Ft. Myers Deanery — Mar. 1, Jun. 7, Sep. 13, Dec. 20; Naples Deanery — Mar. 8, Jun. 14, Sep. 20, Dec. 27. The three non-deanery category clusters (Mar. 15/Jun. 21/Sep. 27, Mar. 22/Jun. 28/Oct. 4, and Mar. 29/Jul. 5/Oct. 11) carry no deanery heading at all in the source.",
+    "The parenthetical subject counts printed in several group headings do not match the number of subjects actually named in that group's own text, and are preserved as printed rather than padded or corrected: the Apr. 5/Jul. 12/Oct. 18 Clearwater Deanery group is headed “(7)” but only 6 congregations are named; the Jan. 11/Apr. 19/Jul. 26/Nov. 1 St. Petersburg Deanery group is headed “(4)” but only 3 congregations are named; the Mar. 15/Jun. 21/Sep. 27 group is headed “(9)” but only 6 distinct items are identifiable in its prose list under any reasonable reading. All other group counts matched the number of subjects transcribed.",
+    "The three non-deanery category clusters are prose lists rather than a clean comma-separated 'Name, Place' table, so where to split them into individual `category` subjects required judgment calls, disclosed here: for the Mar. 15/Jun. 21/Sep. 27 group, “The Smith Center, DaySpring Episcopal Conference Center” is kept as one subject (its comma read as apposition — a specific building at that conference center — rather than a name+place pair), followed by “St. Thomas Chapel”, “Camp Dayspring”, “Youth and Young Adult Ministries”, “Cursillo of SWFL”, and “Episcopal Charities of Southwest Florida” as five further separate subjects. For the Mar. 22/Jun. 28/Oct. 4 group, “St. Anselm’s Chapel, University of South Florida Chapel Center” is likewise kept as one subject (a specific campus chapel, not a congregation+town pair), alongside “School for Ministry”, “Florida Gulf Coast University, Ft. Myers”, and “Episcopal College Chaplaincies: College of Florida Chaplaincy, Bradenton” (this last one's own internal colon and comma preserved verbatim as printed).",
+    "“St. Paul’s Wesley Chapel” (Feb. 1/May 10/Aug. 16/Nov. 22 Tampa Deanery group) is the only congregation entry in the whole source printed with no comma between the congregation's own name and its place, unlike every other congregation entry (all printed “Name, Place”) — parsed here as name “St. Paul’s”, place “Wesley Chapel”, inferring the split from the real Pasco County, FL community of that name (near several other Tampa Deanery congregations in this same group) rather than from a printed comma; disclosed per-subject in that entry's own `note` field as well.",
+    "“...and the seminarians of the Diocese of Southwest Florida” (Mar. 29/Jul. 5/Oct. 11 group) is capitalized here to “The seminarians of the Diocese of Southwest Florida” so it reads as a standalone subject name, since in the source it begins lower-case only because it falls mid-sentence after “...and” — the same treatment this corpus's Missouri file already applies to a lead-in-stripped subject that would otherwise start mid-sentence in lower case. No other wording was changed.",
+    "Minor punctuation inconsistencies in the source's own date-list headings were preserved but did not affect which calendar date was used: “Nov 8” and “Aug 30” print without the period used after every other abbreviated month name (“Nov.”, “Aug.” elsewhere), and the Feb. 22/May 31/Sept. 6/Dec. 13 heading uses a comma after “Feb. 22” where every other heading uses a semicolon between its four dates. All confirmed directly against the page's raw HTML, not just a rendered/extracted text pass.",
+    "The page's own <title>/browser-tab text calls the diocese the “Episcopal Diocese of Southwest Florida”, but its body content and footer consistently self-identify simply as “Diocese of Southwest Florida” (e.g. “Diocese of Southwest Florida — The Rt. Rev. Douglas F. Scharf” in the Every-Sunday block, “Retired clergy of the Diocese of Southwest Florida”, and the page footer's own copyright line) — `diocese` uses this more consistent, repeated body form rather than the page-title form.",
+    "No liturgical Sunday name/Proper number is printed anywhere in the source for any date (only a general note that “2026 falls in Lectionary Year A”, which is not tied to any specific Sunday) — `liturgicalNote` is null on every entry.",
+    "This source is plain single-column HTML prose (a WordPress page), not a PDF, so there was no multi-column interleaving risk; every group above was checked directly against the page's own raw HTML markup (not only a rendered text extraction) before transcribing."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal",
+          "place": "Largo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "New Port Richey"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alfred’s",
+          "place": "Palm Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Safety Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Spring Hill"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Tarpon Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne of Grace",
+          "place": "Seminole"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Giles’",
+          "place": "Pinellas Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s Cathedral",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Vincent’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Dade City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Brooksville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Plant City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Sun City Center"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Chad’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Tampa"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James’ House of Prayer",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine’s",
+          "place": "Temple Terrace"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Innocents Church",
+          "place": "Valrico"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Wesley Chapel",
+          "note": "Printed in the source as “St. Paul’s Wesley Chapel” with no comma between name and place, unlike every other congregation entry in this document (all printed as “Name, Place”) — place inferred from the real Pasco County community of Wesley Chapel, FL."
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth’s",
+          "place": "Zephyrhills"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Edmund’s",
+          "place": "Arcadia"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Holmes Beach"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels by the Sea",
+          "place": "Longboat Key"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Osprey"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Palmetto"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Apostles",
+          "place": "Parrish"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Siesta Key"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Wilfred’s",
+          "place": "Sarasota"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Boca Grande"
+        },
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Englewood"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Punta Gorda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nathaniel’s",
+          "place": "North Port"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’",
+          "place": "Port Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Venice"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Venice"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Cape Coral"
+        },
+        {
+          "type": "parish",
+          "name": "Iona-Hope",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "Lamb of God",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Hilary’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Raphael’s",
+          "place": "Fort Myers Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "LaBelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anselm’s",
+          "place": "Lehigh Acres"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls’",
+          "place": "North Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Sanibel"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Pine Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Bonita Springs"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Marco Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Monica’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity-by-the-Cove",
+          "place": "Naples"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Smith Center, DaySpring Episcopal Conference Center"
+        },
+        {
+          "type": "category",
+          "name": "St. Thomas Chapel"
+        },
+        {
+          "type": "category",
+          "name": "Camp Dayspring"
+        },
+        {
+          "type": "category",
+          "name": "Youth and Young Adult Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Cursillo of SWFL"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Charities of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "St. Anselm’s Chapel, University of South Florida Chapel Center"
+        },
+        {
+          "type": "category",
+          "name": "Florida Gulf Coast University, Ft. Myers"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal College Chaplaincies: College of Florida Chaplaincy, Bradenton"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired clergy of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Clergy spouses and widows of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Schools in the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "The seminarians of the Diocese of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Samaritan",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Dunedin"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Indian Rocks Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal",
+          "place": "Largo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "New Port Richey"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alfred’s",
+          "place": "Palm Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Safety Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Spring Hill"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Tarpon Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne of Grace",
+          "place": "Seminole"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Giles’",
+          "place": "Pinellas Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s Cathedral",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Vincent’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Dade City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Brooksville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Plant City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Sun City Center"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Chad’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Tampa"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James’ House of Prayer",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine’s",
+          "place": "Temple Terrace"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Innocents Church",
+          "place": "Valrico"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Wesley Chapel",
+          "note": "Printed in the source as “St. Paul’s Wesley Chapel” with no comma between name and place, unlike every other congregation entry in this document (all printed as “Name, Place”) — place inferred from the real Pasco County community of Wesley Chapel, FL."
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth’s",
+          "place": "Zephyrhills"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Edmund’s",
+          "place": "Arcadia"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Holmes Beach"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels by the Sea",
+          "place": "Longboat Key"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Osprey"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Palmetto"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Apostles",
+          "place": "Parrish"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Siesta Key"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Wilfred’s",
+          "place": "Sarasota"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Boca Grande"
+        },
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Englewood"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Punta Gorda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nathaniel’s",
+          "place": "North Port"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’",
+          "place": "Port Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Venice"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Venice"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Cape Coral"
+        },
+        {
+          "type": "parish",
+          "name": "Iona-Hope",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "Lamb of God",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Hilary’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Raphael’s",
+          "place": "Fort Myers Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "LaBelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anselm’s",
+          "place": "Lehigh Acres"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls’",
+          "place": "North Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Sanibel"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Pine Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Bonita Springs"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Marco Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Monica’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity-by-the-Cove",
+          "place": "Naples"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Smith Center, DaySpring Episcopal Conference Center"
+        },
+        {
+          "type": "category",
+          "name": "St. Thomas Chapel"
+        },
+        {
+          "type": "category",
+          "name": "Camp Dayspring"
+        },
+        {
+          "type": "category",
+          "name": "Youth and Young Adult Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Cursillo of SWFL"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Charities of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "St. Anselm’s Chapel, University of South Florida Chapel Center"
+        },
+        {
+          "type": "category",
+          "name": "Florida Gulf Coast University, Ft. Myers"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal College Chaplaincies: College of Florida Chaplaincy, Bradenton"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired clergy of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Clergy spouses and widows of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Schools in the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "The seminarians of the Diocese of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Samaritan",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Dunedin"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Indian Rocks Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal",
+          "place": "Largo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "New Port Richey"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alfred’s",
+          "place": "Palm Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Safety Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Spring Hill"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Tarpon Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne of Grace",
+          "place": "Seminole"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Giles’",
+          "place": "Pinellas Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s Cathedral",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Vincent’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Dade City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Brooksville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Plant City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Sun City Center"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Chad’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Tampa"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James’ House of Prayer",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine’s",
+          "place": "Temple Terrace"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Innocents Church",
+          "place": "Valrico"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Wesley Chapel",
+          "note": "Printed in the source as “St. Paul’s Wesley Chapel” with no comma between name and place, unlike every other congregation entry in this document (all printed as “Name, Place”) — place inferred from the real Pasco County community of Wesley Chapel, FL."
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth’s",
+          "place": "Zephyrhills"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Edmund’s",
+          "place": "Arcadia"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Holmes Beach"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels by the Sea",
+          "place": "Longboat Key"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Osprey"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Palmetto"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Apostles",
+          "place": "Parrish"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Siesta Key"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Wilfred’s",
+          "place": "Sarasota"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Boca Grande"
+        },
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Englewood"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Punta Gorda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nathaniel’s",
+          "place": "North Port"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’",
+          "place": "Port Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Venice"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Venice"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Cape Coral"
+        },
+        {
+          "type": "parish",
+          "name": "Iona-Hope",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "Lamb of God",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Hilary’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Raphael’s",
+          "place": "Fort Myers Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "LaBelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anselm’s",
+          "place": "Lehigh Acres"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls’",
+          "place": "North Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Sanibel"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Pine Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Bonita Springs"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Marco Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Monica’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity-by-the-Cove",
+          "place": "Naples"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Smith Center, DaySpring Episcopal Conference Center"
+        },
+        {
+          "type": "category",
+          "name": "St. Thomas Chapel"
+        },
+        {
+          "type": "category",
+          "name": "Camp Dayspring"
+        },
+        {
+          "type": "category",
+          "name": "Youth and Young Adult Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Cursillo of SWFL"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Charities of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "St. Anselm’s Chapel, University of South Florida Chapel Center"
+        },
+        {
+          "type": "category",
+          "name": "Florida Gulf Coast University, Ft. Myers"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal College Chaplaincies: College of Florida Chaplaincy, Bradenton"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired clergy of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Clergy spouses and widows of the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Schools in the Diocese of Southwest Florida"
+        },
+        {
+          "type": "category",
+          "name": "The seminarians of the Diocese of Southwest Florida"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Samaritan",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Clearwater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Dunedin"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Indian Rocks Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Resurrection Episcopal",
+          "place": "Largo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "New Port Richey"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alfred’s",
+          "place": "Palm Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Safety Harbor"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Spring Hill"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Tarpon Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne of Grace",
+          "place": "Seminole"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Giles’",
+          "place": "Pinellas Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s Cathedral",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "St. Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Vincent’s",
+          "place": "St. Petersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Dade City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Brooksville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Plant City"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Sun City Center"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Chad’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Tampa"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James’ House of Prayer",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Tampa"
+        },
+        {
+          "type": "parish",
+          "name": "St. Catherine’s",
+          "place": "Temple Terrace"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Innocents Church",
+          "place": "Valrico"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Wesley Chapel",
+          "note": "Printed in the source as “St. Paul’s Wesley Chapel” with no comma between name and place, unlike every other congregation entry in this document (all printed as “Name, Place”) — place inferred from the real Pasco County community of Wesley Chapel, FL."
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth’s",
+          "place": "Zephyrhills"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Edmund’s",
+          "place": "Arcadia"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Bradenton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Annunciation",
+          "place": "Holmes Beach"
+        },
+        {
+          "type": "parish",
+          "name": "All Angels by the Sea",
+          "place": "Longboat Key"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Osprey"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Palmetto"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Apostles",
+          "place": "Parrish"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Siesta Key"
+        },
+        {
+          "type": "parish",
+          "name": "St. Margaret of Scotland",
+          "place": "Sarasota"
+        },
+        {
+          "type": "parish",
+          "name": "St. Wilfred’s",
+          "place": "Sarasota"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Boca Grande"
+        },
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Englewood"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Punta Gorda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nathaniel’s",
+          "place": "North Port"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’",
+          "place": "Port Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Venice"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Venice"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Cape Coral"
+        },
+        {
+          "type": "parish",
+          "name": "Iona-Hope",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "Lamb of God",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Hilary’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Raphael’s",
+          "place": "Fort Myers Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "LaBelle"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anselm’s",
+          "place": "Lehigh Acres"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls’",
+          "place": "North Fort Myers"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Sanibel"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Pine Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Bonita Springs"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Marco Island"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Monica’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Naples"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity-by-the-Cove",
+          "place": "Naples"
+        }
+      ]
+    }
+  ]
+}

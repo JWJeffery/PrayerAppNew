@@ -1,0 +1,395 @@
+{
+  "id": "episcopal-upper-south-carolina-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Upper South Carolina",
+  "dioceseShort": "upper-south-carolina",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer – 2025-2026 – Year A",
+  "sourceFile": "\"EDUSC_Diocesan_Cycle_of_Prayer_2025-2026.pdf\", fetched directly from https://www.edusc.org/wp-content/uploads/2026/08/EDUSC_Diocesan_Cycle_of_Prayer_2025-2026.pdf. The diocese’s roster-listed URL (https://www.edusc.org/wp-content/uploads/sites/68/files/EDUSC-Diocesan-Cycle-of-Prayer-2025-2026.pdf) returned HTTP 404; the working URL above was found via the diocese’s own site search and is linked from its own resources page, https://www.edusc.org/resources/edusc-diocesan-cycle-of-prayer-2025-2026/ -- same document, current hosting location as of 2026-09-29.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source is one continuous cycle titled \"Diocesan Cycle of Prayer – 2025-2026 – Year A\", running November 30, 2025 (First Sunday of Advent) through November 22, 2026 (Last Sunday after Pentecost: Christ the King) -- a single liturgical year. Per this schema’s own ’one file per diocese per year’ rule and this corpus’s existing precedent for the identical shape of source (episcopal-oklahoma-2026.json, episcopal-atlanta-2026.json, episcopal-north-carolina-2026.json, episcopal-south-dakota-2026.json), only the 47 weeks landing in calendar 2026 (January 4 - November 22) are included here. This is a disclose-and-exclude, not a two-file split, because the 2025 portion is only 5 weeks -- far short of the substantial, roughly-comparable portions that justified a two-file split in this corpus’s Delaware (17 vs. 35 entries) and Southeast Florida precedents. The five excluded 2025 weeks, transcribed here for completeness rather than fabricated or force-fit into this file: Nov. 30, 2025 (The First Sunday of Advent) - St. Andrew’s, Greenville; Church of the Advent, Spartanburg; Dec. 7, 2025 (The Second Sunday of Advent) - Ministry of Church Musicians; Dec. 14, 2025 (The Third Sunday of Advent) - St. Thomas, Eastover; Dec. 21, 2025 (The Fourth Sunday of Advent) - St. Stephen’s, Ridgeway; St. John’s, Columbia; St. John’s, Winnsboro; St. John’s - Congaree, Hopkins; Dec. 28, 2025 (The First Sunday after Christmas Day) - Church of the Incarnation, Gaffney; Church of the Nativity, Union. They would need their own episcopal-upper-south-carolina-2025.json if ever ingested.",
+    "The source is a single-column, three-page table (Date / Designation / Prayers Commended), not a multi-column grid -- confirmed by rendering all three pages as images (150 dpi) and visually checking row/cell order against pdftotext -layout’s linearized extraction before trusting it, per this corpus’s standing rule for sources with any multi-column layout risk. The two matched exactly; there was no interleaving to correct.",
+    "A blank Date cell means ’same date as the row above’, per this schema’s standing grouping rule; all such rows are folded into the preceding date’s `subjects` array in the order printed.",
+    "liturgicalNote is transcribed exactly as the source prints it for each row, including its own inconsistent use of a leading ’The’ (e.g. ’The First Sunday in Lent’ but plain ’Easter Day’, ’All Saints’ Day’, and ’Last Sunday after Pentecost: Christ the King’) -- not normalized to a single house style.",
+    "May 31: the source prints this date’s designation as two stacked lines, ’The First Sunday after Pentecost’ and ’Trinity Sunday’, with NO colon or other punctuation joining them in the source itself -- unlike March 29’s ’The Sunday of the Passion:’ / ’Palm Sunday’, which does carry a printed colon, and May 24’s ’The Day of Pentecost:’ / ’Whitsunday’, which also does. Joined here as ’The First Sunday after Pentecost: Trinity Sunday’ for readability, following this corpus’s own colon convention for combined two-line designations elsewhere (e.g. episcopal-oklahoma-2026.json, episcopal-massachusetts-2026.json) -- this specific colon is an editorial join, not something the source itself printed on this one row, unlike the other combined designations in this file.",
+    "July 26: the source misspells ’Ninth’ as ’Nineth’ (’The Nineth Sunday after Pentecost (Proper 12)’) -- preserved exactly as printed, not silently corrected.",
+    "July 19: ’The Ministry of the Commission on Mission and Internation Concerns’ -- ’Internation’ is an apparent misspelling of ’International’, preserved exactly as printed.",
+    "August 23: ’The Bishops Public Education Initiative’ prints ’Bishops’ with no apostrophe (likely intended as \"Bishop’s\") -- preserved exactly as printed, not corrected.",
+    "October 4: ’St Francis of Assisi, Chapin’ prints ’St’ with no period, inconsistent with this same row’s own ’St. Francis, Greenville’ and every other ’St.’ abbreviation in the source -- preserved exactly as printed.",
+    "May 3 prints ’St. James, Greenville’ with no apostrophe, while July 19 prints the same-named parish as ’St. James’, Greenville’ with one -- both preserved exactly as printed in their own rows rather than normalized to match each other.",
+    "August 30: ’The work of the Community of Hope and Education for Ministry’ prints a lower-case ’work’ opening the line (mid-sentence style) unlike every other category subject in this file, which opens capitalized -- preserved exactly as printed.",
+    "February 1: ’Church of the Ridge: Edgefield, Ridge Spring and Trenton’ is transcribed as a single `parish` subject -- name ’Church of the Ridge’, place ’Edgefield, Ridge Spring and Trenton’ -- rather than split into three subjects or recorded as a `category`, since ’Church of the Ridge’ is this congregation’s own single name for a parish that serves all three towns together (the diocese’s own real-world yoked parish of that name), and the source’s own colon-then-list punctuation reads as one entity’s name followed by its multi-town place, not three separate named congregations. This is the only row in the file using a colon rather than a comma between congregation name and place, disclosed here as a structural judgment call.",
+    "May 31: ’Holy Trinity, Clemson and Historic St. Paul’s, Pendleton’ is transcribed as two separate `parish` subjects (’Holy Trinity’, Clemson; ’Historic St. Paul’s’, Pendleton) rather than folded into one, since -- unlike the Church of the Ridge case above -- these are two distinctly named, separately located congregations joined only by ’and’, matching this corpus’s existing Northwest Texas precedent for the same pattern (two named congregations sharing one row, split into two `parish` subjects).",
+    "October 25: ’St. Simon and St. Jude, Irmo’ is kept as ONE `parish` subject (not split), since this is a single congregation’s own two-saint dedication name (The Episcopal Church of St. Simon and St. Jude, Irmo, SC), not two separate congregations -- distinguished from the Holy Trinity/St. Paul’s case above, where ’and’ joins two independently named, separately located parishes.",
+    "’Voorhees College’ (January 18) is recorded as `category`, not `parish`, since the source gives no town/city for it and a college is not itself a congregation.",
+    "’Ministry of the Convent of St. Helena, North Augusta’ (March 8), ’Gravatt Camp & Conference Center, Aiken’ (July 12), and ’Still Hopes and Finlay House Retirement Communities’ (July 26) are recorded as `category` subjects with the place folded into `name`, not `parish`, consistent with this corpus’s existing precedent for a convent/religious order, a diocesan camp and conference center, and a senior-living community (episcopal-oklahoma-2026.json’s ’St. Crispin’s Conference Center, Wewoka’ and ’St. Simeon’s Home, Tulsa’). This is distinct from ’Chapel of the Holy Spirit – Still Hopes, West Columbia’ (May 24), which names a specific worshipping chapel within the Still Hopes community and is recorded as `parish`.",
+    "’Still Hopes and Finlay House Retirement Communities’ (July 26) is kept as ONE `category` subject rather than split into two, since the source’s plural ’Retirement Communities’ reads as one descriptive phrase spanning both named communities rather than two independently labeled entities.",
+    "Retreats (Vocare Young Adult Retreat, High School Winter Retreat, Happening #94 Retreat, New Beginnings Middle School Retreat, 5th Grade Bridge Retreat) and diocesan-wide ministries/offices/commissions (e.g. Diocesan Commission on Ministry, Seminarians of the Diocese, Diocesan Canterbury College Ministries, Diocesan Ministry to Retired Clergy, Ministry of the Diocesan Chapters of the Order of the Daughters of the King) are all recorded as `category` subjects, none naming a specific congregation.",
+    "November 1 (All Saints’ Day, transferred to the nearest Sunday) is followed by November 8’s designation ’The Twenty-fourth Sunday after Pentecost (Proper 27)’ -- the source’s own Proper numbering jumps from Proper 25 (October 25) to Proper 27 (November 8) with no ’Twenty-third Sunday’/Proper 26 row printed anywhere, since that week’s date was instead labeled for All Saints’ Day. Preserved exactly as the source sequences it, not corrected or re-numbered.",
+    "Apostrophes throughout the source are the curly right single quotation mark (U+2019) exclusively -- no straight apostrophes appear anywhere in the source text -- and one en dash appears in the phrase \"Chapel of the Holy Spirit – Still Hopes, West Columbia\"; both are preserved exactly as printed rather than normalized to plain ASCII.",
+    "The diocese’s own full name, ’The Episcopal Diocese of Upper South Carolina’, is taken verbatim from the source document’s own title-page header/logo."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "The Second Sunday after Christmas Day",
+      "subjects": [
+        { "type": "parish", "name": "Grace Church", "place": "Anderson" }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "The First Sunday after the Epiphany: The Baptism of Our Lord Jesus Christ",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Epiphany", "place": "Laurens" },
+        { "type": "parish", "name": "Church of the Epiphany", "place": "Spartanburg" }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "The Second Sunday after the Epiphany",
+      "subjects": [
+        { "type": "category", "name": "Voorhees College" }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Third Sunday after the Epiphany",
+      "subjects": [
+        { "type": "parish", "name": "St. Timothy’s", "place": "Columbia" }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "The Fourth Sunday after the Epiphany",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Ridge", "place": "Edgefield, Ridge Spring and Trenton" },
+        { "type": "category", "name": "Vocare Young Adult Retreat" }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "The Fifth Sunday after the Epiphany",
+      "subjects": [
+        { "type": "category", "name": "Ministry of Partnership Haiti" }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "The Last Sunday after the Epiphany",
+      "subjects": [
+        { "type": "parish", "name": "Grace Church", "place": "Camden" }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday in Lent",
+      "subjects": [
+        { "type": "category", "name": "High School Winter Retreat" }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "The Second Sunday in Lent",
+      "subjects": [
+        { "type": "parish", "name": "St. David’s", "place": "Columbia" }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "The Third Sunday in Lent",
+      "subjects": [
+        { "type": "category", "name": "Ministry of the Convent of St. Helena, North Augusta" }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "The Fourth Sunday in Lent",
+      "subjects": [
+        { "type": "parish", "name": "Church of Our Saviour", "place": "Rock Hill" },
+        { "type": "category", "name": "Happening #94 Retreat" }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "The Fifth Sunday in Lent",
+      "subjects": [
+        { "type": "category", "name": "Ministry of the Diocesan House Staff" }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "The Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        { "type": "parish", "name": "Calvary Church", "place": "Glenn Springs" },
+        { "type": "parish", "name": "Church of the Redeemer", "place": "Greenville" },
+        { "type": "category", "name": "The Ministry of Altar and Flower Guilds" }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Resurrection", "place": "Greenwood" }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "The Second Sunday of Easter",
+      "subjects": [
+        { "type": "category", "name": "New Beginnings Middle School Retreat" },
+        { "type": "category", "name": "Diocesan Commission on Ministry" }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "The Third Sunday of Easter",
+      "subjects": [
+        { "type": "parish", "name": "St. George’s", "place": "Anderson" },
+        { "type": "category", "name": "Seminarians of the Diocese" }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "The Fourth Sunday of Easter",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Good Shepherd", "place": "Columbia" },
+        { "type": "parish", "name": "Church of the Good Shepherd", "place": "Greer" },
+        { "type": "parish", "name": "Church of the Good Shepherd", "place": "York" },
+        { "type": "category", "name": "5th Grade Bridge Retreat" }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "The Fifth Sunday of Easter",
+      "subjects": [
+        { "type": "parish", "name": "St. Philip’s", "place": "Greenville" },
+        { "type": "parish", "name": "St. James", "place": "Greenville" }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "The Sixth Sunday of Easter",
+      "subjects": [
+        { "type": "category", "name": "Ministry of the Commission for Congregations" }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "The Seventh Sunday of Easter",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Ascension", "place": "Seneca" }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "The Day of Pentecost: Whitsunday",
+      "subjects": [
+        { "type": "parish", "name": "St. Augustine of Canterbury", "place": "Aiken" },
+        { "type": "parish", "name": "Chapel of the Holy Spirit – Still Hopes", "place": "West Columbia" }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "The First Sunday after Pentecost: Trinity Sunday",
+      "subjects": [
+        { "type": "parish", "name": "Trinity Church", "place": "Abbeville" },
+        { "type": "parish", "name": "Trinity Cathedral", "place": "Columbia" },
+        { "type": "parish", "name": "Holy Trinity", "place": "Clemson" },
+        { "type": "parish", "name": "Historic St. Paul’s", "place": "Pendleton" }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "The Second Sunday after Pentecost (Proper 5)",
+      "subjects": [
+        { "type": "parish", "name": "St. Barnabas", "place": "Jenkinsville" }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "The Third Sunday after Pentecost (Proper 6)",
+      "subjects": [
+        { "type": "parish", "name": "St. Alban’s", "place": "Lexington" }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "The Fourth Sunday after Pentecost (Proper 7)",
+      "subjects": [
+        { "type": "parish", "name": "St. Peter’s", "place": "Greenville" },
+        { "type": "parish", "name": "St. Peter’s", "place": "Great Falls" },
+        { "type": "parish", "name": "St. Christopher’s", "place": "Spartanburg" }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "The Fifth Sunday after Pentecost (Proper 8)",
+      "subjects": [
+        { "type": "parish", "name": "St. Paul’s", "place": "Batesburg" },
+        { "type": "parish", "name": "St. Paul’s", "place": "Fort Mill" },
+        { "type": "parish", "name": "St. Paul’s", "place": "Graniteville" }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The Sixth Sunday after Pentecost (Proper 9)",
+      "subjects": [
+        { "type": "category", "name": "Diocesan Canterbury College Ministries" }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "The Seventh Sunday after Pentecost (Proper 10)",
+      "subjects": [
+        { "type": "category", "name": "Gravatt Camp & Conference Center, Aiken" }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "The Eighth Sunday after Pentecost (Proper 11)",
+      "subjects": [
+        { "type": "parish", "name": "St. James’", "place": "Greenville" },
+        { "type": "category", "name": "The Ministry of the Commission on Mission and Internation Concerns" }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "The Nineth Sunday after Pentecost (Proper 12)",
+      "subjects": [
+        { "type": "category", "name": "Still Hopes and Finlay House Retirement Communities" }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "The Tenth Sunday after Pentecost (Proper 13)",
+      "subjects": [
+        { "type": "category", "name": "Diocesan Ministry to Retired Clergy" }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "The Eleventh Sunday after Pentecost (Proper 14)",
+      "subjects": [
+        { "type": "parish", "name": "St. Mary’s", "place": "Columbia" },
+        { "type": "category", "name": "The Ministry of the Deans and Lay Wardens of Deaneries" }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "The Twelfth Sunday after Pentecost (Proper 15)",
+      "subjects": [
+        { "type": "category", "name": "Ministry of the Diocesan Chapters of the Order of the Daughters of the King" }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "The Thirteenth Sunday after Pentecost (Proper 16)",
+      "subjects": [
+        { "type": "parish", "name": "St. Bartholomew’s", "place": "North Augusta" },
+        { "type": "category", "name": "The Bishops Public Education Initiative" }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "The Fourteenth Sunday after Pentecost (Proper 17)",
+      "subjects": [
+        { "type": "category", "name": "The work of the Community of Hope and Education for Ministry" }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "The Fifteenth Sunday after Pentecost (Proper 18)",
+      "subjects": [
+        { "type": "category", "name": "Ministry of Christian Formation Leaders and the Commission on Christian Formation" }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "The Sixteenth Sunday after Pentecost (Proper 19)",
+      "subjects": [
+        { "type": "parish", "name": "Church of the Cross", "place": "Columbia" },
+        { "type": "parish", "name": "Holy Cross", "place": "Simpsonville" }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "The Seventeenth Sunday after Pentecost (Proper 20)",
+      "subjects": [
+        { "type": "parish", "name": "St. Matthew’s", "place": "Spartanburg" }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "The Eighteenth Sunday after Pentecost (Proper 21)",
+      "subjects": [
+        { "type": "parish", "name": "St. Michael’s", "place": "Easley" },
+        { "type": "parish", "name": "St. Michael & All Angels’", "place": "Columbia" }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "The Nineteenth Sunday after Pentecost (Proper 22)",
+      "subjects": [
+        { "type": "parish", "name": "St Francis of Assisi", "place": "Chapin" },
+        { "type": "parish", "name": "St. Francis", "place": "Greenville" }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "The Twentieth Sunday after Pentecost (Proper 23)",
+      "subjects": [
+        { "type": "parish", "name": "St. Luke’s", "place": "Columbia" },
+        { "type": "parish", "name": "St. Luke’s", "place": "Newberry" }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "The Twenty-first Sunday after Pentecost (Proper 24)",
+      "subjects": [
+        { "type": "category", "name": "The Ministry of Education Equals Hope in Ecuador" }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "The Twenty-second Sunday after Pentecost (Proper 25)",
+      "subjects": [
+        { "type": "parish", "name": "St. Simon and St. Jude", "place": "Irmo" },
+        { "type": "parish", "name": "St. Thaddeus", "place": "Aiken" }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints’ Day",
+      "subjects": [
+        { "type": "parish", "name": "All Saints’", "place": "Cayce" },
+        { "type": "parish", "name": "All Saints’", "place": "Clinton" }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "The Twenty-fourth Sunday after Pentecost (Proper 27)",
+      "subjects": [
+        { "type": "parish", "name": "St. Martin’s-in-the-Fields", "place": "Columbia" }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "The Twenty-fifth Sunday after Pentecost (Proper 28)",
+      "subjects": [
+        { "type": "parish", "name": "St. Margaret’s", "place": "Boiling Springs" }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost: Christ the King (Proper 29)",
+      "subjects": [
+        { "type": "parish", "name": "Christ Church", "place": "Greenville" },
+        { "type": "parish", "name": "Christ Church", "place": "Lancaster" }
+      ]
+    }
+  ]
+}

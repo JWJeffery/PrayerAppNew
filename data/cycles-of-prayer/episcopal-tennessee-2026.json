@@ -1,0 +1,633 @@
+{
+  "id": "episcopal-tennessee-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Tennessee",
+  "dioceseShort": "tennessee",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer 2024-2025",
+  "sourceFile": "\"Liturgical Resources\" page (“Diocesan Cycle of Prayer 2024-2025” section), fetched directly from https://edtn.org/resources/liturgical-resources/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Confirming this is the Diocese of Tennessee (Nashville-based, covering Middle Tennessee) and NOT the Diocese of East Tennessee or the Diocese of West Tennessee: the source URL is edtn.org, and every self-identification printed on the page itself -- the <title> tag (“Liturgical Resources | Episcopal Diocese of Tennessee - Open, Obedient, Responsive”), the Open Graph og:site_name, and the page's own embedded JSON-LD Organization name -- reads “Episcopal Diocese of Tennessee” with no “East” or “West” qualifier anywhere on the page. Independently, every place name printed across all 52 entries of the cycle itself (Nashville, Antioch, Smyrna, Gallatin, Tullahoma, Tracy City, Franklin, McMinnville, Columbia, Shelbyville, Spring Hill, Brentwood, Murfreesboro, Clarksville, Winchester, Springfield, Manchester, Cookeville, Hendersonville, Madison, Dickson, Cumberland Furnace (printed \"CUmberland Furnace\"), Sewanee, and Fayetteville (printed \"Fayatteville\")) is a Middle Tennessee location within the Diocese of Tennessee's own territory -- no East Tennessee place (e.g. Knoxville, Chattanooga, the Tri-Cities) or West Tennessee place (e.g. Memphis) appears anywhere in the cycle.",
+    "`diocese` field: the site's <title> tag, og:site_name, and JSON-LD Organization name all consistently read “Episcopal Diocese of Tennessee” (no leading “The”); only the footer logo's alt text alone reads “The Episcopal Diocese of Tennessee.” The more consistently repeated form (without “The”) was used here as the diocese's own self-identification.",
+    "The source is a single, undated-boundary rolling list of 52 consecutive Sunday dates running November 2, 2025 through October 25, 2026 (every date independently verified to fall on a Sunday). Per this schema's 'one file per diocese per year' rule and this corpus's existing precedent for a source whose own range spans a year boundary (episcopal-california-2026.json, episcopal-nevada-2026.json, episcopal-san-diego-2026.json), the 9 entries that fall in calendar year 2025 (November and December 2025) are included in this '-2026' file rather than split into a companion '-2025' file: unlike episcopal-southeast-florida-2026.json/-2027.json (a genuine ~one-third/two-thirds split, warranting two files), here the 2025 portion is a small 9-of-52 lead-in to the 2026 cycle, matching the lead-in shape of the California/Nevada/San Diego precedent rather than the Southeast Florida shape.",
+    "The page's own section heading reads “Diocesan Cycle of Prayer 2024-2025” even though every date actually listed beneath it runs November 2025 through October 2026 -- an apparent stale/un-updated heading left over from a prior edition of this page. Transcribed verbatim into the `source` field rather than corrected or silently updated to match the actual date range.",
+    "Two congregations recur near the end of the displayed window with the same identity as near its start, differently punctuated each time: “CHURCH OF OUR SAVIOUR, GALLATIN” (Nov. 9, 2025) recurs as “Church of Our Saviour, Gallatin” (Oct. 18, 2026), and “ST. BARNABAS’ CHURCH, TULLAHOMA” (Nov. 16, 2025) recurs as “St. Barnabas Church, Tullahoma” (Oct. 25, 2026, no apostrophe-S). This indicates the diocese's underlying prayer-cycle roster is shorter than the 52-week window the page currently displays and has already begun repeating by the time the window ends. Not a transcription error -- both occurrences are recorded exactly as separately printed, without merging, correcting, or omitting either.",
+    "Typos/irregularities preserved verbatim rather than corrected, per this schema's own rule: “Fayatteville” for Fayetteville (Mar. 15); “St. Greorge’s” for George's (May 10); “ST. JAME’S CHURCH” for James' (Aug. 30); “Clavary CHurch, CUmberland Furnace” for Calvary Church, Cumberland Furnace, including its own internal irregular capitalization (Sep. 13); “ALL COMMITTEES & COMMISSIONS OF THE DIOCESE TENNESSEE” missing the word “OF” before TENNESSEE (Jul. 5); inconsistent “ST”/“ST.”/“St.” abbreviation punctuation across entries (e.g. “ST BARTHOLOMEW’S CHURCH” with no period, Apr. 12; “ST MARY’S RETREAT CENTER” with no period alongside “ST. MARY’S CONVENT” with one, both in the same Jul. 12 entry); and mid-phrase capitalization irregularities (“The Parish of St. Mark and ST. Paul,” Apr. 19; “CHURCH OF St. James the Less,” Sep. 6; “CHURCH OF Holy Cross,” Sep. 20).",
+    "The source alternates unpredictably, entry to entry, between printing a congregation's full name/place in ALL CAPS versus ordinary title case (e.g. “ALL SAINTS’ CHURCH, SMYRNA” vs. “Church of the Epiphany, Lebanon”) -- this is a pervasive, source-wide formatting inconsistency, not normalized or made consistent here.",
+    "Minor HTML whitespace (not treated as a source typo, since it is ordinary web-markup formatting rather than printed document text): a double space before “Murfreesboro” in the May 24 entry, and a trailing space after “The Dandridge Trust Committee” (Sep. 27), were both collapsed to normal spacing.",
+    "Several dates print two or three distinctly named subjects joined by “and”/“AND” in a single unbroken line, with no other delimiter in the source distinguishing them; each such line was split into separate `subjects` entries, in the order printed: Jan. 18 and Jan. 25 (a parish followed by that year's Annual Convention of the Diocese, as its own category), Mar. 1 (a parish followed by a school, as its own category), Jul. 12 (a retreat center and a convent, as two categories), Jul. 19 (two chapels, as two categories), Aug. 16 (a parish followed by the Electing Convention of the Diocese, as its own category), and Sep. 13 (two parishes followed by the Daughters of the King, as its own category). Conversely, “and” was NOT treated as a split point where it is plainly part of a single existing proper name rather than a list conjunction: “The Parish of St. Mark and ST. Paul, Sewanee” (Apr. 19, one combined-parish name) and “The Clergy and Staff of the Diocesan House” (Mar. 29, one descriptive category name).",
+    "Mar. 22's entry (“THE BISHOP & COUNCIL, FINANCE & PROPERTY, AND THE STANDING COMMITTEE OF THE DIOCESE OF TENNESSEE”) was split into three separate category subjects at its internal commas (keeping each “&” as part of that one body's own compound name), with the trailing qualifier “OF THE DIOCESE OF TENNESSEE” attached only to the third/nearest body (“The Standing Committee”) per its plain word order, rather than duplicated onto the first two -- a judgment call about how far a single trailing qualifier reaches back across a comma-and-list, disclosed here rather than resolved silently.",
+    "For the three category subjects split out of the Annual/Electing Convention lines (Jan. 18, Jan. 25, Aug. 16), the source's own lowercase leading “the” was kept verbatim as printed (e.g. “the 194th Annual Convention of the Diocese of Tennessee”) rather than recapitalized to look like a standalone category label.",
+    "Type judgment call for congregation-like entries that are not an ordinary parish: entries the source itself formats identically to its unambiguous parish entries (a bare Name, Place pair) -- “St. Augustine’s Chapel, Nashville” (Feb. 22) and “Grace Chapel, Clarksville” (Jun. 7) -- were recorded as `type: \"parish\"`, since the source's own formatting draws no distinction between these and its ordinary parishes. Entries naming an institution with no place-anchored congregational identity of its own -- the retreat center, convent, and two chapels named only alongside another chapel (Jul. 12, Jul. 19), the school (Mar. 1, Jul. 26), “the Daughters of the King” (Sep. 13), “THE EPISCOPAL CHURCH” (Dec. 28, 2025), and committees/conferences/youth/clergy-and-staff groupings -- were recorded as `type: \"category\"`.",
+    "Apr. 5, 2026 (“The church in Jerusalem”) is worded as a plain descriptive phrase, unlike every other entry's Name-comma-Place format, and is transcribed verbatim as a single category subject with no `place` field, since it does not follow the source's own parish Name, Place pattern.",
+    "No entry in this section carries a liturgical Sunday/season label anywhere in the source (no “Advent,” “Easter,” “Pentecost,” “Proper,” etc. is printed against any date), so `liturgicalNote` is null throughout, even though several dates are independently recognizable as notable Sundays.",
+    "The page also links out to the worldwide Anglican Cycle of Prayer (https://www.anglicancommunion.org/resources/cycle-of-prayer/download-the-acp.aspx) -- that is the separate, already-covered scope-'communion' worldwide cycle in this corpus, not part of the Diocese of Tennessee's own local cycle, and is excluded here."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ALL SAINTS’ CHURCH",
+          "place": "SMYRNA"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHURCH OF OUR SAVIOUR",
+          "place": "GALLATIN"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. BARNABAS’ CHURCH",
+          "place": "TULLAHOMA"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHRIST CHURCH",
+          "place": "TRACY CITY"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHURCH OF THE ADVENT",
+          "place": "NASHVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHRIST CHURCH CATHEDRAL",
+          "place": "NASHVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. DAVID’S CHURCH",
+          "place": "NASHVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. MARK’S CHURCH",
+          "place": "ANTIOCH"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "THE EPISCOPAL CHURCH"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Lebanon"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany Mission Church",
+          "place": "Sherwood"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Trinity",
+          "place": "Nashville"
+        },
+        {
+          "type": "category",
+          "name": "the 194th Annual Convention of the Diocese of Tennessee"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s Church",
+          "place": "Nashville"
+        },
+        {
+          "type": "category",
+          "name": "the 193rd Annual Convention of the Diocese of Tennessee"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHURCH OF THE HOLY SPIRIT",
+          "place": "NASHVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew’s Church",
+          "place": "McMinnville"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter’s Church",
+          "place": "Columbia"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine’s Chapel",
+          "place": "Nashville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Shelbyville"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew’s – Sewanee School"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "GRACE CHURCH",
+          "place": "SPRING HILL"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene Church",
+          "place": "Fayatteville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "THE BISHOP & COUNCIL"
+        },
+        {
+          "type": "category",
+          "name": "FINANCE & PROPERTY"
+        },
+        {
+          "type": "category",
+          "name": "THE STANDING COMMITTEE OF THE DIOCESE OF TENNESSEE"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Clergy and Staff of the Diocesan House"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The church in Jerusalem"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST BARTHOLOMEW’S CHURCH",
+          "place": "NASHVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Parish of St. Mark and ST. Paul",
+          "place": "Sewanee"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Brentwood"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Franklin"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Greorge’s Church",
+          "place": "Nashville"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s Church",
+          "place": "Franklin"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. PAUL’S CHURCH",
+          "place": "Murfreesboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Clarksville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Chapel",
+          "place": "Clarksville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Winchester"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Springfield"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bede’s Church",
+          "place": "Manchester"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "ALL COMMITTEES & COMMISSIONS OF THE DIOCESE TENNESSEE"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "ST MARY’S RETREAT CENTER, SEWANEE"
+        },
+        {
+          "type": "category",
+          "name": "ST. MARY’S CONVENT, SEWANEE"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "ALL SAINTS’ CHAPEL, SEWANEE"
+        },
+        {
+          "type": "category",
+          "name": "CHAPEL OF THE APOSTLES, SEWANEE"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal School of Nashville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Youth"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "THE EPISCOPAL LAYMEN’S CONFERENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann’s Church",
+          "place": "Nashville"
+        },
+        {
+          "type": "category",
+          "name": "the Electing Convention of the Diocese of Tennessee"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anselm’s Church",
+          "place": "Nashville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. JAME’S CHURCH",
+          "place": "Sewanee"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHURCH OF St. James the Less",
+          "place": "Madison"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Dickson"
+        },
+        {
+          "type": "parish",
+          "name": "Clavary CHurch",
+          "place": "CUmberland Furnace"
+        },
+        {
+          "type": "category",
+          "name": "the Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "CHURCH OF Holy Cross",
+          "place": "Murfreesboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Dandridge Trust Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "ST. MICHAEL’S CHURCH",
+          "place": "COOKEVILLE"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph of Arimathea Church",
+          "place": "Hendersonville"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Gallatin"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas Church",
+          "place": "Tullahoma"
+        }
+      ]
+    }
+  ]
+}
