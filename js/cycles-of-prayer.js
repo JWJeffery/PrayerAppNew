@@ -97,7 +97,13 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'south-carolina', label: 'The Episcopal Diocese of South Carolina' },
     { bodySlug: 'episcopal', dioceseShort: 'south-dakota', label: 'The Diocese of South Dakota' },
     { bodySlug: 'episcopal', dioceseShort: 'southeast-florida', label: 'The Episcopal Church in Southeast Florida' },
-    { bodySlug: 'episcopal', dioceseShort: 'southern-ohio', label: 'Diocese of Southern Ohio' }
+    { bodySlug: 'episcopal', dioceseShort: 'southern-ohio', label: 'Diocese of Southern Ohio' },
+    { bodySlug: 'episcopal', dioceseShort: 'southwest-florida', label: 'Diocese of Southwest Florida' },
+    { bodySlug: 'episcopal', dioceseShort: 'springfield', label: 'The Episcopal Diocese of Springfield' },
+    { bodySlug: 'episcopal', dioceseShort: 'susquehanna', label: 'Diocese of the Susquehanna' },
+    { bodySlug: 'episcopal', dioceseShort: 'tennessee', label: 'Episcopal Diocese of Tennessee' },
+    { bodySlug: 'episcopal', dioceseShort: 'texas', label: 'The Episcopal Diocese of Texas' },
+    { bodySlug: 'episcopal', dioceseShort: 'upper-south-carolina', label: 'The Episcopal Diocese of Upper South Carolina' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
@@ -463,23 +469,39 @@ function getCachedCycleOfPrayerWeek(dioceseKey, date) {
     const diocese = findCycleOfPrayerDiocese(dioceseKey);
 
     const corpus = getCachedCycleOfPrayerYear(dioceseKey, date.getFullYear());
-    if (!corpus) return null;
 
     if (diocese.cycleType === 'monthly-recurring') {
-        return resolveMonthlyRecurringEntry(corpus, date);
+        return corpus ? resolveMonthlyRecurringEntry(corpus, date) : null;
     }
     if (diocese.cycleType === 'annual-recurring') {
-        return resolveAnnualRecurringEntry(corpus, date);
+        return corpus ? resolveAnnualRecurringEntry(corpus, date) : null;
     }
     if (diocese.cycleType === 'ordinal-sunday-monthly') {
-        return resolveOrdinalSundayMonthlyEntry(corpus, date);
+        return corpus ? resolveOrdinalSundayMonthlyEntry(corpus, date) : null;
     }
 
     // The corpus's own declared year, not just the filename, gates use --
     // belt and suspenders against a future mis-filed file.
-    if (corpus.year !== date.getFullYear()) return null;
+    if (corpus && corpus.year === date.getFullYear()) {
+        return resolveCycleOfPrayerEntry(corpus, date);
+    }
 
-    return resolveCycleOfPrayerEntry(corpus, date);
+    // A 'dated' cycle's own source commonly leads in with a handful of
+    // dates from the tail of the PRIOR calendar year (see schema.json's
+    // own rules, and e.g. episcopal-california-2026.json/episcopal-
+    // tennessee-2026.json) -- those entries live inside the file NAMED for
+    // the following year, not a same-year file of their own. A query date
+    // that falls in such a lead-in has date.getFullYear() one less than
+    // the file it actually lives in; that file is already cached whenever
+    // "today" genuinely falls within it (the ordinary case), so check it
+    // before giving up. resolveCycleOfPrayerEntry naturally returns null
+    // if this date turns out not to be in that corpus's entries either.
+    const nextYearCorpus = getCachedCycleOfPrayerYear(dioceseKey, date.getFullYear() + 1);
+    if (nextYearCorpus) {
+        return resolveCycleOfPrayerEntry(nextYearCorpus, date);
+    }
+
+    return null;
 }
 
 /**

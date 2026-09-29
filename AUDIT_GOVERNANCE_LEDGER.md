@@ -25955,3 +25955,110 @@ Prayer office (correct date commemoration "Saint Michael and All Angels", both C
 present in the sidebar, drop-cap intact) -- applying the Morning-Prayer-forcing technique established in
 batch 10 up front. Zero new console errors beyond the pre-documented sandbox font-CDN block.
 `js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 13: Southwest Florida, Springfield,
+## Susquehanna, Tennessee, Texas, Upper South Carolina (6 dioceses, no blocks); a real app-level bug
+## discovered and fixed in getCachedCycleOfPrayerWeek's year-boundary resolution
+
+Josh: "Continue and I will grab those blocked items from you later." Seventh batch of parallel-
+subagent-dispatched ingestion, continuing alphabetically after Southern Ohio (Southern Virginia remains
+blocked from batch 12, held for Josh's later request). Six agents dispatched, all six succeeded.
+
+**Southwest Florida** (`episcopal-southwest-florida-2026.json`, source: diocesan web page). 52 entries,
+full year. The roster's own research note called this a "quarterly repeating cycle," flagged in this
+corpus's own governance notes as ambiguous and needing careful checking rather than assumption -- the
+dispatched agent fetched the raw page and found it is NOT a non-dated recurring cycle: it prints concrete
+calendar dates throughout. 14 distinct subject groups (11 deanery groups + 3 non-deanery category
+clusters) each recur on their own strict ~14-week period, and laid end to end across the full document
+these dates cover all 52 Sundays of 2026 exactly once each -- so this resolved cleanly to a genuine
+`dated`/2026 file, the same resolution pattern the ambiguous Missouri source hit earlier in this corpus.
+A standing "Every Sunday:" front-matter block (diocesan bishop + 4 companion dioceses, not tied to any
+date) was excluded from `entries` and disclosed instead, following this corpus's Michigan precedent.
+
+**Springfield** (`episcopal-springfield-2026.json`, source: diocesan PDF). 92 entries -- a genuine DAILY
+cycle. Only the current-quarter (July-September 2026) PDF is published on the diocese's own page as of
+ingestion, following the same partial-year-quarterly pattern already established for Missouri; no Q4
+link exists yet, so only Q3 was transcribed, disclosed rather than fabricated. Each day carries two
+parallel labeled cycles -- an "ANGLICAN CYCLE" line (the worldwide Anglican Cycle of Prayer, reprinted
+verbatim, recorded as `category`) and a "DIOCESAN CYCLE" line (Springfield's own local content, split
+into `parish`/`category` subjects as needed) -- mirroring Missouri's own treatment of its companion
+Diocese of Puerto Rico content. 23 of the 92 days combine unrelated content in one sentence and were
+manually split into separate subjects in source order.
+
+**Susquehanna** (`episcopal-susquehanna-2026.json`, source: diocesan PDF, "EDOTS-COP-2026-updated.pdf").
+52 entries, full year. Each week prints two parallel cycles -- the diocese's own parishes/categories AND
+its companion Diocese of Kajo Keji (Anglican Church of South Sudan) -- both folded into each date's
+`subjects` array, Susquehanna's own items first. Kajo Keji subjects are recorded as `category` throughout
+(except one week with an explicit place) since this schema reserves `diocese`/`province` subject types
+for scope-communion files and unfamiliar South Sudanese place names couldn't be independently verified.
+`diocese` field is "Diocese of the Susquehanna," transcribed exactly as printed in the document's own
+header (the "EDOTS" abbreviation never appears in the visible document text, only in the filename).
+
+**Tennessee** (`episcopal-tennessee-2026.json`, source: diocesan web page, cycle embedded directly in
+HTML). 52 entries, Nov 2, 2025-Oct 25, 2026. Confirmed distinct from the separate, no-source-found
+Diocese of East Tennessee and the not-yet-ingested Diocese of West Tennessee, both by domain/self-
+identification and by cross-checking every one of the ~25 place names against Middle Tennessee
+geography. The 9 entries falling in calendar 2025 were disclosed-and-included (not split into a second
+file) following the California/Nevada/San Diego precedent, since they're a minority lead-in rather than
+a roughly-even split.
+
+**Texas** (`episcopal-texas-2026.json`, source: the diocese's own live web page, parsed from rendered
+HTML). 17 entries, Sept 6-Dec 27, 2026 -- the diocese's own live cycle had not yet rolled into 2027 as
+of ingestion. Confirmed distinct from the separate Diocese of West Texas (San Antonio) and Diocese of
+Northwest Texas (Lubbock, already in this corpus) by the page's own footer address (1225 Texas Ave,
+Houston) and every place name transcribed. A standing weekly "Birthdays of:" line and several bishop-
+naming/convocation-header paragraphs with no date of their own were excluded, following this corpus's
+existing Puerto Rico precedent for a similar birthdays section.
+
+**Upper South Carolina** (`episcopal-upper-south-carolina-2026.json`, source: diocesan PDF, fetched from
+a working current URL after the roster-listed URL had gone stale/404'd). 47 entries. Confirmed distinct
+from the separate, already-ingested Diocese of South Carolina. Follows the Oklahoma/Atlanta/North
+Carolina/South Dakota "Advent [year-1]-[year]" disclose-and-exclude precedent for its own 5-week 2025
+lead-in (too small relative to the Delaware/Southeast Florida two-file-split precedent to warrant a
+second file). Distinguishes, with worked examples in `notes`, a single yoked parish spanning three towns
+("Church of the Ridge: Edgefield, Ridge Spring and Trenton", one `parish` subject with a compound
+`place`) from two separately named congregations sharing one source line ("Holy Trinity, Clemson and
+Historic St. Paul's, Pendleton", split into two `parish` subjects) -- the same distinction this corpus's
+Northwest Texas file established.
+
+**Bug found and fixed: `getCachedCycleOfPrayerWeek`'s year-boundary resolution in
+`js/cycles-of-prayer.js`.** Live-verifying Tennessee's own disclosed 2025 lead-in dates (per the
+California/Nevada/San Diego "disclose-and-include" precedent) surfaced a genuine, pre-existing
+app-level bug, not a data problem: the function looked up the cached corpus using
+`getCachedCycleOfPrayerYear(dioceseKey, date.getFullYear())` and then, for a `dated` diocese, required
+`corpus.year === date.getFullYear()` before resolving anything. Since the app only ever prefetches a
+diocese's cycle for `new Date().getFullYear()` (see `js/office-ui.js`'s calls at the diocese-declaration
+and diocese-select-population sites), a query for a lead-in date whose calendar year differs from "this
+year" could never resolve, even when that exact date's entry was sitting right there in the already-
+loaded, already-cached corpus for the following year. Concretely: with real "today" at
+2026-09-29 and Tennessee's 2026-named file already loaded, asking for its own November 2, 2025 entry
+returned null -- and since `renderCycleOfPrayerLine` explicitly renders "the office's own date," never
+only "today" (a user can browse to any past or future date's office), this was a live, reachable bug,
+not a hypothetical: browsing to any 2025 date for a diocese with California/Nevada/San Diego's own
+already-shipped "disclose-and-include" lead-in pattern would have silently shown nothing for that tier,
+even though the data existed. Fixed by adding a fallback: when the query-year corpus isn't cached or
+its `year` field doesn't match, also try the corpus cached for `date.getFullYear() + 1` (the file that
+would actually hold that lead-in date) before giving up; `resolveCycleOfPrayerEntry` itself already
+returns null correctly if the date genuinely isn't present there, so no new false positives are
+introduced. Live-verified this restores resolution for Tennessee's own Nov 2, 2025 entry AND, checked
+directly to confirm the fix isn't Tennessee-specific, retroactively repairs the identical already-merged
+bug in `episcopal-california-2026.json`'s Nov 30, 2025 entry and `episcopal-san-diego-2026.json`'s
+Nov 23, 2025 entry -- both now resolve correctly for the first time since being shipped. No data file
+needed any change for this fix; it is purely a `js/cycles-of-prayer.js` logic correction.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All six (`southwest-florida`, `springfield`, `susquehanna`, `tennessee`, `texas`, `upper-south-carolina`)
+already matched the directory's own slugs exactly, no renaming needed. All 6 registered in
+`CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 74 files, 0 findings. `node --check`
+clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their 13/3/9 baselines
+(confirmed both before and after the bug fix). Live-verified all 6 new dioceses (8 sample points,
+including Springfield's own quarter-boundary dates and Tennessee's year-boundary lead-in date) in
+headless Chromium against the app's own actual runtime, plus 2 targeted spot-checks confirming the bug
+fix's retroactive effect on California and San Diego. Screenshot-verified Susquehanna rendering
+correctly in an actual Morning Prayer office (correct date commemoration "Saint Michael and All Angels,"
+both Cycle of Prayer tiers present in the sidebar, drop-cap intact) -- applying the Morning-Prayer-
+forcing technique established in batch 10. Zero new console errors beyond the pre-documented sandbox
+font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).
+Each of the six new files was committed and pushed individually as its own agent finished, per Josh's
+mid-batch instruction to keep the working tree clean rather than holding everything for one final
+commit; this ledger entry and the registry/bug-fix commit land together as the batch's closing commit.

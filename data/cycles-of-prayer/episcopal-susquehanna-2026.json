@@ -1,0 +1,339 @@
+{
+  "id": "episcopal-susquehanna-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Diocese of the Susquehanna",
+  "dioceseShort": "susquehanna",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer 2026",
+  "sourceFile": "\"EDOTS-COP-2026-updated.pdf\", fetched directly from https://diosusquehanna.org/wp-content/uploads/EDOTS-COP-2026-updated.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 weeks, January 4 - December 27, transcribed from a 7-page document laid out as one row per week with two labeled sub-rows per week -- 'Diocese of the Susquehanna' (the diocese's own parishes/categories) and 'Diocese of Kajo Keji' (its companion diocese, an Anglican diocese of the Province of the Episcopal Church of South Sudan) -- both printed side by side under the single title 'Diocese of the Susquehanna / Cycle of Prayer 2026'. Both halves of each week are recorded together in that date's `subjects` array, in the order printed (Susquehanna's own subjects first, then Kajo Keji's), since this is how the diocese's own document presents its single combined weekly cycle of prayer. This is a two-column-per-row table, not an interleaved multi-story text flow, so a linearized 'pdftotext -layout' extraction carried no column-interleaving risk of the kind flagged elsewhere in this corpus -- confirmed anyway by rendering all 7 pages as images and visually comparing every row against the extracted text before trusting it.",
+    "The document itself prints only 'Diocese of the Susquehanna' (in its own page header, next to 'Cycle of Prayer 2026') -- no fuller or different form appears anywhere in this source, so `diocese` is transcribed exactly as printed. The source PDF's own filename ('EDOTS-COP-2026-updated.pdf') and internal metadata title ('EDOTS COP 2026-updated') use the abbreviation 'EDOTS' (presumably 'Episcopal Diocese Of The Susquehanna'), but that abbreviation, and any fuller expansion of it, is never spelled out anywhere in the document's own visible text, so it is not used for `diocese` here.",
+    "No liturgical Sunday names (e.g. 'Advent', 'Epiphany') are printed anywhere in this source -- `liturgicalNote` is null on every entry. Each week is headed only 'Week of [Month] [Day]', with no year printed alongside the day/month; the year 2026 is taken from the document's own repeated title ('Cycle of Prayer 2026') on every page, not invented.",
+    "The source mixes curly ('smart', ’) and straight (') apostrophes for the same construction ('St. ___'s') inconsistently throughout, including within the very same semicolon-separated list -- e.g. the January 4 entry reads 'St. Andrew’s' (curly) immediately next to 'St. Luke's' (straight) next to 'St. John’s' (curly) again. Likewise, several 'St. James' congregations are printed with no apostrophe-s at all (Bedford, Dundaff, Exchange, Lancaster, Mansfield, Muncy, Schuylkill Haven), while the March 29 entry reads 'St. James’,' (with a bare closing apostrophe, no trailing s) for the Drifton congregation. All of this is preserved exactly as printed per this corpus's standing rule against normalizing a source's own typography.",
+    "For the Susquehanna-side (diocese's own) subjects: each week's cell is a semicolon-separated list, each item either 'Congregation, Place' (recorded as a `parish` subject) or a bare category/committee/ministry name (recorded as `category`). A trailing lowercase list-connector word ('and' and/or 'the') immediately before the final item in such a list is dropped from that item's own `name` (e.g. source '...; and the Diocesan Council' becomes category name 'Diocesan Council'; '...; and Retired Clergy' becomes 'Retired Clergy'). A capitalized 'The' that begins an item's own name (e.g. 'The Commission on Ministry' on July 5, 'The Pennsylvania Council of Churches' on October 18) is kept as printed, since the capital marks it as part of the formal name rather than a mere list connector -- this distinction is a disclosed judgment call, not something the source marks unambiguously itself. Similarly, 'the diocesan Mission Resource Committee' (August 9) keeps its source's own lower-case 'diocesan', inconsistent with the capitalized 'Diocesan' used in every other committee/commission name in this same document (e.g. 'Diocesan Audit Committee', 'Diocesan Convention', 'Diocesan ECW', 'Diocesan Staff', 'Diocesan Youth', 'Diocesan Council') -- preserved verbatim rather than silently normalized.",
+    "Two congregations joined by 'and' and sharing one printed place (e.g. 'St. Clement’s and St. Peter’s, Wilkes-Barre' on March 15; 'St. James’ and St. George’s, Jermyn' on May 31; 'St. Mark’s and St. John’s, Jim Thorpe' on June 7) are recorded as ONE combined `parish` subject whose `name` is the full joined text and whose `place` is the one shared town, matching this corpus's existing precedent for jointly-named/yoked congregations (see episcopal-southern-ohio-2026.json's 'Ascension and Holy Trinity, Wyoming').",
+    "A small number of Susquehanna-side congregation names are printed with no comma before their place at all (inconsistent with this source's otherwise universal 'Name, Place' comma convention): 'St. Peter's Hazelton' (May 24), 'St. Peter's Tunkhannock' (September 6), and 'St. Stephen's Whitehall' (October 11). Each is parsed as 'Name'+'Place' exactly like the comma-separated entries elsewhere (parish name 'St. Peter's'/'St. Stephen's', place 'Hazelton'/'Tunkhannock'/'Whitehall'), a disclosed judgment call rather than a certainty. 'Hazelton' (May 24) also appears to be a misspelling of the actual Pennsylvania city 'Hazleton' -- preserved exactly as printed per this corpus's rule against silently correcting an apparent source typo.",
+    "'Bangor, Churchtown' (March 15, Susquehanna side) is parsed as parish name 'Bangor' with place 'Churchtown' to match this source's uniform 'Name, Place' pattern, but this is a disclosed judgment call: 'Bangor' is itself also the name of a real Northampton County, PA borough, so it is possible (though judged less likely given the surrounding pattern) that the source means something different than a congregation literally named 'Bangor'.",
+    "'Christ Church, Susquehanna' (June 28, Susquehanna side) is a real Pennsylvania borough (Susquehanna, Susquehanna County) coincidentally sharing its name with the diocese itself -- not a transcription error.",
+    "'Hope, Mount Hope' (September 20, Susquehanna side) is parsed as parish name 'Hope' with place 'Mount Hope' (a real Lancaster County, PA place) per the source's usual pattern, despite the name/place repetition reading oddly.",
+    "'St. Barnabas Center, Kutztown' (December 6) and other Susquehanna-side entries whose own printed name ends in 'Center', 'House', 'Ministries', 'School', or similar institutional word (e.g. 'Good Shepherd Learning Center, Douglassville'; 'Brookland Retreat Center, Ulysses'; 'New Bethany Ministries, Bethlehem'; 'Kirby House, Mountain Top'; 'Grace Montessori School, Allentown'; 'St. Alban's Learning Center, Sinking Spring'; 'Stevenson School for Ministry') are recorded as `category` subjects rather than `parish`, on the judgment that these are ministries/institutions rather than worshipping congregations -- consistent with this schema's own guidance that 'category' covers 'a parish's own named ministry' and schools. Since `place`, when present, is only valid on `parish` subjects, any place named alongside such an institution (e.g. ', Kutztown', ', Douglassville') is kept as literal trailing text inside that category's own `name` string rather than split into a separate `place` field. 'St. Matthew's Chapel' (July 26), listed with no place at all between two comma-placed congregations, is likewise recorded as `category` (its name alone, no invented place) rather than `parish`, since this schema requires a non-empty `place` for type `parish` and none is given.",
+    "For the Kajo Keji-side (companion diocese) subjects: this schema's `diocese`/`province` subject types are reserved for scope-'communion' files (this file's scope is 'diocese'), so every Kajo Keji entry is recorded as `parish` or `category` like the Susquehanna-side entries, never as `diocese`/`province`. Only ONE Kajo Keji week (January 11, 'Emmanuel Cathedral, Romogi') gives an explicit comma-separated place the way the Susquehanna side does; every other week names only a congregation/institution (most ending in the word 'Parish' or 'Parishes') with no separately stated place. Because these are unfamiliar South Sudanese place names this transcriber cannot independently verify (e.g. whether a name like 'St. Peter Tipere Parish' embeds a genuine place name 'Tipere' the way 'Indian Hill Church' unambiguously did for a well-known U.S. village in this corpus's Southern Ohio precedent), every such Kajo Keji subject is recorded as `category` (never `parish`) using its full printed name verbatim, rather than guessing at and fabricating an unverifiable `place` value. This is a deliberate, disclosed judgment call to avoid invention, not a claim that these are not genuine parishes of the Diocese of Kajo Keji.",
+    "Where a Kajo Keji week's line joins two complete, independently-named items with 'and' or '&' and each already carries its own full institutional word (e.g. 'Diocesan Office and St. Matthew Wurta Parish' on August 9; 'Kajo Keji Christian College & St. James Wudu Parish' on March 29; 'Sera Jale Parish and Dwani-Stra of Susquehanna Primary School' on July 19; 'Ajira Parish and Gaderu-Victoria Leach Primary School' on August 30; 'Lorudung Parish and Liwolo-Helen Wagner Primary School' on September 27; 'Woro Parish and Romogi-Barebo Primary School' on October 25; 'Jondale Parish and St. Peter Keriwa Parish' on November 15; 'St. Mathew Lori Parish and Romogi-Richard Earl High School' on November 22; 'Mangalotor Parish and Sodogo-Trinity Easton Primary School' on December 27), the line is split into two separate `category` subjects, one per named item, since both halves are already grammatically complete on their own. Where instead two names share ONE trailing plural word ('Parishes') that only makes grammatical sense read together (e.g. 'St. John Kim and St. John Kendiri Parishes' on January 25; 'St. Joseph Lire and Andejo Parishes' on February 22; 'St. Peter Logu and Kanyi Parishes' on May 10; 'Gurube and Mangaloti Parishes' on June 14), the pair is instead kept as ONE combined `category` subject with the full joined text as `name`, to avoid fabricating a second 'Parish' word that the source itself never actually prints for the first name.",
+    "'Lubule, Koiba Parish' (April 19, Kajo Keji side) is the one Kajo Keji entry with an internal comma, but in the OPPOSITE order from this source's own 'Name, Place' convention used everywhere else (including the Kajo Keji side's own January 11 entry) -- it is not clear whether 'Lubule' is a place preceding 'Koiba Parish', two separately-intended items with a missing 'and', or something else. Rather than guess, it is kept as a single `category` subject with the full text 'Lubule, Koiba Parish' verbatim, comma included.",
+    "'Dwani-Stra of Susquehanna Primary School' (July 19, Kajo Keji side, split out per the rule above) is preserved exactly as printed despite 'Dwani-Stra' reading like a possible abbreviation or OCR-adjacent oddity in the diocese's own source document; its own use of 'Susquehanna' in a Kajo Keji-side school's name is presumably a reference to the companion-diocese relationship, not a transcription error introduced here.",
+    "'St. John Akuboro' (May 31) and 'St. Joseph Kala' (October 18) are the only two Kajo Keji entries that do NOT end in 'Parish'/'Parishes' the way every other week's Kajo Keji entry does -- preserved exactly as printed rather than silently appending the word 'Parish' to match the surrounding pattern.",
+    "'St. Mathew Gaderu Parish' (November 1) and 'St. Mathew Lori Parish' (November 22) spell the name 'Mathew' (one 't'), while 'St. Matthew Wurta Parish' (August 9, Kajo Keji side) and the Susquehanna side's own 'St. Matthew's, Sunbury' (November 22) and 'St. Matthew's Chapel' (July 26) spell it 'Matthew' (two 't's) -- this spelling inconsistency is in the source itself and is preserved verbatim in each case, not normalized to one spelling.",
+    "'for Peace in Sudan & South Sudan' (January 4, Kajo Keji side) is the one week with no named parish/institution at all, just this general intercession phrase; its lower-case initial 'for' is preserved exactly as printed rather than capitalized to look like a normal category name."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Alden" },
+      { "type": "parish", "name": "St. Luke's", "place": "Altoona" },
+      { "type": "parish", "name": "St. John’s", "place": "Westfield" },
+      { "type": "category", "name": "Clergy of the Diocese of the Susquehanna" },
+      { "type": "category", "name": "for Peace in Sudan & South Sudan" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Epiphany", "place": "Glenburn" },
+      { "type": "parish", "name": "All Saints", "place": "Williamsport" },
+      { "type": "parish", "name": "Emmanuel Cathedral", "place": "Romogi" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Mediator", "place": "Allentown" },
+      { "type": "parish", "name": "St. James", "place": "Bedford" },
+      { "type": "parish", "name": "Christ Church", "place": "Williamsport" },
+      { "type": "category", "name": "Grace Montessori School, Allentown" },
+      { "type": "category", "name": "St. Peter Tipere Parish" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Allentown" },
+      { "type": "parish", "name": "St. John's", "place": "Bellefonte" },
+      { "type": "parish", "name": "Trinity Pro Cathedral", "place": "Williamsport" },
+      { "type": "category", "name": "Diocesan Council" },
+      { "type": "category", "name": "St. John Kim and St. John Kendiri Parishes" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "North Parish", "place": "St. Clair & Ashland" },
+      { "type": "parish", "name": "Christ Church", "place": "Berwick" },
+      { "type": "parish", "name": "St. Andrew’s", "place": "York" },
+      { "type": "category", "name": "St. Paul Beliak Parish" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Athens" },
+      { "type": "parish", "name": "St. Paul's", "place": "Bloomsburg" },
+      { "type": "parish", "name": "St. John the Baptist", "place": "York" },
+      { "type": "category", "name": "St. Luke Bajur Parish" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Nativity Cathedral", "place": "Bethlehem" },
+      { "type": "parish", "name": "Calvary Chapel", "place": "Beartown" },
+      { "type": "parish", "name": "Transfiguration", "place": "Blue Ridge Summit" },
+      { "type": "category", "name": "St. James Longira Parish" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Bethlehem" },
+      { "type": "parish", "name": "Mount Calvary", "place": "Camp Hill" },
+      { "type": "category", "name": "Retired Clergy" },
+      { "type": "category", "name": "St. Joseph Lire and Andejo Parishes" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Carbondale" },
+      { "type": "parish", "name": "Christ Church", "place": "Forest City" },
+      { "type": "parish", "name": "St. John's", "place": "Carlisle" },
+      { "type": "category", "name": "Kigwo Parish" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Allentown" },
+      { "type": "parish", "name": "Trinity", "place": "Chambersburg" },
+      { "type": "category", "name": "St. Peter Leikor Parish" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Clement’s and St. Peter’s", "place": "Wilkes-Barre" },
+      { "type": "parish", "name": "Bangor", "place": "Churchtown", "note": "Parsed as parish name 'Bangor' + place 'Churchtown' to match this source's usual pattern; 'Bangor' is also a real Northampton County, PA borough name (see file-level notes)." },
+      { "type": "category", "name": "Wojira Parish" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Gabriel’s", "place": "Douglassville" },
+      { "type": "parish", "name": "St. Paul's", "place": "Columbia" },
+      { "type": "category", "name": "Good Shepherd Learning Center, Douglassville" },
+      { "type": "category", "name": "St. John Lukura Parish" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Drifton" },
+      { "type": "parish", "name": "Christ Church", "place": "Coudersport" },
+      { "type": "category", "name": "Brookland Retreat Center, Ulysses" },
+      { "type": "category", "name": "Kajo Keji Christian College" },
+      { "type": "category", "name": "St. James Wudu Parish" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Dundaff" },
+      { "type": "parish", "name": "Christ Memorial", "place": "Danville" },
+      { "type": "category", "name": "Clergy of the Diocese of the Susquehanna" },
+      { "type": "category", "name": "Kudupi Parish" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Easton" },
+      { "type": "parish", "name": "St. James", "place": "Exchange" },
+      { "type": "category", "name": "Clergy Widows and Widowers" },
+      { "type": "category", "name": "St. John Limi Parish" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Margaret’s", "place": "Emmaus" },
+      { "type": "parish", "name": "Memorial Church of the Prince of Peace", "place": "Gettysburg" },
+      { "type": "category", "name": "Lubule, Koiba Parish" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Hamlin" },
+      { "type": "parish", "name": "All Saints", "place": "Hanover" },
+      { "type": "category", "name": "Lay Formation" },
+      { "type": "category", "name": "St. Mark Dwani Parish" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Prince of Peace", "place": "Dallas" },
+      { "type": "parish", "name": "St. Andrew’s in the Valley", "place": "Harrisburg" },
+      { "type": "category", "name": "Diocesan Youth" },
+      { "type": "category", "name": "Emmanuel Parish Logili" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George’s", "place": "Hellertown" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Harrisburg" },
+      { "type": "category", "name": "Diocesan Staff" },
+      { "type": "category", "name": "St. Peter Logu and Kanyi Parishes" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Honesdale" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Harrisburg" },
+      { "type": "category", "name": "Stevenson School for Ministry" },
+      { "type": "category", "name": "St. Paul Loopo Parish" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Hazelton", "note": "Source prints 'St. Peter's Hazelton' with no comma; likely a misspelling of the real city 'Hazleton', PA (see file-level notes)." },
+      { "type": "parish", "name": "Chapel of the Good Shepherd", "place": "Hawk Run" },
+      { "type": "category", "name": "New Bethany Ministries, Bethlehem" },
+      { "type": "category", "name": "Mutongo Parish" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’ and St. George’s", "place": "Jermyn" },
+      { "type": "parish", "name": "All Saints", "place": "Hershey" },
+      { "type": "category", "name": "St. John Akuboro" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s and St. John’s", "place": "Jim Thorpe" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Hollidaysburg" },
+      { "type": "category", "name": "Kirby House, Mountain Top" },
+      { "type": "category", "name": "St. Peter Kinyiba Parish" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Kingston" },
+      { "type": "parish", "name": "St. John's", "place": "Huntingdon" },
+      { "type": "category", "name": "Clergy of the Diocese of the Susquehanna" },
+      { "type": "category", "name": "Gurube and Mangaloti Parishes" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "West Pittston" },
+      { "type": "parish", "name": "Trinity", "place": "Jersey Shore" },
+      { "type": "category", "name": "Sonder Parish" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Susquehanna", "note": "'Susquehanna' here is the real Pennsylvania borough of that name, coincidentally sharing the diocese's own name (see file-level notes)." },
+      { "type": "parish", "name": "St. Mark’s", "place": "New Milford" },
+      { "type": "parish", "name": "St. Edward's", "place": "Lancaster" },
+      { "type": "category", "name": "St. Paul Kasurak Parish" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Lebanon" },
+      { "type": "parish", "name": "St. James", "place": "Lancaster" },
+      { "type": "category", "name": "The Commission on Ministry" },
+      { "type": "category", "name": "St. John Litaba Parish" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints Church", "place": "Lehighton" },
+      { "type": "parish", "name": "St. John's", "place": "Lancaster" },
+      { "type": "category", "name": "St. Paul Pamoju Parish" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Milford" },
+      { "type": "parish", "name": "St. Thomas", "place": "Lancaster" },
+      { "type": "category", "name": "Sera Jale Parish" },
+      { "type": "category", "name": "Dwani-Stra of Susquehanna Primary School" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Montrose" },
+      { "type": "category", "name": "St. Matthew's Chapel" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Lewisburg" },
+      { "type": "category", "name": "Emmanuel Parish Kiri" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Morgantown" },
+      { "type": "parish", "name": "St. Mark’s", "place": "Lewistown" },
+      { "type": "category", "name": "Koiba Parish" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "Moscow" },
+      { "type": "parish", "name": "St. Paul's", "place": "Lock Haven" },
+      { "type": "category", "name": "diocesan Mission Resource Committee" },
+      { "type": "category", "name": "Diocesan Office" },
+      { "type": "category", "name": "St. Matthew Wurta Parish" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Martin’s-in-the-Fields", "place": "Mountaintop" },
+      { "type": "parish", "name": "St. Paul's", "place": "Manheim" },
+      { "type": "category", "name": "St. Philip Andasire Parish" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Mt. Pocono" },
+      { "type": "parish", "name": "St. James", "place": "Mansfield" },
+      { "type": "category", "name": "Diocesan Audit Committee" },
+      { "type": "category", "name": "St. Joseph Jalimo Parish" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Brigid’s", "place": "Nazareth" },
+      { "type": "parish", "name": "St. John's", "place": "Marietta" },
+      { "type": "category", "name": "Ajira Parish" },
+      { "type": "category", "name": "Gaderu-Victoria Leach Primary School" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Tunkhannock", "note": "Source prints 'St. Peter's Tunkhannock' with no comma (see file-level notes)." },
+      { "type": "parish", "name": "St. Luke’s", "place": "Mechanicsburg" },
+      { "type": "category", "name": "Emmanuel Parish Lubule" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Palmerton" },
+      { "type": "parish", "name": "Christ Church", "place": "Milton" },
+      { "type": "category", "name": "St. Paul Bori Parish" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Joseph’s", "place": "Pen Argyl" },
+      { "type": "parish", "name": "St. Mary’s", "place": "Wind Gap" },
+      { "type": "parish", "name": "Hope", "place": "Mount Hope" },
+      { "type": "category", "name": "St. Mark Merguga Parish" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Pottsville" },
+      { "type": "parish", "name": "St. Luke’s", "place": "Mount Joy" },
+      { "type": "category", "name": "Lorudung Parish" },
+      { "type": "category", "name": "Liwolo-Helen Wagner Primary School" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Reading" },
+      { "type": "parish", "name": "St. James", "place": "Muncy" },
+      { "type": "category", "name": "St. Mark Ajio Parish" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Whitehall", "note": "Source prints 'St. Stephen's Whitehall' with no comma (see file-level notes)." },
+      { "type": "parish", "name": "Nativity", "place": "Newport" },
+      { "type": "parish", "name": "St. Stephen’s", "place": "Thompsontown" },
+      { "type": "category", "name": "Diocesan Convention" },
+      { "type": "category", "name": "Pasiki Parish" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Redeemer", "place": "Sayre" },
+      { "type": "parish", "name": "St. Mark's", "place": "Northumberland" },
+      { "type": "category", "name": "The Pennsylvania Council of Churches" },
+      { "type": "category", "name": "St. Joseph Kala" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Schuylkill Haven" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Philipsburg" },
+      { "type": "category", "name": "Woro Parish" },
+      { "type": "category", "name": "Romogi-Barebo Primary School" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Scranton" },
+      { "type": "parish", "name": "All Saints", "place": "Selinsgrove" },
+      { "type": "category", "name": "Diocesan ECW" },
+      { "type": "category", "name": "St. Mathew Gaderu Parish" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Scranton" },
+      { "type": "parish", "name": "St. Andrew’s", "place": "Shippensburg" },
+      { "type": "category", "name": "Clergy of the Diocese of the Susquehanna" },
+      { "type": "category", "name": "St. John Mondi Parish" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban’s", "place": "Sinking Spring" },
+      { "type": "parish", "name": "St. Andrew's", "place": "State College" },
+      { "type": "category", "name": "St. Alban's Learning Center, Sinking Spring" },
+      { "type": "category", "name": "Jondale Parish" },
+      { "type": "category", "name": "St. Peter Keriwa Parish" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Stroudsburg" },
+      { "type": "parish", "name": "St. Matthew’s", "place": "Sunbury" },
+      { "type": "category", "name": "Standing Committee" },
+      { "type": "category", "name": "St. Mathew Lori Parish" },
+      { "type": "category", "name": "Romogi-Richard Earl High School" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen’s Pro-Cathedral", "place": "Wilkes-Barre" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Tioga" },
+      { "type": "category", "name": "St. Mark Rodo Parish" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Barnabas Center, Kutztown", "note": "Recorded as `category`, not `parish`, per this file's disclosed policy for institution-named entries (see file-level notes)." },
+      { "type": "parish", "name": "Trinity", "place": "Tyrone" },
+      { "type": "category", "name": "Emmanuel Kansuk Parish" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Towanda" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Upper Fairfield" },
+      { "type": "category", "name": "St. Philip Dibe Parish" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anne’s", "place": "Trexlertown" },
+      { "type": "parish", "name": "St. Mary’s", "place": "Waynesboro" },
+      { "type": "category", "name": "Education for Ministry (EfM)" },
+      { "type": "category", "name": "Emmanuel Parish Sokare" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Troy" },
+      { "type": "parish", "name": "St. Paul's", "place": "Wellsboro" },
+      { "type": "category", "name": "Mangalotor Parish" },
+      { "type": "category", "name": "Sodogo-Trinity Easton Primary School" }
+    ]}
+  ]
+}
