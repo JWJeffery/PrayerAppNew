@@ -25642,3 +25642,59 @@ app's own long-standing, pre-existing rendering convention for every diocese's p
 by this batch or any prior one. Screenshot-verified New York rendering in an actual office. Zero new
 console errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no
 cache-bust parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Easton and Massachusetts ingested (both previously blocked);
+## El Camino Real removed from TEC_DIOCESE_DIRECTORY entirely
+
+Josh, replying to the consolidated blocked-links summary given at his own request (*"Go ahead and
+provide me links to blocked cycles of prayer"*): supplied both the Easton and Massachusetts PDFs
+directly, and separately said *"El Camino Real is historical only. Remove it."*
+
+**Easton** (`episcopal-easton-2026.json`, source: a one-page PDF, "2026 Diocesan Cycle of Prayer, July
+through September 2026", supplied directly by Josh after the diocese's own resource page's PDF links
+proved unresolvable from this sandbox). 13 entries, July 5-Sept 27 2026 -- a quarterly document, matching
+the roster's own note that the diocese's page said "Recheck for Q4," same pattern as Missouri/Springfield
+elsewhere in this corpus. Prose-style source, not a clean "Congregation, Town" table -- subjects were
+extracted from each week's own sentence, `parish` used only where the source explicitly names both a
+congregation and its town. September 13's "Christ Church, I.U., Worton" preserves the source's own
+"I.U." designation (a historical marker some Maryland Eastern Shore parishes carry) as part of the
+congregation's own name, splitting on the LAST comma rather than the first. Built directly (no subagent
+needed -- a single page).
+
+**Massachusetts** (`episcopal-massachusetts-2026.json`, source: an 11-page PDF, "Diocesan Cycle of
+Prayer, Advent 2026 through Pentecost Season 2026", supplied directly by Josh after both the diocese's
+resource page and its direct PDF link were confirmed sitting behind a bot-protection challenge). Full
+52-week source, Nov 30 2025-Nov 22 2026, arranged alphabetically by deanery. Per this corpus's own
+established precedent for a lopsided prior-year lead-in (see Atlanta, and this session's own North
+Carolina entry above), the 5 weeks falling in calendar 2025 were disclosed in full (every subject listed)
+but excluded from `entries`, rather than spun into a thin two-file split the way Delaware's much more
+evenly-balanced 17/35 divide was -- the choice between those two established patterns is made on the
+actual balance of content each time, confirmed again here. 47 entries, Jan 4-Nov 22 2026.
+
+**A genuine date-ordering/mislabeling anomaly caught in the source itself, not a transcription artifact.**
+The document's printed "Sixth Sunday of Easter" week is dated May 19, 2026, printed AFTER its "Seventh
+Sunday of Easter" week, dated May 17, 2026 -- both out of chronological order relative to each other, and
+neither Sunday-after-Easter number actually matches the real 2026 liturgical calendar for either date
+(Easter 2026 is April 5; the true 6th/7th Sundays of Easter are May 17/24). Per this schema's own rule
+that `liturgicalNote` is a disclosed source label never computed or corrected by this app, NEITHER week's
+own printed content nor its printed label was altered -- only the two entries' relative ORDER was
+corrected (sorted by date) to satisfy the validator's chronological-order check, with the full anomaly
+disclosed in the file's own `notes`. Built directly (no subagent) via a one-off Node script, the same
+pattern used for this session's other 45+ entry files (Chicago, New York, Long Island).
+
+**El Camino Real removed from `TEC_DIOCESE_DIRECTORY` (`js/cycles-of-prayer.js`) entirely, not merely
+left unfetched.** Confirmed against real-world fact: the Diocese of El Camino Real merged into the
+Diocese of California and no longer exists as an independent jurisdiction, matching Josh's own direct
+instruction. This is a genuinely different disposition than Easton/Massachusetts's prior "blocked, not
+yet fetched" status, or than a diocese in the roster's own 18-strong "no verified source" list (which
+still exist and could in principle publish a cycle someday) -- El Camino Real is now permanently out of
+scope for this corpus, not paused. `TEC_DIOCESE_DIRECTORY` goes from 106 to 105 entries; the directory's
+own governing comment in `js/cycles-of-prayer.js` was left as historical narrative (describing the state
+the day it was built) with a forward pointer added rather than rewritten, per this note's own practice of
+not silently revising a dated decision record.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+Both `easton` and `massachusetts` already matched the directory's own slugs exactly, no renaming needed.
+Both registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 50 files, 0
+findings. `node --check` clean on `js/cycles-of-prayer.js`. `js/cycles-of-prayer.js` has no cache-bust
+parameter to bump (same as prior batches).

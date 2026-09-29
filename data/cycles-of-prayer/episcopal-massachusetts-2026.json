@@ -1,0 +1,1351 @@
+{
+  "id": "episcopal-massachusetts-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Massachusetts",
+  "dioceseShort": "massachusetts",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"Diocesan Cycle of Prayer, Advent 2026 through Pentecost Season 2026\" -- an 11-page PDF supplied directly by Josh, since the diocese’s own hosted page/PDF (diomass.org) sit behind a client-side bot-protection challenge this session’s sandbox could not pass.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This diocese is centered on Boston/Eastern Massachusetts, distinct from the already-ingested Diocese of Western Massachusetts (episcopal-western-massachusetts-2026.json) -- not the same file, not a duplicate.",
+    "The source document's own title spans Advent 2025 through Pentecost Season 2026 (52 weeks, Nov 30 2025 - Nov 22 2026), arranged alphabetically by deanery. Per this corpus's established precedent for the same shape (see episcopal-atlanta-2026.json and this batch's own episcopal-north-carolina-2026.json), the 5 weeks that fall in calendar year 2025 (Nov 30, Dec 7, 14, 21, 28) are disclosed here but EXCLUDED from `entries`, since they belong to a 2025-dated file this corpus does not maintain (the lopsided 5-vs-47 split matches Atlanta/North Carolina's own precedent for disclose-and-exclude, not Delaware's even-split two-file approach). Those 5 excluded weeks' own subjects (for provenance): Nov 30 -- Church of Our Saviour/St. John's Church/Order of St. Anne & Bethany House of Prayer (all Arlington), The Standing Committee, Brotherhood of St. Gregory; Dec 7 -- St. Paul's Church (Bedford), All Saints' Church (Belmont), St. Mark's Church (Burlington), The Officers of the Diocese, Racial Justice Commission; Dec 14 -- Christ Church/St. Bartholomew's Church/St. James' Church/St. Peter's Church (all Cambridge), Diocesan Disciplinary Board; Dec 21 -- Episcopal Chaplaincy at Harvard, Lutheran Episcopal Chaplaincy at MIT (both Cambridge), The Society of St. John the Evangelist (Cambridge), Hospital Chaplaincies & Healthcare Chaplains; Dec 28 -- Church of Our Redeemer (Lexington), St. James' Church (Somerville), Christ Church (Waltham), Congregation of St. Peter at Christ Episcopal Church (Waltham), Church of the Good Shepherd (Watertown).",
+    "A genuine source anomaly: the printed week for 'The Sixth Sunday of Easter' is dated May 19, 2026 and 'The Seventh Sunday of Easter' is dated May 17, 2026 -- printed in that (out-of-chronological) order, and with the Sunday-after-Easter numbering not matching the real 2026 liturgical calendar for either date (Easter 2026 is April 5; the real 6th/7th Sundays of Easter are May 17/24). Both dates' own congregation lists and printed liturgical labels are transcribed exactly as given; only the entry ORDER was corrected (by date) to satisfy this schema's own chronological-order validation rule -- the labels themselves were not corrected, since `liturgicalNote` is a disclosed source label this app never computes or overrides.",
+    "Several deanery lists end in a non-parish, no-place entry naming a role or ministry across ALL congregations at once (e.g. 'Congregations: Wardens, Treasurers & Clerks', 'Congregations: Acolytes') -- recorded as `category`, distinct from a single-parish subject.",
+    "'Episcopal City Mission' (June 28) is recorded as `category` here since no place is given on this entry -- contrast with the already-ingested Western Massachusetts file, which records the same-named ministry as `parish` on an entry where a place IS given; this is not an inconsistency in this corpus, both entries follow the same place-presence rule.",
+    "Entries with 'Chapel' explicitly in the name (St. Andrew's Chapel, Trinity Chapel, St. Aidan's Chapel, Emmanuel Chapel, Grace Chapel, St. John's Chapel/Groton School, St. Mark's Chapel/St. Mark's School, Frank D. Ashburn Chapel/Brooks School) are recorded as `parish`, per this corpus's existing precedent (Delaware's St. Andrew's School Chapel) that a chapel is a worship space even when attached to a school; a school/academy with NO 'Chapel' in its own name (Epiphany School, Esperanza Academy) is recorded as `category` instead, per the same corpus's contrasting precedent (Delaware's St. Anne's School).",
+    "Campus ministries and chaplaincies (Northeastern University Lutheran Episcopal Campus Ministry, Boston University Chaplain, Boston College Campus Ministry, Episcopal Chaplaincy at UMass Dartmouth) are recorded as `category`, matching this corpus's existing Chicago/Indianapolis precedent for the same kind of entity.",
+    "Religious communities printed in the identical 'Name, Place' comma format as every surrounding parish entry (Allston Abbey, Society of St. Margaret) are recorded as `parish` rather than `category`, matching the format they were actually printed in rather than their institutional character -- disclosed per-subject via `note`.",
+    "September 13's 'Trinity Church, Stoughton,' carries a stray trailing comma in the source (an evident print artifact, not additional content) -- transcribed with `place` \"Stoughton\", the stray comma trimmed as punctuation rather than treated as a preserved content typo.",
+    "October 4's 'St. Peter' Church/Iglesia de San Pedro, Salem' preserves the source's own missing possessive 's' (\"Peter'\" not \"Peter's\") verbatim.",
+    "No entry in this transcribed portion carries a Sunday-after-Pentecost/Proper label separate from its own liturgical name -- both are folded into a single `liturgicalNote` string exactly as printed (e.g. 'The Second Sunday after Pentecost (Proper 5)')."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "The Second Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church (Old North)",
+          "place": "Boston"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Boston"
+        },
+        {
+          "type": "category",
+          "name": "Charles River Episcopal Co-Housing Endeavor (CRECHE)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "The First Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John & St. James Church",
+          "place": "Roxbury (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Ecclesia Ministries and common cathedral",
+          "place": "Boston",
+          "note": "A street/outdoor ministry, transcribed as parish per the source’s own identical \"Name, Place\" formatting"
+        },
+        {
+          "type": "category",
+          "name": "Hospitality Homes"
+        },
+        {
+          "type": "category",
+          "name": "The Diocesan Staff"
+        },
+        {
+          "type": "category",
+          "name": "The Massachusetts Council of Churches"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "The Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Charlestown (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Boston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine's & St. Martin's Church",
+          "place": "Boston"
+        },
+        {
+          "type": "category",
+          "name": "Greater Boston Interfaith Organization"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Third Sunday after Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Boston"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Boston"
+        },
+        {
+          "type": "category",
+          "name": "B-SAFE"
+        },
+        {
+          "type": "category",
+          "name": "Non-parochial clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Presentation of Jesus in the Temple: Candlemas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Dorchester (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Dorchester (Boston)"
+        },
+        {
+          "type": "category",
+          "name": "Epiphany School, Dorchester"
+        },
+        {
+          "type": "category",
+          "name": "The Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "The Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Jamaica Plain (Boston)"
+        },
+        {
+          "type": "category",
+          "name": "Northeastern University Lutheran Episcopal Campus Ministry"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian's Church",
+          "place": "Roxbury (Boston)"
+        },
+        {
+          "type": "category",
+          "name": "Building Bridges Ministries"
+        },
+        {
+          "type": "category",
+          "name": "Retired Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "The Sixth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Our Cathedral Church of St. Paul",
+          "place": "Boston"
+        },
+        {
+          "type": "category",
+          "name": "The Crossing"
+        },
+        {
+          "type": "category",
+          "name": "MANNA Community"
+        },
+        {
+          "type": "category",
+          "name": "The Cathedral Chapter"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Boston Chinese Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Postulants and Candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Barnstable"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's-on-the-Canal",
+          "place": "Buzzards Bay"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Nantucket"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Wardens, Treasurers & Clerks"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "The Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Chapel",
+          "place": "Hyannis Port"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Plymouth"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's Church",
+          "place": "South Yarmouth"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Congregational Consultants"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "The Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher's Church",
+          "place": "Chatham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Edgartown"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Osterville"
+        },
+        {
+          "type": "category",
+          "name": "Union of Black Episcopalians"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "The Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas' Church",
+          "place": "Falmouth"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Harwich Port"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Vineyard Haven"
+        },
+        {
+          "type": "category",
+          "name": "For all churches in the Diocese closed or merged"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "The Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Chapel",
+          "place": "Oak Bluffs"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Orleans"
+        },
+        {
+          "type": "category",
+          "name": "Boston Episcopal Charitable Society"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "The Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Mary of the Harbor",
+          "place": "Provincetown"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Sandwich"
+        },
+        {
+          "type": "category",
+          "name": "Ministries with Older Adults"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Wareham"
+        },
+        {
+          "type": "parish",
+          "name": "St. James the Fisherman Church",
+          "place": "Wellfleet"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Woods Hole (Falmouth)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "The Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints Parish",
+          "place": "Brookline"
+        },
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Brookline"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Brookline"
+        },
+        {
+          "type": "category",
+          "name": "Boston University Chaplain, Boston"
+        },
+        {
+          "type": "category",
+          "name": "The Church Home Society"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "The Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Chestnut Hill (Newton)"
+        },
+        {
+          "type": "category",
+          "name": "Boston College Campus Ministry, Chestnut Hill"
+        },
+        {
+          "type": "parish",
+          "name": "St. Dunstan's Church",
+          "place": "Dover"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Needham"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "The Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Newton"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Newtonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Newton Lower Falls"
+        },
+        {
+          "type": "parish",
+          "name": "Parish of St. Paul",
+          "place": "Newton Highlands"
+        },
+        {
+          "type": "category",
+          "name": "Prison Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "The Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Parish of Newton Center",
+          "place": "Newton Centre"
+        },
+        {
+          "type": "parish",
+          "name": "Parish of the Good Shepherd",
+          "place": "Waban (Newton)"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Wellesley"
+        },
+        {
+          "type": "parish",
+          "name": "Allston Abbey",
+          "place": "Boston",
+          "note": "A religious community, transcribed as parish per the source’s own identical \"Name, Place\" formatting"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "The Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Chapel, Groton School",
+          "place": "Groton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's Church",
+          "place": "Holliston"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Hopkinton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Hudson"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalNote": "The Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Acton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Ayer"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Concord"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Framingham"
+        },
+        {
+          "type": "category",
+          "name": "Margaret Coffin Prayer Book Society"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "The Day of Pentecost: Whitsunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne's in-the-Fields Church",
+          "place": "Lincoln"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Natick"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Chapel",
+          "place": "Shirley"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Southborough"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Acolytes"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday after Pentecost: Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Chapel, St. Mark's School",
+          "place": "Southborough"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's Church",
+          "place": "Sudbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Weston"
+        },
+        {
+          "type": "category",
+          "name": "The Ministry of the Diocesan Altar Guild and all Altar Guilds"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Budget Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "The Second Sunday after Pentecost (Proper 5)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James' Church",
+          "place": "Amesbury"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Andover"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Chelmsford"
+        },
+        {
+          "type": "parish",
+          "name": "St. James' Church",
+          "place": "Groveland"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Haverhill"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "The Third Sunday after Pentecost (Proper 6)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Lawrence"
+        },
+        {
+          "type": "category",
+          "name": "Esperanza Academy, Lawrence"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne's Church",
+          "place": "Lowell"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Lowell"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Lectors, Worship Leaders, Eucharistic Ministers & Visitors"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "The Fourth Sunday after Pentecost (Proper 7)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Methuen"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Newburyport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "North Andover"
+        },
+        {
+          "type": "category",
+          "name": "Merrimack Valley Project"
+        },
+        {
+          "type": "category",
+          "name": "Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "The Fifth Sunday after Pentecost (Proper 8)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Frank D. Ashburn Chapel/Brooks School",
+          "place": "North Andover"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne's Church",
+          "place": "(North) Billerica"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "West Newbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Westford"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal City Mission (no place given at this entry -- contrast with Western Massachusetts’s own file, which records the same-named ministry as `parish` on a week where a place IS given)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The Sixth Sunday after Pentecost (Proper 9)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Aidan's Chapel",
+          "place": "Dartmouth"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Dartmouth"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Organists, Choirs and other Church Musicians"
+        },
+        {
+          "type": "category",
+          "name": "Society of the Companions of the Holy Cross"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Chaplaincy at the University of Massachusetts, Dartmouth"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "The Seventh Sunday after Pentecost (Proper 10)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Fall River"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Fall River"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gabriel's Church",
+          "place": "Marion"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip of Bethsaida",
+          "place": "Mattapoisett"
+        },
+        {
+          "type": "category",
+          "name": "Clergy spouses and families"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "The Eighth Sunday after Pentecost (Proper 11)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "New Bedford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "New Bedford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin's Church",
+          "place": "New Bedford"
+        },
+        {
+          "type": "category",
+          "name": "Society for the Relief of Widows, Widowers and Orphans of Episcopal Clergy"
+        },
+        {
+          "type": "category",
+          "name": "Society for the Relief of Aged or Disabled Episcopal Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "The Ninth Sunday after Pentecost (Proper 12)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Somerset"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Swansea"
+        },
+        {
+          "type": "category",
+          "name": "Young Adults Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Youth Leadership Council"
+        },
+        {
+          "type": "category",
+          "name": "Barbara C. Harris Camp & Conference Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "The Tenth Sunday after Pentecost (Proper 13)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church/Iglesia de San Lucas",
+          "place": "Chelsea"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church Federated",
+          "place": "East Boston"
+        },
+        {
+          "type": "category",
+          "name": "South Sudanese Congregation"
+        },
+        {
+          "type": "category",
+          "name": "Hispanic Ministry Committee"
+        },
+        {
+          "type": "category",
+          "name": "Creation Care Justice Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "The Eleventh Sunday after Pentecost (Proper 14)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Lynnfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Malden"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Medford"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Parish",
+          "place": "Melrose"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Alan M. Gates African Ministry Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "The Twelfth Sunday after Pentecost (Proper 15)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Reading"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Saugus"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Wakefield"
+        },
+        {
+          "type": "category",
+          "name": "The Third Order, Society of St. Francis"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Parish Historians"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "The Thirteenth Sunday after Pentecost (Proper 16)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's Church",
+          "place": "Wilmington"
+        },
+        {
+          "type": "parish",
+          "name": "Parish of the Epiphany",
+          "place": "Winchester"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Winthrop"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Woburn"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Sextons and Custodians"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "The Fourteenth Sunday after Pentecost (Proper 17)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Canton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Dedham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Dedham"
+        },
+        {
+          "type": "parish",
+          "name": "Parish of All Saints",
+          "place": "Dorchester (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany Church",
+          "place": "Walpole"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "West Roxbury (Boston)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "The Fifteenth Sunday after Pentecost (Proper 18)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Hyde Park (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Iglesia de San Juan",
+          "place": "Hyde Park (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Mattapan (Boston)"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Medfield"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King and Brotherhood of St. Andrew"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "The Sixteenth Sunday after Pentecost (Proper 19)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Medway"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's Church",
+          "place": "Milton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Milton"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Westwood"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Stoughton"
+        },
+        {
+          "type": "category",
+          "name": "Trustees of Donations"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "The Seventeenth Sunday after Pentecost (Proper 20)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Beverly"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Beverly Farms"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints Episcopal Church of the North Shore",
+          "place": "Danvers"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Gloucester"
+        },
+        {
+          "type": "category",
+          "name": "Essex County Community Organization (ECCO)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "The Eighteenth Sunday after Pentecost (Proper 21)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ascension Memorial Church",
+          "place": "Ipswich"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's Memorial Church",
+          "place": "Lynn"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Chapel",
+          "place": "Manchester-by-the-Sea"
+        },
+        {
+          "type": "parish",
+          "name": "Wyman Memorial Church of St. Andrew",
+          "place": "Marblehead"
+        },
+        {
+          "type": "category",
+          "name": "Ministries with Homeless Persons and Refugees"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "The Nineteenth Sunday after Pentecost (Proper 22)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's Church",
+          "place": "Marblehead"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Rockport"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Salem"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter' Church/Iglesia de San Pedro",
+          "place": "Salem"
+        },
+        {
+          "type": "category",
+          "name": "Congregations: Secretaries and Administrators"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "The Twentieth Sunday after Pentecost (Proper 23)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "South Hamilton"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Name",
+          "place": "Swampscott"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Topsfield"
+        },
+        {
+          "type": "category",
+          "name": "Asian and Pacific Islander Americans (APIA) Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "The Twenty-First Sunday after Pentecost (Proper 24)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Rockland"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Cohasset"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Scituate"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Nativity",
+          "place": "South Weymouth"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Whitman"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "The Twenty-Second Sunday after Pentecost (Proper 25)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Parish of St. John the Evangelist",
+          "place": "Hingham"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Holbrook"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Braintree"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Chapel",
+          "place": "Brockton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Hanover"
+        },
+        {
+          "type": "category",
+          "name": "Global Mission Partnerships Program"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "Feast of All Saints (Proper 26)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. John the Evangelist",
+          "place": "Duxbury"
+        },
+        {
+          "type": "parish",
+          "name": "Society of St. Margaret",
+          "place": "Duxbury",
+          "note": "A religious order, transcribed as parish per the source’s own identical \"Name, Place\" formatting"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Marshfield"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Quincy"
+        },
+        {
+          "type": "parish",
+          "name": "Parish of St. Chrysostom",
+          "place": "Quincy"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Randolph"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost (Proper 27)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd Episcopal Church",
+          "place": "the Attleboros"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Foxborough"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Franklin"
+        },
+        {
+          "type": "category",
+          "name": "The Diocesan Convention"
+        },
+        {
+          "type": "category",
+          "name": "Congregational Chapters of the Episcopal Church Women"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty-Fifth Sunday after Pentecost (Proper 28)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Bristol Trinity Episcopal Church",
+          "place": "North Easton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas' Church",
+          "place": "Taunton"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Wrentham"
+        },
+        {
+          "type": "category",
+          "name": "Deputies to Provincial Synod"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost: Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Bridgewater"
+        },
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Middleborough"
+        },
+        {
+          "type": "category",
+          "name": "Order of St. Luke"
+        },
+        {
+          "type": "category",
+          "name": "Deans of Deaneries"
+        },
+        {
+          "type": "category",
+          "name": "Deanery Co-Conveners"
+        }
+      ]
+    }
+  ]
+}

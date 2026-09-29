@@ -1,0 +1,66 @@
+{
+  "id": "episcopal-easton-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Easton",
+  "dioceseShort": "easton",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"2026 Diocesan Cycle of Prayer, July through September 2026\" -- a one-page PDF supplied directly by Josh, since the diocese's own resource page (https://dioceseofeaston.org/communications/cycle-of-prayer/) only links to PDFs whose direct download URLs could not be located in the raw HTML from this session's sandbox.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is a quarterly document (July-September 2026 only) -- the diocese's own resource page, per this corpus's roster research, noted 'latest quarter ends September 30. Recheck for Q4' -- consistent with this corpus's other quarterly-published sources (see Missouri, Springfield's own roster note). Not a gap in transcription; a Q4 2026 quarter, if/when published, would extend this same file.",
+    "Every entry is prose, not a clean 'Congregation, Town' table -- subjects are extracted from each week's own sentence. `parish` is used only where the source explicitly names both a congregation and its town; a named person, committee, staff group, or a congregation with no town given is recorded as `category`.",
+    "September 13: \"Christ Church, I.U., Worton\" is transcribed with `name` \"Christ Church, I.U.\" and `place` \"Worton\" -- \"I.U.\" is preserved as printed (a historical designation some Maryland Eastern Shore parishes carry, not a transcription artifact), splitting on the LAST comma rather than the first so it stays part of the congregation's own name.",
+    "August 23: \"Green Hill Church\" is recorded as `category` rather than `parish` -- the source names no separate town for it (\"Green Hill\" reads as part of the church's own name, not a disclosed place), so no `place` is fabricated.",
+    "September 20 names two of the Rev. Dr. Darcy Williams's congregations in one sentence -- \"Augustine Parish, Chesapeake City\" (a place is given) and \"the Church of the Good Shepherd\" (no place given) -- split into a `parish` subject for the former and a `category` subject for the latter, plus a separate `category` subject for Williams and her spouse.",
+    "September 6 names two distinct subjects in one sentence (a bishop being remembered, and a separate diocesan-wide ministry) -- split into two `category` subjects rather than kept as one, since each names something genuinely distinct.",
+    "No entry carries a liturgical Sunday label in the source, so `liturgicalNote` is null throughout."
+  ],
+  "entries": [
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "This great nation, that being guided by God's Providence we may dwell secure in peace, giving thanks for 250 years of freedom as we celebrate the anniversary of the Declaration of Independence" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "La Iglesia de la Sagrada Familia de Jesus", "place": "Kennedyville", "note": "The Rev. Deacon Lynda Habel, Pastor" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Deacons serving the diocese, and those retired from service: Laura, Melody, George, Donald, Penny, Sharon, Norman, Loretta, Katherine, Alisha, Chris, Barbara, Les, Jim, Peggy and Lynda" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "God's people who serve as elected representatives to the Diocesan Council, including: Vic, James, Susan, Jim, Stephanie, Myron, Sally, James, Suz, Lynda, Pamela, Peggy, Florence, Michael & Carl" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All who serve on diocesan committees and ministries supporting Christ's mission in the world" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The staff of Bray House, who serve members of the Diocese of Easton: Lynn Anstatt, Megan Timms, and Beth Devenny" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The members of the Standing Committee, for their leadership and support during this time of transition: The Rev. Dr. Darcy Williams, Mrs. Debra Dragone, Mrs. Linda Hurley, Mr. Granville Blades, The Very Rev. Greg Powell, and The Rev. Charlotte Meyer" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Green Hill Church, which gathers this day to celebrate St. Bartholomew's Day, and the leadership of the Green Hill Preservation Committee" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's Parish", "place": "Queen Anne", "note": "Deacon Pastor Lynda Habel and her spouse, Joseph" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Sudlersville", "note": "Deacon Pastor Lynda Habel and her spouse, Joseph" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Bishop Paul Jones" },
+      { "type": "category", "name": "The vital ministry of the Episcopal Relief and Development, that their work may reach those in need worldwide" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church, I.U.", "place": "Worton", "note": "Celebrating Friends Day" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rev. Dr. Darcy Williams, and her spouse, Joseph" },
+      { "type": "parish", "name": "Augustine Parish", "place": "Chesapeake City" },
+      { "type": "category", "name": "The Wardens, Vestry and People of the Church of the Good Shepherd" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The ministry of Camp Wright: for the staff and the many children they served this summer" }
+    ]}
+  ]
+}

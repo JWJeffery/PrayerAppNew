@@ -78,7 +78,9 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'nevada', label: 'Episcopal Diocese of Nevada' },
     { bodySlug: 'episcopal', dioceseShort: 'new-hampshire', label: 'The Episcopal Church of New Hampshire' },
     { bodySlug: 'episcopal', dioceseShort: 'new-york', label: 'The Episcopal Diocese of New York' },
-    { bodySlug: 'episcopal', dioceseShort: 'north-carolina', label: 'The Episcopal Diocese of North Carolina' }
+    { bodySlug: 'episcopal', dioceseShort: 'north-carolina', label: 'The Episcopal Diocese of North Carolina' },
+    { bodySlug: 'episcopal', dioceseShort: 'easton', label: 'The Episcopal Diocese of Easton' },
+    { bodySlug: 'episcopal', dioceseShort: 'massachusetts', label: 'The Episcopal Diocese of Massachusetts' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
@@ -133,7 +135,6 @@ const TEC_DIOCESE_DIRECTORY = Object.freeze([
     { dioceseShort: 'easton', label: 'Easton' },
     { dioceseShort: 'ecuador-central', label: 'Ecuador Central' },
     { dioceseShort: 'ecuador-litoral', label: 'Ecuador Litoral' },
-    { dioceseShort: 'el-camino-real', label: 'El Camino Real' },
     { dioceseShort: 'europe', label: 'Europe' },
     { dioceseShort: 'florida', label: 'Florida' },
     { dioceseShort: 'georgia', label: 'Georgia' },
