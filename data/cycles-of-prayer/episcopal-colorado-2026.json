@@ -1,0 +1,122 @@
+{
+  "id": "episcopal-colorado-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Colorado",
+  "dioceseShort": "colorado",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan resource page, fetched directly from https://episcopalcolorado.org/congregational-resources/cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This page shows a rolling current window, not a full-year document -- only August 16 through November 22, 2026 (14 weeks) was present when fetched, matching the roster's own coverage note for this diocese ('August-November 2026'). Not a gap in this transcription; the diocese's own page does not publish the rest of the year in one place.",
+    "Every dated entry carries the source's own liturgical Sunday name (e.g. 'The Twelfth Sunday after Pentecost (Proper 15)') -- recorded in `liturgicalNote`, a disclosed label from the source, not computed by this app.",
+    "The page also interspers standalone weekday saint/commemoration notes between the Sunday entries (e.g. 'August 24: St. Bartholomew the Apostle', 'September 14: Holy Cross Day', 'September 16, 18, 19: Holy Cross Ember Days') -- these are not part of any Sunday's own subject list (they fall on weekdays, not the Sunday being introduced) and are excluded here as a general liturgical-calendar reference embedded in the same page, not as part of the diocese's own weekly cycle-of-prayer content.",
+    "Most weeks name 3 specific congregations plus 1-2 diocesan ministries/offices/regions; congregations are recorded as `parish` subjects (place taken from the source's own 'in City' phrasing), diocesan-wide items as `category` subjects."
+  ],
+  "entries": [
+    { "date": "2026-08-16", "liturgicalNote": "The Twelfth Sunday after Pentecost (Proper 15)", "subjects": [
+      { "type": "parish", "name": "St. Luke's Episcopal Church", "place": "Ft. Collins" },
+      { "type": "parish", "name": "St. John the Baptist Episcopal Church", "place": "Breckenridge" },
+      { "type": "parish", "name": "Christ's Episcopal Church", "place": "Castle Rock" },
+      { "type": "category", "name": "All those in the Ordination Process" },
+      { "type": "category", "name": "Brigit's Bounty Community Resources" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "The Thirteenth Sunday after Pentecost (Proper 16)", "subjects": [
+      { "type": "parish", "name": "St. Augustine's Episcopal Church", "place": "Creede" },
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Lamar" },
+      { "type": "parish", "name": "Chapel of Our Savior", "place": "Colorado Springs" },
+      { "type": "category", "name": "The Office of the Bishop Staff" },
+      { "type": "category", "name": "Christ's Cornucopia in Security" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "The Fourteenth Sunday after Pentecost (Proper 17)", "subjects": [
+      { "type": "parish", "name": "All Saints in the Mountains Mission", "place": "Crested Butte" },
+      { "type": "parish", "name": "St. Joseph's Episcopal Church", "place": "Lakewood" },
+      { "type": "parish", "name": "St. George's Episcopal Church", "place": "Leadville" },
+      { "type": "category", "name": "The Northwest Region of our Diocese and its Missioner, the Rev. Jeremy Lucas" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "The Fifteenth Sunday after Pentecost (Proper 18)", "subjects": [
+      { "type": "parish", "name": "Intercession Church", "place": "Thornton" },
+      { "type": "parish", "name": "St. Andrew's Episcopal Church", "place": "Cripple Creek" },
+      { "type": "parish", "name": "St. Mary Magdalene Episcopal Church", "place": "Boulder" },
+      { "type": "category", "name": "Holy Companion Missional Gathering in Sterling Ranch" },
+      { "type": "category", "name": "Good Samaritan Center in Cortez" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "The Sixteenth Sunday after Pentecost (Proper 19)", "subjects": [
+      { "type": "parish", "name": "St. Stephen the Martyr Episcopal Church", "place": "Monte Vista" },
+      { "type": "parish", "name": "St. James' Episcopal Church", "place": "Meeker" },
+      { "type": "parish", "name": "Church of the Ascension", "place": "Denver" },
+      { "type": "category", "name": "Grace's Kitchen in Cortez" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "The Seventeenth Sunday after Pentecost (Proper 20)", "subjects": [
+      { "type": "parish", "name": "St. Timothy's Episcopal Church", "place": "Centennial" },
+      { "type": "parish", "name": "Epiphany Church", "place": "Denver" },
+      { "type": "parish", "name": "St. Philip-in-the-Field Episcopal Church", "place": "Sedalia" },
+      { "type": "parish", "name": "St. Raphael Episcopal Church", "place": "Security" },
+      { "type": "category", "name": "St. Andrew's Community Center in Manitou Springs" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "The Eighteenth Sunday after Pentecost (Proper 21)", "subjects": [
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Denver" },
+      { "type": "parish", "name": "Grace and St. Stephen's Episcopal Church", "place": "Colorado Springs" },
+      { "type": "parish", "name": "Peace in Christ Episcopal-Lutheran Ministry", "place": "Elizabeth" },
+      { "type": "parish", "name": "The Church of St. Peter & St. Mary", "place": "Denver" },
+      { "type": "category", "name": "Cooperating Ministry of Logan County" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "The Nineteenth Sunday after Pentecost (Proper 22)", "subjects": [
+      { "type": "parish", "name": "St. Philip & St. James Episcopal Church", "place": "Denver" },
+      { "type": "parish", "name": "St. Martin-in-the-fields Episcopal Church", "place": "Aurora" },
+      { "type": "parish", "name": "St. Mary Magdalene Equal to the Apostles", "place": "Denver" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Colorado Springs" },
+      { "type": "category", "name": "Brigit's Village in Frederick" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "The Twentieth Sunday after Pentecost (Proper 23)", "subjects": [
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Fort Collins" },
+      { "type": "parish", "name": "Little Shepherd of the Hills Chapel", "place": "Crestone" },
+      { "type": "parish", "name": "St. Luke's Episcopal Church", "place": "Delta" },
+      { "type": "parish", "name": "Good Shepherd Episcopal Church", "place": "Centennial" },
+      { "type": "category", "name": "New Beginnings Worshipping Community at the Denver Women's Correctional Facility" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "The Twenty-First Sunday after Pentecost (Proper 24)", "subjects": [
+      { "type": "parish", "name": "St. John Chrysostom Episcopal Church", "place": "Golden" },
+      { "type": "parish", "name": "Christ Church", "place": "Canon City" },
+      { "type": "parish", "name": "The Church of Christ the King", "place": "Arvada" },
+      { "type": "parish", "name": "All Saints' Episcopal Church", "place": "Battlement Mesa" },
+      { "type": "parish", "name": "St. Peter's of the Valley Episcopal Church", "place": "Basalt" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "The Twenty-Second Sunday after Pentecost (Proper 25)", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Aspen" },
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Central City" },
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "Grand Junction" },
+      { "type": "parish", "name": "St. Luke's Episcopal Church", "place": "Denver" },
+      { "type": "parish", "name": "Calvary Church", "place": "Golden" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "ALL SAINTS", "subjects": [
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "Aurora" },
+      { "type": "parish", "name": "Grace Church", "place": "Buena Vista" },
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Lakewood" },
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "Kremmling" },
+      { "type": "parish", "name": "The Church of the Holy Redeemer", "place": "Denver" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost (Proper 27)", "subjects": [
+      { "type": "parish", "name": "St. Barnabas Episcopal Church", "place": "Denver" },
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Ouray" },
+      { "type": "parish", "name": "The Parish of St. Barnabas of the Valley", "place": "Cortez" },
+      { "type": "parish", "name": "St. Andrew's Episcopal Church", "place": "Denver" },
+      { "type": "parish", "name": "Episcopal Church of the Transfiguration", "place": "Vail" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost (Proper 28)", "subjects": [
+      { "type": "parish", "name": "St. Matthias Episcopal Church", "place": "Monument" },
+      { "type": "parish", "name": "St. Mark's Church", "place": "Craig" },
+      { "type": "parish", "name": "St. Francis Chapel", "place": "Denver" },
+      { "type": "parish", "name": "The Parish of St. Gregory", "place": "Littleton" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost - CHRIST THE KING", "subjects": [
+      { "type": "parish", "name": "Church of the Ascension and Holy Trinity", "place": "Pueblo" },
+      { "type": "parish", "name": "Cranmer Memorial Chapel", "place": "Winter Park" },
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "Longmont" },
+      { "type": "parish", "name": "The Church of St. Michael the Archangel", "place": "Colorado Springs" },
+      { "type": "parish", "name": "Parish Church of St. Bartholomew the Apostle", "place": "Estes Park" }
+    ]}
+  ]
+}

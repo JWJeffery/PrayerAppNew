@@ -1,0 +1,229 @@
+{
+  "id": "episcopal-central-florida-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Central Florida",
+  "dioceseShort": "central-florida",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Sunday Cycle of Prayer ~ 2026",
+  "sourceFile": "\"2026-Sunday-Cycle-of-Prayer-Revised-9.4.2026-.pdf\", fetched directly from https://cfdiocese.org/app/uploads/2025/12/2026-Sunday-Cycle-of-Prayer-Revised-9.4.2026-.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27. Every subject is a specific congregation (two per week, three on four weeks) -- no diocesan-wide/category weeks anywhere in this source.",
+    "The diocese's own parish list is shorter than 52 weeks, so the same congregations recur later in the year (e.g. January 4's St. Mary's and St. Timothy's, Daytona Beach reappear October 4, joined by a third congregation, St. Anne's, Crystal River, not paired with them in January) -- transcribed exactly as printed for each date, not deduplicated or treated as an error; this is the source's own real weekly content for that date, confirmed by rendering and visually comparing multiple pages against the extracted text before trusting it.",
+    "\"Holy Trintiy Episcopal Church, Bartow\" (September 13) preserves the source's own apparent typo (\"Trintiy\" for \"Trinity\") verbatim, per this corpus's standing rule against silently correcting a diocese's own published document.",
+    "Built by extracting the source PDF's own text and parsing on its own \"Month Day\" header lines -- verified, not merely trusted: the surrounding page-break header text (\"Sunday Cycle of Prayer ~ 2026\", repeating at every page turn) was confirmed to carry no date/subject content of its own and excluded; the source's own two-column layout was independently checked by rendering three of the five pages as images and visually confirming the parser's date-to-subject pairing against them before trusting the remaining pages."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's Episcopal Church", "place": "Daytona Beach" },
+      { "type": "parish", "name": "St. Timothy's Episcopal Church", "place": "Daytona Beach" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Presence", "place": "DeLand" },
+      { "type": "parish", "name": "St. Barnabas Episcopal Church", "place": "DeLand" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Dunnellon" },
+      { "type": "parish", "name": "Holy Faith Church", "place": "Dunnellon" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints' Episcopal Church", "place": "Enterprise" },
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Eustis" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Ft. Meade" },
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Fort Pierce" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Simon the Cyrenian Church", "place": "Fort Pierce" },
+      { "type": "parish", "name": "Holy Trinity Episcopal Church", "place": "Fruitland Park" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's Episcopal Church", "place": "Haines City" },
+      { "type": "parish", "name": "St. Margaret's Episcopal Church", "place": "Inverness" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Kissimmee" },
+      { "type": "parish", "name": "St. Peter's Episcopal Church", "place": "Lake Mary" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis of Assisi Church", "place": "Lake Placid" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Lake Wales" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints' Episcopal Church", "place": "Lakeland" },
+      { "type": "parish", "name": "Christ the King Episcopal Church", "place": "Lakeland" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "Lakeland" },
+      { "type": "parish", "name": "Shepherd of the Hills Church", "place": "Lecanto" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Leesburg" },
+      { "type": "parish", "name": "Christ Church", "place": "Longwood" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Resurrection", "place": "Longwood" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Maitland" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Episcopal Church of Suntree-Viera", "place": "Melbourne" },
+      { "type": "parish", "name": "Holy Trinity Episcopal Church", "place": "Melbourne" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Melbourne" },
+      { "type": "parish", "name": "St. Sebastian's by the Sea", "place": "Melbourne Beach" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's Episcopal Church", "place": "Merritt Island" },
+      { "type": "parish", "name": "St. Edward's Episcopal Church", "place": "Mount Dora" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Church", "place": "New Smyrna Beach" },
+      { "type": "parish", "name": "St. Peter the Fisherman Episcopal Church", "place": "New Smyrna Beach" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Episcopal Church", "place": "Ocala" },
+      { "type": "parish", "name": "Corpus Christi", "place": "Okahumpka" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Okeechobee" },
+      { "type": "parish", "name": "St. Jude's Episcopal Church", "place": "Orange City" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Cathedral Church of St. Luke", "place": "Orlando" },
+      { "type": "parish", "name": "Christ the King Episcopal Church", "place": "Orlando" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Ascension", "place": "Orlando" },
+      { "type": "parish", "name": "Church of the Holy Family", "place": "Orlando" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel Episcopal Church", "place": "Orlando" },
+      { "type": "parish", "name": "Iglesia episcopal San Cristobal", "place": "Orlando" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of John the Baptist", "place": "Orlando" },
+      { "type": "parish", "name": "St. Mary of the Angels Episcopal Church", "place": "Orlando" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "Orlando" },
+      { "type": "parish", "name": "St. Michael's Episcopal Church", "place": "Orlando" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Child", "place": "Ormond Beach" },
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Ormond Beach" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Incarnation", "place": "Oviedo" },
+      { "type": "parish", "name": "Church of Our Savior", "place": "Palm Bay" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Blessed Redeemer", "place": "Palm Bay" },
+      { "type": "parish", "name": "Grace Episcopal Church", "place": "Port Orange" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Nativity", "place": "Port St. Lucie" },
+      { "type": "parish", "name": "Holy Faith Episcopal Church", "place": "Port St. Lucie" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Cross Episcopal Church", "place": "Sanford" },
+      { "type": "parish", "name": "Church of the Holy Apostles", "place": "Satellite Beach" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Elizabeth's Episcopal Church", "place": "Sebastian" },
+      { "type": "parish", "name": "St. Agnes Episcopal Church", "place": "Sebring" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of St. Luke & St. Peter", "place": "Saint Cloud" },
+      { "type": "parish", "name": "St. George Episcopal Church", "place": "The Villages" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Gabriel's Episcopal Church", "place": "Titusville" },
+      { "type": "parish", "name": "St. Augustine of Canterbury", "place": "Vero Beach" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "Vero Beach" },
+      { "type": "parish", "name": "Church of the Messiah", "place": "Winter Garden" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Cross Church", "place": "Winter Haven" },
+      { "type": "parish", "name": "St. Paul's Church", "place": "Winter Haven" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints Episcopal Church", "place": "Winter Park" },
+      { "type": "parish", "name": "St. Richard's Episcopal Church", "place": "Winter Park" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Spirit", "place": "Apopka" },
+      { "type": "parish", "name": "St. Alban's Episcopal Church", "place": "Auburndale" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trintiy Episcopal Church", "place": "Bartow" },
+      { "type": "parish", "name": "Episcopal Church of St. Mary", "place": "Belleview" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis of Assisi Church", "place": "Bushnell" },
+      { "type": "parish", "name": "St. Matthias Episcopal Church", "place": "Clermont" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's Church", "place": "Cocoa" },
+      { "type": "parish", "name": "St. David's by the Sea", "place": "Cocoa Beach" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anne's Episcopal Church", "place": "Crystal River" },
+      { "type": "parish", "name": "St. Mary's Episcopal Church", "place": "Daytona Beach" },
+      { "type": "parish", "name": "St. Timothy's Episcopal Church", "place": "Daytona Beach" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Presence", "place": "DeLand" },
+      { "type": "parish", "name": "St. Barnabas Episcopal Church", "place": "DeLand" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Dunnellon" },
+      { "type": "parish", "name": "Holy Faith Church", "place": "Dunnellon" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints' Episcopal Church", "place": "Enterprise" },
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Eustis" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Church", "place": "Fort Pierce" },
+      { "type": "parish", "name": "St. Simon the Cyrenian Church", "place": "Fort Pierce" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity Episcopal Church", "place": "Fruitland Park" },
+      { "type": "parish", "name": "St. Mark's Episcopal Church", "place": "Haines City" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Margaret's Episcopal Church", "place": "Inverness" },
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Kissimmee" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's Episcopal Church", "place": "Lake Mary" },
+      { "type": "parish", "name": "St. Francis of Assisi Church", "place": "Lake Placid" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Lake Wales" },
+      { "type": "parish", "name": "All Saints' Episcopal Church", "place": "Lakeland" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ the King Episcopal Church", "place": "Lakeland" },
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "Lakeland" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Shepherd of the Hills Church", "place": "Lecanto" },
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Leesburg" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Longwood" },
+      { "type": "parish", "name": "Episcopal Church of the Resurrection", "place": "Longwood" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Maitland" },
+      { "type": "parish", "name": "Christ Episcopal Church of Suntree-Viera", "place": "Melbourne" }
+    ]}
+  ]
+}

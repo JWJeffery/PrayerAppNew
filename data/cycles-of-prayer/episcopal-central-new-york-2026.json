@@ -1,0 +1,99 @@
+{
+  "id": "episcopal-central-new-york-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Central New York",
+  "dioceseShort": "central-new-york",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Prayers for the Week of... (diocesan weekly prayer posts)",
+  "sourceFile": "Diocesan events page (https://cnyepiscopal.org/events/category/prayer/list/), each week its own post (e.g. https://cnyepiscopal.org/event/prayers-for-the-week-of-october-4th/). Automated fetch of the listing page was blocked by a bot-protection challenge page (a `sgcaptcha` redirect, confirmed by inspecting the raw response); the actual content for these 13 weeks was supplied directly by Josh, pasted from his own browser, 2026-09-29.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Only 13 weeks were available (October 4 - December 27, 2026) -- matching the roster's own coverage note for this diocese ('Current and upcoming 2026 weeks'), a rolling window rather than a full-year document. No earlier-2026 weeks are transcribed here since none were supplied; this is the source's own real, partial scope, not a gap trimmed by this transcription.",
+    "Each week's post ends with an identical standing prayer for an end to gun violence ('God of mercy and compassion, who wept with Rachel as she lamented over her children...'), word-for-word the same every week -- per this corpus's established Great Lakes/Southwestern Virginia precedent for a repeated per-week constant, excluded from `entries` and disclosed here in full rather than repeated into all 13 weeks: 'God of mercy and compassion, who wept with Rachel as she lamented over her children -- be with us, who lament the plague of gun violence that lies heavy over our land. Open our eyes to see the ways we might transform the shadow of strife and death into the way of love and peace. Strengthen us to tirelessly care for one another, that we may truly find our security in the boundless love you call us to, and lead us all to your promised future, where no sword will be drawn against another, and no power known but the power of love. All this we ask through the name of your Son, Jesus Christ. Amen.'",
+    "Each week names, in order: 1-2 of the diocese's own parishes (`parish` subjects, clergy folded into `note`); another Episcopal Church diocese, elsewhere, 'and their bishop' (recorded as a `category` subject, not this schema's `diocese` type, since that type is reserved for scope-`communion` files per schema.json -- this file is scope `diocese`); and an Anglican Communion province/church body 'and their [prime bishop/archbishop/etc.]' (also `category`, same reasoning). Both cross-reference lines are the diocese's OWN prayer content, not this transcription inventing structure -- Central New York's own cycle deliberately widens beyond its own parishes every week.",
+    "Two apparent source typos preserved verbatim, per this corpus's standing rule: 'St. James Epsicopal Church' (November 8, evidently 'Episcopal') and 'their bishop, their bishop, the Rt. Rev. Rayford J. Ray' (November 8, an evident duplication in the source's own sentence, not an extraction artifact since this text was hand-copied from a live rendered page, not machine-extracted from a PDF).",
+    "'the Most Marinez Bassotto' (October 4) is missing 'Rev.' before the name, unlike every other entry's parallel phrasing ('the Most Rev. X') -- preserved exactly as the source gives it rather than silently corrected."
+  ],
+  "entries": [
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Marcellus" },
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "Moravia", "note": "priest, the Rev. Thomas Margrave" },
+      { "type": "category", "name": "The Diocese of Newark and their bishop, the Rt. Rev. Carlye J. Hughes" },
+      { "type": "category", "name": "Igreja Episcopal Anglicana do Brasil and their prime bishop, the Most Marinez Bassotto" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Episcopal Church", "place": "New Berlin", "note": "priest, the Rev. Steve White" },
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "New Hartford", "note": "deacon, the Rev. Deacon Lynne Walton" },
+      { "type": "category", "name": "The Diocese of North Carolina and their bishop, the Rt. Rev. Samuel Rodman" },
+      { "type": "category", "name": "Anglican Church of Burundi and their archbishop, the Most Rev. Eraste Bigirimana" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel Episcopal Church", "place": "Norwich", "note": "priest, the Rev. Steve White" },
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Oneida", "note": "priest, the Very Rev. Arthur N. Smith" },
+      { "type": "category", "name": "The Diocese of North Dakota and their bishop, the Rt. Rev. Shay Craig" },
+      { "type": "category", "name": "Anglican Church of Canada and their prime bishop, the Most Rev. Shane Parker" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Resurrection", "place": "Oswego" },
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Owego", "note": "priest, the Rev. Trula Hollywood" },
+      { "type": "category", "name": "The Diocese of Northern California and their bishop, the Rt. Rev. Megan M. Traquair" },
+      { "type": "category", "name": "Church of the Province of Central Africa and their prime bishop, the Most Rev. Albert Chama" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Oxford" },
+      { "type": "parish", "name": "St. Mark's Episcopal Church", "place": "Port Leyden" },
+      { "type": "category", "name": "The Diocese of Northern Indiana and their bishop, the Rt. Rev. Doug Sparks" },
+      { "type": "category", "name": "Iglesia Anglicana de la Region Central de America and their prime bishop, the Most Rev. Ramón Ovalle" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James Epsicopal Church", "place": "Pulaski", "note": "priest, the Rev. Shelly Banner" },
+      { "type": "parish", "name": "Zion Episcopal Church", "place": "Rome", "note": "priest, the Rev. Emily Hyberg" },
+      { "type": "category", "name": "The Diocese of Northern Michigan and their bishop, their bishop, the Rt. Rev. Rayford J. Ray" },
+      { "type": "category", "name": "Province de L'Eglise Anglicane Du Congo and their prime bishop, the Most Rev. Titre Ande Georges" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "Seneca Falls", "note": "priest, the Rev. Brad Benson" },
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Sherburne" },
+      { "type": "category", "name": "The Diocese of Northwest Texas and their bishop, the Rt. Rev. J. Scott Mayer" },
+      { "type": "category", "name": "Iglesia Anglicana de Chile and their prime bishop, the Most Rev. Enrique Lago Zugadi" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Gethsemane Episcopal Church", "place": "Sherrill", "note": "priest, the Rev. Georgina Hegeny" },
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Skaneateles", "note": "priest, the Rev. Pilar Parnell" },
+      { "type": "category", "name": "The Diocese of Northwestern Pennsylvania and their Assisting Bishop, the Rt. Rev. Larry Benfield" },
+      { "type": "category", "name": "Church of England and the Archbishop of Canterbury, the Rt. Rev. and Rt. Hon. Dame Sarah Mullally" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Slaterville Springs" },
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "South New Berlin", "note": "priest, the Rev. Steven White" },
+      { "type": "category", "name": "The Diocese of Ohio and their bishop, the Rt. Rev. Anne B. Jolly" },
+      { "type": "category", "name": "Hong Kong Sheng Kung Hui and their prime bishop, the Most Rev. Andrew Chan Au-ming" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Speedsville", "note": "priest, the Rev. Patricia Kinney" },
+      { "type": "parish", "name": "Church of St. Mark the Evangelist", "place": "Syracuse", "note": "priest, the Rev. Jon M. White" },
+      { "type": "category", "name": "The Diocese of Oklahoma and their bishop, the Rt. Rev. Poulson C. Reed, Jr." },
+      { "type": "category", "name": "Church of the Province of the Indian Ocean and their prime bishop, the Most Rev. Dr. Gilbert Rateloson Rakotondravelo" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Saviour", "place": "Syracuse" },
+      { "type": "parish", "name": "Grace Episcopal Church", "place": "Syracuse", "note": "priest, the Rev. Steven Moore" },
+      { "type": "category", "name": "The Diocese of Olympia and their bishop, the Rt. Rev. Philip N. LaBelle" },
+      { "type": "category", "name": "Church of Ireland and their prime bishops, the Most Rev. John McDowell and the Most Rev. Michael Jackson" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban's Episcopal Church", "place": "Syracuse", "note": "priest, the Rev. Julie Calhoun-Bryant" },
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "Syracuse", "note": "priest, the Rev. Philip Major" },
+      { "type": "category", "name": "The Diocese of Pennsylvania and their bishop, the Rt. Rev. Daniel G.P. Gutierrez" },
+      { "type": "category", "name": "Nippon Sei Ko Kai and their prime bishop, the Most Rev. David Eisho Uehara" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Trumansburg" },
+      { "type": "parish", "name": "Grace Episcopal Church", "place": "Utica", "note": "priest, the Rev. Christine Williams" },
+      { "type": "category", "name": "The Diocese of Pittsburgh and their bishop, the Rt. Rev. Ketlen A. Solak" },
+      { "type": "category", "name": "Episcopal Church of Jerusalem & the Middle East and their prime bishop, the Most Rev. Hosam Elias Naoum" }
+    ]}
+  ]
+}

@@ -366,16 +366,36 @@ four. `npm run audit:cycles-of-prayer`: PASS, 25 files, 0 findings. Full per-dio
 `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 4" entry.
 
 **Every diocese-level source file already sitting in Josh's "TEC Cycle of Prayer" Drive folder is now
-ingested — that phase is fully closed.** Next: the roster spreadsheet's remaining ~65 dioceses via their
-own URLs (per Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this
-note/ledger rather than endlessly retrying, since there is no Drive/Sheets write tool to literally
-annotate the spreadsheet itself).
+ingested — that phase is fully closed.**
 
-**25 files currently in the corpus, all passing the validator:** 21 diocese-level, `cycleType: "dated"`
-— Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East
-Carolina, Great Lakes, Idaho, Kentucky, Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San
-Joaquin, Southwestern Virginia, Western Massachusetts; 2 diocese-level, `cycleType: "monthly-recurring"`
-— Arkansas, Northern Indiana — plus:
+**Batch 5/6 (California, Central Florida, Central New York, Chicago, Colorado, Florida): DONE
+2026-09-29 — the first batch drawn from the roster spreadsheet's own diocesan URLs directly (not a
+Drive file), 6 dioceses.** All `cycleType: "dated"`, `year: 2026`, registered, validated
+(`npm run audit:cycles-of-prayer`: PASS, 31 files, 0 findings). Chicago is the largest/most complex file
+in the corpus (52 entries, two structurally distinct halves — deanery-grouped domestic parishes for the
+first ~33 weeks, institutional/thematic content with no named parishes for the rest). Central New York's
+page was bot-protected (an `sgcaptcha` challenge page, not real content) — reported to Josh per his own
+new standing instruction (*"Send me the link anytime you get blocked, and I'll fetch it"*) and he pasted
+the real content directly; **this is now the standing procedure for any future blocked page, replacing
+the old approach of working around or abandoning it.** Easton and El Camino Real were tried and set
+aside as impractical (JS-generated PDF links; a 52-post blog archive respectively) in favor of cleaner
+alternatives within the same batch — not formally logged as "unfetchable," worth a second look later if
+time allows. Full per-diocese transcription detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese
+ingestion batch 5/6" entry.
+
+**Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time (per
+Josh's original instruction: flag anything unfetchable in this note/ledger, and send Josh the link
+directly if blocked by bot protection, rather than endlessly retrying or working around it — there is
+still no Drive/Sheets write tool to literally annotate the spreadsheet itself). Alphabetically, the next
+batch starts around Delaware/Eastern Oregon (Easton and El Camino Real, above, were attempted out of
+alphabetical order and can be revisited or left for Josh).
+
+**31 files currently in the corpus, all passing the validator:** 27 diocese-level, `cycleType: "dated"`
+— Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
+Coast, Central New York, Chicago, Connecticut, East Carolina, Florida, Great Lakes, Idaho, Kentucky,
+Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western
+Massachusetts, Colorado; 2 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana
+— plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
