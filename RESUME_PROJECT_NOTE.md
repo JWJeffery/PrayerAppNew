@@ -336,49 +336,37 @@ the spreadsheet" for an unfetchable roster URL (Josh's own instruction for that 
 to happen in this note/ledger instead, flagged to Josh — raise this with him before relying on it
 silently.
 
-**Batch 3 (New Jersey, Newark, Rio Grande, San Joaquin): DONE 2026-09-29 — built, validated, registered,
-live-verified.** The 4 tractable dioceses (all but Northern Indiana) were re-fetched fresh from Drive
+**Batch 3 (New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin): FULLY DONE 2026-09-29 — built,
+validated, registered, live-verified, all 5.** The 4 tractable dioceses were re-fetched fresh from Drive
 (the prior session's own transcription reasoning had never been written to a file, so it was re-derived
 against the live source rather than trusted from memory) and shipped as
 `episcopal-newark-2026.json`, `episcopal-new-jersey-2026.json`, `episcopal-rio-grande-2026.json`,
-`episcopal-san-joaquin-2026.json` — all `cycleType: "dated"`, `year: 2026`, all registered in
-`CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`). `npm run audit:cycles-of-prayer`: PASS, 22
+`episcopal-san-joaquin-2026.json` — `cycleType: "dated"`, `year: 2026`. **Northern Indiana resolved same
+day**: its source is a repeating 1-through-37 list with no calendar anchoring, fitting neither existing
+`cycleType` — raised directly with Josh rather than guessed at, and his answer ("Cut it off after 31")
+turned out not to need a new schema at all: dropping items 32-37 (all disclosed in the file's own
+`notes`, not silently discarded) leaves exactly 31 items, which fits the EXISTING `"monthly-recurring"`
+shape Arkansas already uses. Shipped as `episcopal-northern-indiana.json`. All 5 registered in
+`CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`). `npm run audit:cycles-of-prayer`: PASS, 23
 files, 0 findings. Live-verified end to end in headless Chromium against the app's own actual runtime
-(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`), not a standalone harness. Full per-diocese
-transcription detail (every disclosed judgment call): `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29
-"Diocese ingestion batch 3" entry — not repeated here. New Jersey (365-entry full daily cycle, the
-most structurally unusual file in the corpus so far) was built via a one-off Node parsing script
-(scratch-only, not committed) rather than hand-listed, then spot-checked against the source at every
-structurally ambiguous date before being trusted.
+(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`), not a standalone harness — including, for
+Northern Indiana specifically, the February-28 short-month edge case a day-of-month cycle needs to get
+right. Full per-diocese transcription detail (every disclosed judgment call): `AUDIT_GOVERNANCE_LEDGER.md`'s
+2026-09-29 "Diocese ingestion batch 3" entries — not repeated here. New Jersey (365-entry full daily
+cycle, the most structurally unusual file in the corpus so far) was built via a one-off Node parsing
+script (scratch-only, not committed) rather than hand-listed, then spot-checked against the source at
+every structurally ambiguous date before being trusted.
 
-- **Northern Indiana — DOES NOT FIT THE EXISTING SCHEMA, genuinely flagged, still not started, raised
-  with Josh.** Source
-  (Drive id `1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`, "Diocesan Cycle of Prayer - Current.pdf") is a
-  repeating **1-through-37** numbered list (not tied to any calendar day-of-month, not tied to any
-  month name — genuinely just a flat sequential rotation that repeats forever, unrelated to how many
-  days are in any given month). Neither existing `cycleType` fits: `"dated"` needs real calendar
-  dates this source never gives; `"monthly-recurring"` is explicitly 1-31 day-of-month semantics
-  (Arkansas's own precedent) and would permanently strand days 32-37's real content (Honorary Canons
-  of the Cathedral, three parishes, two Retired-Clergy entries) since no month ever reaches day 32.
-  Forcing this into either existing type would either fabricate false day-of-month meaning or
-  silently drop six real entries. This needs a genuine schema decision with Josh (most likely: a
-  third `cycleType`, something like `"sequential"`, keyed by a bare 1-N position with its own
-  anchor-date-based resolution logic, analogous to but distinct from `"monthly-recurring"`) before
-  any Northern Indiana file gets built — raise it with him rather than guessing at a new
-  architecture unilaterally. Full raw source text for all 37 entries was already captured in this
-  session's own reasoning if useful once the schema question is settled.
+Batch 3 is now fully closed. Next: batch 4 — Southwestern Virginia, Western Massachusetts (only 2 — end
+of the Drive-identified list) — then the roster spreadsheet's remaining ~65 via their own URLs (per
+Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this note/ledger rather
+than endlessly retrying, since there is no Drive/Sheets write tool to literally annotate the spreadsheet
+itself).
 
-Batch 3 is done except Northern Indiana, which stays blocked on Josh's schema decision (raised, not yet
-answered). Next up, once that's settled: batch 4 — Southwestern Virginia, Western Massachusetts (only
-2 — end of the Drive-identified list) — then the roster spreadsheet's remaining ~65 via their own URLs
-(per Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this note/ledger
-rather than endlessly retrying, since there is no Drive/Sheets write tool to literally annotate the
-spreadsheet itself).
-
-**22 files currently in the corpus, all passing the validator:** 20 diocese-level — Western Oregon,
-Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes,
-Idaho, Kentucky, Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin
-(`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus:
+**23 files currently in the corpus, all passing the validator:** 19 diocese-level, `cycleType: "dated"`
+— Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East
+Carolina, Great Lakes, Idaho, Kentucky, Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San
+Joaquin; 2 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
