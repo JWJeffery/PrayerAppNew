@@ -362,6 +362,16 @@
            node keeps its onclick intact. */
         var backBtn = main.querySelector(':scope > button[onclick*="backToSplash"]');
 
+        /* ADDED 2026-09-29: the Profile icon (#app-profile-icon-btn) started as
+           a separate position:fixed element, per its own original comment in
+           index.html -- and ran into the EXACT collision already documented
+           just above for "Back to Modes": a fixed top-left element lands right
+           on top of .uo-ordo-mark ("The Universal Office" branding), which
+           occupies that same corner. Same fix, same reasoning: move it into
+           the ordo row as a real flex child instead of floating a fixed
+           element over it. */
+        var profileIconBtn = document.getElementById('app-profile-icon-btn');
+
         /* Move, never rebuild: these nodes carry live handlers and ids. */
         var moved = [];
         ['office-mode-title', 'office-context-actions'].forEach(function (id) {
@@ -398,6 +408,20 @@
             backBtn.style.margin = '0';
             backBtn.style.flex = '0 0 auto';
             ordo.appendChild(backBtn);
+        }
+
+        if (profileIconBtn) {
+            /* Same clearing as backBtn above -- .app-profile-icon-btn's own
+               CSS sets position:fixed as its OWN pre-move default (for the
+               unlikely case JS fails to run at all, it still floats somewhere
+               usable rather than vanishing); cleared here once it becomes a
+               real flex child instead. */
+            profileIconBtn.style.position = 'static';
+            profileIconBtn.style.top = 'auto';
+            profileIconBtn.style.left = 'auto';
+            profileIconBtn.style.margin = '0';
+            profileIconBtn.style.flex = '0 0 auto';
+            ordo.insertBefore(profileIconBtn, ordo.firstChild);
         }
 
         main.insertBefore(ordo, main.firstChild);

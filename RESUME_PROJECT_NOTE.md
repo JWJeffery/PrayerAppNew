@@ -42,6 +42,34 @@ recurring; a literal command is.
 
 ---
 
+## 0. CRITICAL — read this before anything else, 2026-09-29
+
+**The session that wrote this note (`claude/jwjeffery-prayerappnew-resume-k0nd7n`) hit a platform-level
+outage partway through active work: its Bash tool's server-side safety classifier stopped returning a
+verdict at all, for every command, repeatedly, until the platform force-ended its turn ("Auto mode is
+unavailable... Claude stopped").** This was confirmed NOT a repo problem and NOT specific to that one
+branch/checkout being broken -- a second, separate session Josh opened on a different branch
+(`claude/funny-lovelace-9r4fe1`) ran Bash successfully in the same window this one was failing. It was
+that one session's shell access specifically that was down.
+
+**Consequence: real, finished work is sitting UNCOMMITTED, UNPUSHED, on local disk in that session's
+own container**, because `git add`/`git commit`/`git push` all need Bash and none of it could run. If
+you are a FRESH session (a different container/checkout than the one that wrote this note), **you do
+not have these files** -- they exist only on that other session's disk, not in this git history, not on
+`origin`, and not reachable from here. Check `git log --oneline -5` and `git status` right now: if the
+work described in section 7's "UI fixes built 2026-09-29, uncommitted" entry below is NOT already in
+your history, it has not reached you, and you have two real options, not one:
+1. **Rebuild it from this note's description** (detailed below, file by file) -- slower, but unblocked
+   immediately.
+2. **Ask Josh whether the original session's Bash has recovered** -- if so, having IT push is strictly
+   better (byte-identical to what was actually tested) than a rebuild from a description.
+
+Do not assume the work is simply "somewhere in the repo already" and skip verifying -- that assumption
+is exactly what section "Run this exact check" above this one already warns against, for the identical
+reason (a branch/session silently missing real work).
+
+---
+
 ## 1. First thing to do, every session
 
 **Read the full repo and the governance documentation before any analysis or build work.** This is
@@ -223,6 +251,148 @@ it.
 `AUDIT_GOVERNANCE_LEDGER.md`'s dated entries and `documentation/project-history/VOLUME-5-2026-09-28-
 session-log.md` — this section states current status only, not the story of how it got there.**
 
+**PRIORITY 0 — UI fixes built 2026-09-29, UNCOMMITTED, sitting only on the writing session's local
+disk (see section 0 above for why).** Verify with `git status`/`git diff` before trusting any of this
+is actually present in your checkout. If present: run the verification steps at the end of this entry,
+then commit/push/PR/merge per the standing workflow (section 3). If NOT present (a fresh session):
+rebuild file-by-file from the description below, in this order (each depends on the one before it).
+
+Context: four small, real UI bugs Josh reported directly, live, in rapid succession, each fixed and
+merged before the next was reported. **The first three of these four PRs are already merged** (verify
+with `git log --oneline` — you should see them): "Gate Audit Dashboard to super-users; move
+Explore-other-Offices toggle into Profile", "Un-gate the Profile panel from ?advanced=1; fix its stale
+copy", "Stop calling Reader/Subdeacon 'a minor order' -- wrong for TEC", "Gate the Book of Needs role
+picker's options by tradition". **What follows is the FIFTH round, built on top of those four, and it
+is the part that is NOT yet committed:**
+
+1. **Profile panel redesigned and made a true standalone modal, independent of the splash screen.**
+   Josh's own words, in order: first "less ugly and more readable" (the panel was a translucent
+   gradient card at ~0.7 alpha sitting over a busy background photo — unpredictable contrast); then,
+   after a first pass tied it to `#uo-threshold-grid`'s visibility, a direct correction: "that icon
+   would provide access to the profile... do not attach it to where it currently is." Net result:
+   - `index.html`: the `<section id="user-profile-defaults">` block (all its real, live-wired
+     `<select>`/`<input>` fields — entry default, tradition default, Book of Needs scope/role,
+     OOR sub-tradition, Roman Breviary language, parish dedication, display name, diocese, home
+     parish, the Explore-other-Offices checkbox) was CUT from inside `#mode-selection`/
+     `#uo-threshold-grid` and MOVED (not rebuilt — every id/onchange handler preserved) to a new
+     top-level modal host near `#uo-onboarding-prompt` at the end of `<body>`:
+     `<div id="user-profile-panel" class="app-profile-modal-backdrop" ...>` wrapping the same
+     `<section id="user-profile-defaults" class="app-profile-defaults">`, now with a
+     `<button class="app-profile-close">&times;</button>` inside it. Backdrop click-outside-to-close
+     wired inline (`onclick="if (event.target === this) closeUserProfilePanel();"`).
+   - `css/office.css`: `.app-profile-defaults` rewritten from the old translucent gradient to a
+     SOLID card (`background: var(--parchment, #f4ecd8)`, dark-mode `#1a1208`), matching the
+     already-good, never-complained-about `.uo-tradition-explanation-inner`/`#uo-onboarding-prompt`
+     pattern exactly. New `.app-profile-modal-backdrop` (fixed, inset:0, z-index:10002, dark
+     backdrop) and `.app-profile-close` classes added. Grid narrowed from 3 to 2 columns for a
+     narrower modal width.
+   - `js/office-ui.js`: new `openUserProfilePanel()` (calls `syncUserProfileControls()`, shows the
+     backdrop, adds an Escape-key listener), `closeUserProfilePanel()`, `handleUserProfilePanelKeydown()`.
+     The EARLIER coupling this same session had briefly added — `showUoThresholdGrid()`/
+     `showUoThresholdDefault()` toggling `#user-profile-defaults` alongside the grid — was REMOVED
+     again once Josh corrected the approach; the modal is now fully independent of that grid.
+   - `scripts/audit-app-entry-routing.mjs`, `scripts/audit-entry-mobile-stabilization-runner.mjs`,
+     `scripts/audit-user-profile-defaults-skeleton.mjs`: updated (again — third round for these
+     files this session) to assert the new standalone-modal markup/behavior instead of the two
+     prior, now-superseded architectures. **Not yet re-run after the LATEST edit round** (the
+     office-shell.js icon-collision fix below) — run all three again before trusting them.
+
+2. **A persistent "Your Profile" access icon added to every office page**, per Josh's explicit request
+   ("add a little icon in each office page... upper corner"), reusing a simple two-shape person-in-
+   circle SVG (head circle + shoulder arc), deliberately similar-not-identical to a reference image he
+   attached. Also added a plain "Your Profile" button to the splash screen's own Tools row (both call
+   the same `openUserProfilePanel()`).
+   - `index.html`: `<button id="app-profile-icon-btn" class="app-profile-icon-btn"
+     onclick="openUserProfilePanel()" ...>` with an inline SVG, added as a global sibling of
+     `#app-mode-return-button` directly inside `#main-content` (so one element covers every
+     tradition/lane, same pattern that button already uses). Plus a new "Your Profile" `<button>` at
+     the START of `.app-mode-tools-row` (before "Book of Needs").
+   - **BUG FOUND AND FIXED, same session: the icon was invisible.** Its `position: fixed; top:12px;
+     left:16px` landed exactly on top of `.uo-ordo-mark` ("The Universal Office" branding text),
+     which occupies that identical corner in the shared office masthead (`.uo-ordo`,
+     `office-shell.css`, `position: sticky; top:0; z-index:5; padding: 0 22px`) — this is the EXACT
+     same collision `office-shell.js` already has a documented fix for regarding the old "Back to
+     Modes"/"Explore other Offices" button (see its own comment: "floats over the ordo line and
+     lands on top of the Auto/Light/Dark control... Phase 4 rehomes this button properly"). Fixed
+     the same way, matching established precedent rather than inventing a new pattern: in
+     `js/office-shell.js`'s `buildShell()`, added `var profileIconBtn =
+     document.getElementById('app-profile-icon-btn');` right after the existing `backBtn` lookup,
+     and a matching `if (profileIconBtn) { ...clear position:fixed inline styles...;
+     ordo.insertBefore(profileIconBtn, ordo.firstChild); }` block right after the existing `backBtn`
+     relocation block — so the icon becomes a real static flex child at the START of `.uo-ordo`
+     (before the "Universal Office" mark) instead of a floating fixed element fighting it for the
+     same pixels. **`node --check js/office-shell.js` was NEVER RUN** (the Bash outage hit at
+     exactly this point) — run it first, before anything else, when you pick this up. The edit was
+     read back and inspected by eye (balanced braces, matches the sibling `backBtn` block's shape
+     exactly) but that is not a substitute for actually running it.
+   - `css/office.css`: `.app-profile-icon-btn` CSS added (34px circle, gold-on-dark-translucent,
+     `top: calc(var(--uo-ordo-height, 64px) + 10px); left: 16px;` as the PRE-move fallback position
+     only — once `office-shell.js` runs, inline styles override this and it becomes a static flex
+     child instead; the calc() value is irrelevant once moved, it only matters for the brief window
+     before JS relocates it, or if JS somehow fails to run at all).
+   - **Verified working, before the icon-collision fix was even found:** a full headless Playwright
+     pass confirmed the modal itself opens with real profile data, closes via Escape/✕/backdrop-click,
+     with zero console errors, from an ACTUAL BCP office page (not just the splash screen) — see
+     `office-with-icon.png`/`profile-modal-open.png` if still in the writing session's scratchpad.
+     **The icon-collision fix itself (office-shell.js) has NOT been re-verified live** — do that
+     first: reload an office page headless, confirm `#app-profile-icon-btn`'s computed `position` is
+     `static` and it renders visually distinct from `.uo-ordo-mark`, not overlapping it.
+
+3. **"Anglican Communion" renamed to "The Episcopal Church" everywhere it names this app's own
+   implemented tradition**, per Josh's direct correction: "Remember, the app will have already asked
+   if I am east or west, catholic or anglican... it should say 'The Episcopal Church'. The Tradition
+   is Anglicanism. The sub-tradition is The Episcopal Church." This REVERSES an earlier same-project
+   decision (`UNIVERSAL_OFFICE_TRADITION_LABELS`'s own comment, dated 2026-09-28, says Josh confirmed
+   "Anglican Communion" at the time) — his latest instruction controls. Reasoning preserved in the
+   code comments: "Anglican Communion" names the worldwide ~40-province fellowship, not the specific
+   church whose 1979 BCP this app actually renders; every sibling entry in the same lists already
+   names a specific church body ("Church of the East", not "Church of the East Communion"), so this
+   was the one inconsistent entry, not a new naming policy.
+   - `js/office-ui.js`: `UNIVERSAL_OFFICE_TRADITION_LABELS.anglican` and
+     `OFFICE_MODE_HEADER_LABELS.daily` (the literal text `#office-mode-title` renders on every BCP
+     office page — this is the exact string Josh saw in his screenshot) both changed from
+     `'Anglican Communion'` to `'The Episcopal Church'`.
+   - `js/prayers.js`: same rename in `BOOK_OF_NEEDS_TRADITION_CODES.ANG` and
+     `BOOK_OF_NEEDS_CONTEXTS.ANG.label` (the Book of Needs' own tradition-filter label).
+   - `index.html`: three more literal occurrences renamed — the `#entry-western-options` tile
+     (`data-entry-tradition="anglican"`, `<strong>` text), the `#uo-threshold-grid` mode-selection
+     tile (`.app-mode-title`), and the Profile panel's `#profile-tradition-default`
+     `<option value="anglican">` (both its visible text and its `data-available-label` attribute).
+   - `admin/admin.html`: `TA_DISPLAY_NAMES.anglican` (tradition-availability admin display name)
+     given the same rename, for consistency (Josh would see this in Admin Console).
+   - `scripts/browser-qc-user-profile-defaults-sweep.js`,
+     `scripts/browser-qc-book-of-needs-routing-sweep.js`: both browser-QC scripts' literal
+     `"Anglican Communion"` string assertions (checked against LIVE rendered `#office-mode-title`/
+     Book-of-Needs-label text, not just source-code presence) updated to `"The Episcopal Church"` —
+     these would otherwise start failing the next time anyone actually runs them.
+   - **Deliberately NOT touched, and should stay that way**: `data/cycles-of-prayer/
+     anglican-communion-2026.json` and every reference to "Anglican Communion" inside it or
+     `schema.json`'s own scope documentation — that file genuinely IS the worldwide Anglican
+     Communion Cycle of Prayer (a real, correctly-named, separate corpus tier), not an instance of
+     this bug. Also not touched: `audit-ledger.html` line ~706's historical ledger prose quoting a
+     real sanctoral commemoration literally named "the Saints and Martyrs of the Anglican
+     Communion" — that's a real feast name in a real calendar source, and the ledger is an
+     append-only historical record, not something to rewrite.
+
+**Verification steps once Bash is available (do ALL of these before committing):**
+```
+node --check js/office-ui.js
+node --check js/office-shell.js
+node --check js/prayers.js
+node scripts/audit-app-entry-routing.mjs        # compare failure count to the pre-existing baseline noted in its own recent commits, not zero
+node scripts/audit-user-profile-defaults-skeleton.mjs
+node scripts/audit-entry-mobile-stabilization-runner.mjs
+```
+Then a headless Playwright pass (pattern used throughout this session — spin up `npx http-server`,
+persist a test profile via `getUserProfileDefaults()`/`persistUserProfileDefaults()`, reload, click
+`#app-profile-icon-btn`, assert the modal opens with real data and the icon doesn't visually collide
+with `.uo-ordo-mark`) before committing. Then: bump cache-bust query params for every touched
+`<script>`/`<link>` in `index.html` that doesn't already have one bumped this round (check current
+values — several were already bumped mid-session: `office-ui.js` is at `v=325`, `office.css` at
+`v=230`; `office-shell.js` has NOT been bumped yet and should be). Commit, push to
+`claude/jwjeffery-prayerappnew-resume-k0nd7n`, open a PR, merge immediately (standing policy — see
+section 3).
+
 **PRIORITY 1 — Menaion hymn-family corpus transcription (Orthros).** Full detail and evidence in
 `structure.json`'s `menaion-hymn-corpus-transcription` todo. Branch classification (honest-rubric vs.
 deferred) for sessional hymns, praises, exapostilarion, feast Theotokion is done, verified directly
@@ -319,12 +489,111 @@ were derived by cross-referencing the Diocese of Lexington's companion file (ing
 batch), which prints explicit dates for the identical sequence of Sunday names under the same TEC
 "Year A / Daily Office Year Two" lectionary. Full per-diocese transcription detail (every disclosed
 judgment call, typo, ambiguous grouping) for both batches: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29
-entries — not repeated here. Remaining Drive-identified dioceses still to do: New Jersey, Newark,
-Northern Indiana, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts (7 more, then
-the roster spreadsheet's remaining ~65). Note: this session has no Google Drive/Sheets *write* tool, so
-"note it on the spreadsheet" for an unfetchable roster URL (Josh's own instruction for that later phase)
-will need to happen in this note/ledger instead, flagged to Josh — raise this with him before relying on
-it silently.
+entries — not repeated here. Note: this session has no Google Drive/Sheets *write* tool, so "note it on
+the spreadsheet" for an unfetchable roster URL (Josh's own instruction for that later phase) will need
+to happen in this note/ledger instead, flagged to Josh — raise this with him before relying on it
+silently.
+
+**Batch 3 (New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin): source text FULLY FETCHED
+and transcription approach FULLY DECIDED for 4 of 5, but NO BUILD SCRIPTS WRITTEN and NO JSON FILES
+CREATED YET** — this session got pulled onto the urgent UI bug reports in section 7's Priority 0 entry
+before finishing the build step. Do not re-fetch from Drive before checking this note; re-fetching
+would waste real effort (the initial title-based search for these 5 dioceses came back empty — none of
+their filenames mention the diocese name — and took a full investigative pass to resolve).
+
+- **First surprise, save yourself the rediscovery**: searching Josh's "TEC Cycle of Prayer" Drive
+  folder (id `1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew`) by diocese name found NOTHING for any of these 5 —
+  all their filenames are generic ("Diocesan Cycle of Prayer - Current.pdf", etc.), not named after
+  the diocese. Resolved by cross-referencing the roster spreadsheet
+  (`TEC Diocesan Cycles of Prayer 2026 - CURRENT 88 located.xlsx`, Drive id
+  `1F5-ylNoYBx5ecfxvdmPNv4uZTTRPf6CR`) against each generic file's actual content.
+- **Newark** — Drive id `1pzQxvQKN0H-MF4KaXtgtvMYDdret594o`
+  ("Diocesan-Cycle-of-Prayer-2026-May-Dec-updated-4-22-2026.docx"). Clean DOCX, full text already
+  read. Weekly, `cycleType: "dated"`, May 3 – Dec 27, 2026 only (35 weeks; source itself starts in
+  May, not a cross-year issue to trim, just its own real scope). Each week: 1-2 parishes (split into
+  separate `parish` subjects the same way Kentucky/Lexington's "X and Y" pairs were handled), a
+  "ministries of [clergy list]" `category` subject, a "work of [committee/ministry]" `category`
+  subject. Several weeks add a "churches in the [Saint]'s Regional Ministry Network" category with a
+  "Patron saint commemorated on [date]" note, and several November weeks add "In thanksgiving for the
+  ministry of the Rt. Rev. [name]" with a "Consecrated/Became Nth Bishop..." note — same subject/note
+  pattern already used successfully in Great Lakes (batch 1). Full 35-week transcription was already
+  worked out week-by-week in this session's own reasoning (not yet written to a file) — re-fetch the
+  source and it will transcribe quickly following the pattern above; nothing about it is ambiguous.
+- **Rio Grande (weekly)** — Drive id `1DTuMBQq3vNVw2AXOVSnlBXROs3L8apiF`
+  ("Weekly Cycle of Prayer 2026.pdf"). Clean text, one minor extraction ligature corruption confirmed
+  ("Diocesan Sta]" → "Diocesan Staff", an extraction artifact, not a diocese typo — fix it, don't
+  preserve it, per the schema's own distinction between source typos (preserve) and extraction
+  corruption (fix)). Weekly, `dated`, Jan 4 – Dec 20, 2026 (51 weeks, self-contained, doesn't reach
+  Dec 27 — that's the source's own scope, not a gap to fill). Most weeks are plain parish/category
+  lists (split multi-line weeks into separate subjects); FOUR weeks use a bulleted sub-list under one
+  named heading (Big Bend Episcopal Mission; Church in Lincoln County; Parish Schools; Emerging
+  Congregations) — treat the heading as ONE `category` subject with the bulleted members preserved
+  verbatim in that subject's own `note`, not as separate subjects (the source's own bullet-under-
+  heading formatting signals a single united ministry that week, distinct from the plain flat
+  multi-line weeks elsewhere in the same file). There is ALSO a companion **Rio Grande (daily)** file
+  (Drive id `1ALpNslzzYggcEUQWZJRwYGKQ5cINKfGq`, "Daily Cycle of Prayer 2026.pdf", numbered 1-31,
+  minor ligature corruption e.g. "Ma[hias'") — the roster spreadsheet lists the weekly file as
+  primary and the daily as an "Additional uploaded file"; this session's working decision was to
+  ingest the weekly one only (matching the corpus's one-file-per-diocese convention), not both —
+  reconsider with Josh if a diocese having both cadences turns out to matter.
+- **New Jersey** — Drive id `1eZJGIuXP4zeYXWHMsm9vjV7pUwIBarHI`
+  ("2026DiocesanCycleOfPrayer_2026May_UPDATED.pdf" per the roster). Clean text, full 365-day text
+  already read and transcribed day-by-day in this session's own reasoning (not yet written to a
+  file). **This is a genuinely different shape from every other file in the corpus**: a full-year
+  DAILY cycle (not weekly), each day naming either a parish, a ministry/committee, or (most days) a
+  list of clergy under "The Rev(s):" being commemorated on their ordination/consecration anniversary
+  — a dense, compound, inconsistent mix that does not cleanly split into parish-vs-category the way
+  every other diocese's weekly file does. **Working decision, not yet executed**: record each day as
+  ONE `category` subject whose `name` is the source's own day-text verbatim (not attempting to
+  auto-split parish names out from clergy-name lists, which risks mis-parsing at this density) —
+  recognized liturgical day-names (Ash Wednesday, Palm/Passion Sunday, Maundy Thursday, Good Friday,
+  Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day) also get `liturgicalNote` set. One
+  real source quirk already found: April has no standalone "21" line — the day-21 content
+  ("Church of the Resurrection in Millville") sits unlabeled between the "20" and "22" lines; it IS
+  day 21, positionally, not a continuation of day 20 (confirmed against the surrounding sequential
+  day numbers). This is the single biggest remaining build effort in this batch (365 entries) — a
+  parsing script driven from the already-transcribed day-by-day text would be faster than re-hand-
+  listing 365 `add()` calls; the raw source is clean enough that a careful line-based parser (split
+  on `^\d{1,2}\.?\s`) should work, but verify its output against a sample by eye before trusting it
+  wholesale, the same discipline used everywhere else in this corpus.
+- **San Joaquin** — Drive id `13OwPvF9Uhr1hZqwk1D3-c1xPh8eUZv0E` (a `.docx`, titled with the source's
+  own typo "dioceasn cycle of prayer 2026.docx" — NOT a native Google Doc as originally assumed;
+  `read_file_content` still handles it cleanly). Clean text, full year already read and transcribed
+  week-by-week in this session's own reasoning (not yet written to a file). Weekly, `dated`, self-
+  contained Jan 4 – Dec 27, 2026 (52 weeks). Each week: one parish with clergy names folded into that
+  subject's own `note` (not split into a separate category, since the source phrases it as one
+  continuous sentence — "St X, and their priest, the Rev. Y"), except several weeks are pure
+  category subjects (diocesan commissions, the Presiding Bishop, the diocesan bishop). **Two real
+  source date errors found and correctable the same way as Idaho's (batch 2)**: "28— Holy Trinity..."
+  under September should be **27** (breaks an otherwise unbroken Sunday sequence: Sep 6, 13, 20, then
+  27 — not 28, which is a Monday; Jan 4, 2026 is a confirmed Sunday, so this is checkable, not a
+  guess), and "12— St Francis..." under October should be **11** for the identical reason (Oct 4,
+  then 11, 18, 25 — all confirmed Sundays; "12" breaks the pattern by one day). Also preserve the
+  source's own typo "Ant-Racism" (missing "i") verbatim per the standing typo-preservation rule,
+  disclosed in notes rather than silently corrected — this is a spelling typo, not a date, so it
+  gets the OPPOSITE treatment from the two date errors above.
+- **Northern Indiana — DOES NOT FIT THE EXISTING SCHEMA, genuinely flagged, not started.** Source
+  (Drive id `1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`, "Diocesan Cycle of Prayer - Current.pdf") is a
+  repeating **1-through-37** numbered list (not tied to any calendar day-of-month, not tied to any
+  month name — genuinely just a flat sequential rotation that repeats forever, unrelated to how many
+  days are in any given month). Neither existing `cycleType` fits: `"dated"` needs real calendar
+  dates this source never gives; `"monthly-recurring"` is explicitly 1-31 day-of-month semantics
+  (Arkansas's own precedent) and would permanently strand days 32-37's real content (Honorary Canons
+  of the Cathedral, three parishes, two Retired-Clergy entries) since no month ever reaches day 32.
+  Forcing this into either existing type would either fabricate false day-of-month meaning or
+  silently drop six real entries. This needs a genuine schema decision with Josh (most likely: a
+  third `cycleType`, something like `"sequential"`, keyed by a bare 1-N position with its own
+  anchor-date-based resolution logic, analogous to but distinct from `"monthly-recurring"`) before
+  any Northern Indiana file gets built — raise it with him rather than guessing at a new
+  architecture unilaterally. Full raw source text for all 37 entries was already captured in this
+  session's own reasoning if useful once the schema question is settled.
+
+Once batch 3's 4 tractable dioceses are built/validated/registered and Northern Indiana's schema
+question is raised with Josh, remaining Drive-identified dioceses: Southwestern Virginia, Western
+Massachusetts (batch 4, only 2 — end of the Drive-identified list), then the roster spreadsheet's
+remaining ~65 via their own URLs (per Josh's original instruction: fetch 5 at a time, flag anything
+unfetchable in this note/ledger rather than endlessly retrying, since there is no Drive/Sheets write
+tool to literally annotate the spreadsheet itself).
 
 **18 files currently in the corpus, all passing the validator:** 16 diocese-level — Western Oregon,
 Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes,

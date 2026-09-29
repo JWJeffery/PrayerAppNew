@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=229">
+    <link rel="stylesheet" href="css/office.css?v=230">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
@@ -67,7 +67,7 @@
         <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican" data-available-subtitle="TEC 1979 Book of Common Prayer Daily Office.">
             <span class="app-entry-tradition-code">ANG</span>
             <span>
-                <strong>Anglican Communion</strong>
+                <strong>The Episcopal Church</strong>
                 <small>TEC 1979 Book of Common Prayer Daily Office.</small>
             </span>
         </button>
@@ -190,7 +190,7 @@
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
             <span class="app-mode-icon">☩</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Anglican Communion</span>
+                <span class="app-mode-title">The Episcopal Church</span>
                 <span class="app-mode-subtitle">The Daily Office, according to the 1979 Book of Common Prayer.</span>
             </span>
         </button>
@@ -230,6 +230,15 @@
 
     <div class="app-mode-section-label">Tools</div>
     <div class="app-mode-tools-row">
+        <!-- ADDED 2026-09-29: the same Profile modal the per-office corner icon opens
+             (openUserProfilePanel(), js/office-ui.js) -- see #user-profile-panel near the end of
+             <body>. Kept as a normal Tools-row entry here (unlike the office pages' small corner
+             icon) since the splash screen already has room for a labeled button. -->
+        <button class="app-mode-tool-btn" type="button" onclick="openUserProfilePanel()">
+            <strong>Your Profile</strong>
+            <small>Name, role, tradition, and diocese defaults.</small>
+        </button>
+
         <button class="app-mode-tool-btn" type="button" onclick="openUniversalBookOfNeeds()">
             <strong>Book of Needs</strong>
             <small>Prayers, devotions, and occasional offices.</small>
@@ -252,174 +261,12 @@
     </div>
     </div><!-- /uo-threshold-grid -->
 
-    <!-- UPDATED 2026-09-29, per Josh's direct (and furious, and correct) reaction: this section
-         IS the user's profile -- name, role, diocese/parish, tradition defaults -- built earlier
-         2026-09-28 per his own spec (see AUDIT_GOVERNANCE_LEDGER.md's "the profile/user system"
-         entry). It was left carrying two things that actively told him otherwise: (1) copy calling
-         it "advanced local settings... not part of... the full profile system", stale wording from
-         BEFORE the real profile fields existed here, never updated once they landed; (2) gated
-         behind `data-advanced-only`/`?advanced=1` -- the SAME gate as the Admin Console, even
-         though a name/role/diocese picker is ordinary functionality, not a dev tool. Both fixed:
-         copy now says what this actually is, and visibility is no longer tied to advanced-tools at
-         all -- it shows/hides together with #uo-threshold-grid instead (see showUoThresholdGrid()/
-         showUoThresholdDefault() in js/office-ui.js), reachable via "Another Office" like the rest
-         of that grid, with no query param needed. -->
-    <section id="user-profile-defaults" class="app-profile-defaults" hidden aria-hidden="true" aria-labelledby="user-profile-defaults-title">
-        <div class="app-profile-defaults-copy">
-            <p class="app-profile-kicker">Your Profile</p>
-            <h2 id="user-profile-defaults-title">Your Profile</h2>
-            <p>Your name, role, and tradition/diocese defaults for this browser.</p>
-        </div>
-
-        <div class="app-profile-defaults-grid">
-            <label class="app-profile-default-field" for="profile-entry-default">
-                <span>Opening behavior</span>
-                <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
-                    <option value="ask">Ask me to choose a tradition</option>
-                    <option value="tradition">Open my tradition office</option>
-                    <option value="universal">Open the Universal Office selector</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-tradition-default">
-                <span>Default tradition</span>
-                <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
-                    <option value="">No tradition selected</option>
-                    <option value="anglican" data-available-label="Anglican Communion">Anglican Communion</option>
-                    <option value="oriental-orthodox" data-available-label="Oriental Orthodox Church">Oriental Orthodox Church</option>
-                    <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
-                    <option value="eastern-orthodox" data-available-label="Eastern Orthodox Church">Eastern Orthodox Church</option>
-                    <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-book-needs-scope">
-                <span>Book of Needs from office pages</span>
-                <select id="profile-book-needs-scope" onchange="setUserProfileBookOfNeedsScope(this.value)">
-                    <option value="tradition">Show only prayers for the active tradition</option>
-                    <option value="universal">Show all prayers</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-ministry-role">
-                <span>Book of Needs role</span>
-                <!-- ADDED 2026-09-29: this option list is now tradition-gated, per Josh's direct
-                     correction ("orders/ministries should be gated by traditions"). The markup
-                     below is only the pre-tradition/no-JS fallback -- populateMinistryRoleSelect()
-                     (js/office-ui.js) rewrites it to match the declared tradition's own real roles
-                     on every profile sync (e.g. Anglican has no "subdeacon" at all -- TEC
-                     recognizes only bishop/priest/deacon as orders, and Reader there is a licensed
-                     lay ministry, not an order). Never hand-edit this list expecting it to stick;
-                     edit UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS instead. -->
-                <select id="profile-ministry-role" onchange="setUserProfileMinistryRole(this.value)">
-                    <option value="lay">Lay use (default)</option>
-                    <option value="reader">I am a reader</option>
-                    <option value="subdeacon">I am a subdeacon</option>
-                    <option value="deacon">I am a deacon</option>
-                    <option value="priest">I am a priest</option>
-                    <option value="bishop">I am a bishop</option>
-                    <option value="monastic">I am a monastic</option>
-                    <option value="research-reference">Study/reference use -- show role-restricted material, not as an attestation of fitness to perform it</option>
-                    <option value="all">Show everything, regardless of role</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-oor-subtradition">
-                <span>Oriental Orthodox sub-tradition</span>
-                <select id="profile-oor-subtradition" onchange="setUserProfileOorSubtradition(this.value)">
-                    <option value="">Show every Oriental Orthodox commemoration (default)</option>
-                    <option value="Coptic">Coptic</option>
-                    <option value="Armenian">Armenian</option>
-                    <option value="Syriac">Syriac</option>
-                    <option value="Ethiopian">Ethiopian</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-roman-breviary-language">
-                <span>Roman Breviary 1960/1962 language</span>
-                <select id="profile-roman-breviary-language" onchange="setUserProfileRomanBreviaryLanguage(this.value)">
-                    <option value="la">Latin (default)</option>
-                    <option value="en">English</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-parish-dedication">
-                <span>Home parish dedication (Byzantine Horologion)</span>
-                <select id="profile-parish-dedication" onchange="setUserProfileParishDedication(this.value)">
-                    <option value="">Not declared (default)</option>
-                    <optgroup label="A Great Feast">
-                        <option value="presentation-lord">Presentation of the Lord (Feb. 2)</option>
-                        <option value="annunciation-theotokos">Annunciation of the Theotokos (Mar. 25)</option>
-                        <option value="transfiguration-lord">Transfiguration of the Lord (Aug. 6)</option>
-                        <option value="dormition-theotokos">Dormition of the Theotokos (Aug. 15)</option>
-                        <option value="nativity-theotokos">Nativity of the Theotokos (Sep. 8)</option>
-                        <option value="exaltation-holy-cross">Exaltation of the Holy Cross (Sep. 14)</option>
-                        <option value="entrance-theotokos">Entrance of the Theotokos into the Temple (Nov. 21)</option>
-                        <option value="nativity-christ">Nativity of Christ (Dec. 25)</option>
-                    </optgroup>
-                    <optgroup label="A Saint">
-                        <option value="basil-great-circumcision">St. Basil the Great (Jan. 1)</option>
-                        <option value="seraphim-sarov">St. Seraphim of Sarov (Jan. 2)</option>
-                        <option value="synaxis-forerunner-john">St. John the Forerunner and Baptist (Jan. 7)</option>
-                        <option value="anthony-great">St. Anthony the Great (Jan. 17)</option>
-                        <option value="athanasius-cyril-alexandria">Sts. Athanasius and Cyril of Alexandria (Jan. 18)</option>
-                        <option value="ephrem-syrian">St. Ephrem the Syrian (Jan. 28)</option>
-                        <option value="three-hierarchs">The Three Hierarchs (Jan. 30)</option>
-                        <option value="first-second-finding-head-john-baptist">Finding of the Head of St. John the Baptist (Feb. 24)</option>
-                        <option value="george-great-martyr">St. George the Trophy-Bearer (Apr. 23)</option>
-                        <option value="mark-evangelist">Holy Apostle and Evangelist Mark (Apr. 25)</option>
-                        <option value="beheading-john-baptist">Beheading of St. John the Baptist (Aug. 29)</option>
-                        <option value="protection-theotokos">Protection of the Theotokos (Oct. 1)</option>
-                        <option value="john-chrysostom">St. John Chrysostom (Nov. 13)</option>
-                        <option value="apostle-philip">Holy Apostle Philip (Nov. 14)</option>
-                        <option value="apostle-andrew-first-called">Holy Apostle Andrew the First-Called (Nov. 30)</option>
-                        <option value="sabas-sanctified">St. Sabas the Sanctified (Dec. 5)</option>
-                        <option value="nicholas-myra">St. Nicholas of Myra (Dec. 6)</option>
-                        <option value="spyridon-trimythous">St. Spyridon of Trimythous (Dec. 12)</option>
-                        <option value="protomartyr-stephen">Holy Protomartyr Stephen (Dec. 27)</option>
-                    </optgroup>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-display-name">
-                <span>Your name</span>
-                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
-            </label>
-
-            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
-                <span>Diocese</span>
-                <!-- Options beyond "Not declared" are populated at load time by
-                     populateCycleOfPrayerDioceseSelect() (js/office-ui.js) from
-                     TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- all 106 TEC
-                     dioceses/jurisdictions Josh's own roster names, not just the
-                     handful this app has real Cycle of Prayer content for. Never
-                     hand-list options here again; they would silently drift from
-                     that registry. -->
-                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
-                    <option value="">Not declared (default)</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish">
-                <span>Home parish (optional)</span>
-                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
-                    <option value="">Choose a diocese first</option>
-                </select>
-                <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
-                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
-            </label>
-
-            <label class="app-profile-default-field app-profile-default-field-checkbox" for="toggle-explore-other-offices">
-                <span>Show a link to leave my office and explore other traditions</span>
-                <input type="checkbox" id="toggle-explore-other-offices" onchange="setExploreOtherOfficesVisible(this.checked)">
-            </label>
-        </div>
-
-        <div class="app-profile-defaults-actions">
-            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local defaults</button>
-            <p id="profile-defaults-summary" class="app-profile-defaults-summary" aria-live="polite"></p>
-        </div>
-    </section>
+    <!-- MOVED 2026-09-29, per Josh's direct instruction: the Profile panel should not be tied to
+         where it used to live (nested in #mode-selection/#uo-threshold-grid, reachable only via
+         "Another Office"). It's now its own top-level modal, opened from a persistent icon on
+         every office page -- see #user-profile-panel near the other dialog hosts
+         (#uo-onboarding-prompt) at the end of <body>, and openUserProfilePanel()/
+         closeUserProfilePanel() in js/office-ui.js. -->
 
     <a class="app-sponsor-link" href="https://musingsancientandmodern.substack.com/" target="_blank" rel="noopener noreferrer">
         <span>Sponsored by</span>
@@ -726,11 +573,21 @@
              "Back to Modes" to "Explore other Offices", and hidden by default. UPDATED 2026-09-29,
              per Josh's direct instruction ("this should only be reachable via a checkbox IN THE
              PROFILE, not a permanent button, and not tucked inside per-office Office Settings"):
-             its backing checkbox (#toggle-explore-other-offices) now lives directly in
-             #user-profile-defaults below, not in the Office Settings drawer -- see
+             its backing checkbox (#toggle-explore-other-offices) lives in the Profile modal (see
+             #user-profile-panel near the end of <body>) -- see
              isExploreOtherOfficesVisible()/setExploreOtherOfficesVisible() (js/office-ui.js), which
              is unchanged and still finds the checkbox purely by id regardless of where it lives. -->
         <button id="app-mode-return-button" onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return" hidden>Explore other Offices</button>
+
+        <!-- ADDED 2026-09-29, per Josh's direct request: a persistent small icon on every office
+             page giving one-click access to the Profile modal -- explicitly NOT tied to
+             "Explore other Offices"/"Another Office" (his own correction: "do not attach it to
+             where it currently is"). Global, like the button above: lives directly in
+             #main-content, outside any per-tradition template, so one element covers every lane.
+             Opposite corner from the theme toggle/Explore-other-Offices button to avoid crowding. -->
+        <button id="app-profile-icon-btn" class="app-profile-icon-btn" onclick="openUserProfilePanel()" aria-label="Your Profile" title="Your Profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.8"/><path d="M4.5 20c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5"/></svg>
+        </button>
         <h1 id="office-mode-title">The Universal Office</h1>
         <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
             <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
@@ -1161,6 +1018,176 @@
 <div id="uo-onboarding-prompt" role="dialog" aria-modal="true"
      aria-label="Set up your profile" style="display:none;"></div>
 
+<!-- MOVED HERE 2026-09-29 from inside #mode-selection, per Josh's direct instruction: the Profile
+     panel should not be tied to where it used to live (nested in the splash screen's "Another
+     Office" grid). It is now a standalone modal, opened from a persistent icon on every office
+     page (see .app-profile-icon-btn, injected by office-shell.js) and from "Your Profile" on the
+     splash screen's Tools row -- both call openUserProfilePanel()/closeUserProfilePanel() in
+     js/office-ui.js. Same backdrop/card pattern as #uo-tradition-explanation/#uo-onboarding-prompt
+     above (solid card background, not the old translucent gradient -- see Josh's "less ugly and
+     more readable" request). All fields below carry their real ids/onchange handlers unchanged
+     from before the move -- every setter function that reads them by id needed no changes. -->
+<div id="user-profile-panel" class="app-profile-modal-backdrop" style="display:none;" onclick="if (event.target === this) closeUserProfilePanel();">
+    <section id="user-profile-defaults" class="app-profile-defaults" role="dialog" aria-modal="true" aria-labelledby="user-profile-defaults-title">
+        <button type="button" class="app-profile-close" onclick="closeUserProfilePanel()" aria-label="Close">&times;</button>
+
+        <div class="app-profile-defaults-copy">
+            <p class="app-profile-kicker">Your Profile</p>
+            <h2 id="user-profile-defaults-title">Your Profile</h2>
+            <p>Your name, role, and tradition/diocese defaults for this browser.</p>
+        </div>
+
+        <div class="app-profile-defaults-grid">
+            <label class="app-profile-default-field" for="profile-entry-default">
+                <span>Opening behavior</span>
+                <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
+                    <option value="ask">Ask me to choose a tradition</option>
+                    <option value="tradition">Open my tradition office</option>
+                    <option value="universal">Open the Universal Office selector</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-tradition-default">
+                <span>Default tradition</span>
+                <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
+                    <option value="">No tradition selected</option>
+                    <option value="anglican" data-available-label="The Episcopal Church">The Episcopal Church</option>
+                    <option value="oriental-orthodox" data-available-label="Oriental Orthodox Church">Oriental Orthodox Church</option>
+                    <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
+                    <option value="eastern-orthodox" data-available-label="Eastern Orthodox Church">Eastern Orthodox Church</option>
+                    <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-book-needs-scope">
+                <span>Book of Needs from office pages</span>
+                <select id="profile-book-needs-scope" onchange="setUserProfileBookOfNeedsScope(this.value)">
+                    <option value="tradition">Show only prayers for the active tradition</option>
+                    <option value="universal">Show all prayers</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-ministry-role">
+                <span>Book of Needs role</span>
+                <!-- ADDED 2026-09-29: this option list is tradition-gated, per Josh's direct
+                     correction ("orders/ministries should be gated by traditions"). The markup
+                     below is only the pre-tradition/no-JS fallback -- populateMinistryRoleSelect()
+                     (js/office-ui.js) rewrites it to match the declared tradition's own real roles
+                     on every profile sync (e.g. Anglican has no "subdeacon" at all -- TEC
+                     recognizes only bishop/priest/deacon as orders, and Reader there is a licensed
+                     lay ministry, not an order). Never hand-edit this list expecting it to stick;
+                     edit UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS instead. -->
+                <select id="profile-ministry-role" onchange="setUserProfileMinistryRole(this.value)">
+                    <option value="lay">Lay use (default)</option>
+                    <option value="reader">I am a reader</option>
+                    <option value="subdeacon">I am a subdeacon</option>
+                    <option value="deacon">I am a deacon</option>
+                    <option value="priest">I am a priest</option>
+                    <option value="bishop">I am a bishop</option>
+                    <option value="monastic">I am a monastic</option>
+                    <option value="research-reference">Study/reference use -- show role-restricted material, not as an attestation of fitness to perform it</option>
+                    <option value="all">Show everything, regardless of role</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-oor-subtradition">
+                <span>Oriental Orthodox sub-tradition</span>
+                <select id="profile-oor-subtradition" onchange="setUserProfileOorSubtradition(this.value)">
+                    <option value="">Show every Oriental Orthodox commemoration (default)</option>
+                    <option value="Coptic">Coptic</option>
+                    <option value="Armenian">Armenian</option>
+                    <option value="Syriac">Syriac</option>
+                    <option value="Ethiopian">Ethiopian</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-roman-breviary-language">
+                <span>Roman Breviary 1960/1962 language</span>
+                <select id="profile-roman-breviary-language" onchange="setUserProfileRomanBreviaryLanguage(this.value)">
+                    <option value="la">Latin (default)</option>
+                    <option value="en">English</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-parish-dedication">
+                <span>Home parish dedication (Byzantine Horologion)</span>
+                <select id="profile-parish-dedication" onchange="setUserProfileParishDedication(this.value)">
+                    <option value="">Not declared (default)</option>
+                    <optgroup label="A Great Feast">
+                        <option value="presentation-lord">Presentation of the Lord (Feb. 2)</option>
+                        <option value="annunciation-theotokos">Annunciation of the Theotokos (Mar. 25)</option>
+                        <option value="transfiguration-lord">Transfiguration of the Lord (Aug. 6)</option>
+                        <option value="dormition-theotokos">Dormition of the Theotokos (Aug. 15)</option>
+                        <option value="nativity-theotokos">Nativity of the Theotokos (Sep. 8)</option>
+                        <option value="exaltation-holy-cross">Exaltation of the Holy Cross (Sep. 14)</option>
+                        <option value="entrance-theotokos">Entrance of the Theotokos into the Temple (Nov. 21)</option>
+                        <option value="nativity-christ">Nativity of Christ (Dec. 25)</option>
+                    </optgroup>
+                    <optgroup label="A Saint">
+                        <option value="basil-great-circumcision">St. Basil the Great (Jan. 1)</option>
+                        <option value="seraphim-sarov">St. Seraphim of Sarov (Jan. 2)</option>
+                        <option value="synaxis-forerunner-john">St. John the Forerunner and Baptist (Jan. 7)</option>
+                        <option value="anthony-great">St. Anthony the Great (Jan. 17)</option>
+                        <option value="athanasius-cyril-alexandria">Sts. Athanasius and Cyril of Alexandria (Jan. 18)</option>
+                        <option value="ephrem-syrian">St. Ephrem the Syrian (Jan. 28)</option>
+                        <option value="three-hierarchs">The Three Hierarchs (Jan. 30)</option>
+                        <option value="first-second-finding-head-john-baptist">Finding of the Head of St. John the Baptist (Feb. 24)</option>
+                        <option value="george-great-martyr">St. George the Trophy-Bearer (Apr. 23)</option>
+                        <option value="mark-evangelist">Holy Apostle and Evangelist Mark (Apr. 25)</option>
+                        <option value="beheading-john-baptist">Beheading of St. John the Baptist (Aug. 29)</option>
+                        <option value="protection-theotokos">Protection of the Theotokos (Oct. 1)</option>
+                        <option value="john-chrysostom">St. John Chrysostom (Nov. 13)</option>
+                        <option value="apostle-philip">Holy Apostle Philip (Nov. 14)</option>
+                        <option value="apostle-andrew-first-called">Holy Apostle Andrew the First-Called (Nov. 30)</option>
+                        <option value="sabas-sanctified">St. Sabas the Sanctified (Dec. 5)</option>
+                        <option value="nicholas-myra">St. Nicholas of Myra (Dec. 6)</option>
+                        <option value="spyridon-trimythous">St. Spyridon of Trimythous (Dec. 12)</option>
+                        <option value="protomartyr-stephen">Holy Protomartyr Stephen (Dec. 27)</option>
+                    </optgroup>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-display-name">
+                <span>Your name</span>
+                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
+                <span>Diocese</span>
+                <!-- Options beyond "Not declared" are populated at load time by
+                     populateCycleOfPrayerDioceseSelect() (js/office-ui.js) from
+                     TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- all 106 TEC
+                     dioceses/jurisdictions Josh's own roster names, not just the
+                     handful this app has real Cycle of Prayer content for. Never
+                     hand-list options here again; they would silently drift from
+                     that registry. -->
+                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
+                    <option value="">Not declared (default)</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish">
+                <span>Home parish (optional)</span>
+                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
+                    <option value="">Choose a diocese first</option>
+                </select>
+                <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
+                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
+            </label>
+
+            <label class="app-profile-default-field app-profile-default-field-checkbox" for="toggle-explore-other-offices">
+                <span>Show a link to leave my office and explore other traditions</span>
+                <input type="checkbox" id="toggle-explore-other-offices" onchange="setExploreOtherOfficesVisible(this.checked)">
+            </label>
+        </div>
+
+        <div class="app-profile-defaults-actions">
+            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local defaults</button>
+            <p id="profile-defaults-summary" class="app-profile-defaults-summary" aria-live="polite"></p>
+        </div>
+    </section>
+</div>
+
 <!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js" defer></script>
 <script src="js/calendar-ethiopian.js" defer></script>
@@ -1199,12 +1226,12 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=324" defer></script>
+<script src="js/office-ui.js?v=325" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
-<script src="js/office-shell.js?v=302" defer></script>
+<script src="js/office-shell.js?v=303" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
 <script src="js/office-drawer.js?v=9" defer></script>
 </body>

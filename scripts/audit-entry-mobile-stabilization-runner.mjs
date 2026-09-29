@@ -71,12 +71,15 @@ requireIncludes("hour-selector internal-scroll removal markers", css, [
     "overflow-y: visible !important"
 ]);
 
-// UPDATED 2026-09-29: the Profile panel (name/role/diocese/parish) no longer carries
-// app-advanced-only -- see js/office-ui.js's showUoThresholdGrid()/showUoThresholdDefault()
-// and audit-app-entry-routing.mjs's matching check. Admin Console remains gated.
+// UPDATED 2026-09-29 (twice): the Profile panel (name/role/diocese/parish) no longer carries
+// app-advanced-only, and is no longer gated by #uo-threshold-grid's visibility either -- it's now
+// its own standalone modal (#user-profile-panel), independent of both. Admin Console remains
+// gated. See audit-app-entry-routing.mjs's matching checks for the modal itself.
 requireIncludes("advanced selector gate markers", index, [
     "data-advanced-only=\"true\" hidden aria-hidden=\"true\"",
-    "id=\"user-profile-defaults\" class=\"app-profile-defaults\" hidden aria-hidden=\"true\""
+]);
+requireIncludes("profile modal exists independent of advanced-tools/threshold-grid", index, [
+    "id=\"user-profile-panel\" class=\"app-profile-modal-backdrop\"",
 ]);
 
 check("release allowlists entry/mobile browser QC script", releaseScript.includes("const browserQcReleaseFiles = [") && releaseScript.includes("scripts/browser-qc-entry-mobile-stabilization-sweep.js") && releaseScript.includes("browserQcReleaseFiles: copiedBrowserQcReleaseFiles"));

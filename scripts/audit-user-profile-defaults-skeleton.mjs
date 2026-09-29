@@ -68,9 +68,14 @@ check(
   !index.includes('Local Profile Defaults')
 );
 
+// UPDATED 2026-09-29: rewritten as a true standalone modal (see
+// .app-profile-modal-backdrop) with a solid, high-contrast card, replacing the
+// original translucent-gradient-on-the-splash-screen version -- the comment
+// marker below moved with it.
 check(
   'profile CSS is present and scoped',
-  css.includes('User profile defaults skeleton pass') &&
+  css.includes('REDESIGNED 2026-09-29') &&
+  css.includes('.app-profile-modal-backdrop') &&
   css.includes('.app-profile-defaults') &&
   css.includes('.app-profile-defaults-grid') &&
   css.includes('.app-profile-default-field select')
