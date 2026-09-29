@@ -690,9 +690,10 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // behaviour before this field existed, so no existing user loses anything.
     oorSubtradition: null,
     // ADDED 2026-09-27. Which language the Roman Breviary 1960/1962 lane renders
-    // in. 'la' (Latin) is the lane's own liturgical-language identity and stays
-    // the default; 'en' is an explicit opt-in, not the other way around.
-    romanBreviaryLanguage: 'la',
+    // in. REVERSED 2026-09-29, per Josh's direct instruction ("Roman Brev
+    // should also default to English"): 'en' is now the default, 'la' (Latin)
+    // an explicit opt-in -- the original comment here had this backwards.
+    romanBreviaryLanguage: 'en',
     // ADDED 2026-09-28. See UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES above.
     // null means "not declared" -- the Kontakion-of-the-temple clause stays
     // disclosed-not-modeled, exactly today's behaviour, so no existing user
@@ -861,12 +862,28 @@ const UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES = new Set([
 // 'research-reference' both see everything (research-reference is
 // semantically distinct -- study access, not an attestation of fitness to
 // perform the rite -- but not narrower in what it reveals).
+// ADDED 2026-09-29, per Josh's direct correction: "Lay reader is just ONE
+// licensed ministry in TEC" -- TEC's Canon III.4 covers several distinct
+// licensed lay ministries (Pastoral Leader, Worship Leader, Preacher,
+// Eucharistic Minister, Eucharistic Visitor, Catechist), not only Reader.
+// None of these is an ordination rank -- they all sit at the SAME gating
+// tier as 'reader' (rank 1: licensed-lay, above plain lay, below the
+// ordained deacon/priest/bishop ladder), so they're added here as
+// additional selectable values rather than a separate ladder.
 const UNIVERSAL_OFFICE_MINISTRY_ROLE_VALUES = new Set([
-    'lay', 'reader', 'subdeacon', 'deacon', 'priest', 'bishop', 'monastic', 'research-reference', 'all'
+    'lay', 'reader', 'pastoral-leader', 'worship-leader', 'preacher',
+    'eucharistic-minister', 'eucharistic-visitor', 'catechist',
+    'subdeacon', 'deacon', 'priest', 'bishop', 'monastic', 'research-reference', 'all'
 ]);
 const UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER = Object.freeze({
     'lay': 0,
     'reader': 1,
+    'pastoral-leader': 1,
+    'worship-leader': 1,
+    'preacher': 1,
+    'eucharistic-minister': 1,
+    'eucharistic-visitor': 1,
+    'catechist': 1,
     'subdeacon': 2,
     'deacon': 3,
     'priest': 4,
@@ -906,7 +923,18 @@ const UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS = Object.freeze([
 const UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS = Object.freeze({
     anglican: Object.freeze([
         ['lay', 'Lay use (default)'],
+        // TEC's Canon III.4 licensed lay ministries -- Reader is one of
+        // several, not the only one (Josh's direct correction). All gate
+        // Book of Needs content identically (see UNIVERSAL_OFFICE_MINISTRY_
+        // ROLE_ORDER above, all rank 1); listed alphabetically by ministry
+        // name after Reader, which stays first as the most commonly known.
         ['reader', 'I am a reader (a licensed lay ministry)'],
+        ['catechist', 'I am a catechist (a licensed lay ministry)'],
+        ['eucharistic-minister', 'I am a eucharistic minister (a licensed lay ministry)'],
+        ['eucharistic-visitor', 'I am a eucharistic visitor (a licensed lay ministry)'],
+        ['pastoral-leader', 'I am a pastoral leader (a licensed lay ministry)'],
+        ['preacher', 'I am a preacher (a licensed lay ministry)'],
+        ['worship-leader', 'I am a worship leader (a licensed lay ministry)'],
         ['deacon', 'I am a deacon'],
         ['priest', 'I am a priest'],
         ['bishop', 'I am a bishop'],
@@ -996,6 +1024,28 @@ function escapeHtmlForOptionLabel(value) {
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
+}
+
+// ADDED 2026-09-29, per Josh's direct correction: fields tied to ONE
+// tradition (Oriental Orthodox sub-tradition, Roman Breviary language, the
+// Byzantine parish dedication picker, and the Anglican-only Diocese/home
+// parish pair) should not show at all until the matching tradition is
+// actually declared -- they were previously all shown flatly regardless of
+// the declared tradition, exactly the same "one universal list" problem
+// already fixed for the ministry-role picker above, just at the level of
+// whole field rows instead of one field's own options. Each such field's
+// wrapper carries `data-tradition-field="<tradition-key>"` in index.html;
+// this shows only the one matching the current tradition and hides the
+// rest. A field with no such attribute (name, tradition picker itself, the
+// entry/Book-of-Needs settings, the ministry-role picker, the
+// explore-other-offices checkbox) is unaffected -- those apply regardless
+// of tradition.
+function syncProfileFieldVisibilityForTradition(traditionKey) {
+    document.querySelectorAll('[data-tradition-field]').forEach(function (field) {
+        const matches = field.dataset.traditionField === traditionKey;
+        field.hidden = !matches;
+        field.setAttribute('aria-hidden', matches ? 'false' : 'true');
+    });
 }
 
 function isUniversalOfficeAdvancedToolsEnabled() {
@@ -1092,7 +1142,7 @@ function normalizeUserProfileDefaults(raw) {
     }
 
     if (!UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES.has(profile.romanBreviaryLanguage)) {
-        profile.romanBreviaryLanguage = 'la';
+        profile.romanBreviaryLanguage = 'en';
     }
 
     // Migrate the old three-value field (lay/clergy/all), replaced 2026-08-30
@@ -1361,7 +1411,7 @@ function setUserProfileRomanBreviaryLanguage(value) {
     const profile = getUserProfileDefaults();
     profile.romanBreviaryLanguage = UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES.has(value)
         ? value
-        : 'la';
+        : 'en';
 
     persistUserProfileDefaults(profile);
 }
@@ -1744,6 +1794,14 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     // UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS above).
     populateMinistryRoleSelect(ministryRoleSelect, normalized.traditionDefault, normalized.ministryRole);
 
+    // ADDED 2026-09-29, per Josh's direct correction ("weird to have a
+    // question about oriental subtradition when TEC is Anglican... they are
+    // dependencies"): fields that only apply to one tradition (Oriental
+    // Orthodox sub-tradition, Roman Breviary language, Byzantine parish
+    // dedication, Diocese/home parish) now hide themselves unless the
+    // declared tradition is the one they belong to.
+    syncProfileFieldVisibilityForTradition(normalized.traditionDefault);
+
     if (oorSubtraditionSelect) {
         oorSubtraditionSelect.value = normalized.oorSubtradition || '';
     }
@@ -1781,6 +1839,12 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
         const roleLabels = {
             'lay':                'showing lay-appropriate Book of Needs content only',
             'reader':             "showing lay content plus material for a reader's own use (not priestly or diaconal material)",
+            'catechist':          "showing lay content plus material for a catechist's own use (not priestly or diaconal material)",
+            'eucharistic-minister': "showing lay content plus material for a eucharistic minister's own use (not priestly or diaconal material)",
+            'eucharistic-visitor':  "showing lay content plus material for a eucharistic visitor's own use (not priestly or diaconal material)",
+            'pastoral-leader':    "showing lay content plus material for a pastoral leader's own use (not priestly or diaconal material)",
+            'preacher':           "showing lay content plus material for a preacher's own use (not priestly or diaconal material)",
+            'worship-leader':     "showing lay content plus material for a worship leader's own use (not priestly or diaconal material)",
             'subdeacon':          "showing lay content plus material for a subdeacon's own use (not priestly or diaconal material)",
             'deacon':             'showing content appropriate for a deacon (a major order -- not priestly or episcopal material)',
             'priest':             'showing content appropriate for a priest (not episcopal-only material)',

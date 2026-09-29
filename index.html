@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=230">
+    <link rel="stylesheet" href="css/office.css?v=231">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
@@ -1037,14 +1037,21 @@
             <p>Your name, role, and tradition/diocese defaults for this browser.</p>
         </div>
 
+        <!-- REORDERED 2026-09-29, per Josh's direct instruction ("'Your name' should be first.
+             Diocese second. Parish third... they are dependencies"): identity fields (name,
+             tradition, diocese, parish) now lead the form, in dependency order -- tradition before
+             diocese/parish since those only mean anything once a tradition (specifically Anglican)
+             is declared. Fields that only apply to ONE tradition (Oriental Orthodox sub-tradition,
+             Roman Breviary language, Byzantine parish dedication, Diocese/Parish) now carry
+             `data-tradition-field` and are hidden by default -- syncProfileFieldVisibilityForTradition()
+             (js/office-ui.js) shows only the one matching the declared tradition, on every profile
+             sync. Previously all such fields showed unconditionally regardless of tradition, which
+             is what prompted this ("Weird to have a question about oriental subtradition when TEC
+             is Anglican."). -->
         <div class="app-profile-defaults-grid">
-            <label class="app-profile-default-field" for="profile-entry-default">
-                <span>Opening behavior</span>
-                <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
-                    <option value="ask">Ask me to choose a tradition</option>
-                    <option value="tradition">Open my tradition office</option>
-                    <option value="universal">Open the Universal Office selector</option>
-                </select>
+            <label class="app-profile-default-field" for="profile-display-name">
+                <span>Your name</span>
+                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
             </label>
 
             <label class="app-profile-default-field" for="profile-tradition-default">
@@ -1056,6 +1063,38 @@
                     <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
                     <option value="eastern-orthodox" data-available-label="Eastern Orthodox Church">Eastern Orthodox Church</option>
                     <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese" data-tradition-field="anglican" hidden aria-hidden="true">
+                <span>Diocese</span>
+                <!-- Options beyond "Not declared" are populated at load time by
+                     populateCycleOfPrayerDioceseSelect() (js/office-ui.js) from
+                     TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- all 106 TEC
+                     dioceses/jurisdictions Josh's own roster names, not just the
+                     handful this app has real Cycle of Prayer content for. Never
+                     hand-list options here again; they would silently drift from
+                     that registry. -->
+                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
+                    <option value="">Not declared (default)</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish" data-tradition-field="anglican" hidden aria-hidden="true">
+                <span>Home parish (optional)</span>
+                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
+                    <option value="">Choose a diocese first</option>
+                </select>
+                <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
+                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
+            </label>
+
+            <label class="app-profile-default-field" for="profile-entry-default">
+                <span>Opening behavior</span>
+                <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
+                    <option value="ask">Ask me to choose a tradition</option>
+                    <option value="tradition">Open my tradition office</option>
+                    <option value="universal">Open the Universal Office selector</option>
                 </select>
             </label>
 
@@ -1074,9 +1113,9 @@
                      below is only the pre-tradition/no-JS fallback -- populateMinistryRoleSelect()
                      (js/office-ui.js) rewrites it to match the declared tradition's own real roles
                      on every profile sync (e.g. Anglican has no "subdeacon" at all -- TEC
-                     recognizes only bishop/priest/deacon as orders, and Reader there is a licensed
-                     lay ministry, not an order). Never hand-edit this list expecting it to stick;
-                     edit UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS instead. -->
+                     recognizes only bishop/priest/deacon as orders, and Reader is just ONE of
+                     several licensed lay ministries there, not the only one). Never hand-edit this
+                     list expecting it to stick; edit UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS instead. -->
                 <select id="profile-ministry-role" onchange="setUserProfileMinistryRole(this.value)">
                     <option value="lay">Lay use (default)</option>
                     <option value="reader">I am a reader</option>
@@ -1090,7 +1129,7 @@
                 </select>
             </label>
 
-            <label class="app-profile-default-field" for="profile-oor-subtradition">
+            <label class="app-profile-default-field" for="profile-oor-subtradition" data-tradition-field="oriental-orthodox" hidden aria-hidden="true">
                 <span>Oriental Orthodox sub-tradition</span>
                 <select id="profile-oor-subtradition" onchange="setUserProfileOorSubtradition(this.value)">
                     <option value="">Show every Oriental Orthodox commemoration (default)</option>
@@ -1101,15 +1140,15 @@
                 </select>
             </label>
 
-            <label class="app-profile-default-field" for="profile-roman-breviary-language">
+            <label class="app-profile-default-field" for="profile-roman-breviary-language" data-tradition-field="latin-catholic" hidden aria-hidden="true">
                 <span>Roman Breviary 1960/1962 language</span>
                 <select id="profile-roman-breviary-language" onchange="setUserProfileRomanBreviaryLanguage(this.value)">
-                    <option value="la">Latin (default)</option>
-                    <option value="en">English</option>
+                    <option value="en">English (default)</option>
+                    <option value="la">Latin</option>
                 </select>
             </label>
 
-            <label class="app-profile-default-field" for="profile-parish-dedication">
+            <label class="app-profile-default-field" for="profile-parish-dedication" data-tradition-field="eastern-orthodox" hidden aria-hidden="true">
                 <span>Home parish dedication (Byzantine Horologion)</span>
                 <select id="profile-parish-dedication" onchange="setUserProfileParishDedication(this.value)">
                     <option value="">Not declared (default)</option>
@@ -1145,34 +1184,6 @@
                         <option value="protomartyr-stephen">Holy Protomartyr Stephen (Dec. 27)</option>
                     </optgroup>
                 </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-display-name">
-                <span>Your name</span>
-                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
-            </label>
-
-            <label class="app-profile-default-field" for="profile-cycle-of-prayer-diocese">
-                <span>Diocese</span>
-                <!-- Options beyond "Not declared" are populated at load time by
-                     populateCycleOfPrayerDioceseSelect() (js/office-ui.js) from
-                     TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js) -- all 106 TEC
-                     dioceses/jurisdictions Josh's own roster names, not just the
-                     handful this app has real Cycle of Prayer content for. Never
-                     hand-list options here again; they would silently drift from
-                     that registry. -->
-                <select id="profile-cycle-of-prayer-diocese" onchange="setUserProfileCycleOfPrayerDiocese(this.value)">
-                    <option value="">Not declared (default)</option>
-                </select>
-            </label>
-
-            <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish">
-                <span>Home parish (optional)</span>
-                <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
-                    <option value="">Choose a diocese first</option>
-                </select>
-                <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
-                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
             </label>
 
             <label class="app-profile-default-field app-profile-default-field-checkbox" for="toggle-explore-other-offices">
@@ -1226,7 +1237,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=325" defer></script>
+<script src="js/office-ui.js?v=326" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 
