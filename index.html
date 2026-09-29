@@ -252,11 +252,23 @@
     </div>
     </div><!-- /uo-threshold-grid -->
 
-    <section id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true" aria-labelledby="user-profile-defaults-title">
+    <!-- UPDATED 2026-09-29, per Josh's direct (and furious, and correct) reaction: this section
+         IS the user's profile -- name, role, diocese/parish, tradition defaults -- built earlier
+         2026-09-28 per his own spec (see AUDIT_GOVERNANCE_LEDGER.md's "the profile/user system"
+         entry). It was left carrying two things that actively told him otherwise: (1) copy calling
+         it "advanced local settings... not part of... the full profile system", stale wording from
+         BEFORE the real profile fields existed here, never updated once they landed; (2) gated
+         behind `data-advanced-only`/`?advanced=1` -- the SAME gate as the Admin Console, even
+         though a name/role/diocese picker is ordinary functionality, not a dev tool. Both fixed:
+         copy now says what this actually is, and visibility is no longer tied to advanced-tools at
+         all -- it shows/hides together with #uo-threshold-grid instead (see showUoThresholdGrid()/
+         showUoThresholdDefault() in js/office-ui.js), reachable via "Another Office" like the rest
+         of that grid, with no query param needed. -->
+    <section id="user-profile-defaults" class="app-profile-defaults" hidden aria-hidden="true" aria-labelledby="user-profile-defaults-title">
         <div class="app-profile-defaults-copy">
-            <p class="app-profile-kicker">Local Browser Defaults</p>
-            <h2 id="user-profile-defaults-title">Defaults for this browser</h2>
-            <p>Advanced local settings for this browser. They are not part of the first-user tradition flow and can later migrate into the full profile system.</p>
+            <p class="app-profile-kicker">Your Profile</p>
+            <h2 id="user-profile-defaults-title">Your Profile</h2>
+            <p>Your name, role, and tradition/diocese defaults for this browser.</p>
         </div>
 
         <div class="app-profile-defaults-grid">
@@ -1179,7 +1191,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=321" defer></script>
+<script src="js/office-ui.js?v=322" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 

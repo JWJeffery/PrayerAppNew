@@ -27,7 +27,7 @@ const pkg = JSON.parse(read('package.json') || '{}');
 check(
   'local profile defaults panel exists in internal selector',
   index.includes('id="user-profile-defaults"') &&
-  index.includes('Local Browser Defaults') &&
+  index.includes('Your Profile') &&
   index.includes('profile-entry-default') &&
   index.includes('profile-tradition-default') &&
   index.includes('profile-book-needs-scope')
@@ -54,12 +54,16 @@ check(
   index.includes('Latin Catholic — Liturgy of the Hours pending')
 );
 
+// UPDATED 2026-09-29, per Josh's direct (furious) report: this panel's copy used to say it was
+// "advanced local settings... not part of... the full profile system" -- actively telling users
+// this ISN'T the profile, when by this point it IS (name/role/diocese/parish all live here per
+// the 2026-09-28 "profile/user system" build). Copy now says what it actually is.
 check(
-  'profile panel copy is local advanced settings, not public first-user copy',
-  index.includes('Defaults for this browser') &&
-  index.includes('Advanced local settings for this browser.') &&
-  index.includes('not part of the first-user tradition flow') &&
+  'profile panel copy identifies itself as the actual profile, not a stale "not the real thing yet" disclaimer',
+  index.includes('Your Profile') &&
   index.includes('Reset local defaults') &&
+  !index.includes('not part of the first-user tradition flow') &&
+  !index.includes('can later migrate into the full profile system') &&
   !index.includes('How should this browser open?') &&
   !index.includes('Local Profile Defaults')
 );
