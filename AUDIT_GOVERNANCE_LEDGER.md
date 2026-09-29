@@ -24824,3 +24824,110 @@ check next session, though the renderer itself was not touched and batch 1's liv
 
 **Next:** batch 3 (New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin), continuing the same
 Drive-first order before moving to the roster spreadsheet's remaining URLs.
+
+## 2026-09-29 (continued yet again) -- five small UI fixes, all reported live by Josh, all merged
+
+Session interrupted the diocese-ingestion work (batch 3) for a run of real, live-reported UI bugs.
+Each was fixed and merged as its own PR before the next was reported; batch 3 remains paused with its
+source material already fetched (see this note's own diocese-ingestion entry above for exactly what's
+saved and what's still to build).
+
+**1. Audit Dashboard had zero access gating** (PR "Gate Audit Dashboard to super-users; move
+Explore-other-Offices toggle into Profile"). Unlike the adjacent Admin Console/Bible Browser buttons,
+the mode-selection "Audit Dashboard" button was visible to every visitor. Added
+`syncAuditDashboardSuperUserGate()`, mirroring the existing Bible Browser gate. Same PR also moved the
+"Explore other Offices" return-to-splash checkbox out of the per-office Office Settings drawer and into
+the (then still `#mode-selection`-nested) profile panel, per Josh: leaving/returning the office should
+be a deliberate profile-level choice, not buried in the office's own settings chrome.
+
+**2. Profile panel was gated behind `?advanced=1`** (PR "Un-gate the Profile panel from ?advanced=1;
+fix its stale copy") -- the same flag as the dev-only Admin Console, even though it holds ordinary
+functionality (name/role/diocese). This is why Josh could not find "the profile" at all on first
+asking. Dropped `data-advanced-only`/`app-advanced-only`; tied visibility to `#uo-threshold-grid`
+instead (later superseded, see #5 below). Rewrote the panel's own stale copy ("Advanced local
+settings... not part of... the full profile system") which had been actively telling the reader it
+wasn't the real profile, left over from before the real fields existed there.
+
+**3. "Reader"/"Subdeacon" wrongly labeled "a minor order" universally** (PR "Stop calling
+Reader/Subdeacon 'a minor order' -- wrong for TEC"). TEC recognizes only three ordained orders
+(bishop, priest, deacon); Reader there is a licensed lay ministry under Canon III.4, not an order at
+all. The label was accurate for the Eastern/Oriental Orthodox and Church of the East lanes this ladder
+was designed for, but asserted unconditionally regardless of the user's actual tradition. First-pass
+fix: dropped the qualifier everywhere (neutral wording). Superseded by #4 below, same session.
+
+**4. Book of Needs role picker showed the same options for every tradition** (PR "Gate the Book of
+Needs role picker's options by tradition"), per Josh: "orders/ministries should be gated by
+traditions" -- the app already knows the user's tradition by the time they see this picker. Added
+`UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS`, keyed by tradition: Anglican/TEC gets no "subdeacon" option
+at all and "reader" reads as a licensed lay ministry; Eastern Orthodox/Oriental Orthodox/Church of the
+East get the full list with both correctly labeled "a minor order"; Latin Catholic (the 1960/1962
+Roman Breviary lane) gets reader as "a minor order" but subdeacon as "a major order, pre-1972 Latin
+Rite" -- the pre-Vatican-II Western system classified subdeacon among the sacred/major orders, a real
+East/West difference from the Eastern lanes, not an inconsistency to paper over.
+`populateMinistryRoleSelect()` rewrites the actual option list (not just the selected value) on every
+profile sync; `normalizeUserProfileDefaults()` degrades a stored role to `lay` if it stops being valid
+after a tradition switch.
+
+**5. Profile panel redesign: standalone modal, per-office access icon, "The Episcopal Church" naming
+(PR "Redesign Profile as a standalone modal; add per-office access icon; rename Anglican Communion to
+The Episcopal Church").** Three fixes in one PR, all from Josh reacting live to the #2 fix's result:
+
+- *"Less ugly and more readable"*: the panel (visible once un-gated) was a translucent gradient card
+  (`rgba` fills at ~0.68-0.78 alpha) sitting over a busy background photo, giving unpredictable
+  contrast. Rewrote `.app-profile-defaults` to a SOLID card (`var(--parchment, #f4ecd8)`, dark-mode
+  `#1a1208`), matching the already-good, never-complained-about `.uo-tradition-explanation-inner`/
+  `#uo-onboarding-prompt` pattern exactly rather than inventing new styling.
+- *"That icon would provide access to the profile... do not attach it to where it currently is"*:
+  the panel's `#2` fix had tied its visibility to `#uo-threshold-grid` (shown/hidden together with
+  the splash screen's "Another Office" grid) -- Josh corrected this directly. Moved the actual
+  `<section id="user-profile-defaults">` node (never rebuilt -- every field's id/onchange handler
+  intact) out of `#mode-selection` entirely, into a new top-level modal host
+  (`<div id="user-profile-panel" class="app-profile-modal-backdrop">`) near `#uo-onboarding-prompt` at
+  the end of `<body>`, with its own close button. New `openUserProfilePanel()`/
+  `closeUserProfilePanel()`/`handleUserProfilePanelKeydown()`; closable via the X button, Escape, or a
+  backdrop click. The earlier `showUoThresholdGrid()`/`showUoThresholdDefault()` coupling was removed.
+- *"Add a little icon in each office page... upper corner"*: added `#app-profile-icon-btn` (a simple
+  two-shape person-in-circle inline SVG, deliberately similar-not-identical to a reference image Josh
+  attached) as a global sibling of the existing "Explore other Offices" button inside `#main-content`,
+  plus a plain "Your Profile" button on the splash screen's Tools row. **Found and fixed a real bug in
+  the same pass**: the icon's `position:fixed; top:12px; left:16px` landed exactly on top of
+  `.uo-ordo-mark` ("The Universal Office" branding), the identical collision `office-shell.js` already
+  has a documented fix for regarding the old "Back to Modes" button. Fixed the same way: `buildShell()`
+  now moves the icon into the shared `.uo-ordo` row as a real flex child instead of floating a fixed
+  element over it, matching established precedent rather than inventing a new pattern.
+- *"It should say 'The Episcopal Church'. The Tradition is Anglicanism. The sub-tradition is The
+  Episcopal Church"*: renamed "Anglican Communion" to "The Episcopal Church" everywhere it names this
+  app's own implemented tradition -- `UNIVERSAL_OFFICE_TRADITION_LABELS.anglican`,
+  `OFFICE_MODE_HEADER_LABELS.daily` (the literal `#office-mode-title` text on every BCP office page --
+  the exact string in Josh's screenshot), `BOOK_OF_NEEDS_TRADITION_CODES.ANG`,
+  `BOOK_OF_NEEDS_CONTEXTS.ANG.label`, three `index.html` tile/option occurrences, and
+  `admin/admin.html`'s `TA_DISPLAY_NAMES.anglican`. This REVERSES an earlier same-project decision (a
+  2026-09-28 comment on `UNIVERSAL_OFFICE_TRADITION_LABELS` records Josh confirming "Anglican
+  Communion" at the time) -- his latest, more specific instruction controls. Reasoning: "Anglican
+  Communion" names the worldwide ~40-province fellowship, not the specific church whose 1979 BCP this
+  app renders; every sibling entry already names a specific church body, so this was the one
+  inconsistent entry, not a new policy. Two browser-QC scripts' literal string assertions (checked
+  against live rendered text, not just source presence) updated to match. Deliberately NOT touched:
+  `data/cycles-of-prayer/anglican-communion-2026.json` (the real, correctly-named worldwide-communion
+  Cycle of Prayer corpus tier) and `audit-ledger.html`'s historical quotation of an unrelated real
+  sanctoral feast name.
+
+**A platform-level outage hit mid-session, between building the icon-collision fix and verifying it**:
+the session's Bash tool lost its server-side safety-classifier verdict entirely, for every command,
+for an extended period, eventually force-ending a turn. Confirmed not repo-specific -- a second,
+separate session on a different branch ran Bash successfully in the same window. `node --check` on the
+just-edited `office-shell.js` could not be run until the outage cleared; the edit was inspected by eye
+in the meantime (balanced braces, shape matching the sibling `backBtn` block exactly) but not trusted
+as verified until Bash recovered and actually ran it. All three touched audit scripts
+(`audit-app-entry-routing.mjs`, `audit-user-profile-defaults-skeleton.mjs`,
+`audit-entry-mobile-stabilization-runner.mjs`) were updated across this session's multiple
+architecture changes to keep asserting the CURRENT state rather than a superseded one -- each round's
+edit is described in the corresponding PR, not repeated here.
+
+**VERIFIED, once Bash recovered**: `node --check` clean on all three touched JS files
+(`office-ui.js`, `office-shell.js`, `prayers.js`); all three audit scripts' failure counts unchanged
+from their pre-existing, already-documented baselines (13/3/9 — none of the failures are new); headless
+Playwright confirmed `#app-profile-icon-btn` renders `position:static` inside `.uo-ordo` with zero
+bounding-box overlap against `.uo-ordo-mark`, `#office-mode-title` reads "The Episcopal Church", and
+the modal opens over a live BCP office page with real profile data and closes via all three methods
+with zero console errors.
