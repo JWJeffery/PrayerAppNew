@@ -254,22 +254,51 @@ whoever picks this up should decide with Josh whether to ship those first or wai
 tiers together. **A Venite-app screenshot Josh showed was a location reference only, not a design to
 copy** — confirmed explicitly: "I know that Venite does not fill it with prayer text. But that is
 where I want it" (Venite fills the same rubric slot with a "PRAYERS AND THANKSGIVINGS" link and a
-meditation timer; Josh wants actual prayer text at that slot instead). **No source text for any tier
-gathered yet — Josh said he'll supply it.**
+meditation timer; Josh wants actual prayer text at that slot instead). **Communion-tier source text
+LOCATED 2026-09-29, not yet parsed or wired into the rubric:** "September 2026-December 2026 Anglican
+Cycle of Prayer.pdf" in Josh's "TEC Cycle of Prayer" Drive folder (see below) is the actual worldwide
+Anglican Communion Cycle of Prayer — a daily rotation naming one diocese/province at a time. No
+Provincial-tier (TEC-wide, as distinct from the worldwide Communion cycle) source located yet.
+Diocesan/Parish tiers: see the corpus entry directly below.
 
 **Diocesan Cycle of Prayer corpus (`data/cycles-of-prayer/`) — storage, schema, and app-UI wiring all
 exist; content ingestion is ongoing, most of the roster still to do.** `data/cycles-of-prayer/
-schema.json` is the governing spec (file/entry/subject shapes, `cycleType` — `"dated"` for a
+schema.json` is the governing spec: file/entry/subject shapes; `cycleType` — `"dated"` for a
 weekly/daily cycle keyed by ISO date within a stated `year`, `"monthly-recurring"` for a standing
-day-of-month cycle with no year, added 2026-09-28 when Arkansas's own source turned out not to be
-date-anchored at all) — read it before adding another diocese. `scripts/cycles-of-prayer/validate.mjs`
-(`npm run audit:cycles-of-prayer`) validates every file; `js/cycles-of-prayer.js`'s
-`CYCLES_OF_PRAYER_DIOCESES` registry and the profile diocese `<select>` in `index.html` must both be
-hand-kept in sync with whatever `.json` files actually exist — **a file with no matching registry/UI
-entry silently does nothing.** **6 dioceses currently in the corpus, all passing the validator:**
-Western Oregon, Alaska, Arizona, Albany, Alabama (all `cycleType: "dated"`), Arkansas
-(`cycleType: "monthly-recurring"`). **83 of the 88 dioceses in Josh's Google Drive TEC roster
-spreadsheet remain — not started.**
+day-of-month cycle with no year (added 2026-09-28 when Arkansas's own source turned out not to be
+date-anchored at all); `scope` — `"diocese"` (default) for a diocese's own cycle of its parishes, or
+`"parish"` for one parish's own internal cycle of its individual members/households (added 2026-09-29
+alongside subject type `"household"` — see St. Bede's entry below). Read it before adding another
+diocese or parish. `scripts/cycles-of-prayer/validate.mjs` (`npm run audit:cycles-of-prayer`) validates
+every file; `js/cycles-of-prayer.js`'s `CYCLES_OF_PRAYER_DIOCESES` registry and the profile diocese
+`<select>` in `index.html` must both be hand-kept in sync with whatever diocese-level `.json` files
+actually exist — **a file with no matching registry/UI entry silently does nothing** (this has not yet
+been extended to cover scope-`"parish"` files at all — see below).
+
+**7 files currently in the corpus, all passing the validator:** 6 diocese-level — Western Oregon,
+Alaska, Arizona, Albany, Alabama (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus the
+first-ever parish-level file, `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational
+Cycle of Prayer — Josh's own parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29
+directly from a Drive PDF Josh supplied; transcribed from the PDF's own rendered page layout rather
+than its linearized text extraction, which interleaves two printed columns into one run-on line and
+would have misassigned names to the wrong day — see the file's own `notes`). St. Bede's already
+separately appears as a diocese-level `"parish"` subject inside Western Oregon's own file (its week is
+2026-04-12) — the two are not duplicates or in conflict; see schema.json's own `rules` for why. **The
+parish-level file is not yet wired into any UI or registry** — surfacing a household's own "this is my
+family's day" the way the diocese tier surfaces "this is my parish's week" is a real, undecided product
+question (how would the app know which household is the user's?), not yet raised with Josh.
+
+**LOCATED 2026-09-29: Josh's "TEC Cycle of Prayer" Drive folder actually holds ~24 raw files, not just
+the roster spreadsheet** — the Communion-tier PDF and St. Bede's file above came from it, and so does
+ready-to-transcribe (but NOT YET transcribed) source material for at least 15 more dioceses: New
+Jersey, Newark, Western Massachusetts, Southwestern Virginia, Nebraska, Maine, Connecticut, Lexington,
+Great Lakes, Atlanta, San Joaquin (tentative identification, not confirmed by an explicit diocese name
+in the source — verify before ingesting), Central Gulf Coast, East Carolina, Kentucky, Rio Grande (two
+files, a daily- and a weekly-cadence version of the same diocese — pick one, don't ingest both), Idaho,
+and Northern Indiana. **83 of the 88 dioceses in the roster spreadsheet remain unresearched in the
+older sense, but at least 15 of those 83 already have a source sitting unopened in this same Drive
+folder** — whoever picks this up next should open the folder directly before re-researching any diocese
+from scratch.
 
 **Before searching for any of those 83 yourself, check the roster spreadsheet first — it already
 pre-solves most of what you'd otherwise rediscover by hand.** Location and full per-diocese
