@@ -73,7 +73,12 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'louisiana', label: 'The Episcopal Diocese of Louisiana' },
     { bodySlug: 'episcopal', dioceseShort: 'maryland', label: 'The Episcopal Diocese of Maryland' },
     { bodySlug: 'episcopal', dioceseShort: 'michigan', label: 'The Episcopal Diocese of Michigan' },
-    { bodySlug: 'episcopal', dioceseShort: 'missouri', label: 'The Episcopal Diocese of Missouri' }
+    { bodySlug: 'episcopal', dioceseShort: 'missouri', label: 'The Episcopal Diocese of Missouri' },
+    { bodySlug: 'episcopal', dioceseShort: 'montana', label: 'The Episcopal Diocese of Montana' },
+    { bodySlug: 'episcopal', dioceseShort: 'nevada', label: 'Episcopal Diocese of Nevada' },
+    { bodySlug: 'episcopal', dioceseShort: 'new-hampshire', label: 'The Episcopal Church of New Hampshire' },
+    { bodySlug: 'episcopal', dioceseShort: 'new-york', label: 'The Episcopal Diocese of New York' },
+    { bodySlug: 'episcopal', dioceseShort: 'north-carolina', label: 'The Episcopal Diocese of North Carolina' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {

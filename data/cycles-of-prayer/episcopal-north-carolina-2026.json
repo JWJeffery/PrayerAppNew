@@ -1,0 +1,893 @@
+{
+  "id": "episcopal-north-carolina-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of North Carolina",
+  "dioceseShort": "north-carolina",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer",
+  "sourceFile": "HTML page fetched directly from https://episdionc.org/diocesan-cycle-of-prayer/, which states the cycle \"was printed in the 2025-2026 Gospel-Based Discipleship and is available here for worship-planning purposes.\"",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source is one continuous cycle spanning Advent 2025 through calendar 2026 (its own page groups entries under headings \"2025\" and \"2026\"): five weeks in late 2025 (Sunday, Nov. 30 - The Anglican Communion; Sunday, Dec. 7 - The Episcopal Church; Sunday, Dec. 14 - Diocese of North Carolina; Sunday, Dec. 21 - Diocese of Costa Rica; Sunday, Dec. 28 - Diocese of Botswana), followed by 47 weeks running Sunday, Jan. 4 through Sunday, Nov. 22, 2026 (the page's own displayed range ends there, matching the roster's coverage note that the \"2025-2026 cycle displayed through November 22\"). Per this schema's own \"one file per diocese per year\" rule and this corpus's existing precedent for the identical shape of source (episcopal-atlanta-2026.json, which likewise deferred a 5-week late-2025 lead-in rather than splitting a 5-week stub into its own file), only the 47 weeks landing in calendar 2026 are included here. The five 2025 weeks are deliberately excluded, not fabricated or force-fit into this file; they would need their own episcopal-north-carolina-2025.json if ever ingested.",
+    "Unlike most of the 2026 entries (which name specific parishes), all five excluded 2025 entries name diocesan/Communion-wide subjects (the Anglican Communion itself, The Episcopal Church itself, the Diocese of North Carolina itself, and two companion dioceses, Costa Rica and Botswana) rather than individual congregations -- consistent with the cycle beginning its year with wider-scope subjects before moving into the parish-by-parish rotation on Jan. 4, 2026.",
+    "Source is a live HTML page (WordPress), not a PDF -- fetched and parsed directly from its own rendered markup (one <p> block per Sunday, congregations separated by <br> tags), not a linearized/OCR text extraction, so the multi-column interleaving risk this corpus has documented for grid-laid-out PDF sources does not apply here.",
+    "Jan. 4: source prints \"Church of the Ascension Fork, Advance\" with no comma between \"Ascension\" and \"Fork\" (every other entry in the source follows a strict \"Name, Place\" comma pattern). Transcribed here as printed -- name \"Church of the Ascension Fork\", place \"Advance\" -- without inserting a comma the source itself does not have; it is possible the source intends \"Church of the Ascension\" in the community of \"Fork\" (near Advance, NC), but that reading is not assumed here since it would require silently adding punctuation the source omitted.",
+    "Feb. 8: source prints \"St. Michael And All Angels’, Charlotte\" with a capitalized \"And\" mid-name -- preserved exactly as printed, not lowercased.",
+    "The header for the Aug. 16 week prints \"Sunday Aug. 16\" (missing the comma present in every other week's \"Sunday, Month Day\" heading) -- a one-off source inconsistency, noted here for disclosure; it does not affect the transcribed ISO date.",
+    "Oct. 18, Oct. 25, Nov. 1, Nov. 8, and Nov. 15/22 name diocesan institutions, ministries, a retirement community, a conference center, a school, and campus ministries (Penick Village; Thompson Child & Family Focus; Episcopal Farmworkers Ministry; Kanuga; Galilee Ministries of East Charlotte; New Hope Collaborative; St. Mary’s School; several university/college campus ministries) rather than congregations -- recorded as category subjects (no place, per schema, since the source prints these as standalone names with no city/town attached), not parish, consistent with this corpus's existing precedent of treating a school as category rather than parish (see episcopal-delaware-2027.json's \"St. Anne's School\" entry).",
+    "Nov. 8: source prints \"UNC-Charlotte / Central Piedmont /Johnson & Wales University Campus Ministry\" with inconsistent spacing around its two slashes (a space before/after the first, only before the second) -- preserved exactly as printed.",
+    "All possessive/plural-possessive apostrophes in the source use a curly ’ character (e.g. \"St. John’s\"), preserved as printed rather than normalized to a straight apostrophe.",
+    "No entry in the source carries its own liturgical-season label (e.g. \"Easter\", \"Palm Sunday\") -- liturgicalNote is null throughout."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension Fork",
+          "place": "Advance"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Albemarle"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Asheboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Battleboro"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Comforter",
+          "place": "Burlington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Cary"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Chapel of the Cross",
+          "place": "Chapel Hill"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Family",
+          "place": "Chapel Hill"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advocate",
+          "place": "Chapel Hill"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Chapel of Christ The King",
+          "place": "Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Charlotte"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Comforter",
+          "place": "Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin’s",
+          "place": "Charlotte"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael And All Angels’",
+          "place": "Charlotte"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Charlotte"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Clayton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Clement’s",
+          "place": "Clemmons"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Cleveland"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Concord"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Cooleemee"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban’s",
+          "place": "Davidson"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia El Buen Pastor",
+          "place": "Durham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Joseph’s",
+          "place": "Durham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Durham"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s",
+          "place": "Durham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Durham"
+        },
+        {
+          "type": "parish",
+          "name": "St. Titus’",
+          "place": "Durham"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Eden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Eden"
+        },
+        {
+          "type": "parish",
+          "name": "Galloway Memorial Church",
+          "place": "Elkin"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Erwin"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Fuquay-Varina"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Abundant Life",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Spirit",
+          "place": "Greensboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Greensboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas’",
+          "place": "Greensboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Greensboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Hamlet"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Haw River"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Innocents",
+          "place": "Henderson"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Henderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher’s",
+          "place": "High Point"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "High Point"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Hillsborough"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Huntersville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Saviour",
+          "place": "Jackson"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Kernersville"
+        },
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Laurinburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Lexington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban’s",
+          "place": "Littleton"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthias’",
+          "place": "Louisburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Louisburg"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Mayodan"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Monroe"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’",
+          "place": "Mooresville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick’s",
+          "place": "Mooresville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Mount Airy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Cyprian’s",
+          "place": "Oxford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Oxford"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s",
+          "place": "Pittsboro"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Raleigh"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Raleigh"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Raleigh"
+        },
+        {
+          "type": "parish",
+          "name": "St. Ambrose",
+          "place": "Raleigh"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine’s University Chapel",
+          "place": "Raleigh"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael’s",
+          "place": "Raleigh"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy’s",
+          "place": "Raleigh"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "Reidsville"
+        },
+        {
+          "type": "parish",
+          "name": "Chapel of the Good Shepherd",
+          "place": "Ridgeway"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints’",
+          "place": "Roanoke Rapids"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Rockingham"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Rocky Mount"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Rocky Mount"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Roxboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Salisbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew’s",
+          "place": "Salisbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Salisbury"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "Sanford"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Scotland Neck"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Seven Lakes"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Smithfield"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Southern Pines"
+        },
+        {
+          "type": "parish",
+          "name": "Chapel of the Transfiguration",
+          "place": "Southern Pines"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Speed"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Statesville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Tarboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Tarboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael’s",
+          "place": "Tarboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Wadesboro"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Wake Forest"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Walnut Cove"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Warrenton"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret’s",
+          "place": "Waxhaw"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Wilson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy’s",
+          "place": "Wilson"
+        },
+        {
+          "type": "parish",
+          "name": "La Iglesia de la Guadalupana",
+          "place": "Wilson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ’s Beloved Community",
+          "place": "Winston-Salem"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne’s",
+          "place": "Winston-Salem"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Winston-Salem"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Winston-Salem"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy’s",
+          "place": "Winston-Salem"
+        },
+        {
+          "type": "category",
+          "name": "Penick Village"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thompson Child & Family Focus"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Farmworkers Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Kanuga"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Galilee Ministries of East Charlotte"
+        },
+        {
+          "type": "category",
+          "name": "New Hope Collaborative"
+        },
+        {
+          "type": "category",
+          "name": "St. Mary’s School"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "UNC-Charlotte / Central Piedmont /Johnson & Wales University Campus Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Davidson College Campus Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Elon Campus Ministry / LEAF"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Center at Duke University"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Campus Ministry – Raleigh"
+        },
+        {
+          "type": "category",
+          "name": "Greensboro Colleges and Universities/St. Mary’s House"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "UNC-Chapel Hill Campus Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Wake Forest / Salem / Winston-Salem State / UNC School of the Arts Episcopal Campus Ministry"
+        }
+      ]
+    }
+  ]
+}
