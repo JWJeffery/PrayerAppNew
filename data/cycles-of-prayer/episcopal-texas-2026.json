@@ -1,0 +1,473 @@
+{
+  "id": "episcopal-texas-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Texas",
+  "dioceseShort": "texas",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan Cycle of Prayer web page, fetched directly from https://www.epicenter.org/cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Diocese identity check: this is the Diocese of Texas (the large diocese centered on Houston/East Texas), not the separate \"Diocese of West Texas\" (San Antonio, dwtx.org) or \"Diocese of Northwest Texas\" (Lubbock, nwtx.org) that also exist in this corpus/roster. Confirmed three ways: (1) the fetched page's own footer and copyright line read \"The Episcopal Diocese of Texas, 1225 Texas Ave, Houston, TX US 77002\" -- the diocese's own cathedral-office address, distinct from West Texas's and Northwest Texas's own offices; (2) the page's <title> is \"Cycle of Prayer - EDOT\", EDOT being this diocese's own standard abbreviation (Episcopal Diocese Of Texas), served from its own site epicenter.org; (3) every place name printed across all 17 weeks (Houston, Katy, Sugar Land, Missouri City, Richmond, Humble, Kingwood, Cypress, Conroe, Huntsville, Beaumont, Orange, Port Neches, etc.) falls within this diocese's own Houston/East Texas territory, not the San Antonio/Rio Grande Valley area West Texas covers or the Panhandle/South Plains area Northwest Texas covers.",
+    "Source is the diocese's own live web page at https://www.epicenter.org/cycle-of-prayer/ (\"Cycle of Prayer\"), a WordPress/GeneratePress page whose cycle content is rendered directly as HTML -- one <p><strong>date -- liturgical label</strong><br>...</p> paragraph per week, congregation lines separated by <br> within that paragraph -- fetched with curl and parsed from that rendered markup, not from a linearized PDF text dump, so this corpus's standing PDF multi-column-interleaving caveat does not apply here.",
+    "The live page currently runs Sunday, September 6, 2026 through Sunday, December 27, 2026 (17 weekly entries), entirely within calendar year 2026 -- unlike this task's own roster note (checked 2026-09-28, describing the same page as \"September-December 2026\"), the page had not yet rolled forward into January 2027 as of this fetch (2026-09-29), so no year-boundary split was needed and this single file covers the entire live cycle as fetched.",
+    "Each week's paragraph opens with a bold '<Month day> - <liturgical label>' heading (transcribed into `date`/`liturgicalNote`), used exactly once at the very top of the page for an introductory line naming the diocese's own bishops (Presiding Bishop Sean Rowe; Diocesan Bishop C. Andrew Doyle; Bishop Suffragans Jeff W. Fisher and Kathryn 'Kai' Ryan; Bishop Assistant Hector F. Monterroso; Assisting Bishop Brian R. Seage) -- this bishops paragraph is not tied to any specific date printed anywhere on the page, so it is excluded from `entries` entirely rather than attached to the first dated entry or fabricated a date of its own.",
+    "The page also prints 4 standalone convocation-header paragraphs interleaved between weeks -- \"SAN JACINTO - William Blake Rider\", \"SOUTHEAST - James Melvin Pevehouse\", \"SOUTHWEST - Travis Hunter Smith\", and \"WEST HARRIS - Lisa Neilson\" -- each naming a convocation and its dean and applying to several subsequent weeks' worth of congregations, not to one date. Like the bishops paragraph, these carry no date of their own and are excluded from `entries`; the dean named in each heading also appears by name later that convocation's own weekly congregation list (e.g. William Blake Rider reappears as the second name given for St. Stephen's, Huntsville on September 27), so no distinct content is lost by omitting the header itself.",
+    "Every week's paragraph ends with its own \"Birthdays of: <name> (<day>), ...\" line, listing diocesan clergy/spouses with a birthday that week -- a diocese-wide roster unrelated to any specific congregation. This is excluded from `entries` as out-of-scope administrative/celebratory content, following this corpus's existing precedent of excluding a similar birthdays/anniversaries section from episcopal-puerto-rico-2026.json (see that file's own `notes`).",
+    "Every remaining line in a week's paragraph pairs one congregation ('<Name>, <Place>') with one or more person names after an en dash, e.g. 'Christ the King (Atascocita), Humble - Catherine Rodman Reid Cox.'; some names carry a parenthetical role such as '(Senior Warden)' or '(Bishop's Warden)', most carry none. The source never explains what this pairing represents (current clergy? wardens? some mix -- the annotated names are explicitly lay wardens, so it is clearly not clergy-only), so rather than guess or fold it into the parish's own `name`, each congregation is transcribed as a `parish` subject (`name`/`place` from before the dash) and the person name(s) after the dash are preserved verbatim, comma-separated, in that subject's own `note` field, trailing period dropped.",
+    "'Kiswahili Church Plant' (September 13, Huntsville) and 'Esperanza Church Plant' (November 29, Houston) are recorded as `parish`-type subjects, not `category`, since each is a specific named congregation with its own place -- this corpus's schema explicitly includes 'mission' alongside 'parish' and 'cathedral' under the `parish` subject type, and a church plant is a mission congregation in this sense.",
+    "Two distinct congregations share the base name 'Christ the King', disambiguated in the source itself by a parenthetical neighborhood tag baked into the printed name -- 'Christ the King (Atascocita)', Humble (September 6) and 'Christ the King (Alief)', Houston (November 22) -- both preserved verbatim including the parenthetical, per this corpus's standing rule against altering a source's own printed name.",
+    "All apostrophes in the source's congregation names and person names are the curly '’' character (HTML entity &#8217; throughout, e.g. 'St. Aidan’s', 'St. Dunstan’s'), not the plain straight ' character -- preserved as printed.",
+    "September 20, 2026's first congregation line, 'St. Cuthbert, Houston - Kuruvilla Kulangara Chandy', is the only congregation line across all 17 weeks missing its terminal period (every other congregation line in the source ends with one) -- preserved as printed, not silently corrected.",
+    "Liturgical labels are taken directly from each week's own printed heading (e.g. 'Fifteenth Sunday after Pentecost', 'All Saints', 'Last Sunday after Pentecost - Christ the King', 'First Sunday of Advent'). November 1 is labeled 'All Saints' rather than continuing the ordinary-time ordinal sequence, and November 8 then resumes at 'Twenty-Fourth Sunday after Pentecost' -- skipping 'Twenty-Third' entirely -- because All Saints displaced that Sunday's ordinal count; this is the diocese's own liturgical-calendar choice printed as-is, not a numbering error introduced here.",
+    "All 17 printed dates were independently verified to fall on a Sunday in calendar year 2026 before being recorded."
+  ],
+  "entries": [
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ the King (Atascocita)",
+          "place": "Humble",
+          "note": "Catherine Rodman Reid Cox"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Kingwood",
+          "note": "Mark Brown"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Tomball",
+          "note": "Cecil George McGavern, Karen Loomis Jaworski"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Spring",
+          "note": "John Robert Soard, Patience Ebele Okonkwo Onuigbo"
+        },
+        {
+          "type": "parish",
+          "name": "Kiswahili Church Plant",
+          "place": "Huntsville",
+          "note": "Joseph Muchiri Gatungu"
+        },
+        {
+          "type": "parish",
+          "name": "San Esteban",
+          "place": "Cleveland",
+          "note": "William D. Llana"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan’s",
+          "place": "Cypress",
+          "note": "Robert Edward Gray"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Cuthbert",
+          "place": "Houston",
+          "note": "Kuruvilla Kulangara Chandy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Dunstan’s",
+          "place": "Houston",
+          "note": "Roman Dario Roldan, Stephen K. Ferguson, Natividad Menjivar"
+        },
+        {
+          "type": "parish",
+          "name": "St. James the Apostle",
+          "place": "Conroe",
+          "note": "Jerald W. Hyche"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Livingston",
+          "note": "Chester Joseph Makowski"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Cypress",
+          "note": "Kurt Aaron Unangst"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Huntsville",
+          "note": "William Blake Rider, Jonathan Andrew Maresca"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "The Woodlands",
+          "note": "Christine Love Mendoza, Frank Wayne Samuelson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "San Augustine",
+          "note": "Benning Wenworth Bundy (Bishop’s Warden)"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Port Neches",
+          "note": "Rohani Ann Weger"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Silsbee",
+          "note": "Jay Wilson (Bishop’s Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Beaumont",
+          "note": "James Melvin Pevehouse, Christopher Paul Hilton, Tracie Gail Middleton, Keith F. Giblin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Orange",
+          "note": "Rebecca Hall Rutledge (Senior Warden), Margaret Light"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Woodville",
+          "note": "Mary Janice Johnson (Bishop’s Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty-First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Beaumont",
+          "note": "Curtis Kemper Norman"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Liberty",
+          "note": "Brandon Scott McGinnis"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Anahuac",
+          "note": "Carrie D. Hirdes"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Jasper",
+          "note": "Jane Warfield Spencer (Senior Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty-Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Richmond",
+          "note": "Ralph Baier Morgan, Nancy Schreiber Wilkes"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Eagle Lake",
+          "note": "Margarita Eguia Arroyo"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Matagorda",
+          "note": "Jennifer Lynn Klaiber (Bishop’s Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd Indian",
+          "place": "Stafford",
+          "note": "Roy Varghese"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Comforter",
+          "place": "Angleton",
+          "note": "Travis Hunter Smith, Preston Earl Weatherly"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Sugar Land",
+          "note": "Christina Blaine Scheiderich (Senior Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty-Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Catherine of Sienna",
+          "place": "Missouri City",
+          "note": "Andrew Duncan Ellison"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Palacios",
+          "note": "William Thomas Bullard"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Bay City",
+          "note": "Timothy Michael Frawley (Senior Warden), Arthur Ashley Callaham"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty-Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Richmond",
+          "note": "Jeremy Charles Bradley"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "West Columbia",
+          "note": "Jackie Foreman Walker (Senior Warden)"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "Wharton",
+          "note": "Susanne Darnell Hebert"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy’s",
+          "place": "Lake Jackson",
+          "note": "Robin K. Reeves-Kautz"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost – Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Houston",
+          "note": "Thomas Edward Downs (Senior Warden)"
+        },
+        {
+          "type": "parish",
+          "name": "Christ the King (Alief)",
+          "place": "Houston",
+          "note": "Maria Victoria Umana"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Houston",
+          "note": "Patrick Lance Ousley, Helena Mary Corinne Danielli"
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Houston",
+          "note": "Clementine Melissa Arana (Senior Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Esperanza Church Plant",
+          "place": "Houston",
+          "note": "Oscar Huerta-Garcia"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Katy",
+          "note": "Alexander R. Large, Pedro De Jesus Lara"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Houston",
+          "note": "Mitchell Joseph Tollett, Michael Christian Sturdy"
+        },
+        {
+          "type": "parish",
+          "name": "Hope",
+          "place": "Houston",
+          "note": "John Ndubuisi (Senior Warden)"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": "Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "San Mateo",
+          "place": "Bellaire",
+          "note": "Janssen Jose Gutierrez Silva"
+        },
+        {
+          "type": "parish",
+          "name": "San Romero",
+          "place": "Houston",
+          "note": "Uriel Lopez"
+        },
+        {
+          "type": "parish",
+          "name": "Santa Maria Virgen",
+          "place": "Houston",
+          "note": "Uriel Osnaya-Jimenez"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": "Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Houston",
+          "note": "James McKay Lykes Grace, Jeffrey John Bohanski, Margaret Catharine Greene"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher’s",
+          "place": "Houston",
+          "note": "Richard T. Houser, Donna Marie Brackett-Knight"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis’",
+          "place": "Houston",
+          "note": "Stuart Alan Bates, David W. Price, Robert David Wismer, Emily Rose Hylden"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": "Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Houston",
+          "note": "Robert Leigh Spruill, John Deepak Sundara, Reagan Winter Cocke, Elizabeth Christine Garfield, Lars David Jackson Skoglund, Louise B. Samuelson, Robert Trent Pettit, Charles McLean Stiernberg, Douglas Wayne Richnow"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin’s",
+          "place": "Houston",
+          "note": "Dane Ethan Boston, Martin James Bastian, Lisa R. Neilson, Alexander DeWitt Graham, Robert Wesley Arning, Jordan Lee Hylden, Sharron Leslie Cox, John R. Bentley"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Katy",
+          "note": "Hayden Phillip Paul"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": "First Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip the Evangelist",
+          "place": "Houston",
+          "note": "Agook K. Kuol"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen’s",
+          "place": "Houston",
+          "note": "Carissa E. Baldwin-McGinnis, Ashley Elisabeth Bathe Dellagiacoma"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’",
+          "place": "Houston",
+          "note": "David O’Neal Browder, Geoffrey Stewart Simpson"
+        }
+      ]
+    }
+  ]
+}
