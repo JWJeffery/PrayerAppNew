@@ -2218,7 +2218,18 @@ function showUoThresholdDefault() {
 // prompt; syncUserProfileControls() runs on open so the panel always shows
 // current data even if it was last synced before something else changed
 // (e.g. a diocese ingested since the last time this session opened it).
+//
+// EXTENDED 2026-09-29 (same day): per Josh's direct instruction, this is now
+// also the primary trigger for the one-time onboarding prompt -- "the
+// onboarding prompt should appear for the first time when a user clicks on
+// the profile button for the first time." A first click (before onboarding
+// is complete) shows that prompt instead of this panel; every click after
+// that (once Save/Skip has marked onboardingComplete) opens this panel as
+// before. See maybeShowOnboardingPrompt's own comment for the second trigger
+// (scrolling to the bottom of an office).
 function openUserProfilePanel() {
+    if (maybeShowOnboardingPrompt()) return;
+
     const backdrop = document.getElementById('user-profile-panel');
     if (!backdrop) return;
     syncUserProfileControls();
@@ -2434,23 +2445,6 @@ function setUserTraditionDefault(tradition) {
 
     persistUserEntryDefault(route.storedDefault);
 
-    // FIXED 2026-09-29, per Josh's direct live report: the one-time onboarding
-    // prompt was firing unconditionally right after initializeEntryRouting()
-    // resolved, which for a brand-new visitor IS the moment the tradition-entry
-    // splash itself first renders -- so "Set up your profile" was appearing
-    // before the person had chosen a tradition at all, on top of an unrelated
-    // screen, with the role dropdown correctly (but confusingly) showing the
-    // tradition-neutral fallback list rather than anything actually stale. See
-    // maybeShowOnboardingPrompt's own updated gate below -- it now only fires
-    // once a real tradition is on file, so this call here (right after the
-    // splash's own tradition choice is persisted, mode === 'universal' aside,
-    // since that path never sets a traditionDefault at all) is what actually
-    // shows it for a first-time visitor, layered over whatever the routing
-    // below navigates into next.
-    if (route.mode !== 'universal') {
-        maybeShowOnboardingPrompt();
-    }
-
     if (route.mode === 'universal') {
         showUniversalModeSelection(false);
         return;
@@ -2639,7 +2633,14 @@ window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;
 window.syncUniversalOfficeAdvancedToolsVisibility = syncUniversalOfficeAdvancedToolsVisibility;
 
 document.addEventListener('DOMContentLoaded', function () {
-    initializeEntryRouting().then(maybeShowOnboardingPrompt);
+    // FIXED 2026-09-29, per Josh's direct instruction ("the onboarding prompt
+    // should appear for the first time when a user clicks on the profile
+    // button for the first time. Not before prayer."): no longer auto-fires
+    // on page load at all -- see openUserProfilePanel() (fires it on a first
+    // profile-button click) and office-shell.js's updateRailCurrent() (fires
+    // it the first time a reader scrolls to the very bottom of an office,
+    // Josh's own suggested second trigger) for where it actually shows now.
+    initializeEntryRouting();
 });
 
 
@@ -5102,38 +5103,42 @@ function closeTraditionExplanation() {
 
 /**
  * ADDED 2026-09-28, per Josh's direct instruction -- "the profile/user
- * system." One-time prompt for name + role, shown after
- * initializeEntryRouting() has already decided where to land (so it never
- * races the existing tradition-entry/mode-selection routing, and never
- * re-asks the tradition question that routing already answered). Shown
- * exactly once per browser profile: `Save` and `Skip` both mark
- * `onboardingComplete: true`, so it never reappears on its own afterward --
- * the person can still change name/role any time from the profile-defaults
- * panel, this is only the one-time introduction.
+ * system." One-time prompt for name + role. Shown exactly once per browser
+ * profile: `Save` and `Skip` both mark `onboardingComplete: true`, so it
+ * never reappears on its own afterward -- the person can still change
+ * name/role any time from the profile-defaults panel, this is only the
+ * one-time introduction. Returns whether it actually rendered, so a caller
+ * that wants to show something ELSE instead (see openUserProfilePanel) can
+ * branch on it rather than duplicating the `onboardingComplete` check.
  *
- * FIXED 2026-09-29, per Josh's direct live report (a screenshot of this
- * prompt appearing as the very first thing shown on a brand-new Incognito
- * visit, before the tradition-entry splash had been touched at all): the
- * original call site (`initializeEntryRouting().then(maybeShowOnboardingPrompt)`,
- * still below) fires as soon as routing resolves, which for a first-time
- * visitor IS the moment the "ask for a tradition" splash itself renders --
- * this function had no gate against that, so it popped immediately on top
- * of an unrelated screen. Now requires a real `traditionDefault` already on
- * file before rendering at all; the splash's own tradition-entry click
- * handler (`setUserTraditionDefault`) calls this function itself right
- * after persisting that choice, which is what actually shows the prompt for
- * a first-time visitor now, layered over wherever routing lands next rather
- * than pre-empting the choice itself. A returning visitor who already has a
- * tradition on file (from a prior session, before ever completing
- * onboarding) is unaffected -- the original initializeEntryRouting() call
- * site still fires normally in that case, since the gate is satisfied
- * immediately.
+ * REWORKED TWICE, 2026-09-29, both times from Josh's own direct live
+ * reports. First: the original call site (`initializeEntryRouting().then
+ * (maybeShowOnboardingPrompt)`) fired as soon as page-load routing
+ * resolved, which for a first-time visitor IS the moment the tradition-entry
+ * splash itself first renders -- so this was popping immediately, before
+ * the person had touched anything. That first fix moved the trigger to
+ * "right after a tradition is chosen" instead -- better, but still not what
+ * Josh actually wanted: *"the onboarding prompt should appear for the first
+ * time when a user clicks on the profile button for the first time. Not
+ * before prayer."* This function no longer auto-fires from ANYWHERE in the
+ * page-load/tradition-choice path at all (that call site, and the one in
+ * setUserTraditionDefault, are both gone). It's called from exactly two
+ * places instead, both genuinely user-initiated, neither "before prayer":
+ * openUserProfilePanel() (a first profile-button click, from either the
+ * per-office icon or the splash's "Your Profile" button -- the profile
+ * button IS reachable before any tradition is chosen, via the splash, so
+ * the "No tradition selected yet" copy branch in renderOnboardingPrompt is
+ * a real, live path again, not dead code); and office-shell.js's
+ * updateRailCurrent(), the first time a reader scrolls to the very bottom
+ * of an office -- Josh's own suggested second trigger ("What might be
+ * helpful is to have the profile pop up the first time the user scrolls to
+ * the very bottom of the prayer").
  */
 function maybeShowOnboardingPrompt() {
     const profile = getUserProfileDefaults();
-    if (profile.onboardingComplete) return;
-    if (!profile.traditionDefault) return;
+    if (profile.onboardingComplete) return false;
     renderOnboardingPrompt(profile);
+    return true;
 }
 
 function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
@@ -5145,12 +5150,11 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
     // Echoes back whatever tradition the person has already chosen through
     // the existing entry flow, per the spec's own "should already show
     // whatever tradition/entry info the person has already provided... not
-    // ask for it again" -- read-only here, never a second picker for it.
-    // The "no tradition" branch is defensive only as of 2026-09-29:
-    // maybeShowOnboardingPrompt (this function's only caller) now refuses to
-    // call it at all until profile.traditionDefault is set, so this line is
-    // never actually shown through the normal flow -- kept in case this
-    // function is ever invoked directly some other way in the future.
+    // ask for it again" -- read-only here, never a second picker for it. The
+    // "no tradition" branch is a real, live path as of 2026-09-29: this
+    // prompt is now reachable via a first profile-button click from the
+    // splash's own "Your Profile" button, before any tradition has been
+    // chosen at all (see maybeShowOnboardingPrompt's own comment).
     const traditionLine = profile.traditionDefault && UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault]
         ? `Tradition on file: <strong>${esc(UNIVERSAL_OFFICE_TRADITION_LABELS[profile.traditionDefault])}</strong>`
         : 'No tradition selected yet -- you can set one any time from "Where do you pray?".';
@@ -5563,23 +5567,34 @@ function bcpEmitBare(container, text, opts) {
     bcpWrapInGutter(container, '', [bcpMakeSpan('component-text', text, opts)]);
 }
 
-/* Shared rubric-text heading for a bare-content block that wants one but
-   isn't a full bcpEmitBlock shape (no gutter kind, no env/rail entry).
-   ADDED 2026-09-29, per Josh's direct request that the Communion/Diocesan/
-   Parish Cycle of Prayer tiers "appear under their own rubric heading" --
-   mirrors bcpEmitBlock's own labelSpan construction (above) exactly, so it
-   renders identically to every other in-page rubric heading (e.g. "Let Us
-   Bless the Lord"). */
-function bcpEmitRubricHeading(container, label) {
+/* Shared rubric-text heading for a bare-content block that wants one AND a
+   sidebar rail entry. ADDED 2026-09-29, per Josh's direct request that the
+   Communion/Diocesan/Parish Cycle of Prayer tiers "appear under their own
+   rubric heading" -- the labelSpan construction mirrors bcpEmitBlock's own
+   exactly, so it renders identically to every other in-page rubric heading
+   (e.g. "Let Us Bless the Lord"). EXTENDED 2026-09-29 (same day, continued):
+   per Josh's follow-up ("should appear in the sidebar when they are in the
+   prayer"), also pushes a rail entry (`env.blocks`) the same way
+   bcpEmitBlock's own label does -- this function's three call sites
+   (renderCommunionCycleOfPrayerLine/renderDiocesanCycleOfPrayerLine/
+   renderParishCycleOfPrayerLine) are each already gated on real content
+   actually being available before calling this at all, so a tier with
+   nothing to show correctly adds no rail entry either, matching the "any,
+   all, or none may render" contract those three functions already document. */
+function bcpEmitRubricHeading(container, env, label) {
     var labelSpan = document.createElement('span');
     labelSpan.className = 'rubric-text';
     labelSpan.textContent = label;
     container.appendChild(labelSpan);
+    env.blocks.push({ label: label, role: bcpRoleFor(label), units: [] });
 }
 
 /**
  * ADDED 2026-09-28 (diocese tier); ADDED 2026-09-29 (Communion tier, then
- * Parish tier + per-tier rubric headings same day). Appends, after the
+ * Parish tier + per-tier rubric headings, then sidebar rail entries for
+ * each, all same day -- `env` is threaded through here and into each tier
+ * function purely so bcpEmitRubricHeading can push a rail entry alongside
+ * the heading it emits; see that function's own comment). Appends, after the
  * static "Here may be sung a hymn or anthem..." rubric, up to three
  * independent tiers for the OFFICE'S OWN date (`date` -- never `new
  * Date()`/today, so an office rendered for a past or future date shows that
@@ -5593,10 +5608,10 @@ function bcpEmitRubricHeading(container, label) {
  * js/cycles-of-prayer.js's own comments on the prefetch-then-repaint pattern
  * that eventually populates each cache.
  */
-function renderCycleOfPrayerLine(container, date) {
-    renderCommunionCycleOfPrayerLine(container, date);
-    renderDiocesanCycleOfPrayerLine(container, date);
-    renderParishCycleOfPrayerLine(container, date);
+function renderCycleOfPrayerLine(container, env, date) {
+    renderCommunionCycleOfPrayerLine(container, env, date);
+    renderDiocesanCycleOfPrayerLine(container, env, date);
+    renderParishCycleOfPrayerLine(container, env, date);
 }
 
 /**
@@ -5608,7 +5623,7 @@ function renderCycleOfPrayerLine(container, date) {
  * correct, honest state for any date outside whatever partial-year range the
  * current file happens to cover, not a bug).
  */
-function renderCommunionCycleOfPrayerLine(container, date) {
+function renderCommunionCycleOfPrayerLine(container, env, date) {
     if (typeof getCachedCommunionCycleOfPrayerDay !== 'function') return;
 
     const dayEntry = getCachedCommunionCycleOfPrayerDay(date);
@@ -5621,7 +5636,7 @@ function renderCommunionCycleOfPrayerLine(container, date) {
         ? subjectNames[0]
         : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
 
-    bcpEmitRubricHeading(container, 'The Anglican Cycle of Prayer');
+    bcpEmitRubricHeading(container, env, 'The Anglican Cycle of Prayer');
     bcpEmitBare(container, `Today, the Anglican Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
 }
 
@@ -5632,7 +5647,7 @@ function renderCommunionCycleOfPrayerLine(container, date) {
  * under its own name and a rubric heading rather than living directly
  * inside renderCycleOfPrayerLine.
  */
-function renderDiocesanCycleOfPrayerLine(container, date) {
+function renderDiocesanCycleOfPrayerLine(container, env, date) {
     const profile = getUserProfileDefaults();
     if (!profile.cycleOfPrayerDiocese || typeof getCachedCycleOfPrayerWeek !== 'function') return;
 
@@ -5652,7 +5667,7 @@ function renderDiocesanCycleOfPrayerLine(container, date) {
     const line = `This week, the Diocesan Cycle of Prayer asks us to pray for ${subjectPhrase}.` +
         (isHomeParishWeek ? ' This is your own parish’s week.' : '');
 
-    bcpEmitRubricHeading(container, 'The Diocesan Cycle of Prayer');
+    bcpEmitRubricHeading(container, env, 'The Diocesan Cycle of Prayer');
     bcpEmitBare(container, line, { italic: true });
 }
 
@@ -5673,7 +5688,7 @@ function renderDiocesanCycleOfPrayerLine(container, date) {
  * day-of-month granularity (see resolveMonthlyRecurringEntry in
  * js/cycles-of-prayer.js).
  */
-function renderParishCycleOfPrayerLine(container, date) {
+function renderParishCycleOfPrayerLine(container, env, date) {
     const profile = getUserProfileDefaults();
     if (!profile.cycleOfPrayerDiocese || !profile.cycleOfPrayerParish) return;
     if (typeof getCachedCycleOfPrayerParishMonth !== 'function') return;
@@ -5686,7 +5701,7 @@ function renderParishCycleOfPrayerLine(container, date) {
         ? subjectNames[0]
         : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
 
-    bcpEmitRubricHeading(container, 'The Parish Cycle of Prayer');
+    bcpEmitRubricHeading(container, env, 'The Parish Cycle of Prayer');
     bcpEmitBare(container, `Today, your Parish Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
 }
 
@@ -6663,7 +6678,7 @@ async function renderBcpOffice() {
             if (comp) {
                 const t = resolveText(comp, rite) || comp.text || '';
                 bcpEmitBare(container, t, { italic: true });
-                renderCycleOfPrayerLine(container, currentDate);
+                renderCycleOfPrayerLine(container, env, currentDate);
             }
             continue;
         }

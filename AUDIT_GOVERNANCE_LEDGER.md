@@ -25219,3 +25219,61 @@ once real fonts are in play, the fix is a one-line numeric tune (both values mus
 Both fixes: `node --check js/office-ui.js` clean; CSS brace-balance checked (325/325); all three
 standing audit scripts unchanged at their 13/3/9 baselines. `index.html` cache-bust bumped:
 `office-ui.js?v=328`, `office.css?v=232`.
+
+## 2026-09-29 (continued once more) -- Cycle of Prayer tiers added to the sidebar; onboarding prompt
+## re-triggered on profile-button click and scroll-to-bottom instead of tradition choice
+
+Two more direct follow-ups from Josh, in the same conversation as the two fixes just above.
+
+**Sidebar rail entries for the three Cycle of Prayer tiers.** Josh: *"The Anglican Cycle of Prayer,
+The Diocesan Cycle of Prayer, and the The Parish Cycle of Prayer should appear in the sidebar when
+they are in the prayer."* Root cause: `bcpEmitRubricHeading` (added 2026-09-29 earlier today, PR #90)
+only emitted the visible `.rubric-text` heading span -- it never pushed an `env.blocks` entry, the
+thing `office-shell.js`'s rail-building code actually reads to populate "The Order" sidebar list, so
+none of the three tiers ever showed up there regardless of whether they rendered in the page body.
+FIXED: `bcpEmitRubricHeading` now takes `env` as a parameter and pushes `{ label, role: bcpRoleFor
+(label), units: [] }` right alongside the heading it emits, the same shape `bcpEmitBlock`'s own label
+already pushes for every other titled section. `env` threaded through `renderCycleOfPrayerLine`/
+`renderCommunionCycleOfPrayerLine`/`renderDiocesanCycleOfPrayerLine`/`renderParishCycleOfPrayerLine`
+(previously `(container, date)`, now `(container, env, date)`) from the one real call site inside
+`renderBcpOffice()`'s main loop, where `env` was already in scope. No new gating needed: each tier
+function already only calls `bcpEmitRubricHeading` when it has real content to show (the same
+existing early-returns that already gate the visible text also correctly gate the new rail entry).
+Live-verified: with all three tiers' caches warmed, `.uo-rail-label` now lists "The Anglican Cycle of
+Prayer", "The Diocesan Cycle of Prayer", and "The Parish Cycle of Prayer" in that order, positioned
+correctly between "A Prayer for Mission" and "Let Us Bless the Lord" -- matching the page's own content
+order exactly, screenshot-confirmed.
+
+**Onboarding prompt trigger reworked a second time, same day.** Josh's follow-up correction: *"the
+onboarding prompt should appear for the first time when a user clicks on the profile button for the
+first time. Not before prayer. What might be helpful is to have the profile pop up the first time the
+user scrolls to the very bottom of the prayer."* This supersedes the earlier same-day fix (which moved
+the trigger from "page load" to "right after choosing a tradition" -- still too early by Josh's own
+newer, more specific instruction). Both the `initializeEntryRouting().then(maybeShowOnboardingPrompt)`
+page-load call and the `setUserTraditionDefault()` call added earlier today are now removed entirely;
+`maybeShowOnboardingPrompt()` no longer auto-fires from anywhere in the routing/tradition-choice path.
+It now fires from exactly two places, both genuinely user-initiated: `openUserProfilePanel()`
+(js/office-ui.js) -- a first click of either profile-button entry point (the per-office icon or the
+splash's "Your Profile" button) shows the onboarding prompt instead of the normal profile-defaults
+panel; every click after that (once Save/Skip marks `onboardingComplete`) opens the normal panel as
+before -- and `updateRailCurrent()` (js/office-shell.js), the first time a reader scrolls to the very
+bottom of an office, reusing that function's own pre-existing `atBottom` computation (already built
+for the rail-tracking "last item is current at the true bottom of scroll" fix). A new module-level
+`onboardingScrollTriggerFired` one-shot guard in office-shell.js stops the scroll trigger from
+re-firing on every scroll frame spent sitting at the bottom (which would otherwise blow away a
+half-typed name in the prompt's own input field) or from nagging again on a different office within
+the same page load once already offered once. `maybeShowOnboardingPrompt()` now returns a boolean (did
+it actually render) so `openUserProfilePanel()` can branch on it directly rather than duplicating the
+`onboardingComplete` check; the "No tradition selected yet" copy branch in `renderOnboardingPrompt`
+(marked defensive-only dead code by the earlier same-day fix) is a real, live path again, since the
+profile-button trigger is reachable from the splash before any tradition is chosen. Live-verified
+headless, fresh (zero-localStorage) profile: onboarding correctly invisible after page load; correctly
+still invisible immediately after choosing a tradition and landing in an office (the previous fix's own
+trigger point); first `openUserProfilePanel()` call shows the onboarding prompt with the normal panel
+staying hidden; after completing onboarding, a second call correctly opens the normal panel instead;
+on a separate fresh profile, scrolling `.uo-page` to its own `scrollHeight` correctly shows the
+onboarding prompt. Zero console errors across all of it.
+
+`node --check` clean on both touched files (`office-ui.js`, `office-shell.js`); all three standing
+audit scripts unchanged at 13/3/9. `index.html` cache-bust bumped: `office-ui.js?v=329`,
+`office-shell.js?v=304`.

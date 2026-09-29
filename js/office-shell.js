@@ -648,6 +648,21 @@
     var railWaypoints = [];
     var railCurrentIndex = -1;
 
+    // ADDED 2026-09-29, per Josh's direct suggestion ("What might be helpful
+    // is to have the profile pop up the first time the user scrolls to the
+    // very bottom of the prayer"): a one-shot guard so the scroll-to-bottom
+    // onboarding trigger below (in updateRailCurrent) fires at most once per
+    // page load, not on every scroll frame a reader happens to spend sitting
+    // at the bottom -- without this, re-invoking maybeShowOnboardingPrompt()
+    // on every such frame would blow away a name the person had half-typed
+    // into the prompt's own input field. Deliberately NOT persisted/reset
+    // when switching between offices within the same page load: once the
+    // reader has been offered it this way once (whether or not they act on
+    // it), offering it again from this same trigger on a different office
+    // would just be nagging -- js/office-ui.js's own separate profile-button
+    // trigger (openUserProfilePanel) is always still there if they want it.
+    var onboardingScrollTriggerFired = false;
+
     function computeRailWaypoints() {
         var rail = document.querySelector('.uo-rail');
         var page = document.querySelector('.uo-page');
@@ -759,6 +774,21 @@
         // the last item is current outright -- no page has content below its
         // own final block to scroll to.
         var atBottom = (scrollY + page.clientHeight) >= (page.scrollHeight - 2);
+
+        // ADDED 2026-09-29, per Josh's direct suggestion -- see
+        // onboardingScrollTriggerFired's own comment above for the one-shot
+        // guard this relies on. maybeShowOnboardingPrompt (js/office-ui.js,
+        // global scope, same as every other cross-file call in this shell)
+        // already re-checks profile.onboardingComplete itself and is a safe
+        // no-op if it's already true, but the guard here still matters even
+        // then, since without it this would re-run that (cheap but pointless)
+        // check on every single scroll frame spent at the bottom of a page,
+        // not just the first.
+        if (atBottom && !onboardingScrollTriggerFired && typeof maybeShowOnboardingPrompt === 'function') {
+            onboardingScrollTriggerFired = true;
+            maybeShowOnboardingPrompt();
+        }
+
         if (atBottom) {
             current = railWaypoints[railWaypoints.length - 1];
             currentIndex = railWaypoints.length - 1;
