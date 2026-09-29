@@ -1,0 +1,1412 @@
+{
+  "id": "episcopal-puerto-rico-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Iglesia Episcopal, Diócesis de Puerto Rico",
+  "dioceseShort": "puerto-rico",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Calendario Diocesano 2026",
+  "sourceFile": "Diocesan wall-calendar PDF (\"calendario_diocesano_2026.pdf\", 30 pages), fetched directly from https://www.episcopalpr.org/wp-content/uploads/2026/01/calendario_diocesano_2026.pdf -- only each month's own \"Intercesiones\" section was transcribed (see notes).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This source (\"calendario_diocesano_2026.pdf\", a 30-page diocesan wall calendar) combines several distinct sections: a monthly saints'/commemorations grid, a per-week \"Intercesiones\" (intercessions) section, an \"Actividades y Reuniones\" (diocesan meetings/boards schedule) list, and, at the end of the document, \"Cumpleaños y Aniversarios\" (clergy birthdays/ordination anniversaries) and \"Lecturas 2026\" (lectionary readings) sections. Only the \"Intercesiones\" section -- the diocese's own weekly cycle of prayer -- was transcribed into this file; the calendar grid's own liturgical Sunday names, the meetings list, clergy birthdays, and lectionary readings are excluded as out of scope for this corpus.",
+    "Every subject in this source's Intercesiones section is phrased as a full intercession sentence beginning \"Por ...\" (\"For ...\"), mixing worldwide Anglican Communion provinces/dioceses, Puerto Rico diocesan offices/institutions/ministries (including, on January 18, the diocesan cathedral: \"Por la Catedral San Juan Bautista y su cabildo\"), and general prayer concerns in one undifferentiated list -- none of it is printed as a bare congregation name plus city the way this corpus's schema expects for subject type \"parish\". Every subject here is therefore recorded as type \"category\", using the full printed sentence (including its leading \"Por\") as `name`, exactly as printed.",
+    "This document was rendered to page images (300 DPI) and read visually rather than trusted from a linearized `pdftotext -layout` extraction, per this corpus's standing rule for multi-column sources -- and this was essential here: the mini reference-calendar boxes printed beside each month's Intercesiones section bled stray digits into the linearized text (e.g. a real header \"1 - Por la Iglesia Anglicana de México\" was extracted as \"51 - ...\", and June's real \"21 - Por la Iglesia Anglicana del África Austral\" was extracted as \"28 - ...\"). Every one of the 12 months' Intercesiones sections in this file was transcribed from the rendered page image, not the linearized text.",
+    "The printed date number heading each week's intercessions does not reliably track the actual liturgical Sunday shown in that month's calendar grid on the same page. Most months' list starts on calendar day \"1\" even when the 1st is not a Sunday (e.g. April 1, June 1, July 1, September 1, October 1, and December 1, 2026 are all weekdays, not Sundays), and several months' last printed entry does not match that month's real last Sunday either: April's last entry is printed \"21\" (a Tuesday) rather than the 26th (the real last Sunday); June's list stops at \"21\" and omits the 28th; July's list stops at \"19\" and omits the 26th; August's five entries (1, 10, 19, 26, 30) do not align with August's real Sundays (2, 9, 16, 23, 30) except the last. These are preserved exactly as printed rather than silently corrected to the nearest real Sunday, per this corpus's standing rule against fixing a source's own document. Because of this mismatch, `liturgicalNote` is left null on every entry: attaching the calendar grid's own Sunday label to a date that does not actually match it would fabricate a linkage the source itself does not draw.",
+    "Several small apparent typos/grammar irregularities in the source's own Spanish text are preserved verbatim rather than corrected, e.g.: \"Por toda la toda la Comunión Anglicana...\" (January 11, a duplicated phrase), \"Pora que haya amor y justicia en el mundo\" (April 21, for \"Para que\"), \"Por todas las personas que entregar su vida...\" (May 1, apparently for \"entregan\"), and \"Por los enfermos que están nuestros Hospitales Episcopales\" (May 10, apparently missing \"en\" before \"nuestros\").",
+    "Several subject sentences wrap across two printed lines in the source (e.g. \"Por la Iglesia Anglicana de la Región Central / de América\", November 1); these were rejoined into one continuous `name` with a single space, since this is a physical line-wrap rather than a change in wording. This is distinct from September 1's first subject, \"Por la Provincia Episcopal / Anglicana de Alejandría\", whose internal \"/\" is printed within a single line in the source itself (an apparent either/alternate naming for that province) and is preserved as printed.",
+    "The diocese's own name is given here exactly as printed on the document's cover, whose logo reads \"IGLESIA EPISCOPAL\" with \"DIÓCESIS DE PUERTO RICO\" beneath it in smaller type -- transcribed as \"Iglesia Episcopal, Diócesis de Puerto Rico\".",
+    "Several dated entries (May 31, August 30, November 29, and December 13/20/25/27) print only a single intercession sentence with no further elaboration, unlike most other weeks, which list several; this is exactly what the source itself prints for those dates, not a truncated transcription."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia de África Central"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de la Región Central de América"
+        },
+        {
+          "type": "category",
+          "name": "Por el AÑO DIOCESANO DE LA ORACION 2026"
+        },
+        {
+          "type": "category",
+          "name": "Por la Paz mundial y la comprensión entre las naciones."
+        },
+        {
+          "type": "category",
+          "name": "Por todos los ministerios ordenados (Sacerdotes, Diáconos y Obispos de la Iglesia Episcopal)"
+        },
+        {
+          "type": "category",
+          "name": "Por los que fueron bautizados en pasado año"
+        },
+        {
+          "type": "category",
+          "name": "Por toda la toda la Comunión Anglicana, especialmente por la de Venezuela."
+        },
+        {
+          "type": "category",
+          "name": "Por cada una de nuestras feligresías Diocesanas."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Provincia Anglicana del Congo"
+        },
+        {
+          "type": "category",
+          "name": "Por la Semana de Oración por la Unidad de los Cristianos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Catedral San Juan Bautista y su cabildo."
+        },
+        {
+          "type": "category",
+          "name": "Por nuestros Colegios Episcopales y su personal administrativo"
+        },
+        {
+          "type": "category",
+          "name": "Por nuestras instituciones educativas: Colegio, Seminario, Centro anglicano y la Catequesis."
+        },
+        {
+          "type": "category",
+          "name": "Por el inicio de cursos en el Seminario San Pedro y San Pablo"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Chile"
+        },
+        {
+          "type": "category",
+          "name": "Por la visita del Obispo primado ROWE SEAN."
+        },
+        {
+          "type": "category",
+          "name": "Por los presidentes y lideres mundiales de las naciones"
+        },
+        {
+          "type": "category",
+          "name": "Por los frutos de la Semana de Oración por la unidad de todos los cristianos"
+        },
+        {
+          "type": "category",
+          "name": "Por el todo el sistema escolar de Puerto Rico."
+        },
+        {
+          "type": "category",
+          "name": "Por la salud de todos los niños y niñas de Puerto Rico."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Inglaterra"
+        },
+        {
+          "type": "category",
+          "name": "Por Las Iglesias misioneras en China y Tailandia"
+        },
+        {
+          "type": "category",
+          "name": "Por los cristianos en tierra de conflictos."
+        },
+        {
+          "type": "category",
+          "name": "Por la sociedad puertorriqueña"
+        },
+        {
+          "type": "category",
+          "name": "Por nuevas vocaciones sacerdotales y diaconales."
+        },
+        {
+          "type": "category",
+          "name": "Por las personas maltratadas"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por Hong Kong Sheng Kung Hui"
+        },
+        {
+          "type": "category",
+          "name": "Por la iglesia anglicana de Brasil."
+        },
+        {
+          "type": "category",
+          "name": "Por las necesidades personales de nuestros sacerdotes."
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis de República Dominicana"
+        },
+        {
+          "type": "category",
+          "name": "Por las necesidades de los Misioneros en lugares santos."
+        },
+        {
+          "type": "category",
+          "name": "Por el inicio de los cursos en el Centro Anglicano de Formación para Laicos."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia del Océano Índico"
+        },
+        {
+          "type": "category",
+          "name": "Por la Comunidad de Dominicos Anglicanos."
+        },
+        {
+          "type": "category",
+          "name": "Por los mártires de Japón"
+        },
+        {
+          "type": "category",
+          "name": "Por el inicio de la Cuaresma"
+        },
+        {
+          "type": "category",
+          "name": "Por todas las personas que entregan su vida al servicio del Evangelio."
+        },
+        {
+          "type": "category",
+          "name": "Por los deambulantes."
+        },
+        {
+          "type": "category",
+          "name": "Por el ministerio “Cielos abiertos”"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Irlanda"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes trabajan en la Oficina de comunicaciones diocesana."
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana de Burundi (África central)"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los obispos misioneros martirizados"
+        },
+        {
+          "type": "category",
+          "name": "Por Las Juntas parroquiales de nuestras feligresías y por los guardianes Mayores"
+        },
+        {
+          "type": "category",
+          "name": "Por los nuevos proyectos pastorales diocesanos."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Nippon Sei Ko Kai (Japón)"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana en Costa Rica"
+        },
+        {
+          "type": "category",
+          "name": "Por todas las juntas y ministerios diocesanos"
+        },
+        {
+          "type": "category",
+          "name": "Por El Centro Médico Episcopal San Lucas"
+        },
+        {
+          "type": "category",
+          "name": "Por la paz en el Medio Oriente"
+        },
+        {
+          "type": "category",
+          "name": "Por los frutos de la cuaresma 2026."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal en Jerusalén y Medio Oriente"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los arcedianos de esta Diócesis"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana de América Central"
+        },
+        {
+          "type": "category",
+          "name": "Por Los empleados del Centro Diocesano"
+        },
+        {
+          "type": "category",
+          "name": "Por los enfermos de cada una de nuestras feligresías"
+        },
+        {
+          "type": "category",
+          "name": "Por el Consejo Diocesano."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Kenia"
+        },
+        {
+          "type": "category",
+          "name": "Por Servicios Funerales: HONOREM"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Gales y su obispo."
+        },
+        {
+          "type": "category",
+          "name": "Por toda la comunión anglicana y sus necesidades"
+        },
+        {
+          "type": "category",
+          "name": "Por los jóvenes diocesanos."
+        },
+        {
+          "type": "category",
+          "name": "Por los peregrinos en Tierra Santa"
+        },
+        {
+          "type": "category",
+          "name": "Por Los sacerdotes jubilados."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Corea"
+        },
+        {
+          "type": "category",
+          "name": "Por Servicios Funerales: HONOREM"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Gales y su obispo."
+        },
+        {
+          "type": "category",
+          "name": "Por toda la comunión anglicana y sus necesidades"
+        },
+        {
+          "type": "category",
+          "name": "Por los jóvenes diocesanos."
+        },
+        {
+          "type": "category",
+          "name": "Por los peregrinos en Tierra Santa"
+        },
+        {
+          "type": "category",
+          "name": "Por Los sacerdotes jubilados."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Melanesia"
+        },
+        {
+          "type": "category",
+          "name": "Por Servicios Funerales: HONOREM"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Gales y su obispo."
+        },
+        {
+          "type": "category",
+          "name": "Por toda la comunión anglicana y sus necesidades"
+        },
+        {
+          "type": "category",
+          "name": "Por los jóvenes diocesanos."
+        },
+        {
+          "type": "category",
+          "name": "Por los peregrinos en Tierra Santa"
+        },
+        {
+          "type": "category",
+          "name": "Por Los sacerdotes jubilados."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de México"
+        },
+        {
+          "type": "category",
+          "name": "Por el ministerio de asuntos extra-diocesanos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana en Jerusalén"
+        },
+        {
+          "type": "category",
+          "name": "Por el Centro de Espiritualidad San Justo"
+        },
+        {
+          "type": "category",
+          "name": "Por el desarrollo de las Nuevas Misiones diocesanas."
+        },
+        {
+          "type": "category",
+          "name": "Por la PASCUA JUVENIL 2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Mozambique y Angola"
+        },
+        {
+          "type": "category",
+          "name": "En acción de gracias por la Resurrección de Nuestro Señor Jesucristo"
+        },
+        {
+          "type": "category",
+          "name": "FELICES PASCUA PARA TODOS (AS)"
+        },
+        {
+          "type": "category",
+          "name": "Por las vocaciones sacerdotales y diaconales en nuestra Diócesis"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana de Hong Kong"
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis de Cuba"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia de Myanmar"
+        },
+        {
+          "type": "category",
+          "name": "Por el testimonio de vida de todos los cristianos (as)"
+        },
+        {
+          "type": "category",
+          "name": "Para que la gracia de Dios nos acompañe cada día"
+        },
+        {
+          "type": "category",
+          "name": "Por la unidad de los matrimonios"
+        },
+        {
+          "type": "category",
+          "name": "Por los que hayan sido recibidos en nuestra Diocesis este año."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Nigeria"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los episcopales de Puerto Rico"
+        },
+        {
+          "type": "category",
+          "name": "Por los vicarios y rectores de nuestras feligresías"
+        },
+        {
+          "type": "category",
+          "name": "Por el Movimiento de cursillos de Cristiandad"
+        },
+        {
+          "type": "category",
+          "name": "Por las cofradías del altar presente en todas nuestras feligresias"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por todos los enfermos de nuestras familias"
+        },
+        {
+          "type": "category",
+          "name": "Para que el Senor renueve nuestras vidas con el poder de su Espíritu"
+        },
+        {
+          "type": "category",
+          "name": "Pora que haya amor y justicia en el mundo"
+        },
+        {
+          "type": "category",
+          "name": "Por la paz en las calles de Puerto Rico."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia del Norte de India"
+        },
+        {
+          "type": "category",
+          "name": "Por el cese de la discriminación racial"
+        },
+        {
+          "type": "category",
+          "name": "Por todas las personas que entregar su vida a la obra misionera"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana en Mozambique y su obispo"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes no siendo episcopales nos apoyan en la misión Diocesana."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Pakistán"
+        },
+        {
+          "type": "category",
+          "name": "Por todas las madres tanto las vivas como las difuntas."
+        },
+        {
+          "type": "category",
+          "name": "Por los diferentes ministros laicos Diocesanos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal en Ecuador y sus dos obispos."
+        },
+        {
+          "type": "category",
+          "name": "Por los niños desamparados."
+        },
+        {
+          "type": "category",
+          "name": "Por los enfermos que están nuestros Hospitales Episcopales"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Papúa Nueva Guinea"
+        },
+        {
+          "type": "category",
+          "name": "Por el fin de clases en nuestros colegios Episcopales"
+        },
+        {
+          "type": "category",
+          "name": "Por el fin de semestre del Seminario San Pedro y San Pablo."
+        },
+        {
+          "type": "category",
+          "name": "Por las clases graduandas"
+        },
+        {
+          "type": "category",
+          "name": "Por el respeto mutuo entre todos los seres humanos."
+        },
+        {
+          "type": "category",
+          "name": "Para que cese el hambre en el mundo"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal en Filipinas"
+        },
+        {
+          "type": "category",
+          "name": "Por el respeto a la vida en todas sus formas y etapas"
+        },
+        {
+          "type": "category",
+          "name": "Por las parejas del Clero"
+        },
+        {
+          "type": "category",
+          "name": "Por la segunda Provincia de la Iglesia Episcopal."
+        },
+        {
+          "type": "category",
+          "name": "Por la implantación del nuevo modelo de Feligresía: Pastoral, Administrativo, Litúrgico."
+        },
+        {
+          "type": "category",
+          "name": "Por el proceso de acreditación del Seminario San Pedro y San Pablo"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Ruanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal de Escocia"
+        },
+        {
+          "type": "category",
+          "name": "Por el programa “Verano en Español”, en el Seminario San Pedro y San Pablo."
+        },
+        {
+          "type": "category",
+          "name": "Por el desarrollo del Proyecto Jardín en la Diócesis de Puerto Rico"
+        },
+        {
+          "type": "category",
+          "name": "Por todas las visitas Pastorales de nuestro obispo."
+        },
+        {
+          "type": "category",
+          "name": "Para que todas las familias tengan acceso a los servicios básicos."
+        },
+        {
+          "type": "category",
+          "name": "En acción de gracias por el primer año de licencia del Seminario San Pedro y San Pablo."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Asia Suroriental"
+        },
+        {
+          "type": "category",
+          "name": "Por los nuevos Postulantes y Candidatos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia Unida del Norte de Irlanda"
+        },
+        {
+          "type": "category",
+          "name": "Por el buen uso del tiempo del verano y las témporas."
+        },
+        {
+          "type": "category",
+          "name": "Por los músicos de nuestras Feligresías"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia del Sur de India"
+        },
+        {
+          "type": "category",
+          "name": "Por la Junta de directores del Centro Médico Episcopal San Lucas"
+        },
+        {
+          "type": "category",
+          "name": "Unidos contra la criminalidad."
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Nigeria (África Central)"
+        },
+        {
+          "type": "category",
+          "name": "Por los cristianos perseguidos a causa de su fe."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana del África Austral"
+        },
+        {
+          "type": "category",
+          "name": "Por el buen uso del tiempo en este verano"
+        },
+        {
+          "type": "category",
+          "name": "Por los deambulantes de las calles de Puerto Rico."
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Ghana (África Occidental) y su obispo"
+        },
+        {
+          "type": "category",
+          "name": "Por la recuperación de los enfermos"
+        },
+        {
+          "type": "category",
+          "name": "Por fortaleza para los débiles"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Sudamérica"
+        },
+        {
+          "type": "category",
+          "name": "Por las misiones en el mundo entero"
+        },
+        {
+          "type": "category",
+          "name": "Por el fortalecimiento de nuestras feligresias"
+        },
+        {
+          "type": "category",
+          "name": "Por la Convención General de la Iglesia Episcopal"
+        },
+        {
+          "type": "category",
+          "name": "Por la libertad de expresión"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Madagascar y su obispo"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Provincia de Sudán del Sur"
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis de Republica Dominicana y su Obispo Moisés"
+        },
+        {
+          "type": "category",
+          "name": "Por los sacerdotes enfermos"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes viajan para que lleguen a feliz termino"
+        },
+        {
+          "type": "category",
+          "name": "Por los desamparados para que encuentren acogida."
+        },
+        {
+          "type": "category",
+          "name": "Por quienes desean encontrar su vocación de servicio."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Provincia de Sudán"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes no asisten a alguna Iglesia, a fin de que se congreguen"
+        },
+        {
+          "type": "category",
+          "name": "Por los empleados en nuestras instituciones diocesanas."
+        },
+        {
+          "type": "category",
+          "name": "Por los niños del mundo entero para que crezcan en ambientes saludables"
+        },
+        {
+          "type": "category",
+          "name": "Para que haya comprensión entre las naciones."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Tanzania"
+        },
+        {
+          "type": "category",
+          "name": "Por las Diocesis del Cono Sur"
+        },
+        {
+          "type": "category",
+          "name": "Por las Diócesis en proceso de elegir nuevos obispos."
+        },
+        {
+          "type": "category",
+          "name": "Por las Diocesis de América Central."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia de Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Por la Orden de la Transfiguración de Puerto Rico"
+        },
+        {
+          "type": "category",
+          "name": "Por un feliz regreso de las vacaciones de verano"
+        },
+        {
+          "type": "category",
+          "name": "Por los Encuentros matrimoniales"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes viven solos"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal (EE.UU.)"
+        },
+        {
+          "type": "category",
+          "name": "Por el inicio del nuevo año escolar"
+        },
+        {
+          "type": "category",
+          "name": "Por nuestras Instituciones educativas Diocesanas"
+        },
+        {
+          "type": "category",
+          "name": "Por los maestros y catequistas."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia en Gales"
+        },
+        {
+          "type": "category",
+          "name": "Por los niños que regresan al colegio o Escuelas"
+        },
+        {
+          "type": "category",
+          "name": "Por el personal docente de nuestras instituciones"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana de Ghana (África) y su Obispo"
+        },
+        {
+          "type": "category",
+          "name": "Por los refugiados de guerras."
+        },
+        {
+          "type": "category",
+          "name": "Por las Universidades de Puerto Rico"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de África Occidental"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los conductores para pedir protección para ellos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia de singapur y su Obispo"
+        },
+        {
+          "type": "category",
+          "name": "Por los niños que sufren alguna enfermedad terminal."
+        },
+        {
+          "type": "category",
+          "name": "Por los refugiados de las diferentes guerras"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia de las Indias Occidentales"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Provincia Episcopal / Anglicana de Alejandría"
+        },
+        {
+          "type": "category",
+          "name": "Por el Tiempo de la Creación"
+        },
+        {
+          "type": "category",
+          "name": "Por la temporada de Huracanes"
+        },
+        {
+          "type": "category",
+          "name": "Por la protección de los más débiles"
+        },
+        {
+          "type": "category",
+          "name": "Para que respetemos los derechos humanos"
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis anglicana de Sudán del Sur y su obispo"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana en Aotearoa, Nueva Zelanda y Polinesia"
+        },
+        {
+          "type": "category",
+          "name": "Para que cese la xenofobia, el rencor, la venganza, el clasismo y el racismo"
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis Anglicana de Swazilandia y su obispo"
+        },
+        {
+          "type": "category",
+          "name": "Los niños (as) de la Catequesis Diocesana"
+        },
+        {
+          "type": "category",
+          "name": "Por las (os) catequistas Diocesanos"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Australia"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes serán Confirmados este año"
+        },
+        {
+          "type": "category",
+          "name": "Por los cristianos anónimos."
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis de Honduras y su Obispo"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Bangladesh"
+        },
+        {
+          "type": "category",
+          "name": "Por quienes toman las decisiones a nivel mundial"
+        },
+        {
+          "type": "category",
+          "name": "Por el respeto y ayuda entre las personas"
+        },
+        {
+          "type": "category",
+          "name": "Por la juventud mundial."
+        },
+        {
+          "type": "category",
+          "name": "Por la conversión a Cristo."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal Anglicana de Brasil"
+        },
+        {
+          "type": "category",
+          "name": "Por nuestro compromiso con la Creación"
+        },
+        {
+          "type": "category",
+          "name": "Por las especies en vía de extinción"
+        },
+        {
+          "type": "category",
+          "name": "Por la Amazonía y los glaciares"
+        },
+        {
+          "type": "category",
+          "name": "Por la Anglicana de Liberia y su obispo (África)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Burundi"
+        },
+        {
+          "type": "category",
+          "name": "Por las misiones mundial de la Iglesia"
+        },
+        {
+          "type": "category",
+          "name": "Por una buena mayordomía en mi comunidad de fe"
+        },
+        {
+          "type": "category",
+          "name": "Por los profesores del Seminario"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Canadá"
+        },
+        {
+          "type": "category",
+          "name": "Por las diferentes Razas, Lenguas, Pueblos y Naciones."
+        },
+        {
+          "type": "category",
+          "name": "Por el personal clínico de todos los Centros de Salud"
+        },
+        {
+          "type": "category",
+          "name": "Por los enfermeros (as)."
+        },
+        {
+          "type": "category",
+          "name": "Por los que no tienen abrigo."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia de África Central"
+        },
+        {
+          "type": "category",
+          "name": "Por la Iglesia anglicana presente en Jerusalén"
+        },
+        {
+          "type": "category",
+          "name": "Por la unidad de la Comunión Anglicana"
+        },
+        {
+          "type": "category",
+          "name": "Por las diocesis en proceso de elección de obispos."
+        },
+        {
+          "type": "category",
+          "name": "Por la Diócesis de Islas Vírgenes"
+        },
+        {
+          "type": "category",
+          "name": "Por el programa “Discipulado Intencional”"
+        },
+        {
+          "type": "category",
+          "name": "Para que nuestra comunión recupere su espiritualidad."
+        },
+        {
+          "type": "category",
+          "name": "Para que sigamos construyendo una Iglesia según el mandato de Cristo."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de la Región Central de América"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los santos y santas"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los fieles difuntos"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los misioneros que han fallecido en el campo de misión"
+        },
+        {
+          "type": "category",
+          "name": "Por el crecimiento espiritual de todos los sacerdotes."
+        },
+        {
+          "type": "category",
+          "name": "Por las víctimas de fenómenos naturales"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Provincia Anglicana del Congo"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los veteranos"
+        },
+        {
+          "type": "category",
+          "name": "Por las Diócesis en dificultad"
+        },
+        {
+          "type": "category",
+          "name": "Por El obispo de Canterbury"
+        },
+        {
+          "type": "category",
+          "name": "Por los gobernantes de nuestra Isla."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Anglicana de Chile"
+        },
+        {
+          "type": "category",
+          "name": "Por todos los enfermos de nuestras feligresias"
+        },
+        {
+          "type": "category",
+          "name": "Por las personas que sufren de dolor o angustia."
+        },
+        {
+          "type": "category",
+          "name": "Por la Diocesis de Angola (África) y su obispo"
+        },
+        {
+          "type": "category",
+          "name": "Por las intenciones de nuestro Obispo Primado Sean Rowe."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Inglaterra"
+        },
+        {
+          "type": "category",
+          "name": "Por la Celebración de Cristo Rey"
+        },
+        {
+          "type": "category",
+          "name": "Por la celebración de la Fiesta de Cristo Rey"
+        },
+        {
+          "type": "category",
+          "name": "Para que sembremos paz, alegría y esperanza nuestra Diócesis"
+        },
+        {
+          "type": "category",
+          "name": "Por toda nuestra Diocesis y sus instituciones."
+        },
+        {
+          "type": "category",
+          "name": "Por quienes trabajan en servicio a los más necesitados."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por Hong Kong Sheng Kung Hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de la Provincia del Océano Índico"
+        },
+        {
+          "type": "category",
+          "name": "En acción de gracias por este año 2026."
+        },
+        {
+          "type": "category",
+          "name": "Por el año 2027, que nos traiga alegría y paz en Cristo Jesús"
+        },
+        {
+          "type": "category",
+          "name": "Por el buen desarrollo y vivencia del tiempo de adviento"
+        },
+        {
+          "type": "category",
+          "name": "Pedimos a Dios muchas bendiciones en el año que pronto comenzará."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia de Irlanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por el nacimiento de Nuestro Señor y la unidad de la Iglesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Por la Iglesia Episcopal en Jerusalén y Medio Oriente"
+        }
+      ]
+    }
+  ]
+}

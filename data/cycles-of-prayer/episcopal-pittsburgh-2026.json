@@ -1,0 +1,113 @@
+{
+  "id": "episcopal-pittsburgh-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Pittsburgh",
+  "dioceseShort": "pittsburgh",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"DIocesan-Cycle-of-Prayer-09-2026-through-12-2026.pdf\", fetched directly from https://www.episcopalpgh.org/wp-content/uploads/2026/06/DIocesan-Cycle-of-Prayer-09-2026-through-12-2026.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The PDF's own filename says the cycle begins in 09/2026, but the document's own title, header ('07/2026-12/2026 Diocesan Cycle of Prayer') and repeated page footer ('07/2026 – 12/2026 Diocesan Cycle of Prayer', dated 06-16-2026) all state the true coverage as July-December 2026, and the content itself begins with a July 5, 2026 entry -- confirmed by rendering both PDF pages as images at 150dpi and visually cross-checking them against the pdftotext -layout extraction. Actual coverage transcribed here is 2026-07-05 through 2026-12-27 (July-December 2026); January-June 2026 is simply not part of this document, not a gap in this transcription.",
+    "This source is a single-column, two-page layout (verified visually per the above) -- no multi-column interleaving risk was found, unlike some other sources flagged elsewhere in this corpus.",
+    "Nearly every date is a Sunday, but two are not, preserved exactly as printed rather than corrected: September 19, 2026 (a Saturday) and December 24, 2026 (Christmas Eve, a Thursday).",
+    "No entry in this source carries an explicit liturgical Sunday name/label (e.g. 'Proper 21') anywhere -- `liturgicalNote` is therefore null throughout.",
+    "Judgment call on subject modeling: where the source names a specific congregation together with a trailing named clergyperson (e.g. 'St. Andrew's Episcopal Church, Highland Park, and the Rev. Sara Irwin'), the congregation is recorded as a `parish` subject (name/place split at the comma separating them) and the accompanying clergy phrase is preserved verbatim in that subject's own `note` field, since this schema has no dedicated field for an individually named accompanying clergyperson. Where the source instead names a collective category with an enumerated list of individuals (e.g. 'Retired clergy, including the Rev. ... and the Rev. ...'), the entire line is kept as ONE `category` subject's `name` string rather than split into one subject per person, matching how episcopal-colorado-2026.json's own 'The Northwest Region of our Diocese and its Missioner, the Rev. Jeremy Lucas' entry keeps a region-plus-missioner phrase as a single category name.",
+    "October 25, 2026 names two parishes (Kittanning and Rural Valley) followed by a single trailing clergy name ('the Rev. Brandon Cooper') with no indication in the source of which parish he is attached to; it is recorded as a `note` on the second (Rural Valley) parish subject as the nearer antecedent in the sentence -- an interpretive choice, not stated by the source itself.",
+    "The Northern Cambria parish appears twice under two different printed forms of its own name, both preserved exactly as printed rather than harmonized: 'St. Thomas' (September 19 entry) and 'St. Thomas Episcopal Church' (October 4 entry, which otherwise repeats the same parish/clergy pairing as September 19 -- not an error in this transcription, the source's own content).",
+    "August 30, 2026's entry contains an apparent typo in the source, a period where a comma is expected ('the Very Rev. Canon John Park. the Rev. Lorena Ringle') -- preserved verbatim per this corpus's standing rule against silently correcting a source document.",
+    "Curly apostrophes (’) as used in the source's own congregation names (e.g. 'St. Luke’s', 'St. Bartholomew’s') are preserved exactly as printed rather than normalized to straight apostrophes.",
+    "Punctuation/comma placement around the trailing 'and the Rev. ...' clergy phrase varies between entries in the source itself (e.g. a comma before 'and' in most entries, but none in the November 8 and December 13 entries) -- each entry's own note field preserves the source's own wording/spacing as printed, not normalized to a single consistent style."
+  ],
+  "entries": [
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "All Seminarians, Postulants, Candidates for Holy Orders, and the Commission on Ministry" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Rt. Rev. Dr. Ketlen A. Solak; Scott Solak, and all Clergy Spouses" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Staff of the Episcopal Diocese of Pittsburgh, including the Rev. Canon Joann Saylors, The Rev. Walter (Wes) Smedley, Andrew Muhl, Marlene Rihn and Andrea Rath" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Non-parochial clergy, including the Rev. Daniel Hall, the Rev. Kathryn Lalonde and the Rev. Elizabeth Locher" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired clergy, including the Rev. William Geiger, the Rev. Dr. Judith Gentle, the Rev. John Golden, Jr., the Rev. Louis Hays, the Rev. Carol Henley and the Rev. Marc Jacobson" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Non-parochial clergy, including the Rev. William Marchl, III and the Rev. Thomas Prichard" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Church Women; and Education for Ministry" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired clergy, including the Rev. Robin Jarrell, the Rev. Darrell Johnson, the Rev. Douglas Kinsey, the Rev. Barbara Manzo and the Rt. Rev. Dorsey McConnell" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired clergy, including the Rev. Christine McIlvain, the Rev. Catherine Munz, the Very Rev. Canon John Park. the Rev. Lorena Ringle, the Rev. Vincente Santiago and the Rev. Diane Shepard and the Rev. Canon James Shoucair", "note": "Preserves the source's own apparent typo, a period after 'Park' where a comma appears expected, verbatim." }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Historic Old St. Luke’s Church", "place": "Scott Township", "note": "Source also reads: 'and the Very Rev. Scott Quinn', preserved verbatim; this app's schema has no dedicated field for an accompanying named clergyperson." },
+      { "type": "category", "name": "the Social Justice & Outreach Committee" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Cross", "place": "Homewood", "note": "Source also reads: 'and the Rev. Charles Fischer', preserved verbatim." }
+    ]},
+    { "date": "2026-09-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Bartholomew’s Episcopal Church", "place": "Scottdale", "note": "Source also reads: 'and the Rev. Dn. Cynthia Gainer', preserved verbatim." },
+      { "type": "parish", "name": "St. Thomas", "place": "Northern Cambria", "note": "Source also reads: 'and the Rev. Annis Rogers', preserved verbatim. This entry's own printed form of the parish's name ('St. Thomas') differs from its October 4, 2026 entry ('St. Thomas Episcopal Church') -- both kept exactly as printed." }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel Episcopal Church", "place": "North Side", "note": "Source also reads: 'and the Rev. Don Youse', preserved verbatim." }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "the Children’s Ministry Team, and Jen Yoon, Coordinator, all Sunday School teachers and Christian educators" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Northern Cambria", "note": "Source also reads: 'and the Rev. Annis Rogers', preserved verbatim. This parish also appears September 19, 2026 under the shorter printed name 'St. Thomas' -- the source's own repeat, not an error in this transcription." }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s Episcopal Church", "place": "Johnstown" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis-in-the-Fields Episcopal Church", "place": "Somerset" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s Episcopal Church", "place": "Kittanning" },
+      { "type": "parish", "name": "St. Michael’s Episcopal Church", "place": "Rural Valley", "note": "Source also reads: 'and the Rev. Brandon Cooper', preserved verbatim; attached here to this (the nearer, second-named) parish as an interpretive choice -- the source does not itself specify which of the two parishes he is attached to." }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s Episcopal Church", "place": "Highland Park", "note": "Source also reads: 'and the Rev. Sara Irwin', preserved verbatim." }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas Episcopal Church", "place": "Brackenridge", "note": "Source also reads: 'and the Rev. Julie Smith', preserved verbatim." }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Jeannette", "note": "Source also reads: 'and the Rev. Martin Wright', preserved verbatim." }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s Episcopal Church", "place": "Mt. Lebanon", "note": "Source also reads: 'the Rev. Noah Evans, and the Rev. Theodore Somes', preserved verbatim (two clergy named for this entry)." }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired clergy, including the Rev. Dr. James Simons, the Rev. Dr. Stephen Smalley, the Rev. Regis Smolko, the Rev. Nancy Threadgill, the Rev. Dr. Philip Wainwright, the Rev. Linda Tardy Wilson, the Rev. Randy Younkin and the Rev. Agustin Zubieta" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Penn Hills", "note": "Source also reads: 'and the Rev. Canon Eric McIntosh', preserved verbatim." }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas Episcopal Church", "place": "Canonsburg", "note": "Source also reads: 'and the Rev. James Miorelli', preserved verbatim." }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Atonement", "place": "Carnegie", "note": "Source also reads: 'and the Rev. Ben Wright', preserved verbatim." }
+    ]},
+    { "date": "2026-12-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The members of the Standing Committee, the Board of Trustees, and Diocesan Council" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Non-parochial clergy, including the Rev. Dr. Charles Starr and the Rev. Mark Wright" }
+    ]}
+  ]
+}

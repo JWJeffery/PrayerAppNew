@@ -1,0 +1,847 @@
+{
+  "id": "episcopal-oklahoma-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Oklahoma",
+  "dioceseShort": "oklahoma",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"Cycle-of-Prayer-2025-2026.pdf\", fetched directly from https://www.epiok.org/s/Cycle-of-Prayer-2025-2026.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source is one continuous cycle, its own title page reading \"Advent 2025 through Christ the King 2026\" (Nov. 30, 2025 - Nov. 22, 2026). Per this schema's own \"one file per diocese per year\" rule and this corpus's existing precedent for the identical shape of source (episcopal-atlanta-2026.json and episcopal-north-carolina-2026.json, both of which deferred a similarly small late-2025 Advent lead-in rather than splitting into a second file), only the 48 weeks landing in calendar 2026 (January 1 - November 22) are included here. The six 2025 weeks are deliberately excluded, not fabricated or force-fit: Nov. 30, 2025 (First Sunday of Advent) - St. Stephen's, Guymon / The Anglican Church of Australia; Dec. 7 (Second Sunday of Advent) - St. John's, Woodward; Grace, Yukon / The Church of Bangladesh; Dec. 14 (Third Sunday of Advent) - St. Matthew's, Enid / Igreja Episcopal Anglicana do Brasil; Dec. 21 (Fourth Sunday of Advent) - St. Paul's, Clinton; Whirlwind Mission, Watonga / The Anglican Church of Burundi; Dec. 25 (Christmas Day) - The Diocese of Sapele – The Anglican Church of Nigeria; Dec. 28 (First Sunday after Christmas) - St. James', Oklahoma City / The Anglican Church of Canada. They would need their own episcopal-oklahoma-2025.json if ever ingested.",
+    "Source is a two-column-per-page PDF (5 pages). Reading order runs top-to-bottom down the left column, then top-to-bottom down the right column, before continuing onto the next page -- confirmed by rendering all 5 pages as images (150 dpi) and visually checking the column order and date-to-subject pairing against pdftotext -layout's linearized extraction before trusting it, per this corpus's standing rule for multi-column sources.",
+    "Every week pairs one or more local subjects (a parish, mission, school, ministry, or diocesan body) with a final line naming a partner church/diocese elsewhere in the worldwide Anglican Communion (e.g. 'The Anglican Church of Kenya', or 'The Diocese of Sapele – The Anglican Church of Nigeria'). Since this file's scope is 'diocese' (the Diocese of Oklahoma's own cycle of its parishes), not 'communion', these worldwide-partner lines use subject type 'category' with the source's full line kept verbatim as one `name` (not split into this schema's separate 'diocese'/'province' fields, which apply only to scope-'communion' files).",
+    "Three campus ministries in the source ('St. Augustine Canterbury - OSU Campus Ministry', Jan. 1; 'St. Anselm Canterbury - OU Campus Ministry', Mar. 8) name no town/city, only a university abbreviation -- recorded as `category` rather than `parish` since this schema's 'parish' type requires an explicit place and none is given.",
+    "Three schools named with an explicit city ('Holland Hall School, Tulsa'; 'Casady School, Oklahoma City'; 'Oak Hall School, Ardmore', all Sept. 27) and 'St. Mary's School, Edmond' (Jan. 18) are recorded as `category` subjects with the city folded into `name`, not `parish`, since a school is not itself a congregation -- consistent with this corpus's existing precedent (episcopal-delaware-2027.json's 'St. Anne's School, Middletown').",
+    "'Ardmore Village, Ardmore' (May 31, alongside St. Philip's, Ardmore) and 'St. Simeon's Home, Tulsa' (Aug. 30, alongside St. John's, Tulsa) read as senior-living/residential communities rather than congregations, and 'St. Crispin's Conference Center, Wewoka' (July 19) as a diocesan conference center rather than a congregation -- all three recorded as `category` with the place folded into `name`, not `parish`.",
+    "liturgicalNote is transcribed in ordinary title case (e.g. 'Fourth Sunday of Advent'), not the source's own all-caps underlined heading style, which reads as a font/heading-style effect of the Word-to-PDF export rather than the source's own literal letter-casing -- consistent with how this corpus already renders liturgicalNote elsewhere in title case rather than shouting caps.",
+    "Nov. 22's own header prints 'NOVEMBER 22NDLAST SUNDAY AFTER PENTOCOST: CHRIST TH E KING'. The run-together '22ND'+'LAST' with no space is the same ordinal-superscript kerning artifact seen throughout the rest of the source (e.g. '1ST', '4TH' always render tight against the following word) and is not treated as content. 'PENTOCOST', however, is a genuine misspelling of 'Pentecost' in the source's own wording -- preserved verbatim in this entry's liturgicalNote as 'Last Sunday after Pentocost: Christ the King', not silently corrected.",
+    "Aug. 23 and Aug. 30 print 'THIRTEENTH DAY AFTER PENTECOST (Proper 16)' and 'FOURTEENTH DAY AFTER PENTECOST (Proper 17)' -- 'Day' rather than the 'Sunday' used in every other week's heading (both dates are in fact Sundays) -- preserved as printed, not corrected to 'Sunday'.",
+    "Nov. 1's header reads 'ALL SAINTS or TWENTY-THIRD SUNDAY AFTER PENTECOST (Proper 26)', offering both names for the day as the source itself does; both are kept in this entry's liturgicalNote exactly as given.",
+    "May 24: the source prints the town as \"Paul's Valley\" (with an apostrophe); the actual Oklahoma town is spelled \"Pauls Valley\" (no apostrophe). Preserved as printed per this corpus's standing rule against silently correcting a source's own text, disclosed here as a likely source typo rather than corrected.",
+    "Diacritics are preserved exactly as printed in the source, including where they omit a mark a fuller spelling would carry (e.g. 'Igreja Anglicana de Mocambique e Angola' for Moçambique, 'La Iglesia Anglicana de Mexico' for México, 'Eglise Anglicane du Rwanda' for Église, 'Iglesia Anglicana de la Region Central de America' for Región) -- not silently accented to a 'more correct' spelling.",
+    "The diocese's own full name, 'The Episcopal Diocese of Oklahoma', is taken verbatim from the source's own title page."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "liturgicalNote": "The Holy Name",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Stillwater"
+        },
+        {
+          "type": "category",
+          "name": "St. Augustine Canterbury - OSU Campus Ministry"
+        },
+        {
+          "type": "category",
+          "name": "The Diocese of Seychelles – The Church of the Province of the Indian Ocean"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Miami"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Perry"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Edmond"
+        },
+        {
+          "type": "category",
+          "name": "St. Mary's School, Edmond"
+        },
+        {
+          "type": "category",
+          "name": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Guthrie"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Memorial",
+          "place": "El Reno"
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Midwest City"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Okmulgee"
+        },
+        {
+          "type": "category",
+          "name": "Hong Kong Sheng Kung Hui"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Ponca City"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of the Indian Ocean"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin of Tours",
+          "place": "Pryor"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Ireland"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Shawnee"
+        },
+        {
+          "type": "category",
+          "name": "The Nippon Sei Ko Kai"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Norman"
+        },
+        {
+          "type": "category",
+          "name": "St. Anselm Canterbury - OU Campus Ministry"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Kenya"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Santa Maria Virgen",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Korea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Melanesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "La Iglesia Anglicana de Mexico"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Cathedral",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "Igreja Anglicana de Mocambique e Angola"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Antlers"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Myanmar (Burma)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Souls'",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Nigeria"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Oklahoma City"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Norman"
+        },
+        {
+          "type": "category",
+          "name": "The Church of North India"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Duncan"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Durant"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Pakistan"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Altus"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Papua New Guinea"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost: Whitsunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Chickasha"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Paul's Valley"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in the Philippines"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday after Pentecost: Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Ardmore"
+        },
+        {
+          "type": "category",
+          "name": "Ardmore Village, Ardmore"
+        },
+        {
+          "type": "category",
+          "name": "Eglise Anglicane du Rwanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Second Sunday after Pentecost (Proper 5)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Idabel"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Hugo"
+        },
+        {
+          "type": "category",
+          "name": "The Scottish Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Third Sunday after Pentecost (Proper 6)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Coalgate"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Poteau"
+        },
+        {
+          "type": "category",
+          "name": "Church of the Province of South East Asia"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Fourth Sunday after Pentecost (Proper 7)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Seminole"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Holdenville"
+        },
+        {
+          "type": "category",
+          "name": "The Church of South India"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Fifth Sunday after Pentecost (Proper 8)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Ada"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Muskogee"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Southern Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday after Pentecost (Proper 9)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Wagoner"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Eufaula"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of South America"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday after Pentecost (Proper 10)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Basil's",
+          "place": "Tahlequah"
+        },
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of South Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday after Pentecost (Proper 11)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Crispin's Conference Center, Wewoka"
+        },
+        {
+          "type": "category",
+          "name": "Province of the Episcopal Church of Sudan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday after Pentecost (Proper 12)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Sapulpa"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Tanzania"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday after Pentecost (Proper 13)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Sand Springs"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bede's",
+          "place": "Westport"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Uganda"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday after Pentecost (Proper 14)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Tulsa"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Cross",
+          "place": "Owasso"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday after Pentecost (Proper 15)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "The Church in Wales"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Day after Pentecost (Proper 16)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Tulsa"
+        },
+        {
+          "type": "parish",
+          "name": "Espíritu Santo",
+          "place": "Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of West Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Day after Pentecost (Proper 17)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "St. Simeon's Home, Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "The Church in the Province of the West Indies"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost (Proper 18)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Dunstan's",
+          "place": "Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal / Anglican Province of Alexandria"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost (Proper 19)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost (Proper 20)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Broken Arrow"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Australia"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost (Proper 21)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holland Hall School, Tulsa"
+        },
+        {
+          "type": "category",
+          "name": "Casady School, Oklahoma City"
+        },
+        {
+          "type": "category",
+          "name": "Oak Hall School, Ardmore"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Bangladesh"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday after Pentecost (Proper 22)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Grove"
+        },
+        {
+          "type": "category",
+          "name": "Igreja Episcopal Anglicana do Brasil"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday after Pentecost (Proper 23)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Vinita"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Pawhuska"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Burundi"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty-First Sunday after Pentecost (Proper 24)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Claremore"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Canada"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty-Second Sunday after Pentecost (Proper 25)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Bartlesville"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints or Twenty-Third Sunday after Pentecost (Proper 26)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Seminarians, Iona School of Formation, and Aspirancy Program"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty-Fourth Sunday after Pentecost (Proper 27)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "McAlester"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Lawton"
+        },
+        {
+          "type": "category",
+          "name": "Province de L'Eglise Anglicane Du Congo"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty-Fifth Sunday after Pentecost (Proper 28)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired Clergy, Spouses, Widows, and Widowers"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentocost: Christ the King",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Center and Staff"
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        }
+      ]
+    }
+  ]
+}

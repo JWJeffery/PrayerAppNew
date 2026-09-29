@@ -25782,3 +25782,74 @@ before confirming the correct "This week, the Diocesan Cycle of Prayer asks us t
 of our diocese in seminary." line, with "Ohio" also visible correctly populated in the profile's own
 diocese dropdown. Zero new console errors beyond the pre-documented sandbox font-CDN block.
 `js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 11: Oklahoma, Olympia, Pennsylvania,
+## Pittsburgh, Puerto Rico, Rhode Island (6 dioceses, no blocks)
+
+Josh: *"Please proceed."* Continuing the roster-spreadsheet phase alphabetically after Ohio. Six
+parallel background agents dispatched; all six returned real content, no blocks.
+
+**Oklahoma** (`episcopal-oklahoma-2026.json`, source: `epiok.org` PDF, "Advent 2025-Christ the King
+2026", 5 pages, two-column). 48 entries, Jan 1-Nov 22 2026. Per the now-established Atlanta/North
+Carolina precedent, the 6 weeks falling in calendar 2025 (Nov 30-Dec 28) were disclosed in full but
+excluded, rather than a Delaware-style two-file split, given the lopsided 6-vs-48 balance.
+
+**Olympia** (`episcopal-olympia-2026.json`, source: `ecww.org` PDF, "2026 Diocesan Prayer Cycle"). 52
+entries, full year. October and all of November have NO parish subjects at all -- every entry those two
+months is `category` (diocesan ministries, religious orders, governance bodies) -- confirmed as the
+source's own real structure, not a transcription gap. The agent independently cross-checked its own PDF
+parsing against the diocese's separate webpage (which embeds the identical content in linear, non-
+columnar form) before trusting the parsed date-to-subject grouping.
+
+**Pennsylvania** (`episcopal-pennsylvania-2026.json`, source: an **XLSX spreadsheet**, not a PDF, fetched
+directly and parsed with `openpyxl`, 771 raw rows). A genuine DAILY cycle, not weekly -- 332 entries,
+2026-01-01 through 2026-11-28. The roster's own explicit warning proved correct: rows past a certain point
+are stale prior-year template content with internally inconsistent dates (a "1st Sunday of Advent" row
+mis-dated into 2025 whose own following rows are dated December 2024; another block dated all the way
+back to 2021) -- identified programmatically (the real content is exactly 364 consecutive calendar days
+with zero gaps; the stale block breaks that pattern) and excluded entirely, not guessed at. The 32 days
+falling in calendar 2025 (Nov 30-Dec 31) were disclosed-and-excluded per the same lopsided-lead-in
+precedent as Oklahoma above. Confirmed distinct from "Northwestern Pennsylvania" (already ingested) and
+"Pittsburgh" (ingested in this same batch) -- this source's own companion-diocese rotation happens to
+separately name both of those dioceses on different dates, further confirming they're genuinely distinct.
+
+**Pittsburgh** (`episcopal-pittsburgh-2026.json`, source: `episcopalpgh.org` PDF). The roster's own
+research flagged a filename/content mismatch ("DIocesan-Cycle-of-Prayer-09-2026-through-12-2026.pdf" but
+covering "remaining 2026") -- confirmed by reading the actual PDF content (its own title/header/footer
+all say July-December 2026): the filename's "09" is simply wrong, not a coverage clue. 28 entries, July
+5-Dec 27 2026, including two non-Sunday dates (Sept 19, a Saturday; Dec 24, Christmas Eve) kept exactly
+as printed rather than assumed to be typos.
+
+**Puerto Rico** (`episcopal-puerto-rico-2026.json`, source: `episcopalpr.org` PDF, a 30-page Spanish-
+language wall calendar, not a simple weekly list). **Every subject transcribed in the source's own
+Spanish, not translated** -- this corpus's standing "preserve the source verbatim" rule extends to
+language, the same way it already extends to typos and formatting. The agent found the PDF's own
+linearized text extraction was actively corrupted on most months (a mini reference-calendar graphic
+beside each month's content bled stray digits into date headers, e.g. a real "1" extracting as "51") --
+caught by visually cross-checking rendered page images per this corpus's standing rule, and re-
+transcribed entirely from the images rather than the broken text layer once the corruption was found.
+Structurally, this source turned out to be a full wall calendar (saints' days, meetings, clergy
+birthdays, lectionary readings, AND a separate weekly "Intercesiones" section) rather than a simple
+diocese-prays-for-its-parishes list -- only the Intercesiones section was transcribed; no subject in it
+is ever a bare congregation name, so every one of the 54 entries' subjects is `category`, disclosed as
+a structural characteristic of this particular source, not a modeling shortcut.
+
+**Rhode Island** (`episcopal-rhode-island-2026.json`, source: `episcopalri.org` PDF). 46 entries, Jan
+4-Nov 22 2026 -- the 2025 Advent lead-in (4-5 weeks) disclosed-and-excluded per the same precedent as
+Oklahoma/Pennsylvania above. Three major-feast dates (Christmas Day, Ash Wednesday, Easter Day) print
+only a bare date heading with NO accompanying prayer-subject sentence at all in the source -- confirmed
+visually, not an extraction gap -- so those three dates were correctly left OUT of `entries` entirely
+(a subjects array can never be empty per schema) rather than fabricating placeholder content.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All six (`oklahoma`, `olympia`, `pennsylvania`, `pittsburgh`, `puerto-rico`, `rhode-island`) already
+matched the directory's own slugs exactly, no renaming needed. All 6 registered in
+`CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 62 files, 0 findings. `node --check`
+clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their 13/3/9 baselines.
+Live-verified all 6 (7 sample points, including both of Pennsylvania's calendar-year boundary dates and
+Pittsburgh's non-Sunday date) in headless Chromium against the app's own actual runtime. Screenshot-
+verified Puerto Rico rendering correctly in an actual Morning Prayer office (Spanish text rendering
+correctly, both Cycle of Prayer tiers present in the sidebar) -- applying the Morning-Prayer-forcing
+technique established in batch 10 up front this time, rather than discovering the time-of-day
+auto-routing issue again. Zero new console errors beyond the pre-documented sandbox font-CDN block.
+`js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).

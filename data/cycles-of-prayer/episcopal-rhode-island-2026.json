@@ -1,0 +1,183 @@
+{
+  "id": "episcopal-rhode-island-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Rhode Island",
+  "dioceseShort": "rhode-island",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"2025_2026_DioCyclePrayer.pdf\" (titled on its own page 'Episcopal Diocese of Rhode Island / Cycle of Prayer / Advent 2025 – Last Pentecost 2026'), fetched directly from https://episcopalri.org/wp-content/uploads/2025/11/2025_2026_DioCyclePrayer.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source is one continuous cycle spanning Advent 2025 through the Last Sunday after Pentecost 2026 (its own title: 'Advent 2025 – Last Pentecost 2026'). Per this corpus's existing cross-liturgical-year convention (see episcopal-atlanta-2026.json and episcopal-north-carolina-2026.json), only the weeks landing in calendar 2026 (January 4 through November 22) are in this file; the small late-2025 lead-in is disclosed here rather than fabricated into a second file. The excluded 2025 weeks, transcribed here for the record only (not in `entries`): 1 Advent, Nov. 30 - 'For Emmanuel, Cumberland; and Emmanuel, Newport.'; 2 Advent, Dec. 7 - 'For all laity in their several vocations and ministries that they may truly and devoutly serve God.'; 3 Advent, Dec. 14 - 'For the Center for Reconciliation, and all who seek to be reconcilers in our state, nation, and world.'; 4 Advent, Dec. 21 - 'For St. Thomas, Alton; St. Thomas, Greenville; and S. Stephen's, Providence' (source's own 'S.' abbreviation for 'St.' preserved as printed); Christmas Day, Dec. 25 - printed as a header only, no prayer-subject text at all (see next note); 1 Christmas, Dec. 28 - 'St. John's, Barrington; St. John the Evangelist, Newport; and the Chapel of St. John the Divine, Saunderstown.'",
+    "Three major-feast headers in the source (Christmas Day/Dec. 25, Ash Wednesday/Feb. 18, and the Resurrection of Our Lord-Easter Day/Apr. 5) print only the date heading with NO 'For ...' prayer-subject sentence beneath them at all -- verified by visually inspecting the rendered PDF pages, not a text-extraction artifact. Since this schema's `subjects` array cannot be empty, these three dates are excluded from `entries` entirely rather than filled with an invented subject; Christmas Day falls within the excluded 2025 lead-in described above, and Ash Wednesday (2026-02-18) and Easter Day (2026-04-05) are the only two 2026 calendar dates with no corresponding entry in this file for the same reason.",
+    "Each entry's `liturgicalNote` reformats the source's own bare all-caps per-week heading (e.g. '2 EPIPHANY: JANUARY 18', '6 PENTECOST: JULY 5') into this corpus's existing normalized ordinal phrasing (e.g. '2nd Sunday of Epiphany', '6th Sunday after Pentecost'), matching the convention already used in episcopal-alabama-2026.json -- a direct reformatting of the source's own printed ordinal+season label, not a computed/independently-verified liturgical value.",
+    "The source's own Pentecost-season numbering has a genuine internal inconsistency, preserved as printed rather than corrected: '7 PENTECOST' is used twice, once for July 12 and again for July 26 (the intervening '8 PENTECOST: JULY 19' is followed directly by '7 PENTECOST: JULY 26', then '10 PENTECOST: AUGUST 2' -- '9 PENTECOST' never appears anywhere in the source). Both July 12 and July 26 are transcribed here with liturgicalNote '7th Sunday after Pentecost', exactly matching the source's own duplicated ordinal, not renumbered to fill the gap.",
+    "The source's Pentecost numbering also skips from '22 PENTECOST: OCTOBER 25' directly to '24 PENTECOST: NOVEMBER 8' with no '23 PENTECOST' anywhere -- 'ALL SAINTS DAY: NOVEMBER 1' falls in that gap (All Saints' Day landed on a Sunday in 2026), but unlike some other dioceses in this corpus the source does not itself combine the ordinal-Pentecost and All-Saints labels into one heading; the gap is preserved as printed, not filled in.",
+    "The header 'For St. Ann’s by- the-Sea, Block Island.' (July 26) has a stray internal space/hyphen break in 'by- the-Sea', read as 'St. Ann's by-the-Sea' -- a PDF line-wrap artifact, not a source typo, consistent with this corpus's existing Southwestern Virginia precedent for the identical phenomenon ('Patricia Cope- Levy').",
+    "January 25's entry ('St. Paul’s, North Kingstown; St. Paul’s, Pawtucket; and St. Paul’s Portsmouth.') and August 9's entry ('St. Mary’s, Portsmouth') print with no leading 'For', unlike every other week in the source -- transcribed as printed; this has no effect on the transcription itself since the leading 'For'/'for' is stripped from every subject's `name` throughout this file regardless of whether the source included it.",
+    "January 25's third item, 'St. Paul’s Portsmouth', lacks the comma before the place name that the same sentence's other two items have ('St. Paul’s, North Kingstown; St. Paul’s, Pawtucket'). Transcribed here as name 'St. Paul's', place 'Portsmouth' by inference from the sentence's own otherwise-consistent 'Name, Place' pattern -- a judgment call disclosed here, not a literal reading of a comma that is not actually printed.",
+    "August 23's entry names 'St. Augustine's' with no place or further context ('...University of Rhode Island; and St. Augustine's.') -- kept as its own `category` subject (no `place`, since the schema's `parish` type requires one and none is printed) rather than guessing a town for it.",
+    "May 3's entry names 'St. George's School, Middletown', a school rather than a congregation -- kept as a single `category` subject with the place folded into `name`, not a `parish` subject.",
+    "This is a two-page, three-column-per-page PDF. Per this corpus's standing rule on multi-column sources, both pages were rendered as images (pdftoppm -r 150) and visually compared against the pdftotext -layout extraction before transcribing; no column-interleaving errors were found (pdftotext's own -layout mode kept each week's heading and body text together correctly)."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": "2nd Sunday of Christmas", "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Rumford" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "1st Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "The newly baptized, and all who share in the Baptism of our Lord" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "2nd Sunday of Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Peter’s-by-the-Sea", "place": "Narragansett" },
+      { "type": "parish", "name": "St. Peter & St. Andrew’s", "place": "Providence" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "3rd Sunday of Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "North Kingstown" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Pawtucket" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Portsmouth", "note": "Source prints this third item as 'St. Paul’s Portsmouth' with no comma before the place, unlike the sentence's other two items -- see file-level notes." }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "4th Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Seminaries and schools for deacons" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "5th Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "The clergy widows and widowers of the Diocese" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "6th Sunday of Epiphany", "subjects": [
+      { "type": "category", "name": "Episcopal Charities and the ministries and agencies they support" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "1st Sunday of Lent", "subjects": [
+      { "type": "category", "name": "All deacons as they make Christ known to the world" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "2nd Sunday of Lent", "subjects": [
+      { "type": "parish", "name": "St. David’s on-the-Hill", "place": "Cranston" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "3rd Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Church Beyond the Walls" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "4th Sunday of Lent", "subjects": [
+      { "type": "category", "name": "The Commission on Ministry" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "5th Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Diocesan Council, Standing Committee, and those who serve on our Diocesan governing committees" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "The Diocesan Commission on Investments; Commission on Finance; and all who serve the financial ministries of the Diocese" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "2nd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The Episcopal Church Women" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "3rd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The Creation Care ministry, and for good stewardship of the earth" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "4th Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Pawtucket" },
+      { "type": "parish", "name": "St. Mark’s", "place": "Warwick" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "5th Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Iglesia San Jorge", "place": "Pawtucket" },
+      { "type": "category", "name": "St. George’s School, Middletown" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "6th Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "La Iglesia de la Ascension / The Church of the Ascension", "place": "Cranston" },
+      { "type": "parish", "name": "Church of the Ascension", "place": "Wakefield" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "7th Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Providence" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "The Day of Pentecost", "subjects": [
+      { "type": "parish", "name": "Church of the Holy Spirit", "place": "Charlestown" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "Trinity Sunday", "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Cranston" },
+      { "type": "parish", "name": "Trinity", "place": "Newport" },
+      { "type": "parish", "name": "Trinity", "place": "North Scituate" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Tiverton" },
+      { "type": "category", "name": "Those who have died in service to our country" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "2nd Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Warwick" },
+      { "type": "parish", "name": "St. Columba’s", "place": "Middletown" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "3rd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Bishop, and members of Diocesan Staff" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "4th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "All priests that they may be constant in faith and witness" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "5th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "This nation; the President of the United States; Congress; the Courts; and all others in civil authority" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "6th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The campers, counselors, and staff of the Episcopal Conference Center" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "7th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Congregational Development Commission and those who support the work of our congregations" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "8th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Woonsocket" },
+      { "type": "parish", "name": "St. James", "place": "North Providence" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "7th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Ann’s by-the-Sea", "place": "Block Island", "note": "Source prints 'St. Ann’s by- the-Sea' with a stray internal space/hyphen line-wrap break -- see file-level notes." }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "10th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Church of the Transfiguration", "place": "Cranston" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "11th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Mary’s", "place": "Portsmouth" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "12th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Our retired bishop, Geralyn Wolf" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "13th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Campus ministry programs at Rhode Island College and the University of Rhode Island" },
+      { "type": "category", "name": "St. Augustine’s", "note": "No place or further context given in the source -- see file-level notes." }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "14th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Providence" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "15th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Postulants, candidates, and those in discernment" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "16th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Church of the Holy Cross", "place": "Middletown" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "17th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Sts. Matthew and Mark", "place": "Barrington" },
+      { "type": "parish", "name": "St. Matthew’s", "place": "Jamestown" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "18th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Michael’s", "place": "Bristol" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "19th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Francis’", "place": "Coventry" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "20th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "East Greenwich" },
+      { "type": "parish", "name": "St. Luke’s", "place": "Pawtucket" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "21st Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Diocesan Convention, and all the people of our Diocese" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "22nd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "All bishops, and for the Presiding Bishop, that they may guard the faith, unity, and discipline of the Church" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints Day", "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Pontiac" },
+      { "type": "parish", "name": "All Saints’ Memorial", "place": "Providence" },
+      { "type": "category", "name": "Just and fair elections in our nation" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "24th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Martin’s", "place": "Providence" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "25th Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Elizabeth’s", "place": "Hope Valley" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Sunday Last After Pentecost", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Lincoln" },
+      { "type": "parish", "name": "Christ Church", "place": "Westerly" }
+    ]}
+  ]
+}
