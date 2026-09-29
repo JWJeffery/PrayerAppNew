@@ -59,11 +59,11 @@ const TEC_DIOCESE_DIRECTORY_BODY_SLUG = 'episcopal';
 // file id 1F5-ylNoYBx5ecfxvdmPNv4uZTTRPf6CR, checked 2026-09-28 -- see
 // data/cycles-of-prayer/schema.json's own tecDioceseRoster block) -- 88 with
 // a located current cycle plus 18 confirmed to have no verified current
-// cycle as of that check, 106 total. `label` is the roster's own short name,
-// not a fabricated "official" title -- this app has not independently
-// verified every diocese's full published name the way it has for the 6
-// actually-ingested ones in CYCLES_OF_PRAYER_DIOCESES, so it doesn't invent
-// one. Alphabetized, same convention as that registry.
+// cycle as of that check, 106 total. `label` is the roster's own short name
+// (e.g. "Western Oregon", "East Tennessee") -- Josh confirmed directly,
+// 2026-09-29, that this short form is the wanted label, not a placeholder
+// pending a fuller "The Episcopal Diocese of..." title, so this app doesn't
+// invent one. Alphabetized, same convention as that registry.
 const TEC_DIOCESE_DIRECTORY = Object.freeze([
     { dioceseShort: 'alabama', label: 'Alabama' },
     { dioceseShort: 'alaska', label: 'Alaska' },
