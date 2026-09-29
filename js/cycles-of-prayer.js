@@ -8,15 +8,19 @@
  * profile setters and from the BCP "authorized intercessions" render hook.
  */
 
-// Which dioceses are selectable in the profile UI. Kept in sync BY HAND with
-// the files actually present in data/cycles-of-prayer/ -- mirrors the same
-// small hand-maintained registry pattern js/office-ui.js already uses for
-// UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES. `bodySlug`/`dioceseShort` match
-// that directory's schema.json field names exactly; a diocese's identity
-// here is NOT year-scoped (the year-specific file is resolved separately, at
-// query time, against whatever year is actually being asked about), so a
-// user's saved diocese choice does not go stale every January the way a
-// year-embedded id would.
+// Which dioceses this app actually has ingested Cycle of Prayer CONTENT for
+// -- NOT the full list of what a user may declare in their profile (see
+// TEC_DIOCESE_DIRECTORY below for that, added 2026-09-29; a diocese can be a
+// valid profile choice with no entry here at all, meaning "declared, but
+// this app has no cycle content to render for it yet"). Kept in sync BY HAND
+// with the files actually present in data/cycles-of-prayer/ -- mirrors the
+// same small hand-maintained registry pattern js/office-ui.js already uses
+// for UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES. `bodySlug`/`dioceseShort`
+// match that directory's schema.json field names exactly; a diocese's
+// identity here is NOT year-scoped (the year-specific file is resolved
+// separately, at query time, against whatever year is actually being asked
+// about), so a user's saved diocese choice does not go stale every January
+// the way a year-embedded id would.
 // `cycleType` mirrors the same field in each diocese's own JSON file (see
 // data/cycles-of-prayer/schema.json) -- 'dated' (the default, omitted below)
 // for a file keyed by specific ISO calendar dates within a stated `year`,
@@ -37,9 +41,149 @@ function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
     return bodySlug + '/' + dioceseShort;
 }
 
+/**
+ * ADDED 2026-09-29, per Josh's direct instruction that the profile ask for a
+ * user's real diocese/parish regardless of whether this app has ingested
+ * that diocese's actual Cycle of Prayer content yet. Whether a key is
+ * "valid" (may be saved to the profile at all) is now scoped to this much
+ * larger name-only directory, NOT to CYCLES_OF_PRAYER_DIOCESES above (which
+ * stays the much shorter "do we actually have a file to fetch" list --
+ * findCycleOfPrayerDiocese/loadCycleOfPrayerYear still key off that one
+ * unchanged, and already degrade to "no data" gracefully, with no fetch
+ * attempted at all, when a directory-valid diocese isn't in it).
+ */
+const TEC_DIOCESE_DIRECTORY_BODY_SLUG = 'episcopal';
+
+// Every TEC diocese/jurisdiction Josh's own roster spreadsheet names ("TEC
+// Diocesan Cycles of Prayer 2026 - CURRENT 88 located.xlsx", Google Drive
+// file id 1F5-ylNoYBx5ecfxvdmPNv4uZTTRPf6CR, checked 2026-09-28 -- see
+// data/cycles-of-prayer/schema.json's own tecDioceseRoster block) -- 88 with
+// a located current cycle plus 18 confirmed to have no verified current
+// cycle as of that check, 106 total. `label` is the roster's own short name,
+// not a fabricated "official" title -- this app has not independently
+// verified every diocese's full published name the way it has for the 6
+// actually-ingested ones in CYCLES_OF_PRAYER_DIOCESES, so it doesn't invent
+// one. Alphabetized, same convention as that registry.
+const TEC_DIOCESE_DIRECTORY = Object.freeze([
+    { dioceseShort: 'alabama', label: 'Alabama' },
+    { dioceseShort: 'alaska', label: 'Alaska' },
+    { dioceseShort: 'albany', label: 'Albany' },
+    { dioceseShort: 'arizona', label: 'Arizona' },
+    { dioceseShort: 'arkansas', label: 'Arkansas' },
+    { dioceseShort: 'atlanta', label: 'Atlanta' },
+    { dioceseShort: 'california', label: 'California' },
+    { dioceseShort: 'central-florida', label: 'Central Florida' },
+    { dioceseShort: 'central-gulf-coast', label: 'Central Gulf Coast' },
+    { dioceseShort: 'central-new-york', label: 'Central New York' },
+    { dioceseShort: 'chicago', label: 'Chicago' },
+    { dioceseShort: 'colombia', label: 'Colombia' },
+    { dioceseShort: 'colorado', label: 'Colorado' },
+    { dioceseShort: 'connecticut', label: 'Connecticut' },
+    { dioceseShort: 'cuba', label: 'Cuba' },
+    { dioceseShort: 'dallas', label: 'Dallas' },
+    { dioceseShort: 'delaware', label: 'Delaware' },
+    { dioceseShort: 'dominican-republic', label: 'Dominican Republic' },
+    { dioceseShort: 'east-carolina', label: 'East Carolina' },
+    { dioceseShort: 'east-tennessee', label: 'East Tennessee' },
+    { dioceseShort: 'eastern-oregon', label: 'Eastern Oregon' },
+    { dioceseShort: 'easton', label: 'Easton' },
+    { dioceseShort: 'ecuador-central', label: 'Ecuador Central' },
+    { dioceseShort: 'ecuador-litoral', label: 'Ecuador Litoral' },
+    { dioceseShort: 'el-camino-real', label: 'El Camino Real' },
+    { dioceseShort: 'europe', label: 'Europe' },
+    { dioceseShort: 'florida', label: 'Florida' },
+    { dioceseShort: 'georgia', label: 'Georgia' },
+    { dioceseShort: 'great-lakes', label: 'Great Lakes' },
+    { dioceseShort: 'haiti', label: 'Haiti' },
+    { dioceseShort: 'hawai-i', label: 'Hawaiʻi' },
+    { dioceseShort: 'honduras', label: 'Honduras' },
+    { dioceseShort: 'idaho', label: 'Idaho' },
+    { dioceseShort: 'indianapolis', label: 'Indianapolis' },
+    { dioceseShort: 'iowa', label: 'Iowa' },
+    { dioceseShort: 'kansas', label: 'Kansas' },
+    { dioceseShort: 'kentucky', label: 'Kentucky' },
+    { dioceseShort: 'lexington', label: 'Lexington' },
+    { dioceseShort: 'long-island', label: 'Long Island' },
+    { dioceseShort: 'los-angeles', label: 'Los Angeles' },
+    { dioceseShort: 'louisiana', label: 'Louisiana' },
+    { dioceseShort: 'maine', label: 'Maine' },
+    { dioceseShort: 'maryland', label: 'Maryland' },
+    { dioceseShort: 'massachusetts', label: 'Massachusetts' },
+    { dioceseShort: 'michigan', label: 'Michigan' },
+    { dioceseShort: 'minnesota', label: 'Minnesota' },
+    { dioceseShort: 'mississippi', label: 'Mississippi' },
+    { dioceseShort: 'missouri', label: 'Missouri' },
+    { dioceseShort: 'montana', label: 'Montana' },
+    { dioceseShort: 'navajoland', label: 'Navajoland' },
+    { dioceseShort: 'nebraska', label: 'Nebraska' },
+    { dioceseShort: 'nevada', label: 'Nevada' },
+    { dioceseShort: 'new-hampshire', label: 'New Hampshire' },
+    { dioceseShort: 'new-jersey', label: 'New Jersey' },
+    { dioceseShort: 'new-york', label: 'New York' },
+    { dioceseShort: 'newark', label: 'Newark' },
+    { dioceseShort: 'north-carolina', label: 'North Carolina' },
+    { dioceseShort: 'north-dakota', label: 'North Dakota' },
+    { dioceseShort: 'northern-california', label: 'Northern California' },
+    { dioceseShort: 'northern-indiana', label: 'Northern Indiana' },
+    { dioceseShort: 'northern-michigan', label: 'Northern Michigan' },
+    { dioceseShort: 'northwest-texas', label: 'Northwest Texas' },
+    { dioceseShort: 'northwestern-pennsylvania', label: 'Northwestern Pennsylvania' },
+    { dioceseShort: 'ohio', label: 'Ohio' },
+    { dioceseShort: 'oklahoma', label: 'Oklahoma' },
+    { dioceseShort: 'olympia', label: 'Olympia' },
+    { dioceseShort: 'pennsylvania', label: 'Pennsylvania' },
+    { dioceseShort: 'pittsburgh', label: 'Pittsburgh' },
+    { dioceseShort: 'puerto-rico', label: 'Puerto Rico' },
+    { dioceseShort: 'rhode-island', label: 'Rhode Island' },
+    { dioceseShort: 'rio-grande', label: 'Rio Grande' },
+    { dioceseShort: 'rochester', label: 'Rochester' },
+    { dioceseShort: 'san-diego', label: 'San Diego' },
+    { dioceseShort: 'san-joaquin', label: 'San Joaquin' },
+    { dioceseShort: 'south-carolina', label: 'South Carolina' },
+    { dioceseShort: 'south-dakota', label: 'South Dakota' },
+    { dioceseShort: 'southeast-florida', label: 'Southeast Florida' },
+    { dioceseShort: 'southern-ohio', label: 'Southern Ohio' },
+    { dioceseShort: 'southern-virginia', label: 'Southern Virginia' },
+    { dioceseShort: 'southwest-florida', label: 'Southwest Florida' },
+    { dioceseShort: 'southwestern-virginia', label: 'Southwestern Virginia' },
+    { dioceseShort: 'spokane', label: 'Spokane' },
+    { dioceseShort: 'springfield', label: 'Springfield' },
+    { dioceseShort: 'susquehanna', label: 'Susquehanna' },
+    { dioceseShort: 'taiwan', label: 'Taiwan' },
+    { dioceseShort: 'tennessee', label: 'Tennessee' },
+    { dioceseShort: 'texas', label: 'Texas' },
+    { dioceseShort: 'upper-south-carolina', label: 'Upper South Carolina' },
+    { dioceseShort: 'utah', label: 'Utah' },
+    { dioceseShort: 'venezuela', label: 'Venezuela' },
+    { dioceseShort: 'vermont', label: 'Vermont' },
+    { dioceseShort: 'virgin-islands', label: 'Virgin Islands' },
+    { dioceseShort: 'virginia', label: 'Virginia' },
+    { dioceseShort: 'washington-dc', label: 'Washington (DC)' },
+    { dioceseShort: 'west-missouri', label: 'West Missouri' },
+    { dioceseShort: 'west-tennessee', label: 'West Tennessee' },
+    { dioceseShort: 'west-texas', label: 'West Texas' },
+    { dioceseShort: 'west-virginia', label: 'West Virginia' },
+    { dioceseShort: 'western-kansas', label: 'Western Kansas' },
+    { dioceseShort: 'western-louisiana', label: 'Western Louisiana' },
+    { dioceseShort: 'western-massachusetts', label: 'Western Massachusetts' },
+    { dioceseShort: 'western-new-york', label: 'Western New York' },
+    { dioceseShort: 'western-north-carolina', label: 'Western North Carolina' },
+    { dioceseShort: 'western-oregon', label: 'Western Oregon' },
+    { dioceseShort: 'wisconsin', label: 'Wisconsin' },
+    { dioceseShort: 'wyoming', label: 'Wyoming' },
+]);
+
+function findTecDioceseDirectoryEntry(key) {
+    if (typeof key !== 'string') return null;
+    const prefix = TEC_DIOCESE_DIRECTORY_BODY_SLUG + '/';
+    if (!key.startsWith(prefix)) return null;
+    const dioceseShort = key.slice(prefix.length);
+    const entry = TEC_DIOCESE_DIRECTORY.find(d => d.dioceseShort === dioceseShort);
+    return entry ? { dioceseShort: entry.dioceseShort, label: entry.label, key: key } : null;
+}
+
 function isValidCycleOfPrayerDioceseKey(key) {
-    if (typeof key !== 'string') return false;
-    return CYCLES_OF_PRAYER_DIOCESES.some(d => cycleOfPrayerDioceseKey(d.bodySlug, d.dioceseShort) === key);
+    return findTecDioceseDirectoryEntry(key) !== null;
 }
 
 function findCycleOfPrayerDiocese(key) {
