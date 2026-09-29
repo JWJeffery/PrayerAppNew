@@ -25151,3 +25151,71 @@ file Josh had already uploaded to the "TEC Cycle of Prayer" Drive folder is now 
 roster spreadsheet's remaining ~65 dioceses via their own URLs (per Josh's original instruction: fetch
 5 at a time, flag anything unfetchable in this note/ledger rather than endlessly retrying, since there
 is no Drive/Sheets write tool to literally annotate the spreadsheet itself).
+
+## 2026-09-29 (continued once more) -- Two live bug fixes: onboarding prompt firing before a tradition
+## is chosen; a floated drop-cap misaligning long paragraphs' later lines
+
+Two screenshots from theuniversaloffice.com, reported live, in the middle of the batch-4 diocese work
+above.
+
+**Bug 1 -- "The profile set-up should NOT be the first thing a user sees... that pulldown menu is
+stale."** A screenshot (Incognito, fresh visit) showed "Set up your profile" as literally the first
+thing rendered, on top of the splash screen, before any tradition had been chosen -- with the role
+dropdown showing the old universal list (reader/subdeacon/deacon/priest/bishop/monastic, no TEC-
+specific licensed ministries). Root-caused, not guessed: `initializeEntryRouting().then
+(maybeShowOnboardingPrompt)` fires as soon as routing resolves, and for a first-time visitor that
+resolution IS the moment the tradition-entry splash itself renders -- so the one-time onboarding
+prompt was popping immediately, before the person had picked anything. The role dropdown wasn't
+stale at all: `populateMinistryRoleSelect` was correctly falling back to `UNIVERSAL_OFFICE_MINISTRY_
+ROLE_OPTIONS_DEFAULT` (the deliberate "we don't know the tradition yet" neutral list, added during the
+tradition-gating work) -- which happens to look identical to the old pre-gating list, since that list
+WAS the original universal one. One root cause, two visible symptoms. FIXED: `maybeShowOnboardingPrompt()`
+now returns immediately if `profile.traditionDefault` isn't set (never auto-fires before a tradition is
+on file); `setUserTraditionDefault()` (the splash's own entry-card click handler) now calls it directly,
+right after persisting the tradition choice, so the prompt shows once the person has actually picked
+something, correctly pre-populated with their real tradition's own role list. A returning visitor who
+already has a tradition on file from a prior session is unaffected -- the original `initializeEntryRouting()`
+call site still fires normally for them, since the new gate is already satisfied. Live-verified headless
+(fresh profile, zero localStorage): onboarding prompt correctly invisible immediately after load; after
+calling `setUserTraditionDefault('anglican')`, it correctly shows "Tradition on file: The Episcopal
+Church" and the full 14-option Anglican licensed-ministry role list (reader/catechist/eucharistic
+minister/eucharistic visitor/pastoral leader/preacher/worship leader/deacon/priest/bishop/monastic/
+study-reference/show-everything), zero console errors.
+
+**Bug 2 -- "the formatting issue with The Anglican Cycle of Prayer (the word Uganda should not be
+farther to the left than everything else)."** A second screenshot showed the new Anglican Cycle of
+Prayer line (added this session, PR #90) wrapping to 5-6 lines at Josh's actual browser width, with the
+final line or two reverting to a visibly further-left, un-indented margin than the lines still wrapping
+snugly beside the drop cap. Root cause: `.component-text::first-letter`'s `float: left` only excludes
+text from the lines that fall within ITS OWN rendered height (roughly 1-2 lines of body text, given the
+cap's 3.2em font-size / 0.75 line-height against this class's own 1.95 line-height) -- any paragraph
+long enough to wrap past that point has its later lines revert to the FULL, un-padded content width,
+which starts further left than the lines still excluded by the float. This is a structural property of
+the floated-drop-cap technique itself, not anything specific to the new Cycle-of-Prayer content -- any
+sufficiently long paragraph anywhere in the app using `.component-text` was equally exposed; it simply
+hadn't been reported before this content happened to be long enough at Josh's own window width to
+surface it visibly. FIXED: `.component-text` gets a `padding-left: 2.75em` (a generous estimate of the
+drop cap's own rendered footprint), and `.component-text::first-letter` gets a matching `margin-left:
+-0.859375em` (the same physical width, expressed in the first-letter's own 3.2em font-size context: 2.75
+÷ 3.2). Because a float can never render further left than its containing block's own padding-adjusted
+content edge without being pulled there via its own margin, and this negative margin pulls it back by
+EXACTLY the padding just added, the cap's own rendered position is pixel-identical to before (the
+padding and negative margin cancel out by construction) -- but now every line's starting x-position is
+governed by that padding, which applies uniformly to every line regardless of float height, not by the
+float's own exclusion zone, which only ever covered some of them. The em-based math is proportional to
+`.component-text`'s own resolved font-size in every context, so it holds correctly under this class's
+several existing font-size overrides (Book of Needs display, print media, the office-shell's own
+screen-only override) without needing separate correction in each. **DISCLOSED LIMITATION**: this
+session's sandbox cannot reach `fonts.googleapis.com` (confirmed via a console `ERR_CERT_AUTHORITY_
+INVALID` on every page load), so neither the original bug nor this fix could be pixel-verified against
+the app's own real fonts ("IM Fell English", "Cinzel Decorative") -- verification here is structural
+(the padding/negative-margin pair cancel out exactly by construction, proportionally, regardless of the
+actual font metrics in play) plus a fallback-font screenshot confirming no visual regression, not a
+literal before/after comparison against Josh's own rendering the way this project's other CSS fixes
+normally get verified. Ask Josh to confirm live; if the gap next to the cap looks off (too wide/narrow)
+once real fonts are in play, the fix is a one-line numeric tune (both values must stay in the exact 2.75
+: -0.859375 ratio to keep canceling out correctly), not a re-architecture.
+
+Both fixes: `node --check js/office-ui.js` clean; CSS brace-balance checked (325/325); all three
+standing audit scripts unchanged at their 13/3/9 baselines. `index.html` cache-bust bumped:
+`office-ui.js?v=328`, `office.css?v=232`.

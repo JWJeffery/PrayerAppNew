@@ -453,6 +453,27 @@ h2 { font-family: "Cinzel", serif; font-size: 2.1em; color: var(--gold); border-
     word-wrap: break-word;
     overflow: visible;
     color: var(--ink);
+    /* FIXED 2026-09-29, per Josh's direct live report (a screenshot of "The
+       Anglican Cycle of Prayer" -- one of the new Cycle-of-Prayer lines added
+       this session, but this bug is really in the drop-cap technique itself,
+       not anything specific to that content): a floated ::first-letter only
+       excludes the lines that fall within its own rendered height (~1-2 lines
+       of body text, given the cap's own font-size/line-height below vs. this
+       line-height) -- any paragraph long enough to wrap past that point has
+       its later lines revert to the FULL, un-padded content width, starting
+       further left than the lines still wrapping beside the cap. Reserving
+       that same width as a permanent `padding-left` here, then pulling the
+       float back into it with an equal-and-opposite negative margin below,
+       makes every line's starting position governed by padding (which a
+       float can never protrude past once pulled fully inside it) rather than
+       by the float's own height -- so line 1 renders pixel-identical to
+       before (the padding and the negative margin cancel out exactly), and
+       every later line now lines up with it instead of reverting to a
+       different, further-left margin. The exact width (2.75em) is a
+       generous estimate of the drop cap's own rendered footprint (see the
+       matching value below) -- doesn't need to be exact, just at least as
+       wide as the cap actually renders, so it never gets clipped. */
+    padding-left: 2.75em;
 }
 /* Drop cap on first letter of prayer/reading text */
 .component-text::first-letter {
@@ -462,7 +483,13 @@ h2 { font-family: "Cinzel", serif; font-size: 2.1em; color: var(--gold); border-
     color: var(--rubric);
     float: left;
     line-height: 0.75;
-    margin: 0.05em 0.1em 0 0;
+    /* Right/top margins unchanged from before; the negative left margin
+       pulls the float back by the exact same width `.component-text` above
+       now reserves via padding-left (2.75em body-units ÷ 3.2em cap font-size
+       = 0.859375em in this pseudo-element's own em context), landing it at
+       the same physical x-position it always rendered at -- see the comment
+       on .component-text's own padding-left for the full mechanism. */
+    margin: 0.05em 0.1em 0 -0.859375em;
     text-shadow: 1px 1px 0 rgba(139,90,30,0.3);
 }
 
