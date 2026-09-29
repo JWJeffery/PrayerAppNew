@@ -269,11 +269,28 @@ hand-kept in sync with whatever `.json` files actually exist — **a file with n
 entry silently does nothing.** **6 dioceses currently in the corpus, all passing the validator:**
 Western Oregon, Alaska, Arizona, Albany, Alabama (all `cycleType: "dated"`), Arkansas
 (`cycleType: "monthly-recurring"`). **83 of the 88 dioceses in Josh's Google Drive TEC roster
-spreadsheet remain — not started.** Adding one: transcribe directly from that diocese's own published
-document (never from memory), check whether its source is actually date-anchored or a standing
-recurring cycle BEFORE picking a `cycleType` (do not force one shape into the other), disclose
-anything ambiguous in the file's own `notes`, run the validator, and add the registry/UI entries.
-Full per-diocese transcription detail (what each one's source actually looked like, every disclosed
+spreadsheet remain — not started.**
+
+**Before searching for any of those 83 yourself, check the roster spreadsheet first — it already
+pre-solves most of what you'd otherwise rediscover by hand.** Location and full per-diocese
+breakdown: `data/cycles-of-prayer/schema.json`'s own `tecDioceseRoster` block (condensed) and
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entry (complete detail) — not repeated here since this note
+holds current status, not the research itself. In short: the roster already supplies a working
+Drive-hosted fallback URL for ~20 dioceses whose own site blocks direct fetch (exactly the workaround
+this corpus's own Arizona file needed, rediscovered by hand before this roster detail was read
+closely); already flags 18 dioceses as having no verified source at all (don't re-search these from
+scratch); flags 3 URLs across 2 dioceses as needing manual/login access Josh doesn't have; and already
+flags several upcoming dioceses (Iowa, Long Island, Mississippi, Navajoland, Northern Indiana,
+Northwest Texas, Western Louisiana) as standing/recurring cycles with no year — expect some of these
+to need a genuinely new `cycleType` beyond `monthly-recurring` (Mississippi is week-numbered,
+Navajoland is day-of-week — neither fits a day-of-month shape), and raise that to Josh rather than
+forcing it in, the same way `monthly-recurring` itself got added for Arkansas.
+
+Adding a diocese: transcribe directly from that diocese's own published document (never from memory),
+check whether its source is actually date-anchored or a standing recurring cycle BEFORE picking a
+`cycleType` (do not force one shape into the other), disclose anything ambiguous in the file's own
+`notes`, run the validator, and add the registry/UI entries. Full per-diocese transcription detail
+(what each one's source actually looked like, every disclosed
 judgment call): `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-28 entry for this batch.
 
 **NEW TODO, added 2026-09-28 per Josh's direct instruction — make the Google Drive "Anglican
