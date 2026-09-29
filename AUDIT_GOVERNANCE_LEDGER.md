@@ -25078,14 +25078,29 @@ correctly. `npm run audit:cycles-of-prayer`: PASS, 22 files, 0 findings. All thr
 scripts unchanged at their 13/3/9 baselines (only `data/` and `js/cycles-of-prayer.js` touched this
 round, not any UI file the scripts assert against).
 
-**Northern Indiana confirmed still genuinely blocked, not attempted**: its source (Drive id
-`1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`) is a repeating 1-through-37 numbered list with no calendar
-anchoring at all -- neither existing `cycleType` fits (`"dated"` needs real dates the source never
-gives; `"monthly-recurring"` is 1-31 day-of-month and would strand days 32-37's real content). This
-needs a genuine schema decision from Josh (most likely a third `cycleType`, something like
-`"sequential"`) before any file gets built -- not something to guess at unilaterally. Raised directly
-with Josh rather than worked around.
+**Northern Indiana RESOLVED same day, per Josh's direct instruction, closing out batch 3 entirely.**
+Raised as genuinely blocked (above): its source (Drive id `1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ`, "Diocesan
+Cycle of Prayer - Current.pdf") is a repeating 1-through-37 numbered list with no calendar anchoring at
+all. Josh's own resolution, asked directly rather than guessed at: *"Cut it off after 31."* This is an
+editorial scoping call, not a schema change -- dropping items 32-37 (Honorary Canons of the Cathedral of
+Saint James; All Saints, Syracuse; Saint Andrew's, Valparaiso; Saint Anne's, Warsaw; two Retired Clergy
+groups -- all disclosed in full in the file's own `notes`, not silently discarded) leaves exactly 31
+items, which fits this schema's EXISTING `"monthly-recurring"` cycleType cleanly, the same shape Arkansas
+already uses -- no third cycleType needed after all. Built `episcopal-northern-indiana.json` (31 entries,
+`scope: "diocese"`, `cycleType: "monthly-recurring"`, no year, per that cycleType's own naming
+convention), registered in `CYCLES_OF_PRAYER_DIOCESES`. Two source-transcription notes: a `+` marker
+after some names/roles with no legend given ("David Pearson Supply + Priest," "Charlie Strietelmeier
+Supply +") preserved exactly as printed, same disclosed-not-decoded treatment as the identical convention
+in `episcopal-western-oregon-st-bede.json`; day 25 ("Calumet Episcopal Ministry Partnership") recorded as
+a `category` (no place given for the Partnership entity itself there), distinct from six OTHER days where
+the Partnership is instead cited as a specific named parish's own clergy arrangement and that parish stays
+a `parish` subject. `npm run audit:cycles-of-prayer`: PASS, 23 files, 0 findings. Live-verified against
+the app's own actual runtime, including the month-length edge case a day-of-month cycle needs to get
+right: `getCachedCycleOfPrayerWeek` for February 28 (a 28-day month) correctly falls back to day 28's own
+entry rather than erroring or fabricating a day-31 date that doesn't exist that month, confirming
+`resolveMonthlyRecurringEntry`'s existing "latest on-or-before, wrapping" logic handles this file
+correctly with no code changes needed.
 
-**Next:** once Northern Indiana's schema question is settled, batch 4 (Southwestern Virginia, Western
+Batch 3 is now fully closed, all 5 dioceses. **Next:** batch 4 (Southwestern Virginia, Western
 Massachusetts, the last two Drive-identified dioceses), then the roster spreadsheet's remaining ~65
 dioceses via their own URLs, 5 at a time.

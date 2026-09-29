@@ -1,0 +1,114 @@
+{
+  "id": "episcopal-northern-indiana",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Northern Indiana",
+  "dioceseShort": "northern-indiana",
+  "cycleType": "monthly-recurring",
+  "source": "A Cycle of Prayer for The Episcopal Diocese of Northern Indiana",
+  "sourceFile": "\"Diocesan Cycle of Prayer - Current.pdf\", provided directly by Josh via Google Drive (file id 1sXskZRcg3i_z3IizjXmMDLAgwQxWeKTJ, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own list actually runs 1 through 37, not 1 through 31 -- a repeating sequential rotation with no calendar anchoring at all (not tied to day-of-month, day-of-week, or any date), which fit neither of this schema's two existing cycleTypes: 'dated' needs real calendar dates the source never gives, and 'monthly-recurring' is strictly 1-31 day-of-month. Raised directly with Josh rather than guessed at; his own resolution, 2026-09-29 ('Cut it off after 31'), was to drop items 32-37 (Honorary Canons of the Cathedral of Saint James; All Saints, Syracuse; Saint Andrew's, Valparaiso; Saint Anne's, Warsaw; and two Retired Clergy groups) so the remaining 31 items fit this app's existing day-of-month `monthly-recurring` shape cleanly, the same shape Arkansas already uses -- an editorial scoping decision, not a fabrication of structure the source never had. Items 32-37's content is disclosed here rather than silently dropped: Honorary Canons of the Cathedral of Saint James (John Beatty, Linda Buskirk, Paul Bradshaw, Katherine Clark, Michael Dwyer, Cynthia Guzzo, David Hyndman, Maxwell Johnson, Richard Kallenberg, Sharon Katona, Nancy Moody, Theodore Neidlinger, Hugh Page, Richard Phelps, Henry Randolph, David Rider, Gordon Samra, Kathryn Schneider, David Seger, SuzeAnne Silla, James Warnock, Teunisje Velthuizen); All Saints, Syracuse (Michael Fulk, Supply Priest); Saint Andrew's, Valparaiso (Cathy Carpenter, Rector); Saint Anne's, Warsaw (Amanda Henes, Interim Priest-in-Charge; in transition); two Retired Clergy name lists (Francis C. Gray, Edward S. Little II, John Blakslee, Susan Blubaugh, Paul Bradshaw, Marion Carpenter, Beverly Collinsworth, Joseph Czolgosz, George Douglass, Betty Frolick, Paul Greve, Margaret Harker, Thomas Hansen, John Houghton, David Hyndman; and Richard Kallenberg, Ross Mack, Theodore Neidlinger, Henry Randolph, Roberta Ring, Gordon Samra, John Schramm, David Seger, Kathy Thomas, Cindy VanParys, Teunisje Velthuizen).",
+    "The fetched Drive page also carried trailing content from a different diocese's own cycle (ending '...31 The Diocese of Honduras - Lloyd Allen Bishop...') immediately before this diocese's own 'A Cycle of Prayer for The Episcopal Diocese of Northern Indiana' header -- confirmed as page-adjacency noise from wherever this file sits in a combined PDF, not part of Northern Indiana's own list, and excluded entirely from this transcription.",
+    "A '+' marker appears after some names/roles with no legend given by the source (e.g. 'David Pearson Supply + Priest', day 6; 'David Evans Supply + Priest', day 19; 'Charlie Strietelmeier Supply +', day 25) -- preserved exactly as printed, likely denoting clergy/ordained status, same disclosed-not-decoded treatment this corpus already gives the identical '+' convention in episcopal-western-oregon-st-bede.json.",
+    "Day 26's 'In transition &. Kathy Townley Melendez Deacon' has a stray period after the ampersand, a plain extraction artifact -- rendered here as 'In transition & Kathy Townley Melendez, Deacon', not preserved as a typo, per this corpus's standing distinction between a source's own typo (preserved) and an extraction artifact (fixed).",
+    "Day 25 ('Calumet Episcopal Ministry Partnership') is recorded as a `category`, not a `parish`, since the source gives no place for the Partnership entity itself there -- distinct from days 5, 12, 14, 16, 17, and 28, where the Partnership is instead cited as the shared clergy arrangement for a specific NAMED parish (each of those stays a `parish` subject with the Partnership named in its own `note`).",
+    "Three subjects with multi-item source lists (Diocesan Missioners, day 7; Ministry with Children & Youth, day 13; Diocesan Leadership, day 18) have their full member/committee lists semicolon-joined into that subject's own `note`, for readability, with no name or role altered."
+  ],
+  "entries": [
+    { "day": 1, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Episcopal Church in Northern Indiana", "note": "For our Mission to Tell the Good News, Teach New Believers, Tend to Human Need, Transform Unjust Structures, and Treasure Creation; Doug Sparks, VIII Bishop of Northern Indiana" }
+    ]},
+    { "day": 2, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Family", "place": "Angola", "note": "Tom Adamson, Rector" }
+    ]},
+    { "day": 3, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint John of the Cross", "place": "Bristol", "note": "Thomas Gresik, Priest in Charge & Cyd Sunday, Deacon" }
+    ]},
+    { "day": 4, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Francis", "place": "Chesterton", "note": "Erik Grayvold, Pastor-in-Charge" }
+    ]},
+    { "day": 5, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Christopher", "place": "Crown Point", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 6, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Elizabeth's", "place": "Culver", "note": "David Pearson, Supply + Priest" }
+    ]},
+    { "day": 7, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Missioners", "note": "Joe Anand-Obleton, Missioner for Special Projects; Terri Bays, Missioner for Transitions, Formation & Governance; Clay Berkley, Missioner for Deacons; Carol Bianchini, Missioner for Administration, Finance & Sr. High Ministries; Christopher Hillak, Missioner for Communication & Operations; Daniel & Jodi Kallenberg, Missioners for Camp Ministries; Sharon Katona, Missioner for Finance; Cindy & Megan Spice, Missioners for Camp Ministries; Michelle Walker, Missioner for Administration" }
+    ]},
+    { "day": 8, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint John the Evangelist", "place": "Elkhart", "note": "Terri Peterson, Pastor-in-Charge & Melissa Renner, Deacon" }
+    ]},
+    { "day": 9, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Fort Wayne", "note": "In transition" }
+    ]},
+    { "day": 10, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Alban's", "place": "Fort Wayne", "note": "Michael Roeske, Priest-in-Charge" }
+    ]},
+    { "day": 11, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Fort Wayne", "note": "Patrick Collins, Interim Rector; Karla Henderson, Transitional Deacon" }
+    ]},
+    { "day": 12, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Augustine", "place": "Gary", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 13, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Ministry with Children & Youth", "note": "Camp New Happenings - Tina Velthuizen, Liaison; Senior High Youth Program - Carol Bianchini, Director; Summer Camp for Children & Youth - Daniel & Jodi Kallenberg, Cindy & Megan Spice, Co-Directors" }
+    ]},
+    { "day": 14, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Barnabas in the Dunes", "place": "Gary", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 15, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint James", "place": "Goshen", "note": "Nolan McBride, Curate in Charge; Spanish Services - Jerry Acosta Grandez, Priest & Edith Varillas Garrido, Deacon" }
+    ]},
+    { "day": 16, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Timothy's", "place": "Griffith", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 17, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Stephen's", "place": "Hobart", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 18, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Leadership", "note": "Diocesan Convention; Diocesan Council; Standing Committee; Social Outreach Committee; Commission on Ministry; Finance Committee; Property & Loan Committee; Diocesan Foundation" }
+    ]},
+    { "day": 19, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Mark's", "place": "Howe", "note": "David Evans, Supply + Priest" }
+    ]},
+    { "day": 20, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ the King", "place": "Huntington", "note": "Mindy Hancock, Priest-in-Charge" }
+    ]},
+    { "day": 21, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Andrew", "place": "Kokomo", "note": "Richard Lightsey, Rector" }
+    ]},
+    { "day": 22, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Paul's", "place": "LaPorte", "note": "Michelle Walker, Priest-in-Charge" }
+    ]},
+    { "day": 23, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Logansport", "note": "Clark Miller, Priest-in-Charge" }
+    ]},
+    { "day": 24, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Gethsemane", "place": "Marion", "note": "Mindy Hancock, Priest-in-Charge" }
+    ]},
+    { "day": 25, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Calumet Episcopal Ministry Partnership", "note": "Pamela Thiede, Vicar & Charlie Strietelmeier, Supply +" }
+    ]},
+    { "day": 26, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Michigan City", "note": "In transition & Kathy Townley Melendez, Deacon" }
+    ]},
+    { "day": 27, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Paul's", "place": "Mishawaka", "note": "Nate Warne Adishian, Priest-in-Charge" }
+    ]},
+    { "day": 28, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Paul's", "place": "Munster", "note": "Calumet Episcopal Ministry Partnership" }
+    ]},
+    { "day": 29, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Thomas & Santo Tomás", "place": "Plymouth", "note": "Bernadette Hartsough, Priest-in-Charge" }
+    ]},
+    { "day": 30, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "The Cathedral of Saint James", "place": "South Bend", "note": "Brian Grantz, Dean/Rector; Anne Wietstock & Clay Berkley, Deacons" }
+    ]},
+    { "day": 31, "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saint Michael & All Angels", "place": "South Bend", "note": "Jen Fulton, Rector" }
+    ]}
+  ]
+}
