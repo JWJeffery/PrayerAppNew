@@ -1,0 +1,225 @@
+{
+  "id": "episcopal-delaware-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Delaware",
+  "dioceseShort": "delaware",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "PDF (\"Cycle of Prayer | September 6, 2026 – August 31, 2027\") supplied directly by Josh, since the diocese's own hosted Flipsnack flipbook (https://www.flipsnack.com/diodel/ecd-cycle-of-prayer/full-view.html) could not be fetched from this session's sandbox.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source is a single PDF (\"THE EPISCOPAL CHURCH IN DELAWARE / Cycle of Prayer | September 6, 2026 – August 31, 2027\", revised September 6, 2026) supplied directly by Josh after Flipsnack's own hosted version of this cycle (https://www.flipsnack.com/diodel/ecd-cycle-of-prayer/full-view.html) proved unfetchable from this session's sandbox -- individual flipbook page images returned HTTP 403 even by direct URL, and a headless-browser render hit the same TLS/cert block this project has already documented for other external asset CDNs (see AUDIT_GOVERNANCE_LEDGER.md).",
+    "This single source document spans two calendar years (Sept 6, 2026 – Aug 31, 2027, 52 weekly entries total). Per this schema's own 'one file per diocese per year' rule, it is split into two files here: this one (episcopal-delaware-2026.json, the 17 entries from Sept 6 through Dec 27, 2026) and a companion episcopal-delaware-2027.json (the remaining 35 entries, Jan 3 through Aug 29, 2027) -- both transcribed from the identical source PDF. This is a deliberate split for app resolvability (the app's own year-keyed lookup would never find the 2027 dates if they stayed in a 2026-dated file), not a gap or omission in either direction.",
+    "Every parish subject's clergy/warden line (e.g. 'The Rev. Patrick T. Burke, Rector') is recorded in that subject's own `note` field, per the existing precedent in episcopal-great-lakes-2026.json and this batch's own episcopal-indianapolis-2026.json/episcopal-kansas-2026.json -- the schema has no dedicated clergy field, and `note` is the correct place for a per-subject disclosure.",
+    "December 13, 2026 names two congregations together (\"All Saints' Church, Rehoboth Beach, and St. George's Chapel, Harbeson\") sharing one clergy team -- transcribed as two separate `parish` subjects (one per named congregation, each carrying the identical shared-clergy `note`), not folded into one subject, since these are two distinct, currently-existing congregations rather than one congregation under alternate/historical names (contrast with Chicago's 'Trinity (formerly St. Ann...)' merger precedent, which genuinely was one congregation).",
+    "October 11, 2026 (2026 file) and January 24, 2027 (2027 file) each name multiple distinct diocesan-wide items in one sentence -- split into separate `category` subjects, matching this batch's own Kansas precedent for the same pattern.",
+    "February 14, 2027: \"St. Anne's School, Middletown\" is recorded as `category` (an institution, not a congregation) rather than `parish`, distinguishing it from \"St. Andrew's School Chapel, Middletown\" (Jan 31, 2027) which explicitly names a chapel and is recorded as `parish`, consistent with this corpus's existing 'Episcopal City Mission' precedent (a schema-defined `parish` type covers 'a parish, mission, or cathedral', not a school in its own right).",
+    "June 13, 2027: \"Camp Arrowhead and Memorial House\" is transcribed as one `category` subject as printed, not split -- treated as a single camp/retreat-center complex rather than two separate named entities, since the source gives no indication they are administratively distinct the way, e.g., the Jan 24 Daughters of the King / Anamchara Fellowship pairing does.",
+    "Apostrophes preserved as printed in the source (a straight ' in most names, one curly ’ in \"O’Connor\"), following this corpus's per-file convention of matching the specific source document rather than normalizing corpus-wide.",
+    "This file covers the first (2026) portion of the source's Sept 2026 – Aug 2027 cycle -- see episcopal-delaware-2027.json for the remainder."
+  ],
+  "entries": [
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Members of the Diocesan Council, Standing Committee, and Trustees in the Episcopal Church in Delaware"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries to children, teens, and young adults"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Licensed Lay Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Sts. Andrew and Matthew",
+          "place": "Wilmington",
+          "note": "The Rev. Patrick T. Burke, Rector; The Rev. Canon Lloyd S. Casson, Rector Emeritus"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel Highlands Episcopal Church",
+          "place": "Wilmington",
+          "note": "The Rev. E. Wayne Rollins, Priest in Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and Candidates for Holy Orders"
+        },
+        {
+          "type": "category",
+          "name": "The Stevenson School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "The members of the Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel Episcopal Church on the Green",
+          "place": "New Castle",
+          "note": "The Rev. Christopher P. Keene, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas' Church",
+          "place": "Wilmington",
+          "note": "The Rev. Jeanie Martinez-Jantz, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief & Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Racial Justice and Reconciliation Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "242nd Annual Convention of the Episcopal Church in Delaware"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Harrington",
+          "note": "The wardens, vestry, and parish"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Clergy and their families"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Smyrna",
+          "note": "The Rev. Sarah Nelson, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Rehoboth Beach",
+          "note": "The Rev. Shelley McDade, Rector; The Rev. Vincent Black, Associate Rector; The Rev. Judith Rhodes, Assistant Rector; The Rev. Connie Bowman, Priest in Residence"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's Chapel",
+          "place": "Harbeson",
+          "note": "The Rev. Shelley McDade, Rector; The Rev. Vincent Black, Associate Rector; The Rev. Judith Rhodes, Assistant Rector; The Rev. Connie Bowman, Priest in Residence"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ministry of Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Christiana Hundred",
+          "place": "Wilmington",
+          "note": "The Rev. Ruth Lawson Beresford, Rector; The Rev. Thomas Peters, Associate Rector"
+        }
+      ]
+    }
+  ]
+}

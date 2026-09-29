@@ -1,0 +1,569 @@
+{
+  "id": "episcopal-hawai-i",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Hawai'i",
+  "dioceseShort": "hawai-i",
+  "cycleType": "ordinal-sunday-monthly",
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan resource page, fetched directly from https://www.episcopalhawaii.org/prayer-calendar.html (12 month sections, each listing 'We pray for:' under headings '1st Sunday.' through '4th Sunday.'/'5th Sunday.' with no calendar date anywhere on the page).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This source fits neither this schema's 'dated' nor 'monthly-recurring' cycleType -- it names no calendar date at all, only which Sunday of each month ('1st Sunday' through '5th Sunday' where a month has one). Per Josh's direct decision 2026-09-29 (the same kind of call that added 'monthly-recurring' for Arkansas), a new cycleType 'ordinal-sunday-monthly' (month + which Sunday of that month, no year) was added to the schema for this shape rather than computing/guessing a specific calendar date the source itself never prints.",
+    "Every congregation-named entry is introduced by the source's own recurring formula 'The clergy, staff, congregation, families, and community of X' -- this wrapper is dropped and only X is transcribed as the subject's own name, following this corpus's existing precedent for formulaic wrapper phrasing (see Southwestern Virginia).",
+    "The vast majority of named congregations (all but 5 of the year's Sunday slots) carry NO place/town in the source at all -- rather than inventing one, these are recorded as `category` subjects (not `parish`) even though most plainly name a real congregation, matching this batch's own Long Island precedent for the same situation (e.g. its placeless 'Iglesia de San Francisco' entries).",
+    "Five Sundays DO carry an explicit place and are recorded as `parish`: March, 4th Sunday (\"St. Paul's, Honolulu\"); June, 2nd Sunday (\"St. John's (Kula)\", place given in parentheses rather than after a comma); August, 1st Sunday (\"St. John the Divine, Guam and St. Paul’s, Saipan\" -- two congregations each with its own place, joined by 'and', split into two `parish` subjects); August, 5th Sunday (\"West Kaua‘i: St. John’s, ‘Ele‘ele & St. Paul’s, Kekaha\" -- a regional label 'West Kaua‘i' followed by two congregations each with its own place, joined by '&'; the region label itself is dropped from the two `parish` subjects' own names, since it describes their shared location rather than being part of either congregation's own name, and is disclosed here rather than silently dropped).",
+    "May, 5th Sunday nests a nested nested list (seven affiliated schools) under one wrapper sentence in the source's own HTML -- recorded as a single `category` subject (the wrapper sentence as `name`) with all seven schools listed in that subject's own `note`, rather than fabricated into seven separate weekly entries the source itself does not give each its own Sunday.",
+    "November, 1st Sunday names three distinct commissions in one sentence with one shared trailing 'and their families' (\"Members of the Commission on Finance, Commission on Investment, and Commission on Property and their families\") -- kept as ONE `category` subject rather than split three ways, since splitting would require synthesizing 'and their families' onto each fragment, text the source does not actually repeat per item (contrast with November, 2nd Sunday, which genuinely is two separate complete sentences each already ending in its own 'and their families', and IS split into two subjects).",
+    "Apostrophes/'okina and Hawaiian diacritics (‘, ’, macrons) are preserved exactly as the source's own HTML gives them (a straight ' is used for the diocese's own name on the site, while transcribed Hawaiian-language subject names use the source's own curly-quote 'okina and macron characters) -- not normalized to one style."
+  ],
+  "entries": [
+    {
+      "month": 1,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church and Presiding Bishop's office staff, volunteers, and their families"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Support Center staff, volunteers, and their families"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Cross"
+        }
+      ]
+    },
+    {
+      "month": 1,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Emmanuel and St. Matthew’s"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John's By-the-Sea"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Christopher"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Good Samaritan"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Epiphany"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Augustine's"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Grace Church"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hālau Wa‘a"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Honolulu"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "ordinal": 5,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ Church"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Good Shepherd"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Michael & All Angels"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "the Cathedral of St. Andrew"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mark's"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Saints"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Clement"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Camp Mokulē‘ia and their staff and families"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Elizabeth's"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "ordinal": 5,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The chaplains, faculty, staff, students, and families of our Episcopal Church and Affiliated Schools",
+          "note": "All Saints’ School; Holy Nativity School; ‘Iolani School; Seabury Hall; St. Andrew’s Schools; St. Clement’s School; St. John's School, Guam"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Vocational deacons and their families"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Kula"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired clergy and their families"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Surviving spouses of clergy and their families"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity By-the Sea and Holy Innocents' preaching station"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary's"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter's"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. John the Baptist"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ Memorial"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Divine",
+          "place": "Guam"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Saipan"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Judes'"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Apostles"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. James' with St. Columba’s"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "ordinal": 5,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "‘Ele‘ele"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Kekaha"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Stephen's"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Timothy's"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Nativity"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Luke's"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Military Chaplains and their families"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Non-Parochial Clergy and licensed clergy and their families"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Licensed lay Catechists, Preachers, Worship Leaders, Eucharistic Ministers, and Eucharistic Visitors and their families"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Prison Ministry members and their families"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Members of the Commission on Finance, Commission on Investment, and Commission on Property and their families"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Native Hawaiian Ministries Committee members and their families"
+        },
+        {
+          "type": "category",
+          "name": "Kapolei Development Task Group members and their families"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Reconciliation Task Force members and their families"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Environmental Justice and Creation Care Task Force members and their families"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "ordinal": 5,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Diocesan Chancellors and their families"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "ordinal": 1,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and Candidates for Holy Orders and their families"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "ordinal": 2,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Standing Committee and Diocesan Council members and their families"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "ordinal": 3,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Commission on Ministry members and their families"
+        },
+        {
+          "type": "category",
+          "name": "The faculty, staff, students, and families of Waiolaihui‘ia Center for Ministry"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "ordinal": 4,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "A Cup of Cold Water volunteers and their families"
+        }
+      ]
+    }
+  ]
+}

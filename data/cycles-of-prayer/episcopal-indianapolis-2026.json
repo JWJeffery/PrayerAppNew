@@ -1,0 +1,62 @@
+{
+  "id": "episcopal-indianapolis-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Indianapolis",
+  "dioceseShort": "indianapolis",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan page, fetched directly from https://indydio.org/diocesan-cycle-of-prayer/ (\"Diocesan Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This page shows only a rolling current window, not a full-year document -- only September, October, and November 2026 (12 weeks) were present when fetched, matching the roster's own coverage note for this diocese ('2026, including September-November'). Not a gap in this transcription; the diocese's own page does not publish the rest of the year in one place, and only republishes the current few months at a time.",
+    "The page's diocese-of-record name is printed on the page as 'The Episcopal Diocese of Indianapolis' (page title and footer); recorded verbatim in `diocese`.",
+    "Every dated entry carries the source's own liturgical Sunday/Proper name (e.g. 'The Fifteenth Sunday after Pentecost/Proper 18'), recorded in `liturgicalNote` -- a disclosed label from the source, not computed by this app.",
+    "Each week names one parish (or, in one case, a campus ministry) plus, in the source's own next line, the name and title of that congregation's current clergy/warden -- recorded in that subject's `note` field, since `subjectShape` has no dedicated clergy-attribution field (same precedent as this corpus's episcopal-great-lakes-2026.json).",
+    "'Episcopal Campus Ministry at Indiana University-Canterbury House' (September 27) is recorded as a `category` subject rather than `parish`, since it is a campus ministry rather than a parish congregation with a civil place name (same treatment this corpus already gives comparable campus ministries in episcopal-chicago-2026.json).",
+    "November 1's entry departs from the weekly parish pattern: the source names 'The Bishop and staff of the Diocese of Indianapolis' followed by a list of names and titles rather than a single congregation. Recorded as one `category` subject whose `name` is the full sentence as printed, including the complete staff list, rather than being split into separate subjects the source itself does not separate.",
+    "The source opens with a standing, undated notice (not tied to any week): \"We recommend updating your bulletins to reflect the changes that have happened in Haiti... We pray for The Standing Committee of the Diocese of Haiti, and especially for St. Andre's Parish and the School in Mithon.\" This is disclosed here rather than fabricated into any one week's entry, since the source itself does not attach it to a date.",
+    "Each of the three months on the page also carries its own undated monthly theme line, not tied to any single week, disclosed here rather than fabricated into an entry: September -- 'This month, pray for all teachers and students. (BCP 261)'; October -- 'This month, pray for our Vestries and Bishop Committees'; November -- 'This month, pray for the Convention Delegates, the Neighborhoods of the Diocese, and all those involved in our Annual Convention'.",
+    "November 1's liturgical label is printed by the source as 'All Saints OR The Twenty-Third Sunday after Pentecost/Proper 26' (with 'OR' as printed, offering the alternate observance); transcribed verbatim into `liturgicalNote`.",
+    "The source's date lines for October and November are printed with the day-of-month and an em dash separated onto their own line/spacing (e.g. '4 – The Nineteenth Sunday...'), unlike September's inline '6 – The Fifteenth Sunday...'; this is a page-layout/markup difference only and does not change the transcribed content."
+  ],
+  "entries": [
+    { "date": "2026-09-06", "liturgicalNote": "The Fifteenth Sunday after Pentecost/Proper 18", "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Richmond", "note": "The Rev. Robert Abner" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "The Sixteenth Sunday after Pentecost/Proper 19", "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Speedway", "note": "Ms. Becky Douglas, Senior Warden" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "The Seventeenth Sunday after Pentecost/Proper 20", "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Indianapolis", "note": "Ms. Jennifer Albrecht, Senior Warden" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "The Eighteenth Sunday after Pentecost/Proper 21", "subjects": [
+      { "type": "category", "name": "Episcopal Campus Ministry at Indiana University-Canterbury House", "note": "The Rev. Ed Bird" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "The Nineteenth Sunday after Pentecost/Proper 22", "subjects": [
+      { "type": "parish", "name": "St. Francis-in-the-Fields", "place": "Zionsville", "note": "The Rev. C. Davies Reed" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "The Twentieth Sunday after Pentecost/Proper 23", "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Shelbyville", "note": "Ms. Sherrie Wood, Senior Warden" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "The Twenty-First Sunday after Pentecost/Proper 24", "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Terre Haute", "note": "The Rev. Andrew Downs" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "The Twenty-Second Sunday after Pentecost/Proper 25", "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Franklin", "note": "The Rev. Karen Sullivan" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints OR The Twenty-Third Sunday after Pentecost/Proper 26", "subjects": [
+      { "type": "category", "name": "The Bishop and staff of the Diocese of Indianapolis: The Rt. Rev. Jennifer Baskerville-Burrows, Canon Brendan O'Sullivan-Hale, The Rev. Canon Giulianna Cappelletti Gray, Ms. Bethany Baugh, Ms. LaShaundra Bridges, Ms. Heather Campbell, Ms. Julie Eledah, The Rev. Peter Gray, Ms. Lauren Hacker, Ms. Jolene Johnston, The Rev. Ian Lasch, Ms. Kelly Nickson, Ms. Elise Shrock, The Rev. Mary Taflinger, Ms. Erinna Vandever" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost/Proper 27", "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Indianapolis", "note": "The Rev. Dr. Stephen Applegate" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost/Proper 28", "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Vincennes", "note": "Ms. Rene Vermillion, Senior Warden" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost/Christ the King/Proper 29", "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Muncie", "note": "The Rev. Dr. Dawn Roginski" }
+    ]}
+  ]
+}

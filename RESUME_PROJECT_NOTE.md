@@ -383,19 +383,54 @@ alternatives within the same batch — not formally logged as "unfetchable," wor
 time allows. Full per-diocese transcription detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese
 ingestion batch 5/6" entry.
 
+**Batch 7 (Delaware, Georgia, Hawai'i, Indianapolis, Iowa, Kansas, Long Island): DONE 2026-09-29 — 7
+dioceses, the first batch built with parallel background `Agent` subagents** (Josh: *"Looks like we have
+been given some credits. Please feel free to dispatch more than one agent to work on this more
+quickly"*) — five agents ran concurrently, each scoped to write only its own diocese's file, never the
+shared registry/ledger/git state. **Two brand-new cycleTypes added to the schema (v1.2 → v1.3), per
+Josh's direct decision** (the same kind of call that added `monthly-recurring` for Arkansas):
+`"annual-recurring"` (month+day, no year, repeats every calendar year including Feb 29 — for Long
+Island's 366-entry annual cycle) and `"ordinal-sunday-monthly"` (month + which Sunday 1st–5th, no year,
+no calendar date in the source at all — for Hawai'i's "3rd Sunday of March"-style cycle). Both got real
+runtime resolution logic in `js/cycles-of-prayer.js` (`resolveAnnualRecurringEntry`,
+`resolveOrdinalSundayMonthlyEntry`), not just data support — live-verified working, including the Feb 29
+leap-day wraparound and the ordinal-Sunday-to-real-calendar-Sunday lookup. Delaware's own hosted cycle
+(a JS-rendered Flipsnack flipbook) was unfetchable from this sandbox — reported the blocked link to Josh
+per his own standing instruction, and he uploaded the actual PDF directly; its single Sept 2026–Aug 2027
+source document was split into two files (`episcopal-delaware-2026.json`/`-2027.json`) at the calendar
+year boundary, per this schema's own one-file-per-year rule, so the 2027 portion is actually reachable by
+the app rather than silently dropped. **A slug-mismatch bug was caught by live verification before
+shipping**: Hawai'i's new registry entry used `dioceseShort: 'hawaii'`, but the pre-existing
+`TEC_DIOCESE_DIRECTORY` (the profile-picker roster) already had it as `'hawai-i'` — since
+`getCachedCycleOfPrayerWeek` gates every lookup against that directory, the mismatch silently made
+Hawai'i's content unreachable until caught and fixed (file renamed, `id`/`dioceseShort` corrected to
+match). **Lesson for future batches: check a new diocese's slug against `TEC_DIOCESE_DIRECTORY` before
+finalizing the registry entry**, not just after a live-verification failure surfaces it. Full per-diocese
+transcription detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 7" entry.
+
 **Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time (per
 Josh's original instruction: flag anything unfetchable in this note/ledger, and send Josh the link
 directly if blocked by bot protection, rather than endlessly retrying or working around it — there is
-still no Drive/Sheets write tool to literally annotate the spreadsheet itself). Alphabetically, the next
-batch starts around Delaware/Eastern Oregon (Easton and El Camino Real, above, were attempted out of
-alphabetical order and can be revisited or left for Josh).
+still no Drive/Sheets write tool to literally annotate the spreadsheet itself). Parallel background
+`Agent` dispatch (one per diocese, each scoped to its own new file only) is now the established pattern
+for a multi-diocese batch when the session has capacity for it — use it again rather than fetching
+serially. Alphabetically, the next batch starts after Kansas (~Kentucky/Lexington/Long Island are already
+done — next real gap is likely Louisiana onward; check the roster/registry directly rather than trusting
+this note's ordering). Easton and El Camino Real (see batch 5/6 above) remain attempted-but-set-aside,
+not yet retried.
 
-**31 files currently in the corpus, all passing the validator:** 27 diocese-level, `cycleType: "dated"`
+**~88 dioceses have a located, verified current cycle per the roster; 36 are now ingested into this
+corpus, ~52 remain** (separately, 18 dioceses have no verified source at all per Josh's own research —
+see `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
+
+**39 files currently in the corpus, all passing the validator:** 32 diocese-level, `cycleType: "dated"`
 — Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
-Coast, Central New York, Chicago, Connecticut, East Carolina, Florida, Great Lakes, Idaho, Kentucky,
-Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western
-Massachusetts, Colorado; 2 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana
-— plus:
+Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Florida,
+Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Maine, Nebraska, Newark, New
+Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 3 diocese-level,
+`cycleType: "monthly-recurring"` — Arkansas, Northern Indiana, Iowa; 1 diocese-level, `cycleType:
+"annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
+(`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

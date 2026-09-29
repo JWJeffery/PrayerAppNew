@@ -6,7 +6,9 @@ const SCHEMA_FILE = 'schema.json';
 const KEBAB_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const VALID_SUBJECT_TYPES = new Set(['parish', 'category', 'household', 'diocese', 'province']);
-const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring']);
+const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
+const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
+const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb allows 29 (leap day), never checked against a real year here
 const VALID_SCOPES = new Set(['diocese', 'parish', 'communion']);
 
 const verbose = process.argv.includes('--verbose');
@@ -81,7 +83,7 @@ function main() {
 
     const cycleType = doc.cycleType === undefined ? 'dated' : doc.cycleType;
     if (!VALID_CYCLE_TYPES.has(cycleType)) {
-      add('CRITICAL', name, `"cycleType", when present, must be "dated" or "monthly-recurring", got ${JSON.stringify(doc.cycleType)}`);
+      add('CRITICAL', name, `"cycleType", when present, must be "dated", "monthly-recurring", "annual-recurring", or "ordinal-sunday-monthly", got ${JSON.stringify(doc.cycleType)}`);
     }
 
     const scope = doc.scope === undefined ? 'diocese' : doc.scope;
@@ -129,7 +131,7 @@ function main() {
       if (scope !== 'communion') slugParts.push(doc.dioceseShort);
       if (scope === 'parish' && typeof doc.parishShort === 'string') slugParts.push(doc.parishShort);
       const base = slugParts.join('-');
-      const expectedName = cycleType === 'monthly-recurring'
+      const expectedName = NO_YEAR_CYCLE_TYPES.has(cycleType)
         ? `${base}.json`
         : `${base}-${doc.year}.json`;
       if (name !== expectedName) {
@@ -145,9 +147,9 @@ function main() {
         add('CRITICAL', name, `missing or empty required string field "${field}"`);
       }
     }
-    if (cycleType === 'monthly-recurring') {
+    if (NO_YEAR_CYCLE_TYPES.has(cycleType)) {
       if (doc.year !== undefined) {
-        add('HIGH', name, '"year" must be absent for cycleType "monthly-recurring" (a standing monthly cycle has no year)');
+        add('HIGH', name, `"year" must be absent for cycleType "${cycleType}" (a standing no-year cycle has no year)`);
       }
     } else if (!Number.isInteger(doc.year)) {
       add('CRITICAL', name, '"year" must be an integer');
@@ -178,6 +180,73 @@ function main() {
             add('HIGH', name, `${where}.day "${entry.day}" is out of ascending order (previous entry was "${previousDay}")`);
           }
           previousDay = entry.day;
+        }
+
+        if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {
+          add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
+        }
+
+        validateSubjects(name, where, entry.subjects);
+      }
+      continue;
+    }
+
+    if (cycleType === 'annual-recurring') {
+      let previousKey = null;
+      const seenKeys = new Set();
+      for (const [index, entry] of doc.entries.entries()) {
+        const where = `entries[${index}]`;
+
+        const monthOk = Number.isInteger(entry.month) && entry.month >= 1 && entry.month <= 12;
+        if (!monthOk) {
+          add('CRITICAL', name, `${where}.month must be an integer 1-12, got ${JSON.stringify(entry.month)}`);
+        }
+        const maxDay = monthOk ? DAYS_IN_MONTH[entry.month - 1] : 31;
+        if (!Number.isInteger(entry.day) || entry.day < 1 || entry.day > maxDay) {
+          add('CRITICAL', name, `${where}.day must be an integer 1-${maxDay} for month ${JSON.stringify(entry.month)}, got ${JSON.stringify(entry.day)}`);
+        } else if (monthOk) {
+          const key = entry.month * 100 + entry.day;
+          if (seenKeys.has(key)) {
+            add('HIGH', name, `${where} (month ${entry.month}, day ${entry.day}) is a duplicate of an earlier entry`);
+          }
+          seenKeys.add(key);
+          if (previousKey !== null && key < previousKey) {
+            add('HIGH', name, `${where} (month ${entry.month}, day ${entry.day}) is out of ascending order`);
+          }
+          previousKey = key;
+        }
+
+        if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {
+          add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
+        }
+
+        validateSubjects(name, where, entry.subjects);
+      }
+      continue;
+    }
+
+    if (cycleType === 'ordinal-sunday-monthly') {
+      let previousKey = null;
+      const seenKeys = new Set();
+      for (const [index, entry] of doc.entries.entries()) {
+        const where = `entries[${index}]`;
+
+        const monthOk = Number.isInteger(entry.month) && entry.month >= 1 && entry.month <= 12;
+        if (!monthOk) {
+          add('CRITICAL', name, `${where}.month must be an integer 1-12, got ${JSON.stringify(entry.month)}`);
+        }
+        if (!Number.isInteger(entry.ordinal) || entry.ordinal < 1 || entry.ordinal > 5) {
+          add('CRITICAL', name, `${where}.ordinal must be an integer 1-5, got ${JSON.stringify(entry.ordinal)}`);
+        } else if (monthOk) {
+          const key = entry.month * 10 + entry.ordinal;
+          if (seenKeys.has(key)) {
+            add('HIGH', name, `${where} (month ${entry.month}, ordinal ${entry.ordinal}) is a duplicate of an earlier entry`);
+          }
+          seenKeys.add(key);
+          if (previousKey !== null && key < previousKey) {
+            add('HIGH', name, `${where} (month ${entry.month}, ordinal ${entry.ordinal}) is out of ascending order`);
+          }
+          previousKey = key;
         }
 
         if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {

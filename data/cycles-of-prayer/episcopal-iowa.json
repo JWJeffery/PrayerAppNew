@@ -1,0 +1,1122 @@
+{
+  "id": "episcopal-iowa",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Iowa",
+  "dioceseShort": "iowa",
+  "cycleType": "monthly-recurring",
+  "source": "2026 Joint Intercession List",
+  "sourceFile": "PDF fetched directly from https://iowaepiscopal.squarespace.com/s/2026-Joint-Intercession-List.pdf (\"2026 Joint Intercession List\", Dioceses of Iowa, Brechin, Eswatini, and Nzara), linked from https://iowaepiscopal.squarespace.com/intercession.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This PDF (\"2026 Joint Intercession List\") is a single joint monthly cycle shared by four dioceses -- Iowa and its three companion dioceses: The Diocese of Brechin (the Scottish Episcopal Church), The Diocese of Eswatini (the Anglican Church of Southern Africa), and The Diocese of Nzara (the Episcopal Church of South Sudan) -- printed side by side under headings \"(B)\", \"(E)\", \"(I)\", and \"(N)\" for each day of the month, with no calendar year given anywhere in the source. This confirms cycleType 'monthly-recurring'. This file records only the Diocese of Iowa's own cycle (scope 'diocese'): Iowa's own \"(I)\" items become `parish`/`category` subjects, while each day's Brechin/Eswatini/Nzara companion-diocese content is recorded as `category` subjects rather than `parish`, per this corpus's standing convention for companion-diocese items (see episcopal-chicago-2026.json). Each companion-diocese subject's `name` is tagged \"(Companion Diocese of Brechin/Eswatini/Nzara)\", matching the Chicago file's own \"(Companion Diocese of X)\" convention. The companion dioceses' own full monthly cycles are not separate corpus files -- only what this source prints for them alongside Iowa each day is captured here.",
+    "The source's own front matter (p. 3) names this diocese only as \"The Diocese of Iowa\", not \"The Episcopal Diocese of Iowa\"; transcribed exactly as printed.",
+    "Verified this is a genuine single-column, day-of-month 1-31 layout (not a multi-column grid at risk of interleaving) by rendering 9 of the PDF's 31-day pages (pp. 4-12, covering all 31 days) as images and visually comparing them against the linearized `pdftotext -layout` extraction before transcribing; no column-interleaving or misassignment was found, though a few small deviations from a naive text extraction were caught this way (see below).",
+    "Splitting methodology: each day's (I)/(B)/(E)/(N) text is split into multiple subjects only where the source clearly delimits separate named parishes/parochial districts/offices as distinct \"Name, Place: detail\" segments joined by semicolons (mirroring how Iowa's own multi-congregation days are split). A paragraph that names one topic/body with subsidiary detail and no repeated \"Name:\" delimiter is kept as a single subject with the full text preserved in `note`, following this corpus's existing convention (episcopal-northern-indiana.json) of semicolon-joining multi-item lists into `note` rather than fragmenting into many subjects. Eswatini's day 30 item names several diocesan bodies (Diocesan Trust Board, Diocesan Executive Committee/Finance, the Cathedral Chapter, The Council of Swaziland Churches, Board of Education, Board of Social Development) without a repeated delimiter between them; these were lumped into one category subject led by the first-named body (\"Diocesan Trust Board\"), with the rest preserved verbatim in `note`, rather than guessing at a further split the source does not clearly mark.",
+    "Day 2's source prints a stray duplicate heading \"Day 2\" immediately before that day's \"(N)\" line -- confirmed on the rendered page image, not a text-extraction artifact -- and was excluded from the transcription since the entry is already keyed by `day: 2`.",
+    "Day 31 has no \"(E)\" Eswatini item at all -- confirmed both in the text extraction and the rendered page image -- transcribed as printed, with nothing fabricated for that slot.",
+    "Three Iowa items printed in the same \"Name, Place:\" pattern as parish entries were instead recorded as `category` rather than `parish`, as a judgment call: \"Old Brick, Iowa City\" (day 10, a community ministry/nonprofit operating out of a former church building, not itself an active congregation), and \"Beloved Community Initiative\" and \"Agape Café\" (day 10, named ministries printed with no place).",
+    "Day 18's \"Trinity Cluster: St Paul, Harlan; Trinity, Denison; & Trinity, Carroll: Diana Wright\" is transcribed as three separate `parish` subjects (St Paul/Harlan, Trinity/Denison, Trinity/Carroll), each noting \"Trinity Cluster\" and the last carrying the shared leader \"Diana Wright\" exactly where the source places it.",
+    "Day 12's \"Church of the Good Shepherd, Webster City and Grace, Boone: Catherine Schroeder\" and day 22's \"St Alban, Spirit Lake and All Saints, Storm Lake: Carolyn Tuttle\" are each transcribed as two separate `parish` subjects sharing the same named leader, since the source names two distinct congregations joined by \"and\" under one shared person.",
+    "Day 11's Iowa item \"Trinity Cush, Des Moines\" is preserved exactly as printed (confirmed against the rendered page image) even though it may be a typo for another name (e.g. \"Trinity Church\") -- not silently corrected.",
+    "A handful of apparent source typos/oddities are preserved verbatim rather than corrected: day 3's Eswatini item ends with a stray trailing comma (\"...Revd. Petros Dlamini,\"); day 22's Nzara item has a duplicated word (\"Revd. Revd. Canon Keliopa Elisa\"); day 23's Eswatini item has a right double-quotation-mark character in a name where an apostrophe would be expected (\"Thab”sile Masuku\"); day 31's Nzara item punctuates its second parish with a semicolon rather than a colon (\"Navundio Parish; Revd. Joseph Taban\") -- all transcribed as printed."
+  ],
+  "entries": [
+    {
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Paul's Cathedral, Dundee (Companion Diocese of Brechin)",
+          "note": "Provost: Roxanne Campbell; Director of Music: Billy Muir; the Cathedral Chapter; Canon Prof David Brown, Canon Theologian; The Mission of the Cathedral to the City of Dundee."
+        },
+        {
+          "type": "category",
+          "name": "All Saints Cathedral (Companion Diocese of Eswatini)",
+          "note": "Revd. Zama Sigudla, Revd. Dumisani Mabuza, Revd. Mcebo Sigudla. Revd. Frances Takis and Revd. Muzikayise Masina"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Cathedral",
+          "place": "Davenport",
+          "note": "for discernment, Sherry Rodriguez (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Cathedral",
+          "place": "Des Moines",
+          "note": "Nicola Dance Chase (dean); Michael Monnot, Kathleen Milligan, John Doherty"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter Cathedral, Nzara (Companion Diocese of Nzara)",
+          "note": "Revd. Canon William Mbugo Manase, Rev. Nelson John Rakpanza, Revd. Deacon Prucila Yoasa Dariwade, Rev. Abel Titus Zingbondo and L/R John Elinama."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary the Virgin, Arbroath (Companion Diocese of Brechin)",
+          "note": "Rector: Peter Mead"
+        },
+        {
+          "type": "category",
+          "name": "St. Peter, Auchmithie (Companion Diocese of Brechin)",
+          "note": "Rector: Peter Mead"
+        },
+        {
+          "type": "category",
+          "name": "Big Bend Parochial District (Companion Diocese of Eswatini)",
+          "note": "Revd. Nicholas Cox, Churchwardens and the growth of the Church and chaplaincy work."
+        },
+        {
+          "type": "category",
+          "name": "The Standing Committee and Board of Directors of the Episcopal Corporation of the Diocese of Iowa",
+          "note": "all commissions and task groups; and lay leaders of the diocese. Diocesan staff: Elizabeth Adams, Julianne Allaway, Tina Austin, Amy Mellies, Traci Ruhland Petty, Anne Wagner, Meg Wagner (Canon to the Ordinary), Regional Missioners: Stephen Benitz (Northwest), Jay Elmquist (East), Suzanne LeVesconte (Southwest); Jean Davis (Archdeacon); Judith Crossett (Archdeacon Emerita); Jacob Deng Aleer (Diocesan Dinka Missioner)"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan head office (Companion Diocese of Nzara)",
+          "note": "Revd. Canon Morducai Evaresto Dabira, Revd. Canon Anna Epanto, Revd. Deacon Alison Mboringba Kassiano, Revd. Edward Daima Mama."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Andrew, Brechin (Companion Diocese of Brechin)",
+          "note": "Rector: Canon Jim Benton-Evans; Planning for development for the future. Outreach to the community and schools and their linkage with Montrose & Inverbervie."
+        },
+        {
+          "type": "category",
+          "name": "Esigangeni Parish (Companion Diocese of Eswatini)",
+          "note": "Revd. Abraham Gama, Revd. Nimrod Dlamini, and Revd. Petros Dlamini,"
+        },
+        {
+          "type": "parish",
+          "name": "St Peter",
+          "place": "Bettendorf",
+          "note": "Elaine Caldbeck"
+        },
+        {
+          "type": "parish",
+          "name": "St Alban",
+          "place": "Davenport",
+          "note": "for discernment, and for ministry development team in formation"
+        },
+        {
+          "type": "parish",
+          "name": "St Mark",
+          "place": "Maquoketa",
+          "note": "Bob North"
+        },
+        {
+          "type": "category",
+          "name": "Rangu Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Charles Dasiyo, Revd. Isaac Ephraima."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lay Ministry in the Diocese of Brechin (Companion Diocese of Brechin)",
+          "note": "Lay Readers, Lay Worship Leaders and Eucharistic Assistants in their worship and pastoral ministries."
+        },
+        {
+          "type": "category",
+          "name": "KaHhohho Parish (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Nomkhosi Zulu and Revd. Dudu Malambe"
+        },
+        {
+          "type": "parish",
+          "name": "St Paul",
+          "place": "Durant",
+          "note": "Rodney Underwood (ELCA)"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Muscatine",
+          "note": "Kevin Powell"
+        },
+        {
+          "type": "category",
+          "name": "Naakiri Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Andrew Keliopa, Revd. Richard Peter."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. James, Stonehaven (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Canon Mary Jepp; Changes as Mary finishes this year; Their work in and with the community of Stonehaven; their link with St Ternan's Muchalls"
+        },
+        {
+          "type": "category",
+          "name": "Uniswa Chapelry (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene, Lay Ministers, ASF and lectures and support staff"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Cedar Rapids",
+          "note": "John Greve, Diane Eddy"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Cedar Rapids",
+          "note": "Brian Gross, Melody Rockwell"
+        },
+        {
+          "type": "category",
+          "name": "Nabubu Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Charles Makana."
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "University Chaplaincies and Relationships (Companion Diocese of Brechin)",
+          "note": "Dundee University; Abertay University; Al Maktoum College."
+        },
+        {
+          "type": "category",
+          "name": "Mhlume /Tshaneni Parochial District (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene and Lay Ministers. All environmental Networks- Green Anglicans"
+        },
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Clinton",
+          "note": "Kevin Emge"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Ottumwa",
+          "note": "for discernment, Shep Brown (senior warden)"
+        },
+        {
+          "type": "category",
+          "name": "Nambazia Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Mark Peter, Revd. Daniel Sangbaagbia."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Salvador, Dundee (Companion Diocese of Brechin)",
+          "note": "The vestry and all working to support them in their vacancy. The Food Cupboard Project and Maxwell Centre, Engaging with the wider community."
+        },
+        {
+          "type": "category",
+          "name": "Lomahasha Parish (Companion Diocese of Eswatini)",
+          "note": "Revd. Richard Shiba, Revd. John Mahlalela and Revd. Elton Mahlalela. Local churches: to appreciate and recognize the needs of their communities, and that they worship and bring hope and transformation."
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Burlington",
+          "note": "Carl Mann"
+        },
+        {
+          "type": "parish",
+          "name": "St Michael",
+          "place": "Mount Pleasant",
+          "note": "for discernment, Matt Mitchell (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "St Timothy",
+          "place": "West Des Moines",
+          "note": "Kyle Carswell, Jeanie Smith"
+        },
+        {
+          "type": "category",
+          "name": "For peacemakers working for peace throughout South Sudan (Companion Diocese of Nzara)",
+          "note": "The Most Revd. Canon Dr. Samuel Enosa Peni, Stephen Mou, Nelson Fitch, Manyang Gabriel and Provincial Commission on Justice Peace and Reconciliation."
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Council (Companion Diocese of Brechin)",
+          "note": "Council members and Diocesan Officers & Elliott Scarfe, Administrator"
+        },
+        {
+          "type": "category",
+          "name": "Ezulwini Parish (Companion Diocese of Eswatini)",
+          "note": "Revd. Ernest Mnisi and Revd. Fakazi Tsabedze. Self-supporting clergy and worship teams."
+        },
+        {
+          "type": "parish",
+          "name": "St Luke",
+          "place": "Fort Madison",
+          "note": "ministry development team members: Shelley Dowling, Kelly Shields"
+        },
+        {
+          "type": "parish",
+          "name": "St John",
+          "place": "Keokuk",
+          "note": "for discernment"
+        },
+        {
+          "type": "category",
+          "name": "Yubu Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Emmanuel Gabriel."
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Saints, Glencarse (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ven Ian Young; Their worshiping and pastoral life in the Carse of Gowrie"
+        },
+        {
+          "type": "category",
+          "name": "Lubombo Parish (Companion Diocese of Eswatini)",
+          "note": "Revd. Mandla Bhembe. Older people, that the wisdom and experience of the older generation will not be lost. Give thanks for church lunch clubs and daycare centers, as they face the challenge of growing numbers of people needing care."
+        },
+        {
+          "type": "parish",
+          "name": "St Andrew",
+          "place": "Chariton",
+          "note": "Fred Steinbach"
+        },
+        {
+          "type": "parish",
+          "name": "St James",
+          "place": "Oskaloosa",
+          "note": "Terry Kleven"
+        },
+        {
+          "type": "category",
+          "name": "All Angel Yabongo Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Isaac Philemon Zarangbaya, Revd. Philemon Abidayo."
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Laurence, Laurencekirk (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ellie Charman, Lay Readers: Georgie Middleton and Sue Rushforth"
+        },
+        {
+          "type": "category",
+          "name": "St. John the Baptist, Drumlithie (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ellie Charman, Lay Readers: Georgie Middleton and Sue Rushforth"
+        },
+        {
+          "type": "category",
+          "name": "St. Palladius, Drumtochty (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ellie Charman, Lay Readers: Georgie Middleton and Sue Rushforth"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew, Fasque (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ellie Charman, Lay Readers: Georgie Middleton and Sue Rushforth"
+        },
+        {
+          "type": "category",
+          "name": "Zandondo Parish (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene, Revd. John Khoza. Retired Bishops and Clergy; Fellowship of vocation in the Church."
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Iowa City",
+          "note": "Nora Boerner, Judith Crossett, Kevin Edens, Marcus Haack"
+        },
+        {
+          "type": "category",
+          "name": "Old Brick, Iowa City",
+          "note": "Rod Ness (Executive Director), Old Brick Board"
+        },
+        {
+          "type": "category",
+          "name": "Beloved Community Initiative",
+          "note": "Lizzie Gillman, Kinsey Mazunik; BCI Board"
+        },
+        {
+          "type": "category",
+          "name": "Agape Café",
+          "note": "Jenny Britton, and for co-directors: Ellee Murphey and Ryan Mohwinkle, Advisory Committee and Volunteers"
+        },
+        {
+          "type": "category",
+          "name": "St. Gabriel Gangara Parish (Companion Diocese of Nzara)",
+          "note": "Revd. James Edward, Revd. Deacon Peter Yasona Maruka."
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Martin, Dundee (Companion Diocese of Brechin)",
+          "note": "Interim Priest: Ashley Cummins; Lay Reader: Iain Turnbull, The vestry and all working to support them in their vacancy"
+        },
+        {
+          "type": "category",
+          "name": "Luve Parish (Companion Diocese of Eswatini)",
+          "note": "Venerable Charles Kunene, Revd Mphumuzi Maziya. For Christians involved in politics, human rights and justice. Men's Fellowships in Parishes."
+        },
+        {
+          "type": "parish",
+          "name": "St Andrew",
+          "place": "Des Moines",
+          "note": "Team Based Ministry, Lizzie Gillman, Eric Rucker, Mike DeFelice (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Cush",
+          "place": "Des Moines",
+          "note": "Jacob Deng Aleer"
+        },
+        {
+          "type": "parish",
+          "name": "St Luke",
+          "place": "Des Moines",
+          "note": "Martha Kester"
+        },
+        {
+          "type": "parish",
+          "name": "St Mark",
+          "place": "Des Moines",
+          "note": "Kathy Travis"
+        },
+        {
+          "type": "category",
+          "name": "Mageda Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Martin Bati."
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chaplaincy Services through the Diocese (Companion Diocese of Brechin)",
+          "note": "especially National Health Service: All National Health Service Chaplains, Trust members and Administrators, all NHS chaplaincy from local ministry teams; Cadet forces chaplains; School Chaplains; Prison Ministries: Chaplains, Prison Fellowship, Prison staff and prisoners and their families. St. Christopher, Royal Marine Base, Condor, Arbroath"
+        },
+        {
+          "type": "category",
+          "name": "Pigg's Peak (Companion Diocese of Eswatini)",
+          "note": "Revd Alban Hlophe and Revd Theresa Mbingo. Thokoza Anglican Conference Centre, Board and staff."
+        },
+        {
+          "type": "parish",
+          "name": "St Matthew-by-the-Bridge",
+          "place": "Iowa Falls",
+          "note": "for discernment, Jim Hamman (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Webster City",
+          "note": "Catherine Schroeder"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Boone",
+          "note": "Catherine Schroeder"
+        },
+        {
+          "type": "category",
+          "name": "St. John Akorome Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Gordon Sume."
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Souls, Invergowrie (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Lynn Davidson: Engaging with their community and their link with St. Margaret Lochee"
+        },
+        {
+          "type": "category",
+          "name": "Zombodze Parochial District (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene, and Revd Rueben Matsebula"
+        },
+        {
+          "type": "parish",
+          "name": "St Paul",
+          "place": "Grinnell",
+          "note": "Wendy Abrahamson"
+        },
+        {
+          "type": "parish",
+          "name": "St Stephen",
+          "place": "Newton",
+          "note": "for discernment, Rita Baker (senior warden), Merle Smith"
+        },
+        {
+          "type": "category",
+          "name": "St. Anna Yabua II Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Najenty Simon, Revd. Deacon Isai Kassiano."
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Rood, Carnoustie (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Martin Allwood; Assistant Curate: Enza Gibson; Lay Reader: Jean Fenwick; Engaging in their local community and their link with Holy Trinity Monifieth."
+        },
+        {
+          "type": "category",
+          "name": "Mankayane Parish (Companion Diocese of Eswatini)",
+          "note": "Revd Thandekile Zulu, Revd Humphrey Mavuso: Widows and widowers of Clergy and their entire families."
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin",
+          "place": "Perry",
+          "note": "Don Keeler"
+        },
+        {
+          "type": "parish",
+          "name": "St Paul",
+          "place": "Marshalltown",
+          "note": "Richard Graves"
+        },
+        {
+          "type": "category",
+          "name": "Dingapai Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Martin Joel"
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary and St. Peter, Montrose (Companion Diocese of Brechin)",
+          "note": "Rector: Canon Jim Benton-Evans. Outreach to the community and schools and their linkage with Brechin."
+        },
+        {
+          "type": "category",
+          "name": "St. David of Scotland, Inverbervie (Companion Diocese of Brechin)",
+          "note": "Rector: Canon Jim Benton-Evans. Outreach to the community and schools and their linkage with Brechin."
+        },
+        {
+          "type": "category",
+          "name": "Manzini Parish (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene, Revd Dumisani Matsebula, Revd Mthetheleli Simelane, Revd Percy Shabangu, Revd Celiwe Mkhabela and Revd Samson Maseko."
+        },
+        {
+          "type": "parish",
+          "name": "St Paul",
+          "place": "Council Bluffs",
+          "note": "for discernment; Abby Haggerty (senior warden)"
+        },
+        {
+          "type": "category",
+          "name": "Ringasi Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Jeremiah James"
+        },
+        {
+          "type": "category",
+          "name": "Nagero Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Paul Luka"
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Ninian, Dundee (Companion Diocese of Brechin)",
+          "note": "Priest in Charge: Dean Kenneth Gibson; Girls Club, Stay & Play, Mid-Lin Day Care. Engaging in the community."
+        },
+        {
+          "type": "category",
+          "name": "All Parish Wardens and PCC members (Companion Diocese of Eswatini)"
+        },
+        {
+          "type": "category",
+          "name": "Retired Clergy (Companion Diocese of Eswatini)",
+          "note": "Revd Gregory Makhubu, Revd Malo Mthande, Revd Samketi Dlamini, Revd Isiah Dlamini, Revd Amon Manzini, Rev Joshua Fakudze, Revd Richard Shiba, Revd Robert Nhlengethwa."
+        },
+        {
+          "type": "parish",
+          "name": "St John by the Campus",
+          "place": "Ames",
+          "note": "Tom Early, Greta Muller Levis, assisting priests Mary Jane Oakland, Paul Gennett"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Youth Ministry Development Team"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Young Adult Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Nambia Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Philemon Abudayo"
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Margaret, Lochee, Dundee (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Lynn Davidson; all assistants in leadership; planning for future ministry and mission."
+        },
+        {
+          "type": "category",
+          "name": "Nhlangano Parish (Companion Diocese of Eswatini)",
+          "note": "Revd Bhekisisa Dlamini, lay misters, and Pasture Valley Children's home."
+        },
+        {
+          "type": "parish",
+          "name": "St John",
+          "place": "Glenwood",
+          "note": "Ministry Development Team: Karen McCallan, Mark Triplett; Donna Martin (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "St John",
+          "place": "Shenandoah",
+          "note": "Holly Scherff"
+        },
+        {
+          "type": "category",
+          "name": "Nakofo Parish (Companion Diocese of Nzara)",
+          "note": "Revd. John Samuel, Revd. Samuel Philemon."
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Luke, Downfield and Centre of Mission, Dundee (Companion Diocese of Brechin)",
+          "note": "Priest in Charge and Lead Evangelist: Canon Kerry Dixon; Pioneer Evangelist: Steve Waller; Lay Readers: Bruce Gowans, Georgie Middleton; Partnership working with Church Army. The members of the Centre of Mission Steering Group. St Luke's life and work with so many vulnerable people in the City."
+        },
+        {
+          "type": "category",
+          "name": "St Michael's Chapelry (Companion Diocese of Eswatini)",
+          "note": "Archdeacon Charles Kunene, Revd Zamekile Ndzimandze, All Anglican Schools in the Diocese, the Grantee, and CHN Sisters."
+        },
+        {
+          "type": "parish",
+          "name": "St Paul",
+          "place": "Harlan",
+          "note": "Trinity Cluster"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Denison",
+          "note": "Trinity Cluster"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Carroll",
+          "note": "Trinity Cluster; Diana Wright"
+        },
+        {
+          "type": "category",
+          "name": "Nakpudu Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Alice Otoniel, Revd. Juma Freza."
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all who work with children and young people (Companion Diocese of Brechin)",
+          "note": "Diocesan Children and Youth Officer: Claire Benton-Evans; Provincial Youth Network; Diocesan Rep: 18-25 representative Aurelia Arun; work to help churches relate to children and families and to create youth networks in the diocese."
+        },
+        {
+          "type": "category",
+          "name": "Usuthu Mission Parish (Companion Diocese of Eswatini)",
+          "note": "Venerable Nomkhosi Zulu, Revd Jabulani Maseko, Revd Thandazile Simelane, Revd Thulani Makhubu, and Revd Meshack Shabangu. The girls and boys hostel and caretaker."
+        },
+        {
+          "type": "category",
+          "name": "For Theological Seminaries, their trustees, faculties and students; and for our postulants, candidates, and ministry development teams in formation"
+        },
+        {
+          "type": "category",
+          "name": "Central Archdeaconry (Companion Diocese of Nzara)",
+          "note": "Revd. Canon Samuel Phillip."
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Holy Trinity, Monifieth (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Martin Allwood; Assistant Curate: Enza Gibson; Planning for the future, the shared ministry link with Holy Rood Carnoustie."
+        },
+        {
+          "type": "category",
+          "name": "Motshane Parish (Companion Diocese of Eswatini)",
+          "note": "Rev Dr Sicelo Dlamini; Department of Training for Ministries Director and entire Board. The college of the Transfiguration staff and ordinands and those undergoing theological training in ACSA."
+        },
+        {
+          "type": "parish",
+          "name": "St Paul Indian Mission",
+          "place": "Sioux City",
+          "note": "for discernment, Barbara Macais (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "St Thomas",
+          "place": "Sioux City",
+          "note": "for discernment, Amanda Beller (senior warden), Patricia Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Rangu Archdeaconry (Companion Diocese of Nzara)",
+          "note": "Revd. Isaac Philemon."
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Ternan, Muchalls (Companion Diocese of Brechin)",
+          "note": "Priest in charge: Canon Mary Jepp; Changes as Mary finishes this year; local leadership team; Their link with St James' Stonehaven."
+        },
+        {
+          "type": "category",
+          "name": "Shiselweni Parish (Companion Diocese of Eswatini)",
+          "note": "Venerable Charles Kunene, Revd Andreas Mavimbela. The Eswatini Bible Society and the Federation of the people living with Disabilities in Eswatini."
+        },
+        {
+          "type": "parish",
+          "name": "St Mark",
+          "place": "Fort Dodge",
+          "note": "Kris Leaman"
+        },
+        {
+          "type": "parish",
+          "name": "St Anne by the Fields",
+          "place": "Ankeny",
+          "note": "Vincent Bete"
+        },
+        {
+          "type": "category",
+          "name": "Yabua Archdeaconry (Companion Diocese of Nzara)",
+          "note": "Revd. Canon Ruben William."
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary Magdalene, Dundee (Companion Diocese of Brechin)",
+          "note": "Interim Pastor: Dean Fay Lamont; The vestry and all lay ministers working to support them in their vacancy."
+        },
+        {
+          "type": "category",
+          "name": "Liviyo Labofakazi (Companion Diocese of Eswatini)",
+          "note": "President Revd Alban Hlophe. Pray that scientific research will respect the life of all human beings and for medicine and treatment to be available for all."
+        },
+        {
+          "type": "parish",
+          "name": "St Thomas",
+          "place": "Algona",
+          "note": "Kate Campbell"
+        },
+        {
+          "type": "parish",
+          "name": "St Alban",
+          "place": "Spirit Lake",
+          "note": "Carolyn Tuttle"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Storm Lake",
+          "note": "Carolyn Tuttle"
+        },
+        {
+          "type": "category",
+          "name": "Sakure Archdeaconry (Companion Diocese of Nzara)",
+          "note": "Revd. Revd. Canon Keliopa Elisa, Revd. Amona Bullen."
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Drostan Church and Lodge, Tarfside (Companion Diocese of Brechin)",
+          "note": "Administrator: Peter Nelson. Planning and developments for the future."
+        },
+        {
+          "type": "category",
+          "name": "Mothers Union (Companion Diocese of Eswatini)",
+          "note": "President Mrs. Dudu Dlamini, Vice President, Thembie Manana and Zinhle Skosana, Secretary; Senani Mabusela, Treasurer, Ncamsile Myeni, members Thab”sile Masuku."
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Decorah",
+          "note": "Christine Gowdy-Jaehnig"
+        },
+        {
+          "type": "parish",
+          "name": "St James",
+          "place": "Independence",
+          "note": "Sue Ann Raymond, Tom Jones (ELCA), Marilyn Basquin (senior warden)"
+        },
+        {
+          "type": "category",
+          "name": "Nakofo Deanery (Companion Diocese of Nzara)",
+          "note": "Revd. John Samuel."
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy with Permission to Officiate and Warrant/Commissions (Companion Diocese of Brechin)",
+          "note": "Canon Prof David Brown, Gary Clink, Ashley Cummins, Patricia Duffett-Smith, Sam Ferguson, Mike Harris, Denise Herbert, Dean Fay Lamont, John Lyon, Paul McLaren-Cook, Graham Nevin, Dr Emma Percy, Prof Martyn Percy, Hamish Prior, Canon Dr Elizabeth Thomson, Canon Michael Turner, Dr Matt Ward, Prof Annalu Waller, Ven Ian Young"
+        },
+        {
+          "type": "category",
+          "name": "Clergy widow (Companion Diocese of Brechin)",
+          "note": "Mrs Patricia Shepherd."
+        },
+        {
+          "type": "category",
+          "name": "Anglican Women's Fellowship (Companion Diocese of Eswatini)",
+          "note": "Chaplain Revd Thandekile Zulu, President Ms. Thandi Zulu, and the entire Committee. Give thanks for the ministry of the Prison Fellowship and the dedication of prison chaplains. Pray for prisoners and their families, that they may find hope, restoration, and the strength to rebuild their lives."
+        },
+        {
+          "type": "parish",
+          "name": "New Song",
+          "place": "Coralville",
+          "note": "Jim Harrison, Lori Erickson"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Savior",
+          "place": "Orange City",
+          "note": "Michael Kugler"
+        },
+        {
+          "type": "category",
+          "name": "Yabongo Deanery (Companion Diocese of Nzara)",
+          "note": "Revd. Philemon Abidayo."
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Mary, Broughty Ferry (Companion Diocese of Brechin)",
+          "note": "Rector: Mark-Aaron Tisdale, Lay Readers: Sue Rowe and Elaine Hammersley"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Officials (Companion Diocese of Eswatini)",
+          "note": "Chancellor, Vice Chancellor, Registrar, Deputy Registrar."
+        },
+        {
+          "type": "parish",
+          "name": "St John",
+          "place": "Mason City",
+          "note": "for discernment, Jeanne Cornick (senior warden)"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Charles City",
+          "note": "Lou Micich (senior warden)"
+        },
+        {
+          "type": "category",
+          "name": "Nambazia Deanery (Companion Diocese of Nzara)",
+          "note": "Revd. Daniel Sangbaagbia."
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Officials (Companion Diocese of Brechin)",
+          "note": "Chancellor: Sheriff George Way; Registrar: John Thom; Diocesan Secretary: Dr Jaap Jacobs; Treasurer: Bob Main; Protection of Vulnerable Groups Officer: Denise Herbert; Bishop's PA: Elliott Scarfe; Diocesan Archivist: David Bertie"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan projects and programs (Companion Diocese of Eswatini)",
+          "note": "piggery, poultry, goats, forestry, Neighborhood Care Point's; children and their caretakers and the Home-based Care, the patients and their families."
+        },
+        {
+          "type": "parish",
+          "name": "St Luke",
+          "place": "Cedar Falls",
+          "note": "Elizabeth Duff Popplewell, Liane Nichols, Ruth Ratliff"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Waterloo",
+          "note": "Abigail Livingood"
+        },
+        {
+          "type": "category",
+          "name": "Nangirimo Deanery (Companion Diocese of Nzara)",
+          "note": "Revd. Zackilina Samuel, Revd. Alison Edward."
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Net Zero work in the Diocese of Brechin (Companion Diocese of Brechin)",
+          "note": "Charge work on sustainable transport and buildings; The work of the Provincial Net Zero team supporting the church communities. Brechin's Provincial Net Zero Champion: Jack Nevin. Diocesan Net Zero Representative: Prof Peter Sharp"
+        },
+        {
+          "type": "category",
+          "name": "Anglican Youth Council (Companion Diocese of Eswatini)",
+          "note": "Chaplain: Revd Zama Sigudla, Youth Director, Mr. Colani Shabangu; President Nkosinathi Msibi, Vice President, Menzikhaya Matsenjwa, Secretary; Richard Dlamini, Vice Secretary Sihlanganise Maseko, Treasurer, Junior Msibi, members Sifiso Hlatshwayo, Sibonginkosi Dlamini."
+        },
+        {
+          "type": "category",
+          "name": "Chaplains serving in the Military, Hospitals, Prisons, Colleges, Universities and other Educational Institutions",
+          "note": "Martha Kester (Army National Guard), Anne Williams (Chaplain, All Faiths Chapel, Anamosa State Penitentiary)"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Chaplains to the Retired clergy",
+          "note": "John Doherty (coordinator)"
+        },
+        {
+          "type": "category",
+          "name": "All members, associates, and companions of the various Religious Orders"
+        },
+        {
+          "type": "category",
+          "name": "Sangua Deanery (Companion Diocese of Nzara)",
+          "note": "Revd. Alison Ezibon."
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those in discernment in the diocese for Ministry (Companion Diocese of Brechin)",
+          "note": "Scottish Episcopal Institute staff and students."
+        },
+        {
+          "type": "category",
+          "name": "Sunday School (Companion Diocese of Eswatini)",
+          "note": "Chaplain Revd Zama Sigudla, President Mr. Makhosonkhe Mavuso and the entire committee, teachers and pupils. The Servers Guild and Evangelism and Evangelism Committees in the Church."
+        },
+        {
+          "type": "category",
+          "name": "For Coordinators and Faculty of EfM"
+        },
+        {
+          "type": "category",
+          "name": "For 2026 offerings, experiments and discernment post Summer Ministry School and Retreat, and all Christian formation"
+        },
+        {
+          "type": "category",
+          "name": "For Licensed Ministers: Pastoral Leaders, Worship Leaders, Preachers, Eucharistic Ministers, Eucharistic Visitors, Catechists, and Evangelists"
+        },
+        {
+          "type": "category",
+          "name": "Manguri Parish (Companion Diocese of Nzara)",
+          "note": "Revd. William Abiuda"
+        },
+        {
+          "type": "category",
+          "name": "Nambatu Parish (Companion Diocese of Nzara)",
+          "note": "Revd. James Edward."
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Communications Team (Companion Diocese of Brechin)",
+          "note": "Diocesan Website, IT, Social Media and Brechin Bulletin: Elliott Scarfe; Work to upgrade websites and communication strategies."
+        },
+        {
+          "type": "category",
+          "name": "Diocesan staff (Companion Diocese of Eswatini)",
+          "note": "The Rt Revd Dr. Dalcy Dlamini; Diocesan Secretary Ms. Sebenzile Nxumalo; Finance Officer Mr. Simanga Vilakati; Personal Assistant to the Bishop Ms. Hlengiwe Masina; Grantee-Ms. Faith Mkhonta; Receptionist Mrs. Xolile Manyatsi; Projects Officers; Hostel Caretaker Ms. Thulisile Hlophe; and all working on Diocese projects"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Officers",
+          "note": "Chancellor: Jean Davis; Treasurer: Bill Smith; Historiographer: for discernment; Secretary of Convention: Nora Boerner"
+        },
+        {
+          "type": "category",
+          "name": "St. Timothy Secondary School (Companion Diocese of Nzara)",
+          "note": "Revd. Capt. Mary Ngera Taddeo, and Staff; Simon Mborigie in Episcopal University of South Sudan; 2 other students in Bishop Yeremaya Theological Institute (BYTI)."
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Strategy (Companion Diocese of Brechin)",
+          "note": "Healthy Church, Healthy Leaders & Healthy Environment. For all clergy and leaders engaging with healthy discipleship"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Trust Board (Companion Diocese of Eswatini)",
+          "note": "Diocesan Executive Committee/ Finance and the Cathedral Chapter. The Council of Swaziland Churches: the member churches, Secretary Canon Vusi Kunene and staff. Board of Education and Board of Social Development to enact programs that will support the Diocese response to social needs of the community."
+        },
+        {
+          "type": "parish",
+          "name": "St John",
+          "place": "Dubuque",
+          "note": "Susan Forshey"
+        },
+        {
+          "type": "category",
+          "name": "Good Samaritan Primary Health Care Center (Companion Diocese of Nzara)",
+          "note": "Staff; and teachers and students of St. Timothy's School and ECS Primary School."
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all of the Diocese (Companion Diocese of Brechin)",
+          "note": "Vestry Members and Lay Representatives; Church Musicians and Volunteers"
+        },
+        {
+          "type": "category",
+          "name": "Bishops Resigned",
+          "note": "C. Christopher Epting; Alan Scarfe"
+        },
+        {
+          "type": "category",
+          "name": "Iowa Non-parochial clergy",
+          "note": "Troy Beecham, Sean Burke, Roy Chrisman, Laurie Finn, Katie Mears, Stephanie Moncrieff, Catherine Quehl-Engel, Marilyn van Duffelen, Paul Walker, Randy Webster"
+        },
+        {
+          "type": "category",
+          "name": "Iowa Retired Deacons",
+          "note": "Kay Beach, A. Fred Berger, Mark Eccles, John Harper, Margaret Harris, Patricia Kirkland, Elizabeth Koffron-Eisen, Charles Lane, Sarah Lopez, William Magie, Mike McCarthy, Dian Ong, Patricia Roberts, Miriam Smith, Susanne Watson Epting, Marilyn Wentzien"
+        },
+        {
+          "type": "category",
+          "name": "Iowa Retired Priests",
+          "note": "Kathryn Campbell, Lynne Carver, Mary Christopher, Mary Cole-Duvall, Elizabeth Coulter, Karen Crawford, James Davis, Julia Easley, Patrick Genereux, Stacey Gerhart, James Griesheimer, Kathy Halverson-Rigatuso, Alice Haugen, Raisin Horn; John Horn, Linda Hughes, Sherri Hughes-Empke, Georgia Humphrey, Margaret Jackson, Wayne Kamm, Carolyn Keck, Bob Kem, Martha Lang, Randy Lyle, Lauren Lyon, Sharon Mahood, Barb McCaulley, Ken Messer, Kathleen Milligan, Curt Moermond, James Norton, Wayne Pelkey, Jeannette Pillsbury, Charles Pope, Beth Preston, William Pugliese, Melvin Schlachter, Peter Sickels, Arthur Stanley, Jane Stewart, Tim Vann, Karen Wacome, Ben Webb, Marlin Whitmer, Bonnie Wilkerson"
+        },
+        {
+          "type": "category",
+          "name": "Nazaretha Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Edward Daima"
+        },
+        {
+          "type": "category",
+          "name": "Navundio Parish (Companion Diocese of Nzara)",
+          "note": "Revd. Joseph Taban"
+        }
+      ]
+    }
+  ]
+}
