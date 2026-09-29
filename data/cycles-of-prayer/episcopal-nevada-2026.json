@@ -1,0 +1,562 @@
+{
+  "id": "episcopal-nevada-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Nevada",
+  "dioceseShort": "nevada",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Liturgical Calendar and Prayer List",
+  "sourceFile": "Diocesan web page, fetched directly from https://ednv.org/2026-liturgical-calendar.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source page (a single Squarespace page titled \"2026 Liturgical Calendar and Prayer List\") interleaves TWO distinct cycles under each date: an italic line naming that week's/day's entry from the worldwide Anglican Cycle of Prayer (a province or diocese of the Anglican Communion), and a separate bold-italic line naming the Diocese of Nevada's own local prayer subject (a parish or category). Only the bold-italic, diocese-local line is transcribed here, per this corpus's scope-'diocese' convention; the Anglican Cycle of Prayer content belongs in the separate scope-'communion' file and is not duplicated here.",
+    "The source's liturgical year runs Advent 2025 through the Last Sunday after Pentecost 2026 (First Sunday of Advent, Nov 30, 2025, through Nov 22, 2026), spanning the 2025/2026 calendar-year boundary the way this corpus's existing episcopal-california-2026.json and episcopal-georgia-2026.json precedents do; `year` is 2026 per this corpus's per-year filing convention (the liturgical/publication year the source's page is titled for), even though the first 5 entries (Nov 30 - Dec 28) fall in calendar year 2025. Each date's weekday (all Sundays except All Saints, Nov 1, which is itself often observed on the Sunday nearest) was independently verified against the real 2025/2026 calendar before assignment.",
+    "Several dates in the source carry ONLY an Anglican Cycle of Prayer line and no diocese-local (bold) line at all -- these are excluded from `entries` here since there is no Nevada diocesan-cycle subject to record for that date, not a gap in this transcription: Dec 24, 2025 (Christmas Eve), Dec 25, 2025 (Christmas Day), Jan 6, 2026 (The Epiphany), Feb 18, 2026 (Ash Wednesday), Apr 2, 2026 (Maundy Thursday), Apr 3, 2026 (Good Friday), Apr 4, 2026 (Holy Saturday/Easter Vigil), Apr 5, 2026 (Easter Day), May 14, 2026 (Ascension Day), and Aug 6, 2026 (The Transfiguration).",
+    "The source's own Sunday-after-Pentecost numbering skips directly from \"Twenty Second Sunday After Pentecost\" (Oct 25) to \"Twenty Fourth Sunday After Pentecost\" (Nov 8), with no \"Twenty Third\" printed anywhere -- All Saints (Nov 1) displaces that week's ordinary numbering in the source's own count. Preserved exactly as printed, not corrected or renumbered.",
+    "\"Grace in the Desert, LasVegas\" (Feb 15) preserves the source's own missing space in \"LasVegas\" verbatim, per this corpus's standing rule against silently correcting a diocese's own published document.",
+    "\"Holy Spirit, Bullhead City\" (May 10) is transcribed exactly as printed even though Bullhead City, Arizona is not itself in Nevada; not altered or second-guessed.",
+    "Three subjects are recorded as `category` rather than `parish` because the source gives no separable city/town the way its ordinary parish entries do (a phrase naming an institution, camp, or museum rather than a bare \"Congregation, Town\" pair), and the schema's `place` field applies only to type `parish`: \"Galilee Episcopal Camp and Retreat Center, Glenbrook\" (Feb 22), \"St. Jude's Ranch for Children - Chapel of the Holy Family\" (Oct 4), \"Western Missionary Museum at Old St. Paul, Virginia City\" (Oct 11). The full printed string (including any embedded place name) is kept in `name` unsplit for these, the same treatment this corpus's episcopal-colorado-2026.json precedent gives its own prose-style category entries (e.g. \"St. Andrew's Community Center in Manitou Springs\").",
+    "\"Diocesan Treasurers and finance volunteers\" (Apr 19) is transcribed with the source's own internal double space before the closing tag collapsed to a single space, matching this corpus's normal whitespace handling; no wording was altered.",
+    "Congregation names combining two dedications/parishes with a \"|\" character are transcribed exactly as printed, including the character itself: \"All Saints | Todos los Santos, Las Vegas\" (Nov 1), \"Grace | St. Francis, Lovelock\" (Nov 15), \"Christ Church | Cristo Rey, Las Vegas\" (Nov 22)."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": "First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Communion"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": "Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": "Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": "Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Missionaries and Church Planters"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": "First Sunday After Christmas Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday After Christmas Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Vestries and Parish Annual Meetings"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday After the Epiphany, The Baptism of Our Lord",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday After the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday After the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy",
+          "place": "Henderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday After the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Youth Leaders and Volunteers"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday After the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Pioche"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday After the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace in the Desert",
+          "place": "LasVegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Galilee Episcopal Camp and Retreat Center, Glenbrook"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Mission District Deans"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick",
+          "place": "Incline Village"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Creation Care Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Non-parochial and specially licensed clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George",
+          "place": "Austin"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Treasurers and finance volunteers"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Catherine of Siena",
+          "place": "Reno"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Chancellors"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Bullhead City"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels and St. Mary the Virgin",
+          "place": "Pyramid Lake"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday After Pentecost, Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Cathedral",
+          "place": "Reno"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Second Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Fallon"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Third Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and those in discernment"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Fourth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lay Eucharistic Ministers and Visitors"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Fifth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John in the Wilderness",
+          "place": "Glenbrook"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "Sparks"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Retired Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter",
+          "place": "Carson City"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Women, Daughters of the King, and Episcopal Community"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy Spouses"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul",
+          "place": "Elko"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Samaritan Mission",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Province VIII Dioceses"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew",
+          "place": "Ely"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Hugh of Lincoln",
+          "place": "Silver Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher",
+          "place": "Boulder City"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Coventry Cross",
+          "place": "Minden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Jude's Ranch for Children - Chapel of the Holy Family"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Western Missionary Museum at Old St. Paul, Virginia City"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty First Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Society of the Magi and Stewardship Teams"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty Second Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke Episcopal Church",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints | Todos los Santos",
+          "place": "Las Vegas"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty Fourth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin in the Desert",
+          "place": "Pahrump"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty Fifth Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace | St. Francis",
+          "place": "Lovelock"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday After Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church | Cristo Rey",
+          "place": "Las Vegas"
+        }
+      ]
+    }
+  ]
+}

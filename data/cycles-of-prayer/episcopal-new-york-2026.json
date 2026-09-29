@@ -1,0 +1,3853 @@
+{
+  "id": "episcopal-new-york-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of New York",
+  "dioceseShort": "new-york",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Calendar of Intercession",
+  "sourceFile": "PDF fetched directly from https://dioceseny.org/wp-content/uploads/2026/01/2026-Calendar-of-Intercession.pdf (12 pages), extracted with pdftotext -layout and visually cross-checked against a rendered page image (pdftoppm -png -r 150) to confirm the single-column layout.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Genuinely a full calendar-year 2026 DAILY cycle (365 entries, one per calendar day Jan 1 - Dec 31), not weekly, per the source's own title \"Calendar of Intercession\" -- confirmed by counting 365 distinct \"Month D, 2026\" date lines in the extracted text, matching the non-leap 2026 calendar exactly. Unlike the corpus's other 365-entry precedent (episcopal-new-jersey-2026.json), this source's own layout is a clean single-column table (one date, one line of text) confirmed by visually rendering page 1 as an image and comparing it directly against the pdftotext -layout extraction -- no column-interleaving risk was found, and the four wrapped (two-line) entries in the raw text (Jan 27, Feb 10, Mar 10, Apr 25 -- each a bishop's consecration-anniversary entry whose sentence ran past one line) were confirmed to join correctly into a single entry by their position and by the rendered page.",
+    "Each day names exactly one subject in the source (never multiple congregations grouped under one date), so `subjects` has length 1 for every entry except December 28 (see below). Subject `type` was assigned per this corpus's schema rule (parish = a specific congregation with a given town/city; category = anything else, including diocesan offices/committees/commissions, named ministries, religious orders/communities, schools, chaplaincies, retreat/conference centers, bishops named on their consecration anniversaries, and named civic/diocesan observance days) -- this required a judgment call on essentially every entry, since the source itself does not label which of these its entries are. Ambiguous or borderline calls are on the specific dates disclosed below; the great majority of entries were unambiguous (a clear \"Church Name, Town\" pattern for parishes, or a clear office/committee/ministry sentence for categories).",
+    "`liturgicalNote` is left null on every entry. This source's own calendar is diocesan-content-driven, not keyed to the Church's liturgical calendar -- none of the eight liturgical observance days this corpus otherwise looks for (Ash Wednesday, Palm/Passion Sunday, Maundy Thursday, Good Friday, Holy Saturday, Easter Sunday, Thanksgiving Day, Christmas Day) is actually labeled as such anywhere in the source (e.g. Ash Wednesday, Feb 18, 2026, is printed as \"Episcopal Relief and Development\"; Easter Sunday, Apr 5, as \"Hospice Chaplains of the Diocese\"; Christmas Day, Dec 25, as \"The Church of the Holy Nativity, Bronx\" -- an ordinary parish day). A handful of dates DO name civic/diocesan observances as their sole content (\"The Eve of Holocaust Remembrance Day\", Jan 26; \"Absalom Jones Observance\", Feb 13; \"Solemn day of remembrance of the attack on Pearl Harbor\", Dec 7; the Sept 11 entry) -- these are transcribed as `category` subjects using the source's own text as `name`, not promoted to `liturgicalNote`, since they are not among this corpus's established set of labeled liturgical dates and the source does not print them as a label attached to some other subject (the observance IS the day's only content).",
+    "January 1 and April 21 both print \"[The ]Congregation of St. Saviour at the Cathedral Church of St. John the Divine\" (Jan 1 has the leading \"The\", Apr 21 does not -- both preserved exactly as printed) -- recorded as `category`, since no town/city is separately given (only \"at the Cathedral Church of St. John the Divine\", which is not itself a place name) and it is unclear whether this is meant as a distinct parish-like congregation or a ministry housed at the Cathedral.",
+    "January 3, \"Community at the Crossing, Cathedral of St. John the Divine\", is `category` for the same reason -- \"Cathedral of St. John the Divine\" after the comma is not a town/city, so it does not fit the parish subject shape's required `place` field.",
+    "January 19, \"St. Peter's Church, Lithgow, Millbrook\" (two commas), is a judgment call: transcribed as a `parish` subject with name \"St. Peter's Church, Lithgow\" (Lithgow being part of this specific congregation's own printed name, a hamlet in the Town of Millbrook) and place \"Millbrook\" (the town). This splits the source's own comma-separated text differently than every other single-comma parish line in this file; disclosed rather than silently resolved.",
+    "January 23, \"The 2026 Learning Pilgrims to Cuernavaca, Mexico\", is `category` despite ending in a real place name -- it names a diocesan pilgrimage group, not a congregation, so \"Cuernavaca, Mexico\" is the pilgrimage's destination, not this subject's own town.",
+    "January 27's source text reads \"The. Rt. Rev. Catherine S. Roskam...\" -- an apparent stray period after \"The\", preserved exactly as printed rather than silently corrected to \"The Rt. Rev.\"",
+    "February 1 (\"St John's Church (Tuckahoe), Yonkers\") and November 16 (\"St Margaret's Church (Longwood), Bronx\") both print \"St\" without a period, unlike the great majority of this file's other \"St.\" abbreviations -- preserved exactly as printed in each case, not normalized to match the file's more common style.",
+    "A number of entries that end in a real New York place name are nonetheless `category`, not `parish`, because the named entity is a school, nursery school, chaplaincy, retreat/conference center, or similar institution/ministry rather than itself a congregation (per this corpus's parish/category distinction, which requires the type-`parish` subject to be \"a specific congregation\"): e.g. \"Christ's Church Nursery School, Rye\" (Feb 8), \"Sunset Nursery School, Montrose\" (Jul 21), \"The Day School at Christ and St. Stephens, Manhattan\" (Aug 2), \"St. Thomas Choir School, Manhattan\" (Aug 3), \"St. Luke's School, Manhattan\" (Aug 9), \"St. Philip's Nursery School, Garrison\" (Aug 11), \"The Eliza Corwin Frost Child Center of Christ Church, Bronxville\" (Aug 12), \"Grace Church School, Manhattan\" (Aug 17), \"Jack and Jill School at St. George's Church, Manhattan\" (Aug 20), \"Resurrection Episcopal Day School, Manhattan\" (Aug 21), \"St. Hilda's and St. Hugh's School, Manhattan\" (Aug 22), \"Canterbury Uptown Chaplaincy, Manhattan\" (Sep 6), \"Canterbury Downtown Chaplaincy, Manhattan\" (Sep 19), \"Episcopal Chaplaincy at the United States Military Academy, West Point\" (Jul 3), and \"Trinity School, Manhattan\" (Jul 16, a school, distinct from any parish of the same/similar name). These are kept as `category` subjects with the source's full printed text as `name`, not split into a parish+place pair.",
+    "June 27, \"The Haitian Congregation of the Good Samaritan, Bronx\", IS recorded as `parish` (name \"The Haitian Congregation of the Good Samaritan\", place \"Bronx\") since it names a specific worshipping congregation, unlike the school/chaplaincy entries above.",
+    "May 24 prints \"The Church Club Of New York\" (capital \"Of\") while April 8 prints \"Church Club of New York\" (lowercase \"of\") -- two different capitalizations of what is evidently the same organization's name across two entries; both preserved exactly as printed, not normalized to match each other.",
+    "February 18 prints \"Episcopal Relief and Development\" while December 15 prints \"Episcopal Relief & Development\" -- the same organization named with \"and\" spelled out on one date and ampersanded on the other; both preserved exactly as printed.",
+    "July 10, \"Trinity Retreat Center in West Cornwall Connecticut\", is missing a comma before \"Connecticut\" (contrast with the file's many correctly comma-separated Town, State-less NY entries) -- preserved exactly as printed, treated as `category` (a retreat center, not a congregation).",
+    "November 25, \"Vergers, Acolyles, Servers, Chalice Bearers, and Ushers of the Diocese\" -- \"Acolyles\" is an apparent misspelling of \"Acolytes\", preserved exactly as printed rather than silently corrected.",
+    "December 28, \"The Church of the Holy Innocents, Highland Falls/St Mark's Chapel, Fort Montgomery\", names two distinct congregations in two distinct towns (Highland Falls and Fort Montgomery) joined by a slash on a single line -- unlike every other slash-joined \"yoked parish\" entry in this file, which shares a single place after one comma (e.g. April 23's \"Calvary/St George's Church, Manhattan\", June 17's \"Parish of Trinity Church/St Paul's Chapel, Manhattan\", November 15's \"St. John's Church/St. Paul's Chapel, South Salem\", all recorded as a single parish with one shared place). Because this entry genuinely names two different towns, it does not fit that same single-parish pattern; rather than guess at a split, it is kept as ONE `category` subject with the source's full text verbatim as `name`.",
+    "August 23 (\"St. Bartholomew's Church, Manhattan\") and August 24 (\"St. Bartholomew's Church, White Plains\") print the same congregation name for two different towns on consecutive days -- transcribed as printed with no correction; the source's cycle draws from roughly 200+ parishes across 365 days, so most congregations recur at least once and some names (St. Paul's, St. Andrew's, St. John's, Christ Church, Grace Church, etc.) are shared by multiple distinct congregations in different towns throughout the diocese -- this repetition and name-sharing is the source's own ordinary structure, not flagged individually beyond this note.",
+    "Every `parish` subject's `place` is exactly the town/borough the source prints after the entry's final comma (e.g. \"Manhattan\", \"Bronx\", \"Staten Island\" for New York City congregations, and the specific Hudson Valley/Westchester town for others); every `category` subject's `name` is the source's full line verbatim, since a diocesan office, committee, commission, school, ministry, religious order, or observance day does not carry a `place` field under this schema."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Congregation of St. Saviour at the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those taking the General Ordination Exams"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Community at the Crossing, Cathedral of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Warwick"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Epiphany",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's and Trinity Parish",
+          "place": "Tivoli"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Heavenly Rest",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Riverdale"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church (City Island)",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bi-Vocational Clergy of the NY Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Holy Communion",
+          "place": "Mahopac"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Administrative Support Staff to the Bishops"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Office of Advancement and Community Connections"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Comptroller and Accounting Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Regional Canons of the Diocese of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Peekskill"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Church, Lithgow",
+          "place": "Millbrook",
+          "note": "Source prints \"St. Peter's Church, Lithgow, Millbrook\" (two commas); transcribed here as congregation name \"St. Peter's Church, Lithgow\" (Lithgow being the hamlet in its name) with place \"Millbrook\" (the town) -- a judgment call, disclosed in file notes."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Cathedral School Students and Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The 2026 Learning Pilgrims to Cuernavaca, Mexico"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of our Savior",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Eve of Holocaust Remembrance Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The. Rt. Rev. Catherine S. Roskam, Retired Bishop Suffragan of New York, on the anniversary of her consecration"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Pleasant Valley"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Poughkeepsie"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Spring Valley"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Chester"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St John's Church (Tuckahoe)",
+          "place": "Yonkers"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church of Ramapo",
+          "place": "Suffern"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Chaplains who serve in hospitals and other health care settings"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pastoral Care Ministers and Visitors"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Committee to Elect a Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christ's Church Nursery School, Rye"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ's Church",
+          "place": "Rye"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Matthew Foster Heyd, on the day of his Installation as the XVII Bishop of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Trustees"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Office of the Canon for Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Absalom Jones Observance"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Standing Committee of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Congregational Development Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Middletown"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Creation Care Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Fund for Critical Clergy Needs Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Anti-Racism Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Fund for the Diaconate"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Investment Trust"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Port Jervis"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Disciplinary Board of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christian Formation Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ecumenical and Inter-religious Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Simon the Cyrenian Church",
+          "place": "New Rochelle"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ordination of Transitional Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop's Chaplain to Retired Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Association of Episcopal Colleges"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Canon to the Ordinary"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Foundation"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Office of the Canon for Transition Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Millbrook"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sparkill"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parish Wardens and Vestry Members"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Latinx Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Andrew ML Dietsche, XVI Bishop of New York on the anniversary of his consecration"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deputies to General Convention and Provincial Synod"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church (West Farms)",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "College for Congregational Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Poughkeepsie"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Congregations in Search of New Leadership"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rivendell Community"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Edward the Martyr",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph's Episcopal/Anglican Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Postulants and Candidates for the Priesthood"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Office of Diocesan Property Services"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Directors of Religious Education, Sunday School Teachers, and Nursery Care Providers"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Stand With Iraqi Christians"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "American Friends of the Episcopal Diocese of Jerusalem"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ecclesia Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Mediator",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Asian American Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Regeneration Church",
+          "place": "Pine Plains"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Prison Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For those churches being deconsecrated"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy Renewal of Ordination vows"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parish Administrators/Secretaries and Sextons of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Families of Clergy in the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holyrood Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hospice Chaplains of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Brotherhood and Sisterhood of St. Gregory"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Club of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Director of Diaconal Formation"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and Candidates for the Diaconate"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Community of the Holy Spirit"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Staff of the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Sisters of St. Margaret"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Those in Discernment"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Marlboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Monroe"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trustees of the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity Church Manhattan Faith Formation and Education"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Order of the Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Vassar Haiti Project"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Congregation of St. Saviour at the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trustees of the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary/St George's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's Church",
+          "place": "Newburgh"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Mark S. Sisk, XV Bishop of the Diocese of New York on the anniversary of his consecration"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Resurrection",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Church-in-the-Bowery",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Church",
+          "place": "Mount Kisco"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Resurrection",
+          "place": "Hopewell Junction"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "North Salem"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James the Less",
+          "place": "Scarsdale"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Goshen"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church San Marcos",
+          "place": "Tarrytown"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church-la Gracia",
+          "place": "White Plains"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Wappingers Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Order of the Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Committee for the Diaconate"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd",
+          "place": "Greenwood Lake"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd/la Iglesia de Buen Pastor",
+          "place": "Newburgh"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "New York Episcopal Cursillo"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd",
+          "place": "Roosevelt Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Good Shepherd",
+          "place": "Granite Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Mary D. Glasspool, Assistant Bishop, on the anniversary of her consecration"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Ordination of Vocational Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Allen K. Shin, Suffragan Bishop, on the anniversary of his consecration"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Committee for Campus Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Clericus Deans of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church Pension Group"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The National Association of Episcopal Schools"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Messiah",
+          "place": "Rhinebeck"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Psychotherapy and Spirituality Institute"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church Club Of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Ascension",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Ascension",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Ascension",
+          "place": "Mount Vernon"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ascension and Holy Trinity Church",
+          "place": "West Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Eglise Française du Saint-Esprit",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pastoral Visitors of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pastoral Counselors and Therapists of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Spiritual Directors of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity-Pawling School"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Church",
+          "place": "Pawling"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Seamen's Church Institute of New York and New Jersey"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church (Fountain Square)",
+          "place": "Larchmont"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Pleasantville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Barnabas",
+          "place": "Irvington-on-Hudson"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Archivist and Historiographer of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Garnerville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas' Church",
+          "place": "Ardsley"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "New City"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Fishkill"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Church",
+          "place": "Inwood"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All who work for the Episcopal Church Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Parish of Trinity Church/St Paul's Chapel",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "New Rochelle"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's-in-the-Wilderness Church",
+          "place": "Stony Point"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church (Getty Square)",
+          "place": "Yonkers"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's in the Village",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's Church",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Cornwall"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Order of St. John (New York Region)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Memorial Church",
+          "place": "Ellenville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Kingston"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Haitian Congregation of the Good Samaritan",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Apostles",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan LGBT Concerns Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Monticello"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia de San Juan Bautista",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Chaplaincy at the United States Military Academy, West Point"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All who serve in the U.S. Military from the New York Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Security Personnel in the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Disaster Response Leaders"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Human Trafficking Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Summer Camp Programs of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Incarnation Conference Center and Camp"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity Retreat Center in West Cornwall Connecticut"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rural and Migrant Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the poor, the weak, the sick, and the lonely"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Director of Operations and Human Resources"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The House of the Redeemer"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal School in the City of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Social Workers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Red Hook"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Anglican Observer to the United Nations"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Layman's Club of the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sunset Nursery School, Montrose"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Companions of Mary the Apostle"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Union of Black Episcopalians"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church (Fordham)",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Pension Group"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The General Theological Seminary"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis & St. Martha's Church",
+          "place": "White Plains"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church of the Epiphany Day School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thurifers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph of Arimathaea Church",
+          "place": "White Plains"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Day School at Christ and St. Stephens, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Thomas Choir School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "New York Diocesan Investment Trust"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The New York Diocese Controller & Chief of Operations and Finance"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of The Transfiguration",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The New York Diocese Adjustment Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The New York Diocese Treasurer"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Luke's School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lectors and Lay Readers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Philip's Nursery School, Garrison"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Eliza Corwin Frost Child Center of Christ Church, Bronxville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Ghanaian Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "New York Haiti Project"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Mary the Virgin",
+          "place": "Chappaqua"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Pearl River"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Grace Church School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Manhattanville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Mohegan Lake"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jack and Jill School at St. George's Church, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Resurrection Episcopal Day School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Hilda's and St. Hugh's School, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bartholomew's Church",
+          "place": "White Plains"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For those with food insecurity and the homeless"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Prison Ministries of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's Church for the Deaf",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's Church",
+          "place": "Croton-on-Hudson"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all those suffering from oppression and violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Social Concerns Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lay Eucharistic Ministers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all Laborers in the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Afterschool Programs of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gregory's",
+          "place": "Woodstock"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "School Chaplains of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the undocumented and those seeking asylum"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Canterbury Uptown Chaplaincy, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Tuxedo Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Mary the Virgin",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Church (Castleton)",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Society of the Companions of the Holy Cross, New York Chapter"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all those whose lives were affected by the attacks of September 11, 2001"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Those being ordained to the Priesthood"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ & St. Stephen's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Church",
+          "place": "Yonkers"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Church/Santa Cruz Parochial Mission",
+          "place": "Kingston"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Crucifixion",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clericus Deans of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Chaplaincy at Vassar College"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Canterbury Downtown Chaplaincy, Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Chaplaincy at SUNY New Paltz, and SUNY Ulster"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Church",
+          "place": "Bedford"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Matthew & St. Timothy",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Global Women's Fund Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Education for Ministry programs, leaders, and participants of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Chaplain to the Retired Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sacristans of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Dean of the Cathedral Church of St. John the Divine"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Angels' Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Union Theological Seminary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Liaison for Global Mission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The New York Altar Guild and all the Parish Altar Guilds of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Society of St. Francis"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Community of Francis and Clare"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi",
+          "place": "Montgomery"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Global Mission Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Ossining"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hospital Chaplains of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Domestic Violence Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Community Gardens of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's Church in the Highlands",
+          "place": "Garrison"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Acolytes and Crucifers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church New Brighton",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Metropolitan Japanese Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocesan Office of Human Resources"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Ignatius of Antioch",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Katonah"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Somers"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. Luke in the Fields",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Callicoon"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Episcopal Church",
+          "place": "Hyde Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Dobbs Ferry"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Moses Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Mid-Hudson Executive Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Divine Love",
+          "place": "Montrose"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Credit Union and its Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Parish of Christ the Redeemer",
+          "place": "Pelham"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Harrison"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Briarcliff Manor"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the dearly departed this past year"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Church",
+          "place": "Valley Cottage"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Souls' Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Nyack"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Incarnation Camp & Conference Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all Clothing Ministries and Thrift Stores of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bronxville"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The 250th Diocesan Convention Planning Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Inspector of Elections for the Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Secretary and Assistant Secretary of the Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "250th Convention of the Diocese of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Chaplain for the 250th Diocesan Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church/St. Paul's Chapel",
+          "place": "South Salem"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St Margaret's Church (Longwood)",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret's Church",
+          "place": "Staatsburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Hastings-on-Hudson"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Property Services Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Transgendered People"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia San Andres",
+          "place": "Yonkers"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Music Directors, Choirs, and Musicians of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of SS John, Paul, & Clement",
+          "place": "Mount Vernon"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of Christ the King",
+          "place": "Stone Ridge"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Vergers, Acolyles, Servers, Chalice Bearers, and Ushers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Order of the Holy Cross"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Food Pantries, Soup Kitchens, and Meal Programs of the New York Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "New Paltz"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew and St. Luke's Church",
+          "place": "Beacon"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Andrew",
+          "place": "Staten Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all whose lives have been affected by AIDS/HIV"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Hartsdale"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Walden"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Clement's Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ambrose Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Solemn day of remembrance of the attack on Pearl Harbor"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary-in-the-Highlands",
+          "place": "Cold Spring"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Nicholas-on-the-Hudson",
+          "place": "New Hamburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church (Wilmot)",
+          "place": "New Rochelle"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Iglesia Virgen de Guadalupe",
+          "place": "Poughkeepsie"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Charities of the Diocese of New York"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Children, Youth, and Families of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Relief & Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Reparations Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Atonement",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Intercession",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Armonk"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Episcopal Church",
+          "place": "Amenia"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Church",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Church",
+          "place": "Mamaroneck"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Adult Choirs and Choristers of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Incarnation",
+          "place": "Manhattan"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Holy Nativity",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Deacons of the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Chapel of St. John the Divine",
+          "place": "Tomkins Cove"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Church of the Holy Innocents, Highland Falls/St Mark's Chapel, Fort Montgomery",
+          "note": "Names two distinct congregations in two distinct towns (Highland Falls and Fort Montgomery) joined by a slash on one line, unlike every other slash-joined entry in this file which shares a single place (e.g. \"Calvary/St George's Church, Manhattan\"); kept as one combined category subject rather than split, disclosed in file notes."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of St. John the Evangelist",
+          "place": "Red Hook"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church (Woodlawn)",
+          "place": "Bronx"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Twelve Step Communities of the Diocese"
+        }
+      ]
+    }
+  ]
+}

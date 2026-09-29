@@ -1,0 +1,4132 @@
+{
+  "id": "episcopal-montana-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Montana",
+  "dioceseShort": "montana",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocese of Montana Prayer Cycle, a Google Calendar (calendar id q57av3va3lcfaps5lmg4nqgj8k@group.calendar.google.com, titled \"Diocese of Montana Prayer Cycle\") embedded on https://diomontana.com/prayer-cycle-calendar/; fetched directly via its public ICS export at https://calendar.google.com/calendar/ical/q57av3va3lcfaps5lmg4nqgj8k%40group.calendar.google.com/public/basic.ics since the diocesan page itself only embeds a JS-rendered iframe with no static event data.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The diocesan page (https://diomontana.com/prayer-cycle-calendar/) embeds a Google Calendar widget with no static event data in the page's own HTML -- a plain fetch of the page returns only the iframe shell. The page source does expose the iframe's own src=, a calendar.google.com/calendar/embed URL naming the underlying calendar id (q57av3va3lcfaps5lmg4nqgj8k@group.calendar.google.com); that calendar id's public ICS export (calendar.google.com/calendar/ical/.../public/basic.ics) returns the real event data with no authentication or JS rendering required, and was used as the actual source for this transcription.",
+    "The roster's own research note for this diocese says coverage is only 'September 2026 onward' (63 events spot-checked in September 2026). The calendar feed actually turned out to hold dated entries for the diocese's ENTIRE 2026 calendar cycle, January 1 through December 27, 2026 (276 distinct dates, 600 total subject entries across them) -- more complete than the roster's own note anticipated. All of it is transcribed here since it is genuine dated 2026 content the diocese has already published in its live calendar, not fabricated. September 2026 alone holds 55 events in this transcription, close to but not exactly the roster's spot-checked count of 63 (the small difference is not explained and not corrected here).",
+    "89 calendar days between 2026-01-01 and 2026-12-27 have no event at all in the source calendar (leaving 276 populated dates) -- these are gaps in the diocese's own calendar, not omissions in this transcription. The calendar's own 2026 coverage also stops after December 27; no 2026 entries exist for December 28-31.",
+    "This is a daily household-and-parish cycle, not a Sunday-only cycle: most dates name 1-3 individual people, couples, or families with no congregation or place given alongside them at all -- recorded here as `category` subjects (per this corpus's rule that a calendar of bare names with no attached congregation is `category`, not `parish`), since the source itself does not say which parish, if any, each such person belongs to. Interspersed roughly weekly (mostly on Sundays) is a 'parish of the week' entry that DOES explicitly pair one specific congregation with a place (recorded as a `parish` subject, e.g. 'St. Mark's, Anaconda') alongside that congregation's own clergy/wardens/deacons named with their titles (recorded as `category` subjects, e.g. 'Sadie Koppelberger, Rector', since a title-holder's name is not itself a place/congregation). Each of roughly 26 congregations appears in this role on two non-consecutive weeks across the year.",
+    "The underlying source is a live calendar feed, not a printed table with a fixed row order -- when multiple subjects land on the same date, they are recorded here in the order the calendar feed itself returns them for that date (there is no separate table layout to check them against).",
+    "liturgicalNote is null throughout: the source's own event titles never carry a liturgical Sunday/feast label of any kind (unlike some other dioceses' cycles), so none is recorded.",
+    "Numerous spelling/name variants for the same recurring person or place are preserved exactly as printed on each individual date rather than normalized to one spelling, per this corpus's standing rule against silently correcting a source's own document -- for example (not exhaustive): 'Jocelyn & Jermiah Snyder' (2026-01-23) vs. 'Jocelyn & Jeremiah Snider' elsewhere; 'Donnell & Janet O'Flynn' (2026-03-02) vs. 'Donnel & Janet O'Flynn' elsewhere; 'Maurice & Marybeth Champion-Garth' vs. 'Champion-Garthe' on other dates; 'Dorcie & Mark Dvarishkis' vs. 'Dvarshkis' (2026-03-31) vs. 'Dvarshkis' (2026-05-13 area); 'Tim & Linda Ljundggren' (2026-02-25) vs. 'Ljunggren' elsewhere; 'Julianna Olliff' vs. 'Juliana Olliff' vs. 'Olliff'; 'Christine Whiteside' vs. 'Christina Whiteside' (2026-11-06); 'All Saint's, Big Sky' (2026-04-26) vs. 'All Saints, Big Sky' (2026-08-09, no apostrophe) for the very same congregation; 'Church of the Trinity, Jeffers-Ennis' (2026-01-11) vs. 'Church of the Trinity, Jeffers' (2026-12-13, place given without '-Ennis') for the very same congregation; 'Karen King & Judith Kesot' (2026-01-06) vs. 'Karen King' alone (2026-08-11).",
+    "'Holy Troy, Trinity' (2026-04-05) is transcribed exactly as printed in the source, split into name 'Holy Troy' and place 'Trinity' per the source's own comma placement, per this corpus's rule against silently correcting a source. Checked directly against the same underlying calendar feed's entries for this same recurring slot in every other year from 2013 through 2025, all of which instead read 'Holy Trinity, Troy' -- this 2026 instance looks like an accidental transposition in the diocese's own calendar, disclosed here (and per-subject) rather than corrected.",
+    "'Togendowagan Society, St. Peter's Cathedral' (2026-01-04) and 'Togendowagen Society at St. Peter's Cathedral' (2026-12-06) both name the same group at the cathedral in Helena, using two different spellings of 'Togendowagan'/'Togendowagen' and two different phrasings ('X, Y' vs. 'X at Y') on their respective dates, each preserved exactly as printed. Both are recorded as `category` subjects rather than `parish`, since neither gives a town/place separate from the cathedral's own name the way every other parish entry does; the cathedral itself is recorded separately as a `parish` subject (name 'St. Peter's Cathedral', place 'Helena') only where the source's own 2026-11-29 entry gives it that way."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Marybeth Jourdonnais"
+        },
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        },
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Togendowagan Society, St. Peter's Cathedral"
+        },
+        {
+          "type": "category",
+          "name": "Darcy O'Dell, Leader"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        },
+        {
+          "type": "category",
+          "name": "Mary Alice & Jim Jones"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        },
+        {
+          "type": "category",
+          "name": "Karen King & Judith Kesot"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        },
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Caitlin Mallery"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        },
+        {
+          "type": "category",
+          "name": "John Lindell"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Trinity",
+          "place": "Jeffers-Ennis"
+        },
+        {
+          "type": "category",
+          "name": "Beverley Bishop, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bette March"
+        },
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "John & Sharon Moran"
+        },
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        },
+        {
+          "type": "category",
+          "name": "Donnel & Janet O'Flynn"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Julianna Olliff"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Emily Rierson"
+        },
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        },
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Kalispell"
+        },
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        },
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        },
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Laura Schillinger"
+        },
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        },
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        },
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        },
+        {
+          "type": "category",
+          "name": "Jocelyn & Jermiah Snyder"
+        },
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Lewistown"
+        },
+        {
+          "type": "category",
+          "name": "Jean Collins, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        },
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        },
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        },
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        },
+        {
+          "type": "category",
+          "name": "Gretchen & Dave Strohmaier"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        },
+        {
+          "type": "category",
+          "name": "Wells & Leigh Warren"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kendra Wilde"
+        },
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        },
+        {
+          "type": "category",
+          "name": "Christine Whiteside"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Aimee Altizer"
+        },
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        },
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kristin Orr, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Livingston"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Jane Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Doug & Judy Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bill & Barbara Baumgarten"
+        },
+        {
+          "type": "category",
+          "name": "Louise & Jim Baker"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean Buer-Mott"
+        },
+        {
+          "type": "category",
+          "name": "John & Mait Board"
+        },
+        {
+          "type": "category",
+          "name": "Pattiann & Bruce Bennett"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve and Jackie Brehe"
+        },
+        {
+          "type": "category",
+          "name": "Beverley Bishop"
+        },
+        {
+          "type": "category",
+          "name": "Frank & Sue Brookhart"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ray & Joyce Brown"
+        },
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson & Roxanne Kingensmith"
+        },
+        {
+          "type": "category",
+          "name": "Sharman Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Gethsemane",
+          "place": "Manhattan"
+        },
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Maurice & Marybeth Champion-Garth"
+        },
+        {
+          "type": "category",
+          "name": "Jean Collins"
+        },
+        {
+          "type": "category",
+          "name": "Alana & Clay Cruse"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jonathan Coffey"
+        },
+        {
+          "type": "category",
+          "name": "Stephen Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Dorothy DeHart"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dorcie & Mark Dvarishkis"
+        },
+        {
+          "type": "category",
+          "name": "Sue Eades"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "James & Sarah Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Glen Gleaves"
+        },
+        {
+          "type": "category",
+          "name": "Ryan Eikenbary & Burke Wallace"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Miles City"
+        },
+        {
+          "type": "category",
+          "name": "Sharon Hatley, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Terri Ann Grotzinger"
+        },
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        },
+        {
+          "type": "category",
+          "name": "Sarah Gregie"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        },
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        },
+        {
+          "type": "category",
+          "name": "Scott & Marybeth Jourdonnais"
+        },
+        {
+          "type": "category",
+          "name": "Mary Alice & James Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        },
+        {
+          "type": "category",
+          "name": "Karen King & Judith Kesot"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Terri Ann Grotzinger and Gretchen Strohmaier, co-rectors; "
+        },
+        {
+          "type": "category",
+          "name": "Deacons Doug & Judy Anderson, Dorcie Dvarishkis & Anita Rognas"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Missoula"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        },
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        },
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljundggren"
+        },
+        {
+          "type": "category",
+          "name": "John Lindell"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bette March"
+        },
+        {
+          "type": "category",
+          "name": "Caitlin Mallery"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        },
+        {
+          "type": "category",
+          "name": "John & Sharon Moran"
+        },
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Philipsburg"
+        },
+        {
+          "type": "category",
+          "name": "Theresa Kelley, Rector; Deacons Mary Alice & Jim Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        },
+        {
+          "type": "category",
+          "name": "Donnell & Janet O'Flynn"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Julianna Ollif"
+        },
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        },
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Emily Rierson"
+        },
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        },
+        {
+          "type": "category",
+          "name": "Laura Schillinger"
+        },
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Polson"
+        },
+        {
+          "type": "category",
+          "name": "Jocelyn Snider, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        },
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        },
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        },
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        },
+        {
+          "type": "category",
+          "name": "Jocelyn & Jeremiah Snider"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        },
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gretchen & David Strohmaier"
+        },
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        },
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Aimee Altizer, Rector"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Hank Tuell"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Red Lodge"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        },
+        {
+          "type": "category",
+          "name": "Wells & Leigh Warren"
+        },
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kendra Wilde & Ben Spiger"
+        },
+        {
+          "type": "category",
+          "name": "Christine Whiteside"
+        },
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        },
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Aimee Altizer"
+        },
+        {
+          "type": "category",
+          "name": "Doug & Judy Anderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Jane Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        },
+        {
+          "type": "category",
+          "name": "Bill & Barbara Baumgarten"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sheridan"
+        },
+        {
+          "type": "category",
+          "name": "Janis Hansen, Rector; Deacon Steve DeHart"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Louise & Jim Baker"
+        },
+        {
+          "type": "category",
+          "name": "Pattiann & Bruce Bennett"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Jackie Brehe"
+        },
+        {
+          "type": "category",
+          "name": "Frank & Sue Brookhart"
+        },
+        {
+          "type": "category",
+          "name": "Beverley Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ray & Joyce Brown"
+        },
+        {
+          "type": "category",
+          "name": "Jean Buer-Mott"
+        },
+        {
+          "type": "category",
+          "name": "Sharman Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson & Roxanne Klingensmith"
+        },
+        {
+          "type": "category",
+          "name": "Maurice & Marybeth Champion-Garth"
+        },
+        {
+          "type": "category",
+          "name": "Jonathan Coffey"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean Collins"
+        },
+        {
+          "type": "category",
+          "name": "Alana & Clay Cruse"
+        },
+        {
+          "type": "category",
+          "name": "Stephen Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Stevensville"
+        },
+        {
+          "type": "category",
+          "name": "Richard Tardiff, Interim"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Dorothy DeHart"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dorcie & Mark Dvarshkis"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ryan Eikenbary & Burke Wallace"
+        },
+        {
+          "type": "category",
+          "name": "James & Sarah Ljunggren"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Glen Gleaves"
+        },
+        {
+          "type": "category",
+          "name": "Sarah Gregie"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Terri Grotzinger"
+        },
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Troy",
+          "place": "Trinity",
+          "note": "Source's own text; every other year's occurrence of this same recurring calendar entry (checked directly in the same underlying calendar feed, 2013-2025) prints \"Holy Trinity, Troy\" instead -- this looks like a transposition/typo in the 2026 source, preserved exactly as printed here rather than silently corrected."
+        },
+        {
+          "type": "category",
+          "name": "Pam Cole, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        },
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mary Alice & Jim Jones"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Mary Beth Jourdonnais"
+        },
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Karen King & Judith Kesot"
+        },
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Virginia City"
+        },
+        {
+          "type": "category",
+          "name": "Janet Doornbos, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        },
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        },
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gabe LePage"
+        },
+        {
+          "type": "category",
+          "name": "John Lindell"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Caitlin Mallery"
+        },
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljunggren"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Anaconda"
+        },
+        {
+          "type": "category",
+          "name": "Deacons Mary Alice & Jim Jones"
+        },
+        {
+          "type": "category",
+          "name": "Theresa Kelley-Bergmann, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bette March"
+        },
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        },
+        {
+          "type": "category",
+          "name": "John & Sharron Moran"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Donnel & Janet O'Flynn"
+        },
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Julianna Olliff"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        },
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Heidi Jones-Magee"
+        },
+        {
+          "type": "category",
+          "name": "Miriam Schmidt, ELCA Pastor"
+        },
+        {
+          "type": "parish",
+          "name": "All Saint's",
+          "place": "Big Sky"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        },
+        {
+          "type": "category",
+          "name": "Emily Rierson"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        },
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Laura Schillinger"
+        },
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Leo Schuman & Michael Henry"
+        },
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        },
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gary Burmeister, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Big Timber"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Roxy Klingensmith"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        },
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        },
+        {
+          "type": "category",
+          "name": "Jocelyn & Jeremiah Snider"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        },
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gretchen & Dave Strohmaier"
+        },
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        },
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Donnel O'Flynn, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Bigfork"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Wells & Leigh Warren"
+        },
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christine Whiteside"
+        },
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lori Walter"
+        },
+        {
+          "type": "category",
+          "name": "Kendra Wilde & Ben Spiger"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        },
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Doug & Judy Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Aimee Altizer"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Billings"
+        },
+        {
+          "type": "category",
+          "name": "Deacon Corinne Denegre"
+        },
+        {
+          "type": "category",
+          "name": "Maria Surdahl, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        },
+        {
+          "type": "category",
+          "name": "Scott & Jane Anderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bill & Barbara Baumgarten"
+        },
+        {
+          "type": "category",
+          "name": "Louise & Jim Baker"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pattiann & Bruce Bennett"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Jackie Brehe"
+        },
+        {
+          "type": "category",
+          "name": "Frank & Sue Brookhart"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sharman Brown"
+        },
+        {
+          "type": "category",
+          "name": "Ray & Joyce Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Billings"
+        },
+        {
+          "type": "category",
+          "name": "Stephen Day, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson & Roxy Klingensmith"
+        },
+        {
+          "type": "category",
+          "name": "Jean Buer-Mott"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mo & Marybeth Champion-Garthe"
+        },
+        {
+          "type": "category",
+          "name": "Jonathan Coffey"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean Collins"
+        },
+        {
+          "type": "category",
+          "name": "Alana & Clay Cruse"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Stephen Day"
+        },
+        {
+          "type": "category",
+          "name": "Ellen Daugherty"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Dorothy DeHart"
+        },
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Deacon Lynne Matthews"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Bozeman"
+        },
+        {
+          "type": "category",
+          "name": "Valerie Webster, Associate Priest"
+        },
+        {
+          "type": "category",
+          "name": "Rowan Larson, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dorcie & Mark Dvarishkis"
+        },
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ryan Eikenbary & Burke Wallace"
+        },
+        {
+          "type": "category",
+          "name": "James & Sarah Ljunggren"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Glen Gleaves"
+        },
+        {
+          "type": "category",
+          "name": "Sarah Gregie"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        },
+        {
+          "type": "category",
+          "name": "Terri Grotzinger"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Butte"
+        },
+        {
+          "type": "category",
+          "name": "Jim Fay, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mary Alice & Jim Jones"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Marybeth Jourdonnais"
+        },
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Karen King & Judith Kesot"
+        },
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gabe LePage, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "All Saint's",
+          "place": "Columbia Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        },
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "John Lindell"
+        },
+        {
+          "type": "category",
+          "name": "Gabe LePage"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Caitlin Mallery"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bette March"
+        },
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Deer Lodge"
+        },
+        {
+          "type": "category",
+          "name": "Sue Dawson, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        },
+        {
+          "type": "category",
+          "name": "John & Sharron Moran"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Donnel & Janet O'Flynn"
+        },
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        },
+        {
+          "type": "category",
+          "name": "Julianna Olliff"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        },
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        },
+        {
+          "type": "category",
+          "name": "Betsey Stewart"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theresa Kelley-Bergmann, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Dillon"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        },
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Laura Schillinger"
+        },
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        },
+        {
+          "type": "category",
+          "name": "Leo Schuman & Michael Henry"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        },
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        },
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Emigrant"
+        },
+        {
+          "type": "category",
+          "name": "Bob Anderson, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        },
+        {
+          "type": "category",
+          "name": "Jocelyn & Jeremiah Snider"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        },
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        },
+        {
+          "type": "category",
+          "name": "Gretchen & Dave Strohmaier"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        },
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        },
+        {
+          "type": "category",
+          "name": "Wells & Leigh Warren"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael & All Angels",
+          "place": "Eureka"
+        },
+        {
+          "type": "category",
+          "name": "Jim Pettit, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        },
+        {
+          "type": "category",
+          "name": "Christine Whiteside"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kendra Wilde & Ben Spiger"
+        },
+        {
+          "type": "category",
+          "name": "Lori Walter"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        },
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Doug & Judy Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Aimee Altizer"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Jane Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kay Roeslin, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Forsyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Louise & Jim Baker"
+        },
+        {
+          "type": "category",
+          "name": "Bill & Barbara Baumgarten"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pattiann & Bruce Bennett"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Frank & Sue Brookhart"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Jackie Brehe"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ray & Joyce Brown"
+        },
+        {
+          "type": "category",
+          "name": "Sharman Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson & Roxy Klingensmith"
+        },
+        {
+          "type": "category",
+          "name": "Jean Buer-Mott"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Fort Benton"
+        },
+        {
+          "type": "category",
+          "name": "Shirley Lenington, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mo and Marybeth Champion-Garthe"
+        },
+        {
+          "type": "category",
+          "name": "Jean Collins"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Alana & Clay Cruse"
+        },
+        {
+          "type": "category",
+          "name": "Stephen Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ellen Daugherty"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Dorothy DeHart"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Dorcie & Mark Dvarishkis"
+        },
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "James & Sarah Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Ryan Eikenbary & Burke Wallace"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Theresa Kelley-Bergmann, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Anaconda"
+        },
+        {
+          "type": "category",
+          "name": "Revs. Mary Alice & Jim Jones, Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Glen Gleaves"
+        },
+        {
+          "type": "category",
+          "name": "Sarah Gregie"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        },
+        {
+          "type": "category",
+          "name": "Terri Grotzinger"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Mary Alice & Jim Jones"
+        },
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Heidi Jones-Magee, Deacon"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Miriam Schmidt, ELCA Pastor"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Big Sky"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Marybeth Jourdonnais"
+        },
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Karen King"
+        },
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        },
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        },
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Roxy Klingensmith, Deacon"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Big Timber"
+        },
+        {
+          "type": "category",
+          "name": "Gary Burmeister, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "John Lindell"
+        },
+        {
+          "type": "category",
+          "name": "Gabe LePage"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Bette March"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        },
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        },
+        {
+          "type": "category",
+          "name": "John & Sharron Moran"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Donnel & Janet O'Flynn"
+        },
+        {
+          "type": "category",
+          "name": "Julianna Olliff"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Donnel O'Flynn, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Bigfork"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        },
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Betsey Stewart"
+        },
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        },
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Maria Surdahl, Senior Warden"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Corinne Denegre, Deacon"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Billings"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Leo Schuman & Michael Henry"
+        },
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        },
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jocelyn & Jeremiah Snider"
+        },
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        },
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        },
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Stephen Day, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Billings"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        },
+        {
+          "type": "category",
+          "name": "Gretchen & Dave Strohmaier"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        },
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        },
+        {
+          "type": "category",
+          "name": "Christine Whiteside"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kendra Wilde & Ben Spiger"
+        },
+        {
+          "type": "category",
+          "name": "Lori Walter"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        },
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Valerie Webster, Associate Priest"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Rowan Larson, Rector"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Lynne Matthews, Deacon"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Bozeman"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Doug & Judy Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Aimee Altizer"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Scott & Jane Anderson"
+        },
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Louise & Jim Baker"
+        },
+        {
+          "type": "category",
+          "name": "Keith & Barbara Axberg"
+        },
+        {
+          "type": "category",
+          "name": "Bill & Barbara Baumgarten"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Jackie Brehe"
+        },
+        {
+          "type": "category",
+          "name": "Pattiann & Bruce Bennett"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Frank & Sue Brookhart"
+        },
+        {
+          "type": "category",
+          "name": "Ray & Joyce Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Butte"
+        },
+        {
+          "type": "category",
+          "name": "Jim Fay, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Connie Campbell-Pearson & Roxanne Klingensmith"
+        },
+        {
+          "type": "category",
+          "name": "Sharman Brown"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean Collins"
+        },
+        {
+          "type": "category",
+          "name": "Maurice & Marybeth Champion-Garthe"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Nate Darville"
+        },
+        {
+          "type": "category",
+          "name": "Alana & Clay Cruse"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ellen Daugherty"
+        },
+        {
+          "type": "category",
+          "name": "Stephen Day"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Steve & Dorothy DeHart"
+        },
+        {
+          "type": "category",
+          "name": "Corinne & John Denegre"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Columbia Falls"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Gabe LePage, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ryan Eikenbary & Burke Wallace"
+        },
+        {
+          "type": "category",
+          "name": "Dorcie & Mark Dvarishkis"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "James & Sarah Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "Glen Gleaves"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sarah Gregie"
+        },
+        {
+          "type": "category",
+          "name": "Terri Ann Grotzinger"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jerry & Diane Jasmer"
+        },
+        {
+          "type": "category",
+          "name": "David Gunderson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rick Johnson"
+        },
+        {
+          "type": "category",
+          "name": "Marietta & Joe Johnson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sue Dawson, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Deer Lodge"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ci & Ashby Jones"
+        },
+        {
+          "type": "category",
+          "name": "Mary Alice & James Jones"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Heidi & Brian Jones-Magee"
+        },
+        {
+          "type": "category",
+          "name": "Scott & Marybeth Journdonnais"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theresa Kelley & Bernd Bergmann"
+        },
+        {
+          "type": "category",
+          "name": "Noelle & Allen Kent"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Heidi & Scott Kinner"
+        },
+        {
+          "type": "category",
+          "name": "Karen King"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sadie Koppelberger"
+        },
+        {
+          "type": "category",
+          "name": "Carolyn Kuhr"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Theresa Kelley-Bergmann, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Dillon"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Marcia Lauzon"
+        },
+        {
+          "type": "category",
+          "name": "Rowan & Kelsey Larson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gabe LePage"
+        },
+        {
+          "type": "category",
+          "name": "Jaime & Burleigh Leonard"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Tim & Linda Ljunggren"
+        },
+        {
+          "type": "category",
+          "name": "John Lindell"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jean & Paul McLean"
+        },
+        {
+          "type": "category",
+          "name": "Bette March"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "John & Sharron Moran"
+        },
+        {
+          "type": "category",
+          "name": "Brenda McLellan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Emigrant"
+        },
+        {
+          "type": "category",
+          "name": "Bob Anderson, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Paul & Lynda Nelson"
+        },
+        {
+          "type": "category",
+          "name": "Donnel & Janet O'Flynn"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Juliana Olliff"
+        },
+        {
+          "type": "category",
+          "name": "Steve & Brenda Oreskovich"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kristin Orr"
+        },
+        {
+          "type": "category",
+          "name": "Judy Parock"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Randy & Susan Pendergraft"
+        },
+        {
+          "type": "category",
+          "name": "Betsey Stewart"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chris Roberts & Janis Hansen"
+        },
+        {
+          "type": "category",
+          "name": "Anita Rognas"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jim Pettit, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael & All Angels",
+          "place": "Eureka"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Laura Schillinger"
+        },
+        {
+          "type": "category",
+          "name": "Jill Sallin"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Leo Schuman & Michael Henry"
+        },
+        {
+          "type": "category",
+          "name": "Miriam Schmidt & Jeremy Blyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jane Shipp"
+        },
+        {
+          "type": "category",
+          "name": "Clark & Jamie Sherman"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bob & Carol Sisk"
+        },
+        {
+          "type": "category",
+          "name": "Shawn & Mike Sloan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Jocelyn & Jeremiah Snider"
+        },
+        {
+          "type": "category",
+          "name": "Greg Smith & Ken Spencer"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Kay Roeslin, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Forsyth"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Melinda St. Clair"
+        },
+        {
+          "type": "category",
+          "name": "Marty Stebbins & Bob Grudier"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gretchen & Dave Strohmaier"
+        },
+        {
+          "type": "category",
+          "name": "Melody Surdahl"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Richard Tardiff"
+        },
+        {
+          "type": "category",
+          "name": "Hank & Linda Tuell"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Valerie & Jim Webster"
+        },
+        {
+          "type": "category",
+          "name": "Gary Waddingham"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Christina Whiteside"
+        },
+        {
+          "type": "category",
+          "name": "Kendra Wilde & Ben Spiger"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Shirley Lenington, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Fort Benton"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bradley & Jeannine Wirth"
+        },
+        {
+          "type": "category",
+          "name": "Lori Walter"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Joan & Ben Yetter"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Incarnation",
+          "place": "Great Falls"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Ryan Eikenbary, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Paul Nelson, Deacon"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Hamilton"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Gretchen Strohmaier, Rector"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Alana Cruse, Deacon"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Cathedral",
+          "place": "Helena"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Kendra Wilde, Dean"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Darcy O'Dell, Leader"
+        },
+        {
+          "type": "category",
+          "name": "Togendowagen Society at St. Peter's Cathedral"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Trinity",
+          "place": "Jeffers"
+        },
+        {
+          "type": "category",
+          "name": "Beverley Bishop, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Kalispell"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Sadie Koppelberger, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rev. Jean Collins, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Lewistown"
+        }
+      ]
+    }
+  ]
+}

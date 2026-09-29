@@ -1,0 +1,480 @@
+{
+  "id": "episcopal-new-hampshire-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church of New Hampshire",
+  "dioceseShort": "new-hampshire",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan events calendar, fetched directly from https://www.nhepiscopal.org/events (individual weekly \"Diocesan Cycle of Prayer\" calendar events).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is a Squarespace events-calendar page, not a standalone cycle-of-prayer document; it lists individual weekly events titled \"Diocesan Cycle of Prayer - <subject>\" alongside unrelated event types (e.g. \"Bishop's Visitation ...\", \"General Convention ...\") that were excluded here as not part of the cycle of prayer itself. Only events whose title begins \"Diocesan Cycle of Prayer\" are transcribed.",
+    "The page shows a rolling window (an \"upcoming\" list plus a \"past events\" list below a divider), not a single full-year document. When fetched 2026-09-29, the Diocesan Cycle of Prayer events present ran 2026-05-31 through 2027-01-17 with no gaps (one per Sunday). Only the 2026-dated entries (2026-05-31 through 2026-12-27, 31 weeks) are included in this file per this corpus's one-file-per-diocese-per-year convention; three further entries dated 2027-01-03, 2027-01-10, and 2027-01-17 were present on the same page but belong to a future year's file, not this one. Entries for January-April 2026 were not present on the page at fetch time (they had aged out of the rolling window) and are not fabricated here.",
+    "Each week's event title is printed as \"<subject> / <intention>\" (or, on one week, 2026-12-27, with no slash at all). The clause before the slash generally names a specific congregation or diocesan entity; the clause after the slash is a themed prayer intention (e.g. \"for an end to gun violence\") that does not always name a discrete group. Since this schema's subject types are limited to 'parish' and 'category' for a diocese-level file, each intention clause is recorded here as its own 'category' subject with the source's own printed text as its `name`, kept verbatim including the leading word \"for\" -- this is a judgment call to fit the source's two-clause week titles into the schema's subject list rather than an attempt to rename or paraphrase them into conventional category names like \"Diocesan Staff\".",
+    "The left-hand clause was treated as a 'parish' subject (name + place) only when it named what reads as one specific congregation; entries naming a camp/conference center, a diocesan school, a network/ministry, or \"the churches in\" a town collectively were instead recorded as 'category' subjects with the full printed text (including the place, where given) kept in `name` since subjectShape's `place` field applies only to type 'parish'.",
+    "\"Christ Church and Holy Trinity Lutheran, Portsmouth\" (2026-08-09) is transcribed as a single parish subject exactly as printed; it is not clear from the source whether this names one shared Episcopal-Lutheran congregation or two separate congregations sharing a location/listing, so it was not split into two subjects.",
+    "The source itself is inconsistent in how it abbreviates \"Saint\": \"St. James Church, Sunapee\" (2026-09-06) vs. \"Saint James Church, Laconia\" (2026-12-13) -- both preserved exactly as printed, not normalized to a single style.",
+    "No week in this source carries a liturgical Sunday label (e.g. \"Proper 20\"); `liturgicalNote` is null throughout because the source printed none, not because it was omitted.",
+    "Each event's own description field was checked and found empty for every entry transcribed here -- all subject/intention content came from the event title alone."
+  ],
+  "entries": [
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Contemplative Action Network, Manchester"
+        },
+        {
+          "type": "category",
+          "name": "for an end to gun violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Meredith"
+        },
+        {
+          "type": "category",
+          "name": "for community gardens and those who tend them"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Weare"
+        },
+        {
+          "type": "category",
+          "name": "for the deacon of the Episcopal Church of New Hampshire"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's Church",
+          "place": "Salem"
+        },
+        {
+          "type": "category",
+          "name": "for youth and youth ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Dublin"
+        },
+        {
+          "type": "category",
+          "name": "for diocesan seasonal chapels and their ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Barbara C. Harris Camp and Conference Center, Greenfield"
+        },
+        {
+          "type": "category",
+          "name": "for freedom from oppression and for democratic rule"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Chapel",
+          "place": "Sugar Hill"
+        },
+        {
+          "type": "category",
+          "name": "for all victims of war and for God's peace to reign on earth"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's-by-the-Sea",
+          "place": "Rye Beach"
+        },
+        {
+          "type": "category",
+          "name": "for our Assisting Bishops: Bishop Shannon MacVean-Brown (VT) and Bishop Thomas Brown (ME)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis Chapel",
+          "place": "Marlborough"
+        },
+        {
+          "type": "category",
+          "name": "for postulants and candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Whitefield"
+        },
+        {
+          "type": "category",
+          "name": "for racial justice"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church and Holy Trinity Lutheran",
+          "place": "Portsmouth"
+        },
+        {
+          "type": "category",
+          "name": "for housing development partners Haven and Portsmouth Housing Authority"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Concord"
+        },
+        {
+          "type": "category",
+          "name": "for all who serve at the State House and in state government"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Derry"
+        },
+        {
+          "type": "category",
+          "name": "for the right of all people to adequate shelter"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Church",
+          "place": "Dover"
+        },
+        {
+          "type": "category",
+          "name": "for students and educators as they begin a new school year"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Sunapee"
+        },
+        {
+          "type": "category",
+          "name": "for all who labor and for all who seek the dignity of meaningful employment"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. John the Baptist",
+          "place": "Sanbornville"
+        },
+        {
+          "type": "category",
+          "name": "for the work of the Micah 6 Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Church",
+          "place": "Goffstown"
+        },
+        {
+          "type": "category",
+          "name": "for Christian Education programs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Concord"
+        },
+        {
+          "type": "category",
+          "name": "for feeding programs in our communities"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's Church",
+          "place": "Durham"
+        },
+        {
+          "type": "category",
+          "name": "for farmers and their harvest"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany Church",
+          "place": "Lisbon"
+        },
+        {
+          "type": "category",
+          "name": "for Presiding Bishop Sean Rowe and the staff at The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Woodsville"
+        },
+        {
+          "type": "category",
+          "name": "for the Annual Diocesan Convention and the Bishop Electing Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "North Woodstock"
+        },
+        {
+          "type": "category",
+          "name": "for the priests of our diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. John the Evangelist",
+          "place": "Dunbarton"
+        },
+        {
+          "type": "category",
+          "name": "for the sick and those who care for them"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church of New Hampshire School for Ministry (SFM)"
+        },
+        {
+          "type": "category",
+          "name": "for the work of United Thank Offering (UTO)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Hampton"
+        },
+        {
+          "type": "category",
+          "name": "for all who serve and have served in the armed forces of our country"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Nashua"
+        },
+        {
+          "type": "category",
+          "name": "for those serving in lay liturgical ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the churches in Claremont"
+        },
+        {
+          "type": "category",
+          "name": "for the spouses, companions, and families of clergy in the diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Hopkinton"
+        },
+        {
+          "type": "category",
+          "name": "for those grieving the loss of a loved one this holiday season"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Saint James Church",
+          "place": "Laconia"
+        },
+        {
+          "type": "category",
+          "name": "for our siblings in common mission in the Evangelical Lutheran Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Walpole"
+        },
+        {
+          "type": "category",
+          "name": "for the work of Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For our Bishop, our churches, missions, and gospel-oriented communities, and for peace on earth"
+        }
+      ]
+    }
+  ]
+}

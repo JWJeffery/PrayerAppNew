@@ -25566,3 +25566,79 @@ registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PAS
 resolution for each. Screenshot-verified Louisiana rendering in an actual office. Zero new console
 errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust
 parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 9: Montana, Nevada, New Hampshire,
+## New York, North Carolina (5 dioceses, no blocks)
+
+Josh (from his phone): *"Keep going please. And I'll ask you to surface the links here in a little
+while."* Continuing the roster-spreadsheet phase alphabetically after Missouri, skipping Mississippi/
+Navajoland again (still flagged as non-dated shapes worth their own dedicated look). Five parallel
+background agents dispatched, same pattern as batches 7-8. All five reported back with real content --
+no blocks this round, though Montana's source required real problem-solving to reach.
+
+**Montana** (`episcopal-montana-2026.json`, source: `diomontana.com/prayer-cycle-calendar/`, which
+embeds a Google Calendar widget with no static event data in the page's own HTML, as anticipated).
+Rather than stopping at the JS-only wall, the agent found the embedded iframe's own calendar ID in the
+page source and fetched that calendar's PUBLIC ICS EXPORT directly (`calendar.google.com/calendar/ical/
+<id>/public/basic.ics`) -- no auth, no JS execution needed, genuine first-hand event data. 276 entries,
+Jan 1-Dec 27 2026 (89 of ~360 days have no event at all in the diocese's own calendar -- a real gap in
+their own publishing, not a transcription gap). A daily household-and-parish cycle: most dates name 1-3
+individual people/households (`category`, no congregation attached), interspersed roughly weekly with a
+"parish of the week" entry (`parish`) plus that parish's clergy/wardens (`category`). One entry ("Holy
+Troy, Trinity", Apr 5) was checked against the SAME calendar feed's own entries for the same recurring
+slot across 2013-2025, all of which read "Holy Trinity, Troy" instead -- preserved as printed for 2026
+with the likely transposition disclosed, not silently corrected. **New reusable technique for a future
+JS-only diocese page: check the page's own HTML for an embedded Google Calendar's `src=` iframe URL and
+try that calendar's public ICS export before concluding a source is unfetchable.**
+
+**Nevada** (`episcopal-nevada-2026.json`, source: `ednv.org/2026-liturgical-calendar`). The page
+interleaves two separate cycles under each date -- an italic worldwide Anglican Cycle of Prayer line and
+a separate bold-italic Diocese-of-Nevada-local line; only the local line was transcribed into this
+diocese-scope file, since the Communion-wide content already has its own separate scope-`communion` file
+elsewhere in this corpus. 51 entries, spans the 2025/2026 liturgical-year boundary (First Sunday of
+Advent 2025 through Last Sunday after Pentecost 2026), filed under `year: 2026` per the same precedent
+California/Georgia already established for the same situation. 10 major-feast dates carry only the
+Anglican Communion line with no Nevada-local line at all and were correctly excluded, not padded.
+
+**New Hampshire** (`episcopal-new-hampshire-2026.json`, source: `nhepiscopal.org/events`, a Squarespace
+events-calendar page rather than a standalone document). Each week's calendar-event title is printed as
+"`<subject> / <intention>`" -- split on the slash into two subjects: the congregation/entity clause as
+`parish` or `category` depending on what it actually names, and the intention clause (e.g. "for an end
+to gun violence") as its own `category` subject with the source's exact text, leading "for" included --
+a judgment call to fit a two-clause weekly title into subject-per-named-group shape, clearly disclosed as
+such rather than presented as a paraphrase. 31 entries, a rolling window (the diocese's own listing
+currently runs May 2026 through mid-January 2027; only the 2026 portion was kept here, per the usual
+one-file-per-year convention -- the three January 2027 entries belong in a future file).
+
+**New York** (`episcopal-new-york-2026.json`, source: `dioceseny.org/.../2026-Calendar-of-Intercession.
+pdf`, 12 pages, single-column, verified against a rendered page image). A full DAILY cycle, not weekly --
+365 entries, Jan 1-Dec 31 2026, no gaps, the same shape as this corpus's existing New Jersey file. 167
+`parish` + 198 `category` subjects; since the source itself never labels which is which, every borderline
+call (a school/chaplaincy/retreat-center bearing a real place name but not being a congregation; two
+congregations in two different towns named together and kept as one combined subject rather than split)
+is individually disclosed in the file's own 22-entry `notes` array. `liturgicalNote` is null throughout
+even on major feast days (Ash Wednesday, Easter) -- confirmed the source genuinely never prints a
+liturgical label on any date, it always substitutes a diocesan-life subject instead.
+
+**North Carolina** (`episcopal-north-carolina-2026.json`, source: `episdionc.org/diocesan-cycle-of-
+prayer/`, live WordPress HTML, no PDF). 47 entries, 2026-01-04 through 2026-11-22. Faced the same
+2025-lead-in-weeks shape this corpus's own Atlanta file already solved (5 weeks of late-2025 content --
+Anglican Communion, TEC, the diocese itself, two companion dioceses -- ahead of the 47 weeks of 2026
+parish content): followed the SAME precedent Atlanta set (disclose-and-exclude the 5-week lead-in rather
+than spin up a thin 5-entry 2025 file), correctly distinguishing this shape (5 vs 47, heavily lopsided)
+from Delaware's own even 17/35 split, which used a two-file approach instead -- the choice between those
+two established patterns was made on the actual balance of content each time, not applied mechanically.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done BEFORE registering, second batch running.** All
+five (`montana`, `nevada`, `new-hampshire`, `new-york`, `north-carolina`) already matched the directory's
+own slugs exactly, no renaming needed. All 5 registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run
+audit:cycles-of-prayer`: PASS, 48 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`.
+All three standing audit scripts unchanged at their 13/3/9 baselines. Live-verified all 5 in headless
+Chromium against the app's own actual runtime, including New York's own first (Jan 1) and last (Dec 31)
+days of its 365-entry year. One apparent rendering anomaly investigated and ruled a false alarm: New
+York's Sept 29 entry rendered as "Manhattan, All Angels' Church" (place-then-name), which is simply this
+app's own long-standing, pre-existing rendering convention for every diocese's parish subjects (`${subject
+.place}, ${subject.name}` in `renderDiocesanCycleOfPrayerLine`, `js/office-ui.js`) -- not a bug introduced
+by this batch or any prior one. Screenshot-verified New York rendering in an actual office. Zero new
+console errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no
+cache-bust parameter to bump (same as prior batches).

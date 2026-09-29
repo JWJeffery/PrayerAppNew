@@ -423,6 +423,21 @@ Blocked URL reported to Josh per his standing instruction. **Slug cross-check ag
 — all four already matched, no renaming needed. Full per-diocese detail: `AUDIT_GOVERNANCE_LEDGER.md`'s
 2026-09-29 "Diocese ingestion batch 8" entry.
 
+**Batch 9 (Montana, Nevada, New Hampshire, New York, North Carolina): DONE 2026-09-29 — 5 of 5, no
+blocks.** Continued the parallel-`Agent` pattern. Skipped Mississippi/Navajoland again (same reason as
+batch 8). **New reusable technique found: for a diocese page that embeds a Google Calendar widget with
+no static event data (Montana's case), check the page's own HTML for the embedded iframe's calendar ID
+and try that calendar's public ICS export (`calendar.google.com/calendar/ical/<id>/public/basic.ics`)
+before concluding the source is unfetchable** — this worked with no auth/JS-rendering needed and got
+real first-hand data, not a summarized guess. New York's file is a full 365-entry DAILY cycle (like New
+Jersey's), not weekly. North Carolina reused the Atlanta precedent (disclose-and-exclude a lopsided
+lead-in of prior-year weeks) rather than Delaware's even-split precedent, choosing between the two
+established patterns based on the actual balance of content. One apparent rendering anomaly (New York
+showing "Manhattan, All Angels' Church" — place before name) was investigated and confirmed to be the
+app's own pre-existing, long-standing rendering convention for every diocese's parish subjects, not a
+bug — see `renderDiocesanCycleOfPrayerLine` in `js/office-ui.js`. Full per-diocese detail:
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 9" entry.
+
 **Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time (per
 Josh's original instruction: flag anything unfetchable in this note/ledger, and send Josh the link
 directly if blocked by bot protection, rather than endlessly retrying or working around it — there is
@@ -430,26 +445,28 @@ still no Drive/Sheets write tool to literally annotate the spreadsheet itself). 
 `Agent` dispatch (one per diocese, each scoped to its own new file only) is now the established pattern
 for a multi-diocese batch when the session has capacity for it — use it again rather than fetching
 serially; **always cross-check each new diocese's chosen slug against `TEC_DIOCESE_DIRECTORY` before
-registering, not after.** Alphabetically, the next batch starts after Missouri (~Montana onward — Long
-Island, though alphabetically earlier, is already done; Mississippi/Navajoland deliberately skipped, see
-above; check the roster/registry directly rather than trusting this note's ordering). Easton, El Camino
-Real (batch 5/6), and Massachusetts (batch 8, above) remain attempted-but-set-aside/blocked, not yet
-retried — Massachusetts specifically is waiting on Josh to supply the PDF the way he did for Delaware and
-Central New York.
+registering, not after.** For a JS-only calendar-widget source, try the embedded-Google-Calendar ICS
+trick (above) before giving up. Alphabetically, the next batch starts after North Carolina (~North
+Dakota onward; Mississippi/Navajoland deliberately skipped, see above; check the roster/registry directly
+rather than trusting this note's ordering). Easton, El Camino Real (batch 5/6), and Massachusetts (batch
+8) remain attempted-but-set-aside/blocked, not yet retried — Massachusetts specifically is waiting on
+Josh to supply the PDF the way he did for Delaware and Central New York; **Josh has asked to have all
+currently-blocked links surfaced to him together "in a little while"** — when he asks, gather every
+still-open blocked URL from batches 5/6, 8, and this note before replying, not just the most recent one.
 
-**~88 dioceses have a located, verified current cycle per the roster; 40 are now ingested into this
-corpus, ~48 remain** (separately, 18 dioceses have no verified source at all per Josh's own research —
+**~88 dioceses have a located, verified current cycle per the roster; 45 are now ingested into this
+corpus, ~43 remain** (separately, 18 dioceses have no verified source at all per Josh's own research —
 see `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
 
-**43 files currently in the corpus, all passing the validator:** 36 diocese-level, `cycleType: "dated"`
+**48 files currently in the corpus, all passing the validator:** 41 diocese-level, `cycleType: "dated"`
 — Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
 Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Florida,
 Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland,
-Michigan, Missouri, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western
-Massachusetts, Colorado; 3 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana,
-Iowa; 1 diocese-level, `cycleType: "annual-recurring"` — Long Island; 1 diocese-level, `cycleType:
-"ordinal-sunday-monthly"` — Hawai'i (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match
-`TEC_DIOCESE_DIRECTORY`) — plus:
+Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, Nebraska, Newark, New
+Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 3 diocese-level,
+`cycleType: "monthly-recurring"` — Arkansas, Northern Indiana, Iowa; 1 diocese-level, `cycleType:
+"annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
+(`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
