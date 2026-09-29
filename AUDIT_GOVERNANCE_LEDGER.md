@@ -24484,3 +24484,56 @@ has no loader/registry concept for scope-`"communion"` (or scope-`"parish"`) fil
 current `CYCLES_OF_PRAYER_DIOCESES` registry, cache-key logic, and file-path builder are all
 diocese-centric. Rendering "today's" Communion-tier entry into the BCP Authorized Intercessions rubric
 slot is a real next step, not done this session -- flagged in `RESUME_PROJECT_NOTE.md`.
+
+## 2026-09-29 (continued) -- Communion-tier rendering wired into the BCP rubric, live-verified
+
+Josh asked to "wire that rendering in next," closing the gap the entry above left open.
+
+**`js/cycles-of-prayer.js`:** added a Communion-specific loader/cache, deliberately NOT reusing
+`CYCLES_OF_PRAYER_DIOCESES`/`loadCycleOfPrayerYear` since there is exactly one scope-`"communion"` file
+(no diocese key to look up) -- `COMMUNION_CYCLE_OF_PRAYER_BODY_SLUG` (`'anglican-communion'`),
+`_communionCycleOfPrayerCache` (a `Map` keyed by bare `year`, not a compound dioceseKey+year string),
+`communionCycleOfPrayerFilePath(year)`, `loadCommunionCycleOfPrayerYear(year)` (same
+never-throws/cache-null-on-miss contract as `loadCycleOfPrayerYear`), and
+`getCachedCommunionCycleOfPrayerDay(date)` (cache-only, reuses the existing generic
+`resolveCycleOfPrayerEntry` since the Communion file's `cycleType` is `"dated"` just like a diocese's
+own dated file -- no new resolution logic needed, only a new cache to resolve it against).
+
+**`js/office-ui.js`:** added `refreshCommunionCycleOfPrayerForCurrentYear()` (same warm-then-repaint
+shape as `refreshCycleOfPrayerForCurrentYear`, called unconditionally at startup -- no profile gate,
+since this tier is identical for every user) and `renderCommunionCycleOfPrayerLine(container, date)`
+(same subject-phrase-joining shape as the existing diocese-tier renderer, but formatting a `"diocese"`
+subject as `"name (province)"` and a `"province"` subject as bare `name`). `renderCycleOfPrayerLine`
+(the function the `bcp-hymn-anthem-intercessions-rubric` call site already invoked) now calls the new
+Communion renderer first, then falls through to its own original diocese-tier body unchanged -- the
+existing diocese/parish-note logic was not rewritten, only prefixed. `index.html`'s
+`js/office-ui.js?v=318` bumped to `?v=319` per this project's cache-bust rule.
+
+**Live-verified in headless Chromium** (`npm run start:spa`, a profile with `cycleOfPrayerDiocese:
+'episcopal/western-oregon'` declared, both `morning-office` and `evening-office` radio states):
+- 2026-10-05: Communion line reads "Today, the Anglican Cycle of Prayer asks us to pray for The Diocese
+  of Bukuru (The Church of Nigeria (Anglican Communion))." -- matches the source exactly (a `"diocese"`
+  subject, name+province formatted correctly). Diocesan line unaffected: "This week, the Diocesan Cycle
+  of Prayer asks us to pray for Seaside, Calvary."
+- 2026-09-13 (a Sunday, `"province"`-type subject in the source): Communion line reads "...pray for The
+  Anglican Church in Aotearoa, New Zealand and Polynesia." -- correctly NO parenthetical province
+  (province subjects have no separate province field to append).
+- 2026-04-12 and 2026-01-15 (both outside the Communion file's Sept-Dec-only coverage): Communion line
+  correctly absent entirely (no blank line, no placeholder text) while the Diocesan line still renders
+  normally -- confirms the two tiers fail independently rather than one blocking the other.
+- 2026-04-12 with `cycleOfPrayerParish: 'forest-grove-st-bede'` also declared: the pre-existing "This is
+  your own parish's week" note still appends correctly to the Diocesan line -- confirms prefixing the
+  Communion renderer didn't disturb the existing diocese/parish-note logic it now sits in front of.
+- Both `morning-office` and `evening-office` render identically (expected -- the rubric component is
+  inserted into both Morning and Evening Prayer's sequences, per `e6b301c`).
+- Zero new console errors (only the pre-existing, already-documented sandbox-proxy
+  `ERR_CERT_AUTHORITY_INVALID`).
+
+`node --check` clean on both changed `.js` files; `npm run audit:cycles-of-prayer` still PASS (8 files,
+0 findings -- this was a rendering change only, no corpus file touched). Files touched: `js/cycles-of-
+prayer.js`, `js/office-ui.js`, `index.html`.
+
+**Still not done, unchanged from before:** the Provincial tier (no source) and the Parish tier
+(`episcopal-western-oregon-st-bede.json` -- ingested 2026-09-29 but still has no loader, registry, or
+render hook at all; surfacing "this is my household's day" remains an unraised product question, not a
+build task, per the entry above).

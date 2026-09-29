@@ -1276,6 +1276,22 @@ function refreshCycleOfPrayerForCurrentYear(dioceseKey) {
 }
 
 /**
+ * ADDED 2026-09-29. Same warm-then-repaint pattern as
+ * refreshCycleOfPrayerForCurrentYear above, for the single worldwide
+ * Communion cycle instead of a user-declared diocese's own file -- no
+ * dioceseKey parameter, since there is exactly one file and it applies to
+ * every user. No parish-picker repaint either, since the Communion tier has
+ * no parish concept.
+ */
+function refreshCommunionCycleOfPrayerForCurrentYear() {
+    if (typeof loadCommunionCycleOfPrayerYear !== 'function') return;
+
+    loadCommunionCycleOfPrayerYear(new Date().getFullYear()).then((corpus) => {
+        if (corpus && selectedMode === 'daily') requestRender();
+    });
+}
+
+/**
  * Rebuilds the home-parish <select>'s options from an already-loaded (or
  * still-loading) diocese corpus. Built via DOM APIs rather than an HTML
  * string -- no escaping helper needed, and consistent with how this file
@@ -2064,6 +2080,12 @@ async function initializeEntryRouting() {
     if (startupProfile.cycleOfPrayerDiocese) {
         refreshCycleOfPrayerForCurrentYear(startupProfile.cycleOfPrayerDiocese);
     }
+
+    // Same warming, unconditionally: the worldwide Anglican Cycle of Prayer
+    // (scope 'communion' in data/cycles-of-prayer/schema.json) applies to
+    // every user identically, so unlike the diocese warm-up just above this
+    // is never gated on any profile field.
+    refreshCommunionCycleOfPrayerForCurrentYear();
 
     // Awaited here, before anything is shown: the entry/mode screens are already
     // hidden-by-default until this function decides which one to display (see the
@@ -4995,17 +5017,23 @@ function bcpEmitBare(container, text, opts) {
 }
 
 /**
- * ADDED 2026-09-28. Appends the user's declared diocese's real Cycle of
- * Prayer subject(s) for the OFFICE'S OWN date (`date`, the date being
- * rendered -- never `new Date()`/today, so an office rendered for a past or
- * future date shows that date's own week, not today's) right after the
- * static "Here may be sung a hymn or anthem..." rubric. Renders nothing at
- * all when no diocese is declared, or when that date's corpus isn't loaded
- * yet -- cache-only read, never blocks this render on a network fetch; see
- * js/cycles-of-prayer.js's own getCachedCycleOfPrayerWeek comment for the
- * prefetch-then-repaint pattern that eventually populates it.
+ * ADDED 2026-09-28 (diocese tier); ADDED 2026-09-29 (Communion tier).
+ * Appends, after the static "Here may be sung a hymn or anthem..." rubric,
+ * up to two independent lines for the OFFICE'S OWN date (`date` -- never
+ * `new Date()`/today, so an office rendered for a past or future date shows
+ * that date's own entries, not today's): the worldwide Anglican Cycle of
+ * Prayer's entry (unconditional -- the same for every user, no profile
+ * dependency) via renderCommunionCycleOfPrayerLine, then the user's declared
+ * diocese's own weekly Cycle of Prayer entry (gated on
+ * profile.cycleOfPrayerDiocese, unchanged from before this Communion-tier
+ * addition). Either, both, or neither may render depending on what's
+ * declared/loaded -- each is an independent cache-only read, never blocking
+ * on a network fetch; see js/cycles-of-prayer.js's own comments on the
+ * prefetch-then-repaint pattern that eventually populates each cache.
  */
 function renderCycleOfPrayerLine(container, date) {
+    renderCommunionCycleOfPrayerLine(container, date);
+
     const profile = getUserProfileDefaults();
     if (!profile.cycleOfPrayerDiocese || typeof getCachedCycleOfPrayerWeek !== 'function') return;
 
@@ -5026,6 +5054,31 @@ function renderCycleOfPrayerLine(container, date) {
         (isHomeParishWeek ? ' This is your own parish’s week.' : '');
 
     bcpEmitBare(container, line, { italic: true });
+}
+
+/**
+ * ADDED 2026-09-29. The Communion tier of renderCycleOfPrayerLine above: the
+ * worldwide Anglican Cycle of Prayer's own entry for `date`, independent of
+ * any profile field -- every user sees the same line for the same office
+ * date. Renders nothing when that date's entry isn't loaded/covered yet (see
+ * js/cycles-of-prayer.js's getCachedCommunionCycleOfPrayerDay -- notably,
+ * "not covered" is the correct, honest state for any date outside whatever
+ * partial-year range the current file happens to cover, not a bug).
+ */
+function renderCommunionCycleOfPrayerLine(container, date) {
+    if (typeof getCachedCommunionCycleOfPrayerDay !== 'function') return;
+
+    const dayEntry = getCachedCommunionCycleOfPrayerDay(date);
+    if (!dayEntry) return;
+
+    const subjectNames = dayEntry.subjects.map(subject =>
+        subject.type === 'diocese' ? `${subject.name} (${subject.province})` : subject.name
+    );
+    const subjectPhrase = subjectNames.length === 1
+        ? subjectNames[0]
+        : `${subjectNames.slice(0, -1).join(', ')} and ${subjectNames[subjectNames.length - 1]}`;
+
+    bcpEmitBare(container, `Today, the Anglican Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
 }
 
 function bcpEmitDivider(container) {
