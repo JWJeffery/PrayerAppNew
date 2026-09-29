@@ -8,11 +8,17 @@ let prayersData = null; // cache
 
 const BOOK_OF_NEEDS_TAXONOMY_VERSION = 1;
 
-// UPDATED 2026-09-28: matches the five church-body names Josh confirmed
-// directly for #tradition-entry/#uo-threshold-grid (see RESUME_PROJECT_NOTE.md's
-// Task #14 entry) -- this file was carrying its own, older set.
+// UPDATED 2026-09-28: matched the five church-body names Josh confirmed
+// directly for #tradition-entry/#uo-threshold-grid at the time (see
+// RESUME_PROJECT_NOTE.md's Task #14 entry) -- this file was carrying its own,
+// older set. CORRECTED 2026-09-29, per Josh's direct correction ("The
+// Tradition is Anglicanism. The sub-tradition is The Episcopal Church."):
+// "Anglican Communion" names the worldwide fellowship of independent
+// national/regional churches, not the specific church whose prayers this
+// app tags -- same fix as UNIVERSAL_OFFICE_TRADITION_LABELS.anglican and
+// OFFICE_MODE_HEADER_LABELS.daily in js/office-ui.js.
 const BOOK_OF_NEEDS_TRADITION_CODES = Object.freeze({
-    ANG: 'Anglican Communion',
+    ANG: 'The Episcopal Church',
     LC: 'Catholic Church',
     EO: 'Eastern Orthodox Church',
     OO: 'Oriental Orthodox Church',
@@ -28,7 +34,7 @@ const BOOK_OF_NEEDS_CONTEXTS = {
         returnText: 'Back to Modes'
     },
     ANG: {
-        label: 'Anglican Communion',
+        label: 'The Episcopal Church',
         note: 'Showing prayers explicitly tagged for Anglican use.',
         empty: 'No Anglican prayers are available in this section yet.',
         returnText: 'Back to Office'

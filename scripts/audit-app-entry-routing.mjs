@@ -54,13 +54,17 @@ check('entry splash foreground safety guard exists', officeUi.includes('function
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
 check('universal selector advanced tools are hidden by default', index.includes('data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href=\'admin/admin.html\'"'));
-// UPDATED 2026-09-29, per Josh's direct (furious) report: the Profile panel (name/role/diocese/
-// parish) was wrongly gated behind the SAME advanced-only flag as the dev-only Admin Console --
-// ordinary functionality hidden behind a query param nobody would guess. It no longer carries
-// app-advanced-only/data-advanced-only at all; visibility is tied to #uo-threshold-grid instead
-// (see showUoThresholdGrid()/showUoThresholdDefault() in js/office-ui.js).
-check('profile panel is NOT gated behind advanced-only (ordinary functionality, not a dev tool)', index.includes('id="user-profile-defaults" class="app-profile-defaults" hidden aria-hidden="true"') && !index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only"'));
-check('profile panel visibility is tied to the threshold grid, not advanced-tools', officeUi.includes("const profile = document.getElementById('user-profile-defaults');") && officeUi.includes('if (profile) { profile.hidden = false; profile.removeAttribute(\'aria-hidden\'); }') && officeUi.includes('if (profile) { profile.hidden = true; profile.setAttribute(\'aria-hidden\', \'true\'); }'));
+// UPDATED 2026-09-29 (twice): the Profile panel (name/role/diocese/parish) was first found gated
+// behind the SAME advanced-only flag as the dev-only Admin Console (fixed, then briefly tied to
+// #uo-threshold-grid's own visibility instead), then Josh corrected that too: it should not be
+// attached to wherever it used to live at all. It is now its own standalone modal
+// (#user-profile-panel, near #uo-onboarding-prompt at the end of <body>), opened via
+// openUserProfilePanel()/closeUserProfilePanel() from a persistent per-office icon and from
+// "Your Profile" on the splash screen's Tools row -- independent of advanced-tools AND of
+// #uo-threshold-grid.
+check('profile panel is NOT gated behind advanced-only (ordinary functionality, not a dev tool)', !index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only"'));
+check('profile panel is its own standalone modal, not tied to advanced-tools or the threshold grid', index.includes('id="user-profile-panel" class="app-profile-modal-backdrop"') && officeUi.includes('function openUserProfilePanel()') && officeUi.includes('function closeUserProfilePanel()') && !officeUi.includes("if (profile) { profile.hidden = false; profile.removeAttribute('aria-hidden'); }"));
+check('per-office Profile icon exists and opens the modal', index.includes('id="app-profile-icon-btn" class="app-profile-icon-btn" onclick="openUserProfilePanel()"'));
 check('universal selector advanced tools can be explicitly revealed without persistence', officeUi.includes("params.get('advanced')") && officeUi.includes("explicitAdvanced === '1' || explicitAdvanced === 'true'") && !officeUi.includes('UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && !officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && officeUi.includes('syncUniversalOfficeAdvancedToolsVisibility();'));
 check('universal selector advanced tools gate CSS exists', css.includes('Universal selector advanced-tools gate') && css.includes('#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only'));
 check('shared office hour selector does not use internal scroll', css.includes('Shared office hour selector internal-scroll removal') && css.includes('.shared-office-nav-options') && css.includes('max-height: none !important') && css.includes('overflow-y: visible !important'));

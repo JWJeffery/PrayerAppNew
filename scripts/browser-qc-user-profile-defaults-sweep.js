@@ -213,7 +213,7 @@
         const profile = window.getUniversalOfficeUserProfile();
         assert(profile.bookOfNeedsScope === "universal", `Expected Book of Needs scope universal, got ${profile.bookOfNeedsScope}.`);
 
-        const state = await openOfficeBookOfNeeds("daily", "Anglican Communion", "UNIVERSAL");
+        const state = await openOfficeBookOfNeeds("daily", "The Episcopal Church", "UNIVERSAL");
 
         assert(state.returnText === "Back to Office", `Expected contextual Back to Office, got ${state.returnText || "blank"}.`);
         assert(state.visibleCount >= 20, `Expected all-prayers override to show broad list, saw ${state.visibleCount}.`);
@@ -226,7 +226,7 @@
         await waitFor(() => {
             return isVisible($("#daily-office-section")) &&
                 !isVisible($("#individual-prayers-section")) &&
-                text("#office-mode-title").includes("Anglican Communion");
+                text("#office-mode-title").includes("The Episcopal Church");
         }, 12000);
 
         return `Book of Needs all-prayers override showed ${state.visibleCount} prayers from Daily Office access`;
@@ -238,7 +238,7 @@
         const profile = window.getUniversalOfficeUserProfile();
         assert(profile.bookOfNeedsScope === "tradition", `Expected Book of Needs scope tradition, got ${profile.bookOfNeedsScope}.`);
 
-        const state = await openOfficeBookOfNeeds("daily", "Anglican Communion", "ANG");
+        const state = await openOfficeBookOfNeeds("daily", "The Episcopal Church", "ANG");
 
         assert(state.visibleCount > 0, "Tradition-filtered Book of Needs should show Anglican prayers.");
         assert(isPrayerOptionVisible("prayer-humble-access"), "Tradition-filtered Daily Office Book of Needs should show Anglican prayer-humble-access.");
@@ -250,7 +250,7 @@
         await waitFor(() => {
             return isVisible($("#daily-office-section")) &&
                 !isVisible($("#individual-prayers-section")) &&
-                text("#office-mode-title").includes("Anglican Communion");
+                text("#office-mode-title").includes("The Episcopal Church");
         }, 12000);
 
         return `Book of Needs tradition scope restored with ${state.visibleCount} Anglican prayers`;

@@ -194,15 +194,15 @@
     }
 
     async function verifyDailyOfficeBookOfNeedsPath() {
-        const state = await openBookOfNeedsFromOffice("daily", "Anglican Communion", "ANG");
+        const state = await openBookOfNeedsFromOffice("daily", "The Episcopal Church", "ANG");
 
-        assert(state.label === "Anglican Communion", `Daily Office Book of Needs label was ${state.label || "blank"}.`);
+        assert(state.label === "The Episcopal Church", `Daily Office Book of Needs label was ${state.label || "blank"}.`);
         assert(state.visibleCount > 0, "Daily Office Book of Needs should show at least one Anglican prayer.");
         assert(isPrayerOptionVisible("prayer-humble-access"), "Daily Office Book of Needs should show prayer-humble-access.");
         assert(isPrayerOptionHidden("thanksgiving-aquinas"), "Daily Office Book of Needs should hide Latin thanksgiving-aquinas.");
         assert(isPrayerOptionHidden("minister-journey-orthodox"), "Daily Office Book of Needs should hide Orthodox minister-journey-orthodox.");
 
-        const backDetail = await clickBookNeedsBackAndWaitForOffice("Anglican Communion");
+        const backDetail = await clickBookNeedsBackAndWaitForOffice("The Episcopal Church");
 
         return `ANG context showed ${state.visibleCount} visible prayers and ${backDetail}`;
     }

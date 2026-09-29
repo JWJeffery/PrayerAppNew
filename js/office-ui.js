@@ -768,14 +768,26 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'universal': 'universal'
 };
 
-// UPDATED 2026-09-28: matches the same five names Josh confirmed directly for
-// #tradition-entry and #uo-threshold-grid's own labels (see RESUME_PROJECT_NOTE.md's
-// Task #14 entry) -- this object was a fourth place quietly carrying its own,
-// older naming ('The Episcopal Church', 'Roman Breviary 1960/1962' as a
-// TRADITION label rather than an office name), found and fixed in the same
-// pass rather than left as a still-open inconsistency.
+// UPDATED 2026-09-28: matched the same five names Josh confirmed directly for
+// #tradition-entry and #uo-threshold-grid's own labels at the time (see
+// RESUME_PROJECT_NOTE.md's Task #14 entry) -- this object was a fourth place
+// quietly carrying its own, older naming ('The Episcopal Church', 'Roman
+// Breviary 1960/1962' as a TRADITION label rather than an office name), found
+// and fixed in the same pass rather than left as a still-open inconsistency.
+// CORRECTED 2026-09-29, per Josh's direct correction: "The Tradition is
+// Anglicanism. The sub-tradition is The Episcopal Church." -- "Anglican
+// Communion" names the worldwide fellowship of ~40 independent national/
+// regional churches (Church of England, TEC, the Church of Nigeria, etc.),
+// each with its own prayer book; it is not itself a specific tradition this
+// app implements, and calling this lane that could lead a Church of England
+// or ACNA user to expect their own province's book rather than TEC's. This
+// app's Anglican/Western Christian lane specifically implements the 1979
+// Book of Common Prayer -- The Episcopal Church's own book -- so the label
+// now names that specific church, matching the pattern every other entry
+// here already follows (a specific church body, e.g. 'Church of the East',
+// not a wider family or fellowship name).
 const UNIVERSAL_OFFICE_TRADITION_LABELS = {
-    anglican: 'Anglican Communion',
+    anglican: 'The Episcopal Church',
     'church-of-the-east': 'Church of the East',
     'eastern-orthodox': 'Eastern Orthodox Church',
     'oriental-orthodox': 'Oriental Orthodox Church',
@@ -2104,23 +2116,43 @@ function showUoThresholdGrid() {
     // underneath regardless. Setting .style.display directly fixes this for real.
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
-    const profile = document.getElementById('user-profile-defaults');
     if (threshold) { threshold.hidden = true; threshold.style.display = 'none'; threshold.setAttribute('aria-hidden', 'true'); }
     if (grid) { grid.hidden = false; grid.removeAttribute('aria-hidden'); }
-    // ADDED 2026-09-29: the Profile panel used to be gated behind ?advanced=1 (the SAME flag
-    // as the dev-only Admin Console), which is why Josh could not find it at all -- it is
-    // ordinary functionality (name/role/diocese), not an advanced tool. It now shows/hides
-    // together with the grid instead of needing any query param.
-    if (profile) { profile.hidden = false; profile.removeAttribute('aria-hidden'); }
 }
 
 function showUoThresholdDefault() {
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
-    const profile = document.getElementById('user-profile-defaults');
     if (threshold) { threshold.hidden = false; threshold.style.display = 'flex'; threshold.removeAttribute('aria-hidden'); }
     if (grid) { grid.hidden = true; grid.setAttribute('aria-hidden', 'true'); }
-    if (profile) { profile.hidden = true; profile.setAttribute('aria-hidden', 'true'); }
+}
+
+// ADDED 2026-09-29, per Josh's direct request/correction: the Profile panel
+// (name/role/tradition/diocese) is now a standalone modal, opened from a
+// persistent icon on every office page and from "Your Profile" on the splash
+// screen's Tools row -- explicitly NOT tied to #uo-threshold-grid/"Another
+// Office" ("do not attach it to where it currently is"). Same
+// backdrop-click-to-close and Escape-to-close pattern as the onboarding
+// prompt; syncUserProfileControls() runs on open so the panel always shows
+// current data even if it was last synced before something else changed
+// (e.g. a diocese ingested since the last time this session opened it).
+function openUserProfilePanel() {
+    const backdrop = document.getElementById('user-profile-panel');
+    if (!backdrop) return;
+    syncUserProfileControls();
+    backdrop.style.display = 'block';
+    document.addEventListener('keydown', handleUserProfilePanelKeydown);
+}
+
+function closeUserProfilePanel() {
+    const backdrop = document.getElementById('user-profile-panel');
+    if (!backdrop) return;
+    backdrop.style.display = 'none';
+    document.removeEventListener('keydown', handleUserProfilePanelKeydown);
+}
+
+function handleUserProfilePanelKeydown(event) {
+    if (event.key === 'Escape') closeUserProfilePanel();
 }
 
 function showTraditionEntry() {
@@ -2512,13 +2544,18 @@ document.addEventListener('DOMContentLoaded', function () {
 // ── Office mode headers ──────────────────────────────────────────────────────
 // The app shell must name the active office family. "The Universal Office" is
 // the selector/project shell, not the title of every tradition page.
-// UPDATED 2026-09-28: matches the same five church-body names Josh confirmed
-// directly elsewhere (see UNIVERSAL_OFFICE_TRADITION_LABELS above and
-// RESUME_PROJECT_NOTE.md's Task #14 entry) -- this was a further, still-older
-// spot carrying its own naming ('The Episcopal Church', a bare office name for
-// Catholic) found and fixed in the same pass.
+// UPDATED 2026-09-28: matched the same five church-body names Josh confirmed
+// directly elsewhere at the time (see UNIVERSAL_OFFICE_TRADITION_LABELS above
+// and RESUME_PROJECT_NOTE.md's Task #14 entry) -- this was a further,
+// still-older spot carrying its own naming ('The Episcopal Church', a bare
+// office name for Catholic) found and fixed in the same pass.
+// CORRECTED 2026-09-29: same fix as UNIVERSAL_OFFICE_TRADITION_LABELS.anglican
+// above, same reasoning -- "Anglican Communion" is the worldwide fellowship,
+// not the specific church whose 1979 Book of Common Prayer this office page
+// actually renders. Per Josh's direct correction, the sub-tradition this
+// office page names is The Episcopal Church.
 const OFFICE_MODE_HEADER_LABELS = {
-    daily: 'Anglican Communion',
+    daily: 'The Episcopal Church',
     'coptic-agpeya': 'Oriental Orthodox Church',
     'east-syriac': 'Church of the East',
     horologion: 'Eastern Orthodox Church',
