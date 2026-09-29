@@ -357,16 +357,25 @@ cycle, the most structurally unusual file in the corpus so far) was built via a 
 script (scratch-only, not committed) rather than hand-listed, then spot-checked against the source at
 every structurally ambiguous date before being trusted.
 
-Batch 3 is now fully closed. Next: batch 4 — Southwestern Virginia, Western Massachusetts (only 2 — end
-of the Drive-identified list) — then the roster spreadsheet's remaining ~65 via their own URLs (per
-Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this note/ledger rather
-than endlessly retrying, since there is no Drive/Sheets write tool to literally annotate the spreadsheet
-itself).
+**Batch 4 (Southwestern Virginia, Western Massachusetts): DONE 2026-09-29 — the last two Drive-
+identified dioceses, closing that entire phase.** Shipped as `episcopal-southwestern-virginia-2026.json`
+(29 entries, June 7-Dec 20 2026 — the source's own header claims through Dec 27 but no such entry
+actually exists in the text) and `episcopal-western-massachusetts-2026.json` (52 entries, all of Jan
+4-Dec 27 2026). Both registered, both live-verified against the app's own runtime alongside batch 3's
+four. `npm run audit:cycles-of-prayer`: PASS, 25 files, 0 findings. Full per-diocese detail:
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 4" entry.
 
-**23 files currently in the corpus, all passing the validator:** 19 diocese-level, `cycleType: "dated"`
+**Every diocese-level source file already sitting in Josh's "TEC Cycle of Prayer" Drive folder is now
+ingested — that phase is fully closed.** Next: the roster spreadsheet's remaining ~65 dioceses via their
+own URLs (per Josh's original instruction: fetch 5 at a time, flag anything unfetchable in this
+note/ledger rather than endlessly retrying, since there is no Drive/Sheets write tool to literally
+annotate the spreadsheet itself).
+
+**25 files currently in the corpus, all passing the validator:** 21 diocese-level, `cycleType: "dated"`
 — Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East
 Carolina, Great Lakes, Idaho, Kentucky, Lexington, Maine, Nebraska, Newark, New Jersey, Rio Grande, San
-Joaquin; 2 diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana — plus:
+Joaquin, Southwestern Virginia, Western Massachusetts; 2 diocese-level, `cycleType: "monthly-recurring"`
+— Arkansas, Northern Indiana — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

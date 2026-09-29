@@ -1,0 +1,109 @@
+{
+  "id": "episcopal-southwestern-virginia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of Southwestern Virginia",
+  "dioceseShort": "southwestern-virginia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocese of Southwestern Virginia Prayer Calendar",
+  "sourceFile": "\"Current Prayer Calendar.pdf\", provided directly by Josh via Google Drive (file id 1OgklXFLRo-lwbfYIJpAA-XsA6bSAdvN7, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source's own header states 'June 7, 2026 through December 27, 2026', but its actual last printed entry is December 20 -- no December 27 entry exists in the source text at all (the PDF's own periodic 'Updated September 11, 2026' footer marks appear after the December 13 and December 20 entries, suggesting the calendar was current only through mid-September when last updated). Transcribed as printed, 29 weeks, not fabricated out to match the header's own stated end date.",
+    "Every single dated entry in the source ends with the identical standing sentence 'For Grace and Peace in the Diocese of Haiti. Our companion diocese, the Diocese of Leeds and their Bishop, The Rt. Rev. Toby Howarth' -- a fixed weekly constant repeated on every date's own line, not varying week to week, so (per this corpus's existing Great Lakes precedent for a repeated standing preamble) deliberately excluded from `entries` and disclosed here in full rather than repeated into all 29 weeks. ONE real exception: the September 20 entry names 'The Rt. Rev. Nick Baines' instead of Toby Howarth as the Bishop of Leeds -- preserved as the source's own genuine one-week variant (not corrected to match every other week), though not independently resolved here whether this reflects two different real office-holders (e.g. a diocesan vs. suffragan bishop) or a one-off substitution.",
+    "Most weeks pair a 'Pray today for the Bishop's Visitation to [Parish], [City]' sentence with an immediately following 'Pray for the people of [Parish], [City] and their rector, [Name]' sentence naming the same congregation -- folded into ONE `parish` subject per week (not two), with 'Bishop's Visitation' and the rector's name (when given -- several weeks omit it) combined into that subject's own `note`.",
+    "The stray internal space/hyphen break in 'Patricia Cope- Levy' (July 5) is read as 'Patricia Cope-Levy', a PDF line-wrap artifact, not a source typo.",
+    "November 15's second sentence prints 'Trinty Boonsboro' (missing the 'i') where the same week's first sentence correctly prints 'Trinity Boonsboro' -- the correct spelling is used in this file's own combined subject, and the one-off misspelling is disclosed here rather than silently duplicated into the transcription.",
+    "September 6's second sentence shortens 'Christ Church, Pocahontas' to just 'Christ, Pocahontas' -- the fuller form from the week's own first sentence is used as this subject's `name`, both referring to the same congregation."
+  ],
+  "entries": [
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The deacons of our diocese and our Archdeacon, The Ven. Linda Ricker" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our new bishop, The Rt. Rev. Karin MacPhail, and our former bishops, The Rt. Rev. Mark Bourlakas, The Rt. Rev. Neff Powell, and The Rt. Rev. Heath Light" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel", "place": "Covington", "note": "Bishop's Visitation; rector, The Very Rev. Katherine Doyle" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Pulaski", "note": "Bishop's Visitation" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The youth of our diocese and our Youth Missioner, Patricia Cope-Levy" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Big Stone Gap", "note": "Bishop's Visitation" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Memorial", "place": "Lynchburg", "note": "Bishop's Visitation" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Clifford", "note": "Bishop's Visitation; rector, The Rev. Allison Caudill" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Marion", "note": "Bishop's Visitation; rector, The Very Rev. John Church" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Folly Mills", "note": "Bishop's Visitation" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The residents of Boys Home, their Executive Director, Chris Doyle, and their chaplain, the Very Rev. Katherine Doyle" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Commission on Ministry and their Interim Chair, The Rev. Susan Bentley" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Radford", "note": "Bishop's Visitation; priest-in-charge, the Very Rev. William Yagel" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Pocahontas", "note": "Bishop's Visitation" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The students and staff of Stuart Hall and their Head of School, Jason Coady" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The students and staff of Virginia Episcopal School, their Headmaster, Henry Clarke, and their chaplain, the Rev. Adam White" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The bishops of the Episcopal Church as they gather today at House of Bishops" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The members of the Executive Board and the Standing Committee of the Diocese of Southwestern Virginia" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Moneta", "note": "Bishop's Visitation; associate pastor, the Rev. Janet Chisom; head pastor, the Rev. Philip Bouknight" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Abingdon", "note": "Bishop's Visitation; rector, the Rev. Heather Ma" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Bedford", "note": "Bishop's Visitation; rector, the Rev. Wilson Brown" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Roanoke", "note": "Bishop's Visitation; rector, the Rev. Alexander MacPhail" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Fincastle", "note": "Bishop's Visitation; rector, the Rev. Willis Logan" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Boonsboro", "place": "Lynchburg", "note": "Bishop's Visitation; rector, the Rev. Gail Goldsmith" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Retired Clergy of The Diocese of Southwestern Virginia and their Chaplains, The Rev. Dr. Bob Copenhaver and The Rev. Dr. James Hubbard" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The residents and staff of Westminster Canterbury, their chaplain, The Rev. William Deal, and their president, Sean Huyett" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Roanoke", "note": "Bishop's Visitation; rector, the Rev. Joseph Butler" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Lay Employees and Volunteers of the Diocese of Southwestern Virginia" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "St. Paul", "note": "Bishop's Visitation; rector, The Very Rev. John Church" }
+    ]}
+  ]
+}
