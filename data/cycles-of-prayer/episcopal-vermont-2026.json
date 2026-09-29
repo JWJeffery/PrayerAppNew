@@ -1,0 +1,674 @@
+{
+  "id": "episcopal-vermont-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Vermont",
+  "dioceseShort": "vermont",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Episcopal Diocese of Vermont 2026 Prayer Cycle",
+  "sourceFile": "\"2026-Cycle-of-Prayer-1.15.26.pdf\", fetched directly from https://diovermont.org/wp-content/uploads/2026/01/2026-Cycle-of-Prayer-1.15.26.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source covers Advent Year A (November 30, 2025, “1 Advent”) through Christ the King (November 22, 2026), one complete liturgical year, plus a final “1 Advent (Year B), 11/29/2026: New Cycle of Prayer begins” row with no actual prayer subject printed. The five entries before January 1, 2026 (11/30, 12/7, 12/14, 12/21, 12/28/2025) are included here rather than split into a separate file, matching this corpus's existing precedent for a diocesan cycle whose own declared range spans a year boundary (see e.g. episcopal-california-2026.json, episcopal-nevada-2026.json, episcopal-san-diego-2026.json, episcopal-tennessee-2026.json) -- the source's own document is itself titled “...2026 Prayer Cycle” and the bulk of its 52 dated entries fall in calendar year 2026.",
+    "The final row, “1 Advent (Year B)” dated 11/29/2026, prints only “New Cycle of Prayer begins” with no congregation, ministry, or office named -- it is an administrative marker that the diocese's next annual cycle starts that Sunday, not a prayer subject. Excluded from `entries` rather than fabricating a subject for it; disclosed here instead.",
+    "Liturgical labels are transcribed in the source's own numbered short form (e.g. “1 Advent”, “2 Epiphany”, “13 Pentecost”) rather than expanded to “First Sunday of Advent” etc. The January 11, 2026 entry's label is printed across two lines in the source's own Dates column (“1 Epiphany” then “The Baptism of Our Lord”, above the date) -- joined here as “1 Epiphany: The Baptism of Our Lord” following this corpus's existing colon-join convention for a source's own two-part liturgical label (see e.g. episcopal-atlanta-2026.json, episcopal-idaho-2026.json).",
+    "November 1, 2026 is labeled “All Saints’ Sunday” in the source rather than continuing the ordinary Pentecost numbering (it falls between “22 Pentecost” and “24 Pentecost”, with no “23 Pentecost” printed anywhere) -- this is the source's own substitution of the Principal Feast for the ordinarily-numbered Sunday, not a gap or an error in this transcription.",
+    "Typo preserved verbatim per this corpus's standing rule against silently correcting a source: the February 15, 2026 (“6 Epiphany”) entry reads “Minsitry and work of JUMP and Cathedral Square Corporation” (“Minsitry” for “Ministry”), unlike every other week's correctly-spelled “Ministry and work of...” phrasing.",
+    "The source's own extracted text mixes a straight apostrophe (') and a curly right-single-quotation-mark (’) across otherwise identical possessive congregation names, inconsistently and sometimes within the very same sentence -- e.g. April 26, 2026 prints “St. James' Church” with a straight mark and “St. Peter’s Church” with a curly mark in the same row; June 14's “St. Luke's” is straight while September 20's “St. Luke’s” is curly. Both forms are preserved exactly as the source's own text encodes them in each instance, never normalized to one style.",
+    "September 20, 2026's “St. Alban’s” (the town paired with St. Luke's in that week's constellation) is printed with an apostrophe; the real Vermont town of that name is conventionally spelled “St. Albans” (no apostrophe). Preserved exactly as printed rather than silently corrected.",
+    "The source's own “Parishes” column is one continuous descriptive sentence per row, not separate name/place/clergy columns. Where the source uses a semicolon to separate a specifically named congregation from trailing clergy and/or senior-warden identification (e.g. “Christ Church, Bethel; Nancy Wuttke, Senior Warden”), that trailing identification is recorded verbatim in the `parish` subject's own `note` field, following this corpus's existing precedent for the identical situation (see episcopal-south-carolina-2026.json's per-parish clergy notes). Where a comma or “and” instead joins one continuous descriptive phrase naming no separate congregation (e.g. “Ministry and work of the Commission on Ministry, Lisa Schnell, Chairperson”), the full phrase is kept together as a single `category` subject's `name`, unsplit.",
+    "Six weeks name a “constellation” (the diocese's own term for a shared-clergy grouping) of two to four congregations under one week, with shared clergy and/or wardens not attributed in the source to any one specific member congregation: April 26 (“The Shires Constellation”, 2 congregations), July 5 (an unnamed “constellation”, 2 congregations), July 19 (“The Upper Valley Constellation”, 4 congregations), August 2 (“The Northeast Kingdom Constellation”, 4 congregations), September 20 and September 27 (each “The Constellation of...” naming 2 congregations). Each named congregation is recorded as its own separate `parish` subject (never merged into one subject or given a single fabricated shared place), with the constellation's own description and the shared, unattributed clergy/wardens repeated in each member congregation's own `note` -- following this corpus's existing precedent for a multi-congregation shared-clergy grouping (see the “Trinity Cluster” entries in episcopal-iowa.json). Where the source names multiple wardens for a multi-congregation week without saying which warden serves which specific congregation (July 5's “Brian Garland, Senior Warden; and Jack Manning, Senior Warden” for two churches), that ambiguity is disclosed in the note rather than guessed at.",
+    "April 19, 2026 (“3 Easter”) reads “Church of Our Saviour and the ministries of Mission Farm, Killington; the Rev. Lisa Ransom”. “Mission Farm” is Church of Our Saviour's own retreat/camp ministry at the same Killington location, joined to the parish by “and” rather than by the source's own semicolon delimiter used elsewhere to separate genuinely distinct items -- kept as part of this single `parish` subject's `note` rather than split into a separately-typed subject.",
+    "Diocese self-identification: the source document's own page title reads “Episcopal Diocese of Vermont 2026 Prayer Cycle” (without “The”), but its own body text consistently uses the fuller form “The Episcopal Diocese of Vermont” (e.g. “Pray for the People and Ministries of The Episcopal Diocese of Vermont”, and again in several individual entries) -- `diocese` uses this fuller, repeatedly-printed in-body form.",
+    "The source is a single continuous two-column table (Dates | Parishes) running across 4 landscape pages, not a multi-column grid of independently-ordered items -- confirmed by rendering all 4 pages as images at 150 DPI and visually comparing every row against the `pdftotext -layout` extraction before transcribing; no column-interleaving risk (of the kind flagged elsewhere in this corpus for genuinely multi-column sources) was found.",
+    "The source's own page header also links to the worldwide Anglican Cycle of Prayer (https://www.anglicancommunion.org/resources/cycle-of-prayer/download-the-acp.aspx) as a companion resource, and a “Year A” / “Pray for the People and Ministries of The Episcopal Diocese of Vermont” row serves as the table's own column-group header -- neither is a dated prayer entry, so neither is transcribed into `entries`."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": "1 Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of our 11th Bishop, the Rt. Rev. Dr. Shannon MacVean-Brown"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": "2 Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of our Assisting Bishops, the Rt. Rev. A. Robert Hirschfeld and the Rt. Rev. Thomas J. Brown"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": "3 Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries of the members of the Bishop’s Staff and Rock Point Center Staff"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": "4 Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Green Mountain Online Abbey",
+          "note": "the Rev. adwoa Wilson, Vicar for Discipleship and Formation and Clergy in Charge of the Abbey"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": "1 Christmas",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry of Rock Point School, C.J. Spirito, Head of Rock Point School"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "2 Christmas",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Brookhaven Treatment and Learning Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "1 Epiphany: The Baptism of Our Lord",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Standing Committee, the Rev. Dr. Fred Moser, President"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "2 Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Trustees of the Diocese, David Bullock, President"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "3 Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Commission on Finance, the Rev. Melanie Combs, Chairperson"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "4 Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Executive Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "5 Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of VIA (the Vermont Interfaith Action) and the Rev. Susan McMillan, Deacon to VIA"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "6 Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Minsitry and work of JUMP and Cathedral Square Corporation"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "1 Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Work and ministry of the Commission on Ministry, Lisa Schnell, Chairperson; and all those discerning their call to ministry, lay or ordained"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "2 Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Racial Justice and Healing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "3 Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Zero Emissions Task Force"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "4 Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministry and work of the Task Force on Sanctuary and Refuge for the Vulnerable"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "5 Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Dioceses of Province 1 and their varied missions and ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries of our youth and young people throughout the Episcopal Diocese of Vermont and the Rev. Sarah Ginolfi, youth missioner"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries of lay leaders and their families throughout the Episcopal Diocese of Vermont"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "2 Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ministries of all the ordained and their households and families throughout the Episcopal Diocese of Vermont"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "3 Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Killington",
+          "note": "Source prints this entry as “Church of Our Saviour and the ministries of Mission Farm, Killington; the Rev. Lisa Ransom” – “Mission Farm” is Church of Our Saviour's own retreat/camp ministry at the same Killington location, joined by “and” rather than the source's own semicolon delimiter used elsewhere to separate distinct items, so it is kept with this single parish subject rather than split out. The Rev. Lisa Ransom is recorded here as printed."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "4 Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James' Church",
+          "place": "Arlington",
+          "note": "The Shires Constellation, together with St. Peter’s Church, Bennington; the Rev. Jeremy Means-Koss serves this constellation."
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s Church",
+          "place": "Bennington",
+          "note": "The Shires Constellation, together with St. James' Church, Arlington; the Rev. Jeremy Means-Koss serves this constellation."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "5 Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Barre",
+          "note": "the Rev. Earl Kooperkamp; the Rev. Beth Ann Maier"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "6 Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel Church",
+          "place": "Bellows Falls",
+          "note": "the Rev. Steven Fuller"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "7 Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Bethel",
+          "note": "Nancy Wuttke, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "The Day of Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas & Grace Church",
+          "place": "Brandon",
+          "note": "the Rev. Nancy Ludwig"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's Church",
+          "place": "Brattleboro",
+          "note": "the Rev. Mary Lindquist; the Rev. adwoa Wilson; and the Rev. Lars Hunter"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "2 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Cathedral Church of St. Paul",
+          "place": "Burlington",
+          "note": "the Very Rev. Greta Getlein"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "3 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Church",
+          "place": "Chester",
+          "note": "the Rev. Bruce MacDuffie"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "4 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's Church",
+          "place": "Colchester",
+          "note": "Betsy Peacock, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "5 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's Church",
+          "place": "Enosburg Falls",
+          "note": "the Rev. Titus Presler"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "6 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James' Church",
+          "place": "Essex Junction",
+          "note": "Constellation named in the source only as “the constellation,” together with Calvary Church, Underhill; shared clergy/wardens named in the source: the Rev. Dave Ganter; Brian Garland, Senior Warden; and Jack Manning, Senior Warden (the source does not say which warden serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "Underhill",
+          "note": "Constellation named in the source only as “the constellation,” together with St. James' Church, Essex Junction; shared clergy/wardens named in the source: the Rev. Dave Ganter; Brian Garland, Senior Warden; and Jack Manning, Senior Warden (the source does not say which warden serves which congregation)."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "7 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's Episcopal Mission",
+          "place": "Fair Haven",
+          "note": "the Rev. Melanie Combs"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "8 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's Church",
+          "place": "Fairlee",
+          "note": "The Upper Valley Constellation, together with St. Barnabas, Norwich; St. John’s, Randolph; St. Paul’s, White River Junction; shared clergy named in the source: the Rev. Jennie Anderson and the Rev. Scott Neal (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Norwich",
+          "note": "The Upper Valley Constellation, together with St. Martin's Church, Fairlee; St. John’s, Randolph; St. Paul’s, White River Junction; shared clergy named in the source: the Rev. Jennie Anderson and the Rev. Scott Neal (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Randolph",
+          "note": "The Upper Valley Constellation, together with St. Martin's Church, Fairlee; St. Barnabas, Norwich; St. Paul’s, White River Junction; shared clergy named in the source: the Rev. Jennie Anderson and the Rev. Scott Neal (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "White River Junction",
+          "note": "The Upper Valley Constellation, together with St. Martin's Church, Fairlee; St. Barnabas, Norwich; St. John’s, Randolph; shared clergy named in the source: the Rev. Jennie Anderson and the Rev. Scott Neal (the source does not say which clergy serves which congregation)."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "9 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Baptist Church",
+          "place": "Hardwick",
+          "note": "Jerry Willard, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "10 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Island Pond",
+          "note": "The Northeast Kingdom Constellation, together with St. Peter’s, Lyndonville; St. Mark’s, Newport; St. Andrew’s, St. Johnsbury; shared clergy named in the source: the Rev. Ann Hockridge and the Rev. Christine Moseley (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter’s",
+          "place": "Lyndonville",
+          "note": "The Northeast Kingdom Constellation, together with Christ Church, Island Pond; St. Mark’s, Newport; St. Andrew’s, St. Johnsbury; shared clergy named in the source: the Rev. Ann Hockridge and the Rev. Christine Moseley (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Newport",
+          "note": "The Northeast Kingdom Constellation, together with Christ Church, Island Pond; St. Peter’s, Lyndonville; St. Andrew’s, St. Johnsbury; shared clergy named in the source: the Rev. Ann Hockridge and the Rev. Christine Moseley (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "St. Johnsbury",
+          "note": "The Northeast Kingdom Constellation, together with Christ Church, Island Pond; St. Peter’s, Lyndonville; St. Mark’s, Newport; shared clergy named in the source: the Rev. Ann Hockridge and the Rev. Christine Moseley (the source does not say which clergy serves which congregation)."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "11 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Zion Church",
+          "place": "Manchester Center",
+          "note": "Mary Jo Gourd, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "12 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's Church",
+          "place": "Middlebury",
+          "note": "the Rev. Paul Olsson; and the Rev. Charlie Nichols"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "13 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Montpelier",
+          "note": "the Rev. Dr. Walter Brownridge; the Rev. Beth Ann Maier; and the Rev. Stephen Reynes"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "14 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Parish",
+          "place": "Northfield",
+          "note": "the Rev. Rachel Field; the Rev. Canon Lee Crawford; and the Rev. Earl Kooperkamp"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "15 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Rutland",
+          "note": "the Rev. Sarah Ginolfi; and the Rev. Deacon Liz Skaleski"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "16 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Shelburne",
+          "note": "Margaret Lowell, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "17 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Sheldon",
+          "note": "The Constellation of Grace Church, Sheldon and St. Luke’s, St. Alban’s, together with St. Luke’s, St. Alban’s; shared clergy named in the source: the Rev. Darcey Mercier; and the Rev. Jim Ballard (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "St. Alban’s",
+          "note": "The Constellation of Grace Church, Sheldon and St. Luke’s, St. Alban’s, together with Grace Church, Sheldon; shared clergy named in the source: the Rev. Darcey Mercier; and the Rev. Jim Ballard (the source does not say which clergy serves which congregation). “St. Alban’s” is printed with an apostrophe in the source; the real Vermont town is conventionally spelled “St. Albans” (no apostrophe) -- preserved exactly as printed."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "18 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "South Burlington",
+          "note": "The Constellation of All Saints, South Burlington and St. Paul’s, Vergennes, together with St. Paul’s, Vergennes; shared clergy named in the source: the Rev. Anne Hartley; the Rev. Margaret Mathauer; and the Rev. Lucy Pellegrini (the source does not say which clergy serves which congregation)."
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Vergennes",
+          "note": "The Constellation of All Saints, South Burlington and St. Paul’s, Vergennes, together with All Saints, South Burlington; shared clergy named in the source: the Rev. Anne Hartley; the Rev. Margaret Mathauer; and the Rev. Lucy Pellegrini (the source does not say which clergy serves which congregation)."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "19 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Springfield",
+          "note": "Marianne McCarthy, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "20 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's in the Mountains Church",
+          "place": "Stowe",
+          "note": "the Rev. Dr. Bob Leopold"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "21 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity Church",
+          "place": "Swanton",
+          "note": "the Rev. Kathleen Schotto"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "22 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Dunstan's Church",
+          "place": "Waitsfield",
+          "note": "Beth Mapes, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints’ Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Wells",
+          "note": "Laura Burch, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "24 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's in the Mountains Church",
+          "place": "Wilmington",
+          "note": "Elizabeth McEwan, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "25 Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Church",
+          "place": "Windsor",
+          "note": "Betty Cyr, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James Church",
+          "place": "Woodstock",
+          "note": "the Rev. Amy Spagna"
+        }
+      ]
+    }
+  ]
+}

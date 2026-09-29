@@ -1,0 +1,583 @@
+{
+  "id": "episcopal-west-tennessee-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of West Tennessee",
+  "dioceseShort": "west-tennessee",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "West Tennessee Episcopal Diocesan 2026 Cycle of Prayer",
+  "sourceFile": "\"2026-Diocesan-Cycle-of-Prayer.pdf\", fetched directly from https://edwtn.org/wp-content/uploads/2025/12/2026-Diocesan-Cycle-of-Prayer.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Confirmed this is the Memphis-based Episcopal Diocese of West Tennessee (edwtn.org), NOT the separate Episcopal Diocese of Tennessee (Nashville-based, edtn.org, already in this corpus as episcopal-tennessee-2026.json): the diocese's own website lists its office at 692 Poplar Ave., Memphis, TN and self-identifies as \"Episcopal Diocese of West Tennessee\" throughout its site; every place name printed in this source (Memphis, Dyersburg, Collierville, Humboldt, Covington, \"Boliver\"/Bolivar, Millington, Brighton, Union City, Germantown, Jackson, Ripley, Somerville, LaGrange, Paris, Mason, Brownsville) is a West Tennessee location, not a Middle Tennessee one.",
+    "The `diocese` field uses the diocese's own consistent self-identification, \"Episcopal Diocese of West Tennessee\" (per edwtn.org's own site branding, and matching the naming convention already used by this corpus's sibling file episcopal-tennessee-2026.json, \"Episcopal Diocese of Tennessee\"), rather than transcribing the source PDF's own title phrase verbatim into that field -- the PDF's title, \"West Tennessee Episcopal Diocesan 2026 Cycle of Prayer\", is itself transcribed exactly as printed into the `source` field instead, since its unusual adjective-first word order reads as a document title rather than a clean self-identifying name.",
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27, 2026, one subject per week except Trinity Sunday (two). The source prints only a liturgical Sunday name for every entry (e.g. \"Second Sunday after the Epiphany\", \"Twelfth Sunday after Pentecost\") -- no calendar date is printed anywhere in the four-page document. Since the sequence is an unbroken run of 52 consecutive Sundays entirely within civil year 2026 (Jan 4 - Dec 27), calendar dates were independently computed here (date[n] = January 4, 2026 + 7n days) rather than taken from the source, and cross-checked against the standard Western/TEC liturgical calendar for 2026 (Easter Sunday computed via the standard computus algorithm as April 5, 2026): this places the source's own 14th entry, \"Easter Sunday\", at the independently-computed April 5, 2026; its 21st entry, \"Day of Pentecost\", at the independently-computed May 24, 2026 (Easter + 49 days); its 22nd entry, \"Trinity Sunday\", at May 31, 2026 (Pentecost + 7 days); and its 48th entry, \"First Sunday of Advent\", at the independently-computed November 29, 2026 (the Sunday closest to November 30) -- all four checks matched exactly, giving confidence in the date computation. `date` is therefore a computed value in this file, not a source-printed one, distinct from `liturgicalNote`, which is the source's own disclosed label (per this corpus's standing rule that the two are kept apart and neither is used to \"correct\" the other).",
+    "The source's own ordinal numbering after Pentecost skips directly from its 43rd entry, \"Twenty- Second Sunday after Pentecost\" (Oct 25), to its 44th entry, \"All Saints' Sunday\" (Nov 1), then resumes at \"Twenty-Fourth Sunday after Pentecost\" (Nov 8) with no \"Twenty-Third\" anywhere -- verified as correct rather than a source error: All Saints' Day (November 1) itself falls on a Sunday in 2026, so the diocese observed the feast on its actual calendar date rather than continuing the ordinal count, consistent with the Episcopal Church's own rubrics permitting this substitution.",
+    "The source's 43rd entry is printed \"Twenty- Second Sunday after Pentecost\", with a stray space after the hyphen not present in any of the file's other \"Twenty-First\"/\"Twenty-Fourth\"/\"Twenty-Fifth\" hyphenated ordinals -- preserved exactly as printed in `liturgicalNote` rather than silently normalized.",
+    "This is a single-column, single-table, 4-page PDF with no multi-column layout of the kind that risks interleaving elsewhere in this corpus -- confirmed by directly viewing all 4 rendered pages as images, not just a linearized text extraction.",
+    "Several subjects are diocesan ministries, commissions, committees, conferences, or standing observances rather than congregations, and are recorded as `category` subjects per this schema's own definition (a named group not tied to one congregation): \"Licensed Lay Ministers\", \"Happening\" (a Church-wide Episcopal youth retreat program), \"Aspirants, Postulants and Candidates for Holy Orders\", \"Small Church Conference, held April 24-25, 2026\", \"St. Columba Episcopal Camp and Retreat Center\", \"Daughters of the King\", \"West Tennessee Endowment Corporation\", \"Addiction & Recovery Ministries\", \"Thistle and Bee\" (a Memphis-based social enterprise associated with the diocese), \"Tennessee Laymen's Conference\", \"Commission on Ministry\", \"Diocesan Youth and Young Adult Ministries and Episcopal Schools\" (kept as one combined name since the source presents it as a single continuous heading, not a delimited list), \"Barth House at University of Memphis\" (a campus ministry), \"West Tennessee Haiti Partnership\", \"Retired and Non-Parochial Clergy\", \"Diocesan Finance Committee & Treasurer\", \"Becoming Beloved Community Commission\", \"Bishop & Council\", \"Diocesan Convention, held November 20-21, 2026\", \"Church Home Trust Board\", \"Diocesan Office Staff\", and \"Standing Committee\".",
+    "No liturgical observance days other than ordinary/named Sundays are printed anywhere in this source (e.g. no separate Ash Wednesday, Maundy Thursday, or Good Friday line) -- `liturgicalNote` on every entry is the Sunday name the source itself prints, verbatim."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany: The Baptism of Our Lord",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Licensed Lay Ministers"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Dyersburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Collierville"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas the Apostle",
+          "place": "Humboldt"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Happening"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Apostles",
+          "place": "Collierville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Covington"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Aspirants, Postulants and Candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Boliver",
+          "note": "Source prints \"Boliver\"; the actual Hardeman County seat is spelled \"Bolivar\" -- preserved exactly as printed per this corpus's standing rule against silently correcting a source (see file-level notes)."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Millington"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ravenscroft",
+          "place": "Brighton"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Small Church Conference, held April 24-25, 2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Union City"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Germantown"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Communion",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Columba Episcopal Camp and Retreat Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity in the Fields",
+          "place": "Mason",
+          "note": "Source prints this and the next subject as one continuous line, \"Trinity in the Fields, Mason and Trinity, Mason\" -- split here into two separate parish subjects since each half is already its own \"Name, City\" pair joined by \"and\", naming two distinct congregations both located in Mason (a judgment call, disclosed at the file level)."
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Mason",
+          "note": "See note on the preceding subject: split from the source's single combined line \"Trinity in the Fields, Mason and Trinity, Mason\"."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Jackson"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "West Tennessee Endowment Corporation"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Addiction & Recovery Ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thistle and Bee"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel",
+          "place": "Ripley"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Somerville"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Tennessee Laymen's Conference"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Joseph's",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Youth and Young Adult Ministries and Episcopal Schools"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel",
+          "place": "LaGrange"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace- St. Luke's",
+          "place": "Memphis",
+          "note": "Source prints \"Grace- St. Luke's\" with the hyphen immediately after \"Grace\" and a space before \"St.\" -- preserved exactly as printed; likely refers to the Memphis congregation more commonly styled \"Grace - St. Luke's Episcopal Church\"."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Barth House at University of Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "West Tennessee Haiti Partnership"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Paris"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired and Non-Parochial Clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Finance Committee & Treasurer"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty-First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Becoming Beloved Community Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty- Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Mason"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints' Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Memphis"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty-Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop & Council"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "Twenty-Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Convention, held November 20-21, 2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost: Christ the King",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Home Trust Board"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Brownsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": "Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Office Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": "Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Standing Committee"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": "Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Edward's Chapel at Trezevant Manor",
+          "note": "Source prints this in the same \"Name, City\" form as this document's parish entries (\"St. Edward's Chapel at Trezevant Manor, Memphis\"), but it is recorded here as a `category` subject rather than `parish`: Trezevant Manor is a Memphis retirement community and St. Edward's Chapel its in-house chaplaincy, not a separate worshipping congregation, consistent with this corpus's existing judgment for retirement-community chapels (e.g. episcopal-alabama-2026.json's \"St. Martin's in the Pines, Birmingham\"). Its place, \"Memphis\", is preserved here in this note since `category` subjects carry no `place` field."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": "First Sunday after Christmas Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's Cathedral",
+          "place": "Memphis"
+        }
+      ]
+    }
+  ]
+}

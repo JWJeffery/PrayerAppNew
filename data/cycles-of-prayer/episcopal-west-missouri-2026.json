@@ -1,0 +1,152 @@
+{
+  "id": "episcopal-west-missouri-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Diocese of West Missouri",
+  "dioceseShort": "west-missouri",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Prayer Cycle & Bishop’s Visitation Schedule",
+  "sourceFile": "Live HTML calendar page at https://diowestmo.org/calendar/ (section headed \"Prayer Cycle & Bishop’s Visitation Schedule\"), fetched directly 2026-09-29 (both via a rendered fetch and via curl of the raw page HTML to confirm exact wording).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This diocese has folded its Cycle of Prayer into its Bishop's visitation schedule rather than publishing the two separately. The page states verbatim: \"The prayer cycle and Bishop’s visitation schedule will now coincide with each other moving forward. This means that the week the Bishop is visiting a church will be the week that the church will be included in the prayer cycle.\" Each week's entry is laid out in three labeled fields -- \"Location\", \"People\", and \"Ministry\" -- which this file treats as genuine prayer-intention content (per this task's guidance) rather than as a bare scheduling document, since the page explicitly frames it as the diocese's prayer cycle and each field names who/what to pray for that week.",
+    "The diocese also separately publishes a \"November 2026 - April 2028 Visitation Schedule\" PDF (linked from this same calendar page, at https://diowestmo.org/wp-content/uploads/2026/09/November-2026-April-2028-Visitation-Schedule.pdf) which was checked and confirmed to be a bare logistics document only -- a plain Date/City/Church table with \"no visitation\" and special-service/anniversary annotations, and no \"Location/People/Ministry\" prayer-intention framing anywhere in it. That PDF was NOT used as a source for this file; only the live calendar page's own Cycle-of-Prayer entries (with their Location/People/Ministry fields) were transcribed.",
+    "The live calendar page does not publish a fixed full-year document -- it displays only a rolling window of entries for the current calendar month and the next one. At the time of ingestion (2026-09-29) that window held exactly 8 entries, the Sundays of September 6 through October 25, 2026 inclusive; this file transcribes only that visible window. A diocesan roster research note checked one day earlier (2026-09-28) had recorded the window as covering \"August-October\" dates, but by 2026-09-29 the August entries had already scrolled off the page and were not recoverable from it. No stable, fixed-date, full-year published document for this cycle was found on the diocese's site. This file therefore covers only September 6 - October 25, 2026, not the full calendar year, and would need to be re-checked/re-ingested periodically to capture later weeks before they in turn scroll off the live page.",
+    "Each week's entry is modeled as two subjects: (1) the \"Location\" field, recorded as a `parish` subject when it names a specific Diocese of West Missouri congregation (its town/city becomes `place`), or as a `category` subject when it does not (two weeks -- September 6 and September 27 -- name another jurisdiction's bishop/church instead of a local congregation, presumably because the Bishop was traveling rather than visiting a West Missouri parish that week; see below); the \"People\" field's named clergy/warden(s) for that week are folded into that same subject's `note` (joined with \"; \" when more than one person is listed), matching this corpus's existing convention of keeping clergy detail in `note` rather than `name`. (2) The \"Ministry\" field is recorded as its own separate `category` subject naming that week's diocesan ministry focus, since it reads as an independent, week-by-week rotating prayer topic rather than a detail of the visited location; on the one week (September 20) where the Ministry field itself also names an associated person (\"The Rev. Canon Jose Palma\", the Diocesan Hispanic Missioner), that name is folded into the Ministry subject's own `note`.",
+    "September 6, 2026 (\"Pentecost XV\"): the Location field names \"The Episcopal Diocese of Western Louisiana – Pineville\" with its own bishop (\"The Rt. Rev. Jacob W. Owensby, Bishop\") as that week's People -- not a Diocese of West Missouri congregation -- so it is recorded as a `category` subject rather than `parish`.",
+    "September 27, 2026 (\"Pentecost XVIII\"): the Location field names \"The Episcopal Church – New York City\" with the Presiding Bishop (\"The Most Rev. Sean Rowe, Presiding Bishop\") as People and \"Fall House of Bishops' Meeting\" as that week's Ministry -- again not a West Missouri congregation -- so it is recorded as a `category` subject rather than `parish`.",
+    "Typographic characters (the curly apostrophe ’ and the en dash –) are transcribed exactly as the source's own HTML prints them, not normalized to straight quotes/hyphens.",
+    "\"St. Thomas a’ Becket Episcopal Church\" (October 25, 2026 entry, Cassville) is transcribed exactly as printed; the source appears to intend \"St. Thomas à Becket\" (with a grave accent) but instead prints a curly apostrophe (\"a’\") in its place. Preserved verbatim rather than corrected.",
+    "`diocese` is recorded as \"The Diocese of West Missouri\", this diocese's own consistent self-identification across its site (page `<title>` tag and `og:site_name` meta both read \"The Diocese of West Missouri\"; its homepage tagline is \"Episcopal Church in West Missouri\")."
+  ],
+  "entries": [
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Pentecost XV",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Diocese of Western Louisiana – Pineville",
+          "note": "The Rt. Rev. Jacob W. Owensby, Bishop"
+        },
+        {
+          "type": "category",
+          "name": "Church Musicians, Nurses and Sunday School Teachers"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Pentecost XVI",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s Episcopal Church",
+          "place": "Trenton",
+          "note": "Mr. Peter Allen, Bishop’s Warden"
+        },
+        {
+          "type": "category",
+          "name": "Clergy Spouses & Surviving Spouses"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Pentecost XVII",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church of the Good Shepherd",
+          "place": "Kansas City",
+          "note": "The Rev. Jonathan Callison, Interim Rector; The Rev. Lynda Hurt, Deacon"
+        },
+        {
+          "type": "category",
+          "name": "Hispanic Ministry & Diocesan Hispanic Missioner",
+          "note": "The Rev. Canon Jose Palma"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Pentecost XVIII",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church – New York City",
+          "note": "The Most Rev. Sean Rowe, Presiding Bishop"
+        },
+        {
+          "type": "category",
+          "name": "Fall House of Bishops’ Meeting"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Pentecost XIX",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Oswald’s-in-the-Fields Episcopal Church",
+          "place": "Skidmore",
+          "note": "Mrs. Jordyn Pankau-Dreher, Bishop’s Warden"
+        },
+        {
+          "type": "category",
+          "name": "St. Francis of Assisi & Blessing of the Animals"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Pentecost XX",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene Episcopal Church",
+          "place": "Belton",
+          "note": "The Very Rev. David Wilcox, Rector; The Rev. Brock Slabach, Deacon"
+        },
+        {
+          "type": "category",
+          "name": "College and Young Adult Commission"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Pentecost XXI",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael’s Episcopal Church",
+          "place": "Independence",
+          "note": "The Rev. Ryan Wiksell, Priest-in-Charge"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke’s Health System, Hospitals and Nursing Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Pentecost XXII",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas a’ Becket Episcopal Church",
+          "place": "Cassville",
+          "note": "Mr. Jim Craig, Bishop’s Warden; The Rev. Dr. Anita Philbrick, Deacon"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Ministry"
+        }
+      ]
+    }
+  ]
+}

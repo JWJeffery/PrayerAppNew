@@ -1,0 +1,238 @@
+{
+  "id": "episcopal-west-texas-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of West Texas",
+  "dioceseShort": "west-texas",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "The Diocesan Cycle of Prayer 2025 - 2026",
+  "sourceFile": "\"Cycle-of-Prayer-2025-2026.pdf\" (6 pages), linked from the diocese's own \"Cycle of Prayer\" resource page at https://www.dwtx.org/congregational-resources/faith-formation-worship/cycle-of-prayer and fetched directly from its Dropbox-hosted URL (dl.dropbox.com/scl/fi/u8b7l59ts892jglfoc896/Cycle-of-Prayer-2025-2026.pdf).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Diocese identity check: this is the Episcopal Diocese of West Texas (San Antonio-based, dwtx.org), not the separate Episcopal Diocese of Texas (Houston-based, epicenter.org, already in this corpus as episcopal-texas-2026.json) or the Diocese of Northwest Texas (Lubbock-based, dionwt.org, already in this corpus as episcopal-northwest-texas.json). Confirmed by the source URL itself (dwtx.org), by the PDF's own cover-page seal reading \"EPISCOPAL DIOCESE OF WEST TEXAS • 1874\", by the PDF's document metadata Title field (\"Episcopal Diocese of West Texas – Commission on Liturgy and Music\"), and independently by every place name printed across all 52 entries (San Antonio, Corpus Christi, Laredo, McAllen, Brownsville, Harlingen, Del Rio, Uvalde, Kerrville, Boerne, New Braunfels, Victoria, etc.) falling within this diocese's own South/Southwest Texas territory, not the Houston/East Texas area the Diocese of Texas covers or the Panhandle/South Plains area the Diocese of Northwest Texas covers.",
+    "`diocese` field: the source page (dwtx.org) and the PDF's own cover-page seal/document metadata consistently self-identify as \"Episcopal Diocese of West Texas\" (no leading \"The\"); the plainer, unqualified form \"the Diocese of West Texas\" also appears once inside the cycle's own body text (February 22's \"Pray for the 122nd Council of the Diocese of West Texas\"). The fuller, more consistently repeated \"Episcopal Diocese of West Texas\" form was used for the file-level `diocese` field.",
+    "What \"(Year A)\" refers to: the roster note describing this source as \"2025–2026 (Year A)\" refers to the Revised Common Lectionary's three-year Sunday reading cycle (Year A/B/C), not a separate calendar-year label -- the PDF's own cover page prints \"Year A\" directly beneath its title, matching the source's own November 2025 – November 2026 span, which runs exactly one liturgical year: from the First Sunday of Advent 2025 (Nov 30, 2025, the start of Year A) through Christ the King (Nov 22, 2026, \"The Last Sunday after Pentecost\", the final Sunday of Year A, immediately before the next Advent begins Year B on Nov 29, 2026). The source's cover page separately titles itself just \"Cycle of Prayer\" (with \"Year A\" and \"November 2025 – November 2026\" as subtitle lines), while the running header repeated at the top of every interior page instead reads \"The Diocesan Cycle of Prayer 2025 - 2026\" -- the latter, fuller title was used for the file's `source` field.",
+    "Year-boundary handling: the cycle's 52 entries run November 30, 2025 through November 22, 2026, with only its very first entry (Nov 30, 2025, the First Sunday of Advent) falling in calendar year 2025 and all other 51 entries falling in 2026. Per this schema's 'one file per diocese per year' rule and this corpus's existing precedent for a source spanning a year boundary with a small lead-in (episcopal-tennessee-2026.json, itself following episcopal-california-2026.json/episcopal-nevada-2026.json/episcopal-san-diego-2026.json), that single 2025 entry is included here in this '-2026' file rather than split into a separate one-entry '-2025' file -- an even more lopsided lead-in (1-of-52) than Tennessee's own 9-of-52, so the same reasoning applies at least as strongly.",
+    "Apostrophe typography is inconsistent within the source itself: most possessive congregation names use a curly/typographic apostrophe (e.g. “St. Andrew’s”), but three specific occurrences print a plain straight apostrophe instead -- “St. Matthias'” (Feb 15), “St. Barnabas'” (Jun 14), and, notably, “St. Philip's” on May 24 (Uvalde) even though the same congregation name “St. Philip’s” is printed with the ordinary curly apostrophe elsewhere in the very same document (Jul 5, San Antonio; Sep 27, Beeville). Each occurrence is transcribed exactly as printed rather than normalized to one consistent apostrophe style, per this corpus's standing rule against silently correcting a source.",
+    "“St. George, San Antonio” (Apr 19) is printed with no possessive ’s at all, unlike every other “St. <Name>’s” congregation in this source -- transcribed verbatim as “St. George”, not corrected to “St. George’s”.",
+    "“St. Peter & St. Paul, Mission” (Jun 21): “Mission” here is the `place` (a real city in the Rio Grande Valley, Hidalgo County, TX, part of this diocese's territory), not a descriptive word about the congregation's own mission status -- flagged here since it reads ambiguously out of context.",
+    "Several dates print a second, unbroken 'Pray for' line/topic beyond the week's named congregations, with no separate heading distinguishing it from an ordinary category; each is recorded as its own `category` subject, verbatim, including the source's own lowercase leading word where the sentence begins that way: July 5 pairs its two parishes with a second 'Pray for all who mourn, and those impacted by flooding on the one year anniversary of the flood in the Hill Country' sentence, recorded as a third subject on that date.",
+    "Judgment calls on whether an 'and'/comma-joined phrase names one combined prayer topic or two separate ones (this corpus's standing test, per episcopal-tennessee-2026.json's own notes, is whether each half is an independently, distinctly named entity vs. one single descriptive phrase): kept as a SINGLE category -- 'Sunday school teachers and Christian Formation leaders' (Mar 8, two generic lowercase role descriptions functioning as one sentence, not two separately titled bodies); 'the summer camping programs, and all serving at our camps this summer' (Jun 7, one continuous thought pairing a program with the people who run it); 'Latino and Immigration Ministries in West Texas' (Jul 12, read as one compound ministry name, 'and' internal to its own title, the same reasoning as Tennessee's 'The Clergy and Staff of the Diocesan House'). SPLIT into two separate categories -- 'Parish Schools in the Diocese' and 'the diocesan school, TMI - Episcopal' (Aug 23, a general category followed by one specifically named institution); 'Good Samaritan Community Services' and 'Mental Health Commission' (Sep 6, two distinctly, independently named organizations). All of these are judgment calls disclosed here rather than resolved silently.",
+    "'the Community of Saints Francis & Claire in Kerrville' (Oct 4, one of four subjects grouped under that date alongside three 'St. Francis'-named parishes) is recorded as `type: \"category\"`, not `parish`: it is described as a 'Community', which this corpus treats as a religious community/order rather than a congregation, and the source does not give it in the usual parish 'Name, Place' form (it reads '...and the Community of Saints Francis & Claire in Kerrville', with 'in Kerrville' folded into the description rather than set off as a separate place). Its own lowercase leading 'the' is kept verbatim, and 'in Kerrville' is kept as part of the category's `name` since `category` subjects have no separate `place` field.",
+    "The source's own liturgical labels for Nov 1 ('All Saints') and Nov 8 ('The Twenty-fourth Sunday after Pentecost') skip 'The Twenty-third Sunday after Pentecost' entirely -- Oct 25 is labeled 'Twenty-second' and Nov 8 jumps straight to 'Twenty-fourth', with no 'Twenty-third' printed anywhere in the source (All Saints Day, transferred to its nearest Sunday, evidently displaced that week's ordinary numbering in the diocese's own count). Transcribed exactly as printed per this schema's own rule that `liturgicalNote` is a disclosed label copied from the source, never corrected or reconciled against this app's own liturgical-calendar engines.",
+    "Several entries wrap their subject text across a mid-sentence PDF line break (e.g. Dec 7's 'St. Andrew’s, Seguin; and' / 'St. Andrew’s, San Antonio.'; Dec 21's '...St. Stephen’s, Wimberley; and St.' / 'Stephen’s, San Antonio.'; Mar 15's 'Church of the Holy Trinity,' / 'Carrizo Springs'; Apr 5's 'Church of the Redeemer, Eagle' / 'Pass.'; May 3's 'Church of the Holy Spirit,' / 'Dripping Springs.'; May 10's 'Church of the Good' / 'Shepherd, George West.'; Jan 11's liturgical-note heading 'The First Sunday after the Epiphany: The Baptism of Our Lord' / 'Jesus Christ'; Oct 4's '...St. Francis by the Lake,' / 'Canyon Lake, and the Community of Saints Francis & Claire in Kerrville.') -- each was rejoined into its single intended line, confirmed against the rendered PDF page images (not just the linearized text extraction) before trusting the join, per this corpus's standing multi-page-break caveat. This is a single-column layout throughout (no side-by-side multi-column grid), so there was no column-interleaving risk of the kind flagged elsewhere in this corpus for parish- or communion-level sources -- confirmed anyway by rendering and visually checking every one of the document's 6 pages against the extracted text.",
+    "March 15's entry ('...Church of the Holy Trinity, Carrizo Springs') is the only entry in the source with no terminating period after its final congregation -- preserved as printed (no period fabricated).",
+    "The separator between a date and its liturgical label is printed inconsistently across the source -- most read '<date> – <label>' (en dash with a space on each side), but a few instead print '<date>– <label>' (no space before the dash: Feb 15, Jun 28, Oct 18) or '<date>- <label>' (a plain hyphen instead of an en dash: Apr 19, Nov 22). This is purely a separator-punctuation quirk with no effect on the transcribed `date` or `liturgicalNote` field values themselves, noted here for completeness rather than as a content disclosure.",
+    "The ordinal ('122nd') in February 22's entry is printed with a superscripted 'nd' in the source; transcribed here as plain inline text ('122nd'), an unavoidable formatting normalization since this schema's string fields carry no rich-text/superscript formatting, not a content change.",
+    "No entry in this source is left blank/'same as row above' -- every one of the 52 dates prints its own subject(s) directly, so this schema's blank-date grouping rule was never triggered."
+  ],
+  "entries": [
+    { "date": "2025-11-30", "liturgicalNote": "The First Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Nicholas", "place": "Bulverde" },
+      { "type": "parish", "name": "Church of the Advent", "place": "Alice" }
+    ]},
+    { "date": "2025-12-07", "liturgicalNote": "The Second Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Brownsville" },
+      { "type": "parish", "name": "St. Andrew’s", "place": "Seguin" },
+      { "type": "parish", "name": "St. Andrew’s", "place": "San Antonio" }
+    ]},
+    { "date": "2025-12-14", "liturgicalNote": "The Third Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Emmanuel Church", "place": "Lockhart" },
+      { "type": "parish", "name": "St. Thomas’", "place": "San Antonio" }
+    ]},
+    { "date": "2025-12-21", "liturgicalNote": "The Fourth Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Church of the Messiah", "place": "Gonzales" },
+      { "type": "parish", "name": "St. Stephen’s", "place": "Wimberley" },
+      { "type": "parish", "name": "St. Stephen’s", "place": "San Antonio" }
+    ]},
+    { "date": "2025-12-28", "liturgicalNote": "The First Sunday after Christmas Day", "subjects": [
+      { "type": "parish", "name": "Church of the Annunciation", "place": "Luling" },
+      { "type": "parish", "name": "Grace Church", "place": "Port Lavaca" }
+    ]},
+    { "date": "2026-01-04", "liturgicalNote": "The Second Sunday after Christmas Day", "subjects": [
+      { "type": "parish", "name": "St. Christopher’s", "place": "Bandera" },
+      { "type": "parish", "name": "St. Timothy’s", "place": "Cotulla" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "The First Sunday after the Epiphany: The Baptism of Our Lord Jesus Christ", "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Kingsville" },
+      { "type": "parish", "name": "Grace Church", "place": "San Antonio" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "The Second Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Peter’s", "place": "Rockport" },
+      { "type": "parish", "name": "St. Margaret’s", "place": "San Antonio" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "The Third Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Brady" },
+      { "type": "parish", "name": "St. Paul’s", "place": "San Antonio" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "The Fourth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Church of Reconciliation", "place": "San Antonio" },
+      { "type": "parish", "name": "Grace Church", "place": "Cuero" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "The Fifth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Junction" },
+      { "type": "parish", "name": "Grace Church", "place": "Llano" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "The Last Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Matthias'", "place": "Devine", "note": "Source prints a plain straight apostrophe here, unlike the curly apostrophe used for most other possessive congregation names in this document; preserved as printed (see file-level notes)." },
+      { "type": "parish", "name": "St. Andrew’s", "place": "Port Isabel" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "The First Sunday in Lent", "subjects": [
+      { "type": "category", "name": "the 122nd Council of the Diocese of West Texas" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "The Second Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. David’s", "place": "San Antonio" },
+      { "type": "parish", "name": "St. John’s", "place": "Sonora" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "The Third Sunday in Lent", "subjects": [
+      { "type": "category", "name": "Sunday school teachers and Christian Formation leaders" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "The Fourth Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Christopher’s by the Sea", "place": "Portland" },
+      { "type": "parish", "name": "Church of the Holy Trinity", "place": "Carrizo Springs" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "The Fifth Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "Calvary Church", "place": "Menard" },
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Aransas Pass" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "The Sunday of the Passion: Palm Sunday", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Corpus Christi" },
+      { "type": "parish", "name": "Santa Fe Church", "place": "San Antonio" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "The Sunday of the Resurrection: Easter Sunday", "subjects": [
+      { "type": "parish", "name": "Church of the Resurrection", "place": "Windcrest" },
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Eagle Pass" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "The Second Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Diocesan World Mission Department" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "The Third Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. George", "place": "San Antonio" },
+      { "type": "parish", "name": "St. Mark’s", "place": "San Marcos" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "The Fourth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "Corpus Christi" },
+      { "type": "parish", "name": "St. Mark’s", "place": "San Antonio" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "The Fifth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Church of the Holy Spirit", "place": "San Antonio" },
+      { "type": "parish", "name": "Church of the Holy Spirit", "place": "Dripping Springs" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "The Sixth Sunday of Easter (Rogation Sunday) (Mother’s Day)", "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Corpus Christi" },
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "George West" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "The Seventh Sunday of Easter: The Sunday after Ascension Day", "subjects": [
+      { "type": "parish", "name": "Church of the Ascension", "place": "Montell" },
+      { "type": "parish", "name": "Church of the Ascension", "place": "Refugio" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "The Day of Pentecost: Whitsunday", "subjects": [
+      { "type": "parish", "name": "St. Philip's", "place": "Uvalde", "note": "Source prints a plain straight apostrophe here; the same congregation name is printed elsewhere in this document (San Antonio, Beeville) with a curly apostrophe instead. Preserved as printed (see file-level notes)." },
+      { "type": "parish", "name": "St. James’", "place": "Del Rio" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "The First Sunday after Pentecost: Trinity Sunday", "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Edna" },
+      { "type": "parish", "name": "Trinity by the Sea", "place": "Port Aransas" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "The Second Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "the summer camping programs, and all serving at our camps this summer" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "The Third Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Barnabas'", "place": "Fredericksburg", "note": "Source prints a plain straight apostrophe here, unlike the curly apostrophe used for most other possessive congregation names in this document; preserved as printed (see file-level notes)." },
+      { "type": "parish", "name": "St. Boniface", "place": "Comfort" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "The Fourth Sunday after Pentecost: (Father’s Day)", "subjects": [
+      { "type": "parish", "name": "St. Peter & St. Paul", "place": "Mission", "note": "‘Mission’ is the place name (a city in Hidalgo County, TX), not a description of the congregation." },
+      { "type": "parish", "name": "St. Alban’s", "place": "Harlingen" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "The Fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Peter’s", "place": "Kerrville" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Brownsville" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "The Sixth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Bartholomew’s", "place": "Corpus Christi" },
+      { "type": "parish", "name": "St. Philip’s", "place": "San Antonio" },
+      { "type": "category", "name": "all who mourn, and those impacted by flooding on the one year anniversary of the flood in the Hill Country" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "The Seventh Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Latino and Immigration Ministries in West Texas" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "The Eighth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Recovery Ministries in West Texas" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "The Ninth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Hebbronville" },
+      { "type": "parish", "name": "St. James’", "place": "Hallettsville" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "The Tenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Victoria" },
+      { "type": "parish", "name": "Trinity Church", "place": "Pharr" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "The Eleventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "New Braunfels" },
+      { "type": "parish", "name": "St. John’s", "place": "McAllen" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "The Twelfth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Helena’s", "place": "Boerne" },
+      { "type": "parish", "name": "Grace Church", "place": "Weslaco" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "The Thirteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Parish Schools in the Diocese" },
+      { "type": "category", "name": "the diocesan school, TMI - Episcopal" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "The Fourteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "College Missions in West Texas" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "The Fifteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Good Samaritan Community Services" },
+      { "type": "category", "name": "Mental Health Commission" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "The Sixteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Matthew’s", "place": "Kenedy" },
+      { "type": "parish", "name": "St. Stephen’s", "place": "Goliad" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "The Seventeenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Matthew’s", "place": "Edinburg" },
+      { "type": "parish", "name": "St. Matthew’s", "place": "Universal City" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "The Eighteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Michael and All Angels’", "place": "Blanco" },
+      { "type": "parish", "name": "St. Philip’s", "place": "Beeville" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "The Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Francis’", "place": "Victoria" },
+      { "type": "parish", "name": "St. Francis’", "place": "San Antonio" },
+      { "type": "parish", "name": "St. Francis by the Lake", "place": "Canyon Lake" },
+      { "type": "category", "name": "the Community of Saints Francis & Claire in Kerrville" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "The Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "San Antonio" },
+      { "type": "parish", "name": "St. Luke’s", "place": "Cypress Mill" },
+      { "type": "parish", "name": "St. Luke’s", "place": "San Saba" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "The Twenty-first Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Military Ministries in West Texas" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "The Twenty-second Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Corpus Christi" },
+      { "type": "parish", "name": "All Saints’", "place": "San Benito" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints", "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Pleasanton" },
+      { "type": "category", "name": "the Eastern Partners in Ministry" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "The Twenty-fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Martin’s", "place": "Mason" },
+      { "type": "parish", "name": "St. Elizabeth’s", "place": "Buda" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "The Twenty-fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "San Antonio" },
+      { "type": "parish", "name": "Christ Church", "place": "Laredo" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost: Christ the King", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Brackettville" },
+      { "type": "parish", "name": "St. James’", "place": "Fort McKavett" }
+    ]}
+  ]
+}

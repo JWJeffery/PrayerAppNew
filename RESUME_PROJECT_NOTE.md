@@ -517,22 +517,33 @@ same way. Fixed with a same-batch fallback lookup; retroactively verified Califo
 lead-in dates now resolve correctly too. Full per-diocese and bug-fix detail: `AUDIT_GOVERNANCE_LEDGER.md`'s
 2026-09-29 "Diocese ingestion batch 13" entry.
 
+**Batch 14 (Vermont, Virginia, Washington (DC), West Missouri, West Tennessee, West Texas): DONE
+2026-09-29 — 6 of 6, no blocks.** West Missouri's roster-flagged "visitation schedule" was checked
+directly and confirmed to be a genuine cycle of prayer (the diocese deliberately coincides its prayer
+cycle with the bishop's visitations now) — only 8 entries exist since the diocese's page shows just a
+rolling current+next-month window, not a stable full-year document. West Tennessee's source prints no
+calendar dates at all; `date` values were computed from a verified 2026 liturgical calendar and disclosed
+as computed. Vermont's, Washington's, and West Texas's own year-boundary lead-in dates were live-verified
+to confirm batch 13's `getCachedCycleOfPrayerWeek` bug fix holds for new files generally, not just the
+three it was originally written against. Full per-diocese detail: `AUDIT_GOVERNANCE_LEDGER.md`'s
+2026-09-29 "Diocese ingestion batch 14" entry.
+
 **Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time.
-Alphabetically, the next batch starts after Upper South Carolina (Vermont onward — check the
-roster/registry directly rather than trusting this note's ordering; Southwestern Virginia and Western
-Massachusetts are already ingested; Mississippi/Navajoland deliberately skipped, see above).
+Alphabetically, the next batch starts after West Texas (West Virginia onward — check the roster/registry
+directly rather than trusting this note's ordering; Western Massachusetts and Western Oregon are already
+ingested; Mississippi/Navajoland deliberately skipped, see above).
 **Southern Virginia is the one open blocked link** as of this writing — hold it and report the exact URL
 to Josh the next time he asks to see blocked links, per his standing preference, rather than surfacing it
 unprompted; if a future fetch gets blocked, try the reader-service/user-agent tricks from batch 10 first,
 since both resolved what looked like genuine blocks without needing Josh.
 
 **~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 70 are now ingested into this corpus, ~17 remain** (separately, 18 dioceses have no verified
+historical); 76 are now ingested into this corpus, ~11 remain** (separately, 18 dioceses have no verified
 source at all per Josh's own research — see `tecDioceseRoster.noSourceFound` in schema.json — those
 won't get ingested unless a source turns up).
 
-**74 files currently in the corpus, all passing the validator:** 66 diocese-level, `cycleType: "dated"`
-(64 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
+**80 files currently in the corpus, all passing the validator:** 72 diocese-level, `cycleType: "dated"`
+(70 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
 Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf Coast, Central New
 York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton, Florida, Georgia,
 Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland, Massachusetts,
@@ -540,7 +551,8 @@ Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, No
 California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia, Pennsylvania,
 Pittsburgh, Puerto Rico, Rhode Island, San Diego, South Carolina, South Dakota, Southeast Florida (2
 files, 2026+2027), Southern Ohio, Southwest Florida, Springfield, Susquehanna, Tennessee, Texas, Upper
-South Carolina, Nebraska, Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
+South Carolina, Vermont, Virginia, Washington (DC), West Missouri, West Tennessee, West Texas, Nebraska,
+Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
 Virginia, Western Massachusetts, Colorado; 4 diocese-level, `cycleType:
 "monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas; 1 diocese-level, `cycleType:
 "annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
