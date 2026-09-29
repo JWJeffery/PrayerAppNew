@@ -226,3 +226,77 @@ function cycleOfPrayerParishSlug(subject) {
     const raw = subject.type === 'parish' ? (subject.place + ' ' + subject.name) : subject.name;
     return raw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
+
+// ── The worldwide Anglican Cycle of Prayer (scope 'communion') ─────────────
+// ADDED 2026-09-29. Unlike CYCLES_OF_PRAYER_DIOCESES above, there is exactly
+// ONE scope-'communion' file (see data/cycles-of-prayer/schema.json) -- it
+// isn't scoped to any diocese a user picks, so it needs no per-diocese
+// registry/lookup key, just its own bodySlug for building the file path. It
+// applies to every user identically; callers never gate it on any profile
+// field the way the diocese/parish tiers gate on cycleOfPrayerDiocese.
+const COMMUNION_CYCLE_OF_PRAYER_BODY_SLUG = 'anglican-communion';
+
+// Cache key is bare `year` (an integer), since there is only ever one file
+// per year, unlike _cyclesOfPrayerCache's dioceseKey-qualified keys above.
+const _communionCycleOfPrayerCache = new Map();
+
+function communionCycleOfPrayerFilePath(year) {
+    return 'data/cycles-of-prayer/' + COMMUNION_CYCLE_OF_PRAYER_BODY_SLUG + '-' + year + '.json';
+}
+
+/**
+ * Fetches (and caches) the worldwide Communion cycle's file for `year`.
+ * Mirrors loadCycleOfPrayerYear's contract exactly: returns null, never
+ * throws, when that year's file does not exist yet -- the expected, honest
+ * case every January until the next year's cycle is ingested, and also the
+ * case for any date outside whatever partial-year range the current file
+ * actually covers (e.g. anglican-communion-2026.json only covers
+ * Sept-Dec 2026, so a Jan-Aug 2026 date still resolves this same file, but
+ * getCachedCommunionCycleOfPrayerDay below correctly finds no entry for it).
+ */
+async function loadCommunionCycleOfPrayerYear(year) {
+    if (_communionCycleOfPrayerCache.has(year)) {
+        return _communionCycleOfPrayerCache.get(year);
+    }
+
+    const path = communionCycleOfPrayerFilePath(year);
+
+    try {
+        const response = await fetch(path);
+        if (!response.ok) {
+            _communionCycleOfPrayerCache.set(year, null);
+            return null;
+        }
+        const doc = await response.json();
+        _communionCycleOfPrayerCache.set(year, doc);
+        return doc;
+    } catch (_error) {
+        // Network/parse failure: cache nothing, so a later retry is not
+        // permanently blocked by this one failed attempt -- same convention
+        // as loadCycleOfPrayerYear above.
+        return null;
+    }
+}
+
+/**
+ * Synchronous, cache-only resolution of "this day's" Communion cycle entry
+ * for a given date. Reuses resolveCycleOfPrayerEntry's "latest on-or-before"
+ * semantics (this file's cycleType is 'dated', same as a diocese's own dated
+ * file) against whatever year's corpus is already cached. Returns null when
+ * that year isn't loaded yet, or the date falls before the corpus's own
+ * first entry (e.g. a Jan-Aug 2026 date against a Sept-Dec-only file) --
+ * never a fetch, never a guess; callers render nothing in that case, same
+ * "null = not yet available or not covered" convention used throughout this
+ * module.
+ */
+function getCachedCommunionCycleOfPrayerDay(date) {
+    const corpus = _communionCycleOfPrayerCache.get(date.getFullYear()) || null;
+    if (!corpus) return null;
+
+    // The corpus's own declared year, not just the cache key, gates use --
+    // belt and suspenders against a future mis-filed file, same check
+    // getCachedCycleOfPrayerWeek makes for a diocese's own dated file.
+    if (corpus.year !== date.getFullYear()) return null;
+
+    return resolveCycleOfPrayerEntry(corpus, date);
+}
