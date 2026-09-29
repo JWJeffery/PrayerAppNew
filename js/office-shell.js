@@ -373,18 +373,15 @@
         var saints = main.querySelector(':scope > .saint-section');
         if (saints) page.appendChild(saints);
 
-        /* The audit-dashboard link is a direct child of #main-content with no
-           id and no class — inline-styled markup. Left alone it has no
-           grid-area, so CSS auto-places it into an implicit FOURTH row below
-           the keeping bar, which is exactly where it appeared. It belongs in
-           the keeping bar's action slot. Matched on its href rather than
-           position, so re-ordering the markup cannot silently break this. */
-        var auditLink = main.querySelector(':scope > div > a[href="audit-ledger.html"]');
-        var auditBlock = auditLink ? auditLink.parentElement : null;
-        if (auditBlock && auditBlock.parentElement === main) {
-            keeping.querySelector('.uo-keeping-actions').appendChild(auditBlock);
-            auditBlock.style.margin = '0';
-        }
+        /* An audit-dashboard link used to live as a direct child of
+           #main-content and was relocated into the keeping bar's action slot
+           here. Per Josh's direct instruction (2026-09-29): Audit Dashboard
+           does not belong in any office view at all -- it is now a single
+           super-user-gated button on the mode-selection screen (see
+           syncAuditDashboardSuperUserGate() in office-ui.js). The markup this
+           selector matched is gone; this relocation step is removed rather
+           than left as dead code that could silently resurrect the same
+           per-office link if that markup ever reappears. */
 
         if (backBtn) {
             /* The inline style must be cleared ON THE ELEMENT. The previous
