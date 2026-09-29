@@ -454,3 +454,94 @@ function getCachedCommunionCycleOfPrayerDay(date) {
 
     return resolveCycleOfPrayerEntry(corpus, date);
 }
+
+// ── The Parish tier (scope 'parish') ────────────────────────────────────────
+// ADDED 2026-09-29, per Josh's direct report that "the parish cycle of
+// prayer is missing" after St. Bede's own household-cycle file (see that
+// file's own header comment) was ingested but never wired into any loader.
+// Unlike CYCLES_OF_PRAYER_DIOCESES (one row per diocese) this is one row per
+// PARISH, since a parish-tier file sits a layer below a diocese -- a diocese
+// can have any number of ingested parish files, or none. `place`/`name` are
+// deliberately the SAME strings the diocese's own corpus uses for this
+// parish as a scope-'diocese' subject (see e.g.
+// episcopal-western-oregon-2026.json's "Forest Grove" / "St. Bede" entry) --
+// that is what lets this registry be keyed by the exact same
+// cycleOfPrayerParishSlug() value already stored in
+// profile.cycleOfPrayerParish when a user picks their parish from the
+// diocese's own parish list; no separate parish-tier picker/slug exists or
+// is needed. `parishFileSlug` is only the filename's own trailing segment --
+// kept separate from the slug above since a filename-safe form and a
+// display-slug form need not always coincide.
+const CYCLES_OF_PRAYER_PARISHES = Object.freeze([
+    { bodySlug: 'episcopal', dioceseShort: 'western-oregon', place: 'Forest Grove', name: 'St. Bede', parishFileSlug: 'st-bede' }
+]);
+
+function findCycleOfPrayerParishEntry(dioceseKey, parishSlug) {
+    if (!dioceseKey || !parishSlug) return null;
+    return CYCLES_OF_PRAYER_PARISHES.find(p =>
+        cycleOfPrayerDioceseKey(p.bodySlug, p.dioceseShort) === dioceseKey &&
+        cycleOfPrayerParishSlug({ type: 'parish', place: p.place, name: p.name }) === parishSlug
+    ) || null;
+}
+
+function cycleOfPrayerParishFilePath(entry) {
+    return 'data/cycles-of-prayer/' + entry.bodySlug + '-' + entry.dioceseShort + '-' + entry.parishFileSlug + '.json';
+}
+
+// Every ingested parish file so far is 'monthly-recurring' (a standing,
+// no-year household cycle, same cycleType as an Arkansas-style diocese
+// file) -- so, unlike _cyclesOfPrayerCache above, this cache needs no
+// year-qualified key at all, just dioceseKey + the parish's own file slug.
+const _cyclesOfPrayerParishCache = new Map();
+
+/**
+ * Fetches (and caches) the given parish's household-cycle file. Mirrors
+ * loadCycleOfPrayerYear's contract: returns null, never throws, when
+ * `dioceseKey`/`parishSlug` don't resolve to any ingested parish file (the
+ * expected, honest case for every parish this app hasn't ingested yet, not
+ * an error) or the fetch itself fails.
+ */
+async function loadCycleOfPrayerParishMonth(dioceseKey, parishSlug) {
+    const entry = findCycleOfPrayerParishEntry(dioceseKey, parishSlug);
+    if (!entry) return null;
+
+    const cacheKey = dioceseKey + ':' + entry.parishFileSlug;
+    if (_cyclesOfPrayerParishCache.has(cacheKey)) {
+        return _cyclesOfPrayerParishCache.get(cacheKey);
+    }
+
+    try {
+        const response = await fetch(cycleOfPrayerParishFilePath(entry));
+        if (!response.ok) {
+            _cyclesOfPrayerParishCache.set(cacheKey, null);
+            return null;
+        }
+        const doc = await response.json();
+        _cyclesOfPrayerParishCache.set(cacheKey, doc);
+        return doc;
+    } catch (_error) {
+        // Network/parse failure: cache nothing, so a later retry is not
+        // permanently blocked by this one failed attempt -- same convention
+        // as loadCycleOfPrayerYear above.
+        return null;
+    }
+}
+
+/**
+ * Synchronous, cache-only resolution of "today's" (day-of-month) household
+ * entry for a given diocese+parish and date. Reuses
+ * resolveMonthlyRecurringEntry's wrap-around semantics unchanged -- the same
+ * function an 'monthly-recurring' diocese file already uses. Returns null
+ * when the parish isn't a registered/ingested one, or its file isn't loaded
+ * in cache yet; callers render nothing in that case, same "null = not yet
+ * available" convention used throughout this module.
+ */
+function getCachedCycleOfPrayerParishMonth(dioceseKey, parishSlug, date) {
+    const entry = findCycleOfPrayerParishEntry(dioceseKey, parishSlug);
+    if (!entry) return null;
+
+    const corpus = _cyclesOfPrayerParishCache.get(dioceseKey + ':' + entry.parishFileSlug) || null;
+    if (!corpus) return null;
+
+    return resolveMonthlyRecurringEntry(corpus, date);
+}
