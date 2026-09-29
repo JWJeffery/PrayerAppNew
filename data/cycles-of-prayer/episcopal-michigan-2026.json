@@ -1,0 +1,244 @@
+{
+  "id": "episcopal-michigan-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Michigan",
+  "dioceseShort": "michigan",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Cycle of Prayer",
+  "sourceFile": "\"2026-Cycle-of-Prayer.pdf\", fetched directly from https://www.edomi.org/wp-content/uploads/2025/09/2026-Cycle-of-Prayer.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27 (every date checked against a real calendar and confirmed to fall on a Sunday). The source prints no liturgical Sunday names anywhere (no 'Proper' numbers, no season names) -- `liturgicalNote` is null on every entry accordingly.",
+    "The source's own layout is a two-column grid (two months side by side per page, six pages of months). A naive `pdftotext -layout` extraction of this grid was cross-checked against all six month-pair pages rendered as images at 150dpi (and two small regions at 300dpi for closer inspection) before being trusted; the linearized text matched the rendered pages exactly, with no column interleaving found.",
+    "Almost every week names one Diocese of Michigan congregation (occasionally two) plus one companion congregation in the Diocese of the Dominican Republic, which the source marks with its own trailing ', DR' (per the source's own legend printed on most pages: 'DR = Dominican Republic'). Both are transcribed as `parish` subjects; for the companion-diocese congregations, `place` is recorded exactly as the source prints the whole location line, including its own ', DR' marker (e.g. 'Santiago, DR'), rather than stripping it -- this is the source's own printed text, not an invented country field. The Dominican Republic congregation for the week is consistently listed after the Michigan congregation(s), preserved in that printed order.",
+    "The source's front page ('Please remember at each service') lists standing intercessions prayed every week (the Presiding Bishop, the diocesan bishop, the Dominican Republic's bishop, ELCA companion bishops, the retired bishop, and the diocesan household generally) -- these are not tied to any specific date or rotation and are excluded from `entries`, the same way this corpus's Colorado file excludes standalone weekday saint notes embedded in its own source page.",
+    "November 22 (Detroit, St. Matthew's & St. Joseph's) is the one week in the year with only a single subject and no paired Dominican Republic congregation -- transcribed as printed, not an omission on this file's part.",
+    "The source's own apparent errors/oddities are preserved verbatim per this corpus's standing rule against silently correcting a diocese's own document: 'St. Stephe's' for Troy (June 7, evidently missing the 'n'); 'Hato Mayor del Ray' (February 1's Dominican Republic companion town -- likely 'del Rey'); 'All.together Campus Ministry' (Detroit, March 22, the mid-word period as printed); 'Gautier, DR' (November 29's Dominican Republic companion town -- printed exactly this way despite 'Gautier' otherwise being a US place name; not corrected or guessed at).",
+    "June 7's Dearborn entry ('Mother of the Savior') carries an italicized two-line descriptor directly beneath its name in the source, 'Arab-American Christian Ministry' -- recorded in that subject's own `note` field as a disclosed label from the source, not treated as a separate prayer subject.",
+    "Two congregations both named 'St. Aidan's' appear back to back on February 15 (Ann Arbor and Michigan Center) -- transcribed as two separate `parish` subjects exactly as printed, not merged or treated as a duplication error."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Adrian" },
+      { "type": "parish", "name": "St. Luke's", "place": "Santiago, DR" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Mt. Clemens'" },
+      { "type": "parish", "name": "Blessed Virgin Mary", "place": "Puerto Plata, DR" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Wyandotte" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Dexter" },
+      { "type": "parish", "name": "St. Gabriel's", "place": "Consuelo, DR" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Pontiac" },
+      { "type": "parish", "name": "St. Matthew", "place": "Hato Mayor del Ray, DR" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Livonia" },
+      { "type": "parish", "name": "St. Mark's", "place": "Haina, DR" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Aidan's", "place": "Ann Arbor" },
+      { "type": "parish", "name": "St. Aidan's", "place": "Michigan Center" },
+      { "type": "parish", "name": "St. Stephen's", "place": "San Pedro, DR" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Ann Arbor" },
+      { "type": "parish", "name": "St. Timothy's", "place": "Bani, DR" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Cross", "place": "Novi" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Hamburg" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Clare of Assisi", "place": "Ann Arbor" },
+      { "type": "parish", "name": "Trinity Church", "place": "Belleville" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Pleasant Lake" },
+      { "type": "parish", "name": "Church of the Resurrection", "place": "Ecorse" },
+      { "type": "parish", "name": "Jesus the Pilgrim", "place": "Barahona, DR" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All.together Campus Ministry", "place": "Detroit" },
+      { "type": "parish", "name": "St. John's", "place": "Westland" },
+      { "type": "parish", "name": "St. Barnabas", "place": "Bani, DR" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Southgate" },
+      { "type": "parish", "name": "Church of the Resurrection", "place": "Clarkston" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Jackson" },
+      { "type": "parish", "name": "St. James", "place": "San Marcos, DR" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Katherine's", "place": "Williamston" },
+      { "type": "parish", "name": "Nativity Church", "place": "Bloomfield Township" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's", "place": "Lansing" },
+      { "type": "parish", "name": "St. Paul's", "place": "Brighton" },
+      { "type": "parish", "name": "Christ the King", "place": "Puerto Plata, DR" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "Brooklyn" },
+      { "type": "parish", "name": "St. Michaels & All Angels", "place": "Cambridge Junction/Onsted" },
+      { "type": "parish", "name": "St. John the Baptist", "place": "Bonao, DR" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmaus", "place": "Walled Lake" },
+      { "type": "parish", "name": "St. David's", "place": "Southfield" },
+      { "type": "parish", "name": "St. George's", "place": "Azua, DR" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's", "place": "Grosse Pointe Woods" },
+      { "type": "parish", "name": "St. Barnabas", "place": "Chelsea" },
+      { "type": "parish", "name": "St. Joseph's", "place": "Boca Chica, DR" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "St. Clair Shores" },
+      { "type": "parish", "name": "St. Peter and St. Paul", "place": "Santo Domingo North, DR" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Howell" },
+      { "type": "parish", "name": "Jesus of Nazareth", "place": "San Francisco, DR" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Dearborn" },
+      { "type": "parish", "name": "Holy Family", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephe's", "place": "Troy" },
+      { "type": "parish", "name": "Mother of the Savior", "place": "Dearborn", "note": "Source prints an italicized descriptor beneath this congregation's name: \"Arab-American Christian Ministry\"." },
+      { "type": "parish", "name": "Church of the Transfiguration", "place": "Bani, DR" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Birmingham" },
+      { "type": "parish", "name": "St. Clement's", "place": "Inkster" },
+      { "type": "parish", "name": "Holy Cross", "place": "San Pedro, DR" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "Detroit" },
+      { "type": "parish", "name": "Church of Annunciation", "place": "Santiago, DR" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Cathedral Church of St. Paul", "place": "Detroit" },
+      { "type": "parish", "name": "St. Thomas'", "place": "Trenton" },
+      { "type": "parish", "name": "Good Shepherd", "place": "San Pedro, DR" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Detroit" },
+      { "type": "parish", "name": "Church of the Pilgrim", "place": "Barahona, DR" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church at Crossroads", "place": "Detroit" },
+      { "type": "parish", "name": "St. Luke's", "place": "Ferndale" },
+      { "type": "parish", "name": "St. Anthony of Padua", "place": "Bani, DR" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Messiah", "place": "Detroit" },
+      { "type": "parish", "name": "St. John the Evangelist", "place": "Haina, DR" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Detroit" },
+      { "type": "parish", "name": "St. Mary's-in-the-Hills", "place": "Lake Orion" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Detroit" },
+      { "type": "parish", "name": "St. Paul's", "place": "Romeo" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ United", "place": "DeWitt" },
+      { "type": "parish", "name": "Cathedral of the Epiphany", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Spirit of Grace", "place": "West Bloomfield" },
+      { "type": "parish", "name": "Canterbury MSU", "place": "East Lansing" },
+      { "type": "parish", "name": "Christ the Savior", "place": "Santiago, DR" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Plymouth" },
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Southfield" },
+      { "type": "parish", "name": "All Saints'", "place": "La Romana, DR" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Grosse Ile" },
+      { "type": "parish", "name": "St. Peter's", "place": "Hillsdale" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Lansing" },
+      { "type": "parish", "name": "Holy Spirit", "place": "Las Carreras, DR" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Monroe" },
+      { "type": "parish", "name": "St. Philip's", "place": "Rochester" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Royal Oak" },
+      { "type": "parish", "name": "Holy Faith Church", "place": "Saline" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Detroit" },
+      { "type": "parish", "name": "St. Luke's", "place": "Ypsilanti" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "East Lansing" },
+      { "type": "parish", "name": "Divine Grace", "place": "Puerto Plata, DR" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Farmington Hills" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Grosse Pointe" },
+      { "type": "parish", "name": "St. Philip the Apostle", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George's", "place": "Milford" },
+      { "type": "parish", "name": "St. Bartholomew", "place": "San Cristobal, DR" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Waterford" },
+      { "type": "parish", "name": "St. Anne's", "place": "Santo Domingo, DR" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Patrick's", "place": "Madison Heights" },
+      { "type": "parish", "name": "Mount of Transfiguration", "place": "Jarabacoa, DR" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Clinton" },
+      { "type": "parish", "name": "Divine Providence", "place": "San Antonio de Guerra, DR" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's & St. Joseph's", "place": "Detroit" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church Cranbrook", "place": "Bloomfield Hills" },
+      { "type": "parish", "name": "St. Thomas", "place": "Gautier, DR" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Canterbury House", "place": "Ann Arbor" },
+      { "type": "parish", "name": "Good Samaritan", "place": "San Francisco, DR" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Shelby Twp." },
+      { "type": "parish", "name": "Great Commission", "place": "Consuelo, DR" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael & All Angels", "place": "Lincoln Park" },
+      { "type": "parish", "name": "Church of the Incarnation", "place": "La Romana, DR" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Incarnation", "place": "Ann Arbor" },
+      { "type": "parish", "name": "St. Matthew", "place": "Nizao, DR" }
+    ]}
+  ]
+}

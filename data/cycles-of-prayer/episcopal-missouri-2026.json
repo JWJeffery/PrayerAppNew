@@ -1,0 +1,1269 @@
+{
+  "id": "episcopal-missouri-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Missouri",
+  "dioceseShort": "missouri",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocese of Missouri Prayer Cycle, all four 2026 quarterly PDFs (\"Diocese of Missouri Prayer Cycle -- First/Second/Third/Fourth Quarter 2026\"), fetched directly from the download links on https://diocesemo.org/resources/worship.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source page (https://diocesemo.org/resources/worship) currently publishes all four 2026 quarterly Cycle of Prayer PDFs (Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec), so this file covers the full calendar year (52 Sundays, January 4 - December 27, 2026) rather than only the third quarter noted in this corpus's own pre-fetch research note -- that note appears to have gone stale between when it was written and this ingestion.",
+    "Each week's source paragraph names four subjects in a fixed order: a Diocese of Missouri congregation (or, twice, a diocesan-wide ministry), a congregation/institution of the companion Diocese of Puerto Rico, a province/church of the Anglican Communion, and a region of the Armed Forces and Federal Ministries cycle of prayer (a nationwide, alphabetically-rotating list of U.S. states/territories and their military/VA installations that the diocese reprints verbatim into its own weekly text, beginning this year). All four are transcribed as this file's own weekly subjects, per this corpus's per-source-document convention; the companion-diocese, Anglican Communion, and Armed Forces items are recorded as `category` subjects (none is a Missouri congregation), per this task's guidance.",
+    "Each subject line in the source begins with a fixed formulaic lead-in (\"In our Diocese of Missouri, we pray for...\", \"In our companion Diocese of Puerto Rico, we pray for...\", \"In the Anglican Communion, we pray for...\", \"In the Armed Forces and Federal Ministries [cycle of prayer], we pray for...\") and frequently inserts the filler phrase \"the people and ministry of\" before the actual subject name. Both are stripped as non-substantive lead-in text; everything after them is preserved verbatim (including typos). Where stripping left the remaining text starting mid-sentence in lower case, only the first letter was capitalized to read as a standalone name (e.g. \"our chaplains...\" -> \"Our chaplains...\"); no other wording was changed.",
+    "Diocese of Missouri congregation entries print a parenthetical founding year (or two years separated by a slash, e.g. \"(1874/1890)\" for a merged parish) immediately after the congregation's own name, then continue the same sentence naming clergy and their roles. The founding year and clergy detail are both recorded in that subject's `note` field (e.g. \"(1872). David, their Rector; ...\") rather than folded into `name`, matching this corpus's existing convention for clergy detail (see episcopal-nebraska-2026.json); `name` and `place` hold only the congregation's own name and town/city.",
+    "June 14 and June 21, 2026 name diocesan-wide ministries (\"our Diocesan Campus Ministries and all chaplains\"; \"our diocesan staff\") rather than a specific congregation, and are recorded as `category` subjects with no `place`.",
+    "September 27, 2026 is the one week all year whose Diocese of Missouri paragraph never states the named congregation's town/city (confirmed by rendering the source PDF page as an image and checking visually, not just the extracted text) -- \"Episcopal Church of the Holy Communion (1869)\", with named clergy, but no \"in [City]\" phrase anywhere in that paragraph. Because this schema requires a non-empty `place` for a `parish` subject and none is printed to transcribe, this one subject is recorded as `category` (name only, founding year/clergy in `note`) instead of fabricating a location.",
+    "Preserved source typos/oddities, transcribed verbatim rather than corrected: \"Pastoral Universitariaz\" (companion-diocese entries, April 5 and July 5 -- likely \"Pastoral Universitaria\"); a duplicated boilerplate clause \"...for the people and ministry of for the people and ministry of St. Mark's Episcopal Church...\" (March 8) and \"...we pray for the people and ministry of for Christ Episcopal Church...\" (November 8) -- in both cases the duplication falls entirely within the stripped lead-in text and so does not appear in the transcribed `name`; \"in in Arizona\" doubled preposition (September 20 Armed Forces entry); \"Travis Airforce Base\" and \"Camp Lejune\" and \"Camp Jonson\" (Armed Forces entries, likely \"Travis Air Force Base\", \"Camp Lejeune\", \"Camp Johnson\"); \"St. Virgen Mary\" (October 18 companion-diocese entry, likely \"St. Virgin Mary\"); the April 5 Anglican Communion line's unusual wording \"we pray for the peace of Jerusalem, the people and ministry of The La Iglesia Anglicana de Mexico\" (a doubled article, \"The La\", preserved as printed, alongside an otherwise-unexplained leading \"peace of Jerusalem\" clause folded into that same subject's name since the source does not separate them into two subjects).",
+    "\"Calvary Episcopal Church ... in Louisiana\" (August 16, 2026) refers to the city of Louisiana, Missouri (a Missouri river town, per the source's own numbering of Missouri congregations by founding year), not the U.S. state of Louisiana named in an earlier, unrelated Armed Forces entry (January 25) -- both are transcribed exactly as printed.",
+    "Every date carries the source's own liturgical Sunday label (`liturgicalNote`), transcribed exactly as printed, including its own inconsistent use of a leading \"The\" (e.g. \"Last Sunday after Pentecost\" and \"First Sunday after Christmas\" print with no leading \"The\", unlike most other weeks).",
+    "Built by extracting each quarterly PDF's text with pdftotext -layout (confirmed single-column throughout by rendering and visually checking several pages, including the page containing the one no-place entry above) and manually transcribing each of the 52 weeks against that text."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "The Second Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Ladue",
+          "note": "(1872). David, their Rector; Nathan, their Associate Rector; Zack, their Youth and Young Adult Minister; and Luke, Jay & Susie, their Assisting Clergy."
+        },
+        {
+          "type": "category",
+          "name": "The Holy Cross (Misión La Santa Cruz) in Lares"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Iowa—at Camp Dodge, Sioux City Air National Guard Base, Des Moines Air National Guard Base, Army Aviation Support Facility Boone, and the Des Moines VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of All Saints & Ascension",
+          "place": "Northwoods",
+          "note": "(1874/1890). Renee, their Rector; and Valerie, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Paul's Home (Hogar San Pablo)"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Kansas—at Fort Riley, McConnell Air Force Base, the 190th Air Refueling Wing Air National Guard, Fort Leavenworth, and the Eisenhower VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "The Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Cape Girardeau",
+          "note": "(1876)."
+        },
+        {
+          "type": "category",
+          "name": "St. Matthias the Apostle (Misión San Matías, Apóstol) in Lares"
+        },
+        {
+          "type": "category",
+          "name": "Province de L’Eglise Anglicane Du Congo"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Kentucky—at Fort Knox, Fort Campbell, Blue Grass Army Depot, Louisville Air National Guard Base, Federal Correctional Institution Ashland, and the Robley Rex VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Rolla",
+          "note": "(1877). Shug, their Rector."
+        },
+        {
+          "type": "category",
+          "name": "Associates of the Order of the Transfiguration (Asociados Orden de la Transfiguración)"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Louisiana—at Fort Johnson, Barksdale Air Force Base, Naval Air Station Joint Reserve Base New Orleans, Camp Minden, Federal Correctional Center Oakdale, and the Alexandria VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "The Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's & The Vine",
+          "place": "Ferguson",
+          "note": "(1886). Teresa, their Transitional Priest-in-Charge; and Loretta, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Philip and St. James the Apostles (Misión San Felipe y Santiago, Apóstoles) in Loíza"
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Maine—at Portsmouth Naval Shipyard, Bangor Air National Guard Base, Coast Guard Base South Portland, and the Togus VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "The Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Portland",
+          "note": "(1891). Jessica, their Priest-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "Community of Deacons San Lorenzo (Comunidad de Diáconos San Lorenzo)"
+        },
+        {
+          "type": "category",
+          "name": "Hong Kong Sheng Kung Hui"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Maryland—at Fort Meade, Andrews Air Force Base, Aberdeen Proving Ground, Naval Support Activity Annapolis, Federal Correctional Institution Cumberland, and the Baltimore VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "The Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Deaf Episcopal Church",
+          "place": "Crestwood",
+          "note": "(1891). Emily, their Vicar."
+        },
+        {
+          "type": "category",
+          "name": "Parish of the Resurrection (Parroquia Ayudada La Resurrección) in Manatí"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of the Indian Ocean"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Massachusetts—at Hanscom Air Force Base, Otis Air National Guard Base, Natick Soldier Systems Center, Federal Medical Center Devens, and the VA Boston Healthcare System."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday of Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Episcopal Church",
+          "place": "Poplar Bluff",
+          "note": "(1902). Paul, their Priest."
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Church Women (Sociedad de Mujeres Episcopales)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Ireland"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Michigan—at the John D. Dingell VA Medical Center, Camp Grayling, Battle Creek Air National Guard Base, Federal Correctional Institution Milan, and the Alpena Combat Readiness Training Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "The Second Sunday of Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of St. John & St. James",
+          "place": "Sullivan",
+          "note": "(1904/1957). Jim, their Lay Associate Minister."
+        },
+        {
+          "type": "category",
+          "name": "Mission of the Epiphany (Misión La Epifanía) in Maricao"
+        },
+        {
+          "type": "category",
+          "name": "The Nippon Sei Ko Kai"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Minnesota—at Camp Ripley, Minneapolis-St. Paul Joint Air Reserve Station, Duluth Air National Guard Base, Federal Correctional Institution Sandstone, and the Minneapolis VA Health Care System."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "The Third Sunday of Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "St. Louis",
+          "note": "(1939). Delaney, their Rector; Jerre their Deacon; and Teresa, their Priest Associate."
+        },
+        {
+          "type": "category",
+          "name": "UTO and Lorraine, the Chair"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Mississippi—at Kessler Air Force Base, Columbus Air Force Base, Naval Construction Battalion Center Gulfport, Camp Shelby, Federal Correctional Center Yazoo City, and the Biloxi VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "The Fourth Sunday of Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Sikeston",
+          "note": "(1947)."
+        },
+        {
+          "type": "category",
+          "name": "Mission of the Transfiguration (Misión La Transfiguración) in Maricao"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Kenya"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Missouri—at Fort Leonard Wood, Whiteman Air Force Base, Coast Guard Station St. Louis, Rosecrans Air National Guard Base, Medical Center for Federal Prisoners Springfield, and the John J. Cochran VA Hospital."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "The Fifth Sunday of Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas Episcopal Church",
+          "place": "Florissant",
+          "note": "(1957). David, their Rector; and Susan, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Youth Ministry (Ministerio Juvenil Episcopal)"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Korea"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Montana—at Malmstrom Air Force Base, Fort Harrison, the 120th Airlift Wing Air National Guard, and the Fort Harrison VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Advent",
+          "place": "Crestwood",
+          "note": "(1957). Emily, their Rector."
+        },
+        {
+          "type": "category",
+          "name": "The Parish of St. Andrew the Apostle (Parroquia San Andrés Apóstol) in Mayagüez"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Melanesia"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Nebraska—at Offutt Air Force Base, Lincoln Air National Guard Base, Greenlief Training Site, and the Omaha VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy's Episcopal Church",
+          "place": "Creve Coeur",
+          "note": "(1960). Meghan, their Rector; and Dayna, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Pastoral Universitariaz"
+        },
+        {
+          "type": "category",
+          "name": "The peace of Jerusalem, The La Iglesia Anglicana de Mexico"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Nevada—at Nellis Air Force Base, Creech Air Force Base, Naval Air Station Fallon, Hawthorne Army Depot, and the North Las Vegas VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "The Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's Episcopal Church",
+          "place": "Ellisville",
+          "note": "(1965). Leslie, their Rector; and Sally, their Priest in Place."
+        },
+        {
+          "type": "category",
+          "name": "Parish of the Ascension (Parroquia Ayudada La Ascensión) in Morovis"
+        },
+        {
+          "type": "category",
+          "name": "Igreja Anglicana de Mocambique e Angola"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in New Hampshire and New Jersey—at Pease Air National Guard Base, Portsmouth Harbor Coast Guard Station, Coast Guard Training Center Cape May, Joint Base McGuire-Dix-Lakehurst, Federal Correctional Institution Fort Dix, and the VA New Jersey Health Care System."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "The Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints' Episcopal Church",
+          "place": "Farmington",
+          "note": "(1979). Richard, their Vicar."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal School System (Sistema Escuelas Episcopales)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Myanmar (Burma)"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, Bishop Michael Hunn, the work of the bishop’s school in forming military chaplains from other denominations for Episcopal priesthood, and those serving in New Mexico—at Kirtland Air Force Base, Holloman Air Force Base, White Sands Missile Range, Cannon Air Force Base, and the Raymond G. Murphy VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "The Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of the Transfiguration",
+          "place": "Lake St. Louis",
+          "note": "(1991). Lu-Anne, their Rector; and Sister Donna Ruth Hawk-Reinhard, AF, their Pastoral Associate."
+        },
+        {
+          "type": "category",
+          "name": "Our Lady of Guadalupe (Chapel) (Nuestra Sra. De Guadalupe) in Patillas"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Nigeria (Anglican Communion)"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in New York—at Fort Drum, West Point, Niagara Falls Air Reserve Station, Stewart Air National Guard Base, Federal Correctional Institution Otisville, and the James J. Peters VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "The Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis' Episcopal Church",
+          "place": "Eureka",
+          "note": "(1991). Laurie, their Rector; and David, their deacon."
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity Episcopal College (Colegio Episcopal Santísima) in Trinidad"
+        },
+        {
+          "type": "category",
+          "name": "The Church of North India (United)"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in North Carolina—at Camp Lejune, Fort Liberty, Seymour Johnson Air Force Base, Federal Correctional Complex Butner, and the VA Durham Health Care System."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "The Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Vincent's-in-the-Vineyard Episcopal Church",
+          "place": "Ste. Genevieve",
+          "note": "(2008). Marshall & Pamela, their Priests."
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew the Apostle Mission (Misión San Mateo, Apóstol) in Penuelas"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Pakistan (United)"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in North Dakota—at Minot Air Force Base, Grand Forks Air Force Base, Camp Grafton, Fargo Air National Guard Base, and the Fargo VA Health Care System."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "The Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Faith Christian Church of India",
+          "place": "Ballwin",
+          "note": "(2018). Clive & Susanna their Priests."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Cathedral School"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Papua New Guinea"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Ohio—at Wright-Patterson Air Force Base, Rickenbacker Air National Guard Base, the 180th Fighter Wing Air National Guard, the 178th Wing Air National Guard, Federal Correctional Institution Elkton, and the Louis Stokes Cleveland VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "The Day of Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace African Christian Connections (GACC)",
+          "place": "Saint Louis",
+          "note": "(2022). Mtipe, their Priest."
+        },
+        {
+          "type": "category",
+          "name": "The Mission of the Prince of Peace (Misión Adscrita Príncipe de Paz) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in the Philippines"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Oklahoma—at Tinker Air Force Base, Fort Sill, Altus Air Force Base, Vance Air Force Base, Federal Correctional Institution El Reno, and the Oklahoma City VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "The First Sunday after Pentecost/Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Journey Church",
+          "place": "Fulton",
+          "note": "(2023). Jessica their Priest."
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew's Episcopal College (Colegio Episcopal San Andrés)"
+        },
+        {
+          "type": "category",
+          "name": "Eglise Anglicane du Rwanda"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Oregon—at the 173rd Fighter Wing Air National Guard, Camp Rilea, the 142nd Wing Air National Guard, Camp Umatilla, Federal Correctional Institution Sheridan, and the White City VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "The Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Hope Episcopal Church",
+          "place": "Town & Country",
+          "note": "(2023). Jared, their Priest."
+        },
+        {
+          "type": "category",
+          "name": "St. Michael the Archangel Mission (Misión San Miguel Arcángel) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Scottish Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Pennsylvania—at Carlisle Barracks, Letterkenny Army Depot, Fort Indiantown Gap, Federal Correctional Institution Schuylkill, and the VA Pittsburgh Healthcare System."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "The Third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our Diocesan Campus Ministries and all chaplains"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's Episcopal Health System (Sistema de Salud Episcopal San Lucas)"
+        },
+        {
+          "type": "category",
+          "name": "Church of the Province of South East Asia"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Army service members on their 251st birthday and those serving in Puerto Rico—at Fort Buchanan, Muñiz Air National Guard Base, Coast Guard Base San Juan, and Camp Santiago."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "The Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Our diocesan staff"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke the Evangelist Parish (Parroquia Ayudada San Lucas Evangelista) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Church of South India (United)"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Rhode Island—at the Navy War College, Camp Fogarty, Coast Guard Station Providence, the 143rd Airlift Wing Air National Guard, and the Providence VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "The Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Cathedral",
+          "place": "St. Louis",
+          "note": "(1819). Kathie, their Dean; Justin their Deacon; Jeff their Associated Priest; Barbi their Associated Deacon; and Carol, their Social Worker."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's Episcopal Medical Center (Centro Médico Episcopal San Lucas)"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Southern Africa"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in South Carolina—at Fort Jackson, Shaw Air Force Base, Marine Corps Air Station Beaufort, Joint Base Charleston, Federal Correctional Institution Edgefield, and the VA Columbia Health Care System."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "St. Charles",
+          "note": "(1836). Meg, their Priest-in-charge; and Martin, their Assisting Priest."
+        },
+        {
+          "type": "category",
+          "name": "Pastoral Universitariaz"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of South America"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in South Dakota—at Ellsworth Air Force Base, the 114th Fighter Wing Air National Guard, Camp Rapid, Federal Prison Camp Yankton, and the Sioux Falls VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "The Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Jefferson City",
+          "note": "(1839). Paula, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Parish of the Ascension (Parroquia Ayudada La Ascensión) in Morovis"
+        },
+        {
+          "type": "category",
+          "name": "The Province of the Episcopal Church of South Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Tennessee—at Arnold Air Force Base, the 164th Airlift Wing Air National Guard, the 134th Air Refueling Wing Air National Guard, Federal Correctional Institution Memphis, and the Alvin C. York VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "The Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Tower Grove/St. Louis",
+          "note": "(1840). Nancy, their Priest-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal School System (Sistema Escuelas Episcopales)"
+        },
+        {
+          "type": "category",
+          "name": "The Province of the Episcopal Church of Sudan"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Texas—at Fort Bliss, Fort Hood, Joint Base San Antonio, Laughlin Air Force Base, Federal Correctional Complex Beaumont, and the VA North Texas Healthcare System."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "The Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Hannibal",
+          "note": "(1846)."
+        },
+        {
+          "type": "category",
+          "name": "Our Lady of Guadalupe (Chapel) (Nuestra Sra. De Guadalupe) in Patillas"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Tanzania"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Virginia—at Fort Belvoir, Marine Corps Base Quantico, Fort Gregg-Adams, Joint Base Langley-Eustis, Naval Station Norfolk, and the Richmond VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "The Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Episcopal Church of St. Michael & St. George",
+          "place": "Clayton",
+          "note": "(1848/1912). Peter & Tom, their Assistant Rectors; and Stewart & Anne, their Priest Associates."
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity Episcopal College (Colegio Episcopal Santísima) in Trinidad"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Uganda"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Coast Guard service members on their 236th birthday and those serving in Utah and Vermont—at Hill Air Force Base, Dugway Proving Ground, Tooele Army Depot, Camp Williams, George E. Wahlen VA Medical Center, the 158th Fighter Wing Air National Guard, Camp Jonson, Coast Guard Station Burlington, and the Burlington VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "The Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Episcopal Church",
+          "place": "Eolia",
+          "note": "(1853). Deb, their Priest-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew the Apostle Mission (Misión San Mateo, Apóstol) in Penuelas"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Washington—at Joint Base Lewis-McChord, Naval Base Kitsap, Naval Air Station Whidbey Island, Fairchild Air Force Base, Federal Detention Center SeaTac, and the Seattle VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "The Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Episcopal Church",
+          "place": "Louisiana",
+          "note": "(1854). Deb, their Priest-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Cathedral School"
+        },
+        {
+          "type": "category",
+          "name": "The Church in Wales"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in West Virginia—at Camp Dawson, the 130th Airlift Wing Air National Guard, the 167th Airlift Wing Air National Guard, Federal Correctional Institution Beckley, and the Martinsburg VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "The Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary Episcopal Church",
+          "place": "Columbia",
+          "note": "(1855). Ann their Rector; Josh, their Associate Rector; and Beth, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "The Mission of the Prince of Peace (Misión Adscrita Príncipe de Paz) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of West Africa"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Wisconsin—at Fort McCoy, Volk Field Air National Guard Base, the 115th Fighter Wing Air National Guard, Federal Correctional Institution Oxford, and the Madison VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "The Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Central West End / St. Louis",
+          "note": "(1855). Paul, their Rector; Stephen, their Priest Associate; and Harry, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew's Episcopal College (Colegio Episcopal San Andrés)"
+        },
+        {
+          "type": "category",
+          "name": "The Church in the Province of the West Indies"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Wyoming—at F.E. Warren Air Force Base, Camp Guernsey, the 153rd Airlift Wing Air National Guard, Laramie Readiness Center, and the Cheyenne VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "The Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Episcopal Church",
+          "place": "Kirkwood",
+          "note": "(1859). Lisa, their Rector; and Erin, their Associate Priest."
+        },
+        {
+          "type": "category",
+          "name": "St. Michael the Archangel Mission (Misión San Miguel Arcángel) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal / Anglican Province of Alexandria"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Alabama—at Maxwell Air Force Base, Redstone Arsenal, Fort Novosel, Anniston Army Depot, Federal Correctional Institution Aliceville, and the Birmingham VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "The Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Episcopal Church",
+          "place": "Webster Groves",
+          "note": "(1866). Valori, their Rector; Susanna, their Associate Priest, Susie, their Rector Emerita, Jerre, their Deacon, and Warren, Paul and Mandi, their Priest Associates."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's Episcopal Health System (Sistema de Salud Episcopal San Lucas)"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church in Aotearoa, New Zealand and Polynesia"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Air Force service members on their 79th birthday and those serving in Alaska—at Joint Base Elmendorf-Richardson, Eielson Air Force Base, Fort Wainwright, Clear Space Force Station, and the Anchorage VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "The Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Carondelet / St. Louis",
+          "note": "(1868). Jeff, their Interim Priest; and Diana, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke the Evangelist Parish (Parroquia Ayudada San Lucas Evangelista) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Australia"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in in Arizona—at Fort Huachuca, Davis-Monthan Air Force Base, Luke Air Force Base, Yuma Proving Ground, Federal Correctional Institution Phoenix, and the Phoenix VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "The Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church of the Holy Communion",
+          "note": "(1869). Brenda, their Rector; Chester, their Deacon; and Hope, the Rockwell House Campus Ministries Chaplain."
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's Episcopal Medical Center (Centro Médico Episcopal San Lucas)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Bangladesh"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Arkansas—at Pine Bluff Arsenal, Camp Robinson, Ebbing Air National Guard Base, Federal Correctional Complex Forrest City, and the Little Rock VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "The Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's Episcopal Church",
+          "place": "Ironton",
+          "note": "(1870). Richard, their Vicar; and Bob, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Holy Trinity (Parroquia Ayudada La Santísima Trinidad) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "Igreja Episcopal Anglicana do Brasil"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in the Americas and Europe at Naval Station Guantanamo Bay, Ramstein Air Force Base, Army Garrison Bavaria, and Naval Station Rota."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "The Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "St. James",
+          "note": "(1870). Kevin, their Priest-in-Charge; and Pat, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Hospital San Lucas Metro (Metro St. Luke's Hospital)"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Burundi"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Navy service members on their 251st birthday, and those serving in the Pacific at Camp Humphreys, Kadena Air Base, Yokota Air Base, Naval Base Guam, and Osan Air Base."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "The Twenty-First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Episcopal Church",
+          "place": "Kirksville",
+          "note": "(1871). Maria, their Interim Priest."
+        },
+        {
+          "type": "category",
+          "name": "St. Virgen Mary (Parroquia Ayudada Santa María Virgen) in Ponce (St. Mary Virgin Parish)"
+        },
+        {
+          "type": "category",
+          "name": "The Anglican Church of Canada"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in California at Camp Pendleton, Marine Corps Air Station Miramar, Moffett Federal Airfield, Travis Airforce Base, Twentynine Palms, Naval Base San Diego, Edwards Air Force Base, and the West Los Angeles VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "The Twenty-Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Episcopal Church",
+          "place": "Ladue",
+          "note": "(1872). David, their Rector; Nathan, their Associate Rector; Zack, their Youth and Young Adult Minister; Luke, Jay & Susie, their Assisting Clergy; and Valerie, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "Salud en el Hogar y Hospicio San Lucas (St. Luke's Home Health and Hospice)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of Central Africa"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Colorado at Fort Carson, Peterson Space Force Base, Buckley Space Force Base, Schriever Space Force Base, Federal Correctional Center Florence, and the Rocky Mountain Regional VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "The Twenty-Third Sunday after Pentecost/All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of All Saints & Ascension",
+          "place": "Northwoods",
+          "note": "(1874/1890). Renee, their Rector; and Valerie, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Mark the Evangelist (Misión San Marcos Evangelista) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de la Region Central de America"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Connecticut at Naval Submarine Base New London, Bradley Air National Guard Base, Camp Niantic, Coast Guard Station New Haven, Federal Correctional Institution Danbury, and the VA Connecticut Healthcare System."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Cape Girardeau",
+          "note": "(1876). Carol, their Deacon-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "Centro de Salud Conductual (Center of Behavioral Health)"
+        },
+        {
+          "type": "category",
+          "name": "Province de L’Eglise Anglicane Du Congo"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Marine Corps service members on their 251st birthday, and those serving in Delaware at Dover Air Force Base, New Castle Air National Guard Base, Bethany Beach Training Site, Coast Guard Station Indian River, and the Wilmington VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Episcopal Church",
+          "place": "Rolla",
+          "note": "(1877). Shug, their Rector."
+        },
+        {
+          "type": "category",
+          "name": "Reconciliation (Parroquia Ayudada La Reconciliación) in Ponce (Parish of the Reconciliation)"
+        },
+        {
+          "type": "category",
+          "name": "Iglesia Anglicana de Chile"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, Bishop Justin Holcomb, the work of forming military chaplains from other denominations for Episcopal priesthood, and those serving in Florida at the Federal Correctional Institution Miami, Eglin Air Force Base, Hurlburt Field, MacDill Air Force Base, Naval Air Station Jacksonville, and the Orlando VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's & The Vine",
+          "place": "Ferguson",
+          "note": "(1886). Teresa, their Transitional Priest-in-Charge."
+        },
+        {
+          "type": "category",
+          "name": "Seminario Diocesano San Pedro y San Pablo (Diocesan Seminary of St. Peter and St. Paul)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of England"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Georgia at Fort Benning, Robins Air Force Base, United States Penitentiary Atlanta, and the Atlanta VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "Portland",
+          "note": "(1891). Susan, their clergy."
+        },
+        {
+          "type": "category",
+          "name": "Holy Name of Jesus Parish (Parroquia Ayudada Santo Nombre de Jesús) in Ponce"
+        },
+        {
+          "type": "category",
+          "name": "Hong Kong Sheng Kung Hui"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in the District of Columbia at Joint Base Anacostia-Bolling, Marine Barracks Washington, Washington Navy Yard, the Pentagon, and the DC VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": "Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas Deaf Episcopal Church",
+          "place": "Crestwood",
+          "note": "(1891). Emily, their Vicar."
+        },
+        {
+          "type": "category",
+          "name": "Centro Anglicano de Formación para los Laicos (Anglican Center of Lay Formation)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of the Province of the Indian Ocean"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Hawaii at Joint Base Pearl Harbor-Hickam, Schofield Barracks, Marine Corps Base Kaneohe Bay, Tripler Army Medical Center, Federal Detention Center Honolulu, and the VA Pacific Islands Healthcare System."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": "Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross Episcopal Church",
+          "place": "Poplar Bluff",
+          "note": "(1902). Loretta, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "The Child Jesus (Nueva Misión El Niño Jesús) in Quebradillas (New Mission of the Child Jesus)"
+        },
+        {
+          "type": "category",
+          "name": "The Church of Ireland"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our National Guard service members on their 390th birthday, and those serving in Idaho at Mountain Home Air Force Base, the 124th Fighter Wing Air National Guard, Orchard Combat Training Center, Pocatello Air National Guard Base, and the Boise VA Medical Center."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": "Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Episcopal Church of St. John & St. James",
+          "place": "Sullivan",
+          "note": "(1904/1957). Jim, their Lay Associate Minister."
+        },
+        {
+          "type": "category",
+          "name": "Radio Leo 1170 AM"
+        },
+        {
+          "type": "category",
+          "name": "The Nippon Sei Ko Kai"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, all our Space Force service members on their seventh birthday, and those serving in Illinois at Scott Air Force Base, Great Lakes Naval Station, Rock Island Arsenal, Peoria Air National Guard Base, Federal Correctional Institution Perkin, and the Edward Hines Jr. VA Hospital."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": "First Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's Episcopal Church",
+          "place": "St. Louis",
+          "note": "(1939). Delaney, their Rector; and Jerre, their Deacon."
+        },
+        {
+          "type": "category",
+          "name": "St. Ann (Misión Santa Ana) in Sábana Grande (St. Ann Mission)"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church in Jerusalem & The Middle East"
+        },
+        {
+          "type": "category",
+          "name": "Our chaplains, military members, their families, and for those serving in Indiana at Camp Atterbury, Naval Support Activity Crane, Grissom Air Reserve Base, Muscatatuck Urban Training Center, Federal Correctional Institution Terre Haute, and the Roudebush VA Medical Center."
+        }
+      ]
+    }
+  ]
+}
