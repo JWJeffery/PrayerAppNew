@@ -593,12 +593,14 @@
         }
 
         add(explanationRow());
-        /* Global, not lane-specific: #app-mode-return-button and its backing
-           checkbox both live outside any per-tradition template (see
-           index.html's #main-content), so this one row genuinely covers
-           every lane -- added here, unguarded by modeKey, on purpose. */
-        add(checkboxRow('explore-other-offices', 'Explore other Offices link',
-            'toggle-explore-other-offices', 'Hidden', 'Shown'));
+        /* The "Explore other Offices" link's backing checkbox used to get a
+           proxy row here via checkboxRow(). REMOVED 2026-09-29 per Josh's
+           direct instruction: this control belongs in the Profile panel
+           (#user-profile-defaults in index.html), not in per-office Office
+           Settings -- leaving/returning the office should be a deliberate
+           profile-level choice, not something tucked inside the very office
+           chrome it lets you leave. The real checkbox now lives visibly in
+           the Profile panel itself; nothing here duplicates or proxies it. */
         if (typeof window.openTraditionExplanation === 'function') {
             var about = el('button', 'uo-drawer-link', 'About this tradition');
             about.type = 'button';

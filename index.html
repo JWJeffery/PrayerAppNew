@@ -240,7 +240,7 @@
             <small>Read, compare, annotate, and study.</small>
         </button>
 
-        <button class="app-mode-tool-btn" type="button" onclick="window.open('audit-ledger.html', '_blank', 'noopener')">
+        <button class="app-mode-tool-btn" type="button" id="app-audit-dashboard-btn" hidden aria-hidden="true" onclick="window.open('audit-ledger.html', '_blank', 'noopener')">
             <strong>Audit Dashboard</strong>
             <small>Coverage and governance status across every lane.</small>
         </button>
@@ -387,6 +387,11 @@
                 </select>
                 <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
                        style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
+            </label>
+
+            <label class="app-profile-default-field app-profile-default-field-checkbox" for="toggle-explore-other-offices">
+                <span>Show a link to leave my office and explore other traditions</span>
+                <input type="checkbox" id="toggle-explore-other-offices" onchange="setExploreOtherOfficesVisible(this.checked)">
             </label>
         </div>
 
@@ -698,11 +703,14 @@
              there. Removed 2026-09-28 per Josh's direct instruction as a redundant duplicate; the
              defaults panel is still reachable from the splash screen itself. This single button is
              the one true "leave the office and go elsewhere" control, renamed the same day from
-             "Back to Modes" to "Explore other Offices", and hidden by default -- see
-             #toggle-explore-other-offices in the Office Settings drawer (js/office-drawer.js) and
-             isExploreOtherOfficesVisible()/setExploreOtherOfficesVisible() (js/office-ui.js). -->
+             "Back to Modes" to "Explore other Offices", and hidden by default. UPDATED 2026-09-29,
+             per Josh's direct instruction ("this should only be reachable via a checkbox IN THE
+             PROFILE, not a permanent button, and not tucked inside per-office Office Settings"):
+             its backing checkbox (#toggle-explore-other-offices) now lives directly in
+             #user-profile-defaults below, not in the Office Settings drawer -- see
+             isExploreOtherOfficesVisible()/setExploreOtherOfficesVisible() (js/office-ui.js), which
+             is unchanged and still finds the checkbox purely by id regardless of where it lives. -->
         <button id="app-mode-return-button" onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return" hidden>Explore other Offices</button>
-        <input type="checkbox" id="toggle-explore-other-offices" hidden aria-hidden="true" onchange="setExploreOtherOfficesVisible(this.checked)">
         <h1 id="office-mode-title">The Universal Office</h1>
         <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
             <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
@@ -1171,13 +1179,13 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=320" defer></script>
+<script src="js/office-ui.js?v=321" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
-<script src="js/office-shell.js?v=301" defer></script>
+<script src="js/office-shell.js?v=302" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
-<script src="js/office-drawer.js?v=8" defer></script>
+<script src="js/office-drawer.js?v=9" defer></script>
 </body>
 </html>

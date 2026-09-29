@@ -898,6 +898,20 @@ function syncBibleBrowserSuperUserGate() {
     button.setAttribute('aria-hidden', isSuperUser ? 'false' : 'true');
 }
 
+// ADDED 2026-09-29, per Josh's direct instruction: "remove Audit Dashboard
+// from all offices and put it in the super user's profile" -- the button had
+// NO gating at all (unlike the adjacent Admin Console and Bible Browser
+// buttons), so it was visible to every visitor. Same soft/cosmetic gate as
+// syncBibleBrowserSuperUserGate above, on the same isSuperUser flag.
+function syncAuditDashboardSuperUserGate() {
+    const button = document.getElementById('app-audit-dashboard-btn');
+    if (!button) return;
+
+    const isSuperUser = getUserProfileDefaults().isSuperUser === true;
+    button.hidden = !isSuperUser;
+    button.setAttribute('aria-hidden', isSuperUser ? 'false' : 'true');
+}
+
 function readLegacyEntryDefault() {
     try {
         return localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
@@ -1252,6 +1266,7 @@ function setUserProfileSuperUser(value) {
     profile.isSuperUser = value === true;
     persistUserProfileDefaults(profile);
     syncBibleBrowserSuperUserGate();
+    syncAuditDashboardSuperUserGate();
 }
 
 // ADDED 2026-09-29. Sentinel <option> value for "I don't see my parish
@@ -2238,6 +2253,7 @@ async function initializeEntryRouting() {
     setExploreOtherOfficesVisible(isExploreOtherOfficesVisible());
     scheduleSplashForegroundGuard();
     syncBibleBrowserSuperUserGate();
+    syncAuditDashboardSuperUserGate();
 
     // Warm the Cycle of Prayer cache on load if the user already has a
     // diocese declared, so the BCP intercessions space has real content on
