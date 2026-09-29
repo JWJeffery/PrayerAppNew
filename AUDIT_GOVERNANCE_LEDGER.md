@@ -24653,3 +24653,11 @@ entries (deliberately -- see above); as more dioceses get their own cycle-of-pra
 the earlier entries in this file, their `TEC_DIOCESE_DIRECTORY` entry automatically starts offering real
 parish options with zero further UI change, since `hasCycleContent` is derived live from
 `CYCLES_OF_PRAYER_DIOCESES` rather than hand-flagged per directory entry.
+
+**RESOLVED same day: the short-name labels are the wanted design, not a placeholder.** Josh, after
+seeing the picker working: "I don't think that we need the official full names of each diocese. Western
+Oregon. Eastern Oregon. Idaho. Eastern Tennessee. I think those are good enough. It doesn't need to be
+prefaced with the Episcopal Diocese of X!" Confirmed directly -- `TEC_DIOCESE_DIRECTORY`'s roster-short-
+name labels stay exactly as they are; this is not deferred/unfinished work to revisit later. Updated that
+constant's own comment in `js/cycles-of-prayer.js` to say so plainly rather than reading as an
+apologetic gap. No functional change -- comment-only.
