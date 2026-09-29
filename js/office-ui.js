@@ -821,13 +821,23 @@ const UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES = new Set([
 // field with the full eight-role, order-aware ladder that governance
 // document specifies, after researching and confirming (with Josh) that
 // reader and subdeacon are minor orders -- not fully/sacramentally
-// ordained -- while deacon, priest, and bishop are the major orders, both
-// generally in Eastern Christian tradition and specifically for the Church
-// of the East. The old binary let a self-identified "clergy" deacon or
-// subdeacon see full priest-tier material, which directly violated this
-// same governance document's own stated principle ("Subdeacon access must
-// not unlock deaconal, priestly, or episcopal material merely because the
-// user is not a layperson") -- this ladder closes that gap.
+// ordained -- in the Eastern Christian traditions this ladder was designed
+// for (Eastern/Oriental Orthodox, Church of the East), while deacon,
+// priest, and bishop are the major orders there. CORRECTED 2026-09-29,
+// per Josh's direct correction: this "minor order" framing does NOT hold
+// for the Episcopal Church/Anglican Communion -- TEC recognizes only
+// three ordained orders (bishop, priest, deacon); "Reader" there is a
+// licensed LAY ministry under Canon III.4, not an order at all, minor or
+// otherwise. This ladder's rank ORDERING (reader < subdeacon < deacon)
+// is still reused as this app's one shared Book of Needs access gate
+// across every tradition, but no user-facing copy anywhere in this file
+// should describe reader/subdeacon as "a minor order" unqualified -- see
+// the fixed option labels in index.html and the roleLabels object below.
+// The old binary let a self-identified "clergy" deacon or subdeacon see
+// full priest-tier material, which directly violated this same governance
+// document's own stated principle ("Subdeacon access must not unlock
+// deaconal, priestly, or episcopal material merely because the user is
+// not a layperson") -- this ladder closes that gap.
 //
 // UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER gives each role's rank on the major-
 // order ladder for comparison in js/prayers.js: higher-numbered roles see
@@ -1624,8 +1634,8 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
 
         const roleLabels = {
             'lay':                'showing lay-appropriate Book of Needs content only',
-            'reader':             "showing lay content plus material for a reader's own use (a minor order -- not priestly or diaconal material)",
-            'subdeacon':          "showing lay content plus material for a subdeacon's own use (a minor order -- not priestly or diaconal material)",
+            'reader':             "showing lay content plus material for a reader's own use (not priestly or diaconal material)",
+            'subdeacon':          "showing lay content plus material for a subdeacon's own use (not priestly or diaconal material)",
             'deacon':             'showing content appropriate for a deacon (a major order -- not priestly or episcopal material)',
             'priest':             'showing content appropriate for a priest (not episcopal-only material)',
             'bishop':             'showing all role-gated content, including episcopal material',
