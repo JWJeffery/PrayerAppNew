@@ -5,9 +5,9 @@ const ROOT = 'data/cycles-of-prayer';
 const SCHEMA_FILE = 'schema.json';
 const KEBAB_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-const VALID_SUBJECT_TYPES = new Set(['parish', 'category', 'household']);
+const VALID_SUBJECT_TYPES = new Set(['parish', 'category', 'household', 'diocese', 'province']);
 const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring']);
-const VALID_SCOPES = new Set(['diocese', 'parish']);
+const VALID_SCOPES = new Set(['diocese', 'parish', 'communion']);
 
 const verbose = process.argv.includes('--verbose');
 
@@ -46,6 +46,13 @@ function validateSubjects(name, where, subjects) {
     } else if (subject.place !== undefined) {
       add('MEDIUM', name, `${subjectWhere} is type "${subject.type}" but carries a "place" field (only "parish" subjects are tied to a place)`);
     }
+    if (subject.type === 'diocese') {
+      if (typeof subject.province !== 'string' || subject.province.length === 0) {
+        add('CRITICAL', name, `${subjectWhere} is type "diocese" but has no non-empty "province"`);
+      }
+    } else if (subject.province !== undefined) {
+      add('MEDIUM', name, `${subjectWhere} is type "${subject.type}" but carries a "province" field (only "diocese" subjects have a separate province)`);
+    }
     if (subject.note !== undefined && typeof subject.note !== 'string') {
       add('MEDIUM', name, `${subjectWhere}.note, when present, must be a string`);
     }
@@ -72,20 +79,6 @@ function main() {
       continue;
     }
 
-    // Filenames are <body-slug>-<diocese-slug>-<year>.json (cycleType
-    // 'dated') or <body-slug>-<diocese-slug>.json (cycleType
-    // 'monthly-recurring'), but both slugs may themselves contain hyphens
-    // (e.g. "western-oregon"), which makes the filename ambiguous to parse
-    // back apart. So validation runs the other direction: build the
-    // expected filename FROM the document's own declared fields and compare
-    // it to the actual filename, rather than trying to split the filename
-    // and guess which hyphen belongs to what.
-    for (const field of ['bodySlug', 'dioceseShort']) {
-      if (typeof doc[field] !== 'string' || !KEBAB_SLUG_PATTERN.test(doc[field])) {
-        add('CRITICAL', name, `"${field}" must be a non-empty kebab-case slug, got ${JSON.stringify(doc[field])}`);
-      }
-    }
-
     const cycleType = doc.cycleType === undefined ? 'dated' : doc.cycleType;
     if (!VALID_CYCLE_TYPES.has(cycleType)) {
       add('CRITICAL', name, `"cycleType", when present, must be "dated" or "monthly-recurring", got ${JSON.stringify(doc.cycleType)}`);
@@ -93,8 +86,29 @@ function main() {
 
     const scope = doc.scope === undefined ? 'diocese' : doc.scope;
     if (!VALID_SCOPES.has(scope)) {
-      add('CRITICAL', name, `"scope", when present, must be "diocese" or "parish", got ${JSON.stringify(doc.scope)}`);
+      add('CRITICAL', name, `"scope", when present, must be "diocese", "parish", or "communion", got ${JSON.stringify(doc.scope)}`);
     }
+
+    // Filenames are <body-slug>-<diocese-slug>-<year>.json (cycleType
+    // 'dated') or <body-slug>-<diocese-slug>.json (cycleType
+    // 'monthly-recurring'), with a further -<parish-slug> segment for scope
+    // 'parish' and NO diocese segment at all for scope 'communion' -- but
+    // slugs may themselves contain hyphens (e.g. "western-oregon"), which
+    // makes the filename ambiguous to parse back apart. So validation runs
+    // the other direction: build the expected filename FROM the document's
+    // own declared fields and compare it to the actual filename, rather than
+    // trying to split the filename and guess which hyphen belongs to what.
+    if (typeof doc.bodySlug !== 'string' || !KEBAB_SLUG_PATTERN.test(doc.bodySlug)) {
+      add('CRITICAL', name, `"bodySlug" must be a non-empty kebab-case slug, got ${JSON.stringify(doc.bodySlug)}`);
+    }
+    if (scope === 'communion') {
+      if (doc.dioceseShort !== undefined || doc.diocese !== undefined) {
+        add('HIGH', name, '"diocese"/"dioceseShort" must be absent when scope is "communion" (not scoped to any one diocese)');
+      }
+    } else if (typeof doc.dioceseShort !== 'string' || !KEBAB_SLUG_PATTERN.test(doc.dioceseShort)) {
+      add('CRITICAL', name, `"dioceseShort" must be a non-empty kebab-case slug, got ${JSON.stringify(doc.dioceseShort)}`);
+    }
+
     if (scope === 'parish') {
       if (typeof doc.parish !== 'string' || doc.parish.length === 0) {
         add('CRITICAL', name, 'scope is "parish" but "parish" is missing or empty');
@@ -103,15 +117,16 @@ function main() {
         add('CRITICAL', name, `scope is "parish" but "parishShort" must be a non-empty kebab-case slug, got ${JSON.stringify(doc.parishShort)}`);
       }
     } else if (doc.parish !== undefined || doc.parishShort !== undefined) {
-      add('HIGH', name, '"parish"/"parishShort" must be absent when scope is "diocese" (or absent)');
+      add('HIGH', name, '"parish"/"parishShort" must be absent unless scope is "parish"');
     }
 
     const expectedId = name.slice(0, -'.json'.length);
     if (doc.id !== expectedId) {
       add('HIGH', name, `id "${doc.id}" does not match filename (expected "${expectedId}")`);
     }
-    if (typeof doc.bodySlug === 'string' && typeof doc.dioceseShort === 'string') {
-      const slugParts = [doc.bodySlug, doc.dioceseShort];
+    if (typeof doc.bodySlug === 'string' && (scope === 'communion' || typeof doc.dioceseShort === 'string')) {
+      const slugParts = [doc.bodySlug];
+      if (scope !== 'communion') slugParts.push(doc.dioceseShort);
       if (scope === 'parish' && typeof doc.parishShort === 'string') slugParts.push(doc.parishShort);
       const base = slugParts.join('-');
       const expectedName = cycleType === 'monthly-recurring'
@@ -122,7 +137,10 @@ function main() {
       }
     }
 
-    for (const field of ['body', 'diocese', 'source', 'sourceFile', 'ingested']) {
+    const requiredStringFields = scope === 'communion'
+      ? ['body', 'source', 'sourceFile', 'ingested']
+      : ['body', 'diocese', 'source', 'sourceFile', 'ingested'];
+    for (const field of requiredStringFields) {
       if (typeof doc[field] !== 'string' || doc[field].length === 0) {
         add('CRITICAL', name, `missing or empty required string field "${field}"`);
       }

@@ -24432,3 +24432,55 @@ Northern Indiana roster note above). None of these are transcribed into `data/cy
 Whoever continues this work should open the Drive folder directly (not just the roster spreadsheet
 summarized earlier in this same entry-group) before re-researching any diocese from scratch -- several
 of the "83 of 88 not started" dioceses already have a ready source sitting here, unopened.
+
+## 2026-09-29 (continued) -- Communion tier ingested: new `scope: "communion"` and `diocese`/`province` subject types
+
+Josh asked to "tackle the Communion tier PDF next," following on directly from the parish-tier work
+above. The source (`"September 2026-December 2026 Anglican Cycle of Prayer.pdf"`, Drive file id
+`1PnFqfTnD3ZEjzU3-ZCinNxRb5LObO1xQ`) is the actual worldwide Anglican Cycle of Prayer -- a daily
+rotation naming one diocese (with its member church/province) or, on Sundays, one whole province alone.
+
+**Same transcription hazard as St. Bede's, caught before it produced wrong data.** The initial read of
+this PDF (via Drive's `read_file_content`, back when the file was first located) used the same
+linearized text extraction that had already caused a near-miss on the parish-tier file, and it produced
+the same class of error here: it attributed "The Anglican Church of Tanzania" to Friday 4 September
+2026, when the source's own rendered page layout (downloaded via `download_file_content`, base64-decoded
+to a local file, then read with proper page rendering after installing `poppler-utils`) shows that
+Tanzania entry actually belongs to Friday 11 September (Diocese of Biharamulo), and Friday 4 September
+is actually the Diocese of Benin. All 122 days (2026-09-01 through 2026-12-31, the source's own full
+coverage -- it does not cover January-August 2026 at all) were transcribed from the four rendered PDF
+page images, cross-checked visually against the page layout, not from any linearized text extraction.
+
+**Schema extended (v1.1 -> v1.2) rather than forcing this into the existing diocese/parish shapes,**
+since the Communion cycle is not scoped to any one diocese and its subjects are themselves
+dioceses/provinces, not parishes/categories/households:
+- `scope` gained a third value, `"communion"` -- the single worldwide file, using no `diocese`/
+  `dioceseShort`/`parish`/`parishShort` fields at all (those are all diocese/parish-tier-only).
+- `subjectShape.type` gained `"diocese"` (a diocese named alongside its `province` field, e.g. "The
+  Diocese of Belize" / "The Church in the Province of the West Indies") and `"province"` (an entire
+  member church named alone, e.g. "The Anglican Church of Tanzania", used on days -- every Sunday in
+  this source -- when no specific diocese is singled out).
+- Naming convention extended: a scope-`"communion"` file has no diocese segment at all
+  (`<body-slug>-<year>.json`, e.g. `anglican-communion-2026.json`) since it isn't scoped to one.
+- `scripts/cycles-of-prayer/validate.mjs` updated to match: `diocese`/`province` added to
+  `VALID_SUBJECT_TYPES`, `communion` added to `VALID_SCOPES`, `diocese`/`dioceseShort` made
+  conditionally-required (forbidden for scope `communion`, required otherwise), the province field
+  required only for subject type `diocese`, and the expected-filename builder updated to omit the
+  diocese segment for scope `communion`. Ran `npm run audit:cycles-of-prayer` after each change: **PASS,
+  8 files, 0 findings** -- all 6 pre-existing diocese files and the parish-tier file from earlier this
+  session still validate unchanged under the further-extended schema, confirming the addition was
+  genuinely additive/backward-compatible.
+
+**Disclosed in the new file's own `notes` rather than silently normalized:** the source's own
+inconsistent capitalization/article usage across province names (compare "The Church of Nigeria
+(Anglican Communion)" to "Eglise Anglicane du Rwanda" with no definite article); and "The Diocese of
+Christ the King" appearing on two different days (Nov 18 and Nov 19) under two different provinces
+(Mozambique & Angola, then Southern Africa) -- preserved as printed rather than treated as a duplicate
+error, since two same-named dioceses in different provinces is unremarkable and not this corpus's place
+to adjudicate.
+
+**Not yet done:** actually wiring `anglican-communion-2026.json` into the app. `js/cycles-of-prayer.js`
+has no loader/registry concept for scope-`"communion"` (or scope-`"parish"`) files at all yet -- its
+current `CYCLES_OF_PRAYER_DIOCESES` registry, cache-key logic, and file-path builder are all
+diocese-centric. Rendering "today's" Communion-tier entry into the BCP Authorized Intercessions rubric
+slot is a real next step, not done this session -- flagged in `RESUME_PROJECT_NOTE.md`.
