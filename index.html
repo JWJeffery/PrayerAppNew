@@ -303,6 +303,14 @@
 
             <label class="app-profile-default-field" for="profile-ministry-role">
                 <span>Book of Needs role</span>
+                <!-- ADDED 2026-09-29: this option list is now tradition-gated, per Josh's direct
+                     correction ("orders/ministries should be gated by traditions"). The markup
+                     below is only the pre-tradition/no-JS fallback -- populateMinistryRoleSelect()
+                     (js/office-ui.js) rewrites it to match the declared tradition's own real roles
+                     on every profile sync (e.g. Anglican has no "subdeacon" at all -- TEC
+                     recognizes only bishop/priest/deacon as orders, and Reader there is a licensed
+                     lay ministry, not an order). Never hand-edit this list expecting it to stick;
+                     edit UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS instead. -->
                 <select id="profile-ministry-role" onchange="setUserProfileMinistryRole(this.value)">
                     <option value="lay">Lay use (default)</option>
                     <option value="reader">I am a reader</option>
@@ -1191,7 +1199,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=323" defer></script>
+<script src="js/office-ui.js?v=324" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 

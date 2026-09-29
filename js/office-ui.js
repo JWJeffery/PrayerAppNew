@@ -864,6 +864,127 @@ const UNIVERSAL_OFFICE_MINISTRY_ROLE_ORDER = Object.freeze({
     'all': 5,             // blunt override, sees everything
 });
 
+// ADDED 2026-09-29, per Josh's direct correction: "orders/ministries should be
+// gated by tradition" -- the app already knows the user's tradition by the time
+// they see this picker, so it should not offer (or word) options that don't
+// apply to it, rather than showing one universal list and hoping a wording
+// caveat covers the gap. Each tradition's own array is what actually appears
+// in the <select>; the value set doubles as this tradition's valid-role check
+// in normalizeUserProfileDefaults below.
+//
+// 'reader'/'subdeacon' are the only roles that vary by tradition:
+// - Anglican/TEC recognizes only three ordained orders (bishop, priest,
+//   deacon); "Reader" there is a licensed LAY ministry under Canon III.4, not
+//   an order at all -- no "subdeacon" option exists for this tradition, and
+//   "reader" carries no order/minor-order claim.
+// - Eastern Orthodox, Oriental Orthodox, and the Church of the East each
+//   retain reader and subdeacon as real minor clerical ranks (conferred by
+//   cheirothesia), below the major orders of deacon/priest/bishop.
+// - The Roman Rite as it stood before the 1972 Ministeria Quaedam reform
+//   (i.e. the 1960/1962 books this app's Roman Breviary lane represents) also
+//   had reader/lector as one of its four minor orders -- but classified
+//   SUBDEACON as the first of the MAJOR/sacred orders, not a minor one. This
+//   is a genuine East/West difference, not an oversight: labeling subdeacon
+//   "a minor order" here would repeat the exact kind of error just corrected
+//   for TEC, just aimed at the wrong tradition instead.
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS = Object.freeze([
+    ['research-reference', "Study/reference use -- show role-restricted material, not as an attestation of fitness to perform it"],
+    ['all', 'Show everything, regardless of role'],
+]);
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS = Object.freeze({
+    anglican: Object.freeze([
+        ['lay', 'Lay use (default)'],
+        ['reader', 'I am a reader (a licensed lay ministry)'],
+        ['deacon', 'I am a deacon'],
+        ['priest', 'I am a priest'],
+        ['bishop', 'I am a bishop'],
+        ['monastic', 'I am a monastic'],
+        ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+    ]),
+    'eastern-orthodox': Object.freeze([
+        ['lay', 'Lay use (default)'],
+        ['reader', 'I am a reader (a minor order)'],
+        ['subdeacon', 'I am a subdeacon (a minor order)'],
+        ['deacon', 'I am a deacon'],
+        ['priest', 'I am a priest'],
+        ['bishop', 'I am a bishop'],
+        ['monastic', 'I am a monastic'],
+        ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+    ]),
+    'oriental-orthodox': Object.freeze([
+        ['lay', 'Lay use (default)'],
+        ['reader', 'I am a reader (a minor order)'],
+        ['subdeacon', 'I am a subdeacon (a minor order)'],
+        ['deacon', 'I am a deacon'],
+        ['priest', 'I am a priest'],
+        ['bishop', 'I am a bishop'],
+        ['monastic', 'I am a monastic'],
+        ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+    ]),
+    'church-of-the-east': Object.freeze([
+        ['lay', 'Lay use (default)'],
+        ['reader', 'I am a reader (a minor order)'],
+        ['subdeacon', 'I am a subdeacon (a minor order)'],
+        ['deacon', 'I am a deacon'],
+        ['priest', 'I am a priest'],
+        ['bishop', 'I am a bishop'],
+        ['monastic', 'I am a monastic'],
+        ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+    ]),
+    'latin-catholic': Object.freeze([
+        ['lay', 'Lay use (default)'],
+        ['reader', 'I am a reader (a minor order)'],
+        ['subdeacon', 'I am a subdeacon (a major order, pre-1972 Latin Rite)'],
+        ['deacon', 'I am a deacon'],
+        ['priest', 'I am a priest'],
+        ['bishop', 'I am a bishop'],
+        ['monastic', 'I am a monastic'],
+        ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+    ]),
+});
+// Shown when no tradition is on file yet (a fresh profile, or the
+// tradition-agnostic Universal Office selector context) -- the full role set
+// so nobody's existing choice is hidden before we know which tradition's
+// rules to apply, with neutral (unqualified) reader/subdeacon labels since
+// asserting either classification would be a guess at this point.
+const UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS_DEFAULT = Object.freeze([
+    ['lay', 'Lay use (default)'],
+    ['reader', 'I am a reader'],
+    ['subdeacon', 'I am a subdeacon'],
+    ['deacon', 'I am a deacon'],
+    ['priest', 'I am a priest'],
+    ['bishop', 'I am a bishop'],
+    ['monastic', 'I am a monastic'],
+    ...UNIVERSAL_OFFICE_MINISTRY_ROLE_STUDY_OPTIONS,
+]);
+
+function getMinistryRoleOptionsForTradition(traditionKey) {
+    return UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS[traditionKey] || UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS_DEFAULT;
+}
+
+function populateMinistryRoleSelect(selectEl, traditionKey, currentValue) {
+    if (!selectEl) return;
+    const options = getMinistryRoleOptionsForTradition(traditionKey);
+    selectEl.innerHTML = options.map(([value, label]) =>
+        `<option value="${escapeHtmlForOptionLabel(value)}">${escapeHtmlForOptionLabel(label)}</option>`
+    ).join('');
+    const validValues = new Set(options.map(o => o[0]));
+    selectEl.value = validValues.has(currentValue) ? currentValue : 'lay';
+}
+
+function populateMinistryRoleSelects(traditionKey, currentValue) {
+    ['profile-ministry-role', 'uo-onboarding-role'].forEach(id => {
+        populateMinistryRoleSelect(document.getElementById(id), traditionKey, currentValue);
+    });
+}
+
+function escapeHtmlForOptionLabel(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
 
 function isUniversalOfficeAdvancedToolsEnabled() {
     const params = new URLSearchParams(window.location.search);
@@ -1042,6 +1163,18 @@ function normalizeUserProfileDefaults(raw) {
 
     if (profile.traditionDefault === 'unknown') {
         profile.traditionDefault = 'anglican';
+    }
+
+    // Re-check ministryRole now that traditionDefault is fully resolved: a
+    // role valid for one tradition (e.g. 'subdeacon' under Eastern Orthodox)
+    // is not necessarily valid for another (Anglican has no subdeacon at
+    // all) -- if the stored role isn't in the CURRENT tradition's own option
+    // list, it degrades to 'lay' rather than silently keeping an
+    // inapplicable role's Book of Needs access active behind the scenes
+    // after a tradition switch.
+    const traditionRoleValues = new Set(getMinistryRoleOptionsForTradition(profile.traditionDefault).map(o => o[0]));
+    if (!traditionRoleValues.has(profile.ministryRole)) {
+        profile.ministryRole = 'lay';
     }
 
     return profile;
@@ -1594,9 +1727,10 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
         bookNeedsSelect.value = normalized.bookOfNeedsScope;
     }
 
-    if (ministryRoleSelect) {
-        ministryRoleSelect.value = normalized.ministryRole;
-    }
+    // Repopulates the option list itself, not just the selected value --
+    // which roles are even offered depends on the declared tradition (see
+    // UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS above).
+    populateMinistryRoleSelect(ministryRoleSelect, normalized.traditionDefault, normalized.ministryRole);
 
     if (oorSubtraditionSelect) {
         oorSubtraditionSelect.value = normalized.oorSubtradition || '';
@@ -4861,9 +4995,15 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
     // Reuses the SAME <option> list already in index.html's
     // #profile-ministry-role, cloned live from the DOM rather than a second
     // hard-coded copy that could drift from it -- that select always exists
-    // in the DOM (it's only visually hidden behind the advanced-only panel,
-    // never removed), so this is safe to read at any point after page load.
+    // in the DOM (it's only visually hidden behind the Profile panel, never
+    // removed), so this is safe to read at any point after page load.
+    // Explicitly repopulated for the CURRENT tradition right before cloning
+    // (rather than trusting an earlier syncUserProfileControls() call to
+    // still be fresh) since this prompt can render right after the person's
+    // very first tradition choice, before any other sync has run for it --
+    // see UNIVERSAL_OFFICE_MINISTRY_ROLE_OPTIONS.
     const roleSelectSource = document.getElementById('profile-ministry-role');
+    populateMinistryRoleSelect(roleSelectSource, profile.traditionDefault, profile.ministryRole);
     const roleOptionsHtml = roleSelectSource ? roleSelectSource.innerHTML : '<option value="lay">Lay use (default)</option>';
 
     // ADDED 2026-09-29, per Josh's direct instruction: "If the user selects
