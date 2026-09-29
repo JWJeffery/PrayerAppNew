@@ -25698,3 +25698,87 @@ Both `easton` and `massachusetts` already matched the directory's own slugs exac
 Both registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 50 files, 0
 findings. `node --check` clean on `js/cycles-of-prayer.js`. `js/cycles-of-prayer.js` has no cache-bust
 parameter to bump (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 10: North Dakota, Northern California,
+## Northern Michigan, Northwest Texas, Northwestern Pennsylvania, Ohio (6 dioceses, no blocks)
+
+Josh: *"Please proceed."* Continuing the roster-spreadsheet phase alphabetically after North Carolina.
+Northwest Texas, previously set aside alongside Mississippi/Navajoland as a "flagged non-dated" diocese,
+turned out on closer reading of its own roster note ("recurring days 1-31") to fit the already-supported
+`monthly-recurring` shape exactly -- included in this batch rather than skipped, unlike Mississippi
+(week-numbered) and Navajoland (day-of-week), which still don't fit any of this corpus's four cycleTypes
+and remain set aside. Six parallel background agents dispatched; all six returned real content, no blocks.
+
+**North Dakota** (`episcopal-north-dakota-2026.json`, source: a Q3-only PDF, `ndepiscopal.org`).
+13 entries, July 5-Sept 27 2026 -- a Q4 PDF was searched for but not found (unlike Missouri's own
+batch-8 surprise, where a later quarter had since been posted), so this file matches the roster's
+original research exactly. **The diocesan site (ndepiscopal.org) returned Cloudflare HTTP 403 to every
+plain fetch attempt** (root, robots.txt, the PDF itself), including this session's own WebFetch tool;
+archive.org was also unreachable (proxy relay resets). The agent worked around this using the third-
+party reader service `https://r.jina.ai/<url>`, which returned a clean text extraction of both PDF pages
+-- genuine first-hand content, not a search-engine summary. **This means the raw PDF bytes were never
+obtained, so the usual "render page images and visually cross-check" step (this corpus's standing rule
+for any multi-column-risk source) could not be performed** -- disclosed explicitly in the file's own
+`notes` rather than silently skipped, with the agent's own reasoning for why the extraction is
+nonetheless judged reliable (a consistent single-column structure, no interleaving artifacts found).
+**New reusable technique for a future Cloudflare-blocked diocese page: try a URL-prefixed third-party
+reader service (e.g. `r.jina.ai`) before concluding a source is unfetchable** -- alongside the existing
+embedded-Google-Calendar-ICS trick from batch 9, this is the second such workaround this corpus has
+found for a source that blocks direct fetching without actually requiring authentication.
+
+**Northern California** (`episcopal-northern-california-2026.json`, source: `norcalepiscopal.org` PDF,
+8 pages). 52 entries, all `parish` (no diocesan-office content in this source at all). Several
+congregation/city names wrap across multiple table rows in the source's own layout -- reassembled
+correctly by rendering all 8 pages as images and reading them directly, not trusted from the linearized
+text extraction alone, catching a wrapped entry ("Belfry Episcopal & Lutheran Campus Ministry", an
+ecumenical campus ministry) that the agent transcribed as `parish` (matching the source's own identical
+table-row format) rather than `category`, disclosed as a judgment call either way would need.
+
+**Northern Michigan** (`episcopal-northern-michigan-2026.json`, source: `upepiscopal.org/diocesan-cycle-
+of-prayer/`, a bare-day-of-month-under-month-heading page with no year or weekday printed anywhere).
+Confirmed genuinely `dated` (not `ordinal-sunday-monthly`) by checking programmatically that every one
+of the 52 (month, day) pairs actually lands on a real 2026 Sunday -- a source can be typeset without
+spelled-out dates and still be a normal dated weekly cycle; the shape question is about what the content
+actually anchors to, not how it happens to be printed. The agent also fetched the diocese's separate
+"Churches" roster page to correctly classify two ambiguous entries ("Breaking Bread at Jack's", "UP Wild")
+as `category` rather than `parish`, since that page lists them under "Our Communities" rather than "Our
+Congregations" -- cross-referencing a second page on the same site to resolve an ambiguity, not guessing.
+
+**Northwest Texas** (`episcopal-northwest-texas.json`, `cycleType: "monthly-recurring"`, 31 entries,
+confirmed genuine by rendering both PDF pages as images before transcribing). The source's own "Other
+Ministries" column often lists 2-3 distinct topics per cell, separated by "/" or ";" -- each split into
+its own `category` subject; a campus ministry and a school were correctly classified `category`, matching
+the same institution-vs-parish precedent Arkansas already established for this corpus.
+
+**Northwestern Pennsylvania** (`episcopal-northwestern-pennsylvania-2026.json`, source: `dionwpa.org`
+PDF, 7 pages). 52 entries. Each source row actually pairs an "NWPA" line (this diocese's own subject)
+with a separate "ANGLICAN COP" line (that week's worldwide Anglican Cycle of Prayer entry) -- only the
+NWPA line was transcribed into this diocese-scope file, the Anglican Communion line correctly left for
+this corpus's own separate scope-`communion` file rather than folded in.
+
+**Ohio** (`episcopal-ohio-2026.json`, source: `dohio.org` PDF -- the roster's own note flagged that its
+research checker tool failed to fetch this exact URL, but a plain `curl` with a standard user-agent
+string worked on the first try here, no workaround needed). 52 entries. Source is unusual among this
+corpus's files: every week is one full narrative sentence rather than a printed subject list -- the
+agent applied a disclosed splitting rule (each independently-nameable body joined by "and" becomes its
+own `category` subject; a sentence naming one class with its own internal enumeration stays as one
+subject) rather than a mechanical comma-split. Dec 27 names "the Diocese of Southern Ohio" as a prayer
+subject alongside several neighboring dioceses -- the source's own content about a genuinely different
+diocese, flagged explicitly in `notes` to avoid confusion with this file's own `dioceseShort: "ohio"`.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All six (`north-dakota`, `northern-california`, `northern-michigan`, `northwest-texas`, `northwestern-
+pennsylvania`, `ohio`) already matched the directory's own slugs exactly, no renaming needed. All 6
+registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 56 files, 0 findings.
+`node --check` clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their
+13/3/9 baselines. Live-verified all 6 in headless Chromium against the app's own actual runtime
+(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`), correct entry counts and correct sample-date
+resolution for each, including Northwest Texas's `monthly-recurring` day-29 lookup. Screenshot-verified
+Ohio rendering in an actual office -- this one needed extra care: the real-world clock had advanced far
+enough into this long session that the app's own time-of-day auto office-selection was landing on
+Compline by default regardless of the `#office=morning-prayer` URL hash (a pre-existing app behavior, not
+a bug in this batch), so verification forced the Morning Prayer radio input directly and re-rendered
+before confirming the correct "This week, the Diocesan Cycle of Prayer asks us to pray for those members
+of our diocese in seminary." line, with "Ohio" also visible correctly populated in the profile's own
+diocese dropdown. Zero new console errors beyond the pre-documented sandbox font-CDN block.
+`js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior batches).

@@ -1,0 +1,189 @@
+{
+  "id": "episcopal-northern-california-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Northern California",
+  "dioceseShort": "northern-california",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"Diocesan Cycle of Prayer - 2026\" (title within the PDF itself), fetched directly from https://www.norcalepiscopal.org/wp-content/uploads/2020/11/Diocesan-Prayer-Cycle-2026.pdf.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27, one entry per Sunday. The source's own \"Prayer Date\" column carries no liturgical/Proper labels anywhere in the document, so `liturgicalNote` is null on every entry.",
+    "The source's table also has 'Clergy Contact' and 'Title' columns naming each congregation's clergy and their role -- these are out of scope for this schema (subjects are congregations/categories, not individuals) and were not transcribed.",
+    "Every subject is a specific congregation except one: \"Belfry Episcopal & Lutheran Campus Ministry\" (Davis, Jan 18) is an ecumenical (Episcopal & Lutheran) campus ministry rather than an ordinary parish church. The source lists it in the same table row format as every other congregation, with its own City ('Davis') filled in exactly like a parish entry, so it is transcribed here as `type: \"parish\"` (place \"Davis\") rather than `category` -- a judgment call, disclosed here since the source itself does not label it either way.",
+    "The source prints an inconsistent mix of straight (') and curly (’) apostrophes across otherwise-identical possessive church names (e.g. \"St. Mary's\" vs. \"St. Luke’s\") -- each name is transcribed exactly with whichever mark the source itself used for that particular row, per this corpus's standing rule against silently normalizing a source's own document.",
+    "\"All Saints'\" (Redding, Jan 4) and \"All Saints' Memorial\" (Sacramento, Jan 11) are two distinct congregations, transcribed as printed, not a duplicate.",
+    "\"Grace Church\" appears twice for three different towns across the year (St. Helena and Wheatland, and again later as Fairfield on a separate date) and \"Holy Trinity\" appears three times (Willows, Ukiah, Nevada City) -- the diocese's own shared/generic congregation names recurring at different towns, not an error, transcribed as printed each time.",
+    "Two church names wrap across multiple lines in the source's own table layout and are reassembled as printed: \"Belfry Episcopal & Lutheran Campus Ministry\" (Jan 18) and \"St. Augustine of Canterbury\" (Aug 16, Rocklin). Likewise the city \"Mount Shasta\" (Aug 23, St. Barnabas') wraps across two lines in the source (\"Mount\" / \"Shasta\") and is reassembled as one place name. All reassembled by rendering the source PDF's own page images and visually confirming the pairing of church name to city against the table's row boundaries, not by trusting the linearized text extraction alone, per this corpus's standing rule for layouts with wrapped/multi-line cells.",
+    "Every date in the source falls on a Sunday of 2026, confirmed by calendar arithmetic against the ISO dates transcribed."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Redding" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints’ Memorial", "place": "Sacramento" },
+      { "type": "parish", "name": "St. Mary's", "place": "Elk Grove" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Belfry Episcopal & Lutheran Campus Ministry", "place": "Davis", "note": "An ecumenical (Episcopal & Lutheran) campus ministry, not an ordinary parish church -- transcribed as `parish` because the source lists it in the same table row format as every other congregation, with a City filled in exactly like a parish entry. See file-level notes." }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Eureka" },
+      { "type": "parish", "name": "St. Mary's", "place": "Napa" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ the King", "place": "Quincy" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Placerville" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Sacramento" },
+      { "type": "parish", "name": "Church of the Ascension", "place": "Vallejo" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Vacaville" },
+      { "type": "parish", "name": "St. Michael and All Angels", "place": "Fort Bragg" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel Church", "place": "Grass Valley" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Faith Church", "place": "Cameron Park" },
+      { "type": "parish", "name": "St. Michael's", "place": "Carmichael" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Cloverdale" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Susanville" },
+      { "type": "parish", "name": "St. Michael's", "place": "Alturas" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Auburn" },
+      { "type": "parish", "name": "Grace Church", "place": "Fairfield" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "St. Helena" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Wheatland" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Martin’s", "place": "Davis" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Patrick's", "place": "Kenwood" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Nevada City" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Willows" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Crescent City" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Ukiah" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Incarnation Church", "place": "Santa Rosa" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Oroville" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Colusa" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Sebastopol" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Shepherd by the Sea", "place": "Gualala" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Benicia" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Healdsburg" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael’s", "place": "Anderson" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter’s", "place": "Red Bluff" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Sacramento" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy’s", "place": "Gridley" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Corning" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Cathedral", "place": "Sacramento" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Augustine of Canterbury", "place": "Rocklin" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas’", "place": "Mount Shasta" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Folsom" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Clement’s", "place": "Rancho Cordova" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Sutter Creek" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis’", "place": "Fortuna" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis in the Redwoods", "place": "Willits" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Sonoma" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George’s", "place": "Carmichael" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Yuba City" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Lincoln" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John the Evangelist", "place": "Chico" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Petaluma" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban's", "place": "Arcata" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Roseville" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Lakeport" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Woodland" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Calistoga" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Nicholas", "place": "Paradise" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Galt" }
+    ]}
+  ]
+}
