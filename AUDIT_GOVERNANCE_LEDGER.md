@@ -24351,3 +24351,84 @@ Full detail: this entry is itself the full detail (no matching narrative was add
 `RESUME_PROJECT_NOTE.md` beyond a short pointer, deliberately, per that note's own "handoff document,
 not a history" rule -- see the 2026-09-28 entry above about why that note was just split back down
 after re-bloating).
+
+## 2026-09-29 -- Communion-tier source located; St. Bede's parish-level cycle ingested (new `scope`/`household` schema fields); "TEC Cycle of Prayer" Drive folder found to hold ~24 raw files, not just the roster
+
+Josh corrected an assistant claim that "no [Authorized Intercessions] source text has been gathered
+yet" -- it had, just not yet reflected anywhere in this project's own documents. Searching Josh's
+Google Drive (not just the roster spreadsheet already documented above) surfaced the actual "TEC Cycle
+of Prayer" folder (id `1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew`) in full: **24 files total**, most of them raw
+per-diocese/parish source documents Josh had already collected, sitting unprocessed.
+
+**Communion tier -- located, not yet ingested.** `"September 2026-December 2026 Anglican Cycle of
+Prayer.pdf"` (Drive file id `1PnFqfTnD3ZEjzU3-ZCinNxRb5LObO1xQ`) is the actual worldwide Anglican
+Communion Cycle of Prayer: a daily rotation naming one diocese and its province (e.g. "Tuesday 1
+September 2026 -- The Diocese of Belize -- The Church in the Province of the West Indies"), covering
+Sept-Dec 2026 in this particular file. Read in full this session; not yet parsed into a corpus file or
+wired into the BCP rubric slot. No Provincial-tier (a distinct TEC-wide cycle, as opposed to the
+worldwide Communion one) source has been located.
+
+**Parish tier -- St. Bede's own Congregational Cycle of Prayer, INGESTED this session.** Josh pointed
+out his own parish (St. Bede's Episcopal Church, Forest Grove, OR) was the schema's own precedent
+diocese (Western Oregon) and should already be represented -- correct, but only as a single
+diocese-level `"parish"` subject (Western Oregon's own file, week of 2026-04-12). The actual Parish
+tier of the four-tier Communion/Provincial/Diocesan/Parish structure is a different, finer-grained
+document: `"Updated 2026 Congregtional Cycle of Prayer St. Bede's (09_02_2026).pdf"` (Drive file id
+`1rhFbJC2ISL3R1fNEDoo-niOwAuT24ejN`), the parish's own internal day-of-month (1-31) rotation of its
+individual members/households, distinct from a diocese's rotation of parishes.
+
+The existing `subjectShape` (`parish`/`category`) had no way to represent a named individual/couple/
+family, and `fileShape` had no way to say "this file is one parish's own cycle" as opposed to "this is
+a diocese's cycle of its parishes." Extended `schema.json` (v1.1, no version bump made since the shape
+addition is additive/backward-compatible -- every existing file still validates unchanged): a new
+`scope` field (`"diocese"`, the default when absent, vs. `"parish"`, requiring new `parish`/
+`parishShort` fields alongside the existing `diocese`/`dioceseShort`), and a new subject `type`,
+`"household"` (a named individual/couple/family, no `place`, `name` transcribed verbatim). Naming
+convention extended to append the parish slug for scope-`"parish"` files (e.g.
+`episcopal-western-oregon-st-bede.json`). `scripts/cycles-of-prayer/validate.mjs` updated to match:
+`household` added to `VALID_SUBJECT_TYPES`, a new `VALID_SCOPES` check, `parish`/`parishShort`
+required/forbidden validation, and the expected-filename builder extended to include the parish slug
+when present. Ran `npm run audit:cycles-of-prayer` after: **PASS, 7 files, 0 findings** (the 6
+pre-existing diocese files plus the new one, all still valid under the extended schema).
+
+**Transcription care taken, worth recording as a standing gotcha for any future scope-`"parish"`
+file:** Drive's own `read_file_content`/`download_file_content` text extraction of this PDF interleaves
+its two printed columns into one run-on line per pair of facing "Day N"/"Day N+7" boxes (e.g. "Day 1
+Day 8 Eva Alt Ron & Sue Field Jennie & Mark Armstrong Mike Engelman & Emily Field ..."), which would
+have silently misassigned names to the wrong day if transcribed as printed. Downloaded the actual PDF
+bytes (`download_file_content`, base64-decoded to a local file) and read it with proper page-layout
+rendering instead, which resolves the two columns correctly and was cross-checked against the raw text
+extraction's own alternating pattern for agreement. `episcopal-western-oregon-st-bede.json` (31 day
+entries, `cycleType: "monthly-recurring"`, `scope: "parish"`) transcribed from that clean read; its own
+`notes` disclose the source's unexplained `+` suffix on some names (David/deacon-adjacent, likely
+denoting clergy, not decoded further absent an explicit key) and that Day 31 lists parish ministries
+(`category` subjects), not households. The corresponding rule was added to `schema.json`'s own `rules`
+array so a future session doesn't repeat the same near-miss. **Not yet done:** wiring this file into any
+UI or registry -- `js/cycles-of-prayer.js`'s registry and loader only understand diocese-level files;
+surfacing a household's own "this is my family's day" is an undecided product question (how would the
+app know which household is the user's, given this is free text with no stable per-household id?), not
+yet raised with Josh.
+
+**~15 more diocese-level source files sitting unopened in the same Drive folder, identified but NOT
+transcribed this session:** New Jersey (`2026DiocesanCycleOfPrayer_2026May_UPDATED.pdf`), Newark
+(`Diocesan-Cycle-of-Prayer-2026-May-Dec-updated-4-22-2026.docx` -- Kinnelon/Leonia parishes, northern
+NJ, distinct from the Diocese of New Jersey file), Western Massachusetts (`9c621aea-....pdf` -- Bishop
+Douglas J. Fisher), Southwestern Virginia (`Current Prayer Calendar.pdf`), Nebraska
+(`Weekly_Prayer_Cycle_Calendar_2026.pdf`), Maine (`Cycle of Prayer 2025-2026.pdf`), Connecticut/ECCT
+(`712f20a8-....pdf`), Lexington (`intercessory_25-26_4-14-2026.pdf`), the Great Lakes (`Cycle of Prayer
+- EDGL.docx`), Atlanta (`25-26-Cycle-of-Prayer.pdf` -- Bishop Rob Wright), San Joaquin
+(`dioceasn cycle of prayer 2026.docx` -- tentative identification from Bishop David Rice/Bishop-elect
+Greg Kimura transition and Central Valley CA place names; no explicit diocese name string found in the
+source, confirm before ingesting), Central Gulf Coast (`2025-2026- 2027 Cycle of Prayer.docx` --
+explicit diocese name on the Dec 25 line), East Carolina (`2026-Cycle-of-Prayer-4.pdf` -- explicit
+"Bishop of East Carolina"), Kentucky (`Cycle_of_Prayer_-_Weekly_2026.xlsx_-_Sheet1-2.pdf` -- Louisville
+parishes, Thomas Merton commemoration), Rio Grande (published TWO ways -- `Daily Cycle of Prayer
+2026.pdf` and `Weekly Cycle of Prayer 2026.pdf`, same diocese, pick one rather than ingesting both, per
+this same corpus's own already-disclosed Rio Grande dual-publication quirk above), Idaho (`2026 Prayer
+Calendar for the Diocese of Idaho.xlsx`), and Northern Indiana (`Diocesan Cycle of Prayer -
+Current.pdf` -- identified only after opening the full file: explicit "A Cycle of Prayer for The
+Episcopal Diocese of Northern Indiana," Bishop Doug Sparks, matching this ledger's own earlier
+Northern Indiana roster note above). None of these are transcribed into `data/cycles-of-prayer/` yet.
+Whoever continues this work should open the Drive folder directly (not just the roster spreadsheet
+summarized earlier in this same entry-group) before re-researching any diocese from scratch -- several
+of the "83 of 88 not started" dioceses already have a ready source sitting here, unopened.

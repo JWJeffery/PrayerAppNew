@@ -1,0 +1,185 @@
+{
+  "id": "episcopal-western-oregon-st-bede",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Western Oregon",
+  "dioceseShort": "western-oregon",
+  "scope": "parish",
+  "parish": "St. Bede's Episcopal Church",
+  "parishShort": "st-bede",
+  "cycleType": "monthly-recurring",
+  "source": "Congregational Cycle of Prayer (Updated 2026, revised 09/02/2026)",
+  "sourceFile": "\"Updated 2026 Congregtional Cycle of Prayer St. Bede's (09_02_2026).pdf\", provided directly by Josh via Google Drive (file id 1rhFbJC2ISL3R1fNEDoo-niOwAuT24ejN, folder \"TEC Cycle of Prayer\", id 1RNfB4mX7RnVbs9XRHOvO6DhYZ8txZuew).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is a PARISH-level congregational cycle -- the parish's own list of its individual members/households to pray for through the month -- not a diocese-level cycle of parishes. It is the first file in this corpus to use scope 'parish' and subject type 'household'. St. Bede's itself already appears as a diocese-level 'parish' subject in episcopal-western-oregon-2026.json (its own week, 2026-04-12, the file schema.json itself cites as this corpus's original precedent); this file is a different, finer-grained layer beneath that one -- the congregation praying for its own members, not the diocese praying for the congregation as a whole.",
+    "The source's typographic '+' suffix after some names (Jane+, Ken+, Katheryn King+, Linda+, Daniel+) is preserved exactly as printed. It very likely denotes clergy (this parish's rector/associates), consistent with the 'Dcn.' prefix used elsewhere in the same document for deacons, but the source supplies no explicit key/legend, so its meaning is disclosed here rather than decoded or asserted.",
+    "Each household/individual entry is transcribed exactly as printed, including however the source groups spouses ('&'), co-listed adults (comma-separated), and children (listed by first name only, comma-separated after the adult(s)) -- never split, re-ordered, or normalized.",
+    "Day 31 is not a household at all -- the source lists parish ministries/outreach groups as a single comma-separated line ('St. Bede's Outreach Ministries, Relay for Life, Good News Pantry Garden, Eucharistic Visitors/Pastoral Care, Quilt & Prayer Shawl Ministry, Brotherhood at St. Bede's, Women's Fellowship, Christian Formation'). Each comma-separated item is recorded as its own 'category' subject (this corpus's existing type for a named group not tied to one individual/family), consistent with how diocesan-level files in this corpus already use 'category' for non-parish institutional subjects.",
+    "The source PDF's raw copy-pasted text interleaves two printed columns into one run-on line for each pair of facing 'Day N' / 'Day N+7' boxes (e.g. 'Day 1 Day 8 Eva Alt Ron & Sue Field ...'). This file was transcribed from the PDF's own rendered page layout, not that linearized text extraction, specifically to avoid misassigning a name to the wrong day -- per the corresponding rule added to schema.json's own `rules` list."
+  ],
+  "entries": [
+    { "day": 1, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Eva Alt" },
+      { "type": "household", "name": "Jennie & Mark Armstrong" },
+      { "type": "household", "name": "Laurie Baker, Ariane Kimlinger" },
+      { "type": "household", "name": "Jane+ & Bruce Besse" },
+      { "type": "household", "name": "Shanie & Ryan Black, Charlotte, Teddy" }
+    ]},
+    { "day": 2, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Joan Bolen" },
+      { "type": "household", "name": "Leslie Bruckner" },
+      { "type": "household", "name": "Danny & Paula Brunk" },
+      { "type": "household", "name": "Jay & Winnie Carey" }
+    ]},
+    { "day": 3, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Ginny & Tom Carlson" },
+      { "type": "household", "name": "Fritz Brueggemeyer & Jennifer Chapman, Kai, Atticus, Oscar" },
+      { "type": "household", "name": "David & Lynne Chapman" }
+    ]},
+    { "day": 4, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Dick Colgan" },
+      { "type": "household", "name": "Craig Conboy" },
+      { "type": "household", "name": "Colleen Cornish" }
+    ]},
+    { "day": 5, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Bruce & Katie Countryman" },
+      { "type": "household", "name": "Tanya Dämm, Peyton, Preston" }
+    ]},
+    { "day": 6, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Carol & Grant Davis" },
+      { "type": "household", "name": "Spencer Davis, Maya, Sebastian" },
+      { "type": "household", "name": "Carol Dean" }
+    ]},
+    { "day": 7, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Ken+ & Joy Dorsch" },
+      { "type": "household", "name": "David & Meredith Ferrier, Olive, Arnold" },
+      { "type": "household", "name": "Tom & Evey Fete" }
+    ]},
+    { "day": 8, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Ron & Sue Field" },
+      { "type": "household", "name": "Mike Engelman & Emily Field" },
+      { "type": "household", "name": "Dcn. Theresa & Ken Floyd" }
+    ]},
+    { "day": 9, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Beverly & Jerry Frawley, Jacqueline, Rebecca" },
+      { "type": "household", "name": "Ken & Mary Gates" },
+      { "type": "household", "name": "Linda Haddon" }
+    ]},
+    { "day": 10, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Willa Harrelson" },
+      { "type": "household", "name": "John Harrelson & Shiela Lesh, Lucas, Althea, Willa" },
+      { "type": "household", "name": "Steve Harris" },
+      { "type": "household", "name": "George & Margaret Harshbarger" },
+      { "type": "household", "name": "Paul Harwood & Rebecca Gladstone, Tyler" }
+    ]},
+    { "day": 11, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Megan Havens" },
+      { "type": "household", "name": "April & Monty Heying" },
+      { "type": "household", "name": "Sr. Marcia Hobart" }
+    ]},
+    { "day": 12, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Dcn. Valerie Ivey" },
+      { "type": "household", "name": "Linda Jackson" },
+      { "type": "household", "name": "Chris and Tabatha James, Evan, Anna" }
+    ]},
+    { "day": 13, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Josh Jeffery & Bernie Gorman" },
+      { "type": "household", "name": "John & Norma Johansen" },
+      { "type": "household", "name": "Ginger Johnson" },
+      { "type": "household", "name": "John & Liz Jordan" }
+    ]},
+    { "day": 14, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "David & Jeannine Jordan" },
+      { "type": "household", "name": "Paul Jordan" },
+      { "type": "household", "name": "Martha & Nader Khoury, Ellie" }
+    ]},
+    { "day": 15, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Christine Kidd" },
+      { "type": "household", "name": "Frances King & Donald Jessup" },
+      { "type": "household", "name": "Katheryn King+ & David Eitland" },
+      { "type": "household", "name": "Art & Jean Knight" }
+    ]},
+    { "day": 16, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Judy Kolman" },
+      { "type": "household", "name": "Jacob Lloyd, Will Lloyd" },
+      { "type": "household", "name": "Daniel+ & Nancy Longatan" }
+    ]},
+    { "day": 17, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Taylor Mackinnon, Ross" },
+      { "type": "household", "name": "David & Mary Jo Morelli" },
+      { "type": "household", "name": "Ross Morelli" },
+      { "type": "household", "name": "Erin Morelli, Lynn, Abigail, Benson" }
+    ]},
+    { "day": 18, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Bill & Margaret Musgnung" },
+      { "type": "household", "name": "Pat Musgnung" },
+      { "type": "household", "name": "Erika & Mitch Myrick, Chase, Kayla" }
+    ]},
+    { "day": 19, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Kathy & Jim Nelsen, Kevin" },
+      { "type": "household", "name": "Amanda & James Nelsen" },
+      { "type": "household", "name": "Jacob & Kiry (Nelsen) Lipson, Maya, Ari, Martin" }
+    ]},
+    { "day": 20, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Stewart & Diane Nestor" },
+      { "type": "household", "name": "Mike & Jan O'Shanecy, Chris" },
+      { "type": "household", "name": "Sarah Potter & Brandan Johnson" },
+      { "type": "household", "name": "Trey & Amy Parker, James, Abby" }
+    ]},
+    { "day": 21, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Dcn. David Pero" },
+      { "type": "household", "name": "Lissa Phelps Tanner, Celeste (Phelps) Tillo, Ronin Tanner" }
+    ]},
+    { "day": 22, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Linda+ & Tom Potter" },
+      { "type": "household", "name": "Elizabeth & Travis Powers, Maxine" }
+    ]},
+    { "day": 23, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Marie-Hélène & Tim Rake, Margo" },
+      { "type": "household", "name": "John & Pamela Randall, Annelise" }
+    ]},
+    { "day": 24, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Charlie Rhyne" },
+      { "type": "household", "name": "Scott & Jori Richards" },
+      { "type": "household", "name": "Aaron & Holly Sackett, Ben, Rosemary" }
+    ]},
+    { "day": 25, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Bonnie & Robert Shumaker" },
+      { "type": "household", "name": "Dan & Melinda Shumaker" },
+      { "type": "household", "name": "Tanner & Bridget Kelsay (Shumaker), Tucker, Saylem" },
+      { "type": "household", "name": "Charles & Chelsea Forsythe (Shumaker), Annabell, Melanie" }
+    ]},
+    { "day": 26, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Keji Sprenger" },
+      { "type": "household", "name": "Doreen Stenson" },
+      { "type": "household", "name": "Gwen & Randy Stone" }
+    ]},
+    { "day": 27, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Harry & Irene Tanielian" },
+      { "type": "household", "name": "Robin Ten Broeck" }
+    ]},
+    { "day": 28, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Wendy Thompson" },
+      { "type": "household", "name": "Sue Ann Tippett" }
+    ]},
+    { "day": 29, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Kerry VanderZanden" },
+      { "type": "household", "name": "Art & Sydell Voeller" }
+    ]},
+    { "day": 30, "liturgicalNote": null, "subjects": [
+      { "type": "household", "name": "Brenda & Bill Wood" },
+      { "type": "household", "name": "Doris Zielke" }
+    ]},
+    { "day": 31, "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Bede's Outreach Ministries" },
+      { "type": "category", "name": "Relay for Life" },
+      { "type": "category", "name": "Good News Pantry Garden" },
+      { "type": "category", "name": "Eucharistic Visitors/Pastoral Care" },
+      { "type": "category", "name": "Quilt & Prayer Shawl Ministry" },
+      { "type": "category", "name": "Brotherhood at St. Bede's" },
+      { "type": "category", "name": "Women's Fellowship" },
+      { "type": "category", "name": "Christian Formation" }
+    ]}
+  ]
+}

@@ -5,8 +5,9 @@ const ROOT = 'data/cycles-of-prayer';
 const SCHEMA_FILE = 'schema.json';
 const KEBAB_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-const VALID_SUBJECT_TYPES = new Set(['parish', 'category']);
+const VALID_SUBJECT_TYPES = new Set(['parish', 'category', 'household']);
 const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring']);
+const VALID_SCOPES = new Set(['diocese', 'parish']);
 
 const verbose = process.argv.includes('--verbose');
 
@@ -43,7 +44,7 @@ function validateSubjects(name, where, subjects) {
         add('CRITICAL', name, `${subjectWhere} is type "parish" but has no non-empty "place"`);
       }
     } else if (subject.place !== undefined) {
-      add('MEDIUM', name, `${subjectWhere} is type "category" but carries a "place" field (categories are not tied to a congregation)`);
+      add('MEDIUM', name, `${subjectWhere} is type "${subject.type}" but carries a "place" field (only "parish" subjects are tied to a place)`);
     }
     if (subject.note !== undefined && typeof subject.note !== 'string') {
       add('MEDIUM', name, `${subjectWhere}.note, when present, must be a string`);
@@ -90,16 +91,34 @@ function main() {
       add('CRITICAL', name, `"cycleType", when present, must be "dated" or "monthly-recurring", got ${JSON.stringify(doc.cycleType)}`);
     }
 
+    const scope = doc.scope === undefined ? 'diocese' : doc.scope;
+    if (!VALID_SCOPES.has(scope)) {
+      add('CRITICAL', name, `"scope", when present, must be "diocese" or "parish", got ${JSON.stringify(doc.scope)}`);
+    }
+    if (scope === 'parish') {
+      if (typeof doc.parish !== 'string' || doc.parish.length === 0) {
+        add('CRITICAL', name, 'scope is "parish" but "parish" is missing or empty');
+      }
+      if (typeof doc.parishShort !== 'string' || !KEBAB_SLUG_PATTERN.test(doc.parishShort)) {
+        add('CRITICAL', name, `scope is "parish" but "parishShort" must be a non-empty kebab-case slug, got ${JSON.stringify(doc.parishShort)}`);
+      }
+    } else if (doc.parish !== undefined || doc.parishShort !== undefined) {
+      add('HIGH', name, '"parish"/"parishShort" must be absent when scope is "diocese" (or absent)');
+    }
+
     const expectedId = name.slice(0, -'.json'.length);
     if (doc.id !== expectedId) {
       add('HIGH', name, `id "${doc.id}" does not match filename (expected "${expectedId}")`);
     }
     if (typeof doc.bodySlug === 'string' && typeof doc.dioceseShort === 'string') {
+      const slugParts = [doc.bodySlug, doc.dioceseShort];
+      if (scope === 'parish' && typeof doc.parishShort === 'string') slugParts.push(doc.parishShort);
+      const base = slugParts.join('-');
       const expectedName = cycleType === 'monthly-recurring'
-        ? `${doc.bodySlug}-${doc.dioceseShort}.json`
-        : `${doc.bodySlug}-${doc.dioceseShort}-${doc.year}.json`;
+        ? `${base}.json`
+        : `${base}-${doc.year}.json`;
       if (name !== expectedName) {
-        add('HIGH', name, `filename does not match expected pattern for cycleType "${cycleType}" (expected "${expectedName}")`);
+        add('HIGH', name, `filename does not match expected pattern for cycleType "${cycleType}"/scope "${scope}" (expected "${expectedName}")`);
       }
     }
 
