@@ -25101,6 +25101,53 @@ entry rather than erroring or fabricating a day-31 date that doesn't exist that 
 `resolveMonthlyRecurringEntry`'s existing "latest on-or-before, wrapping" logic handles this file
 correctly with no code changes needed.
 
-Batch 3 is now fully closed, all 5 dioceses. **Next:** batch 4 (Southwestern Virginia, Western
-Massachusetts, the last two Drive-identified dioceses), then the roster spreadsheet's remaining ~65
-dioceses via their own URLs, 5 at a time.
+Batch 3 is now fully closed, all 5 dioceses.
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 4: Southwestern Virginia, Western
+## Massachusetts -- the last two Drive-identified dioceses, closing that phase entirely
+
+Josh: *"Continue with the next batch."* Both Drive file ids were not on record (the note only had their
+filenames) -- resolved by title search within the "TEC Cycle of Prayer" folder rather than re-searching
+from scratch. Both `scope: "diocese"`, `cycleType: "dated"`, `year: 2026`, registered in
+`CYCLES_OF_PRAYER_DIOCESES`.
+
+**Southwestern Virginia** (`episcopal-southwestern-virginia-2026.json`, source: "Current Prayer
+Calendar.pdf", Drive id `1OgklXFLRo-lwbfYIJpAA-XsA6bSAdvN7`). Clean text, no rendering needed. 29
+entries, June 7-December 20, 2026 -- the source's own header claims through December 27, but no
+December 27 entry actually exists in the text (transcribed as printed, not padded out to match the
+header). Every single dated entry ends with an identical standing sentence naming the diocese's
+companion relationship (Diocese of Haiti; companion Diocese of Leeds and its bishop) -- per the
+established Great Lakes precedent for a repeated per-week constant, excluded from `entries` and
+disclosed once in full, with the one real exception (September 20 names a different Leeds bishop,
+Nick Baines, preserved as printed) also disclosed. Most weeks pair a "Bishop's Visitation to X"
+sentence with a reinforcing "pray for the people of X and their rector Y" sentence about the same
+congregation -- folded into one `parish` subject, not two, per this session's own working decision.
+
+**Western Massachusetts** (`episcopal-western-massachusetts-2026.json`, source:
+"9c621aea-13fc-4095-8966-d79dce966643.pdf", internally titled "CoP 2026 Large Print.xlsx", Drive id
+`1khMbS7v3y3EoUSNy45fzrBrYQ3iM-SZd`). 52 entries, self-contained Jan 4-Dec 27 2026 (all 52 Sundays).
+Diocese name is inferred, not printed anywhere in the source -- confirmed from the diocesan bishop
+named on the first line (The Rt. Rev. Douglas J. Fisher) rather than from an explicit diocese-name
+string, same disclosed-inference situation as Atlanta/Kentucky in earlier batches; the source instead
+names a genuinely DIFFERENT diocese, "The Episcopal Diocese of Massachusetts" (the separate Eastern
+Massachusetts diocese), as one week's own subject (February 1), not to be confused with this file's own
+diocese. Source is a three-column table (congregation/local ministry | date | wider-church-and-mission)
+whose linearized extraction runs all three together per week with no reliable delimiter beyond the
+source's own semicolons -- each week's leading congregation becomes a `parish` subject, and every
+remaining local/wider item is split on semicolons into its own separate `category` subject (an "X and Y"
+naming one pairing, e.g. a bishop and his spouse, is kept as one subject, since the source's own
+semicolons -- not "and" -- are what separate genuinely distinct items elsewhere in the same file).
+"Episcopal City Mission" (December 13, an urban ministry organization rather than a parish church) is
+still recorded as `parish` since "mission" is explicitly within this schema's own `parish` type
+definition and it fills the identical structural slot as every other week.
+
+All four (this batch's two, live-verified alongside the batch-3 four in the same headless Chromium
+pass this round) load correctly via the app's own actual runtime (`loadCycleOfPrayerYear`/
+`getCachedCycleOfPrayerWeek`) with correct entry counts (29/52) and correctly resolve real sample
+dates. `npm run audit:cycles-of-prayer`: PASS, 25 files, 0 findings.
+
+**This closes the entire Drive-identified phase of diocese ingestion** -- every diocese-level source
+file Josh had already uploaded to the "TEC Cycle of Prayer" Drive folder is now ingested. **Next:** the
+roster spreadsheet's remaining ~65 dioceses via their own URLs (per Josh's original instruction: fetch
+5 at a time, flag anything unfetchable in this note/ledger rather than endlessly retrying, since there
+is no Drive/Sheets write tool to literally annotate the spreadsheet itself).

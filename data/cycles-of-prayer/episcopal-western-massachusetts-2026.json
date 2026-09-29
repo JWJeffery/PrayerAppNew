@@ -1,0 +1,336 @@
+{
+  "id": "episcopal-western-massachusetts-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Western Massachusetts",
+  "dioceseShort": "western-massachusetts",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer 2026",
+  "sourceFile": "\"9c621aea-13fc-4095-8966-d79dce966643.pdf\" (itself titled internally 'CoP 2026 Large Print.xlsx'), provided directly by Josh via Google Drive (file id 1khMbS7v3y3EoUSNy45fzrBrYQ3iM-SZd, folder \"TEC Cycle of Prayer\").",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Diocese name 'The Episcopal Diocese of Western Massachusetts' is inferred, not printed anywhere in the source's own extracted text -- confirmed from the bishop named on the first line (The Rt. Rev. Douglas J. Fisher, Western Massachusetts's own real diocesan bishop) and Josh's roster identification, same disclosed-inference situation as Atlanta and Kentucky in earlier batches. The source instead names a DIFFERENT diocese, 'The Episcopal Diocese of Massachusetts' (the separate Eastern Massachusetts diocese), as one week's own subject (February 1) -- not to be confused with this file's own diocese.",
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27.",
+    "Source is a three-column table (Congregations/Ministries & Partners in Ministry | Sundays | The Church & wider mission) whose linearized text extraction runs each week's three columns together with no reliable delimiter beyond the source's own punctuation; the recurring page-header text ('Congregations, Ministries, & Partners in Ministry / Sundays / The Church & wider 2026 / mission') that repeats at each page break in the raw extraction is page-layout noise, not diocese content, and is excluded entirely.",
+    "Each week's first (leftmost) column item -- almost always a specific congregation, 'Name, City' -- is recorded as this corpus's own `parish` subject (place split from the trailing city name). Two exceptions: February 1 names a different diocese entirely ('The Episcopal Diocese of Massachusetts', no place) and December 13 names an urban ministry organization rather than a parish church ('Episcopal City Mission', Boston) -- the latter is still recorded as `parish` since it fills the identical structural slot as every other week and 'mission' is explicitly within this schema's own `parish` type definition (a parish, mission, or cathedral).",
+    "Each week's remaining local-ministry item(s) and wider-church-and-mission item(s) are recorded as separate `category` subjects, split on the source's own semicolons (its own delimiter between distinct named organizations/offices within one column) -- an 'X and Y' pairing naming one person/couple together (e.g. 'The Rt. Rev. Douglas J. Fisher and the Rev. Betsy Fisher', January 4) is kept as ONE subject, not split, since 'and' here joins one pairing rather than separating two distinct items the way the source's own semicolons do elsewhere.",
+    "'St. Paul's Gardner' (July 12) is missing the comma every other week's parish line has between congregation name and city -- read as 'St. Paul's', place 'Gardner', the same as every comma-separated week, not a different kind of entry.",
+    "December 13's wider-mission column ends with a bare trailing semicolon ('Episcopal Service Corps (ESC);') and no second item after it -- read as a single subject, the trailing semicolon treated as a source-side truncation artifact, not evidence of a second, unprinted organization to guess at."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. David's", "place": "Agawam" },
+      { "type": "category", "name": "The Rt. Rev. Douglas J. Fisher and the Rev. Betsy Fisher" },
+      { "type": "category", "name": "The Presiding Bishop" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Episcopal", "place": "Amherst" },
+      { "type": "category", "name": "Building Bridges Veterans Initiative" },
+      { "type": "category", "name": "The House of Bishops" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Ashfield" },
+      { "type": "category", "name": "For the repose of the souls of our Bishops in glory" },
+      { "type": "category", "name": "President of the House of Deputies" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Athol" },
+      { "type": "category", "name": "Church Without Walls, Springfield" },
+      { "type": "category", "name": "Spouses of deceased clergy" },
+      { "type": "category", "name": "The House of Deputies" },
+      { "type": "category", "name": "Jubilee Ministries" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Episcopal Diocese of Massachusetts" },
+      { "type": "category", "name": "Daughters of the King" },
+      { "type": "category", "name": "Evangelism Initiatives, Racial Reconciliation and Creation Care" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Clinton" },
+      { "type": "category", "name": "The Rt. Rev. Gordon P. Scruton, VIII Bishop, retired" },
+      { "type": "category", "name": "Office of Government Relations" },
+      { "type": "category", "name": "Episcopal Communicators" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "East Longmeadow" },
+      { "type": "category", "name": "Lawrence House Service Corps" },
+      { "type": "category", "name": "Church Periodical Club" },
+      { "type": "category", "name": "The Episcopal Church and Visual Arts" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Philip's", "place": "Easthampton" },
+      { "type": "category", "name": "Society of the Companions of the Holy Cross" },
+      { "type": "category", "name": "Episcopal Conference of the Deaf" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Fitchburg" },
+      { "type": "category", "name": "Reconciliation House, Inc., Webster" },
+      { "type": "category", "name": "Education for Ministry" },
+      { "type": "category", "name": "Episcopal Camps & Conference Centers, Inc." },
+      { "type": "category", "name": "Episcopal News Service" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Rochdale" },
+      { "type": "category", "name": "Cathedral of the Beloved, Pittsfield" },
+      { "type": "category", "name": "All retired clergy" },
+      { "type": "category", "name": "Episcopal Public Policy Network (EPPN)" },
+      { "type": "category", "name": "US Disaster Program, Episcopal Relief & Development" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Worcester" },
+      { "type": "category", "name": "Chancellor of our Diocese, Donald Allison" },
+      { "type": "category", "name": "CREDO" },
+      { "type": "category", "name": "Covenant Relationship With the RC Dioceses of Springfield & Worcester" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Saints James and Andrew", "place": "Greenfield" },
+      { "type": "category", "name": "Cathedral in the Night, Northampton" },
+      { "type": "category", "name": "The Board of Examining Chaplains" },
+      { "type": "category", "name": "The Episcopal Church Foundation (ECF)" },
+      { "type": "category", "name": "Recovery Ministries of the Episcopal Church" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis'", "place": "Holden" },
+      { "type": "category", "name": "Lay Employees of our diocese" },
+      { "type": "category", "name": "Clergy spouses and families" },
+      { "type": "category", "name": "Episcopal Church Missionary Community" },
+      { "type": "category", "name": "Society of Saint John the Evangelist (SSJE)" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Holyoke" },
+      { "type": "category", "name": "Laundry Love" },
+      { "type": "category", "name": "Clergy in Fresh Start" },
+      { "type": "category", "name": "Office of Ecumenical and Interfaith Relations" },
+      { "type": "category", "name": "Church Scholarship Society" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Lanesboro" },
+      { "type": "category", "name": "Latino/Hispanic Ministries" },
+      { "type": "category", "name": "Ecumenical & Interreligious Dialogue" },
+      { "type": "category", "name": "Episcopal Peace Fellowship (EPF)" },
+      { "type": "category", "name": "Forward Movement Publications" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Helena's", "place": "Lenox" },
+      { "type": "category", "name": "An Episcopal Path to Creation Justice" },
+      { "type": "category", "name": "Mampong Babies Home, Ghana" },
+      { "type": "category", "name": "Episcopal Media Services" },
+      { "type": "category", "name": "Archives of The Episcopal Church" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Lenox" },
+      { "type": "category", "name": "The Rt. Rev. Miguelina Howell" },
+      { "type": "category", "name": "Social Justice Commission" },
+      { "type": "category", "name": "Episcopal Youth Event (EYE)" },
+      { "type": "category", "name": "The Society for the Increase of the Ministry (SIM)" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Leominster" },
+      { "type": "category", "name": "Loving the Questions Discernment Experience" },
+      { "type": "category", "name": "Evangelical Education Society" },
+      { "type": "category", "name": "National Episcopal AIDs Association (NEAA)" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Longmeadow" },
+      { "type": "category", "name": "Commission on Ministry" },
+      { "type": "category", "name": "Third Order of Franciscans" },
+      { "type": "category", "name": "Faith Alive" },
+      { "type": "category", "name": "The Episcopal Network for Stewardship (TENS)" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Milford" },
+      { "type": "category", "name": "Bement-Waterfield Educational Grant Committee" },
+      { "type": "category", "name": "National Episcopal Health Ministries" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Millville" },
+      { "type": "category", "name": "Clergy living beyond the diocese" },
+      { "type": "category", "name": "Reclaiming Hope: the Commission on Mental Health and Substance Abuse" },
+      { "type": "category", "name": "Episcopal Women's History Project" },
+      { "type": "category", "name": "New England Synod of the ELCA" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints' Berkshires", "place": "North Adams" },
+      { "type": "category", "name": "Human Resources Committee" },
+      { "type": "category", "name": "the Liturgical Commission" },
+      { "type": "category", "name": "Spiritual Formation and Leadership Development" },
+      { "type": "category", "name": "Southern New England Conference of the United Church of Christ" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Memorial Church", "place": "North Brookfield" },
+      { "type": "category", "name": "Budget & Finance Committee" },
+      { "type": "category", "name": "National Cathedral Association" },
+      { "type": "category", "name": "Action Centered Tutoring Services (ACTS), Springfield" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Northampton" },
+      { "type": "category", "name": "Trustees for the Diocese" },
+      { "type": "category", "name": "Covenant of Friendship with Diocese of Asante-Mampong, Ghana" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Nativity", "place": "Northborough" },
+      { "type": "category", "name": "Diocesan Council" },
+      { "type": "category", "name": "Episcopal Church Women (ECW)" },
+      { "type": "category", "name": "Trans Episcopal" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Oxford" },
+      { "type": "category", "name": "The Standing Committee" },
+      { "type": "category", "name": "Church Publishing Inc." }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Pittsfield" },
+      { "type": "category", "name": "Worcester North Region & Dean of Clericus" },
+      { "type": "category", "name": "Girls' Friendly Society" },
+      { "type": "category", "name": "Bishops United Against Gun Violence" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Gardner" },
+      { "type": "category", "name": "Worcester South Region & Dean of Clericus" },
+      { "type": "category", "name": "Big Blue Drop-in Center, Christ Church Cathedral" },
+      { "type": "category", "name": "Anglican Fellowship of Prayer" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Trinity Church", "place": "Sheffield" },
+      { "type": "category", "name": "Archdeacon, The Ven. Jane Griesbach" },
+      { "type": "category", "name": "United Thank Offering (UTO)" },
+      { "type": "category", "name": "National Network of Episcopal Church Employees" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Shelburne Falls" },
+      { "type": "category", "name": "Franklin-Hampshire Region & Dean of Clericus" },
+      { "type": "category", "name": "Episcopal Relief & Development" },
+      { "type": "category", "name": "Ministries to persons in Assisted Living & Skilled Nursing Care" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Shrewsbury" },
+      { "type": "category", "name": "Hampden Region & Dean of Clericus" },
+      { "type": "category", "name": "Interfaith Coalition for the Homeless, Worcester" },
+      { "type": "category", "name": "Worcester Interfaith" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "South Hadley" },
+      { "type": "category", "name": "Berkshires Region & Dean of Clericus" },
+      { "type": "category", "name": "Episcopal Young Adults & Campus Ministry" },
+      { "type": "category", "name": "Anglican Society" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Southbridge" },
+      { "type": "category", "name": "Bishop's Chaplains to Retired Clergy" },
+      { "type": "category", "name": "Western Mass Food Bank" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Southwick Community Episcopal Church", "place": "Southwick" },
+      { "type": "category", "name": "Bishop's Executive Assistant, Lainey Hurlbut" },
+      { "type": "category", "name": "Ministry of the Armed Forces Chaplains" },
+      { "type": "category", "name": "Episcopal Disability Network" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church Cathedral", "place": "Springfield" },
+      { "type": "category", "name": "Admin. Assistant to the Canon to the Ordinary, Karen Warren" },
+      { "type": "category", "name": "Seminaries of the Episcopal Church" },
+      { "type": "category", "name": "Multicultural Bridge, Berkshires" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Springfield" },
+      { "type": "category", "name": "Human Resources & Compliance Specialist, Susan Olbon" },
+      { "type": "category", "name": "Natl. Episcopal Historians & Archivists" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Stockbridge" },
+      { "type": "category", "name": "Accounting Manager, Kristina Cincotta" },
+      { "type": "category", "name": "Church Musicians & Artists" },
+      { "type": "category", "name": "Historical Society of the Episcopal Church" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Spirit", "place": "Sutton" },
+      { "type": "category", "name": "Canon for Communications, The Rev. Vicki Ix" },
+      { "type": "category", "name": "Mass. Council of Churches" },
+      { "type": "category", "name": "Construct Inc., Berkshires" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Ware" },
+      { "type": "category", "name": "Global Missions Team" },
+      { "type": "category", "name": "Administrative Assistant, Lydia Rosado" },
+      { "type": "category", "name": "Greater Springfield Council of Churches" },
+      { "type": "category", "name": "For the mission of the Church" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Reconciliation", "place": "Webster" },
+      { "type": "category", "name": "For the spiritual life of our people" },
+      { "type": "category", "name": "Episcopal Church Building Fund (ECBF)" },
+      { "type": "category", "name": "Covenant Relationship with Diocese of Kumasi, Ghana" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd Episcopal / Grace Lutheran", "place": "West Springfield" },
+      { "type": "category", "name": "Interim Canon to the Ordinary, The Rev. Steven Wilco" },
+      { "type": "category", "name": "Union of Black Episcopalians (UBE)" },
+      { "type": "category", "name": "Open Pantry Community Services, Springfield" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Westborough" },
+      { "type": "category", "name": "The Episcopal Chaplaincy at Western Massachusetts Regional Women's Correctional Center" },
+      { "type": "category", "name": "Daily Bread Food Pantry, Milford" },
+      { "type": "category", "name": "Gideon's Garden, Great Barrington" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Atonement", "place": "Westfield" },
+      { "type": "category", "name": "\"Believe OUT Loud\" congregations" },
+      { "type": "category", "name": "St. Stephen's Table, Pittsfield" },
+      { "type": "category", "name": "Episcopal Appalachian Ministries" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Whitinsville" },
+      { "type": "category", "name": "Stewardship & Planned Giving" },
+      { "type": "category", "name": "\"Messy Church\" Ministry" },
+      { "type": "category", "name": "Episcopal Booksellers Assn., Inc." }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ the King – Epiphany", "place": "Wilbraham" },
+      { "type": "category", "name": "Secretary of Convention, Wende Wheeler" },
+      { "type": "category", "name": "North Berkshire Community Action" },
+      { "type": "category", "name": "Pioneer Valley Project" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Williamstown" },
+      { "type": "category", "name": "Inquirers, Postulants and Seminarians" },
+      { "type": "category", "name": "Tough Love, Amherst" },
+      { "type": "category", "name": "Bishops' Executive Secretaries Together (B+E+S+T)" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Worcester" },
+      { "type": "category", "name": "Church School teachers & Christian Educators" },
+      { "type": "category", "name": "Vergers' Guild" },
+      { "type": "category", "name": "Integrity USA" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Great Barrington" },
+      { "type": "category", "name": "Human to Human" },
+      { "type": "category", "name": "Pittsfield Council of Churches" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's/Iglesia Episcopal San Marcos", "place": "Worcester" },
+      { "type": "category", "name": "Non-parochial priests & deacons" },
+      { "type": "category", "name": "Church Video & Film" },
+      { "type": "category", "name": "Prayer Shawl Ministry" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal City Mission", "place": "Boston" },
+      { "type": "category", "name": "Ministry Development Grant Committee" },
+      { "type": "category", "name": "Episcopal Service Corps (ESC)" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Worcester" },
+      { "type": "category", "name": "Young Adult Ministry Network (YAMN)" },
+      { "type": "category", "name": "Berkshire Interfaith Organizing (BIO)" },
+      { "type": "category", "name": "Church Pension Group (CPG)" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's-on-the-Heights", "place": "Worcester" },
+      { "type": "category", "name": "Title IV Officer, The Rev. Dr. Molly Scherm" },
+      { "type": "category", "name": "Province I (New England)" },
+      { "type": "category", "name": "The Living Church Foundation, Inc." }
+    ]}
+  ]
+}
