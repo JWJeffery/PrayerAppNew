@@ -25496,3 +25496,73 @@ Screenshot-verified Hawai'i rendering in an actual office (today's real date, Se
 resolves to "St. Luke's" -- the 4th Sunday of September). Zero new console errors beyond the
 pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to bump
 (same as prior batches).
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 8: Louisiana, Maryland, Michigan,
+## Missouri (4 of 5 dioceses; Massachusetts blocked and flagged to Josh)
+
+Josh: *"Keep going please."* Continuing the roster-spreadsheet phase alphabetically after Kansas.
+Skipped Mississippi and Navajoland for now (both already flagged in `tecDioceseRoster` as non-dated
+shapes -- week-numbered and day-of-week respectively -- worth a dedicated look rather than folding into
+a batch of otherwise-routine dioceses). Five parallel background agents dispatched again, per the
+established pattern from batch 7; this time one hit a genuine block rather than a schema question.
+
+**Louisiana** (`episcopal-louisiana-2026.json`, source: `edola.org/wp-content/uploads/2025/12/Cycle-of-
+Prayer-2026.pdf`). 52 entries, full year, all `parish`. The diocese's own webpage and its linked PDF
+disagree in small ways (a misspelling, inconsistent apostrophe glyphs) -- the PDF was used as the
+canonical source, its own glyph choices preserved verbatim including its own internal inconsistency, not
+normalized. Parish-affiliated schools/preschools recorded as `category` (schema's `place` is `parish`-
+only), matching the existing Central Gulf Coast/Connecticut convention. A "(150th Celebration)"
+parenthetical moved to that subject's own `note` rather than folded into `name`.
+
+**Maryland** (`episcopal-maryland-2026.json`, source: `episcopalmaryland.org/prayer-cycle/`, fetched
+LIVE rather than from any cached/indexed copy, per the roster's own warning that the search-index
+snapshot had lagged behind the real page). Only 4 entries -- a rolling current window (Sept 13-Oct 4,
+2026), matching this corpus's Colorado precedent for a page that shows only a rolling window, not a full
+year. Each week lists 4 personal names with NO label anywhere in the source identifying their role --
+recorded as `category` subjects (the closest available fit, since this schema has no individual-person
+subject type at diocese scope) and explicitly disclosed as a judgment call rather than guessed at.
+
+**Michigan** (`episcopal-michigan-2026.json`, source: `edomi.org/.../2026-Cycle-of-Prayer.pdf`, a two-
+column six-page PDF -- every page rendered as an image and visually cross-checked against the linearized
+extraction before trusting it, per this corpus's standing rule). 52 entries, every subject `parish` (no
+diocesan-office items in this source at all). Nearly every week pairs a Michigan congregation with a
+companion congregation in the Diocese of the Dominican Republic; the companion's `place` is recorded
+exactly as printed including its own ", DR" suffix. Several source typos preserved verbatim and
+individually disclosed ("St. Stephe's", "Hato Mayor del Ray, DR", "All.together Campus Ministry").
+
+**Missouri** (`episcopal-missouri-2026.json`, source: `diocesemo.org/resources/worship`, all four 2026
+quarterly PDFs -- the roster's own pre-fetch note said only Q3 was posted at check time, but the live
+page now links all four; this discrepancy (the page having been updated since the roster was built) is
+disclosed rather than silently treated as a correction). 52 entries, full year. Each week names 4 fixed-
+order subjects: a Missouri congregation/ministry, a companion Diocese of Puerto Rico institution, an
+Anglican Communion province, and a nationwide Armed Forces & Federal Ministries region the diocese
+reprints verbatim. September 27's Missouri paragraph never states a town/city for its congregation
+(confirmed by rendering that PDF page as an image, not just trusting the text extraction) -- recorded as
+`category` rather than fabricating a `place` the source never gives. Several source typos preserved and
+individually disclosed ("Pastoral Universitariaz", "in in Arizona", "Camp Jonson").
+
+**Massachusetts -- blocked, flagged to Josh, same procedure as Central New York and Delaware earlier
+this session.** Both the diocese's resource page (`diomass.org/prayer-cycles`) and its own direct PDF
+link return an HTTP 202 bot-protection interstitial (a client-side proof-of-work "Robot Challenge
+Screen"), confirmed independently via `curl` and `WebFetch`. The agent assigned to this diocese
+correctly declined two escalation paths the sandbox's own permission classifier blocked outright
+(programmatically solving the site's anti-bot puzzle; routing the fetch through a public CORS proxy) --
+both would have meant defeating or circumventing the site's own protection, not a legitimate workaround,
+and the agent stopped rather than push past that refusal. It also correctly declined to transcribe from
+two AI-search-engine snippets that surfaced plausible-looking fragments of the real document, after one
+of those same search hits, on direct download, turned out to be a completely different diocese's cycle
+(the Anglican Diocese of Quebec) under a similarly-named file -- a concrete demonstration that a search
+tool's "match" for this kind of document cannot be trusted without a byte-level read of the actual
+source. Reported the exact blocked URL to Josh per his own standing instruction (*"Send me the link
+anytime you get blocked, and I'll fetch it"*); not yet resolved as of this entry.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done BEFORE registering this time** (the lesson from
+batch 7's Hawai'i mismatch) -- all four of this batch's dioceses (`louisiana`, `maryland`, `michigan`,
+`missouri`) already matched the pre-existing directory's own slugs exactly, no renaming needed. All 4
+registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 43 files, 0 findings.
+`node --check` clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their
+13/3/9 baselines. Live-verified all 4 in headless Chromium against the app's own actual runtime
+(`loadCycleOfPrayerYear`/`getCachedCycleOfPrayerWeek`), correct entry counts and correct sample-date
+resolution for each. Screenshot-verified Louisiana rendering in an actual office. Zero new console
+errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust
+parameter to bump (same as prior batches).

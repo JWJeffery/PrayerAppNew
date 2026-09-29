@@ -1,0 +1,231 @@
+{
+  "id": "episcopal-louisiana-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Louisiana",
+  "dioceseShort": "louisiana",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"Cycle-of-Prayer-2026.pdf\" (titled on its own first page \"2026: Cycle of Prayer of the Episcopal Diocese of Louisiana\"), fetched directly from https://www.edola.org/wp-content/uploads/2025/12/Cycle-of-Prayer-2026.pdf, linked from the diocese's own page at https://www.edola.org/cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27, one entry per Sunday, no liturgical names printed anywhere in the source (the PDF's own dates are bare 'Month Day:' headers) -- liturgicalNote is null throughout.",
+    "The diocese's own page (https://www.edola.org/cycle-of-prayer/) additionally displays this same cycle inline, as well as linking the PDF. The two renderings mostly agree, but this file was transcribed from the PDF (the diocese's own downloadable/canonical document) as primary source, checked against the rendered page images (all 6 pages) rather than trusting the linearized pdftotext extraction alone. Two places where the webpage's own inline HTML rendering diverges from the PDF are disclosed here rather than silently reconciled: (1) the webpage's November 29 entry misspells the third item 'Audit Review Committe' (dropped final 'e'), while the PDF -- confirmed by directly viewing the rendered PDF page -- correctly prints 'Audit Review Committee', which is what this file uses; (2) apostrophe glyph (straight ' vs. curly ’) is inconsistent for the same congregation name between the two renderings in a few places (e.g. 'St. Augustine's Episcopal Church' prints with a straight apostrophe in the PDF but a curly one on the webpage). This file preserves the PDF's own apostrophe glyph choice verbatim for every name, including its own internal inconsistency (the PDF itself mixes straight and curly apostrophes across different entries, and even within the same entry pair, e.g. 'St. Augustine's Episcopal Church, Baton Rouge' with a straight apostrophe immediately followed a week later by 'St. Augustine's Episcopal Church, Metairie' also straight, but then 'St. Augustine's Preschool, Metairie' with a curly one) -- not normalized, per this corpus's standing rule against silently correcting a source document.",
+    "'St. Timothy's Episcopa; Preschool, LaPlace' (May 24) preserves the source's own apparent typo verbatim (a semicolon in place of the 'l' at the end of 'Episcopal'), per this corpus's standing rule.",
+    "'St Martin's Episcopal Church, Metairie' (September 20) preserves the source's own missing period after 'St' verbatim, as printed (contrast the same congregation's own school, 'St. Martin's Episcopal School, Metairie', printed the following week with the period present) -- not normalized to match.",
+    "Congregations (including chapels and one merged-name congregation, 'St. Michael's/All Angels Episcopal Church') are recorded as `parish` subjects, place taken from the source's own city/town following the comma. Diocesan-affiliated schools/preschools/day schools are recorded as `category` subjects with the school's own name and city kept together in `name` exactly as the source prints them (e.g. 'Trinity Episcopal School, Baton Rouge'), following this corpus's existing convention for parish-affiliated schools (see e.g. episcopal-central-gulf-coast-2026.json, episcopal-connecticut-2026.json) rather than splitting them into a `place` field, since `place` is reserved for `type: parish`. All other named commissions, committees, boards, ministries, and diocesan-wide subjects are recorded as `category` subjects.",
+    "March 15's entry prints 'Grace Memorial Episcopal Church, Hammond (150th Celebration)' -- the parenthetical is recorded verbatim in that subject's own `note` field rather than folded into `name`, since it is the source's own added annotation about this specific week's occasion, not part of the congregation's own name.",
+    "October 25's entry begins with 'Diocesan Staff' followed by the source's own sub-heading 'For all who help govern and guide the diocese:' introducing a further list of ten items (The Bishop of the Diocese, The delegates to 188th Annual Convention, Secretary of the Diocese, Treasurer of the Diocese, Chancellor and Vice-chancellors, Standing Committee, Executive Board, Board of Trustees, Disciplinary Board, Constitutions & Canons). The introductory sub-heading line itself ('For all who help govern and guide the diocese:') is not transcribed as its own subject, the same way this corpus's own Colorado precedent excludes a source's own introductory/reference text that is not itself a prayer subject; the ten items it introduces are all included as their own `category` subjects, in the source's own order, alongside 'Diocesan Staff'.",
+    "August 30's entry groups 'St. Anna's Episcopal Church, New Orleans' with two further category subjects the source prints in the same week, 'Anna's Place' and 'William H. Terry Chapel and Dodwell House Community Resource Center' -- both appear (per the diocese's own ministries listing) to be ministries of or affiliated with St. Anna's, but the source itself does not state this explicitly, so no such relationship is asserted in this file beyond preserving the source's own weekly grouping.",
+    "'Inclusive Louisiana' (June 28) and 'Addictions Recovery Ministry' (July 12, printed as such though the diocese's own site elsewhere calls this ministry 'Addiction Recovery') are transcribed exactly as printed in this source, per this corpus's standing rule against reconciling a document's own wording against other pages of the same site."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Incarnation", "place": "Amite" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "Baton Rouge" },
+      { "type": "category", "name": "Trinity Episcopal School, Baton Rouge" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Augustine's Episcopal Church", "place": "Baton Rouge" },
+      { "type": "category", "name": "Racial Healing Commission" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Augustine's Episcopal Church", "place": "Metairie" },
+      { "type": "category", "name": "St. Augustine’s Preschool, Metairie" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Commission on Liturgy & Music" },
+      { "type": "category", "name": "Commission on Ministry" },
+      { "type": "category", "name": "Ecumenical Commission" },
+      { "type": "category", "name": "Louisiana Interchurch Conference" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael’s Episcopal Church", "place": "Mandeville" },
+      { "type": "category", "name": "St. Michael’s Episcopal Preschool, Mandeville" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's/All Angels Episcopal Church", "place": "Baton Rouge" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "Morgan City" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban's Chapel", "place": "Baton Rouge" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Episcopal Church", "place": "Slidell" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Memorial Episcopal Church", "place": "Hammond", "note": "The source prints \"(150th Celebration)\" immediately after this entry, marking the parish's 150th anniversary." }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Transfiguration", "place": "Angola" },
+      { "type": "category", "name": "Prison Ministry" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "Houma" },
+      { "type": "category", "name": "St. Matthew's Episcopal School, Houma" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For the baptismal ministry of every Episcopalian in our diocese" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's Episcopal Church", "place": "New Orleans" },
+      { "type": "category", "name": "St. Paul's Episcopal School, New Orleans" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's Episcopal Church", "place": "Baton Rouge" },
+      { "type": "category", "name": "St. Luke's Episcopal School, Baton Rouge" },
+      { "type": "category", "name": "Environmental Evangelism Commission" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Chapel of the Holy Spirit", "place": "New Orleans" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Episcopal Church", "place": "New Orleans" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George's Episcopal Church", "place": "New Orleans" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's Episcopal Church", "place": "Bogalusa" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy's Episcopal Church", "place": "LaPlace" },
+      { "type": "category", "name": "St. Timothy's Episcopa; Preschool, LaPlace" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Episcopal Church of the Holy Communion", "place": "Plaquemine" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's/Holy Trinity Episcopal Church", "place": "New Roads" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s Episcopal Church", "place": "Bayou du Large/Theriot" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's Episcopal Church", "place": "Innis" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Inclusive Louisiana" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Solomon Episcopal Conference Center" },
+      { "type": "category", "name": "Solomon Episcopal Conference Center Board" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary’s Episcopal Church", "place": "Morganza" },
+      { "type": "parish", "name": "St. Andrew’s Episcopal Church", "place": "Paradis" },
+      { "type": "category", "name": "Addictions Recovery Ministry" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Deans of the Diocese" },
+      { "type": "category", "name": "The Order of the Daughters of the King" },
+      { "type": "category", "name": "The Brotherhood of St. Andrew" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Mt. Olivet Episcopal Church", "place": "New Orleans" },
+      { "type": "parish", "name": "Free Church of the Annunciation", "place": "New Orleans" },
+      { "type": "parish", "name": "All Saints’ Episcopal Church", "place": "Ponchatoula" },
+      { "type": "parish", "name": "St. Mary’s Episcopal Church", "place": "Franklin" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Nativity", "place": "Rosedale" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's Episcopal Church", "place": "Clinton" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Kenner" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Patrick's Episcopal Church", "place": "Zachary" },
+      { "type": "category", "name": "St. Patrick's Episcopal Day School, Zachary" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anna's Episcopal Church", "place": "New Orleans" },
+      { "type": "category", "name": "Anna’s Place" },
+      { "type": "category", "name": "William H. Terry Chapel and Dodwell House Community Resource Center" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "College Ministry" },
+      { "type": "category", "name": "Sewanee Board of Trustees" },
+      { "type": "category", "name": "Education Ministry (EFM)" },
+      { "type": "category", "name": "Youth Leadership Commission" },
+      { "type": "category", "name": "Spiritual Adulting Ministry" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Episcopal Church", "place": "New Orleans" },
+      { "type": "category", "name": "Trinity Episcopal School, New Orleans" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Martin’s Episcopal Church", "place": "Metairie" },
+      { "type": "category", "name": "The Little School of Metairie" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Martin's Episcopal School, Metairie" },
+      { "type": "category", "name": "Episcopal School of Baton Rouge" },
+      { "type": "category", "name": "Episcopal School Commission" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Margaret's Episcopal Church", "place": "Baton Rouge" },
+      { "type": "category", "name": "Latino/Hispanic Ministries" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Philip's Episcopal Church", "place": "New Orleans" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James Episcopal Church", "place": "Baton Rouge" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Staff" },
+      { "type": "category", "name": "The Bishop of the Diocese" },
+      { "type": "category", "name": "The delegates to 188th Annual Convention" },
+      { "type": "category", "name": "Secretary of the Diocese" },
+      { "type": "category", "name": "Treasurer of the Diocese" },
+      { "type": "category", "name": "Chancellor and Vice-chancellors" },
+      { "type": "category", "name": "Standing Committee" },
+      { "type": "category", "name": "Executive Board" },
+      { "type": "category", "name": "Board of Trustees" },
+      { "type": "category", "name": "Disciplinary Board" },
+      { "type": "category", "name": "Constitutions & Canons" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints’ Episcopal Church", "place": "River Ridge" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church Cathedral", "place": "New Orleans" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis Episcopal Church", "place": "Denham Springs" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Michael's Episcopal Church", "place": "Mandeville" },
+      { "type": "category", "name": "St. Michael's Episcopal Preschool, Mandeville" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Assessment Review Committee" },
+      { "type": "category", "name": "Budget Review Committee" },
+      { "type": "category", "name": "Audit Review Committee" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Episcopal Church", "place": "Covington" },
+      { "type": "category", "name": "Christ Episcopal School, Covington" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Episcopal Church", "place": "Thibodaux" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Episcopal Church", "place": "St. Francisville" },
+      { "type": "category", "name": "Grace Episcopal Preschool, St. Francisville" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "For all individuals from every generation in our diocese" },
+      { "type": "category", "name": "Episcopal Community Services Board" },
+      { "type": "category", "name": "The Frances Joseph Gaudet Fund and the Gaudet Committee" }
+    ]}
+  ]
+}

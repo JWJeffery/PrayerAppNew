@@ -1,0 +1,57 @@
+{
+  "id": "episcopal-maryland-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Maryland",
+  "dioceseShort": "maryland",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "Diocesan \"Prayer Cycle\" page, fetched directly from https://episcopalmaryland.org/prayer-cycle/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This page shows a rolling current window, not a full-year document -- only September 13, September 20, September 27, and October 4, 2026 (4 weeks) were present when fetched live via curl on 2026-09-29, matching the roster's own coverage note for this diocese ('Rolling weekly entries; verified September 13-October 4, 2026'). Not a gap in this transcription; the diocese's own page does not publish the rest of the year in one place.",
+    "Each congregation is printed by the source as a single 'Church Name, Town' line with no other wording (e.g. 'St. John’s, Deer Park'), split here at the comma into `name` and `place`. Possessive apostrophes on congregation names (e.g. 'St. John’s', 'All Saints’', and the diocesan page's own 'Jane O’Leary') are the source's own Unicode right single quotation mark (’), preserved exactly as printed rather than normalized to a straight apostrophe.",
+    "Each week's block lists exactly 3 congregations followed by exactly 4 personal names, with no heading, label, or punctuation anywhere in the source distinguishing what the 4 names represent (no 'Clergy', 'Ordination Anniversaries', 'Diocesan Council', etc. is printed -- they simply follow the 3 church lines in the same unlabeled paragraph). This schema has no dedicated subject type for a named individual at diocese scope (`household` is restricted to scope-'parish' files per the schema's own rule), so each name is recorded here as a `category` subject -- the closest available fit, not a claim about who these people are or why they are listed. This is a judgment call made because the source itself supplies no grouping label to use instead.",
+    "The page also links out to a separate 'Anglican Cycle of Prayer Resources' page -- that is the worldwide Communion-wide cycle (already covered elsewhere in this corpus as a scope-'communion' file), not part of Maryland's own diocesan cycle, and is excluded here.",
+    "No entry in the fetched window carries a liturgical Sunday name/label anywhere in the source (no 'Proper' or season name is printed), so `liturgicalNote` is null throughout."
+  ],
+  "entries": [
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Deer Park" },
+      { "type": "parish", "name": "St. Mark’s", "place": "Lappans" },
+      { "type": "parish", "name": "St. Matthew’s", "place": "Oakland" },
+      { "type": "category", "name": "Jane G. Mayrer" },
+      { "type": "category", "name": "Scott G. Slater" },
+      { "type": "category", "name": "Walter V. L. Eversley" },
+      { "type": "category", "name": "Richard A. Ginnever" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Hagerstown" },
+      { "type": "parish", "name": "St. Paul’s", "place": "Sharpsburg" },
+      { "type": "parish", "name": "St. Peter’s", "place": "Lonaconing" },
+      { "type": "category", "name": "Portia R. Hirschman" },
+      { "type": "category", "name": "John T. Smith" },
+      { "type": "category", "name": "Annette M. Chappell" },
+      { "type": "category", "name": "Brian K. McDonnell" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Frostburg" },
+      { "type": "parish", "name": "St. Thomas’", "place": "Hancock" },
+      { "type": "parish", "name": "St. Luke’s", "place": "Brownsville" },
+      { "type": "category", "name": "Elizabeth D. Siciliano" },
+      { "type": "category", "name": "Mark A. Stanley" },
+      { "type": "category", "name": "V. Ann Boyd" },
+      { "type": "category", "name": "Mary H. T. Davisson" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Ascension", "place": "Westminster" },
+      { "type": "parish", "name": "All Saints’", "place": "Frederick" },
+      { "type": "parish", "name": "Christ Church", "place": "Columbia" },
+      { "type": "category", "name": "Eleanor L. Holland" },
+      { "type": "category", "name": "Jane O’Leary" },
+      { "type": "category", "name": "Rebecca C. Warlow" },
+      { "type": "category", "name": "Mary A. Eliot" }
+    ]}
+  ]
+}
