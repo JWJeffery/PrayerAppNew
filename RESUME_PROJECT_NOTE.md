@@ -479,29 +479,44 @@ worked fine with a plain `curl` plus a standard user-agent string — worth tryi
 "checker tool failed" note means the URL itself is dead. Full per-diocese detail:
 `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 10" entry.
 
+**Batch 11 (Oklahoma, Olympia, Pennsylvania, Pittsburgh, Puerto Rico, Rhode Island): DONE 2026-09-29 —
+6 of 6, no blocks.** Pennsylvania's source was an XLSX spreadsheet (not a PDF) — fetched directly and
+parsed with `openpyxl`; turned out to be a genuine DAILY cycle (332 entries), with a stale prior-year
+template block at the end of the sheet correctly identified and excluded (the roster's own note had
+flagged this). Puerto Rico's source is a 30-page Spanish-language wall calendar, not a simple weekly
+list — every subject transcribed in the source's own Spanish, never translated, per this corpus's
+standing verbatim-preservation rule extended to language; its linearized PDF text extraction was found
+to be actively corrupted (stray digits bleeding into date headers from an adjacent mini-calendar
+graphic) and the file was re-transcribed entirely from rendered page images once that was caught.
+Pittsburgh's PDF filename claimed September-December coverage but its own content said July-December —
+confirmed from the content, not the filename. Full per-diocese detail:
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 "Diocese ingestion batch 11" entry.
+
 **Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time.
-Alphabetically, the next batch starts after Ohio (~Oklahoma onward; Mississippi/Navajoland deliberately
-skipped, see above; check the roster/registry directly rather than trusting this note's ordering). No
-blocked links remain open as of this writing; if a future fetch gets blocked, report the exact URL to
-Josh per his standing offer rather than working around it — though try the two new reader-service/
-user-agent tricks above first, since both resolved what looked like genuine blocks without needing Josh.
+Alphabetically, the next batch starts after Rhode Island (~San Diego onward — wait, San Diego and San
+Joaquin are alphabetically between Rhode Island and South Carolina but San Joaquin is already ingested;
+check San Diego specifically, then South Carolina onward; Mississippi/Navajoland deliberately skipped,
+see above; check the roster/registry directly rather than trusting this note's ordering). No blocked
+links remain open as of this writing; if a future fetch gets blocked, report the exact URL to Josh per
+his standing offer rather than working around it — though try the reader-service/user-agent tricks from
+batch 10 first, since both resolved what looked like genuine blocks without needing Josh.
 
 **~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 53 are now ingested into this corpus, ~34 remain** (separately, 18 dioceses have no verified
+historical); 59 are now ingested into this corpus, ~28 remain** (separately, 18 dioceses have no verified
 source at all per Josh's own research — see `tecDioceseRoster.noSourceFound` in schema.json — those
 won't get ingested unless a source turns up).
 
-**56 files currently in the corpus, all passing the validator:** 49 diocese-level, `cycleType: "dated"`
+**62 files currently in the corpus, all passing the validator:** 55 diocese-level, `cycleType: "dated"`
 — Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
 Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton,
 Florida, Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine,
 Maryland, Massachusetts, Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina,
-North Dakota, Northern California, Northern Michigan, Northwestern Pennsylvania, Ohio, Nebraska, Newark,
-New Jersey, Rio Grande, San Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 4
-diocese-level, `cycleType: "monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas; 1
-diocese-level, `cycleType: "annual-recurring"` — Long Island; 1 diocese-level, `cycleType:
-"ordinal-sunday-monthly"` — Hawai'i (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match
-`TEC_DIOCESE_DIRECTORY`) — plus:
+North Dakota, Northern California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia,
+Pennsylvania, Pittsburgh, Puerto Rico, Rhode Island, Nebraska, Newark, New Jersey, Rio Grande, San
+Joaquin, Southwestern Virginia, Western Massachusetts, Colorado; 4 diocese-level, `cycleType:
+"monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas; 1 diocese-level, `cycleType:
+"annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
+(`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

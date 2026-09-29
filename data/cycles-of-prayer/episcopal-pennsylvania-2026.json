@@ -1,0 +1,1026 @@
+{
+  "id": "episcopal-pennsylvania-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Pennsylvania",
+  "dioceseShort": "pennsylvania",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer",
+  "sourceFile": "\"Calendar-of-Intersessions-2025-2026.xlsx\" (sheet 'Diocesan Intersessions Calendar'), fetched directly from https://diopa.nyc3.digitaloceanspaces.com/Calendar-of-Intersessions-2025-2026.xlsx.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Source is the diocese's own \"Calendar of Intersessions\" (its title on the source spreadsheet's own sheet, \"Diocesan Intersessions Calendar\"; \"Intersessions\" is the spreadsheet's own spelling throughout, not corrected to \"Intercessions\"), a genuinely DAILY cycle (every calendar day, not weekly) fetched directly as an .xlsx from https://diopa.nyc3.digitaloceanspaces.com/Calendar-of-Intersessions-2025-2026.xlsx and read with openpyxl. Its real content runs continuously from Sunday, November 30, 2025 (1st Sunday of Advent) through Saturday, November 28, 2026 -- confirmed by walking every dated row in order and finding the dates strictly ascending and gap-free across that whole span (364 consecutive calendar days).",
+    "Per this schema's 'one file per diocese per year' rule and this corpus's existing disclose-and-exclude precedent for a source that starts a few weeks into Advent of the prior year (episcopal-atlanta-2026.json, episcopal-north-carolina-2026.json), this file holds only the 332 entries that fall in calendar 2026 (January 1 - November 28, 2026). The 32 entries in late 2025 (Sunday, November 30, 2025 through Wednesday, December 31, 2025 -- the full Advent season into the days following Christmas) are EXCLUDED here, not fabricated into a second file, and are listed in full for the record: Nov 30 'The Archbishop of Canturbury - Elect'; Dec 1 Diocese of Alabama; Dec 2 Diocese of Alaska; Dec 3 The Standing Committee; Dec 4 St. Peters in the Great Valley, Malvern; Dec 5 Church of St. Asaph, Bala Cynwyd; Dec 6 St. George - St. Barnabas, Philadelphia; Dec 7 The Episcopal/Anglican Provice of Alexandria; Dec 8 Diocese of Albany; Dec 9 Diocese of Arizona; Dec 10 The Diocesan Commission on Ministry; Dec 11 St. Peter's, Glenside; Dec 12 St. Andrew's, West Vincent; Dec 13 St. John's, Lower Merion; Dec 14 The Anglican Church in Aotearoa, New Zealand and Polynesia; Dec 15 Diocese of Arkansas; Dec 16 Diocese of Atlanta; Dec 17 The Church Foundation; Dec 18 Incarnation Holy Sacrament, Drexel Hill; Dec 19 St. Andrew's, Yardley; Dec 20 Church of the Redeemer, Andalusia; Dec 21 The Church of Bangladesh; Dec 22 Diocese of Bethlehem; Dec 23 Diocese of California; Dec 24 Clare Project; Dec 25 St. Michael's, Yeadon; Dec 26 Gloria Dei, Philadelphia; Dec 27 St. Paul's, Levittown; Dec 28 Igreja Episcopal Anglican do Brazil; Dec 29 Diocese of Central Ecuador; Dec 30 Diocese of Central Florida; Dec 31 Addiction Recovery Advocates Network.",
+    "PER THE ROSTER'S OWN EXPLICIT WARNING: the source workbook's rows do not stop at November 28, 2026 -- after that date the sheet repeats an old prior-year Advent template (row 701 onward), whose dates are internally inconsistent and stale (e.g. a row labeled '1st Sunday of Advent' printed against November 30, 2025 again, immediately followed by weekday rows dated in DECEMBER 2024; a '3rd Sunday of Advent' row dated 2021-12-14; a 'Thursday' row dated 2024-01-02 sitting between two 2025-dated rows). These trailing ~70 rows were identified as stale leftover template content, confirmed by the out-of-order/impossible dates, and excluded entirely -- not transcribed as 2026 (or any other) content.",
+    "This source is a genuinely DAILY cycle: every date (Sun-Sat) names exactly one subject (never more than one 'main' subject on a single date across the whole file, verified programmatically). Sunday's own subject is usually (not always) the wider Anglican Communion's weekly companion province/primate (row pattern: the liturgical-Sunday header row carries only the label+date, and an immediately following row headed 'Anglican Communion' carries the actual province/primate content for that date) -- both rows are folded into that one Sunday date's single entry per this schema's blank-date-cell grouping rule. On a handful of Sundays late in the source (Nov 8, Nov 15, and Nov 22, 2026) this Anglican-Communion sub-row is absent and the Sunday's own subject is printed directly on the header row instead (a diocesan-wide item on Nov 8/15, and a same-page continuation of the weekday 'Diocese of X' rotation on Nov 22) -- transcribed the same way regardless of which row shape carried the content.",
+    "Monday and Tuesday of nearly every week name a companion TEC diocese by name (e.g. 'Diocese of Alabama') paired with its bishop in the adjoining column -- this is the source's own nationwide diocese-by-diocese prayer rotation running roughly alphabetically across the whole year (distinct from the Sunday Anglican-Communion companion-province rotation). Both this diocese-rotation content and the Anglican-Communion content are recorded as `category` subjects (never `diocese`/`province`, which this schema reserves for scope-'communion' files only; this file's scope is 'diocese'), with the bishop/primate name from the adjoining column recorded in that subject's own `note` field, per this corpus's existing episcopal-delaware-2026.json precedent for a clergy/bishop line with no dedicated schema field of its own. By late November the alphabetical diocese list runs past Monday/Tuesday and fills the remaining weekdays too (through Nov 27), ending in a final catch-all 'Suffrigan, Assisting and Retired Bishops' category on Nov 28 (the source's own spelling of 'Suffragan', preserved) -- transcribed as printed, not corrected or reorganized. The diocese-rotation cycle also names PA's own diocese right alongside every other TEC diocese ('Diocese of Pennsylvania', July 28, paired with its own current bishop) -- kept exactly as printed even though it is this same diocese naming itself; this is the source's own genuine content, not an error to omit. Note also: this rotation separately names 'Diocese of Northwestern Pennsylvania' (July 14) and 'Diocese of Susquehanna' (Jan 12) as two of the many OTHER dioceses in its alphabetical companion list -- distinct dioceses from this file's own Diocese of Pennsylvania, transcribed as printed with no special handling; per this task's own instruction not to confuse Pennsylvania with Northwestern Pennsylvania, this note flags that the two names legitimately co-occur here as separate, correctly-distinguished entries.",
+    "Wednesday through Saturday of most weeks name one of the diocese's own parishes (a clear 'Congregation Name, Town' pattern, split on the single comma into `parish` type's `name`/`place`), typically paired with a specific rector/priest/deacon (or, for a parish currently without settled clergy, the bare word 'Wardens', or 'Searching'/'Standing Committee: Searching' for a diocese between bishops) in the adjoining column, recorded verbatim in that subject's own `note` field exactly as printed -- including entries that name a lay seminarian-in-charge (Feb 28, 'Kathryn Bross (seminarian in charge)') or a named canon/administrator rather than clergy (Jan 14, 'Canon for Finance' / 'Canon Doug Horner'). Saturdays through much of the file instead name 'Retired Clergy' as a standing `category` subject, with that week's own batch of (typically 4-5) named retired clergy from the adjoining column joined into one `note` field, semicolon-separated, in the order printed; this rotates through the diocese's full retired-clergy roster across many weeks rather than repeating.",
+    "A source subject naming what reads as a specific, individually-identifiable congregation (rather than a diocesan office/committee/ministry) is nonetheless recorded as `category`, not `parish`, whenever the source's own text does NOT include a comma-delimited town/city -- this schema's `parish` type requires a `place` field, and none is separately given for these entries, so a town is never guessed or supplied from outside knowledge of the diocese's real parishes. This affects: 'St. Mary's Wayne' (Jan 8) and 'St. Luke's Germantown' (Jan 29) and 'St. Mary's Chester' (Feb 5) (each printed as one run-together phrase with the town but no comma before it); 'George W. South Memorial Church of the Advocate' (Feb 7); 'Grace and the Incarnation' (Jan 24); 'Church of the Holy Apostles and the Mediator' (Apr 9); 'St. Jude and the Nativity' (Apr 17); 'St. Luke and the Epiphany' (May 29); 'Calvary St. Augustine' (Jul 16); 'Philadelphia Cathedral' (Sep 16, the diocese's own cathedral -- 'Philadelphia' happens to appear within its own printed name, but is not set off as a separate place the way this file's ordinary parish entries are); 'African Church of St. Thomas' (Sep 30); 'Church of the Annunciation' (Oct 9); 'Memorial Church of the Good Shepherd' (Oct 21); 'St. Simon the Cyrenian Church' (Nov 6); and 'Christ Church and St. Michael's' (Nov 13). 'Washington Memorial Chapel,' (Sep 10) is the one further edge case: the source prints a trailing comma with nothing after it (evidently an omitted town), transcribed here as `category` with the dangling comma dropped from `name` (the comma itself was clearly a placeholder for missing text, not a content character worth preserving) rather than guessing the town.",
+    "Two comma-containing subjects are `category`, not `parish`, because the comma is internal to a province/list name rather than separating a congregation from its town: 'The Anglican Church in Aotearoa, New Zealand and Polynesia' (Dec 14, 2025 -- excluded 2025 content, see above) and 'Suffrigan, Assisting and Retired Bishops' (Nov 28, 2026).",
+    "'Christ Church, Old Swedes' (Jul 17) is transcribed as `parish` with place 'Old Swedes' exactly as the source's own comma-delimited text gives it, even though 'Old Swedes' reads as a historic nickname/campus designation rather than an ordinary town -- following the source's own printed structure rather than reinterpreting it. Similarly 'St. Mary's, Cathedral Road' (Sep 24) uses 'Cathedral Road' (a street/area name, not a separate municipality) as printed.",
+    "This source is unusually typo-dense; every apparent typo is preserved verbatim, never silently corrected, per this corpus's standing rule. A representative (not exhaustive) sample: 'Canturbury' for Canterbury (Nov 30, 2025, excluded); 'Diosesan' for Diocesan (repeated throughout, e.g. Dec 1, 2025); 'Provice' for Province (Dec 7, 2025, excluded); 'Assiting' for Assisting (Mar 2); '3nd Sunday after Epiphany' for 3rd (Jan 25 liturgical label); 'Communtion' for Communion (Mar 17); 'Vistitation of BVM' for Visitation (Jun 1 liturgical label); 'Pentesost' for Pentecost (May 24 liturgical label); 'Maunday Thursday' for Maundy (Apr 2 liturgical label); 'Jeresulam' for Jerusalem (Feb 4); 'Wisconson' for Wisconsin (Nov 10); 'Dioces of Western New York' for Diocese (Nov 25); 'Stphen' for Stephen (Nov 25); 'Tiwan' for Taiwan (Oct 5); 'Cambell' for Campbell (Oct 11); 'Thre Rev.' and 'The. Rev.' and 'Erv.' as inconsistent renderings of 'The Rev.' (e.g. Apr 18, Feb 15/excluded, Jul 17); 'Falsington' for Fallsington (Jan 3); 'Coatsville' for Coatesville (Aug 27); 'Swathmore' for Swarthmore (Sep 17); 'Grace Ephiphany' for Epiphany (Sep 3); 'Litoral Equador' for Ecuador (Apr 20). None of these are corrected.",
+    "Excel cell artifacts (trailing/leading whitespace, stray blank lines within a single cell, e.g. 'Diocese of Alabama' printed with two trailing blank lines in its cell) are trimmed as ordinary spreadsheet formatting, not preserved as content, per this corpus's existing episcopal-northern-michigan-2026.json precedent for the same kind of artifact -- the words themselves are never altered. One source cell (the 3rd Sunday of Advent's Anglican Communion primate line, excluded 2025 content) lists three co-primates of the Anglican Church in Aotearoa, New Zealand and Polynesia on three separate lines within one cell ('The Most Revd Sione Uluiakepa' / 'The Most Revd Justin Duckworth' / 'The Most Revd  Don Tamihere,    Primates'); these are joined into one `note` field with '; ' between them, preserving each line's own internal spacing/punctuation as printed.",
+    "One date cell (Wednesday of the 3rd week of Advent, excluded 2025 content) is stored in the source not as a date but as the literal text '12/17/255' (an evident data-entry slip). Its position in the week's own unbroken Mon-Sat sequence (Monday Dec 15 -- Tuesday Dec 16 -- [this cell] -- Thursday Dec 18) leaves no ambiguity that it is Wednesday, December 17, 2025; used as such here since this schema's `date` field requires a valid ISO date and cannot hold the source's garbled text, unlike a `name`/`note` field.",
+    "Every parish/category subject's clergy, warden, or other adjoining-column line is recorded in that subject's own `note` field verbatim (joined with '; ' when the source gives more than one name for the same date, e.g. co-rectors or a priest plus a deacon), following this corpus's existing episcopal-delaware-2026.json precedent for a source with no dedicated schema field for this information -- including generic non-personal values printed as-is ('Wardens', 'Searching', 'Standing Committee: Searching').",
+    "`diocese` is given as \"The Episcopal Diocese of Pennsylvania\", the diocese's own name as published on its website (diopa.org) -- the source workbook itself carries no diocese-name title anywhere (only the sheet's own internal title 'Diocesan Intersessions Calendar' and the filename), though one of its own entries (Jul 28) does independently confirm the diocese by naming itself 'Diocese of Pennsylvania' with its own current bishop, The Rt. Rev. Daniel G. P. Gutiérrez."
+  ],
+  "entries": [
+    { "date": "2026-01-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Norristown", "note": "The Rev. Christopher Schwenk" }
+    ]},
+    { "date": "2026-01-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Hallows", "place": "Wyncote", "note": "The Rev. Christopher Exley; The Rev. Kristin Waskowicz Woods, Deacon" }
+    ]},
+    { "date": "2026-01-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saint's", "place": "Falsington", "note": "Wardens" }
+    ]},
+    { "date": "2026-01-04", "liturgicalNote": "2nd Sunday after Christmas", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Burundi", "note": "The Most Revd Sixbert Macumi, Primate" }
+    ]},
+    { "date": "2026-01-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Central Gulf Coast", "note": "The Rt. Rev. Russell Kendrick, Diocesan" }
+    ]},
+    { "date": "2026-01-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Central New York", "note": "The Rt. Rev. DeDe Duncan-Probe, Diocesan" }
+    ]},
+    { "date": "2026-01-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Animal Ministries" }
+    ]},
+    { "date": "2026-01-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Mary's Wayne", "note": "The Rev. Conor Alexander" }
+    ]},
+    { "date": "2026-01-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Memorial Church", "place": "Philadelphia", "note": "Wardens" }
+    ]},
+    { "date": "2026-01-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John the Evangelist", "place": "Essington", "note": "Wardens; The Rev. Joseph German, Deacon" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "1st Sunday after Epiphany", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Canada", "note": "The Most Revd Shane Parker, Primate" }
+    ]},
+    { "date": "2026-01-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Susquehanna", "note": "The Rt. Rev. Dr. Audrey C. Scanlan, Diocesan" }
+    ]},
+    { "date": "2026-01-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Chicago", "note": "The Rt. Rev. Paula E. Clark, Diocesan" }
+    ]},
+    { "date": "2026-01-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Canon for Finance", "note": "Canon Doug Horner" }
+    ]},
+    { "date": "2026-01-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Doylestown", "note": "The Rev. Daniel Moore" }
+    ]},
+    { "date": "2026-01-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Whitemarsh", "note": "The Rev. Daniel Killeen; The Rev. Amy Crawford; The Rev. Phil Geliebter, Archdeacon" }
+    ]},
+    { "date": "2026-01-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephens", "place": "Norwood", "note": "Wardens" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "2nd Sunday after Epiphany", "subjects": [
+      { "type": "category", "name": "The Church of the Province of Central Africa", "note": "The Most Revd Albert Chama, Primate" }
+    ]},
+    { "date": "2026-01-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Columbia", "note": "The Rt. Rev. Elias Garcia Cardenas, Diocesan" }
+    ]},
+    { "date": "2026-01-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Colorado", "note": "The Rt. Rev. Kym Lucas, Diocesan" }
+    ]},
+    { "date": "2026-01-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Global Mission Commission" }
+    ]},
+    { "date": "2026-01-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Philadelphia", "note": "The Rev. David Cobb; The Rev. Lucy Ann Dure; The Rev. Nora Johnson" }
+    ]},
+    { "date": "2026-01-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Gulph Mills", "note": "The Rev. David Green" }
+    ]},
+    { "date": "2026-01-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Grace and the Incarnation", "note": "Wardens" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "3nd Sunday after Epiphany", "subjects": [
+      { "type": "category", "name": "Iglesia Anglica de la Region Centra de America", "note": "The Most Revd Juan David Alvarado Melgar, Primate" }
+    ]},
+    { "date": "2026-01-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Connecticut", "note": "The Rt. Rev. Jeffrey W. Mello, Diocesan" }
+    ]},
+    { "date": "2026-01-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Convocation of Episcopal Churches in Europe", "note": "The Rt. Rev. Mark D. W. Edington, Bishop in Charge" }
+    ]},
+    { "date": "2026-01-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Compass Rose Society" }
+    ]},
+    { "date": "2026-01-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Luke's Germantown", "note": "The Rev. David Morris; The Rev. Renee Coleman, Deacon" }
+    ]},
+    { "date": "2026-01-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Newtown", "note": "The Rev. David Radzik" }
+    ]},
+    { "date": "2026-01-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Innocents St. Paul's", "place": "Tacony", "note": "Wardens" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "4th Sunday after Epiphany", "subjects": [
+      { "type": "category", "name": "Province de L'Eglise Anglicane Du Congo", "note": "The Most Revd Georges Titre Ande, Primate" }
+    ]},
+    { "date": "2026-02-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Cuba", "note": "The Rt. Rev. Angel Rivera, Diocesan" }
+    ]},
+    { "date": "2026-02-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Dallas", "note": "The Rt. Rev. George Sumner, Diocesan" }
+    ]},
+    { "date": "2026-02-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Jeresulam Princess Basma Center" }
+    ]},
+    { "date": "2026-02-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Mary's Chester", "note": "The Rev. Deirdre Whitfield" }
+    ]},
+    { "date": "2026-02-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "La Iglesia de Cristo y San Ambrosio", "note": "The Rev. Dr. Joseluis Memba" }
+    ]},
+    { "date": "2026-02-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "George W. South Memorial Church of the Advocate", "note": "Wardens" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "5th Sunday after Epiphany", "subjects": [
+      { "type": "category", "name": "Iglesia Anglicana de Chile", "note": "The Most Revd Enrique Lago Zugadi, Primate" }
+    ]},
+    { "date": "2026-02-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Delaware", "note": "The Rt. Rev. Kevin S. Brown, Diocesan" }
+    ]},
+    { "date": "2026-02-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Dominican Republic", "note": "The Rt. Rev. Moisés Quezada Mota, Diocesan" }
+    ]},
+    { "date": "2026-02-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "LGBTQIA+ Committee" }
+    ]},
+    { "date": "2026-02-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Rosemont", "note": "The Rev. Dr. Kyle Babin" }
+    ]},
+    { "date": "2026-02-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "Oxford", "note": "The Rev. Dr. Mary Ann Brown Mertz" }
+    ]},
+    { "date": "2026-02-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Spirit", "place": "Harleysville", "note": "The Rev. D. J. Kiessling; The Rev. Johnine Byrer, Deacon" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "Last Sunday of  Epiphany", "subjects": [
+      { "type": "category", "name": "The Church of England", "note": "The. Rt. Rev. and Rt. Hon. Dame Sarah Mullally" }
+    ]},
+    { "date": "2026-02-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of East Carolina", "note": "The Rt. Rev'd Rob Skirving, Diocesan" }
+    ]},
+    { "date": "2026-02-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of East Tennessee", "note": "The Rt. Rev. Brian Lee Cole, Diocesan" }
+    ]},
+    { "date": "2026-02-18", "liturgicalNote": "Ash Wednesday", "subjects": [
+      { "type": "category", "name": "The Resolutions Committee" }
+    ]},
+    { "date": "2026-02-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Buckingham", "note": "The Very Rev. Dr. Nancy Dilliplane" }
+    ]},
+    { "date": "2026-02-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Church", "place": "Compass", "note": "The Rev. Dr. Nina George-Hacker" }
+    ]},
+    { "date": "2026-02-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Lay employees of our parishes" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "1st Sunday of Lent", "subjects": [
+      { "type": "category", "name": "Hong Kong Sheng Kung Hui", "note": "The Most Revd Andrew Chan, Primate" }
+    ]},
+    { "date": "2026-02-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of the Great Lakes", "note": "Searching" }
+    ]},
+    { "date": "2026-02-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Eastern Oregon", "note": "The Rt. Rev. Patrick W. Bell, Diocesan" }
+    ]},
+    { "date": "2026-02-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Diocesan Council" }
+    ]},
+    { "date": "2026-02-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Boothwyn", "note": "The Rev. Dr. Paul Gitimu" }
+    ]},
+    { "date": "2026-02-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Wynnewood", "note": "The Rev. Edward Rix" }
+    ]},
+    { "date": "2026-02-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban's", "place": "Roxborough", "note": "Kathryn Bross (seminarian in charge)" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "2nd Sunday of Lent", "subjects": [
+      { "type": "category", "name": "The Church of the Province of the Indian Ocean", "note": "The Most Revd Dr. Gilbert Rateloson Rakotondravolo, Primate" }
+    ]},
+    { "date": "2026-03-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Easton", "note": "The Rt. Rev. Bud Shand, Assiting Bishop" }
+    ]},
+    { "date": "2026-03-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of El Camino Real", "note": "The Rt. Rev. Lucinda Beth Ashby, Diocesan" }
+    ]},
+    { "date": "2026-03-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Center: Clergy and Lay Employees", "note": "The Rev. Canon Shawn Wamsley, Canon to the Ordinary; The Rev. Canon James Stambaugh, Canon for Parish Development; The Rev. Canon Jane Gober, Canon for Transition Ministry; The Rev. Canon Toneh Smith, Deacon, Canon for Mission" }
+    ]},
+    { "date": "2026-03-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Messiah", "place": "Gwynedd", "note": "The Rev. Emily Given" }
+    ]},
+    { "date": "2026-03-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Hamilton Village", "note": "The Rev. Emily Zimbrick-Rogers; The Rev. Beth Hollingshead, Deacon" }
+    ]},
+    { "date": "2026-03-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Philip's", "place": "New Hope", "note": "The Rev. Dr. Susan Richardson; The Rev. Peter Person" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "3rd Sunday of Lent", "subjects": [
+      { "type": "category", "name": "The Church of Ireland", "note": "The Most Revd John McDowell, Primate" }
+    ]},
+    { "date": "2026-03-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Florida", "note": "Searching" }
+    ]},
+    { "date": "2026-03-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Georgia", "note": "The Rt. Rev. Frank S. Logue, Diocesan" }
+    ]},
+    { "date": "2026-03-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Clergy Assurance Fund" }
+    ]},
+    { "date": "2026-03-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Blue Bell", "note": "The Rev. Emmanuel Williamson" }
+    ]},
+    { "date": "2026-03-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's Church of our Savior", "place": "Huntington Valley", "note": "The Rev. Eric Bond" }
+    ]},
+    { "date": "2026-03-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Gabriel's", "place": "Philadelphia", "note": "The Rev. Jorge Martinez" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "4th Sunday in Lent", "subjects": [
+      { "type": "category", "name": "The Nippon Sei Ko Kai (The Anglican Church of Japan)", "note": "The Most Revd David Eisho Uehara, Primate" }
+    ]},
+    { "date": "2026-03-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Haiti" }
+    ]},
+    { "date": "2026-03-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Church Communtion Partners" }
+    ]},
+    { "date": "2026-03-18", "liturgicalNote": "St. Joseph", "subjects": [
+      { "type": "category", "name": "Union of Black Episcopalians" }
+    ]},
+    { "date": "2026-03-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Chestnut Hill", "note": "The Rev. Eric Hungerford; The Rev. Madeleine Harris-Lerew" }
+    ]},
+    { "date": "2026-03-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Media", "note": "The Rev. Ernest Galaz; The Rev. Joseph German, Deacon" }
+    ]},
+    { "date": "2026-03-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Joshua Alan; The Rev. Barbara Abbott; The Rev. Mary Adebonojo; The Rev. William Franklin Allen" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "5th Sunday in Lent", "subjects": [
+      { "type": "category", "name": "The Episcopal Church in Jerusalem & The Middle East", "note": "The Most Revd Hosam Naoum, Primate" }
+    ]},
+    { "date": "2026-03-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Hawai'i", "note": "The Rt. Rev. Robert Fitzpatrick, Diocesan" }
+    ]},
+    { "date": "2026-03-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Honduras", "note": "The Rt. Rev. Lloyd Emmanuel Allen, Diocesan" }
+    ]},
+    { "date": "2026-03-25", "liturgicalNote": "Annunciation", "subjects": [
+      { "type": "category", "name": "The Absalom Jones Committee" }
+    ]},
+    { "date": "2026-03-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Hilltown", "note": "The Rev. George Master, II" }
+    ]},
+    { "date": "2026-03-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel", "place": "Quakertown", "note": "Wardens" }
+    ]},
+    { "date": "2026-03-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Lucy Amerman; The Rev. David Anderson; The Rev. Kathryn Andonian; The Rev. Allen Bartlett, Jr." }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Kenya", "note": "The Most Revd Jackson Ole Sapit, Primate" }
+    ]},
+    { "date": "2026-03-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Idaho", "note": "The Rt. Rev. Jos Tharakan, Diocesan" }
+    ]},
+    { "date": "2026-03-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Indianapolis", "note": "The Rt. Rev. Jennifer Baskerville-Burrows, Diocesan" }
+    ]},
+    { "date": "2026-04-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Schools in the Diocese" }
+    ]},
+    { "date": "2026-04-02", "liturgicalNote": "Maunday Thursday", "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "Gladwyne", "note": "The Rev. Laura Palmer; The Rev. Suzanne Clune" }
+    ]},
+    { "date": "2026-04-03", "liturgicalNote": "Good Friday", "subjects": [
+      { "type": "parish", "name": "All Saint's", "place": "Torresdale", "note": "The Rev. James Walton" }
+    ]},
+    { "date": "2026-04-04", "liturgicalNote": "Holy Saturday", "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Judith Beck; The Rev. Phillip Bennett; The Rev. Charles Bennison, Jr.; The Rev. Dennis Bingham" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Day", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Korea", "note": "The Most Revd Onesimus Dongsin Park, Primate" }
+    ]},
+    { "date": "2026-04-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Iowa", "note": "The Rt. Rev. Elizabeth Lockwood Hawley Monnot, Diocesan" }
+    ]},
+    { "date": "2026-04-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Kansas", "note": "The Right Reverend Cathleen Chittenden Bascom, Diocesan" }
+    ]},
+    { "date": "2026-04-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Convention Arrangements Committee" }
+    ]},
+    { "date": "2026-04-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Church of the Holy Apostles and the Mediator", "note": "Wardens" }
+    ]},
+    { "date": "2026-04-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Apostles", "place": "Penn Wynne", "note": "Wardens" }
+    ]},
+    { "date": "2026-04-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Charles Brinkman; The Rev. Rodger Broadley; The Rev. Judith Buck-Glenn; The Rev. Kenneth Bullock" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "2nd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "An end to war in the Middle East" }
+    ]},
+    { "date": "2026-04-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Kentucky", "note": "The Rt. Rev. Terry Allen White, Diocesan" }
+    ]},
+    { "date": "2026-04-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Lexington", "note": "The Rt. Rev. Mark Van Koevering, Diocesan" }
+    ]},
+    { "date": "2026-04-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Daughters of the King" }
+    ]},
+    { "date": "2026-04-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Oaks", "note": "The Rev. Jeremiah Mustered" }
+    ]},
+    { "date": "2026-04-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Jude and the Nativity", "note": "The Rev. Jessie Alejanddro" }
+    ]},
+    { "date": "2026-04-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. David Canan; Thre Rev. John Carpenter; The. Rev. Patrician Cashman; The Rev. Robert Coble; The Rev. Dennis Coleman, Deacon" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "3rd Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The Christian Churches in Jerusalem" }
+    ]},
+    { "date": "2026-04-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Litoral Equador", "note": "The Rt. Rev. Cristobal Olmedo León Lozano, Diocesan" }
+    ]},
+    { "date": "2026-04-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Long Island", "note": "The Rt. Rev. Lawrence C. Provenzano, Diocesan" }
+    ]},
+    { "date": "2026-04-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Finance Committee" }
+    ]},
+    { "date": "2026-04-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Concord", "note": "The Rev. Jill LaRoche-Wikel; The Rev. Elizabeth Brickle, Deacon" }
+    ]},
+    { "date": "2026-04-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Nevil Memorial Church of St. George", "place": "Ardmore", "note": "The Very Rev. Joel Daniels, Ph.D." }
+    ]},
+    { "date": "2026-04-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Howard Cole; The Rev. Gerald Collins; The Rev. Donna Constant; The Rev. Ernest Curtin, Jr.; The Rev. Lynn Czarniecki, Deacon" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "4th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Melanesia", "note": "The Most Revd Leonard Dawea, Primate" }
+    ]},
+    { "date": "2026-04-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Los Angeles", "note": "The Rt. Rev. John Harvey Taylor, Diocesan" }
+    ]},
+    { "date": "2026-04-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Louisiana", "note": "The Rt. Rev. Shannon Rogers Duckworth, Diocesan" }
+    ]},
+    { "date": "2026-04-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Community Services" }
+    ]},
+    { "date": "2026-04-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Nativity", "place": "Rockledge", "note": "The Rev. John Daniels; The Rev. Jeannie Sachs, Deacon" }
+    ]},
+    { "date": "2026-05-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew and St. Monica", "place": "Philadelphia", "note": "The Rev. John Sagoe" }
+    ]},
+    { "date": "2026-05-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Edward Cutler; The Rev. Charles Davidson; The Rev. Bancroft Davis; The Rev. Agnus Davis; The Rev. Joseph Dietz, Deacon" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "5th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "La Iglesia Anglicana de Mexico", "note": "The Most Revd Enrique Treviño Cruz, Primate" }
+    ]},
+    { "date": "2026-05-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Maine", "note": "The Rt. Rev. Thomas J. Brown, Diocesan" }
+    ]},
+    { "date": "2026-05-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Maryland", "note": "The Rt. Rev. Carrie Schofield-Broadbent, Diocesan" }
+    ]},
+    { "date": "2026-05-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan History Committee" }
+    ]},
+    { "date": "2026-05-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Free Church of St. John", "place": "Philadelphia", "note": "The Very Rev. Joseluis Memba" }
+    ]},
+    { "date": "2026-05-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Springfield", "note": "The Rev. Joshua Barrett Tracey" }
+    ]},
+    { "date": "2026-05-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Sherry Deets; The Rev. Nancy Deming; The Rev. Jose Diaz; The Rev. Albert Dickinson; The Rev. Carol Duncan, Deacon" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "6th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "Igreja Anglicana de Mocambique e Angola", "note": "The Most. Rev. Vicente Msosa, Primate" }
+    ]},
+    { "date": "2026-05-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Massachusetts", "note": "The Rt. Rev. Julia E. Whitworth, Diocesan" }
+    ]},
+    { "date": "2026-05-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Michigan", "note": "The Rt. Rev. Dr. Bonnie A. Perry, Diocesan" }
+    ]},
+    { "date": "2026-05-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Board of Trustees" }
+    ]},
+    { "date": "2026-05-14", "liturgicalNote": "Ascension Day", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Pottstown", "note": "The Rev. Joshua Caler" }
+    ]},
+    { "date": "2026-05-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Clement's", "place": "Philadelphia", "note": "The Rev. Justin Lanier" }
+    ]},
+    { "date": "2026-05-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Joseph Dietz; The Rev. Timothy Dobbins; The Rev. Stanley Dull; The Rev. Elizabeth Eisenstadt-Evans; The Rev. Karen Kaminskas, Deacon" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "7th Sunday of Easter", "subjects": [
+      { "type": "category", "name": "The Church of the Province of Myanmar (Burma)", "note": "The Most Revd Stephen Than Myint Oo, Primate" }
+    ]},
+    { "date": "2026-05-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Minnesota", "note": "The Rt. Rev. Craig Loya, Diocesan" }
+    ]},
+    { "date": "2026-05-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Mississippi", "note": "The Rt. Rev. Dr. Dorothy Sanders Wells, Diocesan" }
+    ]},
+    { "date": "2026-05-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Commission on Wellness" }
+    ]},
+    { "date": "2026-05-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Ithan", "note": "The Rev. Karl Kruger" }
+    ]},
+    { "date": "2026-05-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban's", "place": "Newtown Square", "note": "The Rev. Kenn Katona" }
+    ]},
+    { "date": "2026-05-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Thomas Eoyang, Jr.; The Rev. James Evans; The Rev. Richard Fenn; The Rev. Charles Flood; The Rev. Carl Knapp, Deacon" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentesost", "subjects": [
+      { "type": "category", "name": "The Church of Nigeria (Anglican Communion)", "note": "The Most Revd Henry C. Ndukuba, Primate" }
+    ]},
+    { "date": "2026-05-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Missouri", "note": "The Rt. Rev. Deon Kevin Johnson, Diocesan" }
+    ]},
+    { "date": "2026-05-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Montana", "note": "The Rt. Rev. Marty Stebbins, Diocesan" }
+    ]},
+    { "date": "2026-05-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Servant Year" }
+    ]},
+    { "date": "2026-05-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Honey Brook", "note": "The Rev. Kim Guiser" }
+    ]},
+    { "date": "2026-05-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Luke and the Epiphany", "note": "The Rev. Krik Berlienback" }
+    ]},
+    { "date": "2026-05-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Susann Fox; The Rev. William Fulks; The Rev. David Funkhouser; The Rev. Richard Giles; The Rev. Jeff Moretzsohn, Deacon" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "Trinity Sunday", "subjects": [
+      { "type": "category", "name": "The Church of North India (United)", "note": "The Most Revd Bijay Nayak, Primate" }
+    ]},
+    { "date": "2026-06-01", "liturgicalNote": "Vistitation of BVM", "subjects": [
+      { "type": "category", "name": "Diocese of Navajoland", "note": "The Rt. Rev. Barry L. Beisner, Bishop Provisional" }
+    ]},
+    { "date": "2026-06-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Nebraska", "note": "The Rt. Rev. J. Scott Barker, Diocesan" }
+    ]},
+    { "date": "2026-06-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Seminarians" }
+    ]},
+    { "date": "2026-06-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Martin in the Fields", "place": "Chestnut Hill", "note": "The Rev. Mary Barber; The Rev. Luke Selles" }
+    ]},
+    { "date": "2026-06-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Redemption", "place": "Southampton", "note": "The Rev. Lori Exley; The Rev. Stacey Carmody, Deacon" }
+    ]},
+    { "date": "2026-06-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Donal Graff; The Rev.  Timothy Griffin; The Rev. Marlene Haines; The Rev. Daniell Hamby; The Rev. Marjorie Oughton, Deacon" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "2nd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church of Pakistan (United)", "note": "The Most Revd Dr Azad Marshall, Primate" }
+    ]},
+    { "date": "2026-06-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Nevada", "note": "The Rt. Rev. Elizabeth Bonforte Gardner, Diocesan" }
+    ]},
+    { "date": "2026-06-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of New Hampshire", "note": "The Rt. Rev. A. Robert Hirschfeld, Diocesan" }
+    ]},
+    { "date": "2026-06-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Episcopal Church Women Committee" }
+    ]},
+    { "date": "2026-06-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew in the Field", "place": "Somerton", "note": "The Rev. Lori Exley; The Rev. Stacey Carmody, Deacon" }
+    ]},
+    { "date": "2026-06-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Epiphany", "place": "Royersford", "note": "The Rev. Lou Steffahagen" }
+    ]},
+    { "date": "2026-06-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Autumn Hardenstine; The Rev. Thomas Hargrove; The Rev. Konrad Hartl; The Rev. Nancy Hauser; The Rev. Bob Ritchie, Deacon" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "3rd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Papua New Guinea", "note": "The Rt. Revd Nathan Ingen, Primate" }
+    ]},
+    { "date": "2026-06-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of New Jersey", "note": "The Rt. Rev. Sally French, Diocesan" }
+    ]},
+    { "date": "2026-06-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of New York", "note": "The Rt. Rev. Matthew Heyd, Diocesan" }
+    ]},
+    { "date": "2026-06-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Youth Ministry" }
+    ]},
+    { "date": "2026-06-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of St. James", "place": "Kingsessing", "note": "The Rev. MacIvan Rogers" }
+    ]},
+    { "date": "2026-06-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Exton", "note": "The Rev. Maxine Maddox Dornrmann" }
+    ]},
+    { "date": "2026-06-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Richard Hawkins; The Rev. Maria Herrera; The Rev. Terrence Highland; The Rev. Beth Hixon" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "4th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Episcopal Church in the Philippines", "note": "The Most Revd Nestor Dagas Poltic, Primate" }
+    ]},
+    { "date": "2026-06-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Newark", "note": "The Rt. Rev. Carlye J. Hughes, Diocesan" }
+    ]},
+    { "date": "2026-06-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of North Carolina", "note": "The Right Reverend Sam Rodman, Diocesan" }
+    ]},
+    { "date": "2026-06-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Nominations Committee" }
+    ]},
+    { "date": "2026-06-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Timothy's", "place": "Roxborough", "note": "The Rev. Megan Mazur" }
+    ]},
+    { "date": "2026-06-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Hatboro", "note": "The Rev. Nazareno Javier" }
+    ]},
+    { "date": "2026-06-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. David Hockensmith; The Rev. Melford \"Bud\" Holland, Jr.; The Rev. Paul Hunt; The Rev. David Hyatt; The Rev. Barbara Tobin, Deacon" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "5th Sunday of Pentecost", "subjects": [
+      { "type": "category", "name": "Eglise Anglicane du Rwanda", "note": "The Most Revd Laurent Mbanda, Primate" }
+    ]},
+    { "date": "2026-06-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of North Dakota", "note": "The Rt. Rev. Brian Thom, Bishop Provisional" }
+    ]},
+    { "date": "2026-06-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northern California", "note": "The Rt. Reverend Megan M. Traquair, Diocesan" }
+    ]},
+    { "date": "2026-07-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Diocesan Altar Guild" }
+    ]},
+    { "date": "2026-07-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Trinity", "place": "West Chester", "note": "The Rev. Keith Marsh" }
+    ]},
+    { "date": "2026-07-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Bryn Mawr", "note": "The Rev. Peter Vanderveen; The Rev. Jo Ann Jones; The Rev. Jeremy O'Neill" }
+    ]},
+    { "date": "2026-07-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Betsy Ivey; The Rev. Stephen Jacobson; The Rev. Bruce Jacobson; The Rev. Ronald Jaynes; The Rev. James Wynn" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "6th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Scottish Episcopal Church", "note": "The Most Revd Mark Strange, Primate" }
+    ]},
+    { "date": "2026-07-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northern Indiana", "note": "The Rt. Rev. Dr. Douglas E. Sparks, Diocesan" }
+    ]},
+    { "date": "2026-07-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northern Michigan", "note": "The Rt. Rev. Rayford Ray, Diocesan" }
+    ]},
+    { "date": "2026-07-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "United Thank Offering" }
+    ]},
+    { "date": "2026-07-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Samaritan", "place": "Paoli", "note": "The Rev. Phillip Ellsworth, Jr.; The Rev. Dr. Matthew Kozlowski; The Rev. Marcia Wilkinson" }
+    ]},
+    { "date": "2026-07-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Holy Trinity", "place": "Rittenhouse", "note": "The Rev. Rachel Gardner; The Rev. John Gardner" }
+    ]},
+    { "date": "2026-07-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Dorothy Jessup; The Rev. Karen Kaminskas; The Rev. John Keefer; The Rev. Arthur Kelly; The Rev. Wiliam Wood; The Rev. Joan Wylie, Deacon" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "7th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Church of the Province of South East Asia", "note": "The Right Revd Dr Titus Chung Khiam Boon, Primate" }
+    ]},
+    { "date": "2026-07-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northwest Texas", "note": "The Rt. Rev. James Scott Mayer, Diocesan" }
+    ]},
+    { "date": "2026-07-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Northwestern Pennsylvania", "note": "The Rt. Rev. Larry Benfield, Assisting Bishop" }
+    ]},
+    { "date": "2026-07-15", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Cathedral Chapter" }
+    ]},
+    { "date": "2026-07-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Calvary St. Augustine", "note": "The Rev. Dr. Evelyn Partridge" }
+    ]},
+    { "date": "2026-07-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Old Swedes", "note": "The Rev. Richard Baumann; The Erv. Andrea Gardner, Deacon" }
+    ]},
+    { "date": "2026-07-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Lisa Keppeler; The Rev. Catherine Kerr; The Rev. Linda Kerr; The Rev. Flora Keshgegian; The Rev. Nancy Wittig" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "8th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church of South India (United)", "note": "The Most Revd Reuben Mark, Moderator" }
+    ]},
+    { "date": "2026-07-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Ohio", "note": "The Rt. Rev. Anne B. Jolly, Diocesan" }
+    ]},
+    { "date": "2026-07-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Oklahoma", "note": "The Rt. Rev. Poulson C. Reed, Diocesan" }
+    ]},
+    { "date": "2026-07-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Philadelphia Theological Institute" }
+    ]},
+    { "date": "2026-07-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Downingtown", "note": "The Rev. Richard Morgan" }
+    ]},
+    { "date": "2026-07-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. David's", "place": "Radnor", "note": "The Rev. Rick Moreley; The Rev. Tanya Regli; The Rev. Thomas Szcerba" }
+    ]},
+    { "date": "2026-07-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Flora Knight; The Rev. Harriet Kollin; The Rev. Richard Larson; The Rev. Barbara Lewis; The Rev. Kenneth Wissler" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "9th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Southern Africa", "note": "The Most Revd Dr Thabo Makgoba, Primate" }
+    ]},
+    { "date": "2026-07-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Olympia", "note": "The Rt. Rev. Philip N. LaBelle, Diocesan" }
+    ]},
+    { "date": "2026-07-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Pennsylvania", "note": "The Rt. Rev. Daniel G. P. Gutiérrez, Diocesan" }
+    ]},
+    { "date": "2026-07-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Anti-Racism Committee" }
+    ]},
+    { "date": "2026-07-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Solebury", "note": "The Rev. Robert Baldwin" }
+    ]},
+    { "date": "2026-07-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Maple Glen", "note": "The Rev. Rodney Roehner" }
+    ]},
+    { "date": "2026-08-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. James Littrell; The Rev. Dennis Lloyd; The Rev. Otto Lolk; The Rev. Keith Marsh; The Rev. Randolph Williamson" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "10th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Anglican Church of South America", "note": "The Most Revd Brian Williams, Primate" }
+    ]},
+    { "date": "2026-08-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Pittsburgh", "note": "The Right Rev. Ketlen A. Solak, Diocesan" }
+    ]},
+    { "date": "2026-08-04", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Puerto Rico", "note": "The Rt. Rev Rafael L. Morales Maldonado, Diocesan" }
+    ]},
+    { "date": "2026-08-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Property Committee" }
+    ]},
+    { "date": "2026-08-06", "liturgicalNote": "The Transfiguration", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Philadelphia", "note": "The Rev. Samantha Vincent-Alexander" }
+    ]},
+    { "date": "2026-08-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Phoenixville", "note": "The Rev. Samuel Kirabi Ndungu" }
+    ]},
+    { "date": "2026-08-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Robin Martin; The Rev. Koshy Mathews; The Rev. Glen Matis; The Rev. Thomas McClellan; The Rev. John Whitnah" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "11th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Province of the Episcopal Church of South Sudan", "note": "The Most Revd Justin Badi Arama, Primate" }
+    ]},
+    { "date": "2026-08-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Rhode Island", "note": "The Rt. Rev. W. Nicholas Knisely, Diocesan" }
+    ]},
+    { "date": "2026-08-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Rio Grande", "note": "The Rt. Rev. Michael Buerkel Hunn, Diocesan" }
+    ]},
+    { "date": "2026-08-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Mission Committee" }
+    ]},
+    { "date": "2026-08-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Emmanuel Resurrection", "place": "Holmesburg", "note": "The Rev. Samuel Murangi" }
+    ]},
+    { "date": "2026-08-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saint's", "place": "Norristown", "note": "The Rev. Sandra Etemad" }
+    ]},
+    { "date": "2026-08-15", "liturgicalNote": "St. Mary the Virgin", "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Mary McCullough; The Rev. Aleander McCurdy; The Rev. Malcolm McGuire; The Rev. Renee Mckenzie-Hayward; The Rev. Winston Welty" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "12th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Province of the Episcopal Church of Sudan", "note": "The Most Revd Ezekiel Kumir Kondo, Primate" }
+    ]},
+    { "date": "2026-08-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Rochester", "note": "The Rt. Rev. Kara Wagner Sherer, Diocesan" }
+    ]},
+    { "date": "2026-08-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of San Diego", "note": "The Rt. Rev. Dr. Susan Brown Snook, Diocesan" }
+    ]},
+    { "date": "2026-08-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "The Transformation Committee" }
+    ]},
+    { "date": "2026-08-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Philadelphia", "note": "The Rev. Laurie Wurm; The Rev. Sarah Hedgis Kligerman" }
+    ]},
+    { "date": "2026-08-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Ardmore", "note": "The Rev. Sean Lanigan" }
+    ]},
+    { "date": "2026-08-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Jill McNish; The Rev. Judith Meckling; The Rev. Maryjo Melberger; The Rev. Robert Mellon; The Rev. Elliot Waters" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "13th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Anglican Church of Tanzania", "note": "The Most Revd Dr Maimbo Mndolwa, Primate" }
+    ]},
+    { "date": "2026-08-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of San Joaquin", "note": "The Rt. Rev. David C. Rice, Diocesan" }
+    ]},
+    { "date": "2026-08-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of South Carolina", "note": "The Rt. Rev. Ruth Woodliff-Stanley, Diocesan" }
+    ]},
+    { "date": "2026-08-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Langhorne", "note": "The Rev. Sean Slack; The Rev. James Massey, Deacon" }
+    ]},
+    { "date": "2026-08-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Coatsville", "note": "The Rev. Kristen Ostendorf" }
+    ]},
+    { "date": "2026-08-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "House of Prayer", "place": "Philadelphia", "note": "The Rev. Stephen Njenga" }
+    ]},
+    { "date": "2026-08-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. John Midwood; The Rev. Robert Miller; The Rev. Isaac Miller; The Rev. Joy Mills; The Rev. Thomas Wand" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "14th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church of the Province of Uganda", "note": "The Most Revd Stephen Kaziimba, Primate" }
+    ]},
+    { "date": "2026-08-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of South Dakota", "note": "The Rt. Rev. Dr. Jonathan H. Folts, Diocesan" }
+    ]},
+    { "date": "2026-09-01", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Southeast Florida", "note": "The Rt. Rev. Peter Eaton, Diocesan" }
+    ]},
+    { "date": "2026-09-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Ascension", "place": "Parksburg", "note": "The Rev. Steve Lindsay" }
+    ]},
+    { "date": "2026-09-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Ephiphany", "place": "Mt. Airy", "note": "Wardens" }
+    ]},
+    { "date": "2026-09-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Resurrection", "place": "Rockdale", "note": "Wardens" }
+    ]},
+    { "date": "2026-09-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Elsa Mintz; The Rev. Thomas Monnat; The Rev. Stephen Moore; The Rev. Christopher Moore; The Rev. John Wallace" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "15th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Episcopal Church", "note": "The Most Revd Sean Rowe, Primate" }
+    ]},
+    { "date": "2026-09-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Southern Ohio", "note": "The Rt. Rev.  Kristin Uffelman White, Diocesan" }
+    ]},
+    { "date": "2026-09-08", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Southern Virginia", "note": "The Rt. Rev.  Susan Bunton Haynes , Diocesan" }
+    ]},
+    { "date": "2026-09-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Advent", "place": "Kennett Square", "note": "The Rev. Tim Johnson" }
+    ]},
+    { "date": "2026-09-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Washington Memorial Chapel", "note": "The Rev. Tommy Thompson" }
+    ]},
+    { "date": "2026-09-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Comforter", "place": "Drexel Hill", "note": "The Rev. Sarah Duunn" }
+    ]},
+    { "date": "2026-09-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. E. Michael Morgan; The Rev. Kell Morton; The Rev. Christine Mottl; The Rev. Domenic Ndai; The Rev. Richard Vinson" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "16th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church in Wales", "note": "The Most Rev. Cherry Vann, Primate" }
+    ]},
+    { "date": "2026-09-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Collegeville", "note": "The Rev. Dr. Mike Sowards" }
+    ]},
+    { "date": "2026-09-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Oxford", "note": "The Rev. William Rex" }
+    ]},
+    { "date": "2026-09-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Philadelphia Cathedral", "note": "The Very Rev. Abigail Crozier Nestlehutt, Dean; The Rev. Dr. Chas Howard; The Rev. Carol Anthony; The Rev. Michael Nailor, Deacon" }
+    ]},
+    { "date": "2026-09-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Swathmore", "note": "The Very Rev. Dr. Edward Thompson" }
+    ]},
+    { "date": "2026-09-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis in the Field", "place": "Sugartown", "note": "The Very Rev. Kevin Dellaria; The Rev. Diane Faison, Deacon" }
+    ]},
+    { "date": "2026-09-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Pamela Nesbit, Deacon; The Rev. Michael Newman; The Rev. John Obenchain; The Rev. Patricia Oglesby; The Rev. Anthony Vanucci" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "17th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church of the Province of West Africa", "note": "The Most Revd Dr Cyril Kobina Ben-Smith, Primate" }
+    ]},
+    { "date": "2026-09-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Southwest Florida", "note": "The Rt. Rev. Douglas Frederick Scharf, Diocesan" }
+    ]},
+    { "date": "2026-09-22", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Southwestern Virginia", "note": "Standing Committee: Searching" }
+    ]},
+    { "date": "2026-09-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Ridley Park", "note": "The Very Rev. Michael Ruk" }
+    ]},
+    { "date": "2026-09-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Cathedral Road", "note": "The Very Rev. Peter Carey" }
+    ]},
+    { "date": "2026-09-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anne's", "place": "Abington", "note": "The Rev. Winston Smith; The Rev. Kristin Waskowicz Woods, Deacon" }
+    ]},
+    { "date": "2026-09-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Daniel Olsen; The Rev. Kwabena Owusu-Afriyie; The Rev. Michael Pearson; The Rev. Clifford Pike; The Rev. Douglas Tompkins, Jr." }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "18th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church in the Province of the West Indies", "note": "The Rt. Rev. Pilip Wright, Acting Primate" }
+    ]},
+    { "date": "2026-09-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Spokane", "note": "The Rt. Rev. Gretchen Rehberg, Diocesan" }
+    ]},
+    { "date": "2026-09-29", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Springfield", "note": "The Rt. Rev. Brian K. Burgess, Diocesan" }
+    ]},
+    { "date": "2026-09-30", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "African Church of St. Thomas", "note": "The Very Rev. Canon Martini Shaw; The Rev. Daren Evans" }
+    ]},
+    { "date": "2026-10-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Hulmville", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. David's", "place": "Manayunk", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Jame Proud; The Rev. Thomas Reed; The Rev. Paul Reid; The Rev. Frances Ritchings; The Rev. Joyce Tompkins" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "19th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Church of Ceylon (Extra-Provincial to Canterbury)", "note": "The Most Revd Nishantha Fernando, Primate" }
+    ]},
+    { "date": "2026-10-05", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Tiwan", "note": "The Rt. Rev. Lennon Yuan-Rung Chang, Diocesan" }
+    ]},
+    { "date": "2026-10-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Tennessee", "note": "The Rt. Rev. John C. Bauerschmidt, Diocesan" }
+    ]},
+    { "date": "2026-10-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Chester", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Incarnation", "place": "Morrisville", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Church of the Annunciation", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Christine Ritter; The Rev. Barbara Rivers; The Rev. Joseph Rivers, III; The Rev. David Robinson; The Rev. Lou Temme" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "20th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Bermuda (Extra-Provincial to Canterbury)", "note": "Provincial Treasurer: Mr. Cambell McBeath" }
+    ]},
+    { "date": "2026-10-12", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Texas", "note": "The Rt. Rev. C. Andrew Doyle, Diocesan" }
+    ]},
+    { "date": "2026-10-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Upper South Carolina", "note": "The Rt. Rev. Daniel Paul Richards, Diocesan" }
+    ]},
+    { "date": "2026-10-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of St. Mary's at Calvary", "place": "Elverson", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Martin's", "place": "Radnor", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Memorial Church of St. Luke", "place": "Bustleton", "note": "The Rev. Elizabeth Colton" }
+    ]},
+    { "date": "2026-10-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Terence Roper; The Rev. Glenda Ruppe-Melnyk; The Rev. Timothy Safford; The Rev. Danna Segal; The. Rev. Phyllis Taylor" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "21st Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Lusitanian Church (Extra-Provincial to Canterbury)", "note": "Provincial Treasurer: The Revd Sérgio Filipe Pinho Alves" }
+    ]},
+    { "date": "2026-10-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Utah", "note": "The Rt. Rev. Phyllis A. Spiegel, Diocesan" }
+    ]},
+    { "date": "2026-10-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Venezuela", "note": "The Rt. Rev. Orlando Guerrero Torres, Diocesan" }
+    ]},
+    { "date": "2026-10-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Memorial Church of the Good Shepherd", "note": "The Rev. Peter Kountz" }
+    ]},
+    { "date": "2026-10-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Augustine of Hippo", "place": "Norristown", "note": "The Rev. Samuel Kirabi Ndungu; The Rev. Andrea Gardner, Deacon" }
+    ]},
+    { "date": "2026-10-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James the Greater", "place": "Bristol", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Warren Shaw; The Rev. William Shepherd; The Rev. Earl Shiley; The Rev. Peter Sipple; The Rev. Robert Tate" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "22nd Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Reformed Episcopal Church of Spain (Extra-Provincial to Canterbury)", "note": "Provincial Treasurer: Senor Jose Antonio Rodriguez" }
+    ]},
+    { "date": "2026-10-26", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Vermont", "note": "The Rt. Rev. Dr. Shannon MacVean-Brown, Diocesan" }
+    ]},
+    { "date": "2026-10-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Virgin Islands", "note": "The Rt. Rev. Rafael Morales Maldonado, Bishop Advisor" }
+    ]},
+    { "date": "2026-10-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Deacons" }
+    ]},
+    { "date": "2026-10-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saint's", "place": "Rhawnhurst", "note": "The Rev. Modayil Philips" }
+    ]},
+    { "date": "2026-10-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Marks", "place": "Frankford", "note": "Wardens" }
+    ]},
+    { "date": "2026-10-31", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. Lula Smart; The Rev. John Smart; The Rev. Richard Smiraglia; The Rev. Robin Smith; The Rev. Marie Swayze" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints", "subjects": [
+      { "type": "category", "name": "Falkland Islands (Extra-Provincial to Canterbury)" }
+    ]},
+    { "date": "2026-11-02", "liturgicalNote": "All Souls", "subjects": [
+      { "type": "category", "name": "Diocese of Wyoming", "note": "The Rt. Rev. Todd Ousley, Bishop Provisional" }
+    ]},
+    { "date": "2026-11-03", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Virginia", "note": "The Rt. Rev. E. Mark Stevenson, Diocesan" }
+    ]},
+    { "date": "2026-11-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Clifton Heights", "note": "Wardens" }
+    ]},
+    { "date": "2026-11-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Philadelphia", "note": "Wardens" }
+    ]},
+    { "date": "2026-11-06", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "St. Simon the Cyrenian Church", "note": "The Rev. Isaac Miller (Missioner)" }
+    ]},
+    { "date": "2026-11-07", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. H Gregory Smith; The Rev. Edwin Smith; The Rev. Richard Smith; The Rev. Stephen Snider; The Rev. Judith Sullivan" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "24th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Episcopal Religious Orders and Communities" }
+    ]},
+    { "date": "2026-11-09", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Washington", "note": "The Rt. Rev. Mariann Edgar Budde, Diocesan" }
+    ]},
+    { "date": "2026-11-10", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Wisconson", "note": "The Rt. Rev. Matthew Gunter, Diocesan" }
+    ]},
+    { "date": "2026-11-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James", "place": "Prospect Park", "note": "Wardens" }
+    ]},
+    { "date": "2026-11-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Elkins Park", "note": "The Rev. John Daniels; The Rev. Jeannie Sachs, Deacon" }
+    ]},
+    { "date": "2026-11-13", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Christ Church and St. Michael's", "note": "The Rev. Renee Coleman, Deacon" }
+    ]},
+    { "date": "2026-11-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Retired Clergy", "note": "The Rev. John Sorensen; The Rev. James Squire; The Rev. Timothy Steeves; The Rev. Nany Stroh; Thr Rev. Peter Stube" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "25th Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Episcopal Seminaries" }
+    ]},
+    { "date": "2026-11-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of West Missouri", "note": "The Rt. Rev. Amy Dafler Meaux, Diocesan" }
+    ]},
+    { "date": "2026-11-17", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of West Tennessee", "note": "The Rt. Rev. Phoebe A. Roaf, Diocesan" }
+    ]},
+    { "date": "2026-11-18", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of West Texas", "note": "The Rt. Rev. Dr. David G. Read, Diocesan" }
+    ]},
+    { "date": "2026-11-19", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of West Virginia", "note": "The Rt. Rev. Matthew Cowden, Diocesan" }
+    ]},
+    { "date": "2026-11-20", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Western Kansas", "note": "The Rt. Rev. Mark A. Cowell, Diocesan" }
+    ]},
+    { "date": "2026-11-21", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Deacons School" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Christ the King", "subjects": [
+      { "type": "category", "name": "Diocese of Western Louisiana", "note": "The Rt. Rev. Jacob W. Owensby, Diocesan" }
+    ]},
+    { "date": "2026-11-23", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Western Massachusetts", "note": "The Rt. Rev. Dr. Douglas John Fisher, Diocesan" }
+    ]},
+    { "date": "2026-11-24", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Western Michigan", "note": "The Rt. Rev. Skip Gladstone Adams, Assisting Bishop" }
+    ]},
+    { "date": "2026-11-25", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Dioces of Western New York", "note": "The Rt. Rev. Stphen Lane, Assisting Bishop" }
+    ]},
+    { "date": "2026-11-26", "liturgicalNote": "Thanksgiving Day", "subjects": [
+      { "type": "category", "name": "Diocese of Western North Carolina", "note": "The Rt. Rev. José A. McLoughlin, Diocesan" }
+    ]},
+    { "date": "2026-11-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocese of Western Oregon", "note": "The Rt. Rev. Diana Akiyama, Diocesan" }
+    ]},
+    { "date": "2026-11-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Suffrigan, Assisting and Retired Bishops" }
+    ]}
+  ]
+}

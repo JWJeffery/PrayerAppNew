@@ -1,0 +1,251 @@
+{
+  "id": "episcopal-olympia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Olympia",
+  "dioceseShort": "olympia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Diocesan Prayer Cycle: Congregations, Ministries, and Institutions",
+  "sourceFile": "\"2026-Diocesan-Prayer-Cycle.pdf\", fetched directly from https://ecww.org/wp-content/uploads/2025/12/2026-Diocesan-Prayer-Cycle.pdf, linked from https://ecww.org/diocesan-cycle-of-prayer/.",
+  "ingested": "2026-09-29",
+  "notes": [
+    "Self-contained calendar-year 2026 cycle, all 52 Sundays, January 4 - December 27. Every dated entry carries the source's own liturgical Sunday name in `liturgicalNote`, a disclosed label from the source, not computed by this app.",
+    "The PDF's own text uses plain/straight apostrophes and hyphens throughout (e.g. \"St. Joseph - St. John, Lakewood\", \"St. Martin - St. Francis, Rockport\"), confirmed by inspecting the raw extracted text's character codes rather than assuming from rendered appearance; this diocese's own website (ecww.org) republishes the same content with WordPress's typographic smart-quote/en-dash substitution (curly apostrophes, en dashes) but is otherwise textually identical -- used only to cross-check the parsing below, not as the transcription source per this corpus's preference for the PDF itself.",
+    "Each month's heading in the source also names a deanery/region in parentheses, e.g. 'January 2026 (Columbia)', 'February 2026 (Eastside)', 'October 2026 (Ministries & Institutions)' -- not reflected per-entry here since the schema has no field for it, but noted for context: the cycle groups congregations by deanery for most of the year, then devotes October and November to diocesan-wide ministries/institutions.",
+    "Two-column PDF layout (months side by side on each of 3 pages) -- verified by rendering all 3 pages as images (150dpi) and visually confirming pdftotext -layout's date-to-subject grouping against them, and additionally cross-checked against the diocese's own website, which embeds the identical cycle as a single linear (non-columnar) block -- no interleaving found.",
+    "Several weeks name a specific congregation with a slash-joined bilingual/dual name, transcribed exactly as printed and not split: 'St. Matthew's/San Mateo, Auburn', 'St. Luke's/San Lucas, Vancouver', 'St. John's/San Juan, Olympia'. Likewise 'St. Michael's South Sudanese, Auburn' and 'St. John's South Sudanese, Kent' are transcribed as printed as their own single congregation names, and 'St. Joseph - St. John, Lakewood', 'St. Martin - St. Francis, Rockport', and 'St. Hilda St. Patrick, Edmonds' are each transcribed as one combined congregation name exactly as the source joins them (the last with no punctuation between the two saints' names at all, as printed).",
+    "'Saint Mark's Cathedral, Seattle' (April 19) spells out 'Saint' in full where every other entry abbreviates 'St.' -- preserved exactly as printed, not normalized.",
+    "October and November are devoted to diocesan-wide ministries, institutions, and governance bodies rather than congregations; each is recorded as a `category` subject with its full text (including any place the source appends after a comma, since the `category` type has no separate `place` field) preserved verbatim in `name`, e.g. 'Huston Camp & Conference Center, Gold Bar', 'Chaplains on the Harbor, Montesano' (which recurs on both September 20 and October 25, as printed -- not a duplication error), 'Annie Wright School, Tacoma', 'Charles Wright Academy, Tacoma', 'Underhill House, Seattle', and 'St. James Family Center, Cathlamet'.",
+    "Two November 1 subjects and one November 22 subject wrap across two lines in the source's own layout with no internal bullet break; each was reassembled as a single subject exactly as printed: 'Retired clergy, clergy widows/widowers, and clergy households of the diocese', 'All Commissions, Committees & Programs of the Diocese', and 'The Table: University of Washington Episcopal Campus Ministry'.",
+    "The source's own liturgical-Sunday numbering skips from 'Twenty-Second Sunday after Pentecost' (October 25) to 'All Saints' Sunday' (November 1) to 'Twenty-Fourth Sunday after Pentecost' (November 8) -- 'Twenty-Third' is never printed, presumably because All Saints' Sunday displaced that Proper; transcribed exactly as the source labels each date, not corrected or renumbered."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": "Second Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "Holy Spirit", "place": "Battle Ground" },
+      { "type": "parish", "name": "St. Matthew's", "place": "Castle Rock" },
+      { "type": "parish", "name": "St. James", "place": "Cathlamet" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "First Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Timothy", "place": "Chehalis" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Longview" },
+      { "type": "parish", "name": "St. Peter's", "place": "Seaview" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "Second Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Luke's/San Lucas", "place": "Vancouver" },
+      { "type": "parish", "name": "All Saints'", "place": "Vancouver" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "Third Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Vancouver" },
+      { "type": "parish", "name": "St. Anne's", "place": "Washougal" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "Fourth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "Resurrection", "place": "Bellevue" },
+      { "type": "parish", "name": "St. Margaret's", "place": "Bellevue" },
+      { "type": "parish", "name": "Holy Apostles", "place": "Bellevue" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "Fifth Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "Bellevue" },
+      { "type": "parish", "name": "St. Michael & All Angels", "place": "Issaquah" },
+      { "type": "parish", "name": "St. John's", "place": "Kirkland" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "Last Sunday after the Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Medina" },
+      { "type": "parish", "name": "Emmanuel", "place": "Mercer Island" },
+      { "type": "parish", "name": "Holy Cross", "place": "Redmond" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "First Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "Good Samaritan", "place": "Sammamish" },
+      { "type": "parish", "name": "St. Clare's", "place": "Snoqualmie" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "Second Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Matthew's/San Mateo", "place": "Auburn" },
+      { "type": "parish", "name": "St. Michael's South Sudanese", "place": "Auburn" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "Third Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Elizabeth's", "place": "Burien" },
+      { "type": "parish", "name": "Good Shepherd", "place": "Federal Way" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "Fourth Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "Emmanuel All Nations", "place": "Federal Way" },
+      { "type": "parish", "name": "St. James", "place": "Kent" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "Fifth Sunday in Lent", "subjects": [
+      { "type": "parish", "name": "St. Columba's", "place": "Kent" },
+      { "type": "parish", "name": "St. John's South Sudanese", "place": "Kent" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Sunday of the Passion: Palm Sunday", "subjects": [
+      { "type": "parish", "name": "St. George", "place": "Maple Valley" },
+      { "type": "parish", "name": "St. Luke's", "place": "Renton" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Day", "subjects": [
+      { "type": "parish", "name": "Ascension", "place": "Seattle" },
+      { "type": "parish", "name": "Epiphany", "place": "Seattle" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "Second Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Clement of Rome", "place": "Seattle" },
+      { "type": "parish", "name": "St. John the Baptist", "place": "Seattle" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "Third Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Saint Mark's Cathedral", "place": "Seattle" },
+      { "type": "parish", "name": "St. Paul's", "place": "Seattle" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "Fourth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Seattle" },
+      { "type": "parish", "name": "Trinity", "place": "Seattle" },
+      { "type": "parish", "name": "Apostles", "place": "Seattle" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "Fifth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Anacortes" },
+      { "type": "parish", "name": "St. Paul's", "place": "Bellingham" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "Sixth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Blaine" },
+      { "type": "parish", "name": "Emmanuel", "place": "Eastsound" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "Seventh Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "St. David's", "place": "Friday Harbor" },
+      { "type": "parish", "name": "Grace", "place": "Lopez Island" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "The Day of Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Mount Vernon" },
+      { "type": "parish", "name": "Resurrección", "place": "Mount Vernon" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "First Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Oak Harbor" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "Second Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Bainbridge Island" },
+      { "type": "parish", "name": "Grace", "place": "Bainbridge Island" },
+      { "type": "parish", "name": "St. Paul's", "place": "Bremerton" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "Third Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Swithin's", "place": "Forks" },
+      { "type": "parish", "name": "St. John's", "place": "Gig Harbor" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Port Angeles" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "Fourth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Bede's", "place": "Port Orchard" },
+      { "type": "parish", "name": "St. Paul's", "place": "Port Townsend" },
+      { "type": "parish", "name": "Faith", "place": "Poulsbo" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "Fifth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Sequim" },
+      { "type": "parish", "name": "St. Antony of Egypt", "place": "Silverdale" },
+      { "type": "parish", "name": "St. Nicholas", "place": "Tahuya" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "Sixth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Holy Family of Jesus", "place": "Tacoma" },
+      { "type": "parish", "name": "St. Mary's", "place": "Lakewood" },
+      { "type": "parish", "name": "St. Joseph - St. John", "place": "Lakewood" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "Seventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Puyallup" },
+      { "type": "parish", "name": "Christ Church", "place": "Tacoma" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Tacoma" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "Eighth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Luke's Memorial", "place": "Tacoma" },
+      { "type": "parish", "name": "St. Matthew's", "place": "Browns Point/Tacoma" },
+      { "type": "parish", "name": "All Saints'", "place": "Tacoma" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "Ninth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "All Saints' Goshen", "place": "Tacoma" },
+      { "type": "parish", "name": "Holy Spirit", "place": "Vashon Island" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "Tenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Aidan's", "place": "Camano Island" },
+      { "type": "parish", "name": "Transfiguration", "place": "Darrington" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "Eleventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Hilda St. Patrick", "place": "Edmonds" },
+      { "type": "parish", "name": "Trinity", "place": "Everett" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "Twelfth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Augustine's in-the-Woods", "place": "Freeland" },
+      { "type": "parish", "name": "St. Philip's", "place": "Marysville" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "Thirteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Martin - St. Francis", "place": "Rockport" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "Fourteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Snohomish" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "Fifteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Aberdeen" },
+      { "type": "parish", "name": "St. Hugh of Lincoln", "place": "Allyn" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "Sixteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Germain", "place": "Hoodsport" },
+      { "type": "parish", "name": "St. Benedict's", "place": "Lacey" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "Seventeenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Montesano" },
+      { "type": "category", "name": "Chaplains on the Harbor, Montesano" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "Eighteenth Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "St. John's/San Juan", "place": "Olympia" },
+      { "type": "parish", "name": "St. Christopher's", "place": "Olympia" },
+      { "type": "parish", "name": "St. David of Wales", "place": "Shelton" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Brotherhood of St. Andrew" },
+      { "type": "category", "name": "The Order of Saint Francis" },
+      { "type": "category", "name": "Earth Ministry" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Community of the Paraclete" },
+      { "type": "category", "name": "Little Sisters of St. Clare" },
+      { "type": "category", "name": "The Third Order Society of St. Francis" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "Twenty-First Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Episcopal Retirement Communities" },
+      { "type": "category", "name": "Episcopal Mission to Seafarers" },
+      { "type": "category", "name": "Seattle Service Corps" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "Twenty-Second Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Huston Camp & Conference Center, Gold Bar" },
+      { "type": "category", "name": "Sacred Waters Center" },
+      { "type": "category", "name": "Refugee Resettlement Office" },
+      { "type": "category", "name": "Chaplains on the Harbor, Montesano" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints' Sunday", "subjects": [
+      { "type": "category", "name": "Retired clergy, clergy widows/widowers, and clergy households of the diocese" },
+      { "type": "category", "name": "Our Bishop and the bishop's staff" },
+      { "type": "category", "name": "All Commissions, Committees & Programs of the Diocese" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "Twenty-Fourth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Diocesan Council" },
+      { "type": "category", "name": "Board of Directors" },
+      { "type": "category", "name": "Standing Committee" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "Twenty-Fifth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Annie Wright School, Tacoma" },
+      { "type": "category", "name": "Charles Wright Academy, Tacoma" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Table: University of Washington Episcopal Campus Ministry" },
+      { "type": "category", "name": "Underhill House, Seattle" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "First Sunday of Advent", "subjects": [
+      { "type": "category", "name": "Center for Spiritual Development" },
+      { "type": "category", "name": "St. James Family Center, Cathlamet" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": "Second Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Alban's", "place": "Edmonds" },
+      { "type": "parish", "name": "Redeemer", "place": "Kenmore" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": "Third Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Seattle" },
+      { "type": "parish", "name": "St. Andrew's", "place": "Seattle" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": "Fourth Sunday of Advent", "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Seattle" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Seattle" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": "First Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "St. Dunstan's", "place": "Shoreline" },
+      { "type": "parish", "name": "St. David Emmanuel", "place": "Shoreline" }
+    ]}
+  ]
+}
