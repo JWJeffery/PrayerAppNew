@@ -1960,15 +1960,23 @@ function showUoThresholdGrid() {
     // underneath regardless. Setting .style.display directly fixes this for real.
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
+    const profile = document.getElementById('user-profile-defaults');
     if (threshold) { threshold.hidden = true; threshold.style.display = 'none'; threshold.setAttribute('aria-hidden', 'true'); }
     if (grid) { grid.hidden = false; grid.removeAttribute('aria-hidden'); }
+    // ADDED 2026-09-29: the Profile panel used to be gated behind ?advanced=1 (the SAME flag
+    // as the dev-only Admin Console), which is why Josh could not find it at all -- it is
+    // ordinary functionality (name/role/diocese), not an advanced tool. It now shows/hides
+    // together with the grid instead of needing any query param.
+    if (profile) { profile.hidden = false; profile.removeAttribute('aria-hidden'); }
 }
 
 function showUoThresholdDefault() {
     const threshold = document.getElementById('uo-threshold');
     const grid = document.getElementById('uo-threshold-grid');
+    const profile = document.getElementById('user-profile-defaults');
     if (threshold) { threshold.hidden = false; threshold.style.display = 'flex'; threshold.removeAttribute('aria-hidden'); }
     if (grid) { grid.hidden = true; grid.setAttribute('aria-hidden', 'true'); }
+    if (profile) { profile.hidden = true; profile.setAttribute('aria-hidden', 'true'); }
 }
 
 function showTraditionEntry() {

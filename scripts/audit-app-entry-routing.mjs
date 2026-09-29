@@ -53,7 +53,14 @@ check('entry card no longer covers the stained glass composition by default', cs
 check('entry splash foreground safety guard exists', officeUi.includes('function ensureSplashForegroundVisible()') && officeUi.includes('Splash background was visible without a foreground panel') && officeUi.includes('scheduleSplashForegroundGuard();'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
-check('universal selector advanced tools are hidden by default', index.includes('data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href=\'admin/admin.html\'"') && index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true"'));
+check('universal selector advanced tools are hidden by default', index.includes('data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href=\'admin/admin.html\'"'));
+// UPDATED 2026-09-29, per Josh's direct (furious) report: the Profile panel (name/role/diocese/
+// parish) was wrongly gated behind the SAME advanced-only flag as the dev-only Admin Console --
+// ordinary functionality hidden behind a query param nobody would guess. It no longer carries
+// app-advanced-only/data-advanced-only at all; visibility is tied to #uo-threshold-grid instead
+// (see showUoThresholdGrid()/showUoThresholdDefault() in js/office-ui.js).
+check('profile panel is NOT gated behind advanced-only (ordinary functionality, not a dev tool)', index.includes('id="user-profile-defaults" class="app-profile-defaults" hidden aria-hidden="true"') && !index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only"'));
+check('profile panel visibility is tied to the threshold grid, not advanced-tools', officeUi.includes("const profile = document.getElementById('user-profile-defaults');") && officeUi.includes('if (profile) { profile.hidden = false; profile.removeAttribute(\'aria-hidden\'); }') && officeUi.includes('if (profile) { profile.hidden = true; profile.setAttribute(\'aria-hidden\', \'true\'); }'));
 check('universal selector advanced tools can be explicitly revealed without persistence', officeUi.includes("params.get('advanced')") && officeUi.includes("explicitAdvanced === '1' || explicitAdvanced === 'true'") && !officeUi.includes('UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && !officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && officeUi.includes('syncUniversalOfficeAdvancedToolsVisibility();'));
 check('universal selector advanced tools gate CSS exists', css.includes('Universal selector advanced-tools gate') && css.includes('#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only'));
 check('shared office hour selector does not use internal scroll', css.includes('Shared office hour selector internal-scroll removal') && css.includes('.shared-office-nav-options') && css.includes('max-height: none !important') && css.includes('overflow-y: visible !important'));

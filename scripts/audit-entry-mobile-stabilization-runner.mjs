@@ -71,9 +71,12 @@ requireIncludes("hour-selector internal-scroll removal markers", css, [
     "overflow-y: visible !important"
 ]);
 
+// UPDATED 2026-09-29: the Profile panel (name/role/diocese/parish) no longer carries
+// app-advanced-only -- see js/office-ui.js's showUoThresholdGrid()/showUoThresholdDefault()
+// and audit-app-entry-routing.mjs's matching check. Admin Console remains gated.
 requireIncludes("advanced selector gate markers", index, [
     "data-advanced-only=\"true\" hidden aria-hidden=\"true\"",
-    "id=\"user-profile-defaults\" class=\"app-profile-defaults app-advanced-only\""
+    "id=\"user-profile-defaults\" class=\"app-profile-defaults\" hidden aria-hidden=\"true\""
 ]);
 
 check("release allowlists entry/mobile browser QC script", releaseScript.includes("const browserQcReleaseFiles = [") && releaseScript.includes("scripts/browser-qc-entry-mobile-stabilization-sweep.js") && releaseScript.includes("browserQcReleaseFiles: copiedBrowserQcReleaseFiles"));
