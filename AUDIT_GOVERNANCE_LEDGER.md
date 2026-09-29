@@ -26062,3 +26062,85 @@ font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to bump (sa
 Each of the six new files was committed and pushed individually as its own agent finished, per Josh's
 mid-batch instruction to keep the working tree clean rather than holding everything for one final
 commit; this ledger entry and the registry/bug-fix commit land together as the batch's closing commit.
+
+## 2026-09-29 (continued once more) -- Diocese ingestion batch 14: Vermont, Virginia, Washington (DC),
+## West Missouri, West Tennessee, West Texas (6 dioceses, no blocks)
+
+Josh: "Please continue." Eighth batch of parallel-subagent-dispatched ingestion, continuing alphabetically
+after Upper South Carolina. Six agents dispatched, all six succeeded (one, West Missouri, was explicitly
+instructed to stop and report rather than build a file if its "visitation schedule" source turned out to
+be pure logistics with no prayer framing -- it determined the source genuinely is a cycle of prayer and
+proceeded).
+
+**Vermont** (`episcopal-vermont-2026.json`, source: diocesan PDF). 52 entries, Advent 2025-Christ the
+King 2026 -- disclose-and-included per the California/Tennessee precedent for a lead-in. Six weeks name a
+"constellation" of 2-4 congregations sharing clergy/wardens with no single congregation to attribute them
+to; each named congregation was split into its own separate `parish` subject rather than merged, following
+this corpus's existing "Trinity Cluster" precedent in `episcopal-iowa.json`. A trailing administrative
+row ("New Cycle of Prayer begins," dated the following Advent 1) names no actual prayer subject and was
+excluded rather than fabricated into a subject.
+
+**Virginia** (`episcopal-virginia-2026.json`, source: diocesan PDF). 31 entries, June 7-Dec 27, 2026 --
+wider than the roster's own pre-fetch "July-December" description, since the live document's own first
+entry is actually June 7; transcribed the whole live document rather than truncating to match the stale
+page description, disclosed. Confirmed distinct from Southern Virginia, Southwestern Virginia (already in
+this corpus), and West Virginia by the document's own header, named bishop, and congregation geography.
+"Shrine Mont, Orkney Springs" is printed in the same two-column parish-style table format as actual
+congregations but is the diocese's own camp/conference center, not a congregation -- recorded as
+`category` per this corpus's rule that type depends on what a subject actually is, not on table
+formatting.
+
+**Washington (DC)** (`episcopal-washington-dc-2026.json`, source: the diocese's own live web page,
+fetched and parsed directly rather than trusting a summarizing fetch tool, which was found to drop the
+source's own liturgical labels and garble content). 56 entries, Nov 2, 2025-Nov 22, 2026. The page's 13
+month-tabs sit in a scrambled, non-chronological DOM order (a CMS artifact) -- re-sorted into true
+ascending order for this file, disclosed. The page's own header claims coverage through November 30,
+2026, but content actually stops at November 22 -- the gap was disclosed rather than fabricated. Three
+printed dates don't actually fall on the Sundays their correctly-sequential liturgical labels imply --
+kept exactly as printed per this corpus's no-silent-correction rule, with the mismatch disclosed.
+
+**West Missouri** (`episcopal-west-missouri-2026.json`, source: the diocese's own live calendar page).
+Only 8 entries, Sept 6-Oct 25, 2026 -- the smallest file in this corpus by design, not by gap: the
+diocese's live page displays only a rolling current+next-month window, and as of ingestion no stable
+full-year document exists anywhere on the site. The roster's own "visitation schedule" description was
+investigated directly rather than assumed: the diocese's page states its prayer cycle and the bishop's
+visitation schedule now deliberately coincide, and each week's Location/People/Ministry fields genuinely
+function as prayer intentions, not bare logistics -- confirmed by also fetching a separate, purely
+logistical Nov 2026-Apr 2028 visitation-schedule PDF linked from the same page and finding it has no
+prayer framing at all, which was correctly NOT used as a source. Disclosed that this file will likely
+need periodic re-ingestion as later weeks scroll into the page's rolling display window.
+
+**West Tennessee** (`episcopal-west-tennessee-2026.json`, source: diocesan PDF). 52 entries, full
+calendar year 2026. The source carries no calendar dates at all, keying every entry only to a liturgical
+Sunday name -- `date` values were computed (Jan 4, 2026 + 7n days) and independently cross-checked
+against a verified 2026 liturgical calendar (Easter, Pentecost, Trinity Sunday, Advent 1 all landed on
+their correspondingly-labeled source entries), then disclosed as computed rather than source-printed, per
+this corpus's rule keeping computed dates and disclosed liturgical labels apart. Confirmed distinct from
+the separate Diocese of Tennessee (already in this corpus) by domain, diocesan-office address, and every
+place name's Memphis-area geography.
+
+**West Texas** (`episcopal-west-texas-2026.json`, source: diocesan PDF, linked from the diocese's own
+resource page). 52 entries, Advent 2025-Christ the King 2026 (only 1 of 52 entries falls in 2025, an even
+smaller lead-in than Tennessee's 9-of-52, disclose-and-included on the same precedent). The roster's own
+"(Year A)" label turned out to refer to the three-year Revised Common Lectionary Sunday-reading cycle,
+not a separate calendar designation -- confirmed from the PDF's own cover-page subtitle and the document's
+exact one-liturgical-year span. Confirmed distinct from the separate Diocese of Texas and Diocese of
+Northwest Texas (both already in this corpus) by domain, PDF metadata/crest, and every place name's
+South/Southwest Texas geography -- the agent read both existing files before proceeding to confirm they're
+genuinely different dioceses.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All six (`vermont`, `virginia`, `washington-dc`, `west-missouri`, `west-tennessee`, `west-texas`) already
+matched the directory's own slugs exactly, no renaming needed. All 6 registered in
+`CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 80 files, 0 findings. `node --check`
+clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their 13/3/9 baselines.
+Live-verified all 6 new dioceses (8 sample points, including Vermont's, Washington's, and West Texas's own
+year-boundary lead-in dates, confirming last batch's `getCachedCycleOfPrayerWeek` bug fix continues to
+hold for genuinely new files, not just the three it was written against). Screenshot-verified Vermont
+rendering correctly in an actual Morning Prayer office (correct date commemoration "Saint Michael and All
+Angels," both Cycle of Prayer tiers present in the sidebar, drop-cap intact) -- applying the Morning-
+Prayer-forcing technique established in batch 10. Zero new console errors beyond the pre-documented
+sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to bump (same as prior
+batches). Each of the six new files was committed and pushed individually as its own agent finished, per
+the working-tree-hygiene pattern established in batch 13; this ledger entry and the registry commit land
+together as the batch's closing commit.

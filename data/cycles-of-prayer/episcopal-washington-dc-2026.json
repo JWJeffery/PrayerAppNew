@@ -1,0 +1,1215 @@
+{
+  "id": "episcopal-washington-dc-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Washington",
+  "dioceseShort": "washington-dc",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer November 1, 2025 – November 30, 2026",
+  "sourceFile": "\"Cycle of Prayer\" page, fetched directly from https://edow.org/congregational-resources/worship/cycle-of-prayer/ (rendered HTML, read from its own per-month tab markup rather than a linearized/summarized extraction).",
+  "ingested": "2026-09-29",
+  "notes": [
+    "`diocese` field: the page's <title> tag, its og:site_name, and its embedded JSON-LD WebSite/Organization/breadcrumb names all consistently read \"Episcopal Diocese of Washington\" (no \"DC\" in the self-identification itself, even though this app's own reserved `dioceseShort` is \"washington-dc\" to disambiguate from other dioceses named Washington). Used as printed.",
+    "Transcribed directly from the live page's rendered HTML (fetched and parsed from its own per-month tab markup), not from a summarized/linearized extraction -- the page presents its cycle as 13 clickable month tabs (June 2026, July 2026, August 2026, September 2026, October 2026, November 2026, December 2025, November 2025, January 2026, February 2026, March 2026, April 2026, May 2026) in that exact scrambled, non-chronological DOM order, evidently a CMS artifact from tabs being appended/reordered over successive years rather than a deliberate editorial order. This file's own `entries` array is instead sorted into true ascending chronological order (Nov 2025 through Nov 2026), per this schema's own expectation that entries are ordered ascending; the raw tab order itself carries no content difference, only presentation order.",
+    "Per this schema's own precedent for a source whose range crosses a year boundary (episcopal-tennessee-2026.json, episcopal-california-2026.json, episcopal-nevada-2026.json, episcopal-san-diego-2026.json): the page's own header reads \"Diocesan Cycle of Prayer November 1, 2025 – November 30, 2026\", and the 9 entries falling in November-December 2025 are a small lead-in (9 of 56 total entries) to the 2026 cycle, not a genuine ~half/half split -- so they are included here in this single '-2026' file (disclose-and-include) rather than split into a companion '-2025' file, matching the Tennessee/California/Nevada/San Diego shape rather than the Southeast Florida two-file shape.",
+    "The page's own header claims coverage through \"November 30, 2026\", but the November 2026 tab's own content stops at the Nov 22, 2026 entry (followed by a trailing blank paragraph in the source's own markup) -- there is no Nov 29, 2026 entry anywhere in the source. Transcribed as printed/absent rather than fabricating a 57th entry to fill out the header's claimed range; the gap between the last real entry (Nov 22, 2026) and the header's stated end date (Nov 30, 2026) is disclosed here rather than silently closed, the same way this corpus's episcopal-tennessee-2026.json disclosed its own stale/mismatched section heading rather than correcting it.",
+    "Three printed dates in the source are not actually Sundays, even though every date on either side of them is, and even though each carries a liturgically sequential 'Nth Sunday after Pentecost'/'... of Easter' label consistent with its neighbors: 'Oct 20' and 'Oct 27' (both print as the correct next ordinals -- 21st and 22nd Sunday after Pentecost -- but the actual Sundays for those ordinals are Oct 18 and Oct 25, 2026) and 'Apr 27' (labeled 'The Fourth Sunday of Easter', but the actual 4th Sunday of Easter is Apr 26, 2026). These read as the diocese's own date typos (a slipped +2 for the October pair, +1 for April), not a deliberate shift, but per this corpus's rule against silently correcting a source, all three are recorded with the literal date text printed in the source (2026-10-20, 2026-10-27, 2026-04-27) rather than the calendrically 'correct' Sunday.",
+    "Every other row's printed liturgical label was independently checked against its own printed date and found internally consistent (correct day-of-week and correct sequential count), including the two November All Saints'-week rows and the several places where the source's own wording departs from its usual pattern (e.g. 'July 26' spelled out in full rather than abbreviated 'Jul 26' as every neighboring month header is, and 'Apr 5 -Easter Day' using a bare unspaced hyphen where every other date header uses a spaced en dash '–') -- these wording/punctuation quirks are preserved verbatim in `liturgicalNote` but did not themselves indicate a wrong date.",
+    "Capitalization/wording inconsistencies in the source's own liturgical labels, preserved verbatim rather than normalized: 'The Twenty-third Sunday after Pentecost' (Nov 16, 2025, lowercase 'third', unlike every other Twenty-Nth label on the page which capitalizes the ordinal word); 'All Saints' Sunday (Twenty-First Sunday after Pentecost)' (Nov 2, 2025) lacking the leading 'The' that the otherwise-parallel 'All Saints' Sunday (The Twenty-Third Sunday after Pentecost)' (Nov 1, 2026) carries.",
+    "Typos/spelling inconsistencies among subject names, preserved verbatim rather than corrected: 'St. Albans School for Boys' (Aug 16) printed with no apostrophe, unlike every other 'St. Alban's'/'St. Albans'' possessive elsewhere on the page (e.g. 'St. Alban's Church, DC'); a stray extra space before the closing parenthesis in 'Labor Day (Sep 7 ):' (Sep 6) and 'International Earth Day (April 22 )' (Apr 19); the trailing stray comma before the parenthetical in 'Diocesan Convention: The Bishop, Convention Officers, Clerical and Lay Delegates, (January 26-27)' (Jan 25).",
+    "Bilingual/dual-name congregations sharing one building and one `place` are recorded as a SINGLE parish subject with both names joined exactly as the source joins them, per this corpus's existing precedent for the same situation (episcopal-southern-ohio-2026.json's 'Church of Our Saviour/La Iglesia de Nuestro Salvador', episcopal-rhode-island-2026.json's 'La Iglesia de la Ascension / The Church of the Ascension', episcopal-western-massachusetts-2026.json's 'St. Mark's/Iglesia Episcopal San Marcos') -- with the shared place text pulled out of the printed name and into the `place` field rather than left embedded and duplicated: 'St. Alban's Church, DC, and Iglesia San Alban' (Jun 14) -> name \"St. Alban's Church and Iglesia San Alban\", place \"DC\"; 'Church of the Ascension, Gaithersburg and Iglesia La Ascención' (May 10) -> name \"Church of the Ascension and Iglesia La Ascención\", place \"Gaithersburg\"; 'Church of Our Saviour, Hillandale and Nuestro Salvador' (Jul 26) -> name \"Church of Our Saviour and Nuestro Salvador\", place \"Hillandale\". 'St. Stephen and the Incarnation /San Esteban y La Encarnación, DC' (Dec 21, 2025) is transcribed as one parish (name \"St. Stephen and the Incarnation /San Esteban y La Encarnación\", place \"DC\") on the same reasoning, though here the leading 'and' is part of the congregation's own English dedication name (a real DC parish, 'St. Stephen and the Incarnation') rather than a list conjunction -- the bilingual half is only the '/San Esteban...' portion.",
+    "A different judgment call for a NAMED CHAPEL trailing after a parish with no place of its own: read as one associated chapel-of-ease under the same parish (a common structure for old Maryland/Southern-Maryland parishes) and folded into a single combined parish subject, with the shared place pulled into `place`: 'St. Thomas' Church, Upper Marlboro, and the Chapel of the Incarnation' (Dec 14, 2025) -> name \"St. Thomas' Church and the Chapel of the Incarnation\", place \"Upper Marlboro\"; 'Trinity Church, Newport & Hughesville, and Old Fields Chapel' (May 31) -> name \"Trinity Church and Old Fields Chapel\", place \"Newport & Hughesville\"; 'Trinity Church, St. Mary's City, and St. Mary's Chapel' (May 31) -> name \"Trinity Church and St. Mary's Chapel\", place \"St. Mary's City\". By contrast, 'St. Paul's Church, Baden, and St. Mary's Chapel, Aquasco' (Jan 25) prints TWO distinct places (Baden and Aquasco), so it was split into two separate parish subjects instead of combined, since each half is anchored to its own named place rather than sharing one.",
+    "Where the source's own comma-separated second half of a parish line is itself a historic civil-parish name rather than an ordinary town (e.g. 'Christ Church, Washington Parish'; 'St. John's Church, Zion Parish'; 'Grace Church, Silver Spring Parish'), that text is still recorded verbatim in the `place` field exactly as printed, on the same reasoning as every ordinary town name -- this corpus's `place` field is whatever the source prints after the comma, not necessarily a literal municipality. Conversely, several parish names print the word 'Parish' as part of the congregation's own name BEFORE the comma instead (e.g. 'St. Bartholomew's Parish, Laytonsville'; 'St. Margaret's Parish, DC'; 'St. Nicholas' Parish, Germantown'; 'Christ Church King & Queen Parish, Chaptico'; 'Christ Church Durham Parish, Nanjemoy'; 'Christ Church Port Tobacco Parish, La Plata') -- both patterns coexist in the same source and are each transcribed on their own printed side of the comma, without normalizing one convention into the other.",
+    "Type judgment call, matching this corpus's own episcopal-tennessee-2026.json precedent: entries naming a school, preschool, day school, or child-development center are recorded as `type: \"category\"` (full text as printed, including any trailing place, kept together in `name` since `category` carries no separate `place` field) rather than `type: \"parish\"`, even when several are formatted identically to an ordinary Name-comma-Place parish line -- e.g. 'St. Columba's Nursery School, DC'; 'St. James' Children's School, Potomac'; 'St. Matthew's Day School, Hyattsville'; 'St. John's Church Georgetown Preschool'; 'St. John's Episcopal School, Olney'; 'Good Shepherd Episcopal Preschool, Silver Spring'; 'St. Patrick's Episcopal Day School, DC'; 'St. Philip's Child Development Center, DC'; and the five schools grouped on Aug 16 (St. Albans School for Boys; The National Cathedral School for Girls; Beauvoir, the National Cathedral Elementary School; Washington Episcopal School; The Bishop John T. Walker School). 'St. Andrew's Episcopal School and St. Andrew's Lower School, Potomac' (Nov 30, 2025) was kept as a single combined category (both schools sharing one trailing place, on the same reasoning as the associated-chapel calls above) rather than split into two.",
+    "Congregation-sounding names printed with NO place/town at all were recorded as `type: \"category\"` rather than `parish`, since this schema requires a non-empty `place` for `parish` and this corpus does not fabricate one: 'St. Barnabas' Church of the Deaf' (Jun 7); 'The Cathedral Church of St. Peter and St. Paul' and 'Cathedral Chaplains and Cathedral Volunteers' (Jun 28, evidently Washington National Cathedral, but no place is printed against it); 'St. Luke's House, Bethesda' (Oct 20) was kept as `category` despite carrying a place, since 'House' reads as a service ministry rather than a worshiping congregation, distinguishing it from the parish 'St. Luke's Church, Bethesda' and 'St. Luke's Parish, DC' printed in the same entry.",
+    "'Pray for children's health and for healthcare workers for all children' and the following line '(Oct 5 – Child Health Day)' (Oct 4) are printed as two separate line breaks in the source's own markup but were merged into one category subject here, read as a single prayer intention whose date annotation simply wrapped to its own line -- the same pattern the source elsewhere keeps on one line (e.g. 'Independence Day (July 4) Pray for dignity, justice, and freedom for all.', Jun 28).",
+    "'African Palms' (Mar 29) and 'St. Mary's Court' (May 24) are transcribed verbatim as categories with no further identification available from the source; their exact referents (a fair-trade palm-sourcing program and, presumably, a senior-living facility grouped with the other named senior ministries in that same entry) were not independently verified beyond what the source itself names.",
+    "The source's own two monthly Spanish-language and Armed Forces/Federal cycle-of-prayer links, and its link to the separate worldwide Anglican Cycle of Prayer, are not part of the Diocese of Washington's own local cycle transcribed here and are excluded, the same reasoning as this corpus's existing episcopal-tennessee-2026.json exclusion of the same worldwide-cycle link (already covered separately by this corpus's own scope-'communion' file)."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-02",
+      "liturgicalNote": "All Saints’ Sunday (Twenty-First Sunday after Pentecost)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints’ Church",
+          "place": "Chevy Chase"
+        },
+        {
+          "type": "category",
+          "name": "All Saints’ Pre-School, Chevy Chase"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’ Parish",
+          "place": "Oakley"
+        },
+        {
+          "type": "category",
+          "name": "All Souls Day (November 2)"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls Church",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "liturgicalNote": "The Twenty-Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Veterans’ Day (November 11) Pray for all military veterans and their families."
+        }
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "liturgicalNote": "The Twenty-third Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Holy Comforter",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-23",
+      "liturgicalNote": "The Last Sunday after Pentecost: The Feast of Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Margaret’s Parish",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "Charlie’s Place Feeding Program, St. Margaret’s Parish"
+        },
+        {
+          "type": "category",
+          "name": "Thanksgiving Day (November 27) Pray for our national life and all of God’s blessings."
+        }
+      ]
+    },
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": "The First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s Church",
+          "place": "College Park"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s Church",
+          "place": "Leonardtown"
+        },
+        {
+          "type": "category",
+          "name": "St. Andrew’s Episcopal School and St. Andrew’s Lower School, Potomac"
+        },
+        {
+          "type": "parish",
+          "name": "St. Nicholas’ Parish",
+          "place": "Germantown"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        },
+        {
+          "type": "category",
+          "name": "United Thank Offering"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": "The Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Latino Ministries in the Episcopal Diocese of Washington"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": "The Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas’ Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas’ Church and the Chapel of the Incarnation",
+          "place": "Upper Marlboro"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": "The Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Broad Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Georgetown"
+        },
+        {
+          "type": "category",
+          "name": "St. John’s Church Georgetown Preschool"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Lafayette Square"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Mt. Rainier"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church, Norwood",
+          "place": "Chevy Chase"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Olney"
+        },
+        {
+          "type": "category",
+          "name": "St. John’s Episcopal School, Olney"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s Church",
+          "place": "Zion Parish"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen and the Incarnation /San Esteban y La Encarnación",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": "The First Sunday after Christmas Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church King & Queen Parish",
+          "place": "Chaptico"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Clinton"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church Durham Parish",
+          "place": "Nanjemoy"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Georgetown"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church Port Tobacco Parish",
+          "place": "La Plata"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Rockville"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Kensington"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Washington Parish"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church Wayside",
+          "place": "Newport"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "The Second Sunday after Christmas Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "Epiphany DC Welcome Cafe Ministry"
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany Church",
+          "place": "Forestville"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Ordination Service for Transitional Deacons (Jan 10)"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "The First Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter’s Church",
+          "place": "Poolesville"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "The Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Samaritan Ministry of Greater Washington"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all Christians in this Week of Christian Unity"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "The Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s Church",
+          "place": "Baden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s Chapel",
+          "place": "Aquasco"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s Church",
+          "place": "Rock Creek"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s Church",
+          "place": "K Street"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s Church",
+          "place": "Waldorf"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all vowed religious orders and communities, that their witness may inspire faith and service in the church."
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Convention: The Bishop, Convention Officers, Clerical and Lay Delegates, (January 26-27)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "The Fourth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Theological Education Sunday"
+        },
+        {
+          "type": "category",
+          "name": "All Seminaries, Seminarians, and Seminary Faculty and Staff"
+        },
+        {
+          "type": "category",
+          "name": "Postulants and Candidates"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Commission on Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "The Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Absalom Jones (February 13)"
+        },
+        {
+          "type": "category",
+          "name": "Committee on Diocesan Reparations"
+        },
+        {
+          "type": "category",
+          "name": "Committee on Black Ministries"
+        },
+        {
+          "type": "category",
+          "name": "World Mission Sunday (Feb 8)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "The Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The ministry of the Rosemont Center"
+        },
+        {
+          "type": "category",
+          "name": "Pray for our Muslim siblings observing the Season of Ramadan"
+        },
+        {
+          "type": "category",
+          "name": "Ash Wednesday (February 18)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "The First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the work of the Standing Committee and their counsel to the bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "The Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David’s Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Georgetown"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Silver Spring Parish"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "The Third Sunday in Lent (Daylight Saving Time begins)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Harriet Ross Tubman"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Silver Spring"
+        },
+        {
+          "type": "category",
+          "name": "Good Shepherd Episcopal Preschool, Silver Spring"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "The Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick’s Church",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "St. Patrick’s Episcopal Day School, DC"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "The Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Annunciation (March 25)"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of the Annunciation, Church House"
+        },
+        {
+          "type": "category",
+          "name": "All Parish Altar Guilds of the Diocese"
+        },
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Oscar Romero and the Martyrs of El Salvador"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday – The Beginning of Holy Week",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "African Palms"
+        },
+        {
+          "type": "category",
+          "name": "Pray for our Jewish siblings observing the Season of Passover"
+        },
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Martin Luther King (April 4)"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Bethesda"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Atonement",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Comforter",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "The Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Sister Juana Inés de la Cruz"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of the Intercession, Washington Hospital Center"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all hospital, hospice, nursing home, and healthcare chaplains"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all parish nurses and healthcare providers"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "The Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for the stewardship of the earth on International Earth Day (April 22 )"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark’s Church",
+          "place": "Fairland"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalNote": "The Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Monica and St. James",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip’s Church",
+          "place": "Laurel"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip the Evangelist Church",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "St. Philip’s Child Development Center, DC"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip’s Church",
+          "place": "Baden"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "The Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George’s Church",
+          "place": "Glenn Dale"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s Church",
+          "place": "Valley Lee"
+        },
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "National Day of Prayer (May 7)"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Confirmation Service (May 9)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "The Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension and Iglesia La Ascención",
+          "place": "Gaithersburg"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Silver Spring"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Lexington Park"
+        },
+        {
+          "type": "category",
+          "name": "Ascension Day (May 14)"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all mothers and for all who have cared for us with a mother’s love."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "The Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Dunstan’s Church",
+          "place": "Bethesda"
+        },
+        {
+          "type": "category",
+          "name": "Pray in thanksgiving for the life and witness of Thurgood Marshall (May 17)"
+        },
+        {
+          "type": "category",
+          "name": "EDOW Clergy Conference"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost: Whitsunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Seabury Resources for Aging"
+        },
+        {
+          "type": "category",
+          "name": "Friendship Terrace"
+        },
+        {
+          "type": "category",
+          "name": "St. Mary’s Court"
+        },
+        {
+          "type": "category",
+          "name": "Collington Episcopal Life Care Community"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all Seniors and their Ministries in the Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "The First Sunday after Pentecost – Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church and Old Fields Chapel",
+          "place": "Newport & Hughesville"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church and St. Mary’s Chapel",
+          "place": "St. Mary’s City"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Upper Marlboro"
+        },
+        {
+          "type": "parish",
+          "name": "All Faith Church",
+          "place": "Charlotte Hall"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "The Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Columba’s Church",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "St. Columba’s Nursery School, DC"
+        },
+        {
+          "type": "category",
+          "name": "St. Barnabas’ Church of the Deaf"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas’ Church",
+          "place": "Leeland"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas’ Church",
+          "place": "Temple Hills"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "The Third Sunday after Pentecost – Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban’s Church and Iglesia San Alban",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "The Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for all fathers and those who have been as fathers to us."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "The Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Cathedral Church of St. Peter and St. Paul"
+        },
+        {
+          "type": "category",
+          "name": "Cathedral Chaplains and Cathedral Volunteers"
+        },
+        {
+          "type": "category",
+          "name": "The life, witness, and ministry of Pauli Murray (July 1)"
+        },
+        {
+          "type": "category",
+          "name": "Independence Day (July 4) Pray for dignity, justice, and freedom for all."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "The Sixth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop, Canons, Clergy and Staff of the Diocese of Washington"
+        },
+        {
+          "type": "category",
+          "name": "All Vestries, Parish Leaders and Staff Members of the parishes of the diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "The Seventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Ordination Service (July 16) Pray for those who are being ordained to the Sacred Order of Priests"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "The Eighth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary Magdalene",
+          "place": "Wheaton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher’s Church",
+          "place": "New Carrollton"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’ Church",
+          "place": "Indian Head"
+        },
+        {
+          "type": "parish",
+          "name": "St. James’ Church",
+          "place": "Potomac"
+        },
+        {
+          "type": "category",
+          "name": "St. James’ Children’s School, Potomac"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "The Ninth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Brookland"
+        },
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour and Nuestro Salvador",
+          "place": "Hillandale"
+        },
+        {
+          "type": "parish",
+          "name": "St. Anne’s Church",
+          "place": "Damascus"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "The Tenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Feast of the Transfiguration (Aug 6)"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Silver Spring"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "The Eleventh Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary’s Church",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "The Twelfth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Albans School for Boys"
+        },
+        {
+          "type": "category",
+          "name": "The National Cathedral School for Girls"
+        },
+        {
+          "type": "category",
+          "name": "Beauvoir, the National Cathedral Elementary School"
+        },
+        {
+          "type": "category",
+          "name": "Washington Episcopal School"
+        },
+        {
+          "type": "category",
+          "name": "The Bishop John T. Walker School"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "The Thirteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine’s Church",
+          "place": "DC"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bartholomew’s Parish",
+          "place": "Laytonsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "The Fourteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The life, witness, and ministry of Deacon David Pendleton Oakerhater (Sep 1)"
+        },
+        {
+          "type": "category",
+          "name": "Campus Ministries and the students they serve"
+        },
+        {
+          "type": "category",
+          "name": "National Association of Episcopal Schools"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all students and teachers"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "The Fifteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Labor Day (Sep 7 ): Pray for all who labor, those who are unemployed, those who seek jobs, and all who must work for less than a living wage."
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Youth Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Young Adult Ministry"
+        },
+        {
+          "type": "category",
+          "name": "All whose passion and work is formation"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "The Sixteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Church of the Holy Communion",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "Holy Cross Day (Sep 14)"
+        },
+        {
+          "type": "category",
+          "name": "Pray for church musicians and choirs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "The Seventeenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew’s Church/San Mateo",
+          "place": "Hyattsville"
+        },
+        {
+          "type": "category",
+          "name": "St. Matthew’s Day School, Hyattsville"
+        },
+        {
+          "type": "category",
+          "name": "For our siblings in the Jewish Faith observing Yom Kippur (Sep 20)"
+        },
+        {
+          "type": "category",
+          "name": "United Nations International Day of Peace (Sep 21): Pray for peace and benevolence among all nations."
+        },
+        {
+          "type": "category",
+          "name": "Pray for international human rights and all organizations and individuals that promote peace and justice worldwide"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "The Eighteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Michael and All Angels",
+          "place": "Adelphi"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis Church",
+          "place": "Potomac"
+        },
+        {
+          "type": "category",
+          "name": "Pray for all of God’s creatures, especially companion, rescue, and service animals (Oct. 4)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "The Nineteenth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for children’s health and for healthcare workers for all children (Oct 5 – Child Health Day)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "The Twentieth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for all Native American/Indigenous people and Native American/Indigenous congregations"
+        },
+        {
+          "type": "category",
+          "name": "World Food Day (Oct 16): Pray for all who are hungry, especially children."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalNote": "The Twenty-First Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s Church",
+          "place": "Bethesda"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke’s House, Bethesda"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s Church",
+          "place": "Brighton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s Parish",
+          "place": "DC"
+        },
+        {
+          "type": "category",
+          "name": "World Mission Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalNote": "The Twenty-Second Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "We pray for parish administrators, sextons, and staff and for all who volunteer to take care of our churches, church buildings, and grounds."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints’ Sunday (The Twenty-Third Sunday after Pentecost)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Saints’ Day (Nov 1)"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’ Church",
+          "place": "Chevy Chase"
+        },
+        {
+          "type": "category",
+          "name": "All Saints’ Pre-School, Chevy Chase"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints’ Parish",
+          "place": "Oakley"
+        },
+        {
+          "type": "category",
+          "name": "All Souls Day (Nov 2)"
+        },
+        {
+          "type": "parish",
+          "name": "All Souls Church",
+          "place": "DC"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Veterans’ Day (Nov 11) – Pray for all military veterans and their families."
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Confirmation Service (Nov 14) – Pray for those who are to be confirmed."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "The Last Sunday after Pentecost: The Feast of Christ the King",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Thanksgiving Day (Nov 26) – Pray for a depth of gratitude that turns what we have into enough and more"
+        }
+      ]
+    }
+  ]
+}
