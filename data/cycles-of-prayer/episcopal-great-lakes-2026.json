@@ -1,0 +1,963 @@
+{
+  "id": "episcopal-great-lakes-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of the Great Lakes",
+  "dioceseShort": "great-lakes",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer 2026",
+  "sourceFile": "\"Cycle of Prayer - EDGL.docx\", provided directly by Josh via Google Drive (file id 1bw5etzmfBYYFjrUiKpZH3s0XmnemPhIs, folder \"TEC Cycle of Prayer\"); original diocesan source per Josh's own roster (a live Google Doc): https://docs.google.com/document/d/19pLzxtD7K1vfVkGFU6zgkNOF7BdAxAsSoFEQTEaP6Jw/edit",
+  "ingested": "2026-09-29",
+  "notes": [
+    "This is a full self-contained calendar-year 2026 cycle (January 4 through December 27), plus a January 3, 2027 entry confirming the cycle repeats annually (it names the exact same two parishes -- St. Alban's, Bay City and St. Christopher's, Grand Blanc -- as March 29, 2026) -- that January 2027 entry is excluded here as out of calendar-2026 range, not fabricated or force-included.",
+    "The source's own standing preamble ('EVERY WEEK PRAY FOR: Presiding Bishop... Bishop Anne Hodges-Copple... partner dioceses and their bishops... ELCA synod bishop', plus a list of postulants/candidates for Holy Orders and Deacons, and retired clergy generally) is a fixed weekly constant, not tied to any one date -- deliberately excluded from `entries` (which hold only the week-keyed rotation) and disclosed here in full rather than repeated into every single week: 'Presiding Bishop, Sean Rowe; Bishop Anne Hodges-Copple our Assisting Bishop, the Standing Committee of the Diocese of the Great Lakes; for our partner dioceses and their bishops, Bonnie Perry, Bishop of Michigan; Rayford Ray, Bishop of Northern Michigan; Dame Sarah Mullally, Archbishop of Canterbury; Stephen Cottrell, Archbishop of York; Julie Schneider-Thomas Bishop of the North/West Lower Michigan Synod of the Evangelical Lutheran Church in America (ELCA). We pray for all those in our diocese discerning calls to ministry, both lay and ordained. In particular, we pray for those in our dioceses preparing for the Sacred Order of Priests, including Abraham Anei, Laurie Atwater, Bryan Boughton, Thon Deng, Rebekah Taylor, and Janet Huff-Worvie. We pray also for those in our dioceses preparing for the Sacred Order of Deacons, including Chris Hamel, Kathryn Hawkins, Laura Hoekstra, Gerry Stackhouse, Paige Faith Wilson. We remember with gratitude the retired clergy of the diocese.' Matches this corpus's existing precedent for a standing preamble (see episcopal-arkansas.json's own 'Pray daily for' disclosure).",
+    "Each parish subject's `note` field holds the specific clergy/warden name and title the source prints alongside that congregation that week -- this is the source's own per-week content (who currently leads or represents that parish), not an editorial annotation, but `note` is the schema field that fits since `subjectShape` has no dedicated clergy-attribution field.",
+    "'Emmaus Monastery, Vestaburg' (April 12) and 'St. Gregory's Abbey, Three Rivers' (May 24) are religious communities, not parishes, and are recorded as `category` subjects (full text including the resident/associated names) rather than `parish` subjects.",
+    "'DeAnne Swiercz, Senior Wanden' (February 1) is preserved exactly as printed, per this corpus's standing rule against silently correcting apparent typos (likely 'Senior Warden').",
+    "July 19's 'St. Peter's-by-the-Lake, Montague' is the only parish entry with no clergy/warden name given in the source -- its `note` field is correspondingly absent, not fabricated."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Dunstan's",
+          "place": "Davison",
+          "note": "Sue Colavincenzo, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Belmont",
+          "note": "Dan Buchin, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Corunna",
+          "note": "Linda Ash, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Niles",
+          "note": "Jim Pederson, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Alma",
+          "note": "Doug Ballard, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Boyne City",
+          "note": "Barry Bates, Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Grand Rapids",
+          "note": "Jedediah Fox, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Benton Harbor",
+          "note": "Erik Broeren, Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Grayling",
+          "note": "DeAnne Swiercz, Senior Wanden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Flint",
+          "note": "Jay Gantz, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul the Apostle",
+          "place": "Greenville",
+          "note": "David Vickers, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Flint",
+          "note": "Tom Manney, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Grand Ledge",
+          "note": "David Mulder, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Allegan",
+          "note": "Corwin Stoppet, Priest Associate"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ausable Inclusion Center - Beckett Leclaire, Deacon"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Holy Cross",
+          "place": "Kentwood",
+          "note": "Jonathan Bratt Carle, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Paw Paw",
+          "note": "Nancy Wheatley, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Charlotte",
+          "note": "Wendy Brown, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi",
+          "place": "Shelbyville",
+          "note": "Steve Shoemaker, Senior Warden"
+        },
+        {
+          "type": "category",
+          "name": "All non-parochial clergy and Lutheran pastors serving in our congregations"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Dreyden",
+          "note": "Harold Schneider, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Muskegon",
+          "note": "Rod Hayhurst, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Jude's",
+          "place": "Fenton",
+          "note": "Susan Williams, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Grand Rapids",
+          "note": "Anne Schnaare, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all the staff in our parishes"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Mediator",
+          "place": "Harbert",
+          "note": "Darlene Kuhn, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Bay City",
+          "note": "Nancy Mayhew, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Grand Blanc",
+          "note": "Jerry Lasley, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "D.R.E.A.M. Partnership in the Dominican Republic"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Traverse City",
+          "note": "James Perra, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "Portage",
+          "note": "Mike Wood, Priest-in-Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Hillman",
+          "note": "Dana Howard, Senior Warden"
+        },
+        {
+          "type": "category",
+          "name": "Emmaus Monastery, Vestaburg - Sisters Diane Stier and Linda-Susan Beard"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Saginaw",
+          "note": "Pam Renna, Assistant Priest"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Albion",
+          "note": "Jocelyn McWhirter, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop Whittemore Foundation"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew",
+          "place": "Saginaw",
+          "note": "Donna Periard, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "South Haven",
+          "note": "John Wakefield, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Otter Lake",
+          "note": "Ministry Team: Rev. Dcn. Joanne St. Pierre"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's Church",
+          "place": "Cadillac",
+          "note": "Radha Michel-Trapaga, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Harsens Island",
+          "note": "Kathy Harrison, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Grand Haven",
+          "note": "Jared Cramer, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Great Lakes Episcopal Camping & Retreat programs - All campers, retreat participants, staff & volunteers supporting our diocesan camping programs this summer."
+        },
+        {
+          "type": "category",
+          "name": "Licensed Eucharist Visitors and Ministers in the Diocese"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Kalamazoo",
+          "note": "Randall Warren, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Gregory's Abbey, Three Rivers and Father Andrew Abbot"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's Seasonal Chapel",
+          "place": "Lake Leelanau",
+          "note": "Charles Bennison, Vicar"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Hope-St. John's",
+          "place": "Oscoda",
+          "note": "Pete Mapes, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Pentwater",
+          "note": "Sam Morrison, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "Sudanese Grace",
+          "place": "Grand Rapids",
+          "note": "Zachariah Char, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Sand Point",
+          "note": "Joe Beedle, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Elk Rapids",
+          "note": "Derek Quinn, Priest-in-Charge"
+        },
+        {
+          "type": "category",
+          "name": "Plainsong Farm's Episcopal Service Corps Fellows: Becca Taylor, Erin Taylor, & James Goff"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "East Tawas",
+          "note": "Max Miller, Priest"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Lansing",
+          "note": "Joe Kennedy, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Three Rivers",
+          "note": "James Smith, Clergy-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Harbor Springs",
+          "note": "Gord Armstrong, Chapel Committee Chair"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Long Rapids",
+          "note": "Sherrie O'Brien, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Beaver Island",
+          "note": "Ken Zick, Chapel Committee Chair"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Family",
+          "place": "Midland",
+          "note": "Debbie Roth, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's by-the-Lake",
+          "place": "Harrisville",
+          "note": "Ron Eisenhart, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's Church",
+          "place": "Sturgis",
+          "note": "Kris Veldheer, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Holland",
+          "note": "Jennifer Adams, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Owosso",
+          "note": "Paul Brunell, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's-by-the-Lake",
+          "place": "Montague"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Sandusky",
+          "note": "Darlene McCelland, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Battle Creek",
+          "note": "Michael Spencer, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Gladwin",
+          "note": "Gary Grinn, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Manistee",
+          "note": "Susan Mencarelii, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Elizabeth's",
+          "place": "Higgins Lake",
+          "note": "Yvonne Dustan, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Ludington",
+          "note": "Mick Shriver, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Roger's City",
+          "note": "Jeri Eldridge, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Newaygo",
+          "note": "B.J. Heyboer, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Saginaw",
+          "note": "Robert Johnson, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Hastings",
+          "note": "Alicia Hager, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's-by-the-Lake",
+          "place": "Onekema",
+          "note": "Dave Emenheiser, Chapel Committee Chair"
+        },
+        {
+          "type": "category",
+          "name": "William Fleener, Chancellor of The Diocese of the Great Lakes"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Lapeer",
+          "note": "Sarah Parks, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Petoskey",
+          "note": "Kay Houck, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Bay City",
+          "note": "Sue Rich, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Apostle",
+          "place": "Ionia",
+          "note": "Jason Smith, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Midland",
+          "note": "Alissa Anderson, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Richland",
+          "note": "Ken Fouts, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Northport",
+          "note": "Chrysanne Timm, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "Transfiguration",
+          "place": "Indian River",
+          "note": "Theresa Williams, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Family",
+          "place": "Blue Water",
+          "note": "Mary Shortt, Priest"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Coldwater",
+          "note": "J Barrett Lee, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocesan Council Members of The Episcopal Diocese of the Great Lakes"
+        },
+        {
+          "type": "category",
+          "name": "The Diocesan Staff of The Episcopal Diocese of the Great Lakes"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For the Diocesan Convention"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Cheboygan",
+          "note": "Lewis Cursoe, Priest-in-Charge"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Charlevoix",
+          "note": "Betsy Collier, Senior Warden"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lexington",
+          "note": "Mary Shortt, Priest"
+        },
+        {
+          "type": "category",
+          "name": "Monastic Solitary - Sarah Swart"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Standing Committee members of The Episcopal Diocese of the Great Lakes"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints Church",
+          "place": "Saugatuck",
+          "note": "Jay Emerson Johnson, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all deacons in the Diocese - Linda Crane and Beth Drew, Archdeacons"
+        },
+        {
+          "type": "parish",
+          "name": "St. Martin of Tours",
+          "place": "Kalamazoo",
+          "note": "Mary Perrin, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Marshall",
+          "note": "Anne Bohl, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Gregory's Church",
+          "place": "Norton Shores",
+          "note": "Lily Marx, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Port Huron",
+          "note": "Shadrack Owuor, Rector"
+        },
+        {
+          "type": "category",
+          "name": "The Commission on Ministry committee and Co-Chairs"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrews",
+          "place": "Big Rapids",
+          "note": "Radha Michel-Trapaga, Rector"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Alpena",
+          "note": "Matthew Roney, Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Coppage Gordon School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Licensed Lay Preachers in the Diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "West Branch",
+          "note": "Chris Anderson, Senior Warden"
+        },
+        {
+          "type": "category",
+          "name": "Lay Leaders in The Episcopal Diocese of the Great Lakes"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Bad Axe",
+          "note": "Dorthy Shinault, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Gaylord",
+          "note": "Pam Lenartowicz, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Freemont",
+          "note": "Kris Carpenter, Senior Warden"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Battle Creek",
+          "note": "Terri Orolin, Senior Warden"
+        }
+      ]
+    }
+  ]
+}

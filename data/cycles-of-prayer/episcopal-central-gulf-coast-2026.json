@@ -1,0 +1,717 @@
+{
+  "id": "episcopal-central-gulf-coast-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of the Central Gulf Coast",
+  "dioceseShort": "central-gulf-coast",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Cycle of Prayer (2025-2026-2027)",
+  "sourceFile": "\"2025-2026- 2027 Cycle of Prayer.docx\", provided directly by Josh via Google Drive (file id 1ac7LA7U-fPBePHw_8uJTXv7NE4sSwbep, folder \"TEC Cycle of Prayer\"); original diocesan source per Josh's own roster: https://www.diocgc.org/cycle-of-prayer",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source is a single fixed annual template that repeats every year onto rolling dates, spanning three labeled years (2025, 2026, 2027) in one document -- confirmed directly: the November 30, 2025 entry and the November 29, 2026 entry both name the identical subject ('Church of the Advent, Lillian'), and the source's own text marks November 29, 2026 with 'Begin the New Cycle of Prayer: 2026-2027' even though that date itself still falls in calendar 2026. Only the weeks landing in calendar 2026 (January 4 through November 29) are in this file, per this corpus's existing cross-liturgical-year convention (see episcopal-alabama-2026.json) -- the 5 weeks in late 2025 (Nov 30, Dec 7/14/21/28) are deferred to a future episcopal-central-gulf-coast-2025.json.",
+    "Several weeks pair a parish with a second, non-parish subject printed on its own line immediately after (a diocesan commission, ministry, or named observance Sunday, e.g. 'Commission on Global Mission Engagement' after January 11's parish) -- recorded as a second `category` subject for that same week, in printed order.",
+    "October 4 ('Episcopal Schools') lists nine schools by name; none are congregations (missions, parishes, or cathedrals) under this schema's own definition of `parish`, so all nine -- plus the 'Episcopal Schools' heading itself -- are recorded as `category` subjects, each holding the school's full printed name (including its city, since `category` has no separate place field), not split into place/name the way a `parish` subject is.",
+    "August 30 prints 'School for Ministry' and 'Lay School' as two separate lines (the same one-line-per-subject pattern every other week in this source uses for multiple subjects) -- recorded as two separate category subjects rather than joined into one guessed phrase.",
+    "November 22's 'St. Anna's, Poarch, Trinity, Atmore' is read as two parishes sharing one printed line (St. Anna's, Poarch and Trinity, Atmore), consistent with how every other multi-parish week in this source lists its parishes.",
+    "December 25 and April 5 (Easter) name the diocese itself (and, for Easter, 'The Episcopal Church') rather than a parish -- recorded as category subjects, not fabricated into a parish entry with no real congregation behind it."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Crestview"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "Dothan"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Global Mission Engagement"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Immanuel",
+          "place": "Bay Minette"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Racial Justice and Reconciliation"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Monica's",
+          "place": "Cantonment"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Panama City"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan and Parish Youth Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Monroeville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Annual Convention of the Diocese of the Central Gulf Coast"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Relief and Development"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Enterprise"
+        },
+        {
+          "type": "category",
+          "name": "Men's Conference"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Pensacola"
+        },
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Panama City"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Fairhope"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Cursillo"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Chapel of St. Dismas"
+        },
+        {
+          "type": "category",
+          "name": "Commission on Prison Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Andalusia"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Episcopal Church"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Diocese of the Central Gulf Coast"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Cathedral",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church Parish",
+          "place": "Pensacola"
+        },
+        {
+          "type": "category",
+          "name": "Commission on the Integrity of Creation"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Beckwith Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Beckwith Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Daphne"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Chickasaw"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Ozark"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ the King",
+          "place": "Santa Rosa Beach"
+        },
+        {
+          "type": "category",
+          "name": "Chaplains to Retired Clergy, Spouses, and Surviving Spouses"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Apalachicola"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Mobile"
+        },
+        {
+          "type": "category",
+          "name": "Emergency Preparedness"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Pensacola"
+        },
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Navarre"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Chipley"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Brewton"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Agatha's",
+          "place": "DeFuniak Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Pensacola"
+        },
+        {
+          "type": "category",
+          "name": "Education for Ministry"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Cyprian's",
+          "place": "Pensacola"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Marianna"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Wilmer Hall Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Wilmer Hall Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas by-the-Sea",
+          "place": "Laguna Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Panama City Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Troy"
+        },
+        {
+          "type": "category",
+          "name": "The Order of the Daughters of the King®"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's by-the-Sea",
+          "place": "Destin"
+        },
+        {
+          "type": "category",
+          "name": "Brotherhood of St. Andrew"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis of Assisi",
+          "place": "Gulf Breeze"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis'",
+          "place": "Dauphin Island"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Milton"
+        },
+        {
+          "type": "category",
+          "name": "School for Ministry"
+        },
+        {
+          "type": "category",
+          "name": "Lay School"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's by-the-Sea",
+          "place": "Coden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Chapel",
+          "place": "Magnolia Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Simon's on the Sound",
+          "place": "Fort Walton Beach"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Gulf Shores"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John the Evangelist",
+          "place": "Robertsdale"
+        },
+        {
+          "type": "parish",
+          "name": "St. Jude's",
+          "place": "Niceville"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Schools"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Day School of Christ Church Parish, Pensacola"
+        },
+        {
+          "type": "category",
+          "name": "Holy Nativity Episcopal School, Panama City"
+        },
+        {
+          "type": "category",
+          "name": "St. Benedict Montessori Pre-school, Apalachicola"
+        },
+        {
+          "type": "category",
+          "name": "St. James Episcopal School, Fairhope"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's Episcopal School, Mobile"
+        },
+        {
+          "type": "category",
+          "name": "St. Paul's Episcopal School, Mobile"
+        },
+        {
+          "type": "category",
+          "name": "St. Paul's Early Education Center, Mobile"
+        },
+        {
+          "type": "category",
+          "name": "St. Paul's Preschool, Daphne"
+        },
+        {
+          "type": "category",
+          "name": "The Tree House Episcopal Montessori School, Santa Rosa"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "Pensacola"
+        },
+        {
+          "type": "category",
+          "name": "Commission of Affirmative Aging"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Bon Secour"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Jackson"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Mobile"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "Greenville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "Citronelle"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anna's",
+          "place": "Poarch"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Atmore"
+        },
+        {
+          "type": "category",
+          "name": "United Thank Offering"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": "Begin the New Cycle of Prayer: 2026-2027 (source's own label -- the annual cycle repeats)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "Lillian"
+        }
+      ]
+    }
+  ]
+}

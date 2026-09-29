@@ -302,8 +302,22 @@ scope-`"parish"` files specifically — the parish tier still has no loader/regi
 `"communion"` needed no such registry since there's only ever one file, referenced directly by its own
 bodySlug).
 
-**8 files currently in the corpus, all passing the validator:** 6 diocese-level — Western Oregon,
-Alaska, Arizona, Albany, Alabama (`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus:
+**IN PROGRESS 2026-09-29, per Josh's direct instruction: ingesting the remaining diocese-level cycles
+5 at a time, starting with the ones already sitting as files in Josh's "TEC Cycle of Prayer" Drive
+folder, then moving to fetching each remaining diocese's own URL from the roster spreadsheet directly.
+Anything unfetchable gets flagged in the roster (not endlessly retried) for Josh to pull himself.**
+First batch of 5 done: **Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes** — all
+`cycleType: "dated"`, all transcribed from the actual rendered PDF/DOCX content (not linearized text
+where that risked column-interleaving errors, per the standing rule added 2026-09-29), all validated,
+all live-verified rendering correctly. Full per-diocese transcription detail (every disclosed judgment
+call, typo, ambiguous grouping): `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-29 entry for this batch — not
+repeated here. Remaining Drive-identified dioceses still to do: Idaho, Kentucky, Lexington, Maine,
+Nebraska, New Jersey, Newark, Northern Indiana, Rio Grande, San Joaquin, Southwestern Virginia, Western
+Massachusetts (12 more, then the roster spreadsheet's remaining ~65).
+
+**13 files currently in the corpus, all passing the validator:** 11 diocese-level — Western Oregon,
+Alaska, Arizona, Albany, Alabama, Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes
+(`cycleType: "dated"`), Arkansas (`"monthly-recurring"`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's

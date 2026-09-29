@@ -24661,3 +24661,83 @@ prefaced with the Episcopal Diocese of X!" Confirmed directly -- `TEC_DIOCESE_DI
 name labels stay exactly as they are; this is not deferred/unfinished work to revisit later. Updated that
 constant's own comment in `js/cycles-of-prayer.js` to say so plainly rather than reading as an
 apologetic gap. No functional change -- comment-only.
+
+## 2026-09-29 (continued) -- Diocese ingestion batch 1 of many: Atlanta, Central Gulf Coast, Connecticut, East Carolina, Great Lakes
+
+Josh: "please begin ingesting diocesan cycles of prayer, 5 at a time, starting with what is in Google
+Drive, and then moving to the spreadsheet. The spreadsheet contains every URL that ChatGPT was able to
+access independently. If you cannot access one, note it on the spreadsheet, and then move on, and I
+will pull those for you at the end." This is the first batch of 5, all already-identified Drive files
+from the earlier 2026-09-29 entry. Standing rule applied to every file below: downloaded the actual
+PDF/DOCX bytes and read the rendered page layout rather than trusting Drive's own linearized text
+extraction, per the near-misses already documented for the Communion and St. Bede's files -- confirmed
+necessary again this batch (see Connecticut and East Carolina below, both genuine multi-column grids
+that the linearized text had visibly garbled).
+
+**Atlanta** (`episcopal-atlanta-2026.json`, source: `25-26-Cycle-of-Prayer.pdf`, Drive id
+`12IQpC4lm4qxzP154oUlGMoTdsDepTFCy`). By far the most structurally complex file ingested so far --
+interleaves fixed-date saints'-day commemorations with no prayer subject (excluded from `entries`
+entirely) with the actual weekly cycle (bishop attribution + parish/ministry list + a companion Diocese
+of Cape Coast, Ghana line). 48 weeks (Jan 4-Nov 29 2026; the 5 weeks landing in late 2025 deferred per
+this corpus's existing cross-year convention). Disclosed: the bishop's own name is printed
+inconsistently ("Bishop Rob Wright" Jan 4/11 only, "Bishop Robert Wright" every week after) -- preserved
+verbatim per week; the Cape Coast companion-diocese line (including any named Ghanaian congregations
+that week) is kept as ONE category subject rather than split into foreign-parish entries; several weeks'
+convocation-name-into-parish-name run-ons (a PDF line-break loss, not a transcription error) were split
+where the boundary was recoverable from context and left as one verbatim category where it wasn't; a
+handful of apparent typos preserved verbatim ('Ft. Andrew's' for likely 'St. Andrew's', 'Grace-Calary'
+for likely 'Grace-Calvary', 'Fort Vally' for likely 'Fort Valley', July 5's internally-inconsistent
+'Fourth Sunday after Pentecost, Proper 9' label); the diocese's own full name is not printed anywhere in
+the source, so 'Diocese of Atlanta' is disclosed as an inference from Bishop Robert Wright's own diocese
+and uniformly-Georgia place names, not a directly-quoted title (the one file in this corpus so far where
+that's true).
+
+**Central Gulf Coast** (`episcopal-central-gulf-coast-2026.json`, source: `2025-2026- 2027 Cycle of
+Prayer.docx`, Drive id `1ac7LA7U-fPBePHw_8uJTXv7NE4sSwbep`). A clean DOCX, no column-interleaving risk.
+48 weeks. Confirmed to be a genuine fixed annual template repeating onto rolling dates (November 30,
+2025 and November 29, 2026 both name the identical subject), with the source's own text marking November
+29, 2026 as the start of the next cycle even though the date itself is still calendar-2026 -- included
+per this file's own coverage, not excluded. October 4's nine named Episcopal schools recorded as
+`category` subjects, not `parish` (schools are not congregations under this schema's own definition).
+
+**Connecticut** (`episcopal-connecticut-2026.json`, source: Drive id `1-MK6Ip3Hz_Et3258zOrM73HL5XM82m3I`,
+a 4-column table -- Dates / Parishes / ECCT Wider Witness & Ministries / Anglican Cycle of Prayer). The
+linearized text extraction genuinely garbled this one (confirmed by comparison: it read
+'Hong Kong Sheng Kung Hui' as interrupted mid-phrase by unrelated middle-column text) -- re-read from
+the rendered PDF page images. 46 weeks (Jan 4-Nov 22 2026; Easter, April 5, deliberately has no entry at
+all since the source replaces its normal row with a seasonal-reflection paragraph naming no specific
+subject, not an oversight). The source's own fourth column duplicates the already-separately-ingested
+worldwide Anglican Communion Cycle of Prayer -- deliberately NOT re-transcribed into this file, to avoid
+two sources of truth for the same tier. Each week's ministry-network cell kept as one verbatim category
+subject rather than split at internal punctuation (these read as continuous prose, not a parallel list).
+Three yoked/combined parish names preserved as single entries rather than guessed apart.
+
+**East Carolina** (`episcopal-east-carolina-2026.json`, source: `2026-Cycle-of-Prayer-4.pdf`, Drive id
+`1pJattfHc4Ol7D2VTyx6Ix3kUdwQj-NQE`, a 13-page one-month-per-page calendar). The linearized text was
+badly garbled (a 3-column-per-month grid); re-read from rendered pages, which usefully color-code
+parishes (teal) versus diocesan/administrative entries (black), though content -- not color alone --
+decided a few borderline cases (e.g. 'Trinity Center', June 21, is the diocese's own retreat center, not
+a congregation, recorded as `category` despite being printed in the parish color). Unlike every other
+file in this corpus so far, this source is a single self-contained calendar-year cycle (Jan 4-Dec 27
+2026, no cross-year boundary at all) -- 51 weeks, with a confirmed genuine gap at May 31 (the source
+itself skips straight from May 24 to June 7, not a transcription miss).
+
+**Great Lakes** (`episcopal-great-lakes-2026.json`, source: `Cycle of Prayer - EDGL.docx`, Drive id
+`1bw5etzmfBYYFjrUiKpZH3s0XmnemPhIs`). Clean DOCX. Also a full self-contained calendar-year cycle, 52
+weeks (Jan 4-Dec 27 2026), confirmed to repeat annually by its own trailing January 3, 2027 entry (names
+the identical two parishes as March 29, 2026) -- excluded as out-of-range, not included. Introduces this
+corpus's first real use of `subjectShape.note` on `parish` subjects: each parish's specific
+clergy/warden name and title for that week is recorded in `note`, since the schema has no dedicated
+clergy-attribution field and `note`'s existing 'free-text about this specific subject' wording fits.
+The source's own standing weekly preamble (Presiding Bishop, Assisting Bishop, partner-diocese bishops,
+named ordination candidates, retired clergy generally) is disclosed in full in this file's own `notes`
+rather than repeated into all 52 entries, matching the precedent already set by episcopal-arkansas.json's
+'Pray daily for' preamble.
+
+All 5 registered in `CYCLES_OF_PRAYER_DIOCESES` (`js/cycles-of-prayer.js`). `npm run audit:cycles-of-prayer`:
+PASS, 13 files, 0 findings. Live-verified in headless Chromium: all 5 render their weekly line correctly
+with no console errors, including a category-only week (Great Lakes, Oct 11) and a Great-Lakes-with-`note`
+week, confirming `note` is harmlessly ignored by the existing renderer (which was never changed).
+
+**Next:** batch 2 (Idaho, Kentucky, Lexington, Maine, Nebraska), continuing the same Drive-first order
+before moving to the roster spreadsheet's remaining URLs.

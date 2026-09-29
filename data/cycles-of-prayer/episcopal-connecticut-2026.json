@@ -1,0 +1,1162 @@
+{
+  "id": "episcopal-connecticut-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Connecticut",
+  "dioceseShort": "connecticut",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "ECCT 2025-2026 Cycle of Prayer",
+  "sourceFile": "Drive file id 1-MK6Ip3Hz_Et3258zOrM73HL5XM82m3I (\"712f20a8-....pdf\", TEC Cycle of Prayer folder); original diocesan source per Josh's own roster: https://www.episcopalct.org/news/download-the-2025-26-cycle-of-prayer/",
+  "ingested": "2026-09-29",
+  "notes": [
+    "The source covers November 30, 2025 through November 22, 2026, with a final unpopulated row reading 'November 29, 2026: Advent 1 (a new Cycle of Prayer begins)' -- no parishes or ministries are actually listed for that date, so no entry is fabricated for it here. Only the weeks landing in calendar 2026 (January 4 through November 22) are otherwise in this file, per this corpus's existing cross-liturgical-year convention -- the 5 weeks in late 2025 are deferred to a future episcopal-connecticut-2025.json.",
+    "April 5, 2026 (Easter) is deliberately absent from `entries`: the source replaces its normal three-parish/ministry-network row with a single seasonal reflection paragraph naming no specific parish, ministry, or category -- there is nothing to transcribe as a subject that week, not an oversight.",
+    "The source's own fourth column ('Anglican Cycle of Prayer') reproduces the worldwide Anglican Communion Cycle of Prayer's province name for that week -- deliberately NOT re-transcribed into this file's `entries`, since that content is already the separate, dedicated scope-'communion' corpus (anglican-communion-2026.json) and duplicating it here would create two sources of truth for the same tier.",
+    "Each week's 'ECCT Wider Witness & Ministries' column is kept as ONE category subject per week, verbatim, rather than split at its own internal semicolons/periods -- these read as continuous prose call-outs (sometimes with illustrative examples introduced by 'For...') rather than a clean parallel list the way, e.g., St. Bede's Day-31 ministries list does.",
+    "Three parish names are unusual combined/yoked forms, preserved exactly as printed rather than guessed apart into two subjects: 'St. Peter's Grace, Monroe' (May 3), 'Good Shepherd/Immanuel St. James Chapel, Shelton' (August 2), and 'St. Peter's-Trinity, Thomaston' (September 27).",
+    "August 16, 23, and 30 name Episcopal schools/seminaries/campus ministries, not congregations -- recorded as `category` subjects (full name plus city combined, since `category` has no separate place field) rather than `parish` subjects, consistent with how this corpus already treats schools elsewhere (e.g. episcopal-central-gulf-coast-2026.json's October 4 entry). August 30's 'Berkeley Divinity School; New Haven' is transcribed with a comma in place of the source's own semicolon, since every other entry in this list uses 'Name, City' and the semicolon here reads as a plain punctuation slip rather than a meaningful list boundary."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Brooklyn"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Cheshire"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Advent",
+          "place": "Clinton"
+        },
+        {
+          "type": "category",
+          "name": "All immigrants, refugees & the ministries that serve them."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Collinsville"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Danbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Darien"
+        },
+        {
+          "type": "category",
+          "name": "The Journey of Discovery with Indigenous Peoples Ministry Network. For Prayer & Healing Ministry Networks"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel's",
+          "place": "East Berlin"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "East Haddam"
+        },
+        {
+          "type": "parish",
+          "name": "All Saint's",
+          "place": "East Hartford"
+        },
+        {
+          "type": "category",
+          "name": "Parish volunteers & parish historians. For the Ecumenical Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ & the Epiphany",
+          "place": "East Haven"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Easton"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Enfield"
+        },
+        {
+          "type": "category",
+          "name": "Arts Ministry Network & all who help others to encounter the holy through creative expressions"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Essex"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Fairfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Farmington"
+        },
+        {
+          "type": "category",
+          "name": "The Hispanic Ministry Network & Latino/Hispanic ministries in Connecticut."
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "Gales Ferry"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Glastonbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Glastonbury"
+        },
+        {
+          "type": "category",
+          "name": "Church musicians: organists; choirs & choir directors; bands; community chorister programs; parish & diocesan committees on liturgy, music & worship"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Greenwich"
+        },
+        {
+          "type": "parish",
+          "name": "St. Barnabas'",
+          "place": "Greenwich"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Guilford"
+        },
+        {
+          "type": "category",
+          "name": "The Reparations Fund Board; The Racial Healing, Justice & Reconciliation Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Guilford"
+        },
+        {
+          "type": "parish",
+          "name": "Grace & St. John's",
+          "place": "Hamden"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church Cathedral",
+          "place": "Hartford"
+        },
+        {
+          "type": "category",
+          "name": "Christ Church Cathedral's ministry in Hartford, the Cathedral Chapter & the honorary canons of our Cathedral"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "Haven Community",
+          "place": "Hartford"
+        },
+        {
+          "type": "category",
+          "name": "Prison ministry & prison chaplains; the ECCT Faith Behind Bars & Beyond Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's",
+          "place": "Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Monica's",
+          "place": "Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Hartford"
+        },
+        {
+          "type": "category",
+          "name": "Haitian ministry in the Episcopal Church in Connecticut"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Hebron"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Higganum"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Ivoryton"
+        },
+        {
+          "type": "category",
+          "name": "Bishops, The Commons staff & parish employees"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Kent"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Killingworth"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lime Rock"
+        },
+        {
+          "type": "category",
+          "name": "Members of the Mission Council, Missionary Society, Standing Committee, Commission on Ministry, and Donations & Bequests"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Litchfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Madison"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Marble Dale"
+        },
+        {
+          "type": "category",
+          "name": "Regions & Region Leadership Teams. For Holy Landers Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Todos Los Santos/All Saints'",
+          "place": "Meriden"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Meriden"
+        },
+        {
+          "type": "category",
+          "name": "Hospital chaplains, Stephen Ministries, pastoral care groups, ministries of healing, wellness programs & recovery ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Middle Haddam"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Middlebury"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Middletown"
+        },
+        {
+          "type": "category",
+          "name": "Clergy whose work is not in parishes, multi-vocational priests, supply clergy & those whose ministry is carried out in other countries or dioceses"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Milford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Milford"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Milton"
+        },
+        {
+          "type": "category",
+          "name": "Parishes in transition, transition teams & interim clergy"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's Grace",
+          "place": "Monroe"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Mystic"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Naugatuck"
+        },
+        {
+          "type": "category",
+          "name": "Retirement communities, especially Armsmear & Seabury Retirement community; chaplains at retirement communities, Retired Clergy Chaplains. For Elder Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "New Canaan"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "New Haven"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "New Haven"
+        },
+        {
+          "type": "category",
+          "name": "Parish prayer groups, intercessory prayer chains, healing prayer groups, parish & community Bible studies"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "New Haven"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul & St. James",
+          "place": "New Haven"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas's",
+          "place": "New Haven"
+        },
+        {
+          "type": "category",
+          "name": "Regional Deans, Clergy peer groups & the Clergy Family Assistance Program"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Pentecost",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "New Haven"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "New London"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "New Milford"
+        },
+        {
+          "type": "category",
+          "name": "Those in discernment and preparing for ordination"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Newtown"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Niantic"
+        },
+        {
+          "type": "parish",
+          "name": "Zion",
+          "place": "North Branford"
+        },
+        {
+          "type": "category",
+          "name": "Companions in Mission for Publishing & Communication, those who work & volunteer in church communications. Digital ministries, online social networks & communities"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "North Haven"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Norwalk"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Northford"
+        },
+        {
+          "type": "category",
+          "name": "TransEpiscopal, LGBTQ+ Episcopalians & those who serve the LGBTQ+ community"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Norwalk"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints with Christ",
+          "place": "Oakville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Saviour's",
+          "place": "Old Greenwich"
+        },
+        {
+          "type": "category",
+          "name": "Students of all ages who are graduating"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Ann's",
+          "place": "Old Lyme"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Old Saybrook"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Orange"
+        },
+        {
+          "type": "category",
+          "name": "Camp Washington: staff, board, counselors & campers"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Oxford"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Oxford"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Pine Meadow"
+        },
+        {
+          "type": "category",
+          "name": "Summer chapels in New London, Norfolk & Fenwick; summer & outdoor worship services; Vacation Bible Schools & parish-based summer camp programs"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Plainfield"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Pomfret"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Portland"
+        },
+        {
+          "type": "category",
+          "name": "All deacons & the Archdeacons' Council. The Province I School for Deacons"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Poquetanuck"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Redding"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Ridgefield"
+        },
+        {
+          "type": "category",
+          "name": "ECCT & parish committees on investments, stewardship, planned giving, insurance & personnel policy"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Riverside"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew the Apostle",
+          "place": "Rocky Hill"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Roxbury"
+        },
+        {
+          "type": "category",
+          "name": "Wardens, treasurers, clerks & all vestry members; elected delegates"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Salisbury"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Seymour"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sharon"
+        },
+        {
+          "type": "category",
+          "name": "Curates, seminary interns, parish assistants & associates"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd/Immanuel St. James Chapel",
+          "place": "Shelton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Shelton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Simsbury"
+        },
+        {
+          "type": "category",
+          "name": "All parish-based mission partnerships; ECCT-wide mission partnership networks; the Companions in Mission Ministry Network"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "South Windsor"
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Southbury"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Southington"
+        },
+        {
+          "type": "category",
+          "name": "Liturgical assistants serving in parishes: members of altar guild, lectors, lay readers, Eucharistic ministers, Eucharistic visitors, lay evangelists & vergers"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Wooster School, Danbury"
+        },
+        {
+          "type": "category",
+          "name": "Kent School, Kent"
+        },
+        {
+          "type": "category",
+          "name": "St. Thomas's Day School, New Haven"
+        },
+        {
+          "type": "category",
+          "name": "Students, teachers & chaplains at Episcopal schools preparing to begin the school year"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Rectory School, Pomfret"
+        },
+        {
+          "type": "category",
+          "name": "Salisbury School, Salisbury"
+        },
+        {
+          "type": "category",
+          "name": "South Kent School, South Kent"
+        },
+        {
+          "type": "category",
+          "name": "Students, teachers & chaplains at Episcopal schools preparing to begin the school year"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Trinity College, Hartford"
+        },
+        {
+          "type": "category",
+          "name": "Berkeley Divinity School, New Haven"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church at Yale, New Haven"
+        },
+        {
+          "type": "category",
+          "name": "The Episcopal Church at UCONN, Storrs"
+        },
+        {
+          "type": "category",
+          "name": "Students, teachers & chaplains at Episcopal seminaries & campus ministries preparing to begin the school year"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Southport"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Stafford Springs"
+        },
+        {
+          "type": "parish",
+          "name": "Iglesia Betania",
+          "place": "Stamford"
+        },
+        {
+          "type": "category",
+          "name": "Those involved in the ministry of Christian Formation in parishes. For church school & youth group directors, teachers & mentors. For adult education leaders"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "L'Eglise de L'Epiphanie",
+          "place": "Stamford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Stamford"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis'",
+          "place": "Stamford"
+        },
+        {
+          "type": "category",
+          "name": "Province 1: the Dioceses of Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, Vermont & Western Massachusetts. For Provincial Synod & all Provincial Networks"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Stamford"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Stonington"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Storrs"
+        },
+        {
+          "type": "category",
+          "name": "Children & children's ministries. Rhythms of Grace & ministries for children with special needs"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Stratford"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Tariffville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's-Trinity",
+          "place": "Thomaston"
+        },
+        {
+          "type": "category",
+          "name": "Youth & youth ministries, J2A, Confirm Not Conform & all preparing for confirmation"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Torrington"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Trumbull"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Trumbull"
+        },
+        {
+          "type": "category",
+          "name": "Creation Care Ministry Network, Community Garden Ministry Network & eco-justice work in Province 1. All creatures great & small"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Vernon"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Wallingford"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Washington"
+        },
+        {
+          "type": "category",
+          "name": "Young adults, Young Adult Episcopal Ministry Network, 20 & 30s Ministry Network. The Episcopal Service Corps & the Young Adult Service Corps of The Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Waterbury"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Waterbury"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints Chapel",
+          "place": "West Cornwall"
+        },
+        {
+          "type": "category",
+          "name": "Convention planning committee, Convention worship committee & all who participate in Annual Convention"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James's",
+          "place": "West Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "West Hartford"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "West Haven"
+        },
+        {
+          "type": "category",
+          "name": "All ministries to, with & for women. For chapters in ECCT of Episcopal Church Women & the Girl's Friendly Society"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Westbrook"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Weston"
+        },
+        {
+          "type": "parish",
+          "name": "Christ & Holy Trinity",
+          "place": "Westport"
+        },
+        {
+          "type": "category",
+          "name": "Persons employed by The Episcopal Church. For the Presiding Bishop & the President of the House of Deputies"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Wethersfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Willimantic"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Wilton"
+        },
+        {
+          "type": "category",
+          "name": "Military chaplains & all who serve this country"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Windham"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "Windsor"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Winsted"
+        },
+        {
+          "type": "category",
+          "name": "Ministries with older adults. For the Brotherhood of St. Andrew & the Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Wolcott"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Woodbury"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Yantic"
+        },
+        {
+          "type": "category",
+          "name": "Finance Committee & Property Working Group. For the Faith & Order Commission"
+        }
+      ]
+    }
+  ]
+}
