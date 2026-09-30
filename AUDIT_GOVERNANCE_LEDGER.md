@@ -26302,3 +26302,82 @@ diocese/jurisdiction in Josh's 88-diocese roster with a located, verified curren
 Mississippi and Navajoland (both have a real source, but neither's shape fits any of this corpus's four
 cycleTypes -- see batch 15's own closing note). The roster's own ~18 no-source-found dioceses remain
 unaddressed, as always, unless a source turns up.
+
+## 2026-09-30 (continued once more) -- Two new cycleTypes added and both remaining roster dioceses
+## ingested: Mississippi ('week-of-year-recurring') and Navajoland ('day-of-week-recurring')
+
+Josh, on seeing the surfaced Mississippi/Navajoland links: "Ok...so one is a different prayer every week
+for a year, one is a different prayer daily, repeating every 7 days. Accomodate them both, new schemas.
+For Mississippi, they will pray that all week." This is the same kind of direct decision that added
+`monthly-recurring` (Arkansas), `annual-recurring` (Long Island), and `ordinal-sunday-monthly` (Hawai'i)
+earlier this project -- see schema.json's own `rules` for the full record, now updated with this entry.
+
+**Two new cycleTypes added to `data/cycles-of-prayer/schema.json` (now v1.4) and
+`scripts/cycles-of-prayer/validate.mjs`:**
+- `week-of-year-recurring` -- entries keyed by a bare ISO 8601 week-of-year number (1-53), one intention
+  held for the entire week, repeating every calendar year with no year field at all. Runtime resolution
+  (`js/cycles-of-prayer.js`'s new `isoWeekOfYear`/`resolveWeekOfYearRecurringEntry`) computes the query
+  date's own ISO week number and finds the latest entry on or before it, wrapping to the corpus's last
+  entry for the handful of dates (very early January, or a rare ISO week 53) that fall outside every
+  entry's own range -- the same "latest on-or-before, wrapping" semantics already used for
+  `monthly-recurring`/`annual-recurring`, just keyed on a week number instead of a day-of-month or
+  (month, day) pair.
+- `day-of-week-recurring` -- entries keyed by day-of-week (0-6, Sunday=0 through Saturday=6, matching
+  JavaScript's own `Date.getDay()`), repeating every single week with no year at all -- the shortest-period
+  recurring cycle in this corpus. Runtime resolution (`resolveDayOfWeekRecurringEntry`) is a plain exact
+  match on `date.getDay()`, not a "latest on-or-before" search, since every weekday is its own complete
+  unit with no natural rollover.
+
+Both were verified against known values before use: `isoWeekOfYear` was checked against several hand-
+computed dates (Jan 1, 2026 = week 1; Dec 28-31, 2026 and Jan 1, 2027 = ISO week 53, a genuine 53-week
+ISO year) before trusting it in the resolver.
+
+**Mississippi** (`episcopal-mississippi.json`, source: the diocese's own live page,
+dioms.org/Resources/mississippi-cycle-of-prayer.html, fetched directly and parsed from its raw server-
+rendered HTML via BeautifulSoup -- confirmed a plain numbered list, no column-interleaving risk). 52
+entries, Week 1 through Week 52 -- the roster's own pre-fetch research had described this as a "51-week
+calendar"; the live page actually runs to 52, transcribed as currently published rather than truncated to
+match the stale research note. Weeks 1-13 and 51-52 name dioceses/provinces/committees/schools (recorded
+as `category`); weeks 14-50 each name one or more specific parishes as "TOWN: Parish Name" (recorded as
+`parish`, place = town, preserved in the source's own all-caps style). Several source-side oddities
+preserved and disclosed rather than corrected: two entries use a comma instead of the usual colon between
+town and parish name; one week ("MCCOMB/MAGNOLIA: Mediator/Redeemer") compresses two towns and two short
+parish names into one slash-paired line, split by position as a disclosed judgment call; one week
+("JACKSON: St. Christopher's Church of the Ascension") reads as two Jackson parishes with a missing
+semicolon between them, split and disclosed on the same reasoning as several Navajoland entries below; and
+a systematic straight-vs-curly-apostrophe inconsistency (almost certainly a CMS smart-quotes artifact
+tied to whether the possessive apostrophe is followed by a letter) runs throughout, preserved as printed
+in every instance.
+
+**Navajoland** (`episcopal-navajoland.json`, source: the Friends of Navajoland support organization's own
+page, friendsofnavajoland.org/prayer-cycle/ -- fetched directly; its 7-row, 6-column table is delivered
+server-side but sits behind an inline `visibility: hidden` style a WP Table Builder plugin's own JS is
+meant to clear, likely blocked in this sandbox the same way an external font CDN is elsewhere in this
+project -- confirmed by parsing the raw HTML `<table>` markup directly via BeautifulSoup, which already
+had the real cell content, and cross-checked by force-overriding the CSS and rendering the live page as an
+image to rule out any visual-only separator the markup itself doesn't show). 7 entries (Sunday-Saturday),
+45 subjects total, all typed `category` (this source never comma-separates a congregation's name from its
+own place the way an ordinary diocese-level file does, so a `parish`/`place` split would mean inventing
+structure that isn't there). Several cells concatenate two or more people/churches with NO delimiter at
+all in the source's own markup (confirmed via the raw HTML, not a lossy text extraction) -- split into
+separate subjects wherever a clear boundary exists (most often a repeated title like "Rev."/"Lay Pastor",
+or an unambiguous second church name), each disclosed individually; this was the single most common class
+of finding in this file. Per the TEC roster's own research, the diocesan bishop's office has been vacant
+since June 21, 2026 (the Standing Committee is now ecclesiastical authority), but the source's own Monday
+entry still names the departed bishop -- preserved as printed and disclosed, not corrected.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+Both `mississippi` and `navajoland` were already reserved in the directory (added in an earlier session
+when the has-content registry didn't yet cover them), no renaming needed. Both registered in
+`CYCLES_OF_PRAYER_DIOCESES` with their respective new `cycleType`. `npm run audit:cycles-of-prayer`: PASS,
+92 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`. All three standing audit scripts
+unchanged at their 13/3/9 baselines. Live-verified 11 sample points across both files in headless Chromium
+(all 7 weekdays for Navajoland; Mississippi's own week 1, a mid-year week, and the year-end ISO-week-53
+wrap, confirmed resolving to the corpus's own last entry as designed). Screenshot-verified both rendering
+correctly in an actual Morning Prayer office (both Cycle of Prayer tiers present in the sidebar, drop-cap
+intact, each time). Zero new console errors beyond the pre-documented sandbox font-CDN block.
+
+**With this, every TEC diocese/jurisdiction in Josh's 88-diocese roster with a located, verified current
+cycle is now ingested into this corpus** -- the roster ingestion effort that began this session is
+genuinely complete, no exceptions remaining. Only the ~18 no-source-found jurisdictions (schema.json's own
+`tecDioceseRoster.noSourceFound`) are outstanding, and those won't be addressed unless a source turns up.

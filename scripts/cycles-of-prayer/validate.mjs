@@ -6,8 +6,8 @@ const SCHEMA_FILE = 'schema.json';
 const KEBAB_SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const VALID_SUBJECT_TYPES = new Set(['parish', 'category', 'household', 'diocese', 'province']);
-const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
-const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
+const VALID_CYCLE_TYPES = new Set(['dated', 'monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly', 'week-of-year-recurring', 'day-of-week-recurring']);
+const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly', 'week-of-year-recurring', 'day-of-week-recurring']);
 const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb allows 29 (leap day), never checked against a real year here
 const VALID_SCOPES = new Set(['diocese', 'parish', 'communion']);
 
@@ -83,7 +83,7 @@ function main() {
 
     const cycleType = doc.cycleType === undefined ? 'dated' : doc.cycleType;
     if (!VALID_CYCLE_TYPES.has(cycleType)) {
-      add('CRITICAL', name, `"cycleType", when present, must be "dated", "monthly-recurring", "annual-recurring", or "ordinal-sunday-monthly", got ${JSON.stringify(doc.cycleType)}`);
+      add('CRITICAL', name, `"cycleType", when present, must be "dated", "monthly-recurring", "annual-recurring", "ordinal-sunday-monthly", "week-of-year-recurring", or "day-of-week-recurring", got ${JSON.stringify(doc.cycleType)}`);
     }
 
     const scope = doc.scope === undefined ? 'diocese' : doc.scope;
@@ -247,6 +247,57 @@ function main() {
             add('HIGH', name, `${where} (month ${entry.month}, ordinal ${entry.ordinal}) is out of ascending order`);
           }
           previousKey = key;
+        }
+
+        if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {
+          add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
+        }
+
+        validateSubjects(name, where, entry.subjects);
+      }
+      continue;
+    }
+
+    if (cycleType === 'week-of-year-recurring') {
+      let previousWeek = null;
+      const seenWeeks = new Set();
+      for (const [index, entry] of doc.entries.entries()) {
+        const where = `entries[${index}]`;
+
+        if (!Number.isInteger(entry.week) || entry.week < 1 || entry.week > 53) {
+          add('CRITICAL', name, `${where}.week must be an integer 1-53, got ${JSON.stringify(entry.week)}`);
+        } else {
+          if (seenWeeks.has(entry.week)) {
+            add('HIGH', name, `${where}.week "${entry.week}" is a duplicate of an earlier entry`);
+          }
+          seenWeeks.add(entry.week);
+          if (previousWeek !== null && entry.week < previousWeek) {
+            add('HIGH', name, `${where}.week "${entry.week}" is out of ascending order (previous entry was "${previousWeek}")`);
+          }
+          previousWeek = entry.week;
+        }
+
+        if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {
+          add('HIGH', name, `${where}.liturgicalNote must be a string or null, got ${JSON.stringify(entry.liturgicalNote)}`);
+        }
+
+        validateSubjects(name, where, entry.subjects);
+      }
+      continue;
+    }
+
+    if (cycleType === 'day-of-week-recurring') {
+      const seenWeekdays = new Set();
+      for (const [index, entry] of doc.entries.entries()) {
+        const where = `entries[${index}]`;
+
+        if (!Number.isInteger(entry.weekday) || entry.weekday < 0 || entry.weekday > 6) {
+          add('CRITICAL', name, `${where}.weekday must be an integer 0-6 (Sunday=0), got ${JSON.stringify(entry.weekday)}`);
+        } else {
+          if (seenWeekdays.has(entry.weekday)) {
+            add('HIGH', name, `${where}.weekday "${entry.weekday}" is a duplicate of an earlier entry`);
+          }
+          seenWeekdays.add(entry.weekday);
         }
 
         if (entry.liturgicalNote !== undefined && entry.liturgicalNote !== null && typeof entry.liturgicalNote !== 'string') {

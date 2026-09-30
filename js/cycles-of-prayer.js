@@ -118,7 +118,9 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'western-north-carolina', label: 'The Episcopal Diocese of Western North Carolina' },
     { bodySlug: 'episcopal', dioceseShort: 'wisconsin', label: 'The Episcopal Diocese of Wisconsin' },
     { bodySlug: 'episcopal', dioceseShort: 'wyoming', label: 'The Episcopal Diocese of Wyoming' },
-    { bodySlug: 'episcopal', dioceseShort: 'europe', label: 'The Convocation of Episcopal Churches in Europe' }
+    { bodySlug: 'episcopal', dioceseShort: 'europe', label: 'The Convocation of Episcopal Churches in Europe' },
+    { bodySlug: 'episcopal', dioceseShort: 'mississippi', label: 'The Episcopal Diocese of Mississippi', cycleType: 'week-of-year-recurring' },
+    { bodySlug: 'episcopal', dioceseShort: 'navajoland', label: 'Episcopal Church in Navajoland', cycleType: 'day-of-week-recurring' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
@@ -277,7 +279,7 @@ function findCycleOfPrayerDiocese(key) {
 // each has exactly one standing file, not one per year. Kept as a single set
 // so cache-key/file-path logic (and getCachedCycleOfPrayerWeek's dispatch)
 // don't have to enumerate all three separately at every call site.
-const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly']);
+const NO_YEAR_CYCLE_TYPES = new Set(['monthly-recurring', 'annual-recurring', 'ordinal-sunday-monthly', 'week-of-year-recurring', 'day-of-week-recurring']);
 
 // Cache key is dioceseKey + ':' + year for a 'dated' diocese, or just
 // dioceseKey for a no-year cycleType (its file has no year, so there is only
@@ -470,6 +472,66 @@ function resolveOrdinalSundayMonthlyEntry(corpus, date) {
 }
 
 /**
+ * ISO 8601 week-of-year number (1-52, or 53 in a small number of years) for
+ * `date`. Standard algorithm: shift to the Thursday of `date`'s own week
+ * (ISO weeks run Monday-Sunday and are numbered by which week contains that
+ * week's Thursday), then count whole weeks between that Thursday and the
+ * first Thursday of its own ISO year.
+ */
+function isoWeekOfYear(date) {
+    const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    const isoDayOfWeek = (target.getUTCDay() + 6) % 7; // Monday=0 ... Sunday=6
+    target.setUTCDate(target.getUTCDate() - isoDayOfWeek + 3); // that week's Thursday
+
+    const firstThursday = new Date(Date.UTC(target.getUTCFullYear(), 0, 4));
+    const firstIsoDayOfWeek = (firstThursday.getUTCDay() + 6) % 7;
+    firstThursday.setUTCDate(firstThursday.getUTCDate() - firstIsoDayOfWeek + 3);
+
+    return 1 + Math.round((target - firstThursday) / (7 * 24 * 60 * 60 * 1000));
+}
+
+/**
+ * Resolves the current entry from an already-loaded 'week-of-year-recurring'
+ * corpus (added 2026-09-30 for Mississippi, whose own cycle holds one
+ * intention for an entire ISO week, Week 1 through Week 52): the entry whose
+ * `week` is the latest one on or before `date`'s own ISO week-of-year,
+ * wrapping to the corpus's own last entry for the handful of dates (very
+ * early January, or a rare ISO week 53) that fall outside every entry's own
+ * range -- same "latest on-or-before, wrapping" semantics as
+ * resolveMonthlyRecurringEntry/resolveAnnualRecurringEntry, just keyed on a
+ * week number instead of a day-of-month or (month, day) pair.
+ */
+function resolveWeekOfYearRecurringEntry(corpus, date) {
+    if (!corpus || !Array.isArray(corpus.entries) || corpus.entries.length === 0) return null;
+
+    const week = isoWeekOfYear(date);
+    let best = null;
+    for (const entry of corpus.entries) {
+        if (entry.week > week) break;
+        best = entry;
+    }
+    return best || corpus.entries[corpus.entries.length - 1];
+}
+
+/**
+ * Resolves the current entry from an already-loaded 'day-of-week-recurring'
+ * corpus (added 2026-09-30 for Navajoland, whose own cycle holds a distinct
+ * set of subjects for each day of the week, repeating every 7 days): the
+ * entry whose `weekday` exactly matches `date.getDay()` (Sunday=0 ...
+ * Saturday=6). Unlike the other no-year resolvers, this is a plain exact
+ * match, not a "latest on-or-before" search -- every weekday is its own
+ * complete unit with no rollover concept, so a source that happens to omit a
+ * weekday simply has nothing to show that day (returns null) rather than
+ * wrapping to a neighboring day's content.
+ */
+function resolveDayOfWeekRecurringEntry(corpus, date) {
+    if (!corpus || !Array.isArray(corpus.entries) || corpus.entries.length === 0) return null;
+
+    const weekday = date.getDay();
+    return corpus.entries.find(entry => entry.weekday === weekday) || null;
+}
+
+/**
  * Synchronous, cache-only resolution of "this week's" (or, for a
  * 'monthly-recurring' diocese, "this day's") cycle-of-prayer entry for a
  * given diocese and date. Returns null when the relevant corpus isn't loaded
@@ -493,6 +555,12 @@ function getCachedCycleOfPrayerWeek(dioceseKey, date) {
     }
     if (diocese.cycleType === 'ordinal-sunday-monthly') {
         return corpus ? resolveOrdinalSundayMonthlyEntry(corpus, date) : null;
+    }
+    if (diocese.cycleType === 'week-of-year-recurring') {
+        return corpus ? resolveWeekOfYearRecurringEntry(corpus, date) : null;
+    }
+    if (diocese.cycleType === 'day-of-week-recurring') {
+        return corpus ? resolveDayOfWeekRecurringEntry(corpus, date) : null;
     }
 
     // The corpus's own declared year, not just the filename, gates use --

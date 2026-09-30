@@ -1,0 +1,819 @@
+{
+  "id": "episcopal-mississippi",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Mississippi",
+  "dioceseShort": "mississippi",
+  "cycleType": "week-of-year-recurring",
+  "source": "The Mississippi Cycle of Prayer",
+  "sourceFile": "https://www.dioms.org/Resources/mississippi-cycle-of-prayer.html (fetched directly; the diocese's own live page, not a downloaded document)",
+  "ingested": "2026-09-30",
+  "notes": [
+    "cycleType 'week-of-year-recurring' was added to this schema specifically for this file, per Josh's direct decision 2026-09-30 (\"a different prayer every week for a year... they will pray that all week\") -- see schema.json's own `rules` for the full record. Each entry holds ONE week's intention for the entire week, keyed by a bare week number with no calendar date or year printed anywhere in the source.",
+    "The roster's own pre-fetch research note described this as a \"51-week calendar\", but the live page (fetched 2026-09-30) actually runs Week 1 through Week 52 -- transcribed as currently published, not truncated or padded to match the earlier research note.",
+    "Weeks 1-13 and 51-52 name dioceses, provinces, committees, schools, and other non-congregation subjects (recorded as `category`); weeks 14-50 each name one or more specific parishes by \"TOWN: Parish Name\" (recorded as `parish`, place = the town exactly as printed, always in the source's own all-caps style -- not normalized to title case).",
+    "Two entries (weeks 23 and 40-41) print a comma instead of the colon used to separate town from parish name everywhere else in the source; both are disclosed on the affected subject's own `note` rather than silently reformatted to match.",
+    "Week 24 (\"MCCOMB/MAGNOLIA: Mediator/Redeemer\") compresses two towns and two parish short-names into one slash-paired line, unlike every other multi-parish week's plain semicolon-separated list. Split into two subjects pairing town-to-name by position, disclosed as a judgment call on both affected subjects.",
+    "Week 31 (\"JACKSON: St. Mark's; JACKSON: St. Christopher's Church of the Ascension; JACKSON: St. James'; JACKSON: St. Philip's\") appears to be missing a semicolon between two distinct Jackson parishes (\"St. Christopher's\" and a separate \"Church of the Ascension\", the latter also independently named in Hattiesburg in week 26) -- split into two subjects, disclosed as a likely source punctuation drop.",
+    "The source's own possessive apostrophes are inconsistent throughout -- most \"Name's\" forms use a curly right single quote (e.g. \"St. Mark's\"), while every \"Names'\" form ending the word itself in the apostrophe (e.g. \"All Saints'\", \"St. James'\", \"St. Francis'\", \"St. Thomas'\") uses a plain straight apostrophe instead. This reads as a smart-quotes artifact of the diocese's own CMS (which correctly curls an apostrophe followed by a letter but leaves a trailing, letter-less apostrophe straight) rather than a deliberate style choice; both forms are preserved exactly as printed throughout, not normalized to match each other.",
+    "\"Church of the Redeemer\" is spelled out in full for Ocean Springs/Biloxi (week 16), Brookhaven (week 24), and Greenville (week 39), while the same dedication is printed as the bare short form \"Redeemer\" for Magnolia (week 24) -- both forms preserved exactly as printed on their own entries, not harmonized.",
+    "Fetched directly via curl with a standard browser User-Agent; the page's content loads as plain server-rendered HTML (a numbered list, not a table), confirmed via BeautifulSoup parsing of the raw markup rather than a linearized text extraction, so none of this corpus's usual PDF column-interleaving risk applies here."
+  ],
+  "entries": [
+    {
+      "week": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Archbishop of Canterbury"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Presiding Bishop and Primates"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Province of Sewanee"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Mississippi and our witness to Christ"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishops of Mississippi"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "University of the South, Sewanee, TN"
+        },
+        {
+          "type": "category",
+          "name": "St. Margaret's School, Tokyo"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Parochial Day Schools in the Diocese of Mississippi"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal chaplaincies in universities, schools hospitals, prisons, and all branches of U. S. Armed Forces",
+          "note": "Source prints \"schools hospitals\" with no comma between them; preserved as printed."
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Gray Center: camps and conferences"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulants and candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Standing Committee and the Trustees"
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Executive Committee"
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Vacant parishes and missions of the Diocese"
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The Cathedral of St. Andrew",
+          "place": "JACKSON"
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "PASCAGOULA"
+        },
+        {
+          "type": "parish",
+          "name": "St. Pierre's",
+          "place": "GAUTIER"
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "OCEAN SPRINGS"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "BILOXI"
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "GULFPORT"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "GULFPORT"
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "LONG BEACH"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "PASS CHRISTIAN"
+        }
+      ]
+    },
+    {
+      "week": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "DIAMONDHEAD"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "BAY ST. LOUIS"
+        }
+      ]
+    },
+    {
+      "week": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "PICAYUNE"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "WOODVILLE"
+        }
+      ]
+    },
+    {
+      "week": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "NATCHEZ"
+        },
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "CHURCH HILL"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "PORT GIBSON"
+        }
+      ]
+    },
+    {
+      "week": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "VICKSBURG"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "BOVINA"
+        }
+      ]
+    },
+    {
+      "week": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "VICKSBURG"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "VICKSBURG",
+          "note": "Source prints a comma (\"VICKSBURG, St. Mary's\") instead of the colon used between place and name everywhere else in this file; preserved as printed."
+        }
+      ]
+    },
+    {
+      "week": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Mediator",
+          "place": "MCCOMB",
+          "note": "Source prints this compactly as \"MCCOMB/MAGNOLIA: Mediator/Redeemer\", pairing two towns with two parish names via a shared slash. Split here into two subjects, pairing each town with the name in the same position (first town/first name, second town/second name) -- a disclosed judgment call, not printed as two separate colon-delimited items the way every other multi-parish week is. Kept as the source's own short form \"Mediator\", not expanded to \"Church of the Mediator\" (compare week 29, which spells out a different Meridian parish as \"Church of the Mediator\")."
+        },
+        {
+          "type": "parish",
+          "name": "Redeemer",
+          "place": "MAGNOLIA",
+          "note": "See the note on this week's McComb entry for the McComb/Magnolia slash-pairing judgment call. Kept as the source's own short form \"Redeemer\", not expanded to \"Church of the Redeemer\" (compare this same week's Brookhaven entry, and weeks 16/39, which spell out \"Church of the Redeemer\" for other towns)."
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "BROOKHAVEN"
+        }
+      ]
+    },
+    {
+      "week": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "CRYSTAL SPRINGS"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "TERRY"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "RAYMOND"
+        }
+      ]
+    },
+    {
+      "week": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "HATTIESBURG"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "HATTIESBURG"
+        }
+      ]
+    },
+    {
+      "week": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "COLUMBIA"
+        },
+        {
+          "type": "parish",
+          "name": "St. Elizabeth",
+          "place": "COLLINS"
+        }
+      ]
+    },
+    {
+      "week": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "LAUREL"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "ENTERPRISE"
+        }
+      ]
+    },
+    {
+      "week": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "MERIDIAN"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Mediator",
+          "place": "MERIDIAN"
+        }
+      ]
+    },
+    {
+      "week": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "JACKSON"
+        },
+        {
+          "type": "parish",
+          "name": "St. Columb's",
+          "place": "RIDGELAND"
+        }
+      ]
+    },
+    {
+      "week": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "JACKSON"
+        },
+        {
+          "type": "parish",
+          "name": "St. Christopher's",
+          "place": "JACKSON",
+          "note": "Source prints \"JACKSON: St. Christopher's Church of the Ascension\" with no semicolon between what read as two distinct Jackson parishes (Jackson has its own separate, real \"Church of the Ascension\", not the same congregation as this week's \"St. Christopher's\"). Split into two subjects as a disclosed judgment call, treating the missing semicolon as a likely source-side punctuation drop -- the same class of undelimited-concatenation finding as several Navajoland entries ingested the same day."
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "JACKSON",
+          "note": "See the note on this week's St. Christopher's entry. This is a distinct Jackson congregation from the Hattiesburg \"Church of the Ascension\" in week 26 -- two different towns sharing this dedication name."
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "JACKSON"
+        },
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "JACKSON"
+        }
+      ]
+    },
+    {
+      "week": 32,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Creator",
+          "place": "CLINTON"
+        },
+        {
+          "type": "parish",
+          "name": "Chapel of the Cross",
+          "place": "MADISON"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "CANTON"
+        }
+      ]
+    },
+    {
+      "week": 33,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "BRANDON"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "BRANDON"
+        }
+      ]
+    },
+    {
+      "week": 34,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "KOSCIUSKO"
+        },
+        {
+          "type": "parish",
+          "name": "St. Francis'",
+          "place": "PHILADELPHIA"
+        }
+      ]
+    },
+    {
+      "week": 35,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "LEXINGTON"
+        },
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "CARROLLTON"
+        }
+      ]
+    },
+    {
+      "week": 36,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "GRENADA"
+        }
+      ]
+    },
+    {
+      "week": 37,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Chapel of the Cross",
+          "place": "ROLLING FORK"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "YAZOO CITY"
+        }
+      ]
+    },
+    {
+      "week": 38,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "HOLLANDALE"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "LELAND"
+        }
+      ]
+    },
+    {
+      "week": 39,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "GREENVILLE"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "GREENVILLE"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "INDIANOLA"
+        }
+      ]
+    },
+    {
+      "week": 40,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "BELZONI"
+        },
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "INVERNESS"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "GREENWOOD",
+          "note": "Source prints a comma (\"GREENWOOD, Church of the Nativity\") instead of the colon used between place and name everywhere else in this file; preserved as printed."
+        }
+      ]
+    },
+    {
+      "week": 41,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Grace Church",
+          "place": "ROSEDALE"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "CLEVELAND",
+          "note": "Source prints a comma (\"CLEVELAND, Calvary Church\") instead of the colon used between place and name everywhere else in this file; preserved as printed."
+        }
+      ]
+    },
+    {
+      "week": 42,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "STARKVILLE"
+        }
+      ]
+    },
+    {
+      "week": 43,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "COLUMBUS"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "COLUMBUS"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Incarnation",
+          "place": "WEST POINT"
+        }
+      ]
+    },
+    {
+      "week": 44,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "ABERDEEN"
+        },
+        {
+          "type": "parish",
+          "name": "St. Bernard's",
+          "place": "OKOLONA"
+        }
+      ]
+    },
+    {
+      "week": 45,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "TUPELO"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "CORINTH"
+        }
+      ]
+    },
+    {
+      "week": 46,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "CLARKSDALE"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advent",
+          "place": "SUMNER"
+        }
+      ]
+    },
+    {
+      "week": 47,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "BATESVILLE"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "OXFORD"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Nativity",
+          "place": "WATER VALLEY"
+        }
+      ]
+    },
+    {
+      "week": 48,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Innocent's",
+          "place": "COMO",
+          "note": "Source prints the singular possessive \"Holy Innocent's\" rather than the more conventional plural \"Holy Innocents'\"; preserved as printed."
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "TUNICA"
+        }
+      ]
+    },
+    {
+      "week": 49,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "HOLLY SPRINGS"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary Church",
+          "place": "MICHIGAN CITY"
+        }
+      ]
+    },
+    {
+      "week": 50,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "SOUTHAVEN"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "OLIVE BRANCH"
+        }
+      ]
+    },
+    {
+      "week": 51,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired Clergy of the Diocese"
+        }
+      ]
+    },
+    {
+      "week": 52,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The work of Christian mission throughout the world"
+        }
+      ]
+    }
+  ]
+}

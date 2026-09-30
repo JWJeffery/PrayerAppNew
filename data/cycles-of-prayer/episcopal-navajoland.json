@@ -1,0 +1,254 @@
+{
+  "id": "episcopal-navajoland",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Church in Navajoland",
+  "dioceseShort": "navajoland",
+  "cycleType": "day-of-week-recurring",
+  "source": "Prayer Cycle Chart",
+  "sourceFile": "https://friendsofnavajoland.org/prayer-cycle/ (fetched directly; the diocese's own live page, not a downloaded document)",
+  "ingested": "2026-09-30",
+  "notes": [
+    "This source is the support organization Friends of Navajoland's own page, not a page hosted by Navajoland/ECN itself, but its prayer-chart content is the diocese/mission's own published cycle. `diocese` uses the exact self-identification the chart itself prints in its own Sunday entry, \"Episcopal Church in Navajoland\" (no leading \"The\"), rather than \"Friends of Navajoland\" (the hosting organization) or a invented fuller form.",
+    "cycleType 'day-of-week-recurring' was added to this schema specifically for this file, per Josh's direct decision 2026-09-30 (\"a different prayer daily, repeating every 7 days\") -- see schema.json's own `rules` for the full record. `weekday` follows JavaScript's own Date.getDay() numbering (Sunday=0 ... Saturday=6).",
+    "The source is a 7-row, 6-column table (\"Days\", then \"Our Mission Congregations\", \"Our Active Clergy and Lay Pastors\", \"Our Churches\", \"Our Lay Staff and Volunteers\", \"Our Special Projects/Ministries\"), fetched directly and parsed from the raw HTML <table> markup (confirmed via BeautifulSoup, and cross-checked against the live rendered page, which required force-overriding an inline `visibility: hidden` style the WP Table Builder plugin applies before its own JS runs -- likely blocked in this sandbox the same way an external font CDN is elsewhere in this project). Each day's five columns are recorded here as five (or more, after splitting -- see below) `category` subjects, each disclosing which column it came from in its own `note` only when that context isn't otherwise obvious.",
+    "None of the five columns' content is typed `parish` in this file, even where a cell names an actual church -- unlike this corpus's usual diocese-level files, nothing in this source ever comma-separates a congregation's name from its own town/chapter, so a `parish`/`place` split would mean inferring structure the source doesn't provide. All entries are `category` throughout, including the \"Our Churches\" column.",
+    "Several cells in the source's own raw HTML concatenate two or more people/churches/phrases into one run-on string with NO delimiter at all between them (no comma, semicolon, line break, or other punctuation) -- confirmed by inspecting the table's own markup directly, not just a lossy text extraction. Where a clear boundary exists (most often a repeated title word like \"Rev.\"/\"Lay Pastor\", or an unambiguous second church name), these were split into separate subjects as a disclosed judgment call, with the split reasoning noted on the affected subject(s); this is the single most common class of disclosure in this file.",
+    "Per the TEC roster's own research note, the diocesan bishop's office is currently vacant (Bishop Barry Beisner's ministry ended June 21, 2026, per Navajoland's own announcement) and the Standing Committee now serves as ecclesiastical authority -- the source's own Monday entry still names Bishop Beisner and has not been updated to reflect the vacancy; preserved as printed rather than corrected or removed, with the vacancy disclosed on that specific subject.",
+    "A few names carry disclosed spelling inconsistencies within the source itself, preserved exactly as printed rather than harmonized: \"St. Christopher's Mission\" (Thursday's own Churches column) versus \"St. Christophers Mission\" (no apostrophe, in that same day's and Friday's Special Projects columns)."
+  ],
+  "entries": [
+    {
+      "weekday": 0,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church in Navajoland"
+        },
+        {
+          "type": "category",
+          "name": "All ECN Clergy"
+        },
+        {
+          "type": "category",
+          "name": "All Churches of ECN"
+        },
+        {
+          "type": "category",
+          "name": "All Volunteers and Lay Staff of ECN"
+        },
+        {
+          "type": "category",
+          "name": "Hozho Woman's Wellness"
+        }
+      ]
+    },
+    {
+      "weekday": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "San Juan Region"
+        },
+        {
+          "type": "category",
+          "name": "Bishop Barry Beisner",
+          "note": "Per the TEC roster's own research (checked 2026-09-28), Bishop Beisner's ministry in Navajoland ended June 21, 2026 and the diocesan Standing Committee is now its ecclesiastical authority; the source's own prayer chart (checked again 2026-09-30) has not been updated to reflect this, so his name is preserved here exactly as still printed."
+        },
+        {
+          "type": "category",
+          "name": "All Saint's, Farmington",
+          "note": "Source prints \"All Saint's Farmington St. Michael's Upper Fruitland\" as one run-on cell with no delimiter between two distinct churches -- confirmed via the raw HTML table markup (no <br> or other separator) and by rendering the live page, which shows the same run-on text. Split into two subjects here as a disclosed judgment call, matching each church name to the town/chapter immediately following it."
+        },
+        {
+          "type": "category",
+          "name": "St. Michael's, Upper Fruitland",
+          "note": "See this day's All Saint's entry for the undelimited-source-cell judgment call this split is based on."
+        },
+        {
+          "type": "category",
+          "name": "Council Members and Economic Development Board"
+        },
+        {
+          "type": "category",
+          "name": "Four Winds Rehab Center"
+        }
+      ]
+    },
+    {
+      "weekday": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Southeast Region"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Canon Cornelia Eaton",
+          "note": "Source prints \"Rev. Canon Cornelia Eaton Rev. Michael Sells\" as one run-on cell with no delimiter between two distinct clergy -- confirmed via the raw HTML table markup and the rendered page. Split into two subjects at the recurring \"Rev.\" title marker, a disclosed judgment call applied throughout this file wherever a cell names more than one person or church with no punctuation between them."
+        },
+        {
+          "type": "category",
+          "name": "Rev. Michael Sells"
+        },
+        {
+          "type": "category",
+          "name": "St. Luke's in the Desert"
+        },
+        {
+          "type": "category",
+          "name": "St. Joseph's House Church"
+        },
+        {
+          "type": "category",
+          "name": "Friends of Navajoland"
+        },
+        {
+          "type": "category",
+          "name": "Cheii Web Development Shop"
+        }
+      ]
+    },
+    {
+      "weekday": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Utah Region"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Canon Cathlena Plummer"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Leon Sampson"
+        },
+        {
+          "type": "category",
+          "name": "Good Shepherd Mission"
+        },
+        {
+          "type": "category",
+          "name": "St. Mark's Coal Mine",
+          "note": "Source prints \"Good Shepherd Mission St. Mark's Coal Mine\" as one run-on cell. Split into two church subjects at the recognizable second church name; kept \"St. Mark's Coal Mine\" together as one undivided name rather than guessing whether \"Coal Mine\" is a separate place name, since (unlike this corpus's usual diocese-level files) nothing in this source ever comma-separates a church name from a town."
+        },
+        {
+          "type": "category",
+          "name": "Active Lay Ministers"
+        },
+        {
+          "type": "category",
+          "name": "Communication's Personnel",
+          "note": "Source prints \"Active Lay Ministers Communication's Personnel\" as one run-on cell; split into two subjects at the recognizable second phrase. The stray apostrophe in \"Communication's\" is preserved exactly as printed."
+        },
+        {
+          "type": "category",
+          "name": "Shima' of Navajoland"
+        }
+      ]
+    },
+    {
+      "weekday": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "San Juan Region"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Jack Chase"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Deacon Paula Henson"
+        },
+        {
+          "type": "category",
+          "name": "St. Christopher's Mission"
+        },
+        {
+          "type": "category",
+          "name": "St. John's the Baptizer"
+        },
+        {
+          "type": "category",
+          "name": "Finances, Bookkeeper, and Treasurer."
+        },
+        {
+          "type": "category",
+          "name": "Water Ministries at St. Christophers Mission",
+          "note": "Source spells this congregation \"St. Christophers\" here (no apostrophe) versus \"St. Christopher's\" in this same day's own Churches column; both preserved exactly as printed."
+        }
+      ]
+    },
+    {
+      "weekday": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Southeast Region"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Catherine Plummer"
+        },
+        {
+          "type": "category",
+          "name": "Lay Pastor Lillie Henderson",
+          "note": "Source prints \"Rev. Catherine Plummer Lay Pastor Lillie Henderson\" as one run-on cell; split at the second person's own title (\"Lay Pastor\"), the same undelimited-cell judgment call used throughout this file."
+        },
+        {
+          "type": "category",
+          "name": "St. Mary's in the Moonlight"
+        },
+        {
+          "type": "category",
+          "name": "Chancellors Stephen Hutchinson, Kathleen Wells, and Angie Rogers."
+        },
+        {
+          "type": "category",
+          "name": "Homer Dell Farm at St. Christophers Mission, Garden at Good Shepherd, and the Bee Project in both areas."
+        }
+      ]
+    },
+    {
+      "weekday": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Utah Region"
+        },
+        {
+          "type": "category",
+          "name": "Rev. Inez Valarde"
+        },
+        {
+          "type": "category",
+          "name": "Sofina Silas",
+          "note": "Source prints \"Rev. Inez Valarde Sofina Silas\" as one run-on cell; split at the second, untitled name, the same undelimited-cell judgment call used throughout this file."
+        },
+        {
+          "type": "category",
+          "name": "ECN Youth Ministries",
+          "note": "This is what the source's own \"Our Churches\" column prints for Saturday -- a ministry name, not a congregation -- transcribed as printed rather than moved to a different column."
+        },
+        {
+          "type": "category",
+          "name": "Wardens and Bishops Committees in all our Mission Congregations."
+        },
+        {
+          "type": "category",
+          "name": "Navajoland Pilgrims past, present, and future from parishes and dioceses across the Episcopal Communion."
+        }
+      ]
+    }
+  ]
+}
