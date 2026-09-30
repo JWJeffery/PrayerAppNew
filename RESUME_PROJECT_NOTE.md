@@ -528,22 +528,40 @@ to confirm batch 13's `getCachedCycleOfPrayerWeek` bug fix holds for new files g
 three it was originally written against. Full per-diocese detail: `AUDIT_GOVERNANCE_LEDGER.md`'s
 2026-09-29 "Diocese ingestion batch 14" entry.
 
-**Next:** continue the roster spreadsheet's remaining dioceses via their own URLs, 5-6 at a time.
-Alphabetically, the next batch starts after West Texas (West Virginia onward — check the roster/registry
-directly rather than trusting this note's ordering; Western Massachusetts and Western Oregon are already
-ingested; Mississippi/Navajoland deliberately skipped, see above).
-**Southern Virginia is the one open blocked link** as of this writing — hold it and report the exact URL
-to Josh the next time he asks to see blocked links, per his standing preference, rather than surfacing it
-unprompted; if a future fetch gets blocked, try the reader-service/user-agent tricks from batch 10 first,
-since both resolved what looked like genuine blocks without needing Josh.
+**Batch 15 (West Virginia, Western Kansas, Western Louisiana, Western New York, Western North Carolina,
+Wisconsin, Wyoming, Europe): DONE 2026-09-30 — 8 of 8, no blocks. This closes out the roster
+spreadsheet's ingestable dioceses.** Seven ordinary dioceses were dispatched first, exhausting the
+roster's remaining state/regional dioceses. Western Louisiana confirmed the roster's own pre-flagged
+day-of-month 1-31 recurring shape (built `monthly-recurring`, no year in the filename, per the Iowa
+precedent). **While finalizing this batch's docs, `dioceseShort: 'europe'` was found sitting in
+`TEC_DIOCESE_DIRECTORY` (added in an earlier session) with no corresponding file ever built** — the
+Convocation of Episcopal Churches in Europe, a TEC jurisdiction with its own located, verified source
+that no prior batch had actually picked up. Rather than ship a known gap, Europe was ingested as an
+eighth diocese in this same batch (53 entries, Nov 2025-Nov 2026, `scope: "diocese"` since a convocation
+plays the same local-cycle role here, not `scope: "communion"`). Full per-diocese detail:
+`AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-30 "Diocese ingestion batch 15" entry.
+
+**Roster status: DONE, with three known exceptions.** Every TEC diocese/jurisdiction with a located,
+verified current cycle per Josh's own roster is now ingested into this corpus except: **Southern
+Virginia** (blocked — SiteGround's bot-challenge page defeats every workaround tried; held for Josh to
+grab the link himself per his standing preference, not yet resolved); **Mississippi** and **Navajoland**
+(both have a real, located source, but neither's shape — week-numbered and day-of-week respectively —
+fits any of this corpus's four cycleTypes; deliberately set aside per standing decision rather than
+forced in, same as how `monthly-recurring` itself was added when Arkansas didn't fit `dated`). Should
+Josh ever supply a working Southern Virginia link, or decide a new cycleType is worth adding for
+Mississippi/Navajoland, that's the only ordinary ingestion work left — everything else in the roster's
+remaining ~18 dioceses has no verified source at all and won't be ingested unless one turns up (see
+`tecDioceseRoster.noSourceFound` in schema.json). Beyond that, future work here is periodic: a diocese
+whose source is only ever a rolling/partial window (West Missouri, Springfield, and similar) will need
+periodic re-checking, and every diocese will need a fresh file once it publishes its 2027 cycle.
 
 **~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 76 are now ingested into this corpus, ~11 remain** (separately, 18 dioceses have no verified
-source at all per Josh's own research — see `tecDioceseRoster.noSourceFound` in schema.json — those
-won't get ingested unless a source turns up).
+historical); 84 are now ingested into this corpus, 3 remain** (Southern Virginia, Mississippi,
+Navajoland — see above; separately, 18 dioceses have no verified source at all per Josh's own research —
+see `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
 
-**80 files currently in the corpus, all passing the validator:** 72 diocese-level, `cycleType: "dated"`
-(70 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
+**88 files currently in the corpus, all passing the validator:** 79 diocese-level, `cycleType: "dated"`
+(77 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
 Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf Coast, Central New
 York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton, Florida, Georgia,
 Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland, Massachusetts,
@@ -551,11 +569,13 @@ Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, No
 California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia, Pennsylvania,
 Pittsburgh, Puerto Rico, Rhode Island, San Diego, South Carolina, South Dakota, Southeast Florida (2
 files, 2026+2027), Southern Ohio, Southwest Florida, Springfield, Susquehanna, Tennessee, Texas, Upper
-South Carolina, Vermont, Virginia, Washington (DC), West Missouri, West Tennessee, West Texas, Nebraska,
+South Carolina, Vermont, Virginia, Washington (DC), West Missouri, West Tennessee, West Texas, West
+Virginia, Western Kansas, Western New York, Western North Carolina, Wisconsin, Wyoming, Europe, Nebraska,
 Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
-Virginia, Western Massachusetts, Colorado; 4 diocese-level, `cycleType:
-"monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas; 1 diocese-level, `cycleType:
-"annual-recurring"` — Long Island; 1 diocese-level, `cycleType: "ordinal-sunday-monthly"` — Hawai'i
+Virginia, Western Massachusetts, Colorado; 5 diocese-level, `cycleType:
+"monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas, Western Louisiana; 1
+diocese-level, `cycleType: "annual-recurring"` — Long Island; 1 diocese-level, `cycleType:
+"ordinal-sunday-monthly"` — Hawai'i
 (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).

@@ -26146,13 +26146,15 @@ the working-tree-hygiene pattern established in batch 13; this ledger entry and 
 together as the batch's closing commit.
 
 ## 2026-09-30 -- Diocese ingestion batch 15: West Virginia, Western Kansas, Western Louisiana, Western
-## New York, Western North Carolina, Wisconsin, Wyoming (7 dioceses, no blocks) -- this closes out the
-## roster spreadsheet's ingestable dioceses
+## New York, Western North Carolina, Wisconsin, Wyoming, and Europe (8 dioceses, no blocks) -- this closes
+## out the roster spreadsheet's ingestable dioceses
 
 Josh: "Please continue." Ninth batch of parallel-subagent-dispatched ingestion, continuing alphabetically
-after West Texas. Seven agents dispatched this time (rather than the usual 5-6) since this exhausts the
-roster's remaining ingestable dioceses -- everything left after this batch is either no-source-found,
-blocked, or deliberately skipped for shape reasons. All seven succeeded.
+after West Texas. Seven agents dispatched initially (rather than the usual 5-6) since this exhausts the
+roster's remaining ingestable ordinary dioceses -- everything left after those seven is either
+no-source-found, blocked, or deliberately skipped for shape reasons. All seven succeeded; an eighth,
+Europe, was then dispatched and folded into this same batch after being caught as an overlooked
+jurisdiction during the batch's own closing review (see below).
 
 **West Virginia** (`episcopal-west-virginia-2026.json`, source: diocesan PDF -- the roster's own recorded
 URL now 404s; the agent found the diocese's current working copy of the same-named file via its own
@@ -26211,30 +26213,46 @@ inferred from the parish it's paired with when disclosed, per the established So
 Church" place-inference precedent.
 
 **Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
-All seven (`west-virginia`, `western-kansas`, `western-louisiana`, `western-new-york`,
-`western-north-carolina`, `wisconsin`, `wyoming`) already matched the directory's own slugs exactly, no
-renaming needed. All 7 registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS,
-87 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`. All three standing audit scripts
-unchanged at their 13/3/9 baselines. Live-verified all 7 new dioceses (8 sample points, including Western
-Louisiana's monthly-recurring day-of-month lookup and Western North Carolina's own year-boundary lead-in
-date) in headless Chromium against the app's own actual runtime. Screenshot-verified West Virginia
-rendering correctly in an actual Morning Prayer office (after dismissing a first-load onboarding-profile
-modal, an existing, unrelated app behavior -- both Cycle of Prayer tiers present in the sidebar, drop-cap
-intact). Zero new console errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js`
-has no cache-bust parameter to bump (same as prior batches). Each of the seven new files was committed
-and pushed individually as its own agent finished, per the working-tree-hygiene pattern established in
-batch 13; this ledger entry and the registry commit land together as the batch's closing commit.
+All eight (`west-virginia`, `western-kansas`, `western-louisiana`, `western-new-york`,
+`western-north-carolina`, `wisconsin`, `wyoming`, `europe`) already matched the directory's own slugs
+exactly, no renaming needed. All 8 registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run
+audit:cycles-of-prayer`: PASS, 88 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`. All
+three standing audit scripts unchanged at their 13/3/9 baselines. Live-verified all 8 new dioceses (11
+sample points, including Western Louisiana's monthly-recurring day-of-month lookup and both Western North
+Carolina's and Europe's own year-boundary lead-in dates) in headless Chromium against the app's own
+actual runtime. Screenshot-verified both West Virginia and Europe rendering correctly in an actual
+Morning Prayer office (after dismissing a first-load onboarding-profile modal, an existing, unrelated app
+behavior -- both Cycle of Prayer tiers present in the sidebar, drop-cap intact each time). Zero new
+console errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js` has no
+cache-bust parameter to bump (same as prior batches). Each of the eight new files was committed and
+pushed individually as its own agent finished, per the working-tree-hygiene pattern established in batch
+13; this ledger entry and the registry commit land together as the batch's closing commit.
 
-**This nearly closes out the roster spreadsheet's ingestable dioceses.** Of the 88 TEC dioceses/
+**Europe** (`episcopal-europe-2026.json`, source: the Convocation of Episcopal Churches in Europe's own
+PDF, "Convocation Prayer Cycle 2026 rev. 26 Nov 25"). 53 entries, Nov 30, 2025-Nov 22, 2026 -- an eighth
+diocese added to this batch after being caught as an overlooked jurisdiction during the batch's own
+closing review (see below). Europe is a TEC convocation, not an ordinary geographic diocese; per this
+corpus's schema, `scope: "diocese"` (the default) was used anyway, since a convocation performs the exact
+same local-cycle role here, and NOT `scope: "communion"`, which is reserved for the one worldwide
+Anglican Cycle of Prayer file. `diocese` uses the document's own more-consistently-repeated internal
+self-identification, "The Convocation of Episcopal Churches in Europe," over the website's shorter
+branding. The 6-of-53 Advent/Christmas 2025 lead-in was disclosed-and-included per the Tennessee
+precedent. Several genuine source defects were preserved verbatim per this corpus's standing rule rather
+than corrected: one entry's own leader line is cut off mid-sentence; one date (Nov 16, 2026) is printed
+against a day that is actually a Monday, not a Sunday like every other entry; one entry's own hosting
+dates predate its own placement in the cycle, apparently a stale carry-over from a prior edition. The
+source's full embedded text layer (not a scan) allowed every accented European name to be transcribed
+exactly as printed.
+
+**This closes out the roster spreadsheet's ingestable dioceses.** Of the 88 TEC dioceses/
 jurisdictions in Josh's own roster (87 after El Camino Real's removal), every diocese with a located,
 verified current cycle is now ingested except Southern Virginia (blocked, held for Josh per his standing
-preference), Mississippi/Navajoland (genuinely non-fitting shapes, set aside per standing decision -- see
-schema.json's own `rules`), and **Europe** (the Convocation of Episcopal Churches in Europe -- a TEC
-jurisdiction, not an ordinary diocese, which the roster's own research located a working source for but
-which no prior batch actually picked up; `dioceseShort: 'europe'` was already reserved in
-`TEC_DIOCESE_DIRECTORY` but no file existed for it until caught during this batch's own closing review
-and folded in as an eighth diocese -- see below). The remaining ~18 dioceses/jurisdictions in the roster
-have no verified source at all per
+preference) and Mississippi/Navajoland (genuinely non-fitting shapes, set aside per standing decision --
+see schema.json's own `rules`). **Europe was the one located-but-never-picked-up jurisdiction found during
+this batch's own closing review** -- `dioceseShort: 'europe'` was already reserved in
+`TEC_DIOCESE_DIRECTORY` from an earlier session but no file had ever been built for it; caught before this
+batch's docs were finalized and folded in as an eighth diocese, rather than shipped as a known gap. The
+remaining ~18 dioceses/jurisdictions in the roster have no verified source at all per
 Josh's own research (`tecDioceseRoster.noSourceFound` in schema.json) and won't be ingested unless a
 source turns up. Any further work on this corpus going forward is either: (a) Southern Virginia, if Josh
 supplies a working link/PDF; (b) a genuinely new cycleType for Mississippi/Navajoland, if Josh decides to

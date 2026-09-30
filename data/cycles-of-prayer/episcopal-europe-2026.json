@@ -1,0 +1,730 @@
+{
+  "id": "episcopal-europe-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Convocation of Episcopal Churches in Europe",
+  "dioceseShort": "europe",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Convocation Prayer Cycle -- For Use by Individuals and Congregations -- Advent 2025 – end of Pentecost 2026 (Year A)",
+  "sourceFile": "PDF fetched directly from https://episcopaleurope.org/convocationprayercycle_2026_rev26nov25/, linked from the Convocation's own \"Our Faith\" page at https://episcopaleurope.org/our-faith/.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "SCOPE / BODY TYPE: The Convocation of Episcopal Churches in Europe is not an ordinary geographic diocese of The Episcopal Church -- it is a convocation, a jurisdiction of TEC covering TEC congregations across the European continent (Italy, Georgia, Switzerland, Germany, the Netherlands, France, Austria, Belgium, etc.), governed by its own Bishop in Charge, Council of Advice, and Annual Convention rather than a single national territory. It is recorded here with scope 'diocese' (this schema's default) per the task's explicit instruction, because a convocation functions the same way as a diocese for this corpus's purposes: it publishes its own local cycle of prayer for its own congregations/ministries, exactly like every other scope-'diocese' file in this corpus. scope 'communion' was deliberately NOT used -- that value is reserved for the single worldwide Anglican Cycle of Prayer file (anglican-communion-2026.json), which is a different, universe-wide document; this file is one jurisdiction's own local cycle, structurally identical in kind to e.g. episcopal-western-oregon-2026.json, not to the worldwide communion cycle.",
+    "`diocese` field: the source PDF itself repeatedly self-identifies as “The Convocation of Episcopal Churches in Europe” (used verbatim three times within the cycle's own entries: 28 Dec/COABICE, 5 Apr/Bishop in Charge, 11 Oct/Annual Convention) -- this is the form used here. The Convocation's website (episcopaleurope.org) additionally brands itself “The Episcopal Church in Europe” in its page <title> and logo (“THE EPISCOPAL CHURCH EUROPE”, also printed as the PDF's own letterhead), but the cycle document's own internal running text consistently uses “Convocation of Episcopal Churches in Europe,” so that form was preferred as the source's own self-identification within the actual document being transcribed, per this corpus's Tennessee precedent of preferring the most consistently repeated in-document form.",
+    "SOURCE LAYOUT: the PDF (6 pages, machine-readable embedded text, not scanned/OCR'd) was rendered page-by-page as images and visually checked before transcription. It is a single-column running list throughout (a dated heading in bold/colored italic, followed by one or more indented lines per date) -- it does NOT have the multi-column monthly-grid layout this corpus's governance notes flag as a risk class for scope-communion/scope-parish sources, so no column-interleaving risk applies here.",
+    "YEAR-BOUNDARY LEAD-IN: the source's own title is 'Advent 2025 – end of Pentecost 2026 (Year A)' and it prints one unbroken weekly rotation of 53 Sundays from 30 Nov 2025 (First Sunday of Advent) through 22 Nov 2026 (Christ the King / Last Sunday after Pentecost), with no gaps. Per this corpus's established disclose-and-include precedent for a year-spanning source (episcopal-tennessee-2026.json, episcopal-california-2026.json, episcopal-vermont-2026.json), the 6 entries falling in calendar year 2025 (30 Nov, 7 Dec, 14 Dec, 21 Dec, 25 Dec, 28 Dec) are included in this single '-2026' file rather than split into a companion '-2025' file: at 6 of 53 entries (~11%), the 2025 portion is a small lead-in comparable in scale to Tennessee's 9-of-52, not a genuine ~one-third/two-thirds split like episcopal-southeast-florida-2026.json/-2027.json.",
+    "TRANSCRIPTION CONVENTION FOR MULTI-LINE ENTRIES: each date's own indentation was used to distinguish separate top-level prayer subjects from subordinate detail lines. A line printed at the source's base indent (flush with other subject lines under that date) is recorded as its own subject (parish or category). A line printed at the source's next-deeper, distinct indent level beneath a subject line (used throughout for officiant/leader names, e.g. 'The Rev. X, Rector') was folded into that subject's own `note` field rather than treated as a separate subject, since this schema's subjectShape has no dedicated field for an officiant/leader name; where more than one such subordinate line applied to a single subject (e.g. 16 August's four Convocation officers, one of which wraps across the page 4/5 boundary; 9 August's two Convocation Staff members; 29 March's three St. Boniface subordinate details), they were joined with '; ' in the order printed. A subordinate line that is a plain page-margin word-wrap of the immediately preceding sentence (not a new officiant/detail, e.g. 18 Jan's Christian-Unity quotation, 15 Feb's World Mission Sunday sentence, 25 Oct's Board-of-Foreign-Parishes sentence, 23 Aug's Ilia Chavchavadze commemoration, 25 Jan's Nicholas of Flüe commemoration) was instead rejoined into that same subject's own `name` as one continuous sentence, since it is not new subordinate content but the same sentence continuing.",
+    "EXCEPTION to the indentation rule above, disclosed explicitly: 5 July's first subject ('Ecumenical partners throughout the Convocation and full communion partners,') is followed by a line printed at the deeper 'subordinate' indent ('especially the Church of Sweden and the Evangelical Lutheran Church of Bavaria'), but because the first line ends mid-sentence with a trailing comma, this was judged to be a continuation of the same sentence (joined into one `name`) rather than a distinct subordinate detail -- a judgment call made on grammar rather than indentation alone.",
+    "INCONSISTENT PLACEMENT OF PARENTHETICAL OBSERVANCE-DAY NOTES: the source is itself inconsistent about whether a parenthetical secular/ecumenical observance-day mention (e.g. '(World Refugee Day, 20 June)') is printed at the base subject-line indent or at the deeper subordinate indent. Where printed at the base indent (21 June's '(World Refugee Day, 20 June)'), it was recorded as its own separate category subject, since the source itself did not subordinate it to the preceding line. Where printed at the deeper subordinate indent (15 March's '(International Day for the Elimination of Racial Discrimination, 21 March)', 18 October's '(United Nations Day, 24 October)', 30 August's '(World Day of Prayer for the Care of Creation...)'), it was folded into the immediately preceding subject's own `note`, per the general rule above. This inconsistency is the source's own, not this transcription's.",
+    "30 Nov 2025: the single printed line 'St. Paul’s Within-the-Walls and the Joel Nafuma Refugee Center, Rome, Italy' names two distinct entities joined by 'and,' each with its own subordinate leader line immediately below it (Fr. Jonathan Evans for the parish; Giulia Bonoldi for the refugee center) -- split into two subjects, a parish ('St. Paul’s Within-the-Walls', Rome, Italy) and a category ('the Joel Nafuma Refugee Center', lower-case 'the' preserved as printed). Since a category subject carries no `place` field, the shared Rome, Italy location for the refugee center was disclosed in its own `note` alongside its leader's name rather than silently dropped.",
+    "14 Dec 2025: 'St. Nino’s Mission in Tbilisi, Georgia' was split into name 'St. Nino’s Mission' and place 'Tbilisi, Georgia' at the word 'in' -- every other parish entry in this source uses a comma (not 'in') to separate name from place, so this one entry's own wording required a different, disclosed split point.",
+    "6 Sept 2026: 'Christ Church, Charleroi; Saint-Esprit, Mons' names two distinct Belgian congregations sharing one Acting Vicar (printed as a single subordinate line below both). Split into two separate parish subjects (Christ Church, Charleroi; Saint-Esprit, Mons), each carrying the same shared-clergy detail in its own `note`, with a parenthetical cross-reference added in each note disclosing that the vicar is shared between the two (that cross-reference phrase is this file's own addition for clarity, not printed in the source).",
+    "29 March 2026 (St. Boniface, Augsburg; St. James the Less, Nuremberg; St. Michael’s Church, Thuringia): each is printed as 'Name, Mission, Place' / 'Name, Organized Mission, Place' -- the middle status word ('Mission' / 'Organized Mission') is not part of the congregation's own name or its place, and this schema's subjectShape has no separate status field, so it was moved into each subject's own `note` (ahead of the officiant's name, in printed order) rather than left embedded in `name` or `place`.",
+    "26 April 2026: 'Santa Maria a Ferrano Retreat Center, Specialized Mission' prints no city/country at all (unlike every parish entry elsewhere in this source), so it was recorded as type 'category' rather than 'parish' -- this schema requires a non-empty `place` for type 'parish' and none is available here to supply without inventing one; its 'Specialized Mission' designation and director's name were both folded into its `note`.",
+    "28 June 2026: 'Latin American Community at St. Paul’s Within-the-Walls, Rome, Italy' was recorded as type 'category' (name 'Latin American Community at St. Paul’s Within-the-Walls') rather than 'parish', since it is a ministry/community meeting within a congregation already separately listed elsewhere in this cycle (30 Nov 2025) rather than a standalone chartered congregation of its own; its Rome, Italy location and vicar were both folded into its `note` since a category subject carries no `place` field.",
+    "19 April 2026: the subordinate leader line under 'Mission Church of All Saints’, Amsterdam' reads, in full, 'The Rev. Dr. Kyle Rader, Priest-in-Charge, and the' -- the sentence is cut off mid-clause in the source itself (nothing follows before the next date's heading). Transcribed verbatim into this subject's `note` exactly as printed, including the dangling 'and the', per this corpus's rule against silently completing or correcting a source's own apparent error.",
+    "16 November 2026: printed exactly as '16 November: Twenty-Fifth Sunday after Pentecost (Proper 28)'. Every other date in this cycle falls on a Sunday (independently verified), but 16 Nov 2026 is a Monday -- 15 Nov 2026 would be the Sunday consistent with the preceding (8 Nov) and following (22 Nov) entries' own 7-day spacing. This is preserved verbatim as printed (date recorded as 2026-11-16) rather than silently corrected to the 15th, per this schema's rule that `date` is taken directly from the source, not computed.",
+    "11 October 2026 entry ('115th Annual Convention of the Convocation of Episcopal Churches in Europe and Festival'): its own subordinate line gives the hosting dates as 'Hosted by the Convocation at the Wilhelm Kempf Center in Wiesbaden, 15-17 October, 2025' -- a year (2025) that precedes this entry's own placement in the cycle (11 October 2026), and is in fact simultaneous with this same source document's Advent-2025 opening rather than its autumn-2026 closing months. This reads as a stale/carried-over reference to a prior edition's convention dates (paralleling this corpus's Tennessee precedent of a stale, un-updated section heading) rather than a live announcement of an event still to come; transcribed verbatim without correction.",
+    "Typos/format irregularities preserved verbatim rather than corrected, per this schema's rule: '14 June: Third Sunday after Pentecost /Proper 6)' is missing its opening parenthesis before 'Proper' (kept as printed, including the stray leading slash); 8 March's Council of Advice line uses a colon ('Ward Greenberg, President: The Rev. Michael Rusk, Vice-President;') where its own following item uses a semicolon convention instead, and the two printed lines of that entry were joined with a single space, not a semicolon, since they were a single wrapped list. Wherever more than one subordinate leader/detail line was folded into one subject's `note` elsewhere in this file, they were joined with '; ' regardless of a given line's own internal punctuation (several already contain their own internal ';'), so a `note` string can contain nested semicolons exactly as the source's own text does.",
+    "Formatting not representable in this schema's plain-text fields: several French-language congregation/programme names and role titles are printed in italics in the source (e.g. 'Mission Episcopale Francophone de la Résurrection', 'Magazine Anglican', 'Radio Fréquence Protestant', 'Animatrice') -- recorded here as plain text with the loss of italic emphasis disclosed rather than represented. Similarly, several date headings are printed in colored italic text keyed to liturgical season (purple for Advent/Lent, black for Christmas/general Ordinary Time, green for Epiphany/the long Pentecost season, red for Palm Sunday/Pentecost Sunday) -- this color-coding is not part of the source's own printed text content and is not carried into `liturgicalNote`.",
+    "Diacritics and special characters (José Jorge de Pina Cabral, Mühlbach am Hochkönig, Résurrection, Fréquence, Flüe, Carlos López-Lozano, Ilia Chavchavadze, Élie Naud, Markus Dünzkofer) are transcribed exactly as encoded in the source PDF's own embedded, machine-readable text layer (this PDF is not a scanned/OCR'd document, so no OCR-adjacent ambiguity applies).",
+    "`liturgicalNote` is transcribed verbatim from each date's own heading text (everything after the date itself), including the source's own inconsistent en-dash/em-dash usage and inline parenthetical remarks (e.g. '1 February: Fourth Sunday after the Epiphany (2 Feb: Presentation of Jesus in the Temple)'), per this schema's rule that it is a disclosed label copied from the source, never computed or corrected against this app's own liturgical-calendar engines."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": "First Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s Within-the-Walls",
+          "place": "Rome, Italy",
+          "note": "The Rev. Jonathan Evans, Priest in Charge"
+        },
+        {
+          "type": "category",
+          "name": "the Joel Nafuma Refugee Center",
+          "note": "Based at St. Paul’s Within-the-Walls, Rome, Italy; Giulia Bonoldi, JNRC Managing Director and Convocation Welcoming Officer"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": "Second Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy spouses and clergy families"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": "Third Sunday of Advent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Nino’s Mission",
+          "place": "Tbilisi, Georgia"
+        },
+        {
+          "type": "category",
+          "name": "St. Nino of Georgia, Missionary, c. 332 (Lesser Feasts and Fasts)"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": "Fourth Sunday of Advent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Sunday School Teachers and Christian Educators"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-25",
+      "liturgicalNote": "Christmas Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "For all the baptized in their daily life and work"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": "First Sunday after Christmas",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The College of Anglican Bishops in Continental Europe (COABICE)",
+          "note": "The Bishops of the Convocation of Episcopal Churches in Europe, Diocese of Gibraltar in Europe of the Church of England, the Lusitanian Catholic Apostolic Evangelical Church of Portugal and the Spanish Episcopal Church"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": "Second Sunday of Christmas",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Altar guilds and those who arrange flowers in our churches"
+        },
+        {
+          "type": "category",
+          "name": "Military Chaplains and their congregations"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": "First Sunday after the Epiphany, The Baptism of our Lord",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Commission on the Ministry of the Baptized",
+          "note": "The Rev. Canon Dr. Ali Gray, Chair and Canon for Spiritual Development"
+        },
+        {
+          "type": "category",
+          "name": "All those seeking discernment and all Postulants and Candidates for Holy Orders"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": "Second Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Week of Prayer for Christian Unity: “There is one body and one Spirit, just as you were called to the one hope of your calling” (Ephesians 4:4), 18–25 January."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": "Third Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel Church",
+          "place": "Geneva, Switzerland",
+          "note": "The Rev. Michael Rusk, Rector; The Rev. Richard Cole, Deacon"
+        },
+        {
+          "type": "category",
+          "name": "Nicholas of Flüe (also known as Brother Klaus), a symbol of peace and reconciliation who bridged bitter divisions, and patron of Switzerland. D 21 March 1487. (proposed for Lesser Feasts and Fasts, 21 March)"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": "Fourth Sunday after the Epiphany (2 Feb: Presentation of Jesus in the Temple)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The European Institute of Christian Studies",
+          "note": "Ms. Janet Day-Strehlow, Chair"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": "Fifth Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Old Catholic Church of the Union of Utrecht",
+          "note": "The Most Rev. Bernd Wallet, Archbishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": "Last Sunday after the Epiphany",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "World Mission Sunday: All missionaries and Young Adult Service Corps members of The Episcopal Church and all engagement with God’s mission throughout the world"
+        },
+        {
+          "type": "category",
+          "name": "The Committee on Mission Congregations and all those in our mission congregations",
+          "note": "Ms. Audrey Jolivet-Habiby, Chair"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": "First Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Lusitanian Catholic Apostolic Evangelical Church of Portugal",
+          "note": "The Rt. Rev. José Jorge de Pina Cabral, Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": "Second Sunday in Lent",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Clermont-Ferrand, France"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": "Third Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Council of Advice",
+          "note": "Ward Greenberg, President: The Rev. Michael Rusk, Vice-President; Torsten Bartsch, Secretary"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": "Fourth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Racial Justice, Reconciliation and Beloved Community",
+          "note": "The Rev. Canon Mpho Tutu Van Furth, Canon for Racial Justice and Beloved Community"
+        },
+        {
+          "type": "category",
+          "name": "Convocation Task Force on Racism, Reconciliation and Beloved Community",
+          "note": "Mr. David Case, Chair; (International Day for the Elimination of Racial Discrimination, 21 March)"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": "Fifth Sunday in Lent",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Most Rev. Sean Rowe, Presiding Bishop and Primate"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": "Sunday of the Passion: Palm Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Boniface",
+          "place": "Augsburg, Germany",
+          "note": "Organized Mission; The Rev. Lutz Ackermann, Vicar; The Rev. Frauke Ackermann, Assisting Priest"
+        },
+        {
+          "type": "parish",
+          "name": "St. James the Less",
+          "place": "Nuremberg, Germany",
+          "note": "Mission; The Rev. Scott Moore, Vicar"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael’s Church",
+          "place": "Thuringia, Germany",
+          "note": "Mission; The Rev. Scott Moore, Vicar"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": "Easter Day",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Rt. Rev. Mark D.W. Edington",
+          "note": "Bishop in Charge of the Convocation of Episcopal Churches in Europe"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": "Second Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Diocese of Gibraltar in Europe (of the Church of England)",
+          "note": "The Rt. Rev. Robert Innes, Bishop; The Rt. Rev. Andrew Norman, Suffragan Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Third Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Mission Church of All Saints’",
+          "place": "Amsterdam",
+          "note": "The Rev. Dr. Kyle Rader, Priest-in-Charge, and the"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": "Fourth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Santa Maria a Ferrano Retreat Center, Specialized Mission",
+          "note": "The Rev. Thomas Muller, Director"
+        },
+        {
+          "type": "category",
+          "name": "All those involved in communication for their parishes and missions: including digital ministries and livestream hosts, newsletters, posters and publicity"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": "Fifth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Spanish Reformed Episcopal Church",
+          "note": "The Rt. Rev. Carlos López-Lozano, Bishop"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": "Sixth Sunday of Easter",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Council of Anglican/Episcopal Churches in Germany (CAECG)",
+          "note": "The Rev. Christopher Easthill, Convenor"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": "Seventh Sunday of Easter",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Ascension",
+          "place": "Munich, Germany",
+          "note": "The Rev. Daniel Morrow, Priest in Charge"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": "Day of Pentecost – Whitsunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Youth Across Europe, Juniors across Europe, and Young Adults"
+        },
+        {
+          "type": "category",
+          "name": "All members of youth groups throughout the Convocation.",
+          "note": "The Rev. Scott Moore, Children and Youth Coordinator"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": "First Sunday after Pentecost: Trinity Sunday",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "The American Cathedral of the Holy Trinity",
+          "place": "Paris, France",
+          "note": "The Rev. Canon Hailey Jacobsen, Canon Missioner"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": "Second Sunday after Pentecost (Proper 5)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of St. Augustine of Canterbury",
+          "place": "Wiesbaden, Germany",
+          "note": "The Rev. Chris Easthill, Rector; The Rev. Douglas Robinson, Assisting Priest; The Rev. Robert Vukovic, Assisting Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": "Third Sunday after Pentecost /Proper 6)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Choir Directors, Organists, Choir members and Musicians."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": "Fourth Sunday after Pentecost (Proper 7)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Refugees and Migrants everywhere, and all those who provide support"
+        },
+        {
+          "type": "category",
+          "name": "Convocation Ministry Initiative on Migrants and Refugees"
+        },
+        {
+          "type": "category",
+          "name": "Convocation Refugee Grant Program, Giulia Bonoldi, Director and Chief Welcoming Officer of the Convocation; Soccoro Heepe, Program and Administrative Manager for the Refugee Grant Program"
+        },
+        {
+          "type": "category",
+          "name": "(World Refugee Day, 20 June)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": "Fifth Sunday after Pentecost (Proper 8)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Latin American Community at St. Paul’s Within-the-Walls",
+          "note": "Based at St. Paul’s Within-the-Walls, Rome, Italy; The Rev. Francisco Alberca, Vicar"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": "Sixth Sunday after Pentecost (Proper 9)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Ecumenical partners throughout the Convocation and full communion partners, especially the Church of Sweden and the Evangelical Lutheran Church of Bavaria"
+        },
+        {
+          "type": "category",
+          "name": "Moses the Ethiopian, Desert Father and Martyr, c.400 (Lesser Feasts and Fasts)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": "Seventh Sunday after Pentecost (Proper 10)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church Wardens, Vestries, and Bishop’s Committees"
+        },
+        {
+          "type": "category",
+          "name": "Parish treasurers and bookkeepers"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": "Eighth Sunday after Pentecost (Proper 11)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Florence, Italy",
+          "note": "The Rev. Richard Easterling, Rector"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": "Ninth Sunday after Pentecost (Proper 12)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Mission Episcopale Francophone de la Résurrection",
+          "place": "Paris",
+          "note": "The Rev. Jean-Dumond Chavanne, Vicar"
+        },
+        {
+          "type": "category",
+          "name": "Magazine Anglican, emission on Anglicanism on Radio Fréquence Protestant, the last Sunday of every month",
+          "note": "Laurence Moachon, Animatrice"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": "Tenth Sunday after Pentecost (Proper 13)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Church sextons and all who care for the maintenance and the cleaning of our churches"
+        },
+        {
+          "type": "category",
+          "name": "Church secretaries and parish administrators"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": "Eleventh Sunday after Pentecost (Proper 14)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Convocation Staff",
+          "note": "Mme Sophie Plé, Canon for Administration; Ms. Audrey Shankles, Chair of Communications"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": "Twelfth Sunday after Pentecost (Proper 15)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Officers of the Convocation",
+          "note": "The Rev. Richard Cole, Secretary of the Convention; Mr. Denis Le Moullac, Treasurer of the Convocation; Ms. Lisa Colella, Assistant Treasurer of the Convocation; Ms. Jocelyn Phelps, Safeguarding Officer"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": "Thirteenth Sunday after Pentecost (Proper 16)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Acolytes and Eucharistic Ministers and all Lay Licensed Ministers"
+        },
+        {
+          "type": "category",
+          "name": "Ilia Chavchavadze, Model of faith for contemporary Georgians, 27 Oct 1837 – 30 Aug 1907. (Proposed for Lesser Feasts and Fasts)"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": "Fourteenth Sunday after Pentecost (Proper 17)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Climate and Creation Care"
+        },
+        {
+          "type": "category",
+          "name": "Convocation Ministry Initiative on Climate and Creation Care",
+          "note": "Ms. Anita Urassa, Chair; (World Day of Prayer for the Care of Creation, 1 Sept; Season of Creation, 1 Sept–4 Oct)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": "Fifteenth Sunday after Pentecost (Proper 18)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Charleroi",
+          "note": "The Rev. Jo Jan Vandenheede, Acting Vicar (shared cure with Saint-Esprit, Mons)"
+        },
+        {
+          "type": "parish",
+          "name": "Saint-Esprit",
+          "place": "Mons",
+          "note": "The Rev. Jo Jan Vandenheede, Acting Vicar (shared cure with Christ Church, Charleroi)"
+        },
+        {
+          "type": "category",
+          "name": "Élie Naud, Huguenot, Witness to the Faith, 7 Sept 1722 (Proposed for Lesser Feasts and Fasts)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": "Sixteenth Sunday after Pentecost (Proper 19)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Children and Youth Commission",
+          "note": "Heidrun Alfke, Chair"
+        },
+        {
+          "type": "category",
+          "name": "All children and youth leaders throughout the Convocation"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": "Seventeenth Sunday after Pentecost (Proper 20)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Chapel of the Holy Family",
+          "place": "Mühlbach am Hochkönig, Austria"
+        },
+        {
+          "type": "category",
+          "name": "Marriage Adventures, Kairos Platzl",
+          "note": "The Rev. Clair and Dr. Rainer Ullmann"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": "Eighteenth Sunday after Pentecost (Proper 21)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Clergy licensed to the Convocation and all other clergy serving in the Convocation"
+        },
+        {
+          "type": "category",
+          "name": "Convocation clergy serving other Anglican Communion and Full Communion partner churches"
+        },
+        {
+          "type": "category",
+          "name": "Retired clergy and bishops of the Convocation"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": "Nineteenth Sunday after Pentecost (Proper 22)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Stewardship Committees"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": "Twentieth Sunday after Pentecost (Proper 23)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "115th Annual Convention of the Convocation of Episcopal Churches in Europe and Festival",
+          "note": "Hosted by the Convocation at the Wilhelm Kempf Center in Wiesbaden, 15-17 October, 2025"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": "Twenty-First Sunday after Pentecost (Proper 24)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All leaders of all the nations.",
+          "note": "(United Nations Day, 24 October)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": "Twenty-Second Sunday after Pentecost (Proper 25)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Board of Foreign Parishes, The Board of St. James and the Board of St. Paul’s Within-the-Walls"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": "All Saints – Twenty-Third Sunday after Pentecost (Proper 26)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints’ Church",
+          "place": "Waterloo, Belgium",
+          "note": "The Rev. Jo Jan Vandenheede, Associate Priest"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": "Twenty-Fourth Sunday after Pentecost (Proper 27)",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Archbishop of Canterbury, The Most Reverend and Right Honourable Sarah Mullally"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalNote": "Twenty-Fifth Sunday after Pentecost (Proper 28)",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Columban’s Mission Church",
+          "place": "Karlsruhe, Germany",
+          "note": "The Rev. Robert Vukovic, Vicar"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": "Last Sunday after Pentecost: Christ the King",
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Christ-the-King",
+          "place": "Frankfurt, Germany",
+          "note": "The Rev. Markus Dünzkofer, Priest in Charge"
+        }
+      ]
+    }
+  ]
+}

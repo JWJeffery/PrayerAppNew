@@ -116,7 +116,8 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'western-new-york', label: 'Episcopal Diocese of Western New York' },
     { bodySlug: 'episcopal', dioceseShort: 'western-north-carolina', label: 'The Episcopal Diocese of Western North Carolina' },
     { bodySlug: 'episcopal', dioceseShort: 'wisconsin', label: 'The Episcopal Diocese of Wisconsin' },
-    { bodySlug: 'episcopal', dioceseShort: 'wyoming', label: 'The Episcopal Diocese of Wyoming' }
+    { bodySlug: 'episcopal', dioceseShort: 'wyoming', label: 'The Episcopal Diocese of Wyoming' },
+    { bodySlug: 'episcopal', dioceseShort: 'europe', label: 'The Convocation of Episcopal Churches in Europe' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {
