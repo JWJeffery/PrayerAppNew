@@ -114,7 +114,7 @@
         regEmail = body.email;
         $('form-register').hidden = true;
         $('form-register-code').hidden = false;
-        $('reg-code-note').textContent = 'We have sent a 6-digit code to ' + body.email + '. It expires in 10 minutes.';
+        $('reg-code-note').textContent = 'We are sending a 6-digit code to ' + body.email + '. It expires in 10 minutes. Check your spam folder. If nothing arrives within a few minutes, that address may already be registered here \u2014 go back and sign in instead.';
         U.say($('register-status'), '', '');
         $('reg-code').focus();
       } else {
