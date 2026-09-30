@@ -11,6 +11,8 @@ $apiDir = dirname(__DIR__);
 foreach (['Config', 'Response', 'Request', 'Router', 'Db', 'Validate', 'Crypto', 'RateLimit', 'Migrator'] as $c) {
     require_once "$apiDir/src/$c.php";
 }
+// bootstrap.php loads the rest (Mailer, Auth, ...) and defines uo_log().
+require_once "$apiDir/src/bootstrap.php";
 
 $pass = 0; $fail = 0;
 function t(string $name, bool $ok, string $detail = ''): void {
@@ -88,6 +90,7 @@ register_shutdown_function(function () use ($proc, $admin, $dbName) {
 function reset_state(): void {
     global $pdo;
     $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
+    mail_reset();
     foreach (['intentions', 'sessions', 'login_codes', 'approval_tokens', 'staff', 'parishes', 'rate_limits', 'audit_log'] as $tbl) {
         $pdo->exec("TRUNCATE TABLE `$tbl`");
     }
@@ -103,6 +106,40 @@ function make_parish(string $slug, string $status = 'approved', string $visibili
         ->execute([$slug, $name ?? ucfirst($slug), $diocese, $visibility,
                    $visibility === 'code' ? Crypto::encryptJoinCode($code) : null, $status]);
     return [(int)$pdo->lastInsertId(), $code];
+}
+function make_staff(int $parishId, string $email, string $role = 'rector', ?string $name = null): int {
+    global $pdo;
+    $pdo->prepare('INSERT INTO staff (parish_id, email, display_name, role, created_at) VALUES (?, ?, ?, ?, UTC_TIMESTAMP())')
+        ->execute([$parishId, $email, $name, $role]);
+    return (int)$pdo->lastInsertId();
+}
+function mail_file(): string { global $tmp; return "$tmp/logs/mail-outbox.log"; }
+function mail_reset(): void { @unlink(mail_file()); }
+/** Messages captured by the log mail driver: [['to'=>, 'subject'=>, 'body'=>], ...] */
+function mail_messages(): array {
+    $raw = @file_get_contents(mail_file());
+    if ($raw === false || $raw === '') { return []; }
+    $out = [];
+    foreach (preg_split('/^=== END ===\n/m', $raw, -1, PREG_SPLIT_NO_EMPTY) as $chunk) {
+        if (preg_match('/^=== MAIL [^\n]*===\nTo: ([^\n]*)\nSubject: ([^\n]*)\n\n(.*)$/s', $chunk, $m)) {
+            $out[] = ['to' => $m[1], 'subject' => $m[2], 'body' => $m[3]];
+        }
+    }
+    return $out;
+}
+/** The 6-digit code in the most recent message to $email, or null. */
+function last_code(string $email): ?string {
+    foreach (array_reverse(mail_messages()) as $m) {
+        if ($m['to'] === $email && preg_match('/\b(\d{6})\b/', $m['body'], $x)) { return $x[1]; }
+    }
+    return null;
+}
+/** Log in through the real endpoints; returns the bearer token. */
+function login_as(string $email): string {
+    http('POST', '/api/v1/auth/request-code', [], ['email' => $email]);
+    $code = last_code($email);
+    [$s, $b] = http('POST', '/api/v1/auth/verify-code', [], ['email' => $email, 'code' => $code]);
+    return jbody($b)['token'] ?? '';
 }
 function make_intention(int $parishId, string $category, string $body, int $expiresInSeconds): int {
     global $pdo;

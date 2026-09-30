@@ -2,9 +2,10 @@
 // DEV ONLY: inserts one sample parish (St. Bede's) with sample intentions so the
 // reader endpoints have something to return. Refuses to run unless site_url is local.
 // Run:  php api/cli/seed-dev.php
+//       php api/cli/seed-dev.php --rector you@example.org   (also makes that address the rector of st-bede)
 if (PHP_SAPI !== 'cli') { exit; }
 define('UO_API', true);
-foreach (['Config', 'Db', 'Crypto', 'Validate'] as $c) { require_once __DIR__ . "/../src/$c.php"; }
+foreach (['Config', 'Response', 'Request', 'Router', 'Db', 'Crypto', 'Validate', 'Auth'] as $c) { require_once __DIR__ . "/../src/$c.php"; }
 
 Config::load();
 if (strpos((string)Config::get('site_url', ''), 'http://localhost') !== 0) {
@@ -38,5 +39,15 @@ if ($count === 0) {
         $ins->execute([$id, $cat, $text, $days]);
     }
     echo "Added 5 sample intentions (one already expired).\n";
+}
+$opt = array_search('--rector', $argv, true);
+if ($opt !== false) {
+    require_once __DIR__ . '/../src/Auth.php';
+    $email = Auth::normalizeEmail($argv[$opt + 1] ?? null);
+    if ($email === null) { fwrite(STDERR, "Give a valid email after --rector.\n"); exit(1); }
+    $pdo->prepare("INSERT INTO staff (parish_id, email, display_name, role, created_at)
+                   VALUES (?, ?, 'Dev Rector', 'rector', UTC_TIMESTAMP())
+                   ON DUPLICATE KEY UPDATE parish_id = VALUES(parish_id), role = 'rector'")->execute([$id, $email]);
+    echo "Rector login ready for $email (dev mail is written to the outbox log, not sent).\n";
 }
 echo "Dev join code for st-bede: " . Crypto::formatJoinCode((string)$code) . "\n";

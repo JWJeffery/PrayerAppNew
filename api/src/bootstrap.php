@@ -11,7 +11,12 @@ require_once __DIR__ . '/Validate.php';
 require_once __DIR__ . '/Crypto.php';
 require_once __DIR__ . '/RateLimit.php';
 require_once __DIR__ . '/Migrator.php';
+require_once __DIR__ . '/Audit.php';
+require_once __DIR__ . '/Deferred.php';
+require_once __DIR__ . '/Mailer.php';
+require_once __DIR__ . '/Auth.php';
 require_once __DIR__ . '/Handlers/Public.php';
+require_once __DIR__ . '/Handlers/AuthHandlers.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -48,6 +53,11 @@ function uo_build_router(): Router
     $r->add('GET', '/parishes', ['PublicApi', 'listParishes']);
     $r->add('GET', '/parishes/{slug}/intentions', ['PublicApi', 'intentions']);
     $r->add('POST', '/parishes/{slug}/join', ['PublicApi', 'join']);
+    // Staff authentication (spec 8.3).
+    $r->add('POST', '/auth/request-code', ['AuthApi', 'requestCode']);
+    $r->add('POST', '/auth/verify-code', ['AuthApi', 'verifyCode']);
+    $r->add('POST', '/auth/logout', ['AuthApi', 'logout']);
+    $r->add('GET', '/me', ['AuthApi', 'me']);
     return $r;
 }
 
