@@ -541,28 +541,30 @@ eighth diocese in this same batch (53 entries, Nov 2025-Nov 2026, `scope: "dioce
 plays the same local-cycle role here, not `scope: "communion"`). Full per-diocese detail:
 `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-30 "Diocese ingestion batch 15" entry.
 
-**Roster status: DONE, with three known exceptions.** Every TEC diocese/jurisdiction with a located,
-verified current cycle per Josh's own roster is now ingested into this corpus except **Mississippi** and
-**Navajoland** (both have a real, located source, but neither's shape — week-numbered and day-of-week
-respectively — fits any of this corpus's four cycleTypes; deliberately set aside per standing decision
-rather than forced in, same as how `monthly-recurring` itself was added when Arkansas didn't fit
-`dated`). **Southern Virginia, the one blocked link, is DONE as of 2026-09-30** — Josh asked to see the
-blocked links, was given the diosova.org URL and the reason it couldn't be fetched (a SiteGround bot-
-challenge page), and supplied the source PDF directly as a file upload; it was transcribed into two files
-(`episcopal-southern-virginia-2026.json` + `-2027.json`, 26 entries each, split evenly across the source's
-own July 2026–June 2027 cycle) the same session. Should Josh ever decide a new cycleType is worth adding
-for Mississippi/Navajoland, that's the only ordinary ingestion work left — everything else in the
-roster's remaining ~18 dioceses has no verified source at all and won't be ingested unless one turns up
-(see `tecDioceseRoster.noSourceFound` in schema.json). Beyond that, future work here is periodic: a
-diocese whose source is only ever a rolling/partial window (West Missouri, Springfield, and similar) will
-need periodic re-checking, and every diocese will need a fresh file once it publishes its 2027 cycle.
+**Roster status: FULLY DONE as of 2026-09-30 — zero exceptions remaining.** Every TEC diocese/
+jurisdiction with a located, verified current cycle per Josh's own roster is now ingested into this
+corpus. The two loose ends closed the same day: **Southern Virginia** (the one blocked link — Josh asked
+to see it, was given the diosova.org URL and the reason it couldn't be fetched, a SiteGround bot-challenge
+page, and supplied the source PDF directly; transcribed into two files, `episcopal-southern-virginia-2026
+.json` + `-2027.json`, 26 entries each, split evenly across the source's own July 2026–June 2027 cycle).
+**Mississippi and Navajoland** (the two shape-mismatched dioceses — Josh's own direct decision, on being
+shown both links: "Accomodate them both, new schemas. For Mississippi, they will pray that all week."
+Two more cycleTypes were added, the same kind of call that created `monthly-recurring`/`annual-recurring`/
+`ordinal-sunday-monthly` earlier: `week-of-year-recurring` (Mississippi — 52 entries, one intention per
+ISO week-of-year, no year) and `day-of-week-recurring` (Navajoland — 7 entries, one set of subjects per
+weekday, repeating every week). Full detail: `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-30 "Two new
+cycleTypes added" entry. Only the ~18 no-source-found jurisdictions remain outstanding (see
+`tecDioceseRoster.noSourceFound` in schema.json) — those won't be addressed unless a source turns up.
+Future work here is now purely periodic: a diocese whose source is only ever a rolling/partial window
+(West Missouri, Springfield, and similar) will need periodic re-checking, and every diocese will need a
+fresh file once it publishes its 2027 cycle.
 
-**~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 85 are now ingested into this corpus, 2 remain** (Mississippi, Navajoland — see above;
-separately, 18 dioceses have no verified source at all per Josh's own research — see
+**87 dioceses/jurisdictions with a located, verified current cycle per the roster (88 minus El Camino
+Real, now historical) — all 87 are now ingested into this corpus, 0 remain** (separately, 18
+dioceses/jurisdictions have no verified source at all per Josh's own research — see
 `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
 
-**90 files currently in the corpus, all passing the validator:** 81 diocese-level, `cycleType: "dated"`
+**92 files currently in the corpus, all passing the validator:** 81 diocese-level, `cycleType: "dated"`
 (78 dioceses; Delaware, Southeast Florida, and Southern Virginia each contribute 2 files, 2026+2027) —
 Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
 Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton,
@@ -578,8 +580,9 @@ Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
 Virginia, Western Massachusetts, Colorado; 5 diocese-level, `cycleType:
 "monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas, Western Louisiana; 1
 diocese-level, `cycleType: "annual-recurring"` — Long Island; 1 diocese-level, `cycleType:
-"ordinal-sunday-monthly"` — Hawai'i
-(`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match `TEC_DIOCESE_DIRECTORY`) — plus:
+"ordinal-sunday-monthly"` — Hawai'i (`episcopal-hawai-i.json`, dioceseShort `hawai-i` to match
+`TEC_DIOCESE_DIRECTORY`); 1 diocese-level, `cycleType: "week-of-year-recurring"` — Mississippi; 1
+diocese-level, `cycleType: "day-of-week-recurring"` — Navajoland — plus:
 - `episcopal-western-oregon-st-bede.json` (St. Bede's own Congregational Cycle of Prayer — Josh's own
   parish, `scope: "parish"`, `"monthly-recurring"`, ingested 2026-09-29 from a Drive PDF Josh supplied).
   St. Bede's already separately appears as a diocese-level `"parish"` subject inside Western Oregon's
