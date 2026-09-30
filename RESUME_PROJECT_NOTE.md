@@ -542,35 +542,38 @@ plays the same local-cycle role here, not `scope: "communion"`). Full per-dioces
 `AUDIT_GOVERNANCE_LEDGER.md`'s 2026-09-30 "Diocese ingestion batch 15" entry.
 
 **Roster status: DONE, with three known exceptions.** Every TEC diocese/jurisdiction with a located,
-verified current cycle per Josh's own roster is now ingested into this corpus except: **Southern
-Virginia** (blocked — SiteGround's bot-challenge page defeats every workaround tried; held for Josh to
-grab the link himself per his standing preference, not yet resolved); **Mississippi** and **Navajoland**
-(both have a real, located source, but neither's shape — week-numbered and day-of-week respectively —
-fits any of this corpus's four cycleTypes; deliberately set aside per standing decision rather than
-forced in, same as how `monthly-recurring` itself was added when Arkansas didn't fit `dated`). Should
-Josh ever supply a working Southern Virginia link, or decide a new cycleType is worth adding for
-Mississippi/Navajoland, that's the only ordinary ingestion work left — everything else in the roster's
-remaining ~18 dioceses has no verified source at all and won't be ingested unless one turns up (see
-`tecDioceseRoster.noSourceFound` in schema.json). Beyond that, future work here is periodic: a diocese
-whose source is only ever a rolling/partial window (West Missouri, Springfield, and similar) will need
-periodic re-checking, and every diocese will need a fresh file once it publishes its 2027 cycle.
+verified current cycle per Josh's own roster is now ingested into this corpus except **Mississippi** and
+**Navajoland** (both have a real, located source, but neither's shape — week-numbered and day-of-week
+respectively — fits any of this corpus's four cycleTypes; deliberately set aside per standing decision
+rather than forced in, same as how `monthly-recurring` itself was added when Arkansas didn't fit
+`dated`). **Southern Virginia, the one blocked link, is DONE as of 2026-09-30** — Josh asked to see the
+blocked links, was given the diosova.org URL and the reason it couldn't be fetched (a SiteGround bot-
+challenge page), and supplied the source PDF directly as a file upload; it was transcribed into two files
+(`episcopal-southern-virginia-2026.json` + `-2027.json`, 26 entries each, split evenly across the source's
+own July 2026–June 2027 cycle) the same session. Should Josh ever decide a new cycleType is worth adding
+for Mississippi/Navajoland, that's the only ordinary ingestion work left — everything else in the
+roster's remaining ~18 dioceses has no verified source at all and won't be ingested unless one turns up
+(see `tecDioceseRoster.noSourceFound` in schema.json). Beyond that, future work here is periodic: a
+diocese whose source is only ever a rolling/partial window (West Missouri, Springfield, and similar) will
+need periodic re-checking, and every diocese will need a fresh file once it publishes its 2027 cycle.
 
 **~87 dioceses have a located, verified current cycle per the roster (88 minus El Camino Real, now
-historical); 84 are now ingested into this corpus, 3 remain** (Southern Virginia, Mississippi,
-Navajoland — see above; separately, 18 dioceses have no verified source at all per Josh's own research —
-see `tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
+historical); 85 are now ingested into this corpus, 2 remain** (Mississippi, Navajoland — see above;
+separately, 18 dioceses have no verified source at all per Josh's own research — see
+`tecDioceseRoster.noSourceFound` in schema.json — those won't get ingested unless a source turns up).
 
-**88 files currently in the corpus, all passing the validator:** 79 diocese-level, `cycleType: "dated"`
-(77 dioceses; Delaware and Southeast Florida each contribute 2 files, 2026+2027) — Western Oregon,
-Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf Coast, Central New
-York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton, Florida, Georgia,
-Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine, Maryland, Massachusetts,
-Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina, North Dakota, Northern
-California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia, Pennsylvania,
-Pittsburgh, Puerto Rico, Rhode Island, San Diego, South Carolina, South Dakota, Southeast Florida (2
-files, 2026+2027), Southern Ohio, Southwest Florida, Springfield, Susquehanna, Tennessee, Texas, Upper
-South Carolina, Vermont, Virginia, Washington (DC), West Missouri, West Tennessee, West Texas, West
-Virginia, Western Kansas, Western New York, Western North Carolina, Wisconsin, Wyoming, Europe, Nebraska,
+**90 files currently in the corpus, all passing the validator:** 81 diocese-level, `cycleType: "dated"`
+(78 dioceses; Delaware, Southeast Florida, and Southern Virginia each contribute 2 files, 2026+2027) —
+Western Oregon, Alaska, Arizona, Albany, Alabama, Atlanta, California, Central Florida, Central Gulf
+Coast, Central New York, Chicago, Connecticut, Delaware (2 files, 2026+2027), East Carolina, Easton,
+Florida, Georgia, Great Lakes, Idaho, Indianapolis, Kansas, Kentucky, Lexington, Louisiana, Maine,
+Maryland, Massachusetts, Michigan, Missouri, Montana, Nevada, New Hampshire, New York, North Carolina,
+North Dakota, Northern California, Northern Michigan, Northwestern Pennsylvania, Ohio, Oklahoma, Olympia,
+Pennsylvania, Pittsburgh, Puerto Rico, Rhode Island, San Diego, South Carolina, South Dakota, Southeast
+Florida (2 files, 2026+2027), Southern Ohio, Southern Virginia (2 files, 2026+2027), Southwest Florida,
+Springfield, Susquehanna, Tennessee, Texas, Upper South Carolina, Vermont, Virginia, Washington (DC),
+West Missouri, West Tennessee, West Texas, West Virginia, Western Kansas, Western New York, Western
+North Carolina, Wisconsin, Wyoming, Europe, Nebraska,
 Newark, New Jersey, Rio Grande, San Joaquin, Southwestern
 Virginia, Western Massachusetts, Colorado; 5 diocese-level, `cycleType:
 "monthly-recurring"` — Arkansas, Northern Indiana, Iowa, Northwest Texas, Western Louisiana; 1

@@ -26259,3 +26259,46 @@ supplies a working link/PDF; (b) a genuinely new cycleType for Mississippi/Navaj
 add one; (c) periodic re-ingestion of a diocese whose source is itself only ever a rolling/partial window
 (West Missouri, Springfield, and similar quarterly-only sources, already flagged in their own files'
 `notes`); or (d) a fresh 2027 cycle as dioceses publish next year's editions.
+
+## 2026-09-30 (continued once more) -- Southern Virginia ingested: the one remaining blocked diocese,
+## resolved directly from a file Josh supplied
+
+Josh: "Please surface the links of the items you weren't able to tame on your own." I reported the one
+outstanding blocked link (Southern Virginia -- diosova.org's own SiteGround "Robot Challenge Screen" bot
+protection, confirmed unreachable via curl, WebFetch, and the r.jina.ai reader-proxy workaround alike, per
+batches 12-15's own record). Josh then supplied the source PDF directly as a file upload.
+
+**Southern Virginia** (`episcopal-southern-virginia-2026.json` + `episcopal-southern-virginia-2027.json`,
+source: "The Episcopal Diocese of Southern Virginia Cycle of Prayer, July 2026 – June 2027," an 8-page
+PDF). 52 weekly entries total, split almost exactly in half by the calendar-year boundary (26 in 2026,
+26 in 2027) -- following the Delaware/Southeast Florida two-file-split precedent rather than a lead-in
+disclosure, since this is a genuine near-even divide rather than a lopsided one. Confirmed single-column,
+prose-per-week throughout by rendering all 8 pages as images and visually cross-checking every week
+against a `pdftotext -layout` extraction before transcribing -- no column-interleaving risk found.
+
+Every week follows a fixed template naming two parishes plus one or more additional intentions, with two
+disclosed exceptions: the week of July 5, 2026 names no parish at all (only the diocesan camp Chanco on
+the James and a civic anniversary), and the week of June 27, 2027 names only one parish. A recurring
+source-side typo -- eight parish names print their comma BEFORE the closing/possessive apostrophe instead
+of after it, e.g. "St. James,' Accomac" where "St. James', Accomac" is clearly intended -- was preserved
+verbatim on each affected subject throughout both files rather than silently corrected, per this corpus's
+standing rule. Two other isolated typos ("St Christopher's" with no period; "St. Johns's" with an extra
+possessive "s") were likewise preserved and disclosed. All 52 dates were independently verified to fall
+on an actual Sunday before transcription.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+`southern-virginia` already matched the directory's own slug exactly, no renaming needed. Registered in
+`CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS, 90 files, 0 findings. `node --check`
+clean on `js/cycles-of-prayer.js`. All three standing audit scripts unchanged at their 13/3/9 baselines.
+Live-verified 4 sample points across both files (including the very first and very last date of each) in
+headless Chromium against the app's own actual runtime -- all resolved correctly, confirming the two-file
+split's boundary works as intended. Screenshot-verified Southern Virginia rendering correctly in an actual
+Morning Prayer office (after dismissing the same first-load onboarding-profile modal noted in batch 15 --
+both Cycle of Prayer tiers present in the sidebar, drop-cap intact). Zero new console errors beyond the
+pre-documented sandbox font-CDN block.
+
+**This was the last outstanding item in the entire TEC roster.** With Southern Virginia now in, every
+diocese/jurisdiction in Josh's 88-diocese roster with a located, verified current cycle is ingested except
+Mississippi and Navajoland (both have a real source, but neither's shape fits any of this corpus's four
+cycleTypes -- see batch 15's own closing note). The roster's own ~18 no-source-found dioceses remain
+unaddressed, as always, unless a source turns up.
