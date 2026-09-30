@@ -9,8 +9,11 @@ if (PHP_SAPI !== 'cli') { exit; }
 $base = rtrim($argv[1] ?? 'https://theuniversaloffice.com', '/');
 $api = $base . '/api/v1';
 
+$siteAuth = null; // "user:password" when the site is behind a hosting-level password
 function call(string $method, string $url, ?array $body = null, ?string $token = null): array {
+    global $siteAuth;
     $h = ['Accept: application/json'];
+    if ($siteAuth !== null && !$token) { $h[] = 'Authorization: Basic ' . base64_encode($siteAuth); }
     if ($token) { $h[] = "Authorization: Bearer $token"; }
     $content = '';
     if ($body !== null) { $h[] = 'Content-Type: application/json'; $content = json_encode($body); }
@@ -30,6 +33,11 @@ function ask(string $label, string $default = ''): string {
 
 echo "Universal Office admin console -- $base\n";
 [$s, $d] = call('GET', "$api/health");
+if ($s === 401) {
+    // The API folder is meant to be exempt from the site password; if it is not, the (temporary) workaround
+    // is to answer the prompt here. Sessions use the same header, so this only works for the sign-in steps.
+    fwrite(STDERR, "The site is answering 401 (password-protected) for the API. The API folder should be exempt; see the runbook.\n");
+}
 if ($s !== 200) { fwrite(STDERR, "Cannot reach $api/health (HTTP $s). Is the backend uploaded?\n"); exit(1); }
 
 $email = ask('Admin email', 'josh@jwjeffery.org');

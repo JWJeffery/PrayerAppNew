@@ -177,6 +177,19 @@ imported the same way.)
 bash api/dev/check-production.sh https://theuniversaloffice.com
 ```
 
+**If your site is behind the hosting-level password (the browser asks for a username and password
+before showing the site), add your site username in front, and type the password when it asks:**
+
+```
+CHECK_USER=yourusername bash api/dev/check-production.sh https://theuniversaloffice.com
+```
+
+The password is kept only in a temporary private file that is deleted when the check ends. Note that
+the `api` folder is deliberately **exempt** from the site password (its `.htaccess` says so): the API
+uses the same `Authorization` header for its own login tokens, so the two cannot coexist, and the
+future phone app cannot answer a password prompt. The rest of the site, including `/parish/`, stays
+locked until you launch.
+
 Every line should say `PASS`, ending with `ALL CHECKS PASSED`. This checks that the API answers,
 that your source code, config and migration files are **not** downloadable, that plain `http`
 redirects to `https`, and that opening the approval link cannot approve anything.

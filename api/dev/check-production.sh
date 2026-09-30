@@ -8,8 +8,17 @@ BASE="${BASE%/}"
 # deployment can be tested while a broken certificate is being fixed. Never treat a run made this
 # way as a pass: the final run must be done WITHOUT it.
 CURLO=""
+# If the site is behind a hosting-level password (HTTP Basic auth), pass CHECK_USER=<username>;
+# you are asked for the password (hidden) and it is kept only in a temporary private file.
+if [ -n "$CHECK_USER" ]; then
+  read -r -s -p "Site password for $CHECK_USER: " CHECK_PASS; echo
+  NETRC="$(mktemp)"; chmod 600 "$NETRC"; trap 'rm -f "$NETRC"' EXIT
+  HOST="${BASE#*://}"; HOST="${HOST%%/*}"; HOST="${HOST%%:*}"
+  printf 'machine %s login %s password %s\n' "$HOST" "$CHECK_USER" "$CHECK_PASS" > "$NETRC"
+  CURLO="--netrc-file $NETRC"
+fi
 if [ -n "$CHECK_INSECURE" ]; then
-  CURLO="-k"
+  CURLO="$CURLO -k"
   echo "*** WARNING: certificate checking is OFF for this run. Fix the certificate, then re-run without CHECK_INSECURE. ***"
 fi
 fails=0

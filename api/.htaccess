@@ -2,6 +2,13 @@
 # Every request that is not the front controller is either routed to it or
 # refused. Source, migrations, cron and CLI scripts must never be reachable.
 
+# The site root may be under hosting-level password protection (HTTP Basic auth) before launch.
+# The API has its own authentication (bearer tokens in the Authorization header -- the same header
+# Basic auth uses, so the two cannot coexist), and the future native app cannot answer a password
+# prompt. So the API folder is exempt from the site password; the rest of the site stays locked.
+AuthType None
+Require all granted
+
 # Force HTTPS.
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
