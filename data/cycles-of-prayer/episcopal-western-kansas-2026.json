@@ -1,0 +1,182 @@
+{
+  "id": "episcopal-western-kansas-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Western Kansas",
+  "dioceseShort": "western-kansas",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Cycle of Prayer",
+  "sourceFile": "Untitled PDF (no distinct on-disk filename given by the source page), fetched directly from https://www.diowks.org/_files/ugd/2c06a4_7d11c45c089449b6b833bfd880c61907.pdf.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "This is the Episcopal Diocese of WESTERN Kansas, confirmed by the document's own page header/logo ('The Episcopal Diocese of WESTERN KANSAS, 2026 Cycle of Prayer') and by every named place in this file being in the western half of the state (Salina, Hays, Dodge City, Garden City, Liberal, Great Bend, Hutchinson, Colby, Scott City, Larned, Goodland, Kinsley, McPherson, Norton, Lyons, Medicine Lodge, Kingman, Russell Springs, Pratt, Lakin) -- distinct from the already-ingested episcopal-kansas-2026.json (The Episcopal Diocese of Kansas, seated in Topeka, covering eastern-Kansas towns like Wichita, Leavenworth, Wamego, Winfield, Parsons, Derby, Shawnee, Overland Park). `dioceseShort` is 'western-kansas' per this app's reserved diocese-directory slug.",
+    "Self-contained, full calendar-year 2026 cycle: exactly 52 entries, one per Sunday, January 4 through December 27, 2026 (every Sunday of the year, verified against a real calendar) -- no year-boundary gap or overlap to disclose.",
+    "This is a 3-page, 2-column-per-page PDF. Per this corpus's standing rule for multi-column sources, it was transcribed from the rendered page images (at 150dpi), not a linearized text extraction -- a `pdftotext -layout` extraction was produced and cross-checked against the images and found to correctly keep the two columns separated (no interleaving occurred here, unlike the risk this corpus has hit elsewhere), so it was used only as a transcription aid.",
+    "Every dated entry in this source is a full prose sentence (or two), not a short heading -- typically beginning with a boilerplate lead-in ('We pray for', 'We pray that', 'We pray', 'Pray that', 'For', or 'Prayers for'). That invariant lead-in is stripped and only the substantive remainder is recorded as the subject's `name`, the same convention this corpus already uses for other narrative-style dioceses (see episcopal-kansas-2026.json). A few entries (e.g. February 22, 'Lent I') have no such lead-in at all -- phrased instead as a direct prayer/collect ('As we enter this sacred season of Lent, draw us closer...') -- and are transcribed in full since there is nothing to strip.",
+    "Judgment call: unlike episcopal-kansas-2026.json (which split one week's disjoint 3-item sentence -- 'the diocesan staff, the Council of Trustees, and the upcoming Diocesan Convention' -- into three separate `category` subjects), no entry in this file is split into multiple subjects, even though several entries' sentences name more than one thing. Two shapes recur here, and neither matches the Kansas file's disjoint-list shape: (1) a plain two-item 'X and Y' pairing (e.g. January 11 'the students at BKSM and those in Discernment'; July 19 'our Bishops and the members of the Diocesan Staff'), which this corpus already keeps as a single category elsewhere (see episcopal-albany-2026.json's 'For clergy spouses and children'); and (2) a list whose own final item is explicitly inclusive of the earlier ones via 'other'/'all who serve on' wording -- February 15's 'the women's ministries in the church, ECW, Daughter's of the King and UTO', April 26's 'the Trustees for the Diocese of Western Kansas, the Commission on Ministry and all who serve on Diocesan Committees', October 18's 'the Trustees, Standing Committee, Diocesan Council, and other Committees that serve the diocese', and December 13's 'our choirs, organists, pianists and other music ministries' -- where the source's own wording marks the named items as examples of one encompassing group rather than independent parallel subjects. Each of these is kept as a single `category` subject with the full sentence (minus the stripped lead-in) as its name.",
+    "Typos and oddities preserved verbatim rather than silently corrected, per this corpus's standing rule: January 11's liturgical label prints as 'Epiphany I /Baptism of our Lord' with a stray space before the slash; February 15 prints 'Daughter's of the King', apparently intended as 'Daughters of the King' (the usual name of that women's ministry organization); June 7's sentence itself reads 'We pray We Pray for the clergy and people who serve our Multi- Cultural Ministries' -- the doubled 'We pray We Pray' lead-in is dropped along with the rest of the boilerplate per the file-wide convention above (so it does not appear in the transcribed name), but 'Multi- Cultural' (a stray space after the hyphen, confirmed present in the rendered page image, not an extraction artifact) is preserved verbatim in the transcribed name; June 28 prints 'St. Andrews' with no apostrophe, unlike the similarly-named 'St. Andrew's' in Liberal (February 1) -- these are two different parishes, not a duplicate, and each is preserved exactly as printed; September 6's sentence ('We pray for those who are employed, those seeking work, and all who face difficult conditions in their workplace. May we honor the work of our hands and the hands of others,') appears to be cut off in the source itself, ending in a dangling comma with no closing clause or terminal punctuation -- transcribed exactly as printed rather than guessing at missing text; December 27's liturgical label prints as 'Christmas 1' (an Arabic numeral), inconsistent with the Roman-numeral convention this same document uses for every Easter/Pentecost Sunday -- preserved as printed; November 8 prints 'St. Francis, Russell Springs' (a comma) rather than the 'in [Place]' construction nearly every other entry uses -- preserved as printed, with `place` still parsed as 'Russell Springs'; scattered stray mid-sentence capitalizations elsewhere in the source (e.g. 'the Clergy and people', 'We Pray for', 'In Dodge City') fall entirely within the boilerplate lead-in text this file strips from every `name` and so do not surface in any transcribed subject, but are disclosed here for completeness.",
+    "January 11's 'BKSM' is transcribed exactly as printed with no expansion given anywhere in the source; it most likely refers to the Bishop Kemper School for Ministry (a multi-diocese Episcopal formation program used across this ecclesiastical province), but that reading is this transcriber's inference, not confirmed by the document itself, and is not added to the transcribed name.",
+    "March 22's clergy/people entry is phrased in reverse order and with a different preposition than the pattern used everywhere else in this source ('We pray for the people and clergy AT St. Mark's Church in Lyons', vs. the usual '...clergy and people OF [parish] in [place]') -- preserved as printed; does not affect the parsed `name`/`place`. Note also that this Lyons 'St. Mark's Church' (March 22) and the separate 'St. Mark's' in Medicine Lodge (November 15) are two distinct parishes sharing the same dedication name in different towns, not a duplicate entry.",
+    "Curly apostrophes ('...'s', e.g. 'St. Andrew's', 'Jesus'') are preserved exactly as the source prints them, not straightened to a plain ASCII apostrophe, consistent with this corpus's episcopal-kansas-2026.json precedent.",
+    "No `sourceFile` on-disk name is given by the hosting page itself (the PDF is served from a Wix-generated `_files/ugd/...` asset path with no human-readable filename); the fetch URL is recorded instead, per this corpus's provenance convention."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": "Second Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "Upper Room Church", "place": "Lakin" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "Epiphany I /Baptism of our Lord", "subjects": [
+      { "type": "category", "name": "the students at BKSM and those in Discernment", "note": "'BKSM' is transcribed exactly as printed; likely the Bishop Kemper School for Ministry, but unconfirmed by the source itself (see file-level notes)." }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "Epiphany II", "subjects": [
+      { "type": "category", "name": "peace in the US and the world through unity, compassion, dialogue, and equality" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "Epiphany III", "subjects": [
+      { "type": "category", "name": "our churches in transition" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "Epiphany IV", "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Liberal" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "Epiphany V", "subjects": [
+      { "type": "category", "name": "Liturgical assistants serving in churches: lectors, lay readers, Eucharistic ministers, and Eucharistic visitors" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "Epiphany Last/Transfiguration Sunday", "subjects": [
+      { "type": "category", "name": "the women’s ministries in the church, ECW, Daughter’s of the King and UTO", "note": "'Daughter's of the King' is printed exactly this way in the source, apparently intended as 'Daughters of the King' -- preserved verbatim, not corrected." }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "Lent I", "subjects": [
+      { "type": "category", "name": "As we enter this sacred season of Lent, draw us closer to the heart of Your Son. Strip away what distracts us, quiet what pulls us from Your presence, and open our eyes to the places where You are already at work." }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "Lent II", "subjects": [
+      { "type": "parish", "name": "Christ Cathedral", "place": "Salina" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "Lent III", "subjects": [
+      { "type": "category", "name": "all deacons. May their compassion, dedication, and leadership continue to inspire and support those they care for, and may they be filled with wisdom and grace as they carry out their calling." }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "Lent IV", "subjects": [
+      { "type": "category", "name": "the youth and those who work with them, seeking God’s guidance, inspiration, and strength as they continue their journey of faith and service." }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "Lent V", "subjects": [
+      { "type": "parish", "name": "St. Mark’s Church", "place": "Lyons", "note": "Source reverses the usual word order/preposition: 'the people and clergy at St. Mark's Church in Lyons' (see file-level notes)." }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "Palm Sunday, remembering Christ’s triumphant entry into Jerusalem. May this holy day inspire us to open our hearts to the peace, humility, and love that Jesus showed." }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Sunday", "subjects": [
+      { "type": "category", "name": "Easter brings us a time of joy and renewal, marking the resurrection of Jesus Christ and the hope it brings to all believers." }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "Easter II", "subjects": [
+      { "type": "category", "name": "our Canon to the Ordinary, The Rev. Canon Cameron Randle" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "Easter III", "subjects": [
+      { "type": "parish", "name": "Holy Nativity", "place": "Kinsley" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "Easter IV", "subjects": [
+      { "type": "category", "name": "the Trustees for the Diocese of Western Kansas, the Commission on Ministry and all who serve on Diocesan Committees" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "Easter V", "subjects": [
+      { "type": "category", "name": "our Diocesan clergy. Giving thanks to their ministry." }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "Easter VI (Mother’s Day)", "subjects": [
+      { "type": "category", "name": "mothers to be, holding them in hope and anticipation as they prepare to welcome new life. We lift up those who have lost children, praying for comfort and healing in their grief. We also honor those who mother with their hearts, offering love, care, and support in ways that go beyond biological ties." }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "Easter VII", "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Hutchinson" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Day of Pentecost", "subjects": [
+      { "type": "category", "name": "we may seek the guidance and inspiration of the Holy Spirit" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "Trinity Sunday", "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Norton" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "Pentecost II", "subjects": [
+      { "type": "category", "name": "the clergy and people who serve our Multi- Cultural Ministries", "note": "Source itself reads 'We pray We Pray for the clergy and people who serve our Multi- Cultural Ministries' -- the doubled boilerplate lead-in is dropped per this file's usual convention, but the stray space in 'Multi- Cultural' is preserved verbatim (see file-level notes)." }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "Pentecost III", "subjects": [
+      { "type": "category", "name": "those who face hardships. Grant them strength, hope, and peace. Surround them with support and guide them toward brighter days." }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "Pentecost IV", "subjects": [
+      { "type": "category", "name": "our retired clergy and their spouses" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "Pentecost V", "subjects": [
+      { "type": "parish", "name": "St. Andrews", "place": "Hays", "note": "Printed without an apostrophe, unlike the similarly-named 'St. Andrew's' in Liberal (February 1) -- a different parish, preserved as printed." }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "Pentecost VI", "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Garden City" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "Pentecost VII", "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Goodland" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "Pentecost VIII", "subjects": [
+      { "type": "category", "name": "our Bishops and the members of the Diocesan Staff" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "Pentecost IX", "subjects": [
+      { "type": "category", "name": "our Diocesan Clergy. Grant them wisdom, compassion, and courage to shepherd Your flock faithfully. May they find joy and renewal in Your service." }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "Pentecost X", "subjects": [
+      { "type": "parish", "name": "Ascension on the Prairie", "place": "Colby" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "Pentecost XI", "subjects": [
+      { "type": "category", "name": "all church and diocesan volunteers who support the mission of the church" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "Pentecost XII", "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Great Bend" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "Pentecost XIII", "subjects": [
+      { "type": "category", "name": "all mission and outreach programs" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "Pentecost XIV", "subjects": [
+      { "type": "parish", "name": "St. Cornelius", "place": "Dodge City" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "Pentecost XV", "subjects": [
+      { "type": "category", "name": "those who are employed, those seeking work, and all who face difficult conditions in their workplace. May we honor the work of our hands and the hands of others,", "note": "Sentence appears cut off in the source itself, ending in a dangling comma with no closing clause -- transcribed exactly as printed (see file-level notes)." }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "Pentecost XVI", "subjects": [
+      { "type": "parish", "name": "St. Anne’s", "place": "McPherson" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "Pentecost XVII", "subjects": [
+      { "type": "category", "name": "all Episcopal dioceses with unity, wisdom, and love. Strengthen their leaders, guide their mission, and inspire their communities." }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "Pentecost XVIII", "subjects": [
+      { "type": "parish", "name": "Saints Mary & Martha", "place": "Larned" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "Pentecost XIX", "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Scott City" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "Pentecost XX", "subjects": [
+      { "type": "category", "name": "those preparing for the Diocesan Convention, asking for wisdom, guidance, and a spirit of unity as they plan and discern for the life of our diocese." }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "Pentecost XXI", "subjects": [
+      { "type": "category", "name": "the Trustees, Standing Committee, Diocesan Council, and other Committees that serve the diocese" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "Pentecost XXII", "subjects": [
+      { "type": "category", "name": "our ecumenical and interfaith partners" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "Pentecost XXIII/All Saints Day", "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Pratt" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "Pentecost XXIV", "subjects": [
+      { "type": "parish", "name": "St. Francis", "place": "Russell Springs", "note": "Source uses a comma ('St. Francis, Russell Springs') rather than the 'in [Place]' construction used almost everywhere else in this document." }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "Pentecost XXV", "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "Medicine Lodge", "note": "A different parish from the similarly-named 'St. Mark's Church' in Lyons (March 22)." }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "Christ the King", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Kingman" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "Advent I", "subjects": [
+      { "type": "category", "name": "as we enter this season of Advent, open our hearts to the hope and promise of your coming" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": "Advent II", "subjects": [
+      { "type": "parish", "name": "St. Michael’s Church", "place": "Hays" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": "Advent III", "subjects": [
+      { "type": "category", "name": "our choirs, organists, pianists and other music ministries who lift our hearts in worship. Inspire their creativity, strengthen their dedication, and let their music glorify You." }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": "Advent IV", "subjects": [
+      { "type": "category", "name": "the light of Jesus’ coming bring peace to our world and deepen our faith in His abiding presence among us" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": "Christmas 1", "subjects": [
+      { "type": "category", "name": "as we greet the new year, let hope and gratitude fill our hearts" }
+    ]}
+  ]
+}
