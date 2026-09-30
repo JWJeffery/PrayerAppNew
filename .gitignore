@@ -19,3 +19,12 @@ __pycache__/
 
 GBON/
 *.patch
+
+# Parish intentions API (see documentation/PARISH_INTENTIONS_BUILD_SPEC.md)
+# Real secrets live OUTSIDE the repo in <home>/uo-private/; these rules are a
+# second line of defence against committing one by accident.
+api/config.php
+uo-private/
+*.cnf
+api/tests/.tmp/
+*.sql.gz

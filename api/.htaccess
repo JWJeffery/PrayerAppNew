@@ -1,0 +1,30 @@
+# Universal Office API -- Apache rules (Spaceship shared hosting / cPanel).
+# Every request that is not the front controller is either routed to it or
+# refused. Source, migrations, cron and CLI scripts must never be reachable.
+
+# Force HTTPS.
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Refuse the private directories outright.
+RewriteRule ^(src|lib|migrations|cron|cli|tests|dev)(/|$) - [F,L]
+
+# Refuse any PHP file other than the front controller, and any config file.
+RewriteRule ^(?!index\.php$).*\.php$ - [F,L]
+RewriteRule (^|/)config[^/]*\.(php|json|ini)$ - [F,L]
+RewriteRule (^|/)[^/]*\.(cnf|sql|gz|log)$ - [F,L]
+
+# Serve real files (openapi.yaml, index.php); route everything else to the API.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+# No directory listings.
+Options -Indexes
+
+# Belt and braces: deny config-like files even if the rewrite rules above are
+# ever disabled.
+<FilesMatch "^(config.*\.php|.*\.cnf|.*\.sql|.*\.gz)$">
+  Require all denied
+</FilesMatch>
