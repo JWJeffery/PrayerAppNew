@@ -20,6 +20,13 @@ final class Config
             $candidate = dirname(rtrim($docroot, '/')) . '/uo-private/config.php';
             if (is_file($candidate)) { return $candidate; }
         }
+        // Command line (cron, cli/ scripts): <home>/uo-private/config.php, as documented.
+        if (PHP_SAPI === 'cli') {
+            $home = getenv('HOME');
+            if (is_string($home) && $home !== '' && is_file($home . '/uo-private/config.php')) {
+                return $home . '/uo-private/config.php';
+            }
+        }
         return null;
     }
 

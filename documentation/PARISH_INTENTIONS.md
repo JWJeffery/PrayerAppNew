@@ -268,6 +268,46 @@ text and runs nothing.
 
 ---
 
+## Part 3b -- Daily job and backups (milestone M7)
+
+Two scheduled jobs run from cPanel **Cron Jobs**. Both are set to run **every hour**; each one checks the
+Pacific clock itself and really acts only once a day (daily job: first tick at or after 8:00 a.m. Pacific;
+backup: first tick at or after 3:00 a.m. Pacific). A missed day catches up at the next hourly tick, and the
+server's own time zone does not matter.
+
+**Cron Jobs page (cPanel -> Advanced -> Cron Jobs):**
+
+1. Under **Cron Email**, enter your email and click **Update Email**. cPanel mails you whatever a job prints.
+   Both jobs print nothing when they succeed, so you only ever hear about trouble.
+2. Under **Add New Cron Job**, set **Common Settings** to **Once Per Hour (0 * * * *)**. The five boxes become
+   `0 * * * *`.
+3. In **Command** paste the daily-job line, then click **Add New Cron Job**:
+
+   `bash /home/lwmpzdytfh/theuniversaloffice.com/api/cron/daily.sh`
+
+4. Repeat steps 2-3 with the backup line:
+
+   `bash /home/lwmpzdytfh/theuniversaloffice.com/api/cron/backup.sh`
+
+**What the daily job does:** emails each rector one digest per parish when requests will expire within 3
+days (counts and dates only, never the request text); deletes requests 7 days after expiry, login codes
+1 day after expiry, expired sessions, rate-limit records older than 2 days, audit entries older than 180
+days and approval tokens 30 days after expiry. A one-line counts-only summary is appended to
+`uo-private/logs/cron.log`.
+
+**What the backup does:** writes `uo-private/backups/uo-YYYYMMDD.sql.gz` (file mode 600, folder 700) and
+keeps the newest 14. It builds `uo-private/backup.cnf` itself from `config.php`, so the database password is
+never typed on a command line. An empty or damaged dump fails loudly (you get an email) and leaves no file.
+
+**Backups contain prayer text in plain form -- treat them as sensitive.** They sit on the same server, so
+they do not protect you if the hosting account itself is lost. About once a month, download one copy
+(cPanel -> File Manager -> `uo-private/backups`, right-click -> Download) and keep it somewhere private.
+Spaceship's paid AutoBackup is an optional off-server upgrade; nothing here assumes it.
+
+To run either job by hand right now (skipping the clock gate), use the same command with `UO_FORCE=1` in
+front, e.g. in a cron line scheduled for one minute from now:
+`UO_FORCE=1 bash /home/lwmpzdytfh/theuniversaloffice.com/api/cron/backup.sh` -- then delete that extra cron line.
+
 ## Part 4 -- If something goes wrong
 
 | Symptom | What it usually means | What to do |
