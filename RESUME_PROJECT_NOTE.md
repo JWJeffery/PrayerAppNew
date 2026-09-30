@@ -223,6 +223,17 @@ it.
 `AUDIT_GOVERNANCE_LEDGER.md`'s dated entries and `documentation/project-history/VOLUME-5-2026-09-28-
 session-log.md` — this section states current status only, not the story of how it got there.**
 
+**DONE 2026-09-30 — Parish Intercessions (rector-managed intercessory prayer lists), M0-M8.** A separate
+JSON API (`api/`, PHP+MariaDB, bearer tokens, no cookies) and rector/admin pages (`parish/`) on the same
+Spaceship host; readers who follow a parish see a "Parish Intercessions" section after the Diocesan Cycle of
+Prayer (`js/parish-intentions.js`, `renderParishIntentionsLine` in `js/office-ui.js`, profile fields
+`parishIntentionsSlug`/`parishIntentionsPass`). Request text is plain text only (`bcpEmitPlainText`,
+`textContent`); never route it through `bcpEmitBare`/`bcpMakeSpan`. Live at theuniversaloffice.com; cPanel cron
+runs hourly jobs that act once a day at Pacific time (daily reminders/purge, nightly backup). Everything
+operational is in `documentation/PARISH_INTENTIONS.md`; contract in `api/openapi.yaml`; checks:
+`php api/tests/run.php` and `npm run audit:parish-intentions`. Open: St. Bede's pilot registration; remove the
+pre-launch site password at launch; delete the test parish(es); SPF/DKIM/DMARC verdicts unconfirmed.
+
 **DONE 2026-09-29 — five rounds of small, real UI fixes, all reported live by Josh, all merged.** In
 order: Audit Dashboard super-user-gated + Explore-other-Offices moved into the profile; Profile panel
 un-gated from `?advanced=1`; "Reader/Subdeacon" stopped being called "a minor order" (wrong for TEC);

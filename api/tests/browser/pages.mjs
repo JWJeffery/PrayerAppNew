@@ -364,13 +364,17 @@ console.log('Browser: registration, approval link and admin page');
 {
   const own = await browser.newContext({ viewport: { width: 1200, height: 1000 } });
   const page = await own.newPage(); watch(page);
+  // The office shown depends on the time of day (Compline late in the evening has no intercessions
+  // slot), so pin the browser clock to 5 p.m. today: Evening Prayer, and expiry dates still in the future.
+  const at5pm = new Date(); at5pm.setHours(17, 0, 0, 0);
+  await page.clock.install({ time: at5pm });
   const profile = (extra) => ({ version: 1, traditionDefault: 'anglican', entryPageDefault: 'tradition', onboardingComplete: true, cycleOfPrayerDiocese: 'episcopal/western-oregon', ...extra });
   await page.addInitScript(([k, v]) => { if (!window.localStorage.getItem(k)) window.localStorage.setItem(k, JSON.stringify(v)); },
     ['universalOffice.userProfile.v1', profile({ parishIntentionsSlug: fx.office.slug })]);
   await page.goto(BASE + '/index.html');
   let ok = true;
   try { await page.waitForFunction(() => [...document.querySelectorAll('.rubric-text')].some((e) => e.textContent === 'Parish Intercessions'), null, { timeout: 15000 }); } catch (e) { ok = false; }
-  t('the office shows a "Parish Intercessions" heading for a followed parish', ok);
+  t('the office shows a "Parish Intercessions" heading for a followed parish', ok, ok ? '' : 'page text: ' + (await page.evaluate(() => document.body.innerText)).replace(/\s+/g, ' ').slice(0, 700) + ' | errors: ' + problems.errors.slice(-3).join(' ; '));
   const info = await page.evaluate((payloads) => {
     const body = document.body.innerText;
     const items = [...document.querySelectorAll('.parish-intentions-item')].map((e) => e.textContent);

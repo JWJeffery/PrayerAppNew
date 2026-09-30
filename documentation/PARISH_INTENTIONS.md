@@ -4,9 +4,10 @@ This is the working manual for the Parish Intentions feature (the backend in `ap
 `parish/`). It is written for Josh: every step says exactly what to click or paste, and what you
 should see when it worked. The build plan behind it is `PARISH_INTENTIONS_BUILD_SPEC.md`.
 
-**Status:** the backend (milestones M0-M4) is finished and tested. The rector dashboard, admin
-page and reader integration (M5-M6), the scheduled jobs (M7) and the final documentation (M8)
-come later; this file grows with each milestone.
+**Status:** complete (milestones M0-M8): backend, rector dashboard and admin pages, reader integration
+in the Daily Office, scheduled jobs, and this manual. The remaining step is the St. Bede's pilot (Part 5).
+Other references: the API contract is `api/openapi.yaml`; the automated checks are
+`php api/tests/run.php` (tests) and `npm run audit:parish-intentions` (static audit).
 
 Where things live:
 
@@ -319,3 +320,29 @@ front, e.g. in a cron line scheduled for one minute from now:
 | Email never arrives | Mail settings or spam | Check spam; run `php api/cli/setup-mail.php` then `send-test-mail.php` from Part 1 style commands and tell me the `FAILED:` text |
 
 Never paste passwords, the config file, join codes or login tokens into chat.
+
+## Part 5 -- Pilot: St. Bede's Episcopal Church
+
+1. On the live site open `https://theuniversaloffice.com/parish/` and choose **Register your parish**.
+2. Use: parish name as the rector wants it shown; diocese **Western Oregon**; home parish in the diocese's
+   list (this sets `corpus_parish_slug` so the parish is offered as the reader's home parish); the rector's own
+   email address (a code is sent there). Choose **join code** or **public** visibility.
+3. You receive the approval email; open the link and press **Approve**. The rector signs in at
+   `/parish/` with an emailed code and adds the first requests.
+4. As a reader: open the app, choose the Episcopal Church, open **Your Profile**, pick the parish under
+   **Parish prayer intentions** (enter the join code if there is one), and open Morning or Evening Prayer.
+   "Parish Intercessions" appears after the Diocesan Cycle of Prayer.
+5. Delete any test parishes: admin page, the parish's **Delete** button, type `DELETE <slug>`.
+
+## Part 6 -- Checks to run after any deploy
+
+```
+CHECK_USER=Admin bash api/dev/check-production.sh https://theuniversaloffice.com
+```
+
+Expected: `ALL CHECKS PASSED` (type the site password carefully -- it is hidden). Also in a Codespace:
+`sudo mysqld_safe --user=mysql >/dev/null 2>&1 &` then `php api/tests/run.php` and
+`npm run audit:parish-intentions`.
+
+**At launch:** remove the pre-launch site password (Spaceship hosting manager), then re-run the check
+without `CHECK_USER`.
