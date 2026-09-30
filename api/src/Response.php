@@ -21,4 +21,11 @@ final class Response
         if ($fields !== null) { $body['fields'] = $fields; }
         self::json($status, $body);
     }
+
+    /** HTTP 429 with Retry-After and a generic body. */
+    public static function rateLimited(int $retryAfter): void
+    {
+        header('Retry-After: ' . max(1, $retryAfter));
+        self::error(429, 'rate_limited', 'Too many requests. Please try again later.');
+    }
 }

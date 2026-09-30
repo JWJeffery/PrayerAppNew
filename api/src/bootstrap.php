@@ -7,6 +7,11 @@ require_once __DIR__ . '/Response.php';
 require_once __DIR__ . '/Request.php';
 require_once __DIR__ . '/Router.php';
 require_once __DIR__ . '/Db.php';
+require_once __DIR__ . '/Validate.php';
+require_once __DIR__ . '/Crypto.php';
+require_once __DIR__ . '/RateLimit.php';
+require_once __DIR__ . '/Migrator.php';
+require_once __DIR__ . '/Handlers/Public.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -39,6 +44,10 @@ function uo_build_router(): Router
     $r->add('GET', '/health', function (): void {
         Response::json(200, ['status' => 'ok']);
     });
+    // Reader endpoints (spec 8.1).
+    $r->add('GET', '/parishes', ['PublicApi', 'listParishes']);
+    $r->add('GET', '/parishes/{slug}/intentions', ['PublicApi', 'intentions']);
+    $r->add('POST', '/parishes/{slug}/join', ['PublicApi', 'join']);
     return $r;
 }
 
@@ -65,6 +74,6 @@ function uo_api_run(): void
         header('Allow: ' . implode(', ', $res['allow']));
         Response::error(405, 'method_not_allowed', 'Method not allowed.');
     } else {
-        ($res['handler'])($res['params']);
+        call_user_func($res['handler'], $res['params']);
     }
 }

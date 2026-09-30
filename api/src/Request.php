@@ -24,6 +24,23 @@ final class Request
         return $rest[0] === '/' ? $rest : null;
     }
 
+    /**
+     * Client address for rate limiting only (never stored raw). REMOTE_ADDR unless the
+     * config says a trusted proxy sits in front, then the first X-Forwarded-For entry.
+     */
+    public static function ip(): string
+    {
+        $ip = (string)($_SERVER['REMOTE_ADDR'] ?? '0.0.0.0');
+        if (Config::get('trust_proxy', false) === true) {
+            $xff = self::header('X-Forwarded-For');
+            if ($xff !== null) {
+                $first = trim(explode(',', $xff)[0]);
+                if (filter_var($first, FILTER_VALIDATE_IP)) { $ip = $first; }
+            }
+        }
+        return $ip;
+    }
+
     public static function header(string $name): ?string
     {
         $key = 'HTTP_' . strtoupper(str_replace('-', '_', $name));
