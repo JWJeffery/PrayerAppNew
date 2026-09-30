@@ -6,7 +6,20 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 PORT="${PORT:-8080}"
 DEV_DIR="$ROOT/.external/uo-private"
-PHP_BIN="${PHP_BIN:-php}"
+# Aliases do not reach scripts, and the Codespace ships a PHP without the database driver,
+# so pick the first PHP on this machine that has BOTH pdo_mysql and sodium.
+find_php() {
+  for c in "${PHP_BIN:-}" php /usr/bin/php8.3 /usr/bin/php8.4 /usr/bin/php8.2 /usr/bin/php8.1 /usr/bin/php; do
+    [ -n "$c" ] || continue
+    command -v "$c" >/dev/null 2>&1 || continue
+    if "$c" -r 'exit(extension_loaded("pdo_mysql") && extension_loaded("sodium") ? 0 : 1);' 2>/dev/null; then
+      command -v "$c"; return 0
+    fi
+  done
+  return 1
+}
+PHP_BIN="$(find_php)" || { echo "No PHP with pdo_mysql and sodium found. Install with: sudo apt-get install -y php8.3-cli php8.3-mysql php8.3-mbstring" >&2; exit 1; }
+echo "Using PHP: $PHP_BIN ($("$PHP_BIN" -r 'echo PHP_VERSION;'))"
 export UO_CONFIG_PATH="${UO_CONFIG_PATH:-$DEV_DIR/config.php}"
 
 if [ ! -f "$UO_CONFIG_PATH" ]; then
