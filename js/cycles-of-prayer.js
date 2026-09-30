@@ -109,7 +109,14 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'washington-dc', label: 'Episcopal Diocese of Washington' },
     { bodySlug: 'episcopal', dioceseShort: 'west-missouri', label: 'The Diocese of West Missouri' },
     { bodySlug: 'episcopal', dioceseShort: 'west-tennessee', label: 'Episcopal Diocese of West Tennessee' },
-    { bodySlug: 'episcopal', dioceseShort: 'west-texas', label: 'Episcopal Diocese of West Texas' }
+    { bodySlug: 'episcopal', dioceseShort: 'west-texas', label: 'Episcopal Diocese of West Texas' },
+    { bodySlug: 'episcopal', dioceseShort: 'west-virginia', label: 'The Episcopal Diocese of West Virginia' },
+    { bodySlug: 'episcopal', dioceseShort: 'western-kansas', label: 'The Episcopal Diocese of Western Kansas' },
+    { bodySlug: 'episcopal', dioceseShort: 'western-louisiana', label: 'The Episcopal Church in Western Louisiana', cycleType: 'monthly-recurring' },
+    { bodySlug: 'episcopal', dioceseShort: 'western-new-york', label: 'Episcopal Diocese of Western New York' },
+    { bodySlug: 'episcopal', dioceseShort: 'western-north-carolina', label: 'The Episcopal Diocese of Western North Carolina' },
+    { bodySlug: 'episcopal', dioceseShort: 'wisconsin', label: 'The Episcopal Diocese of Wisconsin' },
+    { bodySlug: 'episcopal', dioceseShort: 'wyoming', label: 'The Episcopal Diocese of Wyoming' }
 ]);
 
 function cycleOfPrayerDioceseKey(bodySlug, dioceseShort) {

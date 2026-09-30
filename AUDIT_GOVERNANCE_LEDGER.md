@@ -26144,3 +26144,100 @@ sandbox font-CDN block. `js/cycles-of-prayer.js` has no cache-bust parameter to 
 batches). Each of the six new files was committed and pushed individually as its own agent finished, per
 the working-tree-hygiene pattern established in batch 13; this ledger entry and the registry commit land
 together as the batch's closing commit.
+
+## 2026-09-30 -- Diocese ingestion batch 15: West Virginia, Western Kansas, Western Louisiana, Western
+## New York, Western North Carolina, Wisconsin, Wyoming (7 dioceses, no blocks) -- this closes out the
+## roster spreadsheet's ingestable dioceses
+
+Josh: "Please continue." Ninth batch of parallel-subagent-dispatched ingestion, continuing alphabetically
+after West Texas. Seven agents dispatched this time (rather than the usual 5-6) since this exhausts the
+roster's remaining ingestable dioceses -- everything left after this batch is either no-source-found,
+blocked, or deliberately skipped for shape reasons. All seven succeeded.
+
+**West Virginia** (`episcopal-west-virginia-2026.json`, source: diocesan PDF -- the roster's own recorded
+URL now 404s; the agent found the diocese's current working copy of the same-named file via its own
+"Spiritual Resources" page and used that instead, disclosed). 60 entries, full year 2026, including the
+moveable Holy Week/Easter/Christmas weekdays beyond plain Sundays. Confirmed distinct from Virginia,
+Southern Virginia (blocked), and Southwestern Virginia (already ingested) by the source's own cover-page
+seal, footer return address, and hosting-site title. April 4, 2026 is printed twice as two back-to-back
+rows ("Holy Saturday" and "Easter Vigil," genuinely the same date) -- folded into one entry per this
+corpus's repeated-date rule.
+
+**Western Kansas** (`episcopal-western-kansas-2026.json`, source: diocesan PDF). 52 entries, full year.
+Confirmed distinct from the already-ingested Diocese of Kansas by the source's own header and every
+parish town's western-Kansas geography. Unlike the existing Kansas file, which splits disjoint multi-item
+sentences into separate category subjects, this file deliberately does NOT split several multi-item
+sentences, since Western Kansas's own multi-item sentences are either plain two-item pairs or lists whose
+own final item explicitly subsumes the earlier ones -- a distinction disclosed and contrasted directly
+against the existing Kansas file's different structure.
+
+**Western Louisiana** (`episcopal-western-louisiana.json`, source: a published Google Doc). **Confirmed
+the roster's own pre-flagged day-of-month 1-31 recurring shape** -- built as `cycleType: "monthly-recurring"`
+per the established Iowa/Northwest Texas precedent, no year in the filename. Day 31's own printed
+qualifier, "(When there is one)," is disclosed as the clinching internal confirmation that the cycle
+repeats monthly rather than being calendar-anchored despite "2026" appearing in the document's own title.
+The source itself never names the diocese anywhere; `diocese` was drawn from the diocese's own website
+after confirming its bishop (Rt. Rev. Jacob W. Owensby) and every place name are Western Louisiana's, not
+the already-ingested Diocese of Louisiana's.
+
+**Western New York** (`episcopal-western-new-york-2026.json`, source: diocesan PDF). 52 entries, full
+year. Confirmed distinct from the already-ingested Diocese of New York by domain and every place name's
+Buffalo-area geography. The source's own two-column table pairs a "WNY" column with an "Anglican COP"
+column (that week's worldwide Anglican Cycle of Prayer); only WNY was transcribed, the same exclusion
+already used for Maryland's file. The WNY column's own 26-week rotation is printed twice across the full
+52-week year -- both printings kept independently and in full per this corpus's transcribe-what's-printed
+rule, with two of those 26 repeated pairs disclosed as not verbatim-identical between their two 2026
+appearances.
+
+**Western North Carolina** (`episcopal-western-north-carolina-2026.json`, source: diocesan PDF). 56
+entries, All Saints 2025-Christ the King 2026 -- disclose-and-included per the Tennessee/California
+precedent (9-of-56 lead-in). Confirmed distinct from the already-ingested Diocese of North Carolina by
+letterhead and every place name's western-NC mountain-region geography. Because the source's own 56-week
+window runs longer than one calendar year, its final 4 entries exactly repeat its first 4 -- disclosed as
+the diocese's own cycle wrapping, both occurrences kept.
+
+**Wisconsin** (`episcopal-wisconsin-2026.json`, source: a single-page Canva-designed PDF, a 4x3 grid of
+month boxes). 54 entries -- 52 Sundays plus two fixed-date feasts (Epiphany, Christmas) that fall on
+non-Sundays. Several companion-diocese/companion-relationship subjects (Diocese of Masvingo, Diocese of
+Newala, a Haitian companion parish and school) recorded per this corpus's usual category/parish rules,
+including one parish subject whose `place` is an international companion location rather than a
+Wisconsin town, disclosed as stretching that field's normal meaning.
+
+**Wyoming** (`episcopal-wyoming-2026.json`, source: diocesan PDF, a dense one-page full-year table). 52
+entries, full year. The source itself never prints the diocese's own name; `diocese` was drawn from the
+diocesan website. Several dates pair two distinct entities (a parish and an unplaced chapel, or two
+diocesan bodies) via a slash; each was split into separate subjects, with an unplaced chapel's `place`
+inferred from the parish it's paired with when disclosed, per the established Southern Ohio "Indian Hill
+Church" place-inference precedent.
+
+**Slug cross-check against `TEC_DIOCESE_DIRECTORY` done before registering, per established practice.**
+All seven (`west-virginia`, `western-kansas`, `western-louisiana`, `western-new-york`,
+`western-north-carolina`, `wisconsin`, `wyoming`) already matched the directory's own slugs exactly, no
+renaming needed. All 7 registered in `CYCLES_OF_PRAYER_DIOCESES`. `npm run audit:cycles-of-prayer`: PASS,
+87 files, 0 findings. `node --check` clean on `js/cycles-of-prayer.js`. All three standing audit scripts
+unchanged at their 13/3/9 baselines. Live-verified all 7 new dioceses (8 sample points, including Western
+Louisiana's monthly-recurring day-of-month lookup and Western North Carolina's own year-boundary lead-in
+date) in headless Chromium against the app's own actual runtime. Screenshot-verified West Virginia
+rendering correctly in an actual Morning Prayer office (after dismissing a first-load onboarding-profile
+modal, an existing, unrelated app behavior -- both Cycle of Prayer tiers present in the sidebar, drop-cap
+intact). Zero new console errors beyond the pre-documented sandbox font-CDN block. `js/cycles-of-prayer.js`
+has no cache-bust parameter to bump (same as prior batches). Each of the seven new files was committed
+and pushed individually as its own agent finished, per the working-tree-hygiene pattern established in
+batch 13; this ledger entry and the registry commit land together as the batch's closing commit.
+
+**This nearly closes out the roster spreadsheet's ingestable dioceses.** Of the 88 TEC dioceses/
+jurisdictions in Josh's own roster (87 after El Camino Real's removal), every diocese with a located,
+verified current cycle is now ingested except Southern Virginia (blocked, held for Josh per his standing
+preference), Mississippi/Navajoland (genuinely non-fitting shapes, set aside per standing decision -- see
+schema.json's own `rules`), and **Europe** (the Convocation of Episcopal Churches in Europe -- a TEC
+jurisdiction, not an ordinary diocese, which the roster's own research located a working source for but
+which no prior batch actually picked up; `dioceseShort: 'europe'` was already reserved in
+`TEC_DIOCESE_DIRECTORY` but no file existed for it until caught during this batch's own closing review
+and folded in as an eighth diocese -- see below). The remaining ~18 dioceses/jurisdictions in the roster
+have no verified source at all per
+Josh's own research (`tecDioceseRoster.noSourceFound` in schema.json) and won't be ingested unless a
+source turns up. Any further work on this corpus going forward is either: (a) Southern Virginia, if Josh
+supplies a working link/PDF; (b) a genuinely new cycleType for Mississippi/Navajoland, if Josh decides to
+add one; (c) periodic re-ingestion of a diocese whose source is itself only ever a rolling/partial window
+(West Missouri, Springfield, and similar quarterly-only sources, already flagged in their own files'
+`notes`); or (d) a fresh 2027 cycle as dioceses publish next year's editions.
