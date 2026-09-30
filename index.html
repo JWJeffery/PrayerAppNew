@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=232">
+    <link rel="stylesheet" href="css/office.css?v=233">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
@@ -1089,6 +1089,24 @@
                        style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
             </label>
 
+            <!-- ADDED 2026-09-30 (Parish Intercessions). Follow a parish's prayer requests in the office.
+                 Options are filled at run time from GET /api/v1/parishes (js/parish-intentions.js +
+                 populateParishIntentionsControls in js/office-ui.js) -- never hand-list parishes here.
+                 A parish that needs a join code shows the code box below; the reader follows it only once
+                 the code is accepted. Anglican-only, gated exactly like the diocese/parish fields. -->
+            <div class="app-profile-default-field app-profile-default-field-wide" id="profile-parish-intentions-field" data-tradition-field="anglican" hidden aria-hidden="true">
+                <label for="profile-parish-intentions-select">Parish prayer intentions</label>
+                <select id="profile-parish-intentions-select" onchange="setUserProfileParishIntentionsFromSelect(this.value)" disabled>
+                    <option value="">Loading parishes&hellip;</option>
+                </select>
+                <div class="app-profile-parish-intentions-join" id="profile-parish-intentions-join" hidden>
+                    <input type="text" id="profile-parish-intentions-code" placeholder="Join code (for example ABCD-EFGH)" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Parish join code">
+                    <button type="button" class="app-profile-reset" id="profile-parish-intentions-join-button" onclick="joinSelectedParishIntentions()">Join</button>
+                </div>
+                <p class="app-profile-parish-intentions-note" id="profile-parish-intentions-note" role="status" aria-live="polite"></p>
+                <button type="button" class="app-profile-reset app-profile-parish-intentions-stop" id="profile-parish-intentions-stop" hidden onclick="clearUserProfileParishIntentions()">Stop following</button>
+            </div>
+
             <label class="app-profile-default-field" for="profile-entry-default">
                 <span>Opening behavior</span>
                 <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
@@ -1207,6 +1225,7 @@
 <script src="js/saints-resolver.js?v=269" defer></script>
 <script src="js/menaion-resolver.js" defer></script>
 <script src="js/cycles-of-prayer.js" defer></script>
+<script src="js/parish-intentions.js?v=1" defer></script>
 <script src="js/octoechos/orthros-praises-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-sunday.js" defer></script>
 <script src="js/octoechos/orthros-exapostilarion-eothinon.js" defer></script>
@@ -1237,7 +1256,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=329" defer></script>
+<script src="js/office-ui.js?v=331" defer></script>
 <script src="js/prayers.js?v=222"></script>
 <script src="js/tooltip.js"></script>
 

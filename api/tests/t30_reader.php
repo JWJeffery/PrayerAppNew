@@ -11,7 +11,7 @@ $slugs = array_column(jbody($b)['parishes'] ?? [], 'slug');
 t('lists approved parishes alphabetically by name', $s === 200 && $slugs === ['grace', 'st-bede', 'zion'], json_encode($slugs));
 t('pending and suspended parishes never listed', !in_array('waiting', $slugs, true) && !in_array('banned', $slugs, true));
 $first = jbody($b)['parishes'][1];
-t('listing exposes only slug, name, diocese_key, visibility', array_keys($first) === ['slug', 'name', 'diocese_key', 'visibility'], json_encode(array_keys($first)));
+t('listing exposes only slug, name, diocese_key, corpus_parish_slug, visibility', array_keys($first) === ['slug', 'name', 'diocese_key', 'corpus_parish_slug', 'visibility'], json_encode(array_keys($first)));
 [$s, $b] = http('GET', '/api/v1/parishes?diocese=episcopal/western-oregon');
 t('diocese filter', array_column(jbody($b)['parishes'], 'slug') === ['grace', 'st-bede']);
 [$s, $b] = http('GET', '/api/v1/parishes?diocese=' . rawurlencode("' OR 1=1 --"));

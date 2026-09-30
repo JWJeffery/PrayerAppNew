@@ -170,6 +170,16 @@ check(
   pkg.scripts?.['audit:user-profile-defaults-skeleton'] === 'node scripts/audit-user-profile-defaults-skeleton.mjs'
 );
 
+check(
+  'profile carries the parish-intentions fields, normalized and clearable',
+  officeUi.includes('parishIntentionsSlug: null') &&
+  officeUi.includes('parishIntentionsPass: null') &&
+  officeUi.includes('function setUserProfileParishIntentions') &&
+  officeUi.includes('function clearUserProfileParishIntentions') &&
+  index.includes('id="profile-parish-intentions-select"') &&
+  index.includes('js/parish-intentions.js')
+);
+
 if (failures.length) {
   console.error(`FAIL user profile defaults skeleton audit: ${failures.length} failure(s)`);
   for (const failure of failures) console.error(`- ${failure}`);

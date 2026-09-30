@@ -360,6 +360,95 @@ console.log('Browser: registration, approval link and admin page');
   await page.close();
 }
 
+// reader integration (M6): the office shows a followed parish's requests as inert plain text
+{
+  const own = await browser.newContext({ viewport: { width: 1200, height: 1000 } });
+  const page = await own.newPage(); watch(page);
+  const profile = (extra) => ({ version: 1, traditionDefault: 'anglican', entryPageDefault: 'tradition', onboardingComplete: true, cycleOfPrayerDiocese: 'episcopal/western-oregon', ...extra });
+  await page.addInitScript(([k, v]) => { if (!window.localStorage.getItem(k)) window.localStorage.setItem(k, JSON.stringify(v)); },
+    ['universalOffice.userProfile.v1', profile({ parishIntentionsSlug: fx.office.slug })]);
+  await page.goto(BASE + '/index.html');
+  let ok = true;
+  try { await page.waitForFunction(() => [...document.querySelectorAll('.rubric-text')].some((e) => e.textContent === 'Parish Intercessions'), null, { timeout: 15000 }); } catch (e) { ok = false; }
+  t('the office shows a "Parish Intercessions" heading for a followed parish', ok);
+  const info = await page.evaluate((payloads) => {
+    const body = document.body.innerText;
+    const items = [...document.querySelectorAll('.parish-intentions-item')].map((e) => e.textContent);
+    return {
+      pwned: window.__pwned === undefined,
+      allLiteral: payloads.every((p) => items.includes(p)),
+      cats: [...document.querySelectorAll('.parish-intentions-category')].map((e) => e.textContent),
+      injectedImg: document.querySelectorAll('.parish-intentions-item img, .parish-intentions-item svg, .parish-intentions-item script, .parish-intentions-item b').length,
+      dropcap: getComputedStyle(document.querySelector('.parish-intentions-item'), '::first-letter').float,
+      rail: body.includes('Parish Intercessions')
+    };
+  }, fx.office.payloads);
+  t('hostile request text is shown literally and nothing ran', info.pwned && info.allLiteral && info.injectedImg === 0);
+  t('requests are grouped under Individuals / Families / Situations / Institutions', ['Individuals', 'Families', 'Situations', 'Institutions'].every((c) => info.cats.includes(c)));
+  t('request lines carry no drop cap', info.dropcap === 'none');
+
+  // cache-only render: with the API unreachable, with an expired item in the cache, the expired one stays hidden
+  await page.evaluate(([slug]) => {
+    const k = 'universalOfficeParishIntentionsCache';
+    const soon = new Date(Date.now() + 3600e3).toISOString(), past = new Date(Date.now() - 3600e3).toISOString();
+    window.localStorage.setItem(k, JSON.stringify({ slug, fetchedAt: new Date().toISOString(), parish: { slug, name: 'X' }, intentions: [
+      { category: 'individual', text: 'Still current', expires_at: soon }, { category: 'individual', text: 'Long expired', expires_at: past }] }));
+  }, [fx.office.slug]);
+  await page.route('**/api/v1/**', (r) => r.abort());
+  await page.reload();
+  try { await page.waitForFunction(() => document.body.innerText.includes('Still current'), null, { timeout: 15000 }); } catch (e) {}
+  const off = await page.evaluate(() => document.body.innerText);
+  t('API unreachable: the cached request shows and the device-clock-expired one is hidden', off.includes('Still current') && !off.includes('Long expired'));
+  await own.close();
+}
+
+{
+  // non-Anglican profile: no requests at all to the parish API
+  const own = await browser.newContext({ viewport: { width: 1200, height: 1000 } });
+  const page = await own.newPage(); watch(page);
+  const hits = [];
+  page.on('request', (r) => { if (r.url().includes('/api/v1/')) hits.push(r.url()); });
+  await page.addInitScript(() => window.localStorage.setItem('universalOffice.userProfile.v1', JSON.stringify({ version: 1, traditionDefault: 'orthodox', entryPageDefault: 'tradition', onboardingComplete: true })));
+  await page.goto(BASE + '/index.html');
+  await sleep(3000);
+  t('a non-Anglican profile makes no parish-API requests', hits.length === 0, hits.join(' '));
+  await own.close();
+}
+
+{
+  // profile chooser: follow a public parish; join a code parish (wrong then right code); stop following
+  const own = await browser.newContext({ viewport: { width: 1200, height: 1000 } });
+  const page = await own.newPage(); watch(page);
+  await page.addInitScript(() => { if (!window.localStorage.getItem('universalOffice.userProfile.v1')) window.localStorage.setItem('universalOffice.userProfile.v1', JSON.stringify({ version: 1, traditionDefault: 'anglican', entryPageDefault: 'tradition', onboardingComplete: true, cycleOfPrayerDiocese: 'episcopal/western-oregon' })); });
+  await page.goto(BASE + '/index.html');
+  await sleep(2500);
+  await page.evaluate(() => openUserProfilePanel());
+  await page.waitForFunction(() => document.querySelectorAll('#profile-parish-intentions-select option').length > 2, null, { timeout: 10000 }).catch(() => {});
+  const stored = () => page.evaluate(() => JSON.parse(localStorage.getItem('universalOffice.userProfile.v1') || '{}'));
+  await page.selectOption('#profile-parish-intentions-select', fx.office.slug);
+  await sleep(1500);
+  let st = await stored();
+  t('choosing a public parish follows it with no code', st.parishIntentionsSlug === fx.office.slug && !st.parishIntentionsPass);
+  await page.selectOption('#profile-parish-intentions-select', fx.office.codedSlug);
+  await sleep(800);
+  t('choosing a code parish asks for its code', await page.isVisible('#profile-parish-intentions-code'));
+  await page.fill('#profile-parish-intentions-code', 'AAAA-AAAA');
+  await page.click('#profile-parish-intentions-join button, #profile-parish-intentions-join [type=button]');
+  await sleep(1500);
+  st = await stored();
+  t('a wrong join code does not follow the parish', st.parishIntentionsSlug !== fx.office.codedSlug || !st.parishIntentionsPass);
+  await page.fill('#profile-parish-intentions-code', fx.office.joinCode);
+  await page.click('#profile-parish-intentions-join button, #profile-parish-intentions-join [type=button]');
+  await sleep(2000);
+  st = await stored();
+  t('the right join code follows the parish and stores a pass, not the code', st.parishIntentionsSlug === fx.office.codedSlug && !!st.parishIntentionsPass && !JSON.stringify(st).includes(fx.office.joinCode));
+  await page.click('#profile-parish-intentions-stop');
+  await sleep(500);
+  st = await stored();
+  t('"Stop following" clears the parish and pass', !st.parishIntentionsSlug && !st.parishIntentionsPass);
+  await own.close();
+}
+
 // privacy page
 {
   const page = await ctx.newPage(); watch(page);

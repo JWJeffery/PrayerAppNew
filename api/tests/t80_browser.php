@@ -32,6 +32,13 @@ make_intention($pid, 'individual', $payloads[0], 86400);
 make_staff($fid, 'flow@parish.org', 'rector', 'Rev. Flow');
 make_intention($fid, 'individual', 'Expired two days ago', -86400 * 2);
 
+// Reader-side fixtures (M6): a public parish with hostile requests, and a code parish for the join flow.
+[$oid] = make_parish('office-public', 'approved', 'public', 'episcopal/western-oregon', 'Office Public Church');
+$officeCats = ['individual', 'family', 'situation', 'institution', 'individual'];
+foreach ($payloads as $i => $p) { make_intention($oid, $officeCats[$i], $p, 86400 * 5 + $i); }
+[$cid, $cjoin] = make_parish('office-coded', 'approved', 'code', 'episcopal/western-oregon', 'Office Coded Church');
+make_intention($cid, 'situation', 'Coded parish request', 86400 * 3);
+
 $fixtures = [
     'base' => "http://127.0.0.1:$port",
     'mailLog' => mail_file(),
@@ -40,6 +47,7 @@ $fixtures = [
               'rectorToken' => Auth::createSession('staff', $rid)['token']],
     'admin' => ['token' => Auth::createSession('admin', null, 'a@example.org')['token'], 'email' => 'a@example.org'],
     'flow' => ['email' => 'flow@parish.org', 'parishName' => 'Flow Church', 'slug' => 'flow-church'],
+    'office' => ['slug' => 'office-public', 'codedSlug' => 'office-coded', 'joinCode' => $cjoin, 'payloads' => $payloads],
     'reg' => ['email' => 'newrector@parish.org'],
 ];
 $fxFile = "$tmp/browser-fixtures.json";

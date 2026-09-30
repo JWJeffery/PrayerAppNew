@@ -493,6 +493,23 @@ h2 { font-family: "Cinzel", serif; font-size: 2.1em; color: var(--gold); border-
     text-shadow: 1px 1px 0 rgba(139,90,30,0.3);
 }
 
+/* Parish Intercessions lines (M6): same look as .component-text but no drop cap -- these are short
+   list lines, and a drop cap on every request would be absurd. */
+.parish-intentions-item,
+.parish-intentions-category {
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 1em;
+    line-height: 1.6;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+.parish-intentions-category {
+    margin-top: 14px;
+}
+
 .reading-text {
     font-family: "IM Fell English", Georgia, serif;
     font-size: 1em;
@@ -2220,6 +2237,45 @@ body.dark-mode .app-profile-default-field input[type="text"] {
     width: 18px;
     height: 18px;
     accent-color: var(--gold, #c9a84c);
+}
+
+/* ADDED 2026-09-30 (Parish Intercessions): the parish picker spans both grid columns, with its
+   join-code row, status note and "Stop following" button stacked beneath the select. */
+.app-profile-default-field-wide {
+    grid-column: 1 / -1;
+}
+
+.app-profile-parish-intentions-join {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.app-profile-parish-intentions-join[hidden],
+.app-profile-parish-intentions-stop[hidden] {
+    display: none;
+}
+
+.app-profile-parish-intentions-join input[type="text"] {
+    flex: 1 1 220px;
+    width: auto;
+}
+
+.app-profile-parish-intentions-note {
+    margin: 0;
+    min-height: 1.2em;
+    font-family: var(--app-serif, Georgia, "Times New Roman", serif);
+    font-size: 0.9rem;
+    font-variant: normal;
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: inherit;
+    opacity: 0.9;
+}
+
+.app-profile-parish-intentions-stop {
+    justify-self: start;
 }
 
 .app-profile-defaults-actions {

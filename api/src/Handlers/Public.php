@@ -15,7 +15,7 @@ final class PublicApi
             Response::error(422, 'invalid_input', 'Invalid input.', ['diocese' => 'Invalid diocese key.']);
             return;
         }
-        $sql = "SELECT slug, name, diocese_key, visibility FROM parishes WHERE status = 'approved'";
+        $sql = "SELECT slug, name, diocese_key, corpus_parish_slug, visibility FROM parishes WHERE status = 'approved'";
         $args = [];
         if ($diocese !== null) { $sql .= ' AND diocese_key = ?'; $args[] = $diocese; }
         $sql .= ' ORDER BY name ASC, slug ASC LIMIT 200';
