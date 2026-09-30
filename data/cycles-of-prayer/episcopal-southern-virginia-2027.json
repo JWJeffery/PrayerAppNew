@@ -1,0 +1,553 @@
+{
+  "id": "episcopal-southern-virginia-2027",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Southern Virginia",
+  "dioceseShort": "southern-virginia",
+  "cycleType": "dated",
+  "year": 2027,
+  "source": "The Episcopal Diocese of Southern Virginia Cycle of Prayer, July 2026 – June 2027",
+  "sourceFile": "Diosova.org-2026-to-2027-Diocesean-Cycle-of-Prayer.pdf (supplied directly by Josh after the diocese's own site, diosova.org, proved unreachable from this sandbox -- see notes)",
+  "ingested": "2026-09-30",
+  "notes": [
+    "This file is the second half (January 3-June 27, 2027) of a single source document whose first half (July 5-December 27, 2026) is in the companion episcopal-southern-virginia-2026.json -- see that file's own `notes` for the full disclosure of the blocked-link/direct-upload provenance, the two-file-split reasoning, the recurring comma-before-apostrophe typo pattern, and the category-subject-splitting convention used consistently across both files.",
+    "January 24, 2027's paragraph is printed with no blank line separating it from its own \"Week of January 24th\" heading, unlike every other week in the source (which all have a blank line there) -- confirmed against the rendered page image as the source's own formatting, not an extraction artifact; has no effect on the transcribed content.",
+    "All 26 dates in this file were independently verified to fall on an actual Sunday before transcription."
+  ],
+  "entries": [
+    {
+      "date": "2027-01-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin's",
+          "place": "Williamsburg"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Yorktown"
+        },
+        {
+          "type": "category",
+          "name": "our winter shelters and their guests"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Colonial Heights"
+        },
+        {
+          "type": "parish",
+          "name": "Martin's Brandon",
+          "place": "Disputanta"
+        },
+        {
+          "type": "category",
+          "name": "the elderly, the lonely and those who suffer from social isolation"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Hopewell"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "McKenny"
+        },
+        {
+          "type": "category",
+          "name": "the board and volunteers of the Agricultural Workers Advocacy Coalition (AWAC) on the Eastern Shore"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Merchants Hope",
+          "place": "North Prince George"
+        },
+        {
+          "type": "parish",
+          "name": "Christ & Grace",
+          "place": "Petersburg",
+          "note": "Printed as one yoked-parish name, not two separate congregations."
+        },
+        {
+          "type": "category",
+          "name": "postulants, candidates, and seminarians for holy orders"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Petersburg"
+        },
+        {
+          "type": "category",
+          "name": "all Vestries and Wardens"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Petersburg"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Surry"
+        },
+        {
+          "type": "category",
+          "name": "Repairers of the Breach ministry and for the ongoing work for racial justice and healing"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Bishop Susan Haynes, diocesan staff and the diocesan annual convention",
+          "note": "This week names no parish at all -- the source's only subject is the bishop, staff, and convention, transcribed as printed."
+        }
+      ]
+    },
+    {
+      "date": "2027-02-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Waverly"
+        },
+        {
+          "type": "parish",
+          "name": "St. Michael's",
+          "place": "Bon Air"
+        },
+        {
+          "type": "category",
+          "name": "retired clergy"
+        }
+      ]
+    },
+    {
+      "date": "2027-02-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Chester"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthew's",
+          "place": "Chesterfield"
+        },
+        {
+          "type": "category",
+          "name": "diocesan commissions, boards, teams, and council, and all who serve on them"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Redeemer",
+          "place": "Midlothian"
+        },
+        {
+          "type": "parish",
+          "name": "St. Matthias'",
+          "place": "Midlothian",
+          "note": "Same comma-before-apostrophe transposition as other \"St. James'\"/\"All Saints'\" entries in this source; preserved as printed (\"St. Matthias,’ Midlothian\")."
+        },
+        {
+          "type": "category",
+          "name": "THRIVE: DCDI, the Diocesan Church Development Institute",
+          "note": "The source's own sentence has no closing period, unlike every other week; preserved as printed."
+        }
+      ]
+    },
+    {
+      "date": "2027-03-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Barnabas",
+          "place": "North Chesterfield"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "North Chesterfield"
+        },
+        {
+          "type": "category",
+          "name": "high school students as they discern their next steps for their future"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Manakin",
+          "place": "Powhatan"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Powhatan"
+        },
+        {
+          "type": "category",
+          "name": "health care providers"
+        }
+      ]
+    },
+    {
+      "date": "2027-03-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Richmond"
+        },
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Amelia"
+        },
+        {
+          "type": "category",
+          "name": "our youth attending the Province III Youth Event"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Anne's",
+          "place": "Appomattox"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Blackstone"
+        },
+        {
+          "type": "category",
+          "name": "all who are undergoing cancer treatment and their caregivers"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Bracey"
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Cartersville",
+          "note": "Same comma-before-apostrophe transposition as other \"St. James'\" entries in this source; preserved as printed (\"St. James,’ Cartersville\")."
+        },
+        {
+          "type": "category",
+          "name": "the care and nurturing of all families and children, for blended families, for those who adopt or foster, and for those whose desire for children has not been realized"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Johns Memorial",
+          "place": "Farmville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas'",
+          "place": "Freeman",
+          "note": "Same comma-before-apostrophe transposition as other entries in this source; preserved as printed (\"St. Thomas,’ Freeman\")."
+        },
+        {
+          "type": "category",
+          "name": "the Creation Care Team"
+        },
+        {
+          "type": "category",
+          "name": "farmers and workers"
+        }
+      ]
+    },
+    {
+      "date": "2027-04-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Glenmore"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul & St. Andrew's",
+          "place": "Kenbridge",
+          "note": "Printed as one yoked-parish name, not two separate congregations."
+        },
+        {
+          "type": "category",
+          "name": "all victims of sexual assault and caregivers"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Lawrenceville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Lawrenceville"
+        },
+        {
+          "type": "category",
+          "name": "the EYC spring gathering"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "South Hill",
+          "note": "Same comma-before-apostrophe transposition as other \"All Saints'\"/\"St. James'\" entries in this source; preserved as printed (\"All Saints,’ South Hill\")."
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "South Hill"
+        },
+        {
+          "type": "category",
+          "name": "all caregivers"
+        },
+        {
+          "type": "category",
+          "name": "all mothers and all who have been a motherly presence"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Warfield",
+          "note": "Same comma-before-apostrophe transposition as other \"St. James'\" entries in this source; preserved as printed (\"St. James,’ Warfield\")."
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Baskerville"
+        },
+        {
+          "type": "category",
+          "name": "students and graduates"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Chase City"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Chatham"
+        },
+        {
+          "type": "category",
+          "name": "clergy spouses"
+        }
+      ]
+    },
+    {
+      "date": "2027-05-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Timothy's",
+          "place": "Clarksville"
+        },
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Danville"
+        },
+        {
+          "type": "category",
+          "name": "Chanco Summer Staff"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Danville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Gretna"
+        },
+        {
+          "type": "category",
+          "name": "temporary H2-A Visa Farm Workers arriving on the Eastern Shore"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Gretna"
+        },
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Halifax"
+        },
+        {
+          "type": "category",
+          "name": "thanksgiving for God's abundant diversity"
+        },
+        {
+          "type": "category",
+          "name": "the LGBTQIA+ community"
+        },
+        {
+          "type": "category",
+          "name": "all who find hope in PRIDE celebrations"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Halifax"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Java"
+        },
+        {
+          "type": "category",
+          "name": "the celebration of Juneteenth"
+        },
+        {
+          "type": "category",
+          "name": "all fathers and all who have been a fatherly presence"
+        }
+      ]
+    },
+    {
+      "date": "2027-06-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "South Boston"
+        },
+        {
+          "type": "category",
+          "name": "the Diocesan Task Force Against Gun Violence"
+        }
+      ]
+    }
+  ]
+}

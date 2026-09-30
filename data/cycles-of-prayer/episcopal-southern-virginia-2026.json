@@ -1,0 +1,584 @@
+{
+  "id": "episcopal-southern-virginia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Southern Virginia",
+  "dioceseShort": "southern-virginia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "The Episcopal Diocese of Southern Virginia Cycle of Prayer, July 2026 – June 2027",
+  "sourceFile": "Diosova.org-2026-to-2027-Diocesean-Cycle-of-Prayer.pdf (supplied directly by Josh after the diocese's own site, diosova.org, proved unreachable from this sandbox -- see notes)",
+  "ingested": "2026-09-30",
+  "notes": [
+    "This diocese's own website (diosova.org) is protected by a SiteGround 'Robot Challenge Screen' JS proof-of-work bot check that defeated every fetch attempt from this sandbox (a direct curl, the WebFetch tool, and the r.jina.ai reader-proxy workaround that had succeeded on a different diocese's Cloudflare block earlier in this project) -- reported to Josh as a blocked link per his standing preference, and this PDF was then supplied directly by Josh as a file upload rather than fetched by this session.",
+    "The single source document covers a full year, July 2026 through June 2027 (52 weekly entries), split almost exactly in half by the calendar year boundary (26 weeks in 2026, 26 in 2027) -- following this corpus's established two-file-split precedent (episcopal-delaware-2026.json/-2027.json, episcopal-southeast-florida-2026.json/-2027.json) rather than the disclose-and-include-a-lead-in precedent used for a lopsided split, since this is a genuine near-even divide, not a small lead-in on either side. This file, episcopal-southern-virginia-2026.json, covers the first 26 weeks (July 5-December 27, 2026); the remaining 26 weeks (January 3-June 27, 2027) are in the companion episcopal-southern-virginia-2027.json.",
+    "Every week's paragraph follows the fixed template \"In our Diocesan Cycle of Prayers, we pray for X and Y; and for Z[, ...].\", where X and Y are (almost always) two named parishes and the remainder names one or more additional intentions. Two weeks break this pattern entirely: the week of July 5, 2026 names no parish at all (only the diocesan camp Chanco on the James and a civic anniversary); the week of June 27, 2027 names only ONE parish (Trinity, South Boston) rather than the usual two.",
+    "Confirmed the document is single-column, prose-per-week throughout (no multi-column layout, so none of this corpus's usual column-interleaving risk applies) by rendering all 8 pages as images and visually cross-checking every week against a pdftotext -layout extraction before transcribing.",
+    "A recurring source-side typo, preserved verbatim rather than silently corrected per this corpus's standing rule: eight parish names are printed with the comma placed BEFORE the closing/possessive apostrophe instead of after it, e.g. \"St. James,’ Accomac\" where a normal \"St. James', Accomac\" is clearly intended. This transposition recurs identically throughout the document (affecting several distinct St. James', All Saints', St. Matthias', and St. Thomas' entries across both files) and is disclosed individually on each affected subject's own `note` field rather than corrected.",
+    "Where a week's additional intention(s) are phrased as one continuous \"...and for...\" clause with no independent repetition of \"for\", it is kept as a single `category` subject; where the source instead independently reintroduces \"for\" (or an equivalent, like a second semicolon-separated clause) for each item, each is recorded as its own separate `category` subject. This distinction is applied consistently throughout both files and is not re-disclosed on every individual entry.",
+    "`liturgicalNote` is null throughout both files -- the source labels every entry only by its calendar date (\"Week of [Month] [Day]\"), never by a liturgical Sunday/season name.",
+    "All 26 dates in this file were independently verified to fall on an actual Sunday before transcription."
+  ],
+  "entries": [
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "summer campers and staff at Chanco on the James"
+        },
+        {
+          "type": "category",
+          "name": "the 250th anniversary of our democracy"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Accomac",
+          "note": "Source prints \"St. James,’ Accomac\" -- the comma is printed before the apostrophe (a transposition of the intended \"St. James', Accomac\"); preserved as a disclosed typo rather than silently corrected."
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Cape Charles"
+        },
+        {
+          "type": "category",
+          "name": "First Responders"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Eastville"
+        },
+        {
+          "type": "parish",
+          "name": "Hungars Cure",
+          "place": "Bridgetown"
+        },
+        {
+          "type": "category",
+          "name": "single parent homes and childcare centers"
+        },
+        {
+          "type": "category",
+          "name": "the safety of all children while they are out of school"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Jenkins Bridge"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Trinity",
+          "place": "Onancock"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Pungoteague"
+        },
+        {
+          "type": "category",
+          "name": "our churches' mission trips and Vacation Bible Schools"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints'",
+          "place": "Virginia Beach",
+          "note": "Source prints \"All Saints,’ Virginia Beach\" -- same comma-before-apostrophe transposition as St. James' above; preserved as printed."
+        },
+        {
+          "type": "parish",
+          "name": "Eastern Shore Chapel",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "category",
+          "name": "those who work to provide safe drinking water and to protect our water supplies"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Galilee",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "category",
+          "name": "facilitators and participants in the Education For Ministry (EFM) program"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Samaritan",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Apostles",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Schools"
+        },
+        {
+          "type": "category",
+          "name": "ministry to Colleges & Universities and for their Chaplains"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Old Donation",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "category",
+          "name": "all students, teachers, faculty, schools and universities"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "parish",
+          "name": "St. Simon's by-the-Sea",
+          "place": "Virginia Beach"
+        },
+        {
+          "type": "category",
+          "name": "all congregations led by laity"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Advent",
+          "place": "Norfolk"
+        },
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Norfolk"
+        },
+        {
+          "type": "category",
+          "name": "Suicide Prevention and those who have lost a loved one to suicide"
+        },
+        {
+          "type": "category",
+          "name": "all workers and laborers"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ & St. Luke's",
+          "place": "Norfolk",
+          "note": "Printed as one yoked-parish name, not two separate congregations."
+        },
+        {
+          "type": "parish",
+          "name": "Epiphany",
+          "place": "Norfolk"
+        },
+        {
+          "type": "category",
+          "name": "the Diocesan Episcopal Youth Community (EYC)"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Norfolk",
+          "note": "Source wraps this name across a line break (\"Good\\nShepherd, Norfolk\"), confirmed against the rendered page image as an ordinary mid-sentence line wrap, not a separate entry."
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Norfolk"
+        },
+        {
+          "type": "category",
+          "name": "all who suffer from addiction and those who provide recovery resources and ministries"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Norfolk"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Norfolk"
+        },
+        {
+          "type": "category",
+          "name": "all staff, paid and volunteer, who support our congregations and related organizations",
+          "note": "This is the only week in the whole source with no semicolon at all separating the parish pair from the additional intention (\"...Norfolk and St. Paul's, Norfolk and for all staff...\") -- transcribed as printed."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Norfolk"
+        },
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Norfolk"
+        },
+        {
+          "type": "category",
+          "name": "the Union of Black Episcopalians (UBE)"
+        },
+        {
+          "type": "category",
+          "name": "all Historically Black Colleges & Universities (HBCU)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Bride's",
+          "place": "Chesapeake"
+        },
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Chesapeake"
+        },
+        {
+          "type": "category",
+          "name": "breast cancer patients, survivors, caregivers, and those seeking a cure"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Courtland"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Franklin"
+        },
+        {
+          "type": "category",
+          "name": "the diocesan Cursillo community"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St Christopher's",
+          "place": "Portsmouth",
+          "note": "Printed \"St\" with no period, unlike \"St.\" used everywhere else in this source; preserved as printed."
+        },
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Portsmouth",
+          "note": "Same comma-before-apostrophe transposition as other \"St. James'\"/\"All Saints'\" entries in this source; preserved as printed (\"St. James,’ Portsmouth\")."
+        },
+        {
+          "type": "category",
+          "name": "the victims of domestic violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Johns's",
+          "place": "Portsmouth",
+          "note": "Printed \"St. Johns’s\" -- an apparent typo for \"St. John's\" (extra \"s\" before the possessive); preserved verbatim rather than corrected."
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Portsmouth"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal Church Women (ECW)"
+        },
+        {
+          "type": "category",
+          "name": "the Order of the Daughters of the King (DOK)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ",
+          "place": "Smithfield"
+        },
+        {
+          "type": "parish",
+          "name": "Glebe",
+          "place": "Suffolk"
+        },
+        {
+          "type": "category",
+          "name": "all Veterans and Active Duty deployed and their families"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Suffolk"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Suffolk"
+        },
+        {
+          "type": "category",
+          "name": "the Indigenous people and tribal councils of the Commonwealth",
+          "note": "Source uses a colon here (\"...Commonwealth: and for...\") where every other week uses a semicolon between clauses; preserved as printed."
+        },
+        {
+          "type": "category",
+          "name": "our Matoaka covenant"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Suffolk"
+        },
+        {
+          "type": "parish",
+          "name": "Emmanuel",
+          "place": "Hampton"
+        },
+        {
+          "type": "category",
+          "name": "transgender and non-binary people"
+        },
+        {
+          "type": "category",
+          "name": "victims of hate-based violence"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Cyprian's",
+          "place": "Hampton"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Hampton"
+        },
+        {
+          "type": "category",
+          "name": "all families with food insecurity and for the food pantries serving our communities"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Hampton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Newport News"
+        },
+        {
+          "type": "category",
+          "name": "the Kairos Ministry, those incarcerated and their families, and those who work in correctional facilities"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Augustine's",
+          "place": "Newport News"
+        },
+        {
+          "type": "parish",
+          "name": "St. George's",
+          "place": "Newport News"
+        },
+        {
+          "type": "category",
+          "name": "the support of youth shelters and their guests"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Newport News"
+        },
+        {
+          "type": "parish",
+          "name": "Christ the King",
+          "place": "Tabb"
+        },
+        {
+          "type": "category",
+          "name": "all those who do not have secure, affordable housing"
+        },
+        {
+          "type": "category",
+          "name": "everyone grieving, especially in this holiday season"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Hickory Neck",
+          "place": "Toano"
+        },
+        {
+          "type": "parish",
+          "name": "Bruton Parish",
+          "place": "Williamsburg"
+        },
+        {
+          "type": "category",
+          "name": "all clergy and their families"
+        }
+      ]
+    }
+  ]
+}

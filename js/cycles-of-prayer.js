@@ -98,6 +98,7 @@ const CYCLES_OF_PRAYER_DIOCESES = Object.freeze([
     { bodySlug: 'episcopal', dioceseShort: 'south-dakota', label: 'The Diocese of South Dakota' },
     { bodySlug: 'episcopal', dioceseShort: 'southeast-florida', label: 'The Episcopal Church in Southeast Florida' },
     { bodySlug: 'episcopal', dioceseShort: 'southern-ohio', label: 'Diocese of Southern Ohio' },
+    { bodySlug: 'episcopal', dioceseShort: 'southern-virginia', label: 'The Episcopal Diocese of Southern Virginia' },
     { bodySlug: 'episcopal', dioceseShort: 'southwest-florida', label: 'Diocese of Southwest Florida' },
     { bodySlug: 'episcopal', dioceseShort: 'springfield', label: 'The Episcopal Diocese of Springfield' },
     { bodySlug: 'episcopal', dioceseShort: 'susquehanna', label: 'Diocese of the Susquehanna' },
