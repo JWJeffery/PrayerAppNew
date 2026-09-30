@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Approve a parish</title>
+  <link rel="stylesheet" href="parish.css">
+</head>
+<body>
+  <main>
+    <p class="kicker">The Universal Office</p>
+    <h1>Approve a parish</h1>
+
+    <p id="loading" class="muted">Checking the approval link&hellip;</p>
+
+    <section id="review" hidden>
+      <p>This parish has asked to be added. Nothing happens until you press the button.</p>
+      <dl class="card">
+        <dt>Parish</dt><dd id="parish-name"></dd>
+        <dt>Diocese</dt><dd id="parish-diocese"></dd>
+      </dl>
+      <button id="approve-btn" type="button" class="primary">Approve this parish</button>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+  </main>
+  <script src="approve.js"></script>
+</body>
+</html>

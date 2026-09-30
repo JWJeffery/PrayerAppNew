@@ -28,3 +28,4 @@ uo-private/
 *.cnf
 api/tests/.tmp/
 *.sql.gz
+parish-backend.zip

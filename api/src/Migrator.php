@@ -23,7 +23,7 @@ final class Migrator
             foreach (self::statements((string)file_get_contents($file)) as $sql) {
                 $pdo->exec($sql);
             }
-            $ins = $pdo->prepare('INSERT INTO schema_migrations (version, applied_at) VALUES (?, UTC_TIMESTAMP())');
+            $ins = $pdo->prepare('INSERT IGNORE INTO schema_migrations (version, applied_at) VALUES (?, UTC_TIMESTAMP())');
             $ins->execute([$version]);
             $applied[] = $version;
         }

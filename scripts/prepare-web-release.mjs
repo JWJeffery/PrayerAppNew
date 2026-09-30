@@ -14,7 +14,10 @@ const includeEntries = [
   "css",
   "data",
   "images",
-  "js"
+  "js",
+  // Parish intentions backend and rector/admin pages (see documentation/PARISH_INTENTIONS.md).
+  "api",
+  "parish"
 ];
 
 const adminReleaseFiles = [
@@ -48,7 +51,19 @@ const denyNames = new Set([
   "source-witnesses"
 ]);
 
+// Parish intentions backend: development-only directories and anything that could hold a
+// secret must never reach the web root. Real configuration lives OUTSIDE the web root, in
+// <home>/uo-private/, and is never part of a release.
+const denyPathPrefixes = [
+  "api/tests",
+  "api/dev",
+  "api/cli/seed-dev.php"
+];
+
 const denyFilePatterns = [
+  /^config[^/]*\.php$/,
+  /\.cnf$/,
+  /\.sql\.gz$/,
   /^package(-lock)?\.json$/,
   /^patch_.*\.(py|js|mjs|sh)$/,
   /^.*\.bak$/,
@@ -75,6 +90,8 @@ function rmIfExists(target) {
 }
 
 function shouldDeny(relativePath) {
+  const posixPath = relativePath.split(path.sep).join("/");
+  if (denyPathPrefixes.some((prefix) => posixPath === prefix || posixPath.startsWith(prefix + "/"))) return true;
   const parts = relativePath.split(path.sep);
   if (parts.some((part) => denyNames.has(part))) return true;
   const base = path.basename(relativePath);
@@ -181,6 +198,23 @@ const htaccess = `# Universal Office static-app routing.
 fs.writeFileSync(path.join(releaseDir, ".htaccess"), htaccess, "utf-8");
 
 const files = walkFiles(releaseDir);
+
+// Hard assertion: nothing secret or development-only may be in the release.
+{
+  const forbidden = files.filter((f) =>
+    /(^|\/)config[^/]*\.php$/.test(f) ||
+    /\.cnf$/.test(f) ||
+    /\.sql\.gz$/.test(f) ||
+    f.startsWith("api/tests/") ||
+    f.startsWith("api/dev/") ||
+    f === "api/cli/seed-dev.php" ||
+    f.startsWith(".external/")
+  );
+  if (forbidden.length) fail(`forbidden files in release: ${forbidden.join(", ")}`);
+  if (!files.includes("api/.htaccess")) fail("api/.htaccess missing from the release (dotfile not copied?)");
+  if (!files.includes("api/index.php")) fail("api/index.php missing from the release");
+}
+
 const manifest = {
   generatedAt: new Date().toISOString(),
   purpose: "Deployable browser-runtime export for theuniversaloffice.com.",

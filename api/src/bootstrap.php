@@ -18,6 +18,8 @@ require_once __DIR__ . '/Auth.php';
 require_once __DIR__ . '/Handlers/Public.php';
 require_once __DIR__ . '/Handlers/AuthHandlers.php';
 require_once __DIR__ . '/Handlers/Staff.php';
+require_once __DIR__ . '/Handlers/Register.php';
+require_once __DIR__ . '/Handlers/Admin.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -73,6 +75,20 @@ function uo_build_router(): Router
     $r->add('GET', '/staff/parish/join-code', ['StaffApi', 'getJoinCode']);
     $r->add('POST', '/staff/parish/join-code/rotate', ['StaffApi', 'rotateJoinCode']);
     $r->add('DELETE', '/staff/me', ['StaffApi', 'deleteMe']);
+    // Registration (spec 8.2).
+    $r->add('POST', '/register', ['RegisterApi', 'register']);
+    $r->add('POST', '/register/verify', ['RegisterApi', 'verify']);
+    // Admin (spec 8.5).
+    $r->add('POST', '/admin/auth/request-code', ['AdminApi', 'requestCode']);
+    $r->add('POST', '/admin/auth/verify-code', ['AdminApi', 'verifyCode']);
+    $r->add('POST', '/admin/approval-info', ['AdminApi', 'approvalInfo']);
+    $r->add('POST', '/admin/approve', ['AdminApi', 'approve']);
+    $r->add('GET', '/admin/parishes', ['AdminApi', 'listParishes']);
+    $r->add('POST', '/admin/parishes/{id}/approve', ['AdminApi', 'approveById']);
+    $r->add('POST', '/admin/parishes/{id}/suspend', ['AdminApi', 'suspend']);
+    $r->add('POST', '/admin/parishes/{id}/unsuspend', ['AdminApi', 'unsuspend']);
+    $r->add('DELETE', '/admin/parishes/{id}', ['AdminApi', 'delete']);
+    $r->add('GET', '/admin/status', ['AdminApi', 'status']);
     return $r;
 }
 

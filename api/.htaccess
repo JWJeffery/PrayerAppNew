@@ -20,9 +20,6 @@ RewriteRule (^|/)[^/]*\.(cnf|sql|gz|log)$ - [F,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
 
-# No directory listings.
-Options -Indexes
-
 # Belt and braces: deny config-like files even if the rewrite rules above are
 # ever disabled.
 <FilesMatch "^(config.*\.php|.*\.cnf|.*\.sql|.*\.gz)$">

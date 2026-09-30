@@ -107,3 +107,7 @@ CREATE TABLE IF NOT EXISTS audit_log (
   detail VARCHAR(255) NULL,
   KEY idx_audit_at (at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Record this migration so that importing this file by hand (phpMyAdmin) leaves the same
+-- bookkeeping as running cli/migrate.php. INSERT IGNORE keeps re-runs harmless.
+INSERT IGNORE INTO schema_migrations (version, applied_at) VALUES ('001_init', UTC_TIMESTAMP());
