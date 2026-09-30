@@ -17,6 +17,7 @@ require_once __DIR__ . '/Mailer.php';
 require_once __DIR__ . '/Auth.php';
 require_once __DIR__ . '/Handlers/Public.php';
 require_once __DIR__ . '/Handlers/AuthHandlers.php';
+require_once __DIR__ . '/Handlers/Staff.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -58,6 +59,20 @@ function uo_build_router(): Router
     $r->add('POST', '/auth/verify-code', ['AuthApi', 'verifyCode']);
     $r->add('POST', '/auth/logout', ['AuthApi', 'logout']);
     $r->add('GET', '/me', ['AuthApi', 'me']);
+    // Staff endpoints (spec 8.4); the parish always comes from the session.
+    $r->add('GET', '/staff/intentions', ['StaffApi', 'listIntentions']);
+    $r->add('POST', '/staff/intentions', ['StaffApi', 'createIntention']);
+    $r->add('PATCH', '/staff/intentions/{id}', ['StaffApi', 'editIntention']);
+    $r->add('DELETE', '/staff/intentions/{id}', ['StaffApi', 'deleteIntention']);
+    $r->add('POST', '/staff/intentions/{id}/extend', ['StaffApi', 'extendIntention']);
+    $r->add('GET', '/staff/delegates', ['StaffApi', 'listDelegates']);
+    $r->add('POST', '/staff/delegates', ['StaffApi', 'addDelegate']);
+    $r->add('DELETE', '/staff/delegates/{id}', ['StaffApi', 'removeDelegate']);
+    $r->add('PATCH', '/staff/parish', ['StaffApi', 'updateParish']);
+    $r->add('DELETE', '/staff/parish', ['StaffApi', 'deleteParish']);
+    $r->add('GET', '/staff/parish/join-code', ['StaffApi', 'getJoinCode']);
+    $r->add('POST', '/staff/parish/join-code/rotate', ['StaffApi', 'rotateJoinCode']);
+    $r->add('DELETE', '/staff/me', ['StaffApi', 'deleteMe']);
     return $r;
 }
 
