@@ -46,7 +46,7 @@ file_put_contents($cfgFile, "<?php\nreturn [\n 'db' => ['host' => '127.0.0.1', '
     . " 'admin_emails' => ['a@example.org'], 'site_url' => 'http://localhost', 'allowed_origins' => [], 'trust_proxy' => false, 'log_dir' => null,\n];\n");
 $port = random_int(20000, 40000);
 $env = array_merge(getenv(), ['UO_CONFIG_PATH' => $cfgFile]);
-$proc = proc_open(['php', '-S', "127.0.0.1:$port", '-t', dirname($apiDir), "$apiDir/dev/router.php"],
+$proc = proc_open([PHP_BINARY, '-S', "127.0.0.1:$port", '-t', dirname($apiDir), "$apiDir/dev/router.php"],
     [0 => ['file', '/dev/null', 'r'], 1 => ['file', '/dev/null', 'w'], 2 => ['file', '/dev/null', 'w']], $pipes, dirname($apiDir), $env);
 for ($i = 0; $i < 50; $i++) { // wait for the server
     if (@fsockopen('127.0.0.1', $port)) { break; }
@@ -83,7 +83,7 @@ proc_terminate($proc); proc_close($proc);
 // Missing config must fail closed with a generic 500.
 $env['UO_CONFIG_PATH'] = "$tmp/does-not-exist.php";
 $port2 = $port + 1;
-$proc = proc_open(['php', '-S', "127.0.0.1:$port2", '-t', dirname($apiDir), "$apiDir/dev/router.php"],
+$proc = proc_open([PHP_BINARY, '-S', "127.0.0.1:$port2", '-t', dirname($apiDir), "$apiDir/dev/router.php"],
     [0 => ['file', '/dev/null', 'r'], 1 => ['file', '/dev/null', 'w'], 2 => ['file', '/dev/null', 'w']], $pipes, dirname($apiDir), $env);
 for ($i = 0; $i < 50; $i++) { if (@fsockopen('127.0.0.1', $port2)) { break; } usleep(100000); }
 [$s, $b] = http($port2, 'GET', '/api/v1/health');

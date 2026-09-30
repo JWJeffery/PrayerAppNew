@@ -6,6 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 PORT="${PORT:-8080}"
 DEV_DIR="$ROOT/.external/uo-private"
+PHP_BIN="${PHP_BIN:-php}"
 export UO_CONFIG_PATH="${UO_CONFIG_PATH:-$DEV_DIR/config.php}"
 
 if [ ! -f "$UO_CONFIG_PATH" ]; then
@@ -15,7 +16,7 @@ if [ ! -f "$UO_CONFIG_PATH" ]; then
   echo "No dev config found -- creating one at $UO_CONFIG_PATH (git-ignored; mail is logged, never sent)."
   mkdir -p "$DEV_DIR/logs"
   chmod 700 "$DEV_DIR"
-  php -r '
+  "$PHP_BIN" -r '
     $p = bin2hex(random_bytes(32)); $k = base64_encode(random_bytes(32));
     echo "<?php\nreturn [\n"
        . "  \"db\" => [\"host\" => \"127.0.0.1\", \"name\" => \"uo_dev\", \"user\" => \"uo_dev\", \"pass\" => \"uo_dev_local_only\"],\n"
@@ -30,4 +31,4 @@ fi
 
 echo "Serving $ROOT on http://localhost:$PORT  (API: /api/v1/health)"
 cd "$ROOT"
-exec php -S "0.0.0.0:$PORT" -t "$ROOT" "$ROOT/api/dev/router.php"
+exec "$PHP_BIN" -S "0.0.0.0:$PORT" -t "$ROOT" "$ROOT/api/dev/router.php"
