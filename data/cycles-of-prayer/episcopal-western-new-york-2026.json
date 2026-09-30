@@ -1,0 +1,858 @@
+{
+  "id": "episcopal-western-new-york-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "Episcopal Diocese of Western New York",
+  "dioceseShort": "western-new-york",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Dio Cycle of Prayer",
+  "sourceFile": "\"2026-Dio-Cycle-of-Prayer.pdf\", fetched directly from https://episcopalwny.org/wp-content/uploads/2025/12/2026-Dio-Cycle-of-Prayer.pdf.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "This source is an Excel-exported, two-column-per-week table (5 landscape pages) with a 'WNY' column (the diocese's own local parishes for that week) and an 'Anglican COP' column (that week's worldwide Anglican Cycle of Prayer entry). Only the 'WNY' column is transcribed here as this diocese's own cycle of prayer; the 'Anglican COP' column is the separate worldwide Communion-wide cycle, already covered elsewhere in this corpus as a scope-'communion' file (anglican-communion-2026.json), and is excluded here -- the same pattern already used for Maryland's diocesan cycle file in this corpus.",
+    "The document itself prints no title or diocese name anywhere in its body -- it is a bare table with no header row, and the local-diocese column is identified only by the two-letter abbreviation 'WNY'. `diocese` is therefore taken from the diocese's own website's self-identification, 'Episcopal Diocese of Western New York' (episcopalwny.org), which matches Wikipedia's and episcopalchurch.org's naming for this diocese. `source` ('2026 Dio Cycle of Prayer') is likewise inferred from the sourceFile's own filename (2026-Dio-Cycle-of-Prayer.pdf, hyphens replaced with spaces), since no title string is printed anywhere in the document -- a judgment call, disclosed here rather than invented silently.",
+    "Confirmed this is the Diocese of WESTERN New York (Buffalo/Niagara Falls/Southern Tier area), not the separately-ingested Diocese of New York (episcopal-new-york-2026.json, sourced from dioceseny.org, covering NYC/Hudson Valley) already in this corpus: the source URL's own host is episcopalwny.org (distinct from dioceseny.org), and every WNY-column parish place name in this document (Buffalo, Niagara Falls, Batavia, Jamestown, Olean, Cheektowaga, Dunkirk, Lockport, Lancaster, etc.) is in western New York State, nowhere near New York City or the Hudson Valley.",
+    "Every WNY-column entry is a specific named congregation (`type: parish`) -- no diocesan-staff, commission, or other named-group ('category') entries of any kind appear anywhere in the WNY column of this source, unlike some other diocese files in this corpus (e.g. Southern Ohio, Maryland) that mix parishes with categories/individuals.",
+    "Each WNY cell is one or more 'Congregation Name, Place' segments joined by ' & ' (two congregations, the common case) or, for two weeks (Jan 18 and its Jul 19 repeat), by '; ... & ' for three congregations (e.g. \"St. James', Batavia; St. Andrew's, Buffalo & Good Shepherd, Buffalo\" -> three separate parish subjects). Each segment is split at its own first comma into `name` and `place`; no cell in this source omits its place the way an occasional cell does in some other diocese files in this corpus.",
+    "The 52 dates in this source (every Sunday of calendar year 2026, Jan 4 - Dec 27) are not 52 distinct parish pairings: the WNY column's own list of parish pairings is a 26-week rotation that the source itself prints twice over the course of the year -- e.g. the pairing for Jan 4 ('Christ Church, Albion & St. Aidan's, Alden') recurs verbatim at Jul 5, Jan 11 recurs at Jul 12, and so on through all 26 pairs. This was confirmed by direct comparison of all 52 rows. Per this corpus's standing rule of transcribing exactly what the source prints on each of its own dated rows, every one of the 52 dated entries is still recorded here in full and independently, rather than collapsed or cross-referenced, since the source itself repeats the full text on each date rather than omitting it the second time.",
+    "Two of the 26 repeated week-pairs are NOT verbatim-identical between their two 2026 printings -- both are preserved exactly as printed, without harmonizing one to match the other: (1) Jan 25 prints \"St. John's-Grace, Buffalo & St. Marks' and All Saints, Buffalo\" while its Jul 26 repeat prints \"St. John's-Grace, Buffalo & St. Mark's and All Saints', Buffalo\" -- the apostrophe placement on 'Mark's'/'Marks'' and the trailing apostrophe on 'Saints'/'Saints'' differ between the two printings of what is evidently the same combined parish. (2) Feb 1 prints \"St. Michael and All Angels', Buffalo\" (trailing apostrophe) while its Aug 2 repeat prints \"St. Michael and All Angels, Buffalo\" (no trailing apostrophe). Both instances are transcribed as separately printed, not corrected to match each other.",
+    "This is a genuine multi-column layout (a 'WNY' column and an 'Anglican COP' column per dated row, across 5 pages) carrying the interleaving risk this corpus's rules warn about: a plain `pdftotext` extraction (no -layout) of this PDF badly scrambles the rows, printing all 52 dates consecutively up front, detached from their own WNY/Anglican COP text. Transcription here instead used `pdftotext -layout`, which keeps each date correctly paired with its own WNY/Anglican COP rows, and that layout-mode extraction was then visually cross-checked line-by-line against all 5 pages rendered as images (`pdftoppm -r 200`) before being trusted -- every WNY row transcribed here was confirmed to match its rendered page.",
+    "No liturgical Sunday name or season label (e.g. 'Advent', 'Proper 15') is printed anywhere in this source; `liturgicalNote` is null on every entry.",
+    "All WNY-column text in this source uses plain ASCII straight apostrophes throughout (never a Unicode curly apostrophe); the few curly apostrophes and accented characters present in the PDF appear only in the excluded Anglican COP column and are not part of this file."
+  ],
+  "entries": [
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Albion"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Alden"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Angola"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Attica"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Batavia"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's-Grace",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Marks' and All Saints",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels'",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Cathedral",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Simon's",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Burt"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Cheektowaga"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Dunkirk"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthias'",
+          "place": "East Aurora"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Eggertsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Ellicottville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Fredonia"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Gowanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin-in-the-Fields",
+          "place": "Grand Island"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Hamburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Harris Hill"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Holley"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Irving"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Jamestown"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Advent",
+          "place": "Kenmore"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lancaster"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "LeRoy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Lewiston"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Lockport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Mayville"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Medina"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Niagara Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Niagara Falls"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "North Tonawanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Olean"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Orchard Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Apostles'",
+          "place": "Perry"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Randolph"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Salamanca"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Silver Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Springville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Stafford"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Warsaw"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "West Seneca"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Westfield"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Williamsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Wilson"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Youngstown"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Albion"
+        },
+        {
+          "type": "parish",
+          "name": "St. Aidan's",
+          "place": "Alden"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Angola"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Attica"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James'",
+          "place": "Batavia"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's-Grace",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's and All Saints'",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Michael and All Angels",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's Cathedral",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip's",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Simon's",
+          "place": "Buffalo"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Buffalo"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew's",
+          "place": "Burt"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Patrick's",
+          "place": "Cheektowaga"
+        },
+        {
+          "type": "parish",
+          "name": "St. John the Baptist",
+          "place": "Dunkirk"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthias'",
+          "place": "East Aurora"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Eggertsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Ellicottville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Fredonia"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Gowanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Martin-in-the-Fields",
+          "place": "Grand Island"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Hamburg"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Harris Hill"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Holley"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Good Shepherd",
+          "place": "Irving"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke's",
+          "place": "Jamestown"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Advent",
+          "place": "Kenmore"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Lancaster"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "LeRoy"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Lewiston"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Lockport"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Mayville"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Medina"
+        },
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Niagara Falls"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Niagara Falls"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "North Tonawanda"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Stephen's",
+          "place": "Olean"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mark's",
+          "place": "Orchard Park"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Apostles'",
+          "place": "Perry"
+        },
+        {
+          "type": "parish",
+          "name": "Grace",
+          "place": "Randolph"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mary's",
+          "place": "Salamanca"
+        },
+        {
+          "type": "parish",
+          "name": "St. Alban's",
+          "place": "Silver Creek"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Springville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul's",
+          "place": "Stafford"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Warsaw"
+        },
+        {
+          "type": "parish",
+          "name": "St. David's",
+          "place": "West Seneca"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter's",
+          "place": "Westfield"
+        },
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Williamsville"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Wilson"
+        },
+        {
+          "type": "parish",
+          "name": "St. John's",
+          "place": "Youngstown"
+        }
+      ]
+    }
+  ]
+}

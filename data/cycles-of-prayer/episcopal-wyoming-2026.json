@@ -1,0 +1,195 @@
+{
+  "id": "episcopal-wyoming-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Wyoming",
+  "dioceseShort": "wyoming",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Diocesan Prayer Cycle",
+  "sourceFile": "\"ec022b_d3cb805cff5f4f9b9589c15f1e4e8137.pdf\", fetched directly from https://www.episcopalwy.org/_files/ugd/ec022b_d3cb805cff5f4f9b9589c15f1e4e8137.pdf.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "The source PDF itself prints no diocese name anywhere -- only the generic page-wide header '2026 Diocesan Prayer Cycle', with no logo, letterhead, or footer text naming the diocese. `diocese` is instead taken from the diocese's own website's self-identification: 'The Episcopal Diocese of Wyoming' (the page title at episcopalwy.org, which hosts this PDF); that site's own footer copyright line reads 'Episcopal Diocese of Wyoming', without 'The'.",
+    "Full calendar-year weekly cycle, all 52 Sundays, January 4 - December 27, 2026, transcribed from a single-page, two-column table (January-June printed in a left column, July-December in a right column, side by side on one page). Because January 1, 2026 falls on a Thursday, every Sunday of the year falls within this January 4 - December 27 span already, with no week left over at either end -- there is no year-boundary gap or overlap of the kind this corpus's other partial-year sources have had to disclose-and-exclude or split across files.",
+    "Given the two-column layout's known interleaving risk for this corpus, the page was rendered to a 300dpi image and read visually (in four overlapping strips) rather than trusted from a linearized text extraction alone; 'pdftotext -layout''s own row-by-row output was then compared line by line against the rendered image and found to match throughout.",
+    "Curly apostrophes (’) are used throughout, matching the source PDF's own typography exactly, per this corpus's standing rule against silently normalizing a source's own printed text.",
+    "Five dates pair two distinct named congregations on one printed line, joined by a slash ('X/Y'), rather than the source's own multi-column congregation layout used elsewhere in this corpus (e.g. Southern Ohio) -- each such line is transcribed here as two separate `parish` subjects sharing the one date, in the order printed, rather than as one combined name, since each side names an organizationally distinct congregation:",
+    "  - April 19: 'St. Matthew's Cathedral, Laramie/St. Alban's Chapel' -- the second congregation, 'St. Alban's Chapel', is given no comma-separated place of its own in the source; `place` 'Laramie' is inferred here from its pairing with St. Matthew's Cathedral (itself in Laramie), disclosed on that subject via its own `note`.",
+    "  - May 17: 'St. Alban's, Worland/St. Christopher's Chapel' -- 'St. Christopher's Chapel' likewise has no place of its own printed; `place` 'Worland' is inferred from the pairing, disclosed via that subject's own `note`. This is a distinct congregation from 'St. Christopher's, Cheyenne' printed later at August 16 -- same patron saint, two different places.",
+    "  - July 12: 'Christ Church, Cody/Wayfarers Chapel' -- 'Wayfarers Chapel' has no place of its own printed; `place` 'Cody' is inferred from the pairing, disclosed via that subject's own `note`.",
+    "  - July 19: 'St. John's, Jackson/Chapel of the Transfiguration' -- 'Chapel of the Transfiguration' has no place of its own printed; `place` 'Jackson' is inferred from the pairing, disclosed via that subject's own `note`. The real chapel building (in Grand Teton National Park) is more precisely located in Moose, Wyoming, not Jackson itself, but the source does not print a separate place for it, so 'Jackson' (from the pairing) is used rather than substituting outside knowledge the source itself does not give.",
+    "  - August 9: 'St. Andrew's, Atlantic City/Oregon Trail Memorial, Eden' -- included here for contrast: both halves of this slash pairing DO carry their own source-given place ('Atlantic City' and 'Eden'), so no place was inferred for either subject.",
+    "Three further dates pair two diocesan bodies with a slash rather than two congregations: January 11 'Standing Committee/COM', June 14 'Diocesan Council/Foundation Board', and December 27 'Diocesan Staff/TAC' -- each transcribed as two separate `category` subjects sharing the one date. 'COM' and 'TAC' are kept exactly as printed, undecoded abbreviations (plausibly 'Commission on Ministry' and a diocesan committee, respectively) -- not expanded or guessed at, per this corpus's rule against silently altering a source's own text.",
+    "August 2's 'Our Partner Dioceses - Leicester (U.K), Kiteto and Mt. Kilimanjaro (Tanzania), Trichy-Tanjore (India)' is transcribed as a single `category` subject with this entire phrase as its `name`, rather than split into three subjects, because the source phrases it as one continuous sentence (unlike the short slash-joined pairs above). The source's own '(U.K)' (missing the second period one would expect in 'U.K.') is preserved exactly as printed.",
+    "Apostrophe/spelling inconsistencies are preserved verbatim, not corrected: 'All Soul's, Kaycee' (Feb 1) uses a singular possessive, where 'All Souls'' (plural possessive) would be the conventional styling many Episcopal congregations of that name use; 'All Saints, Torrington' (Dec 6) carries no apostrophe at all, unlike 'All Saints', Wheatland' (Jun 21) earlier in the very same document; and 'St Hubert's, Bondurant' (Dec 13) omits the period after 'St' that the source otherwise uses consistently everywhere else (e.g. 'St. Andrew's') -- the same kind of preserved period-omission typo as this corpus's own Southern Ohio precedent file's 'St Patrick's'.",
+    "The source's own table prints a stray blank underscored line immediately after the 'August 2026' column heading (a trailing table-cell border, not text) -- it carries no content and has no corresponding entry in this file.",
+    "No liturgical annotations (e.g. 'Advent', 'Proper 15') are printed anywhere in this source -- `liturgicalNote` is null on every entry."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Green River" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Standing Committee" },
+      { "type": "category", "name": "COM" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter’s", "place": "Sheridan" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas’", "place": "Dubois" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Soul’s", "place": "Kaycee" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis on the Prairie", "place": "Wright" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Our Father’s House", "place": "Ethete" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "Casper" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. David’s", "place": "Fort Washakie" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Dixon" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Luke’s", "place": "Buffalo" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas’", "place": "Saratoga" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Stephen’s", "place": "Casper" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Meeteetse" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Douglas" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew’s Cathedral", "place": "Laramie" },
+      { "type": "parish", "name": "St. Alban’s Chapel", "place": "Laramie", "note": "Source joins this chapel to St. Matthew's Cathedral with a slash and gives no separate place; `place` inferred from the pairing (see file-level `notes`)." }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. George’s", "place": "Lusk" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Riverton" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mark’s", "place": "Cheyenne" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Alban’s", "place": "Worland" },
+      { "type": "parish", "name": "St. Christopher’s Chapel", "place": "Worland", "note": "Source joins this chapel to St. Alban's with a slash and gives no separate place; `place` inferred from the pairing (see file-level `notes`). Distinct from the later 'St. Christopher's, Cheyenne' entry (August 16)." }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas’", "place": "Rawlins" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Kemmerer" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John the Baptist", "place": "Glendo" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Council" },
+      { "type": "category", "name": "Foundation Board" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints’", "place": "Wheatland" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Clergy of the Diocese" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Basin" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Cody" },
+      { "type": "parish", "name": "Wayfarers Chapel", "place": "Cody", "note": "Source joins this chapel to Christ Church with a slash and gives no separate place; `place` inferred from the pairing (see file-level `notes`)." }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Jackson" },
+      { "type": "parish", "name": "Chapel of the Transfiguration", "place": "Jackson", "note": "Source joins this chapel to St. John's with a slash and gives no separate place; `place` inferred from the pairing (see file-level `notes`). The chapel building itself is more precisely in Moose, WY, but the source prints no place for it." }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Thermopolis" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Our Partner Dioceses - Leicester (U.K), Kiteto and Mt. Kilimanjaro (Tanzania), Trichy-Tanjore (India)" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s", "place": "Atlantic City" },
+      { "type": "parish", "name": "Oregon Trail Memorial", "place": "Eden" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher’s", "place": "Cheyenne" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of Our Saviour", "place": "Hartville" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Newcastle" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Gillette" }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Glenrock" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. James’", "place": "Encampment" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Chapel on the Plains", "place": "Medicine Bow" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John’s", "place": "Powell" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "57th Annual Convention" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John the Baptist", "place": "Big Piney" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity Church", "place": "Lander" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Communion", "place": "Rock Springs" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul’s", "place": "Evanston" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew’s in the Pines", "place": "Pinedale" }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Bartholomew’s", "place": "Cokeville" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Church of the Good Shepherd", "place": "Sundance" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints", "place": "Torrington" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St Hubert’s", "place": "Bondurant" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Holy Nativity", "place": "Kinnear" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Diocesan Staff" },
+      { "type": "category", "name": "TAC" }
+    ]}
+  ]
+}
