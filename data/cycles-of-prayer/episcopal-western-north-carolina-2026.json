@@ -1,0 +1,808 @@
+{
+  "id": "episcopal-western-north-carolina-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Western North Carolina",
+  "dioceseShort": "western-north-carolina",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "Diocesan Cycle of Prayer - All Saints Sunday 2025 thru Christ the King Sunday 2026",
+  "sourceFile": "Diocesan Cycle of Prayer 2025-2026.docx",
+  "ingested": "2026-09-30",
+  "notes": [
+    "Confirming this is the Episcopal Diocese of Western North Carolina (Asheville/mountains) and NOT the already-ingested Diocese of North Carolina (episcopal-north-carolina-2026.json, the Raleigh/Piedmont diocese): the source document's own letterhead reads “The Episcopal Diocese of Western North Carolina, 900B CentrePark Drive, Asheville, NC 28805 | www.diocesewnc.org.” Independently, every place name printed across all 56 entries (Asheville, Franklin, Gastonia, Morganton, Waynesville, Newland, Sparta, Canton, Highlands, Burnsville, Mills River, Marion, Sylva, Newton, Edneyville, Wilkesboro, Denver, Shelby, Cullowhee, Hickory, Glendale Springs, Fletcher, Brevard, Cashiers, Hayesville, Tryon, Spruce Pine, Mars Hill, Flat Rock, Lincolnton, Hendersonville, Bat Cave, Saluda, Blowing Rock, Little Switzerland, Valle Crucis, Murphy, Rutherfordton, Boone, Black Mountain, Lenoir, Bessemer City, Cedar Mountain) is a Western North Carolina mountain-region location, not a Piedmont/Raleigh-area location that would belong to the Diocese of North Carolina.",
+    "`diocese` field: the source's own letterhead reads “The Episcopal Diocese of Western North Carolina” (with a leading “The” and “Episcopal” included); used verbatim.",
+    "The source's own title states it spans “All Saints Sunday 2025 thru Christ the King Sunday 2026” and lists 56 weekly entries running November 2, 2025 through November 22, 2026 (each date independently verified to fall on a Sunday). Per this corpus's established precedent for a source whose own range spans a year boundary with a small lead-in (episcopal-tennessee-2026.json, episcopal-california-2026.json, episcopal-nevada-2026.json, episcopal-san-diego-2026.json), the 9 entries that fall in calendar year 2025 (Nov. 2 – Dec. 28, 2025) are included in this ‘-2026’ file rather than split into a companion ‘-2025’ file: 9-of-56 (~16%) is proportionally a small lead-in, close to Tennessee's own 9-of-52 (~17%) lead-in, not a roughly even/majority split like the Southeast Florida two-file precedent.",
+    "Because the source's own printed window (56 weeks, Nov. 2, 2025 – Nov. 22, 2026) is longer than one standard 52-53 week year, its own underlying annual cycle wraps back to its own start before the window ends: the final four entries (Nov. 1, Nov. 8, Nov. 15, and Nov. 22, 2026) exactly repeat the same subjects, verbatim, as the first four entries (Nov. 2, Nov. 9, Nov. 16, and Nov. 23, 2025 respectively) — All Saints/All Saint's Gastonia/Cathedral of All Souls; the Diocesan Convention; the Spanish Speaking Congregations paragraph; and Christ Church Sparta/Church of the Savior Newland/the Chapel of Christ the King prison-ministries entry. This is the diocese's own cycle repeating at the seam, not a transcription error or duplicate to be merged — both the 2025 and 2026 occurrences of each are recorded separately and verbatim, matching this corpus's Tennessee precedent for a similar seam-repeat near the edge of a displayed window.",
+    "Typos/inconsistencies preserved verbatim rather than corrected, per this schema's own rule: “All Saint’s, Gastonia” (singular apostrophe) printed both times it occurs (Nov. 2, 2025 and its Nov. 1, 2026 repeat) and again as “All Saint’s, Linville” (Aug. 30, 2026) — inconsistent with the unapostrophized “All Saints, Franklin” printed on the immediately adjacent line each time.",
+    "The same Newland congregation is spelled three different ways across the document, each preserved exactly as printed in its own location rather than normalized to one spelling: “Church of the Savior, Newland” (its own standalone parish entries, Nov. 23/Aug. 23/Nov. 22), “Church of our Savior, Newland” (embedded inside the Spanish Speaking Congregations sentence, Nov. 16/Nov. 15), and, at a different town entirely, “Church of Our Saviour, Lincolnton” (Jun. 28, “Saviour” spelling).",
+    "“Diocese of WNC Convention and all Delegates” (Nov. 9, 2025/Nov. 8, 2026) abbreviates the diocese's own name to “WNC,” while “Diocese of Western North Carolina Commissions, Committees, Agencies and Boards” (Mar. 8, 2026) spells it out in full — both preserved verbatim as the source's own inconsistent abbreviation practice.",
+    "Two entries the source visually breaks into two paragraph-like blocks, the first ending in a semicolon, were each split into two separate `category` subjects at that semicolon (dropped as a list separator, not part of either name), mirroring this corpus's Tennessee precedent for splitting a punctuation-joined list into separate subjects: Mar. 8, 2026 (“Diocese of Western North Carolina Commissions, Committees, Agencies and Boards;” / “Diocesan Staff”) and Aug. 16, 2026 (“All students, faculty & staff returning to school;” / “College and Campus Ministries at Appalachian State University; Western Carolina University; University of North Carolina, Asheville.”). The second Aug. 16 category's own internal semicolons (separating its three named universities) were left intact and NOT further split into separate top-level subjects, since only the source's own paragraph break — not that internal punctuation — visually distinguishes separate top-level list items here.",
+    "Several entries read as one flowing descriptive sentence rather than a delimited list of independent proper names, and so were kept as a single, un-split `category` subject verbatim, including their own internal commas/semicolons/“and”s: the Nov. 16, 2025/Nov. 15, 2026 Spanish Speaking Congregations paragraph; Feb. 1, 2026 (“Seminarians, and all students, faculty & staff involved in Theological Education”); Mar. 15, 2026 (“St. Joseph’s Chapel and students, staff & faculty of Christ School”); Jul. 5, 2026 (“Episcopal Chaplains serving the Armed Forces, VA Hospitals, and other organizations providing care for veterans”); Sep. 6, 2026 (“St. Giles Chapel and residents & staff of Deerfield Episcopal Retirement Community, Asheville”); Oct. 4, 2026 (“On this World Communion Sunday, we pray for all our Ecumenical relationships.”); and Oct. 11, 2026 (“We pray for all Indigenous People and for the care of our creation.”).",
+    "“Chapel of Christ the King, Craggy Correctional Center, Asheville and all other prison ministries” (Nov. 23, 2025 and its Nov. 22, 2026 repeat) combines a specific named chapel with a general trailing category (“and all other prison ministries”) in one unbroken phrase with no delimiter separating them; recorded as a single `category` subject verbatim rather than split into a `parish` (the chapel) plus a separate category, since the source gives no clear boundary between the two.",
+    "“The Cathedral of All Souls, Asheville” is recorded as `type: \"parish\"` (name “The Cathedral of All Souls,” place “Asheville”), since the source formats it identically to its unambiguous bare Name-comma-Place parish entries.",
+    "Apr. 19, 2026's entry prints only “Easter Sunday,” set in italics — the only entry in the whole document printed in italics, and the only date with no named parish or category underneath it, unlike every other week. Recorded here as both `liturgicalNote: \"Easter Sunday\"` and as its own `category` subject (name “Easter Sunday”), since this schema requires a non-empty `subjects` array and the source supplies no other content for this date to serve as the subject.",
+    "No other entry carries a liturgical Sunday/season label anywhere in the source, so `liturgicalNote` is null throughout except for Apr. 19 (see above) — even though, e.g., the Oct. 4 entry independently names “World Communion Sunday” and Nov. 2/Nov. 1 are All Saints Sunday itself; those liturgical references are embedded inside their own subject's descriptive sentence/name rather than printed as a separate annotation, so they were left inside that subject's `name` rather than being promoted into a separate `liturgicalNote`.",
+    "The source document's own title is printed on two lines (“Diocesan Cycle of Prayer” / “All Saints Sunday 2025 thru Christ the King Sunday 2026”); joined into this file's single `source` string with “ - ” as a separator, since JSON requires one string, with the wording of each line otherwise unchanged.",
+    "`sourceFile` is taken from the PDF's own embedded document-Title metadata (“Diocesan Cycle of Prayer 2025-2026.docx”), which differs from the on-page title (“...2025 thru...2026”) only in using a hyphen instead of “thru”; both are the diocese's own text and are preserved as found in their respective locations rather than reconciled to match each other.",
+    "Minor whitespace (not treated as a source typo, since it is incidental document-conversion markup rather than printed content): zero-width space characters (U+200B) present in the underlying PDF text after several date headings — an artifact of the source docx-to-PDF conversion — were stripped rather than transcribed.",
+    "The source's own page layout prints this cycle as two vertical columns per page (the second column continuing chronologically where the first column's dates leave off, not two parallel/interleaved cycles), the same multi-column layout risk this corpus's own rules flag for a naive linearized text extraction. Verified directly against the PDF's own rendered page images (not a linearized text extraction) to confirm the true chronological reading order is left column top-to-bottom then right column top-to-bottom on each page, and that no entry's subjects were split across or merged with an adjacent date's subjects."
+  ],
+  "entries": [
+    {
+      "date": "2025-11-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Franklin"
+        },
+        {
+          "type": "parish",
+          "name": "All Saint’s",
+          "place": "Gastonia"
+        },
+        {
+          "type": "parish",
+          "name": "The Cathedral of All Souls",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocese of WNC Convention and all Delegates"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Spanish Speaking Congregations at Trinity, Spruce Pine; St. Mary’s, Morganton; Grace, Waynesville; and Church of our Savior, Newland; and for Diocesan Spanish Speaking Missioners"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sparta"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Savior",
+          "place": "Newland"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of Christ the King, Craggy Correctional Center, Asheville and all other prison ministries"
+        }
+      ]
+    },
+    {
+      "date": "2025-11-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Bessemer City"
+        },
+        {
+          "type": "parish",
+          "name": "St. Andrew’s",
+          "place": "Canton"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Incarnation",
+          "place": "Highlands"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Thomas",
+          "place": "Burnsville"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Family",
+          "place": "Mills River"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s & St. Stephen’s",
+          "place": "Morganton"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John’s Cartoogechaye",
+          "place": "Franklin"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Asheville"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Marion"
+        },
+        {
+          "type": "parish",
+          "name": "St. John’s",
+          "place": "Sylva"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Epiphany",
+          "place": "Newton"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Edneyville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Morganton"
+        },
+        {
+          "type": "parish",
+          "name": "St. Paul’s",
+          "place": "Wilkesboro"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Peter by the Lake",
+          "place": "Denver"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Seminarians, and all students, faculty & staff involved in Theological Education"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Asheville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Redeemer",
+          "place": "Shelby"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Lake Logan Conference Center"
+        },
+        {
+          "type": "category",
+          "name": "Valle Crucis Conference Center"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Matthias",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. David’s",
+          "place": "Cullowhee"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocese of Western North Carolina Commissions, Committees, Agencies and Boards"
+        },
+        {
+          "type": "category",
+          "name": "Diocesan Staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Joseph’s Chapel and students, staff & faculty of Christ School"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Mark’s",
+          "place": "Gastonia"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Parish of the Holy Communion",
+          "place": "Glendale Springs"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Calvary",
+          "place": "Fletcher"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Pray for Peace in the Diocese of Jerusalem"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalNote": "Easter Sunday",
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Easter Sunday"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Philip’s",
+          "place": "Brevard"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Cashiers"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Hayesville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Good Shepherd",
+          "place": "Tryon"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Trinity Church",
+          "place": "Spruce Pine"
+        },
+        {
+          "type": "parish",
+          "name": "Trinity",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Camp Henry"
+        },
+        {
+          "type": "category",
+          "name": "All the children and youth of the diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Ascension",
+          "place": "Hickory"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. George’s",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Spirit",
+          "place": "Mars Hill"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Advocate",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Camp Henry"
+        },
+        {
+          "type": "category",
+          "name": "All the children and youth of the diocese"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. John in the Wilderness",
+          "place": "Flat Rock"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of Our Saviour",
+          "place": "Lincolnton"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Chaplains serving the Armed Forces, VA Hospitals, and other organizations providing care for veterans"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Alban’s",
+          "place": "Hickory"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Faith Memorial Chapel",
+          "place": "Cedar Mountain"
+        },
+        {
+          "type": "parish",
+          "name": "Whiteside Summer Chapel",
+          "place": "Cashiers"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Black Mountain"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Hendersonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. James",
+          "place": "Lenoir"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Bat Cave"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Transfiguration",
+          "place": "Saluda"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "La Capilla de Santa Maria",
+          "place": "Hendersonville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary of the Hills",
+          "place": "Blowing Rock"
+        },
+        {
+          "type": "parish",
+          "name": "St. Mary’s",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All students, faculty & staff returning to school"
+        },
+        {
+          "type": "category",
+          "name": "College and Campus Ministries at Appalachian State University; Western Carolina University; University of North Carolina, Asheville."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sparta"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Savior",
+          "place": "Newland"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saint’s",
+          "place": "Linville"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Resurrection",
+          "place": "Little Switzerland"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "St. Giles Chapel and residents & staff of Deerfield Episcopal Retirement Community, Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Tryon"
+        },
+        {
+          "type": "parish",
+          "name": "Holy Cross",
+          "place": "Valle Crucis"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Church of the Messiah",
+          "place": "Murphy"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Gabriel’s",
+          "place": "Rutherfordton"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "On this World Communion Sunday, we pray for all our Ecumenical relationships."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "We pray for all Indigenous People and for the care of our creation."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Asheville"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Boone"
+        },
+        {
+          "type": "parish",
+          "name": "St. Luke’s",
+          "place": "Lincolnton"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "St. Francis",
+          "place": "Rutherfordton"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "All Saints",
+          "place": "Franklin"
+        },
+        {
+          "type": "parish",
+          "name": "All Saint’s",
+          "place": "Gastonia"
+        },
+        {
+          "type": "parish",
+          "name": "The Cathedral of All Souls",
+          "place": "Asheville"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Diocese of WNC Convention and all Delegates"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Spanish Speaking Congregations at Trinity, Spruce Pine; St. Mary’s, Morganton; Grace, Waynesville; and Church of our Savior, Newland; and for Diocesan Spanish Speaking Missioners"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "name": "Christ Church",
+          "place": "Sparta"
+        },
+        {
+          "type": "parish",
+          "name": "Church of the Savior",
+          "place": "Newland"
+        },
+        {
+          "type": "category",
+          "name": "Chapel of Christ the King, Craggy Correctional Center, Asheville and all other prison ministries"
+        }
+      ]
+    }
+  ]
+}

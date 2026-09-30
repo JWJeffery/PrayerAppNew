@@ -1,0 +1,556 @@
+{
+  "id": "episcopal-western-louisiana",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Church in Western Louisiana",
+  "dioceseShort": "western-louisiana",
+  "cycleType": "monthly-recurring",
+  "source": "Diocesan Intercession List 2026",
+  "sourceFile": "Published Google Doc fetched directly from https://docs.google.com/document/d/e/2PACX-1vQ-pIfqlB-__Xod1kYbHCJF5ZkB91CD-GZ0DlEbBZW_ZKm26RmV7Eim4e0A-34Ai0z54W4N36RbdEF2/pub (page title \"diocesanintercessionlist2026\", document heading \"DIOCESAN INTERCESSION LIST 2026\").",
+  "ingested": "2026-09-30",
+  "notes": [
+    "The source document (a published Google Doc titled \"diocesanintercessionlist2026\" / \"DIOCESAN INTERCESSION LIST 2026\") never prints the diocese's own name anywhere in its own text. `diocese` is therefore set to \"The Episcopal Church in Western Louisiana\", the diocese's own consistent self-identification on its official website (epiwla.org: <title>, og:site_name, og:title, and homepage body text all read \"The Episcopal Church in Western Louisiana\").",
+    "Confirmed this is the Episcopal Diocese of Western Louisiana and NOT the (separate, already-ingested) Diocese of Louisiana by two independent lines of evidence in the source itself: (1) the bishop named throughout the document, the Rt. Rev. Jacob W. Owensby, is the Bishop of Western Louisiana, not of Louisiana; (2) every place name in the list (Shreveport, Monroe, Alexandria, Lafayette, Lake Charles, Natchitoches, Ruston, Bossier City, Minden, DeRidder, Leesville, Winnfield, Bunkie, Pineville, Jennings, Mansfield, Moss Bluff, Sulphur, St. Joseph, Rayville, New Iberia, Opelousas, Grambling, Tallulah, Lake Providence, Mer Rouge, Oak Ridge, West Monroe, Cheneyville, Lecompte, Bastrop, Abbeville) falls within the historic north/central/southwest Louisiana territory of the Diocese of Western Louisiana, with none in the New Orleans/Baton Rouge/River Parishes area the Diocese of Louisiana covers.",
+    "cycleType is 'monthly-recurring' (day-of-month 1-31, no year), matching this corpus's Iowa/Northwest Texas precedent: the source prints no calendar dates or month names anywhere, only 'DAY 1' through 'DAY 31', despite '2026' appearing in the document's own title/subtitle. This is confirmed unambiguously by the source's own Day 31 entry, which is explicitly prefixed '(When there is one)' -- an acknowledgment by the diocese itself that day 31 does not occur in every month, preserved here in that subject's own `note`.",
+    "Day 1 groups five semicolon-separated items (the Bishop; the Bishop's Staff; Deacons; the Standing Committee; the Diocesan Council) under one day. Each is recorded as its own `category` subject, using the source's own group label as `name` and any enumerated people as that subject's `note` -- a judgment call to split by the source's own semicolons rather than record the whole day as a single subject.",
+    "Days 6 and 22 each print two parishes comma-separated with no semicolon or conjunction between them (unlike every other multi-parish day, which uses ';' or, for a shared-clergy pair, 'and' as on Day 13). Both are transcribed as two separate `parish` subjects based on the repeating Name-Place-Name-Place-clergy pattern; Day 6's shared clergy (the Rev. André Bordelon) is repeated verbatim on both of its parishes' `note` fields, matching how Day 13's explicitly 'and'-joined shared-clergy pairs (Mer Rouge/Oak Ridge under the Rev. Dawnell Stodghill; Tallulah/Lake Providence under the Rev. William Echols) are handled.",
+    "Day 8 is the only day printed with no trailing period, and its first subject (St. Andrew, Moss Bluff) carries no clergy name of its own, only 'Clergy of Good Shepherd (see Day 11)' -- both preserved exactly as printed rather than adding a period or looking up/duplicating Good Shepherd's own clergy list from Day 11. Day 8's second parish (Christ Memorial, Mansfield) and Day 12's first parish (Leonidas Polk Memorial, Leesville) list no clergy at all in the source; no `note` is fabricated for either.",
+    "Day 16's parish name 'Iglesia Episcopal La Esperanza de Familia Unidas' (grammatically inconsistent -- singular 'Familia' with plural 'Unidas', where standard Spanish would read 'Familias Unidas') is transcribed exactly as printed, not corrected.",
+    "Day 25's Hardtner Camp and Conference Center, Episcopal School of Acadiana, and 'all Parish Day Schools', and Day 26's campus Canterbury ministries/chaplaincies and seminaries, are all recorded as `category` subjects rather than `parish`, since none is a congregation (parish, mission, or cathedral) under this schema's definition.",
+    "Day 26 lists 'All Canterbury ministries and Chaplains' as one heading with a single enumerated list of campus ministries and their chaplains (kept together as one `category` subject with the full list in `note`, the same pattern used for Day 2's Postulant(s) and Day 28-30's clergy/widows lists), followed by a separate bare list of three seminaries ('the University of the South, Virginia Theological Seminary, and the Seminary of the Southwest') with no individually named contact for any of them. That second list is split into three separate `category` subjects, one per independently named seminary, since each is a distinct proper-named institution rather than a set of individuals grouped under one label -- a judgment call, disclosed here.",
+    "Day 27's 'Shetwan Roberison' (President, Episcopal Church Women) is transcribed exactly as printed; it may be a typo for 'Robertson', but is not silently corrected.",
+    "The source's HTML uses non-breaking spaces (U+00A0) in place of ordinary spaces at scattered points throughout the list (e.g. between 'DAY 1' and its content, and mid-sentence in several entries) and straight (not curly) apostrophes throughout. All non-breaking spaces are normalized to ordinary spaces as a whitespace/typography normalization, not a content change, consistent with this corpus's existing apostrophe-normalization precedent (see episcopal-northwest-texas.json and episcopal-arkansas.json)."
+  ],
+  "entries": [
+    {
+      "day": 1,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Bishop",
+          "note": "Rt. Rev. Jacob W. Owensby, PhD, DD (Joy)"
+        },
+        {
+          "type": "category",
+          "name": "the Bishop's Staff",
+          "note": "Lacee Brown (Josh), Holly Davis, Joy Owensby (+Jake), the Rev. Kris Paul, Roy Rosenthal, the Rev. Canon Suzanne Wolfenbarger (Bill)"
+        },
+        {
+          "type": "category",
+          "name": "Deacons",
+          "note": "Paul Burgess, Reese Fuller, Leisa Geoghegan, Bette Jo Kauffman, Lois Maberry, Michael Parham, Kelton Riley, Sara Miller-Schulte, Brian Warner (Ginny)"
+        },
+        {
+          "type": "category",
+          "name": "the Standing Committee"
+        },
+        {
+          "type": "category",
+          "name": "the Diocesan Council"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Postulant(s)",
+          "note": "Arielle Latiolais, Daniel LeBoeuf, Daniel Manuel, Courtney Smith, Ben Williams"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Abbeville",
+          "name": "St. Paul",
+          "note": "the Rev. Madge McLain"
+        },
+        {
+          "type": "parish",
+          "place": "Alexandria",
+          "name": "St. James",
+          "note": "the Rev. Canon John Bedingfield (Donna), the Rev. Deacon Michael Parham"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Alexandria",
+          "name": "St. Timothy",
+          "note": "the Very Rev. Rich Snow (Nikki), the Rev. Deacon Brian Warner (Ginny)"
+        },
+        {
+          "type": "parish",
+          "place": "Winnfield",
+          "name": "St. Paul's",
+          "note": "the Rev. Frank Fuller"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Bastrop",
+          "name": "Christ Church",
+          "note": "the Rev. David Perkins"
+        },
+        {
+          "type": "parish",
+          "place": "Bossier City",
+          "name": "St. George",
+          "note": "the Rev. Terry Deokaran"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Cheneyville",
+          "name": "Trinity",
+          "note": "the Rev. André Bordelon (Rose)"
+        },
+        {
+          "type": "parish",
+          "place": "Lecompte",
+          "name": "Holy Comforter",
+          "note": "the Rev. André Bordelon (Rose)"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Bunkie",
+          "name": "Calvary",
+          "note": "the Rev. Pete Smith (Jennifer)"
+        },
+        {
+          "type": "parish",
+          "place": "Pineville",
+          "name": "St. Michael",
+          "note": "the Very Rev. Rich Snow (Nikki)"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Moss Bluff",
+          "name": "St. Andrew",
+          "note": "Clergy of Good Shepherd (see Day 11)"
+        },
+        {
+          "type": "parish",
+          "place": "Mansfield",
+          "name": "Christ Memorial"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Jennings",
+          "name": "St. Luke's",
+          "note": "the Rev. John Clark (Phyllis)"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Lafayette",
+          "name": "Ascension",
+          "note": "the Rev. Matthew Ainsley (Kasey), the Rev. Deacon Honey Becker, the Rev. Jacob Schlossberg (Jillian)"
+        },
+        {
+          "type": "parish",
+          "place": "Lafayette",
+          "name": "St. Barnabas",
+          "note": "the Very Rev. Michael Bordelon (Lauren)"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Lake Charles",
+          "name": "Good Shepherd",
+          "note": "the Rev. Dr. Mitzi George (Kevin), the Rev. Boo Kay, the Rev. Petroula Ruehlen, the Rev. Countess West (Jakob)"
+        },
+        {
+          "type": "parish",
+          "place": "Lake Charles",
+          "name": "St. Michael and All Angels",
+          "note": "the Rev. Andrew Christiansen (Rachel)"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Leesville",
+          "name": "Leonidas Polk Memorial"
+        },
+        {
+          "type": "parish",
+          "place": "DeRidder",
+          "name": "Trinity",
+          "note": "the Rev. James Lueckenhoff (Linda)"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Mer Rouge",
+          "name": "St. Andrew",
+          "note": "the Rev. Dawnell Stodghill (Whit+)"
+        },
+        {
+          "type": "parish",
+          "place": "Oak Ridge",
+          "name": "Redeemer",
+          "note": "the Rev. Dawnell Stodghill (Whit+)"
+        },
+        {
+          "type": "parish",
+          "place": "Tallulah",
+          "name": "Trinity",
+          "note": "the Rev. William Echols (Linda)"
+        },
+        {
+          "type": "parish",
+          "place": "Lake Providence",
+          "name": "Grace",
+          "note": "the Rev. William Echols (Linda)"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Minden",
+          "name": "St. John",
+          "note": "the Rev. Wayne Carter"
+        },
+        {
+          "type": "parish",
+          "place": "Monroe",
+          "name": "Grace",
+          "note": "the Rev. Don Smith (Lloyd), the Rev. Deacon Bette Jo Kauffman"
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Monroe",
+          "name": "St. Thomas",
+          "note": "the Very Rev. Rita Jefferson (David+)"
+        },
+        {
+          "type": "parish",
+          "place": "West Monroe",
+          "name": "St. Patrick",
+          "note": "the Rev. Rob Harkness (Debbie)"
+        },
+        {
+          "type": "parish",
+          "place": "Monroe",
+          "name": "St. Alban",
+          "note": "the Rev. Whit Stodghill (Dawnell+)"
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Monroe",
+          "name": "Iglesia Episcopal La Esperanza de Familia Unidas",
+          "note": "the Rev. Whit Stodghill (Dawnell+)"
+        },
+        {
+          "type": "parish",
+          "place": "Natchitoches",
+          "name": "Trinity",
+          "note": "the Rev. Kris Paul, the Rev. Peggy Scott"
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "New Iberia",
+          "name": "Epiphany",
+          "note": "the Rev. Annie Etheredge (Jim)"
+        },
+        {
+          "type": "parish",
+          "place": "Opelousas",
+          "name": "Epiphany",
+          "note": "the Rev. Laurent De Prins (Kaitlin)"
+        },
+        {
+          "type": "parish",
+          "place": "Grambling",
+          "name": "St. Luke's",
+          "note": "the Very Rev. Rita Jefferson (David+)"
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Rayville",
+          "name": "St. David",
+          "note": "the Rev. Dawnell Stodghill (Whit+)"
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Ruston",
+          "name": "Redeemer",
+          "note": "the Rev. Dr. Frank Hughes"
+        },
+        {
+          "type": "parish",
+          "place": "Shreveport",
+          "name": "Holy Cross",
+          "note": "the Rev. Garrett Boyte (Ryan Eubanks), the Rev. Deacon Lois Maberry"
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "St. Joseph",
+          "name": "Christ Church",
+          "note": "the Rev. Don Smith (Lloyd)"
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Shreveport",
+          "name": "St. Mark's Cathedral",
+          "note": "the Very Rev. Alston Boyd Johnson (Elizabeth), the Rev. Thomas Nsubuga (Erinah)"
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Shreveport",
+          "name": "St. James",
+          "note": "the Rev. Wayne Fletcher (Dawn)"
+        },
+        {
+          "type": "parish",
+          "place": "Shreveport",
+          "name": "St. Francis Episcopal Church for the Highlands",
+          "note": "the Rev. John Henson (Jinny)"
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Sulphur",
+          "name": "Holy Trinity",
+          "note": "the Very Rev. Paul White (Marianne)"
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "parish",
+          "place": "Shreveport",
+          "name": "St. Paul's",
+          "note": "the Very Rev. Michael Cannon (Erika)"
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Hardtner Camp and Conference Center",
+          "note": "Daniel Chapman (Katie)"
+        },
+        {
+          "type": "category",
+          "name": "Episcopal School of Acadiana",
+          "note": "Dr. Paul Baker, Headmaster"
+        },
+        {
+          "type": "category",
+          "name": "all Parish Day Schools"
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "All Canterbury ministries and Chaplains",
+          "note": "Centenary College (Rob Gilchrist), Grambling University (The Very Rev. Rita Jefferson), Louisiana Tech (Stephanie Carwile), McNeese State University (Paul Burgess), Northwestern State University, University of Louisiana at Lafayette (Jessica Trahan), University of Louisiana at Monroe (Deacon Bette Jo Kauffman)"
+        },
+        {
+          "type": "category",
+          "name": "the University of the South"
+        },
+        {
+          "type": "category",
+          "name": "Virginia Theological Seminary"
+        },
+        {
+          "type": "category",
+          "name": "the Seminary of the Southwest"
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Episcopal Church Women",
+          "note": "Shetwan Roberison, President"
+        },
+        {
+          "type": "category",
+          "name": "Daughters of the King",
+          "note": "Lucy Hines, President"
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Non-Parochial and other Clergy",
+          "note": "the Rev. Margaret Ayers, the Rev. John Campbell (Katy+), the Rev. Stephen Caudle, the Rev. Andrew Comeaux (Eydie), the Rev. Joseph Daly, the Rev. Timothy Heflin (Alexis), the Rev. Don White (Kathryn), the Rev. Kenneth White"
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Retired Clergy",
+          "note": "the Very Rev. M. L. Agnew (Patty), the Rev. Jane Alexander, the Rev. Dr. Wayne Carter, the Rev. John Clark (Phyllis), the Rev. Robert Dandridge (Evelyn), the Rev. Christie Fleming (Scott), the Rev. Jamie Flowers, the Rev. Walter Friese (Paulette), the Rev. George Gennuso, the Rev. Donald D. Heacock (Margaret), the Rev. Paul Martin (Christine), the Rev. Dr. William McBride (Cheryl), the Rev. Roy Myers (Benetta), the Rev. Bill Phillips (Lynn), the Rev. John Raish (Peggy), the Rev. Liz Ratcliff (Robert), the Rev. Mary Richard (Herschel), the Rev. Gregg Riley, the Rev. Pete Smith (Jennifer), the Rev. James Theus (Caroline), the Rev. Fred Tinsley, the Rev. Richmond Thweatt, the Rev. Guido Verbeck, III, the Rev. Canon Rowena White, the Rev. Matt Woollett (Harriet)"
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "Widows of Clergy",
+          "note": "Vail Baldridge, Jane Blair, Judith Bryant, Nancy Cook, Sallie Cooper, June Dickson, Linda Hargrove, Mary Nell Head, Margaret Jaster, the Very Rev. Rita Jefferson, Norma Marrs, Jenny Milligan, Connie Mills, Martha Nelson, Ruth Nielsen, Joyce Odom, Ginger Paul, Jodi Reed, Vicki Robertson, Mele Taylor, Deborah Wilkes, Ann Willson"
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "liturgicalNote": null,
+      "subjects": [
+        {
+          "type": "category",
+          "name": "The Anglican Communion",
+          "note": "(When there is one) the Most Rev. Sean Rowe, Presiding Bishop, and the bishops and other baptized persons throughout the world"
+        },
+        {
+          "type": "category",
+          "name": "the Dominican Development Group",
+          "note": "Christy Wallace, Director, and the dioceses in this companionship"
+        }
+      ]
+    }
+  ]
+}

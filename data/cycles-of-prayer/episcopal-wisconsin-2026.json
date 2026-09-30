@@ -1,0 +1,253 @@
+{
+  "id": "episcopal-wisconsin-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of Wisconsin",
+  "dioceseShort": "wisconsin",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Cycle of Prayer",
+  "sourceFile": "\"2026 of Cycle of Prayer.pdf\", fetched directly from https://static1.squarespace.com/static/665893c08f67ce2f2b45dddd/t/69261462ffa4475512b3e47f/1764103266858/2026%2Bof%2BCycle%2Bof%2BPrayer.pdf.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "The whole cycle is a single letter-size page (a Canva-designed graphic) laid out as a 4x3 grid of month boxes, each box listing several dated bullet lines -- transcribed by rendering the page as a high-resolution image and reading each month box directly against that rendering, not by trusting a linearized text extraction alone, given the multi-column-grid interleaving risk this corpus flags elsewhere.",
+    "Covers the full calendar year: 52 Sundays (January 4 - December 27, 2026) plus two fixed-date feasts the source also lists even though they don't fall on a Sunday in 2026 -- Epiphany (January 6, a Tuesday) and Christmas (December 25, a Friday). No year-boundary gap or split is needed.",
+    "The page header prints only 'Cycle of Prayer' (with '2026' as a separate large numeral); the diocesan seal printed beside it reads 'THE EPISCOPAL DIOCESE OF WISCONSIN EST. 1847' -- `diocese` is transcribed from the seal as 'The Episcopal Diocese of Wisconsin', the fullest self-identification the document itself gives.",
+    "Two dates print only a liturgical observance name with nothing else that week: Easter Sunday (April 5) and Christmas (December 25). Per this corpus's standing convention for such rows (see episcopal-new-jersey-2026.json's notes), the observance name itself is used as the sole `category` subject, since entryShape requires a non-empty `subjects` array and the source genuinely names nothing else those weeks.",
+    "The other four liturgical labels the source marks in red/bold (Epiphany Jan 6, Palm Sunday Mar 29, Pentecost May 24, Advent 1 Nov 29) are all paired with real parish subjects that week, so `liturgicalNote` is set but `subjects` holds the named parishes, not the label. All dates without a marked label carry `liturgicalNote: null`.",
+    "On May 24 specifically, the source prints 'Pentecost' running directly into the following parish name with no semicolon or comma at all ('Pentecost Christ Church Cathedral, Eau Claire; ...'), unlike the other three paired labels (Epiphany, Palm Sunday, Advent 1) which are each followed by a semicolon -- disclosed since the punctuation is inconsistent, though the parse (liturgicalNote 'Pentecost', first subject 'Christ Church Cathedral'/'Eau Claire') is not in doubt.",
+    "Several dates separate their two parishes with a comma, or with '&', instead of the semicolon used everywhere else in the source, making the parish/place split a judgment call rather than a printed certainty: June 21 ('Grace, Sheboygan, St. Alban's, Superior', parsed as Grace/Sheboygan and St. Alban's/Superior), September 6 ('Christ Church, Bayfield, St. Luke's Madison', parsed as Christ Church/Bayfield and St. Luke's/Madison -- also missing the comma before the second place), October 18 ('St. Mary's, Tomah, Holy Apostles, Oneida', parsed as St. Mary's/Tomah and Holy Apostles/Oneida), November 22 ('St. John's, Elkhorn, St. Peter's, Ripon', parsed as St. John's/Elkhorn and St. Peter's/Ripon), and December 13 ('Christ the King, Sturgeon Bay & Holy Nativity, Jacksonport', parsed as Christ the King/Sturgeon Bay and Holy Nativity/Jacksonport).",
+    "Several single parishes print their own name and place with no comma between them at all (unlike the 'Name, Place' pattern used everywhere else): February 8 ('St. Mary's Dousman', parsed as St. Mary's/Dousman), May 3 ('St. Paul's Beloit', parsed as St. Paul's/Beloit), November 8 ('St. John's Burlington', parsed as St. John's/Burlington), and November 29 ('Holy Trinity Waupun', parsed as Holy Trinity/Waupun).",
+    "November 29's second parish, 'St. Thomas & St. John's, New Richmond', is transcribed as a single parish whose own name contains '&' (a yoked/merged parish name), not as two separate parishes -- unlike the comma/'&'-separated pairs listed above, this one has only a single trailing place, supporting the single-parish reading.",
+    "Apparent misspellings preserved verbatim rather than silently corrected, per this corpus's standing rule: 'Delevan' for Christ Church's town on January 18 (the actual Wisconsin municipality is spelled 'Delavan'); 'St. Bartholowmew's' for the November 15 parish in Pewaukee (likely 'St. Bartholomew's').",
+    "November 22's own date label is printed '22rd' in the source (not '22nd'). This has no effect on the transcribed `date` field, which is 2026-11-22 -- a Sunday, consistent with the rest of the weekly pattern -- but is disclosed as a preserved-not-corrected source oddity.",
+    "Minor cosmetic inconsistencies with no effect on the transcribed data: some date labels omit the colon after the ordinal (e.g. 'March 8', 'August 9', 'May 31'), and a few lines carry stray double spaces or a stray space before a comma (e.g. 'Holy Cross , Wisconsin Dells' on September 13, 'St. Mark's , South Milwaukee' on October 25).",
+    "'St. Marc Episcopal Church' (February 8) and 'St. Marc Episcopal School' (June 28) are both recorded as `parish` subjects with `place` given as 'Jeanette, Haiti' exactly as printed -- a companion-diocese congregation and school, not a Wisconsin town. This stretches subjectShape's `place` field (documented as 'the city/town') to a town+country pair since the source gives no separate breakdown; disclosed as a judgment call.",
+    "'Parishes of the Diocese of Masvingo' (March 15) and 'The Sisters of St. Mary, Diocese of Newala' (May 10) are recorded as `category` subjects rather than `parish`, since each names a companion-diocese relationship (Masvingo, Zimbabwe; Newala, Tanzania) or a religious community, not one specific place-anchored congregation.",
+    "'St. Francis House Student Center, UW Madison & all Campus Ministers' (August 30) is recorded as a `category` rather than `parish`: 'UW Madison' is a university campus, not a town/city, and the source's own text extends beyond the center itself to 'all Campus Ministers' generally.",
+    "Two near-duplicate but distinct discernment categories appear and are transcribed exactly as printed without harmonizing the wording: 'Those discerning a call to Ordained Ministry' (May 31) and 'Those discerning a call to ordained ministry or mission work.' (December 27, including its own trailing period and lowercase 'ordained ministry')."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Mineral Point" },
+      { "type": "parish", "name": "Ascension", "place": "Merrill" }
+    ]},
+    { "date": "2026-01-06", "liturgicalNote": "Epiphany", "subjects": [
+      { "type": "parish", "name": "St. Paul's Cathedral", "place": "Fond du Lac" },
+      { "type": "parish", "name": "St. John's", "place": "Sparta" }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Monroe" },
+      { "type": "parish", "name": "St. Mark's", "place": "Milwaukee" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Delevan", "note": "Source prints 'Delevan'; the actual Wisconsin municipality is spelled 'Delavan', preserved as printed per this corpus's standing rule." },
+      { "type": "parish", "name": "St. James", "place": "West Bend" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Anskar's", "place": "Hartland" },
+      { "type": "parish", "name": "St. Aiden's", "place": "Hartford" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John Chrysostom", "place": "Delafield" },
+      { "type": "parish", "name": "St. Barnabas", "place": "Suamico" }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Richland Center" },
+      { "type": "parish", "name": "St. Mary's", "place": "Dousman", "note": "Source prints 'St. Mary's Dousman' with no comma between name and place (see file-level notes)." },
+      { "type": "parish", "name": "St. Marc Episcopal Church", "place": "Jeanette, Haiti", "note": "A companion-diocese congregation in Haiti, not a Wisconsin town; `place` given as printed (see file-level notes)." }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthias", "place": "Waukesha" },
+      { "type": "parish", "name": "St. Peter's", "place": "Fort Atkinson" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Wauwatosa" },
+      { "type": "parish", "name": "All Saints", "place": "Appleton" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Simon the Fisherman", "place": "Port Washington" },
+      { "type": "parish", "name": "St. Paul's", "place": "Ashippun" }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "North Lake" },
+      { "type": "parish", "name": "Precious Blood", "place": "Gardner" }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Watertown" },
+      { "type": "category", "name": "Parishes of the Diocese of Masvingo" }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Marinette" },
+      { "type": "parish", "name": "St. Luke's", "place": "Bayview" }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "parish", "name": "St. Francis", "place": "Menomonee Falls" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Sunday", "subjects": [
+      { "type": "category", "name": "Easter Sunday" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Madison" },
+      { "type": "parish", "name": "St. Boniface", "place": "Mequon" },
+      { "type": "parish", "name": "St. Alban's", "place": "Spooner" }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Kenosha" },
+      { "type": "parish", "name": "St. Ambrose", "place": "Antigo" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Christopher's", "place": "River Hills" },
+      { "type": "parish", "name": "St. Luke's", "place": "Racine" },
+      { "type": "parish", "name": "St. Luke's", "place": "Springbrook" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Beloit", "note": "Source prints 'St. Paul's Beloit' with no comma between name and place (see file-level notes)." },
+      { "type": "parish", "name": "Trinity", "place": "Janesville" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Ascension", "place": "Hayward" },
+      { "type": "category", "name": "The Sisters of St. Mary, Diocese of Newala" }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Grace", "place": "Menomonie" },
+      { "type": "parish", "name": "St. Anne's", "place": "De Pere" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "Pentecost", "subjects": [
+      { "type": "parish", "name": "Christ Church Cathedral", "place": "Eau Claire" },
+      { "type": "parish", "name": "St. Thomas", "place": "Menasha" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Milwaukee" },
+      { "type": "category", "name": "Those discerning a call to Ordained Ministry" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Barnabas", "place": "Clear Lake" },
+      { "type": "parish", "name": "St. Michael's", "place": "Racine" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Katherine's", "place": "Owen" },
+      { "type": "category", "name": "Campers and Staff attending EpiscoWisco Summer Camp" }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints Cathedral", "place": "Milwaukee" },
+      { "type": "parish", "name": "Grace", "place": "Sheboygan", "note": "Source separates this parish from the next with a comma rather than the usual semicolon (see file-level notes)." },
+      { "type": "parish", "name": "St. Alban's", "place": "Superior" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "La Crosse" },
+      { "type": "parish", "name": "Trinity", "place": "Oshkosh" },
+      { "type": "parish", "name": "St. Marc Episcopal School", "place": "Jeanette, Haiti", "note": "A companion-diocese school in Haiti, not a Wisconsin town; `place` given as printed (see file-level notes)." }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Shawano" },
+      { "type": "parish", "name": "St. Luke's", "place": "Sister Bay" },
+      { "type": "parish", "name": "Grace", "place": "Rice Lake" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Platteville" },
+      { "type": "parish", "name": "Zion", "place": "Oconomowoc" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Matthias", "place": "Minocqua" },
+      { "type": "parish", "name": "St. Simeon's", "place": "Chippewa Falls" },
+      { "type": "parish", "name": "St. Mark's", "place": "Waupaca" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "All Saints Chapel", "place": "Elkhart Lake" },
+      { "type": "parish", "name": "St. John's", "place": "Wisconsin Rapids" },
+      { "type": "parish", "name": "St. Peter's", "place": "West Allis" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Agnes", "place": "Algoma" },
+      { "type": "category", "name": "Order of Julian of Norwich" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Olaf's", "place": "Amherst" },
+      { "type": "parish", "name": "St. Augustine", "place": "Rhinelander" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": null, "subjects": [
+      { "type": "category", "name": "Ecumenical Relationships, especially the Evangelical Lutheran Church in America and the Moravian Church" }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Francis", "place": "Eagle River" },
+      { "type": "parish", "name": "St. Mark's", "place": "Beaver Dam" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Atonement", "place": "Fish Creek" },
+      { "type": "category", "name": "St. Francis House Student Center, UW Madison & all Campus Ministers" }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Bayfield" },
+      { "type": "parish", "name": "St. Luke's", "place": "Madison", "note": "Source runs this parish together with the previous one using only commas ('Christ Church, Bayfield, St. Luke's Madison'), with neither the usual semicolon nor a comma before this place (see file-level notes)." }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Chippewa Falls" },
+      { "type": "parish", "name": "Holy Cross", "place": "Wisconsin Dells" }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Thomas", "place": "Greendale" },
+      { "type": "parish", "name": "St. James", "place": "Manitowoc" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Whitefish Bay" },
+      { "type": "category", "name": "Clergy and Lay Deputies attending Diocesan Convention" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Wausau" },
+      { "type": "category", "name": "Those preparing for the Walsingham Pilgrimage at Grace, Sheboygan" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "New London" },
+      { "type": "parish", "name": "Holy Communion", "place": "Lake Geneva" },
+      { "type": "category", "name": "Non-parochial priest and deacons of the diocese" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Mary's", "place": "Tomah" },
+      { "type": "parish", "name": "Holy Apostles", "place": "Oneida", "note": "Source separates this parish from the previous one with a comma rather than the usual semicolon (see file-level notes)." }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Sheboygan Falls" },
+      { "type": "parish", "name": "St. Mark's", "place": "South Milwaukee" }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Plymouth" },
+      { "type": "parish", "name": "Holy Trinity", "place": "Prairie du Chien" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Burlington", "note": "Source prints 'St. John's Burlington' with no comma between name and place (see file-level notes)." },
+      { "type": "parish", "name": "Grace", "place": "Madison" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Hudson" },
+      { "type": "parish", "name": "St. Bartholowmew's", "place": "Pewaukee", "note": "Source prints 'St. Bartholowmew's'; likely 'St. Bartholomew's', preserved as printed per this corpus's standing rule." }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Elkhorn" },
+      { "type": "parish", "name": "St. Peter's", "place": "Ripon", "note": "Source separates this parish from the previous one with a comma rather than the usual semicolon; the date's own ordinal is also printed '22rd' rather than '22nd' (see file-level notes)." }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "Advent 1", "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Waupun", "note": "Source prints 'Holy Trinity Waupun' with no comma between name and place (see file-level notes)." },
+      { "type": "parish", "name": "St. Thomas & St. John's", "place": "New Richmond" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Trinity", "place": "Baraboo" },
+      { "type": "parish", "name": "St. Dunstan's", "place": "Madison" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Christ the King", "place": "Sturgeon Bay" },
+      { "type": "parish", "name": "Holy Nativity", "place": "Jacksonport", "note": "Source joins this parish to the previous one with '&' rather than the usual semicolon (see file-level notes)." }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Beloved Community", "place": "Stevens Point" },
+      { "type": "parish", "name": "St. Alban's", "place": "Sussex" }
+    ]},
+    { "date": "2026-12-25", "liturgicalNote": "Christmas", "subjects": [
+      { "type": "category", "name": "Christmas" }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": null, "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Sun Prairie" },
+      { "type": "category", "name": "Those discerning a call to ordained ministry or mission work." }
+    ]}
+  ]
+}

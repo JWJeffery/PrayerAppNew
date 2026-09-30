@@ -1,0 +1,237 @@
+{
+  "id": "episcopal-west-virginia-2026",
+  "body": "The Episcopal Church",
+  "bodySlug": "episcopal",
+  "diocese": "The Episcopal Diocese of West Virginia",
+  "dioceseShort": "west-virginia",
+  "cycleType": "dated",
+  "year": 2026,
+  "source": "2026 Cycle of Prayer",
+  "sourceFile": "\"Cycle-of-Prayer-2026-2.pdf\", fetched from https://wvdiocese.org/wp-content/uploads/2025/12/Cycle-of-Prayer-2026-2.pdf. The roster's originally recorded URL (https://www.wvdiocese.org/wp-content/uploads/sites/34/files/Cycle-of-Prayer-2026-2.pdf) now 404s -- the diocese appears to have re-uploaded the identically-named file to a new wp-content/uploads path; the working URL above was found via the diocese's own current 'Spiritual Resources' page (https://wvdiocese.org/administration/spiritual-resources), which links this exact PDF.",
+  "ingested": "2026-09-30",
+  "notes": [
+    "Confirmed this is the Episcopal Diocese of West Virginia -- distinct from the separately-ingested Diocese of Virginia and Diocese of Southwestern Virginia, and from the Diocese of Southern Virginia (flagged blocked in this corpus's research) -- by the cover page's own diocesan shield/seal and full title 'THE EPISCOPAL DIOCESE OF WEST VIRGINIA', by the page footer's return address 'PO Box 5400, Charleston, WV 25361', and by the diocese's own website title 'Episcopal Diocese of West Virginia' at wvdiocese.org. `diocese` is transcribed from the cover page's own full title.",
+    "This is a single-column, 12-page PDF (cover, an Epiphany Easter-date proclamation, then a straightforward month-by-month weekly list, then a reference table of fixed Holy Days, then a closing diocesan prayer) -- confirmed single-column with no interleaving risk by rendering every page as an image at 150 DPI and visually comparing against the pdftotext -layout extraction before transcribing.",
+    "The cover-page Scripture epigraph, the Epiphany Easter-date proclamation, the 'Other Holy Days & Holidays' reference table (a fixed list of feast/civil dates repeated every year, most of which are already disclosed inline via each dated entry's own `liturgicalNote`), and the closing 'A Prayer for the Diocese' + 'The Harvest is Here' page are all front/back matter, not part of the diocese's own weekly prayer-subject cycle, and are excluded from `entries` -- not a gap in transcription.",
+    "April 4, 2026 is printed TWICE in the source as two consecutive rows: 'Holy Saturday' (subject: 'For those preparing for Baptism') and 'Easter Vigil' (subject: 'For the faith & witness of all Christians everywhere') -- both genuinely the same calendar date (the Vigil is kept the evening of Holy Saturday), not a blank-cell continuation but an explicit repeated date. Per this corpus's own rule that a repeated date is one week/entry, not two, these are folded into a single 2026-04-04 entry with `liturgicalNote` 'Holy Saturday / Easter Vigil' and both subjects preserved in the source's own order.",
+    "Most dated entries print a single liturgical Sunday/day name (e.g. 'The Second Sunday after Christmas'); several also print a second, historical alternate name for the very same day on the same line (e.g. 'Septuagesima', 'Whitsunday', 'Trinity Sunday', 'Good Shepherd Sunday', 'Christ the King Sunday', 'Gaudete Sunday') -- these are combined into one `liturgicalNote` joined with ' / ' (e.g. 'The Day of Pentecost / Whitsunday').",
+    "Many entries additionally print a separate italicized line directly under the date's own liturgical name, naming a nearby fixed feast day or civil/diocesan observance (e.g. 'The Feast of St. Timothy: January 26', 'West Virginia Day: June 20', 'Diocesan Convention: November 13-15 at Oglebay Park Resort', 'Suicide Prevention Week') -- appended to that entry's `liturgicalNote` after '; ', preserved exactly as printed including its own internal date. When that annotation names a saint whose feast matches the name of a subject listed that same week (the common case -- the week's parish was clearly chosen because it shares the saint's name), the identical annotation text is ALSO recorded as that subject's own `note`, following this corpus's existing Kansas precedent (episcopal-kansas-2026.json) for a feast-day aside tied to a named parish. When the annotation instead names a civil/diocesan observance with no matching named parish (West Virginia Day, Independence Day, Diocesan Convention, Convention Weekend, Suicide Prevention Week, National Recovery Month), it is recorded only in `liturgicalNote`, not duplicated onto the (category) subject.",
+    "June 7's entry prints its two congregations on a single source line joined by '&' -- 'Christ Church, Clarksburg & St. Barnabas Chapel, Bridgeport' -- split here into two separate `parish` subjects (different named congregations in different towns), both carrying the week's own 'Feast of St. Barnabas Day' note even though only the second is Barnabas-named, since the source groups them together under that one week. Likewise December 27 lists three congregations ('St. Thomas a Becket, Morgantown', 'Church of the Incarnation, Ronceverte', 'Emmanuel, Keyser') under one 'Feast of St. Thomas a Becket' annotation though only the first matches by name; all three carry the identical note, consistent with the policy above.",
+    "The source's parish names use curly right single quotation marks throughout (e.g. 'St. Peter's', 'St. John's'); these are transcribed here as straight ASCII apostrophes. This corpus is itself inconsistent on this point (contrast episcopal-kansas-2026.json, which deliberately preserves the source's own curly quotes) -- straight quotes were chosen here for consistency with the majority of already-ingested Virginia-region files (see episcopal-virginia-2026.json). Separately, the source's own June 14 entry ('...learn and share God's story...') is the one place it prints a plain straight apostrophe rather than its usual curly one -- a genuine, if invisible after normalization, inconsistency in the source itself, noted here for completeness.",
+    "Several congregations are printed without a following apostrophe-s where an 's' might otherwise be expected (e.g. 'St. Matthias, Grafton', 'St. Barnabas Chapel, Bridgeport', 'St. Thomas a Becket, Morgantown') -- these are grammatically ordinary (the base name already ends in 's'), transcribed exactly as printed rather than normalized to match other congregations' possessive forms.",
+    "Short single-clause prayer intentions and several parish/category lines are printed by the source with no terminal period (e.g. 'All Christians who face persecution', 'The Anglican Diocese of Jerusalem', 'For those preparing for Baptism', 'The Sandscrest Conference & Retreat Center'), while longer multi-sentence intentions do end with one -- both forms preserved exactly as printed rather than normalized to match each other.",
+    "'Grace Church, St. Mary's' (January 4) is transcribed exactly as printed; the real West Virginia town of this name is commonly spelled 'St. Marys' (no apostrophe), so this may be a source typo, but it is preserved verbatim per this corpus's standing rule against silently correcting a source.",
+    "Diocesan-wide entities not tied to a single congregation -- 'Peterkin Camp & Conference Center', 'The Sandscrest Conference & Retreat Center', 'The Highland Educational Project', the Diocesan Commissions/Committees/Staff/Council paragraphs, 'The Anglican Diocese of Jerusalem' (a companion/partner diocese named as a prayer subject, not a West Virginia congregation) -- are recorded as `category` subjects, not `parish`, consistent with this corpus's existing treatment of diocesan camps and companion dioceses elsewhere (see e.g. episcopal-southern-ohio-2026.json's 'Procter Center').",
+    "'The St. Sebastian's Worshipping Community, Lost River' (February 15) is recorded as a `parish` subject (name including its own printed leading 'The'), since it is a specific gathered congregation despite not being called a 'church' or 'parish' by name.",
+    "Built from the source PDF's pdftotext -layout extraction, cross-checked against all 12 pages rendered as images at 150 DPI to confirm every date, line-wrap, and grouping before transcribing."
+  ],
+  "entries": [
+    { "date": "2026-01-04", "liturgicalNote": "The Second Sunday after Christmas", "subjects": [
+      { "type": "parish", "name": "Grace Church", "place": "Elkins" },
+      { "type": "parish", "name": "Grace", "place": "Middleway" },
+      { "type": "parish", "name": "Grace Church", "place": "St. Mary's" },
+      { "type": "parish", "name": "Grace Church", "place": "Ravenswood" }
+    ]},
+    { "date": "2026-01-06", "liturgicalNote": "The Epiphany", "subjects": [
+      { "type": "category", "name": "We pray that we may have the strength and courage to lead others to Jesus." }
+    ]},
+    { "date": "2026-01-11", "liturgicalNote": "The First Sunday after the Epiphany / The Baptism of our Lord; The Confession of Saint Peter: January 18", "subjects": [
+      { "type": "parish", "name": "St. Peter's", "place": "Huntington", "note": "The Confession of Saint Peter: January 18" }
+    ]},
+    { "date": "2026-01-18", "liturgicalNote": "The Second Sunday after the Epiphany; The Conversion of Saint Paul: January 25", "subjects": [
+      { "type": "parish", "name": "St. Paul's", "place": "Sistersville", "note": "The Conversion of Saint Paul: January 25" },
+      { "type": "parish", "name": "St. Paul's", "place": "Weston", "note": "The Conversion of Saint Paul: January 25" },
+      { "type": "parish", "name": "St. Paul's", "place": "Williamson", "note": "The Conversion of Saint Paul: January 25" }
+    ]},
+    { "date": "2026-01-25", "liturgicalNote": "The Third Sunday after the Epiphany; The Feast of St. Timothy: January 26", "subjects": [
+      { "type": "parish", "name": "St. Timothy's in-the-Valley", "place": "Hurricane", "note": "The Feast of St. Timothy: January 26" }
+    ]},
+    { "date": "2026-02-01", "liturgicalNote": "The Fourth Sunday after the Epiphany / Septuagesima", "subjects": [
+      { "type": "category", "name": "We pray for our Diocesan Youth Council and our Children & Youth Ministries across the state." }
+    ]},
+    { "date": "2026-02-08", "liturgicalNote": "The Fifth Sunday after the Epiphany / Sexagesima", "subjects": [
+      { "type": "parish", "name": "Church of the Heavenly Rest", "place": "Princeton" }
+    ]},
+    { "date": "2026-02-15", "liturgicalNote": "The Last Sunday after the Epiphany / Quinquagesima; The Feast of St. Sebastian: February 20", "subjects": [
+      { "type": "parish", "name": "The St. Sebastian's Worshipping Community", "place": "Lost River", "note": "The Feast of St. Sebastian: February 20" }
+    ]},
+    { "date": "2026-02-18", "liturgicalNote": "Ash Wednesday", "subjects": [
+      { "type": "category", "name": "We pray for the work and witness of the West Virginia Council of Churches" }
+    ]},
+    { "date": "2026-02-22", "liturgicalNote": "The First Sunday in Lent; The Feast of St. Matthias, the Apostle: February 24", "subjects": [
+      { "type": "parish", "name": "St. Matthias", "place": "Grafton", "note": "The Feast of St. Matthias, the Apostle: February 24" }
+    ]},
+    { "date": "2026-03-01", "liturgicalNote": "The Second Sunday in Lent", "subjects": [
+      { "type": "category", "name": "We pray for our Diocesan Reading Camp Programs—for leaders, teachers, administrators, and campers." }
+    ]},
+    { "date": "2026-03-08", "liturgicalNote": "The Third Sunday in Lent", "subjects": [
+      { "type": "category", "name": "We pray for the governing bodies of our Diocese—the Standing Committee, the Diocesan Council, and for our Diocesan Trustees. We pray also for our Committee on Constitution and Canons and for our Diocesan Property and Loan Committee. We pray that they may be faithful stewards and wise leaders." }
+    ]},
+    { "date": "2026-03-15", "liturgicalNote": "The Fourth Sunday in Lent", "subjects": [
+      { "type": "category", "name": "We pray for our Diocesan Staff — for our Canons, Archdeacons, Deans, Directors, administrators, Chancellors, and others who serve our common life and witness as the Diocese of West Virginia." }
+    ]},
+    { "date": "2026-03-22", "liturgicalNote": "The Fifth Sunday in Lent", "subjects": [
+      { "type": "category", "name": "We pray for all Clergy Spouses and Families, that may not only support the work of our clergy, but feel supported in all that they do." }
+    ]},
+    { "date": "2026-03-29", "liturgicalNote": "Palm Sunday", "subjects": [
+      { "type": "category", "name": "All Christians who face persecution" }
+    ]},
+    { "date": "2026-04-02", "liturgicalNote": "Maundy Thursday", "subjects": [
+      { "type": "category", "name": "Episcopal Armed Forces and Federal Ministries" }
+    ]},
+    { "date": "2026-04-03", "liturgicalNote": "Good Friday", "subjects": [
+      { "type": "category", "name": "The Anglican Diocese of Jerusalem" }
+    ]},
+    { "date": "2026-04-04", "liturgicalNote": "Holy Saturday / Easter Vigil", "subjects": [
+      { "type": "category", "name": "For those preparing for Baptism" },
+      { "type": "category", "name": "For the faith & witness of all Christians everywhere" }
+    ]},
+    { "date": "2026-04-05", "liturgicalNote": "Easter Sunday", "subjects": [
+      { "type": "category", "name": "Thanksgiving for all those who have come to faith" }
+    ]},
+    { "date": "2026-04-12", "liturgicalNote": "The Second Sunday of Easter", "subjects": [
+      { "type": "category", "name": "We pray for the work of our Diocesan Commissions and Committees, that they may bring us to a closer awareness of God's plan for us and for our Diocese." }
+    ]},
+    { "date": "2026-04-19", "liturgicalNote": "The Third Sunday of Easter; The Feast of St. Mark, the Evangelist: April 25", "subjects": [
+      { "type": "parish", "name": "St. Mark's", "place": "Berkeley Springs", "note": "The Feast of St. Mark, the Evangelist: April 25" },
+      { "type": "parish", "name": "St. Mark's", "place": "St. Albans", "note": "The Feast of St. Mark, the Evangelist: April 25" }
+    ]},
+    { "date": "2026-04-26", "liturgicalNote": "The Fourth Sunday of Easter / Good Shepherd Sunday", "subjects": [
+      { "type": "parish", "name": "Good Shepherd", "place": "Hansford" },
+      { "type": "parish", "name": "Good Shepherd", "place": "Parkersburg" }
+    ]},
+    { "date": "2026-05-03", "liturgicalNote": "The Fifth Sunday of Easter; The Feast of St. Philip and Saint James: May 1", "subjects": [
+      { "type": "parish", "name": "St. Philip's", "place": "Charles Town", "note": "The Feast of St. Philip and Saint James: May 1" }
+    ]},
+    { "date": "2026-05-10", "liturgicalNote": "The Sixth Sunday of Easter", "subjects": [
+      { "type": "parish", "name": "Church of the Redeemer", "place": "Ansted" }
+    ]},
+    { "date": "2026-05-14", "liturgicalNote": "The Day of the Ascension", "subjects": [
+      { "type": "category", "name": "We pray that we may be faithful in proclaiming the name of Christ to all nations." }
+    ]},
+    { "date": "2026-05-17", "liturgicalNote": "The Seventh Sunday of Easter; The Feast of the Ascension: May 14", "subjects": [
+      { "type": "parish", "name": "Ascension", "place": "Hinton", "note": "The Feast of the Ascension: May 14" }
+    ]},
+    { "date": "2026-05-24", "liturgicalNote": "The Day of Pentecost / Whitsunday", "subjects": [
+      { "type": "category", "name": "Commission on Ministry, Postulants & Candidates for Holy Orders and for those discerning their vocations" }
+    ]},
+    { "date": "2026-05-31", "liturgicalNote": "The First Sunday after Pentecost / Trinity Sunday", "subjects": [
+      { "type": "parish", "name": "Holy Trinity", "place": "Logan" },
+      { "type": "parish", "name": "Trinity", "place": "Huntington" },
+      { "type": "parish", "name": "Trinity", "place": "Martinsburg" },
+      { "type": "parish", "name": "Trinity", "place": "Morgantown" },
+      { "type": "parish", "name": "Trinity", "place": "Moundsville" },
+      { "type": "parish", "name": "Trinity", "place": "Parkersburg" },
+      { "type": "parish", "name": "Trinity", "place": "Shepherdstown" }
+    ]},
+    { "date": "2026-06-07", "liturgicalNote": "The Second Sunday after Pentecost; The Feast of St. Barnabas Day: June 11", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Clarksburg", "note": "The Feast of St. Barnabas Day: June 11" },
+      { "type": "parish", "name": "St. Barnabas Chapel", "place": "Bridgeport", "note": "The Feast of St. Barnabas Day: June 11" }
+    ]},
+    { "date": "2026-06-14", "liturgicalNote": "The Third Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "We pray for our Lilly Endowment-funded programs, Seeds of Faith and Seeds of Hope, that these programs will help us learn and share God's story and our own stories." }
+    ]},
+    { "date": "2026-06-21", "liturgicalNote": "The Fourth Sunday after Pentecost; West Virginia Day: June 20", "subjects": [
+      { "type": "category", "name": "The State of West Virginia, its People, and its Future" }
+    ]},
+    { "date": "2026-06-28", "liturgicalNote": "The Fifth Sunday after Pentecost; Independence Day: July 4", "subjects": [
+      { "type": "category", "name": "For the People of the United States, for Justice, for Peace, for Prosperity, and for Hope" }
+    ]},
+    { "date": "2026-07-05", "liturgicalNote": "The Sixth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "Peterkin Camp & Conference Center—for campers, counselors, staff, and its Board" }
+    ]},
+    { "date": "2026-07-12", "liturgicalNote": "The Seventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Lawrencefield Parish", "place": "Wheeling" }
+    ]},
+    { "date": "2026-07-19", "liturgicalNote": "The Eighth Sunday after Pentecost; The Feast of St. Christopher: July 25", "subjects": [
+      { "type": "parish", "name": "St. Christopher", "place": "Charleston", "note": "The Feast of St. Christopher: July 25" }
+    ]},
+    { "date": "2026-07-26", "liturgicalNote": "The Ninth Sunday after Pentecost; The Feast of St. James: July 25", "subjects": [
+      { "type": "parish", "name": "St. James'", "place": "Lewisburg", "note": "The Feast of St. James: July 25" }
+    ]},
+    { "date": "2026-08-02", "liturgicalNote": "The Tenth Sunday after Pentecost; The Feast of St. Anne: July 26", "subjects": [
+      { "type": "parish", "name": "St. Ann's", "place": "New Martinsville", "note": "The Feast of St. Anne: July 26" }
+    ]},
+    { "date": "2026-08-09", "liturgicalNote": "The Eleventh Sunday after Pentecost", "subjects": [
+      { "type": "parish", "name": "Zion", "place": "Charles Town" },
+      { "type": "parish", "name": "Mt. Zion", "place": "Hedgesville" }
+    ]},
+    { "date": "2026-08-16", "liturgicalNote": "The Twelfth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "We pray for Bishop Matthew & Melissa Cowden, that they feel and know the grace of the Holy Spirit and the support of the people of the Diocese." }
+    ]},
+    { "date": "2026-08-23", "liturgicalNote": "The Thirteenth Sunday after Pentecost; The Feast of St. Bartholomew Day: August 24", "subjects": [
+      { "type": "parish", "name": "St. Bartholomew's", "place": "Leetown", "note": "The Feast of St. Bartholomew Day: August 24" }
+    ]},
+    { "date": "2026-08-30", "liturgicalNote": "The Fourteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "We pray for all schools, colleges, universities, students, teachers, and education paraprofessionals, throughout our state and for all Episcopal seminaries and schools of theological education." }
+    ]},
+    { "date": "2026-09-06", "liturgicalNote": "The Fifteenth Sunday after Pentecost; Suicide Prevention Week", "subjects": [
+      { "type": "category", "name": "We pray for those who suffer from depression, anxiety, or any mental illness, for the end of any stigma associated with them, and that we may all seek hope and help together." }
+    ]},
+    { "date": "2026-09-13", "liturgicalNote": "The Sixteenth Sunday after Pentecost; September is National Recovery Month", "subjects": [
+      { "type": "category", "name": "We pray for those suffering with substance abuse disorder, both those in active addiction and those in recovery, along with their families and the advocates who are in ministry with them." }
+    ]},
+    { "date": "2026-09-20", "liturgicalNote": "The Seventeenth Sunday after Pentecost; The Feast of St. Matthew: September 21", "subjects": [
+      { "type": "parish", "name": "St. Matthew's", "place": "Charleston", "note": "The Feast of St. Matthew: September 21" },
+      { "type": "parish", "name": "St. Matthew's", "place": "Wheeling", "note": "The Feast of St. Matthew: September 21" }
+    ]},
+    { "date": "2026-09-27", "liturgicalNote": "The Eighteenth Sunday after Pentecost; The Feast of St. Michael and All Angels: September 29", "subjects": [
+      { "type": "parish", "name": "St. Michael's", "place": "Kingwood", "note": "The Feast of St. Michael and All Angels: September 29" }
+    ]},
+    { "date": "2026-10-04", "liturgicalNote": "The Nineteenth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Sandscrest Conference & Retreat Center" }
+    ]},
+    { "date": "2026-10-11", "liturgicalNote": "The Twentieth Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "The Highland Educational Project" }
+    ]},
+    { "date": "2026-10-18", "liturgicalNote": "The Twenty-First Sunday after Pentecost; The Feast of St. Luke: October 18", "subjects": [
+      { "type": "parish", "name": "St. Luke's", "place": "Wheeling", "note": "The Feast of St. Luke: October 18" }
+    ]},
+    { "date": "2026-10-25", "liturgicalNote": "The Twenty-Second Sunday after Pentecost", "subjects": [
+      { "type": "category", "name": "We pray for our Young Adult & Campus Ministries around the State, particularly Vespers at Marshall University, and the St. Thomas Aquinas Community at West Virginia University." }
+    ]},
+    { "date": "2026-11-01", "liturgicalNote": "All Saints Sunday", "subjects": [
+      { "type": "parish", "name": "All Saints'", "place": "Union" }
+    ]},
+    { "date": "2026-11-08", "liturgicalNote": "The Twenty-Fourth Sunday after Pentecost; Diocesan Convention: November 13-15 at Oglebay Park Resort", "subjects": [
+      { "type": "category", "name": "Our upcoming Diocesan Convention, including all delegates and committees" }
+    ]},
+    { "date": "2026-11-15", "liturgicalNote": "The Twenty-Fifth Sunday after Pentecost; Convention Weekend", "subjects": [
+      { "type": "category", "name": "We pray that we, as the Diocese of West Virginia, may boldly proclaim the love of God throughout the Mountain State." }
+    ]},
+    { "date": "2026-11-22", "liturgicalNote": "The Last Sunday after Pentecost / Christ the King Sunday", "subjects": [
+      { "type": "parish", "name": "Christ Church", "place": "Bluefield" },
+      { "type": "parish", "name": "Christ Church", "place": "Fairmont" },
+      { "type": "parish", "name": "Christ Church", "place": "Point Pleasant" }
+    ]},
+    { "date": "2026-11-29", "liturgicalNote": "The First Sunday of Advent; The Feast of St. Andrew: November 30", "subjects": [
+      { "type": "parish", "name": "St. Andrew's", "place": "Oak Hill", "note": "The Feast of St. Andrew: November 30" }
+    ]},
+    { "date": "2026-12-06", "liturgicalNote": "The Second Sunday of Advent; The Feast of St. Stephen: December 26", "subjects": [
+      { "type": "parish", "name": "St. Stephen's", "place": "Beckley", "note": "The Feast of St. Stephen: December 26" },
+      { "type": "parish", "name": "St. Stephen's", "place": "Romney", "note": "The Feast of St. Stephen: December 26" }
+    ]},
+    { "date": "2026-12-13", "liturgicalNote": "The Third Sunday of Advent / Gaudete Sunday; The Feast of St. John the Evangelist: December 27", "subjects": [
+      { "type": "parish", "name": "St. John's", "place": "Charleston", "note": "The Feast of St. John the Evangelist: December 27" },
+      { "type": "parish", "name": "St. John's", "place": "Huntington", "note": "The Feast of St. John the Evangelist: December 27" },
+      { "type": "parish", "name": "Olde St. John's", "place": "Colliers", "note": "The Feast of St. John the Evangelist: December 27" },
+      { "type": "parish", "name": "St. John's", "place": "Marlinton", "note": "The Feast of St. John the Evangelist: December 27" },
+      { "type": "parish", "name": "St. John's", "place": "Ripley", "note": "The Feast of St. John the Evangelist: December 27" }
+    ]},
+    { "date": "2026-12-20", "liturgicalNote": "The Fourth Sunday of Advent; The Feast of St. Thomas: December 21", "subjects": [
+      { "type": "parish", "name": "St. Thomas'", "place": "Weirton", "note": "The Feast of St. Thomas: December 21" },
+      { "type": "parish", "name": "St. Thomas'", "place": "White Sulphur Springs", "note": "The Feast of St. Thomas: December 21" }
+    ]},
+    { "date": "2026-12-24", "liturgicalNote": "Christmas Eve", "subjects": [
+      { "type": "category", "name": "We pray that each of us may, like the angels, tell of God's glory to a world that lies in darkness all around and lead others to the knowledge and love of the Word made flesh." }
+    ]},
+    { "date": "2026-12-25", "liturgicalNote": "Christmas Day", "subjects": [
+      { "type": "category", "name": "We pray for peace on earth and for all those who live in war-torn and dangerous places, that there may be goodwill toward all." }
+    ]},
+    { "date": "2026-12-27", "liturgicalNote": "The First Sunday after Christmas; The Feast of St. Thomas a Becket: December 29", "subjects": [
+      { "type": "parish", "name": "St. Thomas a Becket", "place": "Morgantown", "note": "The Feast of St. Thomas a Becket: December 29" },
+      { "type": "parish", "name": "Church of the Incarnation", "place": "Ronceverte", "note": "The Feast of St. Thomas a Becket: December 29" },
+      { "type": "parish", "name": "Emmanuel", "place": "Keyser", "note": "The Feast of St. Thomas a Becket: December 29" }
+    ]}
+  ]
+}
