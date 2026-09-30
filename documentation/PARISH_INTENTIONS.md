@@ -241,7 +241,34 @@ choose `2` to see the parish's number, then `6` to delete it (you'll type the pa
 
 ---
 
-## Part 3 -- If something goes wrong
+## Part 3 -- The parish pages (milestone M5)
+
+The pages live in the `parish` folder of the site. They are uploaded in the same `parish-backend.zip`
+as the backend (Part 2, Steps A and E), so to update them you rebuild and re-upload that one zip.
+
+| Page | Address | Who uses it |
+|---|---|---|
+| Rector dashboard | `https://theuniversaloffice.com/parish/` | Rectors and their helpers: sign in with an emailed code, add / edit / extend / remove prayer requests, choose public or join-code, see and change the join code, add helpers, leave or delete the parish. **Register your parish** is a link on the sign-in page. |
+| Admin page | `https://theuniversaloffice.com/parish/admin.html` | You: sign in with a code sent to josh@jwjeffery.org; approve, suspend, restore or delete parishes. Prayer text is never shown. This replaces `remote-admin.php` for day-to-day use. |
+| Approval page | opened from the link in the "Parish awaiting approval" email | You: shows the parish and an **Approve** button; opening it approves nothing. |
+| Privacy notice | `https://theuniversaloffice.com/parish/privacy.html` | Everyone. Read it once and tell me if any sentence is not true for how you want this to run. It is not legal advice. |
+
+While the pre-launch site password is on, the pages ask for it before showing; the API behind them
+does not (see Part 2, Step G).
+
+**Promises the privacy notice makes** that the scheduled jobs (milestone M7) must keep: expired requests
+deleted 7 days after they expire, hashed network addresses deleted within 2 days, action logs deleted
+after 180 days, and backups kept for a short fixed period.
+
+**Testing the pages in a real browser** (needs Playwright; the ordinary test run does this
+automatically when it is installed): `php api/tests/run.php` includes about 70 checks that drive
+Chromium through sign-in, adding / extending / editing / removing requests, settings, registration, the
+approval link and the admin page, and that hostile text (script tags, broken HTML) shows as plain
+text and runs nothing.
+
+---
+
+## Part 4 -- If something goes wrong
 
 | Symptom | What it usually means | What to do |
 |---|---|---|
