@@ -1909,7 +1909,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
             : !dioceseHasCycleContent
                 ? `diocese on file: ${dioceseDirectoryEntry.label}${normalized.cycleOfPrayerParishOther ? ` (parish: ${normalized.cycleOfPrayerParishOther})` : ''}, but this app has no Cycle of Prayer content for it yet`
                 : parishOptionText
-                    ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}, highlighting ${parishOptionText}'s own week`
+                    ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}, highlighting this week's entry for ${parishOptionText}`
                     : normalized.cycleOfPrayerParishOther
                         ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label} (parish: ${normalized.cycleOfPrayerParishOther}, not in that diocese's own list)`
                         : `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}`;
