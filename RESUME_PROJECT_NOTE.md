@@ -20,7 +20,7 @@ out. A net-growth commit to this file is itself a defect, not just eventually-a-
 line count before finishing any session that touched this file, and split proactively rather than
 waiting to be asked a fifth time.**
 
-**Split again 2026-10-01 (901 -> ~469 lines):** the closed 2026-09-29/30 Cycle of Prayer and UI material moved verbatim to
+**Split again 2026-10-01 (901 -> ~480 lines):** the closed 2026-09-29/30 Cycle of Prayer and UI material moved verbatim to
 `documentation/project-history/VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md`. Same rule applies: check
 the line count before finishing any session that touched this file.
 
@@ -232,8 +232,6 @@ session-log.md` — this section states current status only, not the story of ho
 East closeout, cross-family hardening, final beta gate) `not_started`. Oriental Orthodox's lane is the
 Coptic Agpeya, not the removed Ethiopian Sa'atat. The three Roman LOTH governance questions are
 `superseded`; the roadmap's old LOTH tranche history is retained but marked superseded/abandoned.
-Known pre-existing item: `npm run audit:repo-hygiene` fails on 6 "LOTH metastasis" term hits in
-`project_roadmap.json`/`structure.json` (stale LOTH-era prose; failed identically before this edit).
 
 **Closed work from 2026-09-29/30 (five rounds of UI fixes; the profile/user system; the full Cycle of
 Prayer ingestion; the Communion, Diocesan and Parish tiers) now lives in
@@ -244,10 +242,12 @@ with their own rubric headings and sidebar entries; the profile (diocese + paris
 fallback, onboarding prompt) is built and live. Only ~18 jurisdictions with no located source remain
 un-ingested (`tecDioceseRoster.noSourceFound` in `data/cycles-of-prayer/schema.json`), and dioceses
 whose source is a rolling/partial window (West Missouri, Springfield, Easton, and similar) plus every
-diocese's 2027 cycle need periodic re-checking. The only parish-tier file is St. Bede's, Forest Grove
+diocese's 2027 cycle need periodic re-checking. **The Parish tier DOES render (corrected 2026-10-01 -- an
+earlier session wrongly reported it unwired): PR #90 / `84803f0` added it** (`CYCLES_OF_PRAYER_PARISHES`,
+`loadCycleOfPrayerParishMonth` in `js/cycles-of-prayer.js`; render/refresh in `js/office-ui.js`). The only parish-tier file is St. Bede's, Forest Grove
 (Western Oregon); a household-level "this is my family's day" surface is an undecided product question.
 
-**Roman Breviary 1960/1962 is SHIPPED and live, not "in buildout".** All 8 hours, Roman general
+**Roman Breviary 1960/1962 is SHIPPED and live (corrected 2026-10-01 -- earlier versions of this note wrongly said "in active buildout").** All 8 hours, Roman general
 calendar, Rubrics 1960/1962, calendar years 2026 and 2027 precomputed in Latin AND English
 (`data/roman-breviary-1960-1962/manifests|units/{,en/}{2026,2027}.json`), generated from Divinum
 Officium's own engine at a pinned commit; reachable from the main entry screen ("Catholic" card →
@@ -257,7 +257,7 @@ JWJeffery/LOTH) was abandoned by Josh on 2026-09-27 and is superseded in `projec
 Breviary follow-ups, if any, are Josh's to name — none are tracked here.
 
 **PRIORITY 1 — Menaion hymn-family corpus transcription (Orthros). SOURCE SEARCH DONE 2026-10-01 —
-awaiting Josh's decision; nothing transcribed.** Full evidence in `structure.json`'s
+Josh's decisions recorded below; nothing transcribed yet.** Full evidence in `structure.json`'s
 `menaion-hymn-corpus-transcription` todo; branch classification is done (every sessional hymn / praises /
 exapostilarion / feast Theotokion branch renders "not yet text-backed"/"is deferred"; only troparion +
 27 kontakia have text). Result of the 2026-10-01 search for English, free-to-reuse sources of these
@@ -278,11 +278,27 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
 - **Unverified, not usable yet:** GOARCH Digital Chant Stand / AGES (`ocmc-olw`) — structurally the best
   fit, but Greek lane and license unconfirmed (believed non-commercial/no-derivatives; github.com is
   403 from the sandbox, so the license file could not be read).
-**Decisions needed from Josh:** (1) approve Orloff 1899 for Commons-based rank 3/4 saints (and the new
-Commons layer)? (2) is "free for non-commercial use" acceptable, or only public-domain/permissive — and
-may the Greek-lane AGES texts serve the Russian/Slavic lane? (3) write to OCA / AGES-GOARCH / a Festal
-Menaion rights holder for written permission, or leave Great Feast propers deferred indefinitely?
-(4) will Josh check the AGES license himself (needs GitHub access outside this sandbox)?
+**JOSH'S DECISIONS, 2026-10-01:**
+1. **Use Orloff 1899 (CCEL)** for rank 3/4 saints via a new `common-of-<type>` data layer (needs a schema
+   extension + a commemoration `type` -> common mapping; cite the 1899 edition, per-component provenance).
+2. **"Free for non-commercial use" IS acceptable** as a license class, and **Greek-lane AGES texts MAY
+   serve the Russian/Slavic lane** -- for the large gaps that remain after the Commons. Caveat: a
+   no-derivatives clause (believed, unverified, to be on AGES) could still forbid restructuring the
+   text into this app's data shape -- read the actual license before ingesting anything.
+3. **Great Feast propers stay deferred** (no permission requests to be sent); keep the honest
+   "not yet text-backed" rubrics.
+4. **AGES license still unread** -- GitHub is blocked from the sandbox. Josh was told how to check it
+   himself: GitHub org `AGES-Initiatives`, repos `ages-alwb-templates` and related, open the `LICENSE`
+   file / README; also the "Terms of use"/copyright footer at dcs.goarch.org. Paste the license text
+   back to a session before any AGES ingestion.
+**Next action:** build the Commons layer from Orloff (probe CCEL chapter structure first), then, only
+after the AGES license is read and found compatible, evaluate AGES for the remaining gaps.
+**License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
+Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license
+found, so unusable until clarified) -- AGES/GOARCH DCS (license unread), Ponomar project texts
+(site says free/credit/share-alike but hymn-text provenance unverified), MCI Online Menaion (no
+license shown, mixed translations), Anastasis/Lash texts (repo says permission still being sought),
+Orthodox Wiki (CC BY-SA, but hymn texts are mostly quoted from copyrighted books).
 
 **NEW TODO, added 2026-09-28 per Josh's direct instruction — make the Google Drive "Anglican
 Synaxarium" decision file the controlling TEC commemoration calendar.** Josh: "For TEC saints /
