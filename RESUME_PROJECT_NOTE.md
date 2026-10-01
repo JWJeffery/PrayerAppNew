@@ -302,8 +302,23 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
    library repo ZIP and put it in a Drive folder. CONTENT caveat (not a license one): AGES is Greek
    Archdiocese usage, so feast hymnography will not always match Russian/Slavic usage -- disclose that
    wherever used, and prefer Orloff (Slavonic-derived) wherever it applies.
-**Next action:** build the Commons layer from Orloff (probe CCEL chapter structure first), then use AGES
-(license cleared above, once Josh supplies the texts) for the remaining gaps.
+**PROGRESS 2026-10-01 -- Orloff Commons INGESTED (data layer only; NOT yet wired into the engine).**
+`scripts/menaion/ingest-orloff-commons.py` fetched all 27 chapters + Appendix from CCEL and wrote
+`data/menaion/commons/<slug>.json` (28 files + `index.json`, ~1.1MB): one file per type of saint/feast
+(lord, theotokos, cross, angels, forerunner, holy-fathers-councils, prophet, apostle, apostles-many,
+hierarch, hierarchs-many, monk, monks-many, martyr, martyrs-many, hieromartyr, hieromartyrs-many,
+monk-martyr, monk-martyrs-many, female-martyr, female-martyrs-many, nun, nuns-many, nun-martyr,
+confessor, unmercenaries-wonderworkers, fools-for-christ, appendix). Each paragraph keeps its CCEL id,
+print-edition page(s), and italic runs flagged `rubric: true`; text is VERBATIM (no OCR corrections --
+CCEL's own typos such as "incorrnption" are preserved); the saint's name appears as the literal
+placeholder "(mentioned by name)". Contents confirmed to include Vespers stichera/aposticha, troparia,
+Matins sessional hymns, canon troparia and praises -- i.e. the families this app marks "not yet
+text-backed". **Next action:** (1) map each commemoration's `type` in `data/menaion/*.json`
+(apostle/martyr/hierarch/monastic/...) to a common; (2) wire `js/horologion-engine.js`/
+`js/menaion-resolver.js` to render the matching common's sections (substituting the saint's name for
+"(mentioned by name)", honoring Orloff's own "if there be no Celebration" rubric branches) only for
+rank 3/4 days, leaving Great Feast propers deferred; (3) provenance line + browser verification.
+Then AGES (once Josh supplies the ZIP) for what the Commons leave uncovered.
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license
 found, so unusable until clarified) -- Ponomar project texts

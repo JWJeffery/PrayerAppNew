@@ -1,0 +1,266 @@
+{
+ "schema": "menaion-common/1",
+ "id": "common-appendix",
+ "chapter": "APPENDIX",
+ "title": "appendix",
+ "source": {
+  "work": "The General Menaion (Orloff), London 1899, translated from the Slavonic 16th ed. of 1862",
+  "edition_cited": "1899 first edition (public domain)",
+  "url": "https://www.ccel.org/ccel/anonymous/menaion/menaion.xxxi.html",
+  "transcribed_by": "scripts/menaion/ingest-orloff-commons.py (verbatim from CCEL HTML; no corrections)",
+  "name_placeholder": "(mentioned by name)"
+ },
+ "paragraphs": [
+  {
+   "id": "xxxi-p1",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "It had been originally intended to give here in extenso the Readings (Paroimias) appointed for different sets of services, but, the book having grown so bulky, it was decided to merely indicate here chapters and verses of the different books of the English Bible of which the Readings are made up, and to give in extenso only the Readings from the Books of Proverbs, and the Wisdom of Solomon, which are either not found in the ordinary Bible, or do not exactly correspond with the Slavonian or Greek text.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p2",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Readings to a Prophet. From the Wisdom of Solomon",
+     "rubric": true
+    },
+    {
+     "text": "(3, 1-9)."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p3",
+   "centered": false,
+   "pages": [
+    283
+   ],
+   "segments": [
+    {
+     "text": "The souls of the righteous are in the hands of God, and there shall no torment touch them. In the sight of the unwise they seemed to die, and their departure is taken for misery, and their going from us to be utter destruction, but they are in peace. For though they be punished in the sight of men, yet is their hope full of immortality. And having been a little chastised, they shall be greatly rewarded, for God proved them and found them worthy for Himself. As gold in the furnace hath He tried them, and received them as a burnt offering. And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble. They shall judge the nations and have dominion over the people, and their Lord shall reign for ever. They that put their trust in Him shall understand the truth; and such as be faithful in love shall abide with Him; for grace and mercy is to His saints and visitation for His elect."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p4",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "From the Wisdom of Solomon",
+     "rubric": true
+    },
+    {
+     "text": "(5, 15-23; 6, 1-3)."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p5",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The righteous live unto the ages; their reward is also with the Lord, and the care of them is with the most High. Therefore shall they receive a glorious kingdom and a beautiful crown from the Lord's hand, for with His right hand shall He cover them, and with His arm shall He protect them. He shall take to Him His jealousy for complete armour, and make the creature His weapon for the revenge of His enemies. He shall put on righteousness as a breastplate and true judgment instead of an helmet. He shall take holiness for an invincible shield. His severe wrath shall He sharpen for a sword, and the world shall fight with Him against the unwise. Then shall the right-arming thunderbolts go abroad, and from the clouds, as from a welldrawn bow, shall they fly to the mark. And from the hailstones full of wrath and cast as out of a stone bow the cities shall fall down, and the water of the sea shall rage against them, and the floods shall cruelly drown them. Yea, a mighty wind shall stand up against them, and like a storm shall blow them away; thus iniquity shall lay waste the whole earth, and ill dealing shall overthrow the thrones of the mighty. Hear therefore, O ye kings, and understand; learn ye that be judges of the ends of the earth. Give ear, ye that rule the people and glory in the multitude of nations, for power is given you of the Lord and sovereignty from the Highest."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p6",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "From the Wisdom of Solomon",
+     "rubric": true
+    },
+    {
+     "text": "("
+    },
+    {
+     "text": "pages",
+     "rubric": true
+    },
+    {
+     "text": "49-50)."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p7",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The same Readings are used at the services to a Monk and Monks, Monk-Martyr and Monk-Martyrs, to a Confessor, and to a Foolish for Christ's sake.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p8",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Readings to an Apostle: 1st General Epistle of St. John, 3, 21-24 ; 4, 1-6 (ending \"heareth not us.\") The Readings to an Apostle: 2nd General Epistle of St. John, 4, 11-16. The Readings to an Apostle: 3rd General Epistle of St. John, 4, 20-21 ; 5, 1-5. The Readings to two or more Apostles: 1st General Epistle of St. Peter, 1, 3-9. The Readings to two or more Apostles: 2nd General Epistle of St. Peter, 1, 13-19. The Readings to two or more Apostles: 3rd General Epistle of St. Peter, 2, 11-22 (ending \"should live unto righteousness.\")"
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p9",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The readings to one Hierarch: The Reading from the Book of Proverbs",
+     "rubric": true
+    },
+    {
+     "text": "(3, 13-16; 8, 6, &c.)."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p10",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The memory of the righteous man calleth forth for praises, and the blessing of the Lord is upon his head. Blessed is the man that findeth wisdom, and the man that getteth understanding. For the merchandise of it is better than the merchandise of silver, and the gain thereof than fine gold. She is more precious than costly stones; everything that is honoured cannot be compared unto her. Length of days and years of life are in her right hand ; and in her left hand riches and honour. Out of her mouth truth proceedeth, and law and mercy she carrieth on her tongue. Hear me, then, children, for I will speak of excellent things; and happy is the man that will keep unto my ways, for my paths are the paths of life, and the desire is fashioned of the Lord. Wherefore I entreat you and put forth my voice before the sons of men, for I with wisdom set up everything; I have called forth counsel, understanding and knowledge. Counsel is mine and sound wisdom, mine is understanding and strength is mine. I love them that love me; and those that seek me shall find grace. Understand, then, O ye simple, the cunning, and ye uninstructed-direct your hearts unto it. Hearken unto me again, for I will speak of honourable things, and the opening of my mouth shall be right things, for my mouth shall speak truth and wickedness is an abomination to my lips. All the words of my mouth are in righteousness; there is nothing froward or averse in them. They are all plain to him that understandeth, and right to them that find knowledge. For I will teach you the truth, so that your hope may be in the Lord and ye may be with the Spirit."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p11",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Reading from the Wisdom of Solomon",
+     "rubric": true
+    },
+    {
+     "text": "(6, 12-16; 7, 30; 8, 2-4. 7-9. 21; 9, 1-4. 10. 11. 13)."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p12",
+   "centered": false,
+   "pages": [
+    285
+   ],
+   "segments": [
+    {
+     "text": "The mouth of the righteous man bringeth forth wisdom, and the lips of the wise man know the grace. The mouth of the wise man teacheth wisdom, and the truth delivereth from death. If a righteous man happeneth to die, hope is not lost, for the son of a righteous man is born unto life, and in his good things doth he acquire the fruit of righteousness. There is ever light unto the righteous and of the Lord they obtain both grace and glory; the tongue of the wise acknowledgeth the good, and in their hearts resteth wisdom. The Lord loveth the hearts of the righteous, and acceptable unto Him are all undefiled in the way. The wisdom of the Lord doth illumine the countenances of the wise. She preventeth them that desire her, in making herself first known unto them. She is easily seen ofthem that seek her. Whoso seeketh her early shall have no great travail; and whoso watcheth for her shall quickly be without care. For she goeth about seeking such as are worthy of her, shewing herself favourably unto them in the ways, and meeteth them in every thought. Vice shall never prevail against wisdom. Wherefore I was a lover of her beauty; I loved her, and sought her out from my youth. I desired to make her my spouse, yea, the Lord of all things Himself loved her. For she is privy to the mysteries of the knowledge of God and a lover of His works. Her labours are virtues, for she teacheth temperance and prudence, justice and fortitude; which are such things, as men can have nothing more profitable in their life. If a man desire much experience, she knoweth things of old, and conjectureth aright what is to come. She knoweth the subtleties of speeches and can expound dark sentences; she foreseeth signs and wonders, and the events of seasons and times; unto all she is a counsellor of good things, since there is immortality in her, and she is a comfort in cares and grief. Wherefore I prayed unto the Lord, and besought Him, and with my whole heart I said: O God of my fathers, and Lord of mercy, who hast made all things with Thy word, and fashioned man in Thy wisdom that he should have dominion over the creatures which Thou hast made, and order the world according to equity and righteousness! Give me wisdom that sitteth by Thy throne, and reject me not from among Thy children, for I am Thy servant and son of Thine handmaid. O send her out of Thy holy heavens, and from the throne of Thy glory, that being present she may labour with me, that I may know what is pleasing unto Thee. And she shall lead me soberly in my doings and preserve me in her glory. For the thoughts of mortal men are miserable, and our devices are but uncertain."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p13",
+   "centered": false,
+   "pages": [
+    286
+   ],
+   "segments": [
+    {
+     "text": "When the righteous man is praised the people rejoice, for his memory is undying, since he is acknowledged both of God and man, and his soul pleased the Lord. Love therefore, O ye men, wisdom, and ye shall live; desire her and you shall be instructed, for the very beginning of her is love and the keeping of the law. Honour wisdom, that ye may reign for evermore. I will tell you and will not hide God's mysteries from you, for He it is that leadeth unto wisdom and directeth the wise; in His hands is all wisdom and knowledge of workmanship; and wisdom, which is the worker of all things, will teach you all, for in her is a spirit understanding and holy, brightness of everlasting light, and image of the goodness of God. She maketh people friends of God and prophets, she is more beautiful than the sun, and above all order of stars; being compared with the light, she is found before it. She bath freed from diseases those that pleased her, and bath set them in the right paths; she hath given unto them understanding to keep in holiness, saved them from those lying in wait, and granted them strength of power, so that all may understand that the most powerful of all is piety, and that vice shall never prevail against wisdom, nor judgment shall pass away without convicting the evil. But the ungodly reasoning with themselves not aright, said: let us oppress the righteous man, let us not spare the widow, neither need we be ashamed of the ancient gray hairs of the aged. Let our strength be the law, and let us lie in wait for the righteous, because he is not of our turn, and he is clean contrary to our doings; he upbraideth us with our offending the law and objecteth to our infamy the transgressings of our education; he professeth to have the knowledge of God, and he calleth himself the child of the Lord. He was made to reprove our thoughts; he is grievous unto us even to behold, for his life is not like other men's, his ways are of another fashion; we are esteemed of him as counterfeits, he abstaineth from our ways as from filthiness, he pronounceth the end of the just to be blessed. Let us see if his words be true, let us prove what shall happen in the end of him. Let us examine him with despitefulness and torture, that we may know his meekness and prove his patience; let us condemn him unto a shameful death, for by his own saying he shall be respected. Such things did they imagine and were deceived, for their own wickedness hath blinded them. As for the mysteries of God, they knew them not, neither did they discern that Thou art the Only God that hast the power of life and death, that savest in the time of tribulation and deliverest from every evil, that thou art compassionate and merciful, granting unto the just Thy grace, and setting Thy might against the haughty."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p14",
+   "centered": false,
+   "pages": [
+    287
+   ],
+   "segments": [
+    {
+     "text": "The mouth of the just bringeth forth wisdom; but the froward tongue shall be cut out. The lips of the righteous know what is acceptable; but the mouth of the wicked speaketh frowardness. A false balance is an abomination to the Lord, but a just weight is His delight. Where pride cometh, there cometh shame also; but with the lowly is wisdom. The integrity of the upright shall guide them; but the perverseness of transgressors shall destroy them. Riches profit not in the day of wrath, but righteousness delivereth from death. When a righteous man dieth, remorse is felt, but the ruin of the wicked calleth forth derision. The righteousness of the upright straighteneth the paths, but the transgressors shall fall in their own wickedness. The righteousness of the just men shall deliver them, but the wicked are caught in their own naughtiness. When a righteous man dieth, the hope perisheth not, but the praise of the wicked shall perish. The righteous is delivered out of trouble, and the wicked cometh in his stead. In the mouth of the ungodly there is a snare for their neighbours, but the feeling of the righteous is profitable. When it goeth well with the righteous, the city prospereth, and at the ruin of the wicked there is rejoicing. By the blessing of the upright the city is exalted, but it is overthrown by the mouth of the wicked. He that is void of wisdom despiseth his neighbours, but a man of understanding holdeth his peace."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p15",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Though the righteous happen to die, yet shall he be in rest. For honourable age is not that which standeth in length of time, nor that which is measured by number of years. But wisdom is the gray hair unto men, and an unspotted life in old age. He pleased God, and was beloved of Him, so that living among sinners he was translated. Yea, speedily was he taken up, lest that wickedness should alter his understanding, or deceit beguile his soul. For the bewitching of naughtiness doth obscure things that are honest, and the wandering of concupiscence doth undermine the simple mind. He being made perfect in a short time, fulfilled a long time; for his soul pleased the Lord; therefore hasted He to take him away from among the wicked. This the people saw, and understood it not, neither did they lay this up in their minds, that His grace and mercy is with His saints, and that He doth visit His chosen."
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p16",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Readings to one Martyr:",
+     "rubric": true
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "st Isaiah",
+     "rubric": true
+    },
+    {
+     "text": "(43, 9-14;"
+    },
+    {
+     "text": "beginning",
+     "rubric": true
+    },
+    {
+     "text": ", \"Thus saith the Lord,\""
+    },
+    {
+     "text": "and ending",
+     "rubric": true
+    },
+    {
+     "text": ", \"Thus saith the Lord...the Holy One of Israel.\")"
+    },
+    {
+     "text": "The Readings to one Martyr: 2nd as the 1st in I.",
+     "rubric": true
+    },
+    {
+     "text": "The Readings to one Martyr: 3rd as the 3rd in V.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p17",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The same for the services to Martyrs, Hieromartyr, and Hieromartyrs, Female Martyr and Martyrs, Nun-martyrs, and Unmercenaries, except that the 3rd in these cases is the 2nd of I.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xxxi-p18",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "To the glory of the Holy, One-substanced, Life-giving and Indivisible Trinity of the Father, and of the Son, and of the Holy Ghost, in the reign of the Right-faithful Autocrat, our Great Sovereign, Emperor Nicholas Alexandrovitch of all the Russias, in the time of his Consort, the Right-faithful Lady, Empress Alexandra Feodorovna, of his Mother, the Right-faithful Lady, Empress Mary Feodorovna and of his Heir, the orthodox Lord, Cesarevitch and Grand Duke Michael Alexandrovitch; in the time of the orthodox Lord, Grand Duke Vladimir Alexandrovitch, of his Consort the Grand Duchess Mary Pavlovna, and of the orthodox Lords, Grand Dukes: Cyril, Boris and Andrew Vladimirovitchi; in the time of the orthodox Lord, Grand Duke Alexis Alexandrovitch, of the orthodox Lord Grand Duke Serge Alexandrovitch and of his Consort the orthodox Lady, Grand Duchess Elisabeth Feodorovna; in the time of the orthodox Lord, Grand Duke Paul Alexandrovitch and of the orthodox Lord, Grand Duke Demetrius Pavlovitch; in the time of the orthodox Lady, Grand Duchess Alexandra Josephovna, of the orthodox Lord, Grand Duke Nicholas Constantinovitch, of the orthodox Lord, Grand Duke Constantine Constantinovitch, and of his Consort the Grand Duchess Elisabeth Mavrikievna, and of the orthodox Lord, Grand Duke Demetrius Constantinovitch; in the time of the orthodox Lady, Grand Duchess Alexandra Petrovna, of the orthodox Lord, Grand Duke Nicholas Nicholaevitch, of the orthodox Lord, Grand Duke Peter Nicholaevitch, and of his Consort, the orthodox Lady, Grand Duchess Militza Nicholaevna; in the time of the orthodox Lord, Grand Duke Michael Nicholaevitch, of the orthodox Lords, Grand Dukes: Nicholas, Michael, and George Michaelovitchi, of the orthodox Lord, Grand Duke Alexander Michaelovitch and of his Consort, the orthodox Lady, Grand Duchess Xenia Alexandrovna, and of the orthodox Lord, Grand Duke Serge Michaelovitch; in the time of the orthodox Ladies, Grand Duchesses: Olga, Tatiana and Mary Nicholaevny, of the orthodox Lady, Grand Duchess Olga Alexandrovna, of the orthodox Lady, Grand Duchess Helena Vladimirovna, of the orthodox Lady, Grand Duchess Mary Pavlovna; in the time of the orthodox Lady, Grand Duchess Mary Alexandrovna and of her Consort; in the time of the. Queen of the Hellenes Olga Constantinovna and of her Consort, of the Grand Duchess Vera Constantinovna, of the Grand Duchess Anastasia Michaelovna; and with the blessing of the Right Reverend Tikhon, Lord Bishop of Alaska and of the Aleutan Islands, this translation of the General Menaion, or the Book of Services common to the Festivals of our Lord, of the Holy Virgin, and of the different Orders of Saints, from the 16th edition of the Most Holy Governing Synod of Russia of 1862, hath been printed in the capital city of London, at the Dryden Press office, in its first impression in the year of the world 7408, and in the year from the incarnation of God the Word 1899, in the month of June, the sixty-second year of the reign of Queen Victoria."
+    }
+   ]
+  }
+ ]
+}

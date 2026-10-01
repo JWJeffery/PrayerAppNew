@@ -1,0 +1,1402 @@
+{
+ "schema": "menaion-common/1",
+ "id": "common-prophet",
+ "chapter": "VII",
+ "title": "THE GENERAL SERVICE TO A PROPHET.",
+ "source": {
+  "work": "The General Menaion (Orloff), London 1899, translated from the Slavonic 16th ed. of 1862",
+  "edition_cited": "1899 first edition (public domain)",
+  "url": "https://www.ccel.org/ccel/anonymous/menaion/menaion.x.html",
+  "transcribed_by": "scripts/menaion/ingest-orloff-commons.py (verbatim from CCEL HTML; no corrections)",
+  "name_placeholder": "(mentioned by name)"
+ },
+ "paragraphs": [
+  {
+   "id": "x-p1",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Called from above..."
+    }
+   ]
+  },
+  {
+   "id": "x-p2",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou that hast in the purity of thy mind received the reflex of the God-emitted light and wast the herald of the divine words and seer and divine prophet, thou appearedst as the God-moved mouth of the Spirit, conveying that which was shewn by Him unto thee, O all-honoured"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "and declaring unto all the peoples the salvation that was being granted and the Kingdom of Christ; do entreat Him to save and enlighten our souls."
+    }
+   ]
+  },
+  {
+   "id": "x-p3",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou that dost worthily shine with the sight of God and prophetic contemplation and wart honoured with grace, O Godinspired"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "and made worthy of the divine blessedness, being now possessed of boldness towards the Most gracious One and of sympathy to us, cease not to supplicate for those who in faith praise thee and honour thee as God-declaring, venerable and acceptable to God, that we may be delivered from dangers and that our souls may be saved."
+    }
+   ]
+  },
+  {
+   "id": "x-p4",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy prophet"
+    },
+    {
+     "text": "(mentioned by name)",
+     "rubric": true
+    },
+    {
+     "text": "hast thou, O Immortal One, shewn as a living cloud pouring out the water of life truly eternal, and in sending him, Thou hast richly endowed him with the All-holy Spirit, of one substance with Thee the Father Almighty, and with Thy Son that hath shone forth out of Thy substance; through him hast Thou foretold the saving manifestation of Christ, our God, and announced salvation unto all the peoples."
+    },
+    {
+     "text": "[Glory ...Both now ...The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p5",
+   "centered": false,
+   "pages": [
+    70
+   ],
+   "segments": [
+    {
+     "text": "Since I, miserable, have fallen into the depth of manifold transgressions, through my laziness, dejection and ignorance, and am now kept in the state of despair, be thou unto me, Omost pure one, help, purification and salvation, granting me consolation in the good stead thereof; thee I implore, thee I supplicate, and falling down before thee in faith do I call unto thee that I may not be the joy for the evil one unto the end."
+    }
+   ]
+  },
+  {
+   "id": "x-p6",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Bewail Me not, O Mother, beholding hung on the tree thy Son and God Who hath suspended the earth on the waters unrestrained and hath made all creation, for I shall rise again and be glorified, I shall lay low the kingdoms of the hades with mighty hand and shall destroy its power, freeing its captives from its villanies, as Compassionate One, and bringing them unto My Father, as Lover of man."
+    }
+   ]
+  },
+  {
+   "id": "x-p7",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "If there be Idiomelion, Glory ... Tone 6.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p8",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O prophet, the herald of Christ, thou dost never part from the throne of glory, and art ever present with every sufferer; rendering service up on high, thou blessest the universe and art glorified everywhere; do thou supplicate for mercy unto our souls."
+    }
+   ]
+  },
+  {
+   "id": "x-p9",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now ...the Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Let us, O ye faithful, like archangel, sing the heavenly chamber and the door truly sealed. Hail thou through whom unto us hath grown the Saviour of all, even Christ -- the Giver of life and God. Do thou, O Sovereign-Lady, put down the tormentors, our wicked enemies, with thine arm, O most pure one, the hope of Christians."
+    },
+    {
+     "text": "[The Stavro-theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p10",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Seeing Thee, O Christ, hanging on the cross, the one that gave Thee birth cried out: What a strange mystery do I see now, my Son? How is it that Thou, being hung in flesh on the tree, dieth, O Giver of life?"
+    }
+   ]
+  },
+  {
+   "id": "x-p11",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "If the Celebration be with the Polyeleon, say the Theotokion of the resurrection, Tone 6:",
+     "rubric": true
+    },
+    {
+     "text": "Who would not bless thee ..."
+    },
+    {
+     "text": ".The Entrance...The Prokeimenon of the day and the Paroimias. (See Appendix.)",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p12",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "For Versicles the Stichera, Tone 2. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "When from the tree..."
+    }
+   ]
+  },
+  {
+   "id": "x-p13",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Spiritual Star hath found the purity of thy mind, O prophet"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "shining as clearly as a mirror, and hath illumined the world with the brightness of God's knowledge, resplendent of, and typifying, the images of the divine mysteries and of the grace that was to be granted unto all men, O most wonderful."
+    }
+   ]
+  },
+  {
+   "id": "x-p14",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Verse: Thou art a priest unto the ages, after the order of Melchisedek.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p15",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Being the mouth of God, thou hast openly reproved the evil doers, condemning them unto the inevitable judgment, O most opulent"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "and following the righteous teaching and God's decrees; wherefore seeing thy most wise sayings fulfilled, we do worthily praise thee in hymns, O blessed one."
+    }
+   ]
+  },
+  {
+   "id": "x-p16",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Verse : Moses and Aaron are in the midst of His priests.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p17",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Standing before the throne of the Master and being sated with the ineffable and divine glory, seeing the things above this world and being filled with light, do thou, O God-inspired prophet"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "remember all those that in faith honour thee, entreating for them, O God-favoured one, the salvation of their souls, and for all the remission of sins."
+    }
+   ]
+  },
+  {
+   "id": "x-p18",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory... Tone 1.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p19",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The glorious and honourable prophets, through communion and grace, secondarily as a gift, become partakers of those first qualities and indications of substance wherewithal God is depicted, since the Lord enlighteneth those pleasing unto Him with His brightness."
+    }
+   ]
+  },
+  {
+   "id": "x-p20",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now...the Theotokion of the resurrection :",
+     "rubric": true
+    },
+    {
+     "text": "Behold, fulfilled is Isaiah's..."
+    }
+   ]
+  },
+  {
+   "id": "x-p21",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "If it be not a Feast, say this Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The joy of the heavenly orders and on earth the strong protection of men, do save, O all pure Virgin, us who have recourse unto thee, for after God in thee we have put our trust."
+    },
+    {
+     "text": "The Stavro-theotokion",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p22",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "A sword did pierce, O my Son, -- said the Virgin, seeing Thee hanging on the tree, -- my heart is being pierced, O Master, as Simeon hath of old foretold; but rise and glorify, O Immortal One, Thy Mother and servant, I entreat Thee."
+    }
+   ]
+  },
+  {
+   "id": "x-p23",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Troparion from the Typikon; but if there be no Typikon, say the following Troparion, Tone 2 :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p24",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Of Thy prophet"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "O Lord, the memory now celebrating, through him we supplicate Thee: Save our souls."
+    }
+   ]
+  },
+  {
+   "id": "x-p25",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now ...the Theotokion, according to the Tone of the Troparion.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p26",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Matins, for God is the Lord, the same Troparion. After the first Stichologia the Cathisma, Tone 3. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Unto the beauty of virginity..."
+    }
+   ]
+  },
+  {
+   "id": "x-p27",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The incarnation of the Word hast thou announced beforehand, being enlightened by the Divine Spirit, O great one among the divine prophets, God-inspired"
+    },
+    {
+     "text": "(mentioned by name);",
+     "rubric": true
+    },
+    {
+     "text": "wherefore we glorify thee as a prophet and solemnize to-day thy memory, harmoniously vociferating unto thee, O wise one : Entreat Christ to save our souls."
+    }
+   ]
+  },
+  {
+   "id": "x-p28",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now...the Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "Inconceivable and incomprehensible is the awful, divine mystery that hath taken place in thee, O God-gladdened Sovereign-Lady, for having conceived, thou hast brought forth the Boundless One clothed with the flesh of thy most pure blood; do, O pure one, always entreat Him as thy Son that our souls may be saved."
+    }
+   ]
+  },
+  {
+   "id": "x-p29",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After the 2nd Stichologia, the Cathisma, Tone 6. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Of the divine faith..."
+    }
+   ]
+  },
+  {
+   "id": "x-p30",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As the divine organ of the Comforter, ever and clearly prompted by His grace, wast thou, O blessed one, a prophet; for thou doth declare beforehand the manifestation of things unknown and illumineth those that in faith have recourse to thee, O glorious"
+    },
+    {
+     "text": "(mentioned by name);",
+     "rubric": true
+    },
+    {
+     "text": "do entreat Christ the God to grant unto us a great mercy."
+    },
+    {
+     "text": "[Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p31",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now...the Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The prophets have predicted, apostles taught, martyrs confessed, and we do believe thee to be the true Theotokos; wherefore we also magnify thine ineffable bringing forth."
+    }
+   ]
+  },
+  {
+   "id": "x-p32",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After Praise ye the name of the Lord, the Refrain :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p33",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "We magnify thee, O prophet of God"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "and honour thy holy memory, for thou dost entreat for us Christ our God."
+    }
+   ]
+  },
+  {
+   "id": "x-p34",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The selected Psalm:",
+     "rubric": true
+    },
+    {
+     "text": "Blessed is the man that feareth the Lord..."
+    },
+    {
+     "text": "After the Polyeleon the Cathisma, Tone 6. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "The gate of commiseration..."
+    }
+   ]
+  },
+  {
+   "id": "x-p35",
+   "centered": false,
+   "pages": [
+    73
+   ],
+   "segments": [
+    {
+     "text": "Having cleared thy mind O all-wise one from filth, thouhast made it into a divine mirror, receptive of the rays of the Divine spirit, and now art thou joyfully gone unto the source of illumination, O prophet"
+    },
+    {
+     "text": "(mentioned by name). Twice. Glory...Both now ...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p36",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Son and the Word of God, that was before the ages born of the Father without a mother, hast thou at the end of days brought forth incarnate of thy pure blood without a husband, O God's parent; Him entreat that unto us may be granted the remission of sins before the end."
+    },
+    {
+     "text": "The Graduals, 1st Antiphon, Tone 4.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p37",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Prokeimenon:",
+     "rubric": true
+    },
+    {
+     "text": "Thou art a priest for ever after the order of Melchisedek."
+    },
+    {
+     "text": "The Verse:",
+     "rubric": true
+    },
+    {
+     "text": "The Lord said unto my Lord: Sit Thou at My right hand. Every breath"
+    },
+    {
+     "text": "...Thereupon, the Gospel (Matthew 23, 29-39).",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p38",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After the 50th Psalm, Glory...",
+     "rubric": true
+    },
+    {
+     "text": "At the intercessions of the prophet, O Merciful One, blot out the multitude of our sins."
+    },
+    {
+     "text": "Both now",
+     "rubric": true
+    },
+    {
+     "text": "...At the intercessions of the Theotokos..."
+    },
+    {
+     "text": "Thereupon:",
+     "rubric": true
+    },
+    {
+     "text": "Have mercy on me, O God..."
+    },
+    {
+     "text": "The Sticheron, Tone 6 :",
+     "rubric": true
+    },
+    {
+     "text": "O prophet, the herald of Christ"
+    },
+    {
+     "text": "...See Glory ...for O Lord I have cried...",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p39",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Canon. Tone 6. Ode 1. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p40",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Whilst travelling on foot along the depths of the sea as if upon dry land, Israel, seeing Pharaoh, their pursuer, drowned, cried out : Unto God, let us sing an ode of victory."
+    }
+   ]
+  },
+  {
+   "id": "x-p41",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "We beseech thee, O prophet, standing before the throne of God, assiduously to supplicate that enlightenment may be granted unto us, who in faith hymn thy honourable memory."
+    }
+   ]
+  },
+  {
+   "id": "x-p42",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As a divine organ-depository of the illuminations and gifts of the Divine Spirit -- wast thou manifested, O most wise"
+    },
+    {
+     "text": "(mentioned by name);",
+     "rubric": true
+    },
+    {
+     "text": "wherefore joyfully do we the faithful glorify thee."
+    }
+   ]
+  },
+  {
+   "id": "x-p43",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Before God the Saviour standing as a prophet, do now with boldness entreat that with lustrous rays may be enlightend in the faith those who under God's inspiration glorify thee."
+    }
+   ]
+  },
+  {
+   "id": "x-p44",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The Sun that hath shone forth from thy holy womb, O Sovereign-Lady, illumineth all the earth with the brightest auroras; therewith enlightened, we honour thee as the Mother of God."
+    }
+   ]
+  },
+  {
+   "id": "x-p45",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 3. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p46",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "There is none holy as Thou, O Lord my God, that hast, as Good One, exalted the horn of Thy believers, and established us upon the rock of Thy confession."
+    }
+   ]
+  },
+  {
+   "id": "x-p47",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "He that doth see everything as God, God-beseemingly and clearly manifesteth unto thee, O blissful and wonderful one, the knowledge of the future and the cognisance of events that are going to take place."
+    }
+   ]
+  },
+  {
+   "id": "x-p48",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With pious boldness having fixed thy mind, thou hast, O glorious one, submitted thyself unto the Divine Spirit, and becamest receptive of the divine inspirations thereof."
+    }
+   ]
+  },
+  {
+   "id": "x-p49",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As a stream of the mysterious waters flowing from an abyss wast thou God's herald of the gifts of the Spirit."
+    }
+   ]
+  },
+  {
+   "id": "x-p50",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Behold, all generations in faith call thee blessed, since the Ever-existing Word thou hast in time brought forth in the flesh supernaturally and hast still remained Virgin."
+    }
+   ]
+  },
+  {
+   "id": "x-p51",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Cathisma, Tone 6. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "The gate of commiseration..."
+    }
+   ]
+  },
+  {
+   "id": "x-p52",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having cleared thy mind, O all-wise one, from filth, thou hast made it into a divine mirror, receptive of the rays of the Divine Spirit, and now art thou joyfully gone unto the source of illumination, O prophet"
+    },
+    {
+     "text": "(mentioned by name).",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p53",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory . . . Both now. . . The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The most glorious Mother of God, who is greatly holier than the holy angels, let us unceasingly hymn with our hearts and mouths, confessing her as the Theotokos, since she hath truly borne God Incarnate and is continually praying for our souls."
+    },
+    {
+     "text": "The Stavro-Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p54",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O come, let us all hymn the One Who was crucified for us, for Him Mary saw on the tree and said: Although Thou dost suffer even crucifixion, yet art Thou my Son and my God."
+    }
+   ]
+  },
+  {
+   "id": "x-p55",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 4. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p56",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Christ is my power, my God and Lord -- the venerable church Godbeseemingly singeth, thus calling out, with pure mind feasting in the Lord."
+    }
+   ]
+  },
+  {
+   "id": "x-p57",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Lord of all hath appeared unto us, according to thy prophecy, O glorious one, calling all unto His intimate knowledge and hath freed us from thraldom."
+    }
+   ]
+  },
+  {
+   "id": "x-p58",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Enlightened by the grace, thou hast proclaimed saying: Unto those that follow the faith and serve the Lord, it behoveth to put the neck under one yoke and to work."
+    }
+   ]
+  },
+  {
+   "id": "x-p59",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Being a prophet, ever enlightened with the brilliancy of the light-giving auroras, do thou, O glorious one, enlighten us lovingly hymning thee."
+    },
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p60",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O Mary, the all-purest! do away with the agitation of my thoughts through passions and with the whirlwind of temptation -- thou, O Mother and Virgin, who hast given birth onto the Source of impassiveness."
+    }
+   ]
+  },
+  {
+   "id": "x-p61",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 5. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p62",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With Thy divine light, O Good-one, do illumine, I pray Thee, the souls of those who lovingly watch early unto Thee, that they may know Thee, O Word of God, as the true God, recalling them out of the Darkness of sin."
+    }
+   ]
+  },
+  {
+   "id": "x-p63",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "From unrighteousness to virtue and from the thraldom of passions turn me, O blessed one, through thy supplications, O glorious prophet, and direct me unto the light of the works of piety."
+    }
+   ]
+  },
+  {
+   "id": "x-p64",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having illumined with excellent deeds of virtue thy soul, thou hast shewn it to be receptive of the brightness of the Divine Spirit, from Whom wast thou also enriched with the grace of prophecy."
+    }
+   ]
+  },
+  {
+   "id": "x-p65",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou wast a divine prophet, hast led a pure life and wast a receptacle for the Holy Spirit; therefore wast thou made worthy to contemplate Him Who is comprehended invisibly."
+    }
+   ]
+  },
+  {
+   "id": "x-p66",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "The prophetic utterances herald thy birth, O most pure one, in various types, and we, seeing now their fulfilment, proclaim thee as the true Theotokos."
+    }
+   ]
+  },
+  {
+   "id": "x-p67",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 6. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p68",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Beholding the sea of life swelling with the storm of temptations, and taking refuge in Thy calm haven, I cry unto Thee : Lead up my life from corruption, O Greatly merciful One."
+    }
+   ]
+  },
+  {
+   "id": "x-p69",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having received illumination from the Spirit, thou hast, O glorious one, reflected before the world as clearly as in a mirror the divinely shining prophecies, foretelling the future as current events."
+    }
+   ]
+  },
+  {
+   "id": "x-p70",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy King is come -- rejoice, O Zion, and exult at the sight and He hath enlightened the world with the brightness of His Divinity, putting to shame the deceit of the demons."
+    }
+   ]
+  },
+  {
+   "id": "x-p71",
+   "centered": false,
+   "pages": [
+    76
+   ],
+   "segments": [
+    {
+     "text": "By the power of the Divine Spirit hast thou, O prophet, foreseen the future with the lucidity of thy soul as in a mirror receiving the impressions of the divine phenomena."
+    }
+   ]
+  },
+  {
+   "id": "x-p72",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "He that is the Only-begotten of the Father, in thy womb became united unto the perishable flesh, one coming out of the two without corruption and having preserved unhurt thy pure virginity, O all-hymned one."
+    }
+   ]
+  },
+  {
+   "id": "x-p73",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Contakion to be taken from the Typicon: in the absence of the latter say the following Contakion, Tone 4. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Thou hast appeared to-day..."
+    }
+   ]
+  },
+  {
+   "id": "x-p74",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Illumined of the Spirit thy pure heart became a receptacle for the illustrious prophecy, for thou dost see as the present the events afar off; wherefore we honour thee, O glorious prophet, blissful"
+    },
+    {
+     "text": "(mentioned byname.) [The Oikos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p75",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Enriched with the grace of prophesying, unto the comprehension of the future events wast thou, O God-inspired"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "God-beseemingly taught of the Spirit, and foretelleth unto all the coming of Christ and the most abundant call of the Gentiles; wherefore we celebrate thy honoured memory and lovingly hymn thee, glorifying thee in faith and calling unto thee, O glorious one: do unceasingly supplicate Christ the God for us all."
+    }
+   ]
+  },
+  {
+   "id": "x-p76",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 7. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p77",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Dew-yielding hath an angel made the furnace unto the pious youths, and God's injunction burning the Chaldeans hath inclined the tyrant to cry out : Blessed art Thou, O God of our fathers."
+    }
+   ]
+  },
+  {
+   "id": "x-p78",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy memory, O prophet, hath shone forth unto the world as the sun, illumining with thy grace of prophecy all those who in faith harmoniously sing: Blessed art Thou, O God of our fathers."
+    }
+   ]
+  },
+  {
+   "id": "x-p79",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having appeared as the most abundant cloud thou, O blissful one, hast showered unto us a whole cloud of God's knowledge from the saving sources, wherewithal we are enlightened to vociferate: Blessed art thou, O God of our fathers."
+    }
+   ]
+  },
+  {
+   "id": "x-p80",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Enlightened of God, the prophets foreherald the meaning of the future, they God-wisely proclaim the Word that hath been from the beginning, unto Whom we sing: Blessed art Thou, O God of our fathers."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p81",
+   "centered": false,
+   "pages": [
+    77
+   ],
+   "segments": [
+    {
+     "text": "The Word of old giving unto all their being, having, with thedivine desire, wished to recall man, did come, O pure one, down into thy womb to reside, O blessed one, that gavest birth unto God in the flesh."
+    }
+   ]
+  },
+  {
+   "id": "x-p82",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 8. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p83",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Unto the pious hast Thou made dew out of the flame to flow, and the sacrifice of a righteous man didst Thou consume with water, for everything makest Thou, O Christ, just as Thou willest; Thee we exalt unto all the ages."
+    }
+   ]
+  },
+  {
+   "id": "x-p84",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having given thyself entirely unto the Almighty, thou hast mystically learned the ways of providence and hast taught the economy to the Gentiles, wherefore we hymn Thee, O prophet, God-spoken."
+    }
+   ]
+  },
+  {
+   "id": "x-p85",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Supplicatory melody do thou, O blessed one of God, bring unto God for those that hymn thee, and put down the agitation of temptations, that we may hymn thee, O prophet, Godspoken."
+    }
+   ]
+  },
+  {
+   "id": "x-p86",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As the fire before those sitting in darkness hast thou appeared unto all, God-wisely illumining with the divine light those that in faith hymn the Lord unto the ages. ["
+    },
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p87",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having given birth unto God and Lord -- the Life-giver, thou, O all-holy one, hast put an end to the destruction of death that was unrestrainably putting all to death; wherefore we hymn thee unto all the ages."
+    }
+   ]
+  },
+  {
+   "id": "x-p88",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 9. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p89",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "It is not possible for men to behold God on Whom the angelic orders dare not cast a glance; but through thee, O all-pure one, was seen of men the Incarnate Word; Him magnifying, with heavenly hosts we call thee blessed."
+    }
+   ]
+  },
+  {
+   "id": "x-p90",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In the land of the benign art thou dwelling wherein thou dost see the angelic sereneness, O all-wise God's prophet"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "having been benign whilst shining with the grace; therefore we the faithful glorify thee joyously."
+    }
+   ]
+  },
+  {
+   "id": "x-p91",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Of thy predictions, O all-glorious one, clearly seeing the fulfilment in the past, we wonder at the grace that was given unto thee, and are amazed at the purity of thy mind and of thy soul the clear sight of God."
+    }
+   ]
+  },
+  {
+   "id": "x-p92",
+   "centered": false,
+   "pages": [
+    78
+   ],
+   "segments": [
+    {
+     "text": "Wherein are the angelic orders, of the prophets and patriarchs the choirs and the limpidities of the holy ones, -- therein, O prophet"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "hast thou found a habitation; and now joyfully exulting with them, supplicate the Lord for us that those may be saved who in faith praise thee."
+    }
+   ]
+  },
+  {
+   "id": "x-p93",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "As thou, there never was from ancient generations granted another one, O all spotless Mother of God; for thou alone of all possessedst holiness and purity incomparable; wherefore thou hast received God, in thee incarnate."
+    }
+   ]
+  },
+  {
+   "id": "x-p94",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Photagogicon :",
+     "rubric": true
+    },
+    {
+     "text": "All the prophets are rejoicing and are exulting in thy joyful day, O Godly-wise one, whilst participating of thy gladness and of the divine glory; do supplicate together with them and save those who hymn thee."
+    }
+   ]
+  },
+  {
+   "id": "x-p95",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "With the sprinkling of thy compassions, O pure one, wash off the filth of my soul, and grant, O Maiden, that I may unceasingly pour the drops of tears which should dry up the streams of my passions."
+    }
+   ]
+  },
+  {
+   "id": "x-p96",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With the Lauds the Stichera, Tone 8. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "O most glorious wonder."
+    }
+   ]
+  },
+  {
+   "id": "x-p97",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Divine Spirit hath been poured out, as thou, O honourable"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "moved of Him, didst in thy prophesying say, upon us the believers and He doth reveal the manifestation of the divine mysteries, and those who have received His operation prophesy, being illumined both by the divine light and the divine grace."
+    },
+    {
+     "text": "[Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "x-p98",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The wonderful"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "filled with godly messages, cometh forth from Thy house, O Master, as a source giving drink to the souls, and he hath trickled for us sweetness which doth sweeten the thoughts, since he was great in his whole spirit and was carried by his virtues unto the divine height."
+    }
+   ]
+  },
+  {
+   "id": "x-p99",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Through thy prophetic boldness and intellectual nearness to God, on account of which thou, O"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "dost see the heavenly sights, do make Him merciful unto us that in faith celebrate thy memory, entreating of Him, O glorious one, remission of transgressions, participation of the divine delights and great mercy."
+    }
+   ]
+  },
+  {
+   "id": "x-p100",
+   "centered": false,
+   "pages": [
+    79
+   ],
+   "segments": [
+    {
+     "text": "Glory ...Tone 4.",
+     "rubric": true
+    },
+    {
+     "text": "Rejoicing in the Lord God and thy Saviour and exulting, O God-spoken and glorious one, since thou hast received the luminous light of the Existing One and art mentallyillumined with the light proceeding from God, do thou deliver us that are in faith celebrating thine all-festal memory, from temptations and afflictions through thine intercessions."
+    }
+   ]
+  },
+  {
+   "id": "x-p101",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now ...The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Deliver us from our wants, O Mother of Christ the God, who gavest birth unto the Maker of all, that we all may call unto thee: Hail thou, the sole intercession for our souls."
+    }
+   ]
+  },
+  {
+   "id": "x-p102",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion: Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "As a virtuous..."
+    }
+   ]
+  },
+  {
+   "id": "x-p103",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Seeing Christ being put to death and destroying the deceiver, the all-pure Sovereign-Lady, lamenting Him as Master Who came out of her womb, hymned Him and wondering at His long-suffering, cried out: O my most beloved Child, do not forget Thy servant, tarry not, O Lover of man; with my consolation."
+    }
+   ]
+  }
+ ]
+}

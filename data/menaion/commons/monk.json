@@ -1,0 +1,1311 @@
+{
+ "schema": "menaion-common/1",
+ "id": "common-monk",
+ "chapter": "XII",
+ "title": "THE GENERAL SERVICE TO A MONK.",
+ "source": {
+  "work": "The General Menaion (Orloff), London 1899, translated from the Slavonic 16th ed. of 1862",
+  "edition_cited": "1899 first edition (public domain)",
+  "url": "https://www.ccel.org/ccel/anonymous/menaion/menaion.xv.html",
+  "transcribed_by": "scripts/menaion/ingest-orloff-commons.py (verbatim from CCEL HTML; no corrections)",
+  "name_placeholder": "(mentioned by name)"
+ },
+ "paragraphs": [
+  {
+   "id": "xv-p1",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 8. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "The martyrs of the Lord..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p2",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "A divine and light-bearing lamp that is holy and precious, never remaineth hidden under the bushel of the thick covering of life, but the Lover of man placeth him on the summit of high miracles; through his intercessions grant, O Christ, unto Thy people great mercy."
+    }
+   ]
+  },
+  {
+   "id": "xv-p3",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou, all-honoured one, hast set thyself to the plough with the work of thy hands, and ever working the things divine, thou didst not turn to look back, but wast directed into the Kingdom of Christ, the Incarnate God, unto the salvation of our souls."
+    }
+   ]
+  },
+  {
+   "id": "xv-p4",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Carried in a light boat of the body by the gentle breezes of thy gentle spirit, thou, O wise one, hast easily passed across the abyss of life, and having disposed of thy possessions for the priceless Pearl and obtained it, thou hast kept It unto thyself, finding thy bliss in the divine virtues thereof."
+    }
+   ]
+  },
+  {
+   "id": "xv-p5",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now ...the Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p6",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "My thoughts are unclean, my lips flattering, and my deeds are all defiled. What then can I do? How can I meet the Judge? O Sovereign-Lady Virgin, supplicate unto thy Son and Maker and the Lord that He may receive my spirit in contrition, as the only Compassionate One."
+    }
+   ]
+  },
+  {
+   "id": "xv-p7",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The undefiled youthful Maiden seeing the Youth voluntarily nailed on the tree, piteously bewailing, called out unto Him: Woe unto me, O my most beloved Child ! What hath the graceless assembly of the Hebrews rendered unto Thee? They are bent on depriving me of Thee, O All-beloved One."
+    }
+   ]
+  },
+  {
+   "id": "xv-p8",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "If Idiomelion be appointed. Glory ... Tone 6:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p9",
+   "centered": false,
+   "pages": [
+    120
+   ],
+   "segments": [
+    {
+     "text": "Having preserved unhurt that which is in the image, andhaving through fasting made thy mind master over the perilous passions, thou hast ascended as far as possible unto that which is in the likeness; for, having manfully constrained thy nature, thou hast taken pains to subdue the inferior unto the higher, and to make the flesh a slave unto the spirit, wherefore thou, O hermit, hast appeared an instructor of the monks, teacher of good life, most certain rule of virtue. And now, in the heavens, when mirrors do no longer intervene, thou, our father"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "dost clearly see the Holy Trinity and supplicate immediately for those that in faith and love honour thee."
+    }
+   ]
+  },
+  {
+   "id": "xv-p10",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now...the Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "O Theotokos, thou art the true vine..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p11",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "Seeing Thee crucified, O Christ, she who hath given Thee birth, vociferated: What a strange mystery do I see now, my Son? How, being hung in the flesh, dost Thou die on the tree, O Giver of life?"
+    }
+   ]
+  },
+  {
+   "id": "xv-p12",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:",
+     "rubric": true
+    },
+    {
+     "text": "Who would not bless thee ..."
+    },
+    {
+     "text": "Entrance ... The Prokeimenon of the day. The Readings of the Religious. (See Appendix).",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p13",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "For the Versicles, the Stichera, Tone 1. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "Of the heavenly orders..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p14",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy festival, O God-bearer, brighter than the sun hath come ; it illumineth those that in faith have recourse unto thee, filleth with the sweet smell of immortality and sheddeth healings unto the souls, O holy father, intercessor for our souls."
+    }
+   ]
+  },
+  {
+   "id": "xv-p15",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Versicle : Precious in the sight of the Lord is the death of His saints.",
+     "rubric": true
+    },
+    {
+     "text": "Through the furrows of abstinence having obtained victory over the sensual passions of the body, and having shewn on earth the zeal of the bodiless, thou hast subdued unto the spirit all desires of the flesh, O wonder-worker,"
+    },
+    {
+     "text": "(mentioned by name);",
+     "rubric": true
+    },
+    {
+     "text": "wherefore, dwelling now in the heavenly habitations, do supplicate for our souls."
+    }
+   ]
+  },
+  {
+   "id": "xv-p16",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Versicle : Blessed is the man that feareth the Lord, that delighteth greatly in His commandments.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p17",
+   "centered": false,
+   "pages": [
+    121
+   ],
+   "segments": [
+    {
+     "text": "O blissful"
+    },
+    {
+     "text": "(mentioned by name)",
+     "rubric": true
+    },
+    {
+     "text": "! Having laid the foundationof virtue, thou didst put off the ancient man with his hosts, and hast truly put on Christ; wherefore hast thou, O holy one, put to shame many armies of the enemy and wast instructor of the monks. Supplicate that our souls may be saved."
+    },
+    {
+     "text": "[Glory ...Tone 8.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p18",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "We honour in thee, O"
+    },
+    {
+     "text": "(mentioned by name)",
+     "rubric": true
+    },
+    {
+     "text": "our father, the teacher of the multitude of monks, for we have truly learned to walk straight in thy path. Blessed art thou that hast laboured for Christ and hast laid bare the might of the enemy; O friend of angels and companion of the holy and just ones, with them do supplicate unto the Lord that our souls may be saved."
+    }
+   ]
+  },
+  {
+   "id": "xv-p19",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now ...the Theotokion of the resurrection:",
+     "rubric": true
+    },
+    {
+     "text": "O Virgin unmarried..."
+    },
+    {
+     "text": "But if there be no Celebration, say this Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p20",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O pure virgin, gate of the Word, Mother of our God, supplicate that we may be saved."
+    },
+    {
+     "text": "[The Stavro-theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p21",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "I cannot endure, O my Child, the sight of Thee dying on the tree, whereas Thou grantest vigour unto all, O that Thou mayest vouchsafe the divine and saving vigour unto those also who, through the fruit of the ancient transgression, have already fallen into the sleep of perdition, -- spake in tears the Virgin, whom we magnify."
+    }
+   ]
+  },
+  {
+   "id": "xv-p22",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Troparion from the Typicon, but if there be no Typicon, say this Troparion, Tone 8 :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p23",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In thee, O father, was manifestly preserved what is in the image of God, for having taken up thy cross, thou didst follow Christ, and by thine own example hast taught that the flesh is to be despised as transient, but that particular care should be bestowed on the soul, as a thing immortal; wherefore, together with the angels, rejoiceth also thine, O holy"
+    },
+    {
+     "text": "(mentioned by name)",
+     "rubric": true
+    },
+    {
+     "text": "spirit."
+    },
+    {
+     "text": "[Glory. Both now ...the Theotokion or the Stavro-theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p24",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Matins, for God is the Lord, the same Troparion. After the 1st Stichologia, the Cathisma, Tone 4. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "Speedily prevent."
+    }
+   ]
+  },
+  {
+   "id": "xv-p25",
+   "centered": false,
+   "pages": [
+    122
+   ],
+   "segments": [
+    {
+     "text": "Unto the call of thy Lord hast thou, O all-blessed"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "followed, when thou hadst forsaken the world and everything there is beautiful in the world, with fervour didstthou endure the hardships of the eremitical life and manfully repulsed the armies of the demons; wherefore in faith we also constantly praise in hymns thy memory."
+    },
+    {
+     "text": "Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p26",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now ...the Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "Thou, O pure one, hast renewed, with thy divine bringing forth, the mortal nature of the earth-born ruined by passions, and hast raised all from death unto the life of incorruption ; wherefore we all dutifully bless thee, O most glorious Virgin, as thou hast foretold."
+    }
+   ]
+  },
+  {
+   "id": "xv-p27",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After the 2nd Stichologia, the Cathisma, Tone 5. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "The Co-unoriginate..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p28",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Let us honour with hymns the ascetic of the Lord as one that, by true abstemiousness and enduring patience, hath exterminated all the assaults of passions, and hath put to great shame the opposing enemy with all his pride, and is now supplicating the Lord that our souls may be saved."
+    },
+    {
+     "text": "Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p29",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory... Both now... the Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "The awful miracle of conception and unspeakable manner of giving birth that became known in thee, O pure Ever-virgin, frighten my mind and excite wonder in my thoughts; thy glory, O Theotokos, hath reached everywhere unto the salvation of our souls."
+    }
+   ]
+  },
+  {
+   "id": "xv-p30",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After Praise ye the name of the Lord ...the Refrain :",
+     "rubric": true
+    },
+    {
+     "text": "We bless thee, O religious father"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "and honour thy holy memory, O preceptor of monks and associate of angels."
+    },
+    {
+     "text": "The selected Psalm:",
+     "rubric": true
+    },
+    {
+     "text": "I waited patiently for the Lord ..."
+    },
+    {
+     "text": "After the Polyeleon, the Cathisma, Tone 1. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Thy sepulchre, O Saviour..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p31",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Through mortification of the flesh thou, O sacred father, hast buried all the risings of passions, and after thy decease thou hast obtained unending life; wherefore the church of Christ doth celebrate to-day thy wonder-worthy memory, the ornament of the ascetics."
+    },
+    {
+     "text": "[Twice. Glory...Both now...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p32",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Do set in the way of repentance us, who constantly deviate into the evil libertinism, and anger the Most kind Lord, O most blessed Mary, that hadst no marital experience and art the refuge of despairing men and God's dwelling place."
+    }
+   ]
+  },
+  {
+   "id": "xv-p33",
+   "centered": false,
+   "pages": [
+    123
+   ],
+   "segments": [
+    {
+     "text": "The Graduals. The 1st Antiphon of the 4th Tone. The Prokeimenon :",
+     "rubric": true
+    },
+    {
+     "text": "Precious in the sight of the Lord is the death of His saints."
+    },
+    {
+     "text": "The Verse:",
+     "rubric": true
+    },
+    {
+     "text": "What shall I render unto the Lord for allHis benefits towards me? Let every breath."
+    },
+    {
+     "text": "The Gospel of the religious (Matth. 11, 2'7-30). After the 50th Psalm, the Sticheron, Tone 6:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p34",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O holy father, through all the earth is gone forth the sound of thine exertions, wherefore hast thou found in heaven the reward of thy labours; thou hast destroyed the armies of demons and hast reached the orders of angels, whom thou hast irreproachably emulated in thy life. Possessing boldness before Christ the God, do obtain peace for our souls."
+    }
+   ]
+  },
+  {
+   "id": "xv-p35",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Canon. Tone 8. Ode 1. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p36",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having crossed the water as if it were dry land, and having escaped the evils of Egypt, the Israelites cried out: Let us sing unto our Deliverer and our God."
+    }
+   ]
+  },
+  {
+   "id": "xv-p37",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Adorned with good moral qualities, from thine youth thou didst cleave unto Christ, and passions of thy flesh mortifiedst with abstemiousness and art gone over unto the Life, O holy one."
+    }
+   ]
+  },
+  {
+   "id": "xv-p38",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having been the performer of the divine sayings and laws, thou hast become, O most wise father, filled with divine gifts and miracles, and hast unto all richly emitted thy rays."
+    }
+   ]
+  },
+  {
+   "id": "xv-p39",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Helped by the strength of Christ, thou hast, O father, put down the power and might of the enemy, and honours for thy victory hast thou, O holy one, received in the brilliancy of miracles."
+    }
+   ]
+  },
+  {
+   "id": "xv-p40",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou didst possess a good conscience, and the eye of thy heart was directed to God; wherefore, in answer to thy prayer, O most wise one, He counted thee with the just."
+    },
+    {
+     "text": "[The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p41",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The passions of my flesh and evil insinuations of my mind do appease, I implore thee, O most pure Virgin, and set me with my strayed mind into the right path."
+    }
+   ]
+  },
+  {
+   "id": "xv-p42",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 3. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p43",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou art the stablishing of those that flee unto Thee, O Lord ; Thou art the light unto those in darkness and my spirit hymneth Thee."
+    }
+   ]
+  },
+  {
+   "id": "xv-p44",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Being entirely devoted unto the Almighty, thou hast, O most wise holy father, escaped all the malice of the demons. Adorned with the height of humility, thou hast, with thine excellent works, hurled down to the ground the great boaster."
+    }
+   ]
+  },
+  {
+   "id": "xv-p45",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Whilst still in the flesh, thou hast, O most wise father, humbled the high-borne neck of the wicked one with the humility of thy words."
+    }
+   ]
+  },
+  {
+   "id": "xv-p46",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having as thy help God's power, thou dost, O most wise and wonderful one, shed miracles and drivest away diseases."
+    }
+   ]
+  },
+  {
+   "id": "xv-p47",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "In becoming incarnate, the Maker hath found abode in thy womb, O all-spotless one, unto the benefit of those who in faith hymn thee."
+    }
+   ]
+  },
+  {
+   "id": "xv-p48",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Cathisma, Tone 4. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Speedily prevent...Thou hast vanquished the fleshly subtlety of passions, and having subdued the worst unto the best, thou didst, O most glorious father"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "by fasting destroy the wily scheming of the demons, and shonest forth in the world as a ray of the sun in the brilliant lustre of thy virtues; wherefore we hymn thee."
+    },
+    {
+     "text": "[Glory ...Both now...the Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p49",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "An unassailable wall unto us Christians art thou, O Theotokos Virgin, for fleeing unto thee for shelter we remain unhurt, and when we sin afresh, we possess in thee a supplicant; wherefore, in giving thanks, we vociferate unto thee: Hail thou, full of grace, the Lord is with thee."
+    },
+    {
+     "text": "[The Stavro-theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p50",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O all-spotless Virgin, Mother of Christ the God, a sword hath pierced thy most holy soul when thou beheldest thy Son and God voluntarily crucified; Him do not cease to supplicate, O most blessed one, to grant us the remission of our transgressions."
+    }
+   ]
+  },
+  {
+   "id": "xv-p51",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 4. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p52",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "I have hearkened, O Lord, onto the mystery of Thine economy, comprehended Thy works and glorified Thy Godhead."
+    }
+   ]
+  },
+  {
+   "id": "xv-p53",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having made thy soul into a temple of the Holy Spirit, thou didst become, together with the highest hosts, heir of the Kingdom on high."
+    }
+   ]
+  },
+  {
+   "id": "xv-p54",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou ever dost relieve from sufferings through manifold diseases those that have recourse unto thee; for thou, O holy one, hast obtained from the Lord the grace to work wonders and miracles."
+    }
+   ]
+  },
+  {
+   "id": "xv-p55",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In the house of God hast thou, O father, vegetated up as the best sprout, being adorned with virtues and filled with the sweet smell of a wonderful fruit."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p56",
+   "centered": false,
+   "pages": [
+    125
+   ],
+   "segments": [
+    {
+     "text": "A spiritual field art thou, O Ever-virgin, since out of a furrowthou hast brought forth an ear that feedeth the whole creation the God of all."
+    }
+   ]
+  },
+  {
+   "id": "xv-p57",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 5. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p58",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Watching early we cry out unto Thee: O Lord, save us, for Thou art our God, beside Thee we know none other."
+    }
+   ]
+  },
+  {
+   "id": "xv-p59",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With thy purified mind, O all-glorious one, dost thou behold the ineffable goodness of Christ, the God of all."
+    }
+   ]
+  },
+  {
+   "id": "xv-p60",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Like unto Elijah in the chariot, thou, O father, hast ascended into heaven on thy virtues, being helped by the Spirit."
+    }
+   ]
+  },
+  {
+   "id": "xv-p61",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having contracted thy body with abstemiousness and purity, unto the breadth of the upper habitations hast thou reached, O father."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p62",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Heal the blindness of my diseased mind, having given birth unto the Physician, even Christ, O all-spotless Sovereign-Lady."
+    }
+   ]
+  },
+  {
+   "id": "xv-p63",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 6. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p64",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Unto the Lord will I pour my prayer and to Him will I make known my sorrows, for my soul is become full of afflictions and my life hath come nigh unto the hades, and I will pray as Jonah: O God, raise me up from corruption."
+    }
+   ]
+  },
+  {
+   "id": "xv-p65",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With thy sacred prayers, O God-blissful one, is slain the cunning serpent and therewithal is destroyed the malice of those who demanded of thee a sign, for thou art God's favourite, beaming with light, proved in thy faithfulness."
+    }
+   ]
+  },
+  {
+   "id": "xv-p66",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With assiduous ploughing having renewed thy soul, thou hast, O sacred father, most wisely thrown therein multifruitful seeds of virtues, and hast gathered in rich ears of multifarious healings."
+    }
+   ]
+  },
+  {
+   "id": "xv-p67",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Helped by the strength of the Spirit, thou hast, O father, put down the power and might of the enemy, and honours for thy victory hast thou, O holy one, received in the brilliancy of miracles."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p68",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Lord is with thee, O most pure one! As it hath pleased Him, He was with thee, O Maiden, and through thine intercession hath delivered us all from the dominion of the deceitful one; wherefore now we dutifully from generation to generation call thee blessed."
+    }
+   ]
+  },
+  {
+   "id": "xv-p69",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Contakion from the Typicon; but if there be no Typicon, say this Contakion, Tone 2. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "Seeking the highest..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p70",
+   "centered": false,
+   "pages": [
+    126
+   ],
+   "segments": [
+    {
+     "text": "Having divinely armed thyself with the purity of thy souland unceasing prayers firmly grasping as a spear, thou, our father"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "hast pierced the armies of the demon; supplicate unceasingly for us all."
+    }
+   ]
+  },
+  {
+   "id": "xv-p71",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Oikos :",
+     "rubric": true
+    },
+    {
+     "text": "Having conceived a loving attachment to the divine commandments of Christ, and a hatred for the delights of this world, thou hast with diligence achieved thine end and wast a lamp that did enlighten the ends with the spiritual lustre. Wherefore falling down before thee I implore thee: Enlighten my spiritual eyes to hymn thine exploits of fasting, watchfulness, shedding tears, labours and maceration of the body, for the sake of the blissful future life, of which thou art now in the enjoyment; Supplicate unceasingly for us!"
+    }
+   ]
+  },
+  {
+   "id": "xv-p72",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 7. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p73",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "From Judea coming the youths did once in Babylon tread down the flame of the furnace by their faith in the Trinity, singing: O God of our fathers, blessed art. Thou."
+    }
+   ]
+  },
+  {
+   "id": "xv-p74",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having strong-mindedly gone through thine exploits of fasting, thou hast, O father, humbled the proudest mind with the divine humility, singing: Blessed art Thou, O God of our fathers."
+    }
+   ]
+  },
+  {
+   "id": "xv-p75",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In the house of God hast thou, O father, vegetated up as the best sprout, being adorned with virtues and filled with the sweet smell of a wonderful fruit."
+    }
+   ]
+  },
+  {
+   "id": "xv-p76",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having enlightened thy heart, thou, O father, wast the superior of the sacred assembly, giving directions, teaching and bringing all under the will of God, singing: O God of our fathers, blessed art Thou."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p77",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having given birth unto a new Youth -- the Unoriginate Word, thou, O Virgin, hast renewed us grown old through sin, and made us strong to sing: O God of our fathers, blessed art Thou."
+    }
+   ]
+  },
+  {
+   "id": "xv-p78",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 8. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p79",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The God-spoken youths, whilst treading down in the furnace the flame with the fire, sung : Bless the Lord, ye the works of the Lord."
+    }
+   ]
+  },
+  {
+   "id": "xv-p80",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The heir of the divine habitations, thou didst, O father, live as an angel ; wherefore with the angels doth thy spirit rejoice. Having undeviatingly proceeded, O most wise and marvellous father, along the divine paths leading to heaven, thou hast unto the end avoided those that lead to evil."
+    }
+   ]
+  },
+  {
+   "id": "xv-p81",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Through the grace which hath found abode in thy soul, O father, are driven away the unclean spirits that cunningly find their abode in men."
+    },
+    {
+     "text": "[The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p82",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou art, O Virgin, an inexhaustible source of water, drinking of which all become filled with the grace, being cleansed both in soul and body."
+    }
+   ]
+  },
+  {
+   "id": "xv-p83",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 9. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p84",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Every one became terrified at hearing of the ineffable God's condescension, that the Most High did voluntarily come down even unto the flesh itself, having become man in the Virgin's womb; wherefore we the faithful magnify the most pure Theotokos."
+    }
+   ]
+  },
+  {
+   "id": "xv-p85",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy honoured shrine by the Holy Spirit richly sheddeth healings, cureth long standing diseases of those that have recourse unto thee, O father; it driveth away the cunning, ferocious spirits and raiseth up the faithful to the praising of thine illustrious deeds."
+    }
+   ]
+  },
+  {
+   "id": "xv-p86",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As a great sun that hast shone forth unto us in the greatness of thy deeds, O most wise one; thou hast enlightened the ends of the earth, and in thy death thou art gone from alight unto a brilliant light; wherefore we vociferate unto thee : Enlighten our thoughts, O holy father"
+    },
+    {
+     "text": "(mentioned by name).",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p87",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thine enduring body bound with chains, O blessed one, doth heal by a touch incurable diseases, since God and Saviour hath greatly glorified thee, O most wise and wonderworthy father"
+    },
+    {
+     "text": "(mentioned by name);",
+     "rubric": true
+    },
+    {
+     "text": "for thou hast made thyself famous with thy good works, O holy one."
+    }
+   ]
+  },
+  {
+   "id": "xv-p88",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In the dales of fasting hast thou, O most praised father, blossomed as a wild sweet-smelling rose, and as a lily hast thou filled the consciences of the faithful with perfume of thy virtues and miracles; wherefore, O holy one, drive away from us the malodorous passions."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p89",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Enlighten, O pure Virgin, my heart ever grieving for transgressions and on account of manifold worldly resorts, do not leave me a joy unto mine enemies, that I may glorify and lovingly hymn thee, O most hymned one."
+    }
+   ]
+  },
+  {
+   "id": "xv-p90",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Photagogicon. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Hearken, O ye women..."
+    }
+   ]
+  },
+  {
+   "id": "xv-p91",
+   "centered": false,
+   "pages": [
+    128
+   ],
+   "segments": [
+    {
+     "text": "Thou hast flourished as David's palm, O father, and hast appeared an abode of the Holy Spirit, Who hath made thee famous in the universe, do unceasingly pray for us that in faith honour thy most honoured memory, O holy"
+    },
+    {
+     "text": "(mentioned by name). [The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p92",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "We bless in unceasing odes thee, O Virgin, for unto One of the Trinity hast thou, O Theotokos, given birth and dost bear in thy divine arms the most abundant Word, unchangeable and immutable."
+    }
+   ]
+  },
+  {
+   "id": "xv-p93",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With the Lauds, the Idiomelic Stichera, Tone 6.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p94",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O God-bearer, most blessed"
+    },
+    {
+     "text": "(mentioned by name)!",
+     "rubric": true
+    },
+    {
+     "text": "All the subtleties of thy flesh hast thou subjugated unto thy spirit, having strengthened thyself with the pains of fasting, and assayed as gold in the forge, hast thou appeared shining and wast a receptacle of the Most Holy Spirit. Having gathered multitudes of monks, thou hast with thine instructions, as with a ladder leading into heaven, brought them up unto the height of virtues. Remember us, honouring thy sacred memory, and supplicate that our souls may be saved."
+    },
+    {
+     "text": "[Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p95",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "To-day doth shine forth thy most illustrious and all-festive memory, O most glorious"
+    },
+    {
+     "text": "(mentioned by name),",
+     "rubric": true
+    },
+    {
+     "text": "calling together multitudinous assemblies of the fasting and choirs of the religious, both truly angels and men, unto the praise of Christ, our God adored in the Trinity. Wherefore, coming up unto the sacred shrine of thy relics, we abundantly receive the gifts of healing and glorify Christ, the Saviour of our souls, Who hath crowned thee."
+    }
+   ]
+  },
+  {
+   "id": "xv-p96",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O God-bearer, most blessed father"
+    },
+    {
+     "text": "(mentioned by name)!",
+     "rubric": true
+    },
+    {
+     "text": "As the prophet of old, hast thou covered the earth with thy tears and never gave sleep unto thine eyes nor allowed dozing unto thine eyelids in manifesting the yearning of thy heart after Christ, Whom thou didst love; wherefore, wast thou a model unto monks and hast improved the manifestation of every virtue; wherefore, we also bless thee, magnifying Him Who hath glorified thee."
+    },
+    {
+     "text": "[Glory...Tone 2.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xv-p97",
+   "centered": false,
+   "pages": [
+    129
+   ],
+   "segments": [
+    {
+     "text": "O holy father! Having from childhood assiduously studied virtue, thou wast an organ of the Holy Spirit, and having obtained from Him the working of miracles, thou hast admonished the people to shun the sweets of life. Being now most clearly illumined with the divine light, enlighten also our thoughts, O our father"
+    },
+    {
+     "text": "(mentioned by name). [Both now...the Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "All my trust I place in thee, O Mother of God, do preserve me under thy shelter."
+    }
+   ]
+  },
+  {
+   "id": "xv-p98",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "When from the tree...: Many humiliations hast thou endured; seeing the Maker of all things lifted up on the cross, thou, O most pure one, with moaning didst say: O Most Holy Lord, my Son and my God! How is it that when Thou desirest to honour Thy creation, O Master, Thou dost suffer dishonour in the flesh ? Glory unto Thy great mercy and Thy condescension, O Lover of man."
+    }
+   ]
+  }
+ ]
+}
