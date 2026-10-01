@@ -156,3 +156,11 @@ Callinicus (OCA; Philemon's group is separate); 06-07 renamed Theodotus, Bishop 
 - **stephen-younger**: App lists type 'hierarch' with a hierarch troparion; OCA and Wikipedia describe him as a monk, martyr and confessor (not a bishop). OCA calls him 'Stephen the New'. Death year 764 is from Wikipedia; OCA text gives birth (715) but no death year in the portion read.
 - **patapius-thebes**: OCA gives no century for Patapios; period is the app's estimate.
 - **boniface-tarsus**: App notes give '+290'; OCA gives no year and Wikipedia gives 307, so no date stated.
+
+
+## Rank 1-2 lives pass (2026-10-01) -- all 45 written; no calendar mismatches
+Every rank 1-2 entry is named on its date by OCA and Orthocal. Notes for Josh (no data changed except the first): the Three Hierarchs entry note said
+"Patriarch John Mauropos" -- OCA says John, Bishop of Euchaita (corrected); the app's rank notes for Basil/Circumcision (Jan 1), the Annunciation feast-rank
+override and the "strict fast" note on the Exaltation are not verifiable in OCA/Orthocal; death years the app notes give for Ephrem (373), Spyridon (348),
+Theodosius (529) and Mark (68 vs OCA 63) are not stated by OCA/Orthocal, so the lives omit or hedge them; several dates also carry other saints that the app
+entry does not name (e.g. Nov 8 Synaxis of Unmercenaries, Nov 14 Gregory Palamas, Nov 30 Frumentius).

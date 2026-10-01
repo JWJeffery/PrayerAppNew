@@ -313,8 +313,10 @@ published lectionary on ~half the days (166 of 338 compared); the new data repla
 `data/menaion/lives/lives.json`, from research subagents using 2+ sources each; merged by `scripts/menaion/merge-lives.py`; shown as
 "Commemorated Today" in Vespers/Orthros/Typika by `js/orthodox-day.js`, 2026-2027 new-calendar only). **The calendar/identity mismatches the research found were ALL FIXED the same day** (Jul 7 Thomas of Maleon; Apr 16 Agape/Irene/Chionia; May 5 Great Martyr Irene;
 Jan 14 Nina only + Leavetaking of Theophany moved there; Tikhon -> 08-13, Innocent of Irkutsk -> 02-09, Royal Martyrs -> 07-04 so Menaion files are keyed by the Menaion date); evidence and resolution:
-`documentation/MENAION_DATA_FINDINGS.md`. **DONE 2026-10-01 -- item 1, rank-4 batches:** lives for the rank-4 entries (now 300+ published in `data/menaion/lives/lives.json`). Entries the calendar
-did not support got NO life and are listed with evidence in `documentation/MENAION_DATA_FINDINGS.md` (6 fixed by moving/renaming; the 9 unsupported entries were DELETED on Josh's instruction). **Next:** lives for the 45 rank 1-2 feasts/saints; then plan items 4-8.
+`documentation/MENAION_DATA_FINDINGS.md`. **DONE 2026-10-01 -- item 1 COMPLETE: every one of the 360 Menaion commemorations has an original short life** (`data/menaion/lives/lives.json`; research
+subagents reading OCA + Orthocal per date; merged by `scripts/menaion/merge-lives.py`; shown as "Commemorated Today"). The pass found and fixed ~14 wrong-date/identity
+entries and Josh had 9 unsupported entries deleted -- evidence in `documentation/MENAION_DATA_FINDINGS.md`. Lives are summaries, not liturgical text; confidence ("high"/"medium")
+is stored per entry. **Next in the plan:** items 4-8 (hymn-guide metadata, "what is happening today" panel, education layer, patristic commentary, icons).
 **Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
 **Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
 calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.

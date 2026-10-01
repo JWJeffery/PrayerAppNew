@@ -72,6 +72,471 @@
     "https://orthocal.info/api/gregorian/2026/9/13/"
    ]
   },
+  "basil-great-circumcision": {
+   "life": "On the eighth day after His birth, Jesus was circumcised according to the Law and given the name announced by the angel Gabriel (Luke 2:21). The Fathers teach that this showed He truly took flesh and honored the divine ordinances; baptism later took the place of circumcision. The same day honors Basil the Great (about 330-379), a Cappadocian bishop of Caesarea. He founded monasteries and charitable houses, defended the divinity of the Holy Spirit against the Arians, wrote a Liturgy bearing his name, and died on January 1, 379. A blessed Vasilopita bread is shared in his memory.",
+   "period": "Circumcision: 1st c.; Basil: c. 330-379",
+   "place": "Bethlehem/Jerusalem; Caesarea in Cappadocia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/01",
+    "https://orthocal.info/api/gregorian/2026/1/1/"
+   ]
+  },
+  "seraphim-sarov": {
+   "life": "Seraphim of Sarov, born Prochorus Moshnin at Kursk, entered Sarov monastery in 1778 and was later tonsured and ordained. He lived many years as a hermit in the forest, where a robber attack left him permanently bent, and then for a time as a silent recluse. From 1825 he received pilgrims and the sisters of Diveyevo, greeting all with a paschal salutation and teaching that the aim of Christian life is acquiring the Holy Spirit. He reposed in prayer on January 2, 1833, and was glorified in 1903.",
+   "period": "1754/1759-1833",
+   "place": "Sarov and Diveyevo, Russia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/02",
+    "https://orthocal.info/api/gregorian/2026/1/2/"
+   ]
+  },
+  "theophany-epiphany": {
+   "life": "Theophany commemorates the baptism of Jesus by John in the Jordan (Matthew 3:13-17; Mark 1:9-11; Luke 3:21-22), when the Father's voice was heard, the Son was baptized and the Spirit descended as a dove, revealing the Holy Trinity. The Fathers teach that Christ was baptized not for His own cleansing but to sanctify water and give an example of baptism. The feast is very ancient, once called the Day of Illumination, and in the early Church catechumens were baptized at its Vespers. On this day all foods are permitted, even on a Wednesday or Friday.",
+   "period": "1st c. event; ancient feast",
+   "place": "Jordan River",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/06",
+    "https://orthocal.info/api/gregorian/2026/1/6/"
+   ]
+  },
+  "synaxis-forerunner-john": {
+   "life": "Orthodox practice honors on the day after a Great Feast the persons who took part in its event. After Theophany the Church therefore gathers to honor John the Baptist, who baptized Christ and witnessed the manifestation of the Trinity. The son of Zachariah and Elizabeth, John lived in the desert, preached repentance from about age thirty, and was beheaded by order of Herod. The synaxis also recalls the right hand that baptized the Lord, said to have been brought from Antioch to Constantinople in 956 and now kept in Russia.",
+   "period": "1st c.",
+   "place": "Jordan River; Judea",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/07",
+    "https://orthocal.info/api/gregorian/2026/1/7/"
+   ]
+  },
+  "theodosius-cenobiarch": {
+   "life": "Theodosius the Great was born in Cappadocia, visited the Holy Land, and settled in a cave near Bethlehem, where disciples gathered around him. Tradition holds that he founded his large cenobitic monastery at a spot where incense kindled by itself. It supplied a guest house, infirmaries and aid for the poor, and held services in several languages. Under Emperor Anastasius he boldly upheld the four Ecumenical Councils and was imprisoned. He reposed after a very long life, said to exceed a century, and is called the Cenobiarch for leading monastic communities.",
+   "period": "5th-6th c.",
+   "place": "Cappadocia; Palestine (near Bethlehem)",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/11",
+    "https://orthocal.info/api/gregorian/2026/1/11/"
+   ]
+  },
+  "anthony-great": {
+   "life": "Anthony the Great, born about 251 in Egypt, heard the Gospel call to the rich young man, sold his inheritance, and gave to the poor. After years of struggle against temptation he lived in the desert, and monks gathered under his guidance; he is called the father of monasticism. He ministered to confessors in Alexandria during the persecution and later opposed the Arians there. Saint Athanasius wrote his Life. Anthony died in 356, aged about 105, and was buried in the desert as he had asked.",
+   "period": "c. 251-356",
+   "place": "Egypt (Coma; Thebaid desert)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/17",
+    "https://orthocal.info/api/gregorian/2026/1/17/"
+   ]
+  },
+  "athanasius-cyril-alexandria": {
+   "life": "Athanasius and Cyril were both archbishops of Alexandria and share this joint feast for their defense of Orthodox doctrine. Athanasius, as a deacon, took part in the First Ecumenical Council at Nicaea, insisted that Christ is of one essence with the Father, and spent much of his life in exile; he died in 373. Cyril succeeded his uncle Theophilus in 412 and presided at the Third Council at Ephesus in 431, which rejected Nestorius' teaching about the Theotokos. He died in 444.",
+   "period": "Athanasius d. 373; Cyril d. 444",
+   "place": "Alexandria, Egypt",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/18",
+    "https://orthocal.info/api/gregorian/2026/1/18/"
+   ]
+  },
+  "euthymius-great": {
+   "life": "Euthymius the Great was born at Melitene in Armenia and became a priest and monastic overseer, then left for Palestine and lived near Jerusalem as a basket-weaver. With Theoctistus he founded a monastic community in the Judean wilderness, and later established his own lavra. He baptized many Arabs and, after the Council of Chalcedon in 451, his example led many monks to accept its decisions. He guided the young Sabbas. Euthymius died on January 20, 473, aged ninety-seven.",
+   "period": "c. 377-473",
+   "place": "Melitene, Armenia; Judean desert, Palestine",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/20",
+    "https://orthocal.info/api/gregorian/2026/1/20/"
+   ]
+  },
+  "gregory-theologian": {
+   "life": "Gregory the Theologian, born in 329 near Nazianzus in Cappadocia, studied in Alexandria and Athens, where he befriended Basil. Ordained against his wishes, he later went to Constantinople and preached in the small Anastasis church to revive Orthodox faith there. His Theological Orations taught the divinity of the Son and the Holy Spirit. Chosen patriarch at the Second Ecumenical Council in 381, he resigned for the sake of peace and withdrew to his homeland, where he died on January 25, 389. He is named Theologian like the Apostle John.",
+   "period": "329-389",
+   "place": "Nazianzus, Cappadocia; Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/25",
+    "https://orthocal.info/api/gregorian/2026/1/25/"
+   ]
+  },
+  "translation-chrysostom": {
+   "life": "John Chrysostom died in 407 at Comana while being taken into exile, condemned through the intrigues of Empress Eudoxia. In 438, his disciple Patriarch Proclus preached in his praise, and the people begged for the saint's return. Emperor Theodosius II, Eudoxia's son, consented; tradition holds the relics could not be moved until the emperor wrote humbly to John asking pardon. They were brought to Constantinople and found incorrupt, then laid in the Church of the Holy Apostles. The feast was established in the ninth century.",
+   "period": "407; translation 438",
+   "place": "Comana; Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/27",
+    "https://orthocal.info/api/gregorian/2026/1/27/"
+   ]
+  },
+  "ephrem-syrian": {
+   "life": "Ephraim the Syrian, born in Nisibis in Mesopotamia early in the fourth century, became a disciple of Bishop James of Nisibis. After Persian capture of the city he settled near Edessa, where he lived as an ascetic, taught repentance, opposed Arianism, and wrote Syriac biblical commentaries and many hymns and prayers. His Lenten Prayer is used throughout Great Lent. At Caesarea he met Basil, who ordained him deacon, the rank he kept. During a famine at Edessa he persuaded the wealthy to give aid, and he ended his life in a cave nearby.",
+   "period": "4th c.",
+   "place": "Nisibis and Edessa, Mesopotamia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/28",
+    "https://orthocal.info/api/gregorian/2026/1/28/"
+   ]
+  },
+  "three-hierarchs": {
+   "life": "Basil the Great, Gregory the Theologian and John Chrysostom are honored together as teachers of the whole Church. In the eleventh century a dispute arose at Constantinople over which was greatest, and factions called themselves Basilians, Gregorians and Johnites. In 1084, according to tradition, the three appeared to John, bishop of Euchaita, saying they stood equal before God and that one common feast should be kept. He chose January 30, since each is already remembered separately in January, and the controversy ended.",
+   "period": "1084 (feast established)",
+   "place": "Constantinople; Euchaita",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/01/30",
+    "https://orthocal.info/api/gregorian/2026/1/30/"
+   ]
+  },
+  "presentation-lord": {
+   "life": "Forty days after His birth, the Child Jesus was brought by Mary and Joseph to the Temple at Jerusalem to fulfill the Law (Luke 2:22-40). The elder Simeon, to whom it had been revealed that he would see the Messiah, took the Child in his arms and spoke words now sung at Vespers; the prophetess Anna also gave thanks. Simeon foretold that a sword would pierce Mary's soul. The feast is very ancient and was kept more solemnly after the plague at Constantinople in 541.",
+   "period": "1st c. event; ancient feast",
+   "place": "Jerusalem Temple",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/02/02",
+    "https://orthocal.info/api/gregorian/2026/2/2/"
+   ]
+  },
+  "first-second-finding-head-john-baptist": {
+   "life": "After John the Baptist was beheaded, tradition holds that Herodias hid his head, and Joanna, wife of Herod's steward Chuza, buried it on the Mount of Olives. It was first found by a monk named Innocent while digging a foundation. During Constantine's reign the Forerunner appeared to pilgrims and revealed the head again, and it passed through several hands. In 452 John appeared to Archimandrite Marcellus near Emesa and showed where it lay, which is the Second Finding. The relic was taken to Emesa and then Constantinople.",
+   "period": "4th c. and 452",
+   "place": "Mount of Olives; Emesa (Syria)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/02/24",
+    "https://orthocal.info/api/gregorian/2026/2/24/"
+   ]
+  },
+  "annunciation-theotokos": {
+   "life": "The Annunciation recalls the archangel Gabriel's visit to the Virgin Mary at Nazareth, announcing that she would conceive and bear the Son of God (Luke 1:26-38). The Church sees in it the fulfilment of the promise of a Redeemer, and honors Mary's humble reply, 'Be it unto me according to thy word.' It is one of the earliest Christian feasts, already kept by the fourth century. It is celebrated with joy even in Great Lent, with the Liturgy served and fish permitted.",
+   "period": "1st c. event; feast by 4th c.",
+   "place": "Nazareth, Galilee",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/03/25",
+    "https://orthocal.info/api/gregorian/2026/3/25/"
+   ]
+  },
+  "george-great-martyr": {
+   "life": "George was a Roman soldier from a Christian family, said to be of Cappadocian origin, who served in the imperial guard under Diocletian. When the emperor intensified the persecution, he gave away his wealth, confessed Christ before the Senate, and, tradition holds, endured many tortures from which he was repeatedly healed. He was beheaded on April 23, 303. Tradition says that his witness brought many to faith, including Empress Alexandra. Called the Victory-Bearer for his triumph in martyrdom, he is also remembered in the icon of the horseman slaying a serpent.",
+   "period": "d. 303 (reign of Diocletian)",
+   "place": "Roman Empire (Nicomedia region); origins Cappadocia/Palestine",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/4/23",
+    "https://orthocal.info/api/gregorian/2026/4/23/",
+    "https://en.wikipedia.org/wiki/Saint_George"
+   ]
+  },
+  "mark-evangelist": {
+   "life": "Mark, also called John Mark, was born in Jerusalem, was a nephew of Barnabas, and traveled with Paul, Barnabas and Peter. Tradition holds that he wrote the second Gospel, which early writers linked to Peter's preaching, and that he founded the Church in Alexandria, where he is counted as its first bishop. Pagan crowds seized him while he was celebrating the Liturgy and dragged him through the streets; he died soon after. OCA gives the year 63, though sources differ and others say about 68. His relics were moved to Venice in 820.",
+   "period": "1st century (d. c. 63-68)",
+   "place": "Jerusalem; Alexandria, Egypt",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/4/25",
+    "https://orthocal.info/api/gregorian/2026/4/25/",
+    "https://en.wikipedia.org/wiki/Mark_the_Evangelist"
+   ]
+  },
+  "john-theologian-apostle": {
+   "life": "On May 8 the Church recalls the Apostle John the Theologian in connection with an annual pilgrimage to his tomb at Ephesus. Tradition holds that, when he was over a hundred years old, he had his disciples dig a cross-shaped grave outside the city and cover him with earth. When they later reopened it, the body was not found. A fine dust is said to appear on the grave each May 8, gathered by the faithful for healing. His principal feast is September 26.",
+   "period": "1st century (d. c. 100)",
+   "place": "Ephesus",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/5/8",
+    "https://orthocal.info/api/gregorian/2026/5/8/",
+    "https://en.wikipedia.org/wiki/John_the_Apostle"
+   ]
+  },
+  "constantine-helen-equal-apostles": {
+   "life": "Constantine, born about 274 and acclaimed emperor at York in 306, in 313 granted Christians religious tolerance through the Edict of Milan. He called the First Council of Nicaea in 325, moved the capital to Byzantium, renamed Constantinople, and was baptized on his deathbed in 337. His mother Helen, honored with the title Augusta, traveled to Jerusalem, where the Cross is said to have been found in 326, and had churches built at sacred sites. She died around 327. Both are called Equal-to-the-Apostles.",
+   "period": "4th century (Constantine d. 337; Helen d. c. 327-330)",
+   "place": "Roman Empire; Constantinople; Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/5/21",
+    "https://orthocal.info/api/gregorian/2026/5/21/",
+    "https://en.wikipedia.org/wiki/Constantine_the_Great",
+    "https://en.wikipedia.org/wiki/Helena_(empress)"
+   ]
+  },
+  "third-finding-head-john-baptist": {
+   "life": "This feast recalls the third discovery, around 850, of the Forerunner's head. According to the account, the head was hidden on the Mount of Olives by Joanna, wife of Chuza, and later found at Emesa. It was moved to Komana and buried there during the iconoclast persecution. After icons were restored, Patriarch Ignatius saw in a vision where it lay, and an imperial delegation found it. The relic was brought to Constantinople and placed in a court church on May 25. Part of it is kept on Mount Athos.",
+   "period": "c. 850",
+   "place": "Komana; Constantinople",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/5/25",
+    "https://orthocal.info/api/gregorian/2026/5/25/"
+   ]
+  },
+  "nativity-john-baptist": {
+   "life": "The Church celebrates the birth of John, the Forerunner, described in Luke 1. His parents, the priest Zechariah and Elizabeth, were childless into old age until the archangel Gabriel announced a son to Zechariah in the Temple. Zechariah doubted and was struck mute. John is said to have leapt in the womb at Mary's visit. At his naming on the eighth day Zechariah's speech returned, and he prophesied. John grew in the wilderness, preached repentance, and was worthy to baptize the Lord.",
+   "period": "1st century BC/AD (Gospel of Luke)",
+   "place": "Hebron region, Judea",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/6/24",
+    "https://orthocal.info/api/gregorian/2026/6/24/",
+    "https://en.wikipedia.org/wiki/Nativity_of_John_the_Baptist"
+   ]
+  },
+  "peter-paul-apostles": {
+   "life": "The Church commemorates together the two chief apostles, Peter and Paul. Peter, a Galilean fisherman, acknowledged Jesus as God's Son, denied him three times, was restored by the risen Lord, and preached at Pentecost. Paul, a Pharisee from Tarsus who had persecuted the Church, was converted on the road to Damascus and preached in Greece, Asia Minor and Rome. Tradition holds that both died in Rome under Nero, Peter crucified head downward. The feast ends the Apostles' Fast.",
+   "period": "1st century (d. c. 64-68)",
+   "place": "Rome",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/6/29",
+    "https://orthocal.info/api/gregorian/2026/6/29/",
+    "https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul"
+   ]
+  },
+  "elijah-prophet": {
+   "life": "Elijah the Tishbite was an Old Testament prophet of the ninth century BC who opposed King Ahab and Queen Jezebel for promoting Baal worship. He foretold a drought lasting three and a half years, was fed by ravens, and was sheltered by a widow of Zarephath. On Mount Carmel fire from heaven consumed his sacrifice, and the people confessed that the Lord is God. He met God at Horeb and was taken up in a fiery chariot. He appeared with Christ at the Transfiguration, and is invoked for seasonable weather.",
+   "period": "9th century BC",
+   "place": "Israel; Mount Carmel; Mount Horeb",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/7/20",
+    "https://orthocal.info/api/gregorian/2026/7/20/",
+    "https://en.wikipedia.org/wiki/Elijah"
+   ]
+  },
+  "transfiguration-lord": {
+   "life": "The Church commemorates the event told in Matthew 17, Mark 9 and Luke 9, when Christ took Peter, James and John up a high mountain, traditionally Tabor. His face shone like the sun, and Moses and Elijah appeared and spoke with him. A voice from the cloud declared him the beloved Son. Gregory Palamas teaches that the disciples saw the uncreated divine light, which Christ already possessed. The feast is kept on August 6 and is one of the Twelve Great Feasts.",
+   "period": "1st century (c. AD 30)",
+   "place": "Mount Tabor (traditional)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/8/6",
+    "https://orthocal.info/api/gregorian/2026/8/6/",
+    "https://en.wikipedia.org/wiki/Feast_of_the_Transfiguration"
+   ]
+  },
+  "dormition-theotokos": {
+   "life": "The Church commemorates the falling asleep of the Virgin Mary, an event not recounted in Scripture but handed down in ancient tradition. Tradition holds that an archangel announced her departure, and the apostles were gathered to Jerusalem. Christ received her soul, and she was buried at Gethsemane. When Thomas arrived late and the tomb was opened, only her burial cloths were found, which the Church takes as witness to her bodily ascent to heaven. The feast, August 15, is one of the Twelve Great Feasts.",
+   "period": "1st century",
+   "place": "Jerusalem; Gethsemane",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/8/15",
+    "https://orthocal.info/api/gregorian/2026/8/15/",
+    "https://en.wikipedia.org/wiki/Dormition_of_the_Mother_of_God"
+   ]
+  },
+  "beheading-john-baptist": {
+   "life": "The Gospels of Matthew and Mark relate the martyrdom of John the Baptist. After he rebuked Herod Antipas for taking Herodias, his brother's wife, John was imprisoned. At Herod's birthday banquet Herodias's daughter danced, and Herod promised under oath to grant any request. Prompted by her mother, she asked for John's head, and the king, bound by his oath, ordered his execution. His disciples buried his body at Sebastia. The Church keeps August 29 as a strict fast day in sorrow for his death.",
+   "period": "1st century (c. AD 29-32)",
+   "place": "Herod's court in Galilee (per OCA); Sebastia (burial)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/8/29",
+    "https://orthocal.info/api/gregorian/2026/8/29/",
+    "https://en.wikipedia.org/wiki/Beheading_of_John_the_Baptist"
+   ]
+  },
+  "nativity-theotokos": {
+   "life": "The Church celebrates the birth of the Virgin Mary, whose story is known from tradition rather than the canonical Gospels. Tradition holds that her parents, Joachim and Anna, were childless and shamed for it until an angel told them they would have a daughter. She was born at Nazareth, and her parents had vowed to dedicate her to God's service in the Temple. The Church honors her as chosen to bear the Incarnate Word. The feast, September 8, is one of the Twelve Great Feasts.",
+   "period": "1st century BC",
+   "place": "Nazareth (per OCA)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/9/8",
+    "https://orthocal.info/api/gregorian/2026/9/8/",
+    "https://en.wikipedia.org/wiki/Nativity_of_Mary"
+   ]
+  },
+  "exaltation-holy-cross": {
+   "life": "The Church commemorates the finding of the Cross of Christ and its raising for veneration. According to OCA's account, Empress Helen went to Jerusalem about 326, where the Cross was found beside the Lord's tomb and identified by the raising of a dead man. Patriarch Makarios lifted it before the people. The church over the tomb was dedicated in 335, and the Cross was raised for veneration the next day. The feast also recalls Heraclius's return of the Cross from Persian captivity.",
+   "period": "4th century (326, 335); 7th century (628)",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/9/14",
+    "https://orthocal.info/api/gregorian/2026/9/14/",
+    "https://en.wikipedia.org/wiki/Exaltation_of_the_Cross"
+   ]
+  },
+  "john-theologian-repose": {
+   "life": "John the Theologian, son of Zebedee, was called with his brother James at the Sea of Galilee and became the disciple especially loved by Christ. He stood at the Cross, where Christ entrusted His mother to him, and after her Dormition preached at Ephesus. He was exiled to Patmos, where tradition says he received the Apocalypse, and wrote his Gospel and Epistles at Ephesus. He reposed at a very great age, past one hundred and is called the Apostle of Love and the Theologian.",
+   "period": "1st century (d. c. 100)",
+   "place": "Ephesus; Patmos",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/9/26",
+    "https://orthocal.info/api/gregorian/2026/9/26/",
+    "https://en.wikipedia.org/wiki/John_the_Apostle"
+   ]
+  },
+  "protection-theotokos": {
+   "life": "The feast recalls a vision traditionally set in the tenth century at the Blachernae church in Constantinople. During an all-night vigil, Saint Andrew the Fool-for-Christ and his disciple Epiphanius saw the Mother of God praying for the people, accompanied by saints. She then spread her veil over the congregation as a sign of protection. OCA notes that historical details are uncertain: the feast may also recall deliverance from a Rus' fleet in the ninth century. It is observed more widely among the Slavs than among the Greeks.",
+   "period": "10th century (tradition)",
+   "place": "Blachernae, Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/10/1",
+    "https://orthocal.info/api/gregorian/2026/10/1/",
+    "https://en.wikipedia.org/wiki/Intercession_of_the_Theotokos"
+   ]
+  },
+  "luke-evangelist": {
+   "life": "Luke was a companion of the Apostle Paul, whom he joined on Paul's second missionary journey and stayed with when others had left him. He is the author of the Third Gospel and the Acts of the Apostles, both composed, the sources say, with careful attention to what was known of Christ and the early Church. After the deaths of Peter and Paul he preached in Greece and Egypt, and tradition holds that he died as a martyr at Thebes. Tradition also credits him with the first icons of the Theotokos. Orthocal calls him a physician from Antioch.",
+   "period": "1st century",
+   "place": "Antioch; Achaia (Thebes or Patras)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/10/18",
+    "https://orthocal.info/api/gregorian/2026/10/18/"
+   ]
+  },
+  "demetrios-thessalonica": {
+   "life": "Demetrios was the son of a Roman proconsul at Thessalonica, raised secretly as a Christian. Appointed proconsul after his father, he taught the faith openly instead of persecuting believers. The emperor Maximian had him imprisoned, and in 306 soldiers killed him with lances in his cell. Christians buried his body, and a church was later raised over the grave. Fragrant myrrh was found flowing at his tomb from the seventh century, which gave him the title Myrrh-streamer. He is honored as protector of Thessalonica and is much loved among the Slavs.",
+   "period": "c. 306",
+   "place": "Thessalonica",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/10/26",
+    "https://orthocal.info/api/gregorian/2026/10/26/"
+   ]
+  },
+  "synaxis-bodiless-hosts": {
+   "life": "This feast gathers in one commemoration the Archangel Michael, chief of the heavenly hosts, with Gabriel, Raphael, Uriel and the other bodiless powers. The sources tie its establishment to the Council of Laodicea in the fourth century, which affirmed proper veneration of angels while rejecting their worship. November was chosen as the ninth month, matching the nine ranks of angels, and the eighth day recalls the Eighth Day of the age to come. Michael is honored for leading the faithful angels against the rebellion of Lucifer, and the Church asks the help of all the angels.",
+   "period": "4th century",
+   "place": "Heavenly; Laodicea (council)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/08",
+    "https://orthocal.info/api/gregorian/2026/11/8/"
+   ]
+  },
+  "john-chrysostom": {
+   "life": "John was born at Antioch about 347 and raised by his widowed mother, Anthusa. After baptism, a period of monastic life and ordination as presbyter, he preached for years at Antioch, earning the name Chrysostom, the Golden-Mouthed, and left many commentaries and homilies. In 397 he became Archbishop of Constantinople, where he built hospices, reformed the clergy and rebuked the vices of the court. The empress Eudoxia and bishops hostile to him brought about his exile, and he died on the road at Comana on 14 September 407. His relics were returned to Constantinople in 438.",
+   "period": "c. 347-407",
+   "place": "Antioch; Constantinople; Comana",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/13",
+    "https://orthocal.info/api/gregorian/2026/11/13/"
+   ]
+  },
+  "apostle-philip": {
+   "life": "Philip was a native of Bethsaida in Galilee who followed Christ when called and brought Nathanael to Him (John 1). The Gospels also show him at the feeding of the five thousand and at the Last Supper. According to tradition, after the Ascension he preached in Galilee, Greece and Asia Minor with the Apostle Bartholomew and his sister Mariamne. He suffered at Hierapolis in Phrygia, where he was crucified after healing the prefect's wife. Tradition holds an earthquake followed and that Philip prayed for his executioners before he died. He is distinct from Philip the Deacon.",
+   "period": "1st century",
+   "place": "Bethsaida; Hierapolis in Phrygia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/14",
+    "https://orthocal.info/api/gregorian/2026/11/14/"
+   ]
+  },
+  "apostle-evangelist-matthew": {
+   "life": "Matthew was a tax collector at Capernaum whom Christ called with the words 'Follow me' (Matthew 9:9). He left his work, made amends for any he had cheated, and became one of the Twelve. The Church holds that he wrote the first Gospel for Jewish believers, originally in Aramaic and later translated into Greek. He then preached in distant lands, and tradition says he ended his ministry in Ethiopia, where he suffered martyrdom. Orthocal places him in Parthia as well, and the sources differ on the details of his later travels.",
+   "period": "1st century",
+   "place": "Capernaum; Palestine; Ethiopia (tradition)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/16",
+    "https://orthocal.info/api/gregorian/2026/11/16/"
+   ]
+  },
+  "entrance-theotokos": {
+   "life": "This Great Feast recalls the tradition that Joachim and Anna, keeping a vow made in their childlessness, brought the three-year-old Mary to the Temple in Jerusalem. The High Priest led her into the Holy of Holies, and she remained in the Temple community until her betrothal. The account comes from Church tradition rather than the canonical Gospels, which the Church treats as a sign of her preparation to become the Mother of God. The feast is ancient, with homilies on it from the eighth century, and it opens the approach to the Nativity.",
+   "period": "Traditional account; feast ancient",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/21",
+    "https://orthocal.info/api/gregorian/2026/11/21/"
+   ]
+  },
+  "apostle-andrew-first-called": {
+   "life": "Andrew, a fisherman from Bethsaida, was a disciple of John the Baptist and the first to follow Christ, then brought his brother Peter to Him (John 1:35-42). After Pentecost he preached around the Black Sea and in Asia Minor, Thrace and Macedonia, and tradition says he reached the lands of the Slavs. He is held to have founded the Church at Byzantium, so Constantinople honors him as its founder. At Patras in Greece the prefect Aegeatos had him crucified. Andrew taught the crowd from the cross for two days before he died.",
+   "period": "1st century",
+   "place": "Bethsaida; Black Sea region; Byzantium; Patras",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/11/30",
+    "https://orthocal.info/api/gregorian/2026/11/30/"
+   ]
+  },
+  "sabas-sanctified": {
+   "life": "Sabbas was born in Cappadocia and entered a monastery as a child, then went to Palestine, where he became a disciple of Euthymios the Great. He lived as a hermit in a cave and later, as disciples gathered, founded the Great Lavra near Jerusalem and other monasteries. Church tradition credits him with the first monastic order of services, the Jerusalem Typikon, used across Palestine. He defended the Council of Chalcedon and died in 532 or 533, according to differing sources, having lived over ninety years. His Lavra, Mar Saba, still stands.",
+   "period": "c. 439-532",
+   "place": "Cappadocia; Palestine (Great Lavra)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/05",
+    "https://orthocal.info/api/gregorian/2026/12/5/"
+   ]
+  },
+  "nicholas-myra": {
+   "life": "Nicholas was born at Patara in Lycia and became Archbishop of Myra. The sources recall his secret gifts of gold that saved a poor man's daughters, and his imprisonment under Diocletian for the faith. Tradition says he attended the First Ecumenical Council in 325 and opposed Arius, and that he saved three condemned men from execution. He is revered as a protector of travelers and the needy, and a wonderworker. After his death his relics were kept at Myra and then moved to Bari in Italy in 1087. His date of death is not given by OCA.",
+   "period": "3rd-4th centuries",
+   "place": "Patara; Myra in Lycia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/06",
+    "https://orthocal.info/api/gregorian/2026/12/6/"
+   ]
+  },
+  "spyridon-trimythous": {
+   "life": "Spyridon was a shepherd on Cyprus, married with children, whose generosity to the poor and travelers was said to be rewarded with the gift of healing. After his wife died he was made Bishop of Tremithus in the time of Constantine. He took part in the First Ecumenical Council in 325, where tradition says he led a philosopher to the faith and illustrated the Trinity with a brick. He is remembered for hospitality and many miracles. His relics rest in the church dedicated to him on Corfu.",
+   "period": "4th century",
+   "place": "Cyprus (Tremithus); Corfu (relics)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/12",
+    "https://orthocal.info/api/gregorian/2026/12/12/"
+   ]
+  },
+  "forefeast-nativity-eve": {
+   "life": "The eve of the Nativity, called the Paramone, is the last day of preparation before the feast of Christ's birth. A strict fast is kept. In Slavic practice the Church serves the Royal Hours, then Vespers joined to the Liturgy of Saint Basil. At Vespers eight Old Testament readings are read, and the Gospel is carried in at the entrance. At the end of the Liturgy a lighted candle is placed in the center of the church and the troparion and kontakion of the feast are sung. The Vigil follows with Great Compline and Matins.",
+   "period": "Annual preparation for Dec 25",
+   "place": "Church-wide",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/24",
+    "https://orthocal.info/api/gregorian/2026/12/24/"
+   ]
+  },
+  "nativity-christ": {
+   "life": "The Nativity of Christ commemorates His birth of the Virgin Mary at Bethlehem during the reign of Caesar Augustus, when Mary and Joseph went there for the census. Luke's Gospel tells how He was laid in a manger and how an angel announced the news to shepherds; Matthew tells of the Magi, who followed a star and brought gifts. The sources show the feast was kept in the early Church, and by the fourth century widely. Its hymns continue through the days that follow.",
+   "period": "Reign of Augustus",
+   "place": "Bethlehem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/25",
+    "https://orthocal.info/api/gregorian/2026/12/25/"
+   ]
+  },
+  "synaxis-theotokos-nativity": {
+   "life": "On the day after the Nativity the Church gathers, the meaning of 'synaxis', to honor the Virgin Mary, through whom the Incarnation took place. OCA describes it as probably the oldest feast of Mary, and notes that Epiphanios of Cyprus was already preaching on it in the fourth century. In earlier calendars the day also recalled the Magi's gifts and the flight into Egypt, and the Flight is still commemorated now. It is the second day of the three-day festal celebration of the Nativity, and the Nativity hymns are joined with praise of the Theotokos.",
+   "period": "Feast ancient (4th century or earlier)",
+   "place": "Bethlehem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/26",
+    "https://orthocal.info/api/gregorian/2026/12/26/"
+   ]
+  },
+  "protomartyr-stephen": {
+   "life": "Stephen was the eldest of the seven deacons appointed by the Apostles, and so is called archdeacon. Acts 6 and 7 tell how he preached Christ with great power, was accused before the Sanhedrin and gave a long speech. While speaking he saw the heavens open and Christ standing at God's right hand. He was dragged out of Jerusalem and stoned, praying for his killers, and so became the first Christian martyr. Tradition says Gamaliel buried his body. His commemoration falls on the third day of the Nativity festal period.",
+   "period": "1st century",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/12/27",
+    "https://orthocal.info/api/gregorian/2026/12/27/"
+   ]
+  },
   "synaxis-seventy-apostles": {
    "life": "The Gospel of Luke records that Christ appointed seventy disciples, sent in pairs ahead of him to the towns he planned to visit. Some manuscripts give the number as seventy-two. The Church keeps this joint feast in honor of the whole company, to which tradition adds others later associated with the apostles, so those called 'of the Seventy' exceed the literal number.",
    "period": "1st century",

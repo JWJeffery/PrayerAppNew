@@ -1,0 +1,182 @@
+{
+ "george-great-martyr": {
+  "life": "George was a Roman soldier from a Christian family, said to be of Cappadocian origin, who served in the imperial guard under Diocletian. When the emperor intensified the persecution, he gave away his wealth, confessed Christ before the Senate, and, tradition holds, endured many tortures from which he was repeatedly healed. He was beheaded on April 23, 303. Tradition says that his witness brought many to faith, including Empress Alexandra. Called the Victory-Bearer for his triumph in martyrdom, he is also remembered in the icon of the horseman slaying a serpent.",
+  "period": "d. 303 (reign of Diocletian)",
+  "place": "Roman Empire (Nicomedia region); origins Cappadocia/Palestine",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/4/23",
+   "https://orthocal.info/api/gregorian/2026/4/23/",
+   "https://en.wikipedia.org/wiki/Saint_George"
+  ],
+  "flags": "OCA calls him a native of Cappadocia yet places the serpent story at his native city of Beirut; Wikipedia says Cappadocian Greek origin. Life says 'said to be of Cappadocian origin'. OCA does not name the place of execution."
+ },
+ "mark-evangelist": {
+  "life": "Mark, also called John Mark, was born in Jerusalem, was a nephew of Barnabas, and traveled with Paul, Barnabas and Peter. Tradition holds that he wrote the second Gospel, which early writers linked to Peter's preaching, and that he founded the Church in Alexandria, where he is counted as its first bishop. Pagan crowds seized him while he was celebrating the Liturgy and dragged him through the streets; he died soon after. OCA gives the year 63, though sources differ and others say about 68. His relics were moved to Venice in 820.",
+  "period": "1st century (d. c. 63-68)",
+  "place": "Jerusalem; Alexandria, Egypt",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/4/25",
+   "https://orthocal.info/api/gregorian/2026/4/25/",
+   "https://en.wikipedia.org/wiki/Mark_the_Evangelist"
+  ],
+  "flags": "Death year differs: OCA says 63; app notes and Wikipedia say c. 68. Life states both."
+ },
+ "john-theologian-apostle": {
+  "life": "On May 8 the Church recalls the Apostle John the Theologian in connection with an annual pilgrimage to his tomb at Ephesus. Tradition holds that, when he was over a hundred years old, he had his disciples dig a cross-shaped grave outside the city and cover him with earth. When they later reopened it, the body was not found. A fine dust is said to appear on the grave each May 8, gathered by the faithful for healing. His principal feast is September 26.",
+  "period": "1st century (d. c. 100)",
+  "place": "Ephesus",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/5/8",
+   "https://orthocal.info/api/gregorian/2026/5/8/",
+   "https://en.wikipedia.org/wiki/John_the_Apostle"
+  ],
+  "flags": ""
+ },
+ "constantine-helen-equal-apostles": {
+  "life": "Constantine, born about 274 and acclaimed emperor at York in 306, in 313 granted Christians religious tolerance through the Edict of Milan. He called the First Council of Nicaea in 325, moved the capital to Byzantium, renamed Constantinople, and was baptized on his deathbed in 337. His mother Helen, honored with the title Augusta, traveled to Jerusalem, where the Cross is said to have been found in 326, and had churches built at sacred sites. She died around 327. Both are called Equal-to-the-Apostles.",
+  "period": "4th century (Constantine d. 337; Helen d. c. 327-330)",
+  "place": "Roman Empire; Constantinople; Jerusalem",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/5/21",
+   "https://orthocal.info/api/gregorian/2026/5/21/",
+   "https://en.wikipedia.org/wiki/Constantine_the_Great",
+   "https://en.wikipedia.org/wiki/Helena_(empress)"
+  ],
+  "flags": "Helen's death: OCA gives 327; app notes and Wikipedia give c. 330. Life says 'around 327'; consider 'c. 327-330'."
+ },
+ "third-finding-head-john-baptist": {
+  "life": "This feast recalls the third discovery, around 850, of the Forerunner's head. According to the account, the head was hidden on the Mount of Olives by Joanna, wife of Chuza, and later found at Emesa. It was moved to Komana and buried there during the iconoclast persecution. After icons were restored, Patriarch Ignatius saw in a vision where it lay, and an imperial delegation found it. The relic was brought to Constantinople and placed in a court church on May 25. Part of it is kept on Mount Athos.",
+  "period": "c. 850",
+  "place": "Komana; Constantinople",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/5/25",
+   "https://orthocal.info/api/gregorian/2026/5/25/"
+  ],
+  "flags": "Only OCA gives the account; Orthocal confirms the date and name. No Wikipedia article found for this specific finding."
+ },
+ "nativity-john-baptist": {
+  "life": "The Church celebrates the birth of John, the Forerunner, described in Luke 1. His parents, the priest Zechariah and Elizabeth, were childless into old age until the archangel Gabriel announced a son to Zechariah in the Temple. Zechariah doubted and was struck mute. John is said to have leapt in the womb at Mary's visit. At his naming on the eighth day Zechariah's speech returned, and he prophesied. John grew in the wilderness, preached repentance, and was worthy to baptize the Lord.",
+  "period": "1st century BC/AD (Gospel of Luke)",
+  "place": "Hebron region, Judea",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/6/24",
+   "https://orthocal.info/api/gregorian/2026/6/24/",
+   "https://en.wikipedia.org/wiki/Nativity_of_John_the_Baptist"
+  ],
+  "flags": ""
+ },
+ "peter-paul-apostles": {
+  "life": "The Church commemorates together the two chief apostles, Peter and Paul. Peter, a Galilean fisherman, acknowledged Jesus as God's Son, denied him three times, was restored by the risen Lord, and preached at Pentecost. Paul, a Pharisee from Tarsus who had persecuted the Church, was converted on the road to Damascus and preached in Greece, Asia Minor and Rome. Tradition holds that both died in Rome under Nero, Peter crucified head downward. The feast ends the Apostles' Fast.",
+  "period": "1st century (d. c. 64-68)",
+  "place": "Rome",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/6/29",
+   "https://orthocal.info/api/gregorian/2026/6/29/",
+   "https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul"
+  ],
+  "flags": ""
+ },
+ "elijah-prophet": {
+  "life": "Elijah the Tishbite was an Old Testament prophet of the ninth century BC who opposed King Ahab and Queen Jezebel for promoting Baal worship. He foretold a drought lasting three and a half years, was fed by ravens, and was sheltered by a widow of Zarephath. On Mount Carmel fire from heaven consumed his sacrifice, and the people confessed that the Lord is God. He met God at Horeb and was taken up in a fiery chariot. He appeared with Christ at the Transfiguration, and is invoked for seasonable weather.",
+  "period": "9th century BC",
+  "place": "Israel; Mount Carmel; Mount Horeb",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/7/20",
+   "https://orthocal.info/api/gregorian/2026/7/20/",
+   "https://en.wikipedia.org/wiki/Elijah"
+  ],
+  "flags": ""
+ },
+ "transfiguration-lord": {
+  "life": "The Church commemorates the event told in Matthew 17, Mark 9 and Luke 9, when Christ took Peter, James and John up a high mountain, traditionally Tabor. His face shone like the sun, and Moses and Elijah appeared and spoke with him. A voice from the cloud declared him the beloved Son. Gregory Palamas teaches that the disciples saw the uncreated divine light, which Christ already possessed. The feast is kept on August 6 and is one of the Twelve Great Feasts.",
+  "period": "1st century (c. AD 30)",
+  "place": "Mount Tabor (traditional)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/8/6",
+   "https://orthocal.info/api/gregorian/2026/8/6/",
+   "https://en.wikipedia.org/wiki/Feast_of_the_Transfiguration"
+  ],
+  "flags": ""
+ },
+ "dormition-theotokos": {
+  "life": "The Church commemorates the falling asleep of the Virgin Mary, an event not recounted in Scripture but handed down in ancient tradition. Tradition holds that an archangel announced her departure, and the apostles were gathered to Jerusalem. Christ received her soul, and she was buried at Gethsemane. When Thomas arrived late and the tomb was opened, only her burial cloths were found, which the Church takes as witness to her bodily ascent to heaven. The feast, August 15, is one of the Twelve Great Feasts.",
+  "period": "1st century",
+  "place": "Jerusalem; Gethsemane",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/8/15",
+   "https://orthocal.info/api/gregorian/2026/8/15/",
+   "https://en.wikipedia.org/wiki/Dormition_of_the_Mother_of_God"
+  ],
+  "flags": "Details are from tradition (OCA draws on Nikephoros Callistus and others); Scripture is silent."
+ },
+ "beheading-john-baptist": {
+  "life": "The Gospels of Matthew and Mark relate the martyrdom of John the Baptist. After he rebuked Herod Antipas for taking Herodias, his brother's wife, John was imprisoned. At Herod's birthday banquet Herodias's daughter danced, and Herod promised under oath to grant any request. Prompted by her mother, she asked for John's head, and the king, bound by his oath, ordered his execution. His disciples buried his body at Sebastia. The Church keeps August 29 as a strict fast day in sorrow for his death.",
+  "period": "1st century (c. AD 29-32)",
+  "place": "Herod's court in Galilee (per OCA); Sebastia (burial)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/8/29",
+   "https://orthocal.info/api/gregorian/2026/8/29/",
+   "https://en.wikipedia.org/wiki/Beheading_of_John_the_Baptist"
+  ],
+  "flags": "OCA dates the martyrdom to 32; scholars give varying dates, so period is approximate. Place of execution not stated by OCA; life omits it."
+ },
+ "nativity-theotokos": {
+  "life": "The Church celebrates the birth of the Virgin Mary, whose story is known from tradition rather than the canonical Gospels. Tradition holds that her parents, Joachim and Anna, were childless and shamed for it until an angel told them they would have a daughter. She was born at Nazareth, and her parents had vowed to dedicate her to God's service in the Temple. The Church honors her as chosen to bear the Incarnate Word. The feast, September 8, is one of the Twelve Great Feasts.",
+  "period": "1st century BC",
+  "place": "Nazareth (per OCA)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/9/8",
+   "https://orthocal.info/api/gregorian/2026/9/8/",
+   "https://en.wikipedia.org/wiki/Nativity_of_Mary"
+  ],
+  "flags": "OCA places the birth in Nazareth; other traditions differ (not fetched). Life follows OCA."
+ },
+ "exaltation-holy-cross": {
+  "life": "The Church commemorates the finding of the Cross of Christ and its raising for veneration. According to OCA's account, Empress Helen went to Jerusalem about 326, where the Cross was found beside the Lord's tomb and identified by the raising of a dead man. Patriarch Makarios lifted it before the people. The church over the tomb was dedicated in 335, and the Cross was raised for veneration the next day. The feast also recalls Heraclius's return of the Cross from Persian captivity.",
+  "period": "4th century (326, 335); 7th century (628)",
+  "place": "Jerusalem",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/9/14",
+   "https://orthocal.info/api/gregorian/2026/9/14/",
+   "https://en.wikipedia.org/wiki/Exaltation_of_the_Cross"
+  ],
+  "flags": "OCA and Wikipedia agree on 335; Heraclius's return is dated 628 by Wikipedia (OCA gives no year). Strict-fast-day detail in app notes not in fetched sources, so omitted from life."
+ },
+ "john-theologian-repose": {
+  "life": "John the Theologian, son of Zebedee, was called with his brother James at the Sea of Galilee and became the disciple especially loved by Christ. He stood at the Cross, where Christ entrusted His mother to him, and after her Dormition preached at Ephesus. He was exiled to Patmos, where tradition says he received the Apocalypse, and wrote his Gospel and Epistles at Ephesus. He reposed at a very great age, past one hundred and is called the Apostle of Love and the Theologian.",
+  "period": "1st century (d. c. 100)",
+  "place": "Ephesus; Patmos",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/9/26",
+   "https://orthocal.info/api/gregorian/2026/9/26/",
+   "https://en.wikipedia.org/wiki/John_the_Apostle"
+  ],
+  "flags": "Scholars debate whether the apostle authored all the Johannine writings; life follows Church tradition as stated by OCA."
+ },
+ "protection-theotokos": {
+  "life": "The feast recalls a vision traditionally set in the tenth century at the Blachernae church in Constantinople. During an all-night vigil, Saint Andrew the Fool-for-Christ and his disciple Epiphanius saw the Mother of God praying for the people, accompanied by saints. She then spread her veil over the congregation as a sign of protection. OCA notes that historical details are uncertain: the feast may also recall deliverance from a Rus' fleet in the ninth century. It is observed more widely among the Slavs than among the Greeks.",
+  "period": "10th century (tradition)",
+  "place": "Blachernae, Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/10/1",
+   "https://orthocal.info/api/gregorian/2026/10/1/",
+   "https://en.wikipedia.org/wiki/Intercession_of_the_Theotokos"
+  ],
+  "flags": "OCA notes historical uncertainty: Andrew's lifetime and the date of the vision are unclear, and Nestor's chronicle links the deliverance to a Rus' attack of 860-867 without mentioning Andrew. Life reflects this."
+ }
+}
