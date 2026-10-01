@@ -4,20 +4,25 @@ Writing a short life for each rank-3 commemoration (research subagents, two or m
 app's entry does not match what the Orthodox calendar (OCA / orthocal.info, Slavic) commemorates on that date. These need a
 decision by Josh; no life was published for the first three because it would describe a different saint than the entry names.
 
-## Identity mismatches (no life published)
-| Date | App entry | Calendar says |
-|---|---|---|
-| 07-07 | Holy Apostle Thomas | Venerable Thomas of Mt Maleon (+ Martyr Kyriake). Apostle Thomas is Oct 6 (and Thomas Sunday). |
-| 04-16 | Holy Great Martyr Irene | Martyrs Agape, Irene and Chionia (three sisters). Great Martyr Irene is May 5. |
-| 01-14 | Holy Fathers of the First Council at Nicaea (observed); Equal-to-the-Apostles Nina | Nina of Georgia, the Fathers of Sinai/Raithu, Sava of Serbia. The Nicaea Fathers are kept on a Sunday of the Paschal season. |
+## Calendar and identity questions -- evidence per source (checked 2026-10-01)
+Sources: **Orthocal** = orthocal.info API, OCA/Slavic tradition, fetched live; "Orthocal-Julian" = its `/api/julian/` endpoint, which takes a
+civil date and returns the Old-Calendar Menaion day (civil date minus 13 days); **App** = this repo's data/menaion files;
+**Engine** = `js/horologion-engine.js`, whose `_getFixedCalendarMmdd()` subtracts the 13-day Julian offset from the civil date when the user
+is on the Old Calendar, so Menaion files must be keyed by the *Menaion* date (the new-calendar date), not by an Old-Calendar civil date.
 
-(James: fixed earlier the same day -- Apr 30 is James son of Zebedee, Oct 23 James the Brother of the Lord.)
+| # | App entry | What the app has | What Orthocal says | Proposed fix |
+|---|---|---|---|---|
+| 1 | 07-07 `thomas-apostle` | "Holy Apostle Thomas", rank 3, with Apostle Thomas's troparion ("O Apostle Thomas, thou wast not absent from the burial...") | Jul 7: "Ven. Thomas of Mt Maleon; Holy Martyr Kyriake of Nicomedia". Oct 6: "Holy Apostle Thomas" (the app already has him there, `thomas-apostle-october`). The AGES hymns for Jul 7 are about a rich man turned monk, i.e. Maleon. | Replace the Jul 7 entry with Thomas of Maleon (needs his troparion from OCA) |
+| 2 | 04-16 `irene-great-martyr` | "Holy Great Martyr Irene", rank 3, with her troparion ("Thy lamb Irene crieth out...") | Apr 16: "Virgin Martyrs Agape, Irene and Chionia". May 5: "Great Martyr Irene of Thessalonica" (the app has only a rank-4 "Martyr Irene of Thessalonica" there). | Move Great Martyr Irene to May 5 (rank 3); make Apr 16 the three sisters |
+| 3 | 01-14 `fathers-council-nicaea` | Name "Holy Fathers of the First Council at Nicaea (observed); Equal-to-the-Apostles Nina", but the troparion is Nina's | Jan 14: "Leavetaking of Theophany; St Nino of Georgia; Sava of Serbia; Fathers slain at Sinai and Raithu". The First Council's Fathers are on the 7th Sunday of Pascha (2026-05-24, feast "Holy Fathers of the First Ecumenical Council"). | Rename the entry Nina only; the Nicaea half is not a Jan 14 commemoration |
+| 3b | 01-13 `leavetaking-theophany` | Leavetaking of Theophany stored on Jan 13 | Jan 13 is Hermylus & Stratonicus, Maximos Kavsokalybites, Hilary of Poitiers; Leavetaking is Jan 14 | Move to Jan 14 |
+| 4 | 08-26 Tikhon of Zadonsk | Aug 26 | Orthocal: Aug 13 ("St Tikhon of Zadonsk (1783)"). Orthocal-Julian civil Aug 26 also shows Tikhon, i.e. Aug 26 is the Old-Calendar *civil* date of Aug 13. Aug 26 (Orthocal) is Martyrs Adrian & Natalia. | Key it at 08-13 |
+| 4 | 02-22 Finding of Relics, Innocent of Irkutsk | Feb 22 | Orthocal: Feb 9 ("Relics of St Innocent of Irkutsk"); Orthocal-Julian civil Feb 22 matches. Orthocal Feb 22 is not him. | Key it at 02-09 |
+| 4 | 07-17 Royal Passion-Bearers | Jul 17 (july.json header: "Russian calendar") | Orthocal lists them on both Jul 4 and Jul 17 | Key it at 07-04; Old-Calendar users then get them on civil Jul 17 automatically |
 
-## Calendar-style question
-Tikhon of Zadonsk (app 08-26) and the Finding of the Relics of Innocent of Irkutsk (app 02-22) sit on the Julian-calendar
-civil equivalents (Aug 13 O.S. = Aug 26; Feb 9 O.S. = Feb 22) while OCA (new calendar) keeps Tikhon on Aug 13. The Menaion files
-declare `new-calendar` style, so these dates look like Old-Calendar dates stored in a new-calendar file. Josh to confirm which
-calendar the app's fixed dates follow; other Russian saints (e.g. the Royal Martyrs, Jul 17) may be affected the same way.
+Effect of the current keying: a new-calendar user sees Tikhon on Aug 26 (OCA: Aug 13); an Old-Calendar user gets the Menaion day for civil Aug 26 minus 13 days, i.e. Tikhon would
+appear on civil Sep 8. A scan of all 370 entries against Orthocal's 2026 days found only these (plus the false positives from spelling variants such as Prokopios/Procopius) as
+Old-Calendar-keyed; the 28 other "no name match" entries were mostly Sundays whose Orthocal day text omits the saints, or spelling differences, and were not treated as errors.
 
 ## Other flags raised by the research (identity is fine; details differ between sources)
 - **gregory-nyssa**: Calendar also commemorates Dometian, Bishop of Melitene (6th c.) on Jan 10; the life is written for Gregory, the app's primary identity. Sources differ on birth year (331 in Orthocal; roughly 335 elsewhere), so no birth year is given.
