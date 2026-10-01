@@ -251,46 +251,10 @@
       ]
     },
     "10-12": {
-      "commemorations": [
-        {
-          "id": "cosmas-damian-arabia",
-          "name": "Holy Unmercenary Physicians Cosmas and Damian of Arabia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": {
-            "tone": 8,
-            "title": "Troparion of Sts. Cosmas and Damian of Arabia",
-            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Cosmas and Damian of Arabia (+3rd c.), martyred with their brothers. Rank 4. The Arabian pair — distinct from the Roman pair (Jul 1) and Asian pair (Nov 1)."
-        }
-      ]
+      "commemorations": []
     },
     "10-13": {
-      "commemorations": [
-        {
-          "id": "cornelius-centurion",
-          "name": "Holy Martyr Cornelius the Centurion",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 3,
-          "troparion": {
-            "tone": 3,
-            "title": "Troparion of the Holy Apostle Cornelius the Centurion",
-            "text": "O Holy Apostle Cornelius, intercede with the merciful God, that He grant our souls forgiveness of offences."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Cornelius the Centurion (Acts 10), first Gentile convert, bishop. Rank 4. Standard apostle troparion form (Tone 3)."
-        }
-      ]
+      "commemorations": []
     },
     "10-14": {
       "commemorations": [
@@ -374,6 +338,23 @@
             "EOR"
           ],
           "notes": "Hosea the Prophet (8th c. BC). Rank 4. Standard prophet troparion form."
+        },
+        {
+          "id": "cosmas-damian-arabia",
+          "name": "Holy Unmercenary Physicians Cosmas and Damian of Cilicia (of Arabia)",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Sts. Cosmas and Damian of Arabia",
+            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Cosmas and Damian of Arabia (+3rd c.), martyred with their brothers. Rank 4. The Arabian pair — distinct from the Roman pair (Jul 1) and Asian pair (Nov 1). MOVED 2026-10-01 from 10-12 to 10-17: orthocal.info/OCA keep this commemoration on 10-17 (the lives pass found no source naming it on the old date)."
         }
       ]
     },

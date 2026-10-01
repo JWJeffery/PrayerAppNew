@@ -354,25 +354,7 @@
       ]
     },
     "05-16": {
-      "commemorations": [
-        {
-          "id": "theodotus-ancyra",
-          "name": "Holy Martyr Theodotus of Ancyra",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyr Theodotus of Ancyra",
-            "text": "Your holy martyr Theodotus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Theodotus of Ancyra (+303), innkeeper and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "05-17": {
       "commemorations": [
@@ -409,6 +391,23 @@
             "EOR"
           ],
           "notes": "Hold — monastic type. Troparion text not securely confirmed."
+        },
+        {
+          "id": "theodotus-ancyra",
+          "name": "Holy Martyr Theodotus of Ancyra",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Theodotus of Ancyra",
+            "text": "Your holy martyr Theodotus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Theodotus of Ancyra (+303), innkeeper and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules. MOVED 2026-10-01 from 05-16 to 05-18: orthocal.info/OCA keep this commemoration on 05-18 (the lives pass found no source naming it on the old date)."
         }
       ]
     },

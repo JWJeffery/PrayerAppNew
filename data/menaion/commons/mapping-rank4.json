@@ -45,6 +45,13 @@
    "invocation": "Herodion, Asyncritus and Phlegon"
   },
   {
+   "id": "agabus-apostle",
+   "mmdd": "04-08",
+   "name": "Holy Apostle Agabus",
+   "common": "apostle",
+   "invocation": "Agabus"
+  },
+  {
    "id": "eupsychios-caesarea",
    "mmdd": "04-09",
    "name": "Holy Martyr Eupsychios of Caesarea",
@@ -313,9 +320,9 @@
   {
    "id": "thyrsus-leucius-philemon",
    "mmdd": "12-14",
-   "name": "Holy Martyrs Thyrsus, Leucius, and Philemon",
+   "name": "Holy Martyrs Thyrsus, Leucius, and Callinicus",
    "common": "martyrs-many",
-   "invocation": "Thyrsus, Leucius and Philemon"
+   "invocation": "Thyrsus, Leucius and Callinicus"
   },
   {
    "id": "prophet-haggai",
@@ -677,9 +684,9 @@
   {
    "id": "theodotus-ancyra-bishop",
    "mmdd": "06-07",
-   "name": "Hieromartyr Marcellus, Bishop of Rome",
+   "name": "Hieromartyr Theodotus, Bishop of Ancyra",
    "common": "hieromartyr",
-   "invocation": "Marcellus"
+   "invocation": "Theodotus"
   },
   {
    "id": "alexander-antonina-martyrs",
@@ -864,13 +871,6 @@
    "invocation": "Benedict"
   },
   {
-   "id": "agabus-apostle",
-   "mmdd": "03-15",
-   "name": "Holy Apostle Agabus",
-   "common": "apostle",
-   "invocation": "Agabus"
-  },
-  {
    "id": "sabin-egypt",
    "mmdd": "03-16",
    "name": "Holy Martyr Sabinus (Sabin) of Egypt",
@@ -990,13 +990,6 @@
    "invocation": "Isidore"
   },
   {
-   "id": "theodotus-ancyra",
-   "mmdd": "05-16",
-   "name": "Holy Martyr Theodotus of Ancyra",
-   "common": "martyr",
-   "invocation": "Theodotus"
-  },
-  {
    "id": "andronicus-junia-apostles",
    "mmdd": "05-17",
    "name": "Holy Apostles Andronicus and Junia",
@@ -1009,6 +1002,13 @@
    "name": "Venerable Peter of Caesarea in Cappadocia",
    "common": "monk",
    "invocation": "Peter"
+  },
+  {
+   "id": "theodotus-ancyra",
+   "mmdd": "05-18",
+   "name": "Holy Martyr Theodotus of Ancyra",
+   "common": "martyr",
+   "invocation": "Theodotus"
   },
   {
    "id": "patrick-bishop-prusa",
@@ -1207,13 +1207,6 @@
    "invocation": "Philip"
   },
   {
-   "id": "cosmas-damian-arabia",
-   "mmdd": "10-12",
-   "name": "Holy Unmercenary Physicians Cosmas and Damian of Arabia",
-   "common": "unmercenaries-wonderworkers",
-   "invocation": "Cosmas and Damian of Arabia"
-  },
-  {
    "id": "euthymios-thessalonica",
    "mmdd": "10-15",
    "name": "Venerable Euthymios the New of Thessalonica",
@@ -1233,6 +1226,13 @@
    "name": "Holy Prophet Hosea",
    "common": "prophet",
    "invocation": "Hosea"
+  },
+  {
+   "id": "cosmas-damian-arabia",
+   "mmdd": "10-17",
+   "name": "Holy Unmercenary Physicians Cosmas and Damian of Cilicia (of Arabia)",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "Cosmas and Damian of Cilicia"
   },
   {
    "id": "artemios-antioch-martyr",

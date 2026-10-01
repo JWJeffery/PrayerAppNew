@@ -1,0 +1,306 @@
+{
+ "erasmus-of-ohrid": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/10",
+   "https://orthocal.info/api/gregorian/2026/11/10/"
+  ],
+  "flags": "App names Holy Martyrs Orestes and Erasmus of Ohrid on 11-10. OCA lives page for November 10 lists Apostles of the Seventy Erastus, Olympas, Herodion, Sosipater, Quartus and Tertius; Martyr Orestes the Physician of Cappadocia (Tyana, d. 304; OCA states he is not Orestes of Sebaste); Hieromartyr Milos of Persia; Theocteristus of Symbola; Constantine-Kakhi of Georgia; Great-martyr George of Georgia. No Erasmus and no Ohrid saint appears (the word Erasmus/Ohrid is absent from the page). Orthocal for 11-10 lists Apostles Erastus et al. and Arsenios of Cappadocia only. Entry looks like a conflation of Orestes of Tyana with an unattested Erasmus; no life written."
+ },
+ "menas-victor-vincent": {
+  "life": "On 11 November the Church remembers Menas, an Egyptian soldier who left the army during the persecution under Diocletian and Maximian, confessed Christ publicly in Phrygia and was beheaded in 304. It also remembers Victor, a soldier martyred at Damascus under Marcus Aurelius, and Vincent, a deacon of Saragossa, who died in 304 after fierce tortures under the governor Dacian.",
+  "period": "2nd-4th century",
+  "place": "Phrygia, Damascus, Valencia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/11",
+   "https://orthocal.info/api/gregorian/2026/11/11/"
+  ],
+  "flags": ""
+ },
+ "martyrs-persia-shapur": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/15",
+   "https://orthocal.info/api/gregorian/2026/11/15/"
+  ],
+  "flags": "App names Holy Martyrs and Confessors of Persia on 11-15. OCA lives page for November 15 lists Martyrs and Confessors Gurias, Samonas and Habibus of Edessa (under Diocletian/Maximian and Licinius, not Persia); Martyrs Elpidius, Marcellus and Eustochius (under Julian); Martyr Demetrios of Thrace; and Paisios Velichkovsky. Orthocal for 11-15 lists the start of the Nativity Fast, Gurias, Shamuna and Habib of Edessa, and Paisius Velichkovsky. Neither source names a Persian martyrs group or Shapur on this date; no life written."
+ },
+ "plato-roman": {
+  "life": "Platon, born at Ancyra in Galatia, was the brother of the martyr Antiochus the Physician. As a young man he travelled through cities preaching the Gospel to pagans. Arrested and brought before the governor Agrippinus, he refused both flattery and threats, endured torture and imprisonment, and would not honor the pagan gods. He was then beheaded.",
+  "period": "3rd-4th century (Diocletian era)",
+  "place": "Ancyra, Galatia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/18",
+   "https://orthocal.info/api/gregorian/2026/11/18/"
+  ],
+  "flags": "App id is 'plato-roman' and notes give '+286'; OCA names Martyr Platon of Ancyra (listed with Romanus the Deacon) and gives no year or emperor for him. No death date included in life."
+ },
+ "abdias-prophet": {
+  "life": "Obadiah, the fourth of the Twelve Minor Prophets, lived in the ninth century B.C. and served as steward to King Ahab. When Jezebel hunted the Lord's prophets, he sheltered and fed them. Later he became a follower of Elijah and received the gift of prophecy. His short book foretells the salvation of the Gentiles. He was buried in Samaria.",
+  "period": "9th century B.C.",
+  "place": "Israel (Samaria)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/19",
+   "https://orthocal.info/api/gregorian/2026/11/19/"
+  ],
+  "flags": ""
+ },
+ "forefeast-entrance-theotokos": {
+  "life": "The Forefeast of the Entrance (Entry) of the Theotokos into the Temple prepares the faithful for the feast on 21 November. Tradition holds that Joachim and Anna, keeping a vow, brought the three-year-old Mary to the Jerusalem Temple, where the high priest Zachariah led her into the Holy of Holies. Hymns of the forefeast begin to announce this event.",
+  "period": "1st century B.C. (tradition)",
+  "place": "Jerusalem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/20",
+   "https://orthocal.info/api/gregorian/2026/11/20/"
+  ],
+  "flags": ""
+ },
+ "afterfeast-entrance-theotokos": {
+  "life": "This is the afterfeast of the Entrance of the Theotokos into the Temple, celebrated on 21 November. According to tradition, Joachim and Anna fulfilled their vow by bringing the three-year-old Mary to the Temple. She climbed its steps unaided and was led by the high priest into the Holy of Holies. The Church sees in the event a sign of God's blessing and the coming of Christ.",
+  "period": "1st century B.C. (tradition)",
+  "place": "Jerusalem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/22",
+   "https://orthocal.info/api/gregorian/2026/11/22/"
+  ],
+  "flags": ""
+ },
+ "alypius-stylite": {
+  "life": "Alypius was born at Adrianopolis in Paphlagonia and educated by Bishop Theodore. Guided by a vision of the martyr Euphemia, he built a church in her name and lived on a pillar beside it for fifty-three years, praying and teaching visitors. Two monasteries, for men and for women, arose around him under his direction. He died in 640 and was buried in that church.",
+  "period": "7th century",
+  "place": "Adrianopolis, Paphlagonia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/26",
+   "https://orthocal.info/api/gregorian/2026/11/26/",
+   "https://en.wikipedia.org/wiki/Alypius_the_Stylite"
+  ],
+  "flags": ""
+ },
+ "stephen-younger": {
+  "life": "Stephen was born at Constantinople in 715 and, from age sixteen, lived as a monk on Mount Auxentius in Bithynia, where he later became abbot. He opposed the iconoclasm of Emperor Constantine V, was slandered, exiled, then imprisoned. There he led fellow confessors in prayer and was put to death by soldiers for his defense of icons.",
+  "period": "8th century",
+  "place": "Constantinople; Mount Auxentius, Bithynia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/28",
+   "https://orthocal.info/api/gregorian/2026/11/28/",
+   "https://en.wikipedia.org/wiki/Stephen_the_Younger"
+  ],
+  "flags": "App lists type 'hierarch' with a hierarch troparion; OCA and Wikipedia describe him as a monk, martyr and confessor (not a bishop). OCA calls him 'Stephen the New'. Death year 764 is from Wikipedia; OCA text gives birth (715) but no death year in the portion read."
+ },
+ "martyr-paramon": {
+  "life": "Paramon was a local man of Bithynia who openly denounced the governor Aquianus for persecuting Christians. In 250, under Emperor Decius, the governor had imprisoned 370 Christians and urged them to sacrifice to idols. After tortures Paramon was beheaded together with all 370. The Church remembers them as martyrs of the Decian persecution.",
+  "period": "3rd century (250)",
+  "place": "Bithynia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/11/29",
+   "https://orthocal.info/api/gregorian/2026/11/29/"
+  ],
+  "flags": ""
+ },
+ "prophet-nahum": {
+  "life": "Nahum, the seventh of the Twelve Minor Prophets, came from Elkosh in Galilee and lived in the seventh century B.C. His book foretells the fall of Nineveh, the Assyrian capital, which occurred in 612 B.C. OCA notes that few details of his life are known; he is said to have died at forty-five and been buried in his native region.",
+  "period": "7th century B.C.",
+  "place": "Elkosh, Galilee",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/01",
+   "https://orthocal.info/api/gregorian/2026/12/1/"
+  ],
+  "flags": ""
+ },
+ "prophet-habakkuk": {
+  "life": "Habakkuk, the eighth of the Twelve Minor Prophets, was of the tribe of Simeon and prophesied around 650 B.C. He foresaw the destruction of the Temple and the Babylonian Captivity and return. According to the account in Daniel 14, an angel carried him to Babylon to bring food to Daniel. He died at great age; his relics were found under Theodosius the Younger.",
+  "period": "7th century B.C.",
+  "place": "Judea",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/02",
+   "https://orthocal.info/api/gregorian/2026/12/2/"
+  ],
+  "flags": ""
+ },
+ "prophet-zephaniah": {
+  "life": "Zephaniah, the ninth of the Twelve Minor Prophets, was of the tribe of Simeon and a contemporary of Jeremiah. He lived at the royal court and preached repentance, helping King Josiah remove idol worship. His prophecy warned of calamities coming upon Judea and neighboring peoples, among them Gaza, Ascalon, Moab, Ammon and Nineveh.",
+  "period": "7th century B.C.",
+  "place": "Judea",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/03",
+   "https://orthocal.info/api/gregorian/2026/12/3/"
+  ],
+  "flags": ""
+ },
+ "patapius-thebes": {
+  "life": "Patapios was born at Thebes in Egypt and withdrew to the desert, where visitors sought his counsel and found hospitality. He later settled in a cell by the city wall of Constantinople, near the Blachernae church, and became known for healing the sick. OCA records the healing of a woman with cancer. He was buried in the church of Saint John the Baptist.",
+  "period": "7th century (approximate)",
+  "place": "Thebes, Egypt; Constantinople",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/08",
+   "https://orthocal.info/api/gregorian/2026/12/8/"
+  ],
+  "flags": "OCA gives no century for Patapios; period is the app's estimate."
+ },
+ "menas-hermogenes-eugraphus": {
+  "life": "Menas, sent by Emperor Maximian from Athens to Alexandria to quell unrest, instead preached Christ and converted many. The envoy Hermogenes, sent to try him, was himself won to the faith. Eugraphus, Menas's secretary, declared himself a Christian and was stabbed by the emperor, while Menas and Hermogenes were beheaded. Their relics were later taken to Constantinople.",
+  "period": "Early 4th century",
+  "place": "Alexandria",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/10",
+   "https://orthocal.info/api/gregorian/2026/12/10/"
+  ],
+  "flags": ""
+ },
+ "lucy-syracuse": {
+  "life": "Lucy was born at Syracuse in Sicily during the reign of Diocletian. She gave her wealth to the poor and vowed virginity. A rejected suitor denounced her to the prefect Paschasius. Sentenced to a brothel and then to burning, she was preserved, and was finally killed by a sword. Tradition holds that she was blinded, and she is invoked for eye ailments.",
+  "period": "Early 4th century (c. 304)",
+  "place": "Syracuse, Sicily",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/13",
+   "https://orthocal.info/api/gregorian/2026/12/13/",
+   "https://en.wikipedia.org/wiki/Lucy_of_Syracuse"
+  ],
+  "flags": ""
+ },
+ "thyrsus-leucius-philemon": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/14",
+   "https://orthocal.info/api/gregorian/2026/12/14/"
+  ],
+  "flags": "App names Holy Martyrs Thyrsus, Leucius, and Philemon (Caesarea in Phrygia) on 12-14. OCA lives page for December 14 lists Martyrs Thyrsos, Leukios and Kallinikos, who suffered under Decius at Caesarea in Bithynia, and, as a separate commemoration, Martyrs Philemon, Apollonios, Arrian and Theonas of Alexandria (c. 290-305). Orthocal likewise lists 'Thyrsus, Leucis, Callinicus' and 'Philemon, Apollonius, Arian and those with them'. No trio including both Leucius and Philemon exists in the calendar; the third name and the place (Bithynia, not Phrygia) differ. No life written."
+ },
+ "prophet-haggai": {
+  "life": "Haggai, the tenth of the Twelve Minor Prophets, was of the tribe of Levi and prophesied under the Persian king Darius. After the Jews returned from Babylonian captivity, he urged them to rebuild the Second Temple at Jerusalem and proclaimed that the Messiah would appear there. He is believed to have been buried with the priests at Jerusalem.",
+  "period": "6th century B.C.",
+  "place": "Jerusalem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/16",
+   "https://orthocal.info/api/gregorian/2026/12/16/"
+  ],
+  "flags": ""
+ },
+ "sebastian-rome": {
+  "life": "Sebastian, born in Gaul and educated at Milan, was a secret Christian who commanded the imperial guard under Diocletian and Maximian. He encouraged imprisoned Christians to stand firm and led many to baptism. Shot with arrows and left, he recovered, then publicly rebuked the emperors and was clubbed to death. His companions in the account, including Nicostratus, Zoe and Tiburtius, also died as martyrs.",
+  "period": "Late 3rd century (c. 288)",
+  "place": "Rome",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/18",
+   "https://orthocal.info/api/gregorian/2026/12/18/",
+   "https://en.wikipedia.org/wiki/Saint_Sebastian"
+  ],
+  "flags": ""
+ },
+ "boniface-tarsus": {
+  "life": "Boniface was a servant of the Roman noblewoman Aglaia, with whom he had lived in sin. Sent east to bring back martyrs' relics, he reached Tarsus in Cilicia, openly confessed Christ before the judge, endured tortures and was beheaded. His companions returned his body to Rome, where Aglaia built a church over it, gave away her wealth and later became a nun.",
+  "period": "Early 4th century",
+  "place": "Tarsus, Cilicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/19",
+   "https://orthocal.info/api/gregorian/2026/12/19/",
+   "https://en.wikipedia.org/wiki/Boniface_of_Tarsus"
+  ],
+  "flags": "App notes give '+290'; OCA gives no year and Wikipedia gives 307, so no date stated."
+ },
+ "forefeast-nativity": {
+  "life": "The Forefeast of the Nativity begins on 20 December and runs through the 24th. From this day the hymns of the Church turn to the coming birth of Christ at Bethlehem, many being adapted from the hymns of Holy Week. It is a time of preparation for the feast of the Nativity of the Lord.",
+  "period": "",
+  "place": "Bethlehem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/20",
+   "https://orthocal.info/api/gregorian/2026/12/20/"
+  ],
+  "flags": ""
+ },
+ "forefeast-nativity-2": {
+  "life": "This is the second day of the Forefeast of the Nativity, which prepares the faithful for the birth of Christ at Bethlehem. The services of these days increasingly speak of the approaching Nativity. The same date also commemorates the Virgin Martyr Juliana of Nicomedia, who died in 304 after steadfastly refusing marriage to a pagan official.",
+  "period": "",
+  "place": "Bethlehem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/21",
+   "https://orthocal.info/api/gregorian/2026/12/21/"
+  ],
+  "flags": ""
+ },
+ "forefeast-nativity-3": {
+  "life": "This is the third day of the Forefeast of the Nativity of Christ. The Church's hymns on these days anticipate the Lord's birth at Bethlehem and call the faithful to prepare to meet Him. The same date also commemorates the Great Martyr Anastasia, who aided imprisoned Christians in Diocletian's persecution.",
+  "period": "",
+  "place": "Bethlehem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/22",
+   "https://orthocal.info/api/gregorian/2026/12/22/"
+  ],
+  "flags": ""
+ },
+ "ten-martyrs-crete": {
+  "life": "Theodulus, Saturninus, Euporus, Gelasius, Eunician, Zoticus, Pompius, Agathopus, Basilides and Evaristus, ten Christians from various cities of Crete, were brought before the governor Decius. They confessed Christ steadfastly, endured thirty days of torture and were beheaded under Emperor Decius. About a century later Saint Paul of Constantinople took their relics to Constantinople.",
+  "period": "3rd century (Decius, 249-251)",
+  "place": "Crete",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/23",
+   "https://orthocal.info/api/gregorian/2026/12/23/"
+  ],
+  "flags": ""
+ },
+ "forefeast-nativity-4": {
+  "life": "This is the fourth day of the Forefeast of the Nativity of Christ, close to the feast itself. The hymns of the day, such as those at Compline, call the faithful to draw near in soul and body to Bethlehem and to behold the birth of the Lord. The same date also commemorates the Ten Martyrs of Crete.",
+  "period": "",
+  "place": "Bethlehem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/23",
+   "https://orthocal.info/api/gregorian/2026/12/23/"
+  ],
+  "flags": ""
+ },
+ "anysia-thessalonica": {
+  "life": "Anysia lived at Thessalonica under the co-emperor Maximian. After her parents died she sold her goods, gave to the poor and lived by fasting and prayer. On her way to church a soldier tried to force her to a pagan festival; when she resisted and spoke of Christ, he killed her with his sword. Christians buried her near the city gate and built a chapel there.",
+  "period": "Early 4th century (c. 304)",
+  "place": "Thessalonica",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/30",
+   "https://orthocal.info/api/gregorian/2026/12/30/",
+   "https://en.wikipedia.org/wiki/Anysia"
+  ],
+  "flags": ""
+ },
+ "melania-roman": {
+  "life": "Melania the Younger was born in Rome to a wealthy family and, with her husband Apinianus (Pinian), renounced worldly life after the deaths of their children. They sold their estates, aided the needy and monasteries across the empire, and settled in Jerusalem. She founded a convent on the Mount of Olives and a men's monastery, and died in 439.",
+  "period": "5th century",
+  "place": "Rome; Jerusalem (Mount of Olives)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/31",
+   "https://orthocal.info/api/gregorian/2026/12/31/",
+   "https://en.wikipedia.org/wiki/Melania_the_Younger"
+  ],
+  "flags": "OCA names her husband Apinianus; Wikipedia gives Pinianus (same person)."
+ }
+}

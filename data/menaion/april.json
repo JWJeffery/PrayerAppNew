@@ -155,6 +155,23 @@
             "EOR"
           ],
           "notes": "Herodion, Asyncritus, Phlegon — Apostles of the Seventy (Romans 16:11, 14). Rank 4. Standard apostle troparion form (Tone 3)."
+        },
+        {
+          "id": "agabus-apostle",
+          "name": "Holy Apostle Agabus",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Agabus",
+            "text": "O Holy Apostle Agabus, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Agabus, one of the Seventy Apostles (Acts 11:28, 21:10). Rank 4. Standard apostle troparion form (Tone 3). MOVED 2026-10-01 from 03-15 to 04-08: orthocal.info/OCA keep this commemoration on 04-08 (the lives pass found no source naming it on the old date)."
         }
       ]
     },

@@ -1,0 +1,343 @@
+{
+ "paul-peter-apostles-forefeast": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/28",
+   "https://orthocal.info/api/gregorian/2026/6/28/"
+  ],
+  "flags": "App names a Forefeast of Sts Peter and Paul on 06-28. OCA all-lives for June 28 and Orthocal list only: Translation of Relics of Cyrus and John, Xenophon of Robeika, Sergius and Herman of Valaam, Paul of Corinth, Icon of the Three Hands, Hieromartyr Basil, Sergius of Paphlagonia (Orthocal adds Pappias, Sennuphius). Neither names a forefeast of Peter and Paul."
+ },
+ "cosmas-damian-rome": {
+  "life": "Cosmas and Damian were brothers and physicians born in Rome. They treated the sick without payment, telling patients that healing came from Christ, and so became known as unmercenary physicians. Tradition holds that they healed a persecuting emperor of blindness and were released. Later their former teacher, envious of their fame, led them into the hills and killed them. They are distinguished from the pairs of the same name in Asia Minor and Arabia.",
+  "period": "3rd century",
+  "place": "Rome",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/01",
+   "https://orthocal.info/api/gregorian/2026/7/1/"
+  ],
+  "flags": "Sources differ on the emperor (OCA names Carinus, Orthocal's Prologue note names Galerius); life omits his name."
+ },
+ "hyacinth-caesarea": {
+  "life": "Hyacinth, a young Christian from Caesarea in Cappadocia, served as a chamberlain at the court of the emperor Trajan. A servant reported that he prayed to Christ instead of honoring the idols. Brought before Trajan, he confessed his faith, was whipped and imprisoned, and refused food offered to idols. He died in prison, and his relics were later taken to Caesarea.",
+  "period": "early 2nd century (c. 108)",
+  "place": "Rome; Caesarea in Cappadocia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/03",
+   "https://orthocal.info/api/gregorian/2026/7/3/"
+  ],
+  "flags": "Sources differ on length of his imprisonment (OCA: 38 days; Orthocal: eight days); life omits the figure."
+ },
+ "andrew-crete-bishop": {
+  "life": "Andrew was born in Damascus, became a monk at the monastery of St Sabbas near Jerusalem, and served the Jerusalem Patriarchate. He took part in the Sixth Ecumenical Council, served in Constantinople as a deacon, and became archbishop of Crete. A hymnographer, he composed the Great Canon of Repentance sung in Lent. He died returning to Crete, around 712 to 740 according to differing accounts.",
+  "period": "7th-8th century",
+  "place": "Damascus; Jerusalem; Crete",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/04",
+   "https://orthocal.info/api/gregorian/2026/7/4/"
+  ],
+  "flags": ""
+ },
+ "athanasios-athos": {
+  "life": "Athanasius, born in Trebizond, studied in Constantinople and became a monk under Michael Maleinos. Settling on Mount Athos, he founded the Great Lavra with support from Nikephoros Phocas and gave it a communal rule. Tradition holds that the Mother of God appeared to him and a spring flowed from a rock. He died c. 1003 when part of the church under construction collapsed.",
+  "period": "10th century (d. c. 1003)",
+  "place": "Mount Athos",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/05",
+   "https://orthocal.info/api/gregorian/2026/7/5/"
+  ],
+  "flags": ""
+ },
+ "sisoes-great": {
+  "life": "Sisoes the Great was an Egyptian desert monk who lived in the cave once used by Anthony the Great and spent some sixty years in ascetic labor. Known for humility and mercy toward visitors, he was said to have gifts of healing. His sayings stress regarding oneself as lower than others. At his death, according to the account, his face shone and he said he had barely begun to repent.",
+  "period": "d. 429",
+  "place": "Egypt (Scetis)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/06",
+   "https://orthocal.info/api/gregorian/2026/7/6/"
+  ],
+  "flags": ""
+ },
+ "paisios-great": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/09",
+   "https://orthocal.info/api/gregorian/2026/7/9/"
+  ],
+  "flags": "App names Paisios the Great on 07-09. OCA all-lives for July 9 lists Pancratius of Taormina, Cyril of Gortyna, Patermuthius, Coprius and Alexander, Theodore of Edessa, Dionysios the Rhetorician and Metrophanes, and two Theotokos icons; Orthocal lists Pancratius and Patermuthius. Neither mentions Paisios."
+ },
+ "placing-robe-lord-moscow": {
+  "life": "This feast marks the arrival and placing of a part of the Lord's robe in the Dormition cathedral in Moscow in 1625. The relic had been kept in Georgia and was carried off by the Persian shah Abbas I, who sent it to Tsar Michael and Patriarch Philaret. Its authenticity was attested by hierarchs, and it is brought out for veneration each July 10.",
+  "period": "1625",
+  "place": "Moscow",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/10",
+   "https://orthocal.info/api/gregorian/2026/7/10/"
+  ],
+  "flags": ""
+ },
+ "proclus-hilary-martyrs": {
+  "life": "Proclus and his nephew Hilary (Hilarion) were Christians from the village of Kallippi near Ancyra who suffered in the persecution under Trajan. Proclus confessed Christ before the governor, was tortured, and died shot with arrows. Hilary, meeting his uncle on the way to execution, declared himself a Christian and was beheaded three days later. They were buried in a single grave.",
+  "period": "early 2nd century",
+  "place": "Ancyra (Galatia)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/12",
+   "https://orthocal.info/api/gregorian/2026/7/12/"
+  ],
+  "flags": "Methods of execution differ between sources (OCA: arrows for Proclus; Orthocal: crucified); life follows OCA."
+ },
+ "gabriel-archangel-july": {
+  "life": "This synaxis honors the Archangel Gabriel and the revelations and acts attributed to him in Scripture and afterward. It repeats the synaxis kept on March 26, the day after the Annunciation. It was instituted in the ninth century, perhaps for the dedication of a church in Constantinople, and was originally kept on October 16.",
+  "period": "9th century (feast)",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/13",
+   "https://orthocal.info/api/gregorian/2026/7/13/"
+  ],
+  "flags": ""
+ },
+ "emilian-dorystolon": {
+  "life": "Emilian, a slave and secret Christian in Dorostolon on the Danube, lived under Julian the Apostate. After the imperial edict against Christians, he smashed idols in a pagan temple and, when an innocent man was beaten for it, declared himself guilty. Brought before the governor, he refused to deny Christ and was burned alive. His relics were later taken to Constantinople.",
+  "period": "4th century (361-363)",
+  "place": "Dorostolon (Silistra, Bulgaria)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/18",
+   "https://orthocal.info/api/gregorian/2026/7/18/"
+  ],
+  "flags": ""
+ },
+ "macrina-sister-basil": {
+  "life": "Macrina was the elder sister of Basil the Great and Gregory of Nyssa, born in Cappadocia. After her betrothed died, she chose a life of virginity and helped raise her younger brothers. She persuaded her mother Emilia to join her in a women's monastery, which she led after Emilia's death. Gregory wrote of her holiness. She died in the late fourth century.",
+  "period": "4th century",
+  "place": "Cappadocia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/19",
+   "https://orthocal.info/api/gregorian/2026/7/19/"
+  ],
+  "flags": "Sources differ on death year (OCA: 380; Orthocal: 379); life gives no year."
+ },
+ "symeon-fool-for-christ": {
+  "life": "Symeon and John were close friends from Edessa who, after a pilgrimage to Jerusalem, became monks and lived in the desert near the Jordan and Dead Sea for many years. Symeon then left to serve others in Emesa in Syria, hiding his holiness by feigning madness. John stayed in the desert. Symeon died around 590, and John soon afterward.",
+  "period": "6th century (d. c. 590)",
+  "place": "Edessa; Emesa (Syria)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/21",
+   "https://orthocal.info/api/gregorian/2026/7/21/"
+  ],
+  "flags": ""
+ },
+ "phocas-bishop-sinope": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/23",
+   "https://orthocal.info/api/gregorian/2026/7/23/"
+  ],
+  "flags": "App names Hieromartyr Phocas of Sinope on 07-23. OCA all-lives for July 23 lists Trophimus and 14 others in Lycia, Hieromartyr Apollinaris of Ravenna, two Theotokos icons, and Anna of Leukadio (Orthocal adds Ezekiel and Anna mother of Samuel). No Phocas appears on that date."
+ },
+ "christina-tire-martyr": {
+  "life": "Christina was the daughter of Urban, governor of Tyre, who kept her in a house with idols. Coming to faith in Christ, she smashed the idols. Her father had her tortured, and sources report she survived several ordeals before being put to the sword under a later governor. Her father died, and many came to believe through her witness. She is remembered as a martyr of the third century.",
+  "period": "3rd century",
+  "place": "Tyre",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/24",
+   "https://orthocal.info/api/gregorian/2026/7/24/"
+  ],
+  "flags": ""
+ },
+ "hermolaus-hieromartyr": {
+  "life": "Hermolaus was a priest of Nicomedia who survived the persecution of 303 and baptized the young Pantoleon, later the great martyr Panteleimon. He and the priests Hermippus and Hermocrates were arrested when Panteleimon was tried. They refused to sacrifice to idols and, after Hermolaus was told in a vision of his coming death, were beheaded around 305.",
+  "period": "early 4th century (c. 305)",
+  "place": "Nicomedia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/26",
+   "https://orthocal.info/api/gregorian/2026/7/26/"
+  ],
+  "flags": ""
+ },
+ "prochorus-nicanor-timon-parmenas": {
+  "life": "Prochorus, Nicanor, Timon and Parmenas were four of the seven men chosen as deacons in Acts 6. They are also counted among the Seventy apostles. Prochorus became bishop of Nicomedia and is said to have accompanied John to Patmos. Timon became bishop of Bostra, and Parmenas preached in Macedonia. Nicanor is also commemorated December 28, and they died at different times and places.",
+  "period": "1st century",
+  "place": "Jerusalem; Nicomedia; Bostra; Macedonia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/28",
+   "https://orthocal.info/api/gregorian/2026/7/28/"
+  ],
+  "flags": ""
+ },
+ "callinicos-martyr": {
+  "life": "Callinicus, a native of Cilicia, traveled through cities preaching Christ to pagans. Arrested in Ancyra and tortured by the governor Sacerdonus, he was driven in nail-studded sandals toward Gangra. On the way he is said to have caused water to flow from a rock for thirsty soldiers. At Gangra he was burned in a fire, and believers buried his unharmed body.",
+  "period": "3rd-4th century",
+  "place": "Ancyra; Gangra (Asia Minor)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/29",
+   "https://orthocal.info/api/gregorian/2026/7/29/"
+  ],
+  "flags": ""
+ },
+ "silas-apostle": {
+  "life": "Silas, one of the Seventy, was a leading man in the Jerusalem church and was sent with Paul and Barnabas to Antioch with the decision of the Apostolic Council. He then joined Paul's missions in Syria, Cilicia and Macedonia and was imprisoned with him at Philippi. He became bishop of Corinth and died there; he is commemorated with Silvanus, Crescens, Epenetus and Andronicus.",
+  "period": "1st century",
+  "place": "Jerusalem; Antioch; Corinth",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/30",
+   "https://orthocal.info/api/gregorian/2026/7/30/"
+  ],
+  "flags": ""
+ },
+ "joseph-of-arimathea-nicodemus": {
+  "life": "Joseph of Arimathea was a wealthy member of the Sanhedrin and a secret disciple of Jesus. After the Crucifixion he asked Pilate for the body and, with Nicodemus, laid it in his own new tomb. He is said to have preached the Gospel in many lands, and one tradition holds that he died in England. Nicodemus's relics are marked on August 2.",
+  "period": "1st century",
+  "place": "Arimathea; Jerusalem",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/31",
+   "https://orthocal.info/api/gregorian/2026/7/31/"
+  ],
+  "flags": "OCA and Orthocal name only Righteous Joseph of Arimathea on 07-31 (with Eudocimus of Cappadocia); Nicodemus is not separately listed that day, and OCA marks the finding of his relics on 08-02. Life treats Joseph as the commemorated saint and mentions Nicodemus as in OCA's account."
+ },
+ "translation-stephen-protomartyr": {
+  "life": "This feast commemorates the translation of the relics of the first martyr and archdeacon Stephen. After his stoning, Gamaliel buried him near Jerusalem, and his relics were found in 415. Under Theodosius the Younger they were taken from Jerusalem to Constantinople, about 428, and on August 2 were placed in a church built in his name.",
+  "period": "5th century (c. 428)",
+  "place": "Jerusalem; Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/02",
+   "https://orthocal.info/api/gregorian/2026/8/2/"
+  ],
+  "flags": "App note gives 415; OCA says relics were found in 415 and moved to Constantinople about 428 (Orthocal says c. 427 for the discovery). Life follows OCA."
+ },
+ "isaakios-dalmatos-faustus": {
+  "life": "Isaac, Dalmatus and Faustus are the founding fathers of the Dalmatian Monastery in Constantinople. Isaac, a former soldier, defied the Arian emperor Valens and became the monastery's first abbot. Dalmatus, an army officer, entered it with his son Faustus, succeeded Isaac, and defended the faith at the Council of Ephesus in 431. Faustus later succeeded his father as abbot.",
+  "period": "4th-5th century",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/03",
+   "https://orthocal.info/api/gregorian/2026/8/3/"
+  ],
+  "flags": ""
+ },
+ "seven-sleepers-ephesus": {
+  "life": "Seven young Christians of Ephesus, soldiers according to the account, hid from the persecution under Decius in a cave, which was sealed. Tradition holds that God put them into a sleep of nearly two centuries. In the reign of Theodosius the Younger they woke and were found, and their story served against a heresy denying the resurrection of the dead. They then died peacefully.",
+  "period": "3rd-5th century",
+  "place": "Ephesus",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/04",
+   "https://orthocal.info/api/gregorian/2026/8/4/"
+  ],
+  "flags": ""
+ },
+ "forefeast-transfiguration": {
+  "life": "The forefeast prepares for the Transfiguration of the Lord on August 6, when Christ took Peter, James and John up Mount Tabor and was transfigured before them. His face shone like light, and Moses and Elijah appeared with Him. The Church observes the day as an anticipation of that event.",
+  "period": "1st century (event)",
+  "place": "Mount Tabor",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/05",
+   "https://orthocal.info/api/gregorian/2026/8/5/"
+  ],
+  "flags": ""
+ },
+ "dometius-persia": {
+  "life": "Dometius was born in Persia, converted to Christianity as a youth, and became a monk near Nisibis. He later lived in a monastery at Theodosiopolis, was ordained deacon, and withdrew to a mountain in Syria, where many came for healing. When Julian the Apostate passed through in 363, he had Dometius and his two disciples walled up in a cave.",
+  "period": "4th century (363)",
+  "place": "Persia; Nisibis; Syria",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/07",
+   "https://orthocal.info/api/gregorian/2026/8/7/"
+  ],
+  "flags": "Orthocal notes the Great Horologion says he and his disciples were stoned; OCA and the Prologue say walled up. Life follows OCA."
+ },
+ "emilian-bishop-cyzicus": {
+  "life": "Emilian was bishop of Cyzicus from 787 to 815. Under the iconoclast emperor Leo the Armenian he was summoned with other bishops and told the emperor that the question of icons belonged to the Church, not the court. He was banished in 815 and suffered in exile until his death in 820. He is honored as a confessor for defending the veneration of icons.",
+  "period": "9th century (d. 820)",
+  "place": "Cyzicus",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/08",
+   "https://orthocal.info/api/gregorian/2026/8/8/"
+  ],
+  "flags": ""
+ },
+ "lawrence-archdeacon-rome": {
+  "life": "Lawrence was archdeacon of the Church of Rome under the emperor Valerian. When Pope Sixtus was arrested, Lawrence distributed the Church's treasures to the poor. Asked to give up the treasures, he presented the poor and needy instead. He was tortured and died on a red-hot gridiron on August 10, 258, and is buried at Rome.",
+  "period": "3rd century (258)",
+  "place": "Rome",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/10",
+   "https://orthocal.info/api/gregorian/2026/8/10/"
+  ],
+  "flags": ""
+ },
+ "euplus-catania-deacon": {
+  "life": "Euplus was an archdeacon in Catania, Sicily, who carried the Gospel with him and preached to the pagans. Arrested under Diocletian and Maximian, he was tortured and imprisoned, and confessed Christ a second time before the governor Calvisianus. Led to execution with the Gospel hung around his neck, he read to the crowd, and was beheaded in 304.",
+  "period": "early 4th century (304)",
+  "place": "Catania, Sicily",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/11",
+   "https://orthocal.info/api/gregorian/2026/8/11/"
+  ],
+  "flags": ""
+ },
+ "maximus-confessor-repose": {
+  "life": "Maximus the Confessor, born in Constantinople about 580, served as secretary to Emperor Heraclius before becoming a monk. He opposed Monothelitism, taught in Africa and Rome, and was arrested under Constans II. His tongue and right hand were cut off and he was exiled to Lazika, where he died in 662. OCA marks August 13 as the translation of his relics.",
+  "period": "7th century (d. 662)",
+  "place": "Constantinople; Lazika",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/13",
+   "https://orthocal.info/api/gregorian/2026/8/13/"
+  ],
+  "flags": "App name/id say repose; OCA lists this day under 'Translation of the relics of St Maximus the Confessor', noting his main commemoration is January 21 (Orthocal lists Maximos on 08-13 with the same note). Life mentions both."
+ },
+ "forefeast-dormition": {
+  "life": "The forefeast of the Dormition begins the celebration of the Virgin Mary's falling asleep on August 15. OCA notes that the troparion of the forefeast invites the faithful to gather in gladness because the Theotokos is about to depart from earth to heaven.",
+  "period": "",
+  "place": "",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/14",
+   "https://orthocal.info/api/gregorian/2026/8/14/"
+  ],
+  "flags": ""
+ },
+ "myron-martyr-cyzicus": {
+  "life": "Myron was a presbyter in Achaia who was arrested while celebrating the Liturgy on Christmas under the emperor Decius. He pleaded for his flock and was tortured, and in the account survived fire and wild beasts. The governor Antipater took his own life. Myron was taken to Cyzicus and beheaded around 250.",
+  "period": "3rd century (c. 250)",
+  "place": "Achaia; Cyzicus",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/08/17",
+   "https://orthocal.info/api/gregorian/2026/8/17/"
+  ],
+  "flags": ""
+ }
+}
