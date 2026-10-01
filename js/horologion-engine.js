@@ -700,7 +700,8 @@ const _interhourFixedDataCache = {};
 
         // ── Fast and appointed readings from the published Orthodox lectionary ──
         // js/orthodox-day.js; years without data are left to the engine's own logic.
-        if (typeof window !== 'undefined' && window.OrthodoxDay) {
+        // New-calendar data only: skipped when the user reckons by the Old (Julian) calendar.
+        if (typeof window !== 'undefined' && window.OrthodoxDay && _currentEoMode !== 'old_calendar') {
             try {
                 await window.OrthodoxDay.applyToSections(sections, normalizedKey, isoDate);
             } catch (err) {

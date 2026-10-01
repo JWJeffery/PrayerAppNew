@@ -30,6 +30,38 @@ const OrthodoxDay = (() => {
         return data && data.days ? (data.days[iso] || null) : null;
     }
 
+    // ── Commemorations of the day, with short original lives where we have them ──
+    const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+    const _month = {};
+    let _livesPromise = null;
+    function _loadMonthFile(mm) {
+        if (!_month[mm]) {
+            _month[mm] = fetch('data/menaion/' + MONTHS[mm - 1] + '.json')
+                .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).catch(() => null);
+        }
+        return _month[mm];
+    }
+    function _loadLives() {
+        if (!_livesPromise) {
+            _livesPromise = fetch('data/menaion/lives/lives.json')
+                .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+                .then(j => j.lives || {}).catch(() => ({}));
+        }
+        return _livesPromise;
+    }
+    async function commemorationsText(iso) {
+        const mm = parseInt(String(iso).slice(5, 7), 10), key = String(iso).slice(5);
+        const month = await _loadMonthFile(mm);
+        const entry = month && month.dates ? month.dates[key] : null;
+        if (!entry || !Array.isArray(entry.commemorations) || !entry.commemorations.length) return null;
+        const lives = await _loadLives();
+        const withLife = entry.commemorations.filter(c => lives[c.id]);
+        if (!withLife.length) return null;
+        const blocks = entry.commemorations.map(c => lives[c.id] ? c.name + '\n' + lives[c.id].life : null).filter(Boolean);
+        blocks.push('(Short summaries written for this app from published sources such as the OCA lives of the saints; they are not liturgical texts.)');
+        return blocks.join('\n\n');
+    }
+
     function fastText(day) {
         const f = day && day.fast;
         if (!f) return null;
@@ -102,6 +134,16 @@ const OrthodoxDay = (() => {
             first.items.unshift({
                 type: 'text', key: 'fast-today', label: 'The Fast Today',
                 text: ft, source: 'Orthodox calendar data (orthocal.info, OCA/Slavic)', resolvedAs: 'orthodox-day-fast'
+            });
+            n++;
+        }
+
+        // 1b. Who is commemorated, with a short life where we have one.
+        const ct = await commemorationsText(iso);
+        if (ct && first) {
+            first.items.splice(1, 0, {
+                type: 'text', key: 'commemorated-today', label: 'Commemorated Today',
+                text: ct, source: 'Original summaries (data/menaion/lives)', resolvedAs: 'orthodox-day-commemorations'
             });
             n++;
         }

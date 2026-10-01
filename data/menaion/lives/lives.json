@@ -1,0 +1,800 @@
+{
+ "schema": "menaion-lives/1",
+ "note": "Original short summaries written for this app from published sources (see each entry); no source text copied.",
+ "lives": {
+  "synaxis-seventy-apostles": {
+   "life": "The Gospel of Luke records that Christ appointed seventy disciples, sent in pairs ahead of him to the towns he planned to visit. Some manuscripts give the number as seventy-two. The Church keeps this joint feast in honor of the whole company, to which tradition adds others later associated with the apostles, so those called 'of the Seventy' exceed the literal number.",
+   "period": "1st century",
+   "place": "Judea and the wider Mediterranean world",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/04",
+    "https://orthocal.info/api/gregorian/2026/1/4/",
+    "https://en.wikipedia.org/wiki/Seventy_disciples"
+   ]
+  },
+  "gregory-nyssa": {
+   "life": "Gregory was the younger brother of Basil the Great and a Cappadocian theologian, first a teacher of rhetoric. Consecrated bishop of Nyssa about 372, he was exiled under the Arian emperor Valens, returned after 378, and took part in the Council of Constantinople in 381. His many writings earned the title 'Father of Fathers' at the Seventh Ecumenical Council. He died around 395.",
+   "period": "4th century (d. c. 395)",
+   "place": "Nyssa, Cappadocia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/10",
+    "https://orthocal.info/api/gregorian/2026/1/10/"
+   ]
+  },
+  "veneration-chains-peter": {
+   "life": "This feast recalls the chains that held the Apostle Peter when Herod Agrippa imprisoned him in Jerusalem about 42, and which fell from him when an angel freed him, as told in the Acts of the Apostles. Christians kept the chains as relics. Tradition holds that they were eventually brought to Constantinople and kept in a church dedicated to Peter, where healings were reported.",
+   "period": "1st century (feast later)",
+   "place": "Jerusalem; Constantinople",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/16",
+    "https://orthocal.info/api/gregorian/2026/1/16/"
+   ]
+  },
+  "apostle-timothy": {
+   "life": "Timothy of Lystra in Asia Minor was raised in the faith by his mother Eunice and grandmother Lois and became Paul's closest companion; two New Testament letters are addressed to him. Tradition holds that Paul made him first bishop of Ephesus and that around 97 a mob beat him to death after he opposed a pagan festival. His relics were later taken to Constantinople.",
+   "period": "1st century (d. c. 97)",
+   "place": "Lystra; Ephesus",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/22",
+    "https://orthocal.info/api/gregorian/2026/1/22/"
+   ]
+  },
+  "martyr-ignatius-god-bearer-translation": {
+   "life": "Ignatius, bishop of Antioch, was condemned under Trajan and killed by wild beasts in Rome, about 107. Christians gathered his remaining bones. The feast recalls their return to Antioch, which tradition places in 108, where his former flock received them. His letters to churches written on the journey to Rome survive; his main commemoration is December 20.",
+   "period": "early 2nd century",
+   "place": "Rome to Antioch",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/29",
+    "https://orthocal.info/api/gregorian/2026/1/29/"
+   ]
+  },
+  "cyrus-john-unmercenaries": {
+   "life": "Cyrus was an Alexandrian physician who treated the sick without charge and fled to Arabia when Diocletian's persecution began, becoming a monk. John, a soldier from Edessa, left the army to join him. After they went to encourage a Christian woman, Athanasia, and her three daughters during arrest, all were seized and beheaded, about 311.",
+   "period": "early 4th century (c. 311)",
+   "place": "Alexandria, Egypt",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/31",
+    "https://orthocal.info/api/gregorian/2026/1/31/"
+   ]
+  },
+  "theodore-stratelates": {
+   "life": "Theodore was an imperial commander at Heraclea in Pontus, associated also with Euchaita, who openly confessed Christ under the emperor Licinius. Tradition holds that he smashed gold and silver idols entrusted to him and gave the metal to the poor, then survived severe tortures and crucifixion before being put to death, about 319. He is honored as a Great Martyr.",
+   "period": "early 4th century (c. 319)",
+   "place": "Heraclea, Pontus",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/08",
+    "https://orthocal.info/api/gregorian/2026/2/8/"
+   ]
+  },
+  "haralambos-martyr": {
+   "life": "Haralambos was bishop of Magnesia, in Thessaly or Asia Minor according to differing accounts, who preached openly during the persecution under Septimius Severus. Tradition holds that he endured torture despite great age, converted many, and died in 202 together with companions, including Porphyrius, Baptus and three women. He is widely venerated in Greece as a protector of health.",
+   "period": "c. 202",
+   "place": "Magnesia",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/10",
+    "https://orthocal.info/api/gregorian/2026/2/10/"
+   ]
+  },
+  "alexios-metropolitan-moscow": {
+   "life": "Alexios, born to a Moscow boyar family in the early 1300s (sources differ on the year), became a monk, then bishop of Vladimir and, about 1354, Metropolitan of Kiev and All Rus' residing in Moscow. He journeyed to the Tatar Golden Horde, where tradition holds he healed the khan's wife, founded monasteries, and died in 1378. He was glorified in 1448.",
+   "period": "14th century (d. 1378)",
+   "place": "Moscow",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/12",
+    "https://orthocal.info/api/gregorian/2026/2/12/"
+   ]
+  },
+  "cyril-constantine-philosopher": {
+   "life": "Constantine, called Cyril as a monk, was born in Thessalonica and was a scholar at Constantinople. With his brother Methodius he led a mission to Moravia, translating Scripture and services into Slavonic and devising the first Slavic alphabet. He took the monastic name Cyril shortly before dying in Rome in 869. He is honored as Equal-to-the-Apostles and Teacher of the Slavs.",
+   "period": "9th century (d. 869)",
+   "place": "Thessalonica; Moravia; Rome",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/14",
+    "https://orthocal.info/api/gregorian/2026/2/14/",
+    "https://en.wikipedia.org/wiki/Cyril_and_Methodius"
+   ]
+  },
+  "onesimus-apostle": {
+   "life": "Onesimus was a slave of Philemon of Colossae who ran away to Rome, where Paul converted him and sent him back with the letter to Philemon asking that he be received as a brother. Tradition holds that he was freed, served the Church as bishop, and was beaten to death for the faith. He is counted among the Seventy.",
+   "period": "1st century",
+   "place": "Colossae; Rome",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/15",
+    "https://orthocal.info/api/gregorian/2026/2/15/"
+   ]
+  },
+  "theodore-tyron": {
+   "life": "Theodore was a young Roman soldier from Pontus stationed at Amasea who, according to tradition, refused to sacrifice to the gods during the persecution about 303 and burned a pagan temple. He was tortured and burned. A later legend adds that he killed a dragon near Euchaita. He was widely venerated by the late fourth century.",
+   "period": "early 4th century (c. 306)",
+   "place": "Amasea, Pontus",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/17",
+    "https://orthocal.info/api/gregorian/2026/2/17/",
+    "https://en.wikipedia.org/wiki/Theodore_of_Amasea"
+   ]
+  },
+  "leo-rome": {
+   "life": "Leo was Bishop of Rome from 440 to 461. His letter, the Tome, set out the doctrine of Christ's two natures against Eutyches; it was read and accepted at the Council of Chalcedon in 451. He is also remembered for persuading Attila to withdraw from Italy in 452 and for negotiating with the Vandals after Rome's sack in 455.",
+   "period": "5th century (d. 461)",
+   "place": "Rome",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/18",
+    "https://orthocal.info/api/gregorian/2026/2/18/",
+    "https://en.wikipedia.org/wiki/Pope_Leo_I"
+   ]
+  },
+  "finding-relics-innocent-irkutsk": {
+   "life": "Innocent Kulchitsky, a monk of the Kiev Caves, became the first bishop of Irkutsk and worked among the Buryat and Mongol peoples of Siberia until his death in 1731. In 1764 his body was found undecayed during building work, and in 1805 the Synod ordered his relics uncovered and him numbered among the saints.",
+   "period": "18th century (d. 1731)",
+   "place": "Irkutsk, Siberia",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/22",
+    "https://orthocal.info/api/gregorian/2026/2/22/",
+    "https://www.oca.org/saints/lives/2026/11/26",
+    "https://orthocal.info/api/gregorian/2026/11/26/"
+   ]
+  },
+  "polycarp-smyrna": {
+   "life": "Polycarp was bishop of Smyrna and, according to Irenaeus, a disciple of the apostles. He corresponded with Ignatius of Antioch and led his church for many decades. Arrested in a persecution in his old age, probably in the mid-150s, he refused to renounce Christ, saying he had served him for eighty-six years, and was killed. An eyewitness letter from Smyrna records his martyrdom.",
+   "period": "2nd century (d. c. 155)",
+   "place": "Smyrna, Asia Minor",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/02/23",
+    "https://orthocal.info/api/gregorian/2026/2/23/"
+   ]
+  },
+  "forty-martyrs-sebaste": {
+   "life": "Forty soldiers of the Roman army in Armenia refused to renounce Christ under the emperor Licinius, about 320. They were condemned to stand overnight, stripped, on a frozen lake near Sebaste. Tradition holds that one lost heart and left, and a guard who saw their endurance took his place. In the morning the martyrs died, and their remains were honorably buried.",
+   "period": "early 4th century (c. 320)",
+   "place": "Sebaste, Armenia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/03/09",
+    "https://orthocal.info/api/gregorian/2026/3/9/"
+   ]
+  },
+  "cyril-jerusalem": {
+   "life": "Cyril was born in or near Jerusalem about 315, became a priest, and succeeded Maximus as bishop of Jerusalem about 350. Conflicts with Acacius of Caesarea and imperial policy led to three exiles. He is best known for his catechetical lectures, which describe how converts were instructed and baptized, and he took part in the Council of Constantinople in 381. He died in 386.",
+   "period": "4th century (d. 386)",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/03/18",
+    "https://orthocal.info/api/gregorian/2026/3/18/",
+    "https://en.wikipedia.org/wiki/Cyril_of_Jerusalem"
+   ]
+  },
+  "synaxis-archangel-gabriel": {
+   "life": "This feast, kept the day after the Annunciation, gives thanks to the Archangel Gabriel, who announced the Incarnation to the Virgin Mary. It also recalls the other appearances of Gabriel recorded in Scripture, including the visions to the prophet Daniel and the announcement to Zechariah about John the Baptist. It is held to have been added to the calendar around the ninth century.",
+   "period": "Biblical",
+   "place": "Nazareth (Annunciation)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/03/26",
+    "https://orthocal.info/api/gregorian/2026/3/26/",
+    "https://en.wikipedia.org/wiki/Gabriel"
+   ]
+  },
+  "john-climacus": {
+   "life": "John entered the monastery on Mount Sinai in his youth, spent years under an elder, then lived as a hermit before becoming abbot there. At the request of a neighboring abbot he wrote the Ladder of Divine Ascent, a treatise on the stages of the spiritual life which is read during Great Lent. Tradition holds he died about 649.",
+   "period": "6th-7th century (d. c. 649)",
+   "place": "Mount Sinai",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/03/30",
+    "https://orthocal.info/api/gregorian/2026/3/30/"
+   ]
+  },
+  "mary-egypt": {
+   "life": "Mary of Egypt, according to the life ascribed to Sophronius of Jerusalem, lived a dissolute life in Alexandria before being turned to repentance at Jerusalem. She withdrew to the desert beyond the Jordan for decades. The monk Zosimas met her there, heard her story, and gave her communion; she died soon after. Dates of her death are uncertain.",
+   "period": "5th century (tradition)",
+   "place": "Egypt and the Jordan desert",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/04/01",
+    "https://orthocal.info/api/gregorian/2026/4/1/"
+   ]
+  },
+  "martin-pope-rome": {
+   "life": "Martin was elected Bishop of Rome in 649 and held a council at the Lateran that condemned Monothelitism and the emperor Constans II's decree, the Typos. Constans had him arrested and taken to Constantinople, tried, and exiled to Cherson in the Crimea, where he died in 655 after suffering hardship. Both East and West honor him as a martyr and confessor.",
+   "period": "7th century (d. 655)",
+   "place": "Rome; Cherson",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/04/13",
+    "https://orthocal.info/api/gregorian/2026/4/13/",
+    "https://en.wikipedia.org/wiki/Pope_Martin_I"
+   ]
+  },
+  "theodore-sykeote": {
+   "life": "Theodore was born at Sykeon in Galatia in the mid-sixth century and lived as an ascetic from boyhood, visiting the Holy Land and becoming a monk. Around 590 he was made bishop of Anastasiopolis, and some years later he returned to the monastic life. He was known for healing and exorcism. He died in 613. A biography by his disciple Eleusios survives.",
+   "period": "6th-7th century (d. 613)",
+   "place": "Sykeon and Anastasiopolis, Galatia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/04/22",
+    "https://orthocal.info/api/gregorian/2026/4/22/"
+   ]
+  },
+  "james-zebedee": {
+   "life": "James, son of Zebedee and brother of John, was a fisherman called by Jesus to be one of the Twelve and was among the three disciples present at the Transfiguration. The Acts of the Apostles records that Herod Agrippa had him killed by the sword, about 44, making him the first apostle martyred. Later tradition links him to preaching in Spain.",
+   "period": "1st century (d. c. 44)",
+   "place": "Galilee; Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/04/30",
+    "https://orthocal.info/api/gregorian/2026/4/30/",
+    "https://en.wikipedia.org/wiki/James,_son_of_Zebedee"
+   ]
+  },
+  "athanasius-alexandria": {
+   "life": "Athanasius was born about 297 in Alexandria, attended the Council of Nicaea as a deacon, and became bishop of Alexandria in 328. He was a leading defender of the Nicene teaching on Christ's divinity against the Arians and was exiled five times for it. His writings include On the Incarnation. He died in 373. His principal feast is January 18.",
+   "period": "4th century (d. 373)",
+   "place": "Alexandria, Egypt",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/05/02",
+    "https://orthocal.info/api/gregorian/2026/5/2/"
+   ]
+  },
+  "simon-zealot-apostle": {
+   "life": "Simon the Zealot was one of the Twelve Apostles, named in the Gospel lists with the epithet 'Zealot'. Tradition holds that he came from Cana of Galilee and, after Pentecost, preached in Africa or elsewhere and died by crucifixion. Sources vary on where he preached and how he died, and identification with the bridegroom at Cana is a later tradition.",
+   "period": "1st century",
+   "place": "Galilee; mission field uncertain",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/05/10",
+    "https://orthocal.info/api/gregorian/2026/5/10/"
+   ]
+  },
+  "cyril-methodius-slavs": {
+   "life": "Brothers from Thessalonica, Cyril and Methodius were sent as missionaries to the Slavic peoples of Moravia in the ninth century. They devised a Slavic alphabet, translated Scripture and liturgical texts into the Slavonic tongue, and defended this work before Rome. Cyril died in Rome in 869, and Methodius, later an archbishop, died in 885. Slavic Churches honor them as teachers of their peoples.",
+   "period": "9th century",
+   "place": "Thessalonica; Moravia; Rome",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/5/11/",
+    "https://www.oca.org/saints/lives/2026/05/11"
+   ]
+  },
+  "pachomius-great": {
+   "life": "Pachomius was born in Upper Egypt around 292 and came to the faith after serving in the Roman army. Withdrawing to the desert, he gathered disciples at Tabennisi and gave them a common rule of life, work and prayer, which established communal monasticism. His communities spread across the Thebaid. He died in 348, and later monastic movements drew on his example.",
+   "period": "c. 292-348",
+   "place": "Upper Egypt (Tabennisi)",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/5/15/",
+    "https://en.wikipedia.org/wiki/Pachomius_the_Great"
+   ]
+  },
+  "cyril-alexandria-bishop": {
+   "life": "Cyril served as Patriarch of Alexandria from 412 until his death in 444. He was the chief opponent of Nestorius, who resisted calling Mary the Theotokos, and he led the argument at the Third Ecumenical Council of Ephesus in 431, which affirmed that title. His many letters, commentaries and theological treatises shaped later teaching on the person of Christ.",
+   "period": "5th century (412-444)",
+   "place": "Alexandria, Egypt",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/9/",
+    "https://en.wikipedia.org/wiki/Cyril_of_Alexandria"
+   ]
+  },
+  "bartholomew-barnabas-apostles": {
+   "life": "Bartholomew was one of the Twelve; tradition holds that he preached in the East, including Armenia, and was martyred there. Barnabas, a Levite from Cyprus, accompanied Paul on his first missionary journey and spoke for him before the Church at Jerusalem, as Acts relates. Tradition says he was killed at Salamis on Cyprus. The Church keeps their memory together on this day.",
+   "period": "1st century",
+   "place": "Palestine; Armenia; Cyprus",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/11/",
+    "https://en.wikipedia.org/wiki/Barnabas",
+    "https://en.wikipedia.org/wiki/Bartholomew_the_Apostle"
+   ]
+  },
+  "onuphrius-great": {
+   "life": "Onuphrius was a hermit of the Egyptian desert, living in the fourth or fifth century. According to the account of the monk Paphnutius, who found him, he had lived alone for about sixty years, clothed only by his own hair, sustained by a date palm and a spring, and receiving communion in solitude. Paphnutius buried him after his death.",
+   "period": "4th-5th century",
+   "place": "Egyptian desert (Thebaid)",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/12/",
+    "https://en.wikipedia.org/wiki/Onuphrius"
+   ]
+  },
+  "jude-apostle-brother-lord": {
+   "life": "Jude, called a brother of the Lord, is honored as author of the Epistle of Jude and as an apostle who preached in Judea, Syria and Mesopotamia. Tradition holds that he was martyred in Armenia. Note that the calendar distinguishes him from Thaddaeus of the Twelve, who is kept on June 21.",
+   "period": "1st century",
+   "place": "Judea; Syria; Mesopotamia; Armenia",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/19/",
+    "https://en.wikipedia.org/wiki/Jude_the_Apostle"
+   ]
+  },
+  "eusebius-samosata": {
+   "life": "Eusebius was Bishop of Samosata in Syria and a firm supporter of the Nicene faith against the Arians. He worked closely with Meletius of Antioch, was exiled by the Arian emperor Valens, and after Valens died traveled to appoint Orthodox bishops. Around 380, as he entered a town for this purpose, an Arian woman hit him with a roof tile, and he died of the wound.",
+   "period": "4th century (c. 380)",
+   "place": "Samosata, Syria",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/22/",
+    "https://en.wikipedia.org/wiki/Eusebius_of_Samosata"
+   ]
+  },
+  "synaxis-twelve-apostles": {
+   "life": "The Church gathers on this day, following the feast of Peter and Paul, to honor all twelve apostles whom Christ chose and sent out to preach the Gospel. Matthias was added to their number after the loss of Judas Iscariot, as Acts records. The commemoration recalls their shared witness and the spread of the Church through their labors.",
+   "period": "1st century",
+   "place": "Palestine; the Mediterranean world",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/6/30/",
+    "https://en.wikipedia.org/wiki/Twelve_Apostles"
+   ]
+  },
+  "deposition-robe-theotokos": {
+   "life": "This feast recalls the placing of the Virgin Mary's robe in a church at Blachernae, near Constantinople. According to the tradition, two patricians brought it from Palestine during the reign of Leo I (457-474) and housed it in a shrine there. The robe was long kept at Blachernae and was venerated as a protection for the city.",
+   "period": "5th century (457-474)",
+   "place": "Blachernae, Constantinople",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/2/",
+    "https://www.oca.org/saints/lives/2026/07/02"
+   ]
+  },
+  "prokopios-caesarea-martyr": {
+   "life": "Prokopios, a Christian official of Palestinian Caesarea, was arrested in the persecution under Diocletian and refused to offer sacrifice. He was beheaded around 303. Tradition holds that he was born in Jerusalem and was converted on a journey to Syria. He became one of the best-known military and great martyrs of the Eastern Church.",
+   "period": "c. 303",
+   "place": "Caesarea, Palestine",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/8/",
+    "https://www.oca.org/saints/lives/2026/07/08"
+   ]
+  },
+  "euphemia-great-martyr": {
+   "life": "Euphemia, a young Christian of Chalcedon who was martyred around 303, was honored by a church there that held her relics. This July feast recalls the Council of Chalcedon in 451: tradition holds that the competing confessions of faith were placed in her tomb, and that the Orthodox text was found in her hand. Her martyrdom is kept on September 16.",
+   "period": "c. 303; Council 451",
+   "place": "Chalcedon, Bithynia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/11/",
+    "https://en.wikipedia.org/wiki/Euphemia"
+   ]
+  },
+  "vladimir-equal-apostles": {
+   "life": "Vladimir, Prince of Novgorod and then Grand Prince of Kiev, ruled from 978 until his death in 1015. Around 988 he accepted baptism from Constantinople and led the people of Kievan Rus to the Christian faith. He worked to build churches and to care for the poor. The Church honors him as Equal-to-the-Apostles for bringing Christianity to the Russian lands.",
+   "period": "10th-11th century (d. 1015)",
+   "place": "Kiev, Kievan Rus",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/15/",
+    "https://en.wikipedia.org/wiki/Vladimir_the_Great"
+   ]
+  },
+  "royal-martyrs-russia": {
+   "life": "Nicholas II, the last Russian emperor, his wife Alexandra, and their five children Olga, Tatiana, Maria, Anastasia and Alexei were shot by Bolshevik guards at Ekaterinburg on the night of 16-17 July 1918, after the family had been imprisoned. The Russian Church Abroad glorified them in 1981, and the Moscow Patriarchate in 2000, as passion-bearers who met their ordeal with humility.",
+   "period": "20th century (1918)",
+   "place": "Ekaterinburg, Russia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/17/",
+    "https://en.wikipedia.org/wiki/Canonization_of_the_Romanovs"
+   ]
+  },
+  "mary-magdalene-equal-apostles": {
+   "life": "Mary Magdalene was a woman of Magdala who followed Jesus, stood near the Cross, and went to the tomb with the myrrh-bearing women. The Gospels name her the first witness to the empty tomb and the risen Christ. The Church calls her Equal-to-the-Apostles. Tradition holds that she later preached and died at Ephesus.",
+   "period": "1st century",
+   "place": "Magdala; Jerusalem; Ephesus (tradition)",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/22/",
+    "https://en.wikipedia.org/wiki/Mary_Magdalene"
+   ]
+  },
+  "dormition-anna-mother-theotokos": {
+   "life": "Anna is remembered as the wife of Joachim and mother of the Virgin Mary. Her name comes not from the canonical Gospels but from early tradition, notably the Protoevangelium of James. This feast marks her repose. Church tradition holds that she and Joachim died while Mary was still young, and Anna is invoked by couples hoping for children.",
+   "period": "1st century BC-1st century AD",
+   "place": "Jerusalem (tradition)",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/25/",
+    "https://en.wikipedia.org/wiki/Saint_Anne"
+   ]
+  },
+  "panteleimon-great-martyr": {
+   "life": "Panteleimon was a physician of Nicomedia, born of a pagan father and a Christian mother. Tradition holds that he became a Christian and healed the sick without payment, which led to his denunciation. He was martyred under Diocletian or Maximian around 305. The Church honors him as a Great Martyr and as a Holy Unmercenary healer.",
+   "period": "c. 305",
+   "place": "Nicomedia, Bithynia",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/7/27/",
+    "https://www.oca.org/saints/lives/2026/07/27"
+   ]
+  },
+  "procession-cross-maccabees": {
+   "life": "On August 1 the Byzantine Church marked the carrying of the Cross relic from the imperial treasury through the streets of Constantinople, a custom that began a fortnight of veneration before the Dormition. The day also commemorates the seven Maccabee brothers, their mother Solomonia and their teacher Eleazar, who were martyred in 168 BC under Antiochus Epiphanes rather than eat forbidden food.",
+   "period": "168 BC; 12th century (Cross procession)",
+   "place": "Constantinople; Antioch (Maccabees)",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/8/1/",
+    "https://www.oca.org/saints/lives/2026/08/01"
+   ]
+  },
+  "matthias-apostle-august": {
+   "life": "Matthias was a disciple who had accompanied Jesus from his baptism through the Resurrection. After Judas Iscariot's fall, the apostles cast lots between two candidates, and Matthias was numbered among the Twelve, as Acts 1 describes. Traditions about his later mission and death differ; some place his preaching in Judea and in regions near the Black Sea.",
+   "period": "1st century",
+   "place": "Jerusalem",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/8/9/",
+    "https://www.oca.org/saints/lives/2026/08/09"
+   ]
+  },
+  "icon-not-made-by-hands": {
+   "life": "According to tradition, Jesus pressed a cloth to his face and sent the resulting image to King Abgar of Edessa, who was healed. The cloth, known as the Mandylion, was kept at Edessa for centuries. In 944 it was taken to Constantinople, and this feast commemorates its arrival there. The image is regarded as the first icon of Christ.",
+   "period": "944",
+   "place": "Edessa; Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/8/16/",
+    "https://en.wikipedia.org/wiki/Image_of_Edessa"
+   ]
+  },
+  "bartholomew-titus-apostles": {
+   "life": "Bartholomew, one of the Twelve, is remembered in tradition as a missionary who preached in the East and died a martyr in Armenia. Titus was a Gentile convert and co-worker of Paul, to whom Paul addressed an epistle, and is traditionally counted among the Seventy and as first bishop of Crete. This day honors both apostles.",
+   "period": "1st century",
+   "place": "Armenia; Crete",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/8/25/",
+    "https://www.oca.org/saints/lives/2026/08/25"
+   ]
+  },
+  "tikhon-zadonsk": {
+   "life": "Tikhon was born Timothy Sokolov in 1724, near Novgorod, and became Bishop of Voronezh in 1763. After a few years he retired to the monastery at Zadonsk because of ill health. There he wrote spiritual works and helped the poor until his death in 1783. The Russian Church glorified him in 1861.",
+   "period": "18th century (1724-1783)",
+   "place": "Voronezh; Zadonsk, Russia",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/08/13",
+    "https://en.wikipedia.org/wiki/Tikhon_of_Zadonsk"
+   ]
+  },
+  "deposition-belt-theotokos": {
+   "life": "The Church recalls the placing of the Virgin Mary's belt in a shrine at Blachernae, Constantinople. Tradition holds that the belt passed to Thomas at the Dormition and was brought from Cappadocia to Constantinople, where it was kept in a sealed chest. Accounts differ on whether the feast marks its arrival under Arcadius or the later healing of Empress Zoe.",
+   "period": "c. 400; 9th century",
+   "place": "Constantinople (Blachernae)",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/8/31/",
+    "https://www.oca.org/saints/lives/2026/08/31"
+   ]
+  },
+  "archangel-michael-miracle-chonae": {
+   "life": "At Colossae in Phrygia stood a church of the Archangel Michael beside a spring with healing waters. According to tradition, pagan opponents diverted two rivers to flood it, but Michael appeared and opened a chasm in the earth that swallowed the water. The place was afterwards called Chonae, meaning funnels, and the church was spared.",
+   "period": "Early Christian era (date uncertain)",
+   "place": "Colossae (Chonae), Phrygia",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/9/6/",
+    "https://www.oca.org/saints/lives/2026/09/06"
+   ]
+  },
+  "euphemia-all-praised-september": {
+   "life": "Euphemia of Chalcedon, daughter of a senator, was arrested during the persecution of Diocletian for refusing to sacrifice to Ares. She was tortured and died in the arena around 303. Her tomb became a pilgrimage site, and at the Council of Chalcedon in 451 the bishops met in her church. Her feast on September 16 marks her martyrdom.",
+   "period": "c. 303",
+   "place": "Chalcedon, Bithynia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/9/16/",
+    "https://en.wikipedia.org/wiki/Euphemia"
+   ]
+  },
+  "eustathios-thespesia-companions": {
+   "life": "Eustathios, born Placidas, was a Roman general who, according to tradition, converted after seeing a cross between the antlers of a stag. He, his wife Theopiste and their sons were baptized and later endured long separations and trials before being reunited. Under Emperor Hadrian they refused to sacrifice to idols and were martyred together.",
+   "period": "2nd century",
+   "place": "Rome",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/9/20/",
+    "https://www.oca.org/saints/lives/2026/09/20"
+   ]
+  },
+  "thekla-equal-apostles": {
+   "life": "Thekla of Iconium is known chiefly from the second-century Acts of Paul and Thecla. According to that account, she heard Paul preach, refused marriage and was condemned, yet survived trials by fire and beasts. The Church honors her as first woman martyr and Equal-to-the-Apostles. Tradition holds that she later taught and lived near Seleucia.",
+   "period": "1st century",
+   "place": "Iconium; Seleucia, Asia Minor",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/9/24/",
+    "https://en.wikipedia.org/wiki/Thecla"
+   ]
+  },
+  "gregory-illuminator-armenia": {
+   "life": "Born of Parthian stock and raised as a Christian in Cappadocia, Gregory returned to Armenia and was imprisoned by King Tiridates III for his faith. Tradition holds that the king, later healed and converted, was baptized by him around 301, making Armenia the first Christian kingdom. Gregory became its first catholicos and organized the church there, and is venerated as its enlightener.",
+   "period": "c. 257–331",
+   "place": "Armenia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/9/30/",
+    "https://en.wikipedia.org/wiki/Gregory_the_Illuminator"
+   ]
+  },
+  "thomas-apostle-october": {
+   "life": "One of the Twelve, Thomas is remembered in John's Gospel for doubting the report of the Resurrection until he saw and touched the risen Christ, then confessing him as Lord and God. Tradition holds that he preached in the East, reaching Parthia and India, and was killed near Mylapore. His principal commemoration is July 7; October 6 is a further commemoration.",
+   "period": "1st century",
+   "place": "Judea and India (tradition)",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/10/6/",
+    "https://en.wikipedia.org/wiki/Thomas_the_Apostle"
+   ]
+  },
+  "james-alphaeus-apostle": {
+   "life": "James son of Alphaeus is named among the Twelve in the lists of the Gospels and Acts, and little else is recorded of him in Scripture. Tradition holds that he preached in Judea and then in other lands, and was put to death for the faith. Sources differ on whether he is the same as James the Less.",
+   "period": "1st century",
+   "place": "Judea",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/10/9/",
+    "https://en.wikipedia.org/wiki/James,_son_of_Alphaeus"
+   ]
+  },
+  "paraskeva-serbia": {
+   "life": "Paraskeva was born at Epivates in Thrace, near the Sea of Marmara, and left home to live as a hermit, spending years in the Jordan desert. She returned to her homeland and died there in prayer. Her relics were moved several times, resting in Bulgaria, Serbia and Constantinople, and since 1641 in Iași, Romania. She is venerated across the Balkans.",
+   "period": "11th century",
+   "place": "Epivates, Thrace; relics in Iași",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/10/14/",
+    "https://en.wikipedia.org/wiki/Paraskeva_of_the_Balkans"
+   ]
+  },
+  "john-kronstadt": {
+   "life": "Born in a village near Arkhangelsk, John served as a priest at St. Andrew's Cathedral in Kronstadt from 1855. He was known for caring for the poor, founding a house of industry, and urging frequent communion. Many sought his prayers for healing, and his diary My Life in Christ was widely read. The Russian Orthodox Church canonized him in 1990.",
+   "period": "1829–1908",
+   "place": "Kronstadt, Russia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/10/19/",
+    "https://en.wikipedia.org/wiki/John_of_Kronstadt",
+    "https://orthodoxwiki.org/John_of_Kronstadt"
+   ]
+  },
+  "james-brother-lord": {
+   "life": "Called the Just, James was the first bishop of Jerusalem and is identified in the New Testament as the Lord's brother; Orthodox tradition understands him as a son of Joseph by an earlier marriage. He presided over the apostolic council described in Acts 15 and wrote the Epistle of James. Josephus and early Christian writers report that he was killed in Jerusalem around 62.",
+   "period": "d. c. 62",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/10/23/",
+    "https://en.wikipedia.org/wiki/James,_brother_of_Jesus"
+   ]
+  },
+  "cosmas-damian-asia": {
+   "life": "Cosmas and Damian were brothers from Asia Minor, sons of Theodota, who practiced medicine and refused payment for healing the sick, which is why they are called unmercenaries. Tradition holds they led a quiet life of service and died peacefully, unlike the better-known Roman pair. This commemoration is the one kept on November 1.",
+   "period": "3rd century (tradition)",
+   "place": "Asia Minor",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/1/",
+    "https://en.wikipedia.org/wiki/Cosmas_and_Damian"
+   ]
+  },
+  "joannicius-great": {
+   "life": "Born in Bithynia, Joannicius was first a swineherd and then a soldier before entering the monastic life as a young man. He lived for decades as a hermit on Mount Olympus, was known for supporting the veneration of icons during the iconoclast period, and counseled many visitors, among them patriarchs. He died at about ninety-two.",
+   "period": "754–846",
+   "place": "Bithynia, Asia Minor",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/4/",
+    "https://en.wikipedia.org/wiki/Joannicius_the_Great"
+   ]
+  },
+  "paul-patriarch-cp": {
+   "life": "Paul became Patriarch of Constantinople in the 330s and defended the Nicene faith against the Arians. Supported by the western emperor but opposed by Constantius II and his rivals, he was deposed and exiled more than once. Tradition holds he was killed in exile at Cucusus in Armenia around 350. His relics were later brought back to Constantinople.",
+   "period": "d. c. 350",
+   "place": "Constantinople; exile at Cucusus",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/6/",
+    "https://en.wikipedia.org/wiki/Paul_I_of_Constantinople",
+    "https://orthodoxwiki.org/Paul_the_Confessor"
+   ]
+  },
+  "john-the-merciful": {
+   "life": "Born in Cyprus, John served as Patriarch of Alexandria in the early seventh century and became known for his generosity to the poor, founding hospices and distributing the church's wealth. When Persian forces approached Alexandria in 614 he left for Cyprus, where he died, perhaps in 616 or 619. He is called 'the Almsgiver' or 'the Merciful'.",
+   "period": "c. 556–c. 616/619",
+   "place": "Alexandria; Amathus, Cyprus",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/12/",
+    "https://en.wikipedia.org/wiki/John_the_Almsgiver",
+    "https://orthodoxwiki.org/John_the_Merciful"
+   ]
+  },
+  "gregory-wonderworker": {
+   "life": "Gregory was a native of Neocaesarea in Pontus who studied in Caesarea under Origen, then returned home and became its first bishop. Tradition says almost no Christians were in the city when he arrived and few pagans remained at his death. He is credited with many miracles, which gave him his epithet, and a doctrinal creed attributed to him.",
+   "period": "c. 213–c. 270",
+   "place": "Neocaesarea, Pontus",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/17/",
+    "https://en.wikipedia.org/wiki/Gregory_Thaumaturgus",
+    "https://orthodoxwiki.org/Gregory_the_Wonderworker"
+   ]
+  },
+  "amphilochius-iconium": {
+   "life": "A cousin of Gregory the Theologian, Amphilochius first worked as a lawyer, then became an ascetic and was made Bishop of Iconium around 373. He was a friend of Basil the Great, who wrote On the Holy Spirit at his request. He took part in the Council of Constantinople in 381 and opposed those who denied the divinity of the Spirit.",
+   "period": "c. 340–after 394",
+   "place": "Iconium, Asia Minor",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/23/",
+    "https://en.wikipedia.org/wiki/Amphilochius_of_Iconium"
+   ]
+  },
+  "great-martyr-catherine": {
+   "life": "According to tradition, Catherine was a highly educated young woman of Alexandria who confessed Christ and defeated pagan philosophers in debate, then suffered martyrdom under a pagan emperor, probably in the early fourth century. Her written Life dates from later centuries and early evidence is thin, but her veneration is ancient and widespread, and she is honored as a patroness of learning.",
+   "period": "early 4th century (tradition)",
+   "place": "Alexandria, Egypt",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/24/",
+    "https://en.wikipedia.org/wiki/Catherine_of_Alexandria"
+   ]
+  },
+  "clement-rome": {
+   "life": "Clement became bishop of Rome in the late first century and is traditionally listed as a successor of Peter. He is credited with the First Epistle to the Corinthians, which urged the Corinthian church to restore order. Tradition holds that he was banished to the Crimea under Trajan and died there as a martyr, around the year 100.",
+   "period": "d. c. 100",
+   "place": "Rome; Crimea (tradition)",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/25/",
+    "https://en.wikipedia.org/wiki/Pope_Clement_I",
+    "https://orthodoxwiki.org/Clement_of_Rome"
+   ]
+  },
+  "leavetaking-entrance-theotokos": {
+   "life": "The Leavetaking is the final day of the Entrance of the Theotokos, which is celebrated on November 21. The feast recalls the tradition, found in the Protoevangelium of James, that Joachim and Anna brought the child Mary at the age of three to the Temple in Jerusalem, where she was dedicated to God and raised.",
+   "period": "1st century BC (tradition)",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/25/",
+    "https://en.wikipedia.org/wiki/Presentation_of_Mary"
+   ]
+  },
+  "james-the-persian": {
+   "life": "James was a Christian soldier in the Persian court of Yazdegerd I who, tradition says, renounced the faith to keep his rank. Rebuked by his mother and wife, he repented. Under Bahram V he was tortured and cut into pieces joint by joint, hence the name Intercisus, and he died in 421 praying. He is honored as a great martyr.",
+   "period": "d. 421",
+   "place": "Persia",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/11/27/",
+    "https://en.wikipedia.org/wiki/James_Intercisus"
+   ]
+  },
+  "barbara-great-martyr": {
+   "life": "Tradition holds that Barbara, the daughter of a wealthy pagan named Dioscorus, was confined in a tower, secretly became a Christian, and was baptized. When she would not renounce her faith, she was tortured and then beheaded, reportedly by her own father. Accounts place her at Heliopolis or Nicomedia, around 290 to 306; the details are legendary and sources differ.",
+   "period": "3rd–4th century (tradition)",
+   "place": "Heliopolis or Nicomedia",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/4/",
+    "https://en.wikipedia.org/wiki/Saint_Barbara"
+   ]
+  },
+  "john-damascene": {
+   "life": "Born in Damascus to a Christian family that served the Muslim caliphs, John left public office to become a monk at Mar Saba near Jerusalem. He wrote in defense of holy icons against the iconoclasts and composed a major theological summary, the Fount of Knowledge. He also wrote canons and other church hymns. He died around 749.",
+   "period": "c. 675–749",
+   "place": "Damascus; Mar Saba, Palestine",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/4/",
+    "https://en.wikipedia.org/wiki/John_of_Damascus",
+    "https://orthodoxwiki.org/John_of_Damascus"
+   ]
+  },
+  "ambrose-milan": {
+   "life": "Ambrose was governor of northern Italy when, in 374, the people of Milan chose him as bishop while he was still unbaptized. He defended the Nicene faith against Arianism, preached widely, and wrote hymns and theological works. He helped bring Augustine to baptism in 387. December 7 marks his consecration; he died in 397.",
+   "period": "c. 339–397",
+   "place": "Milan, Italy",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/7/",
+    "https://en.wikipedia.org/wiki/Ambrose",
+    "https://orthodoxwiki.org/Ambrose_of_Milan"
+   ]
+  },
+  "conception-theotokos-anna": {
+   "life": "This feast commemorates the conception of the Virgin Mary by Anna and Joachim. According to the Protoevangelium of James, the couple had long been childless and received the promise of a child. The Church celebrates the event on December 9, nine months before the Nativity of the Theotokos on September 8.",
+   "period": "1st century BC (tradition)",
+   "place": "Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/9/",
+    "https://orthodoxwiki.org/Conception_of_the_Theotokos",
+    "https://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception"
+   ]
+  },
+  "daniel-stylite": {
+   "life": "Born in Mesopotamia, Daniel became a monk young and visited Symeon the Stylite. He later settled near Constantinople, where he lived for thirty-three years on a pillar, praying in all weather. Emperors, including Leo I, and many ordinary people sought his counsel. He died at the age of about eighty-four.",
+   "period": "409–493",
+   "place": "Near Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/11/",
+    "https://en.wikipedia.org/wiki/Daniel_the_Stylite",
+    "https://orthodoxwiki.org/Daniel_the_Stylite"
+   ]
+  },
+  "prophet-daniel-three-youths": {
+   "life": "Daniel was a Jewish captive taken to Babylon in the sixth century BC who served at the royal court and interpreted dreams and visions. His companions Ananias, Azarias and Misael refused to worship the king's golden image and were cast into a fiery furnace but were preserved. Daniel was himself delivered from a den of lions. Their story is told in the Book of Daniel.",
+   "period": "6th century BC",
+   "place": "Babylon",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/17/",
+    "https://en.wikipedia.org/wiki/Book_of_Daniel",
+    "https://orthodoxwiki.org/Daniel"
+   ]
+  },
+  "ignatius-god-bearer": {
+   "life": "Ignatius was bishop of Antioch in Syria, said to have been a disciple of the apostle John. Condemned during the reign of Trajan, he was taken under guard to Rome, writing letters to several churches on the way that urge unity under the bishop. He was martyred in Rome, killed by wild beasts, around 107.",
+   "period": "d. c. 107",
+   "place": "Antioch; Rome",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/20/",
+    "https://en.wikipedia.org/wiki/Ignatius_of_Antioch",
+    "https://orthodoxwiki.org/Ignatius_of_Antioch"
+   ]
+  },
+  "great-martyr-anastasia": {
+   "life": "Born in Rome, Anastasia was a Christian woman who, tradition says, secretly visited and aided Christians imprisoned under Diocletian. After her husband's death she gave her wealth to the suffering. She was arrested and put to death around 304. She is called the Deliverer from Potions for her help to the afflicted.",
+   "period": "d. c. 304",
+   "place": "Rome; Sirmium (tradition)",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/22/",
+    "https://en.wikipedia.org/wiki/Anastasia_of_Sirmium",
+    "https://orthodoxwiki.org/Anastasia_the_Great_Martyr"
+   ]
+  },
+  "twenty-thousand-martyrs-nicomedia": {
+   "life": "During the persecution under Diocletian and Maximian, a large group of Christians gathered in a church at Nicomedia on the day of the Nativity. Tradition says the emperor had the building surrounded and set on fire after they refused to sacrifice to idols, and about twenty thousand perished. The year is given as 302 or 303, and the figure is traditional.",
+   "period": "c. 302–303",
+   "place": "Nicomedia, Bithynia",
+   "confidence": "medium",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/28/",
+    "https://en.wikipedia.org/wiki/Diocletianic_Persecution"
+   ]
+  },
+  "holy-innocents": {
+   "life": "The Gospel of Matthew reports that Herod the Great, hearing of a newborn king, ordered the killing of the male children of Bethlehem and its surrounding area. Joseph took the child Jesus to Egypt to escape. Orthodox tradition honors these children as martyrs and numbers them at fourteen thousand, though the Gospel gives no figure.",
+   "period": "1st century BC",
+   "place": "Bethlehem",
+   "confidence": "high",
+   "sources": [
+    "https://orthocal.info/api/gregorian/2026/12/29/",
+    "https://en.wikipedia.org/wiki/Massacre_of_the_Innocents",
+    "https://orthodoxwiki.org/Holy_Innocents"
+   ]
+  }
+ }
+}

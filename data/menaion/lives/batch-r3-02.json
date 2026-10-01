@@ -1,0 +1,300 @@
+{
+ "cyril-methodius-slavs": {
+  "life": "Brothers from Thessalonica, Cyril and Methodius were sent as missionaries to the Slavic peoples of Moravia in the ninth century. They devised a Slavic alphabet, translated Scripture and liturgical texts into the Slavonic tongue, and defended this work before Rome. Cyril died in Rome in 869, and Methodius, later an archbishop, died in 885. Slavic Churches honor them as teachers of their peoples.",
+  "period": "9th century",
+  "place": "Thessalonica; Moravia; Rome",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/5/11/",
+   "https://www.oca.org/saints/lives/2026/05/11"
+  ],
+  "flags": ""
+ },
+ "pachomius-great": {
+  "life": "Pachomius was born in Upper Egypt around 292 and came to the faith after serving in the Roman army. Withdrawing to the desert, he gathered disciples at Tabennisi and gave them a common rule of life, work and prayer, which established communal monasticism. His communities spread across the Thebaid. He died in 348, and later monastic movements drew on his example.",
+  "period": "c. 292-348",
+  "place": "Upper Egypt (Tabennisi)",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/5/15/",
+   "https://en.wikipedia.org/wiki/Pachomius_the_Great"
+  ],
+  "flags": ""
+ },
+ "cyril-alexandria-bishop": {
+  "life": "Cyril served as Patriarch of Alexandria from 412 until his death in 444. He was the chief opponent of Nestorius, who resisted calling Mary the Theotokos, and he led the argument at the Third Ecumenical Council of Ephesus in 431, which affirmed that title. His many letters, commentaries and theological treatises shaped later teaching on the person of Christ.",
+  "period": "5th century (412-444)",
+  "place": "Alexandria, Egypt",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/9/",
+   "https://en.wikipedia.org/wiki/Cyril_of_Alexandria"
+  ],
+  "flags": ""
+ },
+ "bartholomew-barnabas-apostles": {
+  "life": "Bartholomew was one of the Twelve; tradition holds that he preached in the East, including Armenia, and was martyred there. Barnabas, a Levite from Cyprus, accompanied Paul on his first missionary journey and spoke for him before the Church at Jerusalem, as Acts relates. Tradition says he was killed at Salamis on Cyprus. The Church keeps their memory together on this day.",
+  "period": "1st century",
+  "place": "Palestine; Armenia; Cyprus",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/11/",
+   "https://en.wikipedia.org/wiki/Barnabas",
+   "https://en.wikipedia.org/wiki/Bartholomew_the_Apostle"
+  ],
+  "flags": ""
+ },
+ "onuphrius-great": {
+  "life": "Onuphrius was a hermit of the Egyptian desert, living in the fourth or fifth century. According to the account of the monk Paphnutius, who found him, he had lived alone for about sixty years, clothed only by his own hair, sustained by a date palm and a spring, and receiving communion in solitude. Paphnutius buried him after his death.",
+  "period": "4th-5th century",
+  "place": "Egyptian desert (Thebaid)",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/12/",
+   "https://en.wikipedia.org/wiki/Onuphrius"
+  ],
+  "flags": ""
+ },
+ "jude-apostle-brother-lord": {
+  "life": "Jude, called a brother of the Lord, is honored as author of the Epistle of Jude and as an apostle who preached in Judea, Syria and Mesopotamia. Tradition holds that he was martyred in Armenia. Note that the calendar distinguishes him from Thaddaeus of the Twelve, who is kept on June 21.",
+  "period": "1st century",
+  "place": "Judea; Syria; Mesopotamia; Armenia",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/19/",
+   "https://en.wikipedia.org/wiki/Jude_the_Apostle"
+  ],
+  "flags": "Orthodox calendar treats Jude, Brother of the Lord (June 19) as distinct from Thaddaeus of the Twelve (June 21); the app note identifies him with Thaddaeus. Life written for the calendar identity. Wikipedia notes the identification is debated."
+ },
+ "eusebius-samosata": {
+  "life": "Eusebius was Bishop of Samosata in Syria and a firm supporter of the Nicene faith against the Arians. He worked closely with Meletius of Antioch, was exiled by the Arian emperor Valens, and after Valens died traveled to appoint Orthodox bishops. Around 380, as he entered a town for this purpose, an Arian woman hit him with a roof tile, and he died of the wound.",
+  "period": "4th century (c. 380)",
+  "place": "Samosata, Syria",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/22/",
+   "https://en.wikipedia.org/wiki/Eusebius_of_Samosata"
+  ],
+  "flags": ""
+ },
+ "synaxis-twelve-apostles": {
+  "life": "The Church gathers on this day, following the feast of Peter and Paul, to honor all twelve apostles whom Christ chose and sent out to preach the Gospel. Matthias was added to their number after the loss of Judas Iscariot, as Acts records. The commemoration recalls their shared witness and the spread of the Church through their labors.",
+  "period": "1st century",
+  "place": "Palestine; the Mediterranean world",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/6/30/",
+   "https://en.wikipedia.org/wiki/Twelve_Apostles"
+  ],
+  "flags": ""
+ },
+ "deposition-robe-theotokos": {
+  "life": "This feast recalls the placing of the Virgin Mary's robe in a church at Blachernae, near Constantinople. According to the tradition, two patricians brought it from Palestine during the reign of Leo I (457-474) and housed it in a shrine there. The robe was long kept at Blachernae and was venerated as a protection for the city.",
+  "period": "5th century (457-474)",
+  "place": "Blachernae, Constantinople",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/2/",
+   "https://www.oca.org/saints/lives/2026/07/02"
+  ],
+  "flags": ""
+ },
+ "thomas-apostle": {
+  "life": "Thomas of Mount Maleon is said to have been a successful and wealthy general who left his career to live as a hermit. Tradition holds that he settled on Mount Maleon, near Mount Athos, where people sought healing from him. He died peacefully and miracles were reported at his relics.",
+  "period": "Byzantine era (date uncertain)",
+  "place": "Mount Maleon, near Mount Athos (per Orthocal)",
+  "confidence": "low",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/7/",
+   "https://www.oca.org/saints/lives/2026/07/07"
+  ],
+  "flags": "IDENTITY MISMATCH: Calendar for July 7 (OCA/Orthocal) names Venerable Thomas of Mount Maleon (and Martyr Kyriake), not Apostle Thomas, who is kept on October 6 and the Sunday after Pascha. Life written for Thomas of Maleon. Only OCA-derived text found; century and exact location of Maleon not confirmed. Consider relabeling the entry."
+ },
+ "prokopios-caesarea-martyr": {
+  "life": "Prokopios, a Christian official of Palestinian Caesarea, was arrested in the persecution under Diocletian and refused to offer sacrifice. He was beheaded around 303. Tradition holds that he was born in Jerusalem and was converted on a journey to Syria. He became one of the best-known military and great martyrs of the Eastern Church.",
+  "period": "c. 303",
+  "place": "Caesarea, Palestine",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/8/",
+   "https://www.oca.org/saints/lives/2026/07/08"
+  ],
+  "flags": ""
+ },
+ "euphemia-great-martyr": {
+  "life": "Euphemia, a young Christian of Chalcedon who was martyred around 303, was honored by a church there that held her relics. This July feast recalls the Council of Chalcedon in 451: tradition holds that the competing confessions of faith were placed in her tomb, and that the Orthodox text was found in her hand. Her martyrdom is kept on September 16.",
+  "period": "c. 303; Council 451",
+  "place": "Chalcedon, Bithynia",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/11/",
+   "https://en.wikipedia.org/wiki/Euphemia"
+  ],
+  "flags": "July 11 is the commemoration of the Chalcedon miracle in Slavic usage; her martyrdom is Sept 16 (see separate entry). Wikipedia dates her death 303; app note says 304."
+ },
+ "vladimir-equal-apostles": {
+  "life": "Vladimir, Prince of Novgorod and then Grand Prince of Kiev, ruled from 978 until his death in 1015. Around 988 he accepted baptism from Constantinople and led the people of Kievan Rus to the Christian faith. He worked to build churches and to care for the poor. The Church honors him as Equal-to-the-Apostles for bringing Christianity to the Russian lands.",
+  "period": "10th-11th century (d. 1015)",
+  "place": "Kiev, Kievan Rus",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/15/",
+   "https://en.wikipedia.org/wiki/Vladimir_the_Great"
+  ],
+  "flags": "Orthocal gives death year 1051 in its title; the standard date is 1015."
+ },
+ "royal-martyrs-russia": {
+  "life": "Nicholas II, the last Russian emperor, his wife Alexandra, and their five children Olga, Tatiana, Maria, Anastasia and Alexei were shot by Bolshevik guards at Ekaterinburg on the night of 16-17 July 1918, after the family had been imprisoned. The Russian Church Abroad glorified them in 1981, and the Moscow Patriarchate in 2000, as passion-bearers who met their ordeal with humility.",
+  "period": "20th century (1918)",
+  "place": "Ekaterinburg, Russia",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/17/",
+   "https://en.wikipedia.org/wiki/Canonization_of_the_Romanovs"
+  ],
+  "flags": ""
+ },
+ "mary-magdalene-equal-apostles": {
+  "life": "Mary Magdalene was a woman of Magdala who followed Jesus, stood near the Cross, and went to the tomb with the myrrh-bearing women. The Gospels name her the first witness to the empty tomb and the risen Christ. The Church calls her Equal-to-the-Apostles. Tradition holds that she later preached and died at Ephesus.",
+  "period": "1st century",
+  "place": "Magdala; Jerusalem; Ephesus (tradition)",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/22/",
+   "https://en.wikipedia.org/wiki/Mary_Magdalene"
+  ],
+  "flags": ""
+ },
+ "dormition-anna-mother-theotokos": {
+  "life": "Anna is remembered as the wife of Joachim and mother of the Virgin Mary. Her name comes not from the canonical Gospels but from early tradition, notably the Protoevangelium of James. This feast marks her repose. Church tradition holds that she and Joachim died while Mary was still young, and Anna is invoked by couples hoping for children.",
+  "period": "1st century BC-1st century AD",
+  "place": "Jerusalem (tradition)",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/25/",
+   "https://en.wikipedia.org/wiki/Saint_Anne"
+  ],
+  "flags": "Details of Anna's life rest on non-canonical tradition."
+ },
+ "panteleimon-great-martyr": {
+  "life": "Panteleimon was a physician of Nicomedia, born of a pagan father and a Christian mother. Tradition holds that he became a Christian and healed the sick without payment, which led to his denunciation. He was martyred under Diocletian or Maximian around 305. The Church honors him as a Great Martyr and as a Holy Unmercenary healer.",
+  "period": "c. 305",
+  "place": "Nicomedia, Bithynia",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/7/27/",
+   "https://www.oca.org/saints/lives/2026/07/27"
+  ],
+  "flags": ""
+ },
+ "procession-cross-maccabees": {
+  "life": "On August 1 the Byzantine Church marked the carrying of the Cross relic from the imperial treasury through the streets of Constantinople, a custom that began a fortnight of veneration before the Dormition. The day also commemorates the seven Maccabee brothers, their mother Solomonia and their teacher Eleazar, who were martyred in 168 BC under Antiochus Epiphanes rather than eat forbidden food.",
+  "period": "168 BC; 12th century (Cross procession)",
+  "place": "Constantinople; Antioch (Maccabees)",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/8/1/",
+   "https://www.oca.org/saints/lives/2026/08/01"
+  ],
+  "flags": ""
+ },
+ "matthias-apostle-august": {
+  "life": "Matthias was a disciple who had accompanied Jesus from his baptism through the Resurrection. After Judas Iscariot's fall, the apostles cast lots between two candidates, and Matthias was numbered among the Twelve, as Acts 1 describes. Traditions about his later mission and death differ; some place his preaching in Judea and in regions near the Black Sea.",
+  "period": "1st century",
+  "place": "Jerusalem",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/8/9/",
+   "https://www.oca.org/saints/lives/2026/08/09"
+  ],
+  "flags": "Sources differ on where Matthias later preached."
+ },
+ "icon-not-made-by-hands": {
+  "life": "According to tradition, Jesus pressed a cloth to his face and sent the resulting image to King Abgar of Edessa, who was healed. The cloth, known as the Mandylion, was kept at Edessa for centuries. In 944 it was taken to Constantinople, and this feast commemorates its arrival there. The image is regarded as the first icon of Christ.",
+  "period": "944",
+  "place": "Edessa; Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/8/16/",
+   "https://en.wikipedia.org/wiki/Image_of_Edessa"
+  ],
+  "flags": ""
+ },
+ "bartholomew-titus-apostles": {
+  "life": "Bartholomew, one of the Twelve, is remembered in tradition as a missionary who preached in the East and died a martyr in Armenia. Titus was a Gentile convert and co-worker of Paul, to whom Paul addressed an epistle, and is traditionally counted among the Seventy and as first bishop of Crete. This day honors both apostles.",
+  "period": "1st century",
+  "place": "Armenia; Crete",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/8/25/",
+   "https://www.oca.org/saints/lives/2026/08/25"
+  ],
+  "flags": ""
+ },
+ "tikhon-zadonsk": {
+  "life": "Tikhon was born Timothy Sokolov in 1724, near Novgorod, and became Bishop of Voronezh in 1763. After a few years he retired to the monastery at Zadonsk because of ill health. There he wrote spiritual works and helped the poor until his death in 1783. The Russian Church glorified him in 1861.",
+  "period": "18th century (1724-1783)",
+  "place": "Voronezh; Zadonsk, Russia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/lives/2026/08/13",
+   "https://en.wikipedia.org/wiki/Tikhon_of_Zadonsk"
+  ],
+  "flags": "DATE NOTE: OCA lists Tikhon on Aug 13, while Orthocal's Aug 26 lists Martyrs Adrian and Natalia. Aug 26 is the civil-calendar equivalent of Aug 13 Old Style (his repose, 1783), so the date is correct only for Julian-calendar Slavic usage. Check which calendar the app uses."
+ },
+ "deposition-belt-theotokos": {
+  "life": "The Church recalls the placing of the Virgin Mary's belt in a shrine at Blachernae, Constantinople. Tradition holds that the belt passed to Thomas at the Dormition and was brought from Cappadocia to Constantinople, where it was kept in a sealed chest. Accounts differ on whether the feast marks its arrival under Arcadius or the later healing of Empress Zoe.",
+  "period": "c. 400; 9th century",
+  "place": "Constantinople (Blachernae)",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/8/31/",
+   "https://www.oca.org/saints/lives/2026/08/31"
+  ],
+  "flags": "Sources differ on what the feast commemorates; the app's 395 date is approximate."
+ },
+ "archangel-michael-miracle-chonae": {
+  "life": "At Colossae in Phrygia stood a church of the Archangel Michael beside a spring with healing waters. According to tradition, pagan opponents diverted two rivers to flood it, but Michael appeared and opened a chasm in the earth that swallowed the water. The place was afterwards called Chonae, meaning funnels, and the church was spared.",
+  "period": "Early Christian era (date uncertain)",
+  "place": "Colossae (Chonae), Phrygia",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/9/6/",
+   "https://www.oca.org/saints/lives/2026/09/06"
+  ],
+  "flags": ""
+ },
+ "euphemia-all-praised-september": {
+  "life": "Euphemia of Chalcedon, daughter of a senator, was arrested during the persecution of Diocletian for refusing to sacrifice to Ares. She was tortured and died in the arena around 303. Her tomb became a pilgrimage site, and at the Council of Chalcedon in 451 the bishops met in her church. Her feast on September 16 marks her martyrdom.",
+  "period": "c. 303",
+  "place": "Chalcedon, Bithynia",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/9/16/",
+   "https://en.wikipedia.org/wiki/Euphemia"
+  ],
+  "flags": "Duplicate saint of the July 11 entry; this one is the martyrdom feast. Life text differs deliberately."
+ },
+ "eustathios-thespesia-companions": {
+  "life": "Eustathios, born Placidas, was a Roman general who, according to tradition, converted after seeing a cross between the antlers of a stag. He, his wife Theopiste and their sons were baptized and later endured long separations and trials before being reunited. Under Emperor Hadrian they refused to sacrifice to idols and were martyred together.",
+  "period": "2nd century",
+  "place": "Rome",
+  "confidence": "medium",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/9/20/",
+   "https://www.oca.org/saints/lives/2026/09/20"
+  ],
+  "flags": "Hadrian's reign is 117-138; the app's +118 is approximate. The saints are Eustathios, Theopiste and their sons."
+ },
+ "thekla-equal-apostles": {
+  "life": "Thekla of Iconium is known chiefly from the second-century Acts of Paul and Thecla. According to that account, she heard Paul preach, refused marriage and was condemned, yet survived trials by fire and beasts. The Church honors her as first woman martyr and Equal-to-the-Apostles. Tradition holds that she later taught and lived near Seleucia.",
+  "period": "1st century",
+  "place": "Iconium; Seleucia, Asia Minor",
+  "confidence": "high",
+  "sources": [
+   "https://orthocal.info/api/gregorian/2026/9/24/",
+   "https://en.wikipedia.org/wiki/Thecla"
+  ],
+  "flags": "Her story comes from an apocryphal text."
+ }
+}
