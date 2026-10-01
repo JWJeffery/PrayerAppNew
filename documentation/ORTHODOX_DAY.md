@@ -97,3 +97,7 @@ where the published table has James/Mark. Josh to decide whether to fix the engi
 - Coverage: 2026 650/720 citations, 2027 634/703 (Chrysostom 571). Gaps: 1 John and 1 Peter (only Theophylact available), plus a few others. 1,416 of 1,460 checked Typika/Orthros days carry a comment.
 - Vespers Old Testament readings have no commentary yet.
 - Known blemish: Catena Aurea text occasionally carries stray footnote letters (e.g. "Hereticsb").
+
+## Icons (plan item 8)
+
+`data/icons/commemoration-icons.json` maps the rank 1–2 Menaion commemorations (by MM-DD and exact Menaion name) and four moveable feasts (by day title regex) to a public-domain icon stored in `images/icons/`. `js/day-guide.js` (`_iconFor`) attaches it as `image` on the `about-today` item; `js/office-ui.js` renders it as a `<figure class="uo-icon">` with the credit line (only `images/icons/*` paths are accepted). The Commons search was done by agents and every license re-verified directly against the Commons API; the images were reviewed on a contact sheet. 45 icons appear over 2026–27 (Mark's 2027 date falls in Pascha so the feast is not the governing commemoration). Gaps: Protomartyr Stephen (the chosen file's download was rate-limited by Wikimedia; retry) and Third Finding of the Head (no suitable file). Credits: `images/CREDITS.md`.

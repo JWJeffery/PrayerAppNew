@@ -4859,7 +4859,10 @@ function _renderHorologionItem(item) {
         ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
         : '';
     const formatted = formatParagraphText(item.text || '');
-    const baseHtml  = `<div class="horologion-text"><p>${formatted}</p></div>`;
+    const figure = (item.image && /^images\/icons\/[\w.-]+$/.test(item.image.src || ''))
+        ? `<figure class="uo-icon" style="margin:0 0 1em;text-align:center;"><img src="${escapeHtml(item.image.src)}" alt="${escapeHtml(item.image.alt || '')}" loading="lazy" style="max-width:min(100%,260px);max-height:340px;border-radius:4px;"><figcaption style="font-size:0.75em;opacity:0.7;margin-top:0.4em;">${escapeHtml(item.image.credit || '')}</figcaption></figure>`
+        : '';
+    const baseHtml  = `<div class="horologion-text">${figure}<p>${formatted}</p></div>`;
     return label + _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
            _renderHorologionDiagnostics(item, escapeHtml);
 }

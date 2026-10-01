@@ -66,6 +66,26 @@ const DayGuide = (() => {
         return parts.length ? 'On this page ' + parts.join('; ') + '.' : null;
     }
 
+    // Public-domain icon of the day's feast (data/icons/commemoration-icons.json), or null.
+    let _iconsP = null;
+    function _icons() {
+        if (!_iconsP) _iconsP = fetch('data/icons/commemoration-icons.json').then(r => r.ok ? r.json() : null).catch(() => null);
+        return _iconsP;
+    }
+    async function _iconFor(iso, day, trop) {
+        const data = await _icons();
+        if (!data) return null;
+        const title = day ? ((day.titles || []).concat(day.title || [])).join(' ; ') : '';
+        for (const k of Object.keys(data.moveable || {})) {
+            if (title && new RegExp(data.moveable[k].match).test(title)) return data.moveable[k];
+        }
+        if (trop && trop.resolvedAs === 'menaion-feast-troparion' && trop.commemoration) {
+            const list = (data.byDate || {})[String(iso).slice(5)] || [];
+            return list.find(r => r.name === trop.commemoration) || null;
+        }
+        return null;
+    }
+
     async function applyToSections(sections, officeKey, iso, dateObj) {
         if (!['vespers', 'orthros', 'typika'].includes(officeKey) || !Array.isArray(sections) || !sections.length) return 0;
         const first = sections.find(s => Array.isArray(s.items));
@@ -105,10 +125,14 @@ const DayGuide = (() => {
         if (src) lines.push(src);
 
         if (!lines.length) return 0;
+        const ic = await _iconFor(iso, day, trop);
         first.items.unshift({
             type: 'text', key: 'about-today', label: 'About Today’s Service',
             text: lines.filter(Boolean).join('\n\n'),
-            source: 'Composed from the engine’s resolved office and orthocal.info (OCA/Slavic)', resolvedAs: 'day-guide'
+            source: 'Composed from the engine’s resolved office and orthocal.info (OCA/Slavic)', resolvedAs: 'day-guide',
+            image: ic ? { src: ic.image, alt: 'Icon: ' + (ic.name || ic.title),
+                          credit: ic.title + (ic.artist ? ' — ' + ic.artist : '') + (ic.date ? ', ' + ic.date : '') + '. Public domain, via Wikimedia Commons.',
+                          page: ic.page } : undefined
         });
         return 1;
     }

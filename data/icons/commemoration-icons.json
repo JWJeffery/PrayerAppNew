@@ -1,0 +1,552 @@
+{
+ "schema": "universal_office_commemoration_icons_v1",
+ "note": "Public-domain icons from Wikimedia Commons; each license verified against Commons metadata 2026-10-01. Images are stored locally in images/icons/. Credits in images/CREDITS.md.",
+ "byDate": {
+  "08-06": [
+   {
+    "id": "transfiguration-lord",
+    "image": "images/icons/transfiguration-lord.jpg",
+    "title": "Cretan Icon of the Transfiguration - Pantokratoros",
+    "page": "https://commons.wikimedia.org/wiki/File:Cretan_Icon_of_the_Transfiguration_-_Pantokratoros.jpg",
+    "artist": "Unknown author",
+    "date": "16th-17th Century",
+    "license": "Public domain",
+    "name": "The Holy Transfiguration of Our Lord God and Savior Jesus Christ"
+   }
+  ],
+  "08-15": [
+   {
+    "id": "dormition-theotokos",
+    "image": "images/icons/dormition-theotokos.jpg",
+    "title": "Dormition of the Theotokos, Novgorod",
+    "page": "https://commons.wikimedia.org/wiki/File:Dormition_of_the_Theotokos,_Novgorod.jpg",
+    "artist": "Unknown author",
+    "date": "turn of the 14/15th century",
+    "license": "Public domain",
+    "name": "The Dormition of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary"
+   }
+  ],
+  "12-25": [
+   {
+    "id": "nativity-christ",
+    "image": "images/icons/nativity-christ.jpg",
+    "title": "Nativity of christ",
+    "page": "https://commons.wikimedia.org/wiki/File:Nativity_of_christ.jpg",
+    "artist": "Unknown author",
+    "date": "15th century",
+    "license": "Public domain",
+    "name": "The Nativity of our Lord God and Savior Jesus Christ"
+   }
+  ],
+  "02-02": [
+   {
+    "id": "presentation-lord",
+    "image": "images/icons/presentation-lord.jpg",
+    "title": "Sretenie (Russian museum, 15 c)",
+    "page": "https://commons.wikimedia.org/wiki/File:Sretenie_(Russian_museum,_15_c).jpg",
+    "artist": "Мастерская Андрея Рублева Школа или худ. центр: Москва",
+    "date": "1408",
+    "license": "Public domain",
+    "name": "The Meeting of Our Lord and Savior Jesus Christ (Presentation of the Lord)"
+   }
+  ],
+  "01-06": [
+   {
+    "id": "theophany-epiphany",
+    "image": "images/icons/theophany-epiphany.jpg",
+    "title": "Baptism of Christ",
+    "page": "https://commons.wikimedia.org/wiki/File:Baptism_of_Christ.jpg",
+    "artist": "Unknown , Russian",
+    "date": "circa 1730",
+    "license": "Public domain",
+    "name": "Holy Theophany — Baptism of Our Lord Jesus Christ"
+   }
+  ],
+  "06-24": [
+   {
+    "id": "nativity-john-baptist",
+    "image": "images/icons/nativity-john-baptist.jpg",
+    "title": "0176Hb. Nativity of St. John the Baptist, late 18th - early 19th century",
+    "page": "https://commons.wikimedia.org/wiki/File:0176Hb._Nativity_of_St._John_the_Baptist,_late_18th_-_early_19th_century.jpg",
+    "artist": "Unknown author",
+    "date": "конец XVIII - начало XIX",
+    "license": "Public domain",
+    "name": "The Nativity of the Holy Glorious Prophet, Forerunner, and Baptist John"
+   }
+  ],
+  "06-29": [
+   {
+    "id": "peter-paul-apostles",
+    "image": "images/icons/peter-paul-apostles.jpg",
+    "title": "Peter and Paul the Apostle icon, Aleppo 1667",
+    "page": "https://commons.wikimedia.org/wiki/File:Peter_and_Paul_the_Apostle_icon,_Aleppo_1667.jpg",
+    "artist": "Unknown author",
+    "date": "before 1667",
+    "license": "Public domain",
+    "name": "The Holy Glorious and All-Praised Chief Apostles Peter and Paul"
+   }
+  ],
+  "03-25": [
+   {
+    "id": "annunciation-theotokos",
+    "image": "images/icons/annunciation-theotokos.jpg",
+    "title": "Byzantine icon of the Annunciation (14th c., Pushkin museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Byzantine_icon_of_the_Annunciation_(14th_c.,_Pushkin_museum).jpg",
+    "artist": "Unknown author",
+    "date": "14th century",
+    "license": "Public domain",
+    "name": "The Annunciation of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary"
+   }
+  ],
+  "11-21": [
+   {
+    "id": "entrance-theotokos",
+    "image": "images/icons/entrance-theotokos.jpg",
+    "title": "Russian - Presentation of the Virgin in the Temple - Walters 372410",
+    "page": "https://commons.wikimedia.org/wiki/File:Russian_-_Presentation_of_the_Virgin_in_the_Temple_-_Walters_372410.jpg",
+    "artist": "Anonymous (Russian artist)Unknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "The Entrance of the Most Holy Theotokos into the Temple"
+   }
+  ],
+  "09-08": [
+   {
+    "id": "nativity-theotokos",
+    "image": "images/icons/nativity-theotokos.jpg",
+    "title": "Nikola-Obrazopisov-Belyova-church-Nativity-of-the-Theotokos-icon-1863",
+    "page": "https://commons.wikimedia.org/wiki/File:Nikola-Obrazopisov-Belyova-church-Nativity-of-the-Theotokos-icon-1863.jpg",
+    "artist": "Nikola Obrazopisov",
+    "date": "1863",
+    "license": "Public domain",
+    "name": "The Nativity of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary"
+   }
+  ],
+  "09-14": [
+   {
+    "id": "exaltation-holy-cross",
+    "image": "images/icons/exaltation-holy-cross.jpg",
+    "title": "Unknown painter - Exaltation of the Cross - WGA23497",
+    "page": "https://commons.wikimedia.org/wiki/File:Unknown_painter_-_Exaltation_of_the_Cross_-_WGA23497.jpg",
+    "artist": "Unknown Icon Painter, Russian (late 15th century in northern Russia)",
+    "date": "1490s",
+    "license": "Public domain",
+    "name": "The Universal Exaltation of the Precious and Life-giving Cross"
+   }
+  ],
+  "08-29": [
+   {
+    "id": "beheading-john-baptist",
+    "image": "images/icons/beheading-john-baptist.jpg",
+    "title": "Beheading of John the Baptist (Damaskinos)",
+    "page": "https://commons.wikimedia.org/wiki/File:Beheading_of_John_the_Baptist_(Damaskinos).png",
+    "artist": "Michael Damaskinos",
+    "date": "1590",
+    "license": "Public domain",
+    "name": "The Beheading of the Holy Glorious Prophet, Forerunner, and Baptist John"
+   }
+  ],
+  "10-01": [
+   {
+    "id": "protection-theotokos",
+    "image": "images/icons/protection-theotokos.jpg",
+    "title": "Protection de la Mere de Dieu Ecole de Novgorod Moscou, Galerie Tretiakov",
+    "page": "https://commons.wikimedia.org/wiki/File:Protection_de_la_Mere_de_Dieu_Ecole_de_Novgorod_Moscou,_Galerie_Tretiakov.jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "between 1401 and 1425",
+    "license": "Public domain",
+    "name": "The Protection of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary"
+   }
+  ],
+  "11-08": [
+   {
+    "id": "synaxis-bodiless-hosts",
+    "image": "images/icons/synaxis-bodiless-hosts.jpg",
+    "title": "Kirill Ulanov. Synaxis of the Archangel Michael and the Other Bodiless Powers. 1704",
+    "page": "https://commons.wikimedia.org/wiki/File:Kirill_Ulanov._Synaxis_of_the_Archangel_Michael_and_the_Other_Bodiless_Powers._1704.jpg",
+    "artist": "Kirill Ulanov",
+    "date": "1704",
+    "license": "Public domain",
+    "name": "Synaxis of the Chief of the Heavenly Hosts, Archangel Michael and the Other Bodiless Powers"
+   }
+  ],
+  "04-23": [
+   {
+    "id": "george-great-martyr",
+    "image": "images/icons/george-great-martyr.jpg",
+    "title": "Orthodox Bulgarian icon of St. George fighting the dragon",
+    "page": "https://commons.wikimedia.org/wiki/File:Orthodox_Bulgarian_icon_of_St._George_fighting_the_dragon.jpg",
+    "artist": "Unknown author",
+    "date": "1621",
+    "license": "Public domain",
+    "name": "Holy Great Martyr George the Trophy-Bearer"
+   }
+  ],
+  "04-25": [
+   {
+    "id": "mark-evangelist",
+    "image": "images/icons/mark-evangelist.jpg",
+    "title": "Evangelist Mark Icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Evangelist_Mark_Icon.tif",
+    "artist": "Unknown author",
+    "date": "between 1700 and 1800",
+    "license": "Public domain",
+    "name": "Holy Apostle and Evangelist Mark"
+   }
+  ],
+  "12-05": [
+   {
+    "id": "sabas-sanctified",
+    "image": "images/icons/sabas-sanctified.jpg",
+    "title": "The Dormition of Sabbas the Sanctified",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Dormition_of_Sabbas_the_Sanctified.png",
+    "artist": "Philotheos Skoufos",
+    "date": "circa 1656",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Sabas the Sanctified"
+   }
+  ],
+  "12-06": [
+   {
+    "id": "nicholas-myra",
+    "image": "images/icons/nicholas-myra.jpg",
+    "title": "St Nicholas Icon Sinai 13th century",
+    "page": "https://commons.wikimedia.org/wiki/File:St_Nicholas_Icon_Sinai_13th_century.jpg",
+    "artist": "Unknown author",
+    "date": "2008-04",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Nicholas, Archbishop of Myra in Lycia, Wonderworker"
+   }
+  ],
+  "12-12": [
+   {
+    "id": "spyridon-trimythous",
+    "image": "images/icons/spyridon-trimythous.jpg",
+    "title": "Saint Spyridon Icon from Gorno Statitsa 1720",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Spyridon_Icon_from_Gorno_Statitsa_1720.jpg",
+    "artist": "Unknown author",
+    "date": "1720",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Spyridon, Bishop of Trimythous, Wonderworker"
+   }
+  ],
+  "12-26": [
+   {
+    "id": "synaxis-theotokos-nativity",
+    "image": "images/icons/synaxis-theotokos-nativity.jpg",
+    "title": "Synaxis of the Theotokos (Kirillo-Belozersk)",
+    "page": "https://commons.wikimedia.org/wiki/File:Synaxis_of_the_Theotokos_(Kirillo-Belozersk).jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "15-16 c.",
+    "license": "Public domain",
+    "name": "Synaxis of the Most Holy Theotokos"
+   }
+  ],
+  "02-24": [
+   {
+    "id": "first-second-finding-head-john-baptist",
+    "image": "images/icons/first-second-finding-head-john-baptist.jpg",
+    "title": "Findings of John the Baptist's head BETTER",
+    "page": "https://commons.wikimedia.org/wiki/File:Findings_of_John_the_Baptist%27s_head_BETTER.jpg",
+    "artist": "Unknown author",
+    "date": "14th century",
+    "license": "Public domain",
+    "name": "The First and Second Finding of the Head of John the Baptist"
+   }
+  ],
+  "01-01": [
+   {
+    "id": "basil-great-circumcision",
+    "image": "images/icons/basil-great-circumcision.jpg",
+    "title": "Novgorod School - Saint Basil the Great - NG.M.01523 - National Museum of Art, Architecture and Design",
+    "page": "https://commons.wikimedia.org/wiki/File:Novgorod_School_-_Saint_Basil_the_Great_-_NG.M.01523_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+    "artist": "School of Novgorod school",
+    "date": "1400s",
+    "license": "Public domain",
+    "name": "Circumcision of Our Lord; St. Basil the Great"
+   }
+  ],
+  "01-02": [
+   {
+    "id": "seraphim-sarov",
+    "image": "images/icons/seraphim-sarov.jpg",
+    "title": "Seraphim of Sarov (after 1903, priv.coll)",
+    "page": "https://commons.wikimedia.org/wiki/File:Seraphim_of_Sarov_(after_1903,_priv.coll).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)Public domain image (according to PD-Russia-expired)",
+    "date": "after 1903",
+    "license": "Public domain",
+    "name": "St. Seraphim of Sarov"
+   }
+  ],
+  "01-07": [
+   {
+    "id": "synaxis-forerunner-john",
+    "image": "images/icons/synaxis-forerunner-john.jpg",
+    "title": "St John the Baptist, Angel of the Desert, 17the",
+    "page": "https://commons.wikimedia.org/wiki/File:St_John_the_Baptist,_Angel_of_the_Desert,_17the.jpg",
+    "artist": "Unknown author",
+    "date": "17th century",
+    "license": "Public domain",
+    "name": "Synaxis of the Holy Glorious Prophet, Forerunner and Baptist John"
+   }
+  ],
+  "01-11": [
+   {
+    "id": "theodosius-cenobiarch",
+    "image": "images/icons/theodosius-cenobiarch.jpg",
+    "title": "Theodosius the Cenobiarch",
+    "page": "https://commons.wikimedia.org/wiki/File:Theodosius_the_Cenobiarch.jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Venerable Theodosius the Cenobiarch"
+   }
+  ],
+  "01-17": [
+   {
+    "id": "anthony-great",
+    "image": "images/icons/anthony-great.jpg",
+    "title": "Anthony the Great icon (lebanon)",
+    "page": "https://commons.wikimedia.org/wiki/File:Anthony_the_Great_icon_(lebanon).jpg",
+    "artist": "Unknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Venerable Anthony the Great"
+   }
+  ],
+  "01-18": [
+   {
+    "id": "athanasius-cyril-alexandria",
+    "image": "images/icons/athanasius-cyril-alexandria.jpg",
+    "title": "Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg",
+    "artist": "Unknown author",
+    "date": "End of 17 century",
+    "license": "Public domain",
+    "name": "Sts. Athanasius the Great and Cyril of Alexandria"
+   }
+  ],
+  "01-20": [
+   {
+    "id": "euthymius-great",
+    "image": "images/icons/euthymius-great.jpg",
+    "title": "Euthymius the Great (Tzanes)",
+    "page": "https://commons.wikimedia.org/wiki/File:Euthymius_the_Great_(Tzanes).png",
+    "artist": "Emmanuel Tzanes",
+    "date": "1682",
+    "license": "Public domain",
+    "name": "Venerable Euthymius the Great"
+   }
+  ],
+  "01-25": [
+   {
+    "id": "gregory-theologian",
+    "image": "images/icons/gregory-theologian.jpg",
+    "title": "Agios Gregorios Theologos Peribleptos",
+    "page": "https://commons.wikimedia.org/wiki/File:Agios_Gregorios_Theologos_Peribleptos.jpg",
+    "artist": "Painters Michael and Eutychios",
+    "date": "14th century AD",
+    "license": "Public domain",
+    "name": "St. Gregory the Theologian, Archbishop of Constantinople"
+   }
+  ],
+  "01-27": [
+   {
+    "id": "translation-chrysostom",
+    "image": "images/icons/translation-chrysostom.jpg",
+    "title": "Novgorod School - John Chrysostom - NG.M.01522 - National Museum of Art, Architecture and Design",
+    "page": "https://commons.wikimedia.org/wiki/File:Novgorod_School_-_John_Chrysostom_-_NG.M.01522_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+    "artist": "School of Novgorod school",
+    "date": "1400s",
+    "license": "Public domain",
+    "name": "Translation of the Relics of St. John Chrysostom"
+   }
+  ],
+  "01-28": [
+   {
+    "id": "ephrem-syrian",
+    "image": "images/icons/ephrem-syrian.jpg",
+    "title": "Преподобный Ефрем Сирин",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9_%D0%95%D1%84%D1%80%D0%B5%D0%BC_%D0%A1%D0%B8%D1%80%D0%B8%D0%BD.jpg",
+    "artist": "Manuel Panselinos / Мануил Панселин",
+    "date": "early 14th c. ; Начало XIV в",
+    "license": "Public domain",
+    "name": "Venerable Ephrem the Syrian"
+   }
+  ],
+  "01-30": [
+   {
+    "id": "three-hierarchs",
+    "image": "images/icons/three-hierarchs.jpg",
+    "title": "Three Holy Hierarchs (Novgorod)",
+    "page": "https://commons.wikimedia.org/wiki/File:Three_Holy_Hierarchs_(Novgorod).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)Public domain image (according to PD-Russia-expired)",
+    "date": "Конец XV — начало XVI вв",
+    "license": "Public domain",
+    "name": "Synaxis of the Three Great Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom"
+   }
+  ],
+  "07-20": [
+   {
+    "id": "elijah-prophet",
+    "image": "images/icons/elijah-prophet.jpg",
+    "title": "Semen Spiridonov Kholmogorets. Prophet Elijah. 1678",
+    "page": "https://commons.wikimedia.org/wiki/File:Semen_Spiridonov_Kholmogorets._Prophet_Elijah._1678.jpg",
+    "artist": "Semyon Spiridonov",
+    "date": "28 November 1678",
+    "license": "Public domain",
+    "name": "Holy Glorious Prophet Elijah the Tishbite"
+   }
+  ],
+  "05-08": [
+   {
+    "id": "john-theologian-apostle",
+    "image": "images/icons/john-theologian-apostle.jpg",
+    "title": "Holy Apostle and Evangelist John the Theologian. Icon. Greece, 1500. Monastery of St. John the Theologian on the island of Patmos",
+    "page": "https://commons.wikimedia.org/wiki/File:Holy_Apostle_and_Evangelist_John_the_Theologian._Icon._Greece,_1500._Monastery_of_St._John_the_Theologian_on_the_island_of_Patmos.jpg",
+    "artist": "Unknown author",
+    "date": "1500",
+    "license": "Public domain",
+    "name": "Holy Apostle and Evangelist John the Theologian"
+   }
+  ],
+  "05-21": [
+   {
+    "id": "constantine-helen-equal-apostles",
+    "image": "images/icons/constantine-helen-equal-apostles.jpg",
+    "title": "Constantine and Helen",
+    "page": "https://commons.wikimedia.org/wiki/File:Constantine_and_Helen.png",
+    "artist": "Emmanuel Tzanes",
+    "date": "1669",
+    "license": "Public domain",
+    "name": "Holy Great Equal-to-the-Apostles Emperor Constantine and his mother Helen"
+   }
+  ],
+  "11-13": [
+   {
+    "id": "john-chrysostom",
+    "image": "images/icons/john-chrysostom.jpg",
+    "title": "Novgorod School - John Chrysostom - NG.M.01522 - National Museum of Art, Architecture and Design",
+    "page": "https://commons.wikimedia.org/wiki/File:Novgorod_School_-_John_Chrysostom_-_NG.M.01522_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+    "artist": "School of Novgorod school",
+    "date": "1400s",
+    "license": "Public domain",
+    "name": "Our Father among the Saints John Chrysostom, Archbishop of Constantinople"
+   }
+  ],
+  "11-14": [
+   {
+    "id": "apostle-philip",
+    "image": "images/icons/apostle-philip.jpg",
+    "title": "Philip the Apostle icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Philip_the_Apostle_icon.jpeg",
+    "artist": "Unknown Russian Orthodox icon painter",
+    "date": "First half of the 19th century. Posted to wikimedia on 2011-10-01.",
+    "license": "Public domain",
+    "name": "Holy Apostle Philip"
+   }
+  ],
+  "11-16": [
+   {
+    "id": "apostle-evangelist-matthew",
+    "image": "images/icons/apostle-evangelist-matthew.jpg",
+    "title": "Matthew the Evangelist - icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Matthew_the_Evangelist_-_icon.jpeg",
+    "artist": "Unknown Russian icon painter, middle of 19 th cen.",
+    "date": "Middle of 19th century. Submitted to wikimedia on 2008-05-01",
+    "license": "Public domain",
+    "name": "Holy Apostle and Evangelist Matthew"
+   }
+  ],
+  "11-30": [
+   {
+    "id": "apostle-andrew-first-called",
+    "image": "images/icons/apostle-andrew-first-called.jpg",
+    "title": "Saint Andrew (Tzanes)",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Andrew_(Tzanes).png",
+    "artist": "Emmanuel Tzanes",
+    "date": "1658",
+    "license": "Public domain",
+    "name": "Holy Apostle Andrew the First-Called"
+   }
+  ],
+  "10-18": [
+   {
+    "id": "luke-evangelist",
+    "image": "images/icons/luke-evangelist.jpg",
+    "title": "Saint Luke the Evangelist - icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Luke_the_Evangelist_-_icon.jpeg",
+    "artist": "Unknown Russian Orthodox painter",
+    "date": "18th century. Posted to wikimedia on 2011-10-01",
+    "license": "Public domain",
+    "name": "Holy Apostle and Evangelist Luke"
+   }
+  ],
+  "10-26": [
+   {
+    "id": "demetrios-thessalonica",
+    "image": "images/icons/demetrios-thessalonica.jpg",
+    "title": "Saint Demetrius of Protat",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Demetrius_of_Protat.JPG",
+    "artist": "Manuel Panselinos",
+    "date": "between 1290 and 1310",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Demetrios of Thessalonica, the Myrrh-streamer"
+   }
+  ],
+  "09-26": [
+   {
+    "id": "john-theologian-repose",
+    "image": "images/icons/john-theologian-repose.jpg",
+    "title": "The Death of the Holy Apostle and Evangelist John the Theologian. Icon. Crete, circa 1500 (before 1507)",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Death_of_the_Holy_Apostle_and_Evangelist_John_the_Theologian._Icon._Crete,_circa_1500_(before_1507).jpg",
+    "artist": "Unknown author",
+    "date": "1500",
+    "license": "Public domain",
+    "name": "Repose of the Holy Apostle and Evangelist John the Theologian"
+   }
+  ]
+ },
+ "moveable": {
+  "pascha": {
+   "id": "pascha",
+   "image": "images/icons/pascha.jpg",
+   "title": "Russian School - Icon with the Resurrection and the Anastasis (Descent into Hell) - FA001215 - Brighton Museum ^ Art Gallery",
+   "page": "https://commons.wikimedia.org/wiki/File:Russian_School_-_Icon_with_the_Resurrection_and_the_Anastasis_(Descent_into_Hell)_-_FA001215_-_Brighton_Museum_%5E_Art_Gallery.jpg",
+   "artist": "anonymous",
+   "date": "19th century",
+   "license": "Public domain",
+   "match": "Holy Pascha"
+  },
+  "palm-sunday": {
+   "id": "palm-sunday",
+   "image": "images/icons/palm-sunday.jpg",
+   "title": "Russian School - Icon with Entry into Jerusalem - FA001223 - Brighton Museum ^ Art Gallery",
+   "page": "https://commons.wikimedia.org/wiki/File:Russian_School_-_Icon_with_Entry_into_Jerusalem_-_FA001223_-_Brighton_Museum_%5E_Art_Gallery.jpg",
+   "artist": "anonymous",
+   "date": "18th century",
+   "license": "Public domain",
+   "match": "^Palm Sunday"
+  },
+  "ascension": {
+   "id": "ascension",
+   "image": "images/icons/ascension.jpg",
+   "title": "Ascension of Jesus icon, Lattakia (1667)",
+   "page": "https://commons.wikimedia.org/wiki/File:Ascension_of_Jesus_icon,_Lattakia_(1667).jpg",
+   "artist": "Unknown author",
+   "date": "before 1667",
+   "license": "Public domain",
+   "match": "(^|; )Ascension of the Lord"
+  },
+  "pentecost": {
+   "id": "pentecost",
+   "image": "images/icons/pentecost.jpg",
+   "title": "Descent of the Holy Spirit upon the Apostles (Joseph Vladimirov, 2)",
+   "page": "https://commons.wikimedia.org/wiki/File:Descent_of_the_Holy_Spirit_upon_the_Apostles_(Joseph_Vladimirov,_2).jpg",
+   "artist": "Joseph Vladimirov / Иосиф Владимиров",
+   "date": "1666",
+   "license": "Public domain",
+   "match": "Holy Pentecost|Feast of the Holy Trinity"
+  }
+ }
+}
