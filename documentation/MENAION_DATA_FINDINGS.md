@@ -4,7 +4,10 @@ Writing a short life for each rank-3 commemoration (research subagents, two or m
 app's entry does not match what the Orthodox calendar (OCA / orthocal.info, Slavic) commemorates on that date. These need a
 decision by Josh; no life was published for the first three because it would describe a different saint than the entry names.
 
-## Calendar and identity questions -- evidence per source (checked 2026-10-01)
+## Calendar and identity questions -- evidence per source (checked 2026-10-01) -- ALL APPLIED 2026-10-01
+
+Resolution: Thomas of Maleon (+Acacius) on Jul 7 (OCA troparion/kontakion); the sisters Agape, Irene and Chionia on Apr 16 (OCA); Great Martyr Irene moved to May 5, rank 3 (OCA Tone 1 troparion, Tone 3 kontakion); Jan 14 renamed to Nina only and the Leavetaking of Theophany moved to Jan 14; Tikhon moved to 08-13, Innocent of Irkutsk to 02-09, Royal Martyrs to 07-04 (Menaion-date keying). Emptied dates (01-13, 08-26, 02-22, 07-17) keep an empty commemorations list. Kyriake of Nicomedia (listed by orthocal.info for Jul 7, absent from OCA) was not added.
+
 Sources: **Orthocal** = orthocal.info API, OCA/Slavic tradition, fetched live; "Orthocal-Julian" = its `/api/julian/` endpoint, which takes a
 civil date and returns the Old-Calendar Menaion day (civil date minus 13 days); **App** = this repo's data/menaion files;
 **Engine** = `js/horologion-engine.js`, whose `_getFixedCalendarMmdd()` subtracts the 13-day Julian offset from the civil date when the user

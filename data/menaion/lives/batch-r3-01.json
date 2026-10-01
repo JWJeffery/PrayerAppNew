@@ -22,17 +22,6 @@
   ],
   "flags": "Calendar also commemorates Dometian, Bishop of Melitene (6th c.) on Jan 10; the life is written for Gregory, the app's primary identity. Sources differ on birth year (331 in Orthocal; roughly 335 elsewhere), so no birth year is given."
  },
- "fathers-council-nicaea": {
-  "life": "Nina, called Nino in Georgian tradition, was a Cappadocian Christian who came as a captive to the kingdom of Iberia, in present-day Georgia. Tradition holds that her prayers healed the queen and, after a hunting mishap, led King Mirian to seek baptism for himself and his people. She is honored as Equal-to-the-Apostles and Enlightener of Georgia, and died around 335.",
-  "period": "4th century (d. c. 335)",
-  "place": "Iberia (Georgia)",
-  "confidence": "high",
-  "sources": [
-   "https://www.oca.org/saints/lives/2026/01/14",
-   "https://orthocal.info/api/gregorian/2026/1/14/"
-  ],
-  "flags": "IDENTITY/DATE: app id and name lead with the Fathers of the First Council of Nicaea, but the calendar for Jan 14 (OCA, Orthocal) gives Nina of Georgia (and the Fathers slain at Sinai and Raithu, and Sava of Serbia); the Nicaea fathers are commemorated on a Sunday in the Paschal season, not Jan 14. Life written for Nina."
- },
  "veneration-chains-peter": {
   "life": "This feast recalls the chains that held the Apostle Peter when Herod Agrippa imprisoned him in Jerusalem about 42, and which fell from him when an angel freed him, as told in the Acts of the Apostles. Christians kept the chains as relics. Tradition holds that they were eventually brought to Constantinople and kept in a church dedicated to Peter, where healings were reported.",
   "period": "1st century (feast later)",
@@ -250,17 +239,6 @@
   ],
   "flags": ""
  },
- "irene-great-martyr": {
-  "life": "Agape, Irene and Chionia were three Christian sisters who, tradition holds, lived near Aquileia and were brought before the emperor Diocletian about the turn of the fourth century. They would not deny Christ and were imprisoned and tortured. Agape and Chionia were burned, and Irene was killed by an arrow. Accounts differ on the details of their sufferings.",
-  "period": "early 4th century",
-  "place": "Aquileia (per Orthocal and OCA)",
-  "confidence": "medium",
-  "sources": [
-   "https://www.oca.org/saints/lives/2026/04/16",
-   "https://orthocal.info/api/gregorian/2026/4/16/"
-  ],
-  "flags": "IDENTITY: app names Great Martyr Irene (+303, Diocletian). On Apr 16 the calendar (OCA, Orthocal) commemorates the Virgin Martyrs Agape, Irene and Chionia; the Great Martyr Irene is commemorated on May 5. Life written for the three sisters. Some Greek accounts place them at Thessalonica; sources differ on place."
- },
  "theodore-sykeote": {
   "life": "Theodore was born at Sykeon in Galatia in the mid-sixth century and lived as an ascetic from boyhood, visiting the Holy Land and becoming a monk. Around 590 he was made bishop of Anastasiopolis, and some years later he returned to the monastic life. He was known for healing and exorcism. He died in 613. A biography by his disciple Eleusios survives.",
   "period": "6th-7th century (d. 613)",
@@ -305,5 +283,27 @@
    "https://orthocal.info/api/gregorian/2026/5/10/"
   ],
   "flags": "Accounts of his later mission and martyrdom vary; Cana bridegroom identification is tradition only."
+ },
+ "nina-georgia": {
+  "life": "Nina, called Nino in Georgian tradition, was a Cappadocian Christian who came as a captive to the kingdom of Iberia, in present-day Georgia. Tradition holds that her prayers healed the queen and, after a hunting mishap, led King Mirian to seek baptism for himself and his people. She is honored as Equal-to-the-Apostles and Enlightener of Georgia, and died around 335.",
+  "period": "4th century (d. c. 335)",
+  "place": "Iberia (Georgia)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/lives/2026/01/14",
+   "https://orthocal.info/api/gregorian/2026/1/14/"
+  ],
+  "flags": "IDENTITY/DATE: app id and name lead with the Fathers of the First Council of Nicaea, but the calendar for Jan 14 (OCA, Orthocal) gives Nina of Georgia (and the Fathers slain at Sinai and Raithu, and Sava of Serbia); the Nicaea fathers are commemorated on a Sunday in the Paschal season, not Jan 14. Life written for Nina."
+ },
+ "agape-irene-chionia": {
+  "life": "Agape, Irene and Chionia were three Christian sisters who, tradition holds, lived near Aquileia and were brought before the emperor Diocletian about the turn of the fourth century. They would not deny Christ and were imprisoned and tortured. Agape and Chionia were burned, and Irene was killed by an arrow. Accounts differ on the details of their sufferings.",
+  "period": "early 4th century",
+  "place": "Aquileia (per Orthocal and OCA)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/lives/2026/04/16",
+   "https://orthocal.info/api/gregorian/2026/4/16/"
+  ],
+  "flags": "IDENTITY: app names Great Martyr Irene (+303, Diocletian). On Apr 16 the calendar (OCA, Orthocal) commemorates the Virgin Martyrs Agape, Irene and Chionia; the Great Martyr Irene is commemorated on May 5. Life written for the three sisters. Some Greek accounts place them at Thessalonica; sources differ on place."
  }
 }

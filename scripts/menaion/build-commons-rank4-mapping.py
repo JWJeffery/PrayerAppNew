@@ -53,6 +53,7 @@ OV = {
  'dionysius-areopagite': (None,'Dionysius'), 'philip-apostle-october': (None,'Philip'), 'james-brother-lord-october': (None,'James'),
  'stephen-sabaite-hymnographer': ('monk','Stephen'), 'terence-neonilla-family': (None,'Terence, Neonilla and their children'),
  'george-chozebite': (None,'George'),
+ 'thomas-maleon': ('monks-many','Thomas and Acacius'), 'agape-irene-chionia': ('martyrs-many','Agape, Irene and Chionia'),
 }
 out, skipped = [], []
 for k, e in ents:
@@ -61,7 +62,8 @@ for k, e in ents:
         skipped.append((k, e['id'], name[:60], 'feast/ambiguous')); continue
     first = TITLES.sub('', name).split()[0].strip(',')
     plural = bool(re.search(r'Martyrs|Apostles|Hieromartyrs|Sts\.|Prophets| and companions| and his |, and | and [A-Z]', name))
-    if name.startswith('Hieromartyrs'): common = 'hieromartyrs-many'
+    if e['id'] in OV and OV[e['id']][0] and e['id'] in ('thomas-maleon','agape-irene-chionia'): common = OV[e['id']][0]
+    elif name.startswith('Hieromartyrs'): common = 'hieromartyrs-many'
     elif 'Hieromartyr' in name:
         common = 'hieromartyrs-many' if plural and re.search(r'companions|and its|,', name) and 'Bishop' not in name.split('companions')[0][-0:] and False else 'hieromartyr'
     elif name.startswith(('Holy Apostles','Holy Apostle')):

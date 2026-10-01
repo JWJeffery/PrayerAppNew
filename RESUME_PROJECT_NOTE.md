@@ -311,11 +311,10 @@ READINGS (Vespers paroemias, Matins Gospel, Epistle, Gospel incl. each saint's) 
 published lectionary on ~half the days (166 of 338 compared); the new data replaces it for 2026-2027 -- see
 `documentation/ORTHODOX_DAY.md`. Outside 2026-2027 the old engine logic still runs. **DONE 2026-10-01 -- item 1, batch 1: original short lives for the rank-3 commemorations** (77 published in
 `data/menaion/lives/lives.json`, from research subagents using 2+ sources each; merged by `scripts/menaion/merge-lives.py`; shown as
-"Commemorated Today" in Vespers/Orthros/Typika by `js/orthodox-day.js`, 2026-2027 new-calendar only). **Josh decisions needed -- the research
-found app entries that do not match the calendar:** Jul 7 "Apostle Thomas" is Thomas of Maleon; Apr 16 "Great Martyr Irene" is Agape/Irene/Chionia;
-Jan 14 is Nina etc., not the Nicaea Fathers; and Tikhon (08-26) / Innocent of Irkutsk (02-22) look like Old-Calendar dates in a new-calendar file.
-Details and 36 other source-disagreement flags: `documentation/MENAION_DATA_FINDINGS.md`. **Next:** lives for the 246 rank-4 entries
-(~9 batches of ~27) once Josh answers the identity questions.
+"Commemorated Today" in Vespers/Orthros/Typika by `js/orthodox-day.js`, 2026-2027 new-calendar only). **The calendar/identity mismatches the research found were ALL FIXED the same day** (Jul 7 Thomas of Maleon; Apr 16 Agape/Irene/Chionia; May 5 Great Martyr Irene;
+Jan 14 Nina only + Leavetaking of Theophany moved there; Tikhon -> 08-13, Innocent of Irkutsk -> 02-09, Royal Martyrs -> 07-04 so Menaion files are keyed by the Menaion date); evidence and resolution:
+`documentation/MENAION_DATA_FINDINGS.md`. **Next:** lives for the 246 rank-4 entries
+(~9 batches of ~27) (rank-3 lives: 79 published).
 **Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
 **Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
 calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.

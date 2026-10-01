@@ -308,21 +308,27 @@
     "04-16": {
       "commemorations": [
         {
-          "id": "irene-great-martyr",
-          "name": "Holy Great Martyr Irene",
+          "id": "agape-irene-chionia",
+          "name": "Holy Virgin Martyrs Agape, Irene and Chionia",
           "type": "martyr",
-          "rank": 3,
-          "troparion_tone": 4,
+          "rank": 4,
+          "troparion_tone": 1,
           "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Great Martyr Irene",
-            "text": "Thy lamb Irene crieth out to Thee with a loud voice: I love Thee, O my Bridegroom, and in seeking Thee I endure suffering, and am crucified and buried with Thee in Thy Baptism; and I suffer for Thy sake, that I may reign with Thee; and I die for Thee, that I may live with Thee. Accept me offered with longing as an unblemished sacrifice. Through her intercessions save our souls, as Thou art merciful."
+            "tone": 1,
+            "title": "Troparion of the Holy Virgin Martyrs Agape, Irene and Chionia — Tone 1",
+            "text": "Sisters in the flesh united in the Spirit, you wrestled with the prince of evil and endured your martyrdom. Holy and blest Agape, Irene, and Chionia, pray to Christ our God to save our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 3,
+            "title": "Kontakion of the Holy Virgin Martyrs Agape, Irene and Chionia — Tone 3",
+            "text": "Bright mirrors of virginity, radiant with your martyrdom, you fill the Church with light and dispel the darkness of evil, Agape, Irene, and Chionia, Christ’s precious jewels."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": [
             "EOR"
           ],
-          "notes": "Irene the Great Martyr (+303), martyred under Diocletian. Rank 3. Prominent in the Greek tradition."
+          "notes": "CORRECTED 2026-10-01: Apr 16 was filed as 'Great Martyr Irene' with her troparion. Apr 16 is the sisters Agape, Irene and Chionia (OCA 'Troparia and kontakia for April 16', first troparion and kontakion transcribed verbatim; orthocal.info agrees). Great Martyr Irene is May 5."
         }
       ]
     },

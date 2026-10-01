@@ -31,7 +31,10 @@
             "text": "You were revealed as the sure foundation of the Church, / granting all mankind a lordship which cannot be taken away, / sealing it with your precepts, / O venerable and heavenly Father Basil."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "Jan 1 commemorates both the Circumcision (rank 1 feast of the Lord) and St. Basil the Great. The Troparion of St. Basil is used at Vespers; the feast rank recorded here reflects St. Basil as Polyeleos saint. Kontakion Tone 4. Source: OCA."
         }
       ]
@@ -56,45 +59,51 @@
             "text": "Forsaking the beauty as well as the corruption of this world, / you settled in the monastery of Sarov, O Saint. / There you lived an angelic life, / becoming for many the way to salvation. / Therefore, Christ has glorified you, Father Seraphim, / enriching you with abundant healing and miracles. / So we cry to you: Save us by your prayers, venerable Seraphim, our father."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "St. Seraphim of Sarov (+1833). Glorified 1903. Rank 2 (Polyeleos). OCA calendar. Kontakion Tone 2. Source: OCA."
         }
       ]
     },
     "01-03": {
-  "commemorations": [
-    {
-      "id": "prophet-malachi",
-      "name": "Holy Prophet Malachi",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "troparion": {
-        "tone": 2,
-        "title": "Troparion of the Holy Prophet Malachi",
-        "text": "We celebrate the memory of Your prophet Malachi, O Lord; through him we entreat You, save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Holy Prophet Malachi, last of the Old Testament prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, January 3."
+      "commemorations": [
+        {
+          "id": "prophet-malachi",
+          "name": "Holy Prophet Malachi",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Prophet Malachi",
+            "text": "We celebrate the memory of Your prophet Malachi, O Lord; through him we entreat You, save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Holy Prophet Malachi, last of the Old Testament prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, January 3."
+        },
+        {
+          "id": "gordius-caesarea",
+          "name": "Holy Martyr Gordius of Caesarea",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Gordius of Caesarea",
+            "text": "Your holy martyr Gordius, O Lord, through his suffering has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries, and shattered the powerless boldness of demons. Through his intercessions, save our souls!"
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Gordius of Caesarea (+314), centurion and martyr under Licinius. Rank 4. Troparion Tone 4 per OCA. Source: oca.org/saints/troparia, January 3."
+        }
+      ]
     },
-    {
-      "id": "gordius-caesarea",
-      "name": "Holy Martyr Gordius of Caesarea",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Gordius of Caesarea",
-        "text": "Your holy martyr Gordius, O Lord, through his suffering has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries, and shattered the powerless boldness of demons. Through his intercessions, save our souls!"
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Gordius of Caesarea (+314), centurion and martyr under Licinius. Rank 4. Troparion Tone 4 per OCA. Source: oca.org/saints/troparia, January 3."
-    }
-  ]
-},
     "01-04": {
       "commemorations": [
         {
@@ -109,7 +118,9 @@
             "text": "O Holy Apostles, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Synaxis of the Seventy. Shared troparion form used for groups of apostles."
         }
       ]
@@ -128,7 +139,9 @@
             "text": "Make ready, O Zebulon, and prepare, O Naphtali. Jordan River, stop thy flowing and leap for joy at the approach of thy Master, Who comes to be baptized. O Adam, rejoice with our first mother, and hide not as you did in Paradise; for He Who saw you naked has appeared to clothe you with the first garment. Christ appeared to renew all creation."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Forefeast of Theophany (Eve of Theophany / Paramone). Rank 4 as forefeast."
         }
       ]
@@ -147,7 +160,11 @@
             "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bore witness to Thee, and called Thee His beloved Son; and the Spirit, in the form of a dove, confirmed the truthfulness of His word. O Christ our God, Who hast revealed Thyself, and hast enlightened the world, glory to Thee."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG"
+          ],
           "notes": "Great Feast — Theophany / Epiphany. Rank 1. The Troparion is sung throughout the festal period."
         }
       ]
@@ -165,70 +182,80 @@
             "title": "Troparion of St. John the Baptist",
             "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
           },
-            "troparion_status": "resolved",
+          "troparion_status": "resolved",
           "kontakion": {
             "tone": 6,
             "title": "Kontakion of the Synaxis of the Forerunner — Tone 6",
             "text": "The river Jordan trembled and was driven back filled with fear at Your coming in the flesh, / while John drew back in awe as he fulfilled the ministry of a prophet. / The ranks of angels stood amazed, / when they beheld You in the flesh being baptized in the streams. / And we, who were in darkness, are filled with light as we praise You, / who have appeared to enlighten all."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Synaxis of the Baptist — the day after Theophany, celebrating the Forerunner. Rank 2. Kontakion Tone 6. Source: OCA."        }
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
+          "notes": "Synaxis of the Baptist — the day after Theophany, celebrating the Forerunner. Rank 2. Kontakion Tone 6. Source: OCA."
+        }
       ]
     },
     "01-08": {
-  "commemorations": [
-    {
-      "id": "george-chozebite",
-      "name": "Venerable George the Chozebite, Abbot",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 5,
-      "troparion": {
-        "tone": 5,
-        "title": "Troparion of the Venerable George the Chozebite",
-        "text": "God-bearing Father George, you cultivated the word of grace and gathered the splendid fruits of righteousness, having chosen the way of godliness. Therefore, you partook of the glory of Christ; intercede with Him unceasingly that He may have mercy on our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Palestinian abbot (+625/630), head of the Chozeba monastery between Jordan and Jerusalem. Tone 5 confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: George and Domnica carry different troparia and tones and must be separate commemoration objects."
+      "commemorations": [
+        {
+          "id": "george-chozebite",
+          "name": "Venerable George the Chozebite, Abbot",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 5,
+          "troparion": {
+            "tone": 5,
+            "title": "Troparion of the Venerable George the Chozebite",
+            "text": "God-bearing Father George, you cultivated the word of grace and gathered the splendid fruits of righteousness, having chosen the way of godliness. Therefore, you partook of the glory of Christ; intercede with Him unceasingly that He may have mercy on our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Palestinian abbot (+625/630), head of the Chozeba monastery between Jordan and Jerusalem. Tone 5 confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: George and Domnica carry different troparia and tones and must be separate commemoration objects."
+        },
+        {
+          "id": "domnica-constantinople",
+          "name": "Venerable Domnica of Constantinople",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Venerable Domnica of Constantinople",
+            "text": "Love for that which is better illumined your nous, and you shone in asceticism like a radiant lamp, O Domnika. Hence, the Master revealed you as a light-bearing guide of monastics by your life and word. Intercede with Him, O God-bearer, that all may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Monastic from Carthage, baptized by Patriarch Nectarius in Constantinople, founder of a women's monastery (+c.473). Tone 4 Podoben confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: see George the Chozebite."
+        }
+      ]
     },
-    {
-      "id": "domnica-constantinople",
-      "name": "Venerable Domnica of Constantinople",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Venerable Domnica of Constantinople",
-        "text": "Love for that which is better illumined your nous, and you shone in asceticism like a radiant lamp, O Domnika. Hence, the Master revealed you as a light-bearing guide of monastics by your life and word. Intercede with Him, O God-bearer, that all may be saved."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Monastic from Carthage, baptized by Patriarch Nectarius in Constantinople, founder of a women's monastery (+c.473). Tone 4 Podoben confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: see George the Chozebite."
-    }
-  ]
-},
     "01-09": {
-  "commemorations": [
-    {
-      "id": "martyr-polyeuctus",
-      "name": "Holy Martyr Polyeuctus of Melitene",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Polyeuctus of Melitene",
-        "text": "Your holy martyr Polyeuctus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Polyeuctus of Melitene (+259), soldier-martyr under Valerian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text found at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "martyr-polyeuctus",
+          "name": "Holy Martyr Polyeuctus of Melitene",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Polyeuctus of Melitene",
+            "text": "Your holy martyr Polyeuctus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Polyeuctus of Melitene (+259), soldier-martyr under Valerian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text found at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "01-10": {
       "commemorations": [
         {
@@ -243,7 +270,9 @@
             "text": "As a guide of Orthodoxy, a teacher of piety and modesty, a luminary of the world, the inspired glory of bishops: O Gregory, thou hast enlightened all by thy teachings. O harp of the Spirit, intercede with Christ God for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Gregory of Nyssa (+395). Doctor of the Church, Cappadocian Father. Rank 3."
         }
       ]
@@ -262,54 +291,42 @@
             "text": "Thou didst struggle from thy youth for the sake of Christ, O God-bearing Father, forsaking all earthly things; thou wast adorned with virtues of all kinds and shone forth as a bright light upon the world. Therefore we honor thee, O Theodosius, Father of Fathers."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Theodosius the Great (+529), founder of the cenobitic tradition in Palestine. Rank 2."
         }
       ]
     },
     "01-12": {
-  "commemorations": [
-    {
-      "id": "tatiana-rome",
-      "name": "Holy Martyr Tatiana of Rome",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Tatiana of Rome",
-        "text": "Your holy martyr Tatiana, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Tatiana of Rome (+226), deaconess and martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text found at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-    "01-13": {
       "commemorations": [
         {
-          "id": "leavetaking-theophany",
-          "name": "Leavetaking of Theophany; Martyrs of Crete",
-          "type": "feast",
+          "id": "tatiana-rome",
+          "name": "Holy Martyr Tatiana of Rome",
+          "type": "martyr",
           "rank": 4,
-          "troparion_tone": 1,
+          "troparion_tone": 4,
           "troparion": {
-            "tone": 1,
-            "title": "Troparion of Holy Theophany (Leavetaking)",
-            "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bore witness to Thee, and called Thee His beloved Son; and the Spirit, in the form of a dove, confirmed the truthfulness of His word. O Christ our God, Who hast revealed Thyself, and hast enlightened the world, glory to Thee."
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Tatiana of Rome",
+            "text": "Your holy martyr Tatiana, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "Leavetaking of Theophany — the Theophany Troparion is repeated."
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Tatiana of Rome (+226), deaconess and martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text found at OCA; standard form used per corpus rules."
         }
       ]
+    },
+    "01-13": {
+      "commemorations": []
     },
     "01-14": {
       "commemorations": [
         {
-          "id": "fathers-council-nicaea",
-          "name": "Holy Fathers of the First Ecumenical Council at Nicaea (observed); Equal-to-the-Apostles Nina of Georgia",
+          "id": "nina-georgia",
+          "name": "Equal-to-the-Apostles Nina, Enlightener of Georgia",
           "type": "saint",
           "rank": 3,
           "troparion_tone": 8,
@@ -319,8 +336,27 @@
             "text": "Equal to the Apostles in conduct and the Enlightener of the Iberian land, thou art beloved of Christ; thy deeds have won thee a crown, O wise Nina. Enlighten with thy prayers those who are in darkness of sin, and deliver them from every evil, for thou hast great boldness before Christ our God."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "St. Nina of Georgia (+335). Primary commemoration for weekday use. Rank 3."
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "CORRECTED 2026-10-01: the entry was named 'Holy Fathers of the First Council at Nicaea (observed); Equal-to-the-Apostles Nina' but carried Nina's troparion; Jan 14 is Nina (orthocal.info: St Nino of Georgia, with Sava of Serbia and the Fathers slain at Sinai and Raithu). The First Council's Fathers are kept on the 7th Sunday of Pascha. St. Nina of Georgia (+335). Primary commemoration for weekday use. Rank 3."
+        },
+        {
+          "id": "leavetaking-theophany",
+          "name": "Leavetaking of Theophany",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Holy Theophany (Leavetaking)",
+            "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bore witness to Thee, and called Thee His beloved Son; and the Spirit, in the form of a dove, confirmed the truthfulness of His word. O Christ our God, Who hast revealed Thyself, and hast enlightened the world, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Leavetaking of Theophany — the Theophany Troparion is repeated. MOVED 2026-10-01 from Jan 13 to Jan 14 (orthocal.info / OCA); the former name also said 'Martyrs of Crete', which no Jan 13/14 source lists."
         }
       ]
     },
@@ -338,7 +374,9 @@
             "text": "Thou didst emulate Elias in his zeal, and didst follow the Baptist in his ways, O Father Paul; dwelling in the desert, thou didst strengthen the world by thy prayers. Intercede with Christ God that our souls be saved."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Paul of Thebes (+341), first hermit. Rank 4."
         }
       ]
@@ -357,7 +395,9 @@
             "text": "Thou hast received the chains of Peter the leader of the Apostles as a great gift, O Christ our God, wherewith he was bound in Rome, and offering the same, Thou dost heal the afflictions of men; therefore we magnify Thee Who art rich in mercy."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Feast of the Precious Chains of the Apostle Peter. Rank 3."
         }
       ]
@@ -382,7 +422,12 @@
             "text": "Renouncing the noise of the world and passing thy life in silence, thou didst emulate John the Baptist by thy ways, O righteous one; and with him we honor thee, O Anthony, adorner of the desert."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Anthony the Great (+356), Father of monasticism. Rank 2 (Polyeleos). Pan-traditional celebration. Kontakion Tone 2. Source: OCA/Antiochian tradition."
         }
       ]
@@ -407,7 +452,12 @@
             "text": "Athanasius and Cyril, great hierarchs of true piety, and noble champions of the Church of Christ, / preserve all who sing: / O Compassionate Lord, save those who honor You."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Athanasius (+373) and Cyril (+444) of Alexandria. Defenders of Nicene orthodoxy. Rank 2. Kontakion Tone 4. Source: OCA."
         }
       ]
@@ -426,7 +476,10 @@
             "text": "In thee the image was preserved with exactness, O Father; for taking up thy cross, thou didst follow Christ. By so doing thou didst teach us to disregard the flesh, for it passes away; but to care instead for the soul, since it is immortal. Therefore thy soul rejoices with the angels, O Holy Macarius."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "Macarius the Great of Egypt (+390/391). Desert Father. Rank 4."
         }
       ]
@@ -445,7 +498,9 @@
             "text": "Thou wast a zealous emulator of the Fathers of the desert, following their angelic way of life; together with them thou hast been granted to behold the face of God in His heavenly Kingdom. O Euthymius, Father of monks, intercede with Christ our God that He may grant great mercy to our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Euthymius the Great (+473), Palestinian monastic. Rank 2."
         }
       ]
@@ -464,7 +519,11 @@
             "text": "Guide of Orthodox faith, teacher of piety and reverence, luminary of the world, adornment of monks inspired by God: thou hast enlightened all by thy doctrines, O Maximus, harp of the Holy Spirit. Intercede with Christ our God for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Maximus the Confessor (+662). Theologian and confessor under monothelite persecution. Rank 4."
         }
       ]
@@ -483,49 +542,57 @@
             "text": "O Apostle Timothy, who art adorned with divine grace as a companion of Paul the teacher of the nations, with him intercede with God to grant us remission of our sins."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Apostle Timothy (+97), disciple of Paul. Rank 3."
         }
       ]
     },
     "01-23": {
-  "commemorations": [
-    {
-      "id": "clement-ancyra-agathangelus",
-      "name": "Hieromartyr Clement of Ancyra; Martyr Agathangelus",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Hieromartyr Clement of Ancyra and Martyr Agathangelus",
-        "text": "Your holy martyrs Clement and Agathangelus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Clement of Ancyra (+296), hieromartyr, and Agathangelus, his companion. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied. No unique text found at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-   "01-24": {
-  "commemorations": [
-    {
-      "id": "xenia-rome",
-      "name": "Venerable Xenia of Rome (Eusebeia)",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 3,
-      "troparion": {
-        "tone": 3,
-        "title": "Troparion of Venerable Xenia of Rome",
-        "text": "Living the life of a stranger in the world, you estranged yourself from every sin; you abandoned comforts and fleeting honors and betrothed yourself to your Immortal Bridegroom. Glorious Xenia, entreat Christ our God to grant us His great mercy."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Xenia of Rome (Eusebeia), venerable ascetic and foundress. Rank 4. Proper troparion Tone 3 confirmed from OCA and Jordanville tradition."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "clement-ancyra-agathangelus",
+          "name": "Hieromartyr Clement of Ancyra; Martyr Agathangelus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Clement of Ancyra and Martyr Agathangelus",
+            "text": "Your holy martyrs Clement and Agathangelus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Clement of Ancyra (+296), hieromartyr, and Agathangelus, his companion. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied. No unique text found at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
+    "01-24": {
+      "commemorations": [
+        {
+          "id": "xenia-rome",
+          "name": "Venerable Xenia of Rome (Eusebeia)",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of Venerable Xenia of Rome",
+            "text": "Living the life of a stranger in the world, you estranged yourself from every sin; you abandoned comforts and fleeting honors and betrothed yourself to your Immortal Bridegroom. Glorious Xenia, entreat Christ our God to grant us His great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Xenia of Rome (Eusebeia), venerable ascetic and foundress. Rank 4. Proper troparion Tone 3 confirmed from OCA and Jordanville tradition."
+        }
+      ]
+    },
     "01-25": {
       "commemorations": [
         {
@@ -540,30 +607,37 @@
             "text": "The shepherd's pipe of thy theology vanquished the trumpetings of the philosophers, O Gregory the Theologian. Having gathered and sown the depths of the Spirit, beauty was added unto thee. But intercede with Christ God that our souls be saved."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Gregory Nazianzus (+389/390), Cappadocian Father. Rank 2 (Polyeleos). Also Translation of the relics of Gregory (Jan 19 old calendar / Jan 26 in some usage)."
         }
       ]
     },
     "01-26": {
-  "commemorations": [
-    {
-      "id": "xenophon-family",
-      "name": "Venerable Xenophon and Mary, and their sons Arcadius and John, of Constantinople",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Venerable Xenophon and His Family",
-        "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Venerable Xenophon and his family."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "5th-c. Constantinopolitan nobleman and family, all became monastics after sons were shipwrecked. Tone 4 confirmed OCA January 26 all-troparia page (direct fetch). Standard 'O God of our Fathers' family troparion."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "xenophon-family",
+          "name": "Venerable Xenophon and Mary, and their sons Arcadius and John, of Constantinople",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Venerable Xenophon and His Family",
+            "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Venerable Xenophon and his family."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "5th-c. Constantinopolitan nobleman and family, all became monastics after sons were shipwrecked. Tone 4 confirmed OCA January 26 all-troparia page (direct fetch). Standard 'O God of our Fathers' family troparion."
+        }
+      ]
+    },
     "01-27": {
       "commemorations": [
         {
@@ -578,7 +652,12 @@
             "text": "Grace like a flame shining forth from thy mouth has illumined the universe and stored up in the world the treasures of poverty and the height of humility. Teaching us in thine own words, O Father John Chrysostom, intercede with the Word, Christ our God, that our souls may be saved."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Translation of the relics of Chrysostom (438). The Troparion is the same as Nov 13. Rank 2."
         }
       ]
@@ -603,7 +682,13 @@
             "text": "Ever anticipating the hour of Judgment, / you lamented bitterly, venerable Ephraim. / Through your deeds you were a teacher by example; / therefore, universal Father, you rouse the slothful to repentance."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT", "COE"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT",
+            "COE"
+          ],
           "notes": "Ephrem the Syrian (+373). Deacon, hymnographer, Doctor of the Church. Pan-traditional. Rank 2. Kontakion Tone 2. Source: OCA."
         }
       ]
@@ -622,7 +707,12 @@
             "text": "As the disciples of the Lord, thou didst fulfill His evangelical counsel and didst not hold thy life dear, O blessed Ignatius. Therefore thou wast devoured by lions, yet thou hast been found worthy of bearing Christ within thee. Intercede with Him for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Translation of relics of Ignatius of Antioch (+107/108). Same Troparion as Dec 20. Rank 3."
         }
       ]
@@ -647,7 +737,10 @@
             "text": "O Lord, You have received the Holy and God-proclaiming heralds, the crown of Your Teachers, for the enjoyment of Your good things and for repose; for You have accepted their sufferings and labors above every sacrifice, for You alone glorify Your Saints."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "Feast of the Three Hierarchs. Established by Patriarch John Mauropos of Constantinople (+1100). Rank 2 (Polyeleos). All three are commemorated on their individual feast days as well. Kontakion Tone 2. Source: OCA."
         }
       ]
@@ -666,7 +759,10 @@
             "text": "O God-bearing Cyrus and holy John, with your divine healings ye have driven away the wiles of the demons and the deceptions of the enemies, guarding those of us who are in sickness with your miraculous interventions; and by your supplications ye have chased away the darkness of demonic delusion from our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "Cyrus (+311) and John (+311), unmercenary physicians of Alexandria. Rank 3."
         }
       ]

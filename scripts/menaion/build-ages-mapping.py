@@ -17,7 +17,7 @@ SAINTS = {
 '04-30':('james-zebedee',['james','iakov']),'05-10':('simon-zealot-apostle',['simon']),
  '05-15':('pachomius-great',['pachom']),'06-09':('cyril-alexandria-bishop',['cyril']),
  '06-11':('bartholomew-barnabas-apostles',['barnab','bartholomew']),'06-12':('onuphrius-great',['onuphr']),
- '07-07':('thomas-apostle',['thomas']),'07-22':('mary-magdalene-equal-apostles',['mary','magdal']),
+'07-22':('mary-magdalene-equal-apostles',['mary','magdal']),
  '07-25':('dormition-anna-mother-theotokos',['anna']),'08-01':('procession-cross-maccabees',['macca','eleazar']),
  '08-09':('matthias-apostle-august',['matthias']),'08-31':('deposition-belt-theotokos',['belt','girdle','sash']),
  '09-16':('euphemia-all-praised-september',['euphemia']),'09-24':('thekla-equal-apostles',['thecla','thekla']),

@@ -99,17 +99,6 @@
   ],
   "flags": ""
  },
- "thomas-apostle": {
-  "life": "Thomas of Mount Maleon is said to have been a successful and wealthy general who left his career to live as a hermit. Tradition holds that he settled on Mount Maleon, near Mount Athos, where people sought healing from him. He died peacefully and miracles were reported at his relics.",
-  "period": "Byzantine era (date uncertain)",
-  "place": "Mount Maleon, near Mount Athos (per Orthocal)",
-  "confidence": "low",
-  "sources": [
-   "https://orthocal.info/api/gregorian/2026/7/7/",
-   "https://www.oca.org/saints/lives/2026/07/07"
-  ],
-  "flags": "IDENTITY MISMATCH: Calendar for July 7 (OCA/Orthocal) names Venerable Thomas of Mount Maleon (and Martyr Kyriake), not Apostle Thomas, who is kept on October 6 and the Sunday after Pascha. Life written for Thomas of Maleon. Only OCA-derived text found; century and exact location of Maleon not confirmed. Consider relabeling the entry."
- },
  "prokopios-caesarea-martyr": {
   "life": "Prokopios, a Christian official of Palestinian Caesarea, was arrested in the persecution under Diocletian and refused to offer sacrifice. He was beheaded around 303. Tradition holds that he was born in Jerusalem and was converted on a journey to Syria. He became one of the best-known military and great martyrs of the Eastern Church.",
   "period": "c. 303",
@@ -296,5 +285,16 @@
    "https://en.wikipedia.org/wiki/Thecla"
   ],
   "flags": "Her story comes from an apocryphal text."
+ },
+ "thomas-maleon": {
+  "life": "Thomas, a successful military commander, left the world to become a monk and, with his elders' blessing, lived as a hermit on Mount Maleon in Lakonia in the Peloponnese. Tradition holds that the prophet Elijah led him there; people sought his counsel and the sick were healed. He reposed in the tenth century, and part of his relics rest at Monemvasia and Sparta. He is commemorated with Acacius, a sixth-century Sinai monk of the Ladder, known for his obedience to a harsh elder.",
+  "period": "10th century",
+  "place": "Mount Maleon, Lakonia (Peloponnese)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/07/07",
+   "https://www.oca.org/saints/troparia/2026/07/07"
+  ],
+  "flags": "Rewritten 2026-10-01 from the OCA lives page after the first draft wrongly placed Mount Maleon near Mount Athos."
  }
 }

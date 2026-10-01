@@ -45,13 +45,6 @@
    "invocation": "Jude"
   },
   {
-   "id": "thomas-apostle",
-   "mmdd": "07-07",
-   "name": "Holy Apostle Thomas",
-   "common": "apostle",
-   "invocation": "Thomas"
-  },
-  {
    "id": "thomas-apostle-october",
    "mmdd": "10-06",
    "name": "Holy Apostle Thomas",
@@ -116,7 +109,7 @@
   },
   {
    "id": "tikhon-zadonsk",
-   "mmdd": "08-26",
+   "mmdd": "08-13",
    "name": "St. Tikhon of Zadonsk, Bishop of Voronezh",
    "common": "hierarch",
    "invocation": "Tikhon"
@@ -221,7 +214,7 @@
   },
   {
    "id": "irene-great-martyr",
-   "mmdd": "04-16",
+   "mmdd": "05-05",
    "name": "Holy Great Martyr Irene",
    "common": "female-martyr",
    "invocation": "Irene"
@@ -368,7 +361,7 @@
   },
   {
    "id": "finding-relics-innocent-irkutsk",
-   "mmdd": "02-22",
+   "mmdd": "02-09",
    "name": "Finding of the Relics of Innocent of Irkutsk",
    "common": "hierarch",
    "invocation": "Innocent"
@@ -472,7 +465,7 @@
   },
   {
    "id": "royal-martyrs-russia",
-   "mmdd": "07-17",
+   "mmdd": "07-04",
    "name": "Holy Royal Passion-Bearers Tsar Nicholas II and his family",
    "common": "martyrs-many",
    "invocation": "the Royal Passion-Bearers",
@@ -519,6 +512,14 @@
    "name": "Holy Apostle James, Brother of the Lord",
    "common": "apostle",
    "invocation": "James"
+  },
+  {
+   "id": "nina-georgia",
+   "mmdd": "01-14",
+   "name": "Equal-to-the-Apostles Nina, Enlightener of Georgia",
+   "common": "apostle",
+   "invocation": "Nina",
+   "note": "Equal-to-the-Apostles: no Orloff Common exists; the Common of an Apostle is used (Josh 2026-10-01)"
   }
  ]
 }

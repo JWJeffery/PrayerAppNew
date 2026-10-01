@@ -87,6 +87,13 @@
    "invocation": "Aristarchus, Pudens and Trophimus"
   },
   {
+   "id": "agape-irene-chionia",
+   "mmdd": "04-16",
+   "name": "Holy Virgin Martyrs Agape, Irene and Chionia",
+   "common": "martyrs-many",
+   "invocation": "Agape, Irene and Chionia"
+  },
+  {
    "id": "symeon-bishop-persia",
    "mmdd": "04-17",
    "name": "Hieromartyr Symeon, Bishop of Persia, and companions",
@@ -556,6 +563,13 @@
    "invocation": "Sisoes"
   },
   {
+   "id": "thomas-maleon",
+   "mmdd": "07-07",
+   "name": "Venerable Thomas of Mount Maleon and Venerable Acacius of Sinai",
+   "common": "monks-many",
+   "invocation": "Thomas and Acacius"
+  },
+  {
    "id": "paisios-great",
    "mmdd": "07-09",
    "name": "Venerable Paisios the Great",
@@ -939,13 +953,6 @@
    "name": "Holy Martyr Pelagia of Tarsus",
    "common": "female-martyr",
    "invocation": "Pelagia"
-  },
-  {
-   "id": "irene-thessalonica",
-   "mmdd": "05-05",
-   "name": "Holy Martyr Irene of Thessalonica",
-   "common": "female-martyr",
-   "invocation": "Irene"
   },
   {
    "id": "isaiah-prophet",

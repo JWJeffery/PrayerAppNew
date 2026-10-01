@@ -12,7 +12,9 @@ import json, glob, os, sys
 from urllib.parse import urlparse
 ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
 DIR = os.path.join(ROOT, 'data', 'menaion', 'lives')
-EXCLUDE = {
+EXCLUDE = {  # identity mismatches fixed 2026-10-01 -- kept as a mechanism, now empty
+}
+_OLD_EXCLUDE = {
  'thomas-apostle': 'Calendar for Jul 7 is Ven. Thomas of Mt Maleon (+ Martyr Kyriake); the app entry says Apostle Thomas (who is Oct 6).',
  'irene-great-martyr': 'Calendar for Apr 16 is Martyrs Agape, Irene and Chionia (three sisters); Great Martyr Irene is May 5.',
  'fathers-council-nicaea': 'Calendar for Jan 14 gives Nina of Georgia, the Sinai/Raithu fathers and Sava of Serbia; the Nicaea fathers are kept on a Sunday of the Paschal season.',

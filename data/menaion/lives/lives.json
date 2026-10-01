@@ -2,6 +2,16 @@
  "schema": "menaion-lives/1",
  "note": "Original short summaries written for this app from published sources (see each entry); no source text copied.",
  "lives": {
+  "irene-great-martyr": {
+   "life": "Irene, born Penelope in Magedon in Persia in the fourth century, was the daughter of a pagan ruler. Her tutor Apellian taught her the faith; she was baptized, took the name Irene, refused marriage and, tradition holds, led her father and many thousands to Christ. She endured repeated tortures under persecuting governors, including enclosure in heated bronze oxen, and is venerated as a Great Martyr.",
+   "period": "4th century",
+   "place": "Magedon, Persia",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/05/05",
+    "https://www.oca.org/saints/troparia/2026/05/05"
+   ]
+  },
   "synaxis-seventy-apostles": {
    "life": "The Gospel of Luke records that Christ appointed seventy disciples, sent in pairs ahead of him to the towns he planned to visit. Some manuscripts give the number as seventy-two. The Church keeps this joint feast in honor of the whole company, to which tradition adds others later associated with the apostles, so those called 'of the Seventy' exceed the literal number.",
    "period": "1st century",
@@ -260,6 +270,26 @@
    "sources": [
     "https://www.oca.org/saints/lives/2026/05/10",
     "https://orthocal.info/api/gregorian/2026/5/10/"
+   ]
+  },
+  "nina-georgia": {
+   "life": "Nina, called Nino in Georgian tradition, was a Cappadocian Christian who came as a captive to the kingdom of Iberia, in present-day Georgia. Tradition holds that her prayers healed the queen and, after a hunting mishap, led King Mirian to seek baptism for himself and his people. She is honored as Equal-to-the-Apostles and Enlightener of Georgia, and died around 335.",
+   "period": "4th century (d. c. 335)",
+   "place": "Iberia (Georgia)",
+   "confidence": "high",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/01/14",
+    "https://orthocal.info/api/gregorian/2026/1/14/"
+   ]
+  },
+  "agape-irene-chionia": {
+   "life": "Agape, Irene and Chionia were three Christian sisters who, tradition holds, lived near Aquileia and were brought before the emperor Diocletian about the turn of the fourth century. They would not deny Christ and were imprisoned and tortured. Agape and Chionia were burned, and Irene was killed by an arrow. Accounts differ on the details of their sufferings.",
+   "period": "early 4th century",
+   "place": "Aquileia (per Orthocal and OCA)",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/lives/2026/04/16",
+    "https://orthocal.info/api/gregorian/2026/4/16/"
    ]
   },
   "cyril-methodius-slavs": {
@@ -521,6 +551,16 @@
    "sources": [
     "https://orthocal.info/api/gregorian/2026/9/24/",
     "https://en.wikipedia.org/wiki/Thecla"
+   ]
+  },
+  "thomas-maleon": {
+   "life": "Thomas, a successful military commander, left the world to become a monk and, with his elders' blessing, lived as a hermit on Mount Maleon in Lakonia in the Peloponnese. Tradition holds that the prophet Elijah led him there; people sought his counsel and the sick were healed. He reposed in the tenth century, and part of his relics rest at Monemvasia and Sparta. He is commemorated with Acacius, a sixth-century Sinai monk of the Ladder, known for his obedience to a harsh elder.",
+   "period": "10th century",
+   "place": "Mount Maleon, Lakonia (Peloponnese)",
+   "confidence": "medium",
+   "sources": [
+    "https://www.oca.org/saints/all-lives/2026/07/07",
+    "https://www.oca.org/saints/troparia/2026/07/07"
    ]
   },
   "gregory-illuminator-armenia": {
