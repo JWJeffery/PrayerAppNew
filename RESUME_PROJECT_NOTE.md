@@ -308,22 +308,12 @@ Full record, scripts, mapping rules, limits: `documentation/MENAION_COMMONS_ORLO
 rank-4 saints (246 of 370 commemorations) still show ordinary weekday content; unmapped rank-3 entries
 (Synaxes, groups, ambiguous types) need Josh's judgment; Orloff's alternate-branch rubrics are shown as printed.
 
-**AGES library RECEIVED and inspected 2026-10-01** (Josh uploaded `alwb-library-en-us-goadedes-main.zip`; LICENSE.md
-inside confirmed CC0 1.0). It is a full liturgical library of Fr. Seraphim Dedes' English texts in `.ares`
-files (plain `key = value` lines; values are quoted literals, empty `""`, or references to other
-resources such as Octoechos/Heirmologion/titles): `Books-Collections/{Menaion,Octoechos,Triodion,
-Pentecostarion,Heirmologion,Eothina,Horologion,Euchologion,Hieratikon_PriestsHandbook,Daily,...}`.
-**Menaion = `Menaion/mMM/me.mMM.dDD_en_US_goadedes.ares`, 366 dated days + 5 non-dated files** (m07 `dHF`,
-m10 `dHF`, m12 `dAC`/`dBC`/`dFF`). **Coverage is PARTIAL (measured):** of 366 days, 276 have at least one
-literal hymn text, 189 have >=3 Vespers texts, only 88 have >=3 Matins texts; totals of literal
-`.text` fields -- Vespers 906, Matins 2,858 (mostly canon odes), Small Vespers 9, Liturgy 45. Great Feasts
-are NOT reliably covered (e.g. Aug 6 Transfiguration: Vespers/Aposticha/Apolytikion `text = ""`). Many
-fields are references that resolve only by following them into other library files, so assembling a
-full day is a resolver job, not a copy. Calendar caveat: AGES is GOA New-Calendar usage -- confirm how
-`data/menaion` dates map before pairing by `MM-DD`. The ZIP is not committed to the repo (16MB); a
-parser would write a trimmed `data/menaion/ages/` derived layer. **Next:** write
-`scripts/menaion/ingest-ages-menaion.py` (literal texts only, with source file + key per entry),
-then use AGES for saint-specific propers and Orloff Commons for the rest.
+**AGES (CC0 library, Fr. Seraphim Dedes) -- ingested and wired 2026-10-01 (partial by design).** Coverage of the library
+is partial (226/366 days have literal hymn text) and its day files mix the saint with forefeast/afterfeast hymns, so only
+27 hand-reviewed rank-3 saints use it, and only for slots where EVERY selected hymn names the saint (Vespers stichera,
+aposticha, Orthros praises/exapostilarion); everything else uses the Orloff Common. Full record, rule, limits:
+`documentation/MENAION_AGES.md`. The ZIP is NOT in the repo (re-ingest needs Josh to re-supply it). **Open:** rank-4 saints;
+AGES for more days needs per-day hymn-index review; rank 1-2 feasts untouched (Josh: Great Feast propers stay deferred).
 
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license

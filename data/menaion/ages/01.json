@@ -1,0 +1,2073 @@
+{
+ "schema": "menaion-ages/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (translations by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America), CC0 1.0",
+ "calendar": "GOA New Calendar (Revised Julian) usage; commemorations may differ from the Slavic usage the app otherwise follows",
+ "dates": {
+  "01-01": {
+   "source_file": "me.m01.d01_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "When the Savior came down…",
+      "text": "When the Savior came down to the human race, He consented to be wrapped in swaddling clothes. He did not disdain the circumcision of His skin, when He was eight days old as regards His Mother, and without beginning as regards His Father. O believers, let us say to Him, “You are our God. Have mercy on us.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Our all-good God…",
+      "text": "Our all-good God was not embarrassed to have His skin cut off in circumcision, since He wished to be the model and example to all for salvation. He who made the Law also performed the Law’s decrees and fulfilled what the prophets declared concerning Him. “O Lord, who hold the whole world in Your hand and were wrapped in swaddling clothes, glory to You!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Your name in Greek…",
+      "text": "Your name in Greek is synonymous with kingdom. * O Basil, you led the Church of Christ, which has been called * a royal priesthood, kingdom of priests, a holy nation. * With skill and wisdom, you shepherded it well. * Then the Lord of all, who rules as King over all kings, * namely the Son, coeternal and ever united * with God the Father who had begotten Him, * rewarded you, O Saint, and placed the crown * of the heavenly kingdom upon your head. * Therefore earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "Worthily wearing the vestments…",
+      "text": "Worthily wearing the vestments of a bishop, * with joy you proclaimed the Gospel of the kingdom of God, * and you poured out an abundance of Orthodox teachings, * by which, O Basil, you edify the Church. * We have been illumined by your words, and we confess * the single Godhead, the Trinity, Father almighty, * also the only-begotten Word of God, * and the divine Spirit, and glorify * in three persons, one God, indivisible. * Therefore earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "incipit": "O father Basil…",
+      "text": "O father Basil, as you are now in heaven, * you live in the company of the celestial hosts, * whose incorporeal way of life you imitated * by the sincerity and nobility * of your conduct during your physical life on earth, * which you had led as if bodiless. Now we who study * your sacred teachings ask you to intercede * with Christ our God, that He deliver us * from distress and the darkness of ignorance; * also earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "incipit": "When the Savior came down…",
+      "text": "When the Savior came down to the human race, He consented to be wrapped in swaddling clothes. He did not disdain the circumcision of His skin, when He was eight days old as regards His Mother, and without beginning as regards His Father. O believers, let us say to Him, “You are our God. Have mercy on us.”"
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "incipit": "Our all-good God…",
+      "text": "Our all-good God was not embarrassed to have His skin cut off in circumcision, since He wished to be the model and example to all for salvation. He who made the Law also performed the Law’s decrees and fulfilled what the prophets declared concerning Him. “O Lord, who hold the whole world in Your hand and were wrapped in swaddling clothes, glory to You!”"
+     }
+    ],
+    "praises": [
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "incipit": "When the Savior came down…",
+      "text": "When the Savior came down to the human race, He consented to be wrapped in swaddling clothes. He did not disdain the circumcision of His skin, when He was eight days old as regards His Mother, and without beginning as regards His Father. O believers, let us say to Him, “You are our God. Have mercy on us.”"
+     }
+    ]
+   }
+  },
+  "01-02": {
+   "source_file": "me.m01.d02_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "In preparing to celebrate…",
+      "text": "In preparing to celebrate the illustrious baptism * of our God and Lord, let us sing forefestal hymns. * For now, incarnate, He makes His way as man to His Forerunner, * the all-holy Baptist John, * to request He receive from him saving baptism, * so that all who believe may be illumined and receive the Holy Spirit * and be reborn sacramentally."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Long ago, Prophet David…",
+      "text": "Long ago, Prophet David said that our God will come openly * and reveal himself. And now Christ is publicly * showing himself to the world, as He approaches His servant John, * seeking baptism from him. * River Jordan, be filled with joy. Also earth and sea * and the hills and the mountains, skip and tremble. And the hearts of all believers, * exult, receiving the noetic light."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "O almighty One…",
+      "text": "O almighty One, You are known as the river of peace and as * the abundant water of heavenly delight. * Therefore we marvel how You went down naked into Jordan’s streams, * which accepted You, O Lord, * who have covered heaven with clouds, as the Psalmist said, * and stripped naked the foe of all his evil, and have clothed in incorruption * all those on earth who believe in You."
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "Christ, the truth…",
+      "text": "Christ, the truth, comes to the Jordan, to be baptized by John, who says to Him, “It is I who need to be baptized by You. And You come to me? I who am grass do not dare to touch You, the fire. Sanctify me, O Lord, in Your divine epiphany.”"
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "incipit": "O Jesus, You put on…",
+      "text": "O Jesus, You put on my impoverished nature. * You came and lived among Your own servants, O Master, * exceedingly good, and You asked Your servant to baptize You. * When he saw You come, the Baptist John humbly uttered, * “You are free of stain, therefore how shall I baptize You, * my God most benevolent?”"
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 1,
+      "incipit": "Christ is about to come…",
+      "text": "Christ is about to come to the Jordan River, * within the streams of which He will truly accomplish * our nature’s refashioning, by the grace that is His as God. * Holy Forerunner, rejoice as you now receive Him, * Do as He so wills, as He commands You to wash Him, * the only benevolent Lord."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Desiring to make us rich…",
+      "text": "Desiring to make us rich — for we had made ourselves poor * because of our unrestraint — our gracious Lord who is rich * has made himself poor for us. * He is going to stand in the River Jordan, requesting * publicly to be baptized there by John in its waters. * O believers, let us extol His utmost humility."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       2
+      ],
+      "mode": 4,
+      "incipit": "The Prophet Isaiah’s words…",
+      "text": "The Prophet Isaiah’s words have come to pass today. * “A voice cries: ‘In the wilderness prepare the way of the Lord. * For God make a highway straight.’” * As he said, John the Baptist, the trumpet of the desert, * has sounded, and he is calling all the people to repentance. * Come and let us go to see this marvelous spectacle."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "O voice of one who cries…",
+      "text": "O voice of one who cries, cry out! You hills and mountains, skip like rams! * Celebrate, O human nature, for the pre-eternal Logos * has taken flesh, becoming man. He comes now seeking baptism * in River Jordan by the hands * that He himself had created, * to undo the world’s transgression."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Amazing, how the river…",
+      "text": "Amazing, how the river has received You in its streams, O Word, * who brought all the seas and rivers * to being from non-existence, * and also how the Forerunner has dared to lay his hand on Your * immaculate head, O Master! * Benevolent Lord, astounded, * we praise Your poverty’s grandeur."
+     }
+    ],
+    "praises": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "Hesitant to touch You…",
+      "text": "Hesitant to touch You was John, his hand atremble; * yet his soul rejoiced, for he understood Your purpose, * that You put on the form of a servant and bowed Your head, * as was Your good pleasure, to release us * from our servitude to the devil. * We cry out to You: * Blessed are You, the One who came; glory to You, our God!"
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 6,
+      "incipit": "Mystically rejoice…",
+      "text": "Mystically rejoice, all the earth, as it is written! * Let the mountains skip now, as sang the Prophet David! * O River Jordan, turn back your current prophetically! * Tremble in the presence of the Master! * For God became incarnate, coming * to wash away * from all humanity the sin of Adam our ancestor."
+     }
+    ]
+   }
+  },
+  "01-03": {
+   "source_file": "me.m01.d03_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Behold, our expiation…",
+      "text": "Behold, our expiation has come! * Behold, illumination for us * the believers! To the Jordan Jesus goes * to cleanse our human nature * of every stain of sin, and since we were damaged to refashion us."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "O Master…",
+      "text": "O Master, when Your Forerunner saw * You coming to him and he heard * You requesting that He be baptized by him, * with fear and trepidation * he said, “My God and Maker how can I baptize You, the sinless One?”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "O faithful…",
+      "text": "O faithful, let us mentally * assemble at the Jordan’s streams * and imagine that most wondrous spectacle. * The Creator of all things * is going to be baptized, having appeared in His epiphany."
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "incipit": "To the River Jordan…",
+      "text": "To the River Jordan Christ our God is coming to be baptized, wishing by His epiphany to cleanse us from our iniquities, as the only good and benevolent Lord."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 3,
+      "incipit": "Uncircumscribed is He…",
+      "text": "Uncircumscribed is He in His divinity, * yet circumscribed in His corporeality; * and He is coming to be baptized in the River Jordan. * Come, let us receive the Lord with contemplative purity, * for He wishes to effect the renewal of everyone. * To Him let us with fear therefore cry out, * “Glory to Your epiphany, O Christ!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 3,
+      "incipit": "At Your epiphany…",
+      "text": "At Your epiphany at River Jordan, O Lord, * when You were physically baptized therein by John, * the hosts of Angels were amazed, O Master of all creation, * seeing You, O Savior, stand near Your servant and speak to Him. * And the unoriginate heavenly Father bore witness to You. * And therefore with great joy we cry out to You: * Glory to Your epiphany, O Christ!"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 5,
+      "incipit": "As the Father…",
+      "text": "As the Father and Spirit are one in dignity, * so the Word, now incarnate and baptized for our sake. * As the hosts of Angels witnessed this, they trembled in awe. * When the Jordan River sensed its Creator enter it, * with fear and reverence it turned back, * and to heights of salvation * lifted us who fell into passions of old."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       2
+      ],
+      "mode": 5,
+      "incipit": "As the Father and Spirit…",
+      "text": "As the Father and Spirit are unoriginate, * so the Word, who with mercy assumed our human form. * He is going to the Jordan to be baptized for us. * Let us welcome Him with joy, having purified our thoughts, * and let us say, “Christ our Savior * and Benefactor, You are blessed, * for You have come to sanctify us!”"
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "Having seen in Bethlehem…",
+      "text": "Having seen in Bethlehem the amazing new wonder, * with soulful ardor let us now go to the Jordan River, * and there we shall be witnesses of the awesome mystery; * for with godly dignity, my Christ has stripped himself for me, * and He has clothed me in the robe of the heavenly Kingdom."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Heaven is the throne…",
+      "text": "Heaven is the throne that He sits upon as Master. * He came down to earth now incarnate of the Virgin. * And at the Jordan River, He requests of the Baptist John * all humanity’s purification. * Let us the tribes and all the families * of earth sing to Him, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "Christ has now arrived…",
+      "text": "Christ has now arrived at the waters of the Jordan. * He who washes sins is requesting to be baptized. * Let all the earth rejoice now with the heavens exultantly. * Celebrate, O Church of the Gentiles, * for to the King you have been wedded, * and faithfully sing, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "Mountains, drip…",
+      "text": "Mountains, drip your sweet wine of joy, and you, O Nations, * clap your hands, and mystically blossom, O you desert, * as holy Prophets uttered. River Jordan, now welcome Christ. * Baptist, come and joyfully assist with * the sacrament of the Redeemer. * Let all people sing, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "incipit": "Light from Light…",
+      "text": "Light from Light, He shone forth before all time and ages. * He appeared to those sitting in the night and shadow, * and He has purged the darkness of our sins and has made us clean. * Adam, dance for joy, and Eve, be happy. * For Christ has come for your redemption. * O David, shout, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "Jacob’s Star…",
+      "text": "Jacob’s Star has shone on the world with divine splendor, * taking on himself all the flaming sin of mankind; * and in the Jordan River He has mystically buried it. * Shining with the radiance of Godhead, * He gives the light of godly knowledge * to Nations all. * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 6,
+      "incipit": "Coming in the flesh…",
+      "text": "Coming in the flesh, Christ fulfilled the Law’s commandments. * Wishing to begin to accomplish our salvation, * He comes now to the Jordan. The compassionate Lord of all, * bows His holy head before the Baptist, * who cries out as a faithful servant, * “All people, sing: * ‘Blessed are You who have appeared; glory to You, our God!’”"
+     }
+    ]
+   }
+  },
+  "01-04": {
+   "source_file": "me.m01.d04_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Come, O faithful…",
+      "text": "Come, O faithful Christians, and with sacred hymns let us sing in praise * of the all-holy Seventy * Apostles of Christ our God: Cleopas and Philip, * Prochorus, Nicanor, and the Evangelists Mark * and Luke, with Linus, Stachys, and Agabus, * the Proto-martyr Stephen, Sosipater, Jason, and Tychicus, * Timon, Gaios, Andronicus, * with Philemon and Sosthenes."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Worthily we honor…",
+      "text": "Worthily we honor the Apostles: Narcissus, Trophimus, * Caesar, Gaius, Asyncritus, * Aristarchus, and divine Hermes and Apollos, * with Silas and Zenas and Cephas. Let us also praise * Clement and Justus and Onesiphorus, * Matthias and Erastus, Luke and Carpus, James, Aristobulus, * Urban, Quartus, and Evodus, Aristarchus and Tychicus."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Let us duly praise…",
+      "text": "Let us duly praise those charismatic preachers of Christ our God: * Pudens, Lucius, and Artemas, * Apelles, Philologus, Rhodion, Olympas, * Amplias, Patrobas, Epaphroditus, Titus, Mark, * Tertius, and highly extolled Epenetus, * Achaicus, Aquila, also Fortunatus and Barnabas, * famous Crescens and Parmenas, with the rest of the Seventy."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Minister to the Word…",
+      "text": "Minister to the Word, * O Forerunner and Prophet; * and as His friend, the Bridegroom; * and as His lamp, the Light; as His dawn, the Sun of righteousness."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Sing the pre-festal hymns…",
+      "text": "Sing the pre-festal hymns! * For our illumination * and our Redeemer, Jesus, * is at the Jordan River. Come, let us all be purified."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "All blessings…",
+      "text": "All blessings come to me * through you, O Theotokos: * that God has dwelt among men, * the light appeared at Jordan, and in His light I see the light."
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "Christ, the truth…",
+      "text": "Christ, the truth, comes to the Jordan, to be baptized by John, who says to Him, “It is I who need to be baptized by You. And You come to me? I who am grass do not dare to touch You, the fire. Sanctify me, O Lord, in Your divine epiphany.”"
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Behold, it is Christ…",
+      "text": "Behold, it is Christ our God who to the Jordan has come. * He calls to the Forerunner and says, “Come, baptize Me, * the One who will wash away * all the sins of creation in the streams of the river. * Stretch forth your hand and touch My divine head, for I have come now * to remedy the trespass of the ancestral hand of old."
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 4,
+      "incipit": "Come, O believers…",
+      "text": "Come, O believers, visualizing the Master * and King of all creation as He is baptized, * let us extol and worship Him, for He is truly God. * Let us wash away the stains of our sins and transgressions * and prepare the paths and ways of our hearts for Him with longing. * For He has come to save the human race * by being baptized today in the Jordan’s streams."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "incipit": "Rejoice, O greatest…",
+      "text": "Rejoice, O greatest Prophet of the Lord and Baptist! * For Christ has come today to be baptized by you. * You tremble as a servant, for your Master bows His head to you. * Touch the divine head of Him whose hand touches the universe. * In His good pleasure as God He has come to save the human race."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "Your Seventy Apostles…",
+      "text": "Your Seventy Apostles * left the world behind, O Logos, * for they longed to be disciples * of You, the Logos and Teacher. * Then with the Faith in You they rid * the world of ignorance of God."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "The Son who was begotten…",
+      "text": "The Son who was begotten * from the Father before all time * and who has from a woman * ineffably put on our flesh * now is going to be baptized * for the world’s regeneration."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Having been announced…",
+      "text": "Having been announced by the voice of one who cries out, * Jesus Christ has come to the waters of the Jordan, * to the Forerunner saying, “Come and wash Me in water now. * Baptize Me, for I have condescended, * and I have come to purge from Adam * the ancestral fall.” * Blessed are You who have appeared; glory to You, our God!"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "John the Forerunner…",
+      "text": "John the Forerunner then replied to the Master, * “As I am unable to know the height of heaven, * to count the stars, to measure earth’s dimensions, how can I touch * with my hand Your head? How can I baptize * You who in Your hand hold creation? * So I cry to You: * Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "I who share the throne…",
+      "text": "I who share the throne with the Father and the Spirit * am escorted by the angelic hosts of heaven. * But when with tender mercy I was born in Bethlehem, * I was hosted by a meager grotto; * you, therefore, now lend Me your right hand, * O Forerunner, * that in myself I may indeed wash away the sins of the world."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "incipit": "In the days of Noah…",
+      "text": "In the days of Noah, You opened heaven’s floodgates * and extinguished sins, by Your word alone, O Master. * But how will Jordan River now endure it beholding You? * Already it has turned back its current. * All creation has recognized You; * and I cry to You: * Blessed are You who have appeared; glory to You, our God!"
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "I have come to earth…",
+      "text": "I have come to earth, donning your impoverished nature, * that I may fulfill the good pleasure of the Father. * Though heaven is My throne and earth the footstool of My feet, * yet I bend My neck to you, O Baptist, * having come for this very purpose. * So, baptize Me; * and thus in Me are washed away the sins of humanity."
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 6,
+      "incipit": "You are He who led…",
+      "text": "You are He who led Israel by cloud and pillar. * In the wilderness, You are He who gave them water. * You are creation’s Master, and in nature ineffable, * yet You took the form of a servant! * How can I, the grass, touch You, the fire? * Please, You baptize me. * For it is I who need to be purified by You, O Lord."
+     }
+    ]
+   }
+  },
+  "01-05": {
+   "source_file": "me.m01.d05_en_US_goadedes.ares",
+   "slots": {
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "incipit": "Rejoice, O River Jordan…",
+      "text": "Rejoice, O River Jordan, for He who created * all things has come in His divine compassion requesting * that He receive baptism from His servant within your streams. * Adam and ancestral mother Eve, dance for joy now! * God has come to earth as universal redemption, * for He is supremely good."
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 1,
+      "incipit": "The water of delight…",
+      "text": "The water of delight in the Psalm is the Master, * who comes be baptized in the streams of the river. * for it was His will to give me incorruptible life to drink. * John saw You and said, “I am Your servant. How can I * extend my hand and touch Your head, at which all creation * is trembling in awe, O Lord?”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 3,
+      "incipit": "Incomprehensible is He…",
+      "text": "Incomprehensible is He who in the flesh * has become poor and now has come for baptism, * and in himself accomplished our renewal and refashioning. * Therefore, let us worship Him as our God very merciful, * also let us magnify His condescension and sing to Him * with gratitude of heart and extol Him, * Glory to Your Epiphany, O Christ!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       2
+      ],
+      "mode": 3,
+      "incipit": "O Master Christ…",
+      "text": "O Master Christ our God, You are about to stand * naked in Jordan’s streams to clothe the nakedness * of Adam in the garment of glory, of which Isaiah wrote. * What a paradox indeed! How can water receive You, Lord, * who with water cover Your upper chambers, as David sang? * O Jesus, our divine Benefactor, * we all extol Your Epiphany."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "From the Virgin…",
+      "text": "From the Virgin You shone forth * bodily in Bethlehem. * Now You hasten to the Jordan * to wash away all human stain, * leading to light those in darkness * by means of holy baptism."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Baptist, why have doubts…",
+      "text": "Baptist, why have doubts regarding the dispensation * that for the salvation of all I am enacting? * Let go of former figures, and consider recent events. * Have faith in Your God who condescended, * and come to Me and serve Me. * As God, I have come * to cleanse Adam of the fall, for I am compassionate."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "Taking on Your shoulders…",
+      "text": "Taking on Your shoulders our sins and our transgressions, * Jesus, You have come to me at the River Jordan. * But at Your awesome coming, I am frightened admittedly. * Why do You command me to baptize You, * since You have come to purify me? * And how is it * that You seek baptism from me, since You are He who cleanses all?"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "You will not be able…",
+      "text": "You will not be able to comprehend My nature. * Having clothed myself in the form of a servant, * I come now to the Jordan. Have no doubts with regard to Me. * Do not be afraid. Come and approach Me, * O John, and lay your hand on My head, * and cry aloud, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "incipit": "Astounding is Your immense…",
+      "text": "Astounding is Your immense poverty, O Logos * of God! Now I see that for me who am fallen * You clothed yourself in Adam, in Your pity, and You renew * all those who from Adam are descended. * Therefore doing as You commanded, * with faith I say, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "John then ministered…",
+      "text": "John then ministered to the Lord with fear and trembling, * yet within his soul, he rejoiced and said with gladness, * “Come, all you generations of our Ancestor, celebrate! * Christ, the expectation of all people, * has come now to the Jordan River * to wash away * the sin of Adam from us all, for He is compassionate.”"
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 6,
+      "incipit": "Everybody, sing…",
+      "text": "Everybody, sing to the One born of the Virgin, * who for our salvation was baptized in the Jordan! * And let us all implore Him, “God and King of the universe, * grant that with a clear and guiltless conscience, * and no regrets or condemnation, * we all attain * Your Resurrection from the dead, and celebrate it faithfully.”"
+     }
+    ]
+   }
+  },
+  "01-07": {
+   "source_file": "me.m01.d07_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Baptizing the people…",
+      "text": "Baptizing the people in the River Jordan, Your Forerunner * saw You coming to him, O Lord. * In his great astonishment, as a prudent servant, * fearfully he cried out, “O Savior, what is this I see? * You have assumed such a humble poverty! * For You have clothed yourself in humbled human nature and raised it up * in Your wealth of benevolence, and Your mercy and tender love.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "The Savior of all…",
+      "text": "The Savior of all replied to John the Forerunner, “Come to Me * and do not be afraid to serve * the wonderful mystery that I am performing. * Crushed by sin is Adam, whose nature I have now assumed; * and now as human I will to be baptized * by you here in the Jordan River, where you see I have come today, * even though in divinity I am sinless and undefiled.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "John replied…",
+      "text": "John replied to Jesus, “No one born on earth ever saw the sun * to be washed or be purified. * No one ever saw the One who has clothed the heavens * with clouds to be naked himself. No one has ever seen * Him who created the rivers and the springs * to step into their waters. Lord, I am amazed by Your masterplan. * I, Your servant, now beg that You not give orders too great for me.”"
+     }
+    ]
+   }
+  },
+  "01-08": {
+   "source_file": "me.m01.d08_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "You are light itself…",
+      "text": "You are light itself, as You stated, O my Jesus, * and You are the light that enlightens every person. * O Lord, when You were baptized in the Jordan You shone as light, * being one in essence with Your Father. * Creation all, in You illumined, * O Christ, cries to You, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "Let us purify…",
+      "text": "Let us purify all our senses, so that we be * spiritually filled through the flesh with divine glory. * And as we visualize Christ being baptized in His flesh, * and crushing the head of the deceiver, * let us with poetry extol Him, * and sing to Him, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "We were parched…",
+      "text": "We were parched with thirst for You, O my gracious Jesus. * You gave us to drink from Your vivifying water, * when to the Jordan River You had come in Your tender love. * Therefore having drunk from Your immortal * fount of divine illumination, * O Christ, we sing: * “Blessed are You who have appeared; glory to You, our God!”"
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "incipit": "When Christ, who is the light…",
+      "text": "When Christ, who is the light of the world, was being baptized, * His Father bore witness to Him from heaven, saying, * “This is my Son, the beloved, in whom I am well pleased. Listen to Him. * This is the One who illumines, in His compassion, the civilized world, * and He was baptized, and as He is God He saves the human race.”"
+     }
+    ]
+   }
+  },
+  "01-09": {
+   "source_file": "me.m01.d09_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Lord, even though…",
+      "text": "Lord, even though at the Jordan You were standing * as a human with the Forerunner, * still You were seated with the Father * on the throne, from which You never left. * And being baptized for us, * in Your divine benevolence, * You freed the world from the devil’s bondage, * as our Savior most compassionate."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Lord, even though…",
+      "text": "Lord, even though as a man You were surrounded * by the water of the Jordan’s streams, * from the heights the Spirit bore witness * when He descended and stayed on You. * The Father’s voice also confirmed * that You are His beloved Son. * Please reveal yourself to us and grant us * immortality, and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Lord, You were from…",
+      "text": "Lord, You were from the Father before the ages * truly begotten unchangingly. * Now in latter times from the Virgin * You were born, taking a servant’s form, * and as Creator You renewed * Your image that You made us in. * Being baptized You have granted * to our souls immortality. "
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "O Lord, incompressible…",
+      "text": "O Lord, incompressible, * You came to River Jordan’s streams. * To the Baptist, You the Master bowed Your head, * sanctifying creation, * releasing us from bondage, * O sinless Jesus, by Your baptism."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "The Father from on high…",
+      "text": "The Father from on high testified * that You are His beloved Son, * and the Spirit bore witness to You, O Christ, * when You were in the Jordan, * baptized. And thus revealed was * the mystery of the Trinity."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "You sanctified…",
+      "text": "You sanctified the Jordan’s streams * and all the waters everywhere, * God our Savior, by Your baptism therein. * Humanity extols You. * And we are glorifying * and celebrating Your Epiphany."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "incipit": "With Your compassion…",
+      "text": "With Your compassion importuning on our behalf, * You came to seek the lost and wandering sheep, O God, * in Your tender mercies, O benevolent Lord. * So it was that You were at the renowned River Jordan * to reveal the mystery of the Holy Trinity. * We now extol You and we sing to You with faith:* You came, revealing yourself, O unapproachable Light."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "incipit": "The Master of the universe…",
+      "text": "The Master of the universe revealed himself to us * in the waters of the Jordan River mystically, * to melt down all sin, for He is supremely good and merciful. * Let all creation greatly rejoice at the baptism of Christ our Lord, * who was well pleased to save the human race, as God our only Savior."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "You came to us…",
+      "text": "You came to us, O Logos, * in the form of a servant, * and You the timeless One * sought baptism as human. * Heaven and earth were amazed, * as were the hosts of Angels * as well as all the waters. * John the Forerunner trembled, * and although fearful he rejoiced * performing his sacred function."
+     }
+    ]
+   }
+  },
+  "01-10": {
+   "source_file": "me.m01.d10_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Devout and wise…",
+      "text": "Devout and wise Most Reverend holy father Gregory, * the flute that was blown by the breath of the Paraclete, * the tongue articulating most godly tenets, * radiant lamp that glows with the light of God, * herald of truth, and theology’s foundation, * the fount of doctrines that are sublime, * the stream of teachings that flows like the sweetest honey, * the harp that plays the holy songs that God has written, * truly delighting hearts and minds of the believers. * O Saint, unceasingly imploring Christ, intently pray * to Christ, who in the River Jordan * has refashioned the world, entreating Him so save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Devout and venerable…",
+      "text": "Devout and venerable holy father Gregory, * the battle-axe that cuts off every heretics reach, * the two-edged sword of the Holy Spirit, * pruning shears cutting off fallacious ideas, * fire that consumes every heresy like brushwood; * you are the farmer’s winnowing fork, * able to separate the chaff from the kernel * of godly doctrine; you are the carpenter’s chalk-line, * guiding all precisely on the paths to salvation. * O Saint, unceasingly imploring Christ, intently pray * to Christ, who in the River Jordan * has refashioned the world, entreating Him so save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Devout and ever-blessed…",
+      "text": "Devout and ever-blessed holy father Gregory, * the mouth from which the God-inspired and all-blessed sounds, * like river waters, flow down from divine sources, * namely salvation’s fountains that never stop, * interpreting the words of prayer for the believers; * the guide to virtue that is precise; * you were adorned with most godly contemplation; * undefeated champion of the uncreated * Trinity, by whose radiance you were illumined. * O Saint, unceasingly imploring Christ, intently pray * to Christ, who in the River Jordan * has refashioned the world, entreating Him so save our souls."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Let all creation sing…",
+      "text": "Let all creation sing * a new song to the Savior, * born of the holy Virgin, * to Christ who in the Jordan River has been baptized today."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Let the Forerunner shout…",
+      "text": "Let the Forerunner shout * like a prophetic trumpet, * “Produce the fruits of good works * for Jesus Christ the Lord, who is baptized in the streams today.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "From heaven…",
+      "text": "From heaven the divine * connatural Spirit shone forth, * descended in the form of * a dove, and came to Christ, and was visible ineffably."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 3,
+      "incipit": "To the Jordan River…",
+      "text": "To the Jordan River came today the Master, * and by John the Forerunner He was baptized in its waters. * From on high, the Father testifies about Him, * “This is my beloved Son, with whom I am well pleased.” * And the Spirit in the form of a dove descended * and alighted on Him."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Let us celebrate today…",
+      "text": "Let us celebrate today the Epiphany of God. * Christ revealed himself to us in River Jordan’s streams. * Come all you faithful, let us go and draw the water * of forgiveness of our sins. For Christ incarnate came * to seek the lost sheep that was captured by beasts. * And when He found it, He took it back to Paradise, * in His compassion as our Savior. * So Christ appeared at the Jordan River, * and He has illumined the world."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "Let us all extol…",
+      "text": "Let us all extol today * that wise and learned Gregory, * the brother and kindred soul * of St. Basil the Great and wise * who made him bishop of Nyssa, * where he was a good shepherd. * And therefore we honor him."
+     }
+    ]
+   }
+  },
+  "01-11": {
+   "source_file": "me.m01.d11_en_US_goadedes.ares",
+   "slots": {
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Let us celebrate today…",
+      "text": "Let us celebrate today the Epiphany of God. * Christ revealed himself to us in River Jordan’s streams. * Come all you faithful, let us go and draw the water * of forgiveness of our sins. For Christ incarnate came * to seek the lost sheep that was captured by beasts. * And when He found it, He took it back to Paradise, * in His compassion as our Savior. * So Christ appeared at the Jordan River, * and He has illumined the world."
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       2
+      ],
+      "mode": 3,
+      "incipit": "To the Jordan River…",
+      "text": "To the Jordan River came today the Master, * and by John the Forerunner He was baptized in its waters. * From on high, the Father testifies about Him, * “This is my beloved Son, with whom I am well pleased.” * And the Spirit in the form of a dove descended * and alighted on Him."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "You made yourself…",
+      "text": "You made yourself a house of divine * and sacred virtues, O devout Theodosius; * then you were allowed to dwell in the divine temple and shrine * of the Theotokos and to manage it. * You loved contemplating God’s brilliant splendor and radiance; * and now in heaven, you are seeing the genuine * tabernacle’s grandeur and beauty ineffable. * This was, according the Psalm, established by God Most High, * who is well pleased to allow those who look to Him to inhabit it. * To Him pray intently, that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "After you cleansed…",
+      "text": "After you cleansed yourself through intense * ascetic discipline, you started to imitate * your Master, all-blessed Saint, for you healed the woman who touched * the hem of your garment, curing her disease. * Your name means a gift of God, and you truly lived up to it. * When there was famine in the desert, you furnished food * to the destitute from your storehouse that never failed. * All-holy Theodosius, you preached the Orthodox Faith * and disregarded the anger of the heretical emperor. * To Christ pray intently, that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Fanning within you…",
+      "text": "Fanning within your God-loving soul * the flame of ardent and unwavering love for God, * O Saint, you received a fiery and fragrant sign from on high * of divine good pleasure, which instructed you * to build a most holy church, and a Lavra where souls are trained, * a school of virtue, O devout Theodosius. * As you started it, so you finished it piously. * All-blessed father, therein was your wonderful body laid. * Your tomb enjoys special honor among the saints who are buried there. * To Christ pray intently, that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 5,
+      "incipit": "Truly you have gone…",
+      "text": "Truly you have gone over to dwell * in that most wondrous tabernacle, the house of God, * your soul being full of gladness and great rejoicing, O Saint, * where you heard delightful sounds of festive songs * of all those who celebrate, O devout Theodosius, * all-blessed Father, with ineffable happiness * and exultant joy, in which you now participate. * For you had mortified the flesh, desiring that joy alone, * which you attained by arraying yourself in virtue and righteousness. * To Christ pray intently, that through you the great mercy be given to our souls."
+     }
+    ]
+   }
+  },
+  "01-12": {
+   "source_file": "me.m01.d12_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Christians, with a pure…",
+      "text": "Christians, with a pure and focused mind * let us sing our post-festal praises of the baptism of Christ. * He who with the Father and the Spirit ever exists * in His nature as God, has now as man in the body * come to River Jordan’s banks, and He is saying to John, * You, O Baptist, come and baptize Me. * For I wish to cleanse human nature * of the filth of sin, in My benevolence."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "All the hosts of Angels…",
+      "text": "“All the hosts of Angels in the heights * minister with fear and with trembling to You their King and God. * Cherubim dare not lift up their eyes to gaze at You. * O my Lord, yet You order me to touch Your divine head, * even though I am but grass; and I am gripped with fear, * lest I be consumed by the fire * of Your awesome Godhead, O Master.” * So said John the Forerunner to Christ our God."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Incarnate of a Virgin…",
+      "text": "“Incarnate of a Virgin, I have come * to the Jordan River, today,” answered our Redeemer and God * to the Forerunner. “For I wish to refashion herein * fallen Adam. So John, now come to Me, the Messiah, * and baptize Me in the flesh, which I assumed for this * and to crush the heads of the dragons * lurking there, for I am the One who * takes away the sins of the world, as Lord.”"
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Let us praise the Lord…",
+      "text": "Let us praise the Lord, singing words of Prophet David: * “You revealed yourself to us, O Savior and Maker. * You crushed the heads of dragons in the water, when You, O Word, * went into the Jordan, in Your mercy, * and enlightened those who had been blinded, * O Christ, with Your light. * Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "Ardently we honor…",
+      "text": "Ardently we honor Your plan for our salvation, * which You have accomplished, in Your divine good pleasure. * You freed our human nature from the curse out of Paradise, * and You made us strong against assailants * by Your holy baptism, O Logos. * And now we sing to You, * “Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "…",
+      "text": "We were clothed in garments of skin because of Adam, * in whose fall we willingly once participated. * But in the Lord’s baptism in the Jordan River today, * we have taken off that ancient garment, * and praising God, we join the Angels * and sing to Him, * Blessed are You who have appeared; glory to You, our God!”"
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "Let us the faithful extol…",
+      "text": "Let us the faithful extol the greatness of God’s benevolent deeds concerning us. For He became man in our transgression; and now in the Jordan, He who alone is clean and undefiled is cleansed in the cleansing that is meant for us; and He sanctifies me and the waters, and on the water He crushes the heads of the dragons. Therefore, brethren, let us draw water with gladness. For to those who draw with faith, the grace of the Spirit is invisibly given by Christ, our God and the Savior of our souls."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "incipit": "When Christ, who is the light…",
+      "text": "When Christ, who is the light of the world, was being baptized, * His Father bore witness to Him from heaven, saying, * “This is my Son, the beloved, in whom I am well pleased. Listen to Him. * This is the One who illumines, in His compassion, the civilized world, * and He was baptized, and as He is God He saves the human race.”"
+     }
+    ]
+   }
+  },
+  "01-13": {
+   "source_file": "me.m01.d13_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Now in the Jordan’s streams…",
+      "text": "Now in the Jordan’s streams * has Jesus, the reflection * of God the Father’s glory, * appeared to cleanse our souls of impurity through baptism."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Prophet and Baptist…",
+      "text": "Prophet and Baptist John, * receive now as a servant * the world’s divine Redeemer, * and baptized the Creator as He renews humanity."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Everyone, celebrate…",
+      "text": "Everyone, celebrate! * For our illumination * and our Redeemer, Jesus, * is at the Jordan River. Come, let us all be purified."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 3,
+      "incipit": "To the Jordan River…",
+      "text": "To the Jordan River came today the Master, * and by John the Forerunner He was baptized in its waters. * From on high, the Father testifies about Him, * “This is my beloved Son, with whom I am well pleased.” * And the Spirit in the form of a dove descended * and alighted on Him."
+     }
+    ]
+   }
+  },
+  "01-15": {
+   "source_file": "me.m01.d15_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "Lady, we salute…",
+      "text": "Lady, we salute and sing, “Rejoice!” * Sun-like star, the cause of all blessings! Rejoice, all-blameless one! * You contained within yourself the uncontainable God. * You produced the immortal stalk that feeds all the faithful. * Chariot of God, rejoice! Resplendent gate, rejoice! * Virgin, we salute you, for through you * the ancestral curse has been lifted, * and good things have come to us because of you."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Relinquishing attachments…",
+      "text": "Relinquishing attachments to your parents and to fleeting wealth, * you took up your cross, O Father, and followed Christ with devotion. * Through strict ascetic discipline you mortified the passions all * and hastened to dispassion’s heights. * O God-bearer John, in heaven * for us you are interceding."
+     }
+    ]
+   }
+  },
+  "01-16": {
+   "source_file": "me.m01.d16_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "For the Lord…",
+      "text": "For the Lord you were bound in chains * in a dungeon held prisoner, * O Apostle, yet you kept pagan error bound. * Today, we fervently celebrate and mentally venerate * your most honorable chains. * People draw from them bodily health and well-being * and salvation of soul. We therefore rightly now extol you, who have seen God, * O Peter, peer of the Bodiless."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Through you Gentiles…",
+      "text": "Through you Gentiles throughout the world, * who were formerly prisoners * of deceit and ignorance, learned the truth of God. * They were depicted as animals of all kinds inside a sheet, * which descended from on high * in a vision that you saw when you were in a trance. * O Apostle, now people of all ages glorify you, and they honor * the chains you wore for the love of Christ."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "You denied Him…",
+      "text": "You denied Him when He was judged; * you extolled Him when He was raised * from the dead, O holy Apostle; and you preached * to all the ends of the earth that He is truly both God and man, * whose benevolence is great, * for He came down to earth and dwelt with humanity. O all-lauded St. Peter, we the faithful call you blessed as we honor * the chains you wore for the sake of Christ."
+     }
+    ]
+   }
+  },
+  "01-17": {
+   "source_file": "me.m01.d17_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "You were by rays…",
+      "text": "You were by rays of the Holy Spirit lumined, * and divine and ardent love was kindled in your heart * and it incited your soul to long for Him intensely, * being the very epitome of love. * Therefore you relinquished all attachments, flesh and blood, * renouncing life in the world through much asceticism * and sacred stillness, becoming one with Him. * And you were filled with blessings from on high, * for you asked and received. And then you returned, * like a bright luminary, * lighting up our souls, O Anthony."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You crushed the bows…",
+      "text": "You crushed the bows and the arrows of the demons * by the Holy Spirit’s grace that dwelt inside of you, * and you exposed all their wickedness and every ambush, * and by your teachings you made them known to all. * You splendidly radiated beams of light divine * and were a luminous guiding light for all monastics; * you were the first teacher of the wilderness; * and you became a most experienced * holy healer of bodies and souls alike. * In your person you modeled * every virtue, Father Anthony."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "When Christ the Lord…",
+      "text": "When Christ the Lord, who abounds in His divine gifts, * saw that you, O father, were a mirror without spot, * then He illumined your holy soul with brilliant flashes * of the reflections of His divine light. * From then you began to pour out cures abundantly; * you fed the hungry; you made it rain and thus provided * drink to the thirsty and quenched their appetite. * Seeing the dispositions of their souls, * by your counsels you made them better for God. * And now earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "Your heart and soul…",
+      "text": "Your heart and soul being pure and undefiled, * you became an earthly angel and a heavenly man. * You were a teacher of chastity, the perfect measure * of self-control in all things, O Anthony. * You are with your Master now, to whom you offer up * unceasing hymns of doxology, with all the angels * and all the martyrs and the ascetic saints. * And now we pray to you, O blessed Saint, * that you free from all threats and calamities * and from sins and offenses * those who keep your sacred memory."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Father, we all salute…",
+      "text": "Father, we all salute you: Rejoice, * ascetics’ leader and invincible champion! * When you had uprooted passions and resolutely endured * the assaults of demons, you exposed for all * their weakness and every trick to deceive and destroy the soul, * and demonstrated that the Savior’s all-holy Cross * has a mighty force that is truly invincible. * Girding yourself with it, O Saint, triumphantly you opposed * those who distorted the teaching of Christ’s divine coming in the flesh. * For us now implore Him, * and entreat that great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Shining pillar…",
+      "text": "Shining pillar and shadowing cloud * were you by virtue of your virtues, extending from * the earth to the heights for those dwelling in the wilderness, * and you thus preceded those beholding God. * The Cross was the rod with which you divided the passions’ sea. * When you defeated allegorical Amalek, * you were unimpeded ascending to heaven’s heights * and your immortal legacy, O Anthony blessed by God. * And now rejoicing with Angels, you have a place near the throne of Christ. * For us now implore Him, * and entreat that great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Father, we now salute you…",
+      "text": "Father, we now salute you: Rejoice! * You join angelic hosts in heaven, O Anthony, * for practicing every virtue while you were dwelling on earth, * you followed the pattern of their way of life. * You were like a looking glass that was clear and immaculate, * receiving flashes of divine uncreated light * of the Holy Spirit, O thrice-blessed Saint of God. * Therefore illumined heart and soul, you saw what was to transpire, * and you foretold what was shown you and was divinely revealed by Christ. * For us now implore Him, * and entreat that great mercy be given to our souls."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 8,
+      "incipit": "When your longing…",
+      "text": "When your longing for Christ had possessed your soul * and you surely disdained what remains on earth, * you lodged in the wilderness, and you lived in the mountains. * O Saint, you shone angelically, for you were an oracle * of secrets, having tasted of the tree of knowledge of God. * When you had transcended the flesh like a dark cloud, * you drove out the darkness of all the demons, O Anthony, blessed chief of monastics. * Intercede with Christ our God, * that He grant forgiveness of our sins to us * who celebrate your holy memory with faith and love."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 5,
+      "incipit": "Let us honor with hymns…",
+      "text": "Let us honor with hymns the Ascetic of the Lord, * for he mortified every assault of passions all * by resolute endurance and exercising self-control; * and he utterly embarrassed the adversarial foe * and all his elated vaunting. * And now the Saint is interceding * that the Lord have mercy on our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 8,
+      "incipit": "You withdrew…",
+      "text": "You withdrew from the tumult of daily life, * and you took up your cross and denied yourself, * devoted entirely to your Lord, O all-blessed Saint. * You attained a state outside the flesh and the world, * with the Holy Spirit residing inside of you. * Therefore you inspired zeal for God in the people. * You emptied the cities and populated the wilderness, * God-bearing father Anthony. * Intercede with Christ our God, * that He grant forgiveness of our sins to us * who celebrate your holy memory with faith and love."
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       2
+      ],
+      "mode": 4,
+      "incipit": "By the uncreated light…",
+      "text": "By the uncreated light being illumined, * like a star you brightly shone throughout the wilderness, O Saint, * and by your teachings, O Anthony, * enlightened all who approached you with faith and trust."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": null,
+      "text": "By conceiving the Wisdom and Word of God * in your womb without burning, O Mother of God, * you gave birth ineffably to the One who has made all things, * and in your arms you held Him who holds up the universe, * and you have nursed the Master who nourishes everything. * Therefore, O all-holy Virgin Mary, I pray you, * that I be forgiven of my offenses when I shall stand before Him who created me. * O all-lauded Lady most pure, I implore you, grant me your assistance then. * I am sure you can accomplish whatever you wish."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "We salute you…",
+      "text": "We salute you, O Virgin, Rejoice! For you are she * whom Ezekiel called the Lord’s impassable gate. * Prophet Daniel called you mountain that was cut without hands; * Psalmist David called you great Mountain, Gate, and Throne. * You were prefigured to Moses * in the Bush, the Jar, the Rod, and the Cloud. * The righteous Prophets thus proclaimed you to us."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "The Archangel spoke…",
+      "text": "The Archangel spoke to you, O Theotokos. * Then the Holy Spirit came on you, O Virgin, who conceived * the coessential, coequal Son * of God the Father. Through you, thus, was Adam restored."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "God-bearing Saint…",
+      "text": "God-bearing Saint, early in life you took a new untrodden path, * which was unknown to most people, completing it with great fervor. * Not looking back, you made your way, obeying the new law of Christ; * and you became the first to teach * the way of life of the desert, * O pinnacle of monks."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "Anthony, you became…",
+      "text": "Anthony, you became * a star among luminaries, * the leader of monastics, * the glory of the Christian world. * Like a courageous commander, * you flawlessly instructed * that we should not be frightened * by assaults of the demons, * since the helper that we have * is Christ who destroyed deception."
+     }
+    ]
+   }
+  },
+  "01-18": {
+   "source_file": "me.m01.d18_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "You encountered…",
+      "text": "You encountered life-threatening persecutions courageously, * O St. Athanasius, and spoke the words of God * until you drove out the heresy of blasphemous Arius * and you safeguarded your flock, * by declaring the Orthodox homoousion, * that the Son and the Spirit are in essence consubstantial with the Father, * all-holy thrice-blessed Hierarch."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Athanasius, with brilliant lights…",
+      "text": "Athanasius, with brilliant lights of your words you enlightened those * who were in the dark and dispelled all heresy. * And as a genuine shepherd of your flock you unflinchingly * risked your life in the defense * of the Faith, O all-honored Saint, pillar and support * of the Orthodox Church of Christ. And therefore we rejoice as we assemble * to sing our hymns and to honor you."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "You persistently exercised…",
+      "text": "You persistently exercised every virtue, O godly Saint. * The Spirit anointed you with His holy oil, * and thus He made you a genuine shepherd of the flock of Christ * and a consecrated priest, * who defended the Orthodox Faith emphatically. * Now the Church everywhere is celebrating your memorial, O father, * and thus the Savior is glorified."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "All the fuel of the heresies…",
+      "text": "All the fuel of the heresies is burned up as if underbrush * by your theological doctrines as by fire. * The wayward hosts of the heretics are drowned in the open sea * of your deep theology. * And the Orthodox Church of Christ is adorned each day * by your treatises of dogmatic wisdom, O all-blessed father Cyril, * and she extols you resoundingly."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "incipit": "Now the Orthodox Church…",
+      "text": "Now the Orthodox Church of Christ is adorned by your eloquence, * holy father Cyril, in many written works. * She is exquisitely beautified, possessing your treatises; * and she celebrates with joy * your all-holy and venerable memory today. * You are truly a pillar and the glory of the Fathers, for you championed * the holy Council of Ephesus."
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "incipit": "Father Cyril…",
+      "text": "Father Cyril, you chased away from the Church the noetic wolves * with correct theology like a shepherd’s staff, * and you surrounded her with a wall and fortress of Orthodox * teachings and inspired words, * and to Christ you presented her wholly safe and sound. * Now entreat Him to rescue us from dangers as we loyally now honor * your ever-venerable memory."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Duo of holy Bishops…",
+      "text": "Duo of holy Bishops, rejoice! * You are the Church’s mighty bulwarks defending her, * the pillars of Orthodoxy, for the believers a firm * footing, and the downfall of the heretics. * You guided the flock of Christ with your dogmas inspired by God. * You fed the people with the virtues that you attained. * You were fiery preachers proclaiming the grace of God. * And you declared the sacred laws of Christ to His complement. * You guide the faithful to heaven. You are like doorways of Paradise. * To Christ pray intently, and entreat that great mercy be sent down to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Duo of holy Hierarchs…",
+      "text": "Duo of holy Hierarchs, rejoice! * You were like Angels here on earth who traversed on high. * You rescued the world from error. You are the joy of mankind, * teachers of the Christian peoples everywhere. * You championed the Logos. You were physicians and specialists, * curing diseases of the body and soul alike. * And the Holy Spirit made you ever-flowing streams, * watering the entire earth with words that were God-inspired. * Your theological teachings are most sublime and foundational. * To Christ pray intently, and entreat that great mercy be sent down to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Duo of sacred Teachers…",
+      "text": "Duo of sacred Teachers, rejoice! * The brilliant sun of the terrestrial firmament, * like fiery rays emitted from God the Tri-solar light, * the blind and benighted see again through you. * And you are most excellent fragrant flowers of Paradise, * wise Athanasius, truly great in both name and deed, * godly Cyril, too, Alexandria’s Hierarchs, * tablets and volumes on which God inscribed His theology; * honey and milk of salvation, the jewels of wisdom and scholarship. * To Christ pray intently, and entreat that great mercy be given to our souls."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 5,
+      "incipit": "Let us rightly extol…",
+      "text": "Let us rightly extol Athanasius the Great, * O believers, for we have been instructed by him. * He is the meadow of the words of the divinely inspired * holy Scriptures, and he guides us to correct belief in God. * And he endured many trials. * He intercedes with the Master to have mercy on our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 3,
+      "incipit": "You were shown to be…",
+      "text": "You were shown to be the Church’s pillar and divine support, O Father Cyril. * For when you published your Twelve Chapters censuring * the wrong intent of Nestorius, you proclaimed * that the Son of the Virgin is truly God. * O preeminent orator, pray to Christ our God, * entreating Him to grant us the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 1,
+      "incipit": "Let everyone extol…",
+      "text": "Let everyone extol Athanasius and Cyril * with worthy hymns of praise, as good and trustworthy servants * of the all-holy Trinity and as champions of the Faith. * In the sea of their profound and godly perceptions * they prodigiously submerged the blithering army * of obstinate heretics."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Great Athanasius…",
+      "text": "Great Athanasius, blessed Saint, * and divine theologian * St. Cyril, you were both most wise * mystics and mighty champions of the most holy Trinity, * for you brought down impious * Arius and Sabellius * and Nestorius also in what he erred, * and along with them every other error * of the impious heresies, * O Hierarchs of the Master."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "Let us with minds on God…",
+      "text": "Let us with minds on God extol * the pure and holy Virgin. * She is known allegorically * as God’s all-holy mountain, * the table, the Ark and lampstand * and the jar with the manna, * the rod, the holy throne and gate, * temple and bridal chamber. From her our God * immutably, past nature, became incarnate * and deified what He assumed, * through ineffable union."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "Come, all you lovers of feast days…",
+      "text": "Come, all you lovers of feast days, and let us celebrate * today’s commemoration of the glorious Teachers. * Empowered by the Spirit they razed the conceits * of intractable heresies; * and by their teachings and doctrines inspired by God, * they both fortified the Church of Christ."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "Like brilliant stars…",
+      "text": "Like brilliant stars do the Fathers illumine everyone. * Their Orthodox discourses are like rays shining brightly. * The one subdued the sophistries, hateful to God, * of the heretic Arius; * the other struck down Nestorius and with him * all the ravings of Sabellius."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "Let us extol two…",
+      "text": "Let us extol two most sacred Teachers and Hierarchs, * for they were very zealous for the Lord God almighty: * holy Athanasius the Great, and with him * divine Cyril, that flame of fire. * They are in heaven together and evermore * intercede with God on our behalf."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "incipit": "From heaven visit…",
+      "text": "From heaven visit Your chosen people and flock, O Christ. * For in Your Church, the pasture, vicious wolves are among us. * Wipe out their audacity at the appeals * of Your two holy Hierarchs; * You see how scandals and heresies even now * are assailing us continually."
+     }
+    ]
+   }
+  },
+  "01-20": {
+   "source_file": "me.m01.d20_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "O Father Euthymius, your birth…",
+      "text": "O Father Euthymius, your birth * was announced beforehand by an Angel sent down from heaven, as was John the Baptist’s birth * from a barren mother. * And you proved yourself to be his spitting image, dwelling without possessions in the wilderness; * and you baptized those who came to you; and you brightly shone with many miracles."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "O Father Euthymius, you were…",
+      "text": "O Father Euthymius, you were * a fruit born of barrenness, but you yourself were prolific. From your spiritual seed * rose a multitude of * pious monks who colonized the previously uncharted wilderness. And now entreat the Lord * to bestow His peace upon our souls, * and implore Him to give us the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "O Father Euthymius, your life…",
+      "text": "O Father Euthymius, your life * was supremely excellent, and truly Orthodox was your faith. And through the active life * you attained the highest * contemplation and became the habitat of wisdom. You worshiped Christ, in natures two, and one * of the persons of the Trinity. * And to Him now you pray on behalf of our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "Hallowed were you…",
+      "text": "Hallowed were you from the time of your conception. * For when the all-seeing eye foresaw that you would have * a resolute inclination and uncompromising * predisposition towards the better things, * to your parents He announced your birth, all-blessed Saint, * which they received as a gift from God, ending their sorrow. * The name they gave you denotes felicity. * And as you grew, you ever gladdened * our Benefactor and God, O Euthymius. * And now earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "incipit": "Your soul, O Father…",
+      "text": "Your soul, O Father, was like a spotless mirror. * And Christ, therefore, flashed on you the most resplendent rays * of His divine uncreated light and revelations, * and you were filled with His gifts of grace divine. * And then you became an overflowing well of cures. * You fed the hungry; you prayed for rain, so that the thirsty * could drink and thus satisfy their appetite. * Seeing the dispositions of their souls, * by your words you confirmed their belief in God. * And now earnestly pray Him to illumine us and save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "incipit": "As you excelled…",
+      "text": "As you excelled in the active life and also * contemplation, your angelic life was an exact * standard of virtue for those who choose to serve the Master * in all perfection, O St. Euthymius. * With wisdom, inspired by God, you taught that God is one * and to be worshiped in Trinity, and Christ the Logos * is known in two natures, one hypostasis, * and that at that time there indeed were Four * holy Councils, like four holy Gospels of Christ. * And now earnestly pray Him to illumine us and save our souls."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Father, we all salute you…",
+      "text": "Father, we all salute you: Rejoice! * You brought felicity and joy to the Church of Christ, * for when you were born, according to divine providence, * she fought off the onslaughts of the heretics. * She calls you Euthymius, a name denoting felicity. * Seeing the splendor of your virtuous way of life, * the angelic hosts in the heavens were filled with joy. * Now as you dwell with them on high, O Saint, and are filled with light, * and you enjoy the most blessed and divine splendor and radiance, * to Christ pray intently, * that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Stopping the rushing rivers…",
+      "text": "Stopping the rushing rivers of sin, * as you were strengthened by the rod of the Cross, O Saint, * and spiritually imbibing water of godly delight, * drinking from the holy spring of Paradise, * O Father, you opened springs of salvation in the wilderness. * And richly watered by the grace of the Spirit of God, * you were like a palm tree that flourished, all-blessed one, * rising into the heaven’s heights, O godly Euthymius; * and like a fiery pillar, you glowed with Christ’s brilliant radiance. * To Him pray intently, * that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Father, now you have entered…",
+      "text": "Father, now you have entered the place * of the most wondrous tabernacle, the house of God, * with great joy of soul and gladness, O St. Euthymius, * and the celebration of a festival. * You hear now the sweetest sounds of the echoing songs of praise, * as you enjoy the otherworldly experience * of divine delight and ineffable jubilance. * As you desired this alone, by mortifying the flesh, * you have obtained it, adorning yourself with virtue and righteousness. * To Christ pray intently, * that through you the great mercy be given to our souls."
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "incipit": "O devout Father…",
+      "text": "O devout Father, you did not close your eyes in sleep nor your eyelids for dozing, until you freed your soul and body from the passions, and thus prepared yourself to receive the Holy Spirit. And then Christ and His Father came to you and made their home with you. Now as a servant of the consubstantial Trinity, O exalted herald Euthymius, intercede on behalf of our souls."
+     }
+    ]
+   }
+  },
+  "01-21": {
+   "source_file": "me.m01.d21_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 8,
+      "incipit": "This is amazing…",
+      "text": "This is amazing and marvelous! * A dove came down from on high, * and it spoke with a human voice * to Martyr Neophytos, * and it led and encouraged him * to live alone as a youth angelically * and to compete as a martyr mightily. * Great and divine indeed * was the Martyr’s fivefold contest! By his prayers * save our souls, O Christ, as You are most compassionate."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 8,
+      "incipit": "This is amazing…",
+      "text": "This is amazing and marvelous! * For St. Neophytos * was mature from an early age. * By the Spirit’s energy, * he performed many miracles. * He prayed, and water came gushing from a stone; * he resurrected his mother when she died. * Great and divine indeed * was the Martyr’s fivefold contest! By his prayers * save our souls, O Christ, as You are most compassionate."
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 8,
+      "incipit": "This is amazing…",
+      "text": "This is amazing and marvelous! * As he was martyred for Christ, * brave and fearless Neophytos * astonished the enemies * with his marvelous miracles. * He doused the fire into which he was cast. * He made untamed beasts cower in fear of him. * He was invincible * and a wondrous Athlete by the might of Christ. * Hear his prayers on our behalf, O God, and save our souls."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "incipit": "From the belly of the whale…",
+      "text": "From the belly of the whale of wicked sins extricate me, * O all-holy Mother, who in your belly held Him whom nothing can contain. * Rescue me from the storm of raging temptations. * From the tempest of my trespasses * Lady, deliver me; * and dry up the sea of iniquities, * within which I am wallowing; * and obliterate the demonic hosts, * that always assault me, for you are my protection and defense, * and I will ceaselessly glorify you, all-blessed Virgin pure."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Glorious St. Neophytos…",
+      "text": "Glorious St. Neophytos, * you did a wondrous marvel * by resurrecting from the dead * your mother, demonstrating yourself to be a great servant * of Christ, near whom you stand now * wearing your crown, O godly Saint. * Please persist interceding on the behalf * of us who extol you and who are keeping * your illustrious memory, * O victorious Martyr."
+     }
+    ]
+   }
+  },
+  "01-25": {
+   "source_file": "me.m01.d25_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "Holy Father Gregory…",
+      "text": "Holy Father Gregory, the grave, * which promotes oblivion, * did not conceal nor suppress your lips from speaking after death. * For you are a mouth of Orthodox theology, * pronouncing godly doctrines for all the world. So now entreat the Lord * to bestow His peace upon our souls, * and implore Him to give us the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "Gregory, you wisely turned away…",
+      "text": "Gregory, you wisely turned away * from the hostile enemy, * which is the flesh, and you made your way on virtue to the heights, * like Prophet Elijah on the chariot of old, * and flew to the ineffable beauty there. As you delight therein, * holy Father, grant unto our souls * the profound peace * of God and the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "Gregory, by grace…",
+      "text": "Gregory, by grace you are a true * intercessor for mankind * with God. And now as you confidently pray to Him for us, * holy Father, ask Him to be merciful to us. * We beg you to unceasingly intercede with Christ on our behalf, * to bestow His peace upon our souls, * and implore Him to give us the great mercy."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Father, we now salute you…",
+      "text": "Father, we now salute you, Rejoice! * Fount of theology, in you was the most sublime * divine contemplation. Therefore when you had plumbed heaven’s depths * with true faith and reason, you proclaimed to all: * The Godhead is known as one in essential identity, * the single mingling and adherence of light in three * suns, and also three undivided hypostases. * O God-inspired Saint, your life was pure, and your discourses * were brilliant, teaching us all to worship the all-holy Trinity. * By your intercessions * with our God may great mercy be sent down to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Father, when you attained…",
+      "text": "Father, when you attained to the source * of the reflections of divine glory and conversed * with rays from it, with your God-fearing and devout frame of mind, * you dispelled the darkness of the heresies, * O Gregory, with the light of your brilliant theology. * You purified your soul, O Saint, and you made your mind * a transparent mirror, receiving the Godhead’s light, * threefold and indivisible, the ray of divinity, * single in essence and nature, which dwelt in you most abundantly. * By your intercessions * * with our God may great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Father, we now salute…",
+      "text": "Father, we now salute you, Rejoice! * River of God that flows with water of grace divine * and gladdens the holy city, the Church of Christ the King, * with your godly teachings and inspired words! * The torrent of God’s delight, inexhaustible sea of truth, * rigorous keeper of the dogmas decreed by God, * and the Holy Trinity’s vehement champion! * You are the Spirit’s instrument, the vigilant intellect. * The deeper meanings of Scripture have been explained in your discourses. * To Christ pray intently, * and entreat that great mercy be given to our souls."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "incipit": "Lady, the protection…",
+      "text": "Lady, the protection of Christians all, * I am shaken by the darkness of calamities and woes; * I am drowning in the tempest of the cares of earthly life. * I pray you, send a drop of mercy down on me. * I beg you to extend a helping hand to me. * And make me worthy to have a place * among the chosen and righteous saints, * O Virgin pure, as the Mother of compassionate God."
+     }
+    ]
+   }
+  },
+  "01-26": {
+   "source_file": "me.m01.d26_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Shining with nobility…",
+      "text": "Shining with nobility of soul, * by your works of mercy and faith you brightly distinguished yourself. * For you joyfully distributed your wealth to the poor. * As the Psalm says, your righteousness continues forever. * O father, the light that never sets had risen in you. * With your godly sons and their mother * dwelling in the heavenly city, * you are all together for eternity."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Shunning fleeting glory…",
+      "text": "Shunning fleeting glory and esteem, * you were counted worthy of glory divine and permanent. * Spurning all delights belonging to the present life, * O God-bearers, instead you longed intensely for Christ God, * who is the supreme delight and who delivered you * from the surging waves and the tempest * of the world and led you to anchor * in the sunny quiet life, O blessed Saints."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Putting to death…",
+      "text": "Putting to death the passions of the flesh, * you put on dispassion like clothing that you had made for yourselves * from the fabric of your piety and chastity. * As you rivaled angelic life while still in the body, * you displayed determination that was pleasing to God, * by whom you were all counted worthy * of angelic glory in heaven, * where you now experience the light of God."
+     }
+    ]
+   }
+  },
+  "01-27": {
+   "source_file": "me.m01.d27_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "To that trumpet…",
+      "text": "To that trumpet of hammered gold and the flute that is God-inspired, * let us sing our praises. He is a bottomless * ocean of doctrines, the Church’s strong support and the heavenly * intellect and the profound * depth of wisdom, a solid gold chalice pouring out * sacred teachings like rivers that are flowing as with honey, irrigating * our hearts and minds and creation all."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Let us worthily honor …",
+      "text": "Let us worthily honor him, whom call an unsetting star, * for like rays his teachings illumine all the earth. * He preached repentence to everyone. His words had the good effect * of removing any trace * of despair from his listeners, like a golden sponge, * that refreshes the hearts, even of readers, that because of sin are pining. * Let us extol John of golden words."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Let us magnify Chrysostom…",
+      "text": "Let us magnify Chrysostom and extol him with sacred hymns. * Though he was a man who was dwelling here on earth, * he was angelic and heavenly. The virtues were stored in him. * He was sturdy as a rock; * for the faithful, a paragon of the Christian life; * and on par with the Martyrs, and a peer of holy Angels, and an equal * to the Apostles in way of life."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Seeing her golden…",
+      "text": "Seeing her golden luminous lamp * again upon its sacred lampstand, the Church Christ * rejoices, for it had been taken down and hidden beneath * a bushel of silence by the enemies. * Believers throughout the world honor you as a sacred torch * set on the mountain of the virtues for all to see, * brightly shining more than the sun with your miracles. * God’s judgment, which cannot be bought, today is exhibiting * your vindication from heaven as in broad daylight for all to see, * O all-holy Father, * and He grants His great mercy and peace unto the world."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Herein your casket…",
+      "text": "Herein your casket pours out divine * rivers of miracles, O all-holy Chrysostom, * exuding a stream of healings, as if perfume from a vial, * which delights the souls of those who honor you. * For Christ made you rich in gifts, like aromas ethereal, * and you in turn grant to the faithful who come to you * the eternal grace of the Spirit like fragrant scent. * Wise Father, as we now enjoy the gifts God has given you * and with delight venerate your all-holy relics, we pray to you * with faith and implore you: * Intercede that great mercy be given to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "He who distributes…",
+      "text": "He who distributes wheat to the world, * who feeds the hearts of all believers with heavenly * delight of the Spirit, now is, like noble Joseph of old, * coming, not from Egypt, but from Comana. * Returned to their place are the holy relics of Chrysostom. * By his entreaties, he is parting the stormy sea * of adversity and the ocean of misery. * Therefore, extolling him today, with faith let us pray to him, * “O blessed Saint, come be with us who are observing your memory. * Secure our salvation, * and bestow the great mercy on us abundantly.”"
+     }
+    ],
+    "sessional": [
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "The miracle transcends mind and…",
+      "text": "The miracle transcends mind and thought, how you only * have seedlessly borne Christ, and are Virgin and Mother. * And therefore we glorify you as Mother of God and true * Theotokos, for you bore the King of glory. * Pray Him earnestly to grant His peace to the world * and also to save our souls."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Second to God alone…",
+      "text": "Second to God alone, to your holy shelter * I who am lowly run, O pure Theotokos. * And I beseech you earnestly: Have mercy on me, * for my sins have risen up over my head, blessed Lady, * and I fear and shudder at the thought of perdition. * I pray you make entreaties to your Son, * that He deliver * and save me from such a end."
+     }
+    ]
+   }
+  },
+  "01-28": {
+   "source_file": "me.m01.d28_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "incipit": "O all-holy one…",
+      "text": "O all-holy one, Bride of God, * I implore you to rescue me * from a guilty verdict; and free my sorry soul * from all my terrible sins and death; * and pray that I might receive * vindication in the end, * at my trial on Judgment Day, * as the hosts of saints * have attained through repentance. May I also have the will before my last breath * to cleanse myself with a flood of tears."
+     }
+    ]
+   }
+  },
+  "01-29": {
+   "source_file": "me.m01.d29_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "incipit": "Save me, all-pure Lady…",
+      "text": "Save me, all-pure Lady, as the one who has mysteriously * given birth to the Savior Christ. * First of all, I run to you, my defense and impregnable * fortress, protection, and source of holy joy, * divine refreshment and comfort of my soul. * Mother of Christ our God, * from the worm that never sleeps and from the fire * of that everlasting hell, I pray you rescue me."
+     }
+    ]
+   }
+  },
+  "01-30": {
+   "source_file": "me.m01.d30_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Let us honor Saints…",
+      "text": "Let us honor Saints Gregory, John, and Basil befittingly, * as organs of grace, as the Holy Spirit’s harps, * as the mellifluous trumpets of the Gospel, as world-renowned * awesome thunderbolts that rang * from on high and made known to all the magnificent * holy glory of God. And let us praise that sacred trinity of preachers * of the divine Holy Trinity."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Let us honor those champions…",
+      "text": "Let us honor those champions of the all-holy Trinity, * those divine promoters of the Orthodox Faith, * those three Apostles who join the Twelve, extolling them worthily. * Like the rivers flowing forth * out of Eden, they irrigate the entire earth * with the life-giving streams of living water; like the elements composing * creation, they have composed the Faith."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "To the ends of the world…",
+      "text": "To the ends of the world have gone the three Teachers’ inspired words * and their proclamations. As David said of old, * no speech nor language of theirs has not been heard, for their voice and words * went forth into all the earth. * They were erudite teachers of all the universe, * and the ends of the world are held together in the Orthodox communion, * keeping their precepts inspired by God."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "Let us honor…",
+      "text": "Let us honor with sacred hymns the three preachers of God the Word * and the Spirit’s harps and the trumpets of the truth; * and let us study their writings and embrace what they taught therein, * praying earnestly to them * to entreat with the confidence they have towards the Lord, * and to ask Him to grant to us forgiveness of offences and transgressions * and lasting peace to the whole wide world."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "Trio of holy Bishops…",
+      "text": "Trio of holy Bishops, rejoice! * You are the Church’s great and mighty frontline defense, * the pillars of Orthodoxy, and the believers’ support, * and the utter downfall of the heretics. * You pastored the flock of Christ with your teachings inspired by God, * showing the way to every virtue and excellence. * You were firebrands set ablaze by the Spirit’s grace. * You formulated sacred laws and rules for the Church of Christ, * You guide the faithful to heaven and introduce them to Paradise. * And now we implore you, * pray to Christ, that He send down the great mercy to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Trio of holy Bishops…",
+      "text": "Trio of holy Bishops, rejoice! * You traversed heaven as if Angels while still on earth. * The civilized world rejoices for it is safe and secure * having you, O Fathers, teaching it the truth. * You championed the Word of God, being learned and erudite; * expert physicians, curing bodies and souls alike; * ever-coursing rivers aflow with the Spirit’s grace, * watering the entire earth with sermons and discourses, * as Theologians and Bases and Golden Speakers inspired by God. * And now we implore you, * pray to Christ, that He send down the great mercy to our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "Trio of holy Bishops…",
+      "text": "Trio of holy Bishops, rejoice! * You are the sun of the terrestrial firmament, * the torch-bearers, and the rays of the holy tri-solar light, * through whom the bedarkened have regained their sight. * And you are most beautiful, fragrant flowers of Paradise, * O Theologian, learned Basil, and Chrysostom, * tablets of the Spirit, on whom God engraved His Word. * Piously you have been compared to breasts, in that you provide * spiritual milk of salvation. Learning is valued because of you. * And now we implore you, * pray to Christ, that He send down the great mercy to our souls."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Most radiant luminaries…",
+      "text": "Most radiant luminaries of the Church of Christ, * O Fathers made wise by God, you have enlightened the world * with your teachings and discourses, * refuting every error and heretical teaching, * extinguishing the fiery commotions of blasphemers. * And now as Hierarchs of Christ, * intercede with Him to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "incipit": "Like the bees…",
+      "text": "Like the bees that fly among the many flowers in the field * make their honey from the best, you have selected what is best * from writings secular and sacred to make the honey * of teachings that you offer to believers all, * providing them together as a banquet for us. * And therefore we, who have enjoyed the sweetness * of your writings, sing to you with gladness, * “Although deceased now, come and be with us * who extol you, O blessed Hierarchs.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 4,
+      "incipit": "We the faithful…",
+      "text": "We the faithful magnify the learned Teachers * of the whole wide world today, for while on earth they glorified * the God of all by their words and deeds; * and they contribute to saving humanity."
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       2
+      ],
+      "mode": 4,
+      "incipit": "On this day the Church…",
+      "text": "On this day the Church of Christ is celebrating * with great joy the memory of the three holy Hierarchs; * for they supported and strengthened her * by their divine words and teachings inspired by God."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "O Mother of Christ our God…",
+      "text": "O Mother of Christ our God, all-lauded Virgin most pure, * perpetually virgin Mary, as the help and the hope * of Christian believers all, * rescue us from all danger and from various hardships. * With ardent faith and longing, we rely on your protection, * O Lady Theotokos, the only Bride of God."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Sinful passions…",
+      "text": "Sinful passions like a storm violently rattle me, * the ungrateful one, and yet I call to you for help. * Since you gave birth to God, the ocean of mercy, * please do not give up on me, the wretch that I am, * for except for you I have no other hope. * May I not become the laughing-stock of demons, * O Lady, for I put my trust in you, * and you are able to do what you wish, * as the Mother of the God of all."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "As the unassailable…",
+      "text": "As the unassailable defense and shelter * of believers in distress, who trust in you to comfort them, * deliver me from adversity, * O Theotokos, for you are the helper of all."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "Let us honor…",
+      "text": "Let us honor and extol * those chosen vessels of the Light * those radiant bolts of lightning, * the holy hierarchs, Basil the Great, * Gregory the Theologian, * and also John the Golden Mouth."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "incipit": "O unitary Godhead…",
+      "text": "O unitary Godhead, * Father and Son and Spirit, * at the divine intercessions * of Basil and Gregory and John * and of the pure Theotokos, * may we never lose Your glory."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "How shall we praise…",
+      "text": "How shall we praise the three Teachers today? * Let us crown them with wreaths of laudations. * Although they were physically separate, * yet in the Spirit they were unified. * And they are the chiefs of the God-bearers: * the servants * and numeric equals of the Trinity; * they shone forth * as luminaries of the universe. * And they are the Church’s pillars; * and with crowns of glory * these three holy men have been crowned * as victors by Christ our God, * the Lord who possesses great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "How shall we praise…",
+      "text": "How shall we praise the three God-bearing Saints? * Let us sing florid hymns that extol them. * They are known as heaven’s initiates * and renowned as preachers of sound doctrine; * unadulterated Theologians: * Saint Basil * the great expositor and hierophant; * and also * the divine herald of God, Gregory; * and also John who is famous, * for his tongue was golden. * These were glorified as is meet * by the Holy Trinity, * the Lord who possesses great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "How shall we praise…",
+      "text": "How shall we praise the three Hierarchs? * Let us utter words of admiration. * Peers of the Apostles are they in grace, * and equal sharers in the Spirit’s gifts. * They are the destroyers of false doctrine, * the saviors * and trusty guides in word and actual deed, * the shepherds * who by their faith have imitated Christ. * They were on earth virtual Angels * and heavenly mortals. * They were greatly honored by Christ, * the glorious King of all, * the Lord who possesses great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 2,
+      "incipit": "How shall we praise…",
+      "text": "How shall we praise the three Hierarchs? * Let us crown them with our hymns, extolling * Chrysostom and Basil and Gregory, for they were the Spirit’s receptacles. * And they were the Faith’s strong defenders; * the pillars of the Church; believers’ firm support; * assuagement and also advocates for all who sin; * the wells effusing the water * that we draw and drink from * and are sweetened in our souls, * while earnestly praying for * forgiveness of sins and great mercy."
+     }
+    ]
+   }
+  },
+  "01-31": {
+   "source_file": "me.m01.d31_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "incipit": "All blameless Virgin…",
+      "text": "All blameless Virgin, I am like the fruitless tree described in Holy Scripture, * for I have produced no saving fruit; and now I fear that I will be cut down * to be thrown into the never-ending fire. * Therefore I implore you: Save me from this fate, * and help me to be fruitful, * Lady, and intercede with your Son on my behalf."
+     }
+    ]
+   }
+  }
+ }
+}

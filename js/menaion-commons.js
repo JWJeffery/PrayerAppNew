@@ -9,6 +9,10 @@
 // ingested verbatim by scripts/menaion/ingest-orloff-commons.py into
 // data/menaion/commons/<slug>.json (sections added by build-commons-sections.py).
 //
+// Saint-specific texts (AGES, Fr. Seraphim Dedes' GOA English translations, CC0) take
+// precedence over the Common for the few slots approved in data/menaion/ages/mapping.json
+// (slot approved only when every selected hymn names the saint); the Common fills the rest.
+//
 // Scope, deliberately narrow:
 //   - Only rank-3 commemorations listed in data/menaion/commons/mapping.json
 //     (hand-reviewed). Anything unmapped keeps its existing deferred rubric.
@@ -55,6 +59,12 @@ const MenaionCommons = (() => {
 
     const TROPARION_KEY = { orthros: 'troparion-of-the-day', vespers: 'troparion-or-apolytikion' };
 
+    const AGES_BASE = 'data/menaion/ages/';
+    const AGES_KIND = { 'exapostilarion': 'exapostilarion', 'praises-stichera': 'praises',
+                        'stichera-at-lord-i-have-cried': 'vespers_stichera', 'aposticha': 'vespers_aposticha' };
+    let _agesMappingPromise = null;
+    const _agesMonthPromises = {};
+
     let _mappingPromise = null;
     const _commonPromises = {};
 
@@ -72,6 +82,48 @@ const MenaionCommons = (() => {
             });
         }
         return _mappingPromise;
+    }
+
+    function _loadAgesMapping() {
+        if (!_agesMappingPromise) {
+            _agesMappingPromise = _fetchJson(AGES_BASE + 'mapping.json').catch(err => {
+                console.warn('[MenaionCommons] AGES mapping unavailable:', err.message);
+                return null;
+            });
+        }
+        return _agesMappingPromise;
+    }
+
+    function _loadAgesMonth(mm) {
+        if (!_agesMonthPromises[mm]) {
+            _agesMonthPromises[mm] = _fetchJson(AGES_BASE + mm + '.json').catch(err => {
+                console.warn('[MenaionCommons] AGES month ' + mm + ' unavailable:', err.message);
+                return null;
+            });
+        }
+        return _agesMonthPromises[mm];
+    }
+
+    function _buildAgesItem(slotKey, agesEntry, hymns, original) {
+        const baseLabel = (original && original.label ? String(original.label).split(' — ')[0] : slotKey);
+        const lines = [];
+        let lastMode = null;
+        for (const h of hymns) {
+            if (h.mode && h.mode !== lastMode) { lines.push('(Tone ' + h.mode + ')'); lastMode = h.mode; }
+            lines.push(h.text);
+        }
+        lines.push('(Text: translation by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America (AGES), ' +
+                   'CC0. Greek-Archdiocese usage: the selection and order of hymns may differ from Slavic usage.)');
+        return {
+            type:       'stichera',
+            key:        slotKey,
+            label:      baseLabel + ' — Proper hymns (AGES)',
+            text:       lines.join('\n\n'),
+            source:     'AGES (Fr. Seraphim Dedes, GOA)',
+            rank:       3,
+            commemoration: agesEntry.name,
+            resolvedAs: 'menaion-ages-text'
+        };
     }
 
     function _loadCommon(slug) {
@@ -123,12 +175,16 @@ const MenaionCommons = (() => {
         if (!trop || trop.resolvedAs !== 'menaion-feast-troparion' || trop.rank !== 3 || !trop.commemoration) return 0;
 
         const mapping = await _loadMapping();
-        if (!mapping || !Array.isArray(mapping.entries)) return 0;
-        const entry = mapping.entries.find(e => e.name === trop.commemoration);
-        if (!entry) return 0;
+        const entry = mapping && Array.isArray(mapping.entries)
+            ? mapping.entries.find(e => e.name === trop.commemoration) : null;
+        const agesMapping = await _loadAgesMapping();
+        const agesEntry = agesMapping && Array.isArray(agesMapping.entries)
+            ? agesMapping.entries.find(e => e.name === trop.commemoration) : null;
+        if (!entry && !agesEntry) return 0;
 
-        const common = await _loadCommon('' + entry.common);
-        if (!common || !Array.isArray(common.sections)) return 0;
+        const common = entry ? await _loadCommon('' + entry.common) : null;
+        const agesMonth = agesEntry ? await _loadAgesMonth(agesEntry.mmdd.slice(0, 2)) : null;
+        const agesDay = agesMonth && agesMonth.dates ? agesMonth.dates[agesEntry.mmdd] : null;
 
         let filled = 0;
         for (const sec of sections) {
@@ -137,6 +193,22 @@ const MenaionCommons = (() => {
                 const item = sec.items[i];
                 if (!item || !Object.prototype.hasOwnProperty.call(slots, item.key)) continue;
                 if (!REPLACEABLE[officeKey].test(item.resolvedAs || '')) continue;
+
+                // 1. Saint-specific AGES hymns, when this slot is approved for this saint.
+                const agesKind = AGES_KIND[item.key];
+                const approved = agesEntry && agesKind && agesEntry.slots ? agesEntry.slots[agesKind] : null;
+                if (approved && agesDay && agesDay.slots && Array.isArray(agesDay.slots[agesKind])) {
+                    const hymns = agesDay.slots[agesKind]
+                        .filter(h => h.role === 'n' && approved.indexOf(h.index[0]) !== -1);
+                    if (hymns.length) {
+                        sec.items[i] = _buildAgesItem(item.key, agesEntry, hymns, item);
+                        filled++;
+                        continue;
+                    }
+                }
+
+                // 2. Otherwise the Orloff Common, when this saint is mapped to one.
+                if (!entry || !common || !Array.isArray(common.sections)) continue;
                 const section = common.sections.find(s => s.kind === slots[item.key] && s.lines && s.lines.length);
                 if (!section) continue;   // this Common has no such section: keep the honest rubric
                 sec.items[i] = _buildItem(item.key, slots[item.key], entry, common, section, item);

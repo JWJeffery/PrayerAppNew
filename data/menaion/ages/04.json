@@ -1,0 +1,211 @@
+{
+ "schema": "menaion-ages/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (translations by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America), CC0 1.0",
+ "calendar": "GOA New Calendar (Revised Julian) usage; commemorations may differ from the Slavic usage the app otherwise follows",
+ "dates": {
+  "04-03": {
+   "source_file": "me.m04.d03_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Blessed father…",
+      "text": "Blessed father, guided by the Word, * you became a godly instructor, a faithful steward of souls. * Planting saving seeds in them of Gospel teachings and grace, * and abundantly harvesting the corn of salvation, * joyfully you brought it to your Lord and Master, O Saint. * Now, O God-inspired Niketas, * as you are on high in His presence, * remember your flock that ever honors you."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Gentle and approachable…",
+      "text": "Gentle and approachable were you, * even as you zealously fought for the true and Orthodox Faith. * For you armed yourself with faith as with a breastplate, O Saint; * as a spear you had self-control, O godly Niketas. * You denounced iconoclasm as a heresy, * as you venerated the holy * icon of the Savior and followed * the Patristic definitions faithfully."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "When that bedarkened…",
+      "text": "When that bedarkened tyrant like a beast * forced you into bitterest exile in his brutality, * physically confining you in darkest prisons, O Saint, * you endured it all patiently, rejoicing in spirit, * as you mentally resided up in Paradise. * Reaping the rewards for your labors, * blessed father, you are now granted * to behold its splendor and magnificence."
+     }
+    ]
+   }
+  },
+  "04-20": {
+   "source_file": "me.m04.d20_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Venerable father…",
+      "text": "Venerable father Theodore, you gave yourself as a gift * unto God, as your name denotes. * You had all-night vigilance; * you attained to the height of love. * You had divine contemplation and possessed * extreme humility, hope and faith in God, * purity, sympathy, * total self-control, and never-ceasing prayer, * all of which made you a bright and splendid pillar of light."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Godly-minded father…",
+      "text": "Godly-minded father Theodore, wishing to clothe yourself * in the bright and salvific robe * of genuine modesty * and an Orthodox frame of mind, * you always covered your flesh in ragged clothes, * you wore a hair-shirt and never took it off. * Thus, being strengthened by * the all-holy Spirit, you uncovered all * the tricks of the devil who had stripped us long ago."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Like a living…",
+      "text": "Like a living sacrifice and like a whole-burnt offering, * ooor in spirit, O blessed Saint, * as a holy precious gift * you presented yourself to God, * who from His all-blameless Mother took on flesh, * becoming poor for us, emptying himself. * Therefore you have received * heavenly delights. We pray you, intercede * with the Lord continually, that He have mercy on us."
+     }
+    ]
+   }
+  },
+  "04-24": {
+   "source_file": "me.m04.d24_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "O holy Mother…",
+      "text": "O holy Mother, you persisted in ascetic labors, and you were given * the divine grace to remedy diseases * of both the body and the soul, * and to help all people who were suffering, * and to drive out spirits by the Spirit of God. * By your intercessions, * pray that good health and great mercy may be given to all."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "The powder from your relics…",
+      "text": "The powder from your relics is a source of help for all those who approach you * with ardent faith; for you provide assistance, * restoring vision to the blind, * and curing the people of their illnesses, * honorable Mother, St. Elizabeth. * Now by your intercessions, * pray that good health and great mercy may be given to all."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "You exercised compassion…",
+      "text": "You exercised compassion and you practiced love for God and for your neighbor, * holding fast to the Orthodox confession, * O holy Mother blessed by God. * That is why the Holy Spirit’s grace divine * found repose in you, O St. Elizabeth. * Now by your intercessions, * pray that good health and great mercy may be given to all."
+     }
+    ]
+   }
+  },
+  "04-27": {
+   "source_file": "me.m04.d27_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Hieromartyr St. Symeon…",
+      "text": "Hieromartyr St. Symeon, you are known as a sacred priest, * as one who competed according to the rules, * a wonder-worker admired by all, * a star shining brilliantly, * guiding those who lost their way, * and a pillar unshakable of the holy Church. * You have rightly inherited the kingdom of the heavens, with the honors * of the angelical hosts on high."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "After physical suffering…",
+      "text": "After physical suffering, being tortured in many ways, * after you endured much excruciating pain * from countless spiritual wrestling feats, * O Saint, you were crucified, * imitating Christ the Lord, * who was willingly crucified. We, today, observe * your most luminous memory, and therefore all our spiritual senses * have been illumined, O Symeon."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Hieromartyr St. Symeon…",
+      "text": "Hieromartyr St. Symeon, you went into the heavenly * temple, as your body still dripped with sacred blood. * Now near the all-holy Trinity, * the flashes of brilliant light * that originate therefrom * shine on you, who are luminous. We rejoice today * celebrating your memory, believing that our sins will be forgiven * through your entreaties on our behalf."
+     }
+    ]
+   }
+  },
+  "04-28": {
+   "source_file": "me.m04.d28_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "All-lauded Martyrs…",
+      "text": "All-lauded Martyrs of Christ our God, when pagan senselessness * was predominant long ago, * pushing everyone towards * the abyss of iniquity, * you did not stray from the straight and narrow path, * and to ungodliness you did not assent, * rather you manfully * competed against it and were put to death * by the sword and thus became heirs of eternal life."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Nine holy Martyrs…",
+      "text": "Nine holy Martyrs of Cyzicus, Theognis, Artemas, * Theostichus, Antipater, * Rufus, Magnus, and divine * Theodotus and Thaumasius, * also Philemon, all struggled well for Christ. * They guided many from darkness to the light. * Therefore we honor them, * faithfully extolling them with sacred hymns, * and with joy we celebrate the holy memory."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Splendid arrangement…",
+      "text": "Splendid arrangement of martyr saints, you are a sacred camp, * congregation, and company * chosen and convened by God, * an assembly excellent men, * a troupe of Saints, and a blessed fellowship * who bravely strove for the only triune God. * Pray to the Trinity, * to bestow on us forgiveness of our sins, * and to give humanity the great mercy and peace."
+     }
+    ]
+   }
+  },
+  "04-30": {
+   "source_file": "me.m04.d30_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Seer of God…",
+      "text": "Seer of God, St. Iakovos, as soon as you had received * from the Logos the word to come, * discontinuing to work * for your father, you followed Him. * You left behind the commotions of this life * and worked instead in the spiritual sea, * waters of which you stirred * with the otherworldly thunder of your words, * proclaiming the Gospel truth, Apostle blest by God."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "All-blessed James…",
+      "text": "All-blessed James, as you served the Word, who is the author of life * and the Lord of the age to come, * by your God-inspired words * you warned reprobate Israel * that since their god was their stomach they had lost * the claims and privileges of the firstborn son, * You reprimanded them, * demonstrating that henceforth they are deprived * of the Father’s shelter, blessing, and inheritance."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Since you became…",
+      "text": "Since you became the disciple of the One who made all things, * He assigned a kingdom to you, * ruling over all earth, * as it says in the Gospel of Luke. * Glorious James, you were taken from this life * before the rest of the sacred band of Twelve. * You were the first one whom * lawless men assassinated by the sword, * because of your ardent zeal for Christ, O blessed Saint."
+     }
+    ]
+   }
+  }
+ }
+}

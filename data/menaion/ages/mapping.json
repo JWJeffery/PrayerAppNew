@@ -1,0 +1,361 @@
+{
+ "schema": "menaion-ages-mapping/1",
+ "_comment": "Slot approved only when every selected numbered hymn names the saint (tokens in scripts/menaion/build-ages-mapping.py). Rank-3 only.",
+ "entries": [
+  {
+   "id": "synaxis-seventy-apostles",
+   "mmdd": "01-04",
+   "name": "Synaxis of the Seventy Holy Apostles",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "gregory-nyssa",
+   "mmdd": "01-10",
+   "name": "St. Gregory of Nyssa; St. Dometian of Melitene",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ],
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "veneration-chains-peter",
+   "mmdd": "01-16",
+   "name": "Veneration of the Chains of the Holy Apostle Peter",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "theodore-stratelates",
+   "mmdd": "02-08",
+   "name": "Great Martyr Theodore Stratelates ('the General')",
+   "slots": {
+    "praises": [
+     1,
+     2,
+     3
+    ],
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "theodore-tyron",
+   "mmdd": "02-17",
+   "name": "Great Martyr Theodore Tyron ('the Recruit')",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "polycarp-smyrna",
+   "mmdd": "02-23",
+   "name": "Hieromartyr Polycarp, Bishop of Smyrna",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "james-brother-lord",
+   "mmdd": "04-30",
+   "name": "Holy Apostle James, Brother of the Lord",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "simon-zealot-apostle",
+   "mmdd": "05-10",
+   "name": "Holy Apostle Simon the Zealot",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ],
+    "vespers_aposticha": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "pachomius-great",
+   "mmdd": "05-15",
+   "name": "Venerable Pachomius the Great",
+   "slots": {
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "bartholomew-barnabas-apostles",
+   "mmdd": "06-11",
+   "name": "Holy Apostles Bartholomew and Barnabas",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "id": "onuphrius-great",
+   "mmdd": "06-12",
+   "name": "Venerable Onuphrius the Great",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "mary-magdalene-equal-apostles",
+   "mmdd": "07-22",
+   "name": "Holy Equal-to-the-Apostles Mary Magdalene",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "dormition-anna-mother-theotokos",
+   "mmdd": "07-25",
+   "name": "Repose of St. Anna, Mother of the Most Holy Theotokos",
+   "slots": {
+    "vespers_aposticha": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "procession-cross-maccabees",
+   "mmdd": "08-01",
+   "name": "Procession of the Precious Cross; Holy Maccabee Martyrs",
+   "slots": {
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "matthias-apostle-august",
+   "mmdd": "08-09",
+   "name": "Holy Apostle Matthias",
+   "slots": {
+    "vespers_stichera": [
+     4,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "id": "deposition-belt-theotokos",
+   "mmdd": "08-31",
+   "name": "Deposition of the Precious Belt of the Most Holy Theotokos",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "thekla-equal-apostles",
+   "mmdd": "09-24",
+   "name": "Holy Equal-to-the-Apostles Protomartyr Thekla",
+   "slots": {
+    "vespers_aposticha": [
+     1,
+     2,
+     3
+    ],
+    "praises": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "gregory-illuminator-armenia",
+   "mmdd": "09-30",
+   "name": "St. Gregory the Illuminator of Armenia",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "thomas-apostle-october",
+   "mmdd": "10-06",
+   "name": "Holy Apostle Thomas",
+   "slots": {
+    "exapostilarion": [
+     2
+    ]
+   }
+  },
+  {
+   "id": "amphilochius-iconium",
+   "mmdd": "11-23",
+   "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
+   "slots": {
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "ambrose-milan",
+   "mmdd": "12-07",
+   "name": "Our Father among the Saints Ambrose, Bishop of Milan",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ],
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "conception-theotokos-anna",
+   "mmdd": "12-09",
+   "name": "Conception of the Most Holy Theotokos by Righteous Anna",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ],
+    "vespers_aposticha": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "daniel-stylite",
+   "mmdd": "12-11",
+   "name": "Venerable Daniel the Stylite",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3
+    ],
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "prophet-daniel-three-youths",
+   "mmdd": "12-17",
+   "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael",
+   "slots": {
+    "vespers_stichera": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "exapostilarion": [
+     1
+    ]
+   }
+  },
+  {
+   "id": "ignatius-god-bearer",
+   "mmdd": "12-20",
+   "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch",
+   "slots": {
+    "vespers_stichera": [
+     4,
+     5,
+     6
+    ],
+    "exapostilarion": [
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "id": "great-martyr-anastasia",
+   "mmdd": "12-22",
+   "name": "Holy Great Martyr Anastasia the Deliverer from Potions",
+   "slots": {
+    "exapostilarion": [
+     1,
+     2
+    ]
+   }
+  },
+  {
+   "id": "holy-innocents",
+   "mmdd": "12-29",
+   "name": "The Holy Fourteen Thousand Infants Slain by Herod at Bethlehem",
+   "slots": {
+    "praises": [
+     1,
+     2,
+     3
+    ]
+   }
+  }
+ ]
+}

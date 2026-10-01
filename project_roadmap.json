@@ -733,9 +733,9 @@
       "history": "documentation/project-history/VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md"
     },
     "menaion_hymn_corpus_state": {
-      "status": "orloff_commons_wired_for_rank3_saints_ages_received_not_yet_ingested",
+      "status": "orloff_commons_and_ages_wired_for_rank3_saints",
       "date": "2026-10-01",
-      "finding": "Orloff General Menaion (1899, public domain) Commons ingested (data/menaion/commons) and wired into Orthros/Vespers for 47 mapped rank-3 saints via js/menaion-commons.js. AGES English library (CC0) received 2026-10-01; coverage partial (276/366 days with some hymn text); parser not yet written. Great Feast propers and rank-4 saints still deferred.",
+      "finding": "Rank-3 saints: Orloff Common (60 mapped) plus AGES saint-specific hymns for 27 saints where every hymn names the saint, wired via js/menaion-commons.js. Rank 1-2 feasts (deferred by decision) and rank-4 saints still show honest deferred rubrics. See documentation/MENAION_COMMONS_ORLOFF.md and documentation/MENAION_AGES.md.",
       "decisions": "Josh 2026-10-01: use Orloff General Menaion 1899 (public domain) for Commons via a new common-of-<type> layer; free-for-non-commercial licenses acceptable and Greek-lane AGES texts may serve the Russian/Slavic lane for large gaps (AGES license still unread); Great Feast propers stay deferred."
     }
   },

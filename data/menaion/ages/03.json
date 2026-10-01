@@ -1,0 +1,189 @@
+{
+ "schema": "menaion-ages/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (translations by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America), CC0 1.0",
+ "calendar": "GOA New Calendar (Revised Julian) usage; commemorations may differ from the Slavic usage the app otherwise follows",
+ "dates": {
+  "03-06": {
+   "source_file": "me.m03.d06_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "incipit": "…",
+      "text": "O Virgin, only Mother of God, * from Him you have receive great gifts * of divine grace, * for you physically gave birth * unto Christ the life-giver, * who is one of the persons * of the Trinity, to save our souls."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "The choir of two score and two…",
+      "text": "The choir of two score and two like-minded holy Martyrs, * resolutely competed all together till the end. * They overcame the enemy’s wicked schemes, and they arrived * at the mansions in heaven. And they received the gleaming * medals for their victory from the right hand of God Most High."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "incipit": "As your sympathy is great …",
+      "text": "As your sympathy is great and immense is your mercy, * all-lauded Virgin Mary, my Lady Theotokos, * look upon my humble soul, I pray you drive away from me * the turbulence of the passions and all the scandals of this life, * and by your intercessions, rescue me from the fire of hell."
+     }
+    ]
+   }
+  },
+  "03-07": {
+   "source_file": "me.m03.d07_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Universal luminaries…",
+      "text": "Universal luminaries and all-laudable Hierarchs * and invincible Martyr Saints, * O Fathers, your minds were set on the things of heaven. * Immovable pillars of the all-holy Church of Christ, * the firm foundation of doctrines most divine, * as leaders of the Orthodox, you guide our souls to the light of God. * With the Angels you dwell on high, * for you championed the Trinity."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "With inspired songs…",
+      "text": "With inspired songs extol the Martyrs Ephrem, Aetherius * and Eugene and Elpidius, * Basileus, Capito, and Agathodorus. * Glorious and famous and most illustrious were they, * and they had wisdom from God, and they were great. * They lived their lives devoutly, and they suffered martyrdom sacredly. * And now they are residents * of the heavenly kingdom on high."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Famous Martyr Basileus…",
+      "text": "Famous Martyr Basileus, mortifying the carnal mind * by his labors and discipline, * raised the dead by faithfully invoking the Lord God. * Capito the shepherd and holy hierarch rejoiced, * as he was standing within the burning fire * remaining whole. O Savior, by their intercessions, please grant to us * Your great mercy and clemency, * in Your love for humanity."
+     }
+    ]
+   }
+  },
+  "03-09": {
+   "source_file": "me.m03.d09_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "incipit": "O fellow believers…",
+      "text": "O fellow believers, let us extol with songs of praise those forty medaled Martyrs, and let us melodiously address them, “O medaled Martyrs of Christ, rejoice! We salute you: Hesychius, Meliton, Heraclius, Smaragdus, and Domnus; Euonicus, Valens, Vivianus, Claudius, and Priscus! We salute you: Theodulus, Euthychius, and John; Xantheas, Helianus, Sisinius, Cyrion, Angius, Aetius and Flavius! We salute you: Acacius, Ecditius, Lysimachus, Alexander, Elias, and Candidus; Theophilus, Dometian, godly Gaius, and Gorgonius! We salute you: Eutyches, Athanasius, Cyril, and Sacerdon; Nicholas, Valerius, Philoctimon, Severian, Chudion, and Aglaius! O Martyrs, you are celebrated in song by everyone, and you have confidence in praying to Christ our God. Earnestly intercede with Him, to save us who faithfully observe your most solemn memory.”"
+     }
+    ]
+   }
+  },
+  "03-14": {
+   "source_file": "me.m03.d14_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Father, from a very early age…",
+      "text": "Father, from a very early age, * you renounced the world in obedience and true love for God. * Joyfully you followed Christ who had been crucified. * When by labors you put to death * the flesh, O devout Saint, * you received abundantly the gift of grace to cure. * Therefore you were greatly admired, * for you cured all kinds of diseases, * and by you were evil spirits exorcised."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Glory of monastics…",
+      "text": "Glory of monastics that you were, * you brought countless people together to sing extolling the Lord, * holy Father, and you guided all to follow the path * into heaven, O Benedict. * And rightly they followed * your inspired teachings and they imitated you, * blessed Saint, in life and in virtue. * And again you brought them together * for your death and transfer to the life on high."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Father, by your holy prayers…",
+      "text": "Father, by your holy prayers you brought * rain down from the sky, as Elijah that man of God did of old; * and you made an empty vessel fill with oil, O Saint. * You revived someone who had died * and did many other * miracles to glorify the God and Savior of all. * Therefore every year we assemble * on this day with love and with longing * to observe your memory, O Benedict."
+     }
+    ]
+   }
+  },
+  "03-23": {
+   "source_file": "me.m03.d23_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "You subdued…",
+      "text": "You subdued every physical pleasure and the unruly flesh, * using self-control as a bridle and a bit. * And as an excellent soldier you defeated and overcame * all the weapons of the foe, * by the grace of Spirit of God who strengthened you. * O St. Nikon, and you became the guide of the monastics who adhered to * your wise instructions and godly words."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You shone forth…",
+      "text": "You shone forth, O all-blessed Saint, from the east like a blazing sun, * and you shined the light of the Gospel on the world, * by your most radiant miracles; and you brought along a host * of disciples, who were bright * like the stars. And together you suffered martyrdom, * being tortured and finally beheaded, then delivering your spirits * into the hands of the King of all."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Neither famine…",
+      "text": "Neither famine nor nakedness, peril, whippings, or violent death * separated you from the love of God in Christ, * even as Paul the Apostle said, O splendid and admirable * holy monks; and then like lambs * to the slaughter, you followed your shepherd from the west, * and you reached your unfading destination, in the kingdom of the heavens, * as medaled Athletes, O martyr Saints."
+     }
+    ]
+   }
+  },
+  "03-28": {
+   "source_file": "me.m03.d28_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Blessed father Hilary…",
+      "text": "Blessed father Hilary, your led a holy and blameless life. * You had patience and gentleness, * unadulterated love, self-control and virtue. * You stood all night praying; you had compunction, hope in God, * unshaken faith, and you sympathized with all. * Angelic was your way of life while you were physically here on earth. * Now in heaven you intercede with the Master on our behalf."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Devout father Hilary,…",
+      "text": "Devout father Hilary, you have been called an Angel on earth * and a heavenly man of God, * a river of sympathy, a well of compunction, * an ocean of wonders, a guarantor of those who sinned, * a most luxuriant olive tree of God. * With oil of your accomplishments you cheer the faces of those who sing * and extol you, O Saint, whose name is synonymous with cheerfulness."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Your mind was illumined…",
+      "text": "Your mind was illumined by the light of knowledge Christ our God; * overcoming the bodily * passions, it remained untouched by anything worldly, * and it bore the signs and characteristics of divine * beauty within it; and by the synergy * of the all-holy Spirit, it was clearly godlike in every way. * Now monastics delight in you, O our father St. Hilary."
+     }
+    ]
+   }
+  }
+ }
+}
