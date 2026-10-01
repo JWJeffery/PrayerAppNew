@@ -14,7 +14,7 @@ SAINTS = {
  '01-04':('synaxis-seventy-apostles',['seventy','narcis']),'01-10':('gregory-nyssa',['gregory']),
  '01-16':('veneration-chains-peter',['chains','peter']),'02-08':('theodore-stratelates',['theodore']),
  '02-17':('theodore-tyron',['theodore']),'02-23':('polycarp-smyrna',['polycarp']),
-'05-10':('simon-zealot-apostle',['simon']),
+'04-30':('james-zebedee',['james','iakov']),'05-10':('simon-zealot-apostle',['simon']),
  '05-15':('pachomius-great',['pachom']),'06-09':('cyril-alexandria-bishop',['cyril']),
  '06-11':('bartholomew-barnabas-apostles',['barnab','bartholomew']),'06-12':('onuphrius-great',['onuphr']),
  '07-07':('thomas-apostle',['thomas']),'07-22':('mary-magdalene-equal-apostles',['mary','magdal']),

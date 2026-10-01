@@ -17,9 +17,9 @@
    "invocation": "Onesimus"
   },
   {
-   "id": "james-brother-lord",
+   "id": "james-zebedee",
    "mmdd": "04-30",
-   "name": "Holy Apostle James, Brother of the Lord",
+   "name": "Holy Apostle James, Son of Zebedee, Brother of St. John the Theologian",
    "common": "apostle",
    "invocation": "James"
   },
@@ -512,6 +512,13 @@
    "common": "apostle",
    "invocation": "Peter",
    "note": "Common of an Apostle used"
+  },
+  {
+   "id": "james-brother-lord",
+   "mmdd": "10-23",
+   "name": "Holy Apostle James, Brother of the Lord",
+   "common": "apostle",
+   "invocation": "James"
   }
  ]
 }

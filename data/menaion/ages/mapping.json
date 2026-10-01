@@ -90,6 +90,18 @@
    }
   },
   {
+   "id": "james-zebedee",
+   "mmdd": "04-30",
+   "name": "Holy Apostle James, Son of Zebedee, Brother of St. John the Theologian",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
    "id": "simon-zealot-apostle",
    "mmdd": "05-10",
    "name": "Holy Apostle Simon the Zealot",
