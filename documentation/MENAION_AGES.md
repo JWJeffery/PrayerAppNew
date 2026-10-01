@@ -40,3 +40,16 @@ Credit shown in-app on every AGES-derived item.
   Alphaeus (Andronikos & Athanasia), 10-19 Kronstadt (Joel), 11-24 Catherine (Clement & Peter), 12-22 stichera 1-6
   (Nativity forefeast + Anastasia, only her exapostilarion approved).
 - Sweep: 37 AGES items on the 2026 calendar.
+
+
+## Hymn guide (metadata only) -- 2026-10-01
+Where the app has no hymn text for a Great Feast / major feast, `js/hymn-guide.js` (`window.HymnGuide`, run after MenaionCommons in
+`HorologionEngine.resolveOffice`) replaces the "not yet text-backed" note with what is appointed: per slot the number of Menaion hymns, their tones
+and melody names (e.g. "stichera 1-3: Tone 4, to the melody 'When you were called'; Glory: Tone 8"), plus one line on what the day's rank means
+(taken from data/menaion/schema.json's own rank model: rank 1 Great Feast, rank 2 Polyeleos feast).
+- Data: `scripts/menaion/ingest-ages-guide.py` -> `data/menaion/ages/guide/<MM>.json` (366 days, 4,271 hymn slots, 82% with a melody name; NO hymn
+  text); `scripts/menaion/build-guide-mapping.py` -> `guide/mapping.json` (43 rank 1-2 entries).
+- Why only rank 1-2: AGES day titles are generic ("For the Saint."), and a saint's day file mixes in forefeast/other hymns, so a text-less slot cannot be
+  attributed to a rank 3-4 saint. For rank 1-2 the date fixes the identity. Excluded as Slavic-only: Seraphim of Sarov (Jan 2) and the Protection (Oct 1).
+- Every guide line says "Greek Archdiocese usage (AGES)" and that Slavic usage may differ in count and order. Replaces only a deferred rubric, never text.
+- 2026 sweep (vespers + orthros): 43 feast days get guides (Vespers stichera/aposticha, Orthros sessional hymns 1-2, exapostilarion, praises); 0 errors.

@@ -1,0 +1,267 @@
+{
+ "schema": "menaion-ages-guide-mapping/1",
+ "excluded": {
+  "seraphim-sarov": "Slavic-only commemoration",
+  "protection-theotokos": "Slavic-only feast; Greek usage keeps another commemoration on Oct 1"
+ },
+ "entries": [
+  {
+   "id": "george-great-martyr",
+   "mmdd": "04-23",
+   "name": "Holy Great Martyr George the Trophy-Bearer",
+   "rank": 2
+  },
+  {
+   "id": "mark-evangelist",
+   "mmdd": "04-25",
+   "name": "Holy Apostle and Evangelist Mark",
+   "rank": 2
+  },
+  {
+   "id": "transfiguration-lord",
+   "mmdd": "08-06",
+   "name": "The Holy Transfiguration of Our Lord God and Savior Jesus Christ",
+   "rank": 1
+  },
+  {
+   "id": "dormition-theotokos",
+   "mmdd": "08-15",
+   "name": "The Dormition of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+   "rank": 1
+  },
+  {
+   "id": "beheading-john-baptist",
+   "mmdd": "08-29",
+   "name": "The Beheading of the Holy Glorious Prophet, Forerunner, and Baptist John",
+   "rank": 2
+  },
+  {
+   "id": "sabas-sanctified",
+   "mmdd": "12-05",
+   "name": "Our Father among the Saints Sabas the Sanctified",
+   "rank": 2
+  },
+  {
+   "id": "nicholas-myra",
+   "mmdd": "12-06",
+   "name": "Our Father among the Saints Nicholas, Archbishop of Myra in Lycia, Wonderworker",
+   "rank": 2
+  },
+  {
+   "id": "spyridon-trimythous",
+   "mmdd": "12-12",
+   "name": "Our Father among the Saints Spyridon, Bishop of Trimythous, Wonderworker",
+   "rank": 2
+  },
+  {
+   "id": "forefeast-nativity-eve",
+   "mmdd": "12-24",
+   "name": "Eve of the Nativity of Christ (Paramone)",
+   "rank": 1
+  },
+  {
+   "id": "nativity-christ",
+   "mmdd": "12-25",
+   "name": "The Nativity of our Lord God and Savior Jesus Christ",
+   "rank": 1
+  },
+  {
+   "id": "synaxis-theotokos-nativity",
+   "mmdd": "12-26",
+   "name": "Synaxis of the Most Holy Theotokos",
+   "rank": 2
+  },
+  {
+   "id": "protomartyr-stephen",
+   "mmdd": "12-27",
+   "name": "Holy Protomartyr and Archdeacon Stephen",
+   "rank": 2
+  },
+  {
+   "id": "presentation-lord",
+   "mmdd": "02-02",
+   "name": "The Meeting of Our Lord and Savior Jesus Christ (Presentation of the Lord)",
+   "rank": 1
+  },
+  {
+   "id": "first-second-finding-head-john-baptist",
+   "mmdd": "02-24",
+   "name": "The First and Second Finding of the Head of John the Baptist",
+   "rank": 2
+  },
+  {
+   "id": "basil-great-circumcision",
+   "mmdd": "01-01",
+   "name": "Circumcision of Our Lord; St. Basil the Great",
+   "rank": 2
+  },
+  {
+   "id": "theophany-epiphany",
+   "mmdd": "01-06",
+   "name": "Holy Theophany — Baptism of Our Lord Jesus Christ",
+   "rank": 1
+  },
+  {
+   "id": "synaxis-forerunner-john",
+   "mmdd": "01-07",
+   "name": "Synaxis of the Holy Glorious Prophet, Forerunner and Baptist John",
+   "rank": 2
+  },
+  {
+   "id": "theodosius-cenobiarch",
+   "mmdd": "01-11",
+   "name": "Venerable Theodosius the Cenobiarch",
+   "rank": 2
+  },
+  {
+   "id": "anthony-great",
+   "mmdd": "01-17",
+   "name": "Venerable Anthony the Great",
+   "rank": 2
+  },
+  {
+   "id": "athanasius-cyril-alexandria",
+   "mmdd": "01-18",
+   "name": "Sts. Athanasius the Great and Cyril of Alexandria",
+   "rank": 2
+  },
+  {
+   "id": "euthymius-great",
+   "mmdd": "01-20",
+   "name": "Venerable Euthymius the Great",
+   "rank": 2
+  },
+  {
+   "id": "gregory-theologian",
+   "mmdd": "01-25",
+   "name": "St. Gregory the Theologian, Archbishop of Constantinople",
+   "rank": 2
+  },
+  {
+   "id": "translation-chrysostom",
+   "mmdd": "01-27",
+   "name": "Translation of the Relics of St. John Chrysostom",
+   "rank": 2
+  },
+  {
+   "id": "ephrem-syrian",
+   "mmdd": "01-28",
+   "name": "Venerable Ephrem the Syrian",
+   "rank": 2
+  },
+  {
+   "id": "three-hierarchs",
+   "mmdd": "01-30",
+   "name": "Synaxis of the Three Great Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom",
+   "rank": 2
+  },
+  {
+   "id": "elijah-prophet",
+   "mmdd": "07-20",
+   "name": "Holy Glorious Prophet Elijah the Tishbite",
+   "rank": 2
+  },
+  {
+   "id": "nativity-john-baptist",
+   "mmdd": "06-24",
+   "name": "The Nativity of the Holy Glorious Prophet, Forerunner, and Baptist John",
+   "rank": 1
+  },
+  {
+   "id": "peter-paul-apostles",
+   "mmdd": "06-29",
+   "name": "The Holy Glorious and All-Praised Chief Apostles Peter and Paul",
+   "rank": 1
+  },
+  {
+   "id": "annunciation-theotokos",
+   "mmdd": "03-25",
+   "name": "The Annunciation of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+   "rank": 1
+  },
+  {
+   "id": "john-theologian-apostle",
+   "mmdd": "05-08",
+   "name": "Holy Apostle and Evangelist John the Theologian",
+   "rank": 2
+  },
+  {
+   "id": "constantine-helen-equal-apostles",
+   "mmdd": "05-21",
+   "name": "Holy Great Equal-to-the-Apostles Emperor Constantine and his mother Helen",
+   "rank": 2
+  },
+  {
+   "id": "third-finding-head-john-baptist",
+   "mmdd": "05-25",
+   "name": "The Third Finding of the Head of John the Baptist",
+   "rank": 2
+  },
+  {
+   "id": "synaxis-bodiless-hosts",
+   "mmdd": "11-08",
+   "name": "Synaxis of the Chief of the Heavenly Hosts, Archangel Michael and the Other Bodiless Powers",
+   "rank": 2
+  },
+  {
+   "id": "john-chrysostom",
+   "mmdd": "11-13",
+   "name": "Our Father among the Saints John Chrysostom, Archbishop of Constantinople",
+   "rank": 2
+  },
+  {
+   "id": "apostle-philip",
+   "mmdd": "11-14",
+   "name": "Holy Apostle Philip",
+   "rank": 2
+  },
+  {
+   "id": "apostle-evangelist-matthew",
+   "mmdd": "11-16",
+   "name": "Holy Apostle and Evangelist Matthew",
+   "rank": 2
+  },
+  {
+   "id": "entrance-theotokos",
+   "mmdd": "11-21",
+   "name": "The Entrance of the Most Holy Theotokos into the Temple",
+   "rank": 1
+  },
+  {
+   "id": "apostle-andrew-first-called",
+   "mmdd": "11-30",
+   "name": "Holy Apostle Andrew the First-Called",
+   "rank": 2
+  },
+  {
+   "id": "luke-evangelist",
+   "mmdd": "10-18",
+   "name": "Holy Apostle and Evangelist Luke",
+   "rank": 2
+  },
+  {
+   "id": "demetrios-thessalonica",
+   "mmdd": "10-26",
+   "name": "Holy Great Martyr Demetrios of Thessalonica, the Myrrh-streamer",
+   "rank": 2
+  },
+  {
+   "id": "nativity-theotokos",
+   "mmdd": "09-08",
+   "name": "The Nativity of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+   "rank": 1
+  },
+  {
+   "id": "exaltation-holy-cross",
+   "mmdd": "09-14",
+   "name": "The Universal Exaltation of the Precious and Life-giving Cross",
+   "rank": 1
+  },
+  {
+   "id": "john-theologian-repose",
+   "mmdd": "09-26",
+   "name": "Repose of the Holy Apostle and Evangelist John the Theologian",
+   "rank": 2
+  }
+ ]
+}

@@ -698,6 +698,16 @@ const _interhourFixedDataCache = {};
             }
         }
 
+        // ── Hymn guide: tone/melody/count where the app has no hymn text (rank 1-2) ──
+        if ((normalizedKey === 'orthros' || normalizedKey === 'vespers') &&
+            typeof window !== 'undefined' && window.HymnGuide) {
+            try {
+                await window.HymnGuide.applyToSections(sections, normalizedKey);
+            } catch (err) {
+                console.warn('[HorologionEngine] HymnGuide failed (rubrics kept):', err.message);
+            }
+        }
+
         // ── Fast and appointed readings from the published Orthodox lectionary ──
         // js/orthodox-day.js; years without data are left to the engine's own logic.
         // New-calendar data only: skipped when the user reckons by the Old (Julian) calendar.
