@@ -162,6 +162,69 @@ const MenaionCommons = (() => {
         };
     }
 
+    // ── Rank 4 (three-stichera commemorations): Vespers stichera ONLY ──────────
+    // Josh 2026-10-01: add just the saint's three "Lord, I have cried" stichera from
+    // the Common (hand-reviewed data/menaion/commons/mapping-rank4.json). Where the
+    // engine shows only the "proper stichera should be appointed" rubric, that rubric
+    // is replaced; where it shows the Octoechos stichera, the saint's three follow.
+    let _rank4Promise = null;
+    function _loadRank4Mapping() {
+        if (!_rank4Promise) {
+            _rank4Promise = _fetchJson(BASE + 'mapping-rank4.json').catch(err => {
+                console.warn('[MenaionCommons] rank-4 mapping unavailable:', err.message);
+                return null;
+            });
+        }
+        return _rank4Promise;
+    }
+
+    async function _applyRank4Vespers(sections, trop) {
+        const mapping = await _loadRank4Mapping();
+        const entry = mapping && Array.isArray(mapping.entries)
+            ? mapping.entries.find(e => e.name === trop.commemoration) : null;
+        if (!entry) return 0;
+        const common = await _loadCommon('' + entry.common);
+        const sec = common && Array.isArray(common.sections)
+            ? common.sections.find(s => s.kind === 'vespers_stichera' && s.lines && s.lines.length) : null;
+        if (!sec) return 0;
+
+        // header + melody line + the first stichera, up to the Glory/Theotokion rubric
+        const cut = sec.lines.findIndex((l, i) => i > 0 && /^\(\s*Glory/i.test(l));
+        const lines = cut > 0 ? sec.lines.slice(0, cut) : sec.lines.slice(0, 5);
+        if (lines.length < 3) return 0;
+        const commonLabel = COMMON_LABEL[entry.common] || entry.common;
+
+        for (const s of sections) {
+            if (!Array.isArray(s.items)) continue;
+            for (let i = 0; i < s.items.length; i++) {
+                const item = s.items[i];
+                if (!item || item.key !== 'stichera-at-lord-i-have-cried') continue;
+                const replaceRubric = item.resolvedAs === 'menaion-feast-rubric';
+                const afterOctoechos = item.resolvedAs === 'octoechos-baseline-ordinary';
+                if (!replaceRubric && !afterOctoechos) return 0;
+                const note = replaceRubric
+                    ? '(Three stichera of the commemoration, from the Common of ' + commonLabel + '. The stichera of the day\'s tone ' +
+                      '(Octoechos) that the Typikon sings with them are not shown here.)'
+                    : '(The three stichera of the commemoration follow the Octoechos stichera above, from the Common of ' + commonLabel + '.)';
+                const built = {
+                    type:       'stichera',
+                    key:        'stichera-at-lord-i-have-cried' + (afterOctoechos ? '-menaion' : ''),
+                    label:      'Stichera at "Lord, I have cried" — ' + (afterOctoechos ? 'of the Commemoration' : 'Common of ' + commonLabel),
+                    text:       _render(lines, entry.invocation) + '\n\n' + note + '\n\n(Text: Orloff, The General Menaion, London 1899 — Slavonic usage. ' +
+                                'The proper hymns of ' + entry.invocation + ' themselves, where a service book has them, are not yet in this corpus.)',
+                    source:     'Menaion Common (Orloff 1899)',
+                    rank:       4,
+                    commemoration: entry.name,
+                    commonId:   common.id,
+                    resolvedAs: 'menaion-orloff-common-text-rank4'
+                };
+                if (replaceRubric) s.items[i] = built; else s.items.splice(i + 1, 0, built);
+                return 1;
+            }
+        }
+        return 0;
+    }
+
     /**
      * applyToSections(sections, officeKey)
      * Mutates the engine's already-resolved sections in place. Returns the
@@ -173,7 +236,9 @@ const MenaionCommons = (() => {
 
         const items = sections.flatMap(sec => Array.isArray(sec.items) ? sec.items : []);
         const trop = items.find(it => it && it.key === TROPARION_KEY[officeKey]) || null;
-        if (!trop || trop.resolvedAs !== 'menaion-feast-troparion' || trop.rank !== 3 || !trop.commemoration) return 0;
+        if (!trop || trop.resolvedAs !== 'menaion-feast-troparion' || !trop.commemoration) return 0;
+        if (trop.rank === 4) return officeKey === 'vespers' ? _applyRank4Vespers(sections, trop) : 0;
+        if (trop.rank !== 3) return 0;
 
         const mapping = await _loadMapping();
         const entry = mapping && Array.isArray(mapping.entries)
