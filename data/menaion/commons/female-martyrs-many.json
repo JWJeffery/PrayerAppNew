@@ -1171,5 +1171,334 @@
     }
    ]
   }
+ ],
+ "sections": [
+  {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xxiv-p1",
+    "xxiv-p2",
+    "xxiv-p3",
+    "xxiv-p4",
+    "xxiv-p5",
+    "xxiv-p6",
+    "xxiv-p7",
+    "xxiv-p8",
+    "xxiv-p9",
+    "xxiv-p10"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:)",
+    "Thou hast given a sign...",
+    "The virgin-maidens, united by the law of nature and manifestly sustained by the love unto their Maker, were by faith freed from the ties of the body; the impotent enemy they have valiantly destroyed under their feet, became resplendently adorned with the honours of victors and are rejoicing having found their abode in the intellectual bridal chambers.",
+    "The all-honoured have endured fire and multiformous tortures and deaths, possessing in faith the fairest beauty of the Bridegroom, and, having been adorned with various wounds, were numbered unto Him; wherefore Jesus -the Lover of man and Saviour of our souls- hath crowned them with divers gifts.",
+    "Incorrupt virginity, most admirable virginity have ye, O good maidens, brought unto Christ, having -with manly minds by the power of the cross put down the rage of the enchantment of godlessness ; wherefore all the churches of Christ celebrate your holy memory, O most bright and all-glorious.",
+    "(Glory... Both now... the Theotokion:)",
+    "Since thy supplication unto the Lord is indefatigable and thine intercession incessant, do thou, O most pure one, lull to sleep the attacks and lay down the waves of my wretched soul; vouchsafe, O Maiden, -I implore thee, -consolation unto my heart that is now in affliction, and grant grace unto my mind that I may worthily glorify thee.",
+    "(The Stavro-theotokion:)",
+    "Beholding thee, the Lamb and the Shepherd, on the tree, the ewe that gave Thee birth wept and motherly spake unto Thee O Son most desired! How is it that Thou art hung on the tree, O Long-suffering? How is it that Thy hands and feet, -O Word, were nailed by the lawless, and that Thou, O Master, hast shed Thy blood?",
+    "(If there be Idiomelon, Glory ...Tone 8:)",
+    "Let every tongue be moved unto the laudation of the most praised female martyrs; let every generation and age, all the youths and maidens, crown with praises the great martyrs of Christ; for, having put forth lawful boldness and discarded female weakness, they have put down the tormenting enemy, and having been adorned for their labours of martyrs with the heavenly and divine crowns, they supplicate their Bridegroom and God to grant us great mercy.",
+    "(Both now...the Theotokion:)",
+    "O Sovereign-Lady accept the supplication of thy servants and deliver us from every need and woe.",
+    "(The Stavro-theotokion)",
+    "The most pure one, when she beheld Thee hanging on the tree in the flesh, was pierced in her heart, and with lamentations vociferated: O Word, whither art Thou gone down, most beloved Jesu, my Son and Lord? Do not, O Christ, leave me alone who bare Thee.",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "The King of the heavens...",
+    "(The Entrance. The Prokeimenon of the day. The three Readings of the martyrs (see Appendix).)"
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "With the Versicles the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xxiv-p11",
+    "xxiv-p12",
+    "xxiv-p13",
+    "xxiv-p14",
+    "xxiv-p15",
+    "xxiv-p16",
+    "xxiv-p17"
+   ],
+   "lines": [
+    "(With the Versicles the Stichera, Tone 4. Similar to:)",
+    "As a virtuous...",
+    "The choirs of angels have been certainly amazed at your hearty-zeal, divine love and the unity of your sufferings, O blissful ones, since, having by manful united efforts put down the invisible enemy, ye have worthily and openly received from the life-bearing Hand the crowns of victory.",
+    "(The Versicle : Wonderful in His holy ones is God, the God of Israel.)",
+    "Being put to death for Christ's sake by the enraged sophistry, ye have extinguished the vain flame, and, having the lamps of your souls preserved unextinguished, ye have entered together into the heavenly palace of Christ; wherefore, we all, enlightened by your grace, piously hymn your holy memory, O great female sufferers.",
+    "(The Versicle: In the congregations bless ye God, even the Lord, from the fountains of Israel.)",
+    "Ye have endured sufferings of many tortures, O all-praised ones, and have stood them firmly; thereupon were ye translated unto the reception of the neversetting brightness, serene joy and eternal divine light; wherefore we bless you and perform to-day your holy commemoration, O female martyrs God-comprehending.",
+    "(Glory ...Tone 4.)",
+    "The life dragging down, the food-delights and the glory of prosperity ye have set aside, O most laudable ones, as transient, but attached yourselves unto Christ in martyrdom, being moved thereto by His fair beauty, ye have approached as the sweetsmelling roses and were adorned with the crowns of the incorruptible Kingdom, O God-renowned.",
+    "(Both now ...the Theotokion:)",
+    "O most pure Sovereign-Lady, lamp inextinguishable, throne most admirable, do supplicate that our souls may be saved.",
+    "(The Stavro-theotokion:)",
+    "Seeing Christ-the Lover of man-hung and being pierced through His side with a spear, the most pure one did bewail, crying out: What is this, O my Son ? What have the ungrateful people rewarded Thee with for all the good Thou hast done unto them? and Thou most lovingly takest care of my childlessness. I wonder at Thy voluntary crucifixion, O Compassionate One."
+   ]
+  },
+  {
+   "kind": "vespers_troparion",
+   "header": "The Troparion from the Typicon; if there be no Typicon, say this Troparion, Tone 1:Glory... Both now... the Theotokion or the Stavro-theotokion.",
+   "ids": [
+    "xxiv-p18"
+   ],
+   "lines": [
+    "(The Troparion from the Typicon; if there be no Typicon, say this Troparion, Tone 1:)",
+    "Ye reasonable lambs unto Christ, the Lamb and Shepherd, were conducted through martyrdom; having finished your course and preserved the faith; wherefore with gladsome hearts do we recall to-day your, O wonderworthy, holy memory, magnifying Christ.",
+    "(Glory... Both now... the Theotokion or the Stavro-theotokion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 1. Similar to:",
+   "ids": [
+    "xxiv-p19",
+    "xxiv-p20",
+    "xxiv-p21"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 1. Similar to:)",
+    "Thy sepulchre...",
+    "Burning with the fire of the divine desire, ye were not at all burned by the contact with the material fire, O blissful ones, but with that fire you have destroyed the allurement, and being mercilessly dragged about, ye have, O ever-memorable female martyrs, found your end and obtained glory.",
+    "(Twice.)",
+    "(Glory ...Both now ...the Theotokion:)",
+    "O blessed Mary, innocent of marital life-refuge of the despairing, God's abode! Do set in the path of repentance us who constantly stray into the roadless paths of evil and anger the Good Lord."
+   ]
+  },
+  {
+   "kind": "sessional_2",
+   "header": "Cathisma, Tone 4. Similar to:",
+   "ids": [
+    "xxiv-p22",
+    "xxiv-p23",
+    "xxiv-p24"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 4. Similar to:)",
+    "Wonder-struck was Joseph...",
+    "The heavenly choirs of the bodiless powers have been wonderstruck by your great endurance; it was as if ye were witnessing somebody else's sufferings, whereas your own legs and joints were broken and ye suffered the bitter death, destroying with your female bodies the apostate serpent, O ye virgins, brides of the Giver of Life, champions of the faith.",
+    "(Twice.)",
+    "(Glory... Both now... the Theotokion:)",
+    "Wonder-struck was Joseph contemplating that which is above nature, and with respect to thy seedless conception, O Theotokos, he took into consideration the dew on the fleece, the bush that was consumed by fire, Aaron's staff that sprouted, and bearing witness thy betrothed and guardian called out unto the priests: Virgin giveth birth and after the birth remaineth still Virgin."
+   ]
+  },
+  {
+   "kind": "polyeleos",
+   "header": "After Praise ye the name of the Lord, the Refrain:The selected Psalm:",
+   "ids": [
+    "xxiv-p25"
+   ],
+   "lines": [
+    "(After Praise ye the name of the Lord, the Refrain:)",
+    "We magnify you, O holy female martyrs, and honour your honourable sufferings which for Christ ye have endured.",
+    "(The selected Psalm:)",
+    "God is our refuge and strength..."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone 8. Similar to:",
+   "ids": [
+    "xxiv-p26",
+    "xxiv-p27",
+    "xxiv-p28"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 8. Similar to:)",
+    "Of the wisdom...",
+    "Having been God-beseemingly affianced unto the Lord, ye passion-enduring maidens-have brought Him as dowry your blood and immolation, and have worthily obtained the divine palace wherein ye are unceasingly filled with ineffable enlightenment; wherefore, in spiritually celebrating your holy and honourable memory, we glorify the Saviour and in faith call out: Supplicate Christ the God to grant remission of sins unto those who lovingly honour your holy memory.",
+    "(Twice.)",
+    "(Glory... Both now... the Theotokion:)",
+    "Being moved by the entreaties of Thy bodiless, Thy precursor, of apostles and prophets, of martyrs and all saints and of the Theotokos -Thine innocent of marital life and kind Mother, do grant, O Christ, that we may walk in thy light and vouchsafe unto us that we may obtain Thy Kingdom, for the sake of Thy compassionate mercy."
+   ]
+  },
+  {
+   "kind": "gospel_gradual",
+   "header": "The Graduals, the first Antiphon of the 4th Tone. The Prokeimenon.The Verse:The Gospel, St. Mark 5, 24-34. After the 50th Psalm, the Sticheron,Tone 4:(See Stichera with the Versicles).",
+   "ids": [
+    "xxiv-p29"
+   ],
+   "lines": [
+    "(The Graduals, the first Antiphon of the 4th Tone. The Prokeimenon.)",
+    "Wonderful in His holy ones is God, the God of Israel.",
+    "The Verse:",
+    "In the congregations bless ye God, even the Lord, from the fountains of Israel. Let every breath.",
+    "(The Gospel, St. Mark 5, 24-34. After the 50th Psalm, the Sticheron,Tone 4:)",
+    "The life dragging down...",
+    "((See Stichera with the Versicles).)"
+   ]
+  },
+  {
+   "kind": "canon",
+   "header": "The Canon, Tone 4. Ode 1. The Heirmos",
+   "ids": [
+    "xxiv-p30",
+    "xxiv-p31",
+    "xxiv-p32",
+    "xxiv-p33",
+    "xxiv-p34",
+    "xxiv-p35",
+    "xxiv-p36",
+    "xxiv-p37",
+    "xxiv-p38",
+    "xxiv-p39",
+    "xxiv-p40",
+    "xxiv-p41",
+    "xxiv-p42",
+    "xxiv-p43",
+    "xxiv-p44",
+    "xxiv-p45",
+    "xxiv-p46",
+    "xxiv-p47",
+    "xxiv-p48",
+    "xxiv-p49",
+    "xxiv-p50",
+    "xxiv-p51",
+    "xxiv-p52",
+    "xxiv-p53",
+    "xxiv-p54",
+    "xxiv-p55",
+    "xxiv-p56",
+    "xxiv-p57",
+    "xxiv-p58",
+    "xxiv-p59",
+    "xxiv-p60",
+    "xxiv-p61",
+    "xxiv-p62",
+    "xxiv-p63",
+    "xxiv-p64",
+    "xxiv-p65",
+    "xxiv-p66",
+    "xxiv-p67",
+    "xxiv-p68",
+    "xxiv-p69",
+    "xxiv-p70",
+    "xxiv-p71",
+    "xxiv-p72",
+    "xxiv-p73",
+    "xxiv-p74",
+    "xxiv-p75",
+    "xxiv-p76",
+    "xxiv-p77",
+    "xxiv-p78",
+    "xxiv-p79",
+    "xxiv-p80",
+    "xxiv-p81",
+    "xxiv-p82",
+    "xxiv-p83",
+    "xxiv-p84"
+   ],
+   "lines": [
+    "(The Canon, Tone 4. Ode 1. The Heirmos)",
+    "I will open my mouth, and it shall be filled with breath, and I will break forth in speech to the Queen Mother; yea I will appear as one keeping bright festival and will joyfully hymn her wonders.",
+    "Valiantly have ye, female martyrs, combated the enemy first by fasting and thereupon -secondly- by the cruel shedding of your blood; wherefore we honour in faith your memory.",
+    "Moved by the desire of Him Who for our sake hath suffered both the cross and the death, ye holy female martyrs-followed in His footsteps, forgetting your bodily weakness.",
+    "Sacrificial temples of Hellens and armies of demons have ye, O most honourable female martyrs, overthrown with the weapon of your martyrdom, and have been brought into the heavenly church as burnt-offerings.",
+    "(The Theotokion:)",
+    "Strengthened with the grace of Him Who hath shone forth from thy loins, O most spotless one, the virgin-maidens have undergone the pains of martyrdom and were led in after thee rejoicing.",
+    "(Ode 3. The Heirmos)",
+    "The bow of the mighty hath become impotent and the infirm have girded themselves with strength; wherefore my heart hath become strengthened in the Lord.",
+    "Strengthened of God with mighty power, ye have overthrown the might of the opposing wrestler, and therefore have become famous as invincible victoresses.",
+    "Vain appeared the gapings of the beast through Christ's divine power, and ye, O God-wise ones, were delivered unhurt, glorifying God.",
+    "Your minds were enlightened with wisdom and grace, and ye-female martyrs of the Saviour-were not frightened by the threats of your tormentors, being sustained by God's strength.",
+    "(The Theotokion:)",
+    "Orthodoxy conceiving, we proclaim thee to be the true Mother of God and all-spotless, for through thee the Maker was pleased to come into union with us.",
+    "(The Cathisma, Tone 1)",
+    "Having acquired in you the sources of miracles, we, O most laudable female martyrs, abundantly draw health, singing your pains and divine zeal, the valiant sores and feats; yea it is unto the glory of our God that we celebrate your wonder-worthy memory.",
+    "(Glory... Both now... the Theotokion:)",
+    "The entreaties of thy servants do receive, O Theotokos, and deliver us from every misfortune, for thou hast given birth unto Christ the Saviour and Deliverer of our souls.",
+    "(The Stavro-theotokion:)",
+    "Possessing intercession in thee, O most pure one, and being delivered from afflictions through thy supplications and everywhere preserved by the cross of thy Son, we all dutifully and piously magnify thee.",
+    "(Ode 4. The Heirmos)",
+    "He that sitteth in glory upon the throne of the Godhead, even Christ the most divine, hath come in a light cloud and with incorruptible hand saved those that call: Glory unto Thy power, O Christ.",
+    "Having suffered tortures and bodily sores in various forms, such as breaking of limbs and burning, ye have inherited the heavenly abodes, taking delight in the Tree of life, O wonderworthy.",
+    "The heavenly powers were astonished at the feat of the blissful female martyrs, whilst they in their female nature vanquished the enemy, being strengthened by the power of Him Who hath shone forth from the Virgin.",
+    "Having rejected all the vanity of the world, ye have with the whole of your souls attached yourselves unto God alone; wherefore ye have endured the pains of fasting and of tortures, O ye, Christ's brides, long-suffering.",
+    "(The Theotokion:)",
+    "Into thy womb, O most unblemished one, the Lord hath descended like the dew upon the wool, as the prophet hath said of old; Him hast thou brought forth in two natures and unto Him we call: Glory to Thy might, O Christ!",
+    "(Ode 5. The Heirmos)",
+    "The wicked will not see Thy glory, O Christ, but we, rising early in the night, hymn Thee, the Only-Begotten, the Brightness of Thy Father's divine glory, the Lover of man.",
+    "As unblemished lambs and acceptable sacrifices ye were brought unto the True Shepherd, even Christ, perfect offerings and pleasing holocausts.",
+    "Having died bodily, ye have revived in your souls, O female martyrs, being like unto Him Who hath slain the might of death and endured the cross and death and the voluntary passion.",
+    "The God-wise ones having one mind in many bodies were pared in different ways and burned with the fire, whilst they confessed One Jesus, the Lord of all.",
+    "(The Theotokion:)",
+    "Raise me up fallen into the pit of passions and set me straight, O thou the only all-unblemished, who hast brought forth God and Governor that hath by the grace joined together those separated at first.",
+    "(Ode 6. The Heirmos)",
+    "I will sacrifice unto Thee, O Lord, with the voice of praise,-crieth out unto Thee the church, having been cleansed of the demons' blood with the blood that mercifully ran out of Thy side.",
+    "The first mother doth divinely rejoice, seeing overthrown and trodden under the female feet the serpent that hath first driven her from Eden through flattery.",
+    "Having joined fasting unto the lawful suffering, ye are now incorruptibly conjointed unto the spiritual Bridegroom and with gladsome souls settled in the heavenly palace.",
+    "The waves raised by tormentors were unable to immerse the martyr-ships, for they have reached the divine haven by a strong arm.",
+    "(The Theotokion:)",
+    "Of thy speech now seeing the fulfilment, we yet more magnify thee, O God's Mother, and Him Who hath exalted thee; for truly all generations now bless thee.",
+    "(The Contakion from the Typicon; but if there be no Typicon, say this Contakion, Tone 4. Similar to:)",
+    "Thou hast appeared...",
+    "Of Christ's female martyrs the memory we are now celebrating and in faith praying for help, that from every affliction may be delivered we all that call out: With us is our God that hath glorified these as He willed.",
+    "(The Oikos:)",
+    "Having acquired in you, O female martyrs of Christ, the sources of miracles, we abundantly draw health, honouring your pains and divine zeal, the valiant sores and feats, and celebrate your wonder-worthy memory, calling out: With us is our God that hath glorified these as He willed.",
+    "(Ode 7. The Heirmos:)",
+    "Thou that hast saved in the fire Thine Abrahamic youths and hast slain the Chaldeans whom the truth hath rightfully affected, O Most-hymned Lord, God of our fathers, blessed art Thou.",
+    "Having the eyes of their hearts turned unto God-the Saviour and King, the lambs of Christ went boldly before every variety of evil snares and vanquished manfully, vociferating: Blessed art Thou, O God of our fathers.",
+    "Having all your desires concentrated solely on the Master, ye have, O female martyrs, accounted as a dream all the attractions of life, vociferating: Blessed art Thou, O God of our fathers.",
+    "Behold, the palace is open-let us not be dejected, but rather stand up manfully without sparing our bodies, vociferated the valiant female martyrs, whilst standing before the judgment seat, for Christ is holding out the crowns.",
+    "(The Theotokion:)",
+    "Blessed is the Fruit of thy blessed womb, O pure one; Him bless, O blessed one, the heavenly powers and assemblies of men as One Who hath delivered us from the first curse.",
+    "(Ode 8. The Heirmos:)",
+    "The bringing forth of the Theotokos hath saved the pious youths in the furnace; then it was only typified, but now, being enacted, it moveth the whole universe to sing onto Thee: Hymn the Lord, O ye works, and highly exalt Him unto all the ages.",
+    "Through the blood of martyrdom ye have vested yourselves in bright garments, having truly put off man corrupted by sins, and are singing: Hymn the Lord, O ye works, and highly exalt Him unto the ages.",
+    "Through the shine of the abundant light, through the divine brightness of the intellectual Sun, ye have, O all-praised female martyrs, passed the night of godlessness, singing in the unity of your souls: Hymn the Lord, O ye works, and highly exalt Him unto the ages.",
+    "Like lambs and undefiled heifers, like God's doves and voluntary sacrifices were ye, O female martyrs, brought unto the Maker as undefiled sacrifice, unanimously singing: Hymn the Lord, O ye works, and highly exalt Him unto the ages.",
+    "(The Theotokion:)",
+    "There followed in thy train, O most pure God's Bride, the only one innocent of marital life, the women-martyrs, desirous of the sweet-smelling Myrrh that hath shone forth from thy womb, even thy Son, the only Child, and they truly reign with thee, hymning Christ unto the ages.",
+    "(Ode 9. The Heirmos:)",
+    "Whereas Eve through the fit of disobedience hath brought in the curse, thou, O Virgin-Theotokos, hast flowered unto the world the blessing through the sprouting in thy womb.",
+    "The most famous female martyrs distribute as if from a spring the drops of healing among those that seek for them allay sufferings of the diseased and drive away the troops of demons; they also water the hearts of the God-loving ones for the fructification of Godly works.",
+    "Having obtained power over the enemies, ye have, O God's brides, become exalted and art like unto the angels; freely ye enjoy in the paradise the delights of the tree of life and of the source of all goodness, supplicating for the world.",
+    "Your memory, O female martyrs, shining with the divine lustrous graces, doth illumine the thoughts of those that praise you.",
+    "(The Theotokion:)",
+    "As abode of the Wisdom, far above understanding, as spiritual throne and door, thou hast appeared, O undefiled Virgin, wherefore women loved thee as their Queen and virgins were led in thy train."
+   ]
+  },
+  {
+   "kind": "exapostilarion",
+   "header": "The Photagogicon:",
+   "ids": [
+    "xxiv-p85",
+    "xxiv-p86"
+   ],
+   "lines": [
+    "(The Photagogicon:)",
+    "Desirous to see by all means the fairness of the Bridegroom, by the call unto Him ye have been taught immortality in your mortal bodies, O God-bearing ones; wherefore you are worthily blessed.",
+    "(The Theotokion:)",
+    "Spare me, O Christ, when Thou comest in glory to judge the world, dispel the mist of my passions, through the intercessions of her that bare Thee, and of Thy honourable female martyrs, as Good One and Greatly Merciful."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xxiv-p87",
+    "xxiv-p88",
+    "xxiv-p89",
+    "xxiv-p90",
+    "xxiv-p91",
+    "xxiv-p92",
+    "xxiv-p93"
+   ],
+   "lines": [
+    "(With the Lauds the Stichera, Tone 4. Similar to:)",
+    "As a virtuous...",
+    "Having adorned yourselves with the shedding of your blood, ye, O virgin-maidens, have been incorruptibly united unto the Fair One in quality, even Christ our God, Who doth preserve undefiled your virginity in the immortal bridal-chamber of incorruption, in the heavenly tabernacles, in the palace not made by hand, O most laudable female martyrs.",
+    "(Twice.)",
+    "In imperfect bodies, but with perfect minds, ye, O glorious ones, have, by the power of your spirit, vanquished the ancient serpent-the origin of evil-and have shewn the weakness of his strength; wherefore, O most laudable female martyrs, champions of the Trinity, ye have received the crowns of victory.",
+    "Neither breaking of your limbs, nor burning of your bodies, neither tearing with iron teeth, suspending on the trees, nor cutting up with swords could make you, O most laudable female martyrs, reject Christ; wherefore ye have received the crowns of victory, O great female martyrs, most opulent, champions of the Trinity.",
+    "(Glory... Tone 2:)",
+    "Having lived undefiled life and overthrown the godless judges, ye have stood your ground as victoresses, O honourable ones; wearing as a flower God's lustre, and invested with God's strength, ye have spurned the injunctions of the tyrants and laughed to scorn the vain speeches of the orators, O God-wise female martyrs.",
+    "(Both now... the Theotokion:)",
+    "All my hope do I lay upon thee, O Mother of God; preserve me beneath thy cover.",
+    "(The Stavro-theotokion:)",
+    "When the undefiled lamb saw her Offspring being dragged as a man to the willing slaughter, she thus spake with sobs: Dost Thou strive now, O Christ, to make me childless who gave Thee birth? Wherefore hast Thou done this, O Deliverer of all? Howbeit, I hymn and glorify Thine extreme goodness, O Lover of man, which is above the mind and speech."
+   ]
+  }
  ]
 }

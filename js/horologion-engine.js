@@ -687,6 +687,17 @@ const _interhourFixedDataCache = {};
             await _resolveVespersSlots(sections, dateObj);
         }
 
+        // ── Menaion Commons (Orloff 1899) for rank-3 saints ──────────────────
+        // Fills only slots still showing a deferred rubric; see js/menaion-commons.js.
+        if ((normalizedKey === 'orthros' || normalizedKey === 'vespers') &&
+            typeof window !== 'undefined' && window.MenaionCommons) {
+            try {
+                await window.MenaionCommons.applyToSections(sections, normalizedKey);
+            } catch (err) {
+                console.warn('[HorologionEngine] MenaionCommons failed (rubrics kept):', err.message);
+            }
+        }
+
         // Diagnostic pass — count resolved vs placeholder slots
         let implementedSlots = 0;
         let placeholderSlots = 0;

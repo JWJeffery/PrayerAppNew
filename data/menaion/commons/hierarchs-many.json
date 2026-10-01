@@ -1197,5 +1197,331 @@
     }
    ]
   }
+ ],
+ "sections": [
+  {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xiv-p1",
+    "xiv-p2",
+    "xiv-p3",
+    "xiv-p4",
+    "xiv-p5",
+    "xiv-p6",
+    "xiv-p7",
+    "xiv-p8",
+    "xiv-p9",
+    "xiv-p10",
+    "xiv-p11"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:)",
+    "As virtuous...",
+    "As ever-shining stars of the intellectual firmament, O most glorious ones, ye have adorned the world, O most honourable, and enlighten the universe with the dogmas of the right faith and drive away the darkness of heresies, O hierarchs. Do supplicate that may be delivered from corruption and dangers those who in faith celebrate your all-honoured memory.",
+    "Having with the brightness of the Spirit enlightened the world, ye have appeared as light-giving suns; spreading into all the ends the dogmas as rays, ye enlighten the hearts of the faithful, O most blessed ones, and drive away the darkness of heretics, O God-bearers, by the power of Him Who hath shone forth from the Virgin.",
+    "Ye, O most blessed ones, have driven away from the church of Christ the intellectual wolves with the staff of your dogmas, and have made an intellectual wall round about her, presenting her whole and unassailable unto Christ; Him supplicate that may be delivered from corruption and dangers those who in faith celebrate your all-honoured memory.",
+    "(Glory ...Both now...The Thetokion:)",
+    "O most holy God's Bride ! From condemnation and wicked transgressions deliver my humble soul and turn away from death through thy supplications; grant that in the day of trial I may obtain justification which assemblies of saints have met with, and before the end show me cleansed with repentance and effusion of tears.",
+    "(The Stavro-theotokion :)",
+    "Seeing Christ the Lover of man hung and pierced through His side with a spear, the most pure one did bewail, crying out: What is this, O my Son? What have the ungrateful people rewarded Thee with for all the good Thouhast done unto them, and Thou most lovingly takest care of my childlessness? I wonder, O compassionate One, at Thy voluntary crucifixion.",
+    "(If there be Idiomelon. Glory ... Tone 6:)",
+    "O ye men of God and faithful servants, ministers of the Lord, men wished for, select vessels, pillars and supports of the church, heirs of the kingdom, -- never cease to vociferate unto the Lord for us.",
+    "(Both now...the Theotokion:)",
+    "The God that was incarnate of thee, O Theotokos-Virgin, we have learned to know; Him supplicate for the salvation of our souls.",
+    "(The Stavro-theotokion:)",
+    "Seen Thee crucified, O Christ, she who hath given Thee birth, vociferated: What a strange mystery do I see now, my Son? How being hung in the flesh dost Thou die on the tree, O Giver of life ?",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "Who would not bless thee",
+    "(...Entrance. The Prokeimenon of the day. The Readings for hierarchs (see Appendix).)"
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "For the Versicles the Stichera, Tone 1. Similar to:",
+   "ids": [
+    "xiv-p12",
+    "xiv-p13",
+    "xiv-p14",
+    "xiv-p15",
+    "xiv-p16",
+    "xiv-p17"
+   ],
+   "lines": [
+    "(For the Versicles the Stichera, Tone 1. Similar to:)",
+    "All praised martyrs...",
+    "Let us worthily praise to-day both adepts of the Spirit and intellectual trumpets of God, divine mirrors, hierarchs divine and flame-inspired who are shedding unto us the golden streams of instruction. Pray ye unto Christ that He may grant unto our souls peace and great mercy.",
+    "The Verse : Precious in the sight of the Lord is the death of His saints.",
+    "Let us worthily melodize in hymns the intelligent power of the divine and holy faith, the rivers golden-streamed, the all-bright lamps, the champions of the Trinity, the receptacles of the grace of the Holy Spirit, the immoveable pillars and supports of the church.",
+    "The Verse : Let Thy priests be clothed with righteousness, and let Thy saints, shout for joy.",
+    "O ye, spiritual organs of thunder and of divine signs, lightenings of preaching, golden candlesticks -- bright and carrying the light of God, most blessed hierarchs ! -- do supplicate for us, honouring you, that Christ may grant unto our souls peace and great mercy.",
+    "(Glory ...Tone 6)",
+    ": Let us to-day praise the mysterious trumpets of the Spirit -- the God-bearing fathers who in the midst of the church have sung the hypostatical hymn of theology, the Trinity immutably One both in substance and divinity, -- the exterminators of heresies and champions of the orthodox, who ever pray God that our souls may be saved.",
+    "(Both now ...the Theotokion:)",
+    "O Theotokos, thou art the true vine that did bring forth for me the fruit of life, of thee we supplicate: Pray, O Sovereign-Lady, with the hierarchs, that mercy may be shewn to our souls.",
+    "(The Stavro-Theotokion)"
+   ]
+  },
+  {
+   "kind": "vespers_troparion",
+   "header": "The Troparion from the Typicon, but if there be no Typicon, say this Troparion, Tone 4:Glory ...Both now ... the Theotokion or the Stavro-theotokion.",
+   "ids": [
+    "xiv-p18"
+   ],
+   "lines": [
+    "Standing once before the tree, during the crucifixion, with the chaste-disciple, the Virgin cried out, bewailing: O woe unto me! How dost Thou, O Christ, suffer being Thyself impassiveness unto all?",
+    "(The Troparion from the Typicon, but if there be no Typicon, say this Troparion, Tone 4:)",
+    "O God of our fathers, that ever dealest by us according to Thy kindness, do not withdraw from us Thy mercy, but at their intercessions direct our lives in peace.",
+    "(Glory ...Both now ... the Theotokion or the Stavro-theotokion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 5. Similar to:",
+   "ids": [
+    "xiv-p19",
+    "xiv-p20",
+    "xiv-p21"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 5. Similar to:)",
+    "The Co-unoriginate Word...",
+    "As royal adornment of the church let us praise the hierarchs of the Lord -- the inexhaustible treasury of dogmas, for through these He Himself hath instructed us to honour the Holy Trinity, united in substance and divided hypostatically.",
+    "(Twice.)",
+    "(Glory ...Both now...the Theotokion :)",
+    "O most holy Virgin, have mercy upon us who in faith flee unto thee, O compassionate one, and beg for thy warm protection, for thou canst, as a tender-hearted one and the Mother of the Most High God, save all, ever embracing in thy motherly supplications, O God-greeted one."
+   ]
+  },
+  {
+   "kind": "sessional_2",
+   "header": "Cathisma, Tone 3. Similar to:",
+   "ids": [
+    "xiv-p22",
+    "xiv-p23",
+    "xiv-p24",
+    "xiv-p25",
+    "xiv-p26"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 3. Similar to:)",
+    "Of the divine...",
+    "O God-worded hierarchs ! ye have appeared as the pillars of the church and the inalienable riches of piety, your life ye have made illustrious through impassiveness and have expounded the dogmas of the Trinity. O holy fathers! Supplicate Christ the God for the salvation of our souls.",
+    "(Twice.)",
+    "(Glory ...Both now...the Theotokion:)",
+    "Without divesting Himself of His divine nature, God became flesh in thy womb; but the Incarnate did remain God and hath, after the birth, preserved all-spotless thee, His mother and Virgin, just as before the birth, being One and the same Lord. Him assiduously supplicate to grant unto us great mercy.",
+    "(After:)",
+    "Praise ye the name of the Lord",
+    "(...the Refrain:)",
+    "We magnify you, the great hierarchs, and honour your holy memory, for ye supplicate for us Christ, our God.",
+    "(The selected Psalm)",
+    ": Hearken unto this, all ye nations..."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone 4",
+   "ids": [
+    "xiv-p27",
+    "xiv-p28",
+    "xiv-p29"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 4)",
+    "Let the most wise teachers of the universe, who have glorified God with their deeds and words on earth, be magnified to-day as the mediators of salvation unto us.",
+    "(Twice.)",
+    "(Glory...Both now ...the Theotokion:)",
+    "O invincible defender of the assaulted and fervent protectress of those that trust in thee, deliver me from dangers, for thou art help unto all."
+   ]
+  },
+  {
+   "kind": "gospel_gradual",
+   "header": "The Graduals, 1st Antiphon of the 4th Tone. The ProkeimenonThe Verse:The Gospel of the hierarchs",
+   "ids": [
+    "xiv-p30",
+    "xiv-p31",
+    "xiv-p32"
+   ],
+   "lines": [
+    "(The Graduals, 1st Antiphon of the 4th Tone. The Prokeimenon)",
+    "Precious in the sight of the Lord is the death of His saints.",
+    "The Verse:",
+    "What shall I render unto the Lord for all His benefits towards me ? Let every breath...",
+    "(The Gospel of the hierarchs)",
+    "(Matt. 5, 14-19.)",
+    "(After the 50th Psalm, the Sticheron, Tone 6 :)",
+    "O holy fathers! Through all the earth is gone forth the sound of your exertions, wherefore ye have found in heaven the reward of your labours; ye have annihilated the armies of the demons and have reached the orders of angels, whom ye have blamelessly emulated in your lives. Possessing boldness before the Lord, do obtain peace for our souls."
+   ]
+  },
+  {
+   "kind": "canon",
+   "header": "The Canon, Tone 8. Ode 1. The Heirmos:",
+   "ids": [
+    "xiv-p33",
+    "xiv-p34",
+    "xiv-p35",
+    "xiv-p36",
+    "xiv-p37",
+    "xiv-p38",
+    "xiv-p39",
+    "xiv-p40",
+    "xiv-p41",
+    "xiv-p42",
+    "xiv-p43",
+    "xiv-p44",
+    "xiv-p45",
+    "xiv-p46",
+    "xiv-p47",
+    "xiv-p48",
+    "xiv-p49",
+    "xiv-p50",
+    "xiv-p51",
+    "xiv-p52",
+    "xiv-p53",
+    "xiv-p54",
+    "xiv-p55",
+    "xiv-p56",
+    "xiv-p57",
+    "xiv-p58",
+    "xiv-p59",
+    "xiv-p60",
+    "xiv-p61",
+    "xiv-p62",
+    "xiv-p63",
+    "xiv-p64",
+    "xiv-p65",
+    "xiv-p66",
+    "xiv-p67",
+    "xiv-p68",
+    "xiv-p69",
+    "xiv-p70",
+    "xiv-p71",
+    "xiv-p72",
+    "xiv-p73",
+    "xiv-p74",
+    "xiv-p75",
+    "xiv-p76",
+    "xiv-p77",
+    "xiv-p78",
+    "xiv-p79",
+    "xiv-p80",
+    "xiv-p81",
+    "xiv-p82",
+    "xiv-p83",
+    "xiv-p84",
+    "xiv-p85",
+    "xiv-p86",
+    "xiv-p87"
+   ],
+   "lines": [
+    "(The Canon, Tone 8. Ode 1. The Heirmos:)",
+    "Let us sing unto the Lord Who hath led His people through the Red sea, for He alone hath triumphed gloriously.",
+    "As the most wise hierarchs have ye shone forth in the world,resplendent with the divine dogmas of the King that reigneth over all; wherefore let us hymn Christ, for He hath triumphed.",
+    "As those who shone forth in the world with the light of piety and dispersed the darkness of wickedness, let us, O faithful, honour the hierarchs, great and all-honourable.",
+    "As standing with the angels before the Unapproachable King, supplicate, O ye sacred preachers and God-bearing, that cleansing of sins may be granted unto us who celebrate your memory.",
+    "(The Theotokion:)",
+    "As one that hast conceived the Ever-existing and Unoriginate Word of the Father, and hast above word brought Him forth in the flesh, do thou, O most holy one, pray assiduously that we may be delivered from dangers.",
+    "(Ode 3. The Heirmos:)",
+    "Thou that hast in the beginning stablished the heavens in wisdom and the earth founded upon the waters, do Thou, O Christ, stablish me upon the rock of Thy commandments, for there is none holy but Thou, O only Lover Of man.",
+    "With true abstemiousness and steadfast prayer ye have ascended the upper city of virtues, O holy and God-bearing ones, wherein ye are in constant enjoyment of the stream of divine food.",
+    "As possessing boldness before God, do, O holy hierarchs, supplicate for us, in faith hymning your memory, that we may be saved.",
+    "As teachers of the pious dogmas and true proclaimers of the most wise words, ye, O holy ones, have obtained victory over heresies.",
+    "(The Theotokion:)",
+    "As the heaven and throne of God we all hymn thee, O God's Parent, pure Virgin, for from thee hath appeared Jesus Christ -- the Truth for our salvation.",
+    "(The Cathisma, Tone 3 :)",
+    "Precious vessels of abstemiousness and inviolable riches of piety have ye, O blessed ones, truly appeared, having illumined your lives with impassiveness and enriched with mercy those asking for it; O holy fathers, supplicate Christ the God to grant unto us great mercy.",
+    "(Glory...Both now ...The Theotokion:)",
+    "Every one hath rightfully the recourse thither where heobtaineth salvation, and what can other such refuge be that sheltereth our souls, beside thee, O Theotokos?",
+    "(The Stavro-theotokion :)",
+    "Having acquired as a staff of strength the cross of thy Son, O Theotokos, therewith we put down the rage of the enemies, and unceasingly and lovingly magnify thee.",
+    "(Ode 4. The Heirmos:)",
+    "I have hearkened, O Lord; unto the mystery of Thine economy, comprehended Thy works, and glorified Thy Godhead.",
+    "Let us all praise in hymns the most wise hierarchs, saying O God-bearing fathers! do assiduously supplicate that we may be saved.",
+    "Possessing in you, O truly God-blessed ones, expounders and planters of the pious dogmas, and most wise teachers and hierarchs, we praise you in hymns and odes.",
+    "Your sacred memory, O holy hierarchs of the Lord -- the instructors and nourishers -- we, the faithful, celebrate in hymns and odes.",
+    "(The Theotokion :)",
+    "O unmarried Bride, pure Mother of Christ the God, that had no marital experience! Him unceasingly supplicate to save the souls of those that hymn thee.",
+    "(Ode 5. The Heirmos:)",
+    "Watching early we cry out unto Thee: O Lord save its, for Thou art our God, beside Thee we know none other.",
+    "Ye have, O God-wise ones, as shepherds anointed yourselves with the ointment of piety, wherefore, as hierarchs, we all honour you, O God-bearers.",
+    "As emulators of the apostles in labours and vigilance, ye, O God-wise and glorious, have presided over the people of the church.",
+    "Having emulated Isaiah the zealous and Moses the Godseer, ye have, O God-seeing fathers, put to shame the heresiarchs .",
+    "(The Theotokion :)",
+    "O come all ye faithful, let us, together with the angels, bless the God-blessed one, as the Queen that gave birth unto the King of all.",
+    "(Ode 6. The Heirmos:)",
+    "A bright garment do grant me Thou that puttest on light as a garment, O Multimerciful Christ, our God.",
+    "The glory of the church have ye adorned, O blessed fathers, with your divine dogmas, and extirpated heresies with their roots.",
+    "As lights of piety ye have shone unto all creation, O glorious teachers, with the beauty of dogmas, having darkened the heresies with God's word.",
+    "Making use of the tongue and the word, instead of the weapon, ye have, O holy ones, cut off all the strange teachings and have clearly expounded the Trinity unto all.",
+    "(The Theotokion :)",
+    "Having been born of the Virgin, Thou hast, O Christ the God, enlightened the world; do Thou deliver me also from transgressions, as Lover of man, and set straight my life, I implore Thee.",
+    "(The Contakion from the Typicon; but if there be no Typicon, say this Contakion, Tone 8. Similar to:)",
+    "As the first fruits...",
+    "As the teachers of virtues and ornaments of hierarchs doth the church glorify you, thus melodizing : Through your intercessions grant as invincible ones unto those who lovingly honour you, improvement in virtues and deliverance from temptations.",
+    "(The Oikos :)",
+    "Ye have appeared, O divine hierarchs, as rivers of piety that have filled all the earth with the streams of your dogmas, ye have also, with the clouds of miracles, washed away all the filth and have worthily inherited the nourishing stream; wherefore, being gathered together, we piously honour you to-day with hymns, and in faith cry out unto you : Supplicate unceasingly for us all Christ the God, as invincible ones.",
+    "(Ode 7. The Heirmos:)",
+    "Thou that hast in the beginning founded the earth and made firm the heavens with Thy word, blessed art Thou unto the ages, O Lord God of our fathers.",
+    "Thou that hast shewn the true hierarchs shepherds of Thy flock, blessed art Thou, O God of our fathers.",
+    "Ye have extinguished the flame of passions and have divinely bedewed the souls of the pious that are now crying out: Blessed art Thou, O God of our fathers.",
+    "Ye, O hierarchs, have laboured in abstinence, vigilance and true faith; do remember us all.",
+    "(The Theotokion:)",
+    "Thou that for our sake wast born of the Virgin and hast delivered the world from the enemy, -- blessed art Thou, O God of our fathers.",
+    "(Ode 8. The Heirmos :)",
+    "Him that was glorified on the holy mountain and in the bush through the fire unto Moses hath shewn the mystery of the Ever-virgin, hymn the Lord and exalt unto all the ages.",
+    "Like unto Moses, the fathers have ascended the cloudy mountain of impassiveness and obtained as hierarchs the intellectual law of grace; wherefore we hymn Christ unto the ages.",
+    "Ye, O holy ones, have well tended the people of Christ, have escaped the Egyptian bondage, eluded the passions of Babylon, and in Zion above have found an abode unto all the ages.",
+    "With words and deeds of piety anointed as if with myrrh, ye, O divine hierarchs, are performing sacred and divine acts; wherefore the Trinity in one substance ye hymn unto all the ages.",
+    "(The Theotokion :)",
+    "Him that hath dwelt in the womb of the holy Virgin and therein hath, in an awful and ineffable manner, restored Adam, -- hymn the Lord and exalt unto all the ages.",
+    "(Ode 9. The Heirmos:)",
+    "In unceasing hymns we magnify the bringing forth of the Ever-virgin unto the salvation of us faithful, which was manifested unto the lawgiver in the fire and the bush on the mountain.",
+    "O ye, the most wise hierarchs, that in impassiveness and faith, in hope and love, have shewn unto us the words of the life eternal, supplicate that our souls may be saved.",
+    "Ye, the hierarchs all-honoured, have well tended the people with the staff of the Holy Spirit, and have driven away from the church of God the heresies of God's enemies; wherefore we praise you in hymns.",
+    "In hymns and odes we all unceasingly honour you, Ohierarchs, as the lights of the church, and worthily magnify the shrine of your relics, O blessed fathers.",
+    "(The Theotokion:)",
+    "Hail thou, the ever-living source of incorruption; hail thou, the all-bright cloud of the sun ; hail thou, the chariot of the entire Godhead; hail thou, the ark of sanctification."
+   ]
+  },
+  {
+   "kind": "exapostilarion",
+   "header": "The Photagogicon :[The Theotokion :",
+   "ids": [
+    "xiv-p88",
+    "xiv-p89"
+   ],
+   "lines": [
+    "(The Photagogicon :)",
+    "Let us praise the God-bearing fathers as the brightly-shining, much clearer than the rays of the sun, lamps of the Origin of light -- the Trinity and of the three-rayed Unity supernaturally commingled.",
+    "(The Theotokion :)",
+    "We bless in unceasing hymns thee, O Virgin, that having conceived in thy womb, O Theotokos, One of the Trinity, thou hast in thy divine arms carried the Ever-existing Word, unchangeable and immutable."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds, the Stichera, Tone 6. Similar to :",
+   "ids": [
+    "xiv-p90",
+    "xiv-p91",
+    "xiv-p92",
+    "xiv-p93",
+    "xiv-p94",
+    "xiv-p95",
+    "xiv-p96"
+   ],
+   "lines": [
+    "(With the Lauds, the Stichera, Tone 6. Similar to :)",
+    "Of three days...",
+    "The grace hath overcome, the faith is strengthened, everything is filled with the knowledge of God and we are enriched with the salvation, through the apostles and hierarchs.",
+    "(Twice.)",
+    "Thou, O Lord, hast made Thy hierarchs wonderful through the heavenly mysteries and human teaching -- a combination of graces with corrections that must overcome every heretical invention.",
+    "Let the most wise teachers of the universe, that have glorified God by word and deed on earth, be magnified to-day as the presenters of salvation unto us all.",
+    "(Glory ... Tone 6:)",
+    "Ye were good and faithful servants, assiduous workers of the vineyard of Christ, who have well endured the burthen of your day's work, have increased the talent given you and borne no grudge unto those that came after you; wherefore the gate of heaven was open unto you; having then entered into the joy of Christ, the Master, do supplicate for us, O holy hierarchs.",
+    "(Both now ...The Theotokion:)",
+    "O Theotokos, thou art the true vine...",
+    "(The Stavro-theotokion :)",
+    "Seeing Thee hung on the cross, the most pure one cried out, motherly bewailing: O my Son and my God, my, sweetest Child, how dost Thou endure the horrible passion ?"
+   ]
+  }
  ]
 }

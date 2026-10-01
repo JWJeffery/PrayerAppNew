@@ -1203,5 +1203,309 @@
     }
    ]
   }
+ ],
+ "sections": [
+  {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:,",
+   "ids": [
+    "xxix-p1",
+    "xxix-p2",
+    "xxix-p3",
+    "xxix-p4",
+    "xxix-p5",
+    "xxix-p6",
+    "xxix-p7"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord, I have cried, the Stichera, Tone 4. Similar to:)",
+    "Thou hast given a sign...With spiritual waters being filled and rivers, and manifestly filled to overflowing, ye do water the creation with the knowledge of God and with the most famous gifts of healing, dry up the soul-destroying passions, heal the maladies and drive away the evil spirits, God-bearing unmercenaries {NAME}, supplicants for our souls.",
+    "Having subdued the irrational passions by the strength of your souls, ye do, O holy ones, vouchsafe benefits both unto men and beasts, having been enriched of Christ with the granting of healings, wherefore celebrating your sacred and light-bearing commemoration, we entreat of you the cleansing of our souls.",
+    "Your holy temple hath appeared as a resplendent and saving heaven, and is now as the sun shining with the working of the divine healings, the saving miracles acquired therein being like unto the stars, most blissful {NAME}, most glorious {NAME}, - the ministers of the Lord and supplicants for our souls.",
+    "(If Idiomelon be appointed, Glory ...Tone 8:)",
+    "Who would not wonder at, who would not glorify, who would not faithfully hymn the miracles of the wise and most glorious unmercenaries? For after their holy demise also they vouchsafe abundant healing for all that in faith have recourse unto them, and their honoured and holy relics shed the grace of cures. O holy twins! O honoured heads! O wisdom and glory of the grace given unto you by God! Wherefore in odes we call unto the Benefactor - God Who hath shewn us these for the cure of our souls and bodies.",
+    "(Both now ...the Theotokion:)",
+    "Hail thou - the praise of the universe; hail - the temple of the Lord; hail - the overshadowed mount; hail - the refuge of all; hail - the golden lamp; hail - the honoured glory of the orthodox; hail - Mary Mother of Christ the God; hail - the paradise; hail - the divine table; hail--the tabernacle; hail - the golden pot; hail - the hope of all.",
+    "(The Stavro-theotokion. Similar to:)",
+    "O Lord, although before the judgment seat...",
+    "Seeing Thee, O Lord, hung on the Cross, and standing close by, she that gave Thee birth, with lamentations said unto Thee: O Child! why dost Thou suffer this in the flesh, and strivest to make me childless? Endeavour to glorify Thyself that I may be magnified through Thy passion!",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "The King of the Heavens",
+    "(...The Entrance ...The Prokeimenon of the day. The Readings of the martyrs. (See Appendix.))"
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "For the Versicles the Stichera, Tone 1. Similar to:",
+   "ids": [
+    "xxix-p8",
+    "xxix-p9",
+    "xxix-p10",
+    "xxix-p11",
+    "xxix-p12",
+    "xxix-p13",
+    "xxix-p14",
+    "xxix-p15"
+   ],
+   "lines": [
+    "(For the Versicles the Stichera, Tone 1. Similar to:)",
+    "Of the heavenly orders...",
+    "Having with the rays of your miracles made the whole universe resplendent, ye were, O holy unmercenaries, as most brilliant lamps made worthy of the heaven through the grace,. being set as stars on account of the virtues of your holy lives.",
+    "(The Versicle: In the saints that are in His earth, the Lord hath made wonderful all His desires in them.)",
+    "Ye, O martyrs of the Lord, are the rain-producing clouds abounding in richly-flowingmiracles of graces, with which ye spiritually water all the earth and impel the bringing unto God of orthodox psalmodies.",
+    "(The Versicle: Behold, how good and how pleasant it is for brethren to dwell together in unity.)",
+    "Having truly received from God the art of healing the pains of both the soul and the body, ye do, O martyrs of the Lord, most naturally heal all not by human medical treatment, but by divine inspirations.",
+    "(Glory ...Tone 4:)",
+    "Possessing the source of healings, ye do, O holy unmercenaries {NAME}, grant cures unto all seeking for them, since ye were made worthy of the greatest gifts from the ever-flowing source, even the Saviour Christ, for the Lord hath said unto you, as emulators of the apostles: Behold, I gave you the power against the unclean spirits, to cast them out, and to heal all manner of sickness and all manner of disease. Wherefore having well lived according to His injunctions, freely ye have received, freely ye give in curing the maladies of our souls and bodies.",
+    "(Both now ...the Theotokion of the resurrection:)",
+    "Look down upon the entreaties...",
+    "(But if there be no Celebration, say the following Theotokion:)",
+    "O Theotokos, the Queen of all and the glory of the orthodox! Do thou put down the rays of the heretically inclined and put to shame their countenances, since they neither bow down before thy precious image, O most pure one, nor venerate it.",
+    "(The Stavro-theotokion:)",
+    "Seeing Christ - Lover of man crucified and pierced in His side with a lance, the most pure one bewailed crying out: What is this, O my Son? What have the ungrateful people rendered unto Thee for all the good Thou hast done unto them, and Thou dost most lovingly take care of my childlessness? I wonder, O compassionate One, at Thy voluntary crucifixion."
+   ]
+  },
+  {
+   "kind": "vespers_troparion",
+   "header": "The Troparion from the Typicon; but if there be no Typicon, say the following Troparion, Tone 8:",
+   "ids": [
+    "xxix-p16"
+   ],
+   "lines": [
+    "(The Troparion from the Typicon; but if there be no Typicon, say the following Troparion, Tone 8:)",
+    "O holy unmercenaries and wonder-workers, visit our infirmities: gratuitously have ye received, disinterestedly bestow it upon us."
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 2:",
+   "ids": [
+    "xxix-p17",
+    "xxix-p18"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 2:)",
+    "Made worthy of great gifts, ye have, O glorious ones, lived a humble life on earth, going about everywhere and disinterestedly curing the sick of their illnesses and pains. Now that ye have appeared associates of angels, do, O faithful, best brothers {NAME}, heal through your supplications our pains also.",
+    "(Twice. Glory ...Both now ...the Theotokion:)",
+    "Being a fountain of tenderness of heart, vouchsafe us thy sympathy, O Theotokos: look upon the people that have sinned; shew, as ever, thy power; for hoping in thee, we cry out to thee: Hail, as once did Gabriel, the chief captain of the bodiless ones."
+   ]
+  },
+  {
+   "kind": "sessional_2",
+   "header": "Cathisma, Tone 1:",
+   "ids": [
+    "xxix-p19"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 1:)",
+    "O martyrs of Christ {NAME}, supplicate for us that come to you in faith, for through your intercessions, ye grant the grace of healing and drive away many an infirmity, as preservers of our lives.",
+    "(Twice. Glory ...Both now...the Theotokion:)",
+    "O most pure Theotokos! Thou art blessed in heaven and doxologized on earth; Hail thou, O Bride unmarried."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "After Praise ye the name of the Lord, the Refrain:,The selected Psalm:After the Polyeleon, the Cathisma, Tone 5. Similar to :,Twice. Glory ...Both now ...the Theotokion:",
+   "ids": [
+    "xxix-p20"
+   ],
+   "lines": [
+    "(After Praise ye the name of the Lord, the Refrain:)",
+    "We magnify you, O glorious wonder-workers {NAME}, and venerate your honourable suffering which ye have endured for Christ.",
+    "(The selected Psalm:)",
+    "God is our refuge and strength...",
+    "(After the Polyeleon, the Cathisma, Tone 5. Similar to :)",
+    "The Co-unoriginate Word... The feast of the martyrs {NAME}, doth to-day shine forth, for they are in possession of the heavenly light; the choir of angels triumpheth and the race of men maketh also a festival; wherefore the holy ones do supplicate for our souls.",
+    "(Twice. Glory ...Both now ...the Theotokion:)",
+    "The mystery of the wonderful Virgin hath appeared unto the world as the salvation, for out of her was born the Joy; O Lord, glory to Thee."
+   ]
+  },
+  {
+   "kind": "gospel_gradual",
+   "header": "The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon:The Verse:The Gospel (St. Matth. 9, 36-38 ; 10, 1. 5-8). After the 50th Psalm, the Sticheron, Tone 1:,",
+   "ids": [
+    "xxix-p21"
+   ],
+   "lines": [
+    "(The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon:)",
+    "Inthe saints that are in His earth, the Lord hath made wonderful all His desires in them.",
+    "The Verse:",
+    "I have set the Lord always before me. Let every breath.",
+    "(The Gospel (St. Matth. 9, 36-38 ; 10, 1. 5-8). After the 50th Psalm, the Sticheron, Tone 1:)",
+    "The resplendent and holy, beautiful and all-festivememory of the martyrs {NAME}, illumining all the earth and driving away the darkness of sin, doth shed the grace unto remedies."
+   ]
+  },
+  {
+   "kind": "canon",
+   "header": "The Canon, Tone 8, Ode 1. The Heirmos.",
+   "ids": [
+    "xxix-p22",
+    "xxix-p23",
+    "xxix-p24",
+    "xxix-p25",
+    "xxix-p26",
+    "xxix-p27",
+    "xxix-p28",
+    "xxix-p29",
+    "xxix-p30",
+    "xxix-p31",
+    "xxix-p32",
+    "xxix-p33",
+    "xxix-p34",
+    "xxix-p35",
+    "xxix-p36",
+    "xxix-p37",
+    "xxix-p38",
+    "xxix-p39",
+    "xxix-p40",
+    "xxix-p41",
+    "xxix-p42",
+    "xxix-p43",
+    "xxix-p44",
+    "xxix-p45",
+    "xxix-p46",
+    "xxix-p47",
+    "xxix-p48",
+    "xxix-p49",
+    "xxix-p50",
+    "xxix-p51",
+    "xxix-p52",
+    "xxix-p53",
+    "xxix-p54",
+    "xxix-p55",
+    "xxix-p56",
+    "xxix-p57",
+    "xxix-p58",
+    "xxix-p59",
+    "xxix-p60",
+    "xxix-p61",
+    "xxix-p62",
+    "xxix-p63",
+    "xxix-p64",
+    "xxix-p65",
+    "xxix-p66",
+    "xxix-p67",
+    "xxix-p68",
+    "xxix-p69",
+    "xxix-p70",
+    "xxix-p71",
+    "xxix-p72",
+    "xxix-p73",
+    "xxix-p74",
+    "xxix-p75",
+    "xxix-p76"
+   ],
+   "lines": [
+    "(The Canon, Tone 8, Ode 1. The Heirmos.)",
+    "Unto Him Who hath overthrown in the sea the tyranny of Pharaoh and led Israel over the dried land, let us sing unto Christ, for He is glorified unto the ages.",
+    "Him that hath manifested throughout the world the unmercenaries and physicians {NAME}, who through the grace heal the maladies of all, let us hymn Christ the Saviour, for He is glorified unto the ages.",
+    "The holy ones make flow the rivers of miracles from the spiritual graces and heal maladies; let us, O faithful, laud Him Who hath granted them this power, for He is glorified unto the ages.",
+    "Do bring, O unmercenary physicians, unto God your prayers that He may deliver us from temptations and many afflictions and from the terrible and awful eventual torture.",
+    "(The Theotokion:)",
+    "Do thou, O incessant protection of the afflicted, salvation and hope of the despairing, Theotokos all-praised, always supplicate Christ that we may be delivered from dangers.",
+    "(Ode 3. The Heirmos:)",
+    "My heart is fixed in the Lord, exalted is my horn in my God, my mouth is wide open against mine enemies and I rejoice in Thy salvation.",
+    "Unto the earthly hast Thou, O Lord, manifested Thy holy {NAME}, as secret rays enlightening the whole world; do manifest Thy mercies upon us also.",
+    "Since ye have freely received the gift from God, ye do also disinterestedly grant healings, driving away demons, in accordance with the words of the Lord our God.",
+    "The world hymneth your benefactions ever great and the multitude of miracles, O holy physicians and wonder-workers, the companions of all angels.",
+    "(The Theotokion:)",
+    "Thee that hast sprouted forth on earth from David, and hast given birth unto God that was incarnate of thee, we praise thee, O most pure one, as the divine tabernacle, the throne and the door.",
+    "(The Cathisma, Tone 4. Similar to:)",
+    "Thou that wast of Thy free will lifted on the cross...",
+    "Having trodden under feet the sweet things that drag down, by the grace ye have cheerfully betaken yourselves up into the divine light of martyrdom, O sufferers and lamps of the universe {NAME}; wherefore we entreat you to deliver us from the darkness of sin and maladies through your intercessions before God, Who is above all.",
+    "(Glory ...Both now...the Theotokion:)",
+    "Thou, O Theotokos-Virgin, art an unassailable wall unto Christians, for when we flee unto thee, we remain unhurt, and when we sin again, we have in thee our intercession; wherefore in giving thanks we vociferate unto thee: Hail thou, full of grace, the Lord is with thee.",
+    "(The Stavro-theotokion:)",
+    "O most spotless Virgin, Mother of Christ the God! A sword hath pierced through thy most holy soul, when thou beheldest voluntarily crucified thy Son and God; cease not thy supplications unto Him to grant us the remission of sins.",
+    "(Ode 4. The Heirmos:)",
+    "Mysteriously foreseeing Thee, O Word, incarnate of the Virgin, the prophet in melody vociferated: Glory to Thy might, O Lord.",
+    "Wonderful is the Saviour, our God, for the naked bones of His holy ones lie in their tombs, but they work in the world wonderful and awful miracles; glory to Thy might, O Lord.",
+    "Having forsaken the earthly things as corruptible, ye, O holy ones, have become inheritors of Zion and worthy citizens of Christ's Kingdom.",
+    "Ye are worthily praised on earth, O healers of the sick and unmercenaries {NAME}, since after your demise also ye do deliver all from maladies.",
+    "(The Theotokion:)",
+    "Hail thou - the tabernacle of God's glory; hail - the weapon and the fiery throne ; hail - the overshadowed mount, from which was cut the stone, even Christ.",
+    "(Ode 5. The Heirmos:)",
+    "Watching early we cry out unto Thee, O Lord: Save us, for Thou art our God, beside Thee we know no other.",
+    "Having received from God the power, ye heal, O unmercenaries {NAME}, the diseases of all the infirm.",
+    "Having been made worthy of the great gifts of the Lord, ye, O holy ministers, disinterestedly cure all.",
+    "For the sake of intercessions of thy holy ministers {NAME}, do Thou, O our Saviour, grant unto the whole world Thy mercies, as Compassionate.",
+    "(The Theotokion:)",
+    "As Virgin after the birth we praise thee, O Theotokos, for thou barest unto the world the Word of God in the flesh.",
+    "(Ode 6. The Heirmos:)",
+    "As Thou didst deliver the prophet out of the abyss-like depth, do Thou, O Christ the God, deliver me also from my sins, as Lover of man, and direct my life, - I implore Thee.",
+    "Since upon the sea of life ye have passed the abyss without storm, ye have piously attained unto the salutary haven, the highest kingdom, O unmercenaries.",
+    "Ye, holy unmercenaries, shed the wonderful grace as overflowing springs, driving away maladies; do supplicate for our souls.",
+    "Joyfully inhabiting the heavens, do, O martyrs, hasten to visit your venerable temple and cure our bodily infirmities and the passions of our hearts.",
+    "(The Theotokion:)",
+    "As the highest above the cherubim and all creation, let us praise her who alone hath given birth unto the Maker and Lord and opened unto us the gate of paradise.",
+    "(The Contakion from the Typicon; but if there be no Typicon say this Contakion, Tone 2:)",
+    "Having obtained the grace of healing, ye do distribute health among those in want thereof, O physicians, most glorious wonder-workers; but through your visitation put down the insolence of the enemies, making whole the universe with your miracles.",
+    "(The Oikos:)",
+    "The speech of the wise physicians passeth all understanding and wisdom, and yet giveth understanding unto all, for having received the grace from the Most High, they invisibly vouchsafe health; therefrom it is that unto my narration also is granted the grace to hymn them as God-bearing favourites of Christ and ministers granting a multitude of healings, for they deliver the world from all maladies, healing miraculously.",
+    "(Ode 7. The Heirmos:)",
+    "Thou that hast in the beginning founded the earth and made firm the heavens with Thy word, blessed art Thou unto the ages, O Lord, God of our fathers.",
+    "Thou that hast gloriously magnified the memory of the most wise unmercenaries on the earth, - blessed art Thou, O Lord, God of our fathers.",
+    "Thou that hast shewn unto all the holy wonder-workers as honourable mile-stones, - blessed art Thou, O Lord, God of our fathers.",
+    "Celebrating the venerable memory of the unmercenaries, we joyfully vociferate unto Thee, O compassionate One: Blessed art Thou, O Lord, God of our fathers.",
+    "(The Theotokion:)",
+    "Thou that hast tabernacled in the womb of the Virgin and therein renewed Adam, blessed art Thou, Lord, God of our fathers.",
+    "(Ode 8. The Heirmos:)",
+    "Him that was glorified on the holy mountain, and in the bush through the fire unto Moses hath shewn the mystery of the Ever-virgin, hymn the Lord and exalt unto all the ages.",
+    "Him that hath granted from above unto His unmercenaries the gifts of healing - gratuitously to cure diseases, - hymn the Lord and extol Him unto the ages.",
+    "Him that hath given unto the saints the grace to cure the infirmities of those diseased and to deliver the souls from passion, - hymn the Lord and extol Him unto the ages.",
+    "What man would not praise the unmercenaries for their virtuous life above that of all men? For they have continually wrought great wonders while on earth. Hymn the Lord and extol Him unto the ages.",
+    "(The Theotokion:)",
+    "Him that hath found His abode in the womb of the Virgin and therein renewed, above word and awe, the ancient Adam, - hymn the Lord and extol Him unto the ages.",
+    "(Ode 9. The Heirmos:)",
+    "In unceasing hymns we magnify the bringing forth of the Ever-virgin unto the salvation of us faithful, which was manifested unto the lawgiver in the fire and the bush on the mountain.",
+    "As an universal cure hath appeared your shrine, O holy unmercenaries {NAME}, running unto which as it behoveth, all the faithful obtain cures.",
+    "O ye sickly men, come and be cured of your various diseases; come also ye beasts, for from the shrine of the holy ones floweth the stream of miracles.",
+    "Having found your abode in the highest habitations, ye, O holy ones, that were in our midst, invisibly take compassion on us, who in the midst of your temple send up odes unto the Almighty, and assiduously bless you, O all-praised ones.",
+    "(The Theotokion:)",
+    "Thou, O Theotokos, art our wall and weapon, thou art the protectress of those that flee unto thee; thee we all entreat now that we may be delivered from our enemies."
+   ]
+  },
+  {
+   "kind": "exapostilarion",
+   "header": "The Photagogicon. Similar to:",
+   "ids": [
+    "xxix-p77",
+    "xxix-p78",
+    "xxix-p79"
+   ],
+   "lines": [
+    "(The Photagogicon. Similar to:)",
+    "The heaven with stars...",
+    "O ye wonder-working lamps {NAME}! Do cure our diseases both of the souls and bodies, having received from God the grace of healing.",
+    "(The Theotokion:)",
+    "Of the good things granted by God unto the world, thou, O Theotokos, wast the cause; do also now entreat for universal salvation the God that changeth wrath for mercy."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds the Stichera, Tone 2.",
+   "ids": [
+    "xxix-p80",
+    "xxix-p81",
+    "xxix-p82",
+    "xxix-p83",
+    "xxix-p84",
+    "xxix-p85",
+    "xxix-p86"
+   ],
+   "lines": [
+    "(With the Lauds the Stichera, Tone 2.)",
+    "O ye, physicians of the feeble, treasuries of cures, saviours of the faithful, all-glorious unmercenaries! Help those that call upon you in their needs and heal the sick, supplicating the good God that we may be delivered from the meshes of our enemies.",
+    "(Twice.)",
+    "The fountain of healing did heal but one sick person in a year, but the temple of the unmercenaries doth heal all the multitude of sufferers; for the opulence of the holy ones is inexhaustible and cannot be spent; through their intercessions have mercy upon us, O Christ.",
+    "The choir of the holy ones doth for ever rejoice, for they have inherited the Kingdom of heaven, and the earth, having received their relics, doth emit sweet smells; they were servants of Christ and have entered into the life eternal.",
+    "(Glory ... Tone 6:)",
+    "Endless is the grace which the holy ones have received from Christ; wherefore their relics also uninterruptedly by the divine power work miracles, and, when their names are with faith invoked, they heal incurable diseases; through them, O Lorddeliver us also, as Lover of man, from bodily and spiritual sufferings.",
+    "((Both now...The Theotokion:)",
+    "Do thou, O all-hymned Theotokos - the joy of the sorrowing, the health of the diseased, the peace of the persecuted, the calm of the agitated, the only intercession of the faithful, - save the city and people.",
+    "(The Stavro-theotokion:)",
+    "The most pure one seeing Thee hung on the cross, with motherly tears cried unto Thee: O my God, my sweetest Child! How is it that Thou sufferest the ignominious death?"
+   ]
+  }
  ]
 }

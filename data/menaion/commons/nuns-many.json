@@ -1177,5 +1177,325 @@
     }
    ]
   }
+ ],
+ "sections": [
+  {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord, I have cried, the Stichera, Tone 1. Similar to:",
+   "ids": [
+    "xxvi-p1",
+    "xxvi-p2",
+    "xxvi-p3",
+    "xxvi-p4",
+    "xxvi-p5",
+    "xxvi-p6",
+    "xxvi-p7",
+    "xxvi-p8",
+    "xxvi-p9",
+    "xxvi-p10"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord, I have cried, the Stichera, Tone 1. Similar to:)",
+    "Of the Heavenly orders...",
+    "Shining above as God-like rays, with intellectual rays ye enlighten the world, disperse the darkness and drive away the troops of the evil demons; wherefore we celebrate your light bearing and divine festival.",
+    "Having beheld the beauties of paradise and been abundantly filled therewith, ye, O all-honoured ones, have sprouted unto the world as the never-fading flowers of the divine intellect; partaking thereof to-day in spiritual love, we effectuate every good fruit for our souls.",
+    "With your ascetic life ye have adorned a great multitude of ascetics, shining forth unto all as the sun; wherefore with them are ye being glorified, O most honoured ones, taking delight in the divine glory and supplicating that we may be saved.",
+    "(Glory... Both now... the Theotokion:)",
+    "Tossed about in the abyss of transgressions, I flee unto the calm haven of thy most pure prayer and call out unto thee, O God's Parent: Save me by stretching out unto thy servant thy mighty right hand, O all unblemished one.",
+    "(The Stavro-theotokion:)",
+    "Behold, I have already seen, as it was foretold to me of old, the sword piercing my heart, O my Child, when I saw Thee the Fairest of all the sons of the earth; for voluntarily wast Thou, O Christ, with robbers, as a malefactor, hung up on the cross.",
+    "(If there be Idiomelon, Glory...Tone 8:)",
+    "With the outpouring of tears ye have extinguished the fire of the bodily passions, and having kindled the desire for the care of things divine and the love unto the King, even Christ, ye were impassively united unto Him; wherefore, now that ye have entered into the intellectual palace, supplicate for those that honour you, the Provider thereof.",
+    "(Both now... the Theotokion:)",
+    "O Sovereign-Lady, accept the prayers of thy servants and deliver us from every want and woe.",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "The King of the heavens...",
+    "(The Entrance. The Prokeimenon of the day. The three Readings of the martyrs (see Appendix).)"
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "With the Versicles, the Stichera, Tone 8. Similar to:",
+   "ids": [
+    "xxvi-p11",
+    "xxvi-p12",
+    "xxvi-p13",
+    "xxvi-p14",
+    "xxvi-p15",
+    "xxvi-p16",
+    "xxvi-p17",
+    "xxvi-p18",
+    "xxvi-p19",
+    "xxvi-p20"
+   ],
+   "lines": [
+    "(With the Versicles, the Stichera, Tone 8. Similar to:)",
+    "As a virtuous...",
+    "Ye have proceeded along the narrow path that leadeth unto the life, without your spirit being agitated in your progress, for being of the female ascetics the glory, ye have successfully destroyed the snares of demons; wherefore ye have obtained the title of inheritrices of the heavenly Kingdom and are now enjoying the delights of the never-fading beauty thereof.",
+    "(The Versicle: Wonderful in His holy ones is God, the God of Israel.)",
+    "Your most illustrious life hath astonished angels and manifestly frightened the rage of demons; it hath also brightly adorned the companies of the faithful, enjoining them always to continue in the way unto the heavenly habitation of Christ; Him supplicate that may be delivered from corruption and misfortunes those who in faith celebrate your all-honoured memory.",
+    "(The Versicle : Precious in the sight of the Lord is the death of His saints:)",
+    "Song and praise bringing daily unto Christ whilst ye lived in the desert, ye have given up your souls and thoughts entirely unto God alone, and have, as the great Moses, entered unattainable regions; wherefore ye have obtained victory over the invisible enemy and become a pure receptacle of the divine Spirit.",
+    "(Glory... Tone 4:)",
+    "Maidens have loved the Bridegroom, even the Lord, and in obedience to His teaching, and disdainful of bodily weakness, in their spirit, with pious fervour, they held down the passion and were led in, together with you, O holy ones, into the heavenly palace, ever rejoicing.",
+    "(Both now... the Theotokion:)",
+    "O most pure Sovereign-Lady, lamp inextinguishable, throne of righteousness, supplicate that our souls may be saved.",
+    "(The Stavro-theotokion:)",
+    "Bewail me not, O Mother, beholding hung on the tree thy Son and God; Who suspended the earth over the waters unrestrained and fashioned all the creation; for I shall rise again and be glorified, with My power I shall destroy the strongholds of the hades, shall exterminate the might thereof, deliver the captives from his villanies, as Compassionate, and bring them unto My Father, as Lover of man.",
+    "(The Troparion unto the holy nuns. Tone 2:)",
+    "Having affianced yourselves unto the true desire, O ye glorious in Christ, refusing union with the temporal bridegrooms, and having matured in virtuous deeds, you did rise to the height of incorruption, O ye beautiful in your souls andabounding in riches, the pillars and the rule for the women living in convents. Therefore plead incessantly for us that lovingly celebrate your memory.",
+    "(Glory... Both now... the Theotokion or the Stavro-theotokion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 3. Similar to:",
+   "ids": [
+    "xxvi-p21",
+    "xxvi-p22",
+    "xxvi-p23"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 3. Similar to:)",
+    "Unto the beauty of virginity...",
+    "The beauty of this world ye have forsaken, O holy ones, having exchanged the perishable riches for those that never pass away and are clearly ever present; wherefore we glorify you, together with all the saints, and celebrate your sacred memory, entreating that through your intercessions, O blissful ones, we may obtain great mercy.",
+    "(Twice.)",
+    "(Glory... Both now... the Theotokion:)",
+    "Unthinkable and incomprehensible is the awful divine mystery, that was accomplished in thee, O Sovereign-Lady God-greeted; for having conceived the Immense One, thou hast brought Him forth clothed with the flesh from thy most pure blood; Him, O pure one, do always supplicate as thy Son, that our souls may be saved."
+   ]
+  },
+  {
+   "kind": "sessional_2",
+   "header": "Cathisma, Tone 5. Similar to",
+   "ids": [
+    "xxvi-p24",
+    "xxvi-p25",
+    "xxvi-p26"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 5. Similar to)",
+    "The Co-unoriginate...",
+    "Having adorned your life with abstemiousness, and having mortified the fleshly desires, you have, O holy ones, obtained victory over the attacks of the enemy; ye have appeared also both as dwellers of the wilderness and reasonable lamps of the world; wherefore, O blissful ones, entreat the Lord to have mercy on our souls.",
+    "(Twice.)",
+    "(Glory ...Both now ...the Theotokion:)",
+    "Having acquired in thee both haven and wall, refuge and lofty shelter and warm intercession, we the faithful flee unto thee, assiduously vociferate and cry out unto thee in faith: Have mercy, O Theotokos, upon those that trust in thee, and deliver from transgressions."
+   ]
+  },
+  {
+   "kind": "polyeleos",
+   "header": "After Praise ye the name of the Lord, the Refrain:",
+   "ids": [
+    "xxvi-p27",
+    "xxvi-p28"
+   ],
+   "lines": [
+    "(After Praise ye the name of the Lord, the Refrain:)",
+    "We glorify you, O holy mothers, and honour your holy memory, for ye supplicate for us Christ, our God.",
+    "(The selected Psalm:)",
+    "I have patiently waited for the Lord..."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone 8. Similar to:",
+   "ids": [
+    "xxvi-p29",
+    "xxvi-p30",
+    "xxvi-p31"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 8. Similar to:)",
+    "The ordained...",
+    "Watching in secret prayers and finding delight in the God inspired writings, ye, O blissful ones, have taken upon your shoulders the cross of the Lord and, following it in abstemiousness, ye have put down all the fawning of the serpent, crying out unto Christ: O heavenly Bridegroom, be Thou unto us the mainstay.",
+    "(Twice.)",
+    "(Glory... Both now... the Theotokion:)",
+    "Thou that for our sake wast born of the Virgin and didst endure crucifixion, O Good One, Who, as God, by death hast overthrown death and made resurrection manifest, despise not those whom Thou hast fashioned with Thy hand; shew forth Thy love to man, O Merciful One; receive the Theotokos that bare Thee, who intercedeth for us, and save, O Saviour, Thy despairing people."
+   ]
+  },
+  {
+   "kind": "gospel_gradual",
+   "header": "The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon:The Verse:The Gospel(St. Matt. 25, 1-13). After the 50th Psalm, the Sticheran, Tone 8:(see Glory, for O Lord, I have cried).",
+   "ids": [
+    "xxvi-p32"
+   ],
+   "lines": [
+    "(The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon:)",
+    "Wonderful in His holy ones, is God, the God of Israel.",
+    "The Verse:",
+    "In the congregations bless ye God, even the Lord, from the fountains of Israel. Let every breath.",
+    "(The Gospel(St. Matt. 25, 1-13). After the 50th Psalm, the Sticheran, Tone 8:)",
+    "With the outpouring of tears...",
+    "((see Glory, for O Lord, I have cried).)"
+   ]
+  },
+  {
+   "kind": "canon",
+   "header": "The Canon, Tone 8. Ode 1. The Heirmos:",
+   "ids": [
+    "xxvi-p33",
+    "xxvi-p34",
+    "xxvi-p35",
+    "xxvi-p36",
+    "xxvi-p37",
+    "xxvi-p38",
+    "xxvi-p39",
+    "xxvi-p40",
+    "xxvi-p41",
+    "xxvi-p42",
+    "xxvi-p43",
+    "xxvi-p44",
+    "xxvi-p45",
+    "xxvi-p46",
+    "xxvi-p47",
+    "xxvi-p48",
+    "xxvi-p49",
+    "xxvi-p50",
+    "xxvi-p51",
+    "xxvi-p52",
+    "xxvi-p53",
+    "xxvi-p54",
+    "xxvi-p55",
+    "xxvi-p56",
+    "xxvi-p57",
+    "xxvi-p58",
+    "xxvi-p59",
+    "xxvi-p60",
+    "xxvi-p61",
+    "xxvi-p62",
+    "xxvi-p63",
+    "xxvi-p64",
+    "xxvi-p65",
+    "xxvi-p66",
+    "xxvi-p67",
+    "xxvi-p68",
+    "xxvi-p69",
+    "xxvi-p70",
+    "xxvi-p71",
+    "xxvi-p72",
+    "xxvi-p73",
+    "xxvi-p74",
+    "xxvi-p75",
+    "xxvi-p76",
+    "xxvi-p77",
+    "xxvi-p78",
+    "xxvi-p79",
+    "xxvi-p80",
+    "xxvi-p81",
+    "xxvi-p82",
+    "xxvi-p83",
+    "xxvi-p84",
+    "xxvi-p85",
+    "xxvi-p86"
+   ],
+   "lines": [
+    "(The Canon, Tone 8. Ode 1. The Heirmos:)",
+    "The pursuing Pharaoh with the chariots did once submerge the cruciformly stretched and dividing the sea miraculous rod of Moses, but it hath saved the fugitive Israel who proceeded on foot, singing a chant unto God.",
+    "In bodily weakness have ye, O holy women, put down the powerful enemy and assigned yourselves unto God, supplicating Him to grant the saving strength unto us all.",
+    "Struck by the beauty of the Bridegroom and attaching yourselves unto His train, according to the psalmist, ye have followed in His life-bringing footsteps; therefore ye have also put down the inimicable serpent.",
+    "Having withered the fair bodily qualities with your labours of abstemiousness, ye have adorned your souls, and together with Christ-the Bridegroom-ye have entered the resplendent chambers, O holy ones.",
+    "(The Theotokion:)",
+    "Thy womb, O Virgin, was shown to be a resplendent receptacle, for the sake of the mercy of the Lord, Who was incarnate of thee in the flesh and hath illumined everything with the rays of the knowledge of God.",
+    "(Ode 3. The Heirmos:)",
+    "O Lord, the Roofer of the heavenly firmament and the Founder of the church, do Thou stablish me in Thy love, Thou-the end of the desires, the stablishing of the faithful, the only Lover of man.",
+    "Ye, O most honoured ones, despised the fair traits of the body, and as a dream accounted the transient glory, but with humility and watchfulness have sought and found God, O blessed of God.",
+    "The sacred relics do send forth beams in vouchsafing cures unto those who in faith have recourse thereunto, the holy women having drawn the grace from the Saviour's source Whose voluntary passion they have emulated.",
+    "Ye have rejected the world and the subtleties of the flesh, but by abstemiousness and labours have acquired the most pure Bridegroom, even Christ, Who granteth you the heavenly palace for the divine enjoyment.",
+    "(The Theotokion:)",
+    "The sacred trumpets of the sacred prophets have of old foreannounced thee, O most pure Virgin, as a door that gavest birth unto the Light, and as a live book in which, above words and without hands, was written the Word.",
+    "(The Cathisma, Tone 4.)",
+    "Having taken upon your shoulders the cross of Christ, ye have, O all-bright and holy ones, faithfully followed Him in your ascetic works and have appeared as a rule unto all religious women; but having through your divine labours inherited the Kingdom on high, do unceasingly pray that our souls may be saved.",
+    "(Glory... Both now... the Theotokion:)",
+    "We have learned to know the Word of the Father, even Christ, our God, that was incarnate of thee, O Theotokos-Virgin, the only pure, the only blessed one; wherefore unceasingly hymning we magnify thee.",
+    "(The Stavro-theotokion:)",
+    "Beholding hung on the cross Thee, O Christ, that wast born of the Unoriginate Father, she, who in these last days gave Thee birth in the flesh, vociferated: Woe unto me, O my most beloved Jesu! How is it that Thou Who art glorified of the angels as God, now of lawless men art Thou, O my Son, voluntarily crucified? I hymn thee, O Long-suffering One.",
+    "(Ode 4. The Heirmos:)",
+    "I have hearkened, O Lord, unto the mystery of Thine economy, comprehended Thy works and glorified Thy Godhead.",
+    "Having withered the beauty of the body by asceticism, the holy women behold now the most pure beauty of their beloved Bridegroom.",
+    "Having thrown the sleep off your mental eye-lids, ye have, O sacred women, lulled to sleep the agitation of your bodies with abstemiousness.",
+    "Your bright festival, beaming with the light of the Divine Spirit, doth illumine the souls of us who in faith honour you, O holy ones.",
+    "(The Theotokion:)",
+    "Having conceived love unto Thee, O Lord, Who wast incarnate of the most pure Virgin, the holy women followed in the wake of the smell of Thy myrrh, being moved thereto by the divine love.",
+    "(Ode 5. The Heirmos)",
+    "Why hast Thou driven me away from Thy presence, O Light neversetting, and why hath covered me, the miserable one, the enemy's darkness? Do howbeit turn me and set my paths unto the light of Thy commandments, I pray Thee.",
+    "Doing away with all sicknesses by the power of the Holy Spirit, ye, O all-honoured ones, disperse the mist of maladies by the most glorious lustre of your miracles, and turn the faithful unto the light of the heavenly Kingdom.",
+    "Having died unto the world, ye, O God-blissful ones, have inherited the life immortal and were accounted worthy of the divine bridal chamber, since ye, O all-honoured ones, have with the oil of asceticism preserved your lamps unextinguished.",
+    "Neglecting the life of short duration and corruptible, ye have, O God-blissful ones, left it unto those remaining on earth having bound yourselves with love spiritual; therefore now ye settle wherein there are habitations of the righteous.",
+    "(The Theotokion:)",
+    "The Divine Word, even God, hath voluntarily found His abode in the womb innocent of marital life, and was seen as man He Who hath preserved as Virgin thee,O most pure one; Him desiring, the maidens have followed Him in the asceticism of their bright life.",
+    "(Ode 6. The Heirmos:)",
+    "I will pour out my prayer before the Lord, and unto Him will I make known my sorrows, for my soul is filled with evil and my life is come nigh unto the hades; I will pray with Jonah: Out of corruption lead me up, O God.",
+    "Abstemiousness and humble heart, watchfulness and mercy, understanding and faith and perfect love having acquired, ye were, O sacred women, the temple of God and the source of healings inexhaustible.",
+    "Ye, O honoured ones, have turned yourselves away from the sweets of life and endured the pains of asceticism for the sake of Him Who hath come down unto the earth and voluntarily peregrinated thereon for our sake; therefore ye have, O wonderworthy ones, acquired in heaven the Hospitable One.",
+    "Ye, O all-honoured ones, have lulled to sleep with many vigils the soul-corrupting passions, and have worthily fallen into the sleep of the righteous, supplicating for the world.",
+    "(The Theotokion:)",
+    "I know thee, O Virgin, to be the live intercession and powerful preserver, the extinguishing of the noise of attacks and the driving away of the temptations of demons; wherefore I always entreat thee from the corruption of my passions to deliver me.",
+    "(The Contakion from the Typicon; but if there be no Typicon say this Contakion, Tone 2:)",
+    "Having by fasting attenuated your bodies and in ceaseless prayers implored the Creator for your sins, that ye might obtain their entire forgiveness, you did win of God their remission and the Kingdom of heaven; intercede before Christ the God for us all.",
+    "(The Oikos:)",
+    "Thou that shuttest up and openest the abyss, that carriest up water into the clouds and grantest rain unto the face of the earth, do grant, O God, unto my barren soul also, for the opening of my mouth, well composed speech and unto my stuttering tongue clear utterance that I may be able worthily to hymn Thy holy ones whom Thou Thyself hast glorified, for Thy sake they despised the good things of this world and attenuated their bodies; by Thy might they vanquished the devil and from Thee received the crowns of endurance; and now, standing in the heaven with all the saints, before Thee they unceasingly intercede for us all.",
+    "(Ode 7. The Heirmos:)",
+    "&gt;From Judea coming the youths did once in Babylon tread down the flame of the furnace by their faith in the Trinity, singing: O God of the fathers, blessed art Thou.",
+    "The holy ones by love have changed perishable glory into the incorruptible and, delighting therein, joyful and exulting they sing: Blessed art Thou, O God of our fathers.",
+    "Ye have appeared as multi-lustrous stars and, illumining the souls of the faithful with the light of your labours, ye teach them to sing: Blessed art Thou, O God of our fathers.",
+    "Ye have appeared as the river of healings, drowning the sea of sufferings and saving those that sing: Blessed art Thou, O God of our fathers.",
+    "(The Theotokion:)",
+    "Release my wretched soul from the bonds of sin and attach unto the perfect love of God, O God's Parent, that I may glorify thee in faith and hymn unto the ages.",
+    "(Ode 8. The Heirmos:)",
+    "Having been, through Thy grace, the vanquishers of both the tyrant and of the flame, and strictly carrying out Thy commandments, the youths vociferated: Bless the Lord, all ye the works of the Lord.",
+    "The virgins have subdued the irrational passions unto the mind and being mentally united unto the Bridegroom-the Word, sang: Bless the Lord, all ye the works, and extol Him unto the ages.",
+    "Having been crucified unto the world and pierced by the divine love, the sacred virgins have wounded with the arrows of abstemiousness him that wounded Eve through the taste of sweets, and are hymning Christ unto the ages.",
+    "Ye have, O holy ones, subdued the irrational lusts unto reason, and affianced yourselves, O honoured ones, blamelessly unto the Bridegroom-the Word, singing: Bless the Lord, all ye the works and extol Him unto all the ages.",
+    "(The Theotokion:)",
+    "Thou that of thy pure blood hast given birth unto the Incarnate Jesus, O most pure Virgin-Mother, gatheredst all the virgins and dost vociferate together with them: Bless the Lord all ye the works and extol Him unto the ages.",
+    "(Ode 9. The Heirmos:)",
+    "As truly the Theotokos we declare thee, being saved by thee, O pure Virgin, and together with the bodiless choirs magnify thee.",
+    "Ye, O beautiful and God-spoken turtle-doves and bright and cleanly swallows, were brought into the heavenly beautiful palaces unto the Master.",
+    "Ye are numbered with the highest choirs and have found your abode among the assemblies of the elect, supplicating for us God abounding in love.",
+    "The memory of the holy women hath shone forth unto the world, enlightening the thoughts of the faithful that ever magnify Christ.",
+    "(The Theotokion:)",
+    "Being the receptacle of the Light, do enlighten, O Virgin, my soul darkened by passions, and deliver me with thine intercessions from the outer darkness."
+   ]
+  },
+  {
+   "kind": "exapostilarion",
+   "header": "The Photagogicon:",
+   "ids": [
+    "xxvi-p87",
+    "xxvi-p88"
+   ],
+   "lines": [
+    "(The Photagogicon:)",
+    "O holy and all-honoured ones, do, with your supplications unto God, deliver from every kind of calamity those who lovingly and gratefully celebrate your memory, and wash off the defilement of my soul, however little I may have sung you.",
+    "(The Theotokion:)",
+    "Do not cease, O Virgin, to supplicate for us thy Son, even God, the Lover of man; for in thee we have acquired our hope and through thine intercession we who glorify thee in faith, obtain deliverance from calamities and sufferings, from sins and maladies."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xxvi-p89",
+    "xxvi-p90",
+    "xxvi-p91",
+    "xxvi-p92",
+    "xxvi-p93",
+    "xxvi-p94",
+    "xxvi-p95"
+   ],
+   "lines": [
+    "(With the Lauds the Stichera, Tone 4. Similar to:)",
+    "Thou hast given a sign...",
+    "Having preserved your virginity incorruptible, having led unpolluted and pure life and attained opulence, ye, O holy ones, have fulfilled the law of Christ, after Whom you followed, leaving the earth and everything that is thereon; wherefore Jesus, the Lover of man and Saviour of our souls, hath granted you the heavenly riches and the heaven itself.",
+    "(Twice.)",
+    "Philosophically ye have shewn the self-directing and immortal side of the soul; wherefore ye have striven also to give up the bonds of the flesh free from every pollution of sin and from every impurity, that ye may have neither spot nor wrinkle, O God-acceptable women; ye have stood up before your Bridegroom pure and undefiled.",
+    "Your light-like countenances were illumined with lustre at your demise, O most laudable ones, Christ having glorified you as His holy ones-God-like and compassionate, God-loving and God-spoken; for ye have lived on earth the life of angels, and pleased God with the brightness of your life.",
+    "(Glory... Tone 1:)",
+    "Through abstemiousness and labours having laid aside all the bodily burthen, ye have, O holy women, proceeded up into the heavenly habitations, wherein ye enjoy the ineffable goodness beloved of you.",
+    "(Both now... the Theotokion:)",
+    "Be hailed from us, O holy Theotokos Virgin, the purest vessel of all the universe, lamp inextinguishable, the receptacle of the Illimitable, the temple unassailable. Hail thou! of whom was born the Lamb of God that taketh away the sins of the whole world.",
+    "(The Stavro-theotokion:)",
+    "Beholding Thee lifted up on the cross, the Virgin-unblemished lamb-vociferated in tears: O my sweet Child! What is this new and most glorious sight? How is it that Thou Who holdest everything in the palm of Thy hand, art nailed down to the tree in the flesh?"
+   ]
+  }
  ]
 }

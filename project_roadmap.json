@@ -733,9 +733,9 @@
       "history": "documentation/project-history/VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md"
     },
     "menaion_hymn_corpus_state": {
-      "status": "decided_commons_layer_from_orloff_1899_great_feast_propers_deferred",
+      "status": "orloff_commons_wired_for_rank3_saints_ages_received_not_yet_ingested",
       "date": "2026-10-01",
-      "finding": "No reachable, verifiably licensed English source for feast-proper hymnography (sessional hymns, praises, exapostilarion, canon troparia, aposticha). Orloff General Menaion (1899, public domain, via CCEL) supplies Commons only. See RESUME_PROJECT_NOTE.md section 7.",
+      "finding": "Orloff General Menaion (1899, public domain) Commons ingested (data/menaion/commons) and wired into Orthros/Vespers for 47 mapped rank-3 saints via js/menaion-commons.js. AGES English library (CC0) received 2026-10-01; coverage partial (276/366 days with some hymn text); parser not yet written. Great Feast propers and rank-4 saints still deferred.",
       "decisions": "Josh 2026-10-01: use Orloff General Menaion 1899 (public domain) for Commons via a new common-of-<type> layer; free-for-non-commercial licenses acceptable and Greek-lane AGES texts may serve the Russian/Slavic lane for large gaps (AGES license still unread); Great Feast propers stay deferred."
     }
   },
