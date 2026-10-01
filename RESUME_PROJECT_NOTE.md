@@ -318,7 +318,23 @@ text-backed". **Next action:** (1) map each commemoration's `type` in `data/mena
 `js/menaion-resolver.js` to render the matching common's sections (substituting the saint's name for
 "(mentioned by name)", honoring Orloff's own "if there be no Celebration" rubric branches) only for
 rank 3/4 days, leaving Great Feast propers deferred; (3) provenance line + browser verification.
-Then AGES (once Josh supplies the ZIP) for what the Commons leave uncovered.
+**AGES library RECEIVED and inspected 2026-10-01** (Josh uploaded `alwb-library-en-us-goadedes-main.zip`; LICENSE.md
+inside confirmed CC0 1.0). It is a full liturgical library of Fr. Seraphim Dedes' English texts in `.ares`
+files (plain `key = value` lines; values are quoted literals, empty `""`, or references to other
+resources such as Octoechos/Heirmologion/titles): `Books-Collections/{Menaion,Octoechos,Triodion,
+Pentecostarion,Heirmologion,Eothina,Horologion,Euchologion,Hieratikon_PriestsHandbook,Daily,...}`.
+**Menaion = `Menaion/mMM/me.mMM.dDD_en_US_goadedes.ares`, 366 dated days + 5 non-dated files** (m07 `dHF`,
+m10 `dHF`, m12 `dAC`/`dBC`/`dFF`). **Coverage is PARTIAL (measured):** of 366 days, 276 have at least one
+literal hymn text, 189 have >=3 Vespers texts, only 88 have >=3 Matins texts; totals of literal
+`.text` fields -- Vespers 906, Matins 2,858 (mostly canon odes), Small Vespers 9, Liturgy 45. Great Feasts
+are NOT reliably covered (e.g. Aug 6 Transfiguration: Vespers/Aposticha/Apolytikion `text = ""`). Many
+fields are references that resolve only by following them into other library files, so assembling a
+full day is a resolver job, not a copy. Calendar caveat: AGES is GOA New-Calendar usage -- confirm how
+`data/menaion` dates map before pairing by `MM-DD`. The ZIP is not committed to the repo (16MB); a
+parser would write a trimmed `data/menaion/ages/` derived layer. **Next after the Orloff wiring:** write
+`scripts/menaion/ingest-ages-menaion.py` (literal texts only, with source file + key per entry),
+then use AGES for saint-specific propers and Orloff Commons for the rest.
+
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license
 found, so unusable until clarified) -- Ponomar project texts
