@@ -698,6 +698,16 @@ const _interhourFixedDataCache = {};
             }
         }
 
+        // ── Fast and appointed readings from the published Orthodox lectionary ──
+        // js/orthodox-day.js; years without data are left to the engine's own logic.
+        if (typeof window !== 'undefined' && window.OrthodoxDay) {
+            try {
+                await window.OrthodoxDay.applyToSections(sections, normalizedKey, isoDate);
+            } catch (err) {
+                console.warn('[HorologionEngine] OrthodoxDay failed (engine output kept):', err.message);
+            }
+        }
+
         // Diagnostic pass — count resolved vs placeholder slots
         let implementedSlots = 0;
         let placeholderSlots = 0;

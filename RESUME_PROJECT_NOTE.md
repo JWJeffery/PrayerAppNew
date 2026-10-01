@@ -305,6 +305,12 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
 **DONE 2026-10-01 -- Orloff Commons ingested and wired: 71 rank-3 saints (Orthros sessional hymns 1-2, canon,
 exapostilarion, praises; Vespers stichera, aposticha) and 203 rank-4 saints (Vespers stichera only, Josh's decision)**;
 live-verified across all 2026 dates. Record, scripts, mapping rules, limits: `documentation/MENAION_COMMONS_ORLOFF.md`.
+**DONE 2026-10-01 -- Orthodox day data (Josh's "provide content" plan, items 2 and 3):** the day's FAST and the appointed
+READINGS (Vespers paroemias, Matins Gospel, Epistle, Gospel incl. each saint's) for 2026-2027 from orthocal.info, shown by
+`js/orthodox-day.js` in Vespers/Orthros/Typika. **Finding for Josh:** the engine's own Typika Epistle/Gospel table disagrees with the
+published lectionary on ~half the days (166 of 338 compared); the new data replaces it for 2026-2027 -- see
+`documentation/ORTHODOX_DAY.md`. Outside 2026-2027 the old engine logic still runs. **Next in the plan:** item 1 (short original saint
+lives for the 370 commemorations, in batches of ~25, starting with the James correction), then items 4-8.
 **Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
 **Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
 calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.
