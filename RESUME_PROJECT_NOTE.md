@@ -302,34 +302,11 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
    library repo ZIP and put it in a Drive folder. CONTENT caveat (not a license one): AGES is Greek
    Archdiocese usage, so feast hymnography will not always match Russian/Slavic usage -- disclose that
    wherever used, and prefer Orloff (Slavonic-derived) wherever it applies.
-**DONE 2026-10-01 -- Orloff Commons ingested AND wired for rank-3 saints (live-verified in headless Chromium).**
-- Data: `scripts/menaion/ingest-orloff-commons.py` fetched all 27 chapters + Appendix from CCEL into
-  `data/menaion/commons/<slug>.json` (verbatim, CCEL OCR typos preserved; each paragraph keeps its CCEL id,
-  print page, italic rubric runs). `scripts/menaion/build-commons-sections.py` then adds a `sections` array
-  (vespers_stichera, vespers_aposticha, sessional_1/2/3, canon, exapostilarion, praises, ...) split by
-  Orloff's own rubrics; his "(mentioned by name)" becomes the token `{NAME}`. Both scripts are idempotent.
-- Mapping: `data/menaion/commons/mapping.json` -- 47 hand-reviewed RANK-3 commemorations -> a common +
-  `invocation` (the name substituted for {NAME}). Deliberately UNMAPPED (keep their deferred rubrics):
-  Synaxes, feasts/Marian feasts, Equal-to-the-Apostles, groups of martyrs, saints with companions,
-  Clement/Ignatius/John Damascene (type ambiguous), the Daniel+Three Youths day, Royal Martyrs, Holy Innocents.
-- Runtime: `js/menaion-commons.js` (`window.MenaionCommons.applyToSections`, loaded in `index.html` after
-  `menaion-resolver.js`), called from `HorologionEngine.resolveOffice` for `orthros` and `vespers` right
-  before the diagnostics pass. It ONLY replaces a slot that is still a deferred rubric (resolvedAs
-  `orthros-rank3-menaion-*-deferred-rubric`, `orthros-feast-canon-rubric`, or Vespers `menaion-feast-rubric`)
-  and only when the day's governing troparion is a rank-3 `menaion-feast-troparion` whose name is in the
-  mapping. Orthros slots filled: sessional-hymns-1/-2, canon, exapostilarion, praises-stichera. Vespers:
-  stichera-at-lord-i-have-cried, aposticha. If a Common lacks a section (e.g. the hieromartyr chapter has
-  no Vespers texts) the honest rubric stays. Rendered text carries a disclosure line (Common, Slavonic
-  usage, saint's own proper hymns not in corpus). Item `resolvedAs: 'menaion-orloff-common-text'`.
-- Verified: swept all 365 days of 2026 x {orthros, vespers} in headless Chromium -- 0 exceptions, 0 leftover
-  `{NAME}`/"mentioned by name"; 36 Orthros + 32 Vespers days filled (others fall on Sundays/Lent, where the
-  engine's existing paths govern); UI screenshot of Vespers 2026-07-07 (Apostle Thomas) renders correctly
-  with sidebar entries. NOT touched: rank 1-2 feasts, rank-4 saints, Orthros aposticha, kontakion slot,
-  Octoechos interplay on Sundays.
-- Known limitations/next: (1) rank-4 saints (246 of 370 commemorations) still show ordinary weekday
-  content -- extending needs Typikon rules for which Orloff sections apply at three-stichera rank;
-  (2) Orloff's alternate-branch rubrics ("If there be a Festival...") are shown as printed, not resolved;
-  (3) unmapped rank-3 entries above could be mapped with Josh's judgment; (4) AGES for saint-specific propers.
+**DONE 2026-10-01 -- Orloff Commons ingested and wired for 47 hand-mapped rank-3 saints** (Orthros: sessional
+hymns 1-2, canon, exapostilarion, praises; Vespers: stichera, aposticha; live-verified across all 2026 dates).
+Full record, scripts, mapping rules, limits: `documentation/MENAION_COMMONS_ORLOFF.md`. **Open follow-ups:**
+rank-4 saints (246 of 370 commemorations) still show ordinary weekday content; unmapped rank-3 entries
+(Synaxes, groups, ambiguous types) need Josh's judgment; Orloff's alternate-branch rubrics are shown as printed.
 
 **AGES library RECEIVED and inspected 2026-10-01** (Josh uploaded `alwb-library-en-us-goadedes-main.zip`; LICENSE.md
 inside confirmed CC0 1.0). It is a full liturgical library of Fr. Seraphim Dedes' English texts in `.ares`
