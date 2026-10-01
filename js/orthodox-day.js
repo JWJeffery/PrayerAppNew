@@ -25,6 +25,34 @@ const OrthodoxDay = (() => {
         return _years[year];
     }
 
+    // ── Patristic commentary on the appointed readings (data/commentary/readings) ──
+    const _comm = {};
+    function _loadCommentary(year) {
+        if (!_comm[year]) {
+            _comm[year] = fetch('data/commentary/readings/' + year + '.json')
+                .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+                .catch(() => null);
+        }
+        return _comm[year];
+    }
+
+    // One commentary item for the first of these readings that has an excerpt, or null.
+    async function _commentaryItem(iso, readings) {
+        const data = await _loadCommentary(String(iso).slice(0, 4));
+        if (!data || !data.entries) return null;
+        for (const r of readings) {
+            const h = data.entries[String(r.display || '').replace(/\u200b/g, '')];
+            if (!h || !h.excerpt) continue;
+            return {
+                type: 'text', key: 'patristic-commentary',
+                label: 'From the Fathers \u2014 ' + h.father + ', ' + h.work,
+                text: h.excerpt + '\n\n(On ' + String(r.display).replace(/\u200b/g, '').replace(/(\d)\.(\d)/g, '$1:$2') + '. Public-domain translation; excerpt only.)',
+                source: h.url, resolvedAs: 'orthodox-day-patristic-commentary'
+            };
+        }
+        return null;
+    }
+
     async function getDay(iso) {
         const data = await _loadYear(String(iso).slice(0, 4));
         return data && data.days ? (data.days[iso] || null) : null;
@@ -176,6 +204,8 @@ const OrthodoxDay = (() => {
                     source: 'Orthodox lectionary (orthocal.info, OCA/Slavic); scripture text from the app corpus', resolvedAs: 'orthodox-day-matins-gospel'
                 });
                 n++;
+                const ci = await _commentaryItem(iso, rd);
+                if (ci) { at.section.items.splice(at.index + 1, 0, ci); n++; }
             }
         }
 
@@ -191,6 +221,8 @@ const OrthodoxDay = (() => {
                     source: 'Orthodox lectionary (orthocal.info, OCA/Slavic); scripture text from the app corpus', resolvedAs: 'orthodox-day-' + src.toLowerCase()
                 };
                 n++;
+                const ci = await _commentaryItem(iso, rd);
+                if (ci) { hit.section.items.splice(hit.index + 1, 0, ci); n++; }
             }
         }
         return n;

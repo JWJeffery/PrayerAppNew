@@ -87,3 +87,13 @@ where the published table has James/Mark. Josh to decide whether to fix the engi
 ## "About Today's Service" panel (`js/day-guide.js`)
 
 `window.DayGuide.applyToSections` inserts a first item `about-today` (`resolvedAs: day-guide`) into Vespers and Orthros (New Calendar mode only; hooked last in `resolveOffice` so it sits first). It is composed only from data already in the app: the Orthodox-day record (title, tone, Typikon sign → plain-language meaning), the weekday Octoechos theme, the rank of the troparion's commemoration, Lent/Pascha/Holy Week notes, and a sources line counting what this page took from the Orloff Commons, AGES, hymn-guide metadata, and what remains deferred. No liturgical text is invented. Verified over all of 2026–2027 (1,460 office-days): panel present and first every time, no errors, no empty or "undefined" text.
+
+## Patristic commentary on the appointed readings (plan item 7)
+
+`data/commentary/readings/<year>.json` holds one verbatim excerpt (≤ ~1,100 characters, cut at a paragraph or sentence end, marked "…") per appointed Epistle / Gospel / Matins-Gospel citation of 2026 and 2027. `scripts/commentary/build-reading-commentary.py <clone of HistoricalChristianFaith/Commentaries-Database>` rebuilds it. `js/orthodox-day.js` (`_commentaryItem`) inserts it as item `patristic-commentary` ("From the Fathers — <Father>, <work>") directly after the Typika Epistle, Typika Gospel and Matins Gospel.
+
+- **Public-domain translations only** (whitelist in the script): Chrysostom's NPNF homilies, Augustine's tractates/expositions, Cyril of Alexandria on John and Luke, and the Catena Aurea. Theophylact is excluded: the only translation in the database is modern. So are modern scholarly translations (Jerome on Matthew, Bede's homilies, etc.).
+- Selection: entries contained in the pericope first, then Father priority (Chrysostom, Cyril, Augustine, others), then source priority (a Father's own homily over Catena).
+- Coverage: 2026 650/720 citations, 2027 634/703 (Chrysostom 571). Gaps: 1 John and 1 Peter (only Theophylact available), plus a few others. 1,416 of 1,460 checked Typika/Orthros days carry a comment.
+- Vespers Old Testament readings have no commentary yet.
+- Known blemish: Catena Aurea text occasionally carries stray footnote letters (e.g. "Hereticsb").
