@@ -83,3 +83,7 @@ where the published table has James/Mark. Josh to decide whether to fix the engi
 | 2026-04-21 | Acts 4.1-10; John 3.16-21 |  |  |
 | 2026-04-22 | Acts 4.13-22; John 5.17-24 |  |  |
 | 2026-04-23 | Acts 4.23-31; Acts 12.1-11; John 5.24-30; John 15.17-16.2 |  |  |
+
+## "About Today's Service" panel (`js/day-guide.js`)
+
+`window.DayGuide.applyToSections` inserts a first item `about-today` (`resolvedAs: day-guide`) into Vespers and Orthros (New Calendar mode only; hooked last in `resolveOffice` so it sits first). It is composed only from data already in the app: the Orthodox-day record (title, tone, Typikon sign → plain-language meaning), the weekday Octoechos theme, the rank of the troparion's commemoration, Lent/Pascha/Holy Week notes, and a sources line counting what this page took from the Orloff Commons, AGES, hymn-guide metadata, and what remains deferred. No liturgical text is invented. Verified over all of 2026–2027 (1,460 office-days): panel present and first every time, no errors, no empty or "undefined" text.

@@ -719,6 +719,15 @@ const _interhourFixedDataCache = {};
             }
         }
 
+        // ── Plain-language "About Today's Service" panel (composed from the resolved office) ──
+        if (typeof window !== 'undefined' && window.DayGuide && _currentEoMode !== 'old_calendar') {
+            try {
+                await window.DayGuide.applyToSections(sections, normalizedKey, isoDate, dateObj);
+            } catch (err) {
+                console.warn('[HorologionEngine] DayGuide failed (office kept):', err.message);
+            }
+        }
+
         // Diagnostic pass — count resolved vs placeholder slots
         let implementedSlots = 0;
         let placeholderSlots = 0;
