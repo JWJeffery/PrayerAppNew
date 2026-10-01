@@ -24,7 +24,7 @@
     "lords-prayer": {
       "label": "The Lord's Prayer",
       "role": "prayer",
-      "matchLabels": ["The Lord's Prayer (farced with the Qanona)", "The Lord's Prayer", "Lord's Prayer"],
+      "matchLabels": ["The Lord's Prayer (farced with the Qanona)", "The Lord's Prayer", "Lord's Prayer", "The Lord's Prayer (expanded with the Qanona)"],
       "micro": "The prayer Christ taught, farced — with a refrain woven in between its clauses.",
       "structural": "It stands at the opening of each of the three principal services. Here it is farced: the petitions are interleaved with a refrain, in the same manner as the psalms are farced elsewhere in the office. It is also one of the few parts named as belonging to everyone — along with the Lakhumara, the Holy God and the Nicene Creed, it is said by all, including those who cannot read Old Syriac and so cannot join in the anthems.",
       "source": "Maclean 1894, Introduction pp.xiii-xvi (its position in all three services) and p.xviii (what all may say)."
@@ -42,7 +42,7 @@
     "lakhumara": {
       "label": "The Lakhumara",
       "role": "hymn",
-      "matchLabels": ["The Lakhumara", "Lakhumara", "Prayer of the Lakhumara", "Prayer after the Lakhumara"],
+      "matchLabels": ["The Lakhumara", "Lakhumara", "Prayer of the Lakhumara", "Prayer after the Lakhumara", "Lakhumara Rubric (Feasts of Our Lord)"],
       "micro": "An ascription of praise said by everyone, farced, with a collect before and after it.",
       "structural": "It is described as an ascription of praise said by all, farced, with a collect preceding and following. That 'said by all' is the significant part: the Lakhumara is listed with the Lord's Prayer, the Holy God and the Nicene Creed as the portions of the service which everyone can say, including those unable to read Old Syriac and therefore unable to join in the anthems. It appears in the Morning Service too, where on ferias it takes the place the Morning Anthem occupies on Sundays and feasts.",
       "source": "Maclean 1894, Introduction p.xiii (the Evening Service table), p.xvi (the Morning Service table), and p.xviii (what all may say)."
@@ -69,7 +69,7 @@
     "anthem": {
       "label": "Anthem",
       "role": "hymn",
-      "matchLabels": ["First Anthem", "Second Anthem", "Evening Anthem", "Anthem"],
+      "matchLabels": ["First Anthem", "Second Anthem", "Evening Anthem", "Anthem", "The Anthems in the Fast", "Daily Anthem", "Verses of the Morning Anthem", "Anthem for the Blessing of the Months (i)", "Anthem for the Blessing of the Months (ii), by Mar Abraham of Slukh", "Anthem for the Blessing of the Months (iii), by Mar Gabriel, A.D. 1599", "Anthem of the Departed"],
       "micro": "A metrical hymn sung by the two choirs alternately, each verse preceded by a keynote clause.",
       "structural": "The anthems are the part of the office considered the most Eastern in tone, and their construction is described closely. They are in metre, divided into verses or stanzas each with the same number of lines — as few as two, as many as fourteen — and the lines roughly scan and occasionally rhyme. Before each verse, or each group of verses, stands a clause usually taken from the psalter, sung in monotone, which gives the verse its keynote; this seems to be a unique feature of the rite. The two choirs sing the verses alternately to a chant. In the printed text an asterisk marks where the choirs change and a full stop marks the end of a line. The chants themselves are purely traditional and not written down: the books give names of tunes, but these are not more than names. A caution is worth keeping: these are poetry and must be judged as poetry, not by the strict laws of logic, and one should not press every phrase home.",
       "source": "Maclean 1894, Introduction pp.xvii-xviii (the construction of the anthems, the keynote clause, the alternating choirs, the asterisks and full stops, and the tunes being names only) and p.xix (judging them as poetry)."
@@ -78,7 +78,7 @@
     "martyrs-anthem": {
       "label": "The Martyrs' Anthem",
       "role": "hymn",
-      "matchLabels": ["The Martyrs' Anthem", "Martyrs' Anthem"],
+      "matchLabels": ["The Martyrs' Anthem", "Martyrs' Anthem", "Prayer before the Martyrs' Anthem", "The Morning Martyrs’ Anthem (Monday)", "The Morning Martyrs’ Anthem (Tuesday)", "The Morning Martyrs’ Anthem (Wednesday)", "The Morning Martyrs’ Anthem (Thursday)", "The Morning Martyrs’ Anthem (Friday)", "The Morning Martyrs’ Anthem (Saturday)", "Two Collects after the Martyrs' Anthem", "No Martyrs' Anthem in the Fast", "If the Martyrs' Anthem is said, this prayer is added on Sundays", "Martyrs' Anthem: Sunday Morning 'Before'", "Martyrs' Anthem: Sunday Morning 'After'"],
       "micro": "An anthem in honour of the martyrs, one for each day of the week, in practice said on ferias.",
       "structural": "There is one for each day of the week, and in practice they are said on ferias only. The tables place the Evening and Morning ones differently, and the difference is stated rather than incidental: at the Evening Service the fixed anthem comes before the day's Martyrs' Anthem, while at the Morning Service the Martyrs' Anthem comes first and the two fixed Morning Anthems follow it. Two collects accompany it. The Urmi edition attributes them all to Mar Marutha, Bishop of Maiperqat.",
       "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xvi (the Morning Service table, and the extra collect on Sundays when the Martyrs' Anthem is said)."
@@ -87,7 +87,7 @@
     "karuzutha": {
       "label": "The Karuzutha",
       "role": "intercession",
-      "matchLabels": ["The Karuzutha", "Karuzutha"],
+      "matchLabels": ["The Karuzutha", "Karuzutha", "Karuzutha of the Suba‘a", "Karuzutha (Festival Additions)", "An Occasional Karuzutha", "Karuzutha, as appointed in the Khudhra; or say, Father of mercies (the first part) as above, page 6; or the following", "The proper Canon, Tishbukhta, and Karuzutha for the day", "The proper Karuzutha", "Prayer before the Motwa, and the proper Motwa, collect, Canon, Tishbukhta, Karuzutha, and Madrasha"],
       "micro": "The litany, said by the deacon, with the people answering each petition.",
       "structural": "It is given in two parts, said by the deacon, with special suffrages on Sundays, feasts and memorials. A direct comparison with the Greek rite is drawn: the general karuzutha and the other litanies show great similarity to the Greek ectenes, both in the structure of the petitions and in the practice of using a general litany at almost all services, liturgical and non-liturgical alike. The two are set side by side in the Introduction to make the resemblance visible. On some days a special Karuzutha is appointed.",
       "source": "Maclean 1894, Introduction p.xiv (the Evening Service table), p.xv (the Night Service table), and p.xxii (the comparison with the Greek ectenes)."
@@ -96,7 +96,7 @@
     "holy-god": {
       "label": "Holy God",
       "role": "hymn",
-      "matchLabels": ["Holy God"],
+      "matchLabels": ["Holy God", "Holy God and Our Father after the Suba‘a"],
       "micro": "The Trisagion, said by all and farced with the Gloria.",
       "structural": "It is given as said by all, farced with the Gloria. Like the Lord's Prayer, the Lakhumara and the Nicene Creed, it belongs to the whole assembly rather than to the singers: these four are named as the portions everyone can say, in contrast to the anthems, which are sung only by those able to read Old Syriac.",
       "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xviii (what all may say)."
@@ -105,7 +105,7 @@
     "collect": {
       "label": "Prayer",
       "role": "prayer",
-      "matchLabels": ["Prayer", "The Evening Prayer", "Prayer before the Morning Psalms", "Prayer for Help", "Prayer (Laying on of Hands)", "Prayer (instead of Pity us, thou Compassionate one)"],
+      "matchLabels": ["Prayer", "The Evening Prayer", "Prayer before the Morning Psalms", "Prayer for Help", "Prayer (Laying on of Hands)", "Prayer (instead of Pity us, thou Compassionate one)", "Prayer before the Motwa", "Prayer of the Shubakha", "Evening Prayer for Sundays and Festivals", "Prayer before the Suyakhi", "Prayer at Noon in the Fast", "Prayer before the Morning Psalms (in the Fast)", "Another (Prayer before the Morning Psalms in the Fast)", "Prayer before the Morning Psalms on Fridays of the Fast", "Another for the same (Fridays of the Fast)", "Prayer before the Motwa for Sundays", "Prayer of the Shubakha on Sundays", "Prayer before the Motwa on Feasts"],
       "micro": "A collect. These may be said by a priest only, and are omitted entirely if none is present.",
       "structural": "This is the one point in the office where it matters most whether a priest is present. The collects and the conclusions, or blessings, can be said by priests only, and if none are present they are entirely omitted. A layman praying the office and passing over them is not abbreviating it — that is the tradition's own instruction. Two further things are noted about their style. They almost always end with the words 'Father, Son, and Holy Ghost, for ever,' without pleading the merits of our Saviour, which is also frequent among the Greeks. And they show a marked love of tautology: the same epithet is repeated again and again where a Western writer would have chosen a distinct one — an exuberance of epithets and synonyms common to all Eastern offices, and no little difficulty to the English translator.",
       "source": "Maclean 1894, Introduction p.xviii (collects and blessings for priests only, omitted if none is present), p.xxiii (the ending of the collects, compared with the Greek), and pp.xxiii-xxiv (the love of tautology)."
@@ -132,7 +132,7 @@
     "hulala": {
       "label": "Hulala",
       "role": "psalmody",
-      "matchLabels": ["Hulala I", "Hulala II", "Hulala III", "Hulala IV", "Hulala V", "Hulala VI", "Hulala VII", "Hulala VIII", "Hulala IX", "Hulala X", "Hulala XI", "Hulala XII", "Hulala XIII", "Hulala XIV", "Hulala XV", "Hulala XVI", "Hulala XVII", "Hulala XVIII", "Hulala XIX", "Hulala XX", "Hulala XXI", "Hulala"],
+      "matchLabels": ["Hulala I", "Hulala II", "Hulala III", "Hulala IV", "Hulala V", "Hulala VI", "Hulala VII", "Hulala VIII", "Hulala IX", "Hulala X", "Hulala XI", "Hulala XII", "Hulala XIII", "Hulala XIV", "Hulala XV", "Hulala XVI", "Hulala XVII", "Hulala XVIII", "Hulala XIX", "Hulala XX", "Hulala XXI", "Hulala", "The Hulala of Quta'a"],
       "micro": "One of the twenty divisions of the Psalter, each with its own proper collects. A twenty-first is made of canticles.",
       "structural": "The Night Service is where the psalter is recited, and the hulali are how it is divided: twenty of them, with a twenty-first added made up of certain Old Testament canticles. This recalls the twenty kathismata of the Greeks. A third of the psalter is said on each weekday, so the whole is said twice a week; on feasts of our Lord it is said complete; on Sundays and other holy days selections are made. Each hulala is further subdivided, and before each subdivision comes an appropriate collect gathering up the thoughts of the psalms — one of the two features called beautiful. On weekdays the psalms are said in monotone and antiphonally, one person on each side taking each clause, not necessarily a priest or deacon, and recited very rapidly; on Sundays and festivals several are sung.",
       "source": "Maclean 1894, Introduction p.xvii (the recitation of the psalter, the twenty hulali and the twenty-first of canticles, the comparison with the Greek kathismata, the collects before each subdivision, and the manner of recitation)."
@@ -141,7 +141,7 @@
     "farcing": {
       "label": "Farcing",
       "role": "antiphon",
-      "matchLabels": ["Farcing", "Farcings", "The Farcings of the Psalms", "Giyura"],
+      "matchLabels": ["Farcing", "Farcings", "The Farcings of the Psalms", "Giyura", "Psalm 100, expanded", "Psalm 91, expanded", "Psalm 104:1-16, expanded", "Psalm 113, expanded", "Psalm 51:1-18, expanded", "Psalm 91 (expanded, in the Fast)", "Psalm 104:1-15a (expanded, in the Fast)", "Psalms 113, 93, 148, 149, 150, 117 (expanded, Weeks of the Mysteries)", "Psalms 150 and 117 (expanded)", "Psalm 121 (expanded)", "Psalm 51 (expanded)", "Psalm 100 (expanded with 'In the beginning')", "Psalm 104:1-16a (expanded)", "Psalms 148, 149, 150, 117 (unexpanded, one Gloria)", "Psalm 78, expanded for the feast", "The same, further expanded on Feasts of our Lord"],
       "micro": "A short clause inserted into a psalm — after its opening clauses and at the end — usually giving it a Christian application.",
       "structural": "The giyuri, or farcings, are named as one of the two beautiful features of East Syriac psalm recitation, and they are carefully distinguished from the other. The collects come before each subdivision of the hulali and gather up the thoughts of the psalms; the farcings are something else — clauses introduced after the first, or the first and second, clauses of a psalm and at its end, usually giving the psalm a Christian application. So a psalm here is not simply read: it is punctuated with the Church's reading of it.",
       "source": "Maclean 1894, Introduction p.xvii."
@@ -222,7 +222,7 @@
     "royal-anthem": {
       "label": "The Royal Anthem",
       "role": "hymn",
-      "matchLabels": ["The Royal Anthem", "Royal Anthem", "Prayer after the Royal Anthem", "Prayer before the Royal Anthem"],
+      "matchLabels": ["The Royal Anthem", "Royal Anthem", "Prayer after the Royal Anthem", "Prayer before the Royal Anthem", "Royal Anthem Ending: Sundays from Advent to Epiphany", "Royal Anthem Ending: The Shawu‘a of the Epiphany", "Royal Anthem Ending: The Shawu‘a of the Apostles", "Royal Anthem Ending: Summer, and till Holy Cross Day", "Royal Anthem Ending: Holy Cross Day to the Hallowing of the Church", "Royal Anthem Ending: Sundays of the Hallowing of the Church"],
       "micro": "The proper anthem of Sundays, feasts and memorials at the Evening Service, in place of the ferial Evening Anthem.",
       "structural": "The table sets the two as alternatives in one position: the Royal Anthem on Sundays, feasts and memorials, proper for the day, with the last two verses the same for each Sunday of a shawu'a; or the Evening Anthem on ferias, varying with the season or only with the day of the week. Its proper body belongs to the Khudhra rather than to the books this volume translates, which is why it is a disclosed gap in this corpus while its endings and surrounding prayers are present.",
       "source": "Maclean 1894, Introduction p.xiv (the Evening Service table) and p.xi (the seasonal propers being contained in the Khudhra, Geza and Kashkul)."
@@ -231,7 +231,7 @@
     "subaa": {
       "label": "Suba'a",
       "role": "opening",
-      "matchLabels": ["Suba'a (Compline)", "Suba'a", "Compline"],
+      "matchLabels": ["Suba'a (Compline)", "Suba'a", "Compline", "Suba‘a on Memorials", "Prayer before the Suba‘a", "The Suba‘a (Compline)", "Conclusion of the Suba‘a"],
       "micro": "Compline. By 1894 almost obsolete, kept on certain days and usually joined to the Evening Service.",
       "structural": "Compline is one of the four services the Sunhadus orders daily, but it was already almost obsolete by the time of the 1894 edition except on certain days of the year, when it is usually joined on to the Evening Service. The Evening Service table reflects that: Suba'a appears there on memorials and in the Great Fast, with one collect preceding and two following. It is also one of the two offices the Sunhadus leaves to the rule of the monastery, with no fixed length required of laymen — the reason this app treats it differently in Cathedral and Monastic modes.",
       "source": "Maclean 1894, Introduction p.xiii (Compline almost obsolete, joined to the Evening Service), p.xiv (its position in the Evening Service table), and p.xii (the Sunhadus on the four services)."

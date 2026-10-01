@@ -316,7 +316,7 @@ Jan 14 Nina only + Leavetaking of Theophany moved there; Tikhon -> 08-13, Innoce
 `documentation/MENAION_DATA_FINDINGS.md`. **DONE 2026-10-01 -- item 1 COMPLETE: every one of the 360 Menaion commemorations has an original short life** (`data/menaion/lives/lives.json`; research
 subagents reading OCA + Orthocal per date; merged by `scripts/menaion/merge-lives.py`; shown as "Commemorated Today"). The pass found and fixed ~14 wrong-date/identity
 entries and Josh had 9 unsupported entries deleted -- evidence in `documentation/MENAION_DATA_FINDINGS.md`. Lives are summaries, not liturgical text; confidence ("high"/"medium")
-is stored per entry. **DONE 2026-10-01 -- plan item 4, hymn guide:** rank 1-2 feasts show tone/melody/count of the missing Menaion hymns from AGES metadata (`js/hymn-guide.js`, `documentation/MENAION_AGES.md`), labelled Greek usage. **DONE 2026-10-01 -- plan item 5, "About Today's Service" panel** (`js/day-guide.js`, `documentation/ORTHODOX_DAY.md`). **Next in the plan:** education layer, patristic commentary, icons.
+is stored per entry. **DONE 2026-10-01 -- plan item 4, hymn guide:** rank 1-2 feasts show tone/melody/count of the missing Menaion hymns from AGES metadata (`js/hymn-guide.js`, `documentation/MENAION_AGES.md`), labelled Greek usage. **DONE 2026-10-01 -- plan item 5, "About Today's Service" panel** (`js/day-guide.js`, `documentation/ORTHODOX_DAY.md`). **DONE -- plan item 6, education layer.** **Next in the plan:** patristic commentary (item 7), icons (item 8).
 **Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
 **Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
 calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.
@@ -393,10 +393,7 @@ that predate recent sessions and have not been investigated.
 *Genuinely unblocked — need no research and no decision, can be started any session, per
 `documentation/OPEN_ITEMS_FIXABILITY.md` Part 4:*
 - **Formation prose: editor names stripped** from `data/explanations/*.json` prose (done 2026-10-01; citations in `source` fields kept).
-- **Education-layer coverage extension.** Coverage currently ~49% of Coptic titles to ~57% of East
-  Syriac components (last measured 2026-09-05/09-12, not re-measured this session). Deliberately
-  excludes generic section headings and individual psalm citations. Content work within sources already
-  held in the repo — no new source needed.
+- **Education-layer coverage extension: done 2026-10-01** (Coptic 78/87 titles, East Syriac 318/448, via matchLabels aliases to existing entries + one new Coptic `theotokia` entry; the remainder are individual psalms, generic prayers and proper hymn texts).
 
 *Blocked on Josh's decision, not research:*
 - **Royal Anthem sourcing.** Copyright. Two live options, neither authorized: an OIRSI/Moolan
