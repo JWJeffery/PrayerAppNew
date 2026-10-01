@@ -73,7 +73,8 @@ Cornelius the Centurion 10-13 -> 09-13; Cosmas and Damian of Cilicia/Arabia 10-1
 duplicate rank-4 "Miracle of Archangel Michael at Chonae" on 11-09 deleted (the feast is on 09-06); 12-14 renamed Thyrsus, Leucius and
 Callinicus (OCA; Philemon's group is separate); 06-07 renamed Theodotus, Bishop of Ancyra (was "Marcellus", which is a different pope).
 
-### Still unresolved -- no life published (Josh to decide: move, rename or delete)
+### RESOLVED 2026-10-01: Josh said "delete all nine" -- the nine entries below were removed from data/menaion
+(their dates now carry no commemoration, or only the remaining ones). Original evidence kept for the record.
 | App date | App entry | What OCA / Orthocal say |
 |---|---|---|
 | 04-20 | Holy Martyr Anastasia of Rome (`anastasia-rome-martyr`) | OCA April 20 lists Theodore Trichinas, Athanasios of Meteora, Apostle Zaccheus, and others; no Anastasia of Rome appears there, and Orthocal 4/20 names only Theodore Trichinas, Athanasios of Meteora and Zaccheus. OCA places 'Martyrs Basilissa and Anastasia of Rome, disciples of the Apostles' on April 15 (1st c., under Nero). Date mismatch or different identity; no life written. |

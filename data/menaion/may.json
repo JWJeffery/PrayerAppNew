@@ -380,19 +380,6 @@
     "05-18": {
       "commemorations": [
         {
-          "id": "peter-caesarea-cappadocia",
-          "name": "Venerable Peter of Caesarea in Cappadocia",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Hold — monastic type. Troparion text not securely confirmed."
-        },
-        {
           "id": "theodotus-ancyra",
           "name": "Holy Martyr Theodotus of Ancyra",
           "type": "martyr",

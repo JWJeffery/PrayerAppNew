@@ -115,13 +115,6 @@
    "invocation": "John"
   },
   {
-   "id": "anastasia-rome-martyr",
-   "mmdd": "04-20",
-   "name": "Holy Martyr Anastasia of Rome",
-   "common": "female-martyr",
-   "invocation": "Anastasia"
-  },
-  {
    "id": "januarius-bishop-beneventum",
    "mmdd": "04-21",
    "name": "Hieromartyr Januarius, Bishop of Beneventum",
@@ -577,13 +570,6 @@
    "invocation": "Thomas and Acacius"
   },
   {
-   "id": "paisios-great",
-   "mmdd": "07-09",
-   "name": "Venerable Paisios the Great",
-   "common": "monk",
-   "invocation": "Paisios"
-  },
-  {
    "id": "proclus-hilary-martyrs",
    "mmdd": "07-12",
    "name": "Holy Martyrs Proclus and Hilary",
@@ -603,13 +589,6 @@
    "name": "Venerable Macrina, Sister of Basil the Great",
    "common": "nun",
    "invocation": "Macrina"
-  },
-  {
-   "id": "phocas-bishop-sinope",
-   "mmdd": "07-23",
-   "name": "Hieromartyr Phocas, Bishop of Sinope",
-   "common": "hieromartyr",
-   "invocation": "Phocas"
   },
   {
    "id": "christina-tire-martyr",
@@ -787,13 +766,6 @@
    "invocation": "Eudokia"
   },
   {
-   "id": "hesychius-antioch",
-   "mmdd": "03-02",
-   "name": "Holy Martyr Hesychius of Antioch",
-   "common": "martyr",
-   "invocation": "Hesychius"
-  },
-  {
    "id": "eutropius-cleonicus-basiliscus",
    "mmdd": "03-03",
    "name": "Holy Martyrs Eutropius, Cleonicus, and Basiliscus",
@@ -883,13 +855,6 @@
    "name": "Holy Martyrs Chrysanthos and Daria",
    "common": "martyrs-many",
    "invocation": "Chrysanthos and Daria"
-  },
-  {
-   "id": "martyr-niketas-gothi",
-   "mmdd": "03-20",
-   "name": "Holy Martyr Niketas of the Goths",
-   "common": "martyr",
-   "invocation": "Niketas"
   },
   {
    "id": "james-confessor",
@@ -997,13 +962,6 @@
    "invocation": "Andronicus and Junia"
   },
   {
-   "id": "peter-caesarea-cappadocia",
-   "mmdd": "05-18",
-   "name": "Venerable Peter of Caesarea in Cappadocia",
-   "common": "monk",
-   "invocation": "Peter"
-  },
-  {
    "id": "theodotus-ancyra",
    "mmdd": "05-18",
    "name": "Holy Martyr Theodotus of Ancyra",
@@ -1109,25 +1067,11 @@
    "invocation": "the Thirty-Three Martyrs"
   },
   {
-   "id": "erasmus-of-ohrid",
-   "mmdd": "11-10",
-   "name": "Holy Martyrs Orestes and Erasmus of Ohrid",
-   "common": "martyrs-many",
-   "invocation": "Orestes and Erasmus"
-  },
-  {
    "id": "menas-victor-vincent",
    "mmdd": "11-11",
    "name": "Holy Martyrs Menas, Victor, and Vincent",
    "common": "martyrs-many",
    "invocation": "Menas, Victor and Vincent"
-  },
-  {
-   "id": "martyrs-persia-shapur",
-   "mmdd": "11-15",
-   "name": "Holy Martyrs and Confessors of Persia",
-   "common": "martyrs-many",
-   "invocation": "the Martyrs and Confessors of Persia"
   },
   {
    "id": "plato-roman",

@@ -203,25 +203,7 @@
       ]
     },
     "07-09": {
-      "commemorations": [
-        {
-          "id": "paisios-great",
-          "name": "Venerable Paisios the Great",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Venerable Paisios the Great",
-            "text": "The incarnate Angel, and the boast and summit of monks, the bodiless man, the citizen of Heaven, the great God-bearing Paisios celebrateth with us in divine jubilation, granting grace to all them that extol him with reverence. With fervour let us honour this day, offering him songs of praise."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Egyptian desert father (+400), trained under Abba Pambo of Scete. Tone 4 troparion confirmed GOARCH chapel saints. OCA July 9 all-troparia page does not include a troparion for Paisios the Great; GOARCH is the primary source used here. Live entry had troparion_tone: 8 — corrected."
-        }
-      ]
+      "commemorations": []
     },
     "07-10": {
       "commemorations": [
@@ -442,25 +424,7 @@
       ]
     },
     "07-23": {
-      "commemorations": [
-        {
-          "id": "phocas-bishop-sinope",
-          "name": "Hieromartyr Phocas, Bishop of Sinope",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Hieromartyr Phocas, Bishop of Sinope",
-            "text": "Your holy martyr Phocas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Phocas of Sinope (+117), bishop and martyr under Trajan. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "07-24": {
       "commemorations": [

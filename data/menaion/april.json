@@ -413,25 +413,7 @@
       ]
     },
     "04-20": {
-      "commemorations": [
-        {
-          "id": "anastasia-rome-martyr",
-          "name": "Holy Martyr Anastasia of Rome",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyr Anastasia of Rome",
-            "text": "Your holy martyr Anastasia, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Anastasia of Rome (+3rd c.), martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "04-21": {
       "commemorations": [

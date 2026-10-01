@@ -191,26 +191,7 @@
       "commemorations": []
     },
     "11-10": {
-      "commemorations": [
-        {
-          "id": "erasmus-of-ohrid",
-          "name": "Holy Martyrs Orestes and Erasmus of Ohrid",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyrs Orestes and Erasmus of Ohrid",
-            "text": "Your holy martyrs Orestes and Erasmus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR",
-            "OOR"
-          ],
-          "notes": "Orestes and Erasmus of Ohrid. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "11-11": {
       "commemorations": [
@@ -313,26 +294,7 @@
       ]
     },
     "11-15": {
-      "commemorations": [
-        {
-          "id": "martyrs-persia-shapur",
-          "name": "Holy Martyrs and Confessors of Persia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyrs and Confessors of Persia",
-            "text": "Your holy martyrs and confessors of Persia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR",
-            "OOR"
-          ],
-          "notes": "Persian martyrs group commemoration. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "11-16": {
       "commemorations": [

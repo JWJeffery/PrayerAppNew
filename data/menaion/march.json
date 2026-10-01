@@ -33,25 +33,7 @@
       ]
     },
     "03-02": {
-      "commemorations": [
-        {
-          "id": "hesychius-antioch",
-          "name": "Holy Martyr Hesychius of Antioch",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyr Hesychius of Antioch",
-            "text": "Your holy martyr Hesychius, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Hesychius of Antioch (+303), martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "03-03": {
       "commemorations": [
@@ -398,25 +380,7 @@
       ]
     },
     "03-20": {
-      "commemorations": [
-        {
-          "id": "martyr-niketas-gothi",
-          "name": "Holy Martyr Niketas of the Goths",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Holy Martyr Niketas of the Goths",
-            "text": "Your holy martyr Niketas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Niketas the Goth (+372), martyr under the Arian chieftain Athanaric. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-        }
-      ]
+      "commemorations": []
     },
     "03-21": {
       "commemorations": [

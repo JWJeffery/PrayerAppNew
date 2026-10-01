@@ -588,25 +588,7 @@
       ]
     },
     "06-28": {
-      "commemorations": [
-        {
-          "id": "paul-peter-apostles-forefeast",
-          "name": "Forefeast of the Feast of the Holy Apostles Peter and Paul",
-          "type": "feast",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": {
-            "tone": 4,
-            "title": "Troparion of the Forefeast of Peter and Paul",
-            "text": "O Chief Apostles Peter and Paul, ye are the foundations of the Church and its teachers; through your intercessions establish her in peace, O Only Lover of mankind."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": [
-            "EOR"
-          ],
-          "notes": "Forefeast of the Feast of Sts. Peter and Paul (Jun 29). Uses the apostles' troparion. Rank 4."
-        }
-      ]
+      "commemorations": []
     },
     "06-29": {
       "commemorations": [
