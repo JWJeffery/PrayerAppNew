@@ -33,7 +33,7 @@ const MenaionCommons = (() => {
         'female-martyr': 'a Female Martyr', 'monk': 'a Monk', 'nun': 'a Nun',
         'unmercenaries-wonderworkers': 'the Unmercenaries and Wonder-workers',
         'hierarchs-many': 'Several Hierarchs', 'martyrs-many': 'Several Martyrs', 'prophet': 'a Prophet',
-        'angels': 'the Holy Angels', 'theotokos': 'the Festivals of the Theotokos'
+        'angels': 'the Holy Angels'
     };
 
     // engine slot key -> section kind, per office
@@ -146,7 +146,8 @@ const MenaionCommons = (() => {
         const body = _render(section.lines, entry.invocation);
         const note = '(Text: the Common of ' + commonLabel + ', Orloff, The General Menaion, London 1899 — ' +
                      'Slavonic usage. The proper hymns of ' + (entry.subject || entry.invocation) + ' themselves, where a service book ' +
-                     'has them, are not yet in this corpus.)';
+                     'has them, are not yet in this corpus.' + (entry.note && /Equal-to-the-Apostles/.test(entry.note)
+                         ? ' Orloff has no Common for the Equal-to-the-Apostles; the ' + 'Common of ' + commonLabel + ' is used.' : '') + ')';
         return {
             type:       'stichera',
             key:        slotKey,
@@ -209,6 +210,7 @@ const MenaionCommons = (() => {
 
                 // 2. Otherwise the Orloff Common, when this saint is mapped to one.
                 if (!entry || !common || !Array.isArray(common.sections)) continue;
+                if (Array.isArray(entry.skip) && entry.skip.indexOf(slots[item.key]) !== -1) continue;
                 const section = common.sections.find(s => s.kind === slots[item.key] && s.lines && s.lines.length);
                 if (!section) continue;   // this Common has no such section: keep the honest rubric
                 sec.items[i] = _buildItem(item.key, slots[item.key], entry, common, section, item);
