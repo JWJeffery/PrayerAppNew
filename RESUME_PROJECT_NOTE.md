@@ -392,13 +392,7 @@ that predate recent sessions and have not been investigated.
 
 *Genuinely unblocked — need no research and no decision, can be started any session, per
 `documentation/OPEN_ITEMS_FIXABILITY.md` Part 4:*
-- **Formation prose: strip the editor's name from the explanation-layer prose.** Josh's own direction
-  (2026-09-05): sources must not appear in the user-facing education text at all — the underlying fact
-  should survive, the attribution shouldn't. Confirmed still present and unfixed: at least 23 exact
-  instances of the pattern ("Hapgood explains," "O'Leary records," "Maclean's table shows," etc.) remain
-  across `data/explanations/byzantine.json` (15), `coptic.json` (7), `east-syriac.json` (1) — the true
-  count is likely higher, since this only caught a few exact phrasings, not every way an editor's name
-  could appear. Purely mechanical rewriting, not blocked on anything.
+- **Formation prose: editor names stripped** from `data/explanations/*.json` prose (done 2026-10-01; citations in `source` fields kept).
 - **Education-layer coverage extension.** Coverage currently ~49% of Coptic titles to ~57% of East
   Syriac components (last measured 2026-09-05/09-12, not re-measured this session). Deliberately
   excludes generic section headings and individual psalm citations. Content work within sources already
