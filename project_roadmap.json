@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.43",
-  "last_updated": "2026-07-04T00:00:00-07:00",
+  "roadmap_version": "0.1.44",
+  "last_updated": "2026-10-01T00:00:00-07:00",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "af88450",
-    "latest_known_commit_message": "Repair Bible corpus architecture checkpoint",
+    "latest_known_commit": "ebabd3c",
+    "latest_known_commit_message": "Fix ambiguous comma stacking in profile-summary Cycle of Prayer sentence (#109)",
     "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
@@ -16,13 +16,13 @@
     "latest_known_loth_commit_message": "Map Office of Readings Advent psalmody appointments",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
-    "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
-    "active_oor_completion_plan_remaining_loth_tranches": 20,
-    "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
-    "current_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation.",
+    "active_oor_completion_plan": "abandoned_2026-09-27_roman_loth_lane_superseded_by_roman_breviary",
+    "active_oor_completion_plan_remaining_loth_tranches": null,
+    "active_oor_completion_plan_next_loth_tranche": null,
+    "current_navigation_summary": "Current position (2026-10-01): all five required families are represented in the live app. Anglican BCP 1979 is the public-facing center; the Roman Breviary 1960/1962 is SHIPPED (all 8 hours, Roman general calendar, Latin and English, calendar years 2026 and 2027 precomputed from a pinned Divinum Officium engine) and reachable from the entry screen; Eastern Orthodox is the Russian/Slavic Byzantine Horologion; Oriental Orthodox is the Coptic Agpeya (the Ethiopian Sa'atat was removed 2026-08-18); Church of the East is East Syriac Hudra. The modern Roman LOTH lane was abandoned 2026-09-27. The Diocesan/Communion/Parish Cycle of Prayer tiers render in BCP Morning and Evening Prayer and the TEC diocese roster is fully ingested (92 files). Open depth work: Byzantine Menaion hymn-family corpus (source search done 2026-10-01; awaiting Josh's decision on sources), Anglican Synaxarium decision-file incorporation, and the gated whole-app JSON-to-database migration. Remaining Beta gate work is the per-family release QC phases (4-8).",
     "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
     "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
-    "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
+    "current_public_app_summary": "Public app: BCP Daily Office and Book of Needs hardened; profile is a standalone modal with diocese/parish picker and one-time onboarding prompt; Roman Breviary 1960/1962 live; Cycle of Prayer Communion/Diocesan/Parish tiers live. Entry/mobile stabilization closed through 1cd7c04 (earlier record) and later UI rounds recorded in documentation/project-history/VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md.",
     "latest_bible_corpus_checkpoint": "broader_canon_source_provenance_adjudication_2026_07_03",
     "latest_bible_corpus_checkpoint_commit": "2bd15ff",
     "current_bible_corpus_summary": "Broader canon source/provenance adjudication inspected 38 candidate files after Esdras active OT NRSV repair. The active OT Esdras source-matched NRSV gaps remain repaired, but the separate broader-canon candidate corpus is not trust-ready: 35 files are plain string-text candidates without concrete source pointers, 3 files are zero-row artifacts, and no candidate has explicit source URL, source snapshot, witness edition, or row-level provenance sufficient for trust. Next work is source witness acquisition, source-family/translation-lane classification, zero-row artifact disposition, and collation.",
@@ -712,7 +712,31 @@
         "recordPath": "documentation/ETHIOPIAN_SENKESSAR_DEEP_ASSEMBLY_PROVENANCE_AUDIT_BLOCKER.md",
         "reason": "Does not block current Catholic office completion work; active remediation begins after Catholic offices are completed."
       }
-    ]
+    ],
+    "roman_breviary_current_state": {
+      "status": "shipped_minimum_shippable_floor",
+      "date_reached": "2026-09-27",
+      "scope": "All 8 hours; Roman general calendar; Rubrics 1960/1962; Latin and English; calendar years 2026 and 2027 precomputed",
+      "source": "Divinum Officium, pinned commit 0ce8747d7dba3276fc05937635e02360b49a60a6, run offline as the rubrical oracle",
+      "data": "data/roman-breviary-1960-1962/{manifests,units}/{,en/}{2026,2027}.json",
+      "entry_route": "Catholic entry card -> latin-catholic -> roman-breviary-dev mode; data/tradition-availability.json latin-catholic.available = true",
+      "documentation": "documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md",
+      "known_limits": "Calendar years beyond 2027 require re-running the oracle pipeline; mode id strings still read roman-breviary-dev"
+    },
+    "cycle_of_prayer_current_state": {
+      "status": "roster_complete",
+      "date": "2026-09-30",
+      "files": 92,
+      "tiers_rendering": "Communion, Diocesan, Parish (BCP Morning and Evening Prayer, after A Prayer for Mission)",
+      "validator": "npm run audit:cycles-of-prayer",
+      "outstanding": "About 18 jurisdictions have no located source (tecDioceseRoster.noSourceFound in data/cycles-of-prayer/schema.json); rolling-window dioceses and every diocese 2027 cycle need periodic refresh",
+      "history": "documentation/project-history/VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md"
+    },
+    "menaion_hymn_corpus_state": {
+      "status": "source_search_done_awaiting_decision",
+      "date": "2026-10-01",
+      "finding": "No reachable, verifiably licensed English source for feast-proper hymnography (sessional hymns, praises, exapostilarion, canon troparia, aposticha). Orloff General Menaion (1899, public domain, via CCEL) supplies Commons only. See RESUME_PROJECT_NOTE.md section 7."
+    }
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -728,9 +752,9 @@
     "non_negotiables": [
       "Beta Release is not Byzantine-centered in public presentation.",
       "BCP / Anglican Daily Office is the public-facing focus.",
-      "Roman Catholic Divine Office / Liturgy of the Hours representation is a Beta Release blocker.",
+      "Roman Catholic representation (Roman Breviary 1960/1962) is a Beta Release requirement and is live.",
       "Russian / Slavic Byzantine Horologion is the first Eastern Orthodox recension.",
-      "Ethiopian / Tewahedo Sa'atat is the first Oriental Orthodox lane.",
+      "Coptic Agpeya is the first Oriental Orthodox lane (the Ethiopian Sa'atat was removed 2026-08-18; see documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md).",
       "East Syriac Hudra is the first Church of the East lane.",
       "Other traditions, jurisdictions, and profiles are later expansions, not first-release requirements.",
       "Mobile onboarding must not present the traditions as a smorgasbord of liturgical options.",
@@ -750,14 +774,14 @@
       "A baseline office is advertised as present but lacks enough structure or text to be liturgically honest.",
       "The Admin Dashboard misrepresents project state or release blockers.",
       "Ordinary user flow exposes development placeholders, undefined values, stale implementation language, or hidden silent fallbacks.",
-      "Roman Catholic Divine Office / Liturgy of the Hours baseline is absent."
+      "Roman Catholic representation (Roman Breviary 1960/1962) is absent or not rendering."
     ],
     "not_beta_blockers_if_honestly_deferred": [
       "Full Byzantine seasonal/festal/Menaion depth.",
       "Greek, Antiochian, or other non-Slavic Eastern Orthodox profiles.",
-      "Coptic Agpeya as a separate Oriental Orthodox lane, provided Ethiopian is stable as first OO representation.",
-      "Armenian, Syriac Orthodox, and other Oriental Orthodox additions beyond the Ethiopian first lane.",
-      "1960 Roman Breviary, Benedictine, monastic, or other Latin variants if the first Roman Catholic Divine Office baseline is present.",
+      "Ethiopian/Tewahedo, Armenian, Syriac Orthodox, and other Oriental Orthodox lanes beyond the Coptic Agpeya first lane.",
+      "Other Oriental Orthodox additions beyond the first lane.",
+      "Modern Liturgy of the Hours (abandoned 2026-09-27), Benedictine, monastic, other Latin variants, and Breviary calendar years beyond 2027.",
       "Full database/typed-element Phase 5 migration, provided release data remains honest and stable.",
       "Advanced cross-tradition search and comparison.",
       "Mobile-app packaging."
@@ -765,10 +789,10 @@
     "honesty_rules": [
       "Do not hide true corpus gaps as UX polish.",
       "Do not present one jurisdictional recension as the entire tradition family.",
-      "Do not conflate Ethiopian Sa'atat with Coptic Agpeya.",
+      "Do not present the Coptic Agpeya as the whole Oriental Orthodox family, and do not label it Ethiopian.",
       "Do not treat East Syriac Hudra as missing.",
-      "Do not call the Universal Office release-ready while Roman Catholic Divine Office representation is absent.",
-      "Do not claim Phase 5 typed architecture is complete until it is pressure-tested against Anglican, Roman Catholic, Byzantine, East Syriac, Ethiopian, and any distinct Coptic Agpeya lane pursued before that milestone."
+      "Do not call the Universal Office release-ready while Roman Catholic representation is absent.",
+      "Do not claim Phase 5 typed architecture is complete until it is pressure-tested against Anglican, Roman Catholic, Byzantine, East Syriac, Coptic, and any distinct Coptic Agpeya lane pursued before that milestone."
     ],
     "mobile_onboarding_doctrine": {
       "welcome_copy": "The Church's daily prayer, appointed for the hour. Begin where you pray, and let the office lead you.",
@@ -790,7 +814,7 @@
         ],
         "current_routes": {
           "Anglican": "TEC 1979 BCP Daily Office",
-          "Latin Catholic": "Liturgy of the Hours / Roman office baseline, subject to source-governance and runtime-delivery enablement"
+          "Latin Catholic": "Roman Breviary 1960/1962 (live)"
         }
       },
       "eastern_branch": {
@@ -803,7 +827,7 @@
         "order_note": "Listed in chronological order of differentiation so Byzantine/Eastern Orthodox does not become the implicit norm for all Eastern Christianity.",
         "current_routes": {
           "Church of the East": "East Syriac Hudra",
-          "Oriental Orthodox": "Ethiopian / Tewahedo Sa'atat",
+          "Oriental Orthodox": "Coptic Agpeya",
           "Eastern Orthodox": "Russian / Slavic Byzantine Horologion"
         }
       },
@@ -829,7 +853,7 @@
     "coverage_notice_doctrine": {
       "rule": "When a selected tradition-family has only partial current coverage, show a calm threshold information screen before routing to the available governed form.",
       "phrase": "This release begins with...",
-      "oriental_orthodox_notice": "This release currently begins with the Ethiopian tradition. The liturgies of the other Oriental Orthodox churches, including Coptic, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office.",
+      "oriental_orthodox_notice": "This release currently begins with the Coptic tradition (the Agpeya). The liturgies of the other Oriental Orthodox churches, including Ethiopian, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office.",
       "eastern_orthodox_notice": "This release currently begins with the Byzantine Horologion, with English-language coverage slanted toward Slavic usage. Future updates will broaden jurisdictional and local-use support, including Greek, Antiochian, OCA, ROCOR, and other received Orthodox usages where source-governed material is available.",
       "notification_signup": {
         "allowed": true,
@@ -866,16 +890,16 @@
     {
       "id": "roman_catholic",
       "family": "Roman Catholic",
-      "first_release_lane": "Divine Office / Liturgy of the Hours",
+      "first_release_lane": "Roman Breviary 1960/1962",
       "public_beta_role": "Required major-family representation",
-      "current_status": "private_current_control_corpus_buildout_active_oor_metadata_pilot_population_complete",
-      "beta_status": "release_blocker_private_control_corpus_in_progress_oor_metadata_pilot_population_complete",
-      "blocks_beta": true,
-      "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline remains a Beta Release blocker. The external Roman LOTH control corpus is being built first in JWJeffery/LOTH; a public Roman-family derivative lane will be built afterward using the source-governed corpus as structural and liturgical guide, subject to source-status/source-clearing.",
+      "current_status": "shipped_minimum_shippable_floor_live",
+      "beta_status": "present_requires_release_qc",
+      "blocks_beta": false,
+      "blocker_reason": null,
       "source_governance_required": true,
-      "corpus_repo": "JWJeffery/LOTH",
-      "corpus_repo_visibility": "private",
-      "corpus_repo_note": "external source-governed corpus/governance repository for Roman Liturgy of the Hours. The current working strategy is external Roman LOTH first, public Roman-family derivative second. JWJeffery/LOTH now contains source governance, source-status registry, office structure, resolver maps, Night Prayer weekly-cycle population, Grail 1963 psalter corpus resource, psalm-numbering registry, source supplement policy, and Universalis comparison tooling. external Roman LOTH corpus work may proceed while deployable-source selection remains unresolved. Official/current LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until a deployable corpus lane enables it. Office of Readings failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: controlled source-shape fixture coverage was deepened, contaminated conclusion slots were repaired, and the legacy DivineOffice-derived daily date-block population was retired from the active corpus. Broad resolved Office of Readings date-block snapshots are no longer the forward architecture. Office of Readings forward architecture plan closed in LOTH commit d9fdea1: the active OOR model is now formally cycle/proper/resolver, with 11 resolver layers, composition-map output, unitRefs-only slot resolution, no text-unit writes, and no broad daily date-block snapshots. Office of Readings post-architecture metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: metadata composition pilot, psalmody cycle-map skeleton, psalmody-to-composition binding, and biblical first-reading cycle-map skeleton are now recorded. The bundle remains non-materializing: refs/citationRefs only, no text-unit writes, and no broad daily date-block snapshots. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first-reading binding, metadata composition resolver, first-responsory skeleton/binding, and second-reading skeleton/binding are now active. The resolver emits complete ordered 11-slot composition maps for three pilot contexts while remaining non-materializing: unitRefs/citationRefs only, no text-unit writes, and no broad daily date-block snapshots. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second responsory, Te Deum rule, collect rule, hymn, and verse are now bound into the metadata composition pilot. The metadata resolver now has all 11 Office of Readings slots resolved by refs/rules or rule-not-applicable for the pilot contexts, while remaining non-materializing: no liturgical text, no Office text-unit writes, and no broad daily date-block snapshots. Office of Readings governed text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b: complete metadata pilot audit, stable ordinary text units, populated text-unit hydration, and Te Deum reusable unit population are now recorded. OOR has pivoted from metadata-only assembly into governed reusable text-unit population. Opening versicle, conclusion, and Te Deum are populated as reusable root units and hydrated where applicable; no daily date-block snapshots or broad OOR materializations are authorized. Office of Readings hymn/verse candidate text-unit bundle closed in LOTH commits 003478d, b448eb3, and 066d49f: text-population eligibility gate added, candidate hymn units populated, and candidate verse units populated. OOR now hydrates opening versicle, hymn, verse, and conclusion across pilot contexts, plus Te Deum where applicable. Hymn and verse texts are explicitly candidate public-domain/traditional-English lanes pending final LOTH alignment and are not asserted as current official LOTH appointments. Office of Readings collect/responsory candidate text-unit bundle closed in LOTH commits 7b96f24, 0a98778, 9b54a97, and 3ca5dbd: candidate collect units populated; remaining source-gated refs report added/refreshed; candidate first responsory units populated; candidate second responsory units populated. OOR now hydrates opening versicle, hymn, verse, first responsory, second responsory, collect, and conclusion across ordinary/Lenten pilot contexts, plus Te Deum in the solemnity context. Eligibility now records 8 populated slots and 3 source-gated slots: psalmody, first reading, and second reading remain gated. Office of Readings metadata pilot population completed in LOTH commits 96253d7, 794f624, and a4849c8: candidate first-reading units populated, candidate second-reading units populated, and candidate psalmody units populated. The OOR metadata pilot now has 11 populated slots and 0 source-gated slots. Hydration now reports 10 hydrated slots for ordinary/Lenten pilot contexts, with Te Deum rule-not-applicable, and 11 hydrated slots for the solemnity context. This completes the metadata pilot population only; it does not authorize broad daily date-block snapshots, runtime delivery, or full OOR cycle completion.",
+      "corpus_repo": "divinum-officium (in-repo mirror at data/roman-breviary-1960-1962/source, pinned 0ce8747d)",
+      "corpus_repo_visibility": "public_source_mirrored_in_repo",
+      "corpus_repo_note": "Roman Breviary 1960/1962 shipped 2026-09-27 (PRs #39/#40): all 8 hours, Latin and English, 2026-2027. The modern LOTH control-corpus lane (JWJeffery/LOTH) was ABANDONED 2026-09-27 by Josh's direct decision; its long history is retained in documentation/structure.hist1.json and project-history volumes, not here.",
       "external_source_inquiry": {
         "contact": "DivineOffice.org / Surgeworks",
         "date_sent": "2026-05-23",
@@ -1023,7 +1047,7 @@
         "Polyeleos / rank selection",
         "Distinct Psalms 134-135 Polyeleos corpus",
         "Seasonal / festal Orthros depth",
-        "Menaion hymn-family depth",
+        "Menaion hymn-family depth (source search done 2026-10-01; no free source for feast propers; Orloff 1899 Commons only)",
         "Annual Typikon collision policy",
         "Additional EO jurisdictional overlays"
       ],
@@ -1041,25 +1065,24 @@
     {
       "id": "oriental_orthodox",
       "family": "Oriental Orthodox",
-      "first_release_lane": "Ethiopian / Tewahedo Sa'atat",
+      "first_release_lane": "Coptic Agpeya",
       "public_beta_role": "Required major-family representation",
       "current_status": "present",
       "beta_status": "requires_refinement_audit",
       "blocks_beta": true,
-      "blocker_reason": "Ethiopian lane must be audited and stabilized enough to serve as honest first Oriental Orthodox representation.",
+      "blocker_reason": "Coptic Agpeya lane must receive release-visible QC to serve as honest first Oriental Orthodox representation.",
       "do_not_conflate": [
-        "Ethiopian Sa'atat is not Coptic Agpeya.",
-        "Coptic Agpeya is a separate later Oriental Orthodox lane unless explicitly pulled into Beta Release by governance decision."
+        "Coptic Agpeya is not the Ethiopian/Tewahedo Sa'atat; the Sa'atat was removed 2026-08-18 because no adequate free English source for the real Giyorgis Sa'atat was found."
       ],
       "later_expansions": [
-        "Coptic Agpeya",
+        "Ethiopian / Tewahedo Sa'atat (needs an adequate free English source)",
         "Armenian office traditions",
         "Syriac Orthodox office traditions",
         "Additional Oriental Orthodox calendars and synaxaria",
         "West Syriac / Malankara office traditions",
         "Eritrean office traditions"
       ],
-      "mobile_coverage_notice": "This release currently begins with the Ethiopian tradition. The liturgies of the other Oriental Orthodox churches, including Coptic, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office."
+      "mobile_coverage_notice": "This release currently begins with the Coptic tradition (the Agpeya). The liturgies of the other Oriental Orthodox churches, including Ethiopian, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office."
     },
     {
       "id": "church_of_the_east",
@@ -1106,12 +1129,12 @@
     },
     {
       "id": "phase_3",
-      "title": "Roman Catholic Divine Office private control corpus and public derivative baseline",
-      "status": "private_current_control_corpus_buildout_active",
+      "title": "Roman Catholic representation: Roman Breviary 1960/1962",
+      "status": "done",
       "blocks_beta": true,
-      "purpose": "Build the current Roman LOTH / Divine Office first as a external source-governed control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
-      "exit_gate": "external Roman LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or a deployable corpus lane enables the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population closed for current build scope. Office of Readings cycle/proper/resolver architecture (11 slots, 11 resolver layers, non-materializing) established in d9fdea1. Metadata pilot population complete; text-unit hydration advanced to candidate units. Active OOR path: composition-map/unitRefs/citationRefs only; no text-unit writes; no broad date-block snapshots. Full tranche history archived in documentation/structure.hist1.json → archived_loth_phase3_governance_history."
+      "purpose": "Provide an honest, public-renderable Roman Catholic office baseline. Delivered as the Roman Breviary 1960/1962 sourced from Divinum Officium; the modern LOTH control-corpus plan was abandoned 2026-09-27.",
+      "exit_gate": "Roman Breviary reachable from the main entry screen and rendering all 8 hours for 2026-2027. MET 2026-09-27; release-visible QC folds into phase_7.",
+      "governance_note": "Completed 2026-09-27 (PRs #39/#40). Prior private-LOTH-first strategy and its tranche history are superseded and archived; see documentation/structure.hist1.json and documentation/project-history/."
     },
     {
       "id": "phase_4",
@@ -1123,11 +1146,11 @@
     },
     {
       "id": "phase_5",
-      "title": "Oriental Orthodox Ethiopian release closeout",
+      "title": "Oriental Orthodox Coptic Agpeya release closeout",
       "status": "not_started",
       "blocks_beta": true,
-      "purpose": "Confirm Ethiopian Sa'atat is stable and honestly scoped as first Oriental Orthodox representation.",
-      "exit_gate": "Ethiopian lane passes release-visible QC and dashboard correctly distinguishes Ethiopian Sa'atat from future Coptic Agpeya."
+      "purpose": "Confirm the Coptic Agpeya lane is stable and honestly scoped as first Oriental Orthodox representation.",
+      "exit_gate": "Coptic lane passes release-visible QC and the dashboard correctly distinguishes it from a future Ethiopian lane."
     },
     {
       "id": "phase_6",
@@ -1467,8 +1490,8 @@
     {
       "id": "3.6",
       "phase_id": "phase_3",
-      "title": "external Roman LOTH core-office expansion and Office of Readings source-model correction",
-      "status": "in_progress",
+      "title": "[Superseded 2026-09-27] external Roman LOTH core-office expansion and Office of Readings source-model correction",
+      "status": "superseded",
       "tranche_size": "campaign",
       "repository": "JWJeffery/LOTH",
       "files": [
@@ -1486,7 +1509,7 @@
         "node scripts/audit-office-of-readings-text-population-eligibility.mjs",
         "node scripts/audit-office-of-readings-remaining-source-gated-refs.mjs"
       ],
-      "notes": "Office of Readings source-model failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa. The previous broad DivineOffice-derived daily date-block population model was retired from active corpus. The active forward path is controlled Universalis appointment/structure discovery plus local Grail psalm-body materialization, followed by cycle/proper/resolver architecture for reusable units. Broad resolved daily Office of Readings snapshots must not resume. LOTH commit d9fdea1 closed the Office of Readings cycle/proper/resolver architecture plan. This is a non-materializing architecture contract: 11 slots, 11 resolver layers, composition-map output, unitRefs-only resolution, no official text emission, no Office text-unit writes, and no broad daily date-block snapshots. Office of Readings post-architecture metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3. This bundle added a metadata composition pilot, a refs-only psalmody cycle-map skeleton, binding from psalmody appointment-map refs into the composition pilot, and a citation/ref-only biblical first-reading cycle-map skeleton. The bundle writes no liturgical text, no Office text units, and no broad daily date-block snapshots. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90. This bundle bound first_reading slots to biblical readingKey/citationRefs, added the metadata composition resolver, bound first_responsory slots to paired responsory refs, and bound second_reading slots to secondReadingKey/citation/source refs. The resolver now emits complete ordered 11-slot Office of Readings composition maps for the pilot contexts while preserving unresolved slots explicitly. No liturgical text, Office text units, or broad daily date-block snapshots are written. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2. This bundle bound second_responsory slots to paired second-reading refs, bound Te Deum by rule, bound collect by rule, and bound hymn/verse by metadata refs. The resolver now has all 11 pilot slots resolved or rule-not-applicable without emitting liturgical text or writing Office text units/date blocks. Office of Readings governed text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b. The complete metadata pilot audit passes with 3 resolutions, 11 slots each, 0 unresolved; opening versicle and conclusion are populated as reusable stable ordinary units; the populated text-unit hydrator now hydrates reusable units into OOR pilot output; and the Te Deum reusable unit is populated and hydrated where applicable. This does not authorize runtime delivery or daily date-block materialization. Office of Readings candidate hymn/verse population bundle closed in LOTH commits 003478d, b448eb3, and 066d49f. Eligibility now records 5 populated slots and 6 source-gated slots. Hydration now includes hymn and verse in all pilot contexts, with Te Deum additionally hydrated where applicable. Hymn and verse lanes are candidate public-domain/traditional-English/source-safe lanes pending final LOTH alignment, not official current appointment assertions. Office of Readings collect/responsory population bundle closed in LOTH commits 7b96f24, 0a98778, 9b54a97, and 3ca5dbd. Eligibility now records 8 populated slots and 3 source-gated slots. Hydration now includes collect, first responsory, and second responsory in all pilot contexts. The remaining source-gated slots are psalmody, first reading, and second reading. Office of Readings final metadata-pilot population bundle closed in LOTH commits 96253d7, 794f624, and a4849c8. Eligibility now records 11 populated slots and 0 source-gated slots. Hydration now includes first reading, second reading, and psalmody in all pilot contexts. Ordinary and Lenten pilot contexts hydrate 10 slots because Te Deum is rule-not-applicable; solemnity hydrates all 11 slots. This completes OOR metadata pilot population only.",
+      "notes": "SUPERSEDED 2026-09-27: modern Roman Liturgy of the Hours lane (roman_loth, JWJeffery/LOTH) abandoned by Josh's direct decision; Roman Breviary 1960/1962 (roman_breviary) is the sole Roman Catholic profile. Prior notes archived.",
       "active_subtarget": "office_of_readings_metadata_pilot_population_complete_recorded",
       "completed_source_plan_commit": "a4ee4ce",
       "evidence": [
@@ -1945,8 +1968,8 @@
     {
       "id": "3.7",
       "phase_id": "phase_3",
-      "title": "Public Roman-family derivative source selection",
-      "status": "not_started",
+      "title": "Public Roman-family source selection (resolved: Roman Breviary 1960/1962 via Divinum Officium)",
+      "status": "done",
       "tranche_size": "governance",
       "repository": "JWJeffery/PrayerAppNew",
       "files": [
@@ -1964,8 +1987,8 @@
     {
       "id": "3.8",
       "phase_id": "phase_3",
-      "title": "Roman Catholic baseline release classification",
-      "status": "not_started",
+      "title": "Roman Catholic baseline release classification (resolved: Roman Breviary live)",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "project_roadmap.json",
@@ -2023,24 +2046,21 @@
     {
       "id": "5.1",
       "phase_id": "phase_5",
-      "title": "Ethiopian release-lane audit",
+      "title": "Coptic Agpeya release-lane audit",
       "status": "not_started",
       "tranche_size": "standard",
       "files": [
-        "components/ethiopian.json",
-        "components/traditions/ethiopian/rubrics.json",
-        "js/calendar-ethiopian.js",
+        "components/coptic.json",
+        "components/traditions/coptic/rubrics.json",
         "js/office-ui.js",
-        "documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md",
         "project_roadmap.json"
       ],
-      "purpose": "Audit Ethiopian Sa'atat as first Oriental Orthodox release lane.",
+      "purpose": "Audit the Coptic Agpeya as first Oriental Orthodox release lane.",
       "qc": [
-        "Nine watches reachable",
+        "All Agpeya hours reachable",
         "Date/time override works",
         "Full/abbreviated mode works",
-        "Weddase Maryam toggle works",
-        "Senkessar does not break public flow"
+        "Public flow shows no placeholder or deferred-rubric leakage"
       ]
     },
     {
@@ -2321,7 +2341,7 @@
     },
     {
       "id": "roman_loth_oor_completion_plan_2026_06_01",
-      "status": "active_controlling_plan",
+      "status": "abandoned_2026-09-27",
       "date": "2026-06-01",
       "repository": "PrayerAppNew",
       "planId": "roman_loth_office_of_readings_completion_plan_2026_06_01",
@@ -3016,19 +3036,12 @@
     }
   },
   "current_navigation_state": {
-    "date": "2026-06-02",
-    "primaryImmediateWork": "Handle Psalms as consolidated-psalter lane or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; Rotherham NT blocker books imported using direct verse objects plus translation overlays for mismatch chapters; empty Rotherham source rows governed as omissions.",
-    "resolverState": "translation-compatible with scalar/object verse text and Rotherham NT translation overlays",
-    "activeSideProject": "Rotherham imported for ordinary source-scope books except Psalms consolidated-psalter lane.",
-    "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
-    "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the source-governed Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication.",
-    "roman_loth_office_of_readings": {
-      "current_position": "C05 temporale psalmody appointment map closed",
-      "last_recorded_loth_commit": "8a241bd",
-      "next_destination": "OOR-C06-office-of-readings-next-real-context-slot-family",
-      "decision": "C05 closure recorded as milestone exception before C06."
-    }
+    "date": "2026-10-01",
+    "primaryImmediateWork": "Per-family release QC (phases 4-8); Josh decision on Menaion hymn sources; Anglican Synaxarium decision-file incorporation",
+    "roman_catholic": "Roman Breviary 1960/1962 shipped; modern LOTH lane abandoned 2026-09-27",
+    "cycle_of_prayer": "Roster complete; Communion/Diocesan/Parish tiers live",
+    "bibleCorpusState": "Unchanged from the 2026-06/07 records elsewhere in this file; the Bible-corpus translation audit was declared DONE by Josh 2026-09-28",
+    "pointer": "RESUME_PROJECT_NOTE.md section 7 is the live open-items list"
   },
   "governance": {
     "bible_book_multiversion_v1": {
@@ -3483,10 +3496,10 @@
     "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
     "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
-    "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation.",
+    "next_navigation_summary": "SUPERSEDED 2026-09-27: modern Roman Liturgy of the Hours lane (roman_loth, JWJeffery/LOTH) abandoned by Josh's direct decision; Roman Breviary 1960/1962 (roman_breviary) is the sole Roman Catholic profile.",
     "last_recorded_loth_commit": "8a241bd",
     "last_recorded_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-closure-reconciliation",
-    "next_planned_loth_tranche": "OOR-C06-office-of-readings-next-real-context-slot-family",
+    "next_planned_loth_tranche": null,
     "office_of_readings_temporale_psalmody_c05_status": {
       "status": "closed",
       "source_backed_mapping_count": 121,
@@ -3494,7 +3507,8 @@
       "named_remaining_key_count": 0,
       "failed_source_lead_count": 21
     },
-    "navigation_rule": "Use live LOTH gap inventory and roadmap before beginning C06."
+    "navigation_rule": "Do not resume. Roman Catholic work now lives in the Roman Breviary 1960/1962 lane (current_repo_state.roman_breviary_current_state).",
+    "lane_status": "ABANDONED 2026-09-27 -- superseded by roman_breviary; retained as history only"
   },
   "lothIntegrationMilestones": [
     {
