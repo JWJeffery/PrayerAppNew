@@ -287,15 +287,30 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
    text into this app's data shape -- read the actual license before ingesting anything.
 3. **Great Feast propers stay deferred** (no permission requests to be sent); keep the honest
    "not yet text-backed" rubrics.
-4. **AGES license still unread** -- GitHub is blocked from the sandbox. Josh was told how to check it
-   himself: GitHub org `AGES-Initiatives`, repos `ages-alwb-templates` and related, open the `LICENSE`
-   file / README; also the "Terms of use"/copyright footer at dcs.goarch.org. Paste the license text
-   back to a session before any AGES ingestion.
-**Next action:** build the Commons layer from Orloff (probe CCEL chapter structure first), then, only
-after the AGES license is read and found compatible, evaluate AGES for the remaining gaps.
+4. **AGES LICENSE READ, 2026-10-01 (Josh pasted it): "(c) Fr. Seraphim Dedes ... Creative Commons
+   Attribution-NonCommercial-ShareAlike 4.0 International" (CC BY-NC-SA 4.0).** Verdict: USABLE.
+   Adaptation/restructuring is expressly allowed (`Adapted Material`, s.2(a)(1)(B)); there is NO
+   no-derivatives clause (the earlier "believed ND" memory was wrong). Conditions that bind this
+   project for any AGES-derived data: (a) **Attribution** -- credit Fr. Seraphim Dedes, keep the
+   copyright notice, link the license, and mark that the text was modified (s.3(a)); (b) **NonCommercial**
+   -- the app must stay free/non-commercial; (c) **ShareAlike** -- the AGES-derived DATA files must be
+   published under CC BY-NC-SA 4.0 (or a compatible license) with a link to it, and no extra
+   restrictions or technical protection measures may be put on them (s.3(b), s.2(a)(5)(C)); (d) no
+   implying AGES/Dedes endorses the app (s.2(a)(7)). Plan: keep AGES-derived text in its own
+   directory with its own LICENSE + ATTRIBUTION file, per-component `source` provenance, and an
+   in-app credit line -- do not blend it into files that carry other terms. The earlier 2026-09-28
+   "no copyrighted material" rule is amended by Josh's 2026-10-01 decision to allow free-for-non-
+   commercial licenses. **Still not obtained: the texts themselves** -- GitHub is 403 from the
+   sandbox, so Josh must supply them (e.g. download the AGES text-library repo as a ZIP and put it in
+   his Drive folder or commit it under a scratch path). Also a CONTENT caveat, not a license one: AGES
+   is the Greek Archdiocese's usage, so Greek-lane feast hymnography will not always match Russian/
+   Slavic Menaion usage -- disclose that wherever it is used, and prefer Orloff (Slavonic-derived)
+   wherever it applies.
+**Next action:** build the Commons layer from Orloff (probe CCEL chapter structure first), then use AGES
+(license cleared above, once Josh supplies the texts) for the remaining gaps.
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license
-found, so unusable until clarified) -- AGES/GOARCH DCS (license unread), Ponomar project texts
+found, so unusable until clarified) -- Ponomar project texts
 (site says free/credit/share-alike but hymn-text provenance unverified), MCI Online Menaion (no
 license shown, mixed translations), Anastasis/Lash texts (repo says permission still being sought),
 Orthodox Wiki (CC BY-SA, but hymn texts are mostly quoted from copyrighted books).
