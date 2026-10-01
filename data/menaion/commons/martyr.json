@@ -1617,7 +1617,8 @@
     "xvii-p88",
     "xvii-p89",
     "xvii-p90",
-    "xvii-p91"
+    "xvii-p91",
+    "xvii-p92"
    ],
    "lines": [
     "(The Canon, Tone 5, Ode 1. The Heirmos :)",
@@ -1685,20 +1686,20 @@
     "(Ode 9. The Heirmos:)",
     "Isaiah, exult! The Virgin had in the belly and bare a Son, Emmanuel, both God and man, Orient is His name: Him magnifying, we glorify the Virgin.",
     "O come ye faithful gathered together, let us to-day celebrate the sacred solemnity of the most blessed and sacred martyr of Christ {NAME}; for in his martyrdom he hath by divine power, vanquished all the multitude of enemies.",
-    "Adorned wast thou, O glorious one, with the divine qualities of martyrdom and on thy blood as in a chariot of fire hast thou joyfully ascended and reached the heavens to behold the ineffable goodness of our Saviour. A select warrior of Christ the God and great-sufferer hast thou appeared; wherefore now dost thou dwell in the Kingdom on high, being gloriously adorned with the crown of a victor, O all-praised martyr."
+    "Adorned wast thou, O glorious one, with the divine qualities of martyrdom and on thy blood as in a chariot of fire hast thou joyfully ascended and reached the heavens to behold the ineffable goodness of our Saviour. A select warrior of Christ the God and great-sufferer hast thou appeared; wherefore now dost thou dwell in the Kingdom on high, being gloriously adorned with the crown of a victor, O all-praised martyr.",
+    "(The Theotokion :)",
+    "Having given birth unto the enlightenment of those in darkness, even Christ, do thou, O all-holy one, illumine my blinded soul and grant that I may proceed along the paths that lead unto the life, O instructress of all hymning thee."
    ]
   },
   {
    "kind": "exapostilarion",
-   "header": "The Theotokion :[The Photagogicon:",
+   "header": "The Photagogicon:",
    "ids": [
     "xvii-p92",
     "xvii-p93",
     "xvii-p94"
    ],
    "lines": [
-    "(The Theotokion :)",
-    "Having given birth unto the enlightenment of those in darkness, even Christ, do thou, O all-holy one, illumine my blinded soul and grant that I may proceed along the paths that lead unto the life, O instructress of all hymning thee.",
     "(The Photagogicon:)",
     "As a light-bearing sun with wondrous rays dost thou instruct all creation, O most glorious martyr {NAME} wherefore celebrating thy memory we entreat Him Who rose from the grave to deliver all from dangers.",
     "(The Theotokion:)",

@@ -1444,11 +1444,7 @@
     "v-p14",
     "v-p15",
     "v-p16",
-    "v-p17",
-    "v-p18",
-    "v-p19",
-    "v-p20",
-    "v-p21"
+    "v-p17"
    ],
    "lines": [
     "(For Versicles, the Stichera, Tone 3.)",
@@ -1466,7 +1462,19 @@
     "((name of the event),)",
     "O all-holy and pure Virgin, is glorified both by angels in the heavens and by the race of man on earth, for thou wast the Mother of the Maker of all, Christ the God. Him to entreat for us do notcease, pray we, that have in thee, next to God, placed our trust, O Theotokos, most highly praised and innocent of marital intercourse.",
     "(Glory...Both now...Tone 2.)",
-    "Having purged our thoughts and minds, we, together with angels, joyfully celebrate the Virgin -- the Bride of the King of all, Christ our God, beginning with the David's hymn and saying: Arise, O Lord, in Thy repose, Thou and the ark of Thy sanctuary. As a beautiful chamber hast Thou adorned her and numbered her unto Thy city, O Master, to rear and to shelter from the inimical pagans, by the mighty power, through her entreaties.",
+    "Having purged our thoughts and minds, we, together with angels, joyfully celebrate the Virgin -- the Bride of the King of all, Christ our God, beginning with the David's hymn and saying: Arise, O Lord, in Thy repose, Thou and the ark of Thy sanctuary. As a beautiful chamber hast Thou adorned her and numbered her unto Thy city, O Master, to rear and to shelter from the inimical pagans, by the mighty power, through her entreaties."
+   ]
+  },
+  {
+   "kind": "vespers_troparion",
+   "header": "The Troparion of the Festival from the Typicon. If there be no Typicon, say the following Troparion, Tone 4.",
+   "ids": [
+    "v-p18",
+    "v-p19",
+    "v-p20",
+    "v-p21"
+   ],
+   "lines": [
     "(The Troparion of the Festival from the Typicon. If there be no Typicon, say the following Troparion, Tone 4.)",
     "To the Theotokos let us, sinners and humbled, now flee and in penitence fall down before her calling out of the depth of our souls: O Sovereign Lady, help us taking pity on us, do hasten to our assistance as we are perishing from the multitude of our transgressions; neither turn thy servants empty away, for thou art the only hope that we have.",
     "(Glory...Both now...)",
@@ -1510,24 +1518,25 @@
    "kind": "polyeleos",
    "header": "Glory...Both now...the same. After Praise ye the name of the Lord...the Refrain",
    "ids": [
-    "v-p27"
+    "v-p27",
+    "v-p28"
    ],
    "lines": [
-    "(Glory...Both now...the same. After Praise ye the name of the Lord...the Refrain)"
+    "(Glory...Both now...the same. After Praise ye the name of the Lord...the Refrain)",
+    "Let us bring unto the Theotokos every spiritual hymn.",
+    "(The selected Psalm:)",
+    "Remember David, O Lord, and all his affliction. ..."
    ]
   },
   {
    "kind": "sessional_3",
-   "header": "The selected Psalm:After the Polyeleon, the Cathisma, Tone 1. Similar to: The angelic hosts were upon Thy tomb-stone...",
+   "header": "Cathisma, Tone 1. Similar to: The angelic hosts were upon Thy tomb-stone...",
    "ids": [
     "v-p28",
     "v-p29"
    ],
    "lines": [
-    "Let us bring unto the Theotokos every spiritual hymn.",
-    "(The selected Psalm:)",
-    "Remember David, O Lord, and all his affliction. ...",
-    "(After the Polyeleon, the Cathisma, Tone 1. Similar to: The angelic hosts were upon Thy tomb-stone...)",
+    "(The Cathisma, Tone 1. Similar to: The angelic hosts were upon Thy tomb-stone...)",
     "The ear of thy virginal womb proved to be beautiful, for thou hast given birth unto the Life of the world; wherefore the heavenly powers vociferate unto thee, O Theotokos, praising thy venerated festival, O most pure one. Glory unto thy",
     "((name of the event);)",
     "glory to thy virginity, O Mother, that knewest not a man.",

@@ -1607,7 +1607,8 @@
     "xxviii-p78",
     "xxviii-p79",
     "xxviii-p80",
-    "xxviii-p81"
+    "xxviii-p81",
+    "xxviii-p82"
    ],
    "lines": [
     "(The Canon, Tone 6, Ode 1. The Heirmos:)",
@@ -1673,20 +1674,20 @@
     "It is not possible for man to behold God on Whom the angelic orders dare not cast a glance; but through thee, O all-pure one, was seen of man the Incarnate Word; Him magnifying, with heavenly hosts we call thee blessed.",
     "As light, as the moon and the great sun, as lightning hast thou shone forth unto the church of Christ, and hast illumined the thoughts of the faithful; having found thine abode in the never-fading light, thou dost sing the trisagion hymn unto the Uncreated Trinity.",
     "The earth hath been enriched with thy holy tomb and with thy sacred body, O all-praised {NAME}, and the spirits of the righteous began to exult when the angels have taken up thy spirit, O blissful one; together with them do remember us that hymn thee.",
-    "Thou wast, O {NAME}, temple of the Holy Spirit and a river full of living water, an immoveable foundation of the church, standard of orthodoxy, stream everflowing, wonder-worthy source of the divine repentance."
+    "Thou wast, O {NAME}, temple of the Holy Spirit and a river full of living water, an immoveable foundation of the church, standard of orthodoxy, stream everflowing, wonder-worthy source of the divine repentance.",
+    "(The Theotokion:)",
+    "As heavenly drop hath the rain descended into thy womb, O Virgin, and having dried up the streams of flattery, made incorruption and deliverance to flow unto all men, through thee, O full of God's grace."
    ]
   },
   {
    "kind": "exapostilarion",
-   "header": "The Theotokion:[The Photagogicon:",
+   "header": "The Photagogicon:",
    "ids": [
     "xxviii-p82",
     "xxviii-p83",
     "xxviii-p84"
    ],
    "lines": [
-    "(The Theotokion:)",
-    "As heavenly drop hath the rain descended into thy womb, O Virgin, and having dried up the streams of flattery, made incorruption and deliverance to flow unto all men, through thee, O full of God's grace.",
     "(The Photagogicon:)",
     "First well tried in suffering, having secondly accomplished thy divine course in asceticism, thou hast ascended into heaven and dost stand before Christ, O holy father {NAME}. Do fervently supplicate for us hymning thee.",
     "(The Theotokion:)",

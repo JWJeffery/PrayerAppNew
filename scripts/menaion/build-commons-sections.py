@@ -14,17 +14,17 @@ NAME_RE = re.compile(r'\[?\(\s*mentioned by name\s*\)', re.I)
 
 # (kind, regex tested against a paragraph's concatenated rubric text), in priority order
 STARTS = [
-  ('vespers_stichera',  re.compile(r'^\s*At the Vespers,.*Stichera', re.I)),
-  ('vespers_aposticha', re.compile(r'(For|With)( the)? Versicles?,? the Stichera', re.I)),
-  ('vespers_troparion', re.compile(r'The Troparion from the Typicon', re.I)),
-  ('sessional_1',       re.compile(r'After the 1st Stichologia', re.I)),
+  ('vespers_stichera',  re.compile(r'^\s*At the Vespers,.*Sticher', re.I)),
+  ('vespers_aposticha', re.compile(r'(For|With)( the)? Versicles?,? the (Idiomelic )?Sticher', re.I)),
+  ('vespers_troparion', re.compile(r'The Troparion (from|of the Festival from) the Typ[a-z]{2,3}on', re.I)),
+  ('sessional_1',       re.compile(r'After the (1st|first) Stichologia', re.I)),
   ('sessional_2',       re.compile(r'After the (2nd|second) Stichologia', re.I)),
   ('sessional_3',       re.compile(r'After the Polyeleon,? the Cathisma', re.I)),
   ('polyeleos',         re.compile(r'After Praise ye the name of the Lord', re.I)),
   ('gospel_gradual',    re.compile(r'^\s*The Graduals', re.I)),
   ('canon',             re.compile(r'^\s*The Canon[,.]', re.I)),
   ('exapostilarion',    re.compile(r'Photagogicon', re.I)),
-  ('praises',           re.compile(r'^\s*With the Lauds,? the (Idiomelic )?Stichera', re.I)),
+  ('praises',           re.compile(r'(With|At) the Lauds[\s.,]*the (Idiomelic )?Stichera', re.I)),
 ]
 
 def rubric_text(p):
@@ -68,8 +68,23 @@ def render(p):
     flush()
     return lines
 
+def split_paragraphs(paras):
+    """Split a paragraph where a LATER rubric segment starts a new section."""
+    out = []
+    for p in paras:
+        segs = p['segments']
+        cut = [0]
+        for k, s in enumerate(segs):
+            if k > 0 and s.get('rubric') and any(rx.search(s['text']) for _, rx in STARTS):
+                cut.append(k)
+        cut.append(len(segs))
+        for a, b in zip(cut, cut[1:]):
+            q = dict(p); q['segments'] = segs[a:b]
+            out.append(q)
+    return out
+
 def build(doc):
-    paras = doc['paragraphs']
+    paras = split_paragraphs(doc['paragraphs'])
     sections, cur = [], None
     for p in paras:
         text = ''.join(s['text'] for s in p['segments'])

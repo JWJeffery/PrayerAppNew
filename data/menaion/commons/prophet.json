@@ -1451,13 +1451,7 @@
     "x-p19",
     "x-p20",
     "x-p21",
-    "x-p22",
-    "x-p23",
-    "x-p24",
-    "x-p25",
-    "x-p26",
-    "x-p27",
-    "x-p28"
+    "x-p22"
    ],
    "lines": [
     "(For Versicles the Stichera, Tone 2. Similar to:)",
@@ -1474,11 +1468,33 @@
     "(If it be not a Feast, say this Theotokion :)",
     "The joy of the heavenly orders and on earth the strong protection of men, do save, O all pure Virgin, us who have recourse unto thee, for after God in thee we have put our trust.",
     "(The Stavro-theotokion)",
-    "A sword did pierce, O my Son, -- said the Virgin, seeing Thee hanging on the tree, -- my heart is being pierced, O Master, as Simeon hath of old foretold; but rise and glorify, O Immortal One, Thy Mother and servant, I entreat Thee.",
+    "A sword did pierce, O my Son, -- said the Virgin, seeing Thee hanging on the tree, -- my heart is being pierced, O Master, as Simeon hath of old foretold; but rise and glorify, O Immortal One, Thy Mother and servant, I entreat Thee."
+   ]
+  },
+  {
+   "kind": "vespers_troparion",
+   "header": "The Troparion from the Typikon; but if there be no Typikon, say the following Troparion, Tone 2 :",
+   "ids": [
+    "x-p23",
+    "x-p24",
+    "x-p25"
+   ],
+   "lines": [
     "(The Troparion from the Typikon; but if there be no Typikon, say the following Troparion, Tone 2 :)",
     "Of Thy prophet {NAME}, O Lord, the memory now celebrating, through him we supplicate Thee: Save our souls.",
-    "(Glory ...Both now ...the Theotokion, according to the Tone of the Troparion.)",
-    "(At the Matins, for God is the Lord, the same Troparion. After the first Stichologia the Cathisma, Tone 3. Similar to:)",
+    "(Glory ...Both now ...the Theotokion, according to the Tone of the Troparion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 3. Similar to:",
+   "ids": [
+    "x-p26",
+    "x-p27",
+    "x-p28"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 3. Similar to:)",
     "Unto the beauty of virginity...",
     "The incarnation of the Word hast thou announced beforehand, being enlightened by the Divine Spirit, O great one among the divine prophets, God-inspired {NAME}; wherefore we glorify thee as a prophet and solemnize to-day thy memory, harmoniously vociferating unto thee, O wise one : Entreat Christ to save our souls.",
     "(Glory ...Both now...the Theotokion:)",
@@ -1507,27 +1523,30 @@
    "header": "After Praise ye the name of the Lord, the Refrain :",
    "ids": [
     "x-p32",
-    "x-p33"
+    "x-p33",
+    "x-p34"
    ],
    "lines": [
     "(After Praise ye the name of the Lord, the Refrain :)",
-    "We magnify thee, O prophet of God {NAME}, and honour thy holy memory, for thou dost entreat for us Christ our God."
+    "We magnify thee, O prophet of God {NAME}, and honour thy holy memory, for thou dost entreat for us Christ our God.",
+    "(The selected Psalm:)",
+    "Blessed is the man that feareth the Lord..."
    ]
   },
   {
    "kind": "sessional_3",
-   "header": "The selected Psalm:After the Polyeleon the Cathisma, Tone 6. Similar to:",
+   "header": "Cathisma, Tone 6. Similar to:",
    "ids": [
     "x-p34",
-    "x-p35"
+    "x-p35",
+    "x-p36"
    ],
    "lines": [
-    "(The selected Psalm:)",
-    "Blessed is the man that feareth the Lord...",
-    "(After the Polyeleon the Cathisma, Tone 6. Similar to:)",
+    "(The Cathisma, Tone 6. Similar to:)",
     "The gate of commiseration...",
     "Having cleared thy mind O all-wise one from filth, thouhast made it into a divine mirror, receptive of the rays of the Divine spirit, and now art thou joyfully gone unto the source of illumination, O prophet {NAME}.",
-    "(Twice. Glory...Both now ...the Theotokion:)"
+    "(Twice. Glory...Both now ...the Theotokion:)",
+    "The Son and the Word of God, that was before the ages born of the Father without a mother, hast thou at the end of days brought forth incarnate of thy pure blood without a husband, O God's parent; Him entreat that unto us may be granted the remission of sins before the end."
    ]
   },
   {
@@ -1539,7 +1558,6 @@
     "x-p38"
    ],
    "lines": [
-    "The Son and the Word of God, that was before the ages born of the Father without a mother, hast thou at the end of days brought forth incarnate of thy pure blood without a husband, O God's parent; Him entreat that unto us may be granted the remission of sins before the end.",
     "(The Graduals, 1st Antiphon, Tone 4.)",
     "(The Prokeimenon:)",
     "Thou art a priest for ever after the order of Melchisedek.",

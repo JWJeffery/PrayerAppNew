@@ -31,3 +31,17 @@ Moved out of RESUME_PROJECT_NOTE.md on 2026-10-01 (closed work). Source: Orloff,
   (2) Orloff's alternate-branch rubrics ("If there be a Festival...") are shown as printed, not resolved;
   (3) unmapped rank-3 entries above could be mapped with Josh's judgment; (4) AGES for saint-specific propers.
 
+
+
+## Update 2026-10-01 (later): mapping widened, section detection fixed
+- Mapping now 60 rank-3 entries (was 47): added Synaxes of the 70 and the 12 Apostles, Gregory of Nyssa + Dometian,
+  Translation of Ignatius, Haralambos, Innocent of Irkutsk, the Forty and the Twenty Thousand Martyrs, Eustathios
+  and family, Clement of Rome, Ignatius the God-bearer, John of Damascus, Daniel and the Three Youths.
+- Still unmapped, with reasons: Equal-to-the-Apostles saints (Cyril, Cyril & Methodius, Vladimir, Mary Magdalene,
+  Thekla, Nina) -- Orloff has no such Common; Nicaea Fathers + Nina; feasts with their own propers (Chains of Peter,
+  Procession of the Cross/Maccabees, Mandylion, Conception, Leavetaking, Repose of Anna); Royal Martyrs, Holy Innocents,
+  John of Kronstadt; Gabriel / Michael-at-Chonae (Orloff's Angels chapter names Michael in the text); Robe/Belt of the
+  Theotokos (Theotokos chapter has an unfilled "((name of the event))" placeholder).
+- `build-commons-sections.py` fixed: sections now also start at a rubric in the MIDDLE of a paragraph; patterns accept
+  Typicon/Typikon, 1st/first, Sticheron/Stichera/Idiomelic, "Lauds ... the". A boundary check (no other section's
+  rubric inside a section) passes for every mapped common. 2026 sweep: 43 Orthros + 39 Vespers days filled, 0 errors.

@@ -27,7 +27,9 @@ const MenaionCommons = (() => {
         'apostle': 'an Apostle', 'apostles-many': 'Several Apostles', 'hierarch': 'a Hierarch',
         'confessor': 'a Hierarch-Confessor', 'hieromartyr': 'a Hieromartyr', 'martyr': 'a Martyr',
         'female-martyr': 'a Female Martyr', 'monk': 'a Monk', 'nun': 'a Nun',
-        'unmercenaries-wonderworkers': 'the Unmercenaries and Wonder-workers'
+        'unmercenaries-wonderworkers': 'the Unmercenaries and Wonder-workers',
+        'hierarchs-many': 'Several Hierarchs', 'martyrs-many': 'Several Martyrs', 'prophet': 'a Prophet',
+        'angels': 'the Holy Angels', 'theotokos': 'the Festivals of the Theotokos'
     };
 
     // engine slot key -> section kind, per office
@@ -91,7 +93,7 @@ const MenaionCommons = (() => {
         const baseLabel = (original && original.label ? String(original.label).split(' — ')[0] : slotKey);
         const body = _render(section.lines, entry.invocation);
         const note = '(Text: the Common of ' + commonLabel + ', Orloff, The General Menaion, London 1899 — ' +
-                     'Slavonic usage. The proper hymns of ' + entry.invocation + ' themselves, where a service book ' +
+                     'Slavonic usage. The proper hymns of ' + (entry.subject || entry.invocation) + ' themselves, where a service book ' +
                      'has them, are not yet in this corpus.)';
         return {
             type:       'stichera',

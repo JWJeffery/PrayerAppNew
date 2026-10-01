@@ -1422,6 +1422,80 @@
  ],
  "sections": [
   {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord, I have cried, the Sticheron, Tone 1.",
+   "ids": [
+    "xix-p1",
+    "xix-p2",
+    "xix-p3",
+    "xix-p4",
+    "xix-p5",
+    "xix-p6",
+    "xix-p7",
+    "xix-p8",
+    "xix-p9",
+    "xix-p10",
+    "xix-p11",
+    "xix-p12",
+    "xix-p13",
+    "xix-p14",
+    "xix-p15"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord, I have cried, the Sticheron, Tone 1.)",
+    "(Similar to:)",
+    "All-laudable martyrs...",
+    "O God-wise, blissful {NAME}, with the purple-dye of thy blood, thou hast brightened thy sacred and divine raiment, for thou hast piously gone from strength to strength and from glory to glory; do now supplicate that peace and great mercy may be granted to our souls.",
+    "Offering first unto God the bloodless sacrifice, as a priest truly lawful, afterwards, as an entire and acceptable sacrifice, hast thou, O God-spoken and all-honoured one, offered thyself in thy blood, as a most true martyr, unto Christ; Him entreat for those that hymn thee.",
+    "A whole troop of martyrs hast thou, O father, brought to Christ by thy precepts and teaching, not only instructing and teaching in words, but offering manifestly thyself as an example, O God-wise one; pray together with them that peace and great mercy may be granted to our souls.",
+    "(Glory...Both now...the Theotokion :)",
+    "Being the sport of the abyss of transgressions and having run up unto the calm haven of thy supplication, I call out unto thee, O most pure Theotokos: Save me by extending thy sovereign right hand unto thy servant, O most spotless one.",
+    "(The Stavro-theotokion:)",
+    "Standing at the cross of thy Son and God and considering His long suffering, thou, O pure Mother, thus spakest in tears: Woe unto me, O my sweetest Child! Why dost Thou unjustly suffer this, O Word of God, that Thou savest mankind?",
+    "(If Idiomelion be appointed, Glory, Tone 6.)",
+    "Most lawful priest didst thou, O blissful {NAME}, remain unto thy very end, for performing the divine and ineffable mysteries, thou hast shed thine own blood for Christ the God and offered thyself as a sacrifice well acceptableto Him; wherefore having boldness before Christ, do assiduously supplicate for those who in faith and with love celebrate thy most honoured memory and who honour it, that they may be saved from attacks, all dangers and calamities.",
+    "(Both now...the Theotokion:)",
+    "The God incarnate of thee we have come to know, O Theotokos---Virgin, entreat Him for the salvation of our souls.",
+    "(The Stavro-theotokion:)",
+    "Beholding Thee, O Christ, crucified, she that bare Thee vociferated: What a strange mystery I see, O my Son! How dost die, being in the flesh hung on the tree, Thou -- the Giver of life.",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of)",
+    "(the resurrection:)",
+    "Who would not bless thee...",
+    "(The Entrance. The Prokeimenon of the day. The three Readings)",
+    "(of Hierarchs (see Appendix).)"
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "With the Versicles, the Idiomelic Stichera, Tone 6 .",
+   "ids": [
+    "xix-p16",
+    "xix-p17",
+    "xix-p18",
+    "xix-p19",
+    "xix-p20",
+    "xix-p21",
+    "xix-p22",
+    "xix-p23",
+    "xix-p24",
+    "xix-p25"
+   ],
+   "lines": [
+    "(With the Versicles, the Idiomelic Stichera, Tone 6 .)",
+    "Having steeped thy sacred vestment in blood, thou hast, O glorious {NAME}, entered into the Holy of Holies, being thyself holy, and manifestly art in continuous enjoyment, being adorned with deification, shining in thy martyrdom and taking part in a communion purer than that of angels; wherefore we honour thee and lovingly celebrate thy most sacred festival, O worthy of bliss.",
+    "(The Versicle: The righteous shall flourish like the palm-tree; he shall grow like a cedar in Lebanon.)",
+    "Bound with irons, thou hast trodden, without stumbling, thy path, O holy one, which leadeth unto the heavenly city, being trimmed with the precious wounds as with ornaments, O all-wise {NAME}; therein having entered as the truest vanquisher and invincible martyr and most sacred minister, thou dost clearly sing with the angels the divine hymnology: Holy, Holy, Holy art Thou, O Trinity Consubstantial.",
+    "(The Versicle: Those that be planted in the house of the Lord, shall flourish in the courts of our God.)",
+    "Thy sacred deeds as an ascending gradual hath acquired the church which thou, O hieromartyr {NAME}, dost preserve unshaken and unassailable for the mighty wolves, and which proclaimeth thy virtues and magnifieth thy sufferings, lawfully endured by thee for Christ's sake, O blissful one.",
+    "(Glory...Tone 4.)",
+    "Into the heavenly church hast thou as a holy one entered, being besprinkled with blood, and dost now, O blissful one, stand before the Trinity, richly besprinkled, shining with the lustres proceeding therefrom, O most opulent one, wherefore celebrating to-day thy, O {NAME}, light-bearing memory, we enlighten the senses of our souls.",
+    "(The Theotokion of the resurrection; but if there be no Celebration, say the following Theotokion :)",
+    "With the clouds of the Most Holy Spirit do thou bedew my thoughts, O most pure one, who hast given birth unto the drop, even Christ, that washed out, through compassions, the countless and immeasurable lawless deeds of men; do thou dry up the source of my passions, and vouchsafe unto me the stream of ever living food by thine intercessions.",
+    "(The Stavro-theotokion:)",
+    "Beholding Thee, O Lord, nailed to the cross, she-lamb and Thy Mother wondering called out: What is this spectacle, O my desired Son? Is it thus that the treacherous and lawless assembly hath repaid Thee for Thy many miracles in which it had taken delight? Howbeit, glory be unto Thine unspeakable descent, O Master."
+   ]
+  },
+  {
    "kind": "vespers_troparion",
    "header": "The Troparion from the Typicon; if there be no Typicon, say the following Troparion, Tone 4.",
    "ids": [

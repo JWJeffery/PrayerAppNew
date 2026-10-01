@@ -1186,7 +1186,8 @@
     "xii-p6",
     "xii-p7",
     "xii-p8",
-    "xii-p9"
+    "xii-p9",
+    "xii-p10"
    ],
    "lines": [
     "(At the Vespers, for O Lord I have cried, the Stichera, Tone 4. Similar to:)",
@@ -1203,12 +1204,14 @@
     "(Both now...the Theotokion:)",
     "O most pure Virgin --Theotokos, do receive the voices of thine entreaters and supplicate the Lord unceasingly to grant us the remission of sins.",
     "(The Stavro-theotokion :)",
-    "O Lord, when the sun saw Thee -- the Sun of righteousness hung up on the tree, it hath hidden its rays and the moon hath changed light into darkness, whilst the all-spotless one, Thy Mother, was sorely wounded in her innermost soul."
+    "O Lord, when the sun saw Thee -- the Sun of righteousness hung up on the tree, it hath hidden its rays and the moon hath changed light into darkness, whilst the all-spotless one, Thy Mother, was sorely wounded in her innermost soul.",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "The King of the heavens."
    ]
   },
   {
    "kind": "vespers_aposticha",
-   "header": "If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :The Verse: Through all the earth is gone out their sound and their words to the end of the world:The Verse: The heavens declare the glory of God, and the firmament sheweth His handiwork.Glory ...Tone 4:",
+   "header": "The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :The Verse: Through all the earth is gone out their sound and their words to the end of the world:The Verse: The heavens declare the glory of God, and the firmament sheweth His handiwork.Glory ...Tone 4:",
    "ids": [
     "xii-p10",
     "xii-p11",
@@ -1218,8 +1221,6 @@
     "xii-p15"
    ],
    "lines": [
-    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
-    "The King of the heavens.",
     "(The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :)",
     "Risen on the third day ...Ye, the disciples of God -- theologians and God-seers -- were the ministers of the great mysteries of God, and having received the grace of healing, ye cure the maladies of all men.",
     "The Verse: Through all the earth is gone out their sound and their words to the end of the world:",
@@ -1455,7 +1456,19 @@
    "header": "The Photagogicon:[The Theotokion:",
    "ids": [
     "xii-p85",
-    "xii-p86",
+    "xii-p86"
+   ],
+   "lines": [
+    "(The Photagogicon:)",
+    "O come, ye people! Let us melodize in divine hymns the apostles of Christ, the preachers of faith, as those who supplicate Christ for our souls.",
+    "(The Theotokion:)",
+    "O all-holy, pure Sovereign-Lady, the only one who had no marital experience, our salvation and hope, do thou supplicate our God that was born of thee to save the world from deceit, calamities and afflictions."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds...the Stichera, Tone 8. Similar to:",
+   "ids": [
     "xii-p87",
     "xii-p88",
     "xii-p89",
@@ -1466,10 +1479,6 @@
     "xii-p94"
    ],
    "lines": [
-    "(The Photagogicon:)",
-    "O come, ye people! Let us melodize in divine hymns the apostles of Christ, the preachers of faith, as those who supplicate Christ for our souls.",
-    "(The Theotokion:)",
-    "O all-holy, pure Sovereign-Lady, the only one who had no marital experience, our salvation and hope, do thou supplicate our God that was born of thee to save the world from deceit, calamities and afflictions.",
     "(With the Lauds...the Stichera, Tone 8. Similar to:)",
     "O Lord, although before the judgment seat.",
     "O Lord, Thou hast illumined Thine apostles with the auroras of the Comforter and hast set them as lights for the strengthening of faith, through the mental enlightenment of Thine understanding, O Master; wherefore we adore Thine unspeakable love to mankind.",

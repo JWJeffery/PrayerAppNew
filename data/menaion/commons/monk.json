@@ -1427,19 +1427,28 @@
    ]
   },
   {
+   "kind": "polyeleos",
+   "header": "After Praise ye the name of the Lord ...the Refrain :,The selected Psalm:",
+   "ids": [
+    "xv-p30"
+   ],
+   "lines": [
+    "(After Praise ye the name of the Lord ...the Refrain :)",
+    "We bless thee, O religious father {NAME}, and honour thy holy memory, O preceptor of monks and associate of angels.",
+    "(The selected Psalm:)",
+    "I waited patiently for the Lord ..."
+   ]
+  },
+  {
    "kind": "sessional_3",
-   "header": "After Praise ye the name of the Lord ...the Refrain :,The selected Psalm:After the Polyeleon, the Cathisma, Tone 1. Similar to:",
+   "header": "Cathisma, Tone 1. Similar to:",
    "ids": [
     "xv-p30",
     "xv-p31",
     "xv-p32"
    ],
    "lines": [
-    "(After Praise ye the name of the Lord ...the Refrain :)",
-    "We bless thee, O religious father {NAME}, and honour thy holy memory, O preceptor of monks and associate of angels.",
-    "(The selected Psalm:)",
-    "I waited patiently for the Lord ...",
-    "(After the Polyeleon, the Cathisma, Tone 1. Similar to:)",
+    "(The Cathisma, Tone 1. Similar to:)",
     "Thy sepulchre, O Saviour...",
     "Through mortification of the flesh thou, O sacred father, hast buried all the risings of passions, and after thy decease thou hast obtained unending life; wherefore the church of Christ doth celebrate to-day thy wonder-worthy memory, the ornament of the ascetics.",
     "(Twice. Glory...Both now...the Theotokion:)",

@@ -1304,8 +1304,8 @@
    ]
   },
   {
-   "kind": "sessional_3",
-   "header": "After Praise ye the name of the Lord, the Refrain:,The selected Psalm:After the Polyeleon, the Cathisma, Tone 5. Similar to :,Twice. Glory ...Both now ...the Theotokion:",
+   "kind": "polyeleos",
+   "header": "After Praise ye the name of the Lord, the Refrain:,The selected Psalm:",
    "ids": [
     "xxix-p20"
    ],
@@ -1313,8 +1313,17 @@
     "(After Praise ye the name of the Lord, the Refrain:)",
     "We magnify you, O glorious wonder-workers {NAME}, and venerate your honourable suffering which ye have endured for Christ.",
     "(The selected Psalm:)",
-    "God is our refuge and strength...",
-    "(After the Polyeleon, the Cathisma, Tone 5. Similar to :)",
+    "God is our refuge and strength..."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone 5. Similar to :",
+   "ids": [
+    "xxix-p20"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 5. Similar to :)",
     "The Co-unoriginate Word... The feast of the martyrs {NAME}, doth to-day shine forth, for they are in possession of the heavenly light; the choir of angels triumpheth and the race of men maketh also a festival; wherefore the holy ones do supplicate for our souls.",
     "(Twice. Glory ...Both now ...the Theotokion:)",
     "The mystery of the wonderful Virgin hath appeared unto the world as the salvation, for out of her was born the Joy; O Lord, glory to Thee."

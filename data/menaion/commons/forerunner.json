@@ -1233,23 +1233,14 @@
    "ids": [
     "viii-p25",
     "viii-p26",
-    "viii-p27"
+    "viii-p27",
+    "viii-p28"
    ],
    "lines": [
     "(After Praise ye the name of the Lord, the following Refrain for the Nativity of the Precursor:)",
     "We magnify thee, the precursor of the Saviour, John, and honour thy most glorious birth from a barren one.",
     "(The selected Psalm :)",
-    "Blessed be the Lord God of Israel."
-   ]
-  },
-  {
-   "kind": "sessional_3",
-   "header": "For the Conception the same Psalm, but for the Decollation and the Finding this Psalm:The end of the Refrain:For the Finding:For the Assembly:After the Polyeleon, the Cathisma, Tone5. Similar to:",
-   "ids": [
-    "viii-p28",
-    "viii-p29"
-   ],
-   "lines": [
+    "Blessed be the Lord God of Israel.",
     "(For the Conception the same Psalm, but for the Decollation and the Finding this Psalm:)",
     "Blessed is the man that feareth God...",
     "(The end of the Refrain:)",
@@ -1257,8 +1248,18 @@
     "(For the Finding:)",
     "And all honour the finding ofthy venerable head.",
     "(For the Assembly:)",
-    "and all honour thineall-venerable assembly.",
-    "(After the Polyeleon, the Cathisma, Tone5. Similar to:)",
+    "and all honour thineall-venerable assembly."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone5. Similar to:",
+   "ids": [
+    "viii-p28",
+    "viii-p29"
+   ],
+   "lines": [
+    "(The Cathisma, Tone5. Similar to:)",
     "The Word Co-unoriginate...",
     "Let us loudly praise in hymns him that from the womb was manifested as God's prophet and as a lamp of the world came out of a barren one, the baptist of Christ and victorious sufferer -- the precursor John, for he entreats God that our souls may be saved.",
     "(Twice. Glory ...Both now...the Theotokion:)",

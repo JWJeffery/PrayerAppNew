@@ -1,6 +1,6 @@
 {
  "schema": "menaion-commons-mapping/1",
- "_comment": "Hand-reviewed 2026-10-01. Only rank-3 commemorations whose type of saint is unambiguous from the app's own entry name. Everything else (Synaxes, feasts, Equal-to-the-Apostles, groups of martyrs, saints with companions) is deliberately unmapped and keeps its deferred rubric. \"invocation\" replaces Orloff's \"(mentioned by name)\".",
+ "_comment": "Hand-reviewed 2026-10-01. Rank-3 commemorations whose type of saint is unambiguous from the app's own entry name. Deliberately UNMAPPED (keep deferred rubric): Equal-to-the-Apostles saints (Orloff has no such Common), Nicaea Fathers+Nina, feasts of the Lord and feasts with their own propers (Chains of Peter, Procession of the Cross, Mandylion, Conception, Leavetaking), Anna, Royal Martyrs, Holy Innocents, John of Kronstadt. \"invocation\" replaces Orloff's \"(mentioned by name)\". Also unmapped: Synaxis of Gabriel, Michael at Chonae (Orloff's Angels chapter names Michael in its text), Robe and Belt of the Theotokos (Orloff's Theotokos chapter has an unfilled '((name of the event))' placeholder).",
  "entries": [
   {
    "id": "apostle-timothy",
@@ -330,6 +330,97 @@
    "name": "Venerable Paraskeva of Serbia (of the Balkans)",
    "common": "nun",
    "invocation": "Paraskeva"
+  },
+  {
+   "id": "synaxis-seventy-apostles",
+   "mmdd": "01-04",
+   "name": "Synaxis of the Seventy Holy Apostles",
+   "common": "apostles-many",
+   "invocation": "the Seventy"
+  },
+  {
+   "id": "synaxis-twelve-apostles",
+   "mmdd": "06-30",
+   "name": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles",
+   "common": "apostles-many",
+   "invocation": "the Twelve"
+  },
+  {
+   "id": "gregory-nyssa",
+   "mmdd": "01-10",
+   "name": "St. Gregory of Nyssa; St. Dometian of Melitene",
+   "common": "hierarchs-many",
+   "invocation": "Gregory and Dometian"
+  },
+  {
+   "id": "martyr-ignatius-god-bearer-translation",
+   "mmdd": "01-29",
+   "name": "Translation of the Relics of Hieromartyr Ignatius the God-Bearer",
+   "common": "hieromartyr",
+   "invocation": "Ignatius"
+  },
+  {
+   "id": "haralambos-martyr",
+   "mmdd": "02-10",
+   "name": "Hieromartyr Haralambos and his companions",
+   "common": "hieromartyr",
+   "invocation": "Haralambos"
+  },
+  {
+   "id": "finding-relics-innocent-irkutsk",
+   "mmdd": "02-22",
+   "name": "Finding of the Relics of Innocent of Irkutsk",
+   "common": "hierarch",
+   "invocation": "Innocent"
+  },
+  {
+   "id": "forty-martyrs-sebaste",
+   "mmdd": "03-09",
+   "name": "The Forty Holy Martyrs of Sebaste",
+   "common": "martyrs-many",
+   "invocation": "the Forty Martyrs"
+  },
+  {
+   "id": "twenty-thousand-martyrs-nicomedia",
+   "mmdd": "12-28",
+   "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia",
+   "common": "martyrs-many",
+   "invocation": "the Twenty Thousand Martyrs"
+  },
+  {
+   "id": "eustathios-thespesia-companions",
+   "mmdd": "09-20",
+   "name": "Holy Great Martyr Eustathios Placidas and his family",
+   "common": "martyrs-many",
+   "invocation": "Eustathios and his family"
+  },
+  {
+   "id": "clement-rome",
+   "mmdd": "11-25",
+   "name": "Our Father among the Saints Clement, Pope of Rome",
+   "common": "hieromartyr",
+   "invocation": "Clement"
+  },
+  {
+   "id": "ignatius-god-bearer",
+   "mmdd": "12-20",
+   "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch",
+   "common": "hieromartyr",
+   "invocation": "Ignatius"
+  },
+  {
+   "id": "john-damascene",
+   "mmdd": "12-04",
+   "name": "Our Father among the Saints John of Damascus",
+   "common": "monk",
+   "invocation": "John"
+  },
+  {
+   "id": "prophet-daniel-three-youths",
+   "mmdd": "12-17",
+   "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael",
+   "common": "prophet",
+   "invocation": "Daniel and the Three Youths"
   }
  ]
 }

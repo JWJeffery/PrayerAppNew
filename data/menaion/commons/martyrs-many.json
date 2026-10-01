@@ -1445,19 +1445,27 @@
     "xviii-p25",
     "xviii-p26",
     "xviii-p27",
-    "xviii-p28",
-    "xviii-p29",
-    "xviii-p30",
-    "xviii-p31",
-    "xviii-p32"
+    "xviii-p28"
    ],
    "lines": [
     "(The Troparion from the Typicon; but if there be no Typicon,)",
     "(say this Troparion. Tone 1:)",
     "Through the sufferings of Thy saints which they did endure for Thy sake, be moved, O Lord, and all our infirmities cure, Thou, O Lover of man, we implore Thee.",
     "(Glory...Both now...the Theotokion or the Stavro-theotokion.)",
-    "(At the Matins, for God is the Lord, the same Troparion.)",
-    "(After the first Stichologia, the Cathisma, Tone 4. Similar to:)",
+    "(At the Matins, for God is the Lord, the same Troparion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 4. Similar to:",
+   "ids": [
+    "xviii-p29",
+    "xviii-p30",
+    "xviii-p31",
+    "xviii-p32"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 4. Similar to:)",
     "Thou hast appeared...",
     "Ye divine martyrs, warriors of Christ, as the greatest stars, ever illumine the venerable firmament of the church and enlighten the faithful.",
     "(Twice.)",
@@ -1599,7 +1607,8 @@
     "xviii-p99",
     "xviii-p100",
     "xviii-p101",
-    "xviii-p102"
+    "xviii-p102",
+    "xviii-p103"
    ],
    "lines": [
     "(The Canon, Tone 5, Ode 1. The Heirmos:)",
@@ -1669,7 +1678,8 @@
     "Standing before Christ, for Whose sake ye have endured even tortures, do, O most glorious martyrs, pray for the salvation of all.",
     "With your powerful arm, O invincible ones, ye have put down the stronghold of deceit, and now are accounted worthy to live together with angels in the celestial habitations.",
     "With lawful manners of martyrs ye have obtained victory over the proud tyrant and have received the crowns of the righteous, O all-honoured ones.",
-    "(The Theotokion:)"
+    "(The Theotokion:)",
+    "Hail thou, O Theotokos, Mother of Christ the God, Whom thou broughtest forth. Him supplicate to grant remission of sins unto those that in faith hymn thee."
    ]
   },
   {
@@ -1681,7 +1691,6 @@
     "xviii-p105"
    ],
    "lines": [
-    "Hail thou, O Theotokos, Mother of Christ the God, Whom thou broughtest forth. Him supplicate to grant remission of sins unto those that in faith hymn thee.",
     "(The Photagogicon:)",
     "Ye, the passion-bearers, were taken up into the lustrous habitations of paradise, having been vested in bright garments which ye have woven by the multifarious tortures, and ye stand now before the throne of the Maker, assiduously supplicating for all.",
     "(The Theotokion :)",
