@@ -302,18 +302,18 @@ families: **no reachable, verifiably licensed source exists for feast-PROPER hym
    library repo ZIP and put it in a Drive folder. CONTENT caveat (not a license one): AGES is Greek
    Archdiocese usage, so feast hymnography will not always match Russian/Slavic usage -- disclose that
    wherever used, and prefer Orloff (Slavonic-derived) wherever it applies.
-**DONE 2026-10-01 -- Orloff Commons ingested and wired for 47 hand-mapped rank-3 saints** (Orthros: sessional
-hymns 1-2, canon, exapostilarion, praises; Vespers: stichera, aposticha; live-verified across all 2026 dates).
-Full record, scripts, mapping rules, limits: `documentation/MENAION_COMMONS_ORLOFF.md`. **Open follow-ups:**
-rank-4 saints (246 of 370 commemorations) still show ordinary weekday content; unmapped rank-3 entries
-(Synaxes, groups, ambiguous types) need Josh's judgment; Orloff's alternate-branch rubrics are shown as printed.
+**DONE 2026-10-01 -- Orloff Commons ingested and wired: 71 rank-3 saints (Orthros sessional hymns 1-2, canon,
+exapostilarion, praises; Vespers stichera, aposticha) and 203 rank-4 saints (Vespers stichera only, Josh's decision)**;
+live-verified across all 2026 dates. Record, scripts, mapping rules, limits: `documentation/MENAION_COMMONS_ORLOFF.md`.
+**Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
+**Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
+calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.
 
-**AGES (CC0 library, Fr. Seraphim Dedes) -- ingested and wired 2026-10-01 (partial by design).** Coverage of the library
-is partial (226/366 days have literal hymn text) and its day files mix the saint with forefeast/afterfeast hymns, so only
-27 hand-reviewed rank-3 saints use it, and only for slots where EVERY selected hymn names the saint (Vespers stichera,
-aposticha, Orthros praises/exapostilarion); everything else uses the Orloff Common. Full record, rule, limits:
-`documentation/MENAION_AGES.md`. The ZIP is NOT in the repo (re-ingest needs Josh to re-supply it). **Open:** rank-4 saints;
-AGES for more days needs per-day hymn-index review; rank 1-2 feasts untouched (Josh: Great Feast propers stay deferred).
+**AGES (CC0 library, Fr. Seraphim Dedes) -- ingested and wired 2026-10-01 (partial by design).** Its day files mix the saint
+with forefeast/afterfeast hymns, so every rank-3 day was read hymn by hymn: 36 saints use it for slots approved by rule or
+by reading (Vespers stichera/aposticha, Orthros praises/exapostilarion/one sessional); everything else uses the Orloff
+Common. Full record, rejections, limits: `documentation/MENAION_AGES.md`. The ZIP is NOT in the repo (re-ingest needs Josh
+to re-supply it). **Open:** AGES for rank-4 days (not reviewed); rank 1-2 feasts untouched (Great Feast propers deferred).
 
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license

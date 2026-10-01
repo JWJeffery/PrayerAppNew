@@ -45,3 +45,19 @@ Moved out of RESUME_PROJECT_NOTE.md on 2026-10-01 (closed work). Source: Orloff,
 - `build-commons-sections.py` fixed: sections now also start at a rubric in the MIDDLE of a paragraph; patterns accept
   Typicon/Typikon, 1st/first, Sticheron/Stichera/Idiomelic, "Lauds ... the". A boundary check (no other section's
   rubric inside a section) passes for every mapped common. 2026 sweep: 43 Orthros + 39 Vespers days filled, 0 errors.
+
+
+## Update 2026-10-01 (later still)
+- Rank-3 mapping widened to 71 entries by Josh's instruction ("map all rank-3 days"): Equal-to-the-Apostles saints use the
+  Common of an Apostle (Cyril, Vladimir, Mary Magdalene), Cyril & Methodius the Common of Several Apostles, Thekla the Common
+  of a Female Martyr, John of Kronstadt the wonder-workers' Common, Royal Martyrs and Holy Innocents the Common of Several
+  Martyrs, Chains of Peter the apostle Common, Gabriel/Michael the Angels Common (`skip` lists drop slots that name Michael).
+  Still unmapped (8): Conception, Robe and Belt of the Theotokos, Mandylion, Procession of the Cross (feast Commons are
+  templates with a "((name of the event))" blank plus readings and a prayer for the Emperor), Repose of Anna, Nicaea Fathers,
+  Leavetaking of the Entrance.
+- RANK 4 (Josh's decision): `data/menaion/commons/mapping-rank4.json` (203 of 246 rank-4 commemorations, from
+  `scripts/menaion/build-commons-rank4-mapping.py`, rules on the app's own entry name + hand-reviewed overrides). Vespers
+  "Lord, I have cried" stichera only: the Common's first three stichera. Where the engine shows only the "proper stichera
+  should be appointed" rubric (139 days) it is replaced; where the engine shows the Octoechos stichera (33 days) the saint's
+  three follow as a separate item (`stichera-at-lord-i-have-cried-menaion`). Not done: Orthros at rank 4, aposticha.
+  2026 sweep: 142 rank-4 Vespers filled, 0 errors.

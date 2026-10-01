@@ -26,3 +26,17 @@ Credit shown in-app on every AGES-derived item.
 - Unapproved AGES hymns on mixed days (e.g. 12-20 stichera 1-3) are deliberately dropped, not shown.
 - Possible follow-up: hand-select hymn indexes for more days (needs reading each day file), and resolve Octoechos
   references for melody names.
+
+
+## Update 2026-10-01 (later): hymn-by-hymn review
+- Josh asked for AGES day files to be read one by one to approve more hymns. Every rank-3 day with AGES text was read.
+  `build-ages-mapping.py` now has (a) an automatic rule (all numbered hymns in a slot name the saint, OR three same-tone
+  hymns with at least two naming the saint; sessional/exapostilarion only the hymns that themselves name the saint;
+  a doxastikon only when it names the saint) and (b) a `FORCE` table of slots approved by reading the hymns.
+- Mapping: 36 saints. Slot keys: `'3'` numbered hymn, `'g'` doxastikon, `'k.h'` sessional (kathisma k, hymn h).
+- Rejected on reading (AGES day file is a different saint or feast than the app's entry): 02-12 Alexios (Meletius),
+  04-30 James (the file is James the son of Zebedee; the app labels 04-30 "Brother of the Lord" -- app data question for
+  Josh), 07-07 Thomas (Thomas of Maleon), 07-17 Royal Martyrs (Marina), 08-26 Tikhon, 09-20 Eustathios, 10-09 James
+  Alphaeus (Andronikos & Athanasia), 10-19 Kronstadt (Joel), 11-24 Catherine (Clement & Peter), 12-22 stichera 1-6
+  (Nativity forefeast + Anastasia, only her exapostilarion approved).
+- Sweep: 37 AGES items on the 2026 calendar.

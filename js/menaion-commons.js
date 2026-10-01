@@ -61,7 +61,15 @@ const MenaionCommons = (() => {
 
     const AGES_BASE = 'data/menaion/ages/';
     const AGES_KIND = { 'exapostilarion': 'exapostilarion', 'praises-stichera': 'praises',
-                        'stichera-at-lord-i-have-cried': 'vespers_stichera', 'aposticha': 'vespers_aposticha' };
+                        'stichera-at-lord-i-have-cried': 'vespers_stichera', 'aposticha': 'vespers_aposticha',
+                        'sessional-hymns-1': 'sessional', 'sessional-hymns-2': 'sessional' };
+    const AGES_SESSIONAL_GROUP = { 'sessional-hymns-1': 1, 'sessional-hymns-2': 2 };
+    // approved-hymn key: '3' (numbered), 'g' (doxastikon), 'k.h' (sessional kathisma k, hymn h)
+    function _agesKey(h) {
+        if (h.role === 'glory') return 'g';
+        if (h.role !== 'n' || !h.index || !h.index.length) return null;
+        return h.index.length > 1 ? h.index[0] + '.' + h.index[1] : String(h.index[0]);
+    }
     let _agesMappingPromise = null;
     const _agesMonthPromises = {};
 
@@ -109,6 +117,7 @@ const MenaionCommons = (() => {
         const lines = [];
         let lastMode = null;
         for (const h of hymns) {
+            if (h.role === 'glory') lines.push('(Glory...)');
             if (h.mode && h.mode !== lastMode) { lines.push('(Tone ' + h.mode + ')'); lastMode = h.mode; }
             lines.push(h.text);
         }
@@ -264,8 +273,9 @@ const MenaionCommons = (() => {
                 const agesKind = AGES_KIND[item.key];
                 const approved = agesEntry && agesKind && agesEntry.slots ? agesEntry.slots[agesKind] : null;
                 if (approved && agesDay && agesDay.slots && Array.isArray(agesDay.slots[agesKind])) {
+                    const group = AGES_SESSIONAL_GROUP[item.key];
                     const hymns = agesDay.slots[agesKind]
-                        .filter(h => h.role === 'n' && approved.indexOf(h.index[0]) !== -1);
+                        .filter(h => approved.indexOf(_agesKey(h)) !== -1 && (!group || (h.index && h.index[0] === group)));
                     if (hymns.length) {
                         sec.items[i] = _buildAgesItem(item.key, agesEntry, hymns, item);
                         filled++;

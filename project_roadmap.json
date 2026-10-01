@@ -735,7 +735,7 @@
     "menaion_hymn_corpus_state": {
       "status": "orloff_commons_and_ages_wired_for_rank3_saints",
       "date": "2026-10-01",
-      "finding": "Rank-3 saints: Orloff Common (60 mapped) plus AGES saint-specific hymns for 27 saints where every hymn names the saint, wired via js/menaion-commons.js. Rank 1-2 feasts (deferred by decision) and rank-4 saints still show honest deferred rubrics. See documentation/MENAION_COMMONS_ORLOFF.md and documentation/MENAION_AGES.md.",
+      "finding": "Rank-3 saints: Orloff Common (71 mapped) plus AGES saint-specific hymns for 36 saints (read hymn by hymn). Rank-4 saints: Orloff Common Vespers stichera for 203 saints. Wired via js/menaion-commons.js. Rank 1-2 feasts (deferred by decision), 8 feast-template rank-3 days, and Orthros at rank 4 still show honest deferred rubrics. See documentation/MENAION_COMMONS_ORLOFF.md and MENAION_AGES.md.",
       "decisions": "Josh 2026-10-01: use Orloff General Menaion 1899 (public domain) for Commons via a new common-of-<type> layer; free-for-non-commercial licenses acceptable and Greek-lane AGES texts may serve the Russian/Slavic lane for large gaps (AGES license still unread); Great Feast propers stay deferred."
     }
   },

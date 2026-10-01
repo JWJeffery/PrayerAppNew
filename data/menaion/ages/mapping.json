@@ -8,9 +8,12 @@
    "name": "Synaxis of the Seventy Holy Apostles",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
+    ],
+    "exapostilarion": [
+     "1"
     ]
    }
   },
@@ -20,12 +23,12 @@
    "name": "St. Gregory of Nyssa; St. Dometian of Melitene",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -35,9 +38,9 @@
    "name": "Veneration of the Chains of the Holy Apostle Peter",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -46,13 +49,19 @@
    "mmdd": "02-08",
    "name": "Great Martyr Theodore Stratelates ('the General')",
    "slots": {
+    "vespers_aposticha": [
+     "g"
+    ],
+    "sessional": [
+     "1.1"
+    ],
     "praises": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -62,9 +71,9 @@
    "name": "Great Martyr Theodore Tyron ('the Recruit')",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -74,21 +83,9 @@
    "name": "Hieromartyr Polycarp, Bishop of Smyrna",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
-    ]
-   }
-  },
-  {
-   "id": "james-brother-lord",
-   "mmdd": "04-30",
-   "name": "Holy Apostle James, Brother of the Lord",
-   "slots": {
-    "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -98,14 +95,14 @@
    "name": "Holy Apostle Simon the Zealot",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "vespers_aposticha": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -114,8 +111,25 @@
    "mmdd": "05-15",
    "name": "Venerable Pachomius the Great",
    "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ],
     "exapostilarion": [
-     1
+     "1"
+    ]
+   }
+  },
+  {
+   "id": "cyril-alexandria-bishop",
+   "mmdd": "06-09",
+   "name": "St. Cyril, Archbishop of Alexandria",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -125,12 +139,17 @@
    "name": "Holy Apostles Bartholomew and Barnabas",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3,
-     4,
-     5,
-     6
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "vespers_aposticha": [
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -140,9 +159,9 @@
    "name": "Venerable Onuphrius the Great",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -152,9 +171,9 @@
    "name": "Holy Equal-to-the-Apostles Mary Magdalene",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -164,9 +183,10 @@
    "name": "Repose of St. Anna, Mother of the Most Holy Theotokos",
    "slots": {
     "vespers_aposticha": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3",
+     "g"
     ]
    }
   },
@@ -175,8 +195,18 @@
    "mmdd": "08-01",
    "name": "Procession of the Precious Cross; Holy Maccabee Martyrs",
    "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ],
+    "vespers_aposticha": [
+     "1",
+     "2",
+     "3"
+    ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -186,9 +216,9 @@
    "name": "Holy Apostle Matthias",
    "slots": {
     "vespers_stichera": [
-     4,
-     5,
-     6
+     "4",
+     "5",
+     "6"
     ]
    }
   },
@@ -198,9 +228,21 @@
    "name": "Deposition of the Precious Belt of the Most Holy Theotokos",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "euphemia-all-praised-september",
+   "mmdd": "09-16",
+   "name": "Holy Great Martyr Euphemia the All-Praised",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
     ]
    }
   },
@@ -210,14 +252,14 @@
    "name": "Holy Equal-to-the-Apostles Protomartyr Thekla",
    "slots": {
     "vespers_aposticha": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "praises": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -227,9 +269,10 @@
    "name": "St. Gregory the Illuminator of Armenia",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3",
+     "g"
     ]
    }
   },
@@ -238,8 +281,14 @@
    "mmdd": "10-06",
    "name": "Holy Apostle Thomas",
    "slots": {
+    "vespers_aposticha": [
+     "1",
+     "2",
+     "3",
+     "g"
+    ],
     "exapostilarion": [
-     2
+     "2"
     ]
    }
   },
@@ -248,8 +297,13 @@
    "mmdd": "11-23",
    "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
    "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -259,12 +313,12 @@
    "name": "Our Father among the Saints Ambrose, Bishop of Milan",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -274,14 +328,14 @@
    "name": "Conception of the Most Holy Theotokos by Righteous Anna",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "vespers_aposticha": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ]
    }
   },
@@ -291,12 +345,12 @@
    "name": "Venerable Daniel the Stylite",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
     ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -306,15 +360,20 @@
    "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael",
    "slots": {
     "vespers_stichera": [
-     1,
-     2,
-     3,
-     4,
-     5,
-     6
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "vespers_aposticha": [
+     "1",
+     "2",
+     "3"
     ],
     "exapostilarion": [
-     1
+     "1"
     ]
    }
   },
@@ -324,13 +383,13 @@
    "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch",
    "slots": {
     "vespers_stichera": [
-     4,
-     5,
-     6
+     "4",
+     "5",
+     "6"
     ],
     "exapostilarion": [
-     2,
-     3
+     "2",
+     "3"
     ]
    }
   },
@@ -340,8 +399,8 @@
    "name": "Holy Great Martyr Anastasia the Deliverer from Potions",
    "slots": {
     "exapostilarion": [
-     1,
-     2
+     "1",
+     "2"
     ]
    }
   },
@@ -351,9 +410,105 @@
    "name": "The Holy Fourteen Thousand Infants Slain by Herod at Bethlehem",
    "slots": {
     "praises": [
-     1,
-     2,
-     3
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "forty-martyrs-sebaste",
+   "mmdd": "03-09",
+   "name": "The Forty Holy Martyrs of Sebaste",
+   "slots": {
+    "vespers_aposticha": [
+     "g"
+    ]
+   }
+  },
+  {
+   "id": "eusebius-samosata",
+   "mmdd": "06-22",
+   "name": "Hieromartyr Eusebius, Bishop of Samosata",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "synaxis-twelve-apostles",
+   "mmdd": "06-30",
+   "name": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "deposition-robe-theotokos",
+   "mmdd": "07-02",
+   "name": "Deposition of the Robe of the Most Holy Theotokos at Blachernae",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "icon-not-made-by-hands",
+   "mmdd": "08-16",
+   "name": "Translation of the Image of Our Lord Jesus Christ Not Made by Hands (Holy Mandylion)",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "archangel-michael-miracle-chonae",
+   "mmdd": "09-06",
+   "name": "Miracle of the Archangel Michael at Chonae (Colossae)",
+   "slots": {
+    "sessional": [
+     "1.1"
+    ]
+   }
+  },
+  {
+   "id": "cosmas-damian-asia",
+   "mmdd": "11-01",
+   "name": "Holy Unmercenaries Cosmas and Damian of Asia",
+   "slots": {
+    "vespers_aposticha": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "john-the-merciful",
+   "mmdd": "11-12",
+   "name": "John the Merciful, Patriarch of Alexandria",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6",
+     "g"
     ]
    }
   }
