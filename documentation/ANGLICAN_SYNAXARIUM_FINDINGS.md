@@ -169,5 +169,11 @@ My automatic check was too crude: it missed Brendan (Martyrology p.58, May 16), 
 - 08-19 Mary Sumner: August 9 (Martyrology). August 9 currently has Edith Stein as primary.
 - 12-11 Lucy Menzies: November 24 (Martyrology, SEC). Nov 24 primary is the Catherine/Barbara/Margaret group; Menzies is already an alternate there.
 - 12-29 "David of London": the Martyrology's December 29 entry is the prophet Nathan and King David (then Thomas Becket); no "David of London" is attested. Likely a confusion with King David.
-Also: 02-29 Oswald of Worcester is Feb 28 in the held books (he died 29 Feb 992; Worcester Cathedral keeps Feb 29 in leap years). 07-03 Joshua rests on the Coptic Synaxarium only. Celestine I (Apr 6), Restituta (May 17) and Chaeremon (Dec 22) are in the Book of Saints, whose two-column layout I could not parse to confirm the dates.
+Corrections to the "less certain" items (Josh, 2026-10-02; all now read from the sources):
+- **Celestine I, 04-06:** Book of Saints, printed p.134 (PDF p.147), left column, "6 April" ("d. 432 ... succeeded St Boniface I as pope in 422").
+- **Restituta of Carthage, 05-17:** Book of Saints, printed p.638 (PDF p.651), right column, "17 May", "A Roman African maiden ... martyred at Carthage in the reign of Diocletian".
+- **Chaeremon of Nilopolis and Companions, 12-22:** Book of Saints, printed p.135 (PDF p.148), right column, "22 December", "d. 250. A very old bishop of Nilopolis (Egypt)".
+- **Oswald of Worcester, 02-29:** the held books print Feb 28; Worcester Cathedral's own "Services and Music, February/March 2024" lists "Thursday 29th [February] -- Oswald, Bishop of Worcester, 992" (https://www.worcestercathedral.org.uk/media/0moaigm5/march-scheme-2024.pdf, p.2), i.e. a documented Anglican leap-year observance. The 18 February 2024 Sunday bulletin (p.5) that ChatGPT quoted could not be retrieved by search or by the cathedral's current archive page, so it is not cited here.
+- **Joshua son of Nun, 07-03:** a deliberate decision by Josh, dated by the Coptic Synaxarium (Paona 26) under the "Great Church supplementation" rule; recorded as Great Church provenance, not as a defect.
+- The matrix's wrong source attributions for the above (e.g. "AM; Oxford" for Celestine, Restituta, Chaeremon, Oswald, Odran) should be repaired when the decision file is next revised; see ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md.
 No change has been made to the app for these; they are Josh's decisions.
