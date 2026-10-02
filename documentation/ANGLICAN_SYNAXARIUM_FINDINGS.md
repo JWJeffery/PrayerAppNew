@@ -160,3 +160,14 @@ The candidate matrix behind the Kalendar Review tool was produced by ChatGPT fro
   - 12-29 David of London (matrix witnesses: AM)
   - 12-30 Egwin of Worcester (matrix witnesses: AM; Oxford Dictionary of Saints)
 - **Charles Wesley 12-18 specifically:** no book held places him on December 18. LFF, HWHM, GCW and For All the Saints (Methodist) all print "John and Charles Wesley" on March 3; the Anglican Martyrology lists Charles on March 29 (death) and notes the Church of England keeps both on May 24. December 18 is his birth date (1707). The matrix's witness note for it is "HWHM/GCW date variant?".
+
+## Second pass (2026-10-02): ChatGPT's re-check of the 19, independently verified against the held books
+My automatic check was too crude: it missed Brendan (Martyrology p.58, May 16), Vladimir (Jul 15), Antony and Theodosius Pechersky (Jul 10), Otteran/Odran (Oct 27), Ammon and companions (Dec 20), Thorlac (Dec 23) and Egwin ("Eqwin", Dec 30) because of spelling variants or neighbouring entries; those date assignments ARE supported by the Anglican Martyrology. Confirmed as WRONG dates (the saint is printed on a different day):
+- 12-18 Charles Wesley: March 3 with John (LFF/HWHM/GCW/FAS); 12-18 is his birthday. Duplicate of the 03-03 primary.
+- 05-03 James O. S. Huntington: November 25 in LFF, HWHM and GCW. Duplicate: he is already the 11-25 primary.
+- 05-09 Zinzendorf: May 10 (HWHM, GCW, Martyrology). May 10 currently has Comgall of Bangor as primary.
+- 08-19 Mary Sumner: August 9 (Martyrology). August 9 currently has Edith Stein as primary.
+- 12-11 Lucy Menzies: November 24 (Martyrology, SEC). Nov 24 primary is the Catherine/Barbara/Margaret group; Menzies is already an alternate there.
+- 12-29 "David of London": the Martyrology's December 29 entry is the prophet Nathan and King David (then Thomas Becket); no "David of London" is attested. Likely a confusion with King David.
+Also: 02-29 Oswald of Worcester is Feb 28 in the held books (he died 29 Feb 992; Worcester Cathedral keeps Feb 29 in leap years). 07-03 Joshua rests on the Coptic Synaxarium only. Celestine I (Apr 6), Restituta (May 17) and Chaeremon (Dec 22) are in the Book of Saints, whose two-column layout I could not parse to confirm the dates.
+No change has been made to the app for these; they are Josh's decisions.
