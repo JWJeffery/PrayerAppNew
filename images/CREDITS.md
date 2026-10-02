@@ -365,3 +365,11 @@ Shown in the "About Today's Service" panel (`js/day-guide.js`) when the day's go
 | `twenty-thousand-martyrs-nicomedia.jpg` | [20,000 martyrs of Nicomedia (Menologion of Basil II)](https://commons.wikimedia.org/wiki/File:20,000_martyrs_of_Nicomedia_(Menologion_of_Basil_II).jpg) | Unknown; 0985 | Public domain |
 | `vladimir-equal-apostles.jpg` | [Icon of saint Vladimir (c. 1900, Russia, priv. coll.)](https://commons.wikimedia.org/wiki/File:Icon_of_saint_Vladimir_(c._1900,_Russia,_priv._coll.).jpg) | Anonymous; 19 c, | Public domain |
 | `xenia-rome.jpg` | [Xenia of Rome](https://commons.wikimedia.org/wiki/File:Xenia_of_Rome.jpg) | Anonymous; 1551 | Public domain |
+| `cyriacus-hermit.jpg` | [St. Kirijak the hermit by Andrija Raičević](https://commons.wikimedia.org/wiki/File:St._Kirijak_the_hermit_by_Andrija_Raičević.jpg) | Andrija Raičević; 1649 | Public domain |
+| `david-thessalonica.jpg` | [David of Thessalonica](https://commons.wikimedia.org/wiki/File:David_of_Thessalonica.jpg) | Anonymous; before 19th c. | Public domain |
+| `euphemia-great-martyr.jpg` | [St Euphemia](https://commons.wikimedia.org/wiki/File:St_Euphemia.jpg) | Anonymous; 17th c. | Public domain |
+| `gregory-wonderworker.jpg` | [Grigorii chudotvoretz](https://commons.wikimedia.org/wiki/File:Grigorii_chudotvoretz.jpg) | Anonymous; 14th c. | Public domain |
+| `melania-roman.jpg` | [Melania the Younger, nun of Rome (Menologion of Basil II)](https://commons.wikimedia.org/wiki/File:Melania_the_Younger,_nun_of_Rome_(Menologion_of_Basil_II).jpg) | Menologion of Basil II illuminators; c. 985 | Public domain |
+| `phocas-gardener-sinope.jpg` | [Cretan Icon of Saint Phokas of Sinope](https://commons.wikimedia.org/wiki/File:Cretan_Icon_of_Saint_Phokas_of_Sinope.jpg) | Unknown; 16th-18th c. | Public domain |
+| `prophet-daniel-three-youths.jpg` | [Icon of the Prophet Daniel and the Three Holy Youths](https://commons.wikimedia.org/wiki/File:Icon_of_the_Prophet_Daniel_and_the_Three_Holy_Youths.jpg) | Unknown; 16th-18th c. | Public domain |
+| `protomartyr-stephen.jpg` | [Hymnal, Stoning of St. Stephen, Protomartyr, Walters Manuscript W.547, fol. 37v](https://commons.wikimedia.org/wiki/File:Hymnal,_Stoning_of_St._Stephen,_Protomartyr,_Walters_Manuscript_W.547,_fol._37v.jpg) | Walters Art Museum, hymnal W.547 (Constantinople, 1678), miniature cropped from the page; 1678 | CC0 |

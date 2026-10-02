@@ -2381,6 +2381,102 @@
     "license": "Public domain",
     "name": "St. Cyril, Archbishop of Alexandria"
    }
+  ],
+  "09-29": [
+   {
+    "id": "cyriacus-hermit",
+    "image": "images/icons/cyriacus-hermit.jpg",
+    "title": "St. Kirijak the hermit by Andrija Raičević",
+    "page": "https://commons.wikimedia.org/wiki/File:St._Kirijak_the_hermit_by_Andrija_Raičević.jpg",
+    "artist": "Andrija Raičević",
+    "date": "1649",
+    "license": "Public domain",
+    "name": "Venerable Cyriacus the Anchorite"
+   }
+  ],
+  "06-26": [
+   {
+    "id": "david-thessalonica",
+    "image": "images/icons/david-thessalonica.jpg",
+    "title": "David of Thessalonica",
+    "page": "https://commons.wikimedia.org/wiki/File:David_of_Thessalonica.jpg",
+    "artist": "Anonymous",
+    "date": "before 19th c.",
+    "license": "Public domain",
+    "name": "Venerable David of Thessalonica"
+   }
+  ],
+  "07-11": [
+   {
+    "id": "euphemia-great-martyr",
+    "image": "images/icons/euphemia-great-martyr.jpg",
+    "title": "St Euphemia",
+    "page": "https://commons.wikimedia.org/wiki/File:St_Euphemia.jpg",
+    "artist": "Anonymous",
+    "date": "17th c.",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Euphemia the All-Praised"
+   }
+  ],
+  "11-17": [
+   {
+    "id": "gregory-wonderworker",
+    "image": "images/icons/gregory-wonderworker.jpg",
+    "title": "Grigorii chudotvoretz",
+    "page": "https://commons.wikimedia.org/wiki/File:Grigorii_chudotvoretz.jpg",
+    "artist": "Anonymous",
+    "date": "14th c.",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Gregory the Wonderworker, Bishop of Neo-Caesarea"
+   }
+  ],
+  "12-31": [
+   {
+    "id": "melania-roman",
+    "image": "images/icons/melania-roman.jpg",
+    "title": "Melania the Younger, nun of Rome (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:Melania_the_Younger,_nun_of_Rome_(Menologion_of_Basil_II).jpg",
+    "artist": "Menologion of Basil II illuminators",
+    "date": "c. 985",
+    "license": "Public domain",
+    "name": "Venerable Melania the Younger, Roman"
+   }
+  ],
+  "09-22": [
+   {
+    "id": "phocas-gardener-sinope",
+    "image": "images/icons/phocas-gardener-sinope.jpg",
+    "title": "Cretan Icon of Saint Phokas of Sinope",
+    "page": "https://commons.wikimedia.org/wiki/File:Cretan_Icon_of_Saint_Phokas_of_Sinope.jpg",
+    "artist": "Unknown",
+    "date": "16th-18th c.",
+    "license": "Public domain",
+    "name": "Hieromartyr Phocas the Gardener of Sinope"
+   }
+  ],
+  "12-17": [
+   {
+    "id": "prophet-daniel-three-youths",
+    "image": "images/icons/prophet-daniel-three-youths.jpg",
+    "title": "Icon of the Prophet Daniel and the Three Holy Youths",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_the_Prophet_Daniel_and_the_Three_Holy_Youths.jpg",
+    "artist": "Unknown",
+    "date": "16th-18th c.",
+    "license": "Public domain",
+    "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael"
+   }
+  ],
+  "12-27": [
+   {
+    "id": "protomartyr-stephen",
+    "image": "images/icons/protomartyr-stephen.jpg",
+    "title": "Hymnal, Stoning of St. Stephen, Protomartyr, Walters Manuscript W.547, fol. 37v",
+    "page": "https://commons.wikimedia.org/wiki/File:Hymnal,_Stoning_of_St._Stephen,_Protomartyr,_Walters_Manuscript_W.547,_fol._37v.jpg",
+    "artist": "Walters Art Museum, hymnal W.547 (Constantinople, 1678), miniature cropped from the page",
+    "date": "1678",
+    "license": "CC0",
+    "name": "Holy Protomartyr and Archdeacon Stephen"
+   }
   ]
  },
  "moveable": {
