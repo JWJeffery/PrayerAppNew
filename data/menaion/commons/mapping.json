@@ -520,6 +520,42 @@
    "common": "apostle",
    "invocation": "Nina",
    "note": "Equal-to-the-Apostles: no Orloff Common exists; the Common of an Apostle is used (Josh 2026-10-01)"
+  },
+  {
+   "id": "conception-theotokos-anna",
+   "mmdd": "12-09",
+   "name": "Conception of the Most Holy Theotokos by Righteous Anna",
+   "common": "theotokos",
+   "invocation": "Conception of the Theotokos",
+   "event": "Conception",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "deposition-robe-theotokos",
+   "mmdd": "07-02",
+   "name": "Deposition of the Robe of the Most Holy Theotokos at Blachernae",
+   "common": "theotokos",
+   "invocation": "Deposition of the Robe of the Theotokos",
+   "event": "Deposition of the Robe",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "deposition-belt-theotokos",
+   "mmdd": "08-31",
+   "name": "Deposition of the Precious Belt of the Most Holy Theotokos",
+   "common": "theotokos",
+   "invocation": "Deposition of the Belt of the Theotokos",
+   "event": "Deposition of the Belt",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "procession-cross-maccabees",
+   "mmdd": "08-01",
+   "name": "Procession of the Precious Cross; Holy Maccabee Martyrs",
+   "common": "cross",
+   "invocation": "the Cross",
+   "subject": "the Procession of the Precious Cross",
+   "note": "General Service to the Venerated Cross (Orloff); the Maccabee martyrs are not separately commemorated in the text. Mapped 2026-10-02."
   }
  ]
 }

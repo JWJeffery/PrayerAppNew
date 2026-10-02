@@ -33,7 +33,7 @@ const MenaionCommons = (() => {
         'female-martyr': 'a Female Martyr', 'monk': 'a Monk', 'nun': 'a Nun',
         'unmercenaries-wonderworkers': 'the Unmercenaries and Wonder-workers',
         'hierarchs-many': 'Several Hierarchs', 'martyrs-many': 'Several Martyrs', 'prophet': 'a Prophet',
-        'angels': 'the Holy Angels'
+        'angels': 'the Holy Angels', 'theotokos': 'the Festivals of the Virgin', 'cross': 'the Cross'
     };
 
     // engine slot key -> section kind, per office
@@ -145,14 +145,19 @@ const MenaionCommons = (() => {
         return _commonPromises[slug];
     }
 
-    function _render(lines, invocation) {
-        return lines.join('\n\n').replace(/\{NAME\}/g, invocation);
+    // `event` (mapping field) fills the "((name of the event))" blanks of the Common for the
+    // festivals of the Virgin; Orloff's blank is split across lines, so the surrounding line
+    // breaks are folded back into one sentence.
+    function _render(lines, invocation, event) {
+        let t = lines.join('\n\n').replace(/\{NAME\}/g, invocation);
+        if (event) t = t.replace(/\s*\(\(name of the event\)(?:\)([;,.]?)|([;,.]?)\))\s*/g, (m, a, b) => ' ' + event + (a || b || '') + ' ');
+        return t;
     }
 
     function _buildItem(slotKey, kind, entry, common, section, original) {
         const commonLabel = COMMON_LABEL[entry.common] || entry.common;
         const baseLabel = (original && original.label ? String(original.label).split(' — ')[0] : slotKey);
-        const body = _render(section.lines, entry.invocation);
+        const body = _render(section.lines, entry.invocation, entry.event);
         const note = '(Text: the Common of ' + commonLabel + ', Orloff, The General Menaion, London 1899 — ' +
                      'Slavonic usage. The proper hymns of ' + (entry.subject || entry.invocation) + ' themselves, where a service book ' +
                      'has them, are not yet in this corpus.' + (entry.note && /Equal-to-the-Apostles/.test(entry.note)
@@ -187,7 +192,48 @@ const MenaionCommons = (() => {
         return _rank4Promise;
     }
 
+    // Rank-4 saints whose AGES day file has three Vespers stichera that each name the saint
+    // (data/menaion/ages/mapping-rank4.json): the saint's own hymns take precedence over the Common.
+    let _agesRank4Promise = null;
+    function _loadAgesRank4Mapping() {
+        if (!_agesRank4Promise) {
+            _agesRank4Promise = _fetchJson(AGES_BASE + 'mapping-rank4.json').catch(() => null);
+        }
+        return _agesRank4Promise;
+    }
+
+    async function _applyRank4AgesVespers(sections, trop) {
+        const map = await _loadAgesRank4Mapping();
+        const entry = map && Array.isArray(map.entries) ? map.entries.find(e => e.name === trop.commemoration) : null;
+        if (!entry || !entry.slots || !entry.slots.vespers_stichera) return 0;
+        const month = await _loadAgesMonth(entry.mmdd.slice(0, 2));
+        const day = month && month.dates ? month.dates[entry.mmdd] : null;
+        const all = day && day.slots && Array.isArray(day.slots.vespers_stichera) ? day.slots.vespers_stichera : [];
+        const hymns = all.filter(h => entry.slots.vespers_stichera.indexOf(_agesKey(h)) !== -1);
+        if (hymns.length < 3) return 0;
+        for (const s of sections) {
+            if (!Array.isArray(s.items)) continue;
+            for (let i = 0; i < s.items.length; i++) {
+                const item = s.items[i];
+                if (!item || item.key !== 'stichera-at-lord-i-have-cried') continue;
+                const replaceRubric = item.resolvedAs === 'menaion-feast-rubric';
+                const afterOctoechos = item.resolvedAs === 'octoechos-baseline-ordinary';
+                if (!replaceRubric && !afterOctoechos) return 0;
+                const built = _buildAgesItem('stichera-at-lord-i-have-cried' + (afterOctoechos ? '-menaion' : ''), entry, hymns, item);
+                built.rank = 4;
+                built.label = 'Stichera at "Lord, I have cried" — ' + (afterOctoechos ? 'of the Commemoration' : 'Proper hymns (AGES)');
+                built.text = built.text + '\n\n' + (replaceRubric
+                    ? '(Three stichera of the commemoration. The stichera of the day\'s tone (Octoechos) that the Typikon sings with them are not shown here.)'
+                    : '(The three stichera of the commemoration follow the Octoechos stichera above.)');
+                if (replaceRubric) s.items[i] = built; else s.items.splice(i + 1, 0, built);
+                return 1;
+            }
+        }
+        return 0;
+    }
+
     async function _applyRank4Vespers(sections, trop) {
+        if (await _applyRank4AgesVespers(sections, trop)) return 1;
         const mapping = await _loadRank4Mapping();
         const entry = mapping && Array.isArray(mapping.entries)
             ? mapping.entries.find(e => e.name === trop.commemoration) : null;
@@ -219,7 +265,7 @@ const MenaionCommons = (() => {
                     type:       'stichera',
                     key:        'stichera-at-lord-i-have-cried' + (afterOctoechos ? '-menaion' : ''),
                     label:      'Stichera at "Lord, I have cried" — ' + (afterOctoechos ? 'of the Commemoration' : 'Common of ' + commonLabel),
-                    text:       _render(lines, entry.invocation) + '\n\n' + note + '\n\n(Text: Orloff, The General Menaion, London 1899 — Slavonic usage. ' +
+                    text:       _render(lines, entry.invocation, entry.event) + '\n\n' + note + '\n\n(Text: Orloff, The General Menaion, London 1899 — Slavonic usage. ' +
                                 'The proper hymns of ' + entry.invocation + ' themselves, where a service book has them, are not yet in this corpus.)',
                     source:     'Menaion Common (Orloff 1899)',
                     rank:       4,

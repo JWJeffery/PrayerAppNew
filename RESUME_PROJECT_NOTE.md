@@ -317,7 +317,7 @@ Jan 14 Nina only + Leavetaking of Theophany moved there; Tikhon -> 08-13, Innoce
 subagents reading OCA + Orthocal per date; merged by `scripts/menaion/merge-lives.py`; shown as "Commemorated Today"). The pass found and fixed ~14 wrong-date/identity
 entries and Josh had 9 unsupported entries deleted -- evidence in `documentation/MENAION_DATA_FINDINGS.md`. Lives are summaries, not liturgical text; confidence ("high"/"medium")
 is stored per entry. **DONE 2026-10-01 -- plan item 4, hymn guide:** rank 1-2 feasts show tone/melody/count of the missing Menaion hymns from AGES metadata (`js/hymn-guide.js`, `documentation/MENAION_AGES.md`), labelled Greek usage. **DONE 2026-10-01 -- plan item 5, "About Today's Service" panel** (`js/day-guide.js`, `documentation/ORTHODOX_DAY.md`). **DONE -- plan item 6, education layer.** **DONE -- plan item 7, patristic commentary on readings** (`data/commentary/readings/`, `documentation/ORTHODOX_DAY.md`). **DONE -- plan item 8, public-domain icons** (`data/icons/`, `images/icons/`, `images/CREDITS.md`; 201 icons covering rank 1-4, ~160 commemorations have none; **TRY AGAIN LATER:** 14 icons found on Commons but not downloaded (Wikimedia throttled; ids + method in `documentation/ORTHODOX_DAY.md` Icons section; Protomartyr Stephen has no vetted file yet)). **All 8 plan items complete.** **DONE 2026-10-02: Old Calendar mode now has the day panel/readings/lives/commentary/icons (`documentation/ORTHODOX_DAY.md`); three stale nav audits retired (`scripts/retired-audits/`); innerHTML audit done. Josh confirmed 2026-10-02: Apr 30 is James son of Zebedee.**
-**Open:** 8 rank-3 feasts stay unmapped (feast-name-template Commons); rank-4 Orthros not done; rank 1-2 feasts deferred.
+**DONE 2026-10-02:** 4 of the 8 unmapped rank-3 feasts mapped (3 stay unmapped on purpose; Nicaea entry gone), 58 rank-4 saints use AGES Vespers stichera, rank-4 Orthros/aposticha deliberately not done (Typikon keeps Octoechos) -- see `documentation/MENAION_COMMONS_ORLOFF.md`. Rank 1-2 feast propers stay deferred.
 **Data question for Josh:** the app lists 04-30 as "Apostle James, Brother of the Lord", but the AGES hymns (and the
 calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm which the app's entry should be.
 
@@ -325,7 +325,7 @@ calendar tradition) for Apr 30 are James the son of Zebedee -- please confirm wh
 with forefeast/afterfeast hymns, so every rank-3 day was read hymn by hymn: 36 saints use it for slots approved by rule or
 by reading (Vespers stichera/aposticha, Orthros praises/exapostilarion/one sessional); everything else uses the Orloff
 Common. Full record, rejections, limits: `documentation/MENAION_AGES.md`. The ZIP is NOT in the repo (re-ingest needs Josh
-to re-supply it). **Open:** AGES for rank-4 days (not reviewed); rank 1-2 feasts untouched (Great Feast propers deferred).
+to re-supply it). **AGES rank 4 done 2026-10-02 (Vespers stichera, 58 saints).** Rank 1-2 feasts untouched (Great Feast propers deferred).
 
 **License status of sources not used:** CLEARLY copyrighted/not-granted -- Festal Menaion, HTM Menaion,
 Lambertsen, OCA liturgics, Saint Kosmas pages ("All Rights Reserved"). UNCLEAR (no usable license
