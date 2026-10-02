@@ -505,6 +505,1834 @@
     "license": "Public domain",
     "name": "Repose of the Holy Apostle and Evangelist John the Theologian"
    }
+  ],
+  "01-12": [
+   {
+    "id": "tatiana-rome",
+    "image": "images/icons/tatiana-rome.jpg",
+    "title": "Святая Татьяна",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B2%D1%8F%D1%82%D0%B0%D1%8F_%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0.jpg",
+    "artist": "Anonymous",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Holy Martyr Tatiana of Rome"
+   }
+  ],
+  "01-31": [
+   {
+    "id": "cyrus-john-unmercenaries",
+    "image": "images/icons/cyrus-john-unmercenaries.jpg",
+    "title": "Cyrus and John",
+    "page": "https://commons.wikimedia.org/wiki/File:Cyrus_and_John.jpg",
+    "artist": "Unknown author",
+    "date": "",
+    "license": "Public domain",
+    "name": "Holy Unmercenary Healers Cyrus and John"
+   }
+  ],
+  "02-09": [
+   {
+    "id": "finding-relics-innocent-irkutsk",
+    "image": "images/icons/finding-relics-innocent-irkutsk.jpg",
+    "title": "Innocent of Irkutsk",
+    "page": "https://commons.wikimedia.org/wiki/File:Innocent_of_Irkutsk.jpg",
+    "artist": "Anonymous",
+    "date": "19 th century",
+    "license": "Public domain",
+    "name": "Finding of the Relics of Innocent of Irkutsk"
+   },
+   {
+    "id": "leavetaking-presentation",
+    "image": "images/icons/leavetaking-presentation.jpg",
+    "title": "Sretenie (Russian museum, 15 c)",
+    "page": "https://commons.wikimedia.org/wiki/File:Sretenie_(Russian_museum,_15_c).jpg",
+    "artist": "Мастерская Андрея Рублева Школа или худ. центр: Москва",
+    "date": "1408",
+    "license": "Public domain",
+    "name": "Leavetaking of the Presentation of the Lord"
+   }
+  ],
+  "02-12": [
+   {
+    "id": "alexios-metropolitan-moscow",
+    "image": "images/icons/alexios-metropolitan-moscow.jpg",
+    "title": "Alexius of Moscow (1580, Solvychegodks)",
+    "page": "https://commons.wikimedia.org/wiki/File:Alexius_of_Moscow_(1580,_Solvychegodks).jpg",
+    "artist": "Unknown",
+    "date": "1580s",
+    "license": "Public domain",
+    "name": "St. Alexios, Metropolitan of Moscow"
+   }
+  ],
+  "02-16": [
+   {
+    "id": "pamphilius-caesarea",
+    "image": "images/icons/pamphilius-caesarea.jpg",
+    "title": "Athonite Fresco of the Martyrdom of Saint Pamphilos of Caesarea and his companions",
+    "page": "https://commons.wikimedia.org/wiki/File:Athonite_Fresco_of_the_Martyrdom_of_Saint_Pamphilos_of_Caesarea_and_his_companions.jpg",
+    "artist": "Unknown author",
+    "date": "1547",
+    "license": "Public domain",
+    "name": "Martyr Pamphilius and companions of Caesarea"
+   }
+  ],
+  "02-20": [
+   {
+    "id": "leo-catania",
+    "image": "images/icons/leo-catania.jpg",
+    "title": "Saint Leo of Catania",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Leo_of_Catania.jpg",
+    "artist": "Anonymous",
+    "date": "1818",
+    "license": "Public domain",
+    "name": "St. Leo, Bishop of Catania"
+   }
+  ],
+  "02-26": [
+   {
+    "id": "porphyry-gaza",
+    "image": "images/icons/porphyry-gaza.jpg",
+    "title": "Saint Porphyrius of Gaza Crop",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Porphyrius_of_Gaza_Crop.jpg",
+    "artist": "Unknown author",
+    "date": "16th-18th century",
+    "license": "Public domain",
+    "name": "St. Porphyrius, Bishop of Gaza"
+   }
+  ],
+  "03-11": [
+   {
+    "id": "sophronius-jerusalem",
+    "image": "images/icons/sophronius-jerusalem.jpg",
+    "title": "Fresco Icon of Saint Sophronios of Jerusalem 2",
+    "page": "https://commons.wikimedia.org/wiki/File:Fresco_Icon_of_Saint_Sophronios_of_Jerusalem_2.jpg",
+    "artist": "Unknown author",
+    "date": "14th-15th Century",
+    "license": "Public domain",
+    "name": "St. Sophronius, Patriarch of Jerusalem"
+   }
+  ],
+  "03-26": [
+   {
+    "id": "synaxis-archangel-gabriel",
+    "image": "images/icons/synaxis-archangel-gabriel.jpg",
+    "title": "Archangel Gabriel Icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Archangel_Gabriel_Icon.tif",
+    "artist": "Unknown author",
+    "date": "between 1600 and 1700",
+    "license": "Public domain",
+    "name": "Synaxis of the Holy Archangel Gabriel"
+   }
+  ],
+  "03-30": [
+   {
+    "id": "john-climacus",
+    "image": "images/icons/john-climacus.jpg",
+    "title": "Ivan Ivanovich's dimensional icon (1554, Kremlin museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Ivan_Ivanovich%27s_dimensional_icon_(1554,_Kremlin_museum).jpg",
+    "artist": "Anonymous",
+    "date": "1554",
+    "license": "Public domain",
+    "name": "Venerable John Climacus, Abbot of Sinai"
+   }
+  ],
+  "04-03": [
+   {
+    "id": "nicetas-medikion",
+    "image": "images/icons/nicetas-medikion.jpg",
+    "title": "Преподобный Никита Исповедник, игумен обители Мидикийской. 1380 год. Из церкви Спаса на Ковалёве",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%98%D1%81%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA,_%D0%B8%D0%B3%D1%83%D0%BC%D0%B5%D0%BD_%D0%BE%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D0%B8_%D0%9C%D0%B8%D0%B4%D0%B8%D0%BA%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9._1380_%D0%B3%D0%BE%D0%B4._%D0%98%D0%B7_%D1%86%D0%B5%D1%80%D0%BA%D0%B2%D0%B8_%D0%A1%D0%BF%D0%B0%D1%81%D0%B0_%D0%BD%D0%B0_%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D1%91%D0%B2%D0%B5.jpg",
+    "artist": "Unknown author",
+    "date": "1380",
+    "license": "Public domain",
+    "name": "Venerable Nicetas, Hegumen of Medikion"
+   }
+  ],
+  "04-11": [
+   {
+    "id": "antipas-pergamon",
+    "image": "images/icons/antipas-pergamon.jpg",
+    "title": "St Antipas Icon Sinai 13th century",
+    "page": "https://commons.wikimedia.org/wiki/File:St_Antipas_Icon_Sinai_13th_century.jpg",
+    "artist": "Unknown author",
+    "date": "2008-04",
+    "license": "Public domain",
+    "name": "Hieromartyr Antipas of Pergamon"
+   }
+  ],
+  "04-26": [
+   {
+    "id": "basil-bishop-amasea",
+    "image": "images/icons/basil-bishop-amasea.jpg",
+    "title": "Martyrion Agiou Basileos Amasias Dionysiou",
+    "page": "https://commons.wikimedia.org/wiki/File:Martyrion_Agiou_Basileos_Amasias_Dionysiou.jpg",
+    "artist": "Tzortzis Phouka",
+    "date": "1547",
+    "license": "Public domain",
+    "name": "Hieromartyr Basil, Bishop of Amasea"
+   }
+  ],
+  "05-09": [
+   {
+    "id": "isaiah-prophet",
+    "image": "images/icons/isaiah-prophet.jpg",
+    "title": "Icon of Isaiah (19th c, priv.coll.)",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_Isaiah_(19th_c,_priv.coll.).jpg",
+    "artist": "Unknown",
+    "date": "LATE 19TH CENTURY",
+    "license": "Public domain",
+    "name": "Holy Prophet Isaiah"
+   }
+  ],
+  "06-04": [
+   {
+    "id": "metrophanes-cp",
+    "image": "images/icons/metrophanes-cp.jpg",
+    "title": "Agios Metrophanes Konstantinoupoleos Vissarionos",
+    "page": "https://commons.wikimedia.org/wiki/File:Agios_Metrophanes_Konstantinoupoleos_Vissarionos.jpg",
+    "artist": "Tzortzis Phouka",
+    "date": "16th Century",
+    "license": "Public domain",
+    "name": "St. Metrophanes, First Patriarch of Constantinople"
+   }
+  ],
+  "06-08": [
+   {
+    "id": "theodore-stratilates-translation",
+    "image": "images/icons/theodore-stratilates-translation.jpg",
+    "title": "Theodore Stratelates (XVI century icon)",
+    "page": "https://commons.wikimedia.org/wiki/File:Theodore_Stratelates_(XVI_century_icon).jpg",
+    "artist": "Anonymous",
+    "date": "16 th century",
+    "license": "Public domain",
+    "name": "Translation of the Relics of the Great Martyr Theodore Stratelates"
+   }
+  ],
+  "06-12": [
+   {
+    "id": "onuphrius-great",
+    "image": "images/icons/onuphrius-great.jpg",
+    "title": "Onuphrius (Kolomenskoe, 1670s) 2",
+    "page": "https://commons.wikimedia.org/wiki/File:Onuphrius_(Kolomenskoe,_1670s)_2.jpg",
+    "artist": "Anonymous",
+    "date": "1670s",
+    "license": "Public domain",
+    "name": "Venerable Onuphrius the Great"
+   }
+  ],
+  "06-20": [
+   {
+    "id": "methodius-bishop-patara",
+    "image": "images/icons/methodius-bishop-patara.jpg",
+    "title": "Methodius of Olympus",
+    "page": "https://commons.wikimedia.org/wiki/File:Methodius_of_Olympus.jpg",
+    "artist": "Anonymous",
+    "date": "17 th century",
+    "license": "Public domain",
+    "name": "Hieromartyr Methodius, Bishop of Patara"
+   }
+  ],
+  "07-13": [
+   {
+    "id": "gabriel-archangel-july",
+    "image": "images/icons/gabriel-archangel-july.jpg",
+    "title": "Archangel Gabriel icon from Svaneti (Bernoville, 1875)",
+    "page": "https://commons.wikimedia.org/wiki/File:Archangel_Gabriel_icon_from_Svaneti_(Bernoville,_1875).jpg",
+    "artist": "Tomaszkiewicz EX",
+    "date": "1875",
+    "license": "Public domain",
+    "name": "Synaxis of the Holy Archangel Gabriel"
+   }
+  ],
+  "08-13": [
+   {
+    "id": "maximus-confessor-repose",
+    "image": "images/icons/maximus-confessor-repose.jpg",
+    "title": "Athonite Fresco Icon of Saint Maximos the Confessor",
+    "page": "https://commons.wikimedia.org/wiki/File:Athonite_Fresco_Icon_of_Saint_Maximos_the_Confessor.jpg",
+    "artist": "Unknown author",
+    "date": "14th-15th Century",
+    "license": "Public domain",
+    "name": "Venerable Maximus the Confessor"
+   },
+   {
+    "id": "tikhon-zadonsk",
+    "image": "images/icons/tikhon-zadonsk.jpg",
+    "title": "St. Tikhon of Zadonsk (19th. c., Russia, priv. coll.)",
+    "page": "https://commons.wikimedia.org/wiki/File:St._Tikhon_of_Zadonsk_(19th._c.,_Russia,_priv._coll.).jpg",
+    "artist": "Anonymous",
+    "date": "19 c,",
+    "license": "Public domain",
+    "name": "St. Tikhon of Zadonsk, Bishop of Voronezh"
+   }
+  ],
+  "08-21": [
+   {
+    "id": "thaddaeus-apostle",
+    "image": "images/icons/thaddaeus-apostle.jpg",
+    "title": "Icon of Apostle Jude Thaddeus, Saint John the Forerunner, Jerusalem",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_Apostle_Jude_Thaddeus,_Saint_John_the_Forerunner,_Jerusalem.jpg",
+    "artist": "Unknown author",
+    "date": "19th Century",
+    "license": "Public domain",
+    "name": "Holy Apostle Thaddaeus"
+   }
+  ],
+  "08-25": [
+   {
+    "id": "bartholomew-titus-apostles",
+    "image": "images/icons/bartholomew-titus-apostles.jpg",
+    "title": "Apostle Bartholomew. Fresco of the Church of Agios Nikolaos. Stavronikita Monastery. Athos",
+    "page": "https://commons.wikimedia.org/wiki/File:Apostle_Bartholomew._Fresco_of_the_Church_of_Agios_Nikolaos._Stavronikita_Monastery._Athos.jpg",
+    "artist": "Theophanes the Cretan and Symeon",
+    "date": "1546",
+    "license": "Public domain",
+    "name": "Holy Apostles Bartholomew and Titus"
+   }
+  ],
+  "09-07": [
+   {
+    "id": "forefeast-nativity-theotokos",
+    "image": "images/icons/forefeast-nativity-theotokos.jpg",
+    "title": "Nikola-Obrazopisov-Belyova-church-Nativity-of-the-Theotokos-icon-1863",
+    "page": "https://commons.wikimedia.org/wiki/File:Nikola-Obrazopisov-Belyova-church-Nativity-of-the-Theotokos-icon-1863.jpg",
+    "artist": "Nikola Obrazopisov",
+    "date": "1863",
+    "license": "Public domain",
+    "name": "Forefeast of the Nativity of the Most Holy Theotokos"
+   }
+  ],
+  "09-12": [
+   {
+    "id": "autonomus-bishop-martyr",
+    "image": "images/icons/autonomus-bishop-martyr.jpg",
+    "title": "Autonomus of Italy by O.Chirikov (Muz.ist.rel)",
+    "page": "https://commons.wikimedia.org/wiki/File:Autonomus_of_Italy_by_O.Chirikov_(Muz.ist.rel).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19 th century",
+    "license": "Public domain",
+    "name": "Hieromartyr Autonomus, Bishop"
+   }
+  ],
+  "09-20": [
+   {
+    "id": "eustathios-thespesia-companions",
+    "image": "images/icons/eustathios-thespesia-companions.jpg",
+    "title": "Saint Eustace, Cretan school, 17 c.",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Eustace,_Cretan_school,_17_c..jpg",
+    "artist": "Cretan School",
+    "date": "Первая половина — середина XVII в.",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Eustathios Placidas and his family"
+   }
+  ],
+  "10-08": [
+   {
+    "id": "pelagia-penitent",
+    "image": "images/icons/pelagia-penitent.jpg",
+    "title": "Pelagia of Antioch (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:Pelagia_of_Antioch_(Menologion_of_Basil_II).jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "Venerable Pelagia the Penitent"
+   }
+  ],
+  "10-14": [
+   {
+    "id": "paraskeva-serbia",
+    "image": "images/icons/paraskeva-serbia.jpg",
+    "title": "Unknown - Saint Paraskeva of the Balkans - MNK XVIII-57 (53839)",
+    "page": "https://commons.wikimedia.org/wiki/File:Unknown_-_Saint_Paraskeva_of_the_Balkans_-_MNK_XVIII-57_(53839).jpg",
+    "artist": "unknown",
+    "date": "circa 1400-1500",
+    "license": "Public domain",
+    "name": "Venerable Paraskeva of Serbia (of the Balkans)"
+   }
+  ],
+  "10-17": [
+   {
+    "id": "hosea-prophet",
+    "image": "images/icons/hosea-prophet.jpg",
+    "title": "Hosea",
+    "page": "https://commons.wikimedia.org/wiki/File:Hosea.jpg",
+    "artist": "18 century icon painter",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Hosea"
+   },
+   {
+    "id": "cosmas-damian-arabia",
+    "image": "images/icons/cosmas-damian-arabia.jpg",
+    "title": "Saints Cosmas and Damian icon, Syria (1778)",
+    "page": "https://commons.wikimedia.org/wiki/File:Saints_Cosmas_and_Damian_icon,_Syria_(1778).jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "circa 1778date QS:P,+1778-00-00T00:00:00Z/9,P1480,Q5727902",
+    "license": "Public domain",
+    "name": "Holy Unmercenary Physicians Cosmas and Damian of Cilicia (of Arabia)"
+   }
+  ],
+  "10-22": [
+   {
+    "id": "abercius-bishop-hieropolis",
+    "image": "images/icons/abercius-bishop-hieropolis.jpg",
+    "title": "Abercius of Hieropolis (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:Abercius_of_Hieropolis_(Menologion_of_Basil_II).jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis"
+   }
+  ],
+  "10-27": [
+   {
+    "id": "nestor-martyr-thessalonica",
+    "image": "images/icons/nestor-martyr-thessalonica.jpg",
+    "title": "Nestor of Thessalonica, Holy Trinity Church, Resava Monastery",
+    "page": "https://commons.wikimedia.org/wiki/File:Nestor_of_Thessalonica,_Holy_Trinity_Church,_Resava_Monastery.png",
+    "artist": "Unknown author",
+    "date": "circa 1418",
+    "license": "Public domain",
+    "name": "Holy Martyr Nestor of Thessalonica"
+   }
+  ],
+  "11-07": [
+   {
+    "id": "thirty-three-martyrs-melitene",
+    "image": "images/icons/thirty-three-martyrs-melitene.jpg",
+    "title": "33 Holy Martyrs of Melitene",
+    "page": "https://commons.wikimedia.org/wiki/File:33_Holy_Martyrs_of_Melitene.jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "The Thirty-Three Martyrs of Melitene"
+   }
+  ],
+  "11-18": [
+   {
+    "id": "plato-roman",
+    "image": "images/icons/plato-roman.jpg",
+    "title": "Fresco of Saint Platon of Ankyra, Dečani",
+    "page": "https://commons.wikimedia.org/wiki/File:Fresco_of_Saint_Platon_of_Ankyra,_De%C4%8Dani.jpg",
+    "artist": "Unknown author",
+    "date": "1350",
+    "license": "Public domain",
+    "name": "Holy Martyr Plato of Ancyra"
+   }
+  ],
+  "11-23": [
+   {
+    "id": "amphilochius-iconium",
+    "image": "images/icons/amphilochius-iconium.jpg",
+    "title": "Amphilochius of Iconium (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:Amphilochius_of_Iconium_(Menologion_of_Basil_II).jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Amphilochius, Bishop of Iconium"
+   }
+  ],
+  "11-26": [
+   {
+    "id": "alypius-stylite",
+    "image": "images/icons/alypius-stylite.jpg",
+    "title": "Alypius the Stylite (Tzanes)",
+    "page": "https://commons.wikimedia.org/wiki/File:Alypius_the_Stylite_(Tzanes).png",
+    "artist": "Emmanuel Tzanes",
+    "date": "between 1635 and 1660",
+    "license": "Public domain",
+    "name": "Venerable Alypius the Stylite"
+   }
+  ],
+  "12-01": [
+   {
+    "id": "prophet-nahum",
+    "image": "images/icons/prophet-nahum.jpg",
+    "title": "Nahum-prophet",
+    "page": "https://commons.wikimedia.org/wiki/File:Nahum-prophet.jpg",
+    "artist": "Unknown",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Nahum"
+   }
+  ],
+  "12-04": [
+   {
+    "id": "john-damascene",
+    "image": "images/icons/john-damascene.jpg",
+    "title": "Athonite Fresco Icon of Saint John of Damascus 2",
+    "page": "https://commons.wikimedia.org/wiki/File:Athonite_Fresco_Icon_of_Saint_John_of_Damascus_2.jpg",
+    "artist": "Unknown author",
+    "date": "14th-15th Century",
+    "license": "Public domain",
+    "name": "Our Father among the Saints John of Damascus"
+   },
+   {
+    "id": "barbara-great-martyr",
+    "image": "images/icons/barbara-great-martyr.jpg",
+    "title": "Saint Barbara icon in Saint Barbara Church, Kastoria, 19 Century",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Barbara_icon_in_Saint_Barbara_Church,_Kastoria,_19_Century.jpg",
+    "artist": "unknown",
+    "date": "19_Century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Barbara"
+   }
+  ],
+  "12-10": [
+   {
+    "id": "menas-hermogenes-eugraphus",
+    "image": "images/icons/menas-hermogenes-eugraphus.jpg",
+    "title": "Menas, Hermogenes and Eugraphus of Alexandria (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:Menas,_Hermogenes_and_Eugraphus_of_Alexandria_(Menologion_of_Basil_II).jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus"
+   }
+  ],
+  "12-20": [
+   {
+    "id": "forefeast-nativity",
+    "image": "images/icons/forefeast-nativity.jpg",
+    "title": "Nativity of Jesus icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Nativity_of_Jesus_icon.jpg",
+    "artist": "Unknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Forefeast of the Nativity of our Lord God and Savior Jesus Christ"
+   },
+   {
+    "id": "ignatius-god-bearer",
+    "image": "images/icons/ignatius-god-bearer.jpg",
+    "title": "Byzantine - Saint Ignatius of Antioch - Walters 4820867",
+    "page": "https://commons.wikimedia.org/wiki/File:Byzantine_-_Saint_Ignatius_of_Antioch_-_Walters_4820867.jpg",
+    "artist": "Anonymous (Byzantine Empire)Unknown author",
+    "date": "10th century",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch"
+   }
+  ],
+  "12-22": [
+   {
+    "id": "great-martyr-anastasia",
+    "image": "images/icons/great-martyr-anastasia.jpg",
+    "title": "Anastasia of Sirmium",
+    "page": "https://commons.wikimedia.org/wiki/File:Anastasia_of_Sirmium.jpg",
+    "artist": "Anonymous",
+    "date": "15 th century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Anastasia the Deliverer from Potions"
+   },
+   {
+    "id": "forefeast-nativity-3",
+    "image": "images/icons/forefeast-nativity-3.jpg",
+    "title": "0668Ha. Hermitage Museum (Hall 143). Icon of the Nativity of Christ",
+    "page": "https://commons.wikimedia.org/wiki/File:0668Ha._Hermitage_Museum_(Hall_143)._Icon_of_the_Nativity_of_Christ.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "1-я половина XVII",
+    "license": "Public domain",
+    "name": "Forefeast of the Nativity of Christ (Day 3)"
+   }
+  ],
+  "12-28": [
+   {
+    "id": "twenty-thousand-martyrs-nicomedia",
+    "image": "images/icons/twenty-thousand-martyrs-nicomedia.jpg",
+    "title": "20,000 martyrs of Nicomedia (Menologion of Basil II)",
+    "page": "https://commons.wikimedia.org/wiki/File:20,000_martyrs_of_Nicomedia_(Menologion_of_Basil_II).jpg",
+    "artist": "Unknown",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia"
+   }
+  ],
+  "01-03": [
+   {
+    "id": "prophet-malachi",
+    "image": "images/icons/prophet-malachi.jpg",
+    "title": "Malachi",
+    "page": "https://commons.wikimedia.org/wiki/File:Malachi.jpg",
+    "artist": "18 century icon painter",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Malachi"
+   }
+  ],
+  "01-14": [
+   {
+    "id": "leavetaking-theophany",
+    "image": "images/icons/leavetaking-theophany.jpg",
+    "title": "Baptism of Christ from Vasilyevskiy chin (1408, Russian museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Baptism_of_Christ_from_Vasilyevskiy_chin_(1408,_Russian_museum).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)",
+    "date": "1408",
+    "license": "Public domain",
+    "name": "Leavetaking of Theophany"
+   },
+   {
+    "id": "nina-georgia",
+    "image": "images/icons/nina-georgia.jpg",
+    "title": "St. Nino. Georgian fresco, 17th-18th centuries",
+    "page": "https://commons.wikimedia.org/wiki/File:St._Nino._Georgian_fresco,_17th-18th_centuries.jpg",
+    "artist": "Unknown author",
+    "date": "17th-18th centuries",
+    "license": "Public domain",
+    "name": "Equal-to-the-Apostles Nina, Enlightener of Georgia"
+   }
+  ],
+  "01-19": [
+   {
+    "id": "macarius-egypt",
+    "image": "images/icons/macarius-egypt.jpg",
+    "title": "Macarius the Elder Full Body Length Icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Macarius_the_Elder_Full_Body_Length_Icon.jpg",
+    "artist": "Солнцев, Фёдор Григорьевич",
+    "date": "1846—1853",
+    "license": "Public domain",
+    "name": "Venerable Macarius the Great of Egypt"
+   }
+  ],
+  "01-24": [
+   {
+    "id": "xenia-rome",
+    "image": "images/icons/xenia-rome.jpg",
+    "title": "Xenia of Rome",
+    "page": "https://commons.wikimedia.org/wiki/File:Xenia_of_Rome.jpg",
+    "artist": "Anonymous",
+    "date": "1551",
+    "license": "Public domain",
+    "name": "Venerable Xenia of Rome (Eusebeia)"
+   }
+  ],
+  "02-01": [
+   {
+    "id": "tryphon-martyr",
+    "image": "images/icons/tryphon-martyr.jpg",
+    "title": "Святой Трифон",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD.jpg",
+    "artist": "anonimus",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Holy Martyr Tryphon of Apamea"
+   }
+  ],
+  "02-17": [
+   {
+    "id": "theodore-tyron",
+    "image": "images/icons/theodore-tyron.jpg",
+    "title": "Theodore Tyron by O.Chirikov (1891, Abramov's icon museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Theodore_Tyron_by_O.Chirikov_(1891,_Abramov%27s_icon_museum).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Great Martyr Theodore Tyron ('the Recruit')"
+   }
+  ],
+  "03-04": [
+   {
+    "id": "gerasimus-jordan",
+    "image": "images/icons/gerasimus-jordan.jpg",
+    "title": "Saint Gerasimus of Jordan with a Lion. Icon. Russia, 16th century",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Gerasimus_of_Jordan_with_a_Lion._Icon._Russia,_16th_century.jpg",
+    "artist": "Unknown author",
+    "date": "16th century",
+    "license": "Public domain",
+    "name": "Venerable Gerasimus of the Jordan"
+   }
+  ],
+  "03-17": [
+   {
+    "id": "alexios-man-of-god",
+    "image": "images/icons/alexios-man-of-god.jpg",
+    "title": "Alexios of Rome Russian Icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Alexios_of_Rome_Russian_Icon.jpg",
+    "artist": "Unknown author",
+    "date": "16th-19th Centuries",
+    "license": "Public domain",
+    "name": "Venerable Alexios, Man of God"
+   }
+  ],
+  "03-22": [
+   {
+    "id": "basil-ancyra-presbyter",
+    "image": "images/icons/basil-ancyra-presbyter.jpg",
+    "title": "Basil of Ancyra by M.Dikarev (1890, Hermitage)",
+    "page": "https://commons.wikimedia.org/wiki/File:Basil_of_Ancyra_by_M.Dikarev_(1890,_Hermitage).jpg",
+    "artist": "Mikhail Ivanovich Dikarev",
+    "date": "конец XIX — начало XX вв.",
+    "license": "Public domain",
+    "name": "Hieromartyr Basil, Presbyter of Ancyra"
+   }
+  ],
+  "04-08": [
+   {
+    "id": "herodion-asyncritus-phlegon",
+    "image": "images/icons/herodion-asyncritus-phlegon.jpg",
+    "title": "Icon of Herodion of Patras",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_Herodion_of_Patras.jpg",
+    "artist": "Anonymous",
+    "date": "1840",
+    "license": "Public domain",
+    "name": "Holy Apostles Herodion, Asyncritus, and Phlegon"
+   }
+  ],
+  "04-21": [
+   {
+    "id": "januarius-bishop-beneventum",
+    "image": "images/icons/januarius-bishop-beneventum.jpg",
+    "title": "Januarius by O.Chirikov (Muz.ist. rel)",
+    "page": "https://commons.wikimedia.org/wiki/File:Januarius_by_O.Chirikov_(Muz.ist._rel).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Hieromartyr Januarius, Bishop of Beneventum"
+   }
+  ],
+  "04-27": [
+   {
+    "id": "simeon-bishop-jerusalem",
+    "image": "images/icons/simeon-bishop-jerusalem.jpg",
+    "title": "Simon of Jerusalem (April 27) by O.Chirikov (Muz.it. relig)",
+    "page": "https://commons.wikimedia.org/wiki/File:Simon_of_Jerusalem_(April_27)_by_O.Chirikov_(Muz.it._relig).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Hieromartyr Simeon, Bishop of Jerusalem"
+   }
+  ],
+  "05-01": [
+   {
+    "id": "prophet-jeremiah",
+    "image": "images/icons/prophet-jeremiah.jpg",
+    "title": "0170Hb. Prophet Jeremiah, 2nd half of the 18th century",
+    "page": "https://commons.wikimedia.org/wiki/File:0170Hb._Prophet_Jeremiah,_2nd_half_of_the_18th_century.jpg",
+    "artist": "Unknown author",
+    "date": "2-я половина XVIII",
+    "license": "Public domain",
+    "name": "Holy Prophet Jeremiah"
+   }
+  ],
+  "05-10": [
+   {
+    "id": "simon-zealot-apostle",
+    "image": "images/icons/simon-zealot-apostle.jpg",
+    "title": "Simon the Zealot - Apostle",
+    "page": "https://commons.wikimedia.org/wiki/File:Simon_the_Zealot_-_Apostle.jpeg",
+    "artist": "Unknown Russian Orthodox church icon painter from 1720",
+    "date": "1720, Russian empire. Submitted to wikimedia on 2011-10-01.",
+    "license": "Public domain",
+    "name": "Holy Apostle Simon the Zealot"
+   }
+  ],
+  "05-23": [
+   {
+    "id": "michael-bishop-synnada",
+    "image": "images/icons/michael-bishop-synnada.jpg",
+    "title": "Agios Michael Synnadas",
+    "page": "https://commons.wikimedia.org/wiki/File:Agios_Michael_Synnadas.jpg",
+    "artist": "Unknown author",
+    "date": "18-19th Century",
+    "license": "Public domain",
+    "name": "St. Michael the Confessor, Bishop of Synnada"
+   }
+  ],
+  "06-01": [
+   {
+    "id": "justin-martyr-philosopher",
+    "image": "images/icons/justin-martyr-philosopher.jpg",
+    "title": "Saint Justin Martyr by Theophanes the Cretan",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
+    "artist": "Theophanes the Cretan",
+    "date": "between 1545 and 1546",
+    "license": "Public domain",
+    "name": "Holy Martyr Justin the Philosopher"
+   }
+  ],
+  "06-13": [
+   {
+    "id": "aquilina-byblos",
+    "image": "images/icons/aquilina-byblos.jpg",
+    "title": "Акилина Библосская и Параскева Пятница",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BA%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0_%D0%91%D0%B8%D0%B1%D0%BB%D0%BE%D1%81%D1%81%D0%BA%D0%B0%D1%8F_%D0%B8_%D0%9F%D0%B0%D1%80%D0%B0%D1%81%D0%BA%D0%B5%D0%B2%D0%B0_%D0%9F%D1%8F%D1%82%D0%BD%D0%B8%D1%86%D0%B0.jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Holy Martyr Aquilina of Byblos"
+   }
+  ],
+  "06-21": [
+   {
+    "id": "julian-tarsus-martyr",
+    "image": "images/icons/julian-tarsus-martyr.jpg",
+    "title": "Julian of Tarsus",
+    "page": "https://commons.wikimedia.org/wiki/File:Julian_of_Tarsus.jpg",
+    "artist": "Unknown author",
+    "date": "",
+    "license": "Public domain",
+    "name": "Holy Martyr Julian of Tarsus"
+   }
+  ],
+  "07-05": [
+   {
+    "id": "athanasios-athos",
+    "image": "images/icons/athanasios-athos.jpg",
+    "title": "Athanasios",
+    "page": "https://commons.wikimedia.org/wiki/File:Athanasios.jpg",
+    "artist": "Manuel Panselinos",
+    "date": "1290",
+    "license": "Public domain",
+    "name": "Venerable Athanasios of Athos"
+   }
+  ],
+  "07-15": [
+   {
+    "id": "vladimir-equal-apostles",
+    "image": "images/icons/vladimir-equal-apostles.jpg",
+    "title": "Icon of saint Vladimir (c. 1900, Russia, priv. coll.)",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_saint_Vladimir_(c._1900,_Russia,_priv._coll.).jpg",
+    "artist": "Anonymous",
+    "date": "19 c,",
+    "license": "Public domain",
+    "name": "Holy Equal-to-the-Apostles Great Prince Vladimir of Russia"
+   }
+  ],
+  "07-22": [
+   {
+    "id": "mary-magdalene-equal-apostles",
+    "image": "images/icons/mary-magdalene-equal-apostles.jpg",
+    "title": "Mary Magdalene by Constantin Tzanes (17th c.)",
+    "page": "https://commons.wikimedia.org/wiki/File:Mary_Magdalene_by_Constantin_Tzanes_(17th_c.).jpg",
+    "artist": "Konstantinos Tzanes",
+    "date": "17th century",
+    "license": "Public domain",
+    "name": "Holy Equal-to-the-Apostles Mary Magdalene"
+   }
+  ],
+  "07-27": [
+   {
+    "id": "panteleimon-great-martyr",
+    "image": "images/icons/panteleimon-great-martyr.jpg",
+    "title": "Byzantine - Saint Panteleimon - Walters 4820864",
+    "page": "https://commons.wikimedia.org/wiki/File:Byzantine_-_Saint_Panteleimon_-_Walters_4820864.jpg",
+    "artist": "Anonymous (Byzantine artist)Unknown author",
+    "date": "10th century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr and Healer Panteleimon"
+   }
+  ],
+  "08-04": [
+   {
+    "id": "seven-sleepers-ephesus",
+    "image": "images/icons/seven-sleepers-ephesus.jpg",
+    "title": "Russian Icon of the Seven Sleepers of Ephesos with Vine Frame",
+    "page": "https://commons.wikimedia.org/wiki/File:Russian_Icon_of_the_Seven_Sleepers_of_Ephesos_with_Vine_Frame.jpg",
+    "artist": "Unknown author",
+    "date": "19th-20th Century",
+    "license": "Public domain",
+    "name": "The Seven Youths (Sleepers) of Ephesus"
+   }
+  ],
+  "08-18": [
+   {
+    "id": "floros-lavros-martyrs",
+    "image": "images/icons/floros-lavros-martyrs.jpg",
+    "title": "0899Ha. Hermitage Museum (Hall 144). Icon of the Martyrs Florus and Laurus",
+    "page": "https://commons.wikimedia.org/wiki/File:0899Ha._Hermitage_Museum_(Hall_144)._Icon_of_the_Martyrs_Florus_and_Laurus.jpg",
+    "artist": "Unknown author",
+    "date": "конец XV",
+    "license": "Public domain",
+    "name": "Holy Martyrs Floros and Lavros"
+   }
+  ],
+  "08-27": [
+   {
+    "id": "pimen-great",
+    "image": "images/icons/pimen-great.jpg",
+    "title": "Hosios Loukas (nave, vault over south-west bay) - S.Poimen",
+    "page": "https://commons.wikimedia.org/wiki/File:Hosios_Loukas_(nave,_vault_over_south-west_bay)_-_S.Poimen.jpg",
+    "artist": "Unknown artist",
+    "date": "11th century",
+    "license": "Public domain",
+    "name": "Venerable Pimen (Poemen) the Great"
+   }
+  ],
+  "09-01": [
+   {
+    "id": "indiction-new-year",
+    "image": "images/icons/indiction-new-year.jpg",
+    "title": "Simeon Stylites icon 1465",
+    "page": "https://commons.wikimedia.org/wiki/File:Simeon_Stylites_icon_1465.jpg",
+    "artist": "Anonymous",
+    "date": "1465",
+    "license": "Public domain",
+    "name": "The Indiction — Beginning of the New Ecclesiastical Year; St. Simeon the Stylite"
+   }
+  ],
+  "09-09": [
+   {
+    "id": "joachim-anna-parents-theotokos",
+    "image": "images/icons/joachim-anna-parents-theotokos.jpg",
+    "title": "0670Ha. Hermitage Museum (Hall 143). Icon Meeting of Joachim and Anna at the Golden Gate",
+    "page": "https://commons.wikimedia.org/wiki/File:0670Ha._Hermitage_Museum_(Hall_143)._Icon_Meeting_of_Joachim_and_Anna_at_the_Golden_Gate.jpg",
+    "artist": "Unknown author",
+    "date": "1-я половина XVII",
+    "license": "Public domain",
+    "name": "Holy and Righteous Ancestors of God, Joachim and Anna"
+   }
+  ],
+  "09-13": [
+   {
+    "id": "cornelius-centurion",
+    "image": "images/icons/cornelius-centurion.jpg",
+    "title": "Cornelius the centurion by O.Chirikov (Muz.ist.relig)",
+    "page": "https://commons.wikimedia.org/wiki/File:Cornelius_the_centurion_by_O.Chirikov_(Muz.ist.relig).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19th century",
+    "license": "Public domain",
+    "name": "Holy Martyr Cornelius the Centurion"
+   },
+   {
+    "id": "forefeast-exaltation-cross",
+    "image": "images/icons/forefeast-exaltation-cross.jpg",
+    "title": "Unknown painter - Exaltation of the Cross - WGA23497",
+    "page": "https://commons.wikimedia.org/wiki/File:Unknown_painter_-_Exaltation_of_the_Cross_-_WGA23497.jpg",
+    "artist": "Unknown Icon Painter, Russian (late 15th century in northern Russia)",
+    "date": "1490s",
+    "license": "Public domain",
+    "name": "Forefeast of the Exaltation of the Holy Cross; Consecration of the Church of the Resurrection"
+   }
+  ],
+  "09-17": [
+   {
+    "id": "sophia-vera-nadezda-lyubov",
+    "image": "images/icons/sophia-vera-nadezda-lyubov.jpg",
+    "title": "Karp Zolotaryov Sophia Faith Hope Charity 1685",
+    "page": "https://commons.wikimedia.org/wiki/File:Karp_Zolotaryov_Sophia_Faith_Hope_Charity_1685.jpg",
+    "artist": "en:Karp Zolotaryov (fl. last quarter of the 17th century)",
+    "date": "1685",
+    "license": "Public domain",
+    "name": "Holy Martyrs Sophia (Faith) and her daughters Vera, Nadezhda, and Lyubov"
+   }
+  ],
+  "09-30": [
+   {
+    "id": "gregory-illuminator-armenia",
+    "image": "images/icons/gregory-illuminator-armenia.jpg",
+    "title": "Անհայտ հայ նկարիչ, 18-րդ դար Սուրբ Գրիգոր Լուսավորիչ",
+    "page": "https://commons.wikimedia.org/wiki/File:%D4%B1%D5%B6%D5%B0%D5%A1%D5%B5%D5%BF_%D5%B0%D5%A1%D5%B5_%D5%B6%D5%AF%D5%A1%D6%80%D5%AB%D5%B9,_18-%D6%80%D5%A4_%D5%A4%D5%A1%D6%80_%D5%8D%D5%B8%D6%82%D6%80%D5%A2_%D4%B3%D6%80%D5%AB%D5%A3%D5%B8%D6%80_%D4%BC%D5%B8%D6%82%D5%BD%D5%A1%D5%BE%D5%B8%D6%80%D5%AB%D5%B9.jpg",
+    "artist": "unknown, 18th century",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "St. Gregory the Illuminator of Armenia"
+   }
+  ],
+  "10-09": [
+   {
+    "id": "james-alphaeus-apostle",
+    "image": "images/icons/james-alphaeus-apostle.jpg",
+    "title": "Apostle James, son of Alphaeus",
+    "page": "https://commons.wikimedia.org/wiki/File:Apostle_James,_son_of_Alphaeus.jpeg",
+    "artist": "Mstyora craftsmen of the 19th century",
+    "date": "19-th century (Russian empire). Posted to wikimedia on 2011-10-01.",
+    "license": "Public domain",
+    "name": "Holy Apostle James the son of Alphaeus"
+   }
+  ],
+  "10-23": [
+   {
+    "id": "james-brother-lord",
+    "image": "images/icons/james-brother-lord.jpg",
+    "title": "James the Just (Novgorod, 16 c.)",
+    "page": "https://commons.wikimedia.org/wiki/File:James_the_Just_(Novgorod,_16_c.).jpg",
+    "artist": "Anonymous",
+    "date": "16th century",
+    "license": "Public domain",
+    "name": "Holy Apostle James, Brother of the Lord"
+   }
+  ],
+  "10-28": [
+   {
+    "id": "stephen-sabaite-hymnographer",
+    "image": "images/icons/stephen-sabaite-hymnographer.jpg",
+    "title": "Стефан Савваит. Чтец-3",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B5%D1%84%D0%B0%D0%BD_%D0%A1%D0%B0%D0%B2%D0%B2%D0%B0%D0%B8%D1%82._%D0%A7%D1%82%D0%B5%D1%86-3.jpg",
+    "artist": "Unknown author",
+    "date": "16th century",
+    "license": "Public domain",
+    "name": "Venerable Stephen the Sabaite, Hymnographer"
+   },
+   {
+    "id": "terence-neonilla-family",
+    "image": "images/icons/terence-neonilla-family.jpg",
+    "title": "Neonilla",
+    "page": "https://commons.wikimedia.org/wiki/File:Neonilla.jpg",
+    "artist": "Тзортзи (Зорзис) Фука. Фреска. Афон (Дионисиат). 1547 г.",
+    "date": "1547",
+    "license": "Public domain",
+    "name": "Holy Martyrs Terence and Neonilla and their children"
+   }
+  ],
+  "11-04": [
+   {
+    "id": "joannicius-great",
+    "image": "images/icons/joannicius-great.jpg",
+    "title": "Saint Ioannikios the Great Serbian",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Ioannikios_the_Great_Serbian.jpg",
+    "artist": "Unknown author",
+    "date": "13th Century",
+    "license": "Public domain",
+    "name": "Venerable Joannicius the Great"
+   }
+  ],
+  "11-24": [
+   {
+    "id": "great-martyr-catherine",
+    "image": "images/icons/great-martyr-catherine.jpg",
+    "title": "Catherine of Alexandria Philotheos Skoufos",
+    "page": "https://commons.wikimedia.org/wiki/File:Catherine_of_Alexandria_Philotheos_Skoufos.png",
+    "artist": "Philotheos Skoufos",
+    "date": "1660s",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Catherine of Alexandria"
+   }
+  ],
+  "11-27": [
+   {
+    "id": "james-the-persian",
+    "image": "images/icons/james-the-persian.jpg",
+    "title": "Saint James Intercisus Sinai(12th-13th Century)",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_James_Intercisus_Sinai(12th-13th_Century).jpg",
+    "artist": "",
+    "date": "12th century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr James the Persian"
+   }
+  ],
+  "12-02": [
+   {
+    "id": "prophet-habakkuk",
+    "image": "images/icons/prophet-habakkuk.jpg",
+    "title": "Habakkuk",
+    "page": "https://commons.wikimedia.org/wiki/File:Habakkuk.jpg",
+    "artist": "18 century icon painter",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Habakkuk"
+   }
+  ],
+  "12-11": [
+   {
+    "id": "daniel-stylite",
+    "image": "images/icons/daniel-stylite.jpg",
+    "title": "Daniel Stylites (Kirillo-Belozersk)",
+    "page": "https://commons.wikimedia.org/wiki/File:Daniel_Stylites_(Kirillo-Belozersk).jpg",
+    "artist": "School of Dionisius",
+    "date": "1st h. 16 c.",
+    "license": "Public domain",
+    "name": "Venerable Daniel the Stylite"
+   }
+  ],
+  "12-23": [
+   {
+    "id": "forefeast-nativity-4",
+    "image": "images/icons/forefeast-nativity-4.jpg",
+    "title": "Nativity Icon from Saint George Church in Kochani 1865",
+    "page": "https://commons.wikimedia.org/wiki/File:Nativity_Icon_from_Saint_George_Church_in_Kochani_1865.jpg",
+    "artist": "Unknown author",
+    "date": "1865",
+    "license": "Public domain",
+    "name": "Forefeast of the Nativity of Christ (Day 4)"
+   },
+   {
+    "id": "ten-martyrs-crete",
+    "image": "images/icons/ten-martyrs-crete.jpg",
+    "title": "Ecole crétoise - Les dix martyrs de Crète - PPP4887 - Musée des Beaux-Arts de la ville de Paris",
+    "page": "https://commons.wikimedia.org/wiki/File:Ecole_cr%C3%A9toise_-_Les_dix_martyrs_de_Cr%C3%A8te_-_PPP4887_-_Mus%C3%A9e_des_Beaux-Arts_de_la_ville_de_Paris.jpg",
+    "artist": "School of Crete",
+    "date": "between 1668 and 1800",
+    "license": "Public domain",
+    "name": "The Ten Holy Martyrs of Crete"
+   }
+  ],
+  "12-29": [
+   {
+    "id": "holy-innocents",
+    "image": "images/icons/holy-innocents.jpg",
+    "title": "Massacre of the Innocents (Ionian, 17th c., Byzantine museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Massacre_of_the_Innocents_(Ionian,_17th_c.,_Byzantine_museum).jpg",
+    "artist": "Anonymous icon painter",
+    "date": "17th century",
+    "license": "Public domain",
+    "name": "The Holy Fourteen Thousand Infants Slain by Herod at Bethlehem"
+   }
+  ],
+  "01-04": [
+   {
+    "id": "synaxis-seventy-apostles",
+    "image": "images/icons/synaxis-seventy-apostles.jpg",
+    "title": "70Apostles V-1",
+    "page": "https://commons.wikimedia.org/wiki/File:70Apostles_V-1.jpg",
+    "artist": "Ikonopisatelj",
+    "date": "до XX века.",
+    "license": "Public domain",
+    "name": "Synaxis of the Seventy Holy Apostles"
+   }
+  ],
+  "01-21": [
+   {
+    "id": "maximus-confessor",
+    "image": "images/icons/maximus-confessor.jpg",
+    "title": "Athonite Fresco Icon of Saint Maximos the Confessor",
+    "page": "https://commons.wikimedia.org/wiki/File:Athonite_Fresco_Icon_of_Saint_Maximos_the_Confessor.jpg",
+    "artist": "Unknown author",
+    "date": "14th-15th Century",
+    "license": "Public domain",
+    "name": "Venerable Maximus the Confessor"
+   }
+  ],
+  "02-03": [
+   {
+    "id": "simeon-god-receiver-anna",
+    "image": "images/icons/simeon-god-receiver-anna.jpg",
+    "title": "Saint Simeon (17th c., Russia, priv. coll)",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Simeon_(17th_c.,_Russia,_priv._coll).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)",
+    "date": "Mid-17th century",
+    "license": "Public domain",
+    "name": "Venerable Simeon the God-Receiver and Prophetess Anna"
+   }
+  ],
+  "02-07": [
+   {
+    "id": "parthenius-lampsacus",
+    "image": "images/icons/parthenius-lampsacus.jpg",
+    "title": "Parthenios of Lampsakos",
+    "page": "https://commons.wikimedia.org/wiki/File:Parthenios_of_Lampsakos.jpg",
+    "artist": "Unknown author",
+    "date": "",
+    "license": "Public domain",
+    "name": "St. Parthenius, Bishop of Lampsacus"
+   }
+  ],
+  "02-10": [
+   {
+    "id": "haralambos-martyr",
+    "image": "images/icons/haralambos-martyr.jpg",
+    "title": "Charalambos Destroying The Plague (19th-century Orthodox icon from Șcheii Brașovului)",
+    "page": "https://commons.wikimedia.org/wiki/File:Charalambos_Destroying_The_Plague_(19th-century_Orthodox_icon_from_%C8%98cheii_Bra%C8%99ovului).png",
+    "artist": "Anonymous (writer)Unknown author",
+    "date": "before 1900",
+    "license": "Public domain",
+    "name": "Hieromartyr Haralambos and his companions"
+   }
+  ],
+  "02-14": [
+   {
+    "id": "cyril-constantine-philosopher",
+    "image": "images/icons/cyril-constantine-philosopher.jpg",
+    "title": "Sts. Cyril and Methodius Icon in Assumtion of Mary Church in Harlets",
+    "page": "https://commons.wikimedia.org/wiki/File:Sts._Cyril_and_Methodius_Icon_in_Assumtion_of_Mary_Church_in_Harlets.JPG",
+    "artist": "probably Velko Iliev",
+    "date": "before 1900",
+    "license": "Public domain",
+    "name": "Equal-to-the-Apostles Cyril (Constantine), Teacher of the Slavs"
+   }
+  ],
+  "02-23": [
+   {
+    "id": "polycarp-smyrna",
+    "image": "images/icons/polycarp-smyrna.jpg",
+    "title": "Polycarp of Smyrna, Menologion of Basil II",
+    "page": "https://commons.wikimedia.org/wiki/File:Polycarp_of_Smyrna,_Menologion_of_Basil_II.png",
+    "artist": "Authors of Menologion of Basil II (circa 985 AC, Constantinople), Byzantine manuscript illuminators[1]: Pantoleon with Georgios, Michael the Younger, Michael of Blachernae, Symeon, Symeon of Blachernae, Menas, and Nestor (Online on Vatican site)",
+    "date": "0985",
+    "license": "Public domain",
+    "name": "Hieromartyr Polycarp, Bishop of Smyrna"
+   }
+  ],
+  "03-09": [
+   {
+    "id": "forty-martyrs-sebaste",
+    "image": "images/icons/forty-martyrs-sebaste.jpg",
+    "title": "Forty Martyrs of Sebaste, II Half of XI Century, St Mary Perivleptos Church, Ohrid Icon Gallery",
+    "page": "https://commons.wikimedia.org/wiki/File:Forty_Martyrs_of_Sebaste,_II_Half_of_XI_Century,_St_Mary_Perivleptos_Church,_Ohrid_Icon_Gallery.jpg",
+    "artist": "Unknown author",
+    "date": "II Half of XI Century",
+    "license": "Public domain",
+    "name": "The Forty Holy Martyrs of Sebaste"
+   }
+  ],
+  "03-18": [
+   {
+    "id": "cyril-jerusalem",
+    "image": "images/icons/cyril-jerusalem.jpg",
+    "title": "Serbian Fresco Icon of Saint Cyril of Jerusalem 2",
+    "page": "https://commons.wikimedia.org/wiki/File:Serbian_Fresco_Icon_of_Saint_Cyril_of_Jerusalem_2.jpg",
+    "artist": "Unknown author",
+    "date": "14th-16th Century",
+    "license": "Public domain",
+    "name": "St. Cyril, Archbishop of Jerusalem"
+   }
+  ],
+  "04-01": [
+   {
+    "id": "mary-egypt",
+    "image": "images/icons/mary-egypt.jpg",
+    "title": "Icon of Mary of Egypt (Mstera, 19th c.)",
+    "page": "https://commons.wikimedia.org/wiki/File:Icon_of_Mary_of_Egypt_(Mstera,_19th_c.).jpg",
+    "artist": "RUSSIAN (MSTERA)",
+    "date": "LATE XIX CENTURY,",
+    "license": "Public domain",
+    "name": "Venerable Mary of Egypt"
+   }
+  ],
+  "04-22": [
+   {
+    "id": "theodore-sykeote",
+    "image": "images/icons/theodore-sykeote.jpg",
+    "title": "St.Teodor Sikeot",
+    "page": "https://commons.wikimedia.org/wiki/File:St.Teodor_Sikeot.jpg",
+    "artist": "Unknown author",
+    "date": "3-я четверть XVII ст.",
+    "license": "CC0",
+    "name": "Venerable Theodore of Sykeon"
+   }
+  ],
+  "05-02": [
+   {
+    "id": "athanasius-alexandria",
+    "image": "images/icons/athanasius-alexandria.jpg",
+    "title": "Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg",
+    "artist": "Unknown author",
+    "date": "End of 17 century",
+    "license": "Public domain",
+    "name": "St. Athanasius the Great, Archbishop of Alexandria"
+   }
+  ],
+  "05-06": [
+   {
+    "id": "hiob-righteous",
+    "image": "images/icons/hiob-righteous.jpg",
+    "title": "Иов Многострадальный. Чтец",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%BE%D0%B2_%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9._%D0%A7%D1%82%D0%B5%D1%86.jpg",
+    "artist": "RUSSIAN (MSTERA)",
+    "date": "2008-03-19 14:22:33",
+    "license": "Public domain",
+    "name": "Holy Righteous Job the Much-Suffering"
+   }
+  ],
+  "05-11": [
+   {
+    "id": "cyril-methodius-slavs",
+    "image": "images/icons/cyril-methodius-slavs.jpg",
+    "title": "Sts. Cyril and Methodius Icon in Saint George Church in Dolna Beshovitsa",
+    "page": "https://commons.wikimedia.org/wiki/File:Sts._Cyril_and_Methodius_Icon_in_Saint_George_Church_in_Dolna_Beshovitsa.jpg",
+    "artist": "Velko Iliev",
+    "date": "before 1880",
+    "license": "Public domain",
+    "name": "Equal-to-the-Apostles Cyril and Methodius, Teachers of the Slavs"
+   }
+  ],
+  "05-24": [
+   {
+    "id": "simeon-stylites-junior",
+    "image": "images/icons/simeon-stylites-junior.jpg",
+    "title": "Kirillo-Belozersky iconostasis 21 - Simeon Jr",
+    "page": "https://commons.wikimedia.org/wiki/File:Kirillo-Belozersky_iconostasis_21_-_Simeon_Jr.jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)",
+    "date": "1497",
+    "license": "Public domain",
+    "name": "Venerable Simeon the Stylite the Younger"
+   }
+  ],
+  "06-14": [
+   {
+    "id": "elisha-prophet",
+    "image": "images/icons/elisha-prophet.jpg",
+    "title": "Elisha-Eliseus",
+    "page": "https://commons.wikimedia.org/wiki/File:Elisha-Eliseus.jpg",
+    "artist": "18 century icon painter",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Elisha"
+   }
+  ],
+  "06-22": [
+   {
+    "id": "eusebius-samosata",
+    "image": "images/icons/eusebius-samosata.jpg",
+    "title": "Menaion icon (17 c., TsAK) - June - 35 Eusebius of Samosata",
+    "page": "https://commons.wikimedia.org/wiki/File:Menaion_icon_(17_c.,_TsAK)_-_June_-_35_Eusebius_of_Samosata.jpg",
+    "artist": "Unknown author",
+    "date": "2011-07-05",
+    "license": "Public domain",
+    "name": "Hieromartyr Eusebius, Bishop of Samosata"
+   }
+  ],
+  "06-27": [
+   {
+    "id": "sampson-hospitable",
+    "image": "images/icons/sampson-hospitable.jpg",
+    "title": "Sampson the Hospitable att. to M.Dikarev (c. 1900, Sotheby's)",
+    "page": "https://commons.wikimedia.org/wiki/File:Sampson_the_Hospitable_att._to_M.Dikarev_(c._1900,_Sotheby%27s).jpg",
+    "artist": "attributed to the Dikariev workshop",
+    "date": "circa 1900",
+    "license": "Public domain",
+    "name": "Venerable Sampson the Hospitable of Constantinople"
+   }
+  ],
+  "07-06": [
+   {
+    "id": "sisoes-great",
+    "image": "images/icons/sisoes-great.jpg",
+    "title": "Saint Sisoes facing the tomb of Alexander the Great (Byzantine museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Sisoes_facing_the_tomb_of_Alexander_the_Great_(Byzantine_museum).jpg",
+    "artist": "Anonymous icon painter",
+    "date": "17-18th century?",
+    "license": "Public domain",
+    "name": "Venerable Sisoes the Great"
+   }
+  ],
+  "08-05": [
+   {
+    "id": "forefeast-transfiguration",
+    "image": "images/icons/forefeast-transfiguration.jpg",
+    "title": "1400-10 Theophanes the Greek Transfiguration anagoria",
+    "page": "https://commons.wikimedia.org/wiki/File:1400-10_Theophanes_the_Greek_Transfiguration_anagoria.JPG",
+    "artist": "Theophanes the Greek",
+    "date": "between 1400 and 1410",
+    "license": "Public domain",
+    "name": "Forefeast of the Transfiguration of Our Lord"
+   }
+  ],
+  "08-10": [
+   {
+    "id": "lawrence-archdeacon-rome",
+    "image": "images/icons/lawrence-archdeacon-rome.jpg",
+    "title": "Lawrence of Rome by M.Dikarev (1897, Hermitage)",
+    "page": "https://commons.wikimedia.org/wiki/File:Lawrence_of_Rome_by_M.Dikarev_(1897,_Hermitage).jpg",
+    "artist": "Mikhail Ivanovich Dikarev",
+    "date": "1892",
+    "license": "Public domain",
+    "name": "Holy Martyr and Archdeacon Lawrence of Rome"
+   }
+  ],
+  "08-14": [
+   {
+    "id": "forefeast-dormition",
+    "image": "images/icons/forefeast-dormition.jpg",
+    "title": "Dormition of the Theotokos, Novgorod",
+    "page": "https://commons.wikimedia.org/wiki/File:Dormition_of_the_Theotokos,_Novgorod.jpg",
+    "artist": "Unknown author",
+    "date": "turn of the 14/15th century",
+    "license": "Public domain",
+    "name": "Forefeast of the Dormition of the Most Holy Theotokos"
+   }
+  ],
+  "08-19": [
+   {
+    "id": "andrew-stratelates",
+    "image": "images/icons/andrew-stratelates.jpg",
+    "title": "Saint Andrew Stratelates XVII c",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Andrew_Stratelates_XVII_c.jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "17th century",
+    "license": "Public domain",
+    "name": "Holy Martyr Andrew Stratelates and companions"
+   }
+  ],
+  "08-23": [
+   {
+    "id": "leavetaking-dormition",
+    "image": "images/icons/leavetaking-dormition.jpg",
+    "title": "Dormition of Theotokos Andreas Ritzos",
+    "page": "https://commons.wikimedia.org/wiki/File:Dormition_of_Theotokos_Andreas_Ritzos.jpg",
+    "artist": "Andreas Ritzos",
+    "date": "from 1436 until 1492",
+    "license": "Public domain",
+    "name": "Leavetaking of the Dormition of the Theotokos"
+   }
+  ],
+  "08-28": [
+   {
+    "id": "moses-prophet-ethiopia",
+    "image": "images/icons/moses-prophet-ethiopia.jpg",
+    "title": "Saints Poimen, Elijah, and Moses the Black",
+    "page": "https://commons.wikimedia.org/wiki/File:Saints_Poimen,_Elijah,_and_Moses_the_Black.jpg",
+    "artist": "Unknown author",
+    "date": "15th Century",
+    "license": "Public domain",
+    "name": "Venerable Moses the Ethiopian (the Black)"
+   }
+  ],
+  "10-02": [
+   {
+    "id": "cyprian-ustyna-martyrs",
+    "image": "images/icons/cyprian-ustyna-martyrs.jpg",
+    "title": "Ciprian si Iustina",
+    "page": "https://commons.wikimedia.org/wiki/File:Ciprian_si_Iustina.jpg",
+    "artist": "Painter unknown, photographer unknown",
+    "date": "Unknown date",
+    "license": "Public domain",
+    "name": "Hieromartyr Cyprian and Holy Martyr Justina"
+   }
+  ],
+  "10-06": [
+   {
+    "id": "thomas-apostle-october",
+    "image": "images/icons/thomas-apostle-october.jpg",
+    "title": "Saint Thomas K. Tzanes",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_K._Tzanes.png",
+    "artist": "Konstantinos Tzanes",
+    "date": "",
+    "license": "Public domain",
+    "name": "Holy Apostle Thomas"
+   }
+  ],
+  "10-24": [
+   {
+    "id": "arethas-martyrs-nagran",
+    "image": "images/icons/arethas-martyrs-nagran.jpg",
+    "title": "Byzantine - Saint Arethas - Walters 4820862",
+    "page": "https://commons.wikimedia.org/wiki/File:Byzantine_-_Saint_Arethas_-_Walters_4820862.jpg",
+    "artist": "Anonymous (Byzantine Empire)Unknown author",
+    "date": "10th century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Arethas and companions of Nagran"
+   }
+  ],
+  "11-01": [
+   {
+    "id": "cosmas-damian-asia",
+    "image": "images/icons/cosmas-damian-asia.jpg",
+    "title": "Saints Cosmas and Damian of the Gymnasium Church, Saints Cosmas and Damian Icon, 18th Century",
+    "page": "https://commons.wikimedia.org/wiki/File:Saints_Cosmas_and_Damian_of_the_Gymnasium_Church,_Saints_Cosmas_and_Damian_Icon,_18th_Century.png",
+    "artist": "Unknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Holy Unmercenaries Cosmas and Damian of Asia"
+   }
+  ],
+  "11-12": [
+   {
+    "id": "john-the-merciful",
+    "image": "images/icons/john-the-merciful.jpg",
+    "title": "Kirill Ulanov. John the Merciful. 1704",
+    "page": "https://commons.wikimedia.org/wiki/File:Kirill_Ulanov._John_the_Merciful._1704.jpg",
+    "artist": "Kirill Ulanov",
+    "date": "1704",
+    "license": "Public domain",
+    "name": "John the Merciful, Patriarch of Alexandria"
+   }
+  ],
+  "11-20": [
+   {
+    "id": "forefeast-entrance-theotokos",
+    "image": "images/icons/forefeast-entrance-theotokos.jpg",
+    "title": "Presentation of Mary, II Half of XIV Century, St Mary Perivleptos Church, Ohrid Icon Gallery",
+    "page": "https://commons.wikimedia.org/wiki/File:Presentation_of_Mary,_II_Half_of_XIV_Century,_St_Mary_Perivleptos_Church,_Ohrid_Icon_Gallery.jpg",
+    "artist": "Unknown author",
+    "date": "II Half of XIV Century",
+    "license": "Public domain",
+    "name": "Forefeast of the Entrance of the Most Holy Theotokos into the Temple"
+   }
+  ],
+  "11-28": [
+   {
+    "id": "stephen-younger",
+    "image": "images/icons/stephen-younger.jpg",
+    "title": "Rila Mon. - Fresco mir. icon 008 Stephen the New",
+    "page": "https://commons.wikimedia.org/wiki/File:Rila_Mon._-_Fresco_mir._icon_008_Stephen_the_New.jpg",
+    "artist": "Димитър Христов и Зафир. 1843",
+    "date": "1843",
+    "license": "Public domain",
+    "name": "Our Father among the Saints Stephen the Younger, Martyr"
+   }
+  ],
+  "12-03": [
+   {
+    "id": "prophet-zephaniah",
+    "image": "images/icons/prophet-zephaniah.jpg",
+    "title": "Zephaniah from Yaroslavl (18 c, priv.coll)",
+    "page": "https://commons.wikimedia.org/wiki/File:Zephaniah_from_Yaroslavl_(18_c,_priv.coll).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Holy Prophet Zephaniah (Sophonias)"
+   }
+  ],
+  "12-18": [
+   {
+    "id": "sebastian-rome",
+    "image": "images/icons/sebastian-rome.jpg",
+    "title": "Sebastian by M.Dikarev (Muz.ist.relig)",
+    "page": "https://commons.wikimedia.org/wiki/File:Sebastian_by_M.Dikarev_(Muz.ist.relig).jpg",
+    "artist": "Mikhail Ivanovich Dikarev",
+    "date": "1880s-1890s",
+    "license": "Public domain",
+    "name": "Holy Martyr Sebastian and his Companions"
+   }
+  ],
+  "12-21": [
+   {
+    "id": "forefeast-nativity-2",
+    "image": "images/icons/forefeast-nativity-2.jpg",
+    "title": "Nativity of Jesus icon",
+    "page": "https://commons.wikimedia.org/wiki/File:Nativity_of_Jesus_icon.jpg",
+    "artist": "Unknown author",
+    "date": "18th century",
+    "license": "Public domain",
+    "name": "Forefeast of the Nativity of Christ (Day 2)"
+   }
+  ],
+  "01-10": [
+   {
+    "id": "gregory-nyssa",
+    "image": "images/icons/gregory-nyssa.jpg",
+    "title": "Agios Gregorios Nysses Dionysiou",
+    "page": "https://commons.wikimedia.org/wiki/File:Agios_Gregorios_Nysses_Dionysiou.png",
+    "artist": "Theophanes the Cretan",
+    "date": "1547",
+    "license": "Public domain",
+    "name": "St. Gregory of Nyssa; St. Dometian of Melitene"
+   }
+  ],
+  "01-15": [
+   {
+    "id": "paul-theban-john-huts",
+    "image": "images/icons/paul-theban-john-huts.jpg",
+    "title": "Saint-John-Hut-Dweller-Paul-Thebes-Icon-Orthodox",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-John-Hut-Dweller-Paul-Thebes-Icon-Orthodox.jpg",
+    "artist": "Anonymous",
+    "date": "15th-17th Centuries",
+    "license": "Public domain",
+    "name": "Venerable Paul of Thebes; Venerable John Calabytes ('of the Huts')"
+   }
+  ],
+  "01-29": [
+   {
+    "id": "martyr-ignatius-god-bearer-translation",
+    "image": "images/icons/martyr-ignatius-god-bearer-translation.jpg",
+    "title": "Byzantine - Saint Ignatius of Antioch - Walters 4820867",
+    "page": "https://commons.wikimedia.org/wiki/File:Byzantine_-_Saint_Ignatius_of_Antioch_-_Walters_4820867.jpg",
+    "artist": "Anonymous (Byzantine Empire)Unknown author",
+    "date": "10th centurydate QS:P571,+950-00-00T00:00:00Z/7 (Middle Agesera QS:P2348,Q12554)",
+    "license": "Public domain",
+    "name": "Translation of the Relics of Hieromartyr Ignatius the God-Bearer"
+   }
+  ],
+  "02-08": [
+   {
+    "id": "theodore-stratelates",
+    "image": "images/icons/theodore-stratelates.jpg",
+    "title": "Theodore Stratelates (XVI century icon)",
+    "page": "https://commons.wikimedia.org/wiki/File:Theodore_Stratelates_(XVI_century_icon).jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "16th centurydate QS:P,+1550-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Great Martyr Theodore Stratelates ('the General')"
+   }
+  ],
+  "02-11": [
+   {
+    "id": "blase-sebaste",
+    "image": "images/icons/blase-sebaste.jpg",
+    "title": "Modeste jerusalem and-blaise-sebaste 18c rus",
+    "page": "https://commons.wikimedia.org/wiki/File:Modeste_jerusalem_and-blaise-sebaste_18c_rus.png",
+    "artist": "Anonymous Russian icon painter (before 1917)Public domain image (according to PD-Russia-expired)",
+    "date": "18th centurydate QS:P,+1750-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste"
+   }
+  ],
+  "02-15": [
+   {
+    "id": "onesimus-apostle",
+    "image": "images/icons/onesimus-apostle.jpg",
+    "title": "St.Onesimus",
+    "page": "https://commons.wikimedia.org/wiki/File:St.Onesimus.jpg",
+    "artist": "Unknown",
+    "date": "2012-08-08 11:18:42",
+    "license": "Public domain",
+    "name": "Holy Apostle Onesimus"
+   }
+  ],
+  "02-25": [
+   {
+    "id": "tarasius-patriarch-constantinople",
+    "image": "images/icons/tarasius-patriarch-constantinople.jpg",
+    "title": "Тарасий Константинопольский. Географ",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D0%B8%D0%B9_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9._%D0%93%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "circa 1350date QS:P,+1350-00-00T00:00:00Z/9,P1480,Q5727902",
+    "license": "Public domain",
+    "name": "St. Tarasius, Patriarch of Constantinople"
+   }
+  ],
+  "03-01": [
+   {
+    "id": "martyr-eudokia",
+    "image": "images/icons/martyr-eudokia.jpg",
+    "title": "Eudokia of Heliopolis (19c., Russia, priv. coll)",
+    "page": "https://commons.wikimedia.org/wiki/File:Eudokia_of_Heliopolis_(19c.,_Russia,_priv._coll).jpg",
+    "artist": "Anonymous Russian icon painter (before 1917)Public domain image (according to PD-Russia-expired)",
+    "date": "19th centurydate QS:P,+1850-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Venerable Martyr Eudokia of Heliopolis"
+   }
+  ],
+  "03-10": [
+   {
+    "id": "martyr-codratus-corinth",
+    "image": "images/icons/martyr-codratus-corinth.jpg",
+    "title": "Pridvor, Sinaxar,10 martie - Sf. Mc. Codrat si cei impreuna cu el",
+    "page": "https://commons.wikimedia.org/wiki/File:Pridvor,_Sinaxar,10_martie_-_Sf._Mc._Codrat_si_cei_impreuna_cu_el.jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "16th centurydate QS:P,+1550-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Holy Martyr Codratus of Corinth and companions"
+   }
+  ],
+  "03-14": [
+   {
+    "id": "benedict-nursia",
+    "image": "images/icons/benedict-nursia.jpg",
+    "title": "Жития Святых (1903-1911) - икона 07141 Венедикт",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B8%D1%82%D0%B8%D1%8F_%D0%A1%D0%B2%D1%8F%D1%82%D1%8B%D1%85_(1903-1911)_-_%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0_07141_%D0%92%D0%B5%D0%BD%D0%B5%D0%B4%D0%B8%D0%BA%D1%82.png",
+    "artist": "Unknown authorUnknown author",
+    "date": "before 1911date QS:P,+1911-00-00T00:00:00Z/7,P1326,+1911-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "name": "Venerable Benedict of Nursia"
+   }
+  ],
+  "03-19": [
+   {
+    "id": "chrysanthos-daria",
+    "image": "images/icons/chrysanthos-daria.jpg",
+    "title": "Жития Святых (1903-1911) - икона 07191 Хрисанф и Дария",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B8%D1%82%D0%B8%D1%8F_%D0%A1%D0%B2%D1%8F%D1%82%D1%8B%D1%85_(1903-1911)_-_%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0_07191_%D0%A5%D1%80%D0%B8%D1%81%D0%B0%D0%BD%D1%84_%D0%B8_%D0%94%D0%B0%D1%80%D0%B8%D1%8F.png",
+    "artist": "Unknown authorUnknown author",
+    "date": "before 1911date QS:P,+1911-00-00T00:00:00Z/7,P1326,+1911-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "name": "Holy Martyrs Chrysanthos and Daria"
+   }
+  ],
+  "03-24": [
+   {
+    "id": "forefeast-annunciation",
+    "image": "images/icons/forefeast-annunciation.jpg",
+    "title": "Annunciation Icon Sinai 12th century",
+    "page": "https://commons.wikimedia.org/wiki/File:Annunciation_Icon_Sinai_12th_century.jpg",
+    "artist": "anonymous",
+    "date": "April 2008",
+    "license": "Public domain",
+    "name": "Forefeast of the Annunciation of the Theotokos"
+   }
+  ],
+  "03-29": [
+   {
+    "id": "mark-bishop-arethusa",
+    "image": "images/icons/mark-bishop-arethusa.jpg",
+    "title": "Mark of Arethusa by O.Chirikov (Muz.ist. relig)",
+    "page": "https://commons.wikimedia.org/wiki/File:Mark_of_Arethusa_by_O.Chirikov_(Muz.ist._relig).jpg",
+    "artist": "Osip Semenovich Chirikov",
+    "date": "19th centurydate QS:P,+1850-00-00T00:00:00Z/7 Кон. XIX в. (1880-1890-е гг.)[1893-1894 гг.]",
+    "license": "Public domain",
+    "name": "Hieromartyr Mark, Bishop of Arethusa; Deacon Cyril"
+   }
+  ],
+  "05-12": [
+   {
+    "id": "epiphanius-cyprus",
+    "image": "images/icons/epiphanius-cyprus.jpg",
+    "title": "Жития Святых (1903-1911) - икона 09122 Епифаний",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B8%D1%82%D0%B8%D1%8F_%D0%A1%D0%B2%D1%8F%D1%82%D1%8B%D1%85_(1903-1911)_-_%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0_09122_%D0%95%D0%BF%D0%B8%D1%84%D0%B0%D0%BD%D0%B8%D0%B9.png",
+    "artist": "Unknown authorUnknown author",
+    "date": "before 1911date QS:P,+1911-00-00T00:00:00Z/7,P1326,+1911-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "name": "St. Epiphanius, Archbishop of Cyprus"
+   }
+  ],
+  "06-11": [
+   {
+    "id": "bartholomew-barnabas-apostles",
+    "image": "images/icons/bartholomew-barnabas-apostles.jpg",
+    "title": "Apostle Bartholomew. Fresco of the Church of Agios Nikolaos. Stavronikita Monastery. Athos",
+    "page": "https://commons.wikimedia.org/wiki/File:Apostle_Bartholomew._Fresco_of_the_Church_of_Agios_Nikolaos._Stavronikita_Monastery._Athos.jpg",
+    "artist": "Theophanes the Cretan and Symeon",
+    "date": "1546",
+    "license": "Public domain",
+    "name": "Holy Apostles Bartholomew and Barnabas"
+   }
+  ],
+  "06-15": [
+   {
+    "id": "augustine-hippo",
+    "image": "images/icons/augustine-hippo.jpg",
+    "title": "Greek Icon of Saint Augustinus of Hippo 5",
+    "page": "https://commons.wikimedia.org/wiki/File:Greek_Icon_of_Saint_Augustinus_of_Hippo_5.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "20th centurydate QS:P,+1950-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Blessed Augustine, Bishop of Hippo"
+   }
+  ],
+  "06-30": [
+   {
+    "id": "synaxis-twelve-apostles",
+    "image": "images/icons/synaxis-twelve-apostles.jpg",
+    "title": "Synaxis of the Twelve Apostles by Constantinople master (early 14th c., Pushkin museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Synaxis_of_the_Twelve_Apostles_by_Constantinople_master_(early_14th_c.,_Pushkin_museum).jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "14th centurydate QS:P,+1350-00-00T00:00:00Z/7",
+    "license": "Public domain",
+    "name": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles"
+   }
+  ],
+  "07-04": [
+   {
+    "id": "andrew-crete-bishop",
+    "image": "images/icons/andrew-crete-bishop.jpg",
+    "title": "Rila Mon. - Fresco mir. icon 022 Andrew bishop of Crete",
+    "page": "https://commons.wikimedia.org/wiki/File:Rila_Mon._-_Fresco_mir._icon_022_Andrew_bishop_of_Crete.jpg",
+    "artist": "Димитър Христов и Зафир. 1843",
+    "date": "1843",
+    "license": "Public domain",
+    "name": "St. Andrew of Crete, Archbishop of Gortyna"
+   }
+  ],
+  "08-11": [
+   {
+    "id": "euplus-catania-deacon",
+    "image": "images/icons/euplus-catania-deacon.jpg",
+    "title": "Mosaic of Saint Euplos of Catania at the Daphni Monastery",
+    "page": "https://commons.wikimedia.org/wiki/File:Mosaic_of_Saint_Euplos_of_Catania_at_the_Daphni_Monastery.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "12th Century",
+    "license": "Public domain",
+    "name": "Holy Martyr Euplus (Euplius) of Catania"
+   }
+  ],
+  "08-16": [
+   {
+    "id": "icon-not-made-by-hands",
+    "image": "images/icons/icon-not-made-by-hands.jpg",
+    "title": "Ushakov Nerukotvorniy",
+    "page": "https://commons.wikimedia.org/wiki/File:Ushakov_Nerukotvorniy.jpg",
+    "artist": "Simon Ushakov",
+    "date": "1677",
+    "license": "Public domain",
+    "name": "Translation of the Image of Our Lord Jesus Christ Not Made by Hands (Holy Mandylion)"
+   }
+  ],
+  "08-20": [
+   {
+    "id": "samuel-prophet",
+    "image": "images/icons/samuel-prophet.jpg",
+    "title": "Prophet Samuel Fresco, Gračanica",
+    "page": "https://commons.wikimedia.org/wiki/File:Prophet_Samuel_Fresco,_Gra%C4%8Danica.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "1318",
+    "license": "Public domain",
+    "name": "Holy Prophet Samuel"
+   }
+  ],
+  "09-06": [
+   {
+    "id": "archangel-michael-miracle-chonae",
+    "image": "images/icons/archangel-michael-miracle-chonae.jpg",
+    "title": "Michael Miracle Icon Sinai 12th century",
+    "page": "https://commons.wikimedia.org/wiki/File:Michael_Miracle_Icon_Sinai_12th_century.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "2008-04",
+    "license": "Public domain",
+    "name": "Miracle of the Archangel Michael at Chonae (Colossae)"
+   }
+  ],
+  "09-15": [
+   {
+    "id": "niketas-goth-martyr",
+    "image": "images/icons/niketas-goth-martyr.jpg",
+    "title": "Nikita Martyr (16th c., Yaroslavl museum)",
+    "page": "https://commons.wikimedia.org/wiki/File:Nikita_Martyr_(16th_c.,_Yaroslavl_museum).jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "Вторая половина XVI в.",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Niketas the Goth"
+   }
+  ],
+  "09-23": [
+   {
+    "id": "conception-john-baptist",
+    "image": "images/icons/conception-john-baptist.jpg",
+    "title": "Conception of John Baptist (icon, Russia, 15 c)",
+    "page": "https://commons.wikimedia.org/wiki/File:Conception_of_John_Baptist_(icon,_Russia,_15_c).jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "2-я половина 15 века",
+    "license": "Public domain",
+    "name": "Conception of the Holy Glorious Prophet, Forerunner, and Baptist John"
+   }
+  ],
+  "09-28": [
+   {
+    "id": "chariton-confessor",
+    "image": "images/icons/chariton-confessor.jpg",
+    "title": "Saint Chariton",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Chariton.jpg",
+    "artist": "AnonymousUnknown author",
+    "date": "1660sdate QS:P,+1660-00-00T00:00:00Z/8",
+    "license": "Public domain",
+    "name": "Venerable Chariton the Confessor"
+   }
+  ],
+  "10-03": [
+   {
+    "id": "dionysius-areopagite",
+    "image": "images/icons/dionysius-areopagite.jpg",
+    "title": "Emmanuel Tzanes - Dionysius the Areopagite - NG.M.01774 - National Museum of Art, Architecture and Design",
+    "page": "https://commons.wikimedia.org/wiki/File:Emmanuel_Tzanes_-_Dionysius_the_Areopagite_-_NG.M.01774_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+    "artist": "Emmanuel Tzanes",
+    "date": "between 1610 and 1690date QS:P,+1650-00-00T00:00:00Z/7,P1319,+1610-00-00T00:00:00Z/9,P1326,+1690-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "name": "Hieromartyr Dionysius the Areopagite, Bishop of Athens"
+   }
+  ],
+  "10-07": [
+   {
+    "id": "sergios-bacchus",
+    "image": "images/icons/sergios-bacchus.jpg",
+    "title": "Sergius baccus",
+    "page": "https://commons.wikimedia.org/wiki/File:Sergius_baccus.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "turn of the 6/7th century",
+    "license": "Public domain",
+    "name": "Holy Martyrs Sergios and Bacchus"
+   }
+  ],
+  "10-21": [
+   {
+    "id": "hilarion-great",
+    "image": "images/icons/hilarion-great.jpg",
+    "title": "Жития Святых (1903-1911) - икона 02211 Иларион",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%96%D0%B8%D1%82%D0%B8%D1%8F_%D0%A1%D0%B2%D1%8F%D1%82%D1%8B%D1%85_(1903-1911)_-_%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0_02211_%D0%98%D0%BB%D0%B0%D1%80%D0%B8%D0%BE%D0%BD.png",
+    "artist": "Unknown authorUnknown author",
+    "date": "before 1911date QS:P,+1911-00-00T00:00:00Z/7,P1326,+1911-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "name": "Venerable Hilarion the Great"
+   }
+  ],
+  "12-14": [
+   {
+    "id": "thyrsus-leucius-philemon",
+    "image": "images/icons/thyrsus-leucius-philemon.jpg",
+    "title": "Martyrdom of Saints Thyrsos, Leukios, and Kallinikos of Bithynia, Dionysiou",
+    "page": "https://commons.wikimedia.org/wiki/File:Martyrdom_of_Saints_Thyrsos,_Leukios,_and_Kallinikos_of_Bithynia,_Dionysiou.jpg",
+    "artist": "Tzortzis Phouka",
+    "date": "1547",
+    "license": "Public domain",
+    "name": "Holy Martyrs Thyrsus, Leucius, and Callinicus"
+   }
   ]
  },
  "moveable": {
