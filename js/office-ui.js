@@ -6813,14 +6813,51 @@ async function renderBcpOffice() {
     // the same arguments.
     const angComms = angCommsForColor;
 
-document.getElementById('saint-display').innerHTML = angComms
+// Anglican calendar: the decided primary first, then other commemorations of the day, then alternates
+// (data/saints/sanctoral.json `angRole`), then the Synaxarium decision file's remaining ranked candidates.
+const _angRoleOrder = s => (s.angRole === 'primary' ? 0 : s.angRole === 'alternate' ? 2 : 1);
+const angSorted = angComms.slice().sort((a, b) => _angRoleOrder(a) - _angRoleOrder(b));
+const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.map(s => s.name));
+document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
         const ctx = { tradition: 'ANG', includeEcumenical: true };
         const res = saintAppliesToContext(s, ctx);
-        const label = getTraditionDisplayLabel(res.label || 'Unknown');
-        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${s.description || 'No description'}</p></div>`;
+        const label = getTraditionDisplayLabel(res.label || 'Unknown') + (s.angRole === 'alternate' ? ' \u00b7 Alternate' : '');
+        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p></div>`;
     })
-    .join('') || '<p>No commemorations.</p>';
+    .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
+}
+
+// ── Anglican Synaxarium decisions: alternates not already shown ─────────────────
+let _angDecisionsPromise = null;
+function _loadAngDecisions() {
+    if (!_angDecisionsPromise) {
+        _angDecisionsPromise = fetch('data/kalendar/synaxarium/decisions.json')
+            .then(r => (r.ok ? r.json() : null)).catch(() => null);
+    }
+    return _angDecisionsPromise;
+}
+function _angNameKey(n) { return String(n || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' '); }
+async function _angDecisionAlternates(date, shownNames) {
+    try {
+        const data = await _loadAngDecisions();
+        if (!data || !data.decisions) return '';
+        const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+        const day = data.decisions[key];
+        if (!day || !Array.isArray(day.alternates) || !day.alternates.length) return '';
+        const shown = shownNames.map(_angNameKey);
+        const bigWords = k => k.split(' ').filter(w => w.length >= 5);
+        const fresh = day.alternates.filter(a => {
+            const k = _angNameKey(a.name);
+            return !shown.some(sn => sn === k || bigWords(k).some(w => sn.indexOf(w) !== -1));
+        });
+        if (!fresh.length) return '';
+        const items = fresh.map(a => '<li><strong>' + _sharedOfficeNavigatorEscape(a.name) + '</strong>' +
+            (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
+            (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '') + '</li>').join('');
+        return '<details class="saint-box"><summary style="cursor:pointer;color:var(--accent);font-weight:bold;text-transform:uppercase;font-size:0.8em;">' +
+               'Other commemorations proposed for this day</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
+    } catch (e) { return ''; }
 }
 
 // ── CHURCH OF THE EAST RENDERER (rebuilt 2026-08-19) ────────────────────────

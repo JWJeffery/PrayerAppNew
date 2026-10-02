@@ -25,3 +25,92 @@ Examples of differing dates: 01-02 (decision: Basil and Gregory of Nazianzus; ap
 4. Attach Josh's approved hagiographies (original prose; 12 exist, ~30 expected for November) as the expandable saint card; show them only once marked approved.
 5. Reconcile the 62 conflicts and 69 harmonization notes (alternate dates) -- editorial calls for Josh.
 Open questions for Josh: does "controlling" mean one saint per civil date (as the file encodes) or the primary plus alternates? Where do the 62 conflicting existing ANG rows go (drop, or keep as optional commemorations)? May the decisions export and the approved hagiographies be committed to the (public) repo?
+
+## Applied 2026-10-02 (Josh: primary plus alternates; drop conflicting rows unless a credible ecclesial source proves them)
+- `data/kalendar/synaxarium/decisions.json` is the exported decision file (primary + remaining ranked candidates as alternates, per civil date; no hagiographies). `scripts/saints/apply-synaxarium-decisions.py` applied it to `data/saints/sanctoral.json`:
+  - all 366 primaries now exist as ANG rows with `angRole: primary` and the Synaxarium SIN (239 matched existing rows, of which some gained the ANG tag; 127 new rows created from the decision's designation/period/witnesses).
+  - 27 existing ANG rows that conflicted were KEPT as `angRole: alternate` because the printed calendar of Lesser Feasts and Fasts 2024, Holy Women Holy Men or A Great Cloud of Witnesses prints them on that day (`angAlternateProof`).
+  - 24 conflicting rows had only the ANG tag removed (they keep their Orthodox/Latin/Oriental tags); 25 rows that existed only as unproved Anglican entries were deleted.
+- UI (`office-ui.js`): the Anglican saint panel shows the primary first, then other commemorations, then alternates (labelled), then a collapsed list of the decision file's other proposed commemorations.
+- Proof test: the printed calendars were extracted with `pdftotext` and parsed (`parse-printed-calendars.py`, 366/366 days each). A row survives only when its distinctive name words appear in that day's printed entry; "(alternative date for ...)" notes are ignored. Holy Cross Day was matched by hand to Exaltation of the Holy Cross.
+- **Flag for Josh:** Josh's decision for 09-14 is Albert of Jerusalem; Holy Cross Day (a BCP Other Major Feast, printed on Sept 14 in LFF and HWHM) therefore shows as an alternate. Similarly 05-06, 12-29 etc. keep LFF-printed saints as alternates.
+
+### Kept as alternates (printed source)
+- 01-02 vedanayagam-samuel-azariah
+- 01-14 charles-gore
+- 01-19 wulfstan-of-worcester
+- 01-29 andrei-rublev
+- 01-31 saint-john-bosco
+- 03-04 paul-cuffee
+- 03-06 william-mayo-charles-menninger-and-their-sons
+- 03-30 saint-innocent-of-alaska
+- 03-30 saint-mary-of-egypt
+- 04-24 genocide-remembrance
+- 05-06 saint-george-of-lydda
+- 05-09 gregory-of-nazianzus
+- 05-30 saint-joan-of-arc
+- 07-14 samson-occom
+- 08-13 jeremy-taylor
+- 08-14 jonathan-daniels
+- 08-30 charles-grafton
+- 09-05 gregorio-aglipay
+- 09-11 harry-thacker-burleigh
+- 09-14 exaltation-of-the-holy-cross
+- 10-03 george-bell
+- 10-06 william-tyndale
+- 11-22 saint-cecilia
+- 11-26 isaac-watts
+- 12-22 henry-budd
+- 12-29 saint-thomas-becket
+- 12-31 samuel-ajayi-crowther
+
+### Dropped (no printed LFF 2024 / HWHM / GCW placement on that day)
+- 01-08 saint-george-the-chozebite (ANG tag removed)
+- 01-15 saint-paul-the-first-hermit (ANG tag removed)
+- 02-22 chair-of-saint-peter (ANG tag removed)
+- 03-14 venerable-benedict-of-nursia (ANG tag removed)
+- 05-12 saints-nereus-and-achilleus (ANG tag removed)
+- 05-18 saint-felix-of-cantalice (ANG tag removed)
+- 05-28 blessed-lanfranc-of-canterbury (ANG tag removed)
+- 06-03 saint-charles-lwanga-and-companions (ANG tag removed)
+- 06-08 saint-william-of-york (ANG tag removed)
+- 06-09 saint-ephrem-the-syrian (ANG tag removed)
+- 06-19 saint-jude-thaddeus (ANG tag removed)
+- 06-25 virgin-martyr-febronia-of-nisibis (ANG tag removed)
+- 06-26 saint-david-of-thessaloniki (ANG tag removed)
+- 07-04 saint-andrew-of-crete (ANG tag removed)
+- 07-23 saint-bridget-of-sweden (ANG tag removed)
+- 08-16 saint-stephen-of-hungary (ANG tag removed)
+- 10-27 saint-frumentius (ANG tag removed)
+- 11-08 synaxis-of-the-archangel-michael-and-all-angels (ANG tag removed)
+- 11-14 saint-philip-the-apostle (ANG tag removed)
+- 11-17 saint-elizabeth-of-hungary (ANG tag removed)
+- 11-21 presentation-of-the-blessed-virgin-mary (ANG tag removed)
+- 12-08 feast-immaculate-conception (ANG tag removed)
+- 12-17 prophet-daniel-and-the-three-holy-youths (ANG tag removed)
+- 12-23 saint-john-of-kanty (ANG tag removed)
+- 01-11 mary-slessor (deleted)
+- 01-12 benedict-biscop (deleted)
+- 01-13 george-fox (deleted)
+- 01-13 kentigern-mungo (deleted)
+- 03-25 john-roberts (deleted)
+- 05-24 saint-david-of-scotland (deleted)
+- 06-04 petroc (deleted)
+- 07-06 thomas-more (deleted)
+- 07-10 saint-benedict-of-nursia-eve (deleted)
+- 07-13 saint-silas (deleted)
+- 07-15 swithun-of-winchester (deleted)
+- 08-05 oswald-of-northumbria (deleted)
+- 08-09 mary-sumner (deleted)
+- 08-19 saint-bernard-of-clairvaux-eve (deleted)
+- 08-23 saint-bartholomew-eve (deleted)
+- 10-10 paulinus (deleted)
+- 10-21 ursula-and-companions (deleted)
+- 10-25 crispin-and-crispinian (deleted)
+- 11-04 saints-of-the-old-testament (deleted)
+- 11-08 saints-and-martyrs-of-the-anglican-communion (deleted)
+- 11-20 priscilla-lydia-sellon (deleted)
+- 12-13 samuel-johnson (deleted)
+- 12-17 eglantyne-jebb (deleted)
+- 10-27 thomas-traherne (deleted)
+- 12-30 josephine-butler (deleted)
