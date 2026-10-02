@@ -114,3 +114,16 @@ Open questions for Josh: does "controlling" mean one saint per civil date (as th
 - 12-17 eglantyne-jebb (deleted)
 - 10-27 thomas-traherne (deleted)
 - 12-30 josephine-butler (deleted)
+
+## Follow-up 2026-10-02 (items from Josh's go-ahead)
+- **Saint cards:** each Anglican primary now shows the decision file's tradition and source witnesses under the description (no SIN is shown to readers; the SIN is stored as `synaxariumSin`). Five newly created rows (Elizabeth of Hungary, Euphrosyne/Smaragdus, Frances Xavier Cabrini, John XXIII, Thomas the Apostle) carry `crossRef` to the same person's existing row in another tradition; the other 122 new rows have no same-person row elsewhere in the app (a looser match produced false pairs such as Celestine I/V, Marina the Monk/Marina, Edward King/Edward the Confessor, and was rejected).
+- **Harmonization notes (71 date-conflict notes on the decided saints) checked against the printed LFF 2024 / HWHM / GCW calendars:** for 62 the decided date is printed in at least one of them. For 9 it is not -- they rest on AM/SEC/FAS/Oxford witnesses only. For Josh's information (no change made):
+  - 01-02 Basil the Great and Gregory of Nazianzus: printed calendars place it at 05-09 (LFF/HWHM/GCW), 06-14 (LFF/HWHM/GCW).
+  - 01-19 Macarius the Great: printed calendars place it at no other listed date.
+  - 02-18 Colman of Lindisfarne: printed calendars place it at no other listed date.
+  - 04-26 Albert Ernest Laurie: printed calendars place it at no other listed date.
+  - 05-30 Josephine Butler: printed calendars place it at no other listed date.
+  - 06-25 Moluag of Lismore: printed calendars place it at no other listed date.
+  - 07-16 Osmund of Salisbury: printed calendars place it at no other listed date.
+  - 09-14 Albert of Jerusalem: printed calendars place it at no other listed date.
+  - 12-18 Charles Wesley: printed calendars place it at 03-03 (LFF/HWHM/GCW).

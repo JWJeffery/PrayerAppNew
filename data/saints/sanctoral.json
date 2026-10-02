@@ -25235,7 +25235,8 @@
       },
       "angRole": "primary",
       "synaxariumSin": "UO-SIN-000761",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-08-26); witnesses: LFF; AM; SEC June 8 date variant/source context."
+      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-08-26); witnesses: LFF; AM; SEC June 8 date variant/source context.",
+      "crossRef": "saint-john-xxiii"
     },
     {
       "id": "willibald-of-eichstatt",
@@ -26071,7 +26072,8 @@
       },
       "angRole": "primary",
       "synaxariumSin": "UO-SIN-000089",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: LFF."
+      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: LFF.",
+      "crossRef": "saint-euphrosyne-of-alexandria"
     },
     {
       "id": "paula-and-eustochium-of-rome",
@@ -26379,7 +26381,8 @@
       },
       "angRole": "primary",
       "synaxariumSin": "UO-SIN-000136",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: AM; Oxford Dictionary of Saints."
+      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: AM; Oxford Dictionary of Saints.",
+      "crossRef": "saint-frances-xavier-cabrini"
     },
     {
       "id": "consecration-of-samuel-seabury",
@@ -26445,7 +26448,8 @@
       },
       "angRole": "primary",
       "synaxariumSin": "UO-SIN-000142",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: BCP; LFF; HWHM; GCW; FAS; AM date variant."
+      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: BCP; LFF; HWHM; GCW; FAS; AM date variant.",
+      "crossRef": "saint-elizabeth-of-hungary"
     },
     {
       "id": "mechthilde-of-hackeborn-and-gertrude-the-great",
@@ -26753,7 +26757,8 @@
       },
       "angRole": "primary",
       "synaxariumSin": "UO-SIN-000003",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: BCP; LFF; HWHM; GCW; FAS; AM; Oxford Dictionary of Saints."
+      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: BCP; LFF; HWHM; GCW; FAS; AM; Oxford Dictionary of Saints.",
+      "crossRef": "saint-thomas-the-apostle"
     },
     {
       "id": "chaeremon-of-nilopolis-and-companions",

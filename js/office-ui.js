@@ -6818,12 +6818,13 @@ async function renderBcpOffice() {
 const _angRoleOrder = s => (s.angRole === 'primary' ? 0 : s.angRole === 'alternate' ? 2 : 1);
 const angSorted = angComms.slice().sort((a, b) => _angRoleOrder(a) - _angRoleOrder(b));
 const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.map(s => s.name));
+const angPrimaryDetail = await _angPrimaryDetail(currentDate);
 document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
         const ctx = { tradition: 'ANG', includeEcumenical: true };
         const res = saintAppliesToContext(s, ctx);
         const label = getTraditionDisplayLabel(res.label || 'Unknown') + (s.angRole === 'alternate' ? ' \u00b7 Alternate' : '');
-        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p></div>`;
+        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p>${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}</div>`;
     })
     .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
 }
@@ -6838,6 +6839,18 @@ function _loadAngDecisions() {
     return _angDecisionsPromise;
 }
 function _angNameKey(n) { return String(n || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' '); }
+async function _angPrimaryDetail(date) {
+    try {
+        const data = await _loadAngDecisions();
+        const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+        const p = data && data.decisions && data.decisions[key] ? data.decisions[key].primary : null;
+        if (!p) return '';
+        const parts = [];
+        if (p.tradition) parts.push(p.tradition);
+        if (p.source_witnesses) parts.push('Witnesses: ' + p.source_witnesses);
+        return parts.join(' \u00b7 ');
+    } catch (e) { return ''; }
+}
 async function _angDecisionAlternates(date, shownNames) {
     try {
         const data = await _loadAngDecisions();
