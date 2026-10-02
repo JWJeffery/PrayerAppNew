@@ -334,7 +334,7 @@ found, so unusable until clarified) -- Ponomar project texts
 license shown, mixed translations), Anastasis/Lash texts (repo says permission still being sought),
 Orthodox Wiki (CC BY-SA, but hymn texts are mostly quoted from copyrighted books).
 
-**NEW TODO, added 2026-09-28 per Josh's direct instruction — make the Google Drive "Anglican
+**EXAMINED 2026-10-02 -- see `documentation/ANGLICAN_SYNAXARIUM_FINDINGS.md`: the Drive decisions file is the EXPORT of `synaxarium-review/` and all 366 dates are already decided (the "zero rows reviewed" statement below is stale); 211 dates agree with the app, 62 differ, 93 have no ANG entry. Incorporation not started -- needs Josh's answers listed there.** *(Older text follows.)* **NEW TODO, added 2026-09-28 per Josh's direct instruction — make the Google Drive "Anglican
 Synaxarium" decision file the controlling TEC commemoration calendar.** Josh: "For TEC saints /
 commemoration, incorporate the decision file in Google Drive (Anglican Synaxarium) and make that data
 the controlling commemoration calendar for TEC in the app." **Located, not yet read or incorporated**
@@ -424,7 +424,7 @@ that predate recent sessions and have not been investigated.
 *Not Claude's work at all — a separate, already-built tool waiting on Josh's own hands-on review:*
 - **The Anglican Kalendar remainder via `synaxarium-review/`.** The tool itself is done and ready
   (`synaxarium-review/validation-report.md`: 1,194 candidate rows total, full date coverage, zero
-  missing SIN joins, zero malformed rows) — but **zero rows have been reviewed**. This is the entire
+  missing SIN joins, zero malformed rows) — but **(STALE -- see 2026-10-02 finding above: all 366 dates were decided 2026-08-25 to 09-07)** zero rows had been reviewed. This was the entire
   remaining task — Josh going through all 1,194 candidate rows himself in the tool's own browser UI
   (`cd synaxarium-review && python3 -m http.server 8000`) and concurring/overriding/recording a
   decision for each civil date. Per standing project rule, `synaxarium-review/` is a separate project
