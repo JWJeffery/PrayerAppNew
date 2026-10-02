@@ -127,3 +127,36 @@ Open questions for Josh: does "controlling" mean one saint per civil date (as th
   - 07-16 Osmund of Salisbury: printed calendars place it at no other listed date.
   - 09-14 Albert of Jerusalem: printed calendars place it at no other listed date.
   - 12-18 Charles Wesley: printed calendars place it at 03-03 (LFF/HWHM/GCW).
+
+## Source audit of the 366 decided primaries (2026-10-02, after Josh noted the candidate matrix itself was machine-generated)
+The candidate matrix behind the Kalendar Review tool was produced by ChatGPT from the source books, so its witness claims were never independently checked. Each decided primary was checked against the books held in the repo, by automatic name matching on the decided date (imperfect: appendix entries and alternate name forms can be missed):
+- **270**: printed on that date in LFF 2024, Holy Women Holy Men or A Great Cloud of Witnesses.
+- **70**: not in those, but listed on that date in the Anglican Martyrology (British Isles; a personal compilation based on Fr Hugh Feiss's martyrology plus Exciting Holiness -- not a provincial calendar) or the Scottish Episcopal Church calendar CSV.
+- **26**: no source held in the repo placed on that date by my check (some are false negatives, e.g. Savarimuthu and Rivera are printed in the HWHM/GCW appendices; the Eve of the Nativity is a BCP day):
+  - 02-29 Oswald of Worcester (matrix witnesses: AM/Oxford date context; Feb 28 matrix)
+  - 03-05 Non of Wales (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 03-14 Matilda of Ringelheim (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 04-06 Celestine I (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 04-30 Marie de l'Incarnation (matrix witnesses: FAS; AM; Oxford Dictionary of Saints; HWHM; GCW)
+  - 05-03 James K. O. S. Huntington (matrix witnesses: HWHM; GCW; AM)
+  - 05-05 Jutta of Kulmsee (matrix witnesses: AM)
+  - 05-06 John before the Latin Gate (matrix witnesses: AM/Oxford context)
+  - 05-09 Nicolaus Ludwig von Zinzendorf (matrix witnesses: HWHM; GCW; FAS)
+  - 05-16 Brendan the Navigator (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 05-17 Restituta of Carthage (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 07-03 Joshua the Prophet (Son of Nun) (matrix witnesses: Coptic Orthodox Church Synaxarium (Paona 26))
+  - 07-10 Anthony and Theodosius of the Kyiv Caves (matrix witnesses: AM)
+  - 07-15 Vladimir of Kyiv (matrix witnesses: AM)
+  - 08-19 Mary Sumner (matrix witnesses: AM)
+  - 08-21 Tan Sri John Savarimuthu (matrix witnesses: HWHM appendix; GCW appendix)
+  - 08-22 Alicia “Cristina” Rivera, OSH (matrix witnesses: GCW appendix)
+  - 10-27 Odran of Iona (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 12-11 Lucy Menzies (matrix witnesses: AM; SEC on Nov 24)
+  - 12-18 Charles Wesley (matrix witnesses: HWHM/GCW date variant?)
+  - 12-20 Ammonius and Companions (matrix witnesses: AM)
+  - 12-22 Chaeremon of Nilopolis and Companions (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 12-23 Thorlak of Iceland (matrix witnesses: AM; Oxford Dictionary of Saints)
+  - 12-24 The Eve of the Nativity (matrix witnesses: BCP; LFF; FAS; AM)
+  - 12-29 David of London (matrix witnesses: AM)
+  - 12-30 Egwin of Worcester (matrix witnesses: AM; Oxford Dictionary of Saints)
+- **Charles Wesley 12-18 specifically:** no book held places him on December 18. LFF, HWHM, GCW and For All the Saints (Methodist) all print "John and Charles Wesley" on March 3; the Anglican Martyrology lists Charles on March 29 (death) and notes the Church of England keeps both on May 24. December 18 is his birth date (1707). The matrix's witness note for it is "HWHM/GCW date variant?".
