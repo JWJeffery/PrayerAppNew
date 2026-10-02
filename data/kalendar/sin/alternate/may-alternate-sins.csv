@@ -3,8 +3,7 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 05-01,3,UO-SIN-000996,Sigismund of Burgundy,person,Sigismund of Burgundy,
 05-02,2,UO-SIN-000997,Antoninus of Florence,person,Antoninus of Florence,
 05-02,3,UO-SIN-000998,Felix of Seville,person,Felix of Seville,
-05-03,2,UO-SIN-000999,James K. O. S. Huntington,person,James K. O. S. Huntington,
-05-03,3,UO-SIN-001000,Philip and James source,group,Philip and James source transfer context,normalized from Philip and James source transfer context; date/source-form harmonization
+05-03,2,UO-SIN-001000,Philip and James source,group,Philip and James source transfer context,normalized from Philip and James source transfer context; date/source-form harmonization
 05-04,2,UO-SIN-001001,Florian,person,Florian,
 05-04,3,UO-SIN-001002,English Martyrs,group,English Martyrs source forms,normalized from English Martyrs source forms
 05-05,2,UO-SIN-000731,Athanasius of Alexandria,person,Athanasius source octave/date context,reused existing SIN; date/source-form harmonization
@@ -15,10 +14,10 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 05-07,3,UO-SIN-001007,Mastidia of Troyes,person,Mastidia of Troyes,
 05-08,2,UO-SIN-001008,Victor the Moor,person,Victor the Moor,
 05-08,3,UO-SIN-001009,"Wiro, Plechelm, and Otger",group,"Wiro, Plechelm, and Otger",
-05-09,2,UO-SIN-001010,Nicolaus Ludwig von Zinzendorf,person,Nicolaus Ludwig von Zinzendorf,
-05-09,3,UO-SIN-001011,Beatus of Lungern,person,Beatus of Lungern,
+05-09,2,UO-SIN-001011,Beatus of Lungern,person,Beatus of Lungern,
 05-10,2,UO-SIN-001012,John of Avila,person,John of Avila,
 05-10,3,UO-SIN-001013,Solangia,person,Solangia,
+05-10,4,UO-SIN-001010,Nicolaus Ludwig von Zinzendorf,person,Nicolaus Ludwig von Zinzendorf,
 05-11,2,UO-SIN-001014,Mamertus of Vienne,person,Mamertus of Vienne,
 05-11,3,UO-SIN-001015,Francis di Girolamo,person,Francis di Girolamo,
 05-12,2,UO-SIN-001016,Nereus and Achilleus,group,Nereus and Achilleus,

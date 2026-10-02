@@ -36,6 +36,17 @@ MANUAL_KEEP = {('09-14', 'Exaltation of the Holy Cross'): ['LFF', 'HWHM']}   # p
 OVERRIDE = {('01-01', 'holy-name-of-jesus-circumcision-of-christ')}
 MONTH = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
+EDITORIAL = {   # primaries whose date is the curator's deliberate editorial choice or a Great Church supplementation, not a received Anglican date
+ ('12-18', 'Charles Wesley'): "editorial: the curator's deliberate birthday observance (born 18 December 1707); received joint commemoration with John is 3 March",
+ ('07-03', 'Joshua the Prophet (Son of Nun)'): 'Great Church supplementation: Coptic Orthodox Synaxarium (Paona 26)',
+ ('02-29', 'Oswald of Worcester'): 'cathedral observance: Worcester Cathedral keeps the feast on 29 February in leap years (held books: 28 February)',
+}
+def date_basis(k, name):
+    if (k, name) in EDITORIAL: return EDITORIAL[(k, name)]
+    pr = [s for s in ('LFF', 'HWHM', 'GCW') if same(name, clean(cal[s].get(k, '')))]
+    if pr: return 'received: printed in ' + ', '.join(PROOF_NAME[x] for x in pr)
+    return 'other witness (see source_witnesses and source_notes): Anglican Martyrology / SEC / Book of Saints / ODS'
+
 # ---- 1. export -------------------------------------------------------------------
 out = {'schema': 'universal_office_synaxarium_decisions_v1',
        'source': dec.get('source'), 'exported_at': dec.get('exported_at'), 'format_version': dec.get('format_version'),
@@ -48,12 +59,18 @@ for k in sorted(decisions):
             'source_tier': o.get('source_tier'), 'review_flags': o.get('review_flags'), 'decision_type': r['decision_type'],
             'reviewer_comments': r['reviewer_comments'] or None, 'decided_at': r['timestamp'],
             'entity_type': (o.get('sin') or {}).get('entity_type'), 'harmonization': o.get('harmonization') or None}
+    approved = r.get('approved_alternates') or []
     alts = []
     for c in cands.get(k, []):
         if c['candidate'] == r['selected_candidate'] or str(c.get('preliminary_status', '')).startswith('Weak'): continue
         alts.append({'name': c['candidate'], 'sin': (c.get('sin') or {}).get('sin'), 'designation': c.get('designation'),
                      'period': c.get('year_or_period'), 'tradition': c.get('tradition'),
-                     'source_witnesses': c.get('source_witnesses'), 'preliminary_status': c.get('preliminary_status')})
+                     'source_witnesses': c.get('source_witnesses'), 'preliminary_status': c.get('preliminary_status'),
+                     'curator_approved': c['candidate'] in approved or None})
+    alts.sort(key=lambda a: 0 if a['curator_approved'] else 1)       # stable: approved alternates first, matrix order otherwise
+    prim['date_basis'] = date_basis(k, r['selected_candidate'])
+    prim['source_notes'] = o.get('notes') or None
+    if r.get('curator_correction'): prim['curator_correction'] = r['curator_correction']
     out['decisions'][k] = {'primary': prim, 'alternates': alts}
 json.dump(out, open('data/kalendar/synaxarium/decisions.json', 'w'), ensure_ascii=False, indent=1)
 
@@ -84,12 +101,30 @@ for k in sorted(decisions):
                'dayLegacy': f'{MONTH[mo-1]} {dy}', 'observance': {'type': 'fixed', 'dates': [{'month': mo, 'day': dy}]}}
         rows.append(hit); stats['created'] += 1; report['created'].append((k, hit['id']))
     hit['angRole'] = 'primary'; hit['synaxariumSin'] = r['selected_sin']
+    hit['angDateBasis'] = date_basis(k, name)
+    if r.get('curator_correction'): hit['angCorrection'] = 'Curatorial correction 2026-10-02: ' + r['curator_correction']['reason']
     hit['angDecisionSource'] = f"An Anglican Synaxarium, Kalendar Review decision ({r['decision_type']}, {r['timestamp'][:10]}); witnesses: {o.get('source_witnesses')}."
     primary_ids[k] = hit['id']
+# curator-approved alternates (Josh, 2026-10-02): rows with angRole alternate, on the date the sources print
+for k in sorted(decisions):
+    for aname in decisions[k].get('approved_alternates') or []:
+        arow = next((c for c in cands[k] if c['candidate'] == aname), None)
+        hit = next((x for x in rows if k in fixed_dates(x) and same(aname, x['name']) and x.get('angRole') != 'primary'), None)
+        if hit is None:
+            mo, dy = int(k[:2]), int(k[3:])
+            hit = {'id': slug(aname), 'name': aname,
+                   'description': f"{arow.get('designation') or 'Commemoration'}{', ' + arow['year_or_period'] if arow.get('year_or_period') else ''}. Commemorated in the Anglican calendar of An Anglican Synaxarium (curator-approved alternate, 2026-10-02).",
+                   'type': 'saint', 'tags': ['ANG'], 'dayLegacy': f'{MONTH[mo-1]} {dy}', 'observance': {'type': 'fixed', 'dates': [{'month': mo, 'day': dy}]}}
+            rows.append(hit); stats['approved_alternate_created'] += 1
+        elif 'ANG' not in hit['tags']: hit['tags'].append('ANG')
+        hit['angRole'] = 'alternate'; hit['angApproved'] = True; hit['synaxariumSin'] = (arow.get('sin') or {}).get('sin')
+        hit['angDateBasis'] = date_basis(k, aname)
+        hit['angDecisionSource'] = f"An Anglican Synaxarium, curator-approved alternate (2026-10-02); witnesses: {arow.get('source_witnesses')}."
+        stats['approved_alternate'] += 1
 # conflicting ANG rows
 drop = []
 for x in list(rows):
-    if 'ANG' not in x['tags'] or x.get('angRole') == 'primary': continue
+    if 'ANG' not in x['tags'] or x.get('angRole') == 'primary' or x.get('angApproved'): continue
     for k in fixed_dates(x):
         if k not in decisions: continue
         prim = decisions[k]['selected_candidate']
@@ -110,6 +145,11 @@ for k, x in drop:
     else:
         x['tags'].remove('ANG'); x['angNote'] = f'ANG tag removed 2026-10-02: the Synaxarium decision for {k} is {decisions[k]["selected_candidate"]}, and no printed LFF 2024/HWHM/GCW calendar places this commemoration on that day.'
         stats['stripped_ang'] += 1; report['stripped_ang'].append((k, x['id']))
+# same-person rows in other traditions (reviewed 2026-10-02): link, so cards share the existing identity
+by = {x['id']: x for x in rows}
+for a_id, b_id in [('elizabeth-of-hungary', 'saint-elizabeth-of-hungary'), ('euphrosyne-smaragdus-of-alexandria', 'saint-euphrosyne-of-alexandria'),
+                   ('frances-xavier-cabrini', 'saint-frances-xavier-cabrini'), ('john-xxiii', 'saint-john-xxiii'), ('thomas-the-apostle', 'saint-thomas-the-apostle')]:
+    if a_id in by and b_id in by: by[a_id]['crossRef'] = b_id
 open(p, 'w').write(json.dumps(sd, indent=2, ensure_ascii=False) + '\n')
 print(dict(stats))
 json.dump(report, open('/tmp/claude-0/-home-user-PrayerAppNew/831c5b64-ae18-55a7-ac84-0cadf047a793/scratchpad/apply-report.json', 'w'), indent=1)

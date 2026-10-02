@@ -19,6 +19,7 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 08-08,3,UO-SIN-000258,Altman of Passau,person,Altman of Passau,
 08-09,2,UO-SIN-000138,Herman of Alaska,person,Herman of Alaska,also rank1 11-15
 08-09,3,UO-SIN-000259,Felim,person,Felim,
+08-09,4,UO-SIN-000050,Mary Sumner,person,Mary Sumner,
 08-10,2,UO-SIN-000260,Blane,person,Blane,also appears 08-12
 08-11,2,UO-SIN-000261,John Henry Newman,person,John Henry Newman,
 08-11,3,UO-SIN-000262,Susanna of Rome,person,Susanna of Rome,
@@ -42,9 +43,8 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 08-18,2,UO-SIN-000279,Artemisia Bowden,person,Artemisia Bowden,
 08-18,3,UO-SIN-000280,Helena,person,Helena,
 08-18,4,UO-SIN-000281,Jane Frances de Chantal,person,Jane Frances de Chantal,also appears in 12-12 group
-08-19,2,UO-SIN-000282,John Eudes,person,John Eudes,
-08-19,3,UO-SIN-000283,Blaise Pascal,person,Blaise Pascal,
-08-19,4,UO-SIN-000284,Louis of Anjou,person,Louis of Anjou,
+08-19,2,UO-SIN-000283,Blaise Pascal,person,Blaise Pascal,
+08-19,3,UO-SIN-000284,Louis of Anjou,person,Louis of Anjou,
 08-20,2,UO-SIN-000285,William and Catherine Booth,group,William and Catherine Booth,group source form
 08-20,3,UO-SIN-000286,Bernard Tolomei,person,Bernard Tolomei,
 08-21,2,UO-SIN-000287,Pius X,person,Pius X,

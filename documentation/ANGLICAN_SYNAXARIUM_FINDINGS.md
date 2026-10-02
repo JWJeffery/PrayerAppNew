@@ -180,3 +180,6 @@ No change has been made to the app for these; they are Josh's decisions.
 
 ## Correction (2026-10-02): 01-02 Basil the Great and Gregory of Nazianzus
 Earlier passages in this file that list 01-02 as lacking printed support (the harmonization check and the 9 "not printed" dates) only examined LFF, HWHM and GCW and are superseded: the Anglican Martyrology (PDF p.5) and For All the Saints (calendar listing PDF p.25; own entry PDF p.40) both place Basil and Gregory together on January 2, as the decision cites. The decision stands. See section E of ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md.
+
+## Implementation (2026-10-02)
+The curator's approved corrections were applied; see `ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md` (now the implementation record). The earlier statements in this file that Zinzendorf, Sumner, Menzies, Huntington (05-03), Wesley (12-18) and "David of London" were the primaries on 05-09, 08-19, 12-11, 05-03, 12-18 and 12-29 describe the superseded state, except Wesley 12-18, which is retained deliberately as an editorial birthday observance.

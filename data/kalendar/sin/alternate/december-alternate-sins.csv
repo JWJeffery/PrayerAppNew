@@ -24,7 +24,6 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 12-10,4,UO-SIN-000575,John Roberts,person,John Roberts,
 12-11,2,UO-SIN-000576,Daniel the Stylite,person,Daniel the Stylite,
 12-11,3,UO-SIN-000577,Damasus I,person,Damasus I,
-12-11,4,UO-SIN-000541,Lucy Menzies,person,Lucy Menzies,also appears 11-24
 12-12,2,UO-SIN-000578,Our Lady of Guadalupe,feast,Our Lady of Guadalupe,Marian apparition feast
 12-12,3,UO-SIN-000579,Spyridon of Trimythous,person,Spyridon of Trimythous,
 12-13,2,UO-SIN-000580,Samuel Johnson,person,Samuel Johnson,individual date variant of 08-17 group
@@ -45,7 +44,7 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 12-19,2,UO-SIN-000595,Gregory of Auxerre,person,Gregory of Auxerre,
 12-19,3,UO-SIN-000596,Nemesius of Alexandria,person,Nemesius of Alexandria,
 12-20,2,UO-SIN-000597,Dominic of Silos,person,Dominic of Silos,
-12-20,3,UO-SIN-000598,Ammonius and Companions,group,Ammonius and Companions,group source form
+12-20,3,UO-SIN-000598,Ammon and Companions,group,Ammon and Companions,group source form
 12-21,2,UO-SIN-000599,Peter Canisius,person,Peter Canisius,
 12-21,3,UO-SIN-000600,Forefathers of Christ / Genealogy witnesses,group,Forefathers of Christ / Genealogy witnesses,biblical Advent group
 12-22,2,UO-SIN-000181,Frances Joseph-Gaudet,person,Frances Joseph-Gaudet,unverified date variant of 12-30 and 12-31
@@ -58,8 +57,7 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 12-26,2,UO-SIN-000607,Dionysius / Zosimus post-Christmas saints,group,Dionysius / Zosimus? post-Christmas saints,uncertain source group
 12-27,2,UO-SIN-000608,Fabiola of Rome,person,Fabiola of Rome,
 12-28,2,UO-SIN-000609,Antony of Lerins,person,Antony of Lérins,
-12-29,2,UO-SIN-000610,David of London,person,David of London,
-12-29,3,UO-SIN-000611,Trophimus of Arles,person,Trophimus of Arles,
+12-29,2,UO-SIN-000611,Trophimus of Arles,person,Trophimus of Arles,
 12-30,2,UO-SIN-000612,Egwin of Worcester,person,Egwin of Worcester,
 12-30,3,UO-SIN-000613,Sabinus and Companions,group,Sabinus and Companions,group source form
 12-31,2,UO-SIN-000614,Samuel Ajayi Crowther,person,Samuel Ajayi Crowther,
