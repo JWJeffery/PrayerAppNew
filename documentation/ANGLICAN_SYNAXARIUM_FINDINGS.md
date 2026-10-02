@@ -177,3 +177,6 @@ Corrections to the "less certain" items (Josh, 2026-10-02; all now read from the
 - **Joshua son of Nun, 07-03:** a deliberate decision by Josh, dated by the Coptic Synaxarium (Paona 26) under the "Great Church supplementation" rule; recorded as Great Church provenance, not as a defect.
 - The matrix's wrong source attributions for the above (e.g. "AM; Oxford" for Celestine, Restituta, Chaeremon, Oswald, Odran) should be repaired when the decision file is next revised; see ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md.
 No change has been made to the app for these; they are Josh's decisions.
+
+## Correction (2026-10-02): 01-02 Basil the Great and Gregory of Nazianzus
+Earlier passages in this file that list 01-02 as lacking printed support (the harmonization check and the 9 "not printed" dates) only examined LFF, HWHM and GCW and are superseded: the Anglican Martyrology (PDF p.5) and For All the Saints (calendar listing PDF p.25; own entry PDF p.40) both place Basil and Gregory together on January 2, as the decision cites. The decision stands. See section E of ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md.

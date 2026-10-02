@@ -25,19 +25,30 @@ Only candidates attested on that exact date in a held source are listed. "Matrix
 |---|---|---|---|---|
 | 12-18 | **nothing printed** | Flannan of Killaloe (7th c.); Winnibald of Heidenheim (d. 761) | ODS: Flannan, "Feast: 18 December" | **Flannan**, **Winnibald** (both matrix "Usable"). No Anglican calendar I hold prints either; "Expectation of the Blessed Virgin Mary" is in the matrix but in none of these books for 12-18. |
 | 05-03 | **LFF: Elisabeth Cruciger, Poet and Hymnographer, 1535** | Ansfrid (1010); Henry Vaughan (1695); Elisabeth Leseur (1915) | | **Elisabeth Cruciger** (printed in LFF 2024 on 05-03; matrix "Strong candidate with review"). The strongest-supported option on any vacated date. |
-| 05-09 | **LFF, HWHM, GCW: Gregory of Nazianzus** | Mary-Teresa Gerhardinger (1879) | | **Gregory of Nazianzus** (printed in all three). Note: the 01-02 primary is the pair "Basil the Great and Gregory of Nazianzus", which no held calendar prints; the books print Gregory on 05-09 and Basil on 06-14. |
+| 05-09 | **LFF, HWHM, GCW: Gregory of Nazianzus** | Mary-Teresa Gerhardinger (1879) | | **Gregory of Nazianzus** is a genuine TEC observance on 05-09, but promoting him there overlaps the existing, equally genuine 01-02 selection "Basil the Great and Gregory of Nazianzus" (see section E) -- a deliberate harmonization decision, not a default. The only other AM entry is Mary-Teresa Gerhardinger (Blessed, Roman). |
 | 08-19 | **nothing printed** | John Eudes (1680); Louis of Anjou (1297); Blaise Pascal (1662) | SEC: only a weekday | **John Eudes**, **Louis of Anjou**, **Pascal** (matrix: Usable / Usable / Review). None is in LFF, HWHM or GCW. |
 | 12-11 | **LFF: Frederick Howden, Jr., Priest and Chaplain of the Armed Forces, 1941** | Damasus I (384); Daniel the Stylite (493) | | **Frederick Howden Jr.** (printed in LFF 2024), then Damasus I or Daniel the Stylite (AM). |
 | 12-29 | **LFF, HWHM, GCW: Thomas Becket** | Nathan and King David; Thomas Becket; Marcellus; Evroult; Austin Farrer (1968) | | **Thomas Becket**. |
 
 ## C. Decisions needed (nothing is assumed)
 
-1. **12-18 Wesley:** delete the duplicate. Then choose the 12-18 primary: Flannan / Winnibald / leave to you. (No Anglican calendar prints any.)
-2. **05-03 Huntington:** delete the duplicate. Then 05-03 primary: Elisabeth Cruciger (LFF) is the only printed option.
-3. **05-09 Zinzendorf:** (a) move him to 05-10 as primary and make Comgall an alternate; (b) move him to 05-10 as an alternate and keep Comgall; (c) leave 05-09 as it is, knowing the books print him on 05-10. 05-09 primary if vacated: Gregory of Nazianzus (printed).
-4. **08-19 Sumner:** (a) move her to 08-09 as an alternate (Edith Stein stays: LFF), (b) make her primary on 08-09 (displacing LFF's Edith Stein), (c) leave her on 08-19. 08-19 primary if vacated: John Eudes / Louis of Anjou / Pascal.
-5. **12-11 Menzies:** (a) 11-24 alternate (already so; LFF group stays primary), (b) 11-24 primary on SEC/AM evidence, (c) leave on 12-11. 12-11 primary if vacated: Frederick Howden Jr. (LFF), Damasus I or Daniel the Stylite.
-6. **12-29:** replace "David of London" with Thomas Becket.
+Terminology: **correcting a date** means moving the subject to the day a held source prints; **retaining** a subject on a date no held source supports would be an *editorial transfer* and needs an express justification. They are not offered as equally source-supported options.
+
+1. **12-18 Wesley:** delete the duplicate (he is covered by 03-03). Then choose the 12-18 primary: Flannan / Winnibald / other. No held Anglican calendar prints anyone on 12-18.
+2. **05-03 Huntington:** delete the duplicate (he is the 11-25 primary). Then the 05-03 primary: Elisabeth Cruciger (LFF) is the only printed option.
+3. **05-09 / 05-10 Zinzendorf:**
+   - *Correction (source-supported):* move him to 05-10 (HWHM, GCW, AM) -- as primary (Comgall of Bangor, AM only, becomes an alternate) or as an alternate (Comgall stays primary). That is a choice of rank on a source-supported date.
+   - *Retention on 05-09:* an editorial transfer requiring an express justification; no held source supports 05-09.
+   - If 05-09 is vacated, its primary is a harmonization decision (section E).
+4. **08-19 / 08-09 Sumner:**
+   - *Correction (source-supported, AM only):* move her to 08-09 -- as an alternate (Edith Stein, printed in LFF, stays primary) or as primary (displacing LFF's Edith Stein; HWHM/GCW print Herman of Alaska there).
+   - *Retention on 08-19:* an editorial transfer requiring an express justification; no held source supports 08-19.
+   - If 08-19 is vacated, its primary: John Eudes / Louis of Anjou / Pascal (AM; none printed in LFF, HWHM or GCW).
+5. **12-11 / 11-24 Menzies:**
+   - *Correction (source-supported: SEC calendar and AM):* move her to 11-24 -- she is already an alternate there; the other option is primary (displacing LFF's Catherine/Barbara/Margaret group).
+   - *Retention on 12-11:* an editorial transfer requiring an express justification; no held source supports 12-11.
+   - If 12-11 is vacated, its primary: Frederick Howden Jr. (printed in LFF), then Damasus I or Daniel the Stylite (AM).
+6. **12-29:** replace "David of London" with Thomas Becket (printed in LFF, HWHM, GCW).
 
 ## D. Source-citation repairs for the decision file (no change to dates)
 | Date | Subject | Matrix said | Verified source |
@@ -54,3 +65,10 @@ Only candidates attested on that exact date in a held source are listed. "Matrix
 | 12-23 | Thorlak of Iceland | AM; Oxford | AM, 23 December, as "Thorlac" |
 | 12-30 | Egwin of Worcester | AM; Oxford | AM, 30 December, spelled "Eqwin" |
 | 07-03 | Joshua son of Nun | (Coptic) | Coptic Synaxarium, Paona 26 -- Josh's deliberate Great Church supplementation |
+
+## E. 01-02 Basil and Gregory (withdrawn objection) and the 05-09 overlap
+My earlier statement that the pair is "printed nowhere" on 01-02 is **withdrawn**: it came from checking only LFF, HWHM and GCW. Your 01-02 decision is supported by the books you cited, and I confirmed both in the held copies:
+- **Anglican Martyrology (PDF p.5):** under *January 2*, "Sts. Basil the Great and Gregory of Nazianzus, bishops and doctors of the church" (a joint entry).
+- **For All the Saints:** the January calendar listing (PDF p.25) reads "2b  Basil the Great and Gregory of Nazianzus, Bishops and Teachers of the Faith, 379, 389 -- Mem", and the book has a full entry headed "Basil the Great and Gregory of Nazianzus -- 2 January" (PDF p.40).
+- The Church of England's Common Worship calendar also keeps them together on 2 January; no copy of Common Worship is held in the repo, so that is recorded on your citation and not independently verified here.
+The 01-02 decision is preserved. Gregory on 05-09 (LFF, HWHM, GCW) is also a genuine TEC observance. Promoting him to the 05-09 primary would put Gregory on two dates (01-02 jointly, 05-09 individually), so that is a **deliberate harmonization decision** for you, with these options: (a) leave 05-09 to another subject and list Gregory there only as an alternate; (b) make Gregory the 05-09 primary and record the overlap with 01-02 as intentional; (c) another subject entirely.
