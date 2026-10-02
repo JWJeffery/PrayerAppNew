@@ -2345,6 +2345,42 @@
     "license": "Public domain",
     "name": "Holy Great Martyr Euphemia the All-Praised"
    }
+  ],
+  "11-19": [
+   {
+    "id": "abdias-prophet",
+    "image": "images/icons/abdias-prophet.jpg",
+    "title": "Obadiah (Овдий)",
+    "page": "https://commons.wikimedia.org/wiki/File:Obadiah_(%D0%9E%D0%B2%D0%B4%D0%B8%D0%B9).jpg",
+    "artist": "18 century icon painter",
+    "date": "first quarter of XVIII cen.",
+    "license": "Public domain",
+    "name": "Holy Prophet Obadiah (Abdias)"
+   }
+  ],
+  "05-17": [
+   {
+    "id": "andronicus-junia-apostles",
+    "image": "images/icons/andronicus-junia-apostles.jpg",
+    "title": "Andronicus, Athanasius of Christianoupolis and Junia",
+    "page": "https://commons.wikimedia.org/wiki/File:Andronicus,_Athanasius_of_Christianoupolis_and_Junia.jpg",
+    "artist": "Unknown author",
+    "date": "Old",
+    "license": "Public domain",
+    "name": "Holy Apostles Andronicus and Junia"
+   }
+  ],
+  "06-09": [
+   {
+    "id": "cyril-alexandria-bishop",
+    "image": "images/icons/cyril-alexandria-bishop.jpg",
+    "title": "Saint Athanasius, John Eleimon and Cyril of Alexandria Icon by Veniamin of Galatista, 1833",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Athanasius,_John_Eleimon_and_Cyril_of_Alexandria_Icon_by_Veniamin_of_Galatista,_1833.jpg",
+    "artist": "Veniamin of Galatista",
+    "date": "1833",
+    "license": "Public domain",
+    "name": "St. Cyril, Archbishop of Alexandria"
+   }
   ]
  },
  "moveable": {
