@@ -307,6 +307,7 @@ console.log(JSON.stringify(report, null, 2));
 
 if (failures.length) {
   console.log('ALL FAILED');
+  process.exitCode = 1;
   console.log('NEXT: Review named NT defect state; update data, audit, and ledger deliberately.');
 } else {
   console.log('ALL PASSED');
