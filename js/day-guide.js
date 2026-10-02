@@ -72,7 +72,7 @@ const DayGuide = (() => {
         if (!_iconsP) _iconsP = fetch('data/icons/commemoration-icons.json').then(r => r.ok ? r.json() : null).catch(() => null);
         return _iconsP;
     }
-    async function _iconFor(iso, day, trop) {
+    async function _iconFor(mmdd, day, trop) {
         const data = await _icons();
         if (!data) return null;
         const title = day ? ((day.titles || []).concat(day.title || [])).join(' ; ') : '';
@@ -80,20 +80,21 @@ const DayGuide = (() => {
             if (title && new RegExp(data.moveable[k].match).test(title)) return data.moveable[k];
         }
         if (trop && trop.resolvedAs === 'menaion-feast-troparion' && trop.commemoration) {
-            const list = (data.byDate || {})[String(iso).slice(5)] || [];
+            const list = (data.byDate || {})[mmdd] || [];
             return list.find(r => r.name === trop.commemoration) || null;
         }
         return null;
     }
 
-    async function applyToSections(sections, officeKey, iso, dateObj) {
+    async function applyToSections(sections, officeKey, iso, dateObj, opts) {
+        opts = opts || {};
         if (!['vespers', 'orthros', 'typika'].includes(officeKey) || !Array.isArray(sections) || !sections.length) return 0;
         const first = sections.find(s => Array.isArray(s.items));
         if (!first) return 0;
         const items = _all(sections);
         const lines = [];
 
-        const day = (window.OrthodoxDay && window.OrthodoxDay.getDay) ? await window.OrthodoxDay.getDay(iso) : null;
+        const day = (window.OrthodoxDay && window.OrthodoxDay.getDay) ? await window.OrthodoxDay.getDay(iso, opts.old) : null;
         const dow = dateObj ? dateObj.getDay() : null;
 
         // 1. What day it is.
@@ -125,7 +126,7 @@ const DayGuide = (() => {
         if (src) lines.push(src);
 
         if (!lines.length) return 0;
-        const ic = await _iconFor(iso, day, trop);
+        const ic = await _iconFor(opts.mmdd || String(iso).slice(5), day, trop);
         first.items.unshift({
             type: 'text', key: 'about-today', label: 'About Today’s Service',
             text: lines.filter(Boolean).join('\n\n'),

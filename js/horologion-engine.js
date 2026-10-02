@@ -710,19 +710,21 @@ const _interhourFixedDataCache = {};
 
         // ── Fast and appointed readings from the published Orthodox lectionary ──
         // js/orthodox-day.js; years without data are left to the engine's own logic.
-        // New-calendar data only: skipped when the user reckons by the Old (Julian) calendar.
-        if (typeof window !== 'undefined' && window.OrthodoxDay && _currentEoMode !== 'old_calendar') {
+        // Old Calendar users get the Julian-calendar data set (data/orthodox-day/old/, keyed by civil date)
+        // and the Menaion MM-DD (civil date minus the Julian offset) for lives and icons.
+        const _odOpts = { old: _currentEoMode === 'old_calendar', mmdd: _getFixedCalendarMmdd(dateObj) };
+        if (typeof window !== 'undefined' && window.OrthodoxDay) {
             try {
-                await window.OrthodoxDay.applyToSections(sections, normalizedKey, isoDate);
+                await window.OrthodoxDay.applyToSections(sections, normalizedKey, isoDate, _odOpts);
             } catch (err) {
                 console.warn('[HorologionEngine] OrthodoxDay failed (engine output kept):', err.message);
             }
         }
 
         // ── Plain-language "About Today's Service" panel (composed from the resolved office) ──
-        if (typeof window !== 'undefined' && window.DayGuide && _currentEoMode !== 'old_calendar') {
+        if (typeof window !== 'undefined' && window.DayGuide) {
             try {
-                await window.DayGuide.applyToSections(sections, normalizedKey, isoDate, dateObj);
+                await window.DayGuide.applyToSections(sections, normalizedKey, isoDate, dateObj, _odOpts);
             } catch (err) {
                 console.warn('[HorologionEngine] DayGuide failed (office kept):', err.message);
             }

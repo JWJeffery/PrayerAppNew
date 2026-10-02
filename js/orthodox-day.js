@@ -16,13 +16,14 @@ const OrthodoxDay = (() => {
     const BASE = 'data/orthodox-day/';
     const _years = {};
 
-    function _loadYear(year) {
-        if (!_years[year]) {
-            _years[year] = fetch(BASE + year + '.json')
+    function _loadYear(year, old) {
+        const ck = (old ? 'old/' : '') + year;
+        if (!_years[ck]) {
+            _years[ck] = fetch(BASE + (old ? 'old/' : '') + year + '.json')
                 .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
                 .catch(() => null);
         }
-        return _years[year];
+        return _years[ck];
     }
 
     // ── Patristic commentary on the appointed readings (data/commentary/readings) ──
@@ -53,8 +54,8 @@ const OrthodoxDay = (() => {
         return null;
     }
 
-    async function getDay(iso) {
-        const data = await _loadYear(String(iso).slice(0, 4));
+    async function getDay(iso, old) {
+        const data = await _loadYear(String(iso).slice(0, 4), !!old);
         return data && data.days ? (data.days[iso] || null) : null;
     }
 
@@ -77,8 +78,8 @@ const OrthodoxDay = (() => {
         }
         return _livesPromise;
     }
-    async function commemorationsText(iso) {
-        const mm = parseInt(String(iso).slice(5, 7), 10), key = String(iso).slice(5);
+    async function commemorationsText(iso, mmdd) {
+        const key = mmdd || String(iso).slice(5), mm = parseInt(key.slice(0, 2), 10);
         const month = await _loadMonthFile(mm);
         const entry = month && month.dates ? month.dates[key] : null;
         if (!entry || !Array.isArray(entry.commemorations) || !entry.commemorations.length) return null;
@@ -149,9 +150,10 @@ const OrthodoxDay = (() => {
      * applyToSections(sections, officeKey, iso) -- mutates the engine's resolved sections.
      * Returns the number of items added or replaced.
      */
-    async function applyToSections(sections, officeKey, iso) {
+    async function applyToSections(sections, officeKey, iso, opts) {
+        opts = opts || {};
         if (!['vespers', 'orthros', 'typika'].includes(officeKey) || !Array.isArray(sections) || !sections.length) return 0;
-        const day = await getDay(iso);
+        const day = await getDay(iso, opts.old);
         if (!day) return 0;
         let n = 0;
 
@@ -167,7 +169,7 @@ const OrthodoxDay = (() => {
         }
 
         // 1b. Who is commemorated, with a short life where we have one.
-        const ct = await commemorationsText(iso);
+        const ct = await commemorationsText(iso, opts.mmdd);
         if (ct && first) {
             first.items.splice(1, 0, {
                 type: 'text', key: 'commemorated-today', label: 'Commemorated Today',

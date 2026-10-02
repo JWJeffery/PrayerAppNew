@@ -4,12 +4,17 @@
 
 Only FACTS are kept: the day's fasting level and abstentions, the appointed scripture
 citations, feast rank, tone. The saints' "stories" (prose lives) are deliberately NOT copied.
-Usage: python3 build-orthodox-day.py <cache-dir-with-YYYY-MM-DD.json files> [years...]
+Usage: python3 build-orthodox-day.py [--old] <cache-dir-with-YYYY-MM-DD.json files> [years...]
+--old: the cache holds orthocal.info /api/julian/ responses (keyed by CIVIL date; Old Calendar); output goes to data/orthodox-day/old/.
 """
 import json, os, sys
-cache = sys.argv[1]
-years = [int(y) for y in sys.argv[2:]] or [2026, 2027]
-OUT = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'orthodox-day')
+args = sys.argv[1:]
+old = '--old' in args
+args = [a for a in args if a != '--old']
+cache = args[0]
+years = [int(y) for y in args[1:]] or [2026, 2027]
+OUT = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'orthodox-day') + ('/old' if old else '')
+os.makedirs(OUT, exist_ok=True)
 for year in years:
     days = {}
     for fn in sorted(os.listdir(cache)):
@@ -38,7 +43,7 @@ for year in years:
         }
     json.dump({
         'schema': 'orthodox-day/1',
-        'source': 'orthocal.info API (Orthodox lectionary and calendar data; Slavic/OCA tradition, new calendar), fetched 2026-10-01. Facts only (citations, fast rules); prose lives not copied.',
+        'source': 'orthocal.info API (Orthodox lectionary and calendar data; Slavic/OCA tradition, ' + ('Old (Julian) calendar, keyed by civil date' if old else 'new calendar') + '), fetched 2026-10-0%d.' % (2 if old else 1) + ' Facts only (citations, fast rules); prose lives not copied.',
         'year': year,
         'days': days,
     }, open(os.path.join(OUT, '%d.json' % year), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))

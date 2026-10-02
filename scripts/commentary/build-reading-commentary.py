@@ -94,7 +94,8 @@ def excerpt(q, limit=1100):
 
 for yf in sorted(glob.glob('data/orthodox-day/20*.json')):
     d = json.load(open(yf)); year = d['year']; res = {}; refs = set(); miss = set()
-    for day in d['days'].values():
+    od = json.load(open(yf.replace('orthodox-day/', 'orthodox-day/old/')))   # Old Calendar readings share the same citation-keyed map
+    for day in list(d['days'].values()) + list(od['days'].values()):
         for r in day.get('readings', []):
             if r.get('source') in ('Epistle', 'Gospel') or str(r.get('source', '')).endswith('Matins Gospel'):
                 refs.add(r['display'].replace('​', ''))
