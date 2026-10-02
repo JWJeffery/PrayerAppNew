@@ -269,7 +269,7 @@ async function loadKernel() {
     } catch (err) {
         appData = null; // Reset so a retry attempt can succeed.
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+            `<div class="office-container"><h3>System Error</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
         console.error('[kernel] Fatal load failure:', err);
         throw err;
     }
@@ -2913,7 +2913,7 @@ async function selectMode(mode) {
         _updateGenericCalendarInfo();
 
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Preparing ${_horologionOfficeLabel(selectedHorologionOffice)}…</h3><p>Loading the Byzantine Office.</p></div>`;
+            `<div class="office-container"><h3>Preparing ${_sharedOfficeNavigatorEscape(_horologionOfficeLabel(selectedHorologionOffice))}…</h3><p>Loading the Byzantine Office.</p></div>`;
 
         await loadKernel();
         initializeOfficeDefaultsForCurrentDateTime('horologion');
@@ -2966,7 +2966,7 @@ async function selectMode(mode) {
         } catch (err) {
             if (officeDisplay) {
                 officeDisplay.innerHTML =
-                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${err.message}</p></div>`;
+                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
             }
             console.error('[roman-breviary-dev] Failed to mount dev slice:', err);
         }
@@ -3013,7 +3013,7 @@ async function init() {
         await loadKernel();
     } catch (err) {
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+            `<div class="office-container"><h3>System Error</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
         console.error('[init] Kernel load failed:', err);
     }
 }
@@ -4390,7 +4390,7 @@ async function renderHorologionOffice(officeKey) {
         display.innerHTML =
             `<div class="office-container">` +
             `<h3 style="color:var(--rubric)">Horologion Error</h3>` +
-            `<p class="component-text">${msg}</p>` +
+            `<p class="component-text">${_sharedOfficeNavigatorEscape(msg)}</p>` +
             `</div>`;
         console.error('[renderHorologionOffice] Engine returned error payload:', msg);
         return;
@@ -5895,7 +5895,7 @@ async function renderBcpOffice() {
     if (dailyData?._isFallback) {
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3 style="color:var(--rubric)">Lectionary Gap</h3>` +
-            `<p class="component-text">${dailyData.title}</p>` +
+            `<p class="component-text">${_sharedOfficeNavigatorEscape(dailyData.title)}</p>` +
             `<p class="component-text" style="font-size:0.85em; opacity:0.7;">` +
             `No lectionary entry exists in the data files for this date. ` +
             `The season file may need to be extended.</p></div>`;
@@ -6818,7 +6818,7 @@ document.getElementById('saint-display').innerHTML = angComms
         const ctx = { tradition: 'ANG', includeEcumenical: true };
         const res = saintAppliesToContext(s, ctx);
         const label = getTraditionDisplayLabel(res.label || 'Unknown');
-        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
+        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${s.description || 'No description'}</p></div>`;
     })
     .join('') || '<p>No commemorations.</p>';
 }
@@ -7967,7 +7967,7 @@ async function renderEastSyriac() {
         document.getElementById('date-header').style.display = '';
         if (saintSection) saintSection.style.display = '';
         document.getElementById('saint-display').innerHTML = coeEligible
-            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || '')}</p></div>`)
             .join('');
     } else {
         document.getElementById('saint-display').innerHTML = '';
