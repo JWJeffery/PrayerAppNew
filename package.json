@@ -28,7 +28,6 @@
     "audit:bible-catholic-corpus-text-integrity": "node scripts/audit-bible-catholic-corpus-text-integrity.mjs",
     "audit:bible-catholic-corpus-addressability": "node scripts/audit-bible-catholic-corpus-addressability.mjs",
     "audit:bible-drb-original-source-lane": "node scripts/audit-bible-drb-original-source-lane.mjs",
-    "audit:bible-source-lane-adapter": "node scripts/audit-bible-source-lane-adapter.mjs",
     "smoke:bible-source-lane-ui": "node scripts/smoke-bible-source-lane-ui-runtime.mjs",
     "roman-breviary:dev-slice": "node scripts/build-roman-breviary-1960-dev-slice.mjs",
     "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs",
