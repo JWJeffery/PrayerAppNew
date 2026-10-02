@@ -40,7 +40,11 @@ new Function('globalThis','window','console',
   fs.readFileSync(path.join(ROOT,'js/calendar-east-syriac.js'),'utf8')
 ).call(engineScope, engineScope, engineScope, quiet);
 
-const scope = { EastSyriacCalendar: engineScope.EastSyriacCalendar };
+// EthiopianCalendar backs the Coptic `monthlyCoptic` rule; without it that rule falls back to a legacy day string and
+// reports "no occurrence" in every year (a harness gap until 2026-10-02, and an app bug until the window export was added).
+const ethScope = { console: quiet };
+const EthiopianCalendar = new Function('console', fs.readFileSync(path.join(ROOT,'js/calendar-ethiopian.js'),'utf8') + '; return EthiopianCalendar;')(quiet);
+const scope = { EastSyriacCalendar: engineScope.EastSyriacCalendar, EthiopianCalendar };
 const shim = async (u) => ({ ok:true, json: async () =>
   JSON.parse(fs.readFileSync(path.join(ROOT,'data/saints',path.basename(u)),'utf8')) });
 new Function('globalThis','fetch','console',
@@ -72,7 +76,9 @@ for (const e of rules) {
   const counts = [];
   for (let y = 2020; y <= 2039; y++)
     counts.push(span(y).filter(dt => R.occursOn(e, dt)).length);
-  const zero = counts.filter(c => c === 0).length, many = counts.filter(c => c > 1).length;
+  // `monthlyCoptic` recurs every Coptic month, so 11-13 occurrences per calendar year is correct, not a failure.
+  const [lo, hi] = e.observance.type === 'monthlyCoptic' ? [11, 13] : [1, 1];
+  const zero = counts.filter(c => c < lo).length, many = counts.filter(c => c > hi).length;
   if (zero || many) { unresolved++;
     console.log(`   ${e.id.padEnd(26)} ${JSON.stringify(counts)}  ${zero?zero+' year(s) with NO occurrence':''}${many?' '+many+' with >1':''}`); }
 }

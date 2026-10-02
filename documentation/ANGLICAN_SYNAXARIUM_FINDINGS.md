@@ -33,7 +33,7 @@ Open questions for Josh: does "controlling" mean one saint per civil date (as th
   - 24 conflicting rows had only the ANG tag removed (they keep their Orthodox/Latin/Oriental tags); 25 rows that existed only as unproved Anglican entries were deleted.
 - UI (`office-ui.js`): the Anglican saint panel shows the primary first, then other commemorations, then alternates (labelled), then a collapsed list of the decision file's other proposed commemorations.
 - Proof test: the printed calendars were extracted with `pdftotext` and parsed (`parse-printed-calendars.py`, 366/366 days each). A row survives only when its distinctive name words appear in that day's printed entry; "(alternative date for ...)" notes are ignored. Holy Cross Day was matched by hand to Exaltation of the Holy Cross.
-- **Flag for Josh:** Josh's decision for 09-14 is Albert of Jerusalem; Holy Cross Day (a BCP Other Major Feast, printed on Sept 14 in LFF and HWHM) therefore shows as an alternate. Similarly 05-06, 12-29 etc. keep LFF-printed saints as alternates.
+- 09-14: Josh's decision is Albert of Jerusalem and Holy Cross Day shows as an alternate. **Confirmed intentional by Josh, 2026-10-02.** Other LFF-printed saints (e.g. 05-06, 12-29) likewise stay as alternates.
 
 ### Kept as alternates (printed source)
 - 01-02 vedanayagam-samuel-azariah

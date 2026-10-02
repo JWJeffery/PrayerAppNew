@@ -390,6 +390,8 @@ that predate recent sessions and have not been investigated.
 **The old "carried forward, not independently re-verified" bucket — checked and properly categorized
 2026-09-28, per Josh's direct instruction.** These items are not all the same kind of blocked:
 
+- **Found 2026-10-02 while checking `verify_sanctoral.js` (pre-existing, not caused by the Anglican change -- output identical before and after):** (1) FIXED: `js/calendar-ethiopian.js` never exported `window.EthiopianCalendar`, so the Coptic `monthlyCoptic` rule (Synaxis of Archangel Michael, 12th of every Coptic month) never resolved in the app; now exported and the harness loads it. (2) OPEN: COE `prophet-elias-elijah` (Friday of week 7 of Eliya-Sliwa) has no occurrence in 2038, because Qudash 'Idta (Subara minus 28 days) starts before Eliya's week 7 and the engine clamps Eliya. What the printed calendars do in such a year is unknown (2022 had a smaller overlap). (3) KNOWN, documented in each entry's `ruleSource`: California-calendar acceptance misses for Mar Mushi, Jacob the Recluse, Sabrisho, Tahmazgard, Daniel the Physician (117/124 match); the correct rules cannot yet be expressed.
+
 *Genuinely unblocked — need no research and no decision, can be started any session, per
 `documentation/OPEN_ITEMS_FIXABILITY.md` Part 4:*
 - **Formation prose: editor names stripped** from `data/explanations/*.json` prose (done 2026-10-01; citations in `source` fields kept).

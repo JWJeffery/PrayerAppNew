@@ -266,3 +266,8 @@ const EthiopianCalendar = (() => {
     };
 
 })();
+
+// FIXED 2026-10-02: `const` at the top level of a classic script is a global lexical binding, NOT a property of window,
+// so js/saints-resolver.js (`global.EthiopianCalendar`) never saw this calendar and the Coptic "monthlyCoptic"
+// commemoration (Synaxis of Archangel Michael, the 12th of every Coptic month) never resolved in the app.
+if (typeof window !== 'undefined') window.EthiopianCalendar = EthiopianCalendar;
