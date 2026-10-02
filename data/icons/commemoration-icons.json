@@ -2333,6 +2333,18 @@
     "license": "Public domain",
     "name": "Holy Martyrs Thyrsus, Leucius, and Callinicus"
    }
+  ],
+  "09-16": [
+   {
+    "id": "euphemia-all-praised-september",
+    "image": "images/icons/euphemia-all-praised-september.jpg",
+    "title": "St Euphemia",
+    "page": "https://commons.wikimedia.org/wiki/File:St_Euphemia.jpg",
+    "artist": "Anonymous",
+    "date": "17 th century",
+    "license": "Public domain",
+    "name": "Holy Great Martyr Euphemia the All-Praised"
+   }
   ]
  },
  "moveable": {
