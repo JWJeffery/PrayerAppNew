@@ -1585,7 +1585,7 @@
         "severity": "MEDIUM",
         "status": "open",
         "area": "data/ + components/ + js/*-resolver.js + js/*-engine.js",
-        "phase": "GATED — last item, requires Josh's direct authorization to start; not started"
+        "phase": "SCOPING AUTHORIZED 2026-10-03 (Josh); scoping doc written, no technology chosen, nothing built. See documentation/JSON_TO_DATABASE_SCOPING.md"
       },
       {
         "id": "scripture-display-licensing-rescope",

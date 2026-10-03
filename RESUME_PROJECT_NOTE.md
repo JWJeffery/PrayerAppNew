@@ -89,8 +89,9 @@ and say what you checked.
 
 **Gated on Josh's explicit go-ahead:**
 - **Whole-app JSON-to-database migration** (`structure.json` id `whole-app-json-to-database-migration`).
-  Last on the list, not started, no technology chosen. Do not begin even the scoping without his
-  authorization.
+  Josh authorized scoping 2026-10-03; findings and four open decisions are in
+  `documentation/JSON_TO_DATABASE_SCOPING.md`. No technology chosen, nothing built. Build nothing
+  until he answers the decisions in its section 6.
 
 **Josh's own hands (Drive):**
 - Delete the Google Doc "Calendar and Admission Decisions — Corrections of 2026-10-02" (it wrongly
