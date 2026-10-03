@@ -2577,6 +2577,25 @@ async function initializeEntryRouting() {
         return;
     }
 
+    // ADDED 2026-10-03: `?entry=reset` is a link Josh can hand to someone who
+    // is stuck inside a stored tradition (e.g. a priest whose browser reopens
+    // straight into the Horologion). It clears the stored entry default and
+    // shows the tradition selector. The parameter is then stripped from the
+    // address bar so later visits/reloads route normally instead of resetting
+    // every time.
+    if (entryOverride === 'reset') {
+        clearUserEntryDefault();
+        try {
+            const cleanUrl = new URL(window.location.href);
+            cleanUrl.searchParams.delete('entry');
+            window.history.replaceState(null, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+        } catch (_error) {
+            // Non-fatal: worst case the param stays in the URL.
+        }
+        showTraditionEntry();
+        return;
+    }
+
     // RESTORED 2026-09-02, per Josh's direction: the tradition-picker entry screen was
     // bypassed 2026-07-25 for a specific priest-testing deploy phase, always landing on
     // the 3-button mode-selection screen regardless of any stored preference. That phase
