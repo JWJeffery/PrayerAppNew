@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Frequently Asked Questions</title>
+  <style>
+    :root { --bg:#faf8f3; --fg:#222; --muted:#5a5a5a; --rule:#d9d3c4; --accent:#7a2e2e; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#16151a; --fg:#e8e4da; --muted:#a9a498; --rule:#33313a; --accent:#d49a9a; } }
+    html { background:var(--bg); }
+    body { margin:0 auto; max-width:42rem; padding:1.5rem 1rem 4rem; background:var(--bg); color:var(--fg);
+           font:1.0625rem/1.6 Georgia, "Times New Roman", serif; }
+    .kicker { color:var(--muted); font-size:.9rem; letter-spacing:.04em; text-transform:uppercase; margin:0 0 .25rem; }
+    h1 { font-size:1.8rem; margin:.1rem 0 1.5rem; }
+    details { border-top:1px solid var(--rule); padding:.9rem 0; }
+    details:last-of-type { border-bottom:1px solid var(--rule); }
+    summary { cursor:pointer; font-weight:bold; color:var(--accent); }
+    summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    details > :not(summary) { margin-left:.1rem; }
+    code { background:rgba(127,127,127,.15); padding:.05em .35em; border-radius:3px; font-size:.95em; }
+    .note { color:var(--muted); font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <p class="kicker">The Universal Office &middot; Parish Prayer Requests</p>
+  <h1>Frequently Asked Questions</h1>
+
+  <details open id="find-join-code">
+    <summary>Our parish forgot its join code. How can the rector find it?</summary>
+    <p>The rector can look it up at any time; nothing needs to be written down in advance. Only the rector can see the code. Helpers the rector has authorized cannot.</p>
+    <ol>
+      <li>Open the parish sign-in page at <code>theuniversaloffice.com/parish/</code>.</li>
+      <li>Enter the email address the parish was registered with, and choose <strong>Send code</strong>. A 6-digit code is emailed to that address. It expires in 10 minutes. There is no password.</li>
+      <li>Enter the 6-digit code and choose <strong>Sign in</strong>.</li>
+      <li>Under <strong>Who can follow your parish</strong>, find <strong>Your join code</strong>. It looks like <code>ABCD-EFGH</code>. Choose <strong>Copy code</strong> to copy it.</li>
+    </ol>
+    <p>Give the code to the people in the parish. They enter it once in their app or browser.</p>
+    <p><strong>If the code has spread further than intended,</strong> choose <strong>Make a new code</strong> on the same page. The old code stops working and everyone who used it is signed out of the prayer list until they enter the new one. Do this only when needed.</p>
+    <p class="note">The <strong>Your join code</strong> section appears only for a parish that is set to <em>Only people with the join code</em>. A parish set to be public has no code. If the section is missing, check the setting just above it.</p>
+  </details>
+</body>
+</html>
