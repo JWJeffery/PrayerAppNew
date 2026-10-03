@@ -140,3 +140,24 @@ already excludes the monastic, Dominican and Cistercian directories (`source-pin
   the full text of the hours.
 - **Divinum Officium** itself (web, MIT licence) is the open data source most projects in this
   area can legitimately build on. Whether any particular app uses it is not verified.
+
+## 11. The "Rubrics 1960 - 2020 USA" variant (researched 2026-10-03; not in scope unless Josh says)
+
+Divinum's own description (`web/www/horas/Help/versions.html`, upstream): the version "adapts the
+1960 Code of Rubrics to the local propers of the United States of America and implements some new
+saints per the decree *Cum Sanctissima*" (CDF, 22 February 2020). It is the 1960 rubrics with a
+changed calendar, not a different rule set. Offices not found in the Extraordinary Form are built
+from the Common of Saints; memorials are 3rd-class offices; feasts are treated as 2nd class,
+solemnities as 1st class; if two saints share a day the newer one wins and the 1960 saint is
+commemorated.
+- Upstream shows 30 `n`-suffixed Sancti files (e.g. `05-13n.txt`, `09-23n.txt`) and a calendar delta
+  file `Tabulae/Kalendaria/NC.txt` with about 31 non-comment lines. Examples in that file: Our Lady of
+  Fatima (05-13), Padre Pio (09-23), Our Lady of Guadalupe (12-12), St Juan Diego (12-09), Maria
+  Goretti (07-06), Martin de Porres (11-03), Cabrini (11-13), Teresa Benedicta (08-09).
+- Divinum notes the variant cannot handle seasonal feasts moved to Sundays or external solemnities.
+- The pinned mirror already includes the 30 `n` files. It does **not** include the
+  `Tabulae/` calendar and transfer tables at all (not `1960.txt`, not `NC.txt`). The engine needs
+  `Tabulae` for the 1960 calendar too, so adding it to the mirror is part of phase 1.
+- Cost to add later if wanted: small (a calendar overlay and one rule), because it layers on the
+  1960 engine. It is a separate decision because the Extraordinary Form proper does not contain
+  these saints.
