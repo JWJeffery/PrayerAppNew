@@ -151,10 +151,21 @@ picker) is live. The only parish file is St. Bede's, Forest Grove.
 from Divinum Officium at a pinned commit). See `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
+**Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
+site, built on branch `claude/determined-einstein-kny5ms` (it is NOT on `main`; the repo's `main`
+only has the per-parish Cycle of Prayer files above). Rectors sign in at
+`theuniversaloffice.com/parish/` (emailed 6-digit code, no password) and read the join code under
+"Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the rector's.
+Join codes live encrypted in the production database, not in any repo file. The first FAQ page,
+`faq/index.html` (rector join-code question), exists but is deliberately not linked from the app;
+wiring it in is Josh's call. Add further questions there.
+
 **Housekeeping.** `AUDIT_GOVERNANCE_LEDGER.md` and `AUDIT_SOURCE_VERIFICATION.md` are out of scope
 for any documentation cleanup unless Josh asks. `structure.json`'s innerHTML item is mitigated
 (audited 2026-10-02). The three stale navigation audit scripts were retired to
-`scripts/retired-audits/`.
+`scripts/retired-audits/`. PR #110 (merged 2026-10-03) removed 57 more stale audit scripts and the
+source-lane adapter audit, and added the 25 Maclean Church of the East prayers to the Book of Needs
+menu (only one of the 25 was browser-tested).
 
 ## 7. Source reachability (probed, not assumed)
 
