@@ -181,3 +181,27 @@ pipeline, not a database.** SQLite stays an option for later, not a first step.
    breviary and Menaion; a smaller first release is safer for size and for scripture licensing.
 4. **NRSV permission:** are you willing to request written permission, or should the first release
    use public-domain scripture only (with NRSV added when permission arrives)?
+
+## 12. Josh's decisions, 2026-10-03 (second round)
+
+1. Direction approved: installable website + Capacitor apps + generated data pack.
+2. No Apple Developer or Google Play accounts yet. **First deliverable is the offline website
+   (PWA).** The Capacitor apps follow once accounts exist.
+3. First offline release carries **all five traditions**.
+4. NRSV: Josh has read the licence and judges that discrete-passage devotional display, within
+   verse maximums and without surfacing them as a browsable text, qualifies. The repo will be
+   protected before publishing. This is Josh's licensing judgment; it is not independently
+   verified here. The pack must therefore carry only the cited passages, never whole books.
+
+## 13. Why the Roman Breviary data is the largest (measured)
+
+`data/roman-breviary-1960-1962` is 85 MB, but only ~8-9 MB per language-year is prayer text.
+| Part | Size | What it is |
+|---|---|---|
+| `units/` | 38 MB | The text: ~3,900 units per year, Latin (2026, 2027) and English (2026, 2027). |
+| `manifests/` | 22 MB | Day-by-day index pointing at the units. |
+| `source/` | 25 MB | Raw Divinum Officium upstream files used to generate the above. |
+
+Measured text: Latin 2026 = 7.2 MB, English 2026 = 8.3 MB; 2,868 of ~3,950 Latin units are shared
+between 2026 and 2027, so the two years largely repeat each other. The `source/` folder is not in
+the release script's deny list, so it appears to ship; to be confirmed and fixed in the pack work.
