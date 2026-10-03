@@ -1,7 +1,7 @@
 {
   "schema": "universal_office_bible_canon_profile_draft_v1",
   "status": "draft_complete_profile",
-  "completeness": "complete_study_witness_profile_entries_35",
+  "completeness": "complete_study_witness_profile_entries_31",
   "generated_at": "2026-06-20T04:23:10.815Z",
   "profile_key": "study_witness",
   "display_name": "Study Witness / Non-Profile Witness Draft",
@@ -40,23 +40,6 @@
       "adapter_required": null,
       "notes": [
         "Ethiopian Meqabyan is not Maccabees under another spelling; treat as its own Ethiopian broader-canon identity.",
-        "Do not move during resolver work."
-      ]
-    },
-    {
-      "order": null,
-      "identity_id": "SECOND_BARUCH",
-      "base_work_id": "SECOND_BARUCH",
-      "text_form_id": "SECOND_BARUCH_CURRENT_ENGLISH_WITNESS",
-      "source_path": "data/bible/NT/2baruchCE.json",
-      "preferred_title": "2 Baruch",
-      "work_type": "apocalyptic_broader_canon_or_witness_text",
-      "canonical_status": "witness_only",
-      "use_class": "study_only",
-      "ordinary_chapter_verse_resolver_candidate": true,
-      "adapter_required": null,
-      "notes": [
-        "Known storage/classification review target.",
         "Do not move during resolver work."
       ]
     },
@@ -474,23 +457,6 @@
     },
     {
       "order": null,
-      "identity_id": "HISTORY_OF_ZOSIMUS",
-      "base_work_id": "HISTORY_OF_ZOSIMUS",
-      "text_form_id": "HISTORY_OF_ZOSIMUS_CURRENT_ENGLISH_WITNESS",
-      "source_path": "data/bible/NT/historyofzosimus.json",
-      "preferred_title": "The History of Zosimus / The Rechabites",
-      "work_type": "apocryphal_or_broader_tradition_witness_text",
-      "canonical_status": "witness_only",
-      "use_class": "study_only",
-      "ordinary_chapter_verse_resolver_candidate": true,
-      "adapter_required": null,
-      "notes": [
-        "Known storage/classification review target.",
-        "Do not move during resolver work."
-      ]
-    },
-    {
-      "order": null,
       "identity_id": "LETTER_OF_BARUCH_SYRIAC",
       "base_work_id": "LETTER_OF_BARUCH_SYRIAC",
       "text_form_id": "LETTER_OF_BARUCH_SYRIAC_WITNESS",
@@ -523,45 +489,11 @@
     },
     {
       "order": null,
-      "identity_id": "PRAYER_OF_APOLLONIUS",
-      "base_work_id": "PRAYER_OF_APOLLONIUS",
-      "text_form_id": "PRAYER_OF_APOLLONIUS_ARMENIAN_WITNESS",
-      "source_path": "data/bible/AR/prayerofapolloniusAR.json",
-      "preferred_title": "The Prayer of Apollonius",
-      "work_type": "armenian_prayer_or_apocryphal_witness_text",
-      "canonical_status": "witness_only",
-      "use_class": "study_only",
-      "ordinary_chapter_verse_resolver_candidate": true,
-      "adapter_required": null,
-      "notes": [
-        "Treat as Armenian witness material unless later profile adjudication assigns a stronger status.",
-        "Do not move during resolver work."
-      ]
-    },
-    {
-      "order": null,
       "identity_id": "REST_OF_BARUCH",
       "base_work_id": "REST_OF_BARUCH",
       "text_form_id": "REST_OF_BARUCH_ETHIOPIC_WITNESS",
       "source_path": "data/bible/ET/restofbaruchET.json",
       "preferred_title": "The Rest of the Words of Baruch",
-      "work_type": "ethiopian_broader_textual_witness",
-      "canonical_status": "witness_only",
-      "use_class": "study_only",
-      "ordinary_chapter_verse_resolver_candidate": true,
-      "adapter_required": null,
-      "notes": [
-        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
-        "Do not move during resolver work."
-      ]
-    },
-    {
-      "order": null,
-      "identity_id": "REST_OF_JEREMIAH",
-      "base_work_id": "REST_OF_JEREMIAH",
-      "text_form_id": "REST_OF_JEREMIAH_ETHIOPIC_WITNESS",
-      "source_path": "data/bible/ET/restofjeremiahET.json",
-      "preferred_title": "The Rest of the Words of Jeremiah",
       "work_type": "ethiopian_broader_textual_witness",
       "canonical_status": "witness_only",
       "use_class": "study_only",

@@ -5,71 +5,57 @@ const expectedProfiles = [
     "profile_key": "armenian_apostolic_witness",
     "path": "data/bible/registry/canon-profiles/armenian-apostolic-witness.draft.json",
     "status": "draft_complete_profile",
-    "completeness": "complete_armenian_apostolic_witness_profile_entries_3",
-    "entry_count": 3,
+    "completeness": "complete_armenian_apostolic_witness_profile_entries_1",
+    "entry_count": 1,
     "identity_ids": [
-      "THIRD_CORINTHIANS",
-      "ARMENIAN_CANTICLES",
-      "PRAYER_OF_APOLLONIUS"
+      "THIRD_CORINTHIANS"
     ],
     "canonical_status_counts": {
-      "appendix": 1,
-      "liturgical_reading": 1,
-      "witness_only": 1
+      "appendix": 1
     },
     "use_class_counts": {
-      "study_only": 2,
-      "read_in_church": 1
+      "study_only": 1
     }
   },
   {
     "profile_key": "coptic_orthodox_liturgical",
     "path": "data/bible/registry/canon-profiles/coptic-orthodox-liturgical.draft.json",
     "status": "draft_complete_profile",
-    "completeness": "complete_coptic_orthodox_liturgical_profile_entries_1",
-    "entry_count": 1,
-    "identity_ids": [
-      "COPTIC_ODES"
-    ],
-    "canonical_status_counts": {
-      "liturgical_reading": 1
-    },
-    "use_class_counts": {
-      "read_in_church": 1
-    }
+    "completeness": "complete_coptic_orthodox_liturgical_profile_entries_0",
+    "entry_count": 0,
+    "identity_ids": [],
+    "canonical_status_counts": {},
+    "use_class_counts": {}
   },
   {
     "profile_key": "eastern_orthodox",
     "path": "data/bible/registry/canon-profiles/eastern-orthodox.draft.json",
     "status": "draft_complete_profile",
-    "completeness": "complete_eastern_orthodox_profile_entries_3",
-    "entry_count": 3,
+    "completeness": "complete_eastern_orthodox_profile_entries_2",
+    "entry_count": 2,
     "identity_ids": [
       "DANIEL",
-      "ESTHER",
-      "EASTERN_ORTHODOX_NINE_ODES"
+      "ESTHER"
     ],
     "canonical_status_counts": {
-      "anagignoskomena": 2,
-      "liturgical_reading": 1
+      "anagignoskomena": 2
     },
     "use_class_counts": {
-      "read_in_church": 3
+      "read_in_church": 2
     }
   },
   {
     "profile_key": "ethiopian_orthodox_broader",
     "path": "data/bible/registry/canon-profiles/ethiopian-orthodox-broader.draft.json",
     "status": "draft_complete_profile",
-    "completeness": "complete_ethiopian_orthodox_broader_profile_entries_34",
-    "entry_count": 34,
+    "completeness": "complete_ethiopian_orthodox_broader_profile_entries_32",
+    "entry_count": 32,
     "identity_ids": [
       "FIRST_ENOCH",
       "FIRST_MEQABYAN",
       "SECOND_MEQABYAN",
       "THIRD_MEQABYAN",
       "ABTILIS",
-      "ETHIOPIAN_ODES",
       "FETHA_NAGAST",
       "GITSIW_ADMONITIONS",
       "GUBAE_KANA",
@@ -95,18 +81,17 @@ const expectedProfiles = [
       "ASCENSION_OF_ISAIAH",
       "ETHIOPIC_DIDASKALIA",
       "REST_OF_BARUCH",
-      "REST_OF_JEREMIAH",
       "SHEPHERD_OF_HERMAS",
       "TIZAZ"
     ],
     "canonical_status_counts": {
-      "broader_canon": 25,
-      "liturgical_reading": 7,
-      "witness_only": 2
+      "broader_canon": 24,
+      "witness_only": 2,
+      "liturgical_reading": 6
     },
     "use_class_counts": {
-      "read_in_church": 6,
-      "study_only": 23,
+      "read_in_church": 5,
+      "study_only": 22,
       "read_devotionally": 5
     }
   },
@@ -114,12 +99,11 @@ const expectedProfiles = [
     "profile_key": "study_witness",
     "path": "data/bible/registry/canon-profiles/study-witness.draft.json",
     "status": "draft_complete_profile",
-    "completeness": "complete_study_witness_profile_entries_35",
-    "entry_count": 35,
+    "completeness": "complete_study_witness_profile_entries_31",
+    "entry_count": 31,
     "identity_ids": [
       "FIRST_ENOCH",
       "FIRST_MEQABYAN",
-      "SECOND_BARUCH",
       "SECOND_MEQABYAN",
       "THIRD_CORINTHIANS",
       "THIRD_MEQABYAN",
@@ -144,20 +128,17 @@ const expectedProfiles = [
       "SIRATE_TSION",
       "ASCENSION_OF_ISAIAH",
       "ETHIOPIC_DIDASKALIA",
-      "HISTORY_OF_ZOSIMUS",
       "LETTER_OF_BARUCH_SYRIAC",
       "ODES_OF_SOLOMON",
-      "PRAYER_OF_APOLLONIUS",
       "REST_OF_BARUCH",
-      "REST_OF_JEREMIAH",
       "SHEPHERD_OF_HERMAS",
       "TIZAZ"
     ],
     "canonical_status_counts": {
-      "witness_only": 35
+      "witness_only": 31
     },
     "use_class_counts": {
-      "study_only": 35
+      "study_only": 31
     }
   },
   {

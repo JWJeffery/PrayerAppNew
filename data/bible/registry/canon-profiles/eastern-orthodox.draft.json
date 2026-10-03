@@ -1,7 +1,7 @@
 {
   "schema": "universal_office_bible_canon_profile_draft_v1",
   "status": "draft_complete_profile",
-  "completeness": "complete_eastern_orthodox_profile_entries_3",
+  "completeness": "complete_eastern_orthodox_profile_entries_2",
   "generated_at": "2026-06-20T04:23:10.815Z",
   "profile_key": "eastern_orthodox",
   "display_name": "Eastern Orthodox Canon / Anagignoskomena Draft",
@@ -39,22 +39,6 @@
       "adapter_required": null,
       "notes": [
         "Must be handled as Esther text form / additions-aware identity."
-      ]
-    },
-    {
-      "order": null,
-      "identity_id": "EASTERN_ORTHODOX_NINE_ODES",
-      "base_work_id": "EASTERN_ORTHODOX_NINE_ODES",
-      "text_form_id": "EASTERN_ORTHODOX_NINE_ODES_CURRENT_WITNESS",
-      "source_path": "data/bible/ODES/eoodes.json",
-      "preferred_title": "The Nine Odes",
-      "work_type": "eastern_orthodox_liturgical_canticle_collection",
-      "canonical_status": "liturgical_reading",
-      "use_class": "read_in_church",
-      "ordinary_chapter_verse_resolver_candidate": false,
-      "adapter_required": "canticle_or_odes_collection_adapter",
-      "notes": [
-        "Liturgical/canticle collection witness."
       ]
     }
   ]

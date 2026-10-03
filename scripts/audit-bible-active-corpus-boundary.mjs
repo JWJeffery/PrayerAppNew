@@ -176,6 +176,7 @@ console.log(JSON.stringify(report, null, 2));
 
 if (failures.length) {
   console.log('ALL FAILED');
+  process.exitCode = 1;
   console.log('NEXT: Review the report above; stale source mirrors or manifest references have reentered active corpus space.');
 } else {
   console.log('ALL PASSED');
