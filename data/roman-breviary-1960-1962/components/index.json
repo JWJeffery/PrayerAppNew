@@ -1,0 +1,111 @@
+{
+ "schema_version": "roman_breviary_components_v1",
+ "source_pin": {
+  "repo": "DivinumOfficium/divinum-officium",
+  "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6"
+ },
+ "bundles": [
+  {
+   "id": "en/commune",
+   "path": "en/commune.json",
+   "files": 44,
+   "bytes": 415032
+  },
+  {
+   "id": "en/martyrologium",
+   "path": "en/martyrologium.json",
+   "files": 368,
+   "bytes": 704069
+  },
+  {
+   "id": "en/psalmorum",
+   "path": "en/psalmorum.json",
+   "files": 202,
+   "bytes": 355433
+  },
+  {
+   "id": "en/psalterium",
+   "path": "en/psalterium.json",
+   "files": 18,
+   "bytes": 216605
+  },
+  {
+   "id": "en/sancti",
+   "path": "en/sancti.json",
+   "files": 454,
+   "bytes": 2450272
+  },
+  {
+   "id": "en/tempora",
+   "path": "en/tempora.json",
+   "files": 589,
+   "bytes": 2166850
+  },
+  {
+   "id": "la/appendix",
+   "path": "la/appendix.json",
+   "files": 8,
+   "bytes": 33641
+  },
+  {
+   "id": "la/commune",
+   "path": "la/commune.json",
+   "files": 66,
+   "bytes": 559916
+  },
+  {
+   "id": "la/martyrologium",
+   "path": "la/martyrologium.json",
+   "files": 1,
+   "bytes": 5992
+  },
+  {
+   "id": "la/martyrologium1960",
+   "path": "la/martyrologium1960.json",
+   "files": 367,
+   "bytes": 652574
+  },
+  {
+   "id": "la/psalmorum",
+   "path": "la/psalmorum.json",
+   "files": 202,
+   "bytes": 333642
+  },
+  {
+   "id": "la/psalterium",
+   "path": "la/psalterium.json",
+   "files": 20,
+   "bytes": 304384
+  },
+  {
+   "id": "la/sancti",
+   "path": "la/sancti.json",
+   "files": 731,
+   "bytes": 3267965
+  },
+  {
+   "id": "la/tempora",
+   "path": "la/tempora.json",
+   "files": 638,
+   "bytes": 2289497
+  },
+  {
+   "id": "shared/ordinarium",
+   "path": "shared/ordinarium.json",
+   "files": 6,
+   "bytes": 10546
+  },
+  {
+   "id": "shared/setup",
+   "path": "shared/setup.json",
+   "files": 2,
+   "bytes": 9111
+  },
+  {
+   "id": "shared/tabulae",
+   "path": "shared/tabulae.json",
+   "files": 107,
+   "bytes": 191483
+  }
+ ]
+}

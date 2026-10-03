@@ -30,6 +30,8 @@
     "audit:bible-drb-original-source-lane": "node scripts/audit-bible-drb-original-source-lane.mjs",
     "smoke:bible-source-lane-ui": "node scripts/smoke-bible-source-lane-ui-runtime.mjs",
     "roman-breviary:dev-slice": "node scripts/build-roman-breviary-1960-dev-slice.mjs",
+    "roman-breviary:components:build": "node scripts/build-roman-breviary-components.mjs",
+    "audit:roman-breviary-components": "node scripts/audit-roman-breviary-components.mjs",
     "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs",
     "bible:text-repair": "node scripts/run-bible-text-mass-repair.mjs"
   },

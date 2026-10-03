@@ -166,3 +166,51 @@ commemorated.
 Rubrics 1960 engine and match it to the audited output first; then add the variant as a calendar
 overlay (`Tabulae/Kalendaria/NC.txt`, the `n`-suffixed Sancti files, its transfer tables) with its
 own diff report. It is recorded in `RESUME_PROJECT_NOTE.md` section 5.
+
+## 12. Phase 1 result (2026-10-03)
+
+**Done: components exist and are proven lossless. No engine yet, no app change.**
+
+1. **Mirror completed.** Traced the Perl engine with `strace` at the pinned commit for Rubrics 1960
+   (24 sample dates x 8 hours x Latin/English): it opens **559 distinct data files**; 44 were missing
+   from the mirror. Added from the pinned commit: `Tabulae/` (15 calendar files including `NC.txt`,
+   `Tempora`, `data.txt`, 43 Transfer + 43 Stransfer tables; diocese subfolders excluded), the six
+   `horas/Ordinarium` hour templates, the rest of Latin and English `Psalterium`,
+   `Latin/Martyrologium/Mobile.txt`, `horas.setup`, `horas.dialog`. All 559 traced files are
+   byte-identical to the pinned commit. The traced list is `source/engine-read-set-2026-10-03.txt`;
+   `source-pin.json` records the additions. A 24-date sample is not exhaustive: later phases may find
+   more files, and the audit rule is to add them the same way.
+2. **Converter:** `scripts/build-roman-breviary-components.mjs` writes
+   `data/roman-breviary-1960-1962/components/{la,en,shared}/<group>.json` (17 bundles, 3,823 files,
+   about 13 MB, deterministic). Sectioned files keep `[Section] (condition)` headers, section bodies
+   and any preamble; flat files (psalm texts, Ordinarium, Tabulae tables) keep their text verbatim.
+   Each entry records source path, byte length and sha256. Nothing is edited or interpreted.
+3. **Audit:** `npm run audit:roman-breviary-components` rebuilds every file from its JSON and
+   compares bytes. Current result: 3,823 of 3,823 round-trip (2,530 sectioned files with 26,189
+   sections, 1,293 flat), no orphans either way, all 559 traced files covered. Negative-tested:
+   removing one accent from one component makes the audit fail on that file.
+
+### Findings that shape phases 2-4
+
+- **Versions inherit through a chain**, set in `Tabulae/data.txt`: Rubrics 1960 -> Reduced 1955 ->
+  Divino Afflatu 1954 -> Divino Afflatu 1939 -> Tridentine 1906 -> 1888 -> 1570. The calendar files
+  are overlays (`1960.txt` says it "only notes the changes to Reduced - 1955"). So the 1960 engine
+  must still load and compose the older calendar files; "1960 only" removes the rules for other
+  versions, not their data in this chain.
+- **The text-assembly DSL is small.** Across all Latin/English components (177,806 lines):
+  1,503 stand-alone conditional lines, of which about 76% test `rubrica`; 5,575 `@` includes;
+  2,311 `&` function calls but only **15 distinct functions** (`Gloria`, `teDeum`, `psalm`,
+  `special`, `Dominus_vobiscum`, `Benedicamus_Domino`, `Alleluia`, ...); 2,307 `$` prayer references.
+  Counts are line-start only; inline conditionals were not counted. Conditional subjects seen
+  include `rubrica`, `tempore`, `feria`, `communi`, `die`, `commune`, `officio`, `ad`, `dioecesis`,
+  `mense`. The grammar is defined in upstream `SetupString.pl` (stopwords `sed/vero/atque/attamen/
+  si/deinde`, scopes line/chunk/nest), which phase 3 must reimplement exactly.
+- **The hard part remains the occurrence/precedence/hour-assembly logic in Perl**, not the data.
+- Section-header conditions: 90 distinct strings (the most common: `(rubrica cisterciensis)`, `(communi
+  Summorum Pontificum)`, `(rubrica 196)`).
+
+### Next (phase 2, needs Josh's go-ahead)
+
+Calendar core: Easter and the temporal cycle, the kalendar composition through the version chain, 1960
+rank and precedence, occurrence only; tested day-by-day against the audited oracle `rank` field for the
+730 stored days, plus extra years generated from the pinned Perl engine (now runnable in the session).
