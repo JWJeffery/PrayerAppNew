@@ -214,3 +214,54 @@ own diff report. It is recorded in `RESUME_PROJECT_NOTE.md` section 5.
 Calendar core: Easter and the temporal cycle, the kalendar composition through the version chain, 1960
 rank and precedence, occurrence only; tested day-by-day against the audited oracle `rank` field for the
 730 stored days, plus extra years generated from the pinned Perl engine (now runnable in the session).
+
+## 13. Phase 2 result (2026-10-03): the calendar core matches the Perl engine
+
+**Done: a JavaScript port of "which office is said today" (occurrence) for every hour except Vespers
+and Compline, verified against the pinned Perl engine. No change to the app yet.**
+
+New modules in `js/roman-breviary/` (browser and Node, no dependencies): `date.js` (Easter, temporal
+week, month-week, leap-day handling), `store.js` / `store-node.js` (serves the JSON components),
+`directorium.js` (Tabulae tables through the version chain, transfers), `setupstring.js` (the data
+files' mini-language: conditionals and scopes, `@file:Section` includes with substitutions,
+`officestring`), `occurrence.js` (`occurrence()`, `precedence()` for the non-Vespers view and its
+helpers). They are ports kept close to the Perl so the two can be diffed.
+
+**Verification (all against a Perl engine at the pinned commit; zero differences in every run):**
+
+| Layer | Test | Result |
+|---|---|---|
+| Dates | `npm run test:roman-breviary-date`: 13 years, every day, 8 functions | 4,763 records, 0 mismatches |
+| Tables | `test:roman-breviary-directorium`: 10 years, every day, 9 lookups | 3,653 days, 0 mismatches |
+| Data-file reader | `test:roman-breviary-reader`: 1,436 Latin files x 15 dates x 3 read modes, per-section md5 | 64,620 comparisons, 0 mismatches |
+| Calendar core | `test:roman-breviary-calendar`: winner, commemoration, scriptura, commune, rank, rule, day names, Lauds scheme and 20 more fields per day | Laudes 1962-2100 (about 50,800 days), Matutinum 1990-2060 (25,933 days), Prima/Tertia/Sexta/Nona 2026-2027: 0 differences |
+| Independent check | 156 dates (earliest and latest Easters in range: 2008-03-23, 2035-03-25, 2038-04-25, 2095-04-24 and nine days around each, plus 120 random days), each in its own fresh Perl process | 0 differences |
+
+The tests are sensitive: changing one comparison in `occurrence.js` made 9 days of 2026-2027 fail,
+and the original passes.
+
+**What was learned along the way (all handled in the port):**
+- The data language relies on Perl regex behaviour JavaScript lacks: `$` matches before a final newline,
+  `\w` matches accented letters, replacements use `\n`, `\u`, `\L`, `\1`. Each was caught by the
+  reader test and fixed (`perlRegExp` / `perlSubstitute` in `setupstring.js`).
+- Roman files include text from monastic/Cistercian/Dominican folders; 67 such files (transitive
+  closure) were added to the mirror (`source/include-closure-2026-10-03.txt`).
+- The Perl engine keeps state between calls that a fresh request would not have (a leftover
+  `cvespera`, the parsed-file cache with date conditions already evaluated, a global `monthday`).
+  The oracle resets them, and the reset was proved against 146 plus 156 fresh-process runs.
+- Perl oddities reproduced on purpose: `extract_common` always assigns (a list in boolean context is
+  always true); a misspelt variable (`$tommorow`) makes one condition always true; one loop in
+  `transfered()` is dead code (an out-of-scope hash) and is not ported.
+- Nothing disagrees with Divinum yet, so nothing is logged under the "engine wins" policy.
+  Matching Divinum is not a proof the rubrics are applied correctly; that remains the audit's job.
+
+**Not done (later phases):** concurrence (Vespers and Compline, which also decides the commemoration
+carried from the day before), votive offices, diocesan calendars, the Matins/Lauds text assembly,
+English columns. `precedence()` throws if asked for Vespers or Compline.
+
+**Reproducing the tests:** `npm run roman-breviary:engine:setup` rebuilds the pinned Perl engine
+clone outside the repo (Perl is needed only for tests; the app never uses it).
+
+**Next (phase 3, needs Josh's go-ahead):** per-hour assembly for Lauds first, then Matins and the
+little hours, diffed against the audited stored output in `units/` and `manifests/` (and the Perl
+engine's own output for other years). Vespers and Compline follow concurrence (phase 4).

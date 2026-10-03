@@ -32,6 +32,11 @@
     "roman-breviary:dev-slice": "node scripts/build-roman-breviary-1960-dev-slice.mjs",
     "roman-breviary:components:build": "node scripts/build-roman-breviary-components.mjs",
     "audit:roman-breviary-components": "node scripts/audit-roman-breviary-components.mjs",
+    "roman-breviary:engine:setup": "bash scripts/setup-roman-breviary-engine.sh",
+    "test:roman-breviary-date": "node scripts/test-roman-breviary-date.mjs",
+    "test:roman-breviary-directorium": "node scripts/test-roman-breviary-directorium.mjs",
+    "test:roman-breviary-reader": "node scripts/test-roman-breviary-reader.mjs",
+    "test:roman-breviary-calendar": "node scripts/test-roman-breviary-calendar.mjs",
     "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs",
     "bible:text-repair": "node scripts/run-bible-text-mass-repair.mjs"
   },

@@ -90,6 +90,7 @@
     }
 
     function loadTransfers(version, year, type) {
+      year = Number(year);
       const vd = versionData(version);
       const key = `${type}:${version}:${year}`;
       if (transfers.has(key)) return transfers.get(key);

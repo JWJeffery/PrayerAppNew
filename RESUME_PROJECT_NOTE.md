@@ -90,11 +90,13 @@ and say what you checked.
 **Active direction (Josh, 2026-10-03), in this order:**
 1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
    and English, Rubrics 1960 only, engine wins over Divinum when the rubrics support it). Plan and
-   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. **Phase 1 is done (2026-10-03):** pinned mirror
-   completed (559 engine-read files incl. `Tabulae`), 3,823 files converted to lossless JSON under
-   `data/roman-breviary-1960-1962/components/`, `npm run audit:roman-breviary-components` passes
-   (byte-for-byte round-trip). Phase 2 (calendar core) needs Josh's go-ahead; each phase ends with a
-   diff report. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
+   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. **Phases 1-2 are done (2026-10-03):** pinned mirror
+   completed, 3,890 files as lossless JSON under `data/roman-breviary-1960-1962/components/`
+   (`npm run audit:roman-breviary-components`), and a JS port of "which office wins today" in
+   `js/roman-breviary/` that matches the Perl engine on every field for about 50,800 days of Lauds
+   (1962-2100) and other hours (`npm run test:roman-breviary-calendar`; engine clone setup:
+   `npm run roman-breviary:engine:setup`). Vespers/Compline need concurrence (phase 4). Phase 3
+   (per-hour text assembly) needs Josh's go-ahead; each phase ends with a diff report. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
    only after the 1960 engine matches the audited output** (decided 2026-10-03).
 2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
    pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
