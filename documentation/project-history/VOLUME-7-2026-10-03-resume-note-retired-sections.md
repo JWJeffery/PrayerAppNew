@@ -245,3 +245,14 @@ that predate recent sessions and have not been investigated.
   decision for each civil date. Per standing project rule, `synaxarium-review/` is a separate project
   from the EOR/OOR sanctoral work above; do not extend it or build a parallel tool, and this review
   work is Josh's own editorial judgment to exercise, not something a session should attempt for him.
+
+## Displaced from RESUME_PROJECT_NOTE.md later on 2026-10-03 (HISTORICAL)
+
+Replaced when Josh authorized scoping and set the order of work:
+
+> - **Whole-app JSON-to-database migration** (`structure.json` id `whole-app-json-to-database-migration`).
+>   Josh authorized scoping 2026-10-03; findings and four open decisions are in
+>   `documentation/JSON_TO_DATABASE_SCOPING.md`. No technology chosen, nothing built. Build nothing
+>   until he answers the decisions in its section 6.
+
+and the rule line "Whole-app JSON-to-database migration: only on Josh's direct authorization (see section 5)."

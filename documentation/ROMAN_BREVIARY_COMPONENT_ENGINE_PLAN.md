@@ -161,3 +161,8 @@ commemorated.
 - Cost to add later if wanted: small (a calendar overlay and one rule), because it layers on the
   1960 engine. It is a separate decision because the Extraordinary Form proper does not contain
   these saints.
+
+**Decision (Josh, 2026-10-03): the 2020 USA variant is a planned add-on.** Sequence: finish the
+Rubrics 1960 engine and match it to the audited output first; then add the variant as a calendar
+overlay (`Tabulae/Kalendaria/NC.txt`, the `n`-suffixed Sancti files, its transfer tables) with its
+own diff report. It is recorded in `RESUME_PROJECT_NOTE.md` section 5.

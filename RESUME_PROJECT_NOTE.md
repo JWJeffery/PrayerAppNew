@@ -52,7 +52,7 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 - Josh's preferences: no licensing lectures; specific per-source evidence; never fabricate
   liturgical text; give unambiguous landmarks for any edit he must make by hand; Daily Office
   lectionary only from the 1979 BCP (bcponline.org or justus.anglican.org PDF).
-- Whole-app JSON-to-database migration: only on Josh's direct authorization (see section 5).
+- Whole-app JSON-to-database migration: scoped and approved in direction (see section 5); build only in the order Josh set there.
 
 ## 3. Content rules
 
@@ -87,11 +87,19 @@ and say what you checked.
   `book-of-needs-role-access-governance.json`.
 - **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming.
 
-**Gated on Josh's explicit go-ahead:**
-- **Whole-app JSON-to-database migration** (`structure.json` id `whole-app-json-to-database-migration`).
-  Josh authorized scoping 2026-10-03; findings and four open decisions are in
-  `documentation/JSON_TO_DATABASE_SCOPING.md`. No technology chosen, nothing built. Build nothing
-  until he answers the decisions in its section 6.
+**Active direction (Josh, 2026-10-03), in this order:**
+1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
+   and English, Rubrics 1960 only, engine wins over Divinum when the rubrics support it). Plan and
+   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. Phase 1 (JSON components plus
+   the missing `Tabulae` calendar tables) has not started; each phase ends with a diff report and
+   Josh's go-ahead. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
+   only after the 1960 engine matches the audited output** (decided 2026-10-03).
+2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
+   pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
+   All five traditions ship. JSON stays the source of truth; a database is a later option only if
+   measured. Scripture in the public app is limited to passages cited in the prayers (Bible browser
+   stays admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by
+   us). Record: `documentation/JSON_TO_DATABASE_SCOPING.md`.
 
 **Josh's own hands (Drive):**
 - Delete the Google Doc "Calendar and Admission Decisions — Corrections of 2026-10-02" (it wrongly
@@ -149,7 +157,8 @@ Diocesan and Parish tiers render in BCP Morning/Evening Prayer; the profile (dio
 picker) is live. The only parish file is St. Bede's, Forest Grove.
 
 **Roman Breviary 1960/1962** is shipped (all 8 hours, 2026 and 2027, Latin and English, generated
-from Divinum Officium at a pinned commit). See `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
+from Divinum Officium at a pinned commit, but as stored per-date output for 2026-2027 only; being rebuilt, see section 5).
+See `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
 **Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
