@@ -1,5 +1,7 @@
 # Project History — Index
 
+**EVERYTHING in this folder is HISTORICAL.** Nothing here is current status; the live state is `RESUME_PROJECT_NOTE.md` at the repo root. Each file below also carries a HISTORICAL marker at its top (the two JSON snapshots, which cannot, are historical by this statement).
+
 This package is the consolidated, chronological historical record of this project, created
 2026-09-28 at Josh's direction after too many different, uncoordinated mechanisms had accumulated
 for tracking continuity and status (`RESUME_PROJECT_NOTE_HISTORICAL.md`, dated archive files
@@ -21,6 +23,7 @@ narrative detail, not current state.
 | `VOLUME-4-2026-09-07-to-09-28.md` | 2026-09-07 – 2026-09-28 | split out of the live `RESUME_PROJECT_NOTE.md` | The full session-log narrative, plus the 2026-09-07-dated standing-reference section that preceded this cleanup |
 | `VOLUME-5-2026-09-28-session-log.md` | 2026-09-28 (same day) | split out of the live `RESUME_PROJECT_NOTE.md` | The note re-bloated to 879 lines within the same day as the Volume-4 split above, mixing closed session narrative back in with current material — a fourth recurrence of the exact pattern this package exists to prevent. Contains: the Defaults/Modes/Interhour-gating closeout, the profile/user-system build narrative, the Venite-screenshot confirmation, the documentation-cleanup scoping narrative, the Lucy-era scripts/ audit closeout, structure.json's closed todos, the project_roadmap.json governance-question removal, the full Task #14/#15/etc. UI-bug-queue closeout, and the EOR/OOR sanctoral sweep (including the mar-abraham/mar-abraham-of-qidun corrections) |
 | `VOLUME-6-2026-09-29-to-09-30-cycle-of-prayer-and-ui.md` | 2026-09-29 – 2026-09-30 | split out of the live `RESUME_PROJECT_NOTE.md` on 2026-10-01 | Closed work only: the five rounds of UI fixes, the profile/user system, Authorized Intercessions + Communion tier, and the full Cycle of Prayer corpus ingestion (batches 1-15, roster complete), plus the closed UI-bug queue and sanctoral closeout. Opens with a list of statements later superseded (e.g. the Parish tier, wired in PR #90). |
+| `VOLUME-7-2026-10-03-resume-note-retired-sections.md` | 2026-07-17 – 2026-10-02 | split out of the live `RESUME_PROJECT_NOTE.md` on 2026-10-03 | Josh asked for the note to be cleaned up and pruned (~510 -> ~220 lines). Contains the note's old header/rewrite narrative and its old "What is open" section: Menaion corpus source search and Josh's 2026-10-01 decisions, the Menaion plan-item DONE records, AGES and Orloff ingestion status, license status of unused sources, the original Anglican Synaxarium NEW TODO and the "zero rows reviewed" statement (both superseded 2026-10-02), the carried-forward and "vague/stale" item lists, and the retired-nav-audit and innerHTML notes |
 
 Each volume's content is preserved verbatim from its source file, not rewritten — only a short
 banner was added at the top of each pointing back here. Boundaries were verified directly (checked
@@ -67,7 +70,7 @@ handled as part of the full todo-inventory pass, not decided here.
 ## Status note, 2026-09-28
 
 This package was built as part of a larger cleanup (see the live `RESUME_PROJECT_NOTE.md` for
-current status). All four volumes are now in place, and the live note has been rewritten down to
+current status). (Written 2026-09-28; Volumes 5-7 were added afterwards.) All four volumes were then in place, and the live note has been rewritten down to
 current material only (5507 lines to ~300). **Not yet done as of this writing:** a full
 line-by-line inventory of every todo across `AUDIT_GOVERNANCE_LEDGER.md` (23,523 lines),
 `AUDIT_SOURCE_VERIFICATION.md`, and `data/bible/registry/bible-corpus-remediation-ledger.md` — the

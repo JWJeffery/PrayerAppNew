@@ -1,3 +1,5 @@
+**HISTORICAL — NOT CURRENT STATE. Statements below may be superseded; current status is in the live `RESUME_PROJECT_NOTE.md`.**
+
 > **SUPERSEDED, moved into `documentation/project-history/` 2026-09-28. Do not follow this file's
 > instructions.** Written 2026-07-14 and never updated since; by 2026-09-28 every substantive claim
 > in it was stale or wrong, including in ways that actively misled a session at the start of this

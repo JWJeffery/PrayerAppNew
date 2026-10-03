@@ -1,3 +1,5 @@
+**HISTORICAL — NOT CURRENT STATE. Statements below may be superseded; current status is in the live `RESUME_PROJECT_NOTE.md`.**
+
 <!-- Split out of the live RESUME_PROJECT_NOTE.md on 2026-10-01 (the note had re-bloated to 901 lines).
 Content below is preserved verbatim from that file's old section 7; only this banner and the section
 headers were added. Everything here is CLOSED/HISTORICAL. -->
