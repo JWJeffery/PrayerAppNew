@@ -11,7 +11,11 @@
     "web/www/horas/Latin/Psalterium/Invitatorium.txt",
     "web/www/horas/Latin/Psalterium/Doxologies.txt",
     "web/www/horas/Latin/Psalterium/Benedictions.txt",
-    "web/www/horas/Latin/Psalterium/Mariaant.txt"
+    "web/www/horas/Latin/Psalterium/Mariaant.txt",
+    "web/www/Tabulae/data.txt",
+    "web/www/horas/Latin/Martyrologium/Mobile.txt",
+    "web/www/horas/horas.setup",
+    "web/www/horas/horas.dialog"
   ],
   "mirrored_files_note": "Prayers.txt and Rubricae.txt added 2026-09-27, full-audit pass. Invitatorium.txt/Doxologies.txt/Benedictions.txt/Mariaant.txt added 2026-09-27 continued (full build-out pass) as part of completing the Psalterium common-texts mirror alongside the directory-level entries below. Extracted via `git archive <pinned commit>`, same integrity basis as mirrored_directories below.",
   "mirrored_directories": [
@@ -27,7 +31,15 @@
     "web/www/horas/English/Tempora",
     "web/www/horas/English/Sancti",
     "web/www/horas/English/Commune",
-    "web/www/horas/English/Martyrologium"
+    "web/www/horas/English/Martyrologium",
+    "web/www/horas/Latin/Psalterium",
+    "web/www/horas/English/Psalterium",
+    "web/www/horas/Ordinarium",
+    "web/www/Tabulae/Kalendaria",
+    "web/www/Tabulae/Tempora",
+    "web/www/Tabulae/Transfer (top-level .txt only)",
+    "web/www/Tabulae/Stransfer (top-level .txt only)"
   ],
-  "mirrored_directories_note": "Psalmorum (Latin+English) added 2026-09-27 -- the full 150-psalm Vulgate Psalter (202 files incl. Ps.118's subdivided sections) and its parallel English translation, already in the Breviary's own native numbering. Special/Psalmi/Tempora/Sancti/Commune/Martyrologium1960/Appendix added 2026-09-27 continued (full build-out pass, architecture §10's minimum shippable floor: all 8 hours x the Roman general calendar x current+next year) -- the remaining Latin content the oracle-based build pipeline's calendar computation and per-hour common texts depend on. English Tempora/Sancti/Commune/Martyrologium added 2026-09-27, later still (English-lane reconnaissance-into-build-out) -- mirrors the same subset of content Latin's own Tempora/Sancti/Commune/Martyrologium1960 mirror serves, so a future audit has the same in-repo provenance for English it already has for Latin. Two disclosed gaps, not oversights: upstream has no English 'Appendix' directory at all (Latin's has 9 files; no English counterpart exists at this pinned commit), and upstream's English martyrology has only base 'Martyrologium' (369 files, matching Latin's own base Martyrologium 1:1), not the rubric-year-specific 'Martyrologium1960' Latin also mirrors -- the English build pipeline does not currently read the martyrology at all, so this is disclosed for completeness, not a build blocker. All extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entries for how these were obtained. The build pipeline's actual oracle computation runs against a separate full clone checked out to this same pinned commit (verified by `scripts/roman-breviary-oracle-run.mjs`'s own pin check at every invocation) -- this mirror exists for in-repo provenance/audit purposes per architecture §12 Layer A, not as the pipeline's live input."
+  "mirrored_directories_note": "Psalmorum (Latin+English) added 2026-09-27 -- the full 150-psalm Vulgate Psalter (202 files incl. Ps.118's subdivided sections) and its parallel English translation, already in the Breviary's own native numbering. Special/Psalmi/Tempora/Sancti/Commune/Martyrologium1960/Appendix added 2026-09-27 continued (full build-out pass, architecture §10's minimum shippable floor: all 8 hours x the Roman general calendar x current+next year) -- the remaining Latin content the oracle-based build pipeline's calendar computation and per-hour common texts depend on. English Tempora/Sancti/Commune/Martyrologium added 2026-09-27, later still (English-lane reconnaissance-into-build-out) -- mirrors the same subset of content Latin's own Tempora/Sancti/Commune/Martyrologium1960 mirror serves, so a future audit has the same in-repo provenance for English it already has for Latin. Two disclosed gaps, not oversights: upstream has no English 'Appendix' directory at all (Latin's has 9 files; no English counterpart exists at this pinned commit), and upstream's English martyrology has only base 'Martyrologium' (369 files, matching Latin's own base Martyrologium 1:1), not the rubric-year-specific 'Martyrologium1960' Latin also mirrors -- the English build pipeline does not currently read the martyrology at all, so this is disclosed for completeness, not a build blocker. All extracted via `git archive <pinned commit>` from an authenticated fetch of this exact commit SHA (not a raw-HTTP scrape), so content integrity is already covered by git's own object hashing; see AUDIT_GOVERNANCE_LEDGER.md's 2026-09-27 entries for how these were obtained. The build pipeline's actual oracle computation runs against a separate full clone checked out to this same pinned commit (verified by `scripts/roman-breviary-oracle-run.mjs`'s own pin check at every invocation) -- this mirror exists for in-repo provenance/audit purposes per architecture §12 Layer A, not as the pipeline's live input.",
+  "engine_read_set_note": "2026-10-03 (Breviary component-engine phase 1): added everything the Divinum Perl engine opens for Rubrics 1960 that was not yet mirrored, found by strace-tracing officium.pl at this exact commit over 24 sample dates x 8 hours x Latin/English (559 distinct files; list in ../engine-read-set-2026-10-03.txt). Added: Tabulae (Kalendaria 15 files incl. NC.txt for the planned 2020 USA add-on, Tempora, data.txt, top-level Transfer and Stransfer tables; diocese subdirectories deliberately excluded), horas/Ordinarium (6 hour templates), the rest of Latin and English Psalterium, Latin/Martyrologium/Mobile.txt, horas.setup, horas.dialog. Extracted with git archive from this pinned commit; all 559 traced files are byte-identical to the pinned commit."
 }
