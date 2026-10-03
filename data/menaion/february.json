@@ -25,7 +25,9 @@
             "text": "Thy martyr Tryphon, O Lord, in his sufferings received an imperishable crown from Thee, our God; for having Thy strength, he laid low his adversaries, and shattered the powerless boldness of demons. Through his intercessions, save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Tryphon of Apamea (+250). Martyred under Decius. Rank 4."
         }
       ]
@@ -43,14 +45,19 @@
             "title": "Troparion of the Presentation of the Lord",
             "text": "Rejoice, O Virgin Theotokos, full of grace; for from thee shone the Sun of Righteousness, Christ our God, enlightening those who sat in darkness. Rejoice and be glad, O righteous Elder, as thou receivest in thine arms the Redeemer of our souls, Who grants us also the Resurrection."
           },
-         "troparion_status": "resolved",
+          "troparion_status": "resolved",
           "kontakion": {
             "tone": 1,
             "title": "Kontakion of the Presentation of the Lord — Tone 1",
             "text": "Thou Who didst sanctify the Virgin's womb by Thy birth, and didst bless Simeon's arms as was meet, didst also come to save us, O Christ our God. Preserve Thy people in peace, and strengthen Orthodox Christians whom Thou hast loved, O only Lover of mankind."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Great Feast — Presentation / Hypapante. Rank 1. The Troparion is sung throughout the festal period (Feb 2–9 with Leavetaking on Feb 9). Kontakion Tone 1. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
@@ -69,87 +76,99 @@
             "text": "Rejoice, O Virgin Theotokos, full of grace; for from thee shone the Sun of Righteousness, Christ our God, enlightening those who sat in darkness. Rejoice and be glad, O righteous Elder, as thou receivest in thine arms the Redeemer of our souls, Who grants us also the Resurrection."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Synaxis of Simeon the God-Receiver and Anna the Prophetess — day after Presentation. Uses the Presentation Troparion as the principal festal text remains in force."
         }
       ]
     },
-   "02-04": {
-  "commemorations": [
-    {
-      "id": "isidore-pelusiot",
-      "name": "Venerable Isidore of Pelusium",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Venerable Isidore of Pelusium",
-        "text": "In your wisdom you adorned the Church of Christ gloriously with your many homilies, O Venerable Isidore, you were purified by abstinence, great deeds, and divine vision, and you shone forth in the world. By your words, O Father, we are guided and initiated into a more excellent life."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Egyptian abbot and theologian (+c.436), renowned for ~10,000 letters; relative of Patriarchs Theophilus and Cyril of Alexandria. Tone 4 Podoben 'Be quick to anticipate' confirmed OCA February 4 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
-    }
-  ]
-},
-   "02-05": {
-  "commemorations": [
-    {
-      "id": "agatha-catania",
-      "name": "Holy Martyr Agatha of Catania",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Agatha of Catania",
-        "text": "Your holy martyr Agatha, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR", "LAT", "ANG"],
-      "notes": "Agatha of Catania (+251), virgin martyr under Decius. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+    "02-04": {
+      "commemorations": [
+        {
+          "id": "isidore-pelusiot",
+          "name": "Venerable Isidore of Pelusium",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Venerable Isidore of Pelusium",
+            "text": "In your wisdom you adorned the Church of Christ gloriously with your many homilies, O Venerable Isidore, you were purified by abstinence, great deeds, and divine vision, and you shone forth in the world. By your words, O Father, we are guided and initiated into a more excellent life."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Egyptian abbot and theologian (+c.436), renowned for ~10,000 letters; relative of Patriarchs Theophilus and Cyril of Alexandria. Tone 4 Podoben 'Be quick to anticipate' confirmed OCA February 4 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
+        }
+      ]
+    },
+    "02-05": {
+      "commemorations": [
+        {
+          "id": "agatha-catania",
+          "name": "Holy Martyr Agatha of Catania",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Agatha of Catania",
+            "text": "Your holy martyr Agatha, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR",
+            "LAT",
+            "ANG"
+          ],
+          "notes": "Agatha of Catania (+251), virgin martyr under Decius. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "02-06": {
-  "commemorations": [
-    {
-      "id": "bucolus-smyrna",
-      "name": "St. Bucolus, Bishop of Smyrna",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of St. Bucolus of Smyrna",
-        "text": "You shone with the rays of virtue received from him who leaned on the Master's breast. Resplendent, God-inspired hierarch, you led your flock to the pastures of truth. Entreat Christ our God for those who honor you, father Bucolus."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Bucolus of Smyrna (+2nd c.), disciple of the Apostle John, first Bishop of Smyrna. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 6); corroborated by Basilica.ro."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "bucolus-smyrna",
+          "name": "St. Bucolus, Bishop of Smyrna",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Bucolus of Smyrna",
+            "text": "You shone with the rays of virtue received from him who leaned on the Master's breast. Resplendent, God-inspired hierarch, you led your flock to the pastures of truth. Entreat Christ our God for those who honor you, father Bucolus."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Bucolus of Smyrna (+2nd c.), disciple of the Apostle John, first Bishop of Smyrna. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 6); corroborated by Basilica.ro."
+        }
+      ]
+    },
     "02-07": {
-  "commemorations": [
-    {
-      "id": "parthenius-lampsacus",
-      "name": "St. Parthenius, Bishop of Lampsacus",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of St. Parthenius of Lampsacus",
-        "text": "O God of our Fathers, ever dealing with us according to Your compassion, take not Your mercy from us, but direct our lives in peace through the prayers of Saint Parthenios."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Parthenius of Lampsacus (+4th c.), bishop and wonderworker. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 7); corroborated by Basilica.ro and MCI Menaion."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "parthenius-lampsacus",
+          "name": "St. Parthenius, Bishop of Lampsacus",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Parthenius of Lampsacus",
+            "text": "O God of our Fathers, ever dealing with us according to Your compassion, take not Your mercy from us, but direct our lives in peace through the prayers of Saint Parthenios."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Parthenius of Lampsacus (+4th c.), bishop and wonderworker. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 7); corroborated by Basilica.ro and MCI Menaion."
+        }
+      ]
+    },
     "02-08": {
       "commemorations": [
         {
@@ -164,13 +183,32 @@
             "text": "In thy sufferings, O Theodore Stratelates, thou didst receive an incorruptible crown from Christ God; as thou art adorned with thy blood, thou hast put to shame the false gods. By thy prayers deliver us from every adversity, O most lauded one."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Theodore Stratelates (+319), military martyr of Heraclea. Rank 3. Distinct from Theodore Tyron (Feb 17 / first Saturday of Lent)."
         }
       ]
     },
     "02-09": {
       "commemorations": [
+        {
+          "id": "finding-relics-innocent-irkutsk",
+          "name": "Finding of the Relics of Innocent of Irkutsk",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of St. Innocent of Irkutsk",
+            "text": "O luminary of the Church and wonderworker, who didst enlighten Siberia with the light of the Gospel: O holy Innocent, shepherd and teacher, intercede with Christ God, the Good Shepherd, that He deliver our souls from all evil."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Innocent of Irkutsk (+1731), first bishop of Irkutsk. Finding of relics 1764. Rank 3. Russian Orthodox calendar. MOVED 2026-10-01 from 02-22 to 02-09 (Orthocal: Relics of St Innocent of Irkutsk, Feb 9; Feb 22 was the Old-Calendar civil date)."
+        },
         {
           "id": "leavetaking-presentation",
           "name": "Leavetaking of the Presentation of the Lord",
@@ -183,7 +221,9 @@
             "text": "Rejoice, O Virgin Theotokos, full of grace; for from thee shone the Sun of Righteousness, Christ our God, enlightening those who sat in darkness. Rejoice and be glad, O righteous Elder, as thou receivest in thine arms the Redeemer of our souls, Who grants us also the Resurrection."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Leavetaking of the Presentation — the Presentation Troparion is repeated. Rank 4."
         }
       ]
@@ -202,30 +242,36 @@
             "text": "Having blossomed with divine grace as a noble shoot in the Church, O holy Haralambos, thou dost ever pour forth healings on those who approach thee with faith. Therefore, intercede with Christ our God that He may grant us His great mercy."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Haralambos (+202), hieromartyr, bishop of Magnesia. Popular in the Greek Orthodox tradition. Rank 3."
         }
       ]
     },
     "02-11": {
-  "commemorations": [
-    {
-      "id": "blase-sebaste",
-      "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Hieromartyr Blaise of Sebaste",
-        "text": "Your holy martyr Blaise, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR", "LAT", "ANG"],
-      "notes": "Blaise of Sebaste (+316), bishop and martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "blase-sebaste",
+          "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Blaise of Sebaste",
+            "text": "Your holy martyr Blaise, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR",
+            "LAT",
+            "ANG"
+          ],
+          "notes": "Blaise of Sebaste (+316), bishop and martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "02-12": {
       "commemorations": [
         {
@@ -240,30 +286,34 @@
             "text": "As a guide of Orthodoxy, a teacher of piety and modesty, a luminary of the world and an adornment of hierarchs: O divinely wise Alexios, thou hast illumined all with thy teachings and interceeded before God. Pray to Him for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Alexios of Moscow (+1378), Metropolitan and wonderworker. Glorified 1448. Rank 3. Primarily Russian Orthodox calendar."
         }
       ]
     },
-   "02-13": {
-  "commemorations": [
-    {
-      "id": "martinian-caesarea",
-      "name": "Venerable Martinian of Caesarea",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": {
-        "tone": 8,
-        "title": "Troparion of the Venerable Martinian of Caesarea",
-        "text": "You quenched the flames of passion, blessed Martinian, with abundant tears; you calmed the waves of the sea and checked the assaults of wild beasts, saying: Almighty God, You are most glorious, for You have saved me from the fire and storm!"
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Palestinian desert ascetic (+c.422), known for resisting temptation by standing on burning coals and escaping to sea. Tone 8 confirmed OCA February 13 all-troparia page (direct fetch). Unique text. Live tone was already 8 — correct."
-    }
-  ]
-},
+    "02-13": {
+      "commemorations": [
+        {
+          "id": "martinian-caesarea",
+          "name": "Venerable Martinian of Caesarea",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Venerable Martinian of Caesarea",
+            "text": "You quenched the flames of passion, blessed Martinian, with abundant tears; you calmed the waves of the sea and checked the assaults of wild beasts, saying: Almighty God, You are most glorious, for You have saved me from the fire and storm!"
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Palestinian desert ascetic (+c.422), known for resisting temptation by standing on burning coals and escaping to sea. Tone 8 confirmed OCA February 13 all-troparia page (direct fetch). Unique text. Live tone was already 8 — correct."
+        }
+      ]
+    },
     "02-14": {
       "commemorations": [
         {
@@ -278,7 +328,9 @@
             "text": "O holy brethren Cyril and Methodius, equal to the Apostles and teachers of the Slavs: pray to the Lord of all that He may strengthen all the Slavic nations in Orthodoxy and unity, and grant peace to the world and great mercy to our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Cyril (+869) and Methodius (+885), Apostles to the Slavs, creators of the Glagolitic alphabet. Feb 14 commemorates Cyril; his brother Methodius is commemorated May 11. Shared troparion used for both on respective days. Rank 3."
         }
       ]
@@ -297,30 +349,34 @@
             "text": "O Holy Apostle Onesimus, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Onesimus the Apostle, disciple of Paul (Philemon). Rank 3. Standard apostle troparion form (Tone 3)."
         }
       ]
     },
     "02-16": {
-  "commemorations": [
-    {
-      "id": "pamphilius-caesarea",
-      "name": "Martyr Pamphilius and companions of Caesarea",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Martyr Pamphilius and companions of Caesarea",
-        "text": "Your holy martyrs Pamphilius and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Pamphilius of Caesarea (+309), presbyter, and companions. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "pamphilius-caesarea",
+          "name": "Martyr Pamphilius and companions of Caesarea",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Martyr Pamphilius and companions of Caesarea",
+            "text": "Your holy martyrs Pamphilius and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Pamphilius of Caesarea (+309), presbyter, and companions. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "02-17": {
       "commemorations": [
         {
@@ -335,7 +391,9 @@
             "text": "With great faith Thou wast glorified among the martyrs, O Theodore; and having entered the contest Thou didst trample upon the enemy. By Thy powerful intercession deliver us from our passions, O holy one, that we may cry: Glory to Thee, O our God."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Theodore Tyron (+306), military martyr, burned at Amasea. Rank 3. Also specially commemorated on the first Saturday of Great Lent (Kollyva Saturday). Distinct from Theodore Stratelates (Feb 8)."
         }
       ]
@@ -354,7 +412,11 @@
             "text": "O successor of the Apostles and throne of the Ecumenical Church, O Leo, thou didst confirm the Faith of the Councils; thou wast a pillar of Orthodoxy, a vessel of theology and a preacher of grace. Intercede with Christ God that our souls be saved."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "tradition_tags": [
+            "EOR",
+            "LAT",
+            "ANG"
+          ],
           "notes": "Leo I, Pope of Rome (+461), Doctor and defender of Chalcedonian Christology. Rank 3. Pan-traditional veneration."
         }
       ]
@@ -373,67 +435,57 @@
             "text": "O Holy Apostle Archippus, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Archippus, one of the Seventy Apostles (Colossians 4:17). Rank 4. Standard apostle troparion form (Tone 3)."
         }
       ]
     },
     "02-20": {
-  "commemorations": [
-    {
-      "id": "leo-catania",
-      "name": "St. Leo, Bishop of Catania",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 1,
-      "troparion": {
-        "tone": 1,
-        "title": "Troparion of St. Leo, Bishop of Catania",
-        "text": "You were shown forth as a resplendent priest, a teacher of godliness and a wonderworker, blessed hierarch Leo; by the light of heavenly virtue you were enriched with the power of the Spirit, and heal the souls and bodies of those who hasten to you. Glory to Christ who has glorified you! Glory to Him who has crowned you! Glory to Him who through you works healing for all!"
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Leo of Catania (+8th c.), bishop and wonderworker. Rank 4. Proper troparion Tone 1 confirmed from OCA and Antiochian North America. Name corrected from hieromartyr to bishop; Leo was not martyred."
-    }
-  ]
-},
-   "02-21": {
-  "commemorations": [
-    {
-      "id": "timothy-symbola",
-      "name": "Venerable Timothy of Symbola",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Venerable Timothy of Symbola",
-        "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Saints Timothy and Eustathius."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Bithynian ascetic (+795), monk at the Symbola monastery on Mount Olympus, disciple of Platon of Studion. Tone 4 joint troparion with Eustathius confirmed OCA February 21 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
-    }
-  ]
-},
-    "02-22": {
       "commemorations": [
         {
-          "id": "finding-relics-innocent-irkutsk",
-          "name": "Finding of the Relics of Innocent of Irkutsk",
-          "type": "saint",
-          "rank": 3,
-          "troparion_tone": 3,
+          "id": "leo-catania",
+          "name": "St. Leo, Bishop of Catania",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 1,
           "troparion": {
-            "tone": 3,
-            "title": "Troparion of St. Innocent of Irkutsk",
-            "text": "O luminary of the Church and wonderworker, who didst enlighten Siberia with the light of the Gospel: O holy Innocent, shepherd and teacher, intercede with Christ God, the Good Shepherd, that He deliver our souls from all evil."
+            "tone": 1,
+            "title": "Troparion of St. Leo, Bishop of Catania",
+            "text": "You were shown forth as a resplendent priest, a teacher of godliness and a wonderworker, blessed hierarch Leo; by the light of heavenly virtue you were enriched with the power of the Spirit, and heal the souls and bodies of those who hasten to you. Glory to Christ who has glorified you! Glory to Him who has crowned you! Glory to Him who through you works healing for all!"
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "Innocent of Irkutsk (+1731), first bishop of Irkutsk. Finding of relics 1764. Rank 3. Russian Orthodox calendar."
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Leo of Catania (+8th c.), bishop and wonderworker. Rank 4. Proper troparion Tone 1 confirmed from OCA and Antiochian North America. Name corrected from hieromartyr to bishop; Leo was not martyred."
         }
       ]
+    },
+    "02-21": {
+      "commemorations": [
+        {
+          "id": "timothy-symbola",
+          "name": "Venerable Timothy of Symbola",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Venerable Timothy of Symbola",
+            "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Saints Timothy and Eustathius."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Bithynian ascetic (+795), monk at the Symbola monastery on Mount Olympus, disciple of Platon of Studion. Tone 4 joint troparion with Eustathius confirmed OCA February 21 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
+        }
+      ]
+    },
+    "02-22": {
+      "commemorations": []
     },
     "02-23": {
       "commemorations": [
@@ -449,7 +501,11 @@
             "text": "O Polycarp, thou didst follow in the footsteps of the Apostles as a disciple of the divine John; having tended the flock of Christ well, thou wast slain as a holy offering, giving up thy soul through fire and sword. Intercede with Christ God, for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "tradition_tags": [
+            "EOR",
+            "LAT",
+            "ANG"
+          ],
           "notes": "Polycarp of Smyrna (+155/156), disciple of John the Apostle, martyred at Smyrna. Rank 3. Pan-traditional."
         }
       ]
@@ -468,92 +524,103 @@
             "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
           },
           "troparion_status": "resolved",
-           "kontakion": {
+          "kontakion": {
             "tone": 3,
             "title": "Kontakion of the First and Second Finding of the Head of the Baptist — Tone 3",
             "text": "O Prophet of God and Forerunner of Grace, / your head has blossomed from the earth as a sacred rose. / We are ever being healed, / for as of old, You preach repentance to the world."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "First and Second Finding of the Head of John the Baptist. Rank 2 (Polyeleos). Uses the same Troparion as the Synaxis of the Baptist (Jan 7, Tone 2). Third Finding is commemorated May 25. Kontakion Tone 3. Source: OCA."
         }
       ]
     },
-   "02-25": {
-  "commemorations": [
-    {
-      "id": "tarasius-patriarch-constantinople",
-      "name": "St. Tarasius, Patriarch of Constantinople",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 3,
-      "troparion": {
-        "tone": 3,
-        "title": "Troparion of St. Tarasius, Patriarch of Constantinople",
-        "text": "You shone forth as a light of the Spirit, adorned with an exemplary life and clothed in hierarchical vesture. You stilled the turbulence of heresy and became a pillar and foundation of the Church, which praises your struggles, holy Father Tarasius."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Tarasius of Constantinople (+806), patriarch who presided at the Seventh Ecumenical Council. Rank 4. Proper troparion Tone 3 confirmed from OCA."
-    }
-  ]
-},
+    "02-25": {
+      "commemorations": [
+        {
+          "id": "tarasius-patriarch-constantinople",
+          "name": "St. Tarasius, Patriarch of Constantinople",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of St. Tarasius, Patriarch of Constantinople",
+            "text": "You shone forth as a light of the Spirit, adorned with an exemplary life and clothed in hierarchical vesture. You stilled the turbulence of heresy and became a pillar and foundation of the Church, which praises your struggles, holy Father Tarasius."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Tarasius of Constantinople (+806), patriarch who presided at the Seventh Ecumenical Council. Rank 4. Proper troparion Tone 3 confirmed from OCA."
+        }
+      ]
+    },
     "02-26": {
-  "commemorations": [
-    {
-      "id": "porphyry-gaza",
-      "name": "St. Porphyrius, Bishop of Gaza",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of St. Porphyrius of Gaza",
-        "text": "Who can tell of your labors and illnesses leading to godly devotion, O Father? For you labored incessantly day and night, cleansing Gaza of its wickedness, and planting piety; therefore, as the protector of your flock, O Porphyrios, entreat Christ God for the salvation of our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Porphyrius of Gaza (+420), bishop who oversaw the Christianization of Gaza. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 26). Name corrected: Porphyrius died peacefully and was not a martyr; Hieromartyr label removed."
-    }
-  ]
-},
-   "02-27": {
-  "commemorations": [
-    {
-      "id": "procopius-decapolites",
-      "name": "Venerable Procopius of Decapolis",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 1,
-      "troparion": {
-        "tone": 1,
-        "title": "Troparion of the Venerable Procopius of Decapolis",
-        "text": "Having advanced in asceticism, O Father Prokopios, you went from strength to strength. By venerating the icon of Christ, you were shown as one comparable to the Martyrs. With them, intercede for those who cry to you: Glory to Him Who has strengthened you. Glory to Him Who has crowned you. Glory to Him Who through you works healings for all."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Iconophile confessor of the Decapolis region (+c.750), companion of Basil the Confessor; imprisoned under Leo III. Tone 1 Podoben 'O citizen of the desert' confirmed OCA February 27 all-troparia page (direct fetch). OCA spells 'Prokopios'. Queue held Tone 8 — corrected to Tone 1."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "porphyry-gaza",
+          "name": "St. Porphyrius, Bishop of Gaza",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Porphyrius of Gaza",
+            "text": "Who can tell of your labors and illnesses leading to godly devotion, O Father? For you labored incessantly day and night, cleansing Gaza of its wickedness, and planting piety; therefore, as the protector of your flock, O Porphyrios, entreat Christ God for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Porphyrius of Gaza (+420), bishop who oversaw the Christianization of Gaza. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 26). Name corrected: Porphyrius died peacefully and was not a martyr; Hieromartyr label removed."
+        }
+      ]
+    },
+    "02-27": {
+      "commemorations": [
+        {
+          "id": "procopius-decapolites",
+          "name": "Venerable Procopius of Decapolis",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Venerable Procopius of Decapolis",
+            "text": "Having advanced in asceticism, O Father Prokopios, you went from strength to strength. By venerating the icon of Christ, you were shown as one comparable to the Martyrs. With them, intercede for those who cry to you: Glory to Him Who has strengthened you. Glory to Him Who has crowned you. Glory to Him Who through you works healings for all."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Iconophile confessor of the Decapolis region (+c.750), companion of Basil the Confessor; imprisoned under Leo III. Tone 1 Podoben 'O citizen of the desert' confirmed OCA February 27 all-troparia page (direct fetch). OCA spells 'Prokopios'. Queue held Tone 8 — corrected to Tone 1."
+        }
+      ]
+    },
     "02-28": {
-  "commemorations": [
-    {
-      "id": "basil-confessor",
-      "name": "Venerable Basil the Confessor",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 1,
-      "troparion": {
-        "tone": 1,
-        "title": "Troparion of the Venerable Basil the Confessor",
-        "text": "Dweller of the desert and angel in the body, you were shown to be a wonder-worker, our God-bearing Father Basil. You received heavenly gifts through fasting, vigil, and prayer: Healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength! Glory to Him who granted you a crown! Glory to Him who through you grants healing to all!"
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Iconophile monk and confessor (+750), companion of Procopius of Decapolis; imprisoned under Leo III the Isaurian. Tone 1 'Dweller of the desert' confirmed OCA February 28 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 1."
+      "commemorations": [
+        {
+          "id": "basil-confessor",
+          "name": "Venerable Basil the Confessor",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Venerable Basil the Confessor",
+            "text": "Dweller of the desert and angel in the body, you were shown to be a wonder-worker, our God-bearing Father Basil. You received heavenly gifts through fasting, vigil, and prayer: Healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength! Glory to Him who granted you a crown! Glory to Him who through you grants healing to all!"
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Iconophile monk and confessor (+750), companion of Procopius of Decapolis; imprisoned under Leo III the Isaurian. Tone 1 'Dweller of the desert' confirmed OCA February 28 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 1."
+        }
+      ]
     }
-  ]
-}
   }
 }

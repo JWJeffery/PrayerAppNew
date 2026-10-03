@@ -1,0 +1,4556 @@
+{
+ "schema": "menaion-ages-guide/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (Fr. Seraphim Dedes, GOA English), CC0 1.0 -- metadata only, no hymn text",
+ "usage": "Greek Archdiocese (GOA) usage, new calendar",
+ "dates": {
+  "11-01": {
+   "titles": [
+    "For the Saints."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "melody": "Automelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 2,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": "Idiomelon.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-02": {
+   "titles": [
+    "For the Saints."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Come quickly.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "Automelon.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": true
+     }
+    ]
+   }
+  },
+  "11-03": {
+   "titles": [
+    "For the Martyrs.",
+    "For St. George."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "Theotokos, you are the true vine.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-04": {
+   "titles": [
+    "For St. Joannicius.",
+    "For St. Nicander."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-05": {
+   "titles": [
+    "For the Saints."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-06": {
+   "titles": [
+    "For the Saint."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 1,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 1,
+      "melody": "Automelon.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-07": {
+   "titles": [
+    "For the Martyrs.",
+    "For St. Lazarus."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-08": {
+   "titles": [
+    "For Chief Commander Michael.",
+    "For Chief Commander Gabriel."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "melody": "You who were lifted.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "You who were lifted.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 8,
+      "melody": "When he perceived.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You who were lifted.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "Automelon.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "When he perceived.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-09": {
+   "titles": [
+    "For the Martyrs.",
+    "For the Holy Woman."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-10": {
+   "titles": [
+    "For the Apostles.",
+    "For the Martyr."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-11": {
+   "titles": [
+    "For the Martyrs.",
+    "For St. Theodore."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-12": {
+   "titles": [
+    "For St. John.",
+    "For St. Nilus."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "Theotokos, you are the true vine.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-13": {
+   "titles": [
+    "For the Saint."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 8,
+      "melody": "By conceiving the Wisdom.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 3,
+      "melody": "Your confession.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       2
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 4,
+      "melody": "You revealed yourself today.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       2
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "By conceiving the Wisdom.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-14": {
+   "titles": [
+    "For the Apostle."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-15": {
+   "titles": [
+    "For the Saints."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-16": {
+   "titles": [
+    "For the Evangelist."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "Theotokos, you are the true vine.",
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "melody": "Come quickly.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "melody": "By conceiving the Wisdom.",
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "By conceiving the Wisdom.",
+      "has_text": true
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-17": {
+   "titles": [
+    "For the Saint."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What are we to call you.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "With the disciples.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "With the disciples.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-18": {
+   "titles": [
+    "For St. Plato.",
+    "For St. Romanos."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "Theotokos, you are the true vine.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-19": {
+   "titles": [
+    "For the Prophet.",
+    "For the Martyr."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-20": {
+   "titles": [
+    "For St. Gregory.",
+    "For St. Proclus."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The stone having been sealed.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Come quickly.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "With the disciples.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-21": {
+   "titles": [
+    "For the Entry of the Theotokos."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Joseph marveled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 8,
+      "melody": "When he perceived.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-22": {
+   "titles": [
+    "For the Apostle."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 1,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O House of Ephratha.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O House of Ephratha.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "O House of Ephratha.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The stone having been sealed.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Come quickly.",
+      "has_text": true
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "Let us in faith.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": true
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-23": {
+   "titles": [
+    "For St. Amphilochios.",
+    "For St. Gregory."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 8,
+      "melody": "What a paradoxal.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Joseph marveled.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-24": {
+   "titles": [
+    "For St. Clement.",
+    "For St. Peter."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "melody": "You revealed yourself today.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Joseph marveled.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-25": {
+   "titles": [
+    "For St. Catherine.",
+    "For St. Mercury."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "Marvel at the wondrous paradox.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "To a brave one.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 4,
+      "melody": "Joseph marveled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       2
+      ],
+      "mode": 4,
+      "melody": "Joseph marveled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 8,
+      "melody": "When he perceived.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       2
+      ],
+      "mode": 8,
+      "melody": "When he perceived.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 4,
+      "melody": "You have given.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-26": {
+   "titles": [
+    "For St. Alypios.",
+    "For St. Nikon."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "O Martyrs, extolled.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Having embellished heaven.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-27": {
+   "titles": [
+    "For the Saint."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 2,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "Joseph took You down.",
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 5,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-28": {
+   "titles": [
+    "For St. Stephen.",
+    "For St. Irenarchus."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "melody": "When the saints deposited.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 6,
+      "melody": "You rose within three days.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": true
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "Our Savior from on high.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Our Savior from on high.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 3,
+      "melody": "Our Savior from on high.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-29": {
+   "titles": [
+    "For the Saints."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": false
+     }
+    ]
+   }
+  },
+  "11-30": {
+   "titles": [
+    "For the Apostle."
+   ],
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "melody": "When you were called.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 4,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "Rejoice.",
+      "has_text": true
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 3,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 3,
+      "melody": null,
+      "has_text": false
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 3,
+      "melody": "Your confession.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3,
+       1
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "The soldiers.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       2
+      ],
+      "mode": 3,
+      "melody": "Your confession.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "melody": "As the Father and Spirit.",
+      "has_text": false
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "melody": "The Elder in the Temple.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "melody": "O Women, hearken.",
+      "has_text": false
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "melody": "For all the powers of heaven.",
+      "has_text": false
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     },
+     {
+      "role": "both",
+      "index": [],
+      "mode": 8,
+      "melody": null,
+      "has_text": false
+     }
+    ]
+   }
+  }
+ }
+}

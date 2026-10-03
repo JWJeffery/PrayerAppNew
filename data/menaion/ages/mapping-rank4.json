@@ -1,0 +1,702 @@
+{
+ "schema": "menaion-ages-mapping/1",
+ "_comment": "RANK-4 only: Vespers \"Lord, I have cried\" stichera. A slot is listed only when every selected numbered hymn (or two of three same-tone hymns) names the saint by a distinctive token and each was read 2026-10-02. Built by scripts/menaion/build-ages-mapping-rank4.py.",
+ "entries": [
+  {
+   "id": "procopius-decapolites",
+   "mmdd": "02-27",
+   "name": "Venerable Procopius of Decapolis",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "hieromartyrs-cherson",
+   "mmdd": "03-07",
+   "name": "The Holy Hieromartyrs of Cherson: Basil, Ephraim, Eugene, Elpidius, Agathodorus, Aetherius, and Capiton",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "benedict-nursia",
+   "mmdd": "03-14",
+   "name": "Venerable Benedict of Nursia",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "elizabeth-wonderworker",
+   "mmdd": "04-24",
+   "name": "Venerable Elizabeth the Wonder-Worker",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "prophet-jeremiah",
+   "mmdd": "05-01",
+   "name": "Holy Prophet Jeremiah",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "timothy-maura-martyrs",
+   "mmdd": "05-03",
+   "name": "Holy Martyrs Timothy and Maura",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "pelagia-tarsus",
+   "mmdd": "05-04",
+   "name": "Holy Martyr Pelagia of Tarsus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "isaiah-prophet",
+   "mmdd": "05-09",
+   "name": "Holy Prophet Isaiah",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "germanus-constantinople",
+   "mmdd": "05-12",
+   "name": "St. Germanus, Patriarch of Constantinople",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "glyceria-martyr",
+   "mmdd": "05-13",
+   "name": "Holy Martyr Glyceria",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "isidore-chios",
+   "mmdd": "05-14",
+   "name": "Holy Martyr Isidore of Chios",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "thallelaeus-martyr",
+   "mmdd": "05-20",
+   "name": "Holy Martyr Thallelaeus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "basiliscus-comana",
+   "mmdd": "05-22",
+   "name": "Holy Martyr Basiliscus of Comana",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "michael-bishop-synnada",
+   "mmdd": "05-23",
+   "name": "St. Michael the Confessor, Bishop of Synnada",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "lucian-antioch-martyr",
+   "mmdd": "06-03",
+   "name": "Holy Martyr Lucillian and companions",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "metrophanes-cp",
+   "mmdd": "06-04",
+   "name": "St. Metrophanes, First Patriarch of Constantinople",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "dorotheus-bishop-tyre",
+   "mmdd": "06-05",
+   "name": "Hieromartyr Dorotheus, Bishop of Tyre",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "theodore-stratilates-translation",
+   "mmdd": "06-08",
+   "name": "Translation of the Relics of the Great Martyr Theodore Stratelates",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "aquilina-byblos",
+   "mmdd": "06-13",
+   "name": "Holy Martyr Aquilina of Byblos",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "manuel-sabel-ismael",
+   "mmdd": "06-17",
+   "name": "Holy Martyrs Manuel, Sabel, and Ismael",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "leontius-martyr",
+   "mmdd": "06-18",
+   "name": "Holy Martyr Leontius of Phoenicia",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "methodius-bishop-patara",
+   "mmdd": "06-20",
+   "name": "Hieromartyr Methodius, Bishop of Patara",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "julian-tarsus-martyr",
+   "mmdd": "06-21",
+   "name": "Holy Martyr Julian of Tarsus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "agrippina-rome-martyr",
+   "mmdd": "06-23",
+   "name": "Holy Martyr Agrippina of Rome",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "febronia-nisibis",
+   "mmdd": "06-25",
+   "name": "Venerable Martyr Febronia of Nisibis",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "proclus-hilary-martyrs",
+   "mmdd": "07-12",
+   "name": "Holy Martyrs Proclus and Hilary",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "hermolaus-hieromartyr",
+   "mmdd": "07-26",
+   "name": "Hieromartyr Hermolaus and companions",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "callinicos-martyr",
+   "mmdd": "07-29",
+   "name": "Holy Martyr Callinicos of Gangra",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "myron-martyr-cyzicus",
+   "mmdd": "08-17",
+   "name": "Holy Martyr Myron of Cyzicus",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "agathonikos-martyr",
+   "mmdd": "08-22",
+   "name": "Holy Martyr Agathonikos and companions",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "eutyches-hieromartyr",
+   "mmdd": "08-24",
+   "name": "Hieromartyr Eutyches, Disciple of John the Theologian",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "pimen-great",
+   "mmdd": "08-27",
+   "name": "Venerable Pimen (Poemen) the Great",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "moses-prophet-ethiopia",
+   "mmdd": "08-28",
+   "name": "Venerable Moses the Ethiopian (the Black)",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "mamas-martyr",
+   "mmdd": "09-02",
+   "name": "Holy Martyr Mamas of Caesarea",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "zacharias-prophet-elizabeth",
+   "mmdd": "09-05",
+   "name": "Holy Prophet Zacharias and Righteous Elizabeth, Parents of John the Baptist",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "joachim-anna-parents-theotokos",
+   "mmdd": "09-09",
+   "name": "Holy and Righteous Ancestors of God, Joachim and Anna",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "cornelius-centurion",
+   "mmdd": "09-13",
+   "name": "Holy Martyr Cornelius the Centurion",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "eumenios-bishop-gortyna",
+   "mmdd": "09-18",
+   "name": "St. Eumenios, Bishop of Gortyna",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "trophimos-sabbatios-dorymedon",
+   "mmdd": "09-19",
+   "name": "Holy Martyrs Trophimos, Sabbatios, and Dorymedon",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "phocas-gardener-sinope",
+   "mmdd": "09-22",
+   "name": "Hieromartyr Phocas the Gardener of Sinope",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "callistratos-companions",
+   "mmdd": "09-27",
+   "name": "Holy Martyr Callistratos and companions",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "chariton-confessor",
+   "mmdd": "09-28",
+   "name": "Venerable Chariton the Confessor",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "sergios-bacchus",
+   "mmdd": "10-07",
+   "name": "Holy Martyrs Sergios and Bacchus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "eulampios-eulampia",
+   "mmdd": "10-10",
+   "name": "Holy Martyrs Eulampios and Eulampia",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "philip-apostle-october",
+   "mmdd": "10-11",
+   "name": "Holy Apostle Philip, one of the Seven Deacons",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "longinus-centurion",
+   "mmdd": "10-16",
+   "name": "Holy Martyr Longinus the Centurion",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "hilarion-great",
+   "mmdd": "10-21",
+   "name": "Venerable Hilarion the Great",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "arethas-martyrs-nagran",
+   "mmdd": "10-24",
+   "name": "Holy Great Martyr Arethas and companions of Nagran",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "nestor-martyr-thessalonica",
+   "mmdd": "10-27",
+   "name": "Holy Martyr Nestor of Thessalonica",
+   "slots": {
+    "vespers_stichera": [
+     "4",
+     "5",
+     "6"
+    ]
+   }
+  },
+  {
+   "id": "anastasia-rome",
+   "mmdd": "10-29",
+   "name": "Monastic Martyr Anastasia of Rome",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "zenobius-zenobia",
+   "mmdd": "10-30",
+   "name": "Holy Martyrs Zenobius and Zenobia",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "abdias-prophet",
+   "mmdd": "11-19",
+   "name": "Holy Prophet Obadiah (Abdias)",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "prophet-nahum",
+   "mmdd": "12-01",
+   "name": "Holy Prophet Nahum",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "prophet-habakkuk",
+   "mmdd": "12-02",
+   "name": "Holy Prophet Habakkuk",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "prophet-zephaniah",
+   "mmdd": "12-03",
+   "name": "Holy Prophet Zephaniah (Sophonias)",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "menas-hermogenes-eugraphus",
+   "mmdd": "12-10",
+   "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "prophet-haggai",
+   "mmdd": "12-16",
+   "name": "Holy Prophet Haggai",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "boniface-tarsus",
+   "mmdd": "12-19",
+   "name": "Holy Martyr Boniface of Tarsus",
+   "slots": {
+    "vespers_stichera": [
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  }
+ ]
+}

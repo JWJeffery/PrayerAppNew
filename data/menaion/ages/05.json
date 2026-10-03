@@ -1,0 +1,748 @@
+{
+ "schema": "menaion-ages/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (translations by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America), CC0 1.0",
+ "calendar": "GOA New Calendar (Revised Julian) usage; commemorations may differ from the Slavic usage the app otherwise follows",
+ "dates": {
+  "05-01": {
+   "source_file": "me.m05.d01_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Lord, You knew…",
+      "text": "Lord, You knew glorious, renowned Jeremiah * before You formed him within the womb * and before his birth consecrated * and appointed him to prophesy, * for You foreknew that his mind * was free and not at all enslaved. * At his entreaties for us save us, * for You are good and benevolent."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Lord, even when…",
+      "text": "Lord, even when he was confined in a cistern * and sunk in mire, Your glorious * prophet Jeremiah in spirit * perceive the fragrance of Paradise * and its delights, as if he * were dwelling in the mansions there. * At his entreaties for us save us, * for You are good and benevolent."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Lord, even as…",
+      "text": "Lord, even as Your holy servant Jeremiah * wrote lamentations and mourned and wept, * as a Prophet he did not lessen * the exultation he had in you; * for he united his soul * to You through love and longing, O Christ, * and was continually abounding * in the ineffable gladness of heart."
+     }
+    ]
+   }
+  },
+  "05-03": {
+   "source_file": "me.m05.d03_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "O holy and God-inspired pair…",
+      "text": "O holy and God-inspired pair, * Christian couple, man and wife, * you are the gem of the Martyrs as tremendous Martyr Saints. * You endured the torments, * while remaining faithful to the yoke of God, not frightened by tortures that the tyrants heaped on you. * Intercede now that surpassing peace * and great mercy be upon our souls bestowed."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "O Maura, upstanding…",
+      "text": "O Maura, upstanding and all-blessed, * with your face most radiant * with the divine light of grace, you turned the tyrant’s face morose. * Brutally he ordered * the hair from your head be torn. * You publicly confessed God and clung to Him. * The tyrant had you thrown * in the boiling cauldron, and you scorched * the unjust head of Belial the darkened fiend."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "You honored supremely…",
+      "text": "You honored supremely honored God, * O St. Timothy, with all * your heart and soul and ability, when burning fiery rods * were into your ears thrust. * That is when within your heart you heard the sweetest sound of the voice of God. * They hung you upside down, * and with Maura you were crucified, * and to heaven you ran and received your crown."
+     }
+    ]
+   }
+  },
+  "05-04": {
+   "source_file": "me.m05.d04_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Wishing to receive…",
+      "text": "Wishing to receive salvific and divine holy baptism, * holy Martyr Pelagia, * you sought for it earnestly, and when you encountered * the bishop of Tarsus, he baptized you, and thus with joy * you ran more swiftly to Him for whom you longed. * And you were counted worthy of uncommon visions, O honored Saint. * As the Song says, O maiden pure, * you ran after your Bridegroom Christ."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You rejected…",
+      "text": "You rejected earthly fashions that are fleeting and pass with time * and adornments that fade away, * and earnestly you pursued the celestial splendor * that remains forever and has continual delight, * eternal joy, and immortal purity; * moreover you adopted for yourself the virtue of chastity. * We extol your virginity * and we honor your martyrdom."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Pelagia, your name…",
+      "text": "Pelagia, your name in Greek denotes the deep sea, describing your vast and fathomless miracles. * You longed for Master Christ with a chaste and perfect * heart, O holy Martyr, and you regarded with disdain * the threat of torments and all-consuming fire. * And that is why the Savior of our souls and heavenly Bridegroom made * you, O steadfast and resolute * virgin maid, His celestial bride."
+     }
+    ]
+   }
+  },
+  "05-05": {
+   "source_file": "me.m05.d05_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "Most noble Irene…",
+      "text": "Most noble Irene, when you were dressed * in the splendid purple robe * of your own blood, you ran eagerly to Him for whom you longed, * the King and Creator * and Lord of the universe, * by whom you were awarded the medal and the crown of victory. * And you reign with Him in heaven now, * as a virgin and herculean Martyr Saint."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "You endured…",
+      "text": "You endured the raging flames of fire, * O all-lauded St. Irene, * and all the tortures and injuries inflicted on your flesh, * for you had your eyes on * the rewards awaiting you, * which Jesus Christ our Savior especially prepared only for them * who with fervor love and long for Him, * the most handsome Bridegroom of inviolate souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "Enthralled by the ardent…",
+      "text": "Enthralled by the ardent love of Christ, * O glorious St. Irene, * you truly hated the pagan gods and graven images. * And to those who watched you, * you became a pillar of the knowledge of the true one and only God, as you competed well * and you finished your martyric race, * while preserving your Orthodox faith intact."
+     }
+    ]
+   }
+  },
+  "05-06": {
+   "source_file": "me.m05.d06_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Job, you were a blameless…",
+      "text": "Job, you were a blameless man, upright and honest and innocent, * and you feared God and turned away * from evil of every kind, as we read in Scripture. * You were decorated with every virtue, and you glowed * with the resplendence of sound belief in God. * We therefore call you blest, and we rejoice today as we celebrate * your illustrious memory with delight and solemnity."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Job, you had your pious…",
+      "text": "Job, you had your pious faith in God as wealth. You wore sympathy * as a dignified purple robe, * with righteousness covering you as a divine crown. * You were truly blameless, O blessed Saint, and you subdued * unruly passions, which you controlled as king. * And therefore, O all-lauded man, you have gone up to ethereal * royal courts and are standing near Christ our God the eternal King."
+     }
+    ]
+   }
+  },
+  "05-09": {
+   "source_file": "me.m05.d09_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "When his lips…",
+      "text": "When his lips were purified by the divine coal, the glorious * great Isaiah was authorized * to prophesy that our God would become incarnate. * And he saw the glory of the divinity because * of his abundant virtue and purity. * Appointed as a herald, he was sent proclaiming the prophecy * that the nations would all be saved, and that God would appear on earth."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Praiseworthy Isaiah…",
+      "text": "Praiseworthy Isaiah, when your mind and heart had been purified * by divine fire, you became * a well-tempered instrument of the Holy Spirit, * by whose divine action and inspiration you were played, * ever transposed to a godly frame of mind. * O famous Prophet, you beheld the Lord, who sat on a throne on high, * lifted up, and you heard His voice, which revealed divine mysteries."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Blessed Prophet…",
+      "text": "Blessed Prophet, you beheld the holy Seraphim glorify * one dominion of three divine * hypostases, crying out, “Holy, Holy, Holy!” * Thus initiated, you were entrusted with the grace * of divine prophecy, O marvelous Saint. * And now as we are celebrating your all-sacred memorial, * we invoke your most powerful intercessions to Christ for us."
+     }
+    ]
+   }
+  },
+  "05-10": {
+   "source_file": "me.m05.d10_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Simon, as the pride…",
+      "text": "Simon, as the pride and joy of the Apostles and marvelous, * like a luminous lightning bolt * went forth into all the earth, driving out the darkness * of pagan religion of many gods by his divine * and brilliant teachings that aimed to save the world. * And he illumined many people to believe in the Trinity, * single God, three hypostases, undivided inseverable."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Simon was a brilliant…",
+      "text": "Simon was a brilliant teacher of the nations, a God-inspired, * highly honored Apostle of Christ. * He was like a godly net, dragging many people * from depths of destruction. He was a preacher of the true, * sublime theology, leading all who heard * to knowledge of the Savior Christ. He now presents his accomplishments * as a banquet for us feast, as we honor his memory."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Blessed Simon…",
+      "text": "Blessed Simon, going forth to all the world, like a rolling wheel * that was seen by Ezekiel, * scorched the earth that had succumbed to pagan religion. * He lit flaming torches by grace and signaled true beliefs * to all who faithfully accepted his words. * And he illumined many people to believe in the Trinity, * single God, three hypostases, undivided inseverable."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "O Simon, whom we all…",
+      "text": "O Simon, whom we all now extol, * you were imitating Christ; * for when you drank from the river of delight, you gave the drink * of spiritual knowledge * to those who desired it. * And now that you have gone over to the Lord on high, you contemplate * the almighty and invincible * peace and brilliant glory of the Trinity."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "Most marvelous Simon…",
+      "text": "Most marvelous Simon, you delight * in beholding God as far as you are able, and you are always seen by Him, O Saint, * through a better union, * by adoption deified. * Rejoicing, you obtained Him, the only blessed object of desire. * As you dwell now with the angelic hosts, * holy preacher of Christ, you are praised by all."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "We trust that you…",
+      "text": "We trust that you intercede with God * on behalf of all mankind, * all-blessed Simon. And therefore we implore you now to pray * to our Lord and Savior * Jesus Christ with confidence, * to pity us; and evermore intercede with Him on our behalf, * to bestow His peace upon our souls, * and implore Him to give us the great mercy."
+     }
+    ]
+   }
+  },
+  "05-12": {
+   "source_file": "me.m05.d12_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 1,
+      "incipit": "Germanus, you mightily…",
+      "text": "Germanus, you mightily prevailed * over Leo’s reasoning, * as it was riddled with heresy; for he impiously * banned the veneration * of the holy images * of Christ and all the Saints, and you voiced your opposition and reproof. * Even so, O God-inspired Saint, * he inanely persisted in misbelief."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 1,
+      "incipit": "Leo, that abominable…",
+      "text": "Leo, that abominable beast * and ungodly emperor, * was a forerunner of Antichrist, for he denied and banned * pious veneration * of the images of Christ. * He brought upon himself condemnation and exclusion from the Church. * St. Germanus, intercede with God * that the turmoil affecting us come to an end."
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 1,
+      "incipit": "Germanus, you clearly…",
+      "text": "Germanus, you clearly have attained * that for which you long desired, * O God-inspired theologian. For you went with confidence * to be with your Master, * as a faithful hierarch, * O blessed Saint. And now you experience theosis evermore, * standing near Him, and with confidence * You entreat Him for us to have peace in the world."
+     }
+    ]
+   }
+  },
+  "05-13": {
+   "source_file": "me.m05.d13_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "As you glowed…",
+      "text": "As you glowed with virginity, * by your labors of martyrdom, * you became betrothed to your Lord who dwells on high; * and as a dowry, all-lauded Saint, * you brought to your Bridegroom Christ * your excruciating death * and your body’s dismemberment. Therefore you attained * to the heavenly chambers, Glyceria, where you pray for the salvation * of all who faithfully honor you."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Your resistance…",
+      "text": "Your resistance and frame of mind * were both manly and valorous, * Glyceria, glorious Martyr of the Lord. * For in your body’s fragility * and spirit’s alacrity, * you trampled upon the foe, * that inventor of wickedness, as you cried aloud, * “You, O Lord, are Your servants’ strength and the glory, and You overcome the strong man * by Your invincible might as God.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Neither hunger…",
+      "text": "Neither hunger, nor fearsome threats, * nor protracted tormenting pain, * neither the confinement that was imposed on you, * nor fiery furnace, nor sharpened stones, * O glorious Saint of God, * were able to separate * you at all from the love of Christ. * Therefore, you received * from the Lord the refreshment of the Spirit, and from earth and all things earthly, * O Glyceria, you went to Life."
+     }
+    ]
+   }
+  },
+  "05-14": {
+   "source_file": "me.m05.d14_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "On fire with zeal…",
+      "text": "On fire with zeal and faith in Christ our God, blessed Isidore, * you proceeded most ardently * to enter the tournament against pagan error. * Skillfully professing the godly teachings, you received * the prize and medal of victory from God. * Equipped with the full armor of the Cross, you vanquished the arrogant * and tyrannical enemy, O victorious martyr Saint."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You were dressed…",
+      "text": "You were dressed in human garments of the skin and mortality, * which were torn by the lash and whips. * And these were replaced with the robe of incorruption * and a splendid garment, as soon as access to the tree * of life was granted to you again, O Saint. * You reaped eternal life that never ends, O glorious Isidore. * Being filled with it, grant to us * who extol you the joy of Christ."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "The contests…",
+      "text": "The contests and feats of the glorious Martyrs indeed transcend * every notion and utterance * intended to honor them. For these sturdy pillars * of the Christian Faith had a mortal body just like ours, * which could experience pain and suffering, * and yet they bravely yielded to the flames and beatings dismissively, * as if some other body was being tortured and torn apart."
+     }
+    ]
+   }
+  },
+  "05-15": {
+   "source_file": "me.m05.d15_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 6,
+      "incipit": "Focusing entirely…",
+      "text": "Focusing entirely on God with all your desire, * you gave up mundane delights * as being ephemeral, O Pachomius, * and to Christ gave yourself by your every effort * of devout ascetic discipline. * And you were purified, * demonstrating forceful and resolute * resistance to the stimuli * of the carnal passions that lead to sin. * When you had completed your martyrdom of conscience with success, * being victorious you received * the unfading crown from God."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 6,
+      "incipit": "It was granted you…",
+      "text": "It was granted you to be to God united, O father, * once you rent the heavy veil * of the body and you broke your affinity * to the flesh, through action and through contemplation, * and when you were by the heavenly * graces and rays of light * illumined and when you were deified * through God’s descent in splendid light * and though your ascent into excellence. * Now that you have entered that blessedness, O godly-minded Saint, * for us with confidence pray to Christ, * asking Him to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 6,
+      "incipit": "Transcending the stimuli…",
+      "text": "Transcending the stimuli of all your bodily senses, * purely you conversed with God, * as you were outside the flesh, all-honored Saint; * for you were in control over all the passions, * with your mind focused on higher things. * Father Pachomius, * you subdued and trampled the insolence * of demons. And as you are now * dwelling in heavens and close to Christ, * graciously remember the faithful, who extol you and observe * your sacred memory, when you pray * to the Lord with confidence."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "You withdrew to the deserts…",
+      "text": "You withdrew to the deserts * in your desire to lead a life * that was truly angelic, * subduing passions of the flesh, * O God-bearing Pachomius, * and you became like the angels."
+     }
+    ]
+   }
+  },
+  "05-17": {
+   "source_file": "me.m05.d17_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Follower and famous…",
+      "text": "Follower and famous minister of God the Logos, you stopped * the illogical surging of godless polytheism * by your logical dialogues. * You were a bright luminary in the world. * We glorify you with God-inspired words. * Now as we celebrate * your all-holy memory with greatest joy, * we send up our praise to Christ, the Lord and Ruler of all."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Paul, the divine…",
+      "text": "Paul, the divine and preeminent Apostle, showered divine * praise and honor on both of you, * telling the believers all * of your courage and faithfulness, * also that you were disciples of the Word * of God before him, and relatives of his, * and fellow prisoners. * O all-wise St. Junia and truly blest * Andronicus, you were truly faithful servants of God."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "By your sacred…",
+      "text": "By your sacred preaching, you enlightened many people on earth; * you dispersed the unholy mist * of futility and doom * and directed them towards the light * of saving knowledge of God, for they had been * sitting in godless darkness for many years. * Therefore we honor you * as divine Apostles and unerring guides * to salvation and as constant intercessors for all."
+     }
+    ]
+   }
+  },
+  "05-18": {
+   "source_file": "me.m05.d18_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Since you were illumined…",
+      "text": "Since you were illumined by the divine light of the Trinity, * you swept past the bedarkening * of tortures, and you became brilliant luminaries, * O all-blessed Martyrs; and you forever brightly shine * as holy stars in the Church's firmament. * And now as we are celebrating your most luminous memory, * we extol you and venerate * bones and ashes of your remains."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Come now, O believers…",
+      "text": "Come now, O believers, and with sacred joy let us call them blessed: * Peter, Paul, Dionysius, * Christina, Heraclius, Andrew, Benedimus, * and also Paulinus, for they were adamantly brave, * enduring martyrdom for the Trinity. * They trampled the demonic dragon's machinations and every trap, * and diminished the darkness of the deceit of idolatry."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "You purchased the kingdom…",
+      "text": "You purchased the kingdom that cannot be shaken, O blessed Saints, * with the blood of your martyrdom. * In spirit your reached the calm and most tranquil harbor, * after you endured every kind of torture like a storm, * having a brave and courageous attitude. * And now you are extolled by all, and you unceasingly pray for us * to the Lord to be merciful * towards His servants on Judgment Day."
+     }
+    ]
+   }
+  },
+  "05-19": {
+   "source_file": "me.m05.d19_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "Lady, we salute…",
+      "text": "Lady, we salute and sing, “Rejoice!” * Sun-like star, the cause of all blessings! Rejoice, all-blameless one! * You contained within yourself the uncontainable God. * You produced the immortal stalk that feeds all the faithful. * Chariot of God, rejoice! Resplendent gate, rejoice! * Virgin, we salute you, for through you * the ancestral curse has been lifted, * and good things have come to us because of you."
+     }
+    ]
+   }
+  },
+  "05-20": {
+   "source_file": "me.m05.d20_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "With the downpour…",
+      "text": "With the downpour of your holy blood, O Martyr Thalleleus, * you extinguished the furnace fire * of godless idolatry. Now you treat the many * ailments of the faithful, performing miracles that flow * like mighty streams, such that by the grace of God * you grant them health. And now we celebrate your memory joyfully, * and we solemnly venerate holy icons depicting you."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Knowing you…",
+      "text": "Knowing you, O medaled Martyr St. Thalleleus, as a young * fruitful branch of the olive tree * of God, we are clearly now gladdened by the oil * of your many labors and wondrous miracles and cures, * and we give glory to Christ the God of all, * for He has greatly glorified you, who for Him suffered martyrdom * and extinguished the insolence of deceitful idolatry."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "You remained…",
+      "text": "You remained indomitable when they cast you into the sea * and they brutally tortured you, * all-holy Thalleleus, for you were enabled, * encouraged, and strengthened by Christ, who reinforced your soul * and who endowed you with manful bravery, * to stand against the wicked envy that assailed you, O blessed Saint, * as a peer of the Angels and medaled Martyrs, you pray for us."
+     }
+    ]
+   }
+  },
+  "05-22": {
+   "source_file": "me.m05.d22_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Basiliscus, as you received…",
+      "text": "Basiliscus, as you received the unshakable rule with Christ,* who is King and Lord of the hosts on high, you stand * near Him, O glorious Saint; and now you join all the heavenly * ranks of Angels and with joy * you incessantly sing to Him the perpetual, * blessed song, as you glow with holy splendor through sublime participation * in the divine uncreated light."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Basiliscus, you joyfully…",
+      "text": "Basiliscus, you joyfully made your way to your martyrdom, * even when they shod you with sandals that had spikes * that pierced your all-holy feet, with which you trampled upon the head * of the diabolic foe, * and you thoroughly vanquished him. And thereby equipped, * you continued your march that led to heaven and appeared before the Master * as a victorious Martyr Saint."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Being bound…",
+      "text": "Being bound to a withered tree, Basiliscus, you prayed to God, * and a spring of water came forth, reviving it. * And when they killed you, your blood spilled on the ground, sanctifying it; * and as your all-holy soul * was ascending, it blessed the air. Now observing this * holy day, when you strove and won according to the rules, with faith we honor * and celebrate you, all-lauded Saint."
+     }
+    ]
+   }
+  },
+  "05-23": {
+   "source_file": "me.m05.d23_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "Father Michael…",
+      "text": "Father Michael, God-inspired Saint, you kept the image of God * undistorted within yourself, * and you honored properly * the depiction and icon of Christ. * And you extinguished the prate of heretics, * by firmly teaching correct theology. * Marvelous was your fight * and your mighty struggles on behalf of truth, * by which you were pleasing to almighty Christ our King!"
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Michael, God-inspired…",
+      "text": "Michael, God-inspired Father, you proceeded eagerly * to the contest of martyrdom * even as a clergyman. * You presented yourself to Christ, * adorned with two-fold halos, O blessed Saint, * and also honored with holy hierarchs. * Great and ineffable * is the godly joy and gladness that you now * enjoy and experience, O blessed man of God!"
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Holy Father Michael…",
+      "text": "Holy Father Michael, you were like the high-priest Aaron of old. * As a hierarch ordained by God * vested in the priestly robe, * you have entered and gone behind * the second curtain, beholding the divine * holy of holies, O blessed man of God. * Great and ineffable * is the pure illumination that you now * experience, O all-holy jewel of hierarchs!"
+     }
+    ]
+   }
+  },
+  "05-24": {
+   "source_file": "me.m05.d24_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "O all-blessed father…",
+      "text": "O all-blessed father Symeon, by the contemplative life * and the works of the active life, * you engraved upon your soul, * like a pillar, the virtues all. * God-bearing Saint, when you put on as a robe * life-bearing mortification and subdued * all movements of the flesh, * you became a guiding light that ever shines * and enlightens all the earth with light of grace divine."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "Winged by your longing…",
+      "text": "Winged by your longing and love for God, while you were still in the flesh, * being clad in the dust of the earth, * you associated with * holy angels, O blessed Saint, * becoming ever more distant from the earth, * O holy Father, ascending heavenward. * By your divine ascents * always reaching up, you finally attained * entry to the vision of the uncreated light."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "Through ascetic discipline…",
+      "text": "Through ascetic discipline, your flesh was rarefied, and your soul * as upborne, and approaching God * was a vessel of the all-holy Spirit, O Symeon; * and by His grace you were granted to perform * the supernatural miracles and signs. * In Him is the divine * and creative energy, by which all things * that surpass all thought and understanding come to pass."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "Lady, we salute…",
+      "text": "Lady, we salute and sing, “Rejoice!” * Sun-like star, the cause of all blessings! Rejoice, all-blameless one! * You contained within yourself the uncontainable God. * You produced the immortal stalk that feeds all the faithful. * Chariot of God, rejoice! Resplendent gate, rejoice! * Virgin, we salute you, for through you * the ancestral curse has been lifted, * and good things have come to us because of you."
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 3,
+      "incipit": "Shining forth…",
+      "text": "Shining forth from the desert, * you enlighten the whole world. * The multitudes of monastics * observe your memory with joy. * O devout God-bearing father * Symeon, never cease * praying for the world’s salvation."
+     }
+    ]
+   }
+  },
+  "05-25": {
+   "source_file": "me.m05.d25_en_US_goadedes.ares",
+   "slots": {
+    "sessional": [
+     {
+      "role": "theotokion",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Immaculate Mother…",
+      "text": "Immaculate Mother, through your divine childbirth * mortal human nature, which through the passions succumbed * to death and decay, was renewed. * From death you have exalted us all to life without corruption. * Therefore, as is right, we the faithful call you blessed, * O glorified, holy Virgin, even as you prophesied."
+     },
+     {
+      "role": "theotokion",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "As the unassailable…",
+      "text": "As the unassailable defense and shelter * of believers in distress, who trust in you to comfort them, * deliver me from adversity, * O Theotokos, for you are the helper of all."
+     }
+    ]
+   }
+  },
+  "05-26": {
+   "source_file": "me.m05.d26_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "You became completely…",
+      "text": "You became completely full of light, * O Apostle, when you made * your mind receptive to God’s illumination, and you went * out to preach the Gospel * of Christ, teaching people to * believe in Him as God most benevolent. For us now pray to Him, * to bestow His peace upon our souls * and implore Him to give us the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "You became a most resplendent…",
+      "text": "You became a most resplendent star, * casting rays of light divine; * and you are always enlightening the universe, O Saint, * by your holy teachings; * and by grace you drive away * from everyone the mist of infirmities. For us now pray to Christ, * to bestow His peace upon our souls * and implore Him to give us the great mercy."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "O Martyr, you offered…",
+      "text": "O Martyr, you offered up to God * the unbloody sacrifice, * and on the spiritual altar you yourself were sacrificed, * O divine Apostle, * as a fragrant sacrifice. * O God-inspired Carpus, now intercede with Christ on our behalf, * to bestow His peace upon our souls * and implore Him to give us the great mercy."
+     }
+    ]
+   }
+  },
+  "05-31": {
+   "source_file": "me.m05.d31_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "The unassailable grace…",
+      "text": "The unassailable grace of the Lord that strengthened you, * who were infirm in nature, * demonstrated its power * to all, O holy Martyr. It gave you the might * in your mortal body to fight * against the bodiless enemy and to win * and receive the crown of victory."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "When you extinguished…",
+      "text": "When you extinguished the fire of pagan godlessness * by your own blood, O Martyr, * you abundantly watered * the holy Church of Christ. You illumine the hearts * of the faithful who honor you * and who with sacred solemnity now observe * you most venerable memory."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "An indestructible tower…",
+      "text": "An indestructible tower were you and wholly unmoved * when enemies assaulted; * You instead agitated * their hearts, O Martyr Hermias, for you broke down * the presumptions of all of them, * as if a vulnerable fortress, by your most brave * sacred contests like a battering ram."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 1,
+      "incipit": "As I am storm-tossed…",
+      "text": "As I am storm-tossed, O Lady, within the ocean of life, * and I am whipped by the crosswinds * of distress and misfortune, * I cry to you, O Mother of God, and I pray: * Steer my soul to the tranquil port * of true repentance, and turn the relentless storm * of my thoughts into profound peace of mind."
+     }
+    ]
+   }
+  }
+ }
+}

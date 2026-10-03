@@ -269,7 +269,7 @@ async function loadKernel() {
     } catch (err) {
         appData = null; // Reset so a retry attempt can succeed.
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+            `<div class="office-container"><h3>System Error</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
         console.error('[kernel] Fatal load failure:', err);
         throw err;
     }
@@ -2913,7 +2913,7 @@ async function selectMode(mode) {
         _updateGenericCalendarInfo();
 
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Preparing ${_horologionOfficeLabel(selectedHorologionOffice)}…</h3><p>Loading the Byzantine Office.</p></div>`;
+            `<div class="office-container"><h3>Preparing ${_sharedOfficeNavigatorEscape(_horologionOfficeLabel(selectedHorologionOffice))}…</h3><p>Loading the Byzantine Office.</p></div>`;
 
         await loadKernel();
         initializeOfficeDefaultsForCurrentDateTime('horologion');
@@ -2966,7 +2966,7 @@ async function selectMode(mode) {
         } catch (err) {
             if (officeDisplay) {
                 officeDisplay.innerHTML =
-                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${err.message}</p></div>`;
+                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
             }
             console.error('[roman-breviary-dev] Failed to mount dev slice:', err);
         }
@@ -3013,7 +3013,7 @@ async function init() {
         await loadKernel();
     } catch (err) {
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+            `<div class="office-container"><h3>System Error</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
         console.error('[init] Kernel load failed:', err);
     }
 }
@@ -4390,7 +4390,7 @@ async function renderHorologionOffice(officeKey) {
         display.innerHTML =
             `<div class="office-container">` +
             `<h3 style="color:var(--rubric)">Horologion Error</h3>` +
-            `<p class="component-text">${msg}</p>` +
+            `<p class="component-text">${_sharedOfficeNavigatorEscape(msg)}</p>` +
             `</div>`;
         console.error('[renderHorologionOffice] Engine returned error payload:', msg);
         return;
@@ -4859,7 +4859,10 @@ function _renderHorologionItem(item) {
         ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
         : '';
     const formatted = formatParagraphText(item.text || '');
-    const baseHtml  = `<div class="horologion-text"><p>${formatted}</p></div>`;
+    const figure = (item.image && /^images\/icons\/[\w.-]+$/.test(item.image.src || ''))
+        ? `<figure class="uo-icon" style="margin:0 0 1em;text-align:center;"><img src="${escapeHtml(item.image.src)}" alt="${escapeHtml(item.image.alt || '')}" loading="lazy" style="max-width:min(100%,260px);max-height:340px;border-radius:4px;"><figcaption style="font-size:0.75em;opacity:0.7;margin-top:0.4em;">${escapeHtml(item.image.credit || '')}</figcaption></figure>`
+        : '';
+    const baseHtml  = `<div class="horologion-text">${figure}<p>${formatted}</p></div>`;
     return label + _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
            _renderHorologionDiagnostics(item, escapeHtml);
 }
@@ -5892,7 +5895,7 @@ async function renderBcpOffice() {
     if (dailyData?._isFallback) {
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3 style="color:var(--rubric)">Lectionary Gap</h3>` +
-            `<p class="component-text">${dailyData.title}</p>` +
+            `<p class="component-text">${_sharedOfficeNavigatorEscape(dailyData.title)}</p>` +
             `<p class="component-text" style="font-size:0.85em; opacity:0.7;">` +
             `No lectionary entry exists in the data files for this date. ` +
             `The season file may need to be extended.</p></div>`;
@@ -6810,14 +6813,64 @@ async function renderBcpOffice() {
     // the same arguments.
     const angComms = angCommsForColor;
 
-document.getElementById('saint-display').innerHTML = angComms
+// Anglican calendar: the decided primary first, then other commemorations of the day, then alternates
+// (data/saints/sanctoral.json `angRole`), then the Synaxarium decision file's remaining ranked candidates.
+const _angRoleOrder = s => (s.angRole === 'primary' ? 0 : s.angRole === 'alternate' ? 2 : 1);
+const angSorted = angComms.slice().sort((a, b) => _angRoleOrder(a) - _angRoleOrder(b));
+const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.map(s => s.name));
+const angPrimaryDetail = await _angPrimaryDetail(currentDate);
+document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
         const ctx = { tradition: 'ANG', includeEcumenical: true };
         const res = saintAppliesToContext(s, ctx);
-        const label = getTraditionDisplayLabel(res.label || 'Unknown');
-        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
+        const label = getTraditionDisplayLabel(res.label || 'Unknown') + (s.angRole === 'alternate' ? ' \u00b7 Alternate' : '');
+        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p>${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}</div>`;
     })
-    .join('') || '<p>No commemorations.</p>';
+    .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
+}
+
+// ── Anglican Synaxarium decisions: alternates not already shown ─────────────────
+let _angDecisionsPromise = null;
+function _loadAngDecisions() {
+    if (!_angDecisionsPromise) {
+        _angDecisionsPromise = fetch('data/kalendar/synaxarium/decisions.json')
+            .then(r => (r.ok ? r.json() : null)).catch(() => null);
+    }
+    return _angDecisionsPromise;
+}
+function _angNameKey(n) { return String(n || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' '); }
+async function _angPrimaryDetail(date) {
+    try {
+        const data = await _loadAngDecisions();
+        const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+        const p = data && data.decisions && data.decisions[key] ? data.decisions[key].primary : null;
+        if (!p) return '';
+        const parts = [];
+        if (p.tradition) parts.push(p.tradition);
+        if (p.source_witnesses) parts.push('Witnesses: ' + p.source_witnesses);
+        return parts.join(' \u00b7 ');
+    } catch (e) { return ''; }
+}
+async function _angDecisionAlternates(date, shownNames) {
+    try {
+        const data = await _loadAngDecisions();
+        if (!data || !data.decisions) return '';
+        const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+        const day = data.decisions[key];
+        if (!day || !Array.isArray(day.alternates) || !day.alternates.length) return '';
+        const shown = shownNames.map(_angNameKey);
+        const bigWords = k => k.split(' ').filter(w => w.length >= 5);
+        const fresh = day.alternates.filter(a => {
+            const k = _angNameKey(a.name);
+            return !shown.some(sn => sn === k || bigWords(k).some(w => sn.indexOf(w) !== -1));
+        });
+        if (!fresh.length) return '';
+        const items = fresh.map(a => '<li><strong>' + _sharedOfficeNavigatorEscape(a.name) + '</strong>' +
+            (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
+            (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '') + '</li>').join('');
+        return '<details class="saint-box"><summary style="cursor:pointer;color:var(--accent);font-weight:bold;text-transform:uppercase;font-size:0.8em;">' +
+               'Other commemorations proposed for this day</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
+    } catch (e) { return ''; }
 }
 
 // ── CHURCH OF THE EAST RENDERER (rebuilt 2026-08-19) ────────────────────────
@@ -7964,7 +8017,7 @@ async function renderEastSyriac() {
         document.getElementById('date-header').style.display = '';
         if (saintSection) saintSection.style.display = '';
         document.getElementById('saint-display').innerHTML = coeEligible
-            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || '')}</p></div>`)
             .join('');
     } else {
         document.getElementById('saint-display').innerHTML = '';

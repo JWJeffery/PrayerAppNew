@@ -1,0 +1,343 @@
+{
+ "thallelaeus-martyr": {
+  "life": "Thallelaios was a young physician from Lebanon who was studying medicine when he was arrested at Aegae in Cilicia under Emperor Numerian. He confessed Christ before the prefect Theodore and survived attempted drowning and exposure to wild beasts before being beheaded, about 284. Because he treated the sick without payment, the Church counts him among the unmercenary physicians and invokes him for the sick.",
+  "period": "3rd century",
+  "place": "Aegae, Cilicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/20",
+   "https://orthocal.info/api/gregorian/2026/5/20/"
+  ],
+  "flags": ""
+ },
+ "basiliscus-comana": {
+  "life": "Basiliscus, a nephew of the Great Martyr Theodore the Recruit, was held in prison during the persecution under Maximian Galerius. On his way to Comana he was chained and made to wear nailed sandals; he was brought before the governor Agrippa and beheaded in 308. Christians buried him and later built a church over his relics, where healings were reported.",
+  "period": "4th century",
+  "place": "Comana",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/22",
+   "https://orthocal.info/api/gregorian/2026/5/22/"
+  ],
+  "flags": ""
+ },
+ "michael-bishop-synnada": {
+  "life": "Michael became a monk as a young man and was consecrated Bishop of Synnada in Phrygia by Patriarch Tarasius. He took part in the Seventh Ecumenical Council in 787. When Emperor Leo the Armenian renewed iconoclasm, Michael refused to remove icons from churches and was banished to Eudokiada, where he died about 821. He is venerated as a confessor of the holy icons.",
+  "period": "9th century",
+  "place": "Synnada, Phrygia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/23",
+   "https://orthocal.info/api/gregorian/2026/5/23/"
+  ],
+  "flags": ""
+ },
+ "simeon-stylites-junior": {
+  "life": "Simeon was born at Antioch and lost his father in an earthquake. As a boy he joined a monastery and lived on a pillar, later settling on the Wonderful Mountain near Antioch, where he founded a monastery. He was ordained priest and was known for healing and guidance. Sources differ on exact dates; he is said to have spent some sixty-eight years as a stylite, dying in the late sixth century.",
+  "period": "6th century",
+  "place": "Wonderful Mountain, near Antioch",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/24",
+   "https://orthocal.info/api/gregorian/2026/5/24/"
+  ],
+  "flags": "Sources differ on dates (OCA: born 521, died 596; Orthocal: born 522; app notes say +592). Life gives only 'late sixth century'."
+ },
+ "carpos-alphaeus-apostles": {
+  "life": "Carpos was one of the Seventy Apostles sent out by Christ. He became a bishop in Macedonia (OCA says Verria; other calendar notes say Berea or Thrace) and is held to have died as a martyr. Tradition identifies him as the companion of Paul mentioned in Second Timothy, and records that he prayed for the salvation of sinners.",
+  "period": "1st century",
+  "place": "Verria (Berea), Macedonia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/26",
+   "https://orthocal.info/api/gregorian/2026/5/26/"
+  ],
+  "flags": "Same commemoration lists Carpos with Alphaeus; app id 'carpos-alphaeus-apostles' but name covers Carpos only. Sources differ on his see (Verria/Berea vs Thrace/Varna)."
+ },
+ "john-russian": {
+  "life": "John, born in Little Russia about 1690, served as a soldier under Peter I and was captured by Tatars in 1711 and taken to Asia Minor as a slave. He endured pressure to renounce Christianity, served his master faithfully, and lived in a stable, attending church at night. He died in 1730; his relics were found incorrupt, and are now at Evia in Greece.",
+  "period": "18th century",
+  "place": "Prokopion, Cappadocia (relics at Euboea)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/27",
+   "https://orthocal.info/api/gregorian/2026/5/27/"
+  ],
+  "flags": ""
+ },
+ "nikita-bishop-chalcedon": {
+  "life": "Niketas became Bishop of Chalcedon and was known for charity toward the poor, orphans, widows and travelers. When Emperor Leo the Armenian attacked the holy icons, he spoke against iconoclasm, and he was tortured and sent into exile. He died in the early ninth century, and healings were reported at his relics.",
+  "period": "9th century",
+  "place": "Chalcedon",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/28",
+   "https://orthocal.info/api/gregorian/2026/5/28/"
+  ],
+  "flags": ""
+ },
+ "theodosia-caesarea-cappadocia": {
+  "life": "Theodosia, a seventeen-year-old from Tyre, visited condemned Christians at the praetorium of Caesarea in Palestine and asked for their prayers. Arrested, she was tortured before the governor Urban, thrown into the sea, then exposed to wild beasts, and finally beheaded in 307 or 308. Tradition holds that she later appeared to her parents in glory.",
+  "period": "4th century",
+  "place": "Caesarea in Palestine (of Tyre)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/29",
+   "https://orthocal.info/api/gregorian/2026/5/29/"
+  ],
+  "flags": "App says 'Theodosia of Caesarea in Cappadocia'. OCA and Orthocal for May 29 name Virgin Martyr Theodosia of Tyre, martyred at Caesarea in PALESTINE under Maximian/Diocletian era (307/308); no Cappadocian Theodosia is listed. Life written for Theodosia of Tyre; app name/place should be corrected. (OCA also lists a separate Theodosia the Nun of Constantinople, 730, same date.)"
+ },
+ "isaakios-dalmatian": {
+  "life": "Isaac left the desert for Constantinople during the Arian persecution under Emperor Valens and warned the emperor to reopen the Orthodox churches. He was thrown into a ravine but survived, and Valens died in battle against the Goths. Under Theodosius the Great a monastery was built for him in the capital, which he led until his death in 383; it later took the name of his successor Dalmatos.",
+  "period": "4th century",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/30",
+   "https://orthocal.info/api/gregorian/2026/5/30/"
+  ],
+  "flags": ""
+ },
+ "hermias-martyr": {
+  "life": "Hermias, an elderly soldier, was arrested at Comana in Cappadocia under Antoninus Pius and refused to sacrifice to idols before the governor Sebastian. He is said to have survived a red-hot oven, poison, boiling oil and other tortures, and healed some who had been blinded. He was finally beheaded, and healings occurred at his relics.",
+  "period": "2nd century",
+  "place": "Comana",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/31",
+   "https://orthocal.info/api/gregorian/2026/5/31/"
+  ],
+  "flags": ""
+ },
+ "justin-martyr-philosopher": {
+  "life": "Born in Samaria to pagan Greek parents, Justin studied the Greek philosophies before turning to Christ and being baptized. He wrote two Apologies to defend Christians and the Dialogue with Trypho, and taught at Rome. After disputes with the philosopher Crescentius, he was arrested and beheaded with several companions about 165, before the prefect Rusticus.",
+  "period": "2nd century",
+  "place": "Rome",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/01",
+   "https://orthocal.info/api/gregorian/2026/6/1/"
+  ],
+  "flags": ""
+ },
+ "nicephorus-patriarch-cp": {
+  "life": "Nikephoros was a court official who became a monk and, in 806, Patriarch of Constantinople. He defended the holy icons and wrote against iconoclasm. Emperor Leo the Armenian exiled him in 815 to Prokonnis, where he died in 828. In 846 his relics were returned to Constantinople, placed in Hagia Sophia for a day, and then enshrined in the Church of the Holy Apostles.",
+  "period": "9th century",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/02",
+   "https://orthocal.info/api/gregorian/2026/6/2/"
+  ],
+  "flags": "App title says 'Translation of the Relics'. OCA and Orthocal for June 2 list St Nikephoros the Confessor (his main commemoration), with the 846 return of relics mentioned in the same entry; life covers both."
+ },
+ "lucian-antioch-martyr": {
+  "life": "Lucillian, once a pagan priest, was baptized in old age under Emperor Aurelian and led many to Christ. Arrested at Nicomedia, he was tortured and imprisoned with four young men, Claudius, Hypatius, Paul and Dionysius. All survived a furnace, and at Byzantium the four were beheaded while Lucillian was crucified. The virgin Paula, who tended and buried the martyrs, was also beheaded.",
+  "period": "3rd century",
+  "place": "Byzantium (Nicomedia)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/03",
+   "https://orthocal.info/api/gregorian/2026/6/3/"
+  ],
+  "flags": "App id says 'lucian-antioch-martyr' but name/notes are Lucillian of Byzantium (correct for June 3); Hieromartyr Lucian of Beauvais is a separate saint listed the same day."
+ },
+ "metrophanes-cp": {
+  "life": "Metrophanes was the son of Dometius, bishop of Byzantium, and succeeded his brother Probus as bishop in 316. During the reign of Constantine the Great he is regarded as the first Patriarch of Constantinople. Too aged to attend the First Ecumenical Council in 325, he sent a representative, and the emperor and fathers visited him. He died soon after, in 326 by OCA's reckoning.",
+  "period": "4th century",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/04",
+   "https://orthocal.info/api/gregorian/2026/6/4/"
+  ],
+  "flags": ""
+ },
+ "dorotheus-bishop-tyre": {
+  "life": "Dorotheus was Bishop of Tyre in Phoenicia under Diocletian, withdrew from the persecution, and returned to his see under Constantine the Great. In his old age he was arrested under Julian the Apostate at Udum on the Black Sea (modern Varna) and died under torture about 362, aged about 107. A collection of lives of prophets and apostles is attributed to him by some.",
+  "period": "4th century",
+  "place": "Tyre, Phoenicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/05",
+   "https://orthocal.info/api/gregorian/2026/6/5/"
+  ],
+  "flags": ""
+ },
+ "bessarion-egypt": {
+  "life": "Bessarion, an Egyptian, was baptized in youth, visited holy places and desert monasteries, and became a monk. He kept silence and ate only once a week, sometimes fasting forty days, and spent much of his life praying outdoors. He was granted the gift of wonderworking, which he used humbly and privately. He died peacefully in old age.",
+  "period": "4th-5th century",
+  "place": "Egypt",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/06",
+   "https://orthocal.info/api/gregorian/2026/6/6/"
+  ],
+  "flags": "OCA's life names him a disciple of Isidore of Pelusium; app notes say disciple of Anthony and Moses the Ethiopian and dated c.466. Omitted as sources are unclear."
+ },
+ "theodotus-ancyra-bishop": {
+  "life": null,
+  "period": "",
+  "place": "",
+  "confidence": "low",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/07",
+   "https://orthocal.info/api/gregorian/2026/6/7/"
+  ],
+  "flags": "App entry is inconsistent: id 'theodotus-ancyra-bishop' but name/notes are 'Hieromartyr Marcellus, Bishop of Rome (+309)'. OCA (June 7) and Orthocal list Hieromartyr Theodotus, Bishop of Ancyra, and Hieromartyr Marcellinus, Pope of Rome (+304, under Diocletian), who is a different person from Pope Marcellus I (+309); Marcellus appears on that date only as Marcellinus's successor in a vision. No life written; the entry needs a decision between Theodotus of Ancyra or Marcellinus of Rome."
+ },
+ "theodore-stratilates-translation": {
+  "life": "This day commemorates the transfer of the relics of the Great Martyr Theodore Stratelates, who was martyred at Heraklea on February 8, 319. He had asked his servant Varus to bury his body at his parents' estate at Euchaita, and the relics were moved on June 8. The day also recalls a miracle of his icon near Damascus, reported by Anastasius of Sinai and John of Damascus.",
+  "period": "4th century",
+  "place": "Heraklea / Euchaita",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/08",
+   "https://orthocal.info/api/gregorian/2026/6/8/"
+  ],
+  "flags": ""
+ },
+ "alexander-antonina-martyrs": {
+  "life": "Antonina, a Christian virgin from Asia Minor, was tortured before the governor Festus and imprisoned. A soldier named Alexander helped her escape by giving her his military cloak, and he was punished in her place. Antonina then came forward voluntarily, and both were tortured and burned in 313. Their relics were taken to Constantinople. The governor died in torment after seven days.",
+  "period": "4th century",
+  "place": "Asia Minor / Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/10",
+   "https://orthocal.info/api/gregorian/2026/6/10/"
+  ],
+  "flags": "App says martyrs 'of Caesarea in Cappadocia'. OCA says Antonina was from Krodamos (Asia Minor) and heads the entry 'at Constantinople'; Orthocal places the trial in Alexandria. Sources differ on location; life names no specific city of martyrdom."
+ },
+ "aquilina-byblos": {
+  "life": "Aquilina was a Christian girl of Byblos in Phoenicia who was twelve by OCA's account (Orthocal says ten to twelve) when she persuaded a friend to convert. She was denounced and tortured before the governor Volusian under Diocletian and left for dead, but appeared before him again and was beheaded in 293. Her relics were later taken to Constantinople and healed the sick.",
+  "period": "3rd century",
+  "place": "Byblos, Phoenicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/13",
+   "https://orthocal.info/api/gregorian/2026/6/13/"
+  ],
+  "flags": ""
+ },
+ "elisha-prophet": {
+  "life": "Elisha, from near the Jordan, was called by the prophet Elijah and received a double portion of his spirit when Elijah was taken up in a fiery chariot. He served more than sixty-five years under six kings of Israel and worked miracles, healing Naaman and raising the Shunamite woman's son. He died in old age at Samaria; a dead man touched his bones and revived.",
+  "period": "9th century BC",
+  "place": "Israel / Samaria",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/14",
+   "https://orthocal.info/api/gregorian/2026/6/14/"
+  ],
+  "flags": ""
+ },
+ "augustine-hippo": {
+  "life": "Augustine was born at Thagaste in North Africa, raised by his mother Monica, and taught rhetoric before being baptized at Milan under Ambrose. Ordained priest at Hippo in 391, he later became its bishop for about thirty-five years and wrote against the Donatists, Manichaeans and Pelagians, as well as The City of God and the Confessions. He died in 430; the Orthodox Church keeps his memory on June 15.",
+  "period": "5th century",
+  "place": "Hippo, North Africa",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/15",
+   "https://orthocal.info/api/gregorian/2026/6/15/"
+  ],
+  "flags": ""
+ },
+ "tikhon-amathous": {
+  "life": "Tikhon was born at Amathus on Cyprus, where as a young man he gave bread from his father's bakery to the poor. Ordained and chosen bishop of Amathus, he was consecrated by Epiphanius of Cyprus, and he worked against paganism there. He planted vine cuttings that bore fruit used for Eucharistic wine. OCA places his death in 425.",
+  "period": "5th century",
+  "place": "Amathus, Cyprus",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/16",
+   "https://orthocal.info/api/gregorian/2026/6/16/"
+  ],
+  "flags": ""
+ },
+ "manuel-sabel-ismael": {
+  "life": "Manuel, Sabel and Ismael were brothers from a Persian family, raised as Christians by their mother. Sent by the Persian king as envoys to Emperor Julian the Apostate, they refused to join in pagan sacrifice and were tortured and beheaded in 362. Their bodies are said to have been swallowed by the earth and then restored to Christians, who buried them.",
+  "period": "4th century",
+  "place": "Persia / Chalcedon",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/17",
+   "https://orthocal.info/api/gregorian/2026/6/17/"
+  ],
+  "flags": ""
+ },
+ "leontius-martyr": {
+  "life": "Leontius was a Greek officer at Tripoli in Phoenicia under Vespasian. Hypatius and Theodulus were sent to arrest him, but were converted and baptized, and were beheaded by the governor Adrian. Leontius refused to renounce Christ and was tortured to death. The three are commemorated together.",
+  "period": "1st century",
+  "place": "Tripoli, Phoenicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/18",
+   "https://orthocal.info/api/gregorian/2026/6/18/"
+  ],
+  "flags": "App notes say Leontius '+2nd c.'; OCA and Orthocal place the martyrdom under Vespasian (1st century) and commemorate him with Hypatius and Theodulus."
+ },
+ "methodius-bishop-patara": {
+  "life": "Methodius, bishop of Patara in Lycia, was known for his humility and for defending Orthodoxy against paganism and the Origenist heresy. He left writings explaining doctrine and Scripture. Arrested by pagans, he confessed Christ and was beheaded in 312. Sources differ on his see and place of death, some naming Olympus or Tyre.",
+  "period": "4th century",
+  "place": "Patara, Lycia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/20",
+   "https://orthocal.info/api/gregorian/2026/6/20/"
+  ],
+  "flags": "Sources differ on his see (OCA: Patara; Orthocal: Patara or Olympus, then Tyre; martyred at Chalkis)."
+ },
+ "julian-tarsus-martyr": {
+  "life": "Julian, born in Cilicia to a pagan senator and a Christian mother, was baptized at Tarsus. At eighteen he was arrested under Diocletian and was led through the cities of Cilicia for a year of torture. His mother encouraged him to stand firm and was herself punished. He was sewn into a sack with snakes and sand and thrown into the sea; his body was buried at Alexandria and later moved to Antioch.",
+  "period": "4th century",
+  "place": "Tarsus, Cilicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/21",
+   "https://orthocal.info/api/gregorian/2026/6/21/"
+  ],
+  "flags": ""
+ },
+ "agrippina-rome-martyr": {
+  "life": "Agrippina was a Roman virgin who, under Emperor Valerian, presented herself before the court as a Christian. She was beaten so severely that she died of her injuries. Bassa, Paula and Agathonike took her body to Sicily, where miracles were reported at her grave, and in the eleventh century her relics were moved to Constantinople.",
+  "period": "3rd century",
+  "place": "Rome / Sicily",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/23",
+   "https://orthocal.info/api/gregorian/2026/6/23/"
+  ],
+  "flags": ""
+ },
+ "febronia-nisibis": {
+  "life": "Febronia was raised in a convent under her aunt, the abbess Bryaine, in the time of Diocletian. When the officer Selinus came to destroy Christians, she refused to deny Christ and was tortured, mutilated and beheaded. Her companion Thomais recorded her martyrdom, and Hieria, whom she had taught, accepted baptism. Relics were placed at Nisibis by Bishop James and later at Constantinople.",
+  "period": "4th century",
+  "place": "Nisibis, Mesopotamia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/25",
+   "https://orthocal.info/api/gregorian/2026/6/25/"
+  ],
+  "flags": "OCA says she was raised at Sivapolis in Assyria; Orthocal says Mesopotamia and martyred at Nisibis. Place given as Nisibis per the app's title."
+ },
+ "david-thessalonica": {
+  "life": "David of Thessalonica lived the ascetic life at the monastery of Saints Theodore and Mercurius, and for three years dwelt in an almond tree in prayer until an angel told him to come down. He was given the gift of healing and counseled many visitors. He once carried hot coals in his hands without harm. He died about 540.",
+  "period": "6th century",
+  "place": "Thessalonica",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/26",
+   "https://orthocal.info/api/gregorian/2026/6/26/"
+  ],
+  "flags": ""
+ },
+ "sampson-hospitable": {
+  "life": "Sampson was born in Rome, studied medicine, and turned his family estate into a clinic for the sick. He went to Constantinople, where Patriarch Menas ordained him priest, and he healed Emperor Justinian, who then built a hospice at his request. He died in 530 and was buried at the church of Saint Mokios. OCA notes that Procopius places the hospice earlier.",
+  "period": "6th century",
+  "place": "Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/27",
+   "https://orthocal.info/api/gregorian/2026/6/27/"
+  ],
+  "flags": ""
+ }
+}

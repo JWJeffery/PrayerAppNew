@@ -1,0 +1,590 @@
+{
+ "schema": "menaion-ages/1",
+ "source": "AGES-Initiatives/alwb-library-en-us-goadedes (translations by Fr. Seraphim Dedes for the Greek Orthodox Archdiocese of America), CC0 1.0",
+ "calendar": "GOA New Calendar (Revised Julian) usage; commemorations may differ from the Slavic usage the app otherwise follows",
+ "dates": {
+  "02-03": {
+   "source_file": "me.m02.d03_en_US_goadedes.ares",
+   "slots": {
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "incipit": "You, the life of universe…",
+      "text": "You, the life of universe, the treasure of the ages, * came under the Law, when You became an infant for my sake, * so that You, who had on tablets engraved the Law on Mt. Sinai long ago, * also be the One to free all from the Law’s former yoke of bondage. * Glory to your compassion, O Christ! * Glory to Your eternal rule! * Glory to Your plan for saving us, only benevolent God!"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 5,
+      "incipit": "You the Maker and Lord…",
+      "text": "You the Maker and Lord and the giver of the Law * to the Temple were brought, keeping the custom of the Law. * In Your good pleasure, You were taken up in Symeon’s arms * as an infant in the flesh, and as God, fearsome to all, * encompassing all creation. * In Your compassion You consented to this, * in order to reveal Your light to us all."
+     }
+    ]
+   }
+  },
+  "02-04": {
+   "source_file": "me.m02.d04_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "We celebrate the divine gift…",
+      "text": "We celebrate the divine gift: namely that Christ our God * appeared on earth to save us. Being born as an infant * immutably from Mary the Virgin, today * in the Temple His Mother brings * Him to His Father and God, and He is received * in the arms of Elder Symeon."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "You had appeared…",
+      "text": "You had appeared to the Prophets, as far as possible * for them of old, O Jesus. But now, O God the Logos, * You willingly appeared to the world in the flesh * from the Virgin Mary, O Christ, * and You revealed Your salvation to all mankind * born of Adam, O benevolent Lord."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "You are the One…",
+      "text": "You are the One who on Sinai ordered the Law of old, * and now today in Zion, You fulfill its injunctions, * accepting to be brought as a babe in the flesh * by Your Mother with sacrifice * into the Temple of God, and to be embraced * in the arms of Elder Symeon."
+     }
+    ]
+   }
+  },
+  "02-05": {
+   "source_file": "me.m02.d05_en_US_goadedes.ares",
+   "slots": {
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 1,
+      "incipit": "The famous and splendid…",
+      "text": "The famous and splendid Ark of God * with the Mercy Seat of old * prefigured all-holy Virgin Mary holding Christ our God. * Entering the Temple, * she presents Him solemnly * to godly-minded Symeon’s elderly embrace. And sanctified * is the Holy of Holies today * and rejoicing with the only Holy One."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 1,
+      "incipit": "Symeon is glorified…",
+      "text": "Symeon is glorified today, * as he solemnly receives * in his embrace Christ the burning coal. His lips are purified * kissing Him with reverence. * And with joy he offers thanks * to God, and he requests to depart in peace. And therefore let us all * sing our sacred hymns to honor him * and extol him profusely and call him blest."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 1,
+      "incipit": "The Gate that was ordered…",
+      "text": "The Gate that was ordered to remain * shut of old, according to the Holy Scriptures, prefigured Virgin Mary, within whom * sat the King and Master, * whom today she brings into the Temple through the gate, to present Him in accordance with the Law. * Let us all now celebrate with her * and extol her with hymns that are God-inspired."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 8,
+      "incipit": "O Logos, who were in…",
+      "text": "O Logos, who were in and before the beginning, * incompressible, You were brought to the Temple. * Joyous, the holy Elder came in and took You up in his arms and said, * “Now You let me depart, for You have come according to Your word, O Lord, * who are well pleased to save the human race, as God our only Savior.”"
+     }
+    ]
+   }
+  },
+  "02-06": {
+   "source_file": "me.m02.d06_en_US_goadedes.ares",
+   "slots": {
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 1,
+      "incipit": "You who are the life…",
+      "text": "You who are the life of all were brought to the Temple. * For me becoming an infant, to the Law You submitted, * even You who yourself inscribed the Law on tablets on Mt. Sinai long ago, * in order to deliver all from the ancient bondage to the Law. * lory to your compassion, O Christ! * Glory to Your eternal rule! * Glory to Your plan for saving us, only benevolent God!"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 5,
+      "incipit": "You the Maker and Lord…",
+      "text": "You the Maker and Lord and the giver of the Law * to the Temple were brought, keeping the custom of the Law. * In Your good pleasure, You were taken up in Symeon’s arms * as an infant in the flesh, and as God, fearsome to all, * encompassing all creation. * In Your compassion You consented to this, * in order to reveal Your light to us all."
+     }
+    ]
+   }
+  },
+  "02-07": {
+   "source_file": "me.m02.d07_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "incipit": "I the wretch…",
+      "text": "I the wretch have been attacked and stripped by robber-like demons. * I am lying on the road * of a sinful way of life as a prodigal. * I cannot move nor act for myself, O Lady. * So I pray that you will pity me. * Hurry and come to me, * pour your wine and oil on my injuries. * Your mercy is the only cure. * Lead me back to health, O immaculate, * Virgin Theotokos, and I shall glorify you as is right, * and I shall lovingly sing in praise * of your mighty miracles."
+     }
+    ]
+   }
+  },
+  "02-08": {
+   "source_file": "me.m02.d08_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 8,
+      "incipit": "You conversed with Angels…",
+      "text": "You conversed with Angels, O God-inspired * Zechariah, for you imitated them in way of life, * and through them your mind was lightened about things transcending thought. * The symbols of things wonderful were clarified, * and even greater mysteries were shown to you, * and you were spiritually renewed, * and you were able to prophesy. * So pray for us, and entreat the Lord to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       5
+      ],
+      "mode": 8,
+      "incipit": "You were like an Angel…",
+      "text": "You were like an Angel upon the earth, * with celestial interlocutors while living still on earth, * as a seer of the otherworldly and supermundane; * a lampstand that is shining with spiritual light; * a fruitful olive tree, of which the Psalmist sang, * dripping with fatness of grace divine * for all the faithful who honor you. * So pray for us, and entreat the Lord to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       6
+      ],
+      "mode": 8,
+      "incipit": "As a most authentic…",
+      "text": "As a most authentic Prophet of God, * you experienced theosis, which we also hope to do. * The delight that never ends has clearly permeated you, * beholding glory fiery and ineffable, * a crown of gold and silver adorning your head. * O Zechariah inspired by God, * earnestly pray to the Lord for us * who honor you, importuning Him to save our souls."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 5,
+      "incipit": "O Symeon, receive…",
+      "text": "O Symeon, receive in your arms * the Maker of the universe, * holy Elder, and embrace Him, who is Christ, * whom the all-holy Virgin * conceived and bore without seed, * for the rejoicing of humanity."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 5,
+      "incipit": "Believers from the across…",
+      "text": "Believers from the across the globe, * assemble now and all extol * the Creator and the Maker of the Law, * at whom the Angels tremble, * the only Benefactor, * for He has come to us to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 5,
+      "incipit": "According to Your word…",
+      "text": "According to Your word, O Christ, * You now release Your servant in peace * from the body; for I saw You, who are light * eternal, for the glory * of Israel Your people * and revelation to the nations all."
+     },
+     {
+      "role": "glory",
+      "index": [],
+      "mode": 8,
+      "incipit": "Let us the faithful…",
+      "text": "Let us the faithful extol the valorous Great Martyr Theodore, whose name in Greek denotes the gifts of God; and let us fittingly call him blessed, for he is the heir of God’s blessedness. As the champion of the whole wide world, he intercedes with Christ God, on behalf of our souls."
+     }
+    ],
+    "sessional": [
+     {
+      "role": "n",
+      "index": [
+       1,
+       1
+      ],
+      "mode": 4,
+      "incipit": "The Savior Christ’s triumphant…",
+      "text": "The Savior Christ’s triumphant great medaled Athlete, * who is beloved by God and also by Angels, * yes, marvelous and glorious St. Theodore, * today is bringing holy joy in the grace of the Spirit * to the sacred Churches all in every location, * He prompts us all to joyfully observe * the celebration of his time-honored memory."
+     },
+     {
+      "role": "n",
+      "index": [
+       1,
+       2
+      ],
+      "mode": 4,
+      "incipit": "On Mt. Sinai long ago…",
+      "text": "On Mt. Sinai long ago, Moses beheld the back of God * in His glory as He passed, and he was granted to hear * the divine voice in darkness and gloom and storm indistinctly. * But Symeon has held in his embrace God himself * incarnate now for our sake immutably. * And he rejoiced and he happily hastened * to depart for the life that never ends. * And so he said, “Now You are dismissing * Your servant in peace, O Master.”"
+     },
+     {
+      "role": "n",
+      "index": [
+       2,
+       1
+      ],
+      "mode": 1,
+      "incipit": "You, the life of universe…",
+      "text": "You, the life of universe, the treasure of the ages, * came under the Law, when You became an infant for my sake, * so that You, who had on tablets engraved the Law on Mt. Sinai long ago, * also be the One to free all from the Law’s former yoke of bondage. * Glory to your compassion, O Christ! * Glory to Your eternal rule! * Glory to Your plan for saving us, only benevolent God!"
+     }
+    ],
+    "exapostilarion": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Glorious saint of Christ…",
+      "text": "Glorious saint of Christ our God, * Great Martyr and Commander, * you are the sacred pride and joy * of godly, medaled Athletes. O valorous, godly-minded * Theodore, cease not praying * for our homeland’s prosperity * and for peace in the world, and also for us * who are celebrating today your splendid * memory, that we may receive * forgiveness and salvation."
+     }
+    ],
+    "praises": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "As an athlete…",
+      "text": "As an athlete most resolute, as a soldier invincible, * so the Holy Spirit has shown you forth to be. * For by the wisdom and knowledge of your words and persistence in * deeds of virtue, you put down * and defeated the enemy. Therefore you received * crowns and medals for victory, and now you join the host of saints in heaven, * glorious Martyr, St. Theodore."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You were beaten…",
+      "text": "You were beaten with iron rods and your body was pierced with spikes * and your eyes were plucked out, your sides were scraped and burned. * Enduring tortures of every kind, you suffered great agony, * and suspended on a cross, * you remained undefeatable and you kept the faith, * by the power of Christ who was suspended on the Cross for our salvation, * glorious Martyr St. Theodore."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "O all-blessed Saint…",
+      "text": "O all-blessed Saint, you became like a statue of godliness, * scorning soulless statues and pagan monuments. * As an acceptable offering and unblemished sacrifice * you were offered to the Lord, * who for you had been sacrificed. He gave you to us * in the world as a treasure house of miracles and glorified your holy * memory, Great Martyr Theodore."
+     }
+    ]
+   }
+  },
+  "02-12": {
+   "source_file": "me.m02.d12_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Meditating both day and night…",
+      "text": "Meditating both day and night in the law of the Lord that saves, * you were like a tree that is planted by the streams * of true ascetical discipline, like David the Psalmist said; * you produced the sweetest fruit * of the virtues, O Hierarch St. Meletius, * by God’s grace that illumined your all-holy heart and rendered it receptive * to every spiritual ray of light."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Holy Father, your cheeks…",
+      "text": "Holy Father, your cheeks became like the turtledove’s, beautiful, * as the Song of Solomon says, for they were fond * of self-control while disdaining food, desiring the spiritual * pleasures and divine delights, * which the Lord gave you in return for the ardent zeal * that you had for Him and the many struggles that you underwent defending * the holy Faith, O Meletius."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "Through the practice…",
+      "text": "Through the practice of self-control, holy Father, you shriveled all * movements of the flesh, keeping passions under control. * You decorated your person with dispassion’s resplendent light; * and you ministered to Christ, * liturgizing with purity of body and soul. * Now entreat Him to rescue us from dangers as we loyally now honor * your ever-venerable memory."
+     },
+     {
+      "role": "n",
+      "index": [
+       4
+      ],
+      "mode": 4,
+      "incipit": "You expressed the theology…",
+      "text": "You expressed the theology, O astute St. Meletius, * that without beginning are the Father and the Word, * who was without flesh and then became incarnate in hypostasis, * unaltered and unconfused; * and He acts in a twofold way in accordance with * His two natures, in which He is considered, being truly undivided, * as fully human and fully God."
+     }
+    ]
+   }
+  },
+  "02-17": {
+   "source_file": "me.m02.d17_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Christ, our benefactor…",
+      "text": "Christ, our benefactor and our God, * gave you to the world as a gift that enriches everyone, * when He had accepted your most precious blood that you shed * for His sake and your ardent zeal for godly religion, * which you offered as a gift to Him, O Theodore. * Now as you are near Him in heaven * confidently praying, O Martyr, * keep us safe from harm, for we rely on you."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Blessed Martyr Theodore…",
+      "text": "Blessed Martyr Theodore, for us * who with sacred hymns now extol you and pray to you with faith, * you are like a sturdy tower that protects us against * the assaults of our enemies, a frontline defender, * you are quick to help us, you are swift to rescue us, * fervently assisting the faithful. * You are ever ready to save us, * interceding mightily on our behalf."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Since you have the river…",
+      "text": "Since you have the river of delight, * which is very merciful Christ God, who is the most divine * water of forgiveness, now as a true martyr of His, * rescue me from the river of offensive transgressions. * Calm the troubled water that is overwhelming me. * Still the raging storm of temptations. * Take me to the heavenly haven, * where I shall be safe, O blessed Theodore."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "Lady, please accept…",
+      "text": "Lady, please accept the prayerful song * that your humble servants present to you, holy Mother of God. * Rescue us, for we have no other protector like you. * And deliver this flock of yours from dangers and perils. * We implore you faithfully in this your holy church. * Having given birth to the Savior, * as his Mother, ask Him to save us, * as you intercede with Him with confidence."
+     }
+    ],
+    "vespers_aposticha": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 2,
+      "incipit": "The eyewitnesses of heavenly God…",
+      "text": "The eyewitnesses of heavenly God * understood that you were a new heaven allegorically. * They declared that heaven’s glory came to earth in you. * They proclaimed the creation of His hands to the whole world, * possessing the firm support of Him incarnate of you. * And their proclamation has gone forth * into all the earth, holy Virgin. * They preached to the nations that your Son is God."
+     }
+    ],
+    "praises": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 6,
+      "incipit": "I the wretch…",
+      "text": "I the wretch have been attacked and stripped by robber-like demons. * I am lying on the road * of a sinful way of life as a prodigal. * I cannot move nor act for myself, O Lady. * So I pray that you will pity me. * Hurry and come to me. * Grant to me salvation and health again. * You are the one who raises up * those who, like me, fell, O immaculate, * Virgin Theotokos. And I shall glorify you as is right, * and I shall lovingly sing in praise * of your mighty miracles."
+     }
+    ]
+   }
+  },
+  "02-19": {
+   "source_file": "me.m02.d19_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 8,
+      "incipit": "When Your Apostle…",
+      "text": "When Your Apostle Archippus illumined people with the light of preaching, * he freed them from the dark of ignorance. In martyrdom trampling on the foe, * he ran up to never-setting radiance. * Now with the angelic hosts he celebrates. * At his fervent entreaties, * Master, bestow great mercy upon Your people all."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 8,
+      "incipit": "O blessed Saint…",
+      "text": "O blessed Saint, as you were being dragged and slashed with knives, and also threatened * with every other kind of torture, you did not renounce your belief in Christ * nor did you surrender to idolatry. * Therefore, you received a crown of victory, * from Him, and you entreat Him, * that He bestow great mercy upon his people all."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 8,
+      "incipit": "You sanctified the earth…",
+      "text": "You sanctified the earth with holy streams of blood, O godly-minded Martyr, * wounding the multitude of wicked demons by your endurance and your wounds. * Healings now unceasingly come forth from you, * curing the most agonizing maladies. * O blessed Saint, entreat Christ, * therefore, in your prayers, * that He bestow great mercy upon his people all."
+     },
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "incipit": "My private thoughts…",
+      "text": "My private thoughts are sordid, and my lips deceitful; and my deeds and actions * are all despicable. What should I do now? How shall I stand before the Judge? * Pray for me, O Virgin Lady, to your Son, * who is your Creator and your Lord and God, * that He receive my spirit * when I am in repentance, in His compassion for me."
+     }
+    ]
+   }
+  },
+  "02-21": {
+   "source_file": "me.m02.d21_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "theotokion",
+      "index": [],
+      "mode": 8,
+      "incipit": "My entire life…",
+      "text": "My entire life is prodigal, and dissolute is my soul, * and my body is all defiled, * and polluted is my mind, * and my deeds are abominable; * and I am guilty. I am responsible * for my conviction, judgment, and sentencing. * Where should I go for help? * Who will be my advocate other than you? * Lady, show your tender love, and come and save me, I pray."
+     }
+    ]
+   }
+  },
+  "02-23": {
+   "source_file": "me.m02.d23_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "When the Virgin’s vivifying…",
+      "text": "When the Virgin’s vivifying fruit * and the life-principial seed came and it was sown in the earth, * it produced a very fruitful stalk of wheat, namely you, * as your name in Greek indicates. You fed the believers * with your pious words and teachings and your martyrdom, * cleansing them by your sacred priesthood, * sanctifying them with your holy * and most precious blood, O Father Polycarp."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "Passing from the world…",
+      "text": "Passing from the world, you went to God, * glowing with the radiant light of your holy martyrdom. * And you stopped when you reached Him who was your ultimate * and supreme object of desire. O Saint, you were filled with * blessed light. Now pray that we may all experience it, * earnestly imploring the Savior, * on behalf of us celebrating * your most sacred memory, O Polycarp."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Jesus, the true vine…",
+      "text": "Jesus, the true vine, was crucified. * After His divine resurrection and His ascension, O Saint * Polycarp, He put you forth as a most fruitful branch, * which the sickle of martyrdom cut down, and the tortures * crushed and pressed its clusters to produce the sweetest wine. * Mixing it with faith in the goblet * of our celebration, O Father, * we extol your contests and your victories."
+     }
+    ]
+   }
+  },
+  "02-27": {
+   "source_file": "me.m02.d27_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Being fashioned initially…",
+      "text": "Being fashioned initially in the image and likeness of God, * O devout Procopius, you strove to preserve * the godly image’s dignity in you through correct belief * and through purity of heart * and of mind, and through chastity, and through self-control * of the bodily passions, and through keeping Christ’s commandments, and defending * the holy Faith of the Orthodox."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "Our Creator…",
+      "text": "Our Creator and only God has demanded that all of us * purify our soul and preserve its dignity. * And so you pleased Him, beginning with your ascetic discipline, * and thereafter with your fight * for the Orthodox Faith in Christ. For you glorified * His divine incarnation, venerating holy icons that depict Him * in the humanity He assumed."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "O devout St. Procopius…",
+      "text": "O devout St. Procopius, you refuted the heretics * who denied the real incarnation of the Word. * You validated the truth by your enduring imprisonment, * whippings, beatings, and attempts * to coerce you through violence. You are now an heir * of the kingdom of Christ and of unutterable joy and everlasting * illumination and blessedness."
+     }
+    ]
+   }
+  },
+  "02-28": {
+   "source_file": "me.m02.d28_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 4,
+      "incipit": "Longing for supernal…",
+      "text": "Longing for supernal and incomprehensible blessedness, * father Basil, you looked upon * self-control as luxury, poverty as riches, * counting nonpossession a thing of value to possess, * regarding modesty glorious repute. * O God-inspired Saint, you finally attained what your heart desired, * for you dwell in the heavens now in the mansions with all the saints."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 4,
+      "incipit": "You finished the race…",
+      "text": "You finished the race of your ascetic discipline steadily, * and like Paul you have kept the faith, * O Father, and you received what for you was laid up * by the righteous Judge, yes, the crown of righteousness, by Christ, * who give the prizes to those deserving them, * awarding worthy honors for the pains and labors performed for Him. * O divinely inspired Saint, please implore Him to save our souls."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 4,
+      "incipit": "You pommeled your body…",
+      "text": "You pommeled your body, like Apostle Paul, and denied yourself * every comfort, O godly Saint. * By efforts of self-control, you deadened your senses, * You endured temptations, you led a hard and toilsome life, * you persevered in affliction and distress. * And now as a reward from God you have received everlasting joy * and perpetual luxury and ineffable blessedness."
+     }
+    ]
+   }
+  },
+  "02-29": {
+   "source_file": "me.m02.d29_en_US_goadedes.ares",
+   "slots": {
+    "vespers_stichera": [
+     {
+      "role": "n",
+      "index": [
+       1
+      ],
+      "mode": 2,
+      "incipit": "Having lived like an Angel…",
+      "text": "Having lived like an Angel on the earth, O godly-minded Cassian, * you are ranked with the hosts of the bodiless. * For you carried your Cross upon your shoulders, O righteous Saint, * and you followed the Savior and God of all. * By your ascetic labors You uprooted soul-corrupting passions, * And thus the Holy Spirit dwelt in you, who were His vessel, worthy and pure. * And now we cry to you: On behalf of all who praise you, earnestly pray to God."
+     },
+     {
+      "role": "n",
+      "index": [
+       2
+      ],
+      "mode": 2,
+      "incipit": "By keeping vigils…",
+      "text": "By keeping vigils and protracted fasting, you always clung to God, * O blessed Saint, and you were superior * to every carnal pleasure. And as you were unceasingly * illumined by good ascents, you overflowed * with streams of godly teachings, which have watered the hearts of the faithful * and set before them saving knowledge, O godly-minded St. Cassian. * And now we cry to you: On behalf of all who praise you, earnestly pray to God."
+     },
+     {
+      "role": "n",
+      "index": [
+       3
+      ],
+      "mode": 2,
+      "incipit": "Holy father, illumined from above…",
+      "text": "Holy father, illumined from above was your clever intellect, * and it shone with your teachings resplendently, * Generations of monastics have been guided by this light. * They have been freed from passions as if from mist. * And therefore they all honor and celebrate your holy memory, * while ever glorifying the Lord of glory, who glorified you, O Saint, * for you competed well, and you defeated the serpent, that cunning enemy."
+     }
+    ]
+   }
+  }
+ }
+}

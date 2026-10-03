@@ -1616,9 +1616,9 @@
       {
         "id": "innerHTML-architecture",
         "title": "Migrate from innerHTML string-building",
-        "description": "RE-VERIFIED 2026-09-28 against live files: still accurate. 33 raw .innerHTML writes confirmed in js/office-ui.js alone. Heavy reliance on .innerHTML string building creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
+        "description": "AUDITED 2026-10-02: all 35 innerHTML writes in js/office-ui.js reviewed; the 7 interpolating unescaped dynamic text (error messages, lectionary-gap title, East Syriac saint name/description, office label) now go through _sharedOfficeNavigatorEscape; the rest are static markup or internal constants/DOM-derived HTML (no user or data text). A wholesale createElement rewrite was judged not worth the regression risk; consider closing. (Earlier note: 33 raw .innerHTML writes in js/office-ui.js alone.) Heavy reliance on .innerHTML string building creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
         "severity": "LOW",
-        "status": "open",
+        "status": "mitigated",
         "area": "js/office-ui.js"
       },
       {

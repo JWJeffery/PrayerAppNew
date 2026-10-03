@@ -1,3 +1,5 @@
+**HISTORICAL — NOT CURRENT STATE. Statements below may be superseded; current status is in the live `RESUME_PROJECT_NOTE.md`.**
+
 <!-- Split out of the live RESUME_PROJECT_NOTE.md on 2026-09-28, same day, when the note had
 re-bloated to 879 lines of mixed current/historical material -- the fourth time this has happened
 (see documentation/project-history/INDEX.md and the live note's own header). Content below is

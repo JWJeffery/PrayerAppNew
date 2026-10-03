@@ -31,30 +31,34 @@
             "text": "The Virgin today stands in the midst of the Church, and with the choirs of Saints invisibly prays to God for us. Angels and Bishops worship, Apostles and Prophets rejoice together, since for our sake the Theotokos prays to the pre-eternal God."
           },
           "kontakion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Protection (Pokrov) of the Theotokos — vision of Andrew the Fool-for-Christ in Blachernae (+10th c.). Rank 2 in Slavic calendars (Polyeleos); rank 3 in Greek. Entered here as rank 2 per OCA usage. Kontakion Tone 3. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },
     "10-02": {
-  "commemorations": [
-    {
-      "id": "cyprian-ustyna-martyrs",
-      "name": "Hieromartyr Cyprian and Holy Martyr Justina",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Hieromartyr Cyprian and Holy Martyr Justina",
-        "text": "Your holy martyrs Cyprian and Justina, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Cyprian and Justina (+304), martyrs of Antioch under Diocletian. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "cyprian-ustyna-martyrs",
+          "name": "Hieromartyr Cyprian and Holy Martyr Justina",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Cyprian and Holy Martyr Justina",
+            "text": "Your holy martyrs Cyprian and Justina, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Cyprian and Justina (+304), martyrs of Antioch under Diocletian. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-03": {
       "commemorations": [
         {
@@ -69,49 +73,57 @@
             "text": "Thou didst share in the ways of the apostles and occupy their throne; thou didst find the practice of virtue to be a passage to divine vision. Wherefore, having rightly divided the word of truth, thou didst also pour out thy blood for the faith, O Hieromartyr Dionysius. Intercede with Christ God to save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "tradition_tags": [
+            "EOR",
+            "LAT",
+            "ANG"
+          ],
           "notes": "Dionysius the Areopagite (+1st c.), converted by Paul (Acts 17:34), first bishop of Athens. Rank 4."
         }
       ]
     },
     "10-04": {
-  "commemorations": [
-    {
-      "id": "hierotheos-bishop-athens",
-      "name": "St. Hierotheos, Bishop of Athens",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of St. Hierotheos, Bishop of Athens",
-        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Hierotheos, entreat Christ our God that our souls may be saved."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Hierotheos of Athens (+1st c.), companion of Dionysius, ordained by Paul. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "hierotheos-bishop-athens",
+          "name": "St. Hierotheos, Bishop of Athens",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Hierotheos, Bishop of Athens",
+            "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Hierotheos, entreat Christ our God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Hierotheos of Athens (+1st c.), companion of Dionysius, ordained by Paul. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-05": {
-  "commemorations": [
-    {
-      "id": "charitina-martyr",
-      "name": "Holy Martyr Charitina",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Charitina",
-        "text": "Your holy martyr Charitina, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Charitina (+304), slave and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "charitina-martyr",
+          "name": "Holy Martyr Charitina",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Charitina",
+            "text": "Your holy martyr Charitina, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Charitina (+304), slave and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-06": {
       "commemorations": [
         {
@@ -126,49 +138,55 @@
             "text": "O Apostle Thomas, thou wast not absent from the burial of Christ, and thou wast the first to see His wounds after the Resurrection; thou didst confess Him as Lord and God. Pray thou to Christ our God that He may save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Thomas the Apostle — second commemoration in October (primary: Jul 7). Rank 3."
         }
       ]
     },
     "10-07": {
-  "commemorations": [
-    {
-      "id": "sergios-bacchus",
-      "name": "Holy Martyrs Sergios and Bacchus",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyrs Sergios and Bacchus",
-        "text": "Your holy martyrs Sergios and Bacchus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Sergios and Bacchus (+303), soldier-martyrs in Syria. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-   "10-08": {
-  "commemorations": [
-    {
-      "id": "pelagia-penitent",
-      "name": "Venerable Pelagia the Penitent",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": {
-        "tone": 8,
-        "title": "Troparion of the Venerable Pelagia the Penitent",
-        "text": "The image of God was truly preserved in you, O Mother, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away, but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Pelagia, rejoices with the angels."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Penitent of Antioch (+5th c.), former dancer converted by Bishop Nonnus of Edessa; lived as the anchorite 'Pelagius' on the Mount of Olives. Tone 8 confirmed from Antiochian parish sheet citing OCA and from the OCA October 8 troparia page which lists multiple texts for multiple Pelagias; Tone 8 'image of God' is the text attributed by both Antiochian and OCA-permission sources to Pelagia the Penitent specifically. OCA also lists a Podoben Tone 8 text ('Like a fragrant rose') for this saint; the 'image of God' Tone 8 text is the one circulated with OCA permission in Antiochian parishes. Live tone was already 8 — tone was correct, text was missing."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "sergios-bacchus",
+          "name": "Holy Martyrs Sergios and Bacchus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyrs Sergios and Bacchus",
+            "text": "Your holy martyrs Sergios and Bacchus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Sergios and Bacchus (+303), soldier-martyrs in Syria. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
+    "10-08": {
+      "commemorations": [
+        {
+          "id": "pelagia-penitent",
+          "name": "Venerable Pelagia the Penitent",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Venerable Pelagia the Penitent",
+            "text": "The image of God was truly preserved in you, O Mother, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away, but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Pelagia, rejoices with the angels."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Penitent of Antioch (+5th c.), former dancer converted by Bishop Nonnus of Edessa; lived as the anchorite 'Pelagius' on the Mount of Olives. Tone 8 confirmed from Antiochian parish sheet citing OCA and from the OCA October 8 troparia page which lists multiple texts for multiple Pelagias; Tone 8 'image of God' is the text attributed by both Antiochian and OCA-permission sources to Pelagia the Penitent specifically. OCA also lists a Podoben Tone 8 text ('Like a fragrant rose') for this saint; the 'image of God' Tone 8 text is the one circulated with OCA permission in Antiochian parishes. Live tone was already 8 — tone was correct, text was missing."
+        }
+      ]
+    },
     "10-09": {
       "commemorations": [
         {
@@ -183,30 +201,34 @@
             "text": "O Holy Apostle James, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "James son of Alphaeus, one of the Twelve Apostles. Rank 3. Standard apostle troparion form (Tone 3)."
         }
       ]
     },
     "10-10": {
-  "commemorations": [
-    {
-      "id": "eulampios-eulampia",
-      "name": "Holy Martyrs Eulampios and Eulampia",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyrs Eulampios and Eulampia",
-        "text": "Your holy martyrs Eulampios and Eulampia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Eulampios and his sister Eulampia (+311), martyrs under Maximinus Daza. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "eulampios-eulampia",
+          "name": "Holy Martyrs Eulampios and Eulampia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyrs Eulampios and Eulampia",
+            "text": "Your holy martyrs Eulampios and Eulampia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Eulampios and his sister Eulampia (+311), martyrs under Maximinus Daza. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-11": {
       "commemorations": [
         {
@@ -221,48 +243,18 @@
             "text": "O Holy Apostle Philip, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Philip the Deacon (Acts 6:5, 8:5), one of the Seven. Rank 4. Distinct from Philip the Apostle of the Twelve (Nov 14). Standard apostle troparion form (Tone 3)."
         }
       ]
     },
     "10-12": {
-      "commemorations": [
-        {
-          "id": "cosmas-damian-arabia",
-          "name": "Holy Unmercenary Physicians Cosmas and Damian of Arabia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": {
-            "tone": 8,
-            "title": "Troparion of Sts. Cosmas and Damian of Arabia",
-            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "Cosmas and Damian of Arabia (+3rd c.), martyred with their brothers. Rank 4. The Arabian pair — distinct from the Roman pair (Jul 1) and Asian pair (Nov 1)."
-        }
-      ]
+      "commemorations": []
     },
     "10-13": {
-      "commemorations": [
-        {
-          "id": "cornelius-centurion",
-          "name": "Holy Martyr Cornelius the Centurion",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 3,
-          "troparion": {
-            "tone": 3,
-            "title": "Troparion of the Holy Apostle Cornelius the Centurion",
-            "text": "O Holy Apostle Cornelius, intercede with the merciful God, that He grant our souls forgiveness of offences."
-          },
-          "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "Cornelius the Centurion (Acts 10), first Gentile convert, bishop. Rank 4. Standard apostle troparion form (Tone 3)."
-        }
-      ]
+      "commemorations": []
     },
     "10-14": {
       "commemorations": [
@@ -278,30 +270,34 @@
             "text": "Let us praise Paraskeva the wondrous, the flower of Epivates, the adornment of the Balkans, the rampart of Orthodoxy, the intercessor for our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Paraskeva of Serbia (+11th c.), ascetic venerated throughout the Balkans. Her relics are in Iași, Romania. Rank 3."
         }
       ]
     },
     "10-15": {
-  "commemorations": [
-    {
-      "id": "euthymios-thessalonica",
-      "name": "Venerable Euthymios the New of Thessalonica",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": {
-        "tone": 8,
-        "title": "Troparion of the Venerable Euthymios the New of Thessalonica",
-        "text": "The image of God was truly preserved in you, O Father, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Euthymius, rejoices with the angels."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Thessalonian monastic (+889), ascetic on Mount Athos then at Thessalonica; 'New' distinguishes him from Euthymios the Great (Jan 20). Tone 8 'image of God' confirmed OCA October 15 all-troparia page (direct fetch). Live tone was already 8 — correct."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "euthymios-thessalonica",
+          "name": "Venerable Euthymios the New of Thessalonica",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Venerable Euthymios the New of Thessalonica",
+            "text": "The image of God was truly preserved in you, O Father, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Euthymius, rejoices with the angels."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Thessalonian monastic (+889), ascetic on Mount Athos then at Thessalonica; 'New' distinguishes him from Euthymios the Great (Jan 20). Tone 8 'image of God' confirmed OCA October 15 all-troparia page (direct fetch). Live tone was already 8 — correct."
+        }
+      ]
+    },
     "10-16": {
       "commemorations": [
         {
@@ -316,7 +312,10 @@
             "text": "Thy martyr Longinus, O Lord, in his sufferings received an imperishable crown from Thee, our God; for having Thy strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions, save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "LAT"
+          ],
           "notes": "Longinus the Centurion (+1st c.), soldier who pierced Christ's side, martyred in Cappadocia. Rank 4."
         }
       ]
@@ -335,8 +334,27 @@
             "text": "We celebrate the memory of Thy prophet Hosea, O Lord, and through him we beseech Thee: save our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Hosea the Prophet (8th c. BC). Rank 4. Standard prophet troparion form."
+        },
+        {
+          "id": "cosmas-damian-arabia",
+          "name": "Holy Unmercenary Physicians Cosmas and Damian of Cilicia (of Arabia)",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Sts. Cosmas and Damian of Arabia",
+            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Cosmas and Damian of Arabia (+3rd c.), martyred with their brothers. Rank 4. The Arabian pair — distinct from the Roman pair (Jul 1) and Asian pair (Nov 1). MOVED 2026-10-01 from 10-12 to 10-17: orthocal.info/OCA keep this commemoration on 10-17 (the lives pass found no source naming it on the old date)."
         }
       ]
     },
@@ -354,7 +372,12 @@
             "text": "O Holy Apostle and Evangelist Luke, intercede with the merciful God that He may grant our souls forgiveness of transgressions."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "tradition_tags": [
+            "EOR",
+            "OOR",
+            "ANG",
+            "LAT"
+          ],
           "notes": "Luke the Evangelist, author of the Third Gospel and Acts. Rank 2 (Polyeleos). Pan-traditional."
         }
       ]
@@ -373,75 +396,83 @@
             "text": "God-like in thy pastoral love for people, a model of piety and shepherd of souls, O John of Kronstadt, thou didst instruct God's people in the Faith by thy life and teachings. As thou hast boldness before the Lord, intercede with Him for the salvation of our souls."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "John of Kronstadt (+1908), parish priest and wonderworker, glorified by ROC 1990. Rank 3."
         }
       ]
     },
     "10-20": {
-  "commemorations": [
-    {
-      "id": "artemios-antioch-martyr",
-      "name": "Holy Great Martyr Artemios of Antioch",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Great Martyr Artemios of Antioch",
-        "text": "Your holy martyr Artemios, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Artemios (+363), military officer martyred under Julian the Apostate. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-   "10-21": {
-  "commemorations": [
-    {
-      "id": "hilarion-great",
-      "name": "Venerable Hilarion the Great",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": {
-        "tone": 8,
-        "title": "Troparion of the Venerable Hilarion the Great",
-        "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! Our Father Hilarion pray to Christ God to save our souls!"
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Palestinian desert father (+371), born near Gaza, trained under Anthony the Great; founder of Palestinian monasticism. Tone 8 confirmed OCA October 21 troparia page (direct fetch). Search snippet had displayed the Kontakion (Tone 3) first, which could have caused misidentification; the direct OCA fetch confirms Tone 8 troparion is primary. Standard 'flood of tears' text. Live tone was already 8 — tone was correct, text was missing."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "artemios-antioch-martyr",
+          "name": "Holy Great Martyr Artemios of Antioch",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr Artemios of Antioch",
+            "text": "Your holy martyr Artemios, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Artemios (+363), military officer martyred under Julian the Apostate. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
+    "10-21": {
+      "commemorations": [
+        {
+          "id": "hilarion-great",
+          "name": "Venerable Hilarion the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Venerable Hilarion the Great",
+            "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! Our Father Hilarion pray to Christ God to save our souls!"
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Palestinian desert father (+371), born near Gaza, trained under Anthony the Great; founder of Palestinian monasticism. Tone 8 confirmed OCA October 21 troparia page (direct fetch). Search snippet had displayed the Kontakion (Tone 3) first, which could have caused misidentification; the direct OCA fetch confirms Tone 8 troparion is primary. Standard 'flood of tears' text. Live tone was already 8 — tone was correct, text was missing."
+        }
+      ]
+    },
     "10-22": {
-  "commemorations": [
-    {
-      "id": "abercius-bishop-hieropolis",
-      "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
-        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Abercius, entreat Christ our God that our souls may be saved."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Abercius of Hieropolis (+2nd c.), bishop, wonder-worker, Equal-to-the-Apostles. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "abercius-bishop-hieropolis",
+          "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
+            "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Abercius, entreat Christ our God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Abercius of Hieropolis (+2nd c.), bishop, wonder-worker, Equal-to-the-Apostles. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-23": {
       "commemorations": [
         {
-          "id": "james-brother-lord-october",
-          "name": "Holy Apostle James, Brother of the Lord (second commemoration)",
+          "id": "james-brother-lord",
+          "name": "Holy Apostle James, Brother of the Lord",
           "type": "apostle",
-          "rank": 4,
+          "rank": 3,
           "troparion_tone": 2,
           "troparion": {
             "tone": 2,
@@ -449,49 +480,55 @@
             "text": "As a disciple of the Lord thou didst receive the Gospel, O James; as a martyr thou art unswayed; as a brother of God thou hast boldness; as a hierarch thou dost intercede. Entreat Christ God to grant us great mercy."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
-          "notes": "James Brother of the Lord — second commemoration (primary: Apr 30). Also joint feast with Jude (Brother of Lord) and others on this date. Rank 4."
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "CORRECTED 2026-10-01: Oct 23 is the PRIMARY (and only) commemoration of James the Brother of the Lord, first Bishop of Jerusalem (+62/63); the app previously filed him under Apr 30 (which is James son of Zebedee) and kept Oct 23 as a rank-4 'second commemoration'. Rank 3 (doxology) per orthocal.info / OCA."
         }
       ]
     },
     "10-24": {
-  "commemorations": [
-    {
-      "id": "arethas-martyrs-nagran",
-      "name": "Holy Great Martyr Arethas and companions of Nagran",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Great Martyr Arethas and companions of Nagran",
-        "text": "Your holy martyrs Arethas and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Arethas and the martyrs of Najran (+523). Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "arethas-martyrs-nagran",
+          "name": "Holy Great Martyr Arethas and companions of Nagran",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr Arethas and companions of Nagran",
+            "text": "Your holy martyrs Arethas and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Arethas and the martyrs of Najran (+523). Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-25": {
-  "commemorations": [
-    {
-      "id": "martyrs-notarios",
-      "name": "Holy Martyrs Marcian and Martyrios",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyrs Marcian and Martyrios",
-        "text": "Your holy martyrs Marcian and Martyrios, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Marcian and Martyrios (+351), lector and notary of the Great Church, martyred by Arians. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+      "commemorations": [
+        {
+          "id": "martyrs-notarios",
+          "name": "Holy Martyrs Marcian and Martyrios",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyrs Marcian and Martyrios",
+            "text": "Your holy martyrs Marcian and Martyrios, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Marcian and Martyrios (+351), lector and notary of the Great Church, martyred by Arians. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-26": {
       "commemorations": [
         {
@@ -506,102 +543,116 @@
             "text": "The world has found in thee a great champion and defender in times of peril, O passion-bearer Demetrios, who dost rout the nations. As thou didst bring low the pride of Lyaios and make St. Nestor brave in the contest, so O holy Great Martyr, do thou beseech Christ God to grant us great mercy."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR", "OOR"],
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
           "notes": "Demetrios of Thessalonica (+306), Great Martyr and Myrrh-streamer. Rank 2 (Polyeleos). Patron of Thessalonica and the Balkans. One of the most venerated saints of the Byzantine calendar."
         }
       ]
     },
     "10-27": {
-  "commemorations": [
-    {
-      "id": "nestor-martyr-thessalonica",
-      "name": "Holy Martyr Nestor of Thessalonica",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyr Nestor of Thessalonica",
-        "text": "Your holy martyr Nestor, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Nestor of Thessalonica (+306), young martyr, companion of Demetrios. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-    "10-28": {
-  "commemorations": [
-    {
-      "id": "terence-neonilla-family",
-      "name": "Holy Martyrs Terence and Neonilla and their children",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyrs Terence and Neonilla and their children",
-        "text": "Your holy martyrs Terence, Neonilla, and their children, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Terence, Neonilla, and their seven children (+3rd c.), family martyrs. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+      "commemorations": [
+        {
+          "id": "nestor-martyr-thessalonica",
+          "name": "Holy Martyr Nestor of Thessalonica",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Nestor of Thessalonica",
+            "text": "Your holy martyr Nestor, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Nestor of Thessalonica (+306), young martyr, companion of Demetrios. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
     },
-    {
-      "id": "stephen-sabaite-hymnographer",
-      "name": "Venerable Stephen the Sabaite, Hymnographer",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": {
-        "tone": 8,
-        "title": "Troparion of the Venerable Stephen the Sabaite, Hymnographer",
-        "text": "Champion of Orthodoxy, teacher of purity and of true worship, enlightener of the universe and adornment of hierarchs: all-wise father Stephen, your teachings have gleamed with light upon all things. Intercede before Christ God to save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR", "OOR"],
-      "notes": "Palestinian monk and hymnographer (+794), nephew of St. John of Damascus; spent decades at the Lavra of St. Savvas; composed idiomela for the Triodion. OCA feast October 28. Tone 8 confirmed OCA October 28 troparia page (direct fetch). Moved from erroneous 12-15 placement."
-    }
-  ]
-},
-   "10-29": {
-  "commemorations": [
-    {
-      "id": "anastasia-rome",
-      "name": "Monastic Martyr Anastasia of Rome",
-     "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Monastic Martyr Anastasia of Rome",
-        "text": "Your lamb Anastasia, calls out to You, O Jesus, in a loud voice: \"I love You, my Bridegroom, and in seeking You I endure suffering. In baptism I was crucified so that I might reign in You, and I died so that I might live with You. Accept me as a pure sacrifice, for I have offered myself in love.\" Through her prayers save our souls, since You are merciful."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "3rd-c. monastic martyr raised in a women's monastery under Abbess Sophia; beheaded under Decius (+c.256–259). OCA designates her 'Monastic Martyr' — type corrected from 'monastic' to 'monastic-martyr'. Tone 4 confirmed OCA October 29 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
-    }
-  ]
-},
-   "10-30": {
-  "commemorations": [
-    {
-      "id": "zenobius-zenobia",
-      "name": "Holy Martyrs Zenobius and Zenobia",
-      "type": "martyr",
-      "rank": 4,
-      "troparion_tone": 4,
-      "troparion": {
-        "tone": 4,
-        "title": "Troparion of the Holy Martyrs Zenobius and Zenobia",
-        "text": "Your holy martyrs Zenobius and Zenobia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
-      },
-      "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Zenobius and his sister Zenobia (+285), physician-martyrs of Cilicia. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
+    "10-28": {
+      "commemorations": [
+        {
+          "id": "terence-neonilla-family",
+          "name": "Holy Martyrs Terence and Neonilla and their children",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyrs Terence and Neonilla and their children",
+            "text": "Your holy martyrs Terence, Neonilla, and their children, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Terence, Neonilla, and their seven children (+3rd c.), family martyrs. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+        },
+        {
+          "id": "stephen-sabaite-hymnographer",
+          "name": "Venerable Stephen the Sabaite, Hymnographer",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Venerable Stephen the Sabaite, Hymnographer",
+            "text": "Champion of Orthodoxy, teacher of purity and of true worship, enlightener of the universe and adornment of hierarchs: all-wise father Stephen, your teachings have gleamed with light upon all things. Intercede before Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR",
+            "OOR"
+          ],
+          "notes": "Palestinian monk and hymnographer (+794), nephew of St. John of Damascus; spent decades at the Lavra of St. Savvas; composed idiomela for the Triodion. OCA feast October 28. Tone 8 confirmed OCA October 28 troparia page (direct fetch). Moved from erroneous 12-15 placement."
+        }
+      ]
+    },
+    "10-29": {
+      "commemorations": [
+        {
+          "id": "anastasia-rome",
+          "name": "Monastic Martyr Anastasia of Rome",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Monastic Martyr Anastasia of Rome",
+            "text": "Your lamb Anastasia, calls out to You, O Jesus, in a loud voice: \"I love You, my Bridegroom, and in seeking You I endure suffering. In baptism I was crucified so that I might reign in You, and I died so that I might live with You. Accept me as a pure sacrifice, for I have offered myself in love.\" Through her prayers save our souls, since You are merciful."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "3rd-c. monastic martyr raised in a women's monastery under Abbess Sophia; beheaded under Decius (+c.256–259). OCA designates her 'Monastic Martyr' — type corrected from 'monastic' to 'monastic-martyr'. Tone 4 confirmed OCA October 29 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
+        }
+      ]
+    },
+    "10-30": {
+      "commemorations": [
+        {
+          "id": "zenobius-zenobia",
+          "name": "Holy Martyrs Zenobius and Zenobia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyrs Zenobius and Zenobia",
+            "text": "Your holy martyrs Zenobius and Zenobia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": [
+            "EOR"
+          ],
+          "notes": "Zenobius and his sister Zenobia (+285), physician-martyrs of Cilicia. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+        }
+      ]
+    },
     "10-31": {
       "commemorations": [
         {
@@ -616,7 +667,9 @@
             "text": "O Holy Apostles Stachys, Amplias, Urban, Narcissus, Apelles, and Aristobulus, intercede with the merciful God, that He grant our souls forgiveness of offences."
           },
           "troparion_status": "resolved",
-          "tradition_tags": ["EOR"],
+          "tradition_tags": [
+            "EOR"
+          ],
           "notes": "Six Apostles of the Seventy from Romans 16. Rank 4. Standard apostle troparion form (Tone 3)."
         }
       ]

@@ -687,6 +687,49 @@ const _interhourFixedDataCache = {};
             await _resolveVespersSlots(sections, dateObj);
         }
 
+        // ── Menaion Commons (Orloff 1899) for rank-3 saints ──────────────────
+        // Fills only slots still showing a deferred rubric; see js/menaion-commons.js.
+        if ((normalizedKey === 'orthros' || normalizedKey === 'vespers') &&
+            typeof window !== 'undefined' && window.MenaionCommons) {
+            try {
+                await window.MenaionCommons.applyToSections(sections, normalizedKey);
+            } catch (err) {
+                console.warn('[HorologionEngine] MenaionCommons failed (rubrics kept):', err.message);
+            }
+        }
+
+        // ── Hymn guide: tone/melody/count where the app has no hymn text (rank 1-2) ──
+        if ((normalizedKey === 'orthros' || normalizedKey === 'vespers') &&
+            typeof window !== 'undefined' && window.HymnGuide) {
+            try {
+                await window.HymnGuide.applyToSections(sections, normalizedKey);
+            } catch (err) {
+                console.warn('[HorologionEngine] HymnGuide failed (rubrics kept):', err.message);
+            }
+        }
+
+        // ── Fast and appointed readings from the published Orthodox lectionary ──
+        // js/orthodox-day.js; years without data are left to the engine's own logic.
+        // Old Calendar users get the Julian-calendar data set (data/orthodox-day/old/, keyed by civil date)
+        // and the Menaion MM-DD (civil date minus the Julian offset) for lives and icons.
+        const _odOpts = { old: _currentEoMode === 'old_calendar', mmdd: _getFixedCalendarMmdd(dateObj) };
+        if (typeof window !== 'undefined' && window.OrthodoxDay) {
+            try {
+                await window.OrthodoxDay.applyToSections(sections, normalizedKey, isoDate, _odOpts);
+            } catch (err) {
+                console.warn('[HorologionEngine] OrthodoxDay failed (engine output kept):', err.message);
+            }
+        }
+
+        // ── Plain-language "About Today's Service" panel (composed from the resolved office) ──
+        if (typeof window !== 'undefined' && window.DayGuide) {
+            try {
+                await window.DayGuide.applyToSections(sections, normalizedKey, isoDate, dateObj, _odOpts);
+            } catch (err) {
+                console.warn('[HorologionEngine] DayGuide failed (office kept):', err.message);
+            }
+        }
+
         // Diagnostic pass — count resolved vs placeholder slots
         let implementedSlots = 0;
         let placeholderSlots = 0;

@@ -1,0 +1,68 @@
+# Menaion Commons (Orloff 1899) -- ingestion and wiring record
+
+Moved out of RESUME_PROJECT_NOTE.md on 2026-10-01 (closed work). Source: Orloff, *The General Menaion* (London 1899), via CCEL.
+
+**DONE 2026-10-01 -- Orloff Commons ingested AND wired for rank-3 saints (live-verified in headless Chromium).**
+- Data: `scripts/menaion/ingest-orloff-commons.py` fetched all 27 chapters + Appendix from CCEL into
+  `data/menaion/commons/<slug>.json` (verbatim, CCEL OCR typos preserved; each paragraph keeps its CCEL id,
+  print page, italic rubric runs). `scripts/menaion/build-commons-sections.py` then adds a `sections` array
+  (vespers_stichera, vespers_aposticha, sessional_1/2/3, canon, exapostilarion, praises, ...) split by
+  Orloff's own rubrics; his "(mentioned by name)" becomes the token `{NAME}`. Both scripts are idempotent.
+- Mapping: `data/menaion/commons/mapping.json` -- 47 hand-reviewed RANK-3 commemorations -> a common +
+  `invocation` (the name substituted for {NAME}). Deliberately UNMAPPED (keep their deferred rubrics):
+  Synaxes, feasts/Marian feasts, Equal-to-the-Apostles, groups of martyrs, saints with companions,
+  Clement/Ignatius/John Damascene (type ambiguous), the Daniel+Three Youths day, Royal Martyrs, Holy Innocents.
+- Runtime: `js/menaion-commons.js` (`window.MenaionCommons.applyToSections`, loaded in `index.html` after
+  `menaion-resolver.js`), called from `HorologionEngine.resolveOffice` for `orthros` and `vespers` right
+  before the diagnostics pass. It ONLY replaces a slot that is still a deferred rubric (resolvedAs
+  `orthros-rank3-menaion-*-deferred-rubric`, `orthros-feast-canon-rubric`, or Vespers `menaion-feast-rubric`)
+  and only when the day's governing troparion is a rank-3 `menaion-feast-troparion` whose name is in the
+  mapping. Orthros slots filled: sessional-hymns-1/-2, canon, exapostilarion, praises-stichera. Vespers:
+  stichera-at-lord-i-have-cried, aposticha. If a Common lacks a section (e.g. the hieromartyr chapter has
+  no Vespers texts) the honest rubric stays. Rendered text carries a disclosure line (Common, Slavonic
+  usage, saint's own proper hymns not in corpus). Item `resolvedAs: 'menaion-orloff-common-text'`.
+- Verified: swept all 365 days of 2026 x {orthros, vespers} in headless Chromium -- 0 exceptions, 0 leftover
+  `{NAME}`/"mentioned by name"; 36 Orthros + 32 Vespers days filled (others fall on Sundays/Lent, where the
+  engine's existing paths govern); UI screenshot of Vespers 2026-07-07 (Apostle Thomas) renders correctly
+  with sidebar entries. NOT touched: rank 1-2 feasts, rank-4 saints, Orthros aposticha, kontakion slot,
+  Octoechos interplay on Sundays.
+- Known limitations/next: (1) rank-4 saints (246 of 370 commemorations) still show ordinary weekday
+  content -- extending needs Typikon rules for which Orloff sections apply at three-stichera rank;
+  (2) Orloff's alternate-branch rubrics ("If there be a Festival...") are shown as printed, not resolved;
+  (3) unmapped rank-3 entries above could be mapped with Josh's judgment; (4) AGES for saint-specific propers.
+
+
+
+## Update 2026-10-01 (later): mapping widened, section detection fixed
+- Mapping now 60 rank-3 entries (was 47): added Synaxes of the 70 and the 12 Apostles, Gregory of Nyssa + Dometian,
+  Translation of Ignatius, Haralambos, Innocent of Irkutsk, the Forty and the Twenty Thousand Martyrs, Eustathios
+  and family, Clement of Rome, Ignatius the God-bearer, John of Damascus, Daniel and the Three Youths.
+- Still unmapped, with reasons: Equal-to-the-Apostles saints (Cyril, Cyril & Methodius, Vladimir, Mary Magdalene,
+  Thekla, Nina) -- Orloff has no such Common; Nicaea Fathers + Nina; feasts with their own propers (Chains of Peter,
+  Procession of the Cross/Maccabees, Mandylion, Conception, Leavetaking, Repose of Anna); Royal Martyrs, Holy Innocents,
+  John of Kronstadt; Gabriel / Michael-at-Chonae (Orloff's Angels chapter names Michael in the text); Robe/Belt of the
+  Theotokos (Theotokos chapter has an unfilled "((name of the event))" placeholder).
+- `build-commons-sections.py` fixed: sections now also start at a rubric in the MIDDLE of a paragraph; patterns accept
+  Typicon/Typikon, 1st/first, Sticheron/Stichera/Idiomelic, "Lauds ... the". A boundary check (no other section's
+  rubric inside a section) passes for every mapped common. 2026 sweep: 43 Orthros + 39 Vespers days filled, 0 errors.
+
+
+## Update 2026-10-01 (later still)
+- Rank-3 mapping widened to 71 entries by Josh's instruction ("map all rank-3 days"): Equal-to-the-Apostles saints use the
+  Common of an Apostle (Cyril, Vladimir, Mary Magdalene), Cyril & Methodius the Common of Several Apostles, Thekla the Common
+  of a Female Martyr, John of Kronstadt the wonder-workers' Common, Royal Martyrs and Holy Innocents the Common of Several
+  Martyrs, Chains of Peter the apostle Common, Gabriel/Michael the Angels Common (`skip` lists drop slots that name Michael).
+  Still unmapped (8): Conception, Robe and Belt of the Theotokos, Mandylion, Procession of the Cross (feast Commons are
+  templates with a "((name of the event))" blank plus readings and a prayer for the Emperor), Repose of Anna, Nicaea Fathers,
+  Leavetaking of the Entrance.
+- RANK 4 (Josh's decision): `data/menaion/commons/mapping-rank4.json` (203 of 246 rank-4 commemorations, from
+  `scripts/menaion/build-commons-rank4-mapping.py`, rules on the app's own entry name + hand-reviewed overrides). Vespers
+  "Lord, I have cried" stichera only: the Common's first three stichera. Where the engine shows only the "proper stichera
+  should be appointed" rubric (139 days) it is replaced; where the engine shows the Octoechos stichera (33 days) the saint's
+  three follow as a separate item (`stichera-at-lord-i-have-cried-menaion`). Not done: Orthros at rank 4, aposticha.
+  2026 sweep: 142 rank-4 Vespers filled, 0 errors.
+
+## Update 2026-10-02
+- **Four more rank-3 feasts mapped** (Conception of the Theotokos, Deposition of the Robe, Deposition of the Belt, Procession of the Cross) to the Common of the Festivals of the Virgin / the Cross. The Virgin's Common has a "((name of the event))" blank split across lines; `_render(lines, invocation, event)` now fills it from the mapping's `event` field and folds the line breaks back into one sentence. Where AGES already approved a slot (Vespers stichera for all four) AGES still wins. **Still unmapped on purpose (3):** Repose of St Anna (no Common for righteous women in Orloff), Mandylion (the Lord's-feasts Common contains Lazarus/Palm-Sunday-specific stichera, so it is not generic), Leavetaking of the Entrance (the Entrance's own hymns repeat; a Common would be wrong). The old "Nicaea Fathers" entry no longer exists in the app data.
+- **Rank-4 AGES Vespers stichera:** `data/menaion/ages/mapping-rank4.json` (58 saints). Rule as for rank 3 (every numbered hymn, or two of three same-tone hymns, names the saint by a distinctive token; generic tokens such as "companions", "first", "John", "martyr" excluded) and each set of hymns was read on 2026-10-02. These replace the Common's three stichera (AGES text first, Common fallback). 2026 sweep: 49 rank-4 AGES days (the rest fall on Sundays/Lent/etc.), 88 rank-4 Common days, 0 errors, no unfilled `{NAME}` or "(name of the event)".
+- **Not done, deliberately: rank-4 Orthros and aposticha.** At a simple commemoration the Typikon keeps the Octoechos for the sessional hymns, the aposticha and most of the canon; inserting the Common there would contradict it. Rank-4 saints keep the Octoechos with the saint's troparion and (now) three Vespers stichera.

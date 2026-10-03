@@ -1,0 +1,229 @@
+{
+ "schema": "menaion-commons-index/1",
+ "commons": [
+  {
+   "id": "common-lord",
+   "file": "lord.json",
+   "chapter": "I",
+   "title": "GENERAL SERVICE FOR THE FESTIVALS OF OUR LORD JESUS CHRIST, AS WELL AS PREPARATIONS THERETO AND OCTAVES THEREOF.",
+   "paragraphs": 102,
+   "words": 4350
+  },
+  {
+   "id": "common-theotokos",
+   "file": "theotokos.json",
+   "chapter": "II",
+   "title": "THE SERVICE COMMON TO THE FESTIVALS OF THE HOLY VIRGIN.",
+   "paragraphs": 99,
+   "words": 4094
+  },
+  {
+   "id": "common-cross",
+   "file": "cross.json",
+   "chapter": "III",
+   "title": "THE GENERAL SERVICE TO THE VENERATED AND VIVIFYING CROSS.",
+   "paragraphs": 100,
+   "words": 3453
+  },
+  {
+   "id": "common-angels",
+   "file": "angels.json",
+   "chapter": "IV",
+   "title": "THE SERVICE COMMON TO THE HOLY ANGELS AND OTHER BODILESS ONES.",
+   "paragraphs": 111,
+   "words": 4412
+  },
+  {
+   "id": "common-forerunner",
+   "file": "forerunner.json",
+   "chapter": "V",
+   "title": "GENERAL SERVICE TO JOHN, PRECURSOR, PROPHET AND BAPTIST OF THE LORD.",
+   "paragraphs": 92,
+   "words": 4219
+  },
+  {
+   "id": "common-holy-fathers-councils",
+   "file": "holy-fathers-councils.json",
+   "chapter": "VI",
+   "title": "THE GENERAL SERVICE OF THE HOLY FATHERS, IN REMEMBRANCE OF COUNCILS,",
+   "paragraphs": 83,
+   "words": 3762
+  },
+  {
+   "id": "common-prophet",
+   "file": "prophet.json",
+   "chapter": "VII",
+   "title": "THE GENERAL SERVICE TO A PROPHET.",
+   "paragraphs": 103,
+   "words": 3557
+  },
+  {
+   "id": "common-apostle",
+   "file": "apostle.json",
+   "chapter": "VIII",
+   "title": "THE GENERAL SERVICE TO AN APOSTLE.",
+   "paragraphs": 91,
+   "words": 3395
+  },
+  {
+   "id": "common-apostles-many",
+   "file": "apostles-many.json",
+   "chapter": "IX",
+   "title": "THE SERVICE COMMON TO TWO OR MANY APOSTLES.",
+   "paragraphs": 94,
+   "words": 3468
+  },
+  {
+   "id": "common-hierarch",
+   "file": "hierarch.json",
+   "chapter": "X",
+   "title": "THE GENERAL SERVICE TO ONE HIERARCH.",
+   "paragraphs": 96,
+   "words": 3559
+  },
+  {
+   "id": "common-hierarchs-many",
+   "file": "hierarchs-many.json",
+   "chapter": "XI",
+   "title": "THE SERVICE COMMON TO TWO OR MANY HIERARCHS.",
+   "paragraphs": 96,
+   "words": 2953
+  },
+  {
+   "id": "common-monk",
+   "file": "monk.json",
+   "chapter": "XII",
+   "title": "THE GENERAL SERVICE TO A MONK.",
+   "paragraphs": 98,
+   "words": 3600
+  },
+  {
+   "id": "common-monks-many",
+   "file": "monks-many.json",
+   "chapter": "XIII",
+   "title": "THE SERVICE COMMON TO TWO OR MORE MONKS.",
+   "paragraphs": 108,
+   "words": 3453
+  },
+  {
+   "id": "common-martyr",
+   "file": "martyr.json",
+   "chapter": "XIV",
+   "title": "THE GENERAL SERVICE TO ONE MARTYR.",
+   "paragraphs": 104,
+   "words": 3365
+  },
+  {
+   "id": "common-martyrs-many",
+   "file": "martyrs-many.json",
+   "chapter": "XV",
+   "title": "THE GENERAL SERVICE TO TWO OR MANY MARTYRS.",
+   "paragraphs": 113,
+   "words": 3210
+  },
+  {
+   "id": "common-hieromartyr",
+   "file": "hieromartyr.json",
+   "chapter": "XVI",
+   "title": "THE GENERAL SERVICE TO ONE HIEROMARTYR",
+   "paragraphs": 109,
+   "words": 3537
+  },
+  {
+   "id": "common-hieromartyrs-many",
+   "file": "hieromartyrs-many.json",
+   "chapter": "XVII",
+   "title": "THE GENERAL SERVICE TO TWO OR MANY HIEROMARTYRS.",
+   "paragraphs": 103,
+   "words": 3451
+  },
+  {
+   "id": "common-monk-martyr",
+   "file": "monk-martyr.json",
+   "chapter": "XVIII",
+   "title": "THE GENERAL SERVICE TO A MONK-MARTYR.",
+   "paragraphs": 100,
+   "words": 3672
+  },
+  {
+   "id": "common-monk-martyrs-many",
+   "file": "monk-martyrs-many.json",
+   "chapter": "XIX",
+   "title": "THE GENERAL SERVICE TO TWO OR MANY MONK MARTYRS.",
+   "paragraphs": 98,
+   "words": 3595
+  },
+  {
+   "id": "common-female-martyr",
+   "file": "female-martyr.json",
+   "chapter": "XX",
+   "title": "THE SERVICE TO A FEMALE MARTYR.",
+   "paragraphs": 98,
+   "words": 3443
+  },
+  {
+   "id": "common-female-martyrs-many",
+   "file": "female-martyrs-many.json",
+   "chapter": "XXI",
+   "title": "THE SERVICE COMMON TO TWO AND MANY FEMALE MARTYRS.",
+   "paragraphs": 93,
+   "words": 3333
+  },
+  {
+   "id": "common-nun",
+   "file": "nun.json",
+   "chapter": "XXII",
+   "title": "THE GENERAL SERVICE TO A NUN.",
+   "paragraphs": 95,
+   "words": 3242
+  },
+  {
+   "id": "common-nuns-many",
+   "file": "nuns-many.json",
+   "chapter": "XXIII",
+   "title": "THE SERVICE COMMON TO TWO AND MANY NUNS.",
+   "paragraphs": 95,
+   "words": 3372
+  },
+  {
+   "id": "common-nun-martyr",
+   "file": "nun-martyr.json",
+   "chapter": "XXIV",
+   "title": "GENERAL SERVICE TO A NUN-MARTYR.",
+   "paragraphs": 94,
+   "words": 3620
+  },
+  {
+   "id": "common-confessor",
+   "file": "confessor.json",
+   "chapter": "XXV",
+   "title": "THE GENERAL SERVICE TO A HIERO-CONFESSOR OR MONK-CONFESSOR.",
+   "paragraphs": 91,
+   "words": 3522
+  },
+  {
+   "id": "common-unmercenaries-wonderworkers",
+   "file": "unmercenaries-wonderworkers.json",
+   "chapter": "XXVI",
+   "title": "GENERAL SERVICE TO THE UNMERCENARIES AND WONDER-WORKERS.",
+   "paragraphs": 86,
+   "words": 3072
+  },
+  {
+   "id": "common-fools-for-christ",
+   "file": "fools-for-christ.json",
+   "chapter": "XXVII",
+   "title": "THE GENERAL SERVICE TO SAINTS ANDREW OF CONSTANTINOPLE, ISIDORE OF ROSTOW, MAXIM AND BASIL OF MOSCOW, AND OTHER FOOLISH FOR CHRIST'S SAKE.",
+   "paragraphs": 90,
+   "words": 3443
+  },
+  {
+   "id": "common-appendix",
+   "file": "appendix.json",
+   "chapter": "APPENDIX",
+   "title": "appendix",
+   "paragraphs": 18,
+   "words": 2998
+  }
+ ]
+}

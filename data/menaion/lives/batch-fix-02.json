@@ -1,0 +1,68 @@
+{
+ "theodotus-ancyra": {
+  "life": "Theodotus was a married innkeeper in Ancyra in Galatia during the persecution of Christians. He ransomed or secretly recovered martyrs' bodies for burial, and tradition holds that the Liturgy was celebrated in his inn after the churches were closed. After he buried seven martyred women, a fellow Christian under torture denounced him, and he was put to death. His account was written by his companion Nilus.",
+  "period": "3rd-4th century (persecution under Decius/Diocletian)",
+  "place": "Ancyra, Galatia (modern Ankara)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/05/18",
+   "https://orthocal.info/api/gregorian/2026/5/18/"
+  ],
+  "flags": "OCA's heading says the martyrs suffered under Decius, while its narrative places Theodotus under Diocletian (c. 303); dating is therefore uncertain."
+ },
+ "theodotus-ancyra-bishop": {
+  "life": "Theodotus lived in Ancyra in Galatia during the Diocletian persecution. He sheltered Christians, hosted their secret services, visited prisoners, paid bail, and buried martyrs' bodies, including seven women who had been drowned. Denounced to the governor, he refused to sacrifice, was tortured and beheaded. Tradition holds that a storm prevented the burning of his body, and a Christian took the relics for burial.",
+  "period": "c. 303 (reign of Diocletian)",
+  "place": "Ancyra, Galatia (modern Ankara)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/06/07",
+   "https://orthocal.info/api/gregorian/2026/6/7/"
+  ],
+  "flags": "The OCA title calls him 'Hieromartyr ... Bishop of Ancyra', but its text and Orthocal's story describe a lay Christian and never mention a bishopric; this is the same man commemorated May 18 (OCA notes this)."
+ },
+ "agabus-apostle": {
+  "life": "Agabus was one of the Seventy Apostles and a Christian prophet. Acts records that he foretold a great famine under Emperor Claudius and that he predicted Paul's imprisonment at Jerusalem. Tradition holds that he preached in many lands and converted pagans, and that he suffered martyrdom. He is commemorated on April 8 together with Herodion, Asyncritus, Rufus, Phlegon and Hermes.",
+  "period": "1st century",
+  "place": "Jerusalem and Antioch (per Acts); later ministry unspecified",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/04/08",
+   "https://orthocal.info/api/gregorian/2026/4/8/"
+  ],
+  "flags": "Death and later ministry are only generally described; no specific place of death given."
+ },
+ "cosmas-damian-arabia": {
+  "life": "Cosmas and Damian were physicians from Arabia who traveled through towns and villages preaching Christ and healing the sick without payment. In Cilicia they were arrested and brought before the governor Lysias, who had them beaten and cast into the sea. Tradition holds that an angel brought them ashore; they were then beheaded, together with Leontius, Anthimus and Eutropius, said to be their brothers.",
+  "period": "3rd-4th century (Orthocal gives 4th c.)",
+  "place": "Arabia; martyred in Cilicia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/10/17",
+   "https://orthocal.info/api/gregorian/2026/10/17/"
+  ],
+  "flags": "Century differs: OCA's app note says 3rd; Orthocal says 4th. OCA text names no century. Distinct from the pairs of Nov 1 and Jul 1."
+ },
+ "thyrsus-leucius-philemon": {
+  "life": "Thyrsus, Leucius and Callinicus were martyred under Emperor Decius. Leucius rebuked the prefect Cumbricius for persecuting Christians and was tortured and executed. Thyrsus, still a catechumen, endured severe torments after refusing to sacrifice, and tradition holds that his prayers toppled a statue of Apollo. The pagan priest Callinicus, moved by what he saw, confessed Christ and was beheaded.",
+  "period": "249-251 (reign of Decius)",
+  "place": "Caesarea in Bithynia (OCA); Asia Minor",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/12/14",
+   "https://orthocal.info/api/gregorian/2026/12/14/"
+  ],
+  "flags": "App id says 'Philemon' and app notes say Phrygia, but OCA names Callinicus as the third martyr and places Caesarea in Bithynia; Philemon is a separate Dec 14 martyr of Alexandria. Id/notes should be corrected."
+ },
+ "cornelius-centurion": {
+  "life": "Cornelius was a centurion at Caesarea in Palestine whose conversion is told in Acts 10: an angel directed him to summon Peter, who baptized him and his household as the first Gentile convert. Tradition holds that Peter made him a bishop and sent him to Skepsis, where his prayer toppled a temple, the local prince Demetrius and his family were baptized, and he died in old age.",
+  "period": "1st century",
+  "place": "Caesarea in Palestine; Skepsis (Asia Minor)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/09/13",
+   "https://orthocal.info/api/gregorian/2026/9/13/"
+  ],
+  "flags": "OCA titles him Hieromartyr, but its narrative says he died in old age and does not describe martyrdom; app type 'saint' and name 'Martyr' differ."
+ }
+}

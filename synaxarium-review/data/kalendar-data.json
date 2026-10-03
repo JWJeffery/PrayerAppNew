@@ -150,7 +150,7 @@
      "review_flags": "group entry; Greater Church remembers; date harmonization with future fixed dates",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Received joint commemoration (Anglican Martyrology 2 Jan; For All the Saints 2 Jan; Common Worship). Preserved. Gregory is also individually observed on 9 May (LFF, HWHM, GCW) and Basil on 14 June: intentional additional observances (curator, 2026-10-02).",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000790",
@@ -173,8 +173,8 @@
        "non_date_notes": [],
        "files_seen": "january; may; june",
        "issue_type": "source-form/date harmonization",
-       "qc_status": "Open",
-       "notes": "January has paired Basil-Gregory source form; May has current BCP/LFF individual Gregory of Nazianzus; June has current BCP/LFF individual Basil of Caesarea. Keep source forms distinct.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the received joint commemoration stays on 01-02 (Anglican Martyrology, For All the Saints, Common Worship). Gregory (05-09) and Basil (06-14) are intentional additional individual observances printed in LFF, HWHM and GCW.",
        "this_date_annotation": ""
       }
      ]
@@ -5375,14 +5375,14 @@
      "designation": "Bishop",
      "year_or_period": "992",
      "tradition": "Anglican / English",
-     "source_witnesses": "AM/Oxford date context; Feb 28 matrix",
+     "source_witnesses": "Worcester Cathedral leap-year feast, Thursday 29 Feb 2024 (Sunday News 18 Feb 2024, p.5; Services and Music Feb/Mar 2024); AM (28 Feb); ODS",
      "source_tier": "Anglican martyrology / English calendar witness",
      "preliminary_status": "Strong alternate",
      "ranking_rationale": "Oswald died on Feb 29 and is often kept Feb 28 in non-leap years; possible native leap-day candidate if Cassian is harmonized to July.",
      "review_flags": "leap-day; date harmonization with Feb 28; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Held books (Anglican Martyrology) place Oswald on 28 February. Worcester Cathedral keeps his feast on 29 February in leap years: \"The Feast of St Oswald is on Thursday 29 February\" (Sunday News, 18 Feb 2024, PDF p.5; https://www.worcestercathedral.org.uk/media/brtevqbd/2024-february-18.pdf); Services and Music Feb/Mar 2024 lists \"Thursday 29th: Oswald, Bishop of Worcester, 992\".",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000887",
@@ -5600,8 +5600,8 @@
        "non_date_notes": [],
        "files_seen": "december; march",
        "issue_type": "source-form/date harmonization",
-       "qc_status": "Open",
-       "notes": "March current LFF pairs John and Charles Wesley; December has a Charles Wesley date-variant candidate requiring Methodist/Anglican hymnwriter review.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the received joint commemoration stays on 03-03 (LFF, HWHM, GCW, FAS, SEC). Charles is also commemorated individually on 12-18 by the curator's deliberate birthday observance (born 18 December 1707; LFF 2024 gives the birthday in the 3 March biography). 12-18 is an editorial date, not a received calendar date.",
        "this_date_annotation": ""
       }
      ]
@@ -5612,14 +5612,14 @@
      "designation": "Priest and hymnwriter",
      "year_or_period": "1788",
      "tradition": "Anglican / Methodist-received",
-     "source_witnesses": "December matrix date variant; AM",
+     "source_witnesses": "LFF; HWHM; GCW; FAS; SEC (joint commemoration with John, 3 March)",
      "source_tier": "Anglican martyrology / date variant",
      "preliminary_status": "Review / date harmonization",
      "ranking_rationale": "Individual hymnwriter source form should remain distinct from the John-and-Charles group.",
      "review_flags": "date harmonization with Dec 18; hymnwriter framing",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Alternate form of the received joint commemoration. Charles is also individually observed on 18 December by the curator's deliberate birthday observance.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000594",
@@ -5641,8 +5641,8 @@
        "non_date_notes": [],
        "files_seen": "december; march",
        "issue_type": "source-form/date harmonization",
-       "qc_status": "Open",
-       "notes": "March current LFF pairs John and Charles Wesley; December has a Charles Wesley date-variant candidate requiring Methodist/Anglican hymnwriter review.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the received joint commemoration stays on 03-03 (LFF, HWHM, GCW, FAS, SEC). Charles is also commemorated individually on 12-18 by the curator's deliberate birthday observance (born 18 December 1707; LFF 2024 gives the birthday in the 3 March biography). 12-18 is an editorial date, not a received calendar date.",
        "this_date_annotation": ""
       }
      ]
@@ -8373,14 +8373,14 @@
      "designation": "Bishop of Rome",
      "year_or_period": "432",
      "tradition": "Greater Church / Roman",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "Book of Saints, printed p.134 (PDF p.147), left column, 6 April",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Early papal/Christological witness; papal context.",
      "review_flags": "papal context",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Book of Saints: \"Celestine I, Pope (St) ... 6 April ... d. 432\". The earlier \"AM; Oxford\" attribution did not establish the date.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000949",
@@ -10630,32 +10630,6 @@
     },
     {
      "rank": "2",
-     "candidate": "James K. O. S. Huntington",
-     "designation": "Priest and monastic founder",
-     "year_or_period": "1935",
-     "tradition": "Anglican",
-     "source_witnesses": "HWHM; GCW; AM",
-     "source_tier": "TEC secondary / Anglican martyrology",
-     "preliminary_status": "Strong alternate",
-     "ranking_rationale": "Anglican priest and founder of the Order of the Holy Cross; strong Anglican religious-life alternate.",
-     "review_flags": "religious-founder framing",
-     "decision_status": "Pending",
-     "final_primary": "",
-     "notes": "",
-     "sin_status": "ok",
-     "sin": {
-      "sin": "UO-SIN-000999",
-      "normalized_name": "James K. O. S. Huntington",
-      "entity_type": "person",
-      "source_candidate_name": "James K. O. S. Huntington",
-      "identity_note": "",
-      "source": "alternate",
-      "canonical_name": "James K. O. S. Huntington"
-     },
-     "harmonization": null
-    },
-    {
-     "rank": "3",
      "candidate": "Philip and James source transfer context",
      "designation": "Apostles",
      "year_or_period": "1st century",
@@ -10905,14 +10879,14 @@
      "designation": "Apostolic devotion",
      "year_or_period": "1st century",
      "tradition": "Western devotional feast",
-     "source_witnesses": "AM/Oxford context",
+     "source_witnesses": "ODS (John the Evangelist entry: West 6 May, Dedication of the church of St John before the Latin Gate); Butler, Lives of the Saints, 6 May",
      "source_tier": "TEC secondary / Anglican martyrology",
      "preliminary_status": "Review",
      "ranking_rationale": "Devotional apostolic observance; not stronger than George or fixed John feast.",
      "review_flags": "feast/genre review",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "ODS John the Evangelist entry: \"in the West, 27 December and 6 May, the Dedication of the church of St. John before the Latin Gate\". Butler's 6 May chapter cited by the curator (not held in the repository). The unverified AM attribution is removed.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-001004",
@@ -11126,7 +11100,7 @@
      "review_flags": "date harmonization with January 2 paired Basil-Gregory form; Greater Church remembers",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Printed 9 May in LFF, HWHM and GCW. Intentional additional individual observance alongside the joint 2 January commemoration with Basil (curator, 2026-10-02).",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000737",
@@ -11149,40 +11123,14 @@
        "non_date_notes": [],
        "files_seen": "january; may; june",
        "issue_type": "source-form/date harmonization",
-       "qc_status": "Open",
-       "notes": "January has paired Basil-Gregory source form; May has current BCP/LFF individual Gregory of Nazianzus; June has current BCP/LFF individual Basil of Caesarea. Keep source forms distinct.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the received joint commemoration stays on 01-02 (Anglican Martyrology, For All the Saints, Common Worship). Gregory (05-09) and Basil (06-14) are intentional additional individual observances printed in LFF, HWHM and GCW.",
        "this_date_annotation": ""
       }
      ]
     },
     {
      "rank": "2",
-     "candidate": "Nicolaus Ludwig von Zinzendorf",
-     "designation": "Renewer of the Church",
-     "year_or_period": "1760",
-     "tradition": "Moravian / Anglican-received",
-     "source_witnesses": "HWHM; GCW; FAS",
-     "source_tier": "TEC secondary / Anglican martyrology",
-     "preliminary_status": "Review",
-     "ranking_rationale": "Major devotional/missionary renewal witness but non-Anglican Protestant status requires review.",
-     "review_flags": "Protestant/non-Anglican review",
-     "decision_status": "Pending",
-     "final_primary": "",
-     "notes": "",
-     "sin_status": "ok",
-     "sin": {
-      "sin": "UO-SIN-001010",
-      "normalized_name": "Nicolaus Ludwig von Zinzendorf",
-      "entity_type": "person",
-      "source_candidate_name": "Nicolaus Ludwig von Zinzendorf",
-      "identity_note": "",
-      "source": "alternate",
-      "canonical_name": "Nicolaus Ludwig von Zinzendorf"
-     },
-     "harmonization": null
-    },
-    {
-     "rank": "3",
      "candidate": "Beatus of Lungern",
      "designation": "Hermit",
      "year_or_period": "112",
@@ -11286,6 +11234,47 @@
       "canonical_name": "Solangia"
      },
      "harmonization": null
+    },
+    {
+     "rank": "4",
+     "candidate": "Nicolaus Ludwig von Zinzendorf",
+     "designation": "Renewer of the Church",
+     "year_or_period": "1760",
+     "tradition": "Moravian / Anglican-received",
+     "source_witnesses": "HWHM; GCW; AM (all print 10 May); FAS",
+     "source_tier": "TEC secondary / Anglican martyrology",
+     "preliminary_status": "Curator-approved date correction",
+     "ranking_rationale": "Printed on 10 May in Holy Women, Holy Men and A Great Cloud of Witnesses (Prophetic Witness, 1760) and listed on 10 May in the Anglican Martyrology. Moved from 05-09 by the curator on 2026-10-02; selected as primary on 05-10 with Comgall of Bangor retained as an alternate.",
+     "review_flags": "date corrected 2026-10-02; Protestant/Moravian review",
+     "decision_status": "Pending",
+     "final_primary": "",
+     "notes": "Curatorial correction 2026-10-02: previously placed on 05-09, a date no held source supports.",
+     "sin_status": "ok",
+     "sin": {
+      "sin": "UO-SIN-001010",
+      "normalized_name": "Nicolaus Ludwig von Zinzendorf",
+      "entity_type": "person",
+      "source_candidate_name": "Nicolaus Ludwig von Zinzendorf",
+      "identity_note": "",
+      "source": "alternate",
+      "canonical_name": "Nicolaus Ludwig von Zinzendorf"
+     },
+     "harmonization": [
+      {
+       "candidate_or_group": "Nicolaus Ludwig von Zinzendorf",
+       "dates": [
+        "05-09",
+        "05-10"
+       ],
+       "date_annotations": {},
+       "non_date_notes": [],
+       "files_seen": "may",
+       "issue_type": "date correction",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: printed 10 May in HWHM, GCW and the Anglican Martyrology; moved from 05-09 and selected as primary on 05-10. Comgall of Bangor remains an alternate on 05-10.",
+       "this_date_annotation": ""
+      }
+     ]
     }
    ],
    "05-11": [
@@ -11762,14 +11751,14 @@
      "designation": "Abbot",
      "year_or_period": "c. 577",
      "tradition": "Anglican / Irish",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "AM, p.58 (16 May: Brendan of Clonfert)",
      "source_tier": "TEC secondary / Anglican martyrology",
      "preliminary_status": "Strong alternate",
      "ranking_rationale": "Irish monastic and missionary tradition, with legendary voyage material.",
      "review_flags": "legendary material review; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology p.58 places Brendan of Clonfert on 16 May. A January 15 mention occurs within the entry for Ita.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-001023",
@@ -11816,14 +11805,14 @@
      "designation": "Martyr",
      "year_or_period": "304",
      "tradition": "Greater Church / North African",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "Book of Saints, printed p.638 (PDF p.651), right column, 17 May",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Ancient martyrial witness; lower source priority.",
      "review_flags": "Greater Church remembers",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Book of Saints: \"Restituta (St) 17 May d. 304. A Roman African maiden, she was martyred at Carthage in the reign of Diocletian.\"",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-001024",
@@ -14209,7 +14198,7 @@
      "review_flags": "date/source-form harmonization with January 2 Basil-Gregory pair and May 9 Gregory of Nazianzus",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Printed 14 June in LFF, HWHM and GCW. Preserved; Basil is also commemorated jointly with Gregory on 2 January.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000771",
@@ -15892,13 +15881,13 @@
      "year_or_period": "",
      "tradition": "Biblical / Coptic Orthodox / Oriental Orthodox",
      "source_witnesses": "Coptic Orthodox Church Synaxarium (Paona 26)",
-     "source_tier": "Coptic Orthodox synaxarium",
+     "source_tier": "Great Church supplementation (Coptic Orthodox Synaxarium)",
      "preliminary_status": "Strong candidate",
      "ranking_rationale": "Biblical prophet and successor of Moses; his Coptic commemoration of departure supplies a distinct July 3 witness while Thomas remains on the BCP/LFF date of December 21.",
      "review_flags": "none",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "Governed by Josh on 2026-09-07 as the July 3 replacement for Thomas the Apostle.",
+     "notes": "Deliberate Great Church supplementation by the curator under the Editorial Rules: the date is dated by the received Coptic commemoration (Paona 26) and is not duplicated by an Anglican calendar.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-001106",
@@ -16362,14 +16351,14 @@
      "designation": "Monastics",
      "year_or_period": "",
      "tradition": "Eastern Orthodox / Greater Church",
-     "source_witnesses": "AM",
+     "source_witnesses": "AM (10 July: Antony Pechersky and Theodosius Pechersky)",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Thin Anglican day; strong Eastern monastic formation and holiness witness.",
      "review_flags": "Greater Church remembers; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology 10 July names them \"St. Antony Pechersky and St. Theodosius Pechersky\", abbots of the Cave monastery of Kiev.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000010",
@@ -16881,14 +16870,14 @@
      "designation": "Ruler / Equal-to-the-Apostles",
      "year_or_period": "",
      "tradition": "Eastern Christian / Greater Church",
-     "source_witnesses": "AM",
+     "source_witnesses": "AM (15 July); Vladimir also discussed on 11 July within Olga's entry",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Important Eastern Christian witness; could be considered if Byzantine supplementation is desired.",
      "review_flags": "Great Five supplement; ruler-saint review",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology 15 July: \"In 1015, St. Vladimir of Kiev\". The 11 July discussion of Vladimir occurs within Olga's entry.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000210",
@@ -19223,6 +19212,47 @@
       "canonical_name": "Felim"
      },
      "harmonization": null
+    },
+    {
+     "rank": "4",
+     "candidate": "Mary Sumner",
+     "designation": "Founder of the Mothers’ Union",
+     "year_or_period": "1921",
+     "tradition": "Anglican",
+     "source_witnesses": "AM (9 August, Alresford, 1921)",
+     "source_tier": "Anglican martyrology",
+     "preliminary_status": "Curator-approved alternate",
+     "ranking_rationale": "The Anglican Martyrology places Mary Sumner on 9 August (died at Alresford, 1921). Moved from 08-19 by the curator on 2026-10-02 and retained on 08-09 as an alternate to Edith Stein (LFF 2024).",
+     "review_flags": "date corrected 2026-10-02",
+     "decision_status": "Pending",
+     "final_primary": "",
+     "notes": "Curatorial correction 2026-10-02: previously placed on 08-19, a date no held source supports.",
+     "sin_status": "ok",
+     "sin": {
+      "sin": "UO-SIN-000050",
+      "normalized_name": "Mary Sumner",
+      "entity_type": "person",
+      "source_candidate_name": "Mary Sumner",
+      "identity_note": "",
+      "source": "alternate",
+      "canonical_name": "Mary Sumner"
+     },
+     "harmonization": [
+      {
+       "candidate_or_group": "Mary Sumner",
+       "dates": [
+        "08-19",
+        "08-09"
+       ],
+       "date_annotations": {},
+       "non_date_notes": [],
+       "files_seen": "august",
+       "issue_type": "date correction",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the Anglican Martyrology places Mary Sumner on 08-09; she is retained there as an alternate to Edith Stein (LFF). 08-19 is now John Eudes.",
+       "this_date_annotation": ""
+      }
+     ]
     }
    ],
    "08-10": [
@@ -20153,32 +20183,6 @@
    "08-19": [
     {
      "rank": "1",
-     "candidate": "Mary Sumner",
-     "designation": "Founder of the Mothers’ Union",
-     "year_or_period": "1921",
-     "tradition": "Anglican",
-     "source_witnesses": "AM",
-     "source_tier": "Anglican martyrology",
-     "preliminary_status": "Strong candidate",
-     "ranking_rationale": "Anglican lay holiness family formation and mothers’ vocation; best Anglican candidate on thin day.",
-     "review_flags": "source/date verification; institutional-founder framing",
-     "decision_status": "Pending",
-     "final_primary": "",
-     "notes": "",
-     "sin_status": "ok",
-     "sin": {
-      "sin": "UO-SIN-000050",
-      "canonical_name": "Mary Sumner",
-      "entity_type": "person",
-      "audit_status": "rank1_controlled",
-      "audit_result": "rank preserved pending source verification",
-      "sin_review_flags": "source/date verification; institutional-founder framing",
-      "source": "rank1"
-     },
-     "harmonization": null
-    },
-    {
-     "rank": "2",
      "candidate": "John Eudes",
      "designation": "Priest and founder",
      "year_or_period": "1680",
@@ -20194,17 +20198,17 @@
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000282",
-      "normalized_name": "John Eudes",
+      "canonical_name": "John Eudes",
       "entity_type": "person",
-      "source_candidate_name": "John Eudes",
-      "identity_note": "",
-      "source": "alternate",
-      "canonical_name": "John Eudes"
+      "audit_status": "rank1_controlled",
+      "audit_result": "curatorial correction 2026-10-02: promoted to rank 1 by removal of the displaced candidate",
+      "sin_review_flags": "Greater Church remembers",
+      "source": "rank1"
      },
      "harmonization": null
     },
     {
-     "rank": "3",
+     "rank": "2",
      "candidate": "Blaise Pascal",
      "designation": "Thinker and apologist",
      "year_or_period": "1662",
@@ -20230,7 +20234,7 @@
      "harmonization": null
     },
     {
-     "rank": "4",
+     "rank": "3",
      "candidate": "Louis of Anjou",
      "designation": "Bishop / Franciscan",
      "year_or_period": "1297",
@@ -27941,14 +27945,14 @@
      "designation": "Monastic martyr?",
      "year_or_period": "c. 563",
      "tradition": "Anglican / Irish-Scottish",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "AM (27 October, as Otteran); ODS (Odran (Otteran) of Iona)",
      "source_tier": "Anglican martyrology / Scottish-Irish witness",
      "preliminary_status": "Strong candidate with review",
      "ranking_rationale": "Early Iona-associated witness on a thin Anglican day; tradition is evocative but legendary material requires care.",
      "review_flags": "legendary material review; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology 27 October: \"In 563, St Otteran, abbot\"; ODS: \"ODRAN (Otteran) OF IONA (d. c.563)\".",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000119",
@@ -31046,7 +31050,22 @@
       "source": "alternate",
       "canonical_name": "Lucy Menzies"
      },
-     "harmonization": null
+     "harmonization": [
+      {
+       "candidate_or_group": "Lucy Menzies",
+       "dates": [
+        "12-11",
+        "11-24"
+       ],
+       "date_annotations": {},
+       "non_date_notes": [],
+       "files_seen": "december; november",
+       "issue_type": "date correction",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: SEC calendar and the Anglican Martyrology place Lucy Menzies on 11-24, where she is an alternate to the primary group (LFF). 12-11 is now Frederick Howden Jr. (LFF).",
+       "this_date_annotation": ""
+      }
+     ]
     },
     {
      "rank": "3",
@@ -31126,7 +31145,22 @@
       "sin_review_flags": "",
       "source": "rank1"
      },
-     "harmonization": null
+     "harmonization": [
+      {
+       "candidate_or_group": "James Otis Sargent Huntington",
+       "dates": [
+        "05-03",
+        "11-25"
+       ],
+       "date_annotations": {},
+       "non_date_notes": [],
+       "files_seen": "may; november",
+       "issue_type": "duplicate/date harmonization",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the 05-03 copy was an erroneous duplicate and is removed (its SIN UO-SIN-000999 is retired). Huntington remains the 11-25 primary (LFF, HWHM, GCW), UO-SIN-000148.",
+       "this_date_annotation": ""
+      }
+     ]
     },
     {
      "rank": "2",
@@ -32780,32 +32814,6 @@
       "canonical_name": "Damasus I"
      },
      "harmonization": null
-    },
-    {
-     "rank": "4",
-     "candidate": "Lucy Menzies",
-     "designation": "Scholar and mystic",
-     "year_or_period": "1954",
-     "tradition": "Anglican / Scottish",
-     "source_witnesses": "AM; SEC on Nov 24",
-     "source_tier": "Anglican martyrology / Provincial date elsewhere",
-     "preliminary_status": "Review / date harmonization",
-     "ranking_rationale": "Anglican mystical scholar but November 24 SEC/AM handling already appears in November matrix.",
-     "review_flags": "date harmonization with November 24",
-     "decision_status": "Pending",
-     "final_primary": "",
-     "notes": "",
-     "sin_status": "ok",
-     "sin": {
-      "sin": "UO-SIN-000541",
-      "normalized_name": "Lucy Menzies",
-      "entity_type": "person",
-      "source_candidate_name": "Lucy Menzies",
-      "identity_note": "also appears 11-24",
-      "source": "alternate",
-      "canonical_name": "Lucy Menzies"
-     },
-     "harmonization": null
     }
    ],
    "12-12": [
@@ -33499,14 +33507,14 @@
      "designation": "Hymnwriter",
      "year_or_period": "1788",
      "tradition": "Anglican / Methodist",
-     "source_witnesses": "HWHM/GCW date variant?",
-     "source_tier": "TEC secondary candidate",
-     "preliminary_status": "Review / date harmonization",
-     "ranking_rationale": "Major hymnwriter but likely belongs elsewhere in TEC source-form; hold until Methodist/evangelical date strategy is complete.",
-     "review_flags": "date/source verification; Protestant/Methodist review; hymnwriter holiness test",
+     "source_witnesses": "Curator's birthday observance; ecclesial reception through the joint 3 March commemoration (LFF; HWHM; GCW; FAS; SEC)",
+     "source_tier": "Editorial selection (curator) on a received joint commemoration",
+     "preliminary_status": "Curator-approved editorial observance",
+     "ranking_rationale": "Charles Wesley is individually commemorated on 18 December by the curator's deliberate birthday observance (born 18 December 1707; LFF 2024 gives the birthday in the 3 March biography, printed p.124). The received joint commemoration with John remains on 3 March. LFF, HWHM and GCW do not print a 18 December feast.",
+     "review_flags": "editorial date (birthday); not a received calendar date; apparatus only",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Charles Wesley is individually commemorated on December 18 by the curator's deliberate birthday observance. The received joint commemoration with John remains on March 3.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000594",
@@ -33528,8 +33536,8 @@
        "non_date_notes": [],
        "files_seen": "december; march",
        "issue_type": "source-form/date harmonization",
-       "qc_status": "Open",
-       "notes": "March current LFF pairs John and Charles Wesley; December has a Charles Wesley date-variant candidate requiring Methodist/Anglican hymnwriter review.",
+       "qc_status": "Resolved",
+       "notes": "Governed 2026-10-02: the received joint commemoration stays on 03-03 (LFF, HWHM, GCW, FAS, SEC). Charles is also commemorated individually on 12-18 by the curator's deliberate birthday observance (born 18 December 1707; LFF 2024 gives the birthday in the 3 March biography). 12-18 is an editorial date, not a received calendar date.",
        "this_date_annotation": ""
       }
      ]
@@ -33670,27 +33678,27 @@
     },
     {
      "rank": "3",
-     "candidate": "Ammonius and Companions",
+     "candidate": "Ammon and Companions",
      "designation": "Martyrs",
      "year_or_period": "250",
      "tradition": "Greater Church / Egyptian",
-     "source_witnesses": "AM",
+     "source_witnesses": "AM (20 December: Ammon and companions)",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Alexandrian martyrial witness; lower source priority.",
      "review_flags": "Greater Church remembers; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology 20 December: \"In 250, at Alexandria, St. Ammon and companions\" (Decian persecution). Label reconciled from \"Ammonius and Companions\" to the attested \"Ammon and Companions\"; unrelated to Ammonius the hermit (8 November). Book of Saints gives the corresponding group on 1 June and is not evidence for 20 December.",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000598",
-      "normalized_name": "Ammonius and Companions",
+      "normalized_name": "Ammon and Companions",
       "entity_type": "group",
-      "source_candidate_name": "Ammonius and Companions",
+      "source_candidate_name": "Ammon and Companions",
       "identity_note": "group source form",
       "source": "alternate",
-      "canonical_name": "Ammonius and Companions"
+      "canonical_name": "Ammon and Companions"
      },
      "harmonization": null
     }
@@ -33867,14 +33875,14 @@
      "designation": "Martyrs",
      "year_or_period": "250",
      "tradition": "Greater Church / Egyptian",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "Book of Saints, printed p.135 (PDF p.148), right column, 22 December",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Usable",
      "ranking_rationale": "Egyptian martyrial witness; lower source priority.",
      "review_flags": "Greater Church remembers; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Book of Saints: \"Chaeremon of Nilopolis and Comps (SS) 22 December d. 250. A very old bishop of Nilopolis (Egypt)\".",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000601",
@@ -33962,14 +33970,14 @@
      "designation": "Bishop",
      "year_or_period": "1193",
      "tradition": "Greater Church / Nordic",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "AM (23 December, as Thorlac)",
      "source_tier": "Anglican martyrology / Great Church",
      "preliminary_status": "Strong alternate",
      "ranking_rationale": "Icelandic reforming bishop and national saint; strong Great Church/Nordic candidate on thin day.",
      "review_flags": "Greater Church remembers; source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology 23 December: \"At Skalholt in Iceland, St. Thorlac, bishop\".",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000603",
@@ -34338,32 +34346,6 @@
     },
     {
      "rank": "2",
-     "candidate": "David of London",
-     "designation": "Bishop",
-     "year_or_period": "12th century",
-     "tradition": "Anglican / English",
-     "source_witnesses": "AM",
-     "source_tier": "Anglican martyrology",
-     "preliminary_status": "Weak / defer",
-     "ranking_rationale": "Local episcopal candidate but thin and outranked by Becket.",
-     "review_flags": "source verification",
-     "decision_status": "Pending",
-     "final_primary": "",
-     "notes": "",
-     "sin_status": "ok",
-     "sin": {
-      "sin": "UO-SIN-000610",
-      "normalized_name": "David of London",
-      "entity_type": "person",
-      "source_candidate_name": "David of London",
-      "identity_note": "",
-      "source": "alternate",
-      "canonical_name": "David of London"
-     },
-     "harmonization": null
-    },
-    {
-     "rank": "3",
      "candidate": "Trophimus of Arles",
      "designation": "Bishop / missionary",
      "year_or_period": "early tradition",
@@ -34440,14 +34422,14 @@
      "designation": "Bishop",
      "year_or_period": "717",
      "tradition": "Anglican / English",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "source_witnesses": "AM (30 December; 10 September is the translation of his relics); ODS (Feast: 30 December)",
      "source_tier": "Anglican martyrology / English witness",
      "preliminary_status": "Strong alternate",
      "ranking_rationale": "English bishop and monastic founder; good Anglican-family alternate if Gaudet is governed to December 31 only.",
      "review_flags": "source verification",
      "decision_status": "Pending",
      "final_primary": "",
-     "notes": "",
+     "notes": "Anglican Martyrology (entry under 10 September): \"In the Middle Ages St Egwin was commemorated on 30 December: September 10 is the day of the translation of his relics in 1039.\" ODS: \"Feast: 30 December; translation feasts 10 September and 11 January.\"",
      "sin_status": "ok",
      "sin": {
       "sin": "UO-SIN-000612",
@@ -34628,6 +34610,21 @@
     }
    ]
   },
-  "day_notices": {}
+  "day_notices": {
+   "12-29": [
+    {
+     "candidate_or_group": "David of London",
+     "dates": [
+      "12-29"
+     ],
+     "date_annotations": {},
+     "non_date_notes": [],
+     "files_seen": "december",
+     "issue_type": "unsupported identity",
+     "qc_status": "Resolved",
+     "notes": "Governed 2026-10-02: withdrawn. No David of London is attested; the Anglican Martyrology entry for 29 December is the prophet Nathan and King David. Replaced by Thomas Becket (LFF, HWHM, GCW). UO-SIN-000610 is retired and must not be repurposed."
+    }
+   ]
+  }
  }
 }

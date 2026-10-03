@@ -181,3 +181,7 @@ June exposed this through SEC transfer contexts around the Visitation, Justin, a
 ## Continuing QC rule
 
 Each future monthly tranche should be checked against current LFF first, then against earlier months for source-form consistency, duplicate/date harmonization, status-language consistency, year-specific transfer artifacts, and whether the ranking reflects the project rules: holiness over significance, social impact as evidence rather than proof, Anglican-centered source hierarchy, Great Church supplementation only when properly labeled, and the final test of prayability and discipleship.
+
+
+## 2026-10-02 curatorial corrections
+Applied from the curator's approved table (documentation/ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md): 05-03 Cruciger, 05-09 Gregory of Nazianzus, 05-10 Zinzendorf (Comgall alternate), 08-09 Edith Stein (+ Mary Sumner alternate), 08-19 John Eudes, 11-24 group (+ Lucy Menzies alternate), 12-11 Howden, 12-18 Charles Wesley (editorial birthday observance), 12-29 Thomas Becket. Retired SINs: UO-SIN-000999, UO-SIN-000610 (data/kalendar/sin/retired-sins.csv). Thirteen witness citations repaired.

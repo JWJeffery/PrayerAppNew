@@ -1,0 +1,561 @@
+{
+ "schema": "menaion-commons-mapping/1",
+ "_comment": "Rank-3 commemorations mapped to an Orloff Common. Mapped by Josh's instruction 2026-10-01 (\"map all rank-3 days\") wherever a Common can fit without a feast-name blank. Deliberately UNMAPPED (8): Conception, Robe and Belt of the Theotokos, Mandylion, Procession of the Cross (Orloff's Lord/Theotokos/Cross Commons are templates with a '((name of the event))' blank that does not fit grammatically across feasts, plus readings and a prayer for the Emperor); Repose of Anna (no Common for the righteous); Nicaea Fathers+Nina (Orloff's chapter is only two partial sections); Leavetaking of the Entrance (no Common). AGES still covers some of these (data/menaion/ages/mapping.json).",
+ "entries": [
+  {
+   "id": "apostle-timothy",
+   "mmdd": "01-22",
+   "name": "Holy Apostle Timothy",
+   "common": "apostle",
+   "invocation": "Timothy"
+  },
+  {
+   "id": "onesimus-apostle",
+   "mmdd": "02-15",
+   "name": "Holy Apostle Onesimus",
+   "common": "apostle",
+   "invocation": "Onesimus"
+  },
+  {
+   "id": "james-zebedee",
+   "mmdd": "04-30",
+   "name": "Holy Apostle James, Son of Zebedee, Brother of St. John the Theologian",
+   "common": "apostle",
+   "invocation": "James"
+  },
+  {
+   "id": "simon-zealot-apostle",
+   "mmdd": "05-10",
+   "name": "Holy Apostle Simon the Zealot",
+   "common": "apostle",
+   "invocation": "Simon"
+  },
+  {
+   "id": "bartholomew-barnabas-apostles",
+   "mmdd": "06-11",
+   "name": "Holy Apostles Bartholomew and Barnabas",
+   "common": "apostles-many",
+   "invocation": "Bartholomew and Barnabas"
+  },
+  {
+   "id": "jude-apostle-brother-lord",
+   "mmdd": "06-19",
+   "name": "Holy Apostle Jude, Brother of the Lord",
+   "common": "apostle",
+   "invocation": "Jude"
+  },
+  {
+   "id": "thomas-apostle-october",
+   "mmdd": "10-06",
+   "name": "Holy Apostle Thomas",
+   "common": "apostle",
+   "invocation": "Thomas"
+  },
+  {
+   "id": "matthias-apostle-august",
+   "mmdd": "08-09",
+   "name": "Holy Apostle Matthias",
+   "common": "apostle",
+   "invocation": "Matthias"
+  },
+  {
+   "id": "bartholomew-titus-apostles",
+   "mmdd": "08-25",
+   "name": "Holy Apostles Bartholomew and Titus",
+   "common": "apostles-many",
+   "invocation": "Bartholomew and Titus"
+  },
+  {
+   "id": "james-alphaeus-apostle",
+   "mmdd": "10-09",
+   "name": "Holy Apostle James the son of Alphaeus",
+   "common": "apostle",
+   "invocation": "James"
+  },
+  {
+   "id": "alexios-metropolitan-moscow",
+   "mmdd": "02-12",
+   "name": "St. Alexios, Metropolitan of Moscow",
+   "common": "hierarch",
+   "invocation": "Alexios"
+  },
+  {
+   "id": "leo-rome",
+   "mmdd": "02-18",
+   "name": "St. Leo the Great, Pope of Rome",
+   "common": "hierarch",
+   "invocation": "Leo"
+  },
+  {
+   "id": "cyril-jerusalem",
+   "mmdd": "03-18",
+   "name": "St. Cyril, Archbishop of Jerusalem",
+   "common": "hierarch",
+   "invocation": "Cyril"
+  },
+  {
+   "id": "athanasius-alexandria",
+   "mmdd": "05-02",
+   "name": "St. Athanasius the Great, Archbishop of Alexandria",
+   "common": "hierarch",
+   "invocation": "Athanasius"
+  },
+  {
+   "id": "cyril-alexandria-bishop",
+   "mmdd": "06-09",
+   "name": "St. Cyril, Archbishop of Alexandria",
+   "common": "hierarch",
+   "invocation": "Cyril"
+  },
+  {
+   "id": "tikhon-zadonsk",
+   "mmdd": "08-13",
+   "name": "St. Tikhon of Zadonsk, Bishop of Voronezh",
+   "common": "hierarch",
+   "invocation": "Tikhon"
+  },
+  {
+   "id": "gregory-illuminator-armenia",
+   "mmdd": "09-30",
+   "name": "St. Gregory the Illuminator of Armenia",
+   "common": "hierarch",
+   "invocation": "Gregory"
+  },
+  {
+   "id": "john-the-merciful",
+   "mmdd": "11-12",
+   "name": "John the Merciful, Patriarch of Alexandria",
+   "common": "hierarch",
+   "invocation": "John"
+  },
+  {
+   "id": "gregory-wonderworker",
+   "mmdd": "11-17",
+   "name": "Our Father among the Saints Gregory the Wonderworker, Bishop of Neo-Caesarea",
+   "common": "hierarch",
+   "invocation": "Gregory"
+  },
+  {
+   "id": "amphilochius-iconium",
+   "mmdd": "11-23",
+   "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
+   "common": "hierarch",
+   "invocation": "Amphilochius"
+  },
+  {
+   "id": "ambrose-milan",
+   "mmdd": "12-07",
+   "name": "Our Father among the Saints Ambrose, Bishop of Milan",
+   "common": "hierarch",
+   "invocation": "Ambrose"
+  },
+  {
+   "id": "paul-patriarch-cp",
+   "mmdd": "11-06",
+   "name": "Paul the Confessor, Patriarch of Constantinople",
+   "common": "confessor",
+   "invocation": "Paul"
+  },
+  {
+   "id": "polycarp-smyrna",
+   "mmdd": "02-23",
+   "name": "Hieromartyr Polycarp, Bishop of Smyrna",
+   "common": "hieromartyr",
+   "invocation": "Polycarp"
+  },
+  {
+   "id": "martin-pope-rome",
+   "mmdd": "04-13",
+   "name": "Hieromartyr Martin, Pope of Rome",
+   "common": "hieromartyr",
+   "invocation": "Martin"
+  },
+  {
+   "id": "eusebius-samosata",
+   "mmdd": "06-22",
+   "name": "Hieromartyr Eusebius, Bishop of Samosata",
+   "common": "hieromartyr",
+   "invocation": "Eusebius"
+  },
+  {
+   "id": "theodore-stratelates",
+   "mmdd": "02-08",
+   "name": "Great Martyr Theodore Stratelates ('the General')",
+   "common": "martyr",
+   "invocation": "Theodore"
+  },
+  {
+   "id": "theodore-tyron",
+   "mmdd": "02-17",
+   "name": "Great Martyr Theodore Tyron ('the Recruit')",
+   "common": "martyr",
+   "invocation": "Theodore"
+  },
+  {
+   "id": "prokopios-caesarea-martyr",
+   "mmdd": "07-08",
+   "name": "Holy Great Martyr Prokopios of Caesarea",
+   "common": "martyr",
+   "invocation": "Prokopios"
+  },
+  {
+   "id": "panteleimon-great-martyr",
+   "mmdd": "07-27",
+   "name": "Holy Great Martyr and Healer Panteleimon",
+   "common": "martyr",
+   "invocation": "Panteleimon"
+  },
+  {
+   "id": "james-the-persian",
+   "mmdd": "11-27",
+   "name": "Holy Great Martyr James the Persian",
+   "common": "martyr",
+   "invocation": "James"
+  },
+  {
+   "id": "irene-great-martyr",
+   "mmdd": "05-05",
+   "name": "Holy Great Martyr Irene",
+   "common": "female-martyr",
+   "invocation": "Irene"
+  },
+  {
+   "id": "euphemia-great-martyr",
+   "mmdd": "07-11",
+   "name": "Holy Great Martyr Euphemia the All-Praised",
+   "common": "female-martyr",
+   "invocation": "Euphemia"
+  },
+  {
+   "id": "euphemia-all-praised-september",
+   "mmdd": "09-16",
+   "name": "Holy Great Martyr Euphemia the All-Praised",
+   "common": "female-martyr",
+   "invocation": "Euphemia"
+  },
+  {
+   "id": "great-martyr-catherine",
+   "mmdd": "11-24",
+   "name": "Holy Great Martyr Catherine of Alexandria",
+   "common": "female-martyr",
+   "invocation": "Catherine"
+  },
+  {
+   "id": "barbara-great-martyr",
+   "mmdd": "12-04",
+   "name": "Holy Great Martyr Barbara",
+   "common": "female-martyr",
+   "invocation": "Barbara"
+  },
+  {
+   "id": "great-martyr-anastasia",
+   "mmdd": "12-22",
+   "name": "Holy Great Martyr Anastasia the Deliverer from Potions",
+   "common": "female-martyr",
+   "invocation": "Anastasia"
+  },
+  {
+   "id": "cyrus-john-unmercenaries",
+   "mmdd": "01-31",
+   "name": "Holy Unmercenary Healers Cyrus and John",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "Cyrus and John"
+  },
+  {
+   "id": "cosmas-damian-asia",
+   "mmdd": "11-01",
+   "name": "Holy Unmercenaries Cosmas and Damian of Asia",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "Cosmas and Damian"
+  },
+  {
+   "id": "john-climacus",
+   "mmdd": "03-30",
+   "name": "Venerable John Climacus, Abbot of Sinai",
+   "common": "monk",
+   "invocation": "John"
+  },
+  {
+   "id": "theodore-sykeote",
+   "mmdd": "04-22",
+   "name": "Venerable Theodore of Sykeon",
+   "common": "monk",
+   "invocation": "Theodore"
+  },
+  {
+   "id": "pachomius-great",
+   "mmdd": "05-15",
+   "name": "Venerable Pachomius the Great",
+   "common": "monk",
+   "invocation": "Pachomius"
+  },
+  {
+   "id": "onuphrius-great",
+   "mmdd": "06-12",
+   "name": "Venerable Onuphrius the Great",
+   "common": "monk",
+   "invocation": "Onuphrius"
+  },
+  {
+   "id": "joannicius-great",
+   "mmdd": "11-04",
+   "name": "Venerable Joannicius the Great",
+   "common": "monk",
+   "invocation": "Joannicius"
+  },
+  {
+   "id": "daniel-stylite",
+   "mmdd": "12-11",
+   "name": "Venerable Daniel the Stylite",
+   "common": "monk",
+   "invocation": "Daniel"
+  },
+  {
+   "id": "mary-egypt",
+   "mmdd": "04-01",
+   "name": "Venerable Mary of Egypt",
+   "common": "nun",
+   "invocation": "Mary"
+  },
+  {
+   "id": "paraskeva-serbia",
+   "mmdd": "10-14",
+   "name": "Venerable Paraskeva of Serbia (of the Balkans)",
+   "common": "nun",
+   "invocation": "Paraskeva"
+  },
+  {
+   "id": "synaxis-seventy-apostles",
+   "mmdd": "01-04",
+   "name": "Synaxis of the Seventy Holy Apostles",
+   "common": "apostles-many",
+   "invocation": "the Seventy"
+  },
+  {
+   "id": "synaxis-twelve-apostles",
+   "mmdd": "06-30",
+   "name": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles",
+   "common": "apostles-many",
+   "invocation": "the Twelve"
+  },
+  {
+   "id": "gregory-nyssa",
+   "mmdd": "01-10",
+   "name": "St. Gregory of Nyssa; St. Dometian of Melitene",
+   "common": "hierarchs-many",
+   "invocation": "Gregory and Dometian"
+  },
+  {
+   "id": "martyr-ignatius-god-bearer-translation",
+   "mmdd": "01-29",
+   "name": "Translation of the Relics of Hieromartyr Ignatius the God-Bearer",
+   "common": "hieromartyr",
+   "invocation": "Ignatius"
+  },
+  {
+   "id": "haralambos-martyr",
+   "mmdd": "02-10",
+   "name": "Hieromartyr Haralambos and his companions",
+   "common": "hieromartyr",
+   "invocation": "Haralambos"
+  },
+  {
+   "id": "finding-relics-innocent-irkutsk",
+   "mmdd": "02-09",
+   "name": "Finding of the Relics of Innocent of Irkutsk",
+   "common": "hierarch",
+   "invocation": "Innocent"
+  },
+  {
+   "id": "forty-martyrs-sebaste",
+   "mmdd": "03-09",
+   "name": "The Forty Holy Martyrs of Sebaste",
+   "common": "martyrs-many",
+   "invocation": "the Forty Martyrs"
+  },
+  {
+   "id": "twenty-thousand-martyrs-nicomedia",
+   "mmdd": "12-28",
+   "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia",
+   "common": "martyrs-many",
+   "invocation": "the Twenty Thousand Martyrs"
+  },
+  {
+   "id": "eustathios-thespesia-companions",
+   "mmdd": "09-20",
+   "name": "Holy Great Martyr Eustathios Placidas and his family",
+   "common": "martyrs-many",
+   "invocation": "Eustathios and his family"
+  },
+  {
+   "id": "clement-rome",
+   "mmdd": "11-25",
+   "name": "Our Father among the Saints Clement, Pope of Rome",
+   "common": "hieromartyr",
+   "invocation": "Clement"
+  },
+  {
+   "id": "ignatius-god-bearer",
+   "mmdd": "12-20",
+   "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch",
+   "common": "hieromartyr",
+   "invocation": "Ignatius"
+  },
+  {
+   "id": "john-damascene",
+   "mmdd": "12-04",
+   "name": "Our Father among the Saints John of Damascus",
+   "common": "monk",
+   "invocation": "John"
+  },
+  {
+   "id": "prophet-daniel-three-youths",
+   "mmdd": "12-17",
+   "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael",
+   "common": "prophet",
+   "invocation": "Daniel and the Three Youths"
+  },
+  {
+   "id": "cyril-constantine-philosopher",
+   "mmdd": "02-14",
+   "name": "Equal-to-the-Apostles Cyril (Constantine), Teacher of the Slavs",
+   "common": "apostle",
+   "invocation": "Cyril",
+   "note": "Equal-to-the-Apostles: no Orloff Common exists; the Common of an Apostle is used (Josh 2026-10-01)"
+  },
+  {
+   "id": "cyril-methodius-slavs",
+   "mmdd": "05-11",
+   "name": "Equal-to-the-Apostles Cyril and Methodius, Teachers of the Slavs",
+   "common": "apostles-many",
+   "invocation": "Cyril and Methodius",
+   "note": "Equal-to-the-Apostles: Common of Several Apostles used (Josh 2026-10-01)"
+  },
+  {
+   "id": "vladimir-equal-apostles",
+   "mmdd": "07-15",
+   "name": "Holy Equal-to-the-Apostles Great Prince Vladimir of Russia",
+   "common": "apostle",
+   "invocation": "Vladimir",
+   "note": "Equal-to-the-Apostles: Common of an Apostle used (Josh 2026-10-01)"
+  },
+  {
+   "id": "mary-magdalene-equal-apostles",
+   "mmdd": "07-22",
+   "name": "Holy Equal-to-the-Apostles Mary Magdalene",
+   "common": "apostle",
+   "invocation": "Mary Magdalene",
+   "note": "Equal-to-the-Apostles: Common of an Apostle used (Josh 2026-10-01)"
+  },
+  {
+   "id": "thekla-equal-apostles",
+   "mmdd": "09-24",
+   "name": "Holy Equal-to-the-Apostles Protomartyr Thekla",
+   "common": "female-martyr",
+   "invocation": "Thekla",
+   "note": "Protomartyr: Common of a Female Martyr used"
+  },
+  {
+   "id": "john-kronstadt",
+   "mmdd": "10-19",
+   "name": "St. John of Kronstadt, Wonderworker",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "John",
+   "note": "Wonder-worker: that Common used"
+  },
+  {
+   "id": "royal-martyrs-russia",
+   "mmdd": "07-04",
+   "name": "Holy Royal Passion-Bearers Tsar Nicholas II and his family",
+   "common": "martyrs-many",
+   "invocation": "the Royal Passion-Bearers",
+   "note": "Common of Several Martyrs used"
+  },
+  {
+   "id": "holy-innocents",
+   "mmdd": "12-29",
+   "name": "The Holy Fourteen Thousand Infants Slain by Herod at Bethlehem",
+   "common": "martyrs-many",
+   "invocation": "the Holy Innocents",
+   "note": "Common of Several Martyrs used"
+  },
+  {
+   "id": "synaxis-archangel-gabriel",
+   "mmdd": "03-26",
+   "name": "Synaxis of the Holy Archangel Gabriel",
+   "common": "angels",
+   "invocation": "Gabriel",
+   "skip": [
+    "exapostilarion",
+    "vespers_aposticha"
+   ],
+   "note": "Orloff's Angels chapter names Michael in those two slots, so they are skipped"
+  },
+  {
+   "id": "archangel-michael-miracle-chonae",
+   "mmdd": "09-06",
+   "name": "Miracle of the Archangel Michael at Chonae (Colossae)",
+   "common": "angels",
+   "invocation": "Michael"
+  },
+  {
+   "id": "veneration-chains-peter",
+   "mmdd": "01-16",
+   "name": "Veneration of the Chains of the Holy Apostle Peter",
+   "common": "apostle",
+   "invocation": "Peter",
+   "note": "Common of an Apostle used"
+  },
+  {
+   "id": "james-brother-lord",
+   "mmdd": "10-23",
+   "name": "Holy Apostle James, Brother of the Lord",
+   "common": "apostle",
+   "invocation": "James"
+  },
+  {
+   "id": "nina-georgia",
+   "mmdd": "01-14",
+   "name": "Equal-to-the-Apostles Nina, Enlightener of Georgia",
+   "common": "apostle",
+   "invocation": "Nina",
+   "note": "Equal-to-the-Apostles: no Orloff Common exists; the Common of an Apostle is used (Josh 2026-10-01)"
+  },
+  {
+   "id": "conception-theotokos-anna",
+   "mmdd": "12-09",
+   "name": "Conception of the Most Holy Theotokos by Righteous Anna",
+   "common": "theotokos",
+   "invocation": "Conception of the Theotokos",
+   "event": "Conception",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "deposition-robe-theotokos",
+   "mmdd": "07-02",
+   "name": "Deposition of the Robe of the Most Holy Theotokos at Blachernae",
+   "common": "theotokos",
+   "invocation": "Deposition of the Robe of the Theotokos",
+   "event": "Deposition of the Robe",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "deposition-belt-theotokos",
+   "mmdd": "08-31",
+   "name": "Deposition of the Precious Belt of the Most Holy Theotokos",
+   "common": "theotokos",
+   "invocation": "Deposition of the Belt of the Theotokos",
+   "event": "Deposition of the Belt",
+   "note": "Common of the festivals of the Virgin with the \"(name of the event)\" blank filled with the feast; mapped 2026-10-02."
+  },
+  {
+   "id": "procession-cross-maccabees",
+   "mmdd": "08-01",
+   "name": "Procession of the Precious Cross; Holy Maccabee Martyrs",
+   "common": "cross",
+   "invocation": "the Cross",
+   "subject": "the Procession of the Precious Cross",
+   "note": "General Service to the Venerated Cross (Orloff); the Maccabee martyrs are not separately commemorated in the text. Mapped 2026-10-02."
+  }
+ ]
+}

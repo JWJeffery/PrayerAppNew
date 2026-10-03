@@ -40,7 +40,11 @@ new Function('globalThis','window','console',
   fs.readFileSync(path.join(ROOT,'js/calendar-east-syriac.js'),'utf8')
 ).call(engineScope, engineScope, engineScope, quiet);
 
-const scope = { EastSyriacCalendar: engineScope.EastSyriacCalendar };
+// EthiopianCalendar backs the Coptic `monthlyCoptic` rule; without it that rule falls back to a legacy day string and
+// reports "no occurrence" in every year (a harness gap until 2026-10-02, and an app bug until the window export was added).
+const ethScope = { console: quiet };
+const EthiopianCalendar = new Function('console', fs.readFileSync(path.join(ROOT,'js/calendar-ethiopian.js'),'utf8') + '; return EthiopianCalendar;')(quiet);
+const scope = { EastSyriacCalendar: engineScope.EastSyriacCalendar, EthiopianCalendar };
 const shim = async (u) => ({ ok:true, json: async () =>
   JSON.parse(fs.readFileSync(path.join(ROOT,'data/saints',path.basename(u)),'utf8')) });
 new Function('globalThis','fetch','console',
@@ -72,11 +76,20 @@ for (const e of rules) {
   const counts = [];
   for (let y = 2020; y <= 2039; y++)
     counts.push(span(y).filter(dt => R.occursOn(e, dt)).length);
-  const zero = counts.filter(c => c === 0).length, many = counts.filter(c => c > 1).length;
+  // `monthlyCoptic` recurs every Coptic month, so 11-13 occurrences per calendar year is correct, not a failure.
+  const [lo, hi] = e.observance.type === 'monthlyCoptic' ? [11, 13] : [1, 1];
+  // KNOWN GAPS (documented, not hidden): years where the rule legitimately cannot resolve.
+  // prophet-elias-elijah 2038: Gregorian Easter on its latest date (25 Apr) leaves Eliya-Sliwa only six weeks before
+  // Qudash 'Idta (Subara minus 28 days) begins, so "Friday of the seventh week of Elijah" does not exist. The printed
+  // diocesan calendars (2020-2026) never show such a year, so what the Church does is unknown; no rule is invented.
+  const KNOWN_GAPS = { 'prophet-elias-elijah': [2038] };
+  const gapYears = KNOWN_GAPS[e.id] || [];
+  const zero = counts.filter((c, i) => c < lo && gapYears.indexOf(2020 + i) === -1).length, many = counts.filter(c => c > hi).length;
+  if (gapYears.length && counts.some((c, i) => c < lo && gapYears.indexOf(2020 + i) !== -1)) console.log(`   ${e.id.padEnd(26)} KNOWN GAP in ${gapYears.join(', ')} (see comment in this script)`);
   if (zero || many) { unresolved++;
     console.log(`   ${e.id.padEnd(26)} ${JSON.stringify(counts)}  ${zero?zero+' year(s) with NO occurrence':''}${many?' '+many+' with >1':''}`); }
 }
-console.log(unresolved ? `   ${unresolved} FAILING` : '   all rules resolve to exactly one day in all 20 years');
+console.log(unresolved ? `   ${unresolved} FAILING` : '   all rules resolve to exactly one day in all 20 years (apart from any KNOWN GAP listed above)');
 
 // PRIMARY: the Diocese of CALIFORNIA, which this project follows and from which
 // this corpus was compiled. SECONDARY: Western Europe, retained because it has

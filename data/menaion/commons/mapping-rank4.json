@@ -1,0 +1,1371 @@
+{
+ "schema": "menaion-commons-mapping-rank4/1",
+ "_comment": "Rank-4 commemorations mapped to an Orloff Common by name rules (scripts/menaion/build-commons-rank4-mapping.py), reviewed by hand. Vespers stichera only (Josh 2026-10-01).",
+ "entries": [
+  {
+   "id": "titus-wonder-worker",
+   "mmdd": "04-02",
+   "name": "Venerable Titus the Wonder-Worker",
+   "common": "monk",
+   "invocation": "Titus"
+  },
+  {
+   "id": "nicetas-medikion",
+   "mmdd": "04-03",
+   "name": "Venerable Nicetas, Hegumen of Medikion",
+   "common": "monk",
+   "invocation": "Nicetas"
+  },
+  {
+   "id": "george-maleon",
+   "mmdd": "04-04",
+   "name": "Venerable George of Mount Maleon in the Peloponnesus",
+   "common": "monk",
+   "invocation": "George"
+  },
+  {
+   "id": "claudius-diodorus-victor-papias",
+   "mmdd": "04-05",
+   "name": "Holy Martyrs Claudius, Diodorus, Victor, and Papias",
+   "common": "martyrs-many",
+   "invocation": "Claudius, Diodorus, Victor and Papias"
+  },
+  {
+   "id": "eutychios-patriarch-constantinople",
+   "mmdd": "04-06",
+   "name": "St. Eutychios, Patriarch of Constantinople",
+   "common": "hierarch",
+   "invocation": "Eutychios"
+  },
+  {
+   "id": "herodion-asyncritus-phlegon",
+   "mmdd": "04-08",
+   "name": "Holy Apostles Herodion, Asyncritus, and Phlegon",
+   "common": "apostles-many",
+   "invocation": "Herodion, Asyncritus and Phlegon"
+  },
+  {
+   "id": "agabus-apostle",
+   "mmdd": "04-08",
+   "name": "Holy Apostle Agabus",
+   "common": "apostle",
+   "invocation": "Agabus"
+  },
+  {
+   "id": "eupsychios-caesarea",
+   "mmdd": "04-09",
+   "name": "Holy Martyr Eupsychios of Caesarea",
+   "common": "martyr",
+   "invocation": "Eupsychios"
+  },
+  {
+   "id": "terence-pompeius-companions",
+   "mmdd": "04-10",
+   "name": "Holy Martyrs Terence, Pompeius, and companions",
+   "common": "martyrs-many",
+   "invocation": "Terence, Pompeius and their companions"
+  },
+  {
+   "id": "antipas-pergamon",
+   "mmdd": "04-11",
+   "name": "Hieromartyr Antipas of Pergamon",
+   "common": "hieromartyr",
+   "invocation": "Antipas"
+  },
+  {
+   "id": "basil-bishop-parium",
+   "mmdd": "04-12",
+   "name": "Hieromartyr Basil, Bishop of Parium",
+   "common": "hieromartyr",
+   "invocation": "Basil"
+  },
+  {
+   "id": "martin-confessor-pope",
+   "mmdd": "04-14",
+   "name": "St. Martin the Confessor, Pope of Rome",
+   "common": "confessor",
+   "invocation": "Martin"
+  },
+  {
+   "id": "aristarchus-pudens-trophimus",
+   "mmdd": "04-15",
+   "name": "Holy Apostles Aristarchus, Pudens, and Trophimus",
+   "common": "apostles-many",
+   "invocation": "Aristarchus, Pudens and Trophimus"
+  },
+  {
+   "id": "agape-irene-chionia",
+   "mmdd": "04-16",
+   "name": "Holy Virgin Martyrs Agape, Irene and Chionia",
+   "common": "martyrs-many",
+   "invocation": "Agape, Irene and Chionia"
+  },
+  {
+   "id": "symeon-bishop-persia",
+   "mmdd": "04-17",
+   "name": "Hieromartyr Symeon, Bishop of Persia, and companions",
+   "common": "hieromartyr",
+   "invocation": "Symeon and his companions"
+  },
+  {
+   "id": "john-of-old-lavra",
+   "mmdd": "04-19",
+   "name": "Venerable John of the Old Lavra",
+   "common": "monk",
+   "invocation": "John"
+  },
+  {
+   "id": "januarius-bishop-beneventum",
+   "mmdd": "04-21",
+   "name": "Hieromartyr Januarius, Bishop of Beneventum",
+   "common": "hieromartyr",
+   "invocation": "Januarius"
+  },
+  {
+   "id": "elizabeth-wonderworker",
+   "mmdd": "04-24",
+   "name": "Venerable Elizabeth the Wonder-Worker",
+   "common": "nun",
+   "invocation": "Elizabeth"
+  },
+  {
+   "id": "basil-bishop-amasea",
+   "mmdd": "04-26",
+   "name": "Hieromartyr Basil, Bishop of Amasea",
+   "common": "hieromartyr",
+   "invocation": "Basil"
+  },
+  {
+   "id": "simeon-bishop-jerusalem",
+   "mmdd": "04-27",
+   "name": "Hieromartyr Simeon, Bishop of Jerusalem",
+   "common": "hieromartyr",
+   "invocation": "Simeon"
+  },
+  {
+   "id": "jason-sosipater",
+   "mmdd": "04-28",
+   "name": "Holy Apostles Jason and Sosipater",
+   "common": "apostles-many",
+   "invocation": "Jason and Sosipater"
+  },
+  {
+   "id": "memnou-memnon-wonder-worker",
+   "mmdd": "04-29",
+   "name": "Holy Martyr Memnon the Wonder-Worker",
+   "common": "martyr",
+   "invocation": "Memnon"
+  },
+  {
+   "id": "isaakios-dalmatos-faustus",
+   "mmdd": "08-03",
+   "name": "Venerable Isaakios, Dalmatos, and Faustus of the Dalmatian Monastery",
+   "common": "monks-many",
+   "invocation": "Isaakios, Dalmatos and Faustus"
+  },
+  {
+   "id": "dometius-persia",
+   "mmdd": "08-07",
+   "name": "Venerable Martyr Dometios of Persia",
+   "common": "monk-martyr",
+   "invocation": "Dometios"
+  },
+  {
+   "id": "emilian-bishop-cyzicus",
+   "mmdd": "08-08",
+   "name": "St. Emilian the Confessor, Bishop of Cyzicus",
+   "common": "confessor",
+   "invocation": "Emilian"
+  },
+  {
+   "id": "lawrence-archdeacon-rome",
+   "mmdd": "08-10",
+   "name": "Holy Martyr and Archdeacon Lawrence of Rome",
+   "common": "martyr",
+   "invocation": "Lawrence"
+  },
+  {
+   "id": "euplus-catania-deacon",
+   "mmdd": "08-11",
+   "name": "Holy Martyr Euplus (Euplius) of Catania",
+   "common": "martyr",
+   "invocation": "Euplus"
+  },
+  {
+   "id": "maximus-confessor-repose",
+   "mmdd": "08-13",
+   "name": "Venerable Maximus the Confessor",
+   "common": "monk",
+   "invocation": "Maximus"
+  },
+  {
+   "id": "myron-martyr-cyzicus",
+   "mmdd": "08-17",
+   "name": "Holy Martyr Myron of Cyzicus",
+   "common": "martyr",
+   "invocation": "Myron"
+  },
+  {
+   "id": "floros-lavros-martyrs",
+   "mmdd": "08-18",
+   "name": "Holy Martyrs Floros and Lavros",
+   "common": "martyrs-many",
+   "invocation": "Floros and Lavros"
+  },
+  {
+   "id": "andrew-stratelates",
+   "mmdd": "08-19",
+   "name": "Holy Martyr Andrew Stratelates and companions",
+   "common": "martyrs-many",
+   "invocation": "Andrew and his companions"
+  },
+  {
+   "id": "samuel-prophet",
+   "mmdd": "08-20",
+   "name": "Holy Prophet Samuel",
+   "common": "prophet",
+   "invocation": "Samuel"
+  },
+  {
+   "id": "thaddaeus-apostle",
+   "mmdd": "08-21",
+   "name": "Holy Apostle Thaddaeus",
+   "common": "apostle",
+   "invocation": "Thaddaeus"
+  },
+  {
+   "id": "agathonikos-martyr",
+   "mmdd": "08-22",
+   "name": "Holy Martyr Agathonikos and companions",
+   "common": "martyrs-many",
+   "invocation": "Agathonikos and his companions"
+  },
+  {
+   "id": "eutyches-hieromartyr",
+   "mmdd": "08-24",
+   "name": "Hieromartyr Eutyches, Disciple of John the Theologian",
+   "common": "hieromartyr",
+   "invocation": "Eutyches"
+  },
+  {
+   "id": "pimen-great",
+   "mmdd": "08-27",
+   "name": "Venerable Pimen (Poemen) the Great",
+   "common": "monk",
+   "invocation": "Pimen"
+  },
+  {
+   "id": "moses-prophet-ethiopia",
+   "mmdd": "08-28",
+   "name": "Venerable Moses the Ethiopian (the Black)",
+   "common": "monk",
+   "invocation": "Moses"
+  },
+  {
+   "id": "alexander-john-paul-cp-patriarchs",
+   "mmdd": "08-30",
+   "name": "Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
+   "common": "hierarchs-many",
+   "invocation": "Alexander, John and Paul the New, Patriarchs of Constantinople"
+  },
+  {
+   "id": "prophet-nahum",
+   "mmdd": "12-01",
+   "name": "Holy Prophet Nahum",
+   "common": "prophet",
+   "invocation": "Nahum"
+  },
+  {
+   "id": "prophet-habakkuk",
+   "mmdd": "12-02",
+   "name": "Holy Prophet Habakkuk",
+   "common": "prophet",
+   "invocation": "Habakkuk"
+  },
+  {
+   "id": "prophet-zephaniah",
+   "mmdd": "12-03",
+   "name": "Holy Prophet Zephaniah (Sophonias)",
+   "common": "prophet",
+   "invocation": "Zephaniah"
+  },
+  {
+   "id": "patapius-thebes",
+   "mmdd": "12-08",
+   "name": "Venerable Patapius of Thebes",
+   "common": "monk",
+   "invocation": "Patapius"
+  },
+  {
+   "id": "menas-hermogenes-eugraphus",
+   "mmdd": "12-10",
+   "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus",
+   "common": "martyrs-many",
+   "invocation": "Menas, Hermogenes and Eugraphus"
+  },
+  {
+   "id": "lucy-syracuse",
+   "mmdd": "12-13",
+   "name": "Holy Martyr Lucy of Syracuse",
+   "common": "female-martyr",
+   "invocation": "Lucy"
+  },
+  {
+   "id": "thyrsus-leucius-philemon",
+   "mmdd": "12-14",
+   "name": "Holy Martyrs Thyrsus, Leucius, and Callinicus",
+   "common": "martyrs-many",
+   "invocation": "Thyrsus, Leucius and Callinicus"
+  },
+  {
+   "id": "prophet-haggai",
+   "mmdd": "12-16",
+   "name": "Holy Prophet Haggai",
+   "common": "prophet",
+   "invocation": "Haggai"
+  },
+  {
+   "id": "sebastian-rome",
+   "mmdd": "12-18",
+   "name": "Holy Martyr Sebastian and his Companions",
+   "common": "martyrs-many",
+   "invocation": "Sebastian and his companions"
+  },
+  {
+   "id": "boniface-tarsus",
+   "mmdd": "12-19",
+   "name": "Holy Martyr Boniface of Tarsus",
+   "common": "martyr",
+   "invocation": "Boniface"
+  },
+  {
+   "id": "ten-martyrs-crete",
+   "mmdd": "12-23",
+   "name": "The Ten Holy Martyrs of Crete",
+   "common": "martyrs-many",
+   "invocation": "the Ten Martyrs"
+  },
+  {
+   "id": "anysia-thessalonica",
+   "mmdd": "12-30",
+   "name": "Holy Martyr Anysia of Thessalonica",
+   "common": "female-martyr",
+   "invocation": "Anysia"
+  },
+  {
+   "id": "melania-roman",
+   "mmdd": "12-31",
+   "name": "Venerable Melania the Younger, Roman",
+   "common": "nun",
+   "invocation": "Melania"
+  },
+  {
+   "id": "tryphon-martyr",
+   "mmdd": "02-01",
+   "name": "Holy Martyr Tryphon of Apamea",
+   "common": "martyr",
+   "invocation": "Tryphon"
+  },
+  {
+   "id": "isidore-pelusiot",
+   "mmdd": "02-04",
+   "name": "Venerable Isidore of Pelusium",
+   "common": "monk",
+   "invocation": "Isidore"
+  },
+  {
+   "id": "agatha-catania",
+   "mmdd": "02-05",
+   "name": "Holy Martyr Agatha of Catania",
+   "common": "female-martyr",
+   "invocation": "Agatha"
+  },
+  {
+   "id": "bucolus-smyrna",
+   "mmdd": "02-06",
+   "name": "St. Bucolus, Bishop of Smyrna",
+   "common": "hierarch",
+   "invocation": "Bucolus"
+  },
+  {
+   "id": "parthenius-lampsacus",
+   "mmdd": "02-07",
+   "name": "St. Parthenius, Bishop of Lampsacus",
+   "common": "hierarch",
+   "invocation": "Parthenius"
+  },
+  {
+   "id": "blase-sebaste",
+   "mmdd": "02-11",
+   "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste",
+   "common": "hieromartyr",
+   "invocation": "Blaise"
+  },
+  {
+   "id": "martinian-caesarea",
+   "mmdd": "02-13",
+   "name": "Venerable Martinian of Caesarea",
+   "common": "monk",
+   "invocation": "Martinian"
+  },
+  {
+   "id": "pamphilius-caesarea",
+   "mmdd": "02-16",
+   "name": "Martyr Pamphilius and companions of Caesarea",
+   "common": "martyrs-many",
+   "invocation": "Pamphilius and his companions"
+  },
+  {
+   "id": "archippus-apostle",
+   "mmdd": "02-19",
+   "name": "Holy Apostle Archippus",
+   "common": "apostle",
+   "invocation": "Archippus"
+  },
+  {
+   "id": "leo-catania",
+   "mmdd": "02-20",
+   "name": "St. Leo, Bishop of Catania",
+   "common": "hierarch",
+   "invocation": "Leo"
+  },
+  {
+   "id": "timothy-symbola",
+   "mmdd": "02-21",
+   "name": "Venerable Timothy of Symbola",
+   "common": "monk",
+   "invocation": "Timothy"
+  },
+  {
+   "id": "tarasius-patriarch-constantinople",
+   "mmdd": "02-25",
+   "name": "St. Tarasius, Patriarch of Constantinople",
+   "common": "hierarch",
+   "invocation": "Tarasius"
+  },
+  {
+   "id": "porphyry-gaza",
+   "mmdd": "02-26",
+   "name": "St. Porphyrius, Bishop of Gaza",
+   "common": "hierarch",
+   "invocation": "Porphyrius"
+  },
+  {
+   "id": "procopius-decapolites",
+   "mmdd": "02-27",
+   "name": "Venerable Procopius of Decapolis",
+   "common": "monk",
+   "invocation": "Procopius"
+  },
+  {
+   "id": "basil-confessor",
+   "mmdd": "02-28",
+   "name": "Venerable Basil the Confessor",
+   "common": "monk",
+   "invocation": "Basil"
+  },
+  {
+   "id": "prophet-malachi",
+   "mmdd": "01-03",
+   "name": "Holy Prophet Malachi",
+   "common": "prophet",
+   "invocation": "Malachi"
+  },
+  {
+   "id": "gordius-caesarea",
+   "mmdd": "01-03",
+   "name": "Holy Martyr Gordius of Caesarea",
+   "common": "martyr",
+   "invocation": "Gordius"
+  },
+  {
+   "id": "george-chozebite",
+   "mmdd": "01-08",
+   "name": "Venerable George the Chozebite, Abbot",
+   "common": "monk",
+   "invocation": "George"
+  },
+  {
+   "id": "domnica-constantinople",
+   "mmdd": "01-08",
+   "name": "Venerable Domnica of Constantinople",
+   "common": "nun",
+   "invocation": "Domnica"
+  },
+  {
+   "id": "martyr-polyeuctus",
+   "mmdd": "01-09",
+   "name": "Holy Martyr Polyeuctus of Melitene",
+   "common": "martyr",
+   "invocation": "Polyeuctus"
+  },
+  {
+   "id": "tatiana-rome",
+   "mmdd": "01-12",
+   "name": "Holy Martyr Tatiana of Rome",
+   "common": "female-martyr",
+   "invocation": "Tatiana"
+  },
+  {
+   "id": "macarius-egypt",
+   "mmdd": "01-19",
+   "name": "Venerable Macarius the Great of Egypt",
+   "common": "monk",
+   "invocation": "Macarius"
+  },
+  {
+   "id": "maximus-confessor",
+   "mmdd": "01-21",
+   "name": "Venerable Maximus the Confessor",
+   "common": "monk",
+   "invocation": "Maximus"
+  },
+  {
+   "id": "xenia-rome",
+   "mmdd": "01-24",
+   "name": "Venerable Xenia of Rome (Eusebeia)",
+   "common": "nun",
+   "invocation": "Xenia"
+  },
+  {
+   "id": "cosmas-damian-rome",
+   "mmdd": "07-01",
+   "name": "Holy Unmercenary Physicians Cosmas and Damian of Rome",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "Cosmas and Damian of Rome"
+  },
+  {
+   "id": "hyacinth-caesarea",
+   "mmdd": "07-03",
+   "name": "Holy Martyr Hyacinth of Caesarea",
+   "common": "martyr",
+   "invocation": "Hyacinth"
+  },
+  {
+   "id": "andrew-crete-bishop",
+   "mmdd": "07-04",
+   "name": "St. Andrew of Crete, Archbishop of Gortyna",
+   "common": "hierarch",
+   "invocation": "Andrew of Crete"
+  },
+  {
+   "id": "athanasios-athos",
+   "mmdd": "07-05",
+   "name": "Venerable Athanasios of Athos",
+   "common": "monk",
+   "invocation": "Athanasios"
+  },
+  {
+   "id": "sisoes-great",
+   "mmdd": "07-06",
+   "name": "Venerable Sisoes the Great",
+   "common": "monk",
+   "invocation": "Sisoes"
+  },
+  {
+   "id": "thomas-maleon",
+   "mmdd": "07-07",
+   "name": "Venerable Thomas of Mount Maleon and Venerable Acacius of Sinai",
+   "common": "monks-many",
+   "invocation": "Thomas and Acacius"
+  },
+  {
+   "id": "proclus-hilary-martyrs",
+   "mmdd": "07-12",
+   "name": "Holy Martyrs Proclus and Hilary",
+   "common": "martyrs-many",
+   "invocation": "Proclus and Hilary"
+  },
+  {
+   "id": "emilian-dorystolon",
+   "mmdd": "07-18",
+   "name": "Holy Martyr Emilian of Dorystolon",
+   "common": "martyr",
+   "invocation": "Emilian"
+  },
+  {
+   "id": "macrina-sister-basil",
+   "mmdd": "07-19",
+   "name": "Venerable Macrina, Sister of Basil the Great",
+   "common": "nun",
+   "invocation": "Macrina"
+  },
+  {
+   "id": "christina-tire-martyr",
+   "mmdd": "07-24",
+   "name": "Holy Great Martyr Christina of Tyre",
+   "common": "female-martyr",
+   "invocation": "Christina"
+  },
+  {
+   "id": "hermolaus-hieromartyr",
+   "mmdd": "07-26",
+   "name": "Hieromartyr Hermolaus and companions",
+   "common": "hieromartyr",
+   "invocation": "Hermolaus and his companions"
+  },
+  {
+   "id": "prochorus-nicanor-timon-parmenas",
+   "mmdd": "07-28",
+   "name": "Holy Apostles Prochorus, Nicanor, Timon, and Parmenas",
+   "common": "apostles-many",
+   "invocation": "Prochorus, Nicanor, Timon and Parmenas"
+  },
+  {
+   "id": "callinicos-martyr",
+   "mmdd": "07-29",
+   "name": "Holy Martyr Callinicos of Gangra",
+   "common": "martyr",
+   "invocation": "Callinicos"
+  },
+  {
+   "id": "silas-apostle",
+   "mmdd": "07-30",
+   "name": "Holy Apostle Silas",
+   "common": "apostle",
+   "invocation": "Silas"
+  },
+  {
+   "id": "justin-martyr-philosopher",
+   "mmdd": "06-01",
+   "name": "Holy Martyr Justin the Philosopher",
+   "common": "martyr",
+   "invocation": "Justin"
+  },
+  {
+   "id": "lucian-antioch-martyr",
+   "mmdd": "06-03",
+   "name": "Holy Martyr Lucillian and companions",
+   "common": "martyrs-many",
+   "invocation": "Lucillian and his companions"
+  },
+  {
+   "id": "metrophanes-cp",
+   "mmdd": "06-04",
+   "name": "St. Metrophanes, First Patriarch of Constantinople",
+   "common": "hierarch",
+   "invocation": "Metrophanes"
+  },
+  {
+   "id": "dorotheus-bishop-tyre",
+   "mmdd": "06-05",
+   "name": "Hieromartyr Dorotheus, Bishop of Tyre",
+   "common": "hieromartyr",
+   "invocation": "Dorotheus"
+  },
+  {
+   "id": "bessarion-egypt",
+   "mmdd": "06-06",
+   "name": "Venerable Bessarion of Egypt",
+   "common": "monk",
+   "invocation": "Bessarion"
+  },
+  {
+   "id": "theodotus-ancyra-bishop",
+   "mmdd": "06-07",
+   "name": "Hieromartyr Theodotus, Bishop of Ancyra",
+   "common": "hieromartyr",
+   "invocation": "Theodotus"
+  },
+  {
+   "id": "alexander-antonina-martyrs",
+   "mmdd": "06-10",
+   "name": "Holy Martyrs Alexander and Antonina",
+   "common": "martyrs-many",
+   "invocation": "Alexander and Antonina"
+  },
+  {
+   "id": "aquilina-byblos",
+   "mmdd": "06-13",
+   "name": "Holy Martyr Aquilina of Byblos",
+   "common": "female-martyr",
+   "invocation": "Aquilina"
+  },
+  {
+   "id": "elisha-prophet",
+   "mmdd": "06-14",
+   "name": "Holy Prophet Elisha",
+   "common": "prophet",
+   "invocation": "Elisha"
+  },
+  {
+   "id": "augustine-hippo",
+   "mmdd": "06-15",
+   "name": "Blessed Augustine, Bishop of Hippo",
+   "common": "hierarch",
+   "invocation": "Augustine"
+  },
+  {
+   "id": "tikhon-amathous",
+   "mmdd": "06-16",
+   "name": "St. Tikhon, Bishop of Amathous in Cyprus",
+   "common": "hierarch",
+   "invocation": "Tikhon"
+  },
+  {
+   "id": "manuel-sabel-ismael",
+   "mmdd": "06-17",
+   "name": "Holy Martyrs Manuel, Sabel, and Ismael",
+   "common": "martyrs-many",
+   "invocation": "Manuel, Sabel and Ismael"
+  },
+  {
+   "id": "leontius-martyr",
+   "mmdd": "06-18",
+   "name": "Holy Martyr Leontius of Phoenicia",
+   "common": "martyr",
+   "invocation": "Leontius"
+  },
+  {
+   "id": "methodius-bishop-patara",
+   "mmdd": "06-20",
+   "name": "Hieromartyr Methodius, Bishop of Patara",
+   "common": "hieromartyr",
+   "invocation": "Methodius"
+  },
+  {
+   "id": "julian-tarsus-martyr",
+   "mmdd": "06-21",
+   "name": "Holy Martyr Julian of Tarsus",
+   "common": "martyr",
+   "invocation": "Julian"
+  },
+  {
+   "id": "agrippina-rome-martyr",
+   "mmdd": "06-23",
+   "name": "Holy Martyr Agrippina of Rome",
+   "common": "female-martyr",
+   "invocation": "Agrippina"
+  },
+  {
+   "id": "febronia-nisibis",
+   "mmdd": "06-25",
+   "name": "Venerable Martyr Febronia of Nisibis",
+   "common": "nun-martyr",
+   "invocation": "Febronia"
+  },
+  {
+   "id": "david-thessalonica",
+   "mmdd": "06-26",
+   "name": "Venerable David of Thessalonica",
+   "common": "monk",
+   "invocation": "David"
+  },
+  {
+   "id": "sampson-hospitable",
+   "mmdd": "06-27",
+   "name": "Venerable Sampson the Hospitable of Constantinople",
+   "common": "monk",
+   "invocation": "Sampson"
+  },
+  {
+   "id": "martyr-eudokia",
+   "mmdd": "03-01",
+   "name": "Venerable Martyr Eudokia of Heliopolis",
+   "common": "nun-martyr",
+   "invocation": "Eudokia"
+  },
+  {
+   "id": "eutropius-cleonicus-basiliscus",
+   "mmdd": "03-03",
+   "name": "Holy Martyrs Eutropius, Cleonicus, and Basiliscus",
+   "common": "martyrs-many",
+   "invocation": "Eutropius, Cleonicus and Basiliscus"
+  },
+  {
+   "id": "gerasimus-jordan",
+   "mmdd": "03-04",
+   "name": "Venerable Gerasimus of the Jordan",
+   "common": "monk",
+   "invocation": "Gerasimus"
+  },
+  {
+   "id": "mark-the-ascetic",
+   "mmdd": "03-05",
+   "name": "Venerable Mark the Ascetic",
+   "common": "monk",
+   "invocation": "Mark"
+  },
+  {
+   "id": "forty-two-martyrs-ammoria",
+   "mmdd": "03-06",
+   "name": "The Forty-Two Martyrs of Ammoria",
+   "common": "martyrs-many",
+   "invocation": "the Forty-Two Martyrs"
+  },
+  {
+   "id": "hieromartyrs-cherson",
+   "mmdd": "03-07",
+   "name": "The Holy Hieromartyrs of Cherson: Basil, Ephraim, Eugene, Elpidius, Agathodorus, Aetherius, and Capiton",
+   "common": "hieromartyrs-many",
+   "invocation": "the Hieromartyrs of Cherson"
+  },
+  {
+   "id": "theophylact-nicomedia",
+   "mmdd": "03-08",
+   "name": "St. Theophylactus (Theophylact), Bishop of Nicomedia, Confessor",
+   "common": "confessor",
+   "invocation": "Theophylactus"
+  },
+  {
+   "id": "martyr-codratus-corinth",
+   "mmdd": "03-10",
+   "name": "Holy Martyr Codratus of Corinth and companions",
+   "common": "martyrs-many",
+   "invocation": "Codratus and his companions"
+  },
+  {
+   "id": "sophronius-jerusalem",
+   "mmdd": "03-11",
+   "name": "St. Sophronius, Patriarch of Jerusalem",
+   "common": "hierarch",
+   "invocation": "Sophronius"
+  },
+  {
+   "id": "theophanes-confessor",
+   "mmdd": "03-12",
+   "name": "Venerable Theophanes the Confessor",
+   "common": "monk",
+   "invocation": "Theophanes"
+  },
+  {
+   "id": "nikephoros-patriarch-constantinople",
+   "mmdd": "03-13",
+   "name": "St. Nikephoros, Patriarch of Constantinople",
+   "common": "hierarch",
+   "invocation": "Nikephoros"
+  },
+  {
+   "id": "benedict-nursia",
+   "mmdd": "03-14",
+   "name": "Venerable Benedict of Nursia",
+   "common": "monk",
+   "invocation": "Benedict"
+  },
+  {
+   "id": "sabin-egypt",
+   "mmdd": "03-16",
+   "name": "Holy Martyr Sabinus (Sabin) of Egypt",
+   "common": "martyr",
+   "invocation": "Sabinus"
+  },
+  {
+   "id": "chrysanthos-daria",
+   "mmdd": "03-19",
+   "name": "Holy Martyrs Chrysanthos and Daria",
+   "common": "martyrs-many",
+   "invocation": "Chrysanthos and Daria"
+  },
+  {
+   "id": "james-confessor",
+   "mmdd": "03-21",
+   "name": "Venerable James the Confessor, Bishop of Catania",
+   "common": "confessor",
+   "invocation": "James"
+  },
+  {
+   "id": "basil-ancyra-presbyter",
+   "mmdd": "03-22",
+   "name": "Hieromartyr Basil, Presbyter of Ancyra",
+   "common": "hieromartyr",
+   "invocation": "Basil"
+  },
+  {
+   "id": "nikon-and-companions",
+   "mmdd": "03-23",
+   "name": "Holy Martyr Nikon and 199 companions",
+   "common": "martyrs-many",
+   "invocation": "Nikon and his companions"
+  },
+  {
+   "id": "matrona-thessalonica",
+   "mmdd": "03-27",
+   "name": "Holy Martyr Matrona of Thessalonica",
+   "common": "female-martyr",
+   "invocation": "Matrona"
+  },
+  {
+   "id": "hilarion-new-pelekete",
+   "mmdd": "03-28",
+   "name": "Venerable Hilarion the New, Abbot of Pelekete",
+   "common": "monk",
+   "invocation": "Hilarion"
+  },
+  {
+   "id": "hypatius-gangra",
+   "mmdd": "03-31",
+   "name": "Hieromartyr Hypatius, Bishop of Gangra",
+   "common": "hieromartyr",
+   "invocation": "Hypatius"
+  },
+  {
+   "id": "prophet-jeremiah",
+   "mmdd": "05-01",
+   "name": "Holy Prophet Jeremiah",
+   "common": "prophet",
+   "invocation": "Jeremiah"
+  },
+  {
+   "id": "timothy-maura-martyrs",
+   "mmdd": "05-03",
+   "name": "Holy Martyrs Timothy and Maura",
+   "common": "martyrs-many",
+   "invocation": "Timothy and Maura"
+  },
+  {
+   "id": "pelagia-tarsus",
+   "mmdd": "05-04",
+   "name": "Holy Martyr Pelagia of Tarsus",
+   "common": "female-martyr",
+   "invocation": "Pelagia"
+  },
+  {
+   "id": "isaiah-prophet",
+   "mmdd": "05-09",
+   "name": "Holy Prophet Isaiah",
+   "common": "prophet",
+   "invocation": "Isaiah"
+  },
+  {
+   "id": "epiphanius-cyprus",
+   "mmdd": "05-12",
+   "name": "St. Epiphanius, Archbishop of Cyprus",
+   "common": "hierarch",
+   "invocation": "Epiphanius"
+  },
+  {
+   "id": "germanus-constantinople",
+   "mmdd": "05-12",
+   "name": "St. Germanus, Patriarch of Constantinople",
+   "common": "hierarch",
+   "invocation": "Germanus"
+  },
+  {
+   "id": "glyceria-martyr",
+   "mmdd": "05-13",
+   "name": "Holy Martyr Glyceria",
+   "common": "female-martyr",
+   "invocation": "Glyceria"
+  },
+  {
+   "id": "isidore-chios",
+   "mmdd": "05-14",
+   "name": "Holy Martyr Isidore of Chios",
+   "common": "martyr",
+   "invocation": "Isidore"
+  },
+  {
+   "id": "andronicus-junia-apostles",
+   "mmdd": "05-17",
+   "name": "Holy Apostles Andronicus and Junia",
+   "common": "apostles-many",
+   "invocation": "Andronicus and Junia"
+  },
+  {
+   "id": "theodotus-ancyra",
+   "mmdd": "05-18",
+   "name": "Holy Martyr Theodotus of Ancyra",
+   "common": "martyr",
+   "invocation": "Theodotus"
+  },
+  {
+   "id": "patrick-bishop-prusa",
+   "mmdd": "05-19",
+   "name": "Hieromartyr Patrick, Bishop of Prusa, and companions",
+   "common": "hieromartyr",
+   "invocation": "Patrick and his companions"
+  },
+  {
+   "id": "thallelaeus-martyr",
+   "mmdd": "05-20",
+   "name": "Holy Martyr Thallelaeus",
+   "common": "martyr",
+   "invocation": "Thallelaeus"
+  },
+  {
+   "id": "basiliscus-comana",
+   "mmdd": "05-22",
+   "name": "Holy Martyr Basiliscus of Comana",
+   "common": "martyr",
+   "invocation": "Basiliscus"
+  },
+  {
+   "id": "michael-bishop-synnada",
+   "mmdd": "05-23",
+   "name": "St. Michael the Confessor, Bishop of Synnada",
+   "common": "confessor",
+   "invocation": "Michael"
+  },
+  {
+   "id": "simeon-stylites-junior",
+   "mmdd": "05-24",
+   "name": "Venerable Simeon the Stylite the Younger",
+   "common": "monk",
+   "invocation": "Simeon"
+  },
+  {
+   "id": "carpos-alphaeus-apostles",
+   "mmdd": "05-26",
+   "name": "Holy Apostle Carpos",
+   "common": "apostle",
+   "invocation": "Carpos"
+  },
+  {
+   "id": "nikita-bishop-chalcedon",
+   "mmdd": "05-28",
+   "name": "St. Nikita (Niketas), Bishop of Chalcedon",
+   "common": "hierarch",
+   "invocation": "Nikita"
+  },
+  {
+   "id": "theodosia-caesarea-cappadocia",
+   "mmdd": "05-29",
+   "name": "Holy Martyr Theodosia of Caesarea in Cappadocia",
+   "common": "female-martyr",
+   "invocation": "Theodosia"
+  },
+  {
+   "id": "isaakios-dalmatian",
+   "mmdd": "05-30",
+   "name": "Venerable Isaakios, Abbot of the Dalmatian Monastery",
+   "common": "monk",
+   "invocation": "Isaakios"
+  },
+  {
+   "id": "hermias-martyr",
+   "mmdd": "05-31",
+   "name": "Holy Martyr Hermias",
+   "common": "martyr",
+   "invocation": "Hermias"
+  },
+  {
+   "id": "acindynus-pegasius-anempodistus",
+   "mmdd": "11-02",
+   "name": "Holy Martyrs Acindynus, Pegasius, Anempodistus, Elpidiphorus, and Aphthonius",
+   "common": "martyrs-many",
+   "invocation": "Acindynus, Pegasius, Anempodistus, Elpidiphorus and Aphthonius"
+  },
+  {
+   "id": "acepsimas-bishop-persia",
+   "mmdd": "11-03",
+   "name": "Holy Martyr Acepsimas, Bishop of Persia, and his Companions",
+   "common": "martyrs-many",
+   "invocation": "Acepsimas and his companions"
+  },
+  {
+   "id": "galacteon-episteme",
+   "mmdd": "11-05",
+   "name": "Holy Martyrs Galacteon and Episteme",
+   "common": "martyrs-many",
+   "invocation": "Galacteon and Episteme"
+  },
+  {
+   "id": "thirty-three-martyrs-melitene",
+   "mmdd": "11-07",
+   "name": "The Thirty-Three Martyrs of Melitene",
+   "common": "martyrs-many",
+   "invocation": "the Thirty-Three Martyrs"
+  },
+  {
+   "id": "menas-victor-vincent",
+   "mmdd": "11-11",
+   "name": "Holy Martyrs Menas, Victor, and Vincent",
+   "common": "martyrs-many",
+   "invocation": "Menas, Victor and Vincent"
+  },
+  {
+   "id": "plato-roman",
+   "mmdd": "11-18",
+   "name": "Holy Martyr Plato of Ancyra",
+   "common": "martyr",
+   "invocation": "Plato"
+  },
+  {
+   "id": "abdias-prophet",
+   "mmdd": "11-19",
+   "name": "Holy Prophet Obadiah (Abdias)",
+   "common": "prophet",
+   "invocation": "Obadiah"
+  },
+  {
+   "id": "alypius-stylite",
+   "mmdd": "11-26",
+   "name": "Venerable Alypius the Stylite",
+   "common": "monk",
+   "invocation": "Alypius"
+  },
+  {
+   "id": "martyr-paramon",
+   "mmdd": "11-29",
+   "name": "Holy Martyr Paramon and his Three Hundred and Seventy Companions",
+   "common": "martyrs-many",
+   "invocation": "Paramon and his companions"
+  },
+  {
+   "id": "dionysius-areopagite",
+   "mmdd": "10-03",
+   "name": "Hieromartyr Dionysius the Areopagite, Bishop of Athens",
+   "common": "hieromartyr",
+   "invocation": "Dionysius"
+  },
+  {
+   "id": "hierotheos-bishop-athens",
+   "mmdd": "10-04",
+   "name": "St. Hierotheos, Bishop of Athens",
+   "common": "hierarch",
+   "invocation": "Hierotheos"
+  },
+  {
+   "id": "charitina-martyr",
+   "mmdd": "10-05",
+   "name": "Holy Martyr Charitina",
+   "common": "female-martyr",
+   "invocation": "Charitina"
+  },
+  {
+   "id": "sergios-bacchus",
+   "mmdd": "10-07",
+   "name": "Holy Martyrs Sergios and Bacchus",
+   "common": "martyrs-many",
+   "invocation": "Sergios and Bacchus"
+  },
+  {
+   "id": "pelagia-penitent",
+   "mmdd": "10-08",
+   "name": "Venerable Pelagia the Penitent",
+   "common": "nun",
+   "invocation": "Pelagia"
+  },
+  {
+   "id": "eulampios-eulampia",
+   "mmdd": "10-10",
+   "name": "Holy Martyrs Eulampios and Eulampia",
+   "common": "martyrs-many",
+   "invocation": "Eulampios and Eulampia"
+  },
+  {
+   "id": "philip-apostle-october",
+   "mmdd": "10-11",
+   "name": "Holy Apostle Philip, one of the Seven Deacons",
+   "common": "apostle",
+   "invocation": "Philip"
+  },
+  {
+   "id": "euthymios-thessalonica",
+   "mmdd": "10-15",
+   "name": "Venerable Euthymios the New of Thessalonica",
+   "common": "monk",
+   "invocation": "Euthymios"
+  },
+  {
+   "id": "longinus-centurion",
+   "mmdd": "10-16",
+   "name": "Holy Martyr Longinus the Centurion",
+   "common": "martyr",
+   "invocation": "Longinus"
+  },
+  {
+   "id": "hosea-prophet",
+   "mmdd": "10-17",
+   "name": "Holy Prophet Hosea",
+   "common": "prophet",
+   "invocation": "Hosea"
+  },
+  {
+   "id": "cosmas-damian-arabia",
+   "mmdd": "10-17",
+   "name": "Holy Unmercenary Physicians Cosmas and Damian of Cilicia (of Arabia)",
+   "common": "unmercenaries-wonderworkers",
+   "invocation": "Cosmas and Damian of Cilicia"
+  },
+  {
+   "id": "artemios-antioch-martyr",
+   "mmdd": "10-20",
+   "name": "Holy Great Martyr Artemios of Antioch",
+   "common": "martyr",
+   "invocation": "Artemios"
+  },
+  {
+   "id": "hilarion-great",
+   "mmdd": "10-21",
+   "name": "Venerable Hilarion the Great",
+   "common": "monk",
+   "invocation": "Hilarion"
+  },
+  {
+   "id": "abercius-bishop-hieropolis",
+   "mmdd": "10-22",
+   "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
+   "common": "hierarch",
+   "invocation": "Abercius"
+  },
+  {
+   "id": "arethas-martyrs-nagran",
+   "mmdd": "10-24",
+   "name": "Holy Great Martyr Arethas and companions of Nagran",
+   "common": "martyrs-many",
+   "invocation": "Arethas and his companions"
+  },
+  {
+   "id": "martyrs-notarios",
+   "mmdd": "10-25",
+   "name": "Holy Martyrs Marcian and Martyrios",
+   "common": "martyrs-many",
+   "invocation": "Marcian and Martyrios"
+  },
+  {
+   "id": "nestor-martyr-thessalonica",
+   "mmdd": "10-27",
+   "name": "Holy Martyr Nestor of Thessalonica",
+   "common": "martyr",
+   "invocation": "Nestor"
+  },
+  {
+   "id": "terence-neonilla-family",
+   "mmdd": "10-28",
+   "name": "Holy Martyrs Terence and Neonilla and their children",
+   "common": "martyrs-many",
+   "invocation": "Terence, Neonilla and their children"
+  },
+  {
+   "id": "stephen-sabaite-hymnographer",
+   "mmdd": "10-28",
+   "name": "Venerable Stephen the Sabaite, Hymnographer",
+   "common": "monk",
+   "invocation": "Stephen"
+  },
+  {
+   "id": "anastasia-rome",
+   "mmdd": "10-29",
+   "name": "Monastic Martyr Anastasia of Rome",
+   "common": "nun-martyr",
+   "invocation": "Anastasia"
+  },
+  {
+   "id": "zenobius-zenobia",
+   "mmdd": "10-30",
+   "name": "Holy Martyrs Zenobius and Zenobia",
+   "common": "martyrs-many",
+   "invocation": "Zenobius and Zenobia"
+  },
+  {
+   "id": "stachys-amplias-urban-apostles",
+   "mmdd": "10-31",
+   "name": "Holy Apostles Stachys, Amplias, Urban, Narcissus, Apelles, and Aristobulus",
+   "common": "apostles-many",
+   "invocation": "Stachys, Amplias, Urban, Narcissus, Apelles and Aristobulus"
+  },
+  {
+   "id": "mamas-martyr",
+   "mmdd": "09-02",
+   "name": "Holy Martyr Mamas of Caesarea",
+   "common": "martyr",
+   "invocation": "Mamas"
+  },
+  {
+   "id": "anthimos-bishop-nicomedia",
+   "mmdd": "09-03",
+   "name": "Hieromartyr Anthimos, Bishop of Nicomedia",
+   "common": "hieromartyr",
+   "invocation": "Anthimos"
+  },
+  {
+   "id": "babylas-bishop-antioch",
+   "mmdd": "09-04",
+   "name": "Hieromartyr Babylas, Bishop of Antioch, and companions",
+   "common": "hieromartyr",
+   "invocation": "Babylas and his companions"
+  },
+  {
+   "id": "menodora-metrodora-nymphodora",
+   "mmdd": "09-10",
+   "name": "Holy Martyrs Menodora, Metrodora, and Nymphodora",
+   "common": "martyrs-many",
+   "invocation": "Menodora, Metrodora and Nymphodora"
+  },
+  {
+   "id": "theodora-alexandria",
+   "mmdd": "09-11",
+   "name": "Venerable Theodora of Alexandria",
+   "common": "nun",
+   "invocation": "Theodora"
+  },
+  {
+   "id": "autonomus-bishop-martyr",
+   "mmdd": "09-12",
+   "name": "Hieromartyr Autonomus, Bishop",
+   "common": "hieromartyr",
+   "invocation": "Autonomus"
+  },
+  {
+   "id": "niketas-goth-martyr",
+   "mmdd": "09-15",
+   "name": "Holy Great Martyr Niketas the Goth",
+   "common": "martyr",
+   "invocation": "Niketas"
+  },
+  {
+   "id": "sophia-vera-nadezda-lyubov",
+   "mmdd": "09-17",
+   "name": "Holy Martyrs Sophia (Faith) and her daughters Vera, Nadezhda, and Lyubov",
+   "common": "martyrs-many",
+   "invocation": "Sophia and her daughters Vera, Nadezhda and Lyubov"
+  },
+  {
+   "id": "eumenios-bishop-gortyna",
+   "mmdd": "09-18",
+   "name": "St. Eumenios, Bishop of Gortyna",
+   "common": "hierarch",
+   "invocation": "Eumenios"
+  },
+  {
+   "id": "trophimos-sabbatios-dorymedon",
+   "mmdd": "09-19",
+   "name": "Holy Martyrs Trophimos, Sabbatios, and Dorymedon",
+   "common": "martyrs-many",
+   "invocation": "Trophimos, Sabbatios and Dorymedon"
+  },
+  {
+   "id": "quadratus-prophet",
+   "mmdd": "09-21",
+   "name": "Holy Apostle Quadratus",
+   "common": "apostle",
+   "invocation": "Quadratus"
+  },
+  {
+   "id": "phocas-gardener-sinope",
+   "mmdd": "09-22",
+   "name": "Hieromartyr Phocas the Gardener of Sinope",
+   "common": "hieromartyr",
+   "invocation": "Phocas"
+  },
+  {
+   "id": "euphrosyne-alexandria",
+   "mmdd": "09-25",
+   "name": "Venerable Euphrosyne of Alexandria",
+   "common": "nun",
+   "invocation": "Euphrosyne"
+  },
+  {
+   "id": "callistratos-companions",
+   "mmdd": "09-27",
+   "name": "Holy Martyr Callistratos and companions",
+   "common": "martyrs-many",
+   "invocation": "Callistratos and companions"
+  },
+  {
+   "id": "chariton-confessor",
+   "mmdd": "09-28",
+   "name": "Venerable Chariton the Confessor",
+   "common": "monk",
+   "invocation": "Chariton"
+  },
+  {
+   "id": "cyriacus-hermit",
+   "mmdd": "09-29",
+   "name": "Venerable Cyriacus the Anchorite",
+   "common": "monk",
+   "invocation": "Cyriacus"
+  }
+ ]
+}

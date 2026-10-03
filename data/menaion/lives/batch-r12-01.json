@@ -1,0 +1,167 @@
+{
+ "basil-great-circumcision": {
+  "life": "On the eighth day after His birth, Jesus was circumcised according to the Law and given the name announced by the angel Gabriel (Luke 2:21). The Fathers teach that this showed He truly took flesh and honored the divine ordinances; baptism later took the place of circumcision. The same day honors Basil the Great (about 330-379), a Cappadocian bishop of Caesarea. He founded monasteries and charitable houses, defended the divinity of the Holy Spirit against the Arians, wrote a Liturgy bearing his name, and died on January 1, 379. A blessed Vasilopita bread is shared in his memory.",
+  "period": "Circumcision: 1st c.; Basil: c. 330-379",
+  "place": "Bethlehem/Jerusalem; Caesarea in Cappadocia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/01",
+   "https://orthocal.info/api/gregorian/2026/1/1/"
+  ],
+  "flags": "The calendar names both items on Jan 1; the app's rank note (rank 2, St Basil as Polyeleos saint) was not checked against a source. Orthocal lists the feast as 'Circumcision of Our Lord' with Basil among the saints."
+ },
+ "seraphim-sarov": {
+  "life": "Seraphim of Sarov, born Prochorus Moshnin at Kursk, entered Sarov monastery in 1778 and was later tonsured and ordained. He lived many years as a hermit in the forest, where a robber attack left him permanently bent, and then for a time as a silent recluse. From 1825 he received pilgrims and the sisters of Diveyevo, greeting all with a paschal salutation and teaching that the aim of Christian life is acquiring the Holy Spirit. He reposed in prayer on January 2, 1833, and was glorified in 1903.",
+  "period": "1754/1759-1833",
+  "place": "Sarov and Diveyevo, Russia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/02",
+   "https://orthocal.info/api/gregorian/2026/1/2/"
+  ],
+  "flags": "Sources differ on birth year (OCA: 1754; Orthocal: 1759), so the birth year is omitted. Glorification year 1903 is inferred from OCA's mention of the manuscript found in 1903 'shortly before the glorification'; the app note gives 1903. OCA also lists the Forefeast of Theophany on this date."
+ },
+ "theophany-epiphany": {
+  "life": "Theophany commemorates the baptism of Jesus by John in the Jordan (Matthew 3:13-17; Mark 1:9-11; Luke 3:21-22), when the Father's voice was heard, the Son was baptized and the Spirit descended as a dove, revealing the Holy Trinity. The Fathers teach that Christ was baptized not for His own cleansing but to sanctify water and give an example of baptism. The feast is very ancient, once called the Day of Illumination, and in the early Church catechumens were baptized at its Vespers. On this day all foods are permitted, even on a Wednesday or Friday.",
+  "period": "1st c. event; ancient feast",
+  "place": "Jordan River",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/06",
+   "https://orthocal.info/api/gregorian/2026/1/6/"
+  ],
+  "flags": ""
+ },
+ "synaxis-forerunner-john": {
+  "life": "Orthodox practice honors on the day after a Great Feast the persons who took part in its event. After Theophany the Church therefore gathers to honor John the Baptist, who baptized Christ and witnessed the manifestation of the Trinity. The son of Zachariah and Elizabeth, John lived in the desert, preached repentance from about age thirty, and was beheaded by order of Herod. The synaxis also recalls the right hand that baptized the Lord, said to have been brought from Antioch to Constantinople in 956 and now kept in Russia.",
+  "period": "1st c.",
+  "place": "Jordan River; Judea",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/07",
+   "https://orthocal.info/api/gregorian/2026/1/7/"
+  ],
+  "flags": ""
+ },
+ "theodosius-cenobiarch": {
+  "life": "Theodosius the Great was born in Cappadocia, visited the Holy Land, and settled in a cave near Bethlehem, where disciples gathered around him. Tradition holds that he founded his large cenobitic monastery at a spot where incense kindled by itself. It supplied a guest house, infirmaries and aid for the poor, and held services in several languages. Under Emperor Anastasius he boldly upheld the four Ecumenical Councils and was imprisoned. He reposed after a very long life, said to exceed a century, and is called the Cenobiarch for leading monastic communities.",
+  "period": "5th-6th c.",
+  "place": "Cappadocia; Palestine (near Bethlehem)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/11",
+   "https://orthocal.info/api/gregorian/2026/1/11/"
+  ],
+  "flags": "Death year differs: app note says 529; Orthocal heading gives 519; OCA gives only 'fifth-sixth centuries'. Age at death also differs (OCA 105; Great Horologion via Orthocal 103). Dates are left general."
+ },
+ "anthony-great": {
+  "life": "Anthony the Great, born about 251 in Egypt, heard the Gospel call to the rich young man, sold his inheritance, and gave to the poor. After years of struggle against temptation he lived in the desert, and monks gathered under his guidance; he is called the father of monasticism. He ministered to confessors in Alexandria during the persecution and later opposed the Arians there. Saint Athanasius wrote his Life. Anthony died in 356, aged about 105, and was buried in the desert as he had asked.",
+  "period": "c. 251-356",
+  "place": "Egypt (Coma; Thebaid desert)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/17",
+   "https://orthocal.info/api/gregorian/2026/1/17/"
+  ],
+  "flags": ""
+ },
+ "athanasius-cyril-alexandria": {
+  "life": "Athanasius and Cyril were both archbishops of Alexandria and share this joint feast for their defense of Orthodox doctrine. Athanasius, as a deacon, took part in the First Ecumenical Council at Nicaea, insisted that Christ is of one essence with the Father, and spent much of his life in exile; he died in 373. Cyril succeeded his uncle Theophilus in 412 and presided at the Third Council at Ephesus in 431, which rejected Nestorius' teaching about the Theotokos. He died in 444.",
+  "period": "Athanasius d. 373; Cyril d. 444",
+  "place": "Alexandria, Egypt",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/18",
+   "https://orthocal.info/api/gregorian/2026/1/18/"
+  ],
+  "flags": ""
+ },
+ "euthymius-great": {
+  "life": "Euthymius the Great was born at Melitene in Armenia and became a priest and monastic overseer, then left for Palestine and lived near Jerusalem as a basket-weaver. With Theoctistus he founded a monastic community in the Judean wilderness, and later established his own lavra. He baptized many Arabs and, after the Council of Chalcedon in 451, his example led many monks to accept its decisions. He guided the young Sabbas. Euthymius died on January 20, 473, aged ninety-seven.",
+  "period": "c. 377-473",
+  "place": "Melitene, Armenia; Judean desert, Palestine",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/20",
+   "https://orthocal.info/api/gregorian/2026/1/20/"
+  ],
+  "flags": ""
+ },
+ "gregory-theologian": {
+  "life": "Gregory the Theologian, born in 329 near Nazianzus in Cappadocia, studied in Alexandria and Athens, where he befriended Basil. Ordained against his wishes, he later went to Constantinople and preached in the small Anastasis church to revive Orthodox faith there. His Theological Orations taught the divinity of the Son and the Holy Spirit. Chosen patriarch at the Second Ecumenical Council in 381, he resigned for the sake of peace and withdrew to his homeland, where he died on January 25, 389. He is named Theologian like the Apostle John.",
+  "period": "329-389",
+  "place": "Nazianzus, Cappadocia; Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/25",
+   "https://orthocal.info/api/gregorian/2026/1/25/"
+  ],
+  "flags": "The app note mentions a translation of Gregory's relics on another date; OCA mentions the transfer of his relics to Constantinople in 950 within this life but names no separate commemoration on Jan 25, so it is not treated as a separate item."
+ },
+ "translation-chrysostom": {
+  "life": "John Chrysostom died in 407 at Comana while being taken into exile, condemned through the intrigues of Empress Eudoxia. In 438, his disciple Patriarch Proclus preached in his praise, and the people begged for the saint's return. Emperor Theodosius II, Eudoxia's son, consented; tradition holds the relics could not be moved until the emperor wrote humbly to John asking pardon. They were brought to Constantinople and found incorrupt, then laid in the Church of the Holy Apostles. The feast was established in the ninth century.",
+  "period": "407; translation 438",
+  "place": "Comana; Constantinople",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/27",
+   "https://orthocal.info/api/gregorian/2026/1/27/"
+  ],
+  "flags": "App note says 438; OCA text gives 438 in the body but the Orthocal heading gives 437. Used 438."
+ },
+ "ephrem-syrian": {
+  "life": "Ephraim the Syrian, born in Nisibis in Mesopotamia early in the fourth century, became a disciple of Bishop James of Nisibis. After Persian capture of the city he settled near Edessa, where he lived as an ascetic, taught repentance, opposed Arianism, and wrote Syriac biblical commentaries and many hymns and prayers. His Lenten Prayer is used throughout Great Lent. At Caesarea he met Basil, who ordained him deacon, the rank he kept. During a famine at Edessa he persuaded the wealthy to give aid, and he ended his life in a cave nearby.",
+  "period": "4th c.",
+  "place": "Nisibis and Edessa, Mesopotamia",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/28",
+   "https://orthocal.info/api/gregorian/2026/1/28/"
+  ],
+  "flags": "App note gives death year 373; neither fetched source states it (OCA gives no death year), so no year is stated. OCA also names Isaac the Syrian on this date; the app entry names only Ephraim."
+ },
+ "three-hierarchs": {
+  "life": "Basil the Great, Gregory the Theologian and John Chrysostom are honored together as teachers of the whole Church. In the eleventh century a dispute arose at Constantinople over which was greatest, and factions called themselves Basilians, Gregorians and Johnites. In 1084, according to tradition, the three appeared to John, bishop of Euchaita, saying they stood equal before God and that one common feast should be kept. He chose January 30, since each is already remembered separately in January, and the controversy ended.",
+  "period": "1084 (feast established)",
+  "place": "Constantinople; Euchaita",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/01/30",
+   "https://orthocal.info/api/gregorian/2026/1/30/"
+  ],
+  "flags": "App note says the feast was established by 'Patriarch John Mauropos'; OCA names 'John, Bishop of Euchaita' and Orthocal 'the monk John Mauropus' (a reign of Alexios I Komnenos). He was not a patriarch in either source, and the app note should be corrected."
+ },
+ "presentation-lord": {
+  "life": "Forty days after His birth, the Child Jesus was brought by Mary and Joseph to the Temple at Jerusalem to fulfill the Law (Luke 2:22-40). The elder Simeon, to whom it had been revealed that he would see the Messiah, took the Child in his arms and spoke words now sung at Vespers; the prophetess Anna also gave thanks. Simeon foretold that a sword would pierce Mary's soul. The feast is very ancient and was kept more solemnly after the plague at Constantinople in 541.",
+  "period": "1st c. event; ancient feast",
+  "place": "Jerusalem Temple",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/02/02",
+   "https://orthocal.info/api/gregorian/2026/2/2/"
+  ],
+  "flags": ""
+ },
+ "first-second-finding-head-john-baptist": {
+  "life": "After John the Baptist was beheaded, tradition holds that Herodias hid his head, and Joanna, wife of Herod's steward Chuza, buried it on the Mount of Olives. It was first found by a monk named Innocent while digging a foundation. During Constantine's reign the Forerunner appeared to pilgrims and revealed the head again, and it passed through several hands. In 452 John appeared to Archimandrite Marcellus near Emesa and showed where it lay, which is the Second Finding. The relic was taken to Emesa and then Constantinople.",
+  "period": "4th c. and 452",
+  "place": "Mount of Olives; Emesa (Syria)",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/02/24",
+   "https://orthocal.info/api/gregorian/2026/2/24/"
+  ],
+  "flags": ""
+ },
+ "annunciation-theotokos": {
+  "life": "The Annunciation recalls the archangel Gabriel's visit to the Virgin Mary at Nazareth, announcing that she would conceive and bear the Son of God (Luke 1:26-38). The Church sees in it the fulfilment of the promise of a Redeemer, and honors Mary's humble reply, 'Be it unto me according to thy word.' It is one of the earliest Christian feasts, already kept by the fourth century. It is celebrated with joy even in Great Lent, with the Liturgy served and fish permitted.",
+  "period": "1st c. event; feast by 4th c.",
+  "place": "Nazareth, Galilee",
+  "confidence": "high",
+  "sources": [
+   "https://www.oca.org/saints/all-lives/2026/03/25",
+   "https://orthocal.info/api/gregorian/2026/3/25/"
+  ],
+  "flags": "App note about feast-rank overrides when March 25 coincides with Holy Week or Pascha was not checked in fetched sources."
+ }
+}

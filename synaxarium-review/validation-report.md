@@ -19,29 +19,29 @@ Source: current `origin/main` (fetched fresh via codeload tarball). Candidate sc
 - **February**: 87 candidate rows, 29 of 29 days covered
 - **March**: 86 candidate rows, 31 of 31 days covered
 - **April**: 90 candidate rows, 30 of 30 days covered
-- **May**: 93 candidate rows, 31 of 31 days covered
+- **May**: 92 candidate rows, 31 of 31 days covered
 - **June**: 90 candidate rows, 30 of 30 days covered
 - **July**: 97 candidate rows, 31 of 31 days covered
 - **August**: 106 candidate rows, 31 of 31 days covered
 - **September**: 119 candidate rows, 30 of 30 days covered
 - **October**: 127 candidate rows, 31 of 31 days covered
 - **November**: 111 candidate rows, 30 of 30 days covered
-- **December**: 97 candidate rows, 31 of 31 days covered
+- **December**: 95 candidate rows, 31 of 31 days covered
 
 ## C. SIN validation
 
-- Total candidate rows: **1194**
+- Total candidate rows: **1191**
 - Rank-1 SIN joins: **366**
-- Alternate SIN joins: **828**
+- Alternate SIN joins: **825**
 - Missing SIN joins: **0**
 
 Expected zero missing SIN joins: **MET**
 
 ## D. Harmonization validation
 
-- Harmonization ledger rows loaded: **92**
-- Matched to a specific candidate card by name+date: **92**
-- Falling back to day-level warnings: **0**
+- Harmonization ledger rows loaded: **97**
+- Matched to a specific candidate card by name+date: **96**
+- Falling back to day-level warnings: **1**
 - Unmatched entirely (date doesn't map to a real month): **0**
 - Annotated date strings (e.g. "01-11 fixed", "Silas 07-13/07-30") parsed to a clean civil date: **YES, all of them**
 - Entries containing a genuinely non-date descriptive note (e.g. "future possible date") rather than a civil date, kept as context but not attached to any day: **2**

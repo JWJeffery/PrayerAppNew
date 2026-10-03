@@ -1,0 +1,1498 @@
+{
+ "schema": "menaion-common/1",
+ "id": "common-apostles-many",
+ "chapter": "IX",
+ "title": "THE SERVICE COMMON TO TWO OR MANY APOSTLES.",
+ "source": {
+  "work": "The General Menaion (Orloff), London 1899, translated from the Slavonic 16th ed. of 1862",
+  "edition_cited": "1899 first edition (public domain)",
+  "url": "https://www.ccel.org/ccel/anonymous/menaion/menaion.xii.html",
+  "transcribed_by": "scripts/menaion/ingest-orloff-commons.py (verbatim from CCEL HTML; no corrections)",
+  "name_placeholder": "(mentioned by name)"
+ },
+ "paragraphs": [
+  {
+   "id": "xii-p1",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Vespers, for O Lord I have cried, the Stichera, Tone 4. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "As a virtuous..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p2",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As personally knowing and eye-witnesses of the incarnation of the Word, ye -- the most fortunate disciples -- are being blessed, for as brilliant lightnings have ye made your appearance in the world, and as intellectual mountains you let fall the sweet things; and as the ever running parted rivers of paradise you give unto the churches of the Gentiles the divine waters to drink."
+    }
+   ]
+  },
+  {
+   "id": "xii-p3",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As the rays resplendent with the brightness of the Spirit, were ye sent into the whole world, and you have wrought an abundance of miracles; ye were the ministers of the mysteries of Christ and God-written tablets of the divine grace inscribed with the God-taught law, O ye sacred adepts abounding in mysteries."
+    }
+   ]
+  },
+  {
+   "id": "xii-p4",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The calamus of the fishermen hath put in order the waverings of philosophers and current of orators, having clearly expounded in the gospel the God-wise teachings, the doctrines of grace and of the beneficent mysteries, as well as the participation of the eternal food, the delight of angels and ever-abiding glory."
+    }
+   ]
+  },
+  {
+   "id": "xii-p5",
+   "centered": false,
+   "pages": [
+    90
+   ],
+   "segments": [
+    {
+     "text": "Glory...Both now ...The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Hail thou, O luminous sun -- the bearer of the never-setting Sun, that hast beamed forth the Incomprehensible Sun; hail thou, O mind, that flashesforth the divine lights; hail thou, O ray of light that illuminest the ends of the earth, and art truly of golden light, perfectly beautiful and most unblemished, that hast flashed unto the faithful the never-ending Light."
+    },
+    {
+     "text": "[The Stavro-theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p6",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Seeing Christ the Lover of man, hung and being pierced through His side with a spear, the most pure one did bewail crying out: What is this, O my Son? What have the ungrateful people rewarded Thee with for all the good Thou hast done unto them? and Thou most lovingly takest care of my childlessness. I wonder at Thy voluntary crucifixion, O Compassionate One."
+    }
+   ]
+  },
+  {
+   "id": "xii-p7",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Should there be Idiomelion: Glory ...Tone 8.",
+     "rubric": true
+    },
+    {
+     "text": "Enlightening the creation among whom ye, the disciples of the Saviour, have moved, and burning the deceitful idols as dry sticks with your teaching, ye have brought the nations from the depths of ignorance unto the divine understanding and saved them, and now do supplicate Christ that He may be merciful unto us in the day of judgment."
+    },
+    {
+     "text": "[Both now...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p8",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O most pure Virgin --Theotokos, do receive the voices of thine entreaters and supplicate the Lord unceasingly to grant us the remission of sins."
+    },
+    {
+     "text": "[The Stavro-theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p9",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O Lord, when the sun saw Thee -- the Sun of righteousness hung up on the tree, it hath hidden its rays and the moon hath changed light into darkness, whilst the all-spotless one, Thy Mother, was sorely wounded in her innermost soul."
+    }
+   ]
+  },
+  {
+   "id": "xii-p10",
+   "centered": false,
+   "pages": [
+    91
+   ],
+   "segments": [
+    {
+     "text": "If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:",
+     "rubric": true
+    },
+    {
+     "text": "The King of the heavens."
+    },
+    {
+     "text": "The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "Risen on the third day ...Ye, the disciples of God -- theologians and God-seers -- were the ministers of the great mysteries of God, and having received the grace of healing, ye cure the maladies of all men."
+    },
+    {
+     "text": "The Verse: Through all the earth is gone out their sound and their words to the end of the world:",
+     "rubric": true
+    },
+    {
+     "text": "A great refuge and shelter for our souls and the driving away of the evil spirits ye are, O apostles of the Lord and God-seers; wherefore we always honour you."
+    },
+    {
+     "text": "The Verse: The heavens declare the glory of God, and the firmament sheweth His handiwork.",
+     "rubric": true
+    },
+    {
+     "text": "O ye, blessed apostles of God, do deliver those that praise you infaith, from every attack and injury of the demons, from transgressions and from captivity of the evil one. ["
+    },
+    {
+     "text": "Glory ...Tone 4:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p11",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Organs well appointed by the divine nursing, ye, apostles, were entrusted with the call of the Gentiles, instructing them both by word and deed in the knowledge of Christ, and you have enlightened all to confess the true divinity of Christ, the Saviour of our souls."
+    },
+    {
+     "text": "If there be Celebration, say the Theotokion of the resurrection:",
+     "rubric": true
+    },
+    {
+     "text": "Look down upon the entreaties of thy servants"
+    },
+    {
+     "text": "...But in case of no Celebration, say this Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p12",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Possessing in thee, O Theotokos, the hope and protection, we are not afraid of the assaults of the enemy, for thou dost save our souls. ["
+    },
+    {
+     "text": "The Stavro-theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p13",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "A sword, as Simeon hath said, did pierce thy heart, O all-holy Theotokos, when thou sawest the ineffable Word, Who shone forth from thee, condemned by the lawless, lifted up on the cross, partaking of vinegar and gall, whilst His side was pierced and His hands and feet were nailed; with bitter wailing hast thou cried, vociferating as a Mother. What is this new mystery, O my sweet Child? ["
+    },
+    {
+     "text": "The Troparion, Tone 3:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p14",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O holy apostles, entreat the Merciful God that He may grant forgiveness of sins to our souls."
+    }
+   ]
+  },
+  {
+   "id": "xii-p15",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Both now ...the Theotokion according to the Tone of the Troparion.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p16",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "At the Matins, for God is the Lord, the same Troparion. After the 1st Stichologia, the Cathisma, Tone 1. Similar to: Thy sepulchre O Saviour...",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p17",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The spiritual choir of apostles of the Most High God have been mysteriously sent and appeared as physicians of those suffering in thraldom, invoking only the Three-hypostatic One; they have wisely described the divine incarnation of Emanuel the Lord. ["
+    },
+    {
+     "text": "Twice. Glory ...Both now...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p18",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As the bush which Moses saw unconsumed, as God's mountain, holy cloud, undefiled tabernacle, God-acceptable table, palace of the Great King, all-luminous and impassable door, -- we hymn thee, O Virgin."
+    }
+   ]
+  },
+  {
+   "id": "xii-p19",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After the 2nd Stichologia, the Cathisma, Tone 4. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "Thou hast appeared to-day..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p20",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As the stars, ye apostles, illumine the ends of the earth with resplendent beams -- with the instructions of your holy preaching, O heavenly adepts of the Lord."
+    },
+    {
+     "text": "Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p21",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory...Both now...the Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "As ardent protection of those in need, our help and turn God-wards, for whose sake we have been freed from corruption, let us, O ye faithful, bless the Theotokos."
+    }
+   ]
+  },
+  {
+   "id": "xii-p22",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After Praise ye the name of the Lord ...the Refrain:",
+     "rubric": true
+    },
+    {
+     "text": "We magnify you, O holy apostles, since you have enlightened the whole world with your teaching and have brought unto Christ all the ends."
+    }
+   ]
+  },
+  {
+   "id": "xii-p23",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The selected Psalm:",
+     "rubric": true
+    },
+    {
+     "text": "The heavens declare the glory of God..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p24",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "After the Polyeleon, the Cathisma, Tone 3. Similar to :",
+     "rubric": true
+    },
+    {
+     "text": "The Divine..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p25",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ye, divine trumpets of the Comforter, emitting the breath of the words of salvation, do proclaim it unto the world, and awakening those that are sleeping in the darkness of deceit, do bring unto the light of the knowledge of God, O apostles of the Divine Light, supplicating Christ the God that our souls may be saved."
+    },
+    {
+     "text": "[Twice. Glory ...Both now...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p26",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Without divesting Himself of His divine nature, God became flesh in thy womb, but the Incarnate did remain God, and hath, after the birth, preserved all-spotless thee, His Mother and virgin, just as before the birth, being One and the same Lord; Him do assiduously supplicate to grant unto us great mercy."
+    }
+   ]
+  },
+  {
+   "id": "xii-p27",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon :",
+     "rubric": true
+    },
+    {
+     "text": "Through all the earth is gone out their sound."
+    },
+    {
+     "text": "The Verse :",
+     "rubric": true
+    },
+    {
+     "text": "The heavens declare the glory of God...Let every breath"
+    },
+    {
+     "text": ",..Thereupon the Gospel unto one apostle (Match. 9, 36-38; 10, 1. 5-8)....After the 50th Psalm the Sticheron, Tone 6.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p28",
+   "centered": false,
+   "pages": [
+    93
+   ],
+   "segments": [
+    {
+     "text": "The all-honourable festival of the apostles hath come unto the church of Christ intercessory of salvation for us all; wherefore in secretly applauding let us call unto them: Hail, O ye lamps, shedding forth the beams of intellectual Sun unto those in darkness; hail, O ye apostles -- the immoveable foundationsof the divine doctrines, friends of Christ, honourable vessels; come invisibly into our midst and vouchsafe the immaterial gifts unto those that praise in songs your festival."
+    }
+   ]
+  },
+  {
+   "id": "xii-p29",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Canon. Tone 4. Ode 1. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p30",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The red abyss of the sea with unmoistened steps having crossed on foot, the Israel of old hath, through the cruciform arms of Moses, obtained victory in the wilderness over the forces of Amalek."
+    }
+   ]
+  },
+  {
+   "id": "xii-p31",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Unto me desirous to melodize the choir of apostles, through their intercessions, grant, O Christ, as God, a ray of the All-holy Spirit and the light of Thy wisdom."
+    }
+   ]
+  },
+  {
+   "id": "xii-p32",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Strengthened with Thy might and grace, O Christ, Thy honourable apostles, the God-seers, have broken down the power of the opposing enemies by their constant watching for Thee."
+    }
+   ]
+  },
+  {
+   "id": "xii-p33",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Accomplishing healings in Thy name; O Master, the glorious apostles have caught entire heathen nations unto the knowledge of Thee and enlightened with Thy light."
+    }
+   ]
+  },
+  {
+   "id": "xii-p34",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having learned the heavenly wisdom, the most glorious and wise apostles have clearly made foolish the verbosity of the impious by the conciseness of their preaching."
+    }
+   ]
+  },
+  {
+   "id": "xii-p35",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "One of the most divine Trinity hast Thou, O most pure one, brought forth -- Him that appeared from thee, O Virgin and Mother, in our flesh, by the goodwill of the Begetter and by the working of the Most Holy Spirit."
+    }
+   ]
+  },
+  {
+   "id": "xii-p36",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 3. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p37",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Delighted on Thine account is Thy church, O Christ, calling unto Thee: Thou art my strength, O Lord, both refuge and support."
+    }
+   ]
+  },
+  {
+   "id": "xii-p38",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The preachers of Christ, having proclaimed on earth the divine and honourable dogmas, and having had them confirmed by the tongues of fire, delivered them over unto us."
+    }
+   ]
+  },
+  {
+   "id": "xii-p39",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou, O Master, hast shewn Thy disciples to be the intellectual heavens that declare Thy glory unto all the ends of the world."
+    }
+   ]
+  },
+  {
+   "id": "xii-p40",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Written in the heavens and appearing as co-dwellers with Christ, do ye, O most wise ones, preserve now us who lovingly venerate you."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p41",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "He that dwelleth on high, O most pure one, hath found His abode in us, for having without seed taken the flesh of thee, He did appear."
+    }
+   ]
+  },
+  {
+   "id": "xii-p42",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Cathisma, Tone 8. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "Of Wisdom..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p43",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With the net of divine words having caught the intellectual fishes, you have brought these as firstlings unto our God, and having desired to put Christ's wounds, you have appeared like unto Him in His passion; wherefore, having come together, we dutifully honour your, O glorious apostles, all-festive memory, and harmoniously vociferate unto you: Supplicate Christ the God that He may grant remission of sins unto those who lovingly venerate your holy memory."
+    }
+   ]
+  },
+  {
+   "id": "xii-p44",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory...Both now...the Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p45",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As Virgin and one amongst women that, without seed, hast brought forth God in the flesh, we -- all generations of men -- call thee blessed, for the fire of the Divinity hath tabernacled in thee and, as an infant, dost thou suckle the Maker and the Lord. Wherefore, both the angels and the mankind, we do worthily glorify thine all-holy bringing forth, and harmoniously vociferate unto thee. Supplicate Christ the God that He may grant the remission of sins unto those who in faith adore thine all-holy bringing forth."
+    },
+    {
+     "text": "[The Stavro-theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p46",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Seeing the Lamb, the Shepherd and the Redeemer upon the cross, the lamb exclaimed in tears, and loudly lamenting, thus vociferated: The world indeed rejoiceth receiving through Thee the deliverance, but my innermost is consumed at the sight of Thy crucifixion which Thou dost endure on account of the mercifulness of Thy compassion. O Longsuffering Lord, abyss of mercy and a source inexhaustible, take compassion and grant the remission of transgressions unto those who in faith hymn Thy divine passion."
+    }
+   ]
+  },
+  {
+   "id": "xii-p47",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 4. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p48",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Elevated on the cross seeing Thee, the Sun of righteousness, the church stood up in her order worthily calling out: Glory to Thy power, O Lord."
+    }
+   ]
+  },
+  {
+   "id": "xii-p49",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The utterance of divine words of the apostles, fire-like hath passed through the entire universe, consuming the matter, of deceit and enlightening with grace the nations of the pious."
+    }
+   ]
+  },
+  {
+   "id": "xii-p50",
+   "centered": false,
+   "pages": [
+    95
+   ],
+   "segments": [
+    {
+     "text": "The disciples of the Lord, having appeared as God's bright light, have enlightened the world that became black through the darkness of godlessness, with the beams of grace and the brightness of their preaching."
+    }
+   ]
+  },
+  {
+   "id": "xii-p51",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Illumined with the sacred rays of the intellectual Sun, ye, O most famous, shine in the world as the sun and drive away the mist of deceit with the divine light."
+    }
+   ]
+  },
+  {
+   "id": "xii-p52",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In Thy cross possessing the staff of strength, Thine eye-witnesses have divided in two the salty sea of life, disturbing, as horses, the waters of polytheism."
+    },
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p53",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Adorned with the variegated illumination, the animated heaven of Thee, O Christ, the King of kings, the most pure Virgin is now glorified as the Theotokos."
+    }
+   ]
+  },
+  {
+   "id": "xii-p54",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 5. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p55",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou, my God, didst come into the world as light, as a holy light that bringeth out of the darkness of ignorance those who in faith hymn Thee."
+    }
+   ]
+  },
+  {
+   "id": "xii-p56",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thy divine and most wise servants hast Thou shewn in the world as a light that announceth unto all Thee -- the never-setting Light."
+    }
+   ]
+  },
+  {
+   "id": "xii-p57",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ye, apostles, who have manifestly practiced every virtue, do now destroy the various plots of the malice of the demons."
+    }
+   ]
+  },
+  {
+   "id": "xii-p58",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Uttering in tongues of fire, the apostles made clear unto us the Trinity shining in the Unity of the Godhead."
+    }
+   ]
+  },
+  {
+   "id": "xii-p59",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion:",
+     "rubric": true
+    },
+    {
+     "text": "We offer thee as an invincible weapon against our enemies; in thee, O God's Bride, we have acquired the anchor and the hope of our salvation."
+    }
+   ]
+  },
+  {
+   "id": "xii-p60",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 6. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p61",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "I will sacrifice unto Thee, O Lord, with the voice of praise -- crieth out unto Thee the church having been cleansed of the demons' blood with the blood that mercifully ran out of Thy side."
+    }
+   ]
+  },
+  {
+   "id": "xii-p62",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having fortified Thy disciples, O Saviour, with wisdom and miracles, Thou hast made them stronger than the hellenic charlatans, and they overthrew the deceitful doctrines of these."
+    }
+   ]
+  },
+  {
+   "id": "xii-p63",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The divine rivers of wisdom have filled with the waters of salvation all the valleys of the church, having enriched them with the streams from the sources of salvation."
+    }
+   ]
+  },
+  {
+   "id": "xii-p64",
+   "centered": false,
+   "pages": [
+    96
+   ],
+   "segments": [
+    {
+     "text": "Having appeared as living stars, O most highly praised ones, ye have dispersed all the dark deceitfulness by thebrilliant beams, and have shone forth the light of the knowledge of God."
+    },
+    {
+     "text": "[The Theotokion :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p65",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having found in thee a dove entirely perfect and beautiful, bright lily and flower of the valley, the intellectual Bridegroom hath tabernacled in thee."
+    },
+    {
+     "text": "The Contakion from the Typicon. If there be no Typicon, say the following Contakion, Tone 4:",
+     "rubric": true
+    },
+    {
+     "text": "Ye, the wise ones, have appeared as the branches of the vine of Christ, bearing clusters of virtues and making the wine of salvation to flow unto us; drinking of which and filled with gladness, we celebrate your honoured memory; whereon, O apostles of the Lord, do supplicate that great mercy may be granted unto us and remission of sins."
+    },
+    {
+     "text": "[The Oikos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p66",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "As disciples of the Master of all, with the net of your prayers, O God-seers, do snatch out of the depth of transgressions my humble soul which hath been caught with the nets of the wiles of demons, that passing well the rest of my life I may lovingly hymn you and glorify your spotless life which ye have led on earth, enlightening those in extreme darkness and teaching to divinely honour the Trinity, O apostles of the Lord."
+    }
+   ]
+  },
+  {
+   "id": "xii-p67",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 7. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p68",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "In the Persian furnace the youths, descendants of Abraham, burning rather with love of piety than with the flame of fire, have called out: Blessed art Thou in the temple of Thy glory, O Lord."
+    }
+   ]
+  },
+  {
+   "id": "xii-p69",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Thou that wast before God by nature and hast made sons of Thy disciples, O Most Gracious One, hast shewn them heirs of Thy Father's patrimony and hast deigned them to go about with you as God and Master."
+    }
+   ]
+  },
+  {
+   "id": "xii-p70",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having granted unto Thy divine disciples the outpouring of wisdom, the largeness of heart and well-spoken tongue, Thou hast, O Word, sent them to preach the Gospel of the Kingdom unto all the ends."
+    }
+   ]
+  },
+  {
+   "id": "xii-p71",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having appeared as clouds of the divine light, the apostles are raining unto all the life-effecting water, calling: Blessed art Thou in the temple of Thy glory, O Lord."
+    },
+    {
+     "text": "[The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p72",
+   "centered": false,
+   "pages": [
+    97
+   ],
+   "segments": [
+    {
+     "text": "Adorned with the divine glory hast thou appeared, O most pure one, since thou wast the only one, O Mother and Virgin,that ever conceived the Word of God. Blessed art thou among women, O all-spotless Sovereign-Lady."
+    }
+   ]
+  },
+  {
+   "id": "xii-p73",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 8. The Heirmos :",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p74",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having spread his hands, Daniel did close the jaws of the lions in their den; and the force of the fire was deadened by the zealously pious youths who girded themselves with virtue and called out : Bless the Lord, all ye the works of the Lord."
+    }
+   ]
+  },
+  {
+   "id": "xii-p75",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The divine and most wise choir of the apostles of Christ with the fire of the Spirit have burned as the tares the mufti-formous temples of the demons, and have illumined the hearts of the faithful, calling out: Bless the Lord, all ye the works of the Lord."
+    }
+   ]
+  },
+  {
+   "id": "xii-p76",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Let us harmoniously honour the apostles as divine disciples of Christ who have loudly proclaimed unto us the divine dogmas, as refuges of the faithful, as common benefactors of the whole human race and as servants of the Saviour."
+    }
+   ]
+  },
+  {
+   "id": "xii-p77",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Let us honour the all-venerable and capacious vessels of virtues, the firstlings of men, the trumpets of preaching, the streams of the life of incorruption, the God-bearing lightnings, the sources of healings and the beautiful feet of the Gospel."
+    },
+    {
+     "text": "[The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p78",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Full One emptieth Himself for our sake that we may partake of His fullness; for He, the Immeasurable One, having entered thy most pure womb, without leaving His Father's bosom, hath become incarnate ; wherefore we all bless thee, O Mary, God's Bride."
+    }
+   ]
+  },
+  {
+   "id": "xii-p79",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ode 9. The Heirmos:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p80",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "A stone cut out without hands from an untouched mountain -- from thee, O Virgin, was separated -- that corner stone, even Christ, Who hath joined together the distant natures ; rejoicing thereat we magnify thee, O Theotokos."
+    }
+   ]
+  },
+  {
+   "id": "xii-p81",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Having received from the Master the power to loose the bonds of transgressions, do ye, O God-seers, mercifully cleanse the sins of those who hymn you, and make worthy of salvation."
+    }
+   ]
+  },
+  {
+   "id": "xii-p82",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ye all, O glorious apostles, have received the whole light of the Spirit that in substance appeared unto you, and in the upper room ye have learned the sublime teaching and dogmas, and now ye are worthily being blessed."
+    }
+   ]
+  },
+  {
+   "id": "xii-p83",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Unto you His friends that are gone to rest, Christ doth grant now the unfading crowns and filleth you with the contemplation of God; do supplicate Him now to save all the churches."
+    }
+   ]
+  },
+  {
+   "id": "xii-p84",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Having desired to come down in flesh He Who hath adorned everything with His word, made His abode in thee, having found thee to be the holiest of all, and hath shewn thee as the true Theotokos, O Mother and Virgin."
+    }
+   ]
+  },
+  {
+   "id": "xii-p85",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Photagogicon:",
+     "rubric": true
+    },
+    {
+     "text": "O come, ye people! Let us melodize in divine hymns the apostles of Christ, the preachers of faith, as those who supplicate Christ for our souls."
+    },
+    {
+     "text": "[The Theotokion:",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p86",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O all-holy, pure Sovereign-Lady, the only one who had no marital experience, our salvation and hope, do thou supplicate our God that was born of thee to save the world from deceit, calamities and afflictions."
+    }
+   ]
+  },
+  {
+   "id": "xii-p87",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "With the Lauds...the Stichera, Tone 8. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "O Lord, although before the judgment seat."
+    }
+   ]
+  },
+  {
+   "id": "xii-p88",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O Lord, Thou hast illumined Thine apostles with the auroras of the Comforter and hast set them as lights for the strengthening of faith, through the mental enlightenment of Thine understanding, O Master; wherefore we adore Thine unspeakable love to mankind."
+    },
+    {
+     "text": "Twice.",
+     "rubric": true
+    }
+   ]
+  },
+  {
+   "id": "xii-p89",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "O Lord, through the intercessions of Thine apostles Thou hast fenced in this Thy flock, preserving it unhurt from the temptations of the enemies, for Thou hast bought it with Thy precious blood from the thraldom of the adversary, as Compassionate One and Lover of man."
+    }
+   ]
+  },
+  {
+   "id": "xii-p90",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Ye have appeared together in the foundation of the church, as good stones, clearly emitting unto the universe in a bright light the knowledge of God, O divine apostles that are standing before the Trinity and supplicating for our souls."
+    }
+   ]
+  },
+  {
+   "id": "xii-p91",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Glory ...Tone",
+     "rubric": true
+    },
+    {
+     "text": "4 : As winged eagles ye have traversed the whole earth, spreading the venerable dogmas, and tearing up the tares of deceit by the grace and producing multy-eared fruit, O all-famed ones, of which ye also keep the intellectual granaries forever, preserving it in all richness unto the Immortal Worker."
+    }
+   ]
+  },
+  {
+   "id": "xii-p92",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Both now ...The Theotokion :",
+     "rubric": true
+    },
+    {
+     "text": "Possessing in thee, O Theotokos, our hope and defence, we are not afraid of the assaults of the enemy, for thou dost save our souls."
+    }
+   ]
+  },
+  {
+   "id": "xii-p93",
+   "centered": true,
+   "pages": [],
+   "segments": [
+    {
+     "text": "The Stavro-theotokion. Similar to:",
+     "rubric": true
+    },
+    {
+     "text": "As virtuous..."
+    }
+   ]
+  },
+  {
+   "id": "xii-p94",
+   "centered": false,
+   "pages": [],
+   "segments": [
+    {
+     "text": "Seeing Christ-Lover of man crucified and with a lance pierced in His side, the most pure one bewailed crying out: What is this, O my Son? What have the ungrateful people rendered unto Thee for all the good Thou hast done unto them, and Thou dost most lovingly take care of my childlessness ? I wonder, O Compassionate One, at Thy voluntary crucifixion."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "kind": "vespers_stichera",
+   "header": "At the Vespers, for O Lord I have cried, the Stichera, Tone 4. Similar to:",
+   "ids": [
+    "xii-p1",
+    "xii-p2",
+    "xii-p3",
+    "xii-p4",
+    "xii-p5",
+    "xii-p6",
+    "xii-p7",
+    "xii-p8",
+    "xii-p9",
+    "xii-p10"
+   ],
+   "lines": [
+    "(At the Vespers, for O Lord I have cried, the Stichera, Tone 4. Similar to:)",
+    "As a virtuous...",
+    "As personally knowing and eye-witnesses of the incarnation of the Word, ye -- the most fortunate disciples -- are being blessed, for as brilliant lightnings have ye made your appearance in the world, and as intellectual mountains you let fall the sweet things; and as the ever running parted rivers of paradise you give unto the churches of the Gentiles the divine waters to drink.",
+    "As the rays resplendent with the brightness of the Spirit, were ye sent into the whole world, and you have wrought an abundance of miracles; ye were the ministers of the mysteries of Christ and God-written tablets of the divine grace inscribed with the God-taught law, O ye sacred adepts abounding in mysteries.",
+    "The calamus of the fishermen hath put in order the waverings of philosophers and current of orators, having clearly expounded in the gospel the God-wise teachings, the doctrines of grace and of the beneficent mysteries, as well as the participation of the eternal food, the delight of angels and ever-abiding glory.",
+    "(Glory...Both now ...The Theotokion :)",
+    "Hail thou, O luminous sun -- the bearer of the never-setting Sun, that hast beamed forth the Incomprehensible Sun; hail thou, O mind, that flashesforth the divine lights; hail thou, O ray of light that illuminest the ends of the earth, and art truly of golden light, perfectly beautiful and most unblemished, that hast flashed unto the faithful the never-ending Light.",
+    "(The Stavro-theotokion :)",
+    "Seeing Christ the Lover of man, hung and being pierced through His side with a spear, the most pure one did bewail crying out: What is this, O my Son? What have the ungrateful people rewarded Thee with for all the good Thou hast done unto them? and Thou most lovingly takest care of my childlessness. I wonder at Thy voluntary crucifixion, O Compassionate One.",
+    "(Should there be Idiomelion: Glory ...Tone 8.)",
+    "Enlightening the creation among whom ye, the disciples of the Saviour, have moved, and burning the deceitful idols as dry sticks with your teaching, ye have brought the nations from the depths of ignorance unto the divine understanding and saved them, and now do supplicate Christ that He may be merciful unto us in the day of judgment.",
+    "(Both now...the Theotokion:)",
+    "O most pure Virgin --Theotokos, do receive the voices of thine entreaters and supplicate the Lord unceasingly to grant us the remission of sins.",
+    "(The Stavro-theotokion :)",
+    "O Lord, when the sun saw Thee -- the Sun of righteousness hung up on the tree, it hath hidden its rays and the moon hath changed light into darkness, whilst the all-spotless one, Thy Mother, was sorely wounded in her innermost soul.",
+    "(If the Celebration be with the Polyeleon, say the Theotokion of the resurrection:)",
+    "The King of the heavens."
+   ]
+  },
+  {
+   "kind": "vespers_aposticha",
+   "header": "The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :The Verse: Through all the earth is gone out their sound and their words to the end of the world:The Verse: The heavens declare the glory of God, and the firmament sheweth His handiwork.Glory ...Tone 4:",
+   "ids": [
+    "xii-p10",
+    "xii-p11",
+    "xii-p12",
+    "xii-p13",
+    "xii-p14",
+    "xii-p15"
+   ],
+   "lines": [
+    "(The Entrance... The Prokeimenon of the day... The Readings of the Apostles (see Appendix). For the Versicles, the Stichera, Tone 6. Similar to :)",
+    "Risen on the third day ...Ye, the disciples of God -- theologians and God-seers -- were the ministers of the great mysteries of God, and having received the grace of healing, ye cure the maladies of all men.",
+    "The Verse: Through all the earth is gone out their sound and their words to the end of the world:",
+    "A great refuge and shelter for our souls and the driving away of the evil spirits ye are, O apostles of the Lord and God-seers; wherefore we always honour you.",
+    "The Verse: The heavens declare the glory of God, and the firmament sheweth His handiwork.",
+    "O ye, blessed apostles of God, do deliver those that praise you infaith, from every attack and injury of the demons, from transgressions and from captivity of the evil one. [",
+    "(Glory ...Tone 4:)",
+    "Organs well appointed by the divine nursing, ye, apostles, were entrusted with the call of the Gentiles, instructing them both by word and deed in the knowledge of Christ, and you have enlightened all to confess the true divinity of Christ, the Saviour of our souls.",
+    "(If there be Celebration, say the Theotokion of the resurrection:)",
+    "Look down upon the entreaties of thy servants",
+    "(...But in case of no Celebration, say this Theotokion :)",
+    "Possessing in thee, O Theotokos, the hope and protection, we are not afraid of the assaults of the enemy, for thou dost save our souls. [",
+    "(The Stavro-theotokion:)",
+    "A sword, as Simeon hath said, did pierce thy heart, O all-holy Theotokos, when thou sawest the ineffable Word, Who shone forth from thee, condemned by the lawless, lifted up on the cross, partaking of vinegar and gall, whilst His side was pierced and His hands and feet were nailed; with bitter wailing hast thou cried, vociferating as a Mother. What is this new mystery, O my sweet Child? [",
+    "(The Troparion, Tone 3:)",
+    "O holy apostles, entreat the Merciful God that He may grant forgiveness of sins to our souls.",
+    "(Glory ...Both now ...the Theotokion according to the Tone of the Troparion.)"
+   ]
+  },
+  {
+   "kind": "sessional_1",
+   "header": "Cathisma, Tone 1. Similar to: Thy sepulchre O Saviour...",
+   "ids": [
+    "xii-p16",
+    "xii-p17",
+    "xii-p18"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 1. Similar to: Thy sepulchre O Saviour...)",
+    "The spiritual choir of apostles of the Most High God have been mysteriously sent and appeared as physicians of those suffering in thraldom, invoking only the Three-hypostatic One; they have wisely described the divine incarnation of Emanuel the Lord. [",
+    "(Twice. Glory ...Both now...the Theotokion:)",
+    "As the bush which Moses saw unconsumed, as God's mountain, holy cloud, undefiled tabernacle, God-acceptable table, palace of the Great King, all-luminous and impassable door, -- we hymn thee, O Virgin."
+   ]
+  },
+  {
+   "kind": "sessional_2",
+   "header": "Cathisma, Tone 4. Similar to :",
+   "ids": [
+    "xii-p19",
+    "xii-p20",
+    "xii-p21"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 4. Similar to :)",
+    "Thou hast appeared to-day...",
+    "As the stars, ye apostles, illumine the ends of the earth with resplendent beams -- with the instructions of your holy preaching, O heavenly adepts of the Lord.",
+    "(Twice.)",
+    "(Glory...Both now...the Theotokion:)",
+    "As ardent protection of those in need, our help and turn God-wards, for whose sake we have been freed from corruption, let us, O ye faithful, bless the Theotokos."
+   ]
+  },
+  {
+   "kind": "polyeleos",
+   "header": "After Praise ye the name of the Lord ...the Refrain:",
+   "ids": [
+    "xii-p22",
+    "xii-p23"
+   ],
+   "lines": [
+    "(After Praise ye the name of the Lord ...the Refrain:)",
+    "We magnify you, O holy apostles, since you have enlightened the whole world with your teaching and have brought unto Christ all the ends.",
+    "(The selected Psalm:)",
+    "The heavens declare the glory of God..."
+   ]
+  },
+  {
+   "kind": "sessional_3",
+   "header": "Cathisma, Tone 3. Similar to :",
+   "ids": [
+    "xii-p24",
+    "xii-p25",
+    "xii-p26"
+   ],
+   "lines": [
+    "(The Cathisma, Tone 3. Similar to :)",
+    "The Divine...",
+    "Ye, divine trumpets of the Comforter, emitting the breath of the words of salvation, do proclaim it unto the world, and awakening those that are sleeping in the darkness of deceit, do bring unto the light of the knowledge of God, O apostles of the Divine Light, supplicating Christ the God that our souls may be saved.",
+    "(Twice. Glory ...Both now...the Theotokion:)",
+    "Without divesting Himself of His divine nature, God became flesh in thy womb, but the Incarnate did remain God, and hath, after the birth, preserved all-spotless thee, His Mother and virgin, just as before the birth, being One and the same Lord; Him do assiduously supplicate to grant unto us great mercy."
+   ]
+  },
+  {
+   "kind": "gospel_gradual",
+   "header": "The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon :The Verse :,..Thereupon the Gospel unto one apostle (Match. 9, 36-38; 10, 1. 5-8)....After the 50th Psalm the Sticheron, Tone 6.",
+   "ids": [
+    "xii-p27",
+    "xii-p28"
+   ],
+   "lines": [
+    "(The Graduals, the 1st Antiphon of the 4th Tone. The Prokeimenon :)",
+    "Through all the earth is gone out their sound.",
+    "The Verse :",
+    "The heavens declare the glory of God...Let every breath",
+    "(,..Thereupon the Gospel unto one apostle (Match. 9, 36-38; 10, 1. 5-8)....After the 50th Psalm the Sticheron, Tone 6.)",
+    "The all-honourable festival of the apostles hath come unto the church of Christ intercessory of salvation for us all; wherefore in secretly applauding let us call unto them: Hail, O ye lamps, shedding forth the beams of intellectual Sun unto those in darkness; hail, O ye apostles -- the immoveable foundationsof the divine doctrines, friends of Christ, honourable vessels; come invisibly into our midst and vouchsafe the immaterial gifts unto those that praise in songs your festival."
+   ]
+  },
+  {
+   "kind": "canon",
+   "header": "The Canon. Tone 4. Ode 1. The Heirmos:",
+   "ids": [
+    "xii-p29",
+    "xii-p30",
+    "xii-p31",
+    "xii-p32",
+    "xii-p33",
+    "xii-p34",
+    "xii-p35",
+    "xii-p36",
+    "xii-p37",
+    "xii-p38",
+    "xii-p39",
+    "xii-p40",
+    "xii-p41",
+    "xii-p42",
+    "xii-p43",
+    "xii-p44",
+    "xii-p45",
+    "xii-p46",
+    "xii-p47",
+    "xii-p48",
+    "xii-p49",
+    "xii-p50",
+    "xii-p51",
+    "xii-p52",
+    "xii-p53",
+    "xii-p54",
+    "xii-p55",
+    "xii-p56",
+    "xii-p57",
+    "xii-p58",
+    "xii-p59",
+    "xii-p60",
+    "xii-p61",
+    "xii-p62",
+    "xii-p63",
+    "xii-p64",
+    "xii-p65",
+    "xii-p66",
+    "xii-p67",
+    "xii-p68",
+    "xii-p69",
+    "xii-p70",
+    "xii-p71",
+    "xii-p72",
+    "xii-p73",
+    "xii-p74",
+    "xii-p75",
+    "xii-p76",
+    "xii-p77",
+    "xii-p78",
+    "xii-p79",
+    "xii-p80",
+    "xii-p81",
+    "xii-p82",
+    "xii-p83",
+    "xii-p84"
+   ],
+   "lines": [
+    "(The Canon. Tone 4. Ode 1. The Heirmos:)",
+    "The red abyss of the sea with unmoistened steps having crossed on foot, the Israel of old hath, through the cruciform arms of Moses, obtained victory in the wilderness over the forces of Amalek.",
+    "Unto me desirous to melodize the choir of apostles, through their intercessions, grant, O Christ, as God, a ray of the All-holy Spirit and the light of Thy wisdom.",
+    "Strengthened with Thy might and grace, O Christ, Thy honourable apostles, the God-seers, have broken down the power of the opposing enemies by their constant watching for Thee.",
+    "Accomplishing healings in Thy name; O Master, the glorious apostles have caught entire heathen nations unto the knowledge of Thee and enlightened with Thy light.",
+    "Having learned the heavenly wisdom, the most glorious and wise apostles have clearly made foolish the verbosity of the impious by the conciseness of their preaching.",
+    "(The Theotokion:)",
+    "One of the most divine Trinity hast Thou, O most pure one, brought forth -- Him that appeared from thee, O Virgin and Mother, in our flesh, by the goodwill of the Begetter and by the working of the Most Holy Spirit.",
+    "(Ode 3. The Heirmos:)",
+    "Delighted on Thine account is Thy church, O Christ, calling unto Thee: Thou art my strength, O Lord, both refuge and support.",
+    "The preachers of Christ, having proclaimed on earth the divine and honourable dogmas, and having had them confirmed by the tongues of fire, delivered them over unto us.",
+    "Thou, O Master, hast shewn Thy disciples to be the intellectual heavens that declare Thy glory unto all the ends of the world.",
+    "Written in the heavens and appearing as co-dwellers with Christ, do ye, O most wise ones, preserve now us who lovingly venerate you.",
+    "(The Theotokion :)",
+    "He that dwelleth on high, O most pure one, hath found His abode in us, for having without seed taken the flesh of thee, He did appear.",
+    "(The Cathisma, Tone 8. Similar to:)",
+    "Of Wisdom...",
+    "With the net of divine words having caught the intellectual fishes, you have brought these as firstlings unto our God, and having desired to put Christ's wounds, you have appeared like unto Him in His passion; wherefore, having come together, we dutifully honour your, O glorious apostles, all-festive memory, and harmoniously vociferate unto you: Supplicate Christ the God that He may grant remission of sins unto those who lovingly venerate your holy memory.",
+    "(Glory...Both now...the Theotokion:)",
+    "As Virgin and one amongst women that, without seed, hast brought forth God in the flesh, we -- all generations of men -- call thee blessed, for the fire of the Divinity hath tabernacled in thee and, as an infant, dost thou suckle the Maker and the Lord. Wherefore, both the angels and the mankind, we do worthily glorify thine all-holy bringing forth, and harmoniously vociferate unto thee. Supplicate Christ the God that He may grant the remission of sins unto those who in faith adore thine all-holy bringing forth.",
+    "(The Stavro-theotokion:)",
+    "Seeing the Lamb, the Shepherd and the Redeemer upon the cross, the lamb exclaimed in tears, and loudly lamenting, thus vociferated: The world indeed rejoiceth receiving through Thee the deliverance, but my innermost is consumed at the sight of Thy crucifixion which Thou dost endure on account of the mercifulness of Thy compassion. O Longsuffering Lord, abyss of mercy and a source inexhaustible, take compassion and grant the remission of transgressions unto those who in faith hymn Thy divine passion.",
+    "(Ode 4. The Heirmos:)",
+    "Elevated on the cross seeing Thee, the Sun of righteousness, the church stood up in her order worthily calling out: Glory to Thy power, O Lord.",
+    "The utterance of divine words of the apostles, fire-like hath passed through the entire universe, consuming the matter, of deceit and enlightening with grace the nations of the pious.",
+    "The disciples of the Lord, having appeared as God's bright light, have enlightened the world that became black through the darkness of godlessness, with the beams of grace and the brightness of their preaching.",
+    "Illumined with the sacred rays of the intellectual Sun, ye, O most famous, shine in the world as the sun and drive away the mist of deceit with the divine light.",
+    "In Thy cross possessing the staff of strength, Thine eye-witnesses have divided in two the salty sea of life, disturbing, as horses, the waters of polytheism.",
+    "(The Theotokion :)",
+    "Adorned with the variegated illumination, the animated heaven of Thee, O Christ, the King of kings, the most pure Virgin is now glorified as the Theotokos.",
+    "(Ode 5. The Heirmos :)",
+    "Thou, my God, didst come into the world as light, as a holy light that bringeth out of the darkness of ignorance those who in faith hymn Thee.",
+    "Thy divine and most wise servants hast Thou shewn in the world as a light that announceth unto all Thee -- the never-setting Light.",
+    "Ye, apostles, who have manifestly practiced every virtue, do now destroy the various plots of the malice of the demons.",
+    "Uttering in tongues of fire, the apostles made clear unto us the Trinity shining in the Unity of the Godhead.",
+    "(The Theotokion:)",
+    "We offer thee as an invincible weapon against our enemies; in thee, O God's Bride, we have acquired the anchor and the hope of our salvation.",
+    "(Ode 6. The Heirmos :)",
+    "I will sacrifice unto Thee, O Lord, with the voice of praise -- crieth out unto Thee the church having been cleansed of the demons' blood with the blood that mercifully ran out of Thy side.",
+    "Having fortified Thy disciples, O Saviour, with wisdom and miracles, Thou hast made them stronger than the hellenic charlatans, and they overthrew the deceitful doctrines of these.",
+    "The divine rivers of wisdom have filled with the waters of salvation all the valleys of the church, having enriched them with the streams from the sources of salvation.",
+    "Having appeared as living stars, O most highly praised ones, ye have dispersed all the dark deceitfulness by thebrilliant beams, and have shone forth the light of the knowledge of God.",
+    "(The Theotokion :)",
+    "Having found in thee a dove entirely perfect and beautiful, bright lily and flower of the valley, the intellectual Bridegroom hath tabernacled in thee.",
+    "(The Contakion from the Typicon. If there be no Typicon, say the following Contakion, Tone 4:)",
+    "Ye, the wise ones, have appeared as the branches of the vine of Christ, bearing clusters of virtues and making the wine of salvation to flow unto us; drinking of which and filled with gladness, we celebrate your honoured memory; whereon, O apostles of the Lord, do supplicate that great mercy may be granted unto us and remission of sins.",
+    "(The Oikos :)",
+    "As disciples of the Master of all, with the net of your prayers, O God-seers, do snatch out of the depth of transgressions my humble soul which hath been caught with the nets of the wiles of demons, that passing well the rest of my life I may lovingly hymn you and glorify your spotless life which ye have led on earth, enlightening those in extreme darkness and teaching to divinely honour the Trinity, O apostles of the Lord.",
+    "(Ode 7. The Heirmos :)",
+    "In the Persian furnace the youths, descendants of Abraham, burning rather with love of piety than with the flame of fire, have called out: Blessed art Thou in the temple of Thy glory, O Lord.",
+    "Thou that wast before God by nature and hast made sons of Thy disciples, O Most Gracious One, hast shewn them heirs of Thy Father's patrimony and hast deigned them to go about with you as God and Master.",
+    "Having granted unto Thy divine disciples the outpouring of wisdom, the largeness of heart and well-spoken tongue, Thou hast, O Word, sent them to preach the Gospel of the Kingdom unto all the ends.",
+    "Having appeared as clouds of the divine light, the apostles are raining unto all the life-effecting water, calling: Blessed art Thou in the temple of Thy glory, O Lord.",
+    "(The Theotokion:)",
+    "Adorned with the divine glory hast thou appeared, O most pure one, since thou wast the only one, O Mother and Virgin,that ever conceived the Word of God. Blessed art thou among women, O all-spotless Sovereign-Lady.",
+    "(Ode 8. The Heirmos :)",
+    "Having spread his hands, Daniel did close the jaws of the lions in their den; and the force of the fire was deadened by the zealously pious youths who girded themselves with virtue and called out : Bless the Lord, all ye the works of the Lord.",
+    "The divine and most wise choir of the apostles of Christ with the fire of the Spirit have burned as the tares the mufti-formous temples of the demons, and have illumined the hearts of the faithful, calling out: Bless the Lord, all ye the works of the Lord.",
+    "Let us harmoniously honour the apostles as divine disciples of Christ who have loudly proclaimed unto us the divine dogmas, as refuges of the faithful, as common benefactors of the whole human race and as servants of the Saviour.",
+    "Let us honour the all-venerable and capacious vessels of virtues, the firstlings of men, the trumpets of preaching, the streams of the life of incorruption, the God-bearing lightnings, the sources of healings and the beautiful feet of the Gospel.",
+    "(The Theotokion:)",
+    "The Full One emptieth Himself for our sake that we may partake of His fullness; for He, the Immeasurable One, having entered thy most pure womb, without leaving His Father's bosom, hath become incarnate ; wherefore we all bless thee, O Mary, God's Bride.",
+    "(Ode 9. The Heirmos:)",
+    "A stone cut out without hands from an untouched mountain -- from thee, O Virgin, was separated -- that corner stone, even Christ, Who hath joined together the distant natures ; rejoicing thereat we magnify thee, O Theotokos.",
+    "Having received from the Master the power to loose the bonds of transgressions, do ye, O God-seers, mercifully cleanse the sins of those who hymn you, and make worthy of salvation.",
+    "Ye all, O glorious apostles, have received the whole light of the Spirit that in substance appeared unto you, and in the upper room ye have learned the sublime teaching and dogmas, and now ye are worthily being blessed.",
+    "Unto you His friends that are gone to rest, Christ doth grant now the unfading crowns and filleth you with the contemplation of God; do supplicate Him now to save all the churches.",
+    "(The Theotokion :)",
+    "Having desired to come down in flesh He Who hath adorned everything with His word, made His abode in thee, having found thee to be the holiest of all, and hath shewn thee as the true Theotokos, O Mother and Virgin."
+   ]
+  },
+  {
+   "kind": "exapostilarion",
+   "header": "The Photagogicon:[The Theotokion:",
+   "ids": [
+    "xii-p85",
+    "xii-p86"
+   ],
+   "lines": [
+    "(The Photagogicon:)",
+    "O come, ye people! Let us melodize in divine hymns the apostles of Christ, the preachers of faith, as those who supplicate Christ for our souls.",
+    "(The Theotokion:)",
+    "O all-holy, pure Sovereign-Lady, the only one who had no marital experience, our salvation and hope, do thou supplicate our God that was born of thee to save the world from deceit, calamities and afflictions."
+   ]
+  },
+  {
+   "kind": "praises",
+   "header": "With the Lauds...the Stichera, Tone 8. Similar to:",
+   "ids": [
+    "xii-p87",
+    "xii-p88",
+    "xii-p89",
+    "xii-p90",
+    "xii-p91",
+    "xii-p92",
+    "xii-p93",
+    "xii-p94"
+   ],
+   "lines": [
+    "(With the Lauds...the Stichera, Tone 8. Similar to:)",
+    "O Lord, although before the judgment seat.",
+    "O Lord, Thou hast illumined Thine apostles with the auroras of the Comforter and hast set them as lights for the strengthening of faith, through the mental enlightenment of Thine understanding, O Master; wherefore we adore Thine unspeakable love to mankind.",
+    "(Twice.)",
+    "O Lord, through the intercessions of Thine apostles Thou hast fenced in this Thy flock, preserving it unhurt from the temptations of the enemies, for Thou hast bought it with Thy precious blood from the thraldom of the adversary, as Compassionate One and Lover of man.",
+    "Ye have appeared together in the foundation of the church, as good stones, clearly emitting unto the universe in a bright light the knowledge of God, O divine apostles that are standing before the Trinity and supplicating for our souls.",
+    "(Glory ...Tone)",
+    "4 : As winged eagles ye have traversed the whole earth, spreading the venerable dogmas, and tearing up the tares of deceit by the grace and producing multy-eared fruit, O all-famed ones, of which ye also keep the intellectual granaries forever, preserving it in all richness unto the Immortal Worker.",
+    "(Both now ...The Theotokion :)",
+    "Possessing in thee, O Theotokos, our hope and defence, we are not afraid of the assaults of the enemy, for thou dost save our souls.",
+    "(The Stavro-theotokion. Similar to:)",
+    "As virtuous...",
+    "Seeing Christ-Lover of man crucified and with a lance pierced in His side, the most pure one bewailed crying out: What is this, O my Son? What have the ungrateful people rendered unto Thee for all the good Thou hast done unto them, and Thou dost most lovingly take care of my childlessness ? I wonder, O Compassionate One, at Thy voluntary crucifixion."
+   ]
+  }
+ ]
+}
