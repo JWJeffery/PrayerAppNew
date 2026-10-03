@@ -36,6 +36,12 @@
    "bytes": 2450272
   },
   {
+   "id": "en/sanctim",
+   "path": "en/sanctim.json",
+   "files": 1,
+   "bytes": 3133
+  },
+  {
    "id": "en/tempora",
    "path": "en/tempora.json",
    "files": 589,
@@ -52,6 +58,24 @@
    "path": "la/commune.json",
    "files": 66,
    "bytes": 559916
+  },
+  {
+   "id": "la/communecist",
+   "path": "la/communecist.json",
+   "files": 13,
+   "bytes": 88100
+  },
+  {
+   "id": "la/communem",
+   "path": "la/communem.json",
+   "files": 12,
+   "bytes": 108733
+  },
+  {
+   "id": "la/communeop",
+   "path": "la/communeop.json",
+   "files": 3,
+   "bytes": 27833
   },
   {
    "id": "la/martyrologium",
@@ -84,10 +108,40 @@
    "bytes": 3267965
   },
   {
+   "id": "la/sancticist",
+   "path": "la/sancticist.json",
+   "files": 5,
+   "bytes": 34232
+  },
+  {
+   "id": "la/sanctim",
+   "path": "la/sanctim.json",
+   "files": 12,
+   "bytes": 52367
+  },
+  {
    "id": "la/tempora",
    "path": "la/tempora.json",
    "files": 638,
    "bytes": 2289497
+  },
+  {
+   "id": "la/temporacist",
+   "path": "la/temporacist.json",
+   "files": 5,
+   "bytes": 29430
+  },
+  {
+   "id": "la/temporam",
+   "path": "la/temporam.json",
+   "files": 4,
+   "bytes": 25387
+  },
+  {
+   "id": "la/temporaop",
+   "path": "la/temporaop.json",
+   "files": 12,
+   "bytes": 27188
   },
   {
    "id": "shared/ordinarium",
