@@ -113,3 +113,71 @@ edits), which the parish backend already covers separately.
 - Current versions and licences of sql.js, SQLite WASM, sql.js-httpvfs.
 - Count and shape of `scripts/` readers that would need updating.
 - No schemas drafted, no prototype built.
+
+---
+
+# Update 2026-10-03 (after Josh's answers): revised plan
+
+## 8. Josh's answers (these supersede sections 5 and 6)
+
+- **Goal:** platform stability, speed, reliability.
+- **Delivery:** one website plus stand-alone iOS and Android apps. **Offline is required.**
+- **Scripture:** the public app does not ship the Bible browser. It ships only scripture displayed
+  inside the prayers. The browser stays admin-only (matches `scripture-display-licensing-rescope`).
+- **Source of truth:** JSON stays.
+- **Bible registry model:** authored by Lucy, so Josh cannot adjudicate it. Treated as unverified
+  (Lucy-era work is void as evidence) and kept out of the public app. It stays in the admin/source
+  tier only.
+
+## 9. New findings from the repo
+
+1. **Offline does not exist today.** There is no service worker and no web manifest
+   (`index.html` has neither). Every page needs the network.
+2. **Scripture is fetched at runtime a whole book at a time.** `js/scripture-resolver.js` downloads
+   e.g. `data/bible/OT/psalms.json` (1.9 MB) or `jeremiah.json` (1.4 MB) to show a few verses, then
+   extracts the range in the browser. A slow connection or a failed fetch (6.5 s timeout) means a
+   missing reading. This is the biggest speed and reliability problem in the app, and a database
+   would not fix it by itself.
+3. **The public app needs far less scripture than the repo holds.** `data/bible/` is 52 MB across
+   391 files (OT 24 MB, NT 6 MB, the Douay-Rheims translation folder 10 MB, plus source lanes). The
+   offices cite a finite set of passages; the BCP Daily Office lectionary is a fixed two-year cycle.
+4. **Licensing is a blocker for the NRSV pack.** The recorded NRSV permission is for devotional
+   quotation of verses. Bundling the full set of Daily Office lessons into an app on the Apple and
+   Google stores likely exceeds that. Josh needs written permission from the NRSV rights holder
+   (the National Council of Churches) before the NRSV lessons ship in a store app. Not verified
+   here. The Coverdale psalter in the BCP and public-domain texts are not affected.
+
+## 10. Revised recommendation
+
+**The answer to "stable, fast, offline, on web + iOS + Android" is mainly an offline-first build
+pipeline, not a database.** SQLite stays an option for later, not a first step.
+
+1. **One codebase, three delivery forms.** Make the site a PWA (manifest + service worker that
+   precaches the app and data pack), then wrap the same build with **Capacitor** (open source,
+   Ionic) to produce the iOS and Android apps. Capacitor bundles the web files inside the app, so
+   offline works on first launch. This reuses the existing HTML/JS app instead of rewriting it.
+2. **A generated "app data pack".** A build script reads the JSON source of truth and emits a
+   compact, versioned pack: only passages the offices cite (resolved ahead of time, per
+   translation), breviary data split per day instead of per year and language, and the small
+   curated corpora as they are. The pack carries a version number so the app can update it safely
+   and fall back to the last good copy.
+3. **Remove runtime whole-book fetching** from the public path by pointing the resolver at the pack.
+   Keep the old resolver for the admin Bible browser only.
+4. **Size budget.** The stores limit package size (Google Play's base module and Apple's cellular
+   download warning are both in the low hundreds of MB; I have not re-checked the current figures).
+   The pack should target well under 50 MB. The breviary (85 MB raw) is the item to shrink first.
+5. **Database later, only if measured need.** If the pack proves slow to query on a phone, add
+   SQLite (Capacitor has a community SQLite plugin; sql.js works on web) as a build output of the
+   same JSON.
+6. **Tests that prove it:** a Playwright run with the network disabled that opens each office, and
+   a check that every citation in the lectionary resolves from the pack.
+
+## 11. Next decisions for Josh
+
+1. **Approve this direction** (PWA + Capacitor + generated pack), or ask for alternatives.
+2. **Developer accounts:** Apple Developer Program and Google Play Console are needed to publish.
+   Do you have them, or should the first goal be a working PWA only?
+3. **Which offices ship in the first offline release?** All five traditions would carry the full
+   breviary and Menaion; a smaller first release is safer for size and for scripture licensing.
+4. **NRSV permission:** are you willing to request written permission, or should the first release
+   use public-domain scripture only (with NRSV added when permission arrives)?
