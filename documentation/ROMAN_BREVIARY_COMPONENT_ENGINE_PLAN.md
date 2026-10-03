@@ -103,13 +103,40 @@ Store once, assemble at runtime, like the Horologion.
 - Not verified here: the exact count of 1960-only Perl lines, and whether CGI-free runs of the Perl
   engine are possible for generating extra test years.
 
-## 8. Decisions for Josh before phase 1
+## 8. Decisions (Josh, 2026-10-03)
 
-1. Rubric scope: 1960 only, or 1960 and 1962 (the lane is named 1960/1962; Divinum treats them as
-   close but not identical)?
-2. English: keep the English layer in the first engine release, or Latin first? (The components
-   already exist in both.)
-3. Divergence policy: when the engine disagrees with Divinum and the rubrics support the engine,
-   is the engine right? (Recommended: yes, logged.)
-4. Is it acceptable to install `perl` and `libcgi-pm-perl` in the session environment to generate
-   extra test years?
+1. **Rubric scope: one set, "Rubrics 1960".** Research finding: Divinum has no separate 1962 Office
+   rubric set. The Code of Rubrics (1960) was incorporated into the 1961 typical Breviary and the
+   1962 typical Missal; the "1962" label comes from the Missal. Divinum states it maintains its
+   "Rubrics 1960" version "substantially harmonious with the 1962 typical edition". The engine
+   implements that one version. The "Rubrics 1960 - 2020 USA" variant (US propers, recent saints)
+   is out of scope unless Josh later asks.
+2. **Languages: Latin and English** (components exist in both).
+3. **Divergence policy:** where the engine disagrees with Divinum and the rubrics support the
+   engine, the engine wins; each such case is logged.
+4. **Perl and `libcgi-pm-perl`:** approved and installed in the session environment (2026-10-03)
+   to generate extra test years.
+
+## 9. What "variance we don't need" means
+
+Divinum Officium is one program serving many historical versions of the Office, selected at run
+time. The version list in `RunTimeOptions.pm` and the calendar files in `web/www/Tabulae/Kalendaria/`
+include: Tridentine 1570 and 1888/1906/1910; Divino Afflatu 1939 and 1954; Reduced 1955; Rubrics
+1960 (and a 2020 USA variant); Monastic (1617, 1930, 1963); Cistercian; Ordo Praedicatorum 1962.
+Throughout the Perl code, rules branch on the version (for example `horascommon.pl` tests
+`$version =~ /1955|Monastic.*Divino|1963/`). We only need the 1960 branches. The data mirror
+already excludes the monastic, Dominican and Cistercian directories (`source-pin.json`).
+
+## 10. Other apps for the traditional Breviary (what I could verify)
+
+- **Breviarium Meum** (Giovanni Manelli; iOS, Android): traditional Latin Breviary "1962 or earlier",
+  with Divino Afflatu and Trent versions, parallel translation in nine languages. Its store
+  description says texts can be downloaded "up to a week in advance" for offline use. That
+  suggests pre-generated days fetched in short windows, but how it generates them is not stated
+  and I could not confirm what data source it uses.
+- **Ordo Mobile App** (Romanitas Press): a calendar guide for the 1962 Missal and Breviary that
+  "automatically applies the general rubrics", works offline after download; its data comes from
+  the publisher's printed Ordo (in print since 1979). It applies rubrics but is a calendar, not
+  the full text of the hours.
+- **Divinum Officium** itself (web, MIT licence) is the open data source most projects in this
+  area can legitimately build on. Whether any particular app uses it is not verified.
