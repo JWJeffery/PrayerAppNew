@@ -205,3 +205,12 @@ pipeline, not a database.** SQLite stays an option for later, not a first step.
 Measured text: Latin 2026 = 7.2 MB, English 2026 = 8.3 MB; 2,868 of ~3,950 Latin units are shared
 between 2026 and 2027, so the two years largely repeat each other. The `source/` folder is not in
 the release script's deny list, so it appears to ship; to be confirmed and fixed in the pack work.
+
+## 14. Decision (Josh, 2026-10-04): what ships in the app and what downloads
+
+Text for every tradition ships inside the app and the offline pack. Icons (the Menaion saint icons,
+`images/icons`, about 27 MB) are not bundled; they download the first time someone opens the Orthodox
+side, then stay cached for offline use. Reason: most downloads (for example a convocation's parishes)
+will never use the Orthodox side. The website already fetches an image only when it is displayed.
+Open design point for phase 6: what the Orthodox side shows when it is opened offline before the icons
+have ever downloaded (text first, icon placeholders, a "connect once to fetch icons" note).

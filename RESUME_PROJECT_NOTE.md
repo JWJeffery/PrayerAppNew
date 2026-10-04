@@ -101,7 +101,7 @@ and say what you checked.
    only after the 1960 engine matches the audited output** (decided 2026-10-03).
 2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
    pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
-   All five traditions ship. JSON stays the source of truth; a database is a later option only if
+   All five traditions ship, with their **full text bundled** (works offline from first launch); **icons are not bundled**: they download on first use of the Orthodox side and are then kept for offline use (Josh, 2026-10-04; saint icons are ~27 MB). JSON stays the source of truth; a database is a later option only if
    measured. Scripture in the public app is limited to passages cited in the prayers (Bible browser
    stays admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by
    us). Record: `documentation/JSON_TO_DATABASE_SCOPING.md`.
