@@ -605,7 +605,7 @@
       cache.clear();
     }
 
-    return { setupstring, officestring, checklatinfile, getdialog, clearCache, vero, processConditionalLines, parseFile, RESOLVE_ALL, RESOLVE_WHOLEFILE, RESOLVE_NONE };
+    return { setupstring, officestring, checklatinfile, getdialog, clearCache, vero, processConditionalLines, parseFile, doInclusionSubstitutions, RESOLVE_ALL, RESOLVE_WHOLEFILE, RESOLVE_NONE };
   }
 
   RB.createSetupString = createSetupString;

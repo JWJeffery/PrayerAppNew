@@ -783,6 +783,7 @@
     // ------------------------------------------------------------------ precedence (non-Vespers view)
     function precedence(date) {
       resetState();
+      ss.clearCache(); // conditionals are evaluated when a file is parsed, so the cache is per date
       const d1 = String(date).replace(/\//g, '-');
       const [month, day, year] = d1.split('-').map(Number);
       Object.assign(ctx, { month, day, year });
@@ -879,7 +880,15 @@
       return ctx;
     }
 
-    return { ctx, precedence, occurrence, ss, directorium, emberday, extract_common, climit1960 };
+    // Office of the Dead recited after the hour? (Directorium.pm dirge())
+    function dirge(hora) {
+      if (!/Vespera|Laudes/i.test(hora)) return 0;
+      const sday = /Laudes/i.test(hora) ? D.get_sday(ctx.month, ctx.day, ctx.year) : D.nextday(ctx.month, ctx.day, ctx.year);
+      const line = [1, 2, 3].map((n) => S(get_from_directorium('transfer', ctx.version, 'dirge' + n, ctx.year))).join(' ');
+      return new RegExp(sday).test(line) ? 1 : 0;
+    }
+
+    return { ctx, store, precedence, occurrence, ss, directorium, emberday, extract_common, climit1960, dirge };
   }
 
   RB.createCalendar = createCalendar;
