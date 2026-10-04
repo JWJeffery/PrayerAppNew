@@ -106,7 +106,7 @@ and say what you checked.
    included); icons download once on first Orthodox entry (`js/offline-packs.js`); `manifest.webmanifest`
    makes it installable (placeholder cross icon in `images/app/`, Josh to replace). `npm run test:offline`
    (needs `npm run release:web` first) cuts the network and opens all five traditions. The release also now
-   ships `assets/fonts` (they were missing before). **Update prompt (`js/update-prompt.js`):** when a new release has downloaded, a small notice offers
+   ships `assets/fonts` (they were missing before). **Roman Breviary now uses the shared Office Settings drawer** (date stepper, the eight hours, Language, Explanations) like every other lane; its own inline Date/Hour/Language form is gone (`renderRomanBreviary()` in `js/office-ui.js`). **Anglican saint panel** no longer shows catalogue metadata (tradition code, source witnesses); it shows the saint's name, description and designation/period. Richer saint biographies for the Anglican/Roman calendars do not exist in the data yet (only one-line descriptions); the Menaion lives are the model. **Update prompt (`js/update-prompt.js`):** when a new release has downloaded, a small notice offers
    "Update now" / "Later"; the app also checks for new releases on returning to the foreground and hourly. Not done: password-protected hosting can block the manifest/service worker, see
    documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md section 17.
    All five traditions ship, with their **full text bundled** (works offline from first launch); **icons are not bundled**: they download on first use of the Orthodox side and are then kept for offline use (Josh, 2026-10-04; saint icons are ~27 MB). JSON stays the source of truth; a database is a later option only if

@@ -3,6 +3,7 @@ let currentDate = new Date();
 let selectedMode = null;
 let isHydrationComplete        = false;
 let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
+let selectedRomanBreviaryHour  = 'lauds';   // tracks the active hour within Roman Breviary mode
 let selectedEoMode = 'new_calendar'; // 'new_calendar' | 'old_calendar' — persisted in universalOfficeSettings
 let selectedCoeEasterMode = 'gregorian'; // 'julian' | 'gregorian' — persisted in universalOfficeSettings
 // Default changed 2026-08-30, from 'julian' to 'gregorian': confirmed via research that the
@@ -2952,25 +2953,11 @@ async function selectMode(mode) {
             return;
         }
 
-        const _rbNow = new Date();
-        const _rbDate = _clampRomanBreviaryDateToSupportedRange(_sharedOfficeNavigatorIsoDate(_rbNow));
-
-        try {
-            await window.RomanBreviary1960DevSlice.mountDevSlice('office-display', {
-                year: Number(_rbDate.slice(0, 4)),
-                date: _rbDate,
-                hour: _defaultRomanBreviaryHourForCurrentTime(_rbNow),
-                language: getUserProfileDefaults().romanBreviaryLanguage,
-                onLanguageChange: setUserProfileRomanBreviaryLanguage
-            });
-            isHydrationComplete = true;
-        } catch (err) {
-            if (officeDisplay) {
-                officeDisplay.innerHTML =
-                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
-            }
-            console.error('[roman-breviary-dev] Failed to mount dev slice:', err);
-        }
+        // Same shape as every other lane: date and hour live in the shared navigator and the
+        // Office Settings drawer; this lane only renders (renderRomanBreviary).
+        initializeOfficeDefaultsForCurrentDateTime('romanBreviary');
+        isHydrationComplete = true;
+        requestRender();
 
     } else {
         // ── Daily Office (default) ────────────────────────────────────────────
@@ -3127,6 +3114,21 @@ const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
             { value: "subaa", label: "Suba'a", detail: "Pre-dawn · 03:00–06:00" },
         ],
     },
+    romanBreviary: {
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Hour",
+        options: [
+            { value: "matins", label: "Matins", detail: "Matutinum" },
+            { value: "lauds", label: "Lauds", detail: "Morning" },
+            { value: "prime", label: "Prime", detail: "First hour" },
+            { value: "terce", label: "Terce", detail: "Third hour" },
+            { value: "sext", label: "Sext", detail: "Sixth hour" },
+            { value: "none", label: "None", detail: "Ninth hour" },
+            { value: "vespers", label: "Vespers", detail: "Evening" },
+            { value: "compline", label: "Compline", detail: "Night" },
+        ],
+    },
     horologion: {
         dateTitle: "Date",
         datePickerLabel: "Select Date",
@@ -3209,6 +3211,9 @@ function _sharedOfficeNavigatorActiveValue(modeKey) {
     }
     if (modeKey === "horologion") {
         return selectedHorologionOffice || "vespers";
+    }
+    if (modeKey === "romanBreviary") {
+        return selectedRomanBreviaryHour || "lauds";
     }
     return "";
 }
@@ -3392,6 +3397,12 @@ function setSharedOfficeNavHour(modeKey, value) {
 
     if (modeKey === "horologion") {
         selectHorologionOffice(value);
+        return;
+    }
+
+    if (modeKey === "romanBreviary") {
+        selectedRomanBreviaryHour = value;
+        requestRender();
     }
 }
 
@@ -3406,7 +3417,7 @@ function _sharedOfficeNavigatorDateFromIso(dateValue) {
 function setSharedOfficeNavDate(modeKey, dateValue) {
     if (!dateValue) return;
 
-    if (modeKey === "daily" || modeKey === "horologion" || modeKey === "coptic") {
+    if (modeKey === "daily" || modeKey === "horologion" || modeKey === "coptic" || modeKey === "romanBreviary") {
         setCustomDate(dateValue);
         renderSharedOfficeNavigation();
         return;
@@ -3690,6 +3701,10 @@ function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
         const radio = document.querySelector(`input[name="office-time"][value="${CSS.escape(office)}"]`);
         if (radio) radio.checked = true;
         updateSidebarForOffice();
+    }
+
+    if (modeKey === "romanBreviary") {
+        selectedRomanBreviaryHour = _defaultRomanBreviaryHourForCurrentTime(now);
     }
 
     if (modeKey === "coptic") {
@@ -4362,11 +4377,46 @@ async function renderOffice() {
         return renderEastSyriac();
     } else if (selectedMode === 'horologion') {
         return renderHorologionOffice(selectedHorologionOffice);
+    } else if (selectedMode === 'roman-breviary-dev') {
+        return renderRomanBreviary();
     } else {
         return renderBcpOffice();
     }
 }
 
+
+// ── ROMAN BREVIARY UI ADAPTER ─────────────────────────────────────────────────
+// Date and hour come from the shared navigator (currentDate, selectedRomanBreviaryHour); language from
+// the profile. All liturgical work is done by the engine (js/roman-breviary/*), driven through
+// js/roman-breviary-1960-1962-dev-slice.js.
+async function renderRomanBreviary() {
+    const display = document.getElementById('office-display');
+    if (!display) return;
+    if (!window.RomanBreviary1960DevSlice || typeof window.RomanBreviary1960DevSlice.mountDevSlice !== 'function') {
+        display.innerHTML = `<div class="office-container"><h3>Roman Breviary unavailable</h3><p>The Roman Breviary module did not load.</p></div>`;
+        return;
+    }
+    const date = _clampRomanBreviaryDateToSupportedRange(_sharedOfficeNavigatorIsoDate(currentDate));
+    try {
+        await window.RomanBreviary1960DevSlice.mountDevSlice('office-display', {
+            year: Number(date.slice(0, 4)),
+            date,
+            hour: selectedRomanBreviaryHour || 'lauds',
+            language: getUserProfileDefaults().romanBreviaryLanguage
+        });
+    } catch (err) {
+        display.innerHTML = `<div class="office-container"><h3>Roman Breviary failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
+        console.error('[roman-breviary] render failed:', err);
+    }
+}
+
+// Language choice from Office Settings: remembered in the profile, then the office re-renders.
+function setRomanBreviaryLanguage(value) {
+    setUserProfileRomanBreviaryLanguage(value);
+    requestRender();
+}
+window.setRomanBreviaryLanguage = setRomanBreviaryLanguage;
+window.getRomanBreviaryLanguage = () => getUserProfileDefaults().romanBreviaryLanguage;
 
 // ── HOROLOGION UI ADAPTER ─────────────────────────────────────────────────────
 //
@@ -6829,10 +6879,9 @@ const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.ma
 const angPrimaryDetail = await _angPrimaryDetail(currentDate);
 document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
-        const ctx = { tradition: 'ANG', includeEcumenical: true };
-        const res = saintAppliesToContext(s, ctx);
-        const label = getTraditionDisplayLabel(res.label || 'Unknown') + (s.angRole === 'alternate' ? ' \u00b7 Alternate' : '');
-        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p>${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}</div>`;
+        // No tradition code ("ANG") or source label above the name: that is catalogue metadata.
+        const label = s.angRole === 'alternate' ? 'Alternate' : '';
+        return `<div class="saint-box">${label ? `<small style="display:block; color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small>` : ''}<strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p>${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}</div>`;
     })
     .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
 }
@@ -6853,9 +6902,11 @@ async function _angPrimaryDetail(date) {
         const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
         const p = data && data.decisions && data.decisions[key] ? data.decisions[key].primary : null;
         if (!p) return '';
+        // About the saint, not about the records: who they were and when. (Which calendars and books
+        // attest the commemoration is audit data, kept in the decisions file, never shown to people praying.)
         const parts = [];
-        if (p.tradition) parts.push(p.tradition);
-        if (p.source_witnesses) parts.push('Witnesses: ' + p.source_witnesses);
+        if (p.designation) parts.push(p.designation);
+        if (p.period) parts.push(p.period);
         return parts.join(' \u00b7 ');
     } catch (e) { return ''; }
 }
@@ -6877,7 +6928,7 @@ async function _angDecisionAlternates(date, shownNames) {
             (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
             (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '') + '</li>').join('');
         return '<details class="saint-box"><summary style="cursor:pointer;color:var(--accent);font-weight:bold;text-transform:uppercase;font-size:0.8em;">' +
-               'Other commemorations proposed for this day</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
+               'Also remembered on this day</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
     } catch (e) { return ''; }
 }
 

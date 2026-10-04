@@ -139,26 +139,6 @@
     return groups;
   }
 
-  const HOUR_OPTIONS=[
-    ['matins','Matins'],['lauds','Lauds'],['prime','Prime'],['terce','Terce'],
-    ['sext','Sext'],['none','None'],['vespers','Vespers'],['compline','Compline']
-  ];
-
-  function renderNavHtml(date,hour,language){
-    const hourOptionsHtml=HOUR_OPTIONS.map(([key,label])=>
-      `<option value="${esc(key)}"${key===hour?' selected':''}>${esc(label)}</option>`
-    ).join('');
-    const languageOptionsHtml=Object.keys(SUPPORTED_LANGUAGES).map(code=>
-      `<option value="${esc(code)}"${code===language?' selected':''}>${esc(SUPPORTED_LANGUAGES[code])}</option>`
-    ).join('');
-    return `<form class="rb1960-nav" onsubmit="return false;">`+
-      `<label>Date <input type="date" class="rb1960-nav-date" value="${esc(date)}" min="1900-01-01" max="2100-12-31"></label>`+
-      `<label>Hour <select class="rb1960-nav-hour">${hourOptionsHtml}</select></label>`+
-      `<label>Language <select class="rb1960-nav-language">${languageOptionsHtml}</select></label>`+
-      `<button type="button" class="rb1960-nav-go">Go</button>`+
-      `</form>`;
-  }
-
   function renderResolvedOfficeHtml(envelope){
     const groups=groupByNocturn(envelope.blocks||[]);
     const groupsHtml=groups.map(group=>{
@@ -171,7 +151,6 @@
     }).join('');
     return `<div class="office-container rb1960-dev-slice">`+
       `<h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2>`+
-      renderNavHtml(envelope.context.date,envelope.context.hour,normalizeLanguage(envelope.language))+
       `<p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
   }
 
@@ -223,11 +202,6 @@
   async function mountDevSlice(targetId='office-display',options={}){
     const target=document.getElementById(targetId);
     if(!target) throw new Error('Target element not found: '+targetId);
-    // Called whenever the user picks a language from the in-page selector, so the shell can
-    // persist it as the lane's own stored default (js/office-ui.js's user-profile system) --
-    // this module has no localStorage access of its own and shouldn't grow one just for this.
-    const onLanguageChange=typeof options.onLanguageChange==='function'?options.onLanguageChange:null;
-
     async function renderFor(opts){
       target.innerHTML=`<div class="office-container"><h3>Loading...</h3></div>`;
       let envelope;
@@ -275,21 +249,6 @@
           // Never let envelope publication break a rendered office.
         }
       }
-      const dateInput=target.querySelector('.rb1960-nav-date');
-      const hourSelect=target.querySelector('.rb1960-nav-hour');
-      const languageSelect=target.querySelector('.rb1960-nav-language');
-      const goBtn=target.querySelector('.rb1960-nav-go');
-      const currentOpts=()=>({date:dateInput.value||opts.date,hour:hourSelect.value||opts.hour,language:languageSelect.value||opts.language});
-      if(goBtn) goBtn.addEventListener('click',()=>{
-        renderFor(currentOpts()).catch(()=>{}); // failure already rendered into `target` above
-      });
-      // Immediate switch, not gated behind "Go" -- date/hour stay Go-gated (matches the
-      // existing, already-shipped behavior above) but a language choice is a single discrete
-      // pick, not something a user fine-tunes before submitting.
-      if(languageSelect) languageSelect.addEventListener('change',()=>{
-        if(onLanguageChange) onLanguageChange(languageSelect.value);
-        renderFor(currentOpts()).catch(()=>{});
-      });
       return envelope;
     }
 

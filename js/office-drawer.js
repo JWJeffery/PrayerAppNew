@@ -580,6 +580,22 @@
                conflict is recorded in the ledger for Josh's call. */
             add(radioRow('esy-mode', 'Use', 'esy-mode',
                 [['cathedral', 'Cathedral'], ['monastic', 'Monastic']]));
+        } else if (modeKey === 'romanBreviary') {
+            /* Language is a profile setting (Latin or English); the date and the hour come from the
+               shared navigator sections above and below, like every other lane. */
+            if (typeof window.setRomanBreviaryLanguage === 'function') {
+                var lrow = el('label', 'uo-drawer-row');
+                lrow.appendChild(el('span', 'uo-drawer-row-label', 'Language'));
+                var lsel = el('select', 'uo-drawer-row-value');
+                lsel.setAttribute('data-uo-key', 'rb-language');
+                [['la', 'Latin'], ['en', 'English']].forEach(function (o) {
+                    var opt = el('option', null, o[1]); opt.value = o[0]; lsel.appendChild(opt);
+                });
+                lsel.value = window.getRomanBreviaryLanguage();
+                lsel.addEventListener('change', function () { window.setRomanBreviaryLanguage(lsel.value); });
+                lrow.appendChild(lsel);
+                add(lrow);
+            }
         } else if (modeKey === 'horologion') {
             add(selectRow('hor-cal', 'Calendar', 'hor-eo-calendar-select'));
             add(selectRow('hor-depth', 'Display depth', 'hor-depth-select'));
@@ -771,23 +787,6 @@
         var actions = document.querySelector('#main-content .uo-keeping-actions');
         if (!actions) return;
         var existing = actions.querySelector('.uo-drawer-open');
-
-        /* Roman Breviary (found live, 2026-09-27: opening this drawer here showed the Daily
-           Office's own Rite/Officiant/Psalter/Creed/Gospel/Marian/BCP-Only-Mode content, because
-           currentModeKey() didn't recognise this lane and fell back to 'daily'). This lane has no
-           legacy sidebar (#settings-panel/#coptic-settings/#east-syriac-settings/#generic-settings)
-           for the drawer to reflect -- none of those BCP-shaped settings apply to the Roman Rite --
-           and it already manages its own settings inline (Date/Hour/Language, in
-           js/roman-breviary-1960-1962-dev-slice.js's own nav), not through this shared drawer. So
-           this lane gets no entry at all, rather than a drawer with nothing real to show. .uo-keeping-
-           actions is built once by office-shell.js's buildShell() and persists across every lane
-           switch, so a button inserted while in another lane has to be actively removed here, not
-           just skipped on future insertion attempts. */
-        if (currentModeKey() === 'romanBreviary') {
-            if (existing) existing.remove();
-            if (dialog && dialog.open) dialog.close();
-            return;
-        }
 
         if (existing) return;
         var b = el('button', 'uo-drawer-open', 'Office Settings');
