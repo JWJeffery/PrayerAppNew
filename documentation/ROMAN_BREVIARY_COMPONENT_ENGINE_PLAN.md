@@ -338,8 +338,7 @@ over Latin (`setupstring`), and the English martyrology date line.
 | JS blocks vs audited stored blocks, Latin | all 2,920 hours of 2026 and of 2027 | identical |
 | JS blocks vs audited stored blocks, English | all 2,920 hours of 2026 | identical |
 
-Further years (Latin 2028-2032, 2038, spot years 1962-2100) run against Perl; see the resume note for
-the outcome.
+| JS cells vs Perl HTML, Latin, all 8 hours | every day of 2028-2032, 2038, 1962, 1975, 1990, 2008, 2045, 2100 (about 29,000 hour-records) | identical |
 
 **Bugs this found in stage A code** (never reached before because only script arrays were compared):
 a missing `u` flag on a drop-cap regex in `lectio()`, and a stray multiline flag on the responsory
@@ -351,3 +350,19 @@ written atomically so parallel test runs do not collide.
 day's rank line; the offline data pack (phase 6); the 2020 USA add-on.
 
 **Next: phase 5**, with Josh's go-ahead (assumed yes unless a major decision appears).
+
+
+## 16. Phase 5 result (2026-10-04): the app runs on the engine
+
+The Roman Breviary screen now builds each office in the browser from `data/roman-breviary-1960-1962/components/`
+(about 14 MB, loaded once) for any date 1900-2100, Latin or English. New: `js/roman-breviary/blocks.js`
+(parser and block builder, moved out of `scripts/`, now shared by the audit scripts and the app),
+`js/roman-breviary/engine-office.js` (loads bundles, runs the engine, returns the envelope the display
+code already renders); the day's rank line is ported (`headline()`), matching all 365 stored 2026 lines in
+both languages. The stored per-year files remain in the repository as audit fixtures and as a fallback
+if the engine cannot start; the release now leaves out `source/`, `units/` and `manifests/` (Breviary data
+in the release zip: 22.5 MB to 4.1 MB). Checked in headless Chromium: a Latin office for 2026-03-05, an
+English one for 2031-07-14, Matins for 1999-12-25, and the real app's Catholic entry card.
+
+**Next:** phase 6, the offline data pack (versioned, cached by a service worker), then the PWA and Capacitor
+apps; the 2020 USA add-on stays planned.

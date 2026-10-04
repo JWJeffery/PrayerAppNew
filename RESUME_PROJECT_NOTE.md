@@ -90,13 +90,14 @@ and say what you checked.
 **Active direction (Josh, 2026-10-03), in this order:**
 1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
    and English, Rubrics 1960 only, engine wins over Divinum when the rubrics support it). Plan and
-   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. **Phases 1-2 and phase 3 stage A are done (2026-10-04):** pinned mirror
+   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. **Phases 1-5 are done (2026-10-04):** pinned mirror
    completed; 3,890 files as lossless JSON in `data/roman-breviary-1960-1962/components/`
-   (`npm run audit:roman-breviary-components`); `js/roman-breviary/` decides which office is said (matches
-   the Perl engine for about 50,800 days) and fills every hour's template (Matins to Compline: identical
-   script arrays for 2026-2027 and the extreme years 2008 and 2038; `npm run test:roman-breviary-script`).
-   Engine clone for tests: `npm run roman-breviary:engine:setup`. **Next: stage B** (expand psalms, prayers
-   and lessons into text and blocks; then English), needs Josh's go-ahead; each stage ends with a diff report. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
+   (`npm run audit:roman-breviary-components`); `js/roman-breviary/` decides the office, fills and expands
+   every hour (Latin and English) and the app now runs on it for any date 1900-2100. Verified against the
+   Perl engine and the audited stored data (plan doc sections 12-16; tests `npm run test:roman-breviary-
+   script|render|blocks`; engine clone for tests: `npm run roman-breviary:engine:setup`). Old
+   `units/`/`manifests/` stay as fixtures and fallback, not shipped. **Next: phase 6** (offline data pack),
+   then item 2 below. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
    only after the 1960 engine matches the audited output** (decided 2026-10-03).
 2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
    pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
