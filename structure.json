@@ -1603,7 +1603,7 @@
         "severity": "MEDIUM",
         "status": "open",
         "area": "data/saints/ + data/kalendar/synaxarium/decisions.json + js/office-ui.js (saint panel)",
-        "phase": "Not started; logged only"
+        "phase": "Primary saints done (346 of 347 written, see documentation/ANGLICAN_SAINT_LIVES.md); additional saints and a human read-through still to do"
       },
       {
         "id": "menaion-hymn-corpus-transcription",
