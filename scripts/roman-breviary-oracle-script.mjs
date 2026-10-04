@@ -32,6 +32,9 @@ const LOOP = String.raw`{
       ($vespera, $cvespera, $svesp, $tvesp, $rank, $commemorated, $initia, $laudesonly) = (undef) x 8;
       ($comrank, $litaniaflag, $octavam) = (0, 0, '');
       $searchind = 0;
+      # horas.pl declares 'my $ant, $ant2;' and 'my $ant, $duplexf;', which make $ant2/$duplexf package
+      # globals that keep a value between hours; a fresh request would start with them unset.
+      $ant2 = undef; $duplexf = undef;
       $hora = $h;
       our $oracle_ctx = { date => $d, hora => $h };
       # horas() sometimes calls precedence() with no argument, which reads the CGI 'date' parameter

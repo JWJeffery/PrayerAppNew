@@ -63,6 +63,7 @@
 
   function createHours(cal) {
     const { ctx, ss } = cal;
+    const store = cal.store;
     const { get_from_directorium } = cal.directorium;
     // Perl `-e "$datafolder/Latin/$name"`: a literal existence test, no '.txt' added
     const fileExists = (name) => cal.store.exists('Latin', name);
@@ -562,6 +563,21 @@
       return [`${ant};;${psalm.join(';')}`];
     }
 
+    // The Perl condition for the Vespers fifth-psalm override, evaluated in the same order so that
+    // $2 (the psalm number) comes from the first pattern that matches.
+    function psalm5Match(rule, communeRule, isC4) {
+      let m;
+      if (!T(ctx.antecapitulum)) {
+        if (ctx.vespera === 3) {
+          if ((m = /Psalm5 (Vespera3)=([0-9]+)/i.exec(rule))) return m;
+          if ((m = /Psalm5 (Vespera3)=([0-9]+)/i.exec(communeRule)) && isC4) return m;
+        }
+        if ((m = /Psalm5 (Vespera)=([0-9]+)/i.exec(rule))) return m;
+        if ((m = /Psalm5 (Vespera)=([0-9]+)/i.exec(communeRule)) && isC4) return m;
+      }
+      return /Psalm5 (VesperaAnte)=([0-9]+)/i.exec(S(ctx.antecapitulum));
+    }
+
     function psalmi_major() {
       const { version, rule, laudes, rank, winner, dayofweek, vespera, duplex, commune, month, day, communetype, votive } = ctx;
       const psalmiMap = off(ss.setupstring('Latin', 'Psalterium/Psalmi/Psalmi major.txt'));
@@ -625,7 +641,10 @@
           const pm = /;;(.*)/s.exec(S(p[i]));
           let pp = pm ? pm[1] : 'missing';
           // (Vespers 5th-psalm rules: Vespers only)
-          if (ctx.hora === 'Vespera' && i === 4) throw new Error('Vespers psalm-5 rules not ported yet');
+          if (i === 4 && ctx.hora === 'Vespera' && !/no Psalm5/i.test(S(rule))) {
+            const pm = psalm5Match(S(rule), S(off(ctx.communeHash).get('Rule')), String(c) === '4');
+            if (pm) { pp = pm[2]; aflag = 1; }
+          }
           const am = /(.*?);;/s.exec(S(antiphones[i]));
           psalmi[i] = /;;[0-9;\n]+/.test(S(antiphones[i])) && !aflag ? antiphones[i] : am ? `${am[1]};;${pp}` : `${antiphones[i]};;${pp}`;
         }
@@ -724,7 +743,13 @@
         vers = S(vers).replace(/\s*$/, '');
         resp = S(resp).replace(/\s*$/, `\n_\n${vers}`);
       }
-      if (ctx.hora === 'Completorium') throw new Error('Compline responsory not ported yet');
+      if (ctx.hora === 'Completorium') {
+        if (T(resp)) resp = S(resp) + '\n_\n';
+        resp = S(resp) + S(capit.get('Versum 4'));
+        const capitC = perlSplit(S(resp), /\n/);
+        postprocess_short_resp(capitC);
+        return capitC.join('\n');
+      }
       const nm = `Responsory ${ctx.hora}`;
       let [wr] = getproprium(nm, 1);
       if (!T(wr)) {
@@ -751,6 +776,197 @@
       const [w, c] = getproprium(name, 1);
       if (ctx.hora !== 'Completorium') setcomment(ctx.label, 'Source', T(w) ? c : comment);
       return (T(w) ? w : capit) + '\n_\n' + minor_reponsory();
+    }
+
+    // Prime ----------------------------------------------------------------------
+    function get_prima_responsory() {
+      const { version, month, day } = ctx;
+      let key = gettempora('Prima responsory');
+      let m;
+      if ((m = /Doxology=(Nat|Epi|Pasch|Asc|Corp|Heart)/i.exec(S(ctx.rule))) || (m = /Doxology=(Nat|Epi|Pasch|Asc|Corp|Heart)/i.exec(S(off(ctx.commemoratioHash).get('Rule'))))) {
+        key = m[1];
+      } else if (!/196/.test(version) && month === 8 && day > 15 && day < 23) key = 'Nat';
+      // Perl: `$day !~ 12` uses the day as a pattern, i.e. it is false when the day contains "12"
+      if (/196/.test(version) && month === 12 && day > 8 && day < 16 && !/Newcal/.test(version) && !/12/.test(String(day))) key = 'Adv';
+      if (/196/.test(version) && /Corp|Heart/.test(key)) key = '';
+      if (!T(key)) return '';
+      const t = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      return t.get(`Responsory ${key}`);
+    }
+
+    function capitulum_prima(withresponsory) {
+      const { dayofweek, version, commune, rank } = ctx;
+      const brevis = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      const wr = S(W().get('Rank'));
+      const key =
+        dayofweek > 0 && !/196[03]/.test(version) && /Feria|Vigilia/i.test(wr) && !/Vigilia Epi/i.test(wr) && !(/in.*Oct/i.test(wr) && /Cist/i.test(version)) &&
+        (!T(commune) || !/C10/.test(S(commune))) && (N(rank) < 3 || /Quad6/.test(S(ctx.dayname[0])) || /Quadp3-3/.test(S(ctx.winner))) && !/Pasc/i.test(S(ctx.dayname[0]))
+          ? 'Feria' : 'Dominica';
+      const capit = S(brevis.get(key)) + '\n$Deo gratias\n_\n';
+      setcomment(ctx.label, 'Source', key === 'Feria' ? 1 : 0);
+      let resp = [];
+      if (T(withresponsory)) {
+        resp = perlSplit(S(brevis.get('Responsory')), /\n/);
+        let primaresponsory = get_prima_responsory();
+        if (W().has('Versum Prima')) primaresponsory = W().get('Versum Prima');
+        if (T(primaresponsory)) resp[2] = `V. ${primaresponsory}`;
+        resp.push('_');
+      }
+      resp.push(...perlSplit(S(brevis.get('Versum')), /\n/));
+      postprocess_short_resp(resp);
+      return capit + resp.join('\n');
+    }
+
+    function lectio_brevis_prima() {
+      const { version } = ctx;
+      const brevisMap = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      const name = gettempora('Lectio brevis Prima');
+      let brevis = brevisMap.get(name);
+      let comment = /per annum/i.test(name) ? 5 : 1;
+      if (!/1955|196|cist/i.test(version)) {
+        let b;
+        if (W().has('Lectio Prima')) { b = W().get('Lectio Prima'); comment = 3; }
+        else if (off(ctx.communeHash).has('Lectio Prima')) { b = off(ctx.communeHash).get('Lectio Prima'); comment = 4; }
+        brevis = T(b) ? b : brevis;
+      }
+      brevis = S(brevis);
+      if (!/^Monastic/.test(version)) brevis = `$benedictio Prima\n${brevis}`;
+      brevis += '\n$Tu autem';
+      return [brevis, comment];
+    }
+
+    // --- martyrology and the lunar date (Date.pm date_to_days/days_to_date, specprima.pl gregor) ---
+    function perl_date_to_days(d, m, y) {
+      // Perl: m is the 0-based month. (The 1970-2038 timelocal line there computes and discards a value.)
+      let yc = Math.floor(y / 100);
+      let c = 20;
+      let ret = 10957;
+      let add;
+      if (y < 2000) {
+        while (c > yc) { c--; add = c % 4 === 0 ? 36525 : 36524; ret -= add; }
+      } else {
+        while (c < yc) { add = c % 4 === 0 ? 36525 : 36524; ret += add; c++; }
+      }
+      add = 4 * 365;
+      if (yc % 4 === 0) add += 1;
+      yc *= 100;
+      while (yc < y - (y % 4)) { ret += add; add = 4 * 365 + 1; yc += 4; }
+      add = 366;
+      if (yc % 100 === 0 && yc % 400 > 0) add = 365;
+      while (yc < y) { ret += add; add = 365; yc++; }
+      const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      months[1] = y % 4 === 0 ? 29 : 28;
+      if (y % 100 === 0 && y % 400 > 0) months[1] = 28;
+      c = 0;
+      while (c < m) { ret += months[c]; c++; }
+      ret += d - 1;
+      return ret;
+    }
+    // Only element [7] (day of the year) of Perl days_to_date() is used. For 1970-2038 it comes from
+    // localtime() and is 0-based; outside that window the hand-written branch gives a 1-based value.
+    function perl_days_to_date_yday(days) {
+      if (days > 0 && days < 24837) {
+        const t = new Date((days * 86400 + 12 * 3600) * 1000);
+        return Math.floor((Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate()) - Date.UTC(t.getUTCFullYear(), 0, 1)) / 86400000);
+      }
+      let count = 10957;
+      let yc = 20;
+      let add, oldadd, oldcount = count, oldyc = yc;
+      if (days < count) {
+        while (days < count) { yc--; add = yc % 4 === 0 ? 36525 : 36524; count -= add; }
+      } else {
+        while (days >= count) { oldcount = count; oldyc = yc; add = yc % 4 === 0 ? 36525 : 36524; count += add; yc++; }
+        count = oldcount;
+        yc = oldyc;
+      }
+      add = 4 * 365;
+      if (yc % 4 === 0) add += 1;
+      yc *= 100;
+      oldcount = count;
+      oldyc = yc;
+      while (count <= days) { oldcount = count; oldyc = yc; count += add; add = 4 * 365 + 1; yc += 4; }
+      count = oldcount;
+      yc = oldyc;
+      add = 366;
+      if (yc % 100 === 0 && yc % 400 > 0) add = 365;
+      oldyc = yc;
+      while (count <= days) { oldadd = add; oldyc = yc; count += add; add = 365; yc++; }
+      count -= oldadd;
+      yc = oldyc;
+      return days - count + 1;
+    }
+
+    const ORDINALS = ['prima', 'secúnda', 'tértia', 'quarta', 'quinta', 'sexta', 'séptima', 'octáva', 'nona', 'décima', 'undécima', 'duodécima',
+      'tértia décima', 'quarta décima', 'quinta décima', 'sexta décima', 'décima séptima', 'duodevicésima', 'undevicésima', 'vicésima',
+      'vicésima prima', 'vicésima secúnda', 'vicésima tértia', 'vicésima quarta', 'vicésima quinta', 'vicésima sexta', 'vicésima séptima', 'vicésima octáva',
+      'vicésima nona', 'tricésima'];
+
+    function luna_latin(month, day, year) {
+      const epact2008 = 23;
+      const edays = perl_date_to_days(1, 0, 2008);
+      const lunarmonth = 29.53059;
+      const t = perl_date_to_days(day, month - 1, year) - edays + epact2008;
+      const mult = Math.floor(t / lunarmonth);
+      let dist = Math.floor(t - mult * lunarmonth - 0.25);
+      if (dist <= 0) dist = 30 + dist;
+      return `Luna ${ORDINALS[dist - 1]}. Anno ${year}\n`;
+    }
+
+    function gregor_latin(month, day, year) {
+      const golden = year % 19;
+      const epact = [29, 10, 21, 2, 13, 24, 5, 16, 27, 8, 19, 30, 11, 22, 3, 14, 25, 6, 17];
+      const om = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 100];
+      let leapday;
+      if (golden === 18) om[12] = 29; else om[12] = 30;
+      if (D.leapyear(year) && month > 2) om[1] = 30;
+      if (golden === 0) om.unshift(30);
+      if (golden === 8 || golden === 11) om.unshift(30);
+      if (D.leapyear(year) && month === 2 && day >= 24) {
+        leapday = (day + 1) % 30;
+        if (day === 29) day = 24;
+      }
+      const t = perl_date_to_days(day, month - 1, year);
+      const yday = perl_days_to_date_yday(t);
+      let num = -epact[golden] - 1;
+      let i = 0;
+      while (num < yday) { num += om[i]; i++; }
+      num -= om[i - 1];
+      const gday = yday - num;
+      return `Luna ${ORDINALS[gday - 1]} Anno Dómini ${year}\n`;
+    }
+
+    function martyrologium() {
+      const { version, year, month, day, dayofweek } = ctx;
+      let t = '';
+      const a = D.getweek(day, month, year, 1) + '-' + ((dayofweek + 1) % 7);
+      let am = off(ss.setupstring('Latin', 'Martyrologium1960/Mobile.txt'));
+      if (!am.has(a) && !am.keys().length) am = off(ss.setupstring('Latin', 'Martyrologium/Mobile.txt'));
+      let mobile = '';
+      let hd = 0;
+      if (am.has(a)) mobile = `${am.get(a)}\n`;
+      if (month === 10 && dayofweek === 6 && day > 23 && day < 31 && am.has('10-DU')) mobile = S(ctx.m && ctx.m['10-DU']); // (Perl reads an undefined %m here)
+      if (/Pasc0\-1/i.test(a)) hd = 1;
+      if (/ex C9/i.test(S(W().get('Rank'))) && am.has('Defuncti')) { mobile = am.get('Defuncti'); hd = 1; }
+      if (hd === 1) { t = `v. ${mobile}` + `_\n${t}`; mobile = ''; }
+      const fname = D.nextday(month, day, year);
+      const [m, d] = fname.split('-').map(Number);
+      const y = m === 1 && d === 1 ? year + 1 : year;
+      let path = `Martyrologium1960/${fname}.txt`;
+      if (!store.exists('Latin', path)) path = `Martyrologium/${fname}.txt`;
+      const lines = RB.doRead(store.horas('Latin', path));
+      if (lines.length) {
+        const luna = year >= 1900 && year < 2200 ? gregor_latin(m, d, y) : luna_latin(m, d, y);
+        lines[0] += ` ${luna}`;
+        let prefix = 'v. ';
+        for (const line of lines) {
+          if (line.length > 3 && !/^\/\:/.test(line) && !/\([,;:]+[zZ]?\)/.test(line)) t += `${prefix}${line}\n`;
+          else t += `${line}\n`;
+          prefix = 'r. ';
+          if (T(mobile) && /_/.test(line)) { t += `${prefix}${mobile}`; mobile = ''; }
+        }
+      }
+      t += prayer('Conclmart');
+      return t;
     }
 
     function hymnshiftFns() {
@@ -845,16 +1061,28 @@
       const num = ctx.hora === 'Laudes' ? 2 : ctx.hora === 'Completorium' ? 4 : 3;
       let ant, ant2;
       let duplexf = /196/.test(ctx.version) ? 1 : 0;
-      if (ctx.hora === 'Completorium') throw new Error('Compline canticle not ported yet');
-      const comment = /sancti/i.test(S(ctx.winner)) ? 3 : 2;
-      setcomment(item, 'Source', comment, translate('Antiphona'));
-      duplexf = duplexf || (N(ctx.duplex) > 2 ? 1 : 0);
-      const key = num === 3 ? ctx.vespera : num;
-      let df;
-      [ant, df] = ant123_special();
-      if (!T(ant)) {
-        [ant] = getantvers('Ant', key);
-      } else duplexf = duplexf || df;
+      if (ctx.hora === 'Completorium') {
+        s.push('#' + translate(item.slice(1)));
+        const [w] = getproprium(`Ant 4${ctx.vespera}`);
+        if (T(w)) {
+          const parts = perlSplit(S(w), /\n/);
+          ant = parts[0];
+          ant2 = parts[1];
+        } else {
+          const a = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+          ant = a.get('Ant 4');
+        }
+      } else {
+        const comment = /sancti/i.test(S(ctx.winner)) ? 3 : 2;
+        setcomment(item, 'Source', comment, translate('Antiphona'));
+        duplexf = duplexf || (N(ctx.duplex) > 2 ? 1 : 0);
+        const key = num === 3 ? ctx.vespera : num;
+        let df;
+        [ant, df] = ant123_special();
+        if (!T(ant)) {
+          [ant] = getantvers('Ant', key);
+        } else duplexf = duplexf || df;
+      }
       const psalmiList = [`${ant};;${229 + num}`];
       antetpsalm(psalmiList, duplexf);
       if (T(ant2)) s[s.length - 1] = `Ant. ${ant2}`;
@@ -1299,7 +1527,48 @@
             if (T(c)) { ccind++; cc[ccind + 8500] = c; }
           }
         }
-        if (ctx.hora === 'Vespera') throw new Error('Vespers commemorations not ported yet');
+        if (ctx.hora === 'Vespera') {
+          // add Concurrent Office
+          if (T(ctx.cwinner)) {
+            let key = 0;
+            if (!fileExists(ctx.cwinner) && !/txt$/i.test(ctx.cwinner)) ctx.cwinner += '.txt';
+            c = getcommemoratio(ctx.cwinner, ctx.cvespera);
+            cobj = off(ss.officestring('Latin', ctx.cwinner, ctx.cvespera === 1 && /tempora/i.test(ctx.cwinner) ? 1 : 0));
+            if (T(c) && T(ctx.octvespera) && ctx.octvespera !== ctx.cvespera && new RegExp(octavestring, 'i').test(c)) throw new Error('octvespera (pre-1960)');
+            if (T(c)) {
+              const cr = perlSplit(S(cobj.get('Rank')), ';;');
+              key = /infra Octavam Epi/i.test(S(cobj.get('Rule'))) ? 5600 : 9000;
+              key = 10000 - key;
+              ccind++;
+              cc[key] = c;
+            }
+            if (!((N(rank) >= (!/cist/i.test(version) ? 6 : 7) && !/Pasc[07]|Nat0?6/.test(S(ctx.dayname[0]))) || /no commemoratio/i.test(S(ctx.rule)) || (/196/.test(version) && /nocomm1960/i.test(S(cobj.get('Rule')))))) {
+              if (cobj.has(`Commemoratio ${ctx.cvespera}`)) c = getrefs(cobj.get(`Commemoratio ${ctx.cvespera}`), ctx.cvespera, cobj.get('Rule'));
+              else if (T(ctx.octvespera) && cobj.has(`Commemoratio ${ctx.octvespera}`)) c = getrefs(cobj.get(`Commemoratio ${ctx.octvespera}`), ctx.octvespera, cobj.get('Rule'));
+              else if (cobj.has('Commemoratio') && (ctx.cvespera !== 3 || /Tempora/i.test(ctx.cwinner) || /!.*O[ckt]ta/i.test(S(cobj.get('Commemoratio'))))) c = getrefs(cobj.get('Commemoratio'), ctx.cvespera, cobj.get('Rule'));
+              else c = '';
+              if (T(c) && T(ctx.octvespera) && new RegExp(octavestring, 'i').test(c)) throw new Error('octvespera (pre-1960)');
+              if (T(c)) {
+                const redn = setfont(FONT.largefont, 'N.');
+                c = c.replace(/ N\. /g, ` ${redn} `);
+                c = c.replace(/\n!/g, '\n!!');
+                c = c.replace(/!!Oratio/gi, '!Oratio');
+                c = c.replace(/\$Oremus\s*\n(v\. )?/g, '$Oremus\nv. ');
+                const ic = c.split('!!');
+                while (ic.length && ic[ic.length - 1] === '') ic.pop();
+                for (let item of ic) {
+                  if (!T(item) || /^\s*$/.test(item) || (new RegExp(octavestring + '|!.*?' + sundaystring, 'i').test(item) && nooctnat()) ||
+                    (/19(?:55|6)/.test(version) && /!.*?Vigil/i.test(item) && /Sancti/i.test(ctx.cwinner) && !/08\-14|06\-23|06\-28|08\-09/.test(ctx.cwinner))) continue;
+                  if (!/^!/.test(item)) item = `!${item}`;
+                  ccind++;
+                  const k2 = new RegExp(sundaystring, 'i').test(item) ? 3000 : ccind + 9900;
+                  cc[k2] = item;
+                }
+              }
+            }
+          }
+          cvesp = [1, 3];
+        }
         for (const cv of cvesp) {
           const centries = cv === 1 ? ctx.ccommemoentries || [] : ctx.commemoentries || [];
           for (let commemo of centries) {
@@ -1497,8 +1766,15 @@
           continue;
         }
 
-        if (/Capitulum/i.test(item) && hora === 'Prima') throw new Error('Prima capitulum not ported');
-        if (/Lectio brevis/i.test(item) && hora === 'Completorium') throw new Error('Compline lectio brevis not ported');
+        if (/Capitulum/i.test(item) && hora === 'Prima') {
+          s.push(capitulum_prima(/Responsorium/i.test(item)));
+          continue;
+        }
+        if (/Lectio brevis/i.test(item) && hora === 'Completorium') {
+          const lectio = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+          s.push(item, lectio.get('Lectio Completorium'));
+          continue;
+        }
         if (/Capitulum/i.test(item) && /^(?:Tertia|Sexta|Nona|Completorium)$/i.test(hora)) {
           if (hora === 'Completorium') s.push(translate(item));
           s.push(capitulum_minor());
@@ -1508,7 +1784,14 @@
         if (/Capitulum/i.test(item) && /^(?:Laudes|Vespera)$/.test(hora)) s.push(capitulum_major());
 
         if (/Regula/i.test(item)) throw new Error('Regula not ported');
-        if (/Lectio brevis/i.test(item) && hora === 'Prima') throw new Error('Prima lectio brevis not ported');
+        if (/Lectio brevis/i.test(item) && hora === 'Prima') {
+          const [b, c] = lectio_brevis_prima();
+          let lbl = label;
+          if (/regula/i.test(lbl)) lbl = '';
+          setcomment(lbl, 'Source', c);
+          s.push(b);
+          continue;
+        }
 
         if (/Hymnus/.test(item)) {
           s.push(gethymn());
@@ -1546,9 +1829,25 @@
           continue;
         }
 
-        if (/Martyrologium/.test(item)) throw new Error('Martyrologium not ported');
+        if (/Martyrologium/.test(item)) {
+          setcomment(label, 'Martyrologium', 0);
+          s.push(martyrologium());
+          if (!/ex C9/.test(S(ctx.rule))) s.push('', '$Pretiosa');
+          continue;
+        }
         if (item === '#Commemoratio defunctorum') throw new Error('Commemoratio defunctorum not ported');
-        if (/Antiphona finalis/.test(item)) throw new Error('Antiphona finalis not ported');
+        if (/Antiphona finalis/.test(item)) {
+          if (T(litaniaflag) || T(specialflag)) continue;
+          s.push('#' + translate('Antiphona finalis BMV'));
+          const { month, day } = ctx;
+          const dn0 = S(ctx.dayname[0]);
+          if (/Adv|Nat/i.test(dn0) || month === 1 || (month === 2 && day < 2) || (month === 2 && day === 2 && !/Completorium/i.test(hora))) s.push('$ant Alma Redemptoris Mater');
+          else if ((month === 2 || month === 3 || /Quad/i.test(dn0)) && !/Pasc/i.test(dn0)) s.push('$ant Ave Regina caelorum');
+          else if (/Pasc/.test(dn0)) s.push('$ant Regina caeli');
+          else s.push('$ant Salve Regina');
+          s.push('&Divinum_auxilium');
+          continue;
+        }
 
         // Litaniae majores flag (St Mark's day)
         let flag = 0;

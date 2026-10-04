@@ -780,6 +780,367 @@
       });
     }
 
+    // Perl: ($trank[0] =~ /infra Octavam (.*)/i && $ctrank[0] =~ /in Octava (.*)/i && $1 eq $2).
+    // After the second successful match $1 is that match's group and $2 is undefined, so the test
+    // is true only when that captured group is empty.
+    function octavaNamesEqual() {
+      if (!/infra Octavam (.*)/i.test(S(ctx.trank[0]))) return false;
+      const m2 = /in Octava (.*)/i.exec(S(Array.isArray(ctx.ctrank) ? ctx.ctrank[0] : ''));
+      return !!m2 && m2[1] === '';
+    }
+
+    // ------------------------------------------------------------------ concurrence (Vespers, Compline)
+    // Port of concurrence() from horascommon.pl. "Tomorrow's" office is worked out first, then today's;
+    // the two are compared to decide whose Vespers it is and what is commemorated. Variables named
+    // c... belong to tomorrow's office. (The Perl uses an undeclared $weekname in one test; it is
+    // always undefined there, so that term is false.)
+    function concurrence(day, month, year, version, dioecesis) {
+      const hora = ctx.hora;
+      occurrence(day, month, year, version, dioecesis, 1);
+      ctx.cwinner = ctx.winner;
+      ctx.crank = ctx.rank;
+      let ccomrank = ctx.comrank;
+      const ccommune = ctx.commune;
+      const ccommunetype = ctx.communetype;
+      ctx.ctrank = ctx.trank.slice();
+      ctx.csrank = ctx.srank.slice();
+      ctx.ccommemoentries = (ctx.commemoentries || []).slice();
+      ctx.ctname = ctx.tname;
+      ctx.csname = ctx.sname;
+      ctx.csanctoraloffice = ctx.sanctoraloffice;
+      ctx.ctempora = ctx.tempora;
+      ctx.csaint = ctx.saint;
+      let cwinnerH = ctx.csanctoraloffice ? ctx.csaint : ctx.ctempora;
+      let cwrank = (ctx.csanctoraloffice ? ctx.csrank : ctx.ctrank).slice();
+
+      occurrence(day, month, year, version, dioecesis, 0);
+      let winnerH = ctx.sanctoraloffice ? ctx.saint : ctx.tempora;
+      ctx.winnerHash = winnerH;
+      let wrank = (ctx.sanctoraloffice ? ctx.srank : ctx.trank).slice();
+      const dn0 = S(ctx.dayname[0]);
+      const dayofweek = ctx.dayofweek;
+      const RULE = (h) => S(h.get('Rule'));
+      const RANK = (h) => S(h.get('Rank'));
+      const noop = () => {};
+
+      // (cwinner is rebuilt as a plain object when "emptied": the Perl assigns {} or ())
+      const emptyH = EMPTY;
+      let rank = ctx.rank;
+
+      if (/No secunda Vespera/i.test(RULE(winnerH)) && !/196[03]/i.test(version)) {
+        wrank = [];
+        winnerH = emptyH;
+        ctx.winner = '';
+        rank = 0;
+      } else if (/Quadp3/.test(dn0) && dayofweek === 3 && !/1960|1955/.test(version)) {
+        rank = wrank[2] = 2.99;
+      } else if (/Quad[0-5]|Quadp|Adv|Pasc1/.test(dn0) && dayofweek === 0 && /trident(?!.*altovadensis)/i.test(version)) {
+        rank = wrank[2] = 2.99;
+      } else if (/Quad[0-5]|Quadp|Adv|Pasc1/.test(dn0) && dayofweek === 0 && /divino|cist/i.test(version)) {
+        rank = wrank[2] = /divino/i.test(version) ? 4.9 : 3.9;
+      } else if (/(?<!Albis )In Octava/i.test(S(wrank[0])) && (N(rank) > 5 || /Asc|Nat|Cord/i.test(S(wrank[0])))) {
+        if (!/Cist/i.test(version)) rank = wrank[2] = 4.99;
+      }
+      ctx.rank = rank;
+
+      if (/Dominica/i.test(S(cwrank[0])) && !/infra octavam/i.test(S(cwrank[0])) && /semiduplex/i.test(S(cwrank[1])) && !/1955|196/.test(version)) {
+        cwrank[2] = ctx.crank = /altovadensis/i.test(version) ? 3.9 : /trident/i.test(version) ? 2.9 : 4.9;
+      }
+
+      const trank = ctx.trank;
+      if ((/Dominica/i.test(S(cwrank[0])) && /in.*octava/i.test(S(trank[0]))) || (/infra.*octav/i.test(S(cwrank[0])) && /Trident/.test(version))) {
+        if (!/196/.test(version)) ctx.octvespera = 3;
+        if (/cist/i.test(version) && dayofweek === 6) ctx.octvespera = 1;
+      } else if (/in.*octava|Vigilia Pent/i.test(S(cwrank[0])) && (/Dominica/i.test(S(wrank[0])) || (/Sancti/.test(S(ctx.winner)) && !/in.*octava/i.test(S(wrank)))) && /divino/i.test(version)) {
+        ctx.octvespera = 1;
+      }
+
+      const ctrank = ctx.ctrank;
+      if (/(?<!De )Dominica|Trinitatis/i.test(S(ctrank[0])) && !(/19(?:55|6)|altovadensis/i.test(version) && /Dominica Resurrectionis/i.test(S(ctrank[0])))) {
+        // tomorrow is a Sunday: today's Tempora is dropped completely
+        if (ctx.sanctoraloffice && !/infra octavam Nativitatis$/i.test(S(ctx.srank[0]))) {
+          if (/tempora/i.test(S((ctx.commemoentries || [])[0]))) {
+            ctx.commemoentries.shift();
+            if (ctx.commemoentries.length) {
+              ctx.commemoratio = ctx.commemoentries[0];
+              const tc = off(ss.setupstring('Latin', ctx.commemoratio));
+              const cr = perlSplit(S(tc.get('Rank')), ';;');
+              ctx.comrank = cr[2];
+            } else {
+              ctx.commemoratio = '';
+              ctx.comrank = 0;
+            }
+          }
+        } else {
+          winnerH = emptyH;
+          ctx.winner = '';
+          rank = 0;
+          ctx.rank = 0;
+        }
+        ctx.tempora = EMPTY;
+        ctx.trank = [''];
+        ctx.tname = '';
+      }
+      ctx.winnerHash = winnerH;
+
+      // (the "weekname" test of the Perl is on an undeclared variable: false)
+      const weekname = '';
+      const cw = ctx;
+      const ctrankNow = ctx.ctrank;
+      const cwR = RULE(cwinnerH);
+      const cwRank = RANK(cwinnerH);
+      if (
+        /No prima vespera/i.test(cwR) ||
+        (/1955/.test(version) && N(cwrank[2]) < 5) ||
+        (/196/.test(version) && !/Barroux/.test(version) && N(cwrank[2]) < (/Dominica/i.test(S(cwrank[0])) || (/Festum Domini/i.test(cwR) && dayofweek === 6) ? 5 : 6)) ||
+        (/Barroux/.test(version) && N(cwrank[2]) < 5 && !/C10/.test(cwRank)) ||
+        (/Feria|Sabbato|Vigilia|Quat[t]*uor/i.test(cwRank) && !/in Vigilia Epi|in octava|infra octavam|Dominica|C10/i.test(cwRank)) ||
+        (/infra octavam|Vigilia Pent/i.test(cwRank) && !/Dominica/i.test(cwRank) && (/trident/i.test(version) || ctx.sanctoraloffice == ctx.csanctoraloffice) && /infra octavam|post Octavam Asc|Quat.*Pent|Dominica (Resurrectionis|Pentecostes)/i.test(RANK(winnerH))) ||
+        (/Pasc[07]/i.test(weekname) && !/Dominica/i.test(cwRank)) ||
+        (/01-01/.test(S(ctx.winner)) && !/trident/i.test(version)) ||
+        (/C10/i.test(cwRank) && /C1[01]/i.test(RANK(winnerH))) ||
+        (/19(?:55|6)/i.test(version) && /Dominica Resurrectionis|Patrocinii S. Joseph/i.test(cwRank)) ||
+        (/19(?:55|6)/.test(version) && /octav/i.test(cwRank) && !/dominica|cum Octava/i.test(cwRank) && N(cwrank[2]) < 6)
+      ) {
+        const blank = () => {
+          ctx.ctname = '';
+          cwinnerH = emptyH;
+          cwrank = [];
+          ctx.cwinner = '';
+          ctx.crank = 0;
+          ctx.cvespera = 0;
+        };
+        if (N(ccomrank) >= (N(rank) >= (/trident/i.test(version) ? 6 : 5) && !/feria|sabbato|octava/i.test(S(cwrank[0])) ? 2.1 : !/cist/i.test(version) ? 1.1 : 1) && !/1.5/.test(String(ccomrank)) && !/1955|196/.test(version)) {
+          ctx.vespera = 3;
+          ctx.dayname[2] = S(ctx.tomorrowname[2]) + '<br/>Vespera de Officio occurente, Commemoratio Sanctorum crastinorum tantum';
+          blank();
+        } else if (((ctx.csanctoraloffice && !/infra octavam Epi/i.test(S(cwrank[0]))) || /Nat2-0/i.test(S(ctx.cwinner))) && !/1955|196/.test(version)) {
+          ctx.vespera = 3;
+          ctx.dayname[2] = S(ctx.dayname[2]) + (ctx.sanctoraloffice ? '<br/>Vespera de Officio occurente; nihil de sequenti' : '<br/>Vespera de Tempore occurente; nihil de sequenti');
+          blank();
+          ctx.ccommemoentries = [];
+        } else {
+          ctx.vespera = 3;
+          if (!(/Dominica|Advent|Quadr|Pass|Asc/i.test(S(ctx.dayname[2])) || (N(ctx.comrank) >= 2.1 && !/ad Laudes|Rogatio/i.test(S(ctx.dayname[2]))))) ctx.dayname[2] = '';
+          if (ctx.sanctoraloffice) { if (!/1955|196/.test(version)) ctx.dayname[2] += '<br/>Vespera de Officio occurente'; }
+          else if (!/1955|196/.test(version)) ctx.dayname[2] += '<br/>Vespera de Tempore occurente';
+          blank();
+          ctx.ccommemoentries = [];
+        }
+      } else if (!ctx.sanctoraloffice && !ctx.csanctoraloffice && !/C10/.test(S(ctx.cwinner))) {
+        // two "concurrent" Tempora
+        if (N(ctx.crank) >= N(rank) || /No secunda vespera/i.test(S(ctx.tempora.get('Rule')))) {
+          ctx.vespera = 1;
+          ctx.tvesp = 1;
+          ctx.cvespera = 0;
+          ctx.winner = ctx.cwinner;
+          if (N(ctx.crank) < 7 && N(ctx.crank) !== 6.5 && N(ctx.crank) !== 6 && N(ctx.comrank) > 2 && !/no commemoratio/i.test(cwR)) {
+            const hodie = N(ctx.comrank) >= N(ccomrank) ? 'hodiernorum tantum' : 'tantum';
+            ctx.tomorrowname[2] = ctx.dayname[2] = S(ctx.dayname[2]) + `<br/>Vespera de sequenti; Commemoratio Sanctorum ${hodie}`;
+          } else {
+            ctx.tomorrowname[2] = S(ctx.tomorrowname[2]) + '<br/>Vespera de sequenti.';
+            ctx.commemoentries = [];
+            ctx.commemoratio = '';
+          }
+          ctx.dayname = ctx.tomorrowname.slice();
+          rank = ctx.crank;
+          ctx.rank = rank;
+          ctx.commune = ccommune;
+          ctx.communetype = ccommunetype;
+          ctx.cwinner = '';
+          cwinnerH = emptyH;
+        } else {
+          ctx.vespera = 3;
+          ctx.tvesp = 3;
+          ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>Vespera de Tempore præcedenti; nihil de sequenti';
+          ctx.ctrank = '';
+          ctx.ctname = '';
+          cwinnerH = emptyH;
+          cwrank = [];
+          ctx.cwinner = '';
+          ctx.crank = 0;
+          ctx.cvespera = 0;
+        }
+      } else {
+        const crank = N(ctx.crank);
+        // "flattened" ranks: only differ from the real ones for the older rubrics
+        const flrank = rank;
+        const flcrank = ctx.crank;
+        const wR = RULE(winnerH);
+        if (
+          (N(rank) >= ((/19(?:55|6)/.test(version) && !/Barroux/.test(version) && dayofweek < 6) ? 6 : 7) && crank < 6) ||
+          (/196/.test(version) && /Dominica/i.test(cwRank) && !/Nat1/i.test(dn0) && crank <= 5 && N(rank) >= 5 && /Festum Domini/i.test(wR)) ||
+          (N(rank) >= (/cist/i.test(version) ? 7 : /trident/i.test(version) ? 6 : 5) && !/feria|in.*octava/i.test(S(ctx.winner)) && crank < 2.1) ||
+          (/Pent02-5/.test(S(ctx.winner)) && /07-01\./.test(S(ctx.cwinner)))
+        ) {
+          ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>Vespera de præcedenti; nihil de sequenti';
+          ctx.cwinner = '';
+          cwinnerH = emptyH;
+          ctx.vespera = 3;
+          ctx.crank = 0;
+          ctx.cvespera = 0;
+          ctx.ccommemoentries = [];
+          ccomrank = 0;
+        } else if (
+          (N(rank) < 2 && !(N(rank) === 1.15 && /tempora/i.test(S(ctx.winner)))) ||
+          (/196/.test(version) && (/Dominica/i.test(S(cwrank[0])) || /Festum Domini/i.test(cwR)) && (N(rank) < (crank >= 6 ? 6 : 5) || /Dominica/i.test(S(wrank[0])) || /Festum Domini/i.test(wR))) ||
+          (crank >= 6 && !(N(rank) === 1.15 || N(rank) === 2.1 || N(rank) === 2.99 || N(rank) === 3.9 || N(rank) >= 4.2) && !/cist/i.test(version) && !/Dominica|feria|in.*octava/i.test(S(cwrank[0]))) ||
+          (/12-25|01-01/.test(S(ctx.cwinner)) && !/cist/i.test(version)) ||
+          (/12-25/.test(S(ctx.cwinner)) && /cist/i.test(version)) ||
+          (crank >= 5 && !(N(rank) === 1.15 || N(rank) === 2.1 || N(rank) >= 2.99) && !/Dominica|feria|in.*octava/i.test(S(cwrank[0])))
+        ) {
+          ctx.dayname = ctx.tomorrowname.slice();
+          ctx.vespera = 1;
+          ctx.cvespera = 3;
+          const comrank = N(ctx.comrank);
+          if ((comrank === 1.15 || comrank === 2.1 || comrank === 2.99 || comrank === 3.9) && !/12-25|01-01/.test(S(ctx.cwinner)) && !(/07-01/.test(S(ctx.cwinner)) && /Sangu|Cor[dp]/.test(S(ctx.trank[0])))) {
+            ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>Vespera de sequenti; commemoratio de off. priv. tantum';
+          } else {
+            ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>Vespera de sequenti; nihil de præcedenti';
+            ctx.commemoratio = '';
+            ctx.comrank = 0;
+            ctx.commemoentries = [];
+          }
+          rank = ctx.crank;
+          ctx.rank = rank;
+          ctx.commune = ccommune;
+          ctx.communetype = ccommunetype;
+          ctx.winner = ctx.cwinner;
+          ctx.cwinner = '';
+          cwinnerH = emptyH;
+        } else if (!/196/.test(version) && /Dominica/i.test(RANK(winnerH)) && !/Nat1/i.test(dn0) && N(rank) <= 5 && crank > 2.1 && /Festum Domini/i.test(cwR)) {
+          throw new Error('pre-1960 concurrence branch reached');
+        } else if ((!/196/.test(version) && /Dominica/i.test(cwRank) && !/Nat1/i.test(dn0) && crank <= 5 && N(rank) > 2.1 && /Festum Domini/i.test(wR)) || (/196/.test(version) && N(rank) >= crank)) {
+          ctx.vespera = 3;
+          ctx.cvespera = 1;
+          ctx.commemoratio = ctx.cwinner;
+          ctx.dayname[2] = `Commemoratio: ${S(cwrank[0])}`;
+          ctx.dayname[2] += '<br/>Vespera de præcedenti; commemoratio de sequenti';
+          if (/Dominica/i.test(cwRank)) ctx.dayname[2] += ' Dominica';
+        } else if (N(flcrank) === N(flrank)) {
+          // "flattened" ranks equal => a capitulo
+          ctx.commemoratio = ctx.winner;
+          ctx.communeHash = (/trident/i.test(version) || N(flrank) >= 5) && T(ctx.commune) ? off(ss.officestring('Latin', ctx.commune, 0)) : EMPTY;
+          ctx.tomorrowname[2] = `Commemoratio: ${S(wrank[0])}`;
+          const ch = ctx.communeHash;
+          ctx.antecapitulum = winnerH.has('Ant Vespera 3') ? winnerH.get('Ant Vespera 3') : winnerH.has('Ant Vespera') ? winnerH.get('Ant Vespera') : ch.has('Ant Vespera 3') ? ch.get('Ant Vespera 3') : ch.has('Ant Vespera') ? ch.get('Ant Vespera') : '';
+          if (T(ctx.antecapitulum)) {
+            let mm;
+            if (!/no Psalm5/i.test(wR) && !/monastic/i.test(version) && ((mm = /Psalm5 Vespera3=([0-9]+)/i.exec(wR)) || (mm = /Psalm5 Vespera3=([0-9]+)/i.exec(RULE(ch))) || (mm = /Psalm5 Vespera=([0-9]+)/i.exec(wR)) || (mm = /Psalm5 Vespera=([0-9]+)/i.exec(RULE(ch))))) {
+              ctx.antecapitulum += `\nPsalm5 VesperaAnte=${mm[1]}`;
+            }
+          }
+          ctx.vespera = 1;
+          ctx.cvespera = 3;
+          ctx.winner = ctx.cwinner;
+          ctx.cwinner = ctx.commemoratio;
+          ctx.dayname = ctx.tomorrowname.slice();
+          rank = ctx.crank;
+          ctx.rank = rank;
+          ctx.commune = ccommune;
+          ctx.communetype = ccommunetype;
+          ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>A capitulo de sequenti; commemoratio de præcedenti';
+        } else if (crank > N(rank)) {
+          ctx.vespera = 1;
+          ctx.commemoratio = ctx.winner;
+          ctx.cvespera = 3;
+          ctx.tomorrowname[2] = `Commemoratio: ${S(wrank[0])}`;
+          ctx.winner = ctx.cwinner;
+          ctx.cwinner = ctx.commemoratio;
+          ctx.dayname = ctx.tomorrowname.slice();
+          rank = ctx.crank;
+          ctx.rank = rank;
+          ctx.commune = ccommune;
+          ctx.communetype = ccommunetype;
+          ctx.dayname[2] = S(ctx.dayname[2]) + '<br/>Vespera de sequenti; commemoratio de præcedenti';
+        } else {
+          ctx.commemoratio = ctx.cwinner;
+          ctx.dayname[2] = `Commemoratio: ${S(cwrank[0])}`;
+          ctx.vespera = 3;
+          ctx.cvespera = 1;
+          ctx.dayname[2] += '<br/>Vespera de præcedenti; commemoratio de sequenti';
+          if (/infra octavam|post Octavam Asc|Vigilia Pent/i.test(cwRank) || /infra octavam|post Octavam Asc|Vigilia Pent/i.test(S((ctx.ccommemoentries || [])[0]))) {
+            const comentries = [];
+            for (let commemo of ctx.commemoentries || []) {
+              if (!store.exists('Latin', commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
+              const cstr = off(ss.officestring('Latin', commemo, 0));
+              if (!(cstr.isEmpty || !cstr.keys().length || (/infra octavam|post Octavam Asc|Vigilia Pent/i.test(S(cstr.get('Rank'))) && !/Dominica/i.test(S(cstr.get('Rank')))))) comentries.push(commemo);
+            }
+            ctx.commemoentries = comentries;
+          }
+        }
+      }
+
+      // Some branches swap "winner"; keep the hash in step with it
+      if (!/C12/i.test(S(ctx.votive))) {
+        // winnerHash is recomputed from ctx.winner by precedence()
+      }
+      ctx.cwinnerHash = EMPTY; // Perl's global %cwinner (the lexical of the same name is separate)
+      ctx.cwinnerLocal = cwinnerH;
+      ctx.cwrank = cwrank;
+
+      if (/completorium/i.test(hora)) ctx.dayname[2] = '';
+
+      // Restrict commemorations according to the respective rubrics
+      const dn = ctx;
+      const rankNow = N(ctx.rank);
+      if (ctx.vespera === 3) {
+        let ranklimit = rankNow >= (/trident/i.test(version) ? 6 : 5) && !/Dominica|feria|in.*octava/i.test(S(wrank[0])) ? 2.1 : 1.1;
+        if (/cist/i.test(version)) ranklimit = 1;
+        let comentries = [];
+        for (let commemo of ctx.ccommemoentries || []) {
+          if (!store.exists('Latin', commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
+          const cstr = off(ss.officestring('Latin', commemo, 1));
+          if ((/tempora/i.test(commemo) || /infra octavam|post Octavam Asc|Vigilia Pent/i.test(S(cstr.get('Rank')))) && !/Dominica/i.test(S(cstr.get('Rank')))) continue;
+          if (!cstr.isEmpty && cstr.keys().length) {
+            const cr = perlSplit(S(cstr.get('Rank')), ';;');
+            if (!(N(cr[2]) < ranklimit || /No prima vespera/i.test(S(cstr.get('Rule'))) || /1955|196/.test(version))) comentries.push(commemo);
+          }
+        }
+        ctx.ccommemoentries = comentries;
+        ranklimit = /Dominica|feria|in.*octava/i.test(S(wrank[0])) || /cist/i.test(version) ? 2 : rankNow >= 6 ? (!/trident/i.test(version) ? 4.2 : 3.1) : rankNow >= 5 ? 2.1 : 2;
+        comentries = [];
+        for (let commemo of ctx.commemoentries || []) {
+          if (/tempora/i.test(commemo) && ((N(ctx.trank[2]) < 2 && N(ctx.trank[2]) !== 1.15) || /Rogatio|Quattuor.*Sept/i.test(S(ctx.trank[0])))) continue;
+          if (!store.exists('Latin', commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
+          const cstr = off(ss.officestring('Latin', commemo, 0));
+          if (!cstr.isEmpty && cstr.keys().length) {
+            const cr = perlSplit(S(cstr.get('Rank')), ';;');
+            if (!((N(cr[2]) < ranklimit && !(N(cr[2]) === 1.15 || N(cr[2]) === 2.1 || N(cr[2]) === 2.99 || N(cr[2]) === 3.9)) || /No secunda vespera/i.test(S(cstr.get('Rule'))))) comentries.push(commemo);
+          }
+        }
+        ctx.commemoentries = comentries;
+      } else {
+        let ranklimit = rankNow >= 6 && !/Dominica|feria|in.*octava/i.test(S(cwrank[0])) ? 4.2 : rankNow >= 5 && !/Dominica|feria|in.*octava/i.test(S(cwrank[0])) ? 2.99 : 2;
+        if (rankNow >= 5 && !/Dominica|feria|in.*octava/i.test(S(cwrank[0])) && /cist/i.test(version)) ranklimit = 2.1;
+        let comentries = [];
+        for (let commemo of ctx.commemoentries || []) {
+          if (/tempora/i.test(commemo) && N(ctx.trank[2]) !== 1.15 &&
+            (N(ctx.trank[2]) < 2 || /Rogatio|Quattuor.*Sept/i.test(S(ctx.trank[0])) || octavaNamesEqual())) continue;
+          if (!store.exists('Latin', commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
+          const cstr = off(ss.officestring('Latin', commemo, 0));
+          if (!cstr.isEmpty && cstr.keys().length) {
+            const cr = perlSplit(S(cstr.get('Rank')), ';;');
+            if (!((N(cr[2]) < ranklimit && !(N(cr[2]) === 1.15 || N(cr[2]) === 2.1 || N(cr[2]) === 2.99 || N(cr[2]) === 3.9)) || /No secunda vespera/i.test(S(cstr.get('Rule'))) || /De VII di|Die VII infra/i.test(S(cr[0])))) comentries.push(commemo);
+          }
+        }
+        ctx.commemoentries = comentries;
+        ranklimit = /Dominica|feria|in.*octava/i.test(S(cwrank[0])) ? (!/cist/i.test(version) ? 1.1 : 1) : rankNow >= 6 ? (!/trident/i.test(version) ? 4.2 : !/cist/i.test(version) ? 3.1 : 2.2) : rankNow >= 5 ? 2.2 : !/cist/i.test(version) ? 1.1 : 1;
+        comentries = [];
+        for (let commemo of ctx.ccommemoentries || []) {
+          if (!store.exists('Latin', commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
+          const cstr = off(ss.officestring('Latin', commemo, 1));
+          if ((/tempora/i.test(commemo) || /infra octavam/i.test(S(cstr.get('Rank')))) && !/Dominica/i.test(S(cstr.get('Rank')))) continue;
+          if (!cstr.isEmpty && cstr.keys().length) {
+            const cr = perlSplit(S(cstr.get('Rank')), ';;');
+            if (!(N(cr[2]) < ranklimit || /No prima vespera/i.test(S(cstr.get('Rule'))) || (/1955|196/.test(version) && !/Dominica/i.test(S(cstr.get('Rank')))) ||
+              (/Feria|Sabbato|Vigilia|Quat[t]*uor Temp/i.test(S(cstr.get('Rank'))) && !/in Vigilia Epi|in octava|Dominica/i.test(S(cstr.get('Rank')))))) comentries.push(commemo);
+          }
+        }
+        ctx.ccommemoentries = comentries;
+      }
+    }
+
     // ------------------------------------------------------------------ precedence (non-Vespers view)
     function precedence(date) {
       resetState();
@@ -795,9 +1156,10 @@
 
       const version = ctx.version;
       if (/vespera|completorium/i.test(ctx.hora) && !/C12/i.test(S(ctx.votive))) {
-        throw new Error('concurrence (Vespers) is not implemented yet (engine rebuild phase 4)');
+        concurrence(day, month, year, version, ctx.dioecesis);
+      } else {
+        occurrence(day, month, year, version, ctx.dioecesis, 0);
       }
-      occurrence(day, month, year, version, ctx.dioecesis, 0);
 
       const dn1 = S(ctx.dayname[1]);
       if (dn1 && !/duplex/i.test(dn1)) ctx.duplex = 1;
@@ -888,7 +1250,7 @@
       return new RegExp(sday).test(line) ? 1 : 0;
     }
 
-    return { ctx, store, precedence, occurrence, ss, directorium, emberday, extract_common, climit1960, dirge };
+    return { ctx, store, precedence, occurrence, concurrence, ss, directorium, emberday, extract_common, climit1960, dirge };
   }
 
   RB.createCalendar = createCalendar;
