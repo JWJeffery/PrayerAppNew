@@ -6877,11 +6877,12 @@ const _angRoleOrder = s => (s.angRole === 'primary' ? 0 : s.angRole === 'alterna
 const angSorted = angComms.slice().sort((a, b) => _angRoleOrder(a) - _angRoleOrder(b));
 const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.map(s => s.name));
 const angPrimaryDetail = await _angPrimaryDetail(currentDate);
+const angPrimaryLife = await _angPrimaryLife(currentDate);
 document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
         // No tradition code ("ANG") or source label above the name: that is catalogue metadata.
         const label = s.angRole === 'alternate' ? 'Alternate' : '';
-        return `<div class="saint-box">${label ? `<small style="display:block; color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small>` : ''}<strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong><p>${_sharedOfficeNavigatorEscape(s.description || 'No description')}</p>${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}</div>`;
+        return `<div class="saint-box">${label ? `<small style="display:block; color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small>` : ''}<strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong>${s.angRole === 'primary' && angPrimaryLife ? '' : '<p>' + _sharedOfficeNavigatorEscape(s.description || 'No description') + '</p>'}${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}${s.angRole === 'primary' && angPrimaryLife ? '<p class="saint-life">' + _sharedOfficeNavigatorEscape(angPrimaryLife) + '</p>' : ''}</div>`;
     })
     .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
 }
@@ -6896,6 +6897,25 @@ function _loadAngDecisions() {
     return _angDecisionsPromise;
 }
 function _angNameKey(n) { return String(n || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' '); }
+// Short lives of the Anglican calendar's saints (data/saints/anglican-lives.json, keyed by the saint's
+// identifier in the decisions file); original prose written for this app, see documentation/ANGLICAN_SAINT_LIVES.md.
+let _angLivesPromise = null;
+function _loadAngLives() {
+    if (!_angLivesPromise) {
+        _angLivesPromise = fetch('data/saints/anglican-lives.json')
+            .then(r => (r.ok ? r.json() : null)).catch(() => null);
+    }
+    return _angLivesPromise;
+}
+async function _angPrimaryLife(date) {
+    try {
+        const [data, lives] = await Promise.all([_loadAngDecisions(), _loadAngLives()]);
+        const key = String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+        const sin = data && data.decisions && data.decisions[key] && data.decisions[key].primary ? data.decisions[key].primary.sin : null;
+        const entry = sin && lives && lives.lives ? lives.lives[sin] : null;
+        return entry && entry.life ? entry.life : '';
+    } catch (e) { return ''; }
+}
 async function _angPrimaryDetail(date) {
     try {
         const data = await _loadAngDecisions();
