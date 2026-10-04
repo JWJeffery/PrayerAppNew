@@ -316,3 +316,38 @@ app and retiring `units/` and `manifests/`.
 **Next (needs Josh's go-ahead): stage B.** Port `resolve_refs()`/`expand()` and the script functions
 (`psalm`, `lectio` text, `Gloria`, `teDeum`, ...), then compare the resulting blocks with the audited
 stored units for 2026-2027 and with the Perl engine's own HTML for other years.
+
+## 15. Phase 3, stage B result (2026-10-04): the engine writes the finished text, Latin and English
+
+**Done: `js/roman-breviary/expand.js` turns an hour's script into the same cell HTML the Perl engine
+prints (psalms, prayers, readings, Gloria, Te Deum, red/black formatting, alleluia rules, spelling), and
+the existing parser then turns it into the app's blocks. The English column is included.**
+
+Ported: `resolve_refs`, `adjust_refs`, `expand`, `getunit`, `setcell`, `setcross`, `setvrbar`,
+`getantcross` (the dagger), the script functions (`psalm`, `Gloria`/`Gloria1`/`Gloria2`, `Alleluia`,
+`Deus_in_adjutorium`, `Dominus_vobiscum*`, `Benedicamus_Domino`, `Divinum_auxilium`, `Domine_labia`,
+`teDeum`, `special`, `lectio`), `spell_var`, inline-alleluia handling, the English layering of data files
+over Latin (`setupstring`), and the English martyrology date line.
+
+**Verification (zero differences unless stated):**
+
+| Check | Scope | Result |
+|---|---|---|
+| JS cells vs Perl HTML, Latin | every hour, every day of 2026; Matins 2027; other hours 2027 | identical (one Quicumque initial in 2027 found, fixed) |
+| JS cells vs Perl HTML, English | every hour, every day of 2026 (2,920) | identical |
+| JS blocks vs audited stored blocks, Latin | all 2,920 hours of 2026 and of 2027 | identical |
+| JS blocks vs audited stored blocks, English | all 2,920 hours of 2026 | identical |
+
+Further years (Latin 2028-2032, 2038, spot years 1962-2100) run against Perl; see the resume note for
+the outcome.
+
+**Bugs this found in stage A code** (never reached before because only script arrays were compared):
+a missing `u` flag on a drop-cap regex in `lectio()`, and a stray multiline flag on the responsory
+Gloria insertion. **Oracle fixes:** the language tables are reloaded after `precedence()` for each date
+(as `officium.pl` does; Prayers.txt has date-dependent conditions), and the patched Perl copies are
+written atomically so parallel test runs do not collide.
+
+**Not done:** switching the app to the engine and retiring `units/` and `manifests/` (phase 5); the
+day's rank line; the offline data pack (phase 6); the 2020 USA add-on.
+
+**Next: phase 5**, with Josh's go-ahead (assumed yes unless a major decision appears).
