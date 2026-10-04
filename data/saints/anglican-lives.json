@@ -1,0 +1,317 @@
+{
+ "schema": "anglican-saint-lives/1",
+ "note": "Original short lives written for this app from published sources (see each entry); no source text copied. Keyed by the saint's identifier in data/kalendar/synaxarium/decisions.json.",
+ "lives": {
+  "UO-SIN-000790": {
+   "name": "Basil the Great and Gregory of Nazianzus",
+   "life": "Basil and Gregory were friends from their student days in Athens, and both were born in Cappadocia in what is now Turkey. Basil became bishop of Caesarea in 370, where he defended the Nicene faith, wrote on the Holy Spirit, drew up rules for community monastic life, and built a great hospital for the poor. Gregory, a gifted preacher and poet, was drawn from quiet retirement to lead the small orthodox flock in Constantinople, where his five theological orations on the Trinity earned him the title \"the Theologian.\" He later returned home to his family estate and wrote there until his death.",
+   "period": "Basil died 379; Gregory died about 390",
+   "place": "Caesarea and Nazianzus in Cappadocia; Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Basil_of_Caesarea",
+    "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus",
+    "https://www.britannica.com/biography/Saint-Gregory-of-Nazianzus",
+    "https://orthodoxwiki.org/Basil_the_Great"
+   ]
+  },
+  "UO-SIN-000793": {
+   "name": "William Passavant",
+   "life": "William Alfred Passavant was a Lutheran pastor born in 1821 in Zelienople, Pennsylvania. Ordained in 1842, he served congregations in Baltimore and Pittsburgh. In 1849 he brought German deaconesses from Kaiserswerth to nurse in the Pittsburgh Infirmary, which began the Lutheran deaconess movement in America. Over the following decades he raised money for hospitals, orphanages, homes for the sick and disabled, and schools, among them Thiel College, serving many German and Scandinavian immigrants. He also helped to found Lutheran synods and a seminary in Chicago. His works of mercy grew into a large network of Lutheran social ministry. He died in Pittsburgh in 1894.",
+   "period": "died 1894",
+   "place": "Pittsburgh, Pennsylvania",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/William_Passavant",
+    "https://www.lutheranhistoricalsociety.com/william-alfred-passavant/"
+   ]
+  },
+  "UO-SIN-000620": {
+   "name": "Elizabeth Ann Seton",
+   "life": "Elizabeth Bayley was born in New York in 1774 into an Episcopalian family and married William Seton, with whom she had five children. After his death from tuberculosis in Italy in 1803, she was drawn to the Catholic faith and was received into the Catholic Church in 1805, losing the support of many friends and relatives. Seeking a way to support her children, she founded a school and in 1809 gathered a small community of sisters at Emmitsburg, Maryland, later the Sisters of Charity of St Joseph. They gave free schooling to poor girls and pioneered Catholic parish education. She died there in 1821.",
+   "period": "died 1821",
+   "place": "New York; Emmitsburg, Maryland",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elizabeth_Ann_Seton",
+    "https://www.britannica.com/biography/Saint-Elizabeth-Ann-Seton"
+   ]
+  },
+  "UO-SIN-000621": {
+   "name": "Sarah, Theodora, and Syncletica of Egypt",
+   "life": "These three women are among the Desert Mothers, the \"ammas\" whom seekers visited in the Egyptian wilderness for a word of guidance. Sarah lived as a hermit for about sixty years beside the Nile and was admired for her fierce discipline and her sharp, humble replies. Syncletica, from a wealthy family, gave away her inheritance and lived in a tomb outside Alexandria, where women gathered to learn from her; she taught moderation and steady thanksgiving. Theodora, according to tradition, left a troubled marriage, lived disguised as a monk in the Thebaid, and bore false accusation in silence. Their sayings still guide those who pray.",
+   "period": "4th to 5th century",
+   "place": "Egypt: the Nile, Scetis, Alexandria, the Thebaid",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Desert_Mothers",
+    "https://en.wikipedia.org/wiki/Amma_Sarah",
+    "https://en.wikipedia.org/wiki/Syncletica_of_Alexandria",
+    "https://en.wikipedia.org/wiki/Theodora_of_Alexandria"
+   ]
+  },
+  "UO-SIN-000623": {
+   "name": "Lucian of Antioch",
+   "life": "Lucian was born around 240 at Samosata in Syria and became a priest at Antioch, where he led a school of Christian learning. He is remembered for careful work on the Greek text of the Bible, favouring the plain, literal meaning of scripture. Some of his pupils later sided with Arius, so his own teaching was long debated, though church authorities came to accept his statements of faith. During the persecution under Emperor Maximinus he was arrested and held at Nicomedia, where he suffered torture and died in January 312, refusing to deny Christ. Tradition remembers him as a martyr who stayed steadfast to the end.",
+   "period": "died 312",
+   "place": "Antioch and Nicomedia",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lucian_of_Antioch",
+    "https://www.britannica.com/biography/Saint-Lucian-of-Antioch"
+   ]
+  },
+  "UO-SIN-000624": {
+   "name": "Harriet Bedell",
+   "life": "Harriet Bedell was born in Buffalo, New York, in 1875 and trained as a teacher before becoming a missionary. From 1907 she taught and gave simple medical care among the Cheyenne at Whirlwind Mission in Oklahoma, then served in Alaska, where she was set apart as a deaconess in 1922. In 1932 she began work among the Miccosukee and Seminole people in the Florida Everglades, where she helped families earn a living by selling their traditional crafts. They called her \"Woman Who Prays.\" She worked in the Everglades until Hurricane Donna and her age ended her mission in 1960, and she died in 1969.",
+   "period": "died 1969",
+   "place": "Oklahoma, Alaska and the Florida Everglades",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harriet_Bedell",
+    "https://www.episcopalchurch.org/glossary/bedell-harriet",
+    "https://episcopalswfl.org/news/remembering-deaconess-harriet-bedell-woman-who-prays/"
+   ]
+  },
+  "UO-SIN-000625": {
+   "name": "Julia Chester Emery",
+   "life": "Julia Emery was born in 1852 at Dorchester, Massachusetts, one of eleven children of a devout sea captain. In 1876 she succeeded her sister Mary as national secretary of the Women's Auxiliary to the Episcopal Church's mission board, a post she held for forty years. She travelled to dioceses across the United States and visited mission stations in Europe and Asia, encouraging women to pray and give for the Church's work. She helped to start the United Offering, now the United Thank Offering, in which women set aside a small gift in thanksgiving. It still supports mission work. She died in New York in 1922.",
+   "period": "died 1922",
+   "place": "Boston and New York",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Julia_Chester_Emery",
+    "https://www.episcopalchurch.org/uto/a-little-more-about-julia-chester-emery/"
+   ]
+  },
+  "UO-SIN-000626": {
+   "name": "William Laud",
+   "life": "William Laud was born in Reading in 1573 and became a fellow, then president, of St John's College, Oxford. He rose to be bishop of St Davids, Bath and Wells, and London, and in 1633 Archbishop of Canterbury under Charles I. He worked for order and reverence in worship, the repair of churches, and strict use of the Book of Common Prayer, which brought him into conflict with Puritans. His attempt to impose English worship on Scotland helped spark the Bishops' Wars. Parliament imprisoned him in the Tower in 1640, and after a long trial passed a bill of attainder. He was beheaded on Tower Hill on 10 January 1645.",
+   "period": "died 1645",
+   "place": "Oxford, London, Canterbury",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/William_Laud",
+    "https://www.britannica.com/biography/William-Laud"
+   ]
+  },
+  "UO-SIN-000627": {
+   "name": "Theodosius the Cenobiarch",
+   "life": "Theodosius was born about 423 in Cappadocia and, as a young man, went to the Holy Land. He lived for many years in a cave near Bethlehem in prayer and severe self-denial. As disciples gathered, he founded a large monastery in the Judean wilderness, which cared for the poor, the elderly, and the sick, and welcomed monks of several languages. When his friend Sabbas was set over the hermits of Palestine, Theodosius was given charge of the monks living in community, hence his title \"Cenobiarch.\" Together they defended the Council of Chalcedon against Emperor Anastasius, who briefly removed him. He died in 529, aged about one hundred and five.",
+   "period": "died 529",
+   "place": "Cappadocia; near Bethlehem, Judean wilderness",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Theodosius_the_Cenobiarch",
+    "https://orthodoxwiki.org/Theodosius_the_Great_(Cenobiarch)"
+   ]
+  },
+  "UO-SIN-000628": {
+   "name": "Aelred of Rievaulx",
+   "life": "Aelred was born around 1110 at Hexham in Northumbria and was raised at the court of King David of Scotland, where he became royal steward. About 1134 he left court to enter the Cistercian abbey of Rievaulx in Yorkshire. He served as abbot of Revesby and, from 1147, of Rievaulx, which grew greatly under his care. Though often ill, he travelled to visit other houses and counselled bishops and kings. His writings, especially The Mirror of Charity and On Spiritual Friendship, praise friendship as a path to God. He died at Rievaulx on 12 January 1167 and has been called the \"Bernard of the North.\"",
+   "period": "died 1167",
+   "place": "Hexham, Scotland, and Rievaulx Abbey, Yorkshire",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Aelred_of_Rievaulx",
+    "https://www.britannica.com/biography/Saint-Aelred-of-Rievaulx"
+   ]
+  },
+  "UO-SIN-000629": {
+   "name": "Hilary of Poitiers",
+   "life": "Hilary was born in Gaul to a pagan family, studied widely, and came to Christian faith through reading scripture. He was baptised with his wife and daughter and about 353 was chosen bishop of Poitiers. When he refused to condemn Athanasius and join the Arian cause, Emperor Constantius exiled him to Phrygia in 356. In exile he wrote On the Trinity, the first great Latin work on the subject, and explained the Eastern debates to western bishops. Returning about 361, he pressed Gaul to hold to the Nicene faith and encouraged Martin of Tours. He died in 367 and is honoured as the \"Athanasius of the West.\"",
+   "period": "died 367",
+   "place": "Poitiers, Gaul; exile in Phrygia",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hilary_of_Poitiers",
+    "https://www.britannica.com/biography/Saint-Hilary-of-Poitiers"
+   ]
+  },
+  "UO-SIN-000810": {
+   "name": "Macrina the Elder",
+   "life": "Macrina the Elder lived in Neocaesarea in Pontus, in what is now Turkey, in the late third and early fourth centuries. She learned the faith from the followers of Gregory Thaumaturgus, the great bishop of her region. When Galerius and Diocletian persecuted Christians, she and her husband fled to the forests and hills of Pontus, where they endured hunger and hardship for years, and later lost their property. She became the grandmother of Basil the Great, Gregory of Nyssa, Peter of Sebaste, and Macrina the Younger, and taught Basil his first lessons in the faith. She is remembered for handing on the teaching she had received.",
+   "period": "died about 340",
+   "place": "Neocaesarea in Pontus",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Macrina_the_Elder",
+    "https://orthodoxwiki.org/Macrina_the_Elder",
+    "https://ewtn.com/catholicism/library/st-macrina-the-elder-5632"
+   ]
+  },
+  "UO-SIN-000631": {
+   "name": "Ita of Killeedy",
+   "life": "According to tradition, Ita was born in County Waterford around the late fifth century, of a noble family, and chose a life of prayer. She settled at Killeedy near Newcastle West in County Limerick, where she founded a community of women and a school. She became known as the \"foster mother of the saints of Ireland\" because she cared for and taught many children, among them, as tradition holds, the young Brendan the Voyager, who sought her counsel throughout his life. Stories praise her wisdom, simplicity, and generosity. She is said to have died about 570, and Killeedy still bears her name.",
+   "period": "died about 570",
+   "place": "Killeedy, County Limerick, Ireland",
+   "confidence": "low",
+   "sources": [
+    "https://www.oca.org/saints/id/lives/100201",
+    "https://synaxarion.org.uk/05irishsaints/ita/ita",
+    "https://orthochristian.com/calendar/name/13570.html"
+   ]
+  },
+  "UO-SIN-000630": {
+   "name": "Richard Meux Benson and Charles Gore",
+   "life": "Richard Benson, born in London in 1824, was vicar of Cowley near Oxford. In 1866, with two companions, he founded the Society of St John the Evangelist, the \"Cowley Fathers,\" the first religious community for men in the Anglican Church since the Reformation; it later spread to America, India, and South Africa. He died in 1915. Charles Gore, born in 1853, edited the essays of Lux Mundi, which sought to join Catholic faith with modern learning. He founded the Community of the Resurrection in 1892 and became bishop of Worcester, Birmingham, and Oxford, caring deeply about social justice. He died in 1932.",
+   "period": "Benson died 1915; Gore died 1932",
+   "place": "Cowley, Oxford; Mirfield; Worcester, Birmingham",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Richard_Meux_Benson",
+    "https://en.wikipedia.org/wiki/Charles_Gore",
+    "https://www.britannica.com/biography/Charles-Gore",
+    "https://anglicanhistory.org/bios/rmbenson.html"
+   ]
+  },
+  "UO-SIN-000633": {
+   "name": "Antony of Egypt",
+   "life": "Antony was born about 251 in Egypt to a Christian family. Around the age of twenty he withdrew to the desert, first near his village, then in an abandoned fort, and later at a mountain near the Red Sea. He lived on bread, salt, and water, and fought against temptation by prayer and fasting. Disciples gathered around him, and many came for advice, so that he became known as the father of monks. Athanasius's account of his life spread the monastic ideal throughout the Church. He died, according to tradition, in 356, aged one hundred and five.",
+   "period": "died 356",
+   "place": "Egyptian desert, near the Red Sea",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anthony_the_Great",
+    "https://www.britannica.com/biography/Saint-Anthony-of-Egypt"
+   ]
+  },
+  "UO-SIN-000792": {
+   "name": "Macarius the Great",
+   "life": "Macarius was born in the Egyptian Delta about the year 300. He worked as a cattle-herder before turning to the ascetic life, and he was a follower of Antony the Great. He settled in the desert of Scetis, was ordained priest, and drew many monks to live near him, so that the monasteries of Wadi Natrun grew from his community. During the reign of Valens he was briefly exiled to an island in the Nile because of the controversy over the Nicene faith. Fifty Spiritual Homilies, long attributed to him, speak of the Spirit's work in the heart. He died about 390, and his monastery is still inhabited.",
+   "period": "died about 390",
+   "place": "Scetis (Wadi Natrun), Egypt",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Macarius_of_Egypt",
+    "https://orthodoxwiki.org/Macarius_the_Great",
+    "https://stmacariusmonastery.org/saints/macarius/?lang=en"
+   ]
+  },
+  "UO-SIN-000636": {
+   "name": "Fabian",
+   "life": "Fabian was a layman from Rome who, according to the historian Eusebius, was chosen bishop of Rome in 236 after a dove settled on his head as the clergy and people gathered to elect a leader. During his fourteen years in office he made peace with the imperial authorities, divided the city into districts under deacons, appointed notaries to record the acts of the martyrs, and sent missionary bishops to Gaul. When Emperor Decius began a persecution in 250, Fabian was among the first victims and died, probably in prison, on 20 January. He was buried in the Catacomb of Callixtus.",
+   "period": "died 250",
+   "place": "Rome",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pope_Fabian",
+    "https://www.britannica.com/biography/Saint-Fabian"
+   ]
+  },
+  "UO-SIN-000637": {
+   "name": "Agnes and Cecilia of Rome",
+   "life": "Agnes and Cecilia are two of the most beloved virgin martyrs of Rome. According to tradition, Agnes was a girl of twelve or thirteen who refused marriage because she belonged to Christ, and was put to death in the persecution of Diocletian about 304; she was buried on the Via Nomentana. Cecilia, a noblewoman of the third century, is said to have converted her husband Valerian and his brother, given her wealth to the poor, and been beheaded after surviving attempts to kill her. Because she is said to have sung to God at her wedding, she is honoured as patron of musicians. Details of both lives are legendary.",
+   "period": "Agnes died about 304; Cecilia died in the 3rd century",
+   "place": "Rome",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Agnes_of_Rome",
+    "https://en.wikipedia.org/wiki/Saint_Cecilia",
+    "https://www.britannica.com/biography/Saint-Agnes",
+    "https://www.britannica.com/biography/Saint-Cecilia"
+   ]
+  },
+  "UO-SIN-000638": {
+   "name": "Vincent of Saragossa",
+   "life": "Vincent was a deacon of the church at Saragossa in Spain, who preached on behalf of his bishop, Valerius, who had difficulty speaking. In the persecution under Diocletian, around 304, both were arrested and taken in chains to Valencia before the governor Dacian. Valerius was exiled, but Vincent was put to the torture, on the rack and the burning gridiron, yet would not yield. According to tradition he died in prison, remaining at peace. The poet Prudentius celebrated his courage, and his shrine drew pilgrims across Spain and Portugal. Many details are legendary.",
+   "period": "died about 304",
+   "place": "Saragossa and Valencia, Spain",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vincent_of_Saragossa",
+    "https://www.catholic.com/encyclopedia/vincent-saint-deacon-of-saragossa"
+   ]
+  },
+  "UO-SIN-000639": {
+   "name": "Phillips Brooks",
+   "life": "Phillips Brooks was born in Boston in 1835 and educated at Harvard before being ordained in the Episcopal Church in 1859. He served as rector in Philadelphia and then, from 1869, at Trinity Church, Boston, where he became one of the most admired preachers in America, known for his height and warm, direct manner. He taught that preaching was \"truth through personality.\" He wrote the Christmas hymn \"O Little Town of Bethlehem.\" Elected bishop of Massachusetts in 1891, he served only about fifteen months and died in Boston in January 1893.",
+   "period": "died 1893",
+   "place": "Boston and Philadelphia",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Phillips_Brooks",
+    "https://www.britannica.com/biography/Phillips-Brooks"
+   ]
+  },
+  "UO-SIN-000640": {
+   "name": "Florence Li Tim-Oi",
+   "life": "Florence Li was born in Hong Kong in 1907 and was baptised as a schoolgirl, taking the name Florence. She became a deaconess and, during the Second World War, ministered to refugees in Macau, where no priest could reach the people. In 1944 Bishop Ronald Hall ordained her priest, the first woman ordained in the Anglican Communion. The decision caused controversy, and after the war she resigned her licence to protect the Church's unity, though she remained a priest. She endured hardship and forced labour in China during the Cultural Revolution. She later served the Chinese community in Toronto, where she died in 1992.",
+   "period": "died 1992",
+   "place": "Hong Kong, Macau, Toronto",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Florence_Li_Tim-Oi",
+    "https://www.cbeinternational.org/resource/florence-li-pioneer-anglican-priesthood-part-1/"
+   ]
+  },
+  "UO-SIN-000642": {
+   "name": "Timothy and Titus",
+   "life": "Timothy and Titus were younger companions and trusted helpers of the apostle Paul. Timothy, from Lystra, had a Jewish mother, Eunice, and grandmother, Lois, who taught him the scriptures; Paul called him his \"beloved child.\" He travelled with Paul, was sent on delicate missions, and, by tradition, led the church at Ephesus. Titus, a Gentile convert, was Paul's troubleshooter, who carried letters to Corinth and helped to heal the church there. Tradition holds that Paul left him to organise the church on Crete. Letters addressed to each of them guide pastors still.",
+   "period": "1st century",
+   "place": "Lystra, Ephesus, Corinth and Crete",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Saint_Titus",
+    "https://www.britannica.com/biography/Saint-Titus",
+    "https://www.Wikipedia.org/wiki/St_Timothy",
+    "https://orthodoxwiki.org/Apostle_Timothy"
+   ]
+  },
+  "UO-SIN-000348": {
+   "name": "John Chrysostom",
+   "life": "John was born at Antioch about 347, and was raised by his widowed mother. After training in rhetoric and a time among hermits, he became a priest and, for years, preached at Antioch, earning the name Chrysostom, \"golden mouth.\" In 397 he was made archbishop of Constantinople. He reformed the clergy, founded hospitals, and spoke fearlessly for the poor, which angered the wealthy. Conflict with the empress Eudoxia and Bishop Theophilus of Alexandria led to his exile. He was sent to the Black Sea region and died in 407 on the journey, at Comana in Pontus. His sermons and commentaries remain widely read.",
+   "period": "died 407",
+   "place": "Antioch and Constantinople",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/John_Chrysostom",
+    "https://www.britannica.com/biography/Saint-John-Chrysostom"
+   ]
+  },
+  "UO-SIN-000643": {
+   "name": "Thomas Aquinas",
+   "life": "Thomas was born about 1225 at Roccasecca in Italy and was educated at Monte Cassino and Naples. Against his family's wishes he joined the Dominican friars, and studied in Paris under Albert the Great. He became a master of theology and taught in Paris and Italy. His great works, the Summa contra Gentiles and the unfinished Summa Theologiae, joined Christian faith with the philosophy of Aristotle. He died on 7 March 1274 at Fossanova Abbey on his way to the Council of Lyon, and was canonised in 1323.",
+   "period": "died 1274",
+   "place": "Naples, Paris, Italy",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thomas_Aquinas",
+    "https://www.britannica.com/biography/Saint-Thomas-Aquinas"
+   ]
+  },
+  "UO-SIN-000644": {
+   "name": "Liliʻuokalani of Hawaiʻi",
+   "life": "Liliʻuokalani was born in Honolulu in 1838 and educated in a mission school. She married John Owen Dominis and in 1891 succeeded her brother Kalākaua as queen, the first woman to rule Hawaiʻi alone. In 1893 a group of American and European businessmen, backed by US Marines, overthrew her after she tried to give the kingdom a new constitution. She yielded peacefully to avoid bloodshed and appealed for justice. Imprisoned in 1895 after a failed uprising, she later wrote Hawaii's Story by Hawaii's Queen and composed songs, including \"Aloha ʻOe.\" A devout Christian, she died in Honolulu in 1917.",
+   "period": "died 1917",
+   "place": "Honolulu, Hawaiʻi",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Liliuokalani",
+    "https://www.britannica.com/biography/Liliuokalani"
+   ]
+  },
+  "UO-SIN-000645": {
+   "name": "Charles I",
+   "life": "Charles I became king of England, Scotland, and Ireland in 1625. He held a strong belief in the divine right of kings, and quarrelled with Parliament over taxation and royal power; his support for ceremonial worship in the Church of England alarmed many Protestants. These disputes led to civil war from 1642, and after defeat he was handed over to Parliament. He was tried for treason in January 1649 and denied the court's authority. He was beheaded at Whitehall on 30 January 1649. Many Anglicans honour him for his steadfast loyalty to the Church and the dignity of his death.",
+   "period": "died 1649",
+   "place": "London, Whitehall",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_I_of_England",
+    "https://www.britannica.com/biography/Charles-I-king-of-Great-Britain-and-Ireland"
+   ]
+  },
+  "UO-SIN-000646": {
+   "name": "Marcella of Rome",
+   "life": "Marcella was born into a noble Roman family around 325. Widowed early in her marriage, she turned her palace on the Aventine Hill into a house of prayer, charity, and study of scripture, gathering women around her. She lived this life for decades before Jerome arrived in Rome, and he wrote to her more than to any other woman, praising her knowledge of the Bible and asking for her judgment. When the Goths sacked Rome in 410, soldiers beat her, seeking treasure; she pleaded for her young companion Principia and died soon after.",
+   "period": "died 410",
+   "place": "Rome, the Aventine Hill",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Marcella_of_Rome",
+    "https://www.biblicaltraining.org/library/marcella"
+   ]
+  }
+ }
+}
