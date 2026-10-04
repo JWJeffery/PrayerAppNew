@@ -3555,8 +3555,8 @@ function _defaultRomanBreviaryHourForCurrentTime(now = new Date()) {
 // (architecture §10's minimum-shippable floor) -- clamp so a clock outside
 // that window still lands on real data instead of a fetch 404.
 function _clampRomanBreviaryDateToSupportedRange(isoDate) {
-    if (isoDate < '2026-01-01') return '2026-01-01';
-    if (isoDate > '2027-12-31') return '2027-12-31';
+    if (isoDate < '1900-01-01') return '1900-01-01';
+    if (isoDate > '2100-12-31') return '2100-12-31';
     return isoDate;
 }
 

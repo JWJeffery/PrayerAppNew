@@ -74,7 +74,18 @@ function rmIfExists(target) {
   }
 }
 
+// The Roman Breviary now runs from its component bundles (data/roman-breviary-1960-1962/components).
+// The Divinum Officium source mirror and the old per-year units/manifests are audit material kept in the
+// repository, not shipped.
+const denyPathPrefixes = [
+  "data/roman-breviary-1960-1962/source",
+  "data/roman-breviary-1960-1962/units",
+  "data/roman-breviary-1960-1962/manifests"
+];
+
 function shouldDeny(relativePath) {
+  const normalized = relativePath.split(path.sep).join("/");
+  if (denyPathPrefixes.some((prefix) => normalized === prefix || normalized.startsWith(prefix + "/"))) return true;
   const parts = relativePath.split(path.sep);
   if (parts.some((part) => denyNames.has(part))) return true;
   const base = path.basename(relativePath);

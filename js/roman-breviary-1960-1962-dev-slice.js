@@ -152,7 +152,7 @@
       `<option value="${esc(code)}"${code===language?' selected':''}>${esc(SUPPORTED_LANGUAGES[code])}</option>`
     ).join('');
     return `<form class="rb1960-nav" onsubmit="return false;">`+
-      `<label>Date <input type="date" class="rb1960-nav-date" value="${esc(date)}" min="2026-01-01" max="2027-12-31"></label>`+
+      `<label>Date <input type="date" class="rb1960-nav-date" value="${esc(date)}" min="1900-01-01" max="2100-12-31"></label>`+
       `<label>Hour <select class="rb1960-nav-hour">${hourOptionsHtml}</select></label>`+
       `<label>Language <select class="rb1960-nav-language">${languageOptionsHtml}</select></label>`+
       `<button type="button" class="rb1960-nav-go">Go</button>`+
@@ -181,11 +181,37 @@
     return response.json();
   }
 
+  // The calendar-and-hours engine (js/roman-breviary/*.js, ported from Divinum Officium and verified
+  // against it) now produces every office, for any date. The stored per-year files below stay as a
+  // fallback if the engine cannot start (e.g. its data bundles failed to download).
+  let enginePromise=null;
+  function getEngine(){
+    const RB=typeof globalThis!=='undefined'?globalThis.RomanBreviary:null;
+    if(!RB||typeof RB.createBreviaryEngine!=='function') return Promise.resolve(null);
+    if(!enginePromise){
+      const base=`${DATA_ROOT}/components/`;
+      enginePromise=fetchJson(base+'index.json').then(index=>RB.createBreviaryEngine({
+        bundleIds:index.bundles.map(b=>b.id),
+        loadBundle:id=>fetchJson(base+index.bundles.find(b=>b.id===id).path)
+      })).catch(err=>{ enginePromise=null; console.warn('[roman-breviary] engine unavailable, using stored files:',err); return null; });
+    }
+    return enginePromise;
+  }
+
   async function resolveDevSliceOffice(options={}){
     const date=options.date||'2026-11-02';
     const hour=options.hour||'matins';
     const year=options.year||Number(date.slice(0,4))||2026;
     const language=normalizeLanguage(options.language);
+    const engine=await getEngine();
+    if(engine){
+      try{
+        const live=await engine.resolve({date,hour,language});
+        return composeResolvedOffice({unitsData:live.unitsData,manifestData:live.manifestData,date,hour});
+      }catch(err){
+        console.warn('[roman-breviary] engine failed for',date,hour,language,'- using stored files:',err);
+      }
+    }
     const [unitsData,manifestData]=await Promise.all([
       fetchJson(unitsPathFor(year,language)),
       fetchJson(manifestPathFor(year,language))

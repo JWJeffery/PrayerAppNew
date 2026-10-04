@@ -467,10 +467,42 @@
       const state = { searchind: 0 };
       let html = '';
       for (const u of units(scriptLines)) html += setcell(u, state);
-      return { html, script: scriptLines };
+      return { html, script: scriptLines, headline: headline() };
     }
 
-    return { render, resolve_refs, expand, psalm, units, setcell, scriptFunctions, getantcross, spell_var };
+    // setheadline()/rankname(): the day's title line, e.g. "Feria quarta ... ~ IV. classis" (Rubrics 1960 branches)
+    function rankname() {
+      const latname = S(off(ss.setupstring('Latin', ctx.winner)).get('Rank')).replace(/;;[^]*$/, '');
+      const t = off(ss.setupstring(getLang(), 'Psalterium/Comment.txt'));
+      const ranktable = perlSplit(S(t.get('Festa')), '\n');
+      const winner = S(ctx.winner), dow = N(ctx.dayofweek), rank = N(ctx.rank);
+      let rankname;
+      if (!/(?:Die|Feria|Sabbato|^In Octava)/i.test(latname) && (!/Pasc[07]-[1-6]/.test(winner) || dow === 0)) {
+        let i = rank;
+        rankname = ranktable[Math.trunc(i)];
+        if (/Vigilia Epi/i.test(latname)) rankname = `${ranktable[2]} ${S(t.get('Vigilia'))} II. ${S(t.get('classis'))}`;
+        else if (/^In Vigilia/i.test(latname) && rank <= 2.5) rankname = ranktable[1];
+      } else if (/C10/.test(S(ctx.commune))) {
+        rankname = ranktable[1];
+      } else if (/Pasc[07]-[1-6]/.test(winner)) {
+        rankname = `${S(t.get('Dies Octavæ'))} I. ${S(t.get('classis'))}`;
+      } else if (/Pasc6-6/.test(winner)) {
+        rankname = ranktable[6];
+      } else if (/Pasc5-3/.test(winner)) {
+        rankname = ranktable[5];
+      } else if (N(ctx.month) === 12 && N(ctx.day) > 16 && N(ctx.day) < 25 && dow) {
+        rankname = ranktable[5];
+      } else {
+        rankname = ranktable[rank === 4.9 ? 5 : Math.trunc(rank)];
+      }
+      return S(rankname).replace(/\n/g, '');
+    }
+    function headline() {
+      const m = /^(.*?);/.exec(S(ctx.winnerHash.get('Rank')));
+      return `${m ? m[1] : S(ctx.winnerHash.get('Rank'))} ~ ${rankname()}`;
+    }
+
+    return { headline, render, resolve_refs, expand, psalm, units, setcell, scriptFunctions, getantcross, spell_var };
   }
 
   RB.createRenderer = createRenderer;
