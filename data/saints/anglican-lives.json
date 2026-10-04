@@ -3856,6 +3856,17 @@
     "https://en.wikipedia.org/wiki/Aidan_of_Lindisfarne",
     "http://oca.org/saints/lives/2014/08/31/102445-st-aidan-the-bishop-of-lindesfarne"
    ]
+  },
+  "UO-SIN-000290": {
+   "name": "Philip Benizi",
+   "life": "Philip Benizi was born into a respected family in Florence in 1233 and trained as a physician before joining the Servite friars in 1254. Ordained priest, he became the order's superior general in 1267 and guided it through uncertain years, helping it grow across Europe. In a land torn by feuding Guelph and Ghibelline factions, he travelled as a gentle peacemaker, notably to the divided town of Forlì in 1283. According to tradition, he hid rather than accept election as pope. He died at Todi in 1285, remembered for humility, patience and the reconciling of enemies.",
+   "period": "1233-1285",
+   "place": "Florence and Todi, Italy",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Philip_Benizi_de_Damiani",
+    "https://www.catholic.com/encyclopedia/philip-benizi-saint"
+   ]
   }
  }
 }
