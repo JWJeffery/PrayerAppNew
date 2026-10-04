@@ -609,6 +609,8 @@
   }
 
   RB.createSetupString = createSetupString;
+  RB.perlSubstitute = perlSubstitute;
+  RB.perlRegExp = perlRegExp;
   RB.perlSplit = perlSplit;
   RB.perlTrue = T;
   if (typeof module !== 'undefined' && module.exports) module.exports = RB;

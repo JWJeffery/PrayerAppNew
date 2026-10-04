@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import { runScripts } from './roman-breviary-oracle-script.mjs';
 const require = createRequire(import.meta.url);
 require('../js/roman-breviary/date.js');
-for (const f of ['store', 'directorium', 'setupstring', 'occurrence', 'hours']) require(`../js/roman-breviary/${f}.js`);
+for (const f of ['store', 'directorium', 'setupstring', 'occurrence', 'matins', 'hours']) require(`../js/roman-breviary/${f}.js`);
 const RB = globalThis.RomanBreviary;
 const { createNodeStore } = require('../js/roman-breviary/store-node.js');
 

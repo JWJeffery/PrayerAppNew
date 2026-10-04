@@ -265,3 +265,54 @@ clone outside the repo (Perl is needed only for tests; the app never uses it).
 **Next (phase 3, needs Josh's go-ahead):** per-hour assembly for Lauds first, then Matins and the
 little hours, diffed against the audited stored output in `units/` and `manifests/` (and the Perl
 engine's own output for other years). Vespers and Compline follow concurrence (phase 4).
+
+## 14. Phase 3, stage A result (2026-10-04): all eight hours fill their templates like the Perl engine
+
+**Done: a JavaScript port of "fill the hour's template with the day's content" (`specials()` and the
+modules it calls) for Matins, Lauds, Prime, Terce, Sext, None, Vespers and Compline, verified against
+the pinned Perl engine. The prayer texts themselves are not expanded yet (see below).**
+
+What "stage A" produces: for a date and hour, the hour's *script*: an array of lines such as
+`#Psalmi{Psalmi & antiphonae ex Psalterio secundum diem}`, the antiphons, `&psalm(62)`,
+`$Pater noster`, the chosen chapter, hymn, collect with its commemorations, and so on. References
+(`&psalm(n)`, `$Prayer`, `&lectio(n)`, `&Gloria`) are still unexpanded; expanding them and turning the
+result into display blocks is stage B.
+
+New files: `js/roman-breviary/hours.js` (specials, psalmody, chapters, hymns, canticles, preces, collects
+and commemorations, suffragium, Prime and Compline pieces, the martyrology with its lunar date),
+`js/roman-breviary/matins.js` (invitatory, hymn, nocturns, absolutions and blessings, and `lectio()`),
+concurrence added to `js/roman-breviary/occurrence.js`; `scripts/roman-breviary-oracle-script.mjs` and
+`scripts/test-roman-breviary-script.mjs` (`npm run test:roman-breviary-script`).
+
+**Verification (script arrays compared line for line; zero differences in every run):**
+
+| Hour(s) | Dates | Records |
+|---|---|---|
+| Lauds | every day 1962-2011, 2026-2030 | 20,000+ |
+| Matins, Lauds, Prime, Terce, Sext, None, Vespers, Compline | every day of 2008 (earliest Easter) and 2038 (latest) | 5,848 |
+| Matins | every day of 2026-2027 | 730 |
+| Vespers, Compline | every day of 2026-2027 | 1,460 |
+| Prime | 2026-2027, plus spot years 1900, 1905, 1965, 2045, 2100, 2150 (the martyrology's date quirks) | 730+ |
+| Terce, Sext, None | every day of 2026-2027 | 2,190 |
+
+**Oracle artifacts found and fixed (the Perl engine is built for one request per process):**
+- With several dates in one process, `horas()` sometimes calls `precedence()` with no date, which then
+  reads the CGI "date" parameter (the first date on the command line); the oracle now sets it per date.
+- `my $ant, $ant2;` and `my $ant, $duplexf;` declare only the first variable; the second is a package
+  global that carries over between hours. The oracle resets them.
+- Parsed-file caches have date-dependent conditionals already evaluated, so both the oracle and the JS
+  clear them for each date.
+
+**Perl quirks reproduced on purpose (each would otherwise cause a mismatch):** `"v."` in some regexes
+means "v plus any character"; hash keys made from floats use 15 significant digits; `split` drops
+trailing empty fields; `prevdayl1()` assigns `$day = 0`; one line empties the working hash with an
+undeclared `%w1`; the day-of-year used by the martyrology is 0-based for 1970-2038 and 1-based outside it.
+
+**Not done:** stage B, the expansion of `&psalm`, `$Prayer`, `&lectio`, `&Gloria`, `&teDeum`... into text
+and the conversion into the app's blocks; the English column (stage A already works from Latin only;
+English needs the English components in the same paths); the 2020 USA add-on; wiring the engine into the
+app and retiring `units/` and `manifests/`.
+
+**Next (needs Josh's go-ahead): stage B.** Port `resolve_refs()`/`expand()` and the script functions
+(`psalm`, `lectio` text, `Gloria`, `teDeum`, ...), then compare the resulting blocks with the audited
+stored units for 2026-2027 and with the Perl engine's own HTML for other years.

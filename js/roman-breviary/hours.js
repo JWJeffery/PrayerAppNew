@@ -707,7 +707,7 @@
     function psalmi() {
       ctx.psalmnum1 = 0;
       ctx.psalmnum2 = 0;
-      if (ctx.hora === 'Matutinum') throw new Error('Matins psalmody not ported yet');
+      if (ctx.hora === 'Matutinum') { matins.psalmi_matutinum(); return; }
       let duplexf = /196/.test(ctx.version);
       let ps;
       if (/^(?:Laudes|Vespera)$/i.test(ctx.hora)) {
@@ -972,7 +972,7 @@
     function hymnshiftFns() {
       const key = 'Hy' + D.get_sday(ctx.month, ctx.day, ctx.year);
       const v = S(get_from_directorium('transfer', ctx.version, key, ctx.year));
-      return { shift: /2/.test(v), shiftmerge: /3/.test(v) };
+      return { shift: /2/.test(v), shiftmerge: /3/.test(v), merge: /1/.test(v) };
     }
 
     function hymnusmajor() {
@@ -1016,7 +1016,11 @@
     function gethymn() {
       let section = translate('Hymnus');
       let hymn, name, hymnsource, versum, cr;
-      if (ctx.hora === 'Laudes' || ctx.hora === 'Vespera') {
+      if (ctx.hora === 'Matutinum') {
+        [hymn, name] = matins.hymnusmatutinum();
+        if (!T(hymn)) hymnsource = 'Matutinum';
+        section = '';
+      } else if (ctx.hora === 'Laudes' || ctx.hora === 'Vespera') {
         [hymn, name] = hymnusmajor();
         name = `Hymnus ${name}`;
         if (!T(hymn)) hymnsource = 'Major';
@@ -1759,7 +1763,10 @@
           continue;
         }
 
-        if (/invitatorium/i.test(item)) throw new Error('Invitatorium not ported');
+        if (/invitatorium/i.test(item)) {
+          matins.invitatorium();
+          continue;
+        }
 
         if (/psalm/i.test(item)) {
           psalmi();
@@ -1912,13 +1919,20 @@
       ctx.cwinner = undefined;
       ctx.octvespera = undefined;
       ctx.churchpatron = undefined;
+      ctx.ltype1960 = undefined;
       cal.precedence(date);
       loadLanguage();
       const ord = getordinarium(hora);
       return specials(ord);
     }
 
-    return { script, specials, getordinarium, translate, prayer, loadLanguage, ctx, getantvers, getproprium, getfrompsalterium, postprocess_ant };
+    const api = {
+      cal, ctx, ss, S, N, T, perlSplit, off, setfont, FONT, chompd, push: (...x) => s.push(...x),
+      translate, prayer, gettempora, getproprium, setcomment, antetpsalm, checkmtv, hymnshiftFns, postprocess_ant,
+      ensure_single_alleluia, alleluia_required, alleluia_ant, replaceNdot, fileExists
+    };
+    const matins = RB.createMatins(api);
+    return { script, specials, getordinarium, translate, prayer, loadLanguage, ctx, getantvers, getproprium, getfrompsalterium, postprocess_ant, matins };
   }
 
   RB.createHours = createHours;
