@@ -2464,3 +2464,28 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
         max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - 38px - clamp(28px, 6vh, 72px));
     }
 }
+
+/* 2026-10-03: the threshold ("It is time for ...") carried a fixed 92px left / 60px right padding
+   from the desktop design, which on a phone left ~240px of text width: the office name ran off
+   the right edge and the "Another office" button was cut off (reported from an iPhone). Inline
+   styles on the markup, hence !important. */
+@media (max-width: 640px) {
+    #uo-threshold .uo-threshold-content {
+        padding: 0 24px !important;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: auto !important;
+    }
+    #uo-threshold #uo-threshold-office-name {
+        font-size: clamp(30px, 9.5vw, 48px) !important;
+        overflow-wrap: anywhere;
+    }
+    #uo-threshold .uo-threshold-actions {
+        flex-wrap: wrap;
+    }
+    #uo-threshold .uo-threshold-actions button {
+        flex: 1 1 auto;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+}
