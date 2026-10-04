@@ -3648,9 +3648,11 @@ const EXPLORE_OTHER_OFFICES_STORAGE_KEY = 'uoExploreOtherOfficesVisible';
 
 function isExploreOtherOfficesVisible() {
     try {
-        return localStorage.getItem(EXPLORE_OTHER_OFFICES_STORAGE_KEY) === 'true';
+        // 2026-10-03: now visible unless the reader explicitly turned it off. Hidden-by-default
+        // left first-time users (reported on Safari/Mac) with no way out of an office page.
+        return localStorage.getItem(EXPLORE_OTHER_OFFICES_STORAGE_KEY) !== 'false';
     } catch (e) {
-        return false; // fail closed: hidden by default, matches the feature's own default
+        return true; // no storage: show the exit rather than trap the reader
     }
 }
 
@@ -4062,6 +4064,9 @@ function saveSettings() {
         psalter30Day:        document.getElementById('toggle-30day-psalter')?.checked || false,
         generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
         chrysostom:          document.getElementById('toggle-chrysostom')?.checked || false,
+        // 2026-10-03: these two now default ON. Blobs saved before this marker existed hold
+        // the old default (false) rather than a choice, so loadSettings() ignores them.
+        closingPrayersDefaultOn: true,
         prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
         examen:              document.getElementById('toggle-examen')?.checked || false,
         kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false,
@@ -4117,8 +4122,10 @@ function loadSettings() {
         setChk('toggle-suffrages',             s.suffrages);
         setChk('toggle-rotate-mission-prayer', s.rotateMissionPrayer !== false);
         setChk('toggle-30day-psalter',         s.psalter30Day);
-        setChk('toggle-general-thanksgiving',  s.generalThanksgiving);
-        setChk('toggle-chrysostom',            s.chrysostom);
+        if (s.closingPrayersDefaultOn) {
+            setChk('toggle-general-thanksgiving',  s.generalThanksgiving);
+            setChk('toggle-chrysostom',            s.chrysostom);
+        }
         setChk('toggle-prayer-before-reading', s.prayerBeforeReading);
         setChk('toggle-examen',                s.examen);
         setChk('toggle-kyrie-pantocrator',     s.kyriePantocrator);
