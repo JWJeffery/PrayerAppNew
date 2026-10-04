@@ -239,6 +239,6 @@ menu (only one of the 25 was browser-tested).
 - Fast Ramsha placeholders are resolved in `js/office-ui.js` by substring match against the day's
   ordinary ramsha sequence; an unresolvable marker fails loudly by design.
 - Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
-  into three zips when over ~30MB). There is no auto-deploy.
+  into four zips when over ~30MB: Breviary data, other data, saint icons, app shell). There is no auto-deploy.
 - Old narrative detail: `documentation/project-history/INDEX.md`, seven HISTORICAL volumes
   (2026-07-06 to 2026-10-03).
