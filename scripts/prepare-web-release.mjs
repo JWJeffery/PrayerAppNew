@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
+import { buildServiceWorker } from "./build-service-worker.mjs";
 
 const root = process.cwd();
 const releaseDir = path.join(root, "web-release");
@@ -9,7 +10,9 @@ const zipPath = path.join(root, "web-release.zip");
 
 const includeEntries = [
   "index.html",
+  "manifest.webmanifest",
   "admin",
+  "assets",
   "components",
   "css",
   "data",
@@ -179,6 +182,13 @@ const htaccess = `# Universal Office static-app routing.
 # If cPanel Directory Privacy later adds AuthType/AuthUserFile lines,
 # do not overwrite them during routine uploads.
 
+# The service worker must never be served from a stale cache, or devices would not see updates.
+<IfModule mod_headers.c>
+  <FilesMatch "^(sw\\.js|manifest\\.webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -190,6 +200,10 @@ const htaccess = `# Universal Office static-app routing.
 `;
 
 fs.writeFileSync(path.join(releaseDir, ".htaccess"), htaccess, "utf-8");
+
+// Offline support: sw.js lists every file the device keeps; it is built last, from the release folder.
+const swResult = await buildServiceWorker(releaseDir);
+console.log(`release:web: sw.js precaches ${swResult.count} files (${(swResult.size / (1024 * 1024)).toFixed(1)} MB)`);
 
 const files = walkFiles(releaseDir);
 const manifest = {

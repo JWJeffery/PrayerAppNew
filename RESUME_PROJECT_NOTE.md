@@ -101,6 +101,14 @@ and say what you checked.
    only after the 1960 engine matches the audited output** (decided 2026-10-03).
 2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
    pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
+   **Offline website is built (2026-10-04):** `npm run release:web` now also writes `sw.js` (Workbox) that
+   keeps the app and all text on the device (668 files, ~70 MB, versioned by hash; Roman Breviary engine data
+   included); icons download once on first Orthodox entry (`js/offline-packs.js`); `manifest.webmanifest`
+   makes it installable (placeholder cross icon in `images/app/`, Josh to replace). `npm run test:offline`
+   (needs `npm run release:web` first) cuts the network and opens all five traditions. The release also now
+   ships `assets/fonts` (they were missing before). Not done: an "update available" prompt (a new version
+   waits until tabs close); password-protected hosting can block the manifest/service worker, see
+   documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md section 17.
    All five traditions ship, with their **full text bundled** (works offline from first launch); **icons are not bundled**: they download on first use of the Orthodox side and are then kept for offline use (Josh, 2026-10-04; saint icons are ~27 MB). JSON stays the source of truth; a database is a later option only if
    measured. Scripture in the public app is limited to passages cited in the prayers (Bible browser
    stays admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by

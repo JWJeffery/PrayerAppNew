@@ -2919,6 +2919,7 @@ async function selectMode(mode) {
         initializeOfficeDefaultsForCurrentDateTime('horologion');
         isHydrationComplete = true;
         requestRender();
+        if (window.OfflinePacks) window.OfflinePacks.noteOrthodoxEntry(); // keep the saint icons offline too
 
     } else if (mode === 'roman-breviary-dev') {
         // ── Roman Breviary 1960/1962 ────────────────────────────────────────────

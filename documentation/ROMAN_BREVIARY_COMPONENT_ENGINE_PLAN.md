@@ -366,3 +366,18 @@ English one for 2031-07-14, Matins for 1999-12-25, and the real app's Catholic e
 
 **Next:** phase 6, the offline data pack (versioned, cached by a service worker), then the PWA and Capacitor
 apps; the 2020 USA add-on stays planned.
+
+## 17. Phase 6 result (2026-10-04): the offline website
+
+`scripts/build-service-worker.mjs` (Workbox, MIT) generates `sw.js` during `npm run release:web`.
+Precached at install: app shell, fonts, all prayer text (`data/`, including Breviary bundles and the Bible
+text the lectionaries read) = 668 files, about 70 MB uncompressed. Cached as used: images, saint icons,
+Bible-browser translation files, web fonts. A new version waits until open tabs close. `.htaccess` sends
+`Cache-Control: no-cache` for `sw.js` and the manifest. `scripts/test-offline.mjs` (`npm run test:offline`)
+installs the service worker in Chromium, cuts the network, and opens all five traditions plus a Breviary date
+that was never opened; all pass, with no failed same-origin requests.
+
+Open points: the install icon is a placeholder; if the site stays behind hosting-level password protection
+(Directory Privacy), browsers fetch the manifest and `sw.js` without credentials and installation may fail,
+so test on the real host before relying on it; no "update available" prompt yet; per-tradition packs (so a
+Roman-only user need not download the Orthodox text) are possible later but were not chosen (all text ships).
