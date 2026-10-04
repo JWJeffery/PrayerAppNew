@@ -183,3 +183,11 @@ Earlier passages in this file that list 01-02 as lacking printed support (the ha
 
 ## Implementation (2026-10-02)
 The curator's approved corrections were applied; see `ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md` (now the implementation record). The earlier statements in this file that Zinzendorf, Sumner, Menzies, Huntington (05-03), Wesley (12-18) and "David of London" were the primaries on 05-09, 08-19, 12-11, 05-03, 12-18 and 12-29 describe the superseded state, except Wesley 12-18, which is retained deliberately as an editorial birthday observance.
+
+## Manual override after the export (2026-10-04)
+August 22: Josh made **Philip Benizi** the principal commemoration, replacing Alicia "Cristina" Rivera, OSH (printed only in
+the Great Cloud of Witnesses appendix, with no biography to write from). Rivera stays as an additional commemoration.
+Edited by hand in `data/kalendar/synaxarium/decisions.json` (primary and alternates swapped, `decision_type: josh_override`)
+and `data/saints/sanctoral.json` (new `philip-benizi` row with `angRole: primary`; Rivera's row now `alternate`).
+`scripts/saints/apply-synaxarium-decisions.py` regenerates both files from the review-tool export, so re-running it would
+undo this; apply the same swap to the export first.

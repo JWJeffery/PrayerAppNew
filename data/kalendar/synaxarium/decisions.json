@@ -10100,23 +10100,33 @@
   },
   "08-22": {
    "primary": {
-    "name": "Alicia “Cristina” Rivera, OSH",
-    "sin": "UO-SIN-000053",
-    "designation": "Monastic",
-    "period": "1996",
-    "tradition": "Anglican",
-    "source_witnesses": "GCW appendix",
-    "source_tier": "TEC/GCW appendix",
-    "review_flags": "modern review; appendix status; source verification",
-    "decision_type": "concur_rank1",
-    "reviewer_comments": null,
-    "decided_at": "2026-09-07T19:11:13.070Z",
+    "name": "Philip Benizi",
+    "sin": "UO-SIN-000290",
+    "designation": "Servite priest / peacemaker",
+    "period": "1285",
+    "tradition": "Roman Catholic / Greater Church",
+    "source_witnesses": "AM",
+    "source_tier": "Anglican Martyrology / Book of Saints",
+    "review_flags": "none",
+    "decision_type": "josh_override",
+    "reviewer_comments": "Josh, 2026-10-04: Philip Benizi replaces Alicia \"Cristina\" Rivera, OSH as the principal commemoration for August 22; Rivera stays as an additional commemoration (printed in the Great Cloud of Witnesses appendix).",
+    "decided_at": "2026-10-04T00:00:00.000Z",
     "entity_type": "person",
     "harmonization": null,
-    "date_basis": "other witness (see source_witnesses and source_notes): Anglican Martyrology / SEC / Book of Saints / ODS",
+    "date_basis": "other witness (see source_witnesses): Anglican Martyrology / Book of Saints; chosen by the curator over the GCW-appendix name",
     "source_notes": null
    },
    "alternates": [
+    {
+     "name": "Alicia “Cristina” Rivera, OSH",
+     "sin": "UO-SIN-000053",
+     "designation": "Monastic",
+     "period": "1996",
+     "tradition": "Anglican",
+     "source_witnesses": "GCW appendix",
+     "preliminary_status": "Usable",
+     "curator_approved": null
+    },
     {
      "name": "Queenship of Mary",
      "sin": "UO-SIN-000289",
@@ -10125,16 +10135,6 @@
      "tradition": "Roman Catholic / Greater Church",
      "source_witnesses": "AM",
      "preliminary_status": "Review",
-     "curator_approved": null
-    },
-    {
-     "name": "Philip Benizi",
-     "sin": "UO-SIN-000290",
-     "designation": "Servite priest / peacemaker",
-     "period": "1285",
-     "tradition": "Roman Catholic / Greater Church",
-     "source_witnesses": "AM",
-     "preliminary_status": "Usable",
      "curator_approved": null
     }
    ]
