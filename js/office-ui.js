@@ -6928,7 +6928,7 @@ async function _angDecisionAlternates(date, shownNames) {
             (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
             (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '') + '</li>').join('');
         return '<details class="saint-box"><summary style="cursor:pointer;color:var(--accent);font-weight:bold;text-transform:uppercase;font-size:0.8em;">' +
-               'Also remembered on this day</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
+               'Also commemorated today</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
     } catch (e) { return ''; }
 }
 
