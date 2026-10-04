@@ -242,12 +242,15 @@ const combinedZipSize = fs.statSync(zipPath).size;
 console.log(`PASS release:web: files=${files.length} output=web-release/ zip=web-release.zip (${(combinedZipSize / (1024 * 1024)).toFixed(1)}MB)`);
 
 if (combinedZipSize > SPLIT_SIZE_CAP_BYTES) {
-  console.log(`web-release.zip exceeds the ${(SPLIT_SIZE_CAP_BYTES / (1024 * 1024)).toFixed(0)}MB delivery-channel cap -- auto-splitting into 3 independent zips.`);
+  console.log(`web-release.zip exceeds the ${(SPLIT_SIZE_CAP_BYTES / (1024 * 1024)).toFixed(0)}MB delivery-channel cap -- auto-splitting into 4 independent zips.`);
 
   const splitSpecs = [
     { name: "web-release-roman-breviary-data.zip", include: ["data/roman-breviary-1960-1962"], exclude: [] },
     { name: "web-release-remaining-data.zip", include: ["data"], exclude: ["data/roman-breviary-1960-1962"] },
-    { name: "web-release-app-shell.zip", include: [""], exclude: ["data"] }
+    // The saint icons (public-domain PNG/JPG, already compressed) grew past the cap on their own,
+    // so they ship as their own zip rather than inside the app shell.
+    { name: "web-release-icons.zip", include: ["images/icons"], exclude: [] },
+    { name: "web-release-app-shell.zip", include: [""], exclude: ["data", "images/icons"] }
   ];
 
   execFileSync("python3", ["-c", `
@@ -281,5 +284,5 @@ for spec in specs:
         raise SystemExit(1)
 `], { stdio: "inherit" });
 
-  console.log("PASS release:web: 3-way split complete -- deliver all three zips together, they unzip into the same destination and don't overlap.");
+  console.log("PASS release:web: 4-way split complete -- deliver all four zips together, they unzip into the same destination and don't overlap.");
 }
