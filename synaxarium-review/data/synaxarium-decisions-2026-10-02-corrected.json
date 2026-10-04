@@ -9661,11 +9661,11 @@
   "08-22": {
    "month": "August",
    "date": "08-22",
-   "selected_candidate": "Alicia “Cristina” Rivera, OSH",
-   "selected_sin": "UO-SIN-000053",
-   "decision_type": "concur_rank1",
-   "reviewer_comments": "",
-   "timestamp": "2026-09-07T19:11:13.070Z",
+   "selected_candidate": null,
+   "selected_sin": null,
+   "decision_type": "custom",
+   "reviewer_comments": "Unsupported Rivera primary recommendation withdrawn under Josh Jeffery's instruction to fix the source failure. Philip Benizi is recommended from Anglican Martyrology p.102 (August 22) and Oxford Dictionary of Saints PDF p.764; replacement admission awaits curator decision. Rivera remains a research candidate; UO-SIN-000053 is not reassigned.",
+   "timestamp": "2026-10-04T21:23:40.000Z",
    "original_candidate_row": {
     "rank": "1",
     "candidate": "Alicia “Cristina” Rivera, OSH",
@@ -9692,9 +9692,20 @@
     },
     "harmonization": null
    },
-   "_internal_chosen_key": "0:Alicia “Cristina” Rivera, OSH",
-   "_internal_is_custom": false,
-   "_internal_custom_text": ""
+   "_internal_chosen_key": null,
+   "_internal_is_custom": true,
+   "_internal_custom_text": "",
+   "decision_status": "Replacement admission pending curator decision",
+   "replacement_recommendation": {
+    "candidate": "Philip Benizi",
+    "designation": "Servite friar and priest; prior general and peacemaker",
+    "date": "08-22",
+    "selected_sin": null,
+    "status": "Recommended; not admitted",
+    "source_witnesses": "Anglican Martyrology PDF p.102; Oxford Dictionary of Saints PDF p.764",
+    "review_flags": "Curatorial admission; resolve death-place and death-day discrepancies before drafting"
+   },
+   "correction_note": "Supersedes the earlier 08-22 selection only. original_candidate_row is preserved as historical provenance, not an active ranking endorsement. Authoritative Calendar and Admission Decisions, section F; synaxarium-08-22-correction-2026-10-04.json."
   },
   "08-23": {
    "month": "August",
