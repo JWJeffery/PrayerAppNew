@@ -521,7 +521,7 @@
       if (num % rpn === 0 || (!/^Monastic|Praedicatorum/.test(ctx.version) && num % rpn === rpn - 1 && tedeum_required(num + 1))) {
         if (!/&Gloria/i.test(w)) {
           w = w.replace(/[\s_]*$/gs, '');
-          w = w.replace(/(R\..*?)$/m, (m0, a) => `${a}\n&Gloria1\n${a}`);
+          w = w.replace(/(R\..*?)$/, (m0, a) => `${a}\n&Gloria1\n${a}`);
         }
       } else {
         w = w.replace(/.&Gloria.*/s, '');
@@ -811,7 +811,7 @@
 
       w = w.replace(/^\_/, '');
       if (!/^!/m.test(w)) w = w.replace(/^(?=\p{L})/u, 'v. ');
-      else if (!/^\d/m.test(w)) w = w.replace(/^!.*?\n(?=\p{L})/gm, (m0) => m0 + 'v. ');
+      else if (!/^\d/m.test(w)) w = w.replace(/^!.*?\n(?=\p{L})/gmu, (m0) => m0 + 'v. ');
 
       let item = api.translate('Lectio');
       if (!/%s/.test(item)) item += ' %s';

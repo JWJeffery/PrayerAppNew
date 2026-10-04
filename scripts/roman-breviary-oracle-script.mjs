@@ -35,6 +35,7 @@ const LOOP = String.raw`{
       # horas.pl declares 'my $ant, $ant2;' and 'my $ant, $duplexf;', which make $ant2/$duplexf package
       # globals that keep a value between hours; a fresh request would start with them unset.
       $ant2 = undef; $duplexf = undef;
+      $psalmnum1 = 0; $psalmnum2 = 0; $incipitTone = undef; $expandind = 0;
       $hora = $h;
       our $oracle_ctx = { date => $d, hora => $h };
       # horas() sometimes calls precedence() with no argument, which reads the CGI 'date' parameter
@@ -42,6 +43,9 @@ const LOOP = String.raw`{
       $q->param('date', $d); $q->param('date1', $d);
       precedence($d);
       setsecondcol();
+      # officium.pl loads the language tables AFTER precedence() has filled the day's variables, and
+      # Prayers.txt holds conditional lines that depend on them; so reload for every date.
+      load_languages_data($lang1, $lang2, $langfb, $version, $missa);
       horas($h);
     }
   }
@@ -50,7 +54,18 @@ const LOOP = String.raw`{
 
 const DUMP = String.raw`{
   my @copy = @script1;
-  my %o = (%$oracle_ctx, script => \@copy, globals => { largefont => $largefont, redfont => $redfont, smallfont => $smallfont, smallblack => $smallblack, blackfont => $blackfont, initiale => $initiale, priest => $priest, expand => $expand, only => $only, langfb => $langfb, precesferiales => $precesferiales, oldhymns => $oldhymns, nofancychars => $nofancychars, column => $column, lang1 => $lang1, lang2 => $lang2, dioecesis => $dioecesis, votive => $votive });
+  my $html = '';
+  if ($oracle_html) {
+    my $buf = '';
+    open(my $fh, '>:utf8', \$buf) or die;
+    my $old = select($fh);
+    print_content($lang1, \@script1, $lang2, \@script2, $version !~ /(1570|1955|196|Altovadensis)/);
+    select($old);
+    close($fh);
+    utf8::decode($buf);
+    $html = $buf;
+  }
+  my %o = (%$oracle_ctx, script => \@copy, html => $html, globals => { largefont => $largefont, redfont => $redfont, smallfont => $smallfont, smallblack => $smallblack, blackfont => $blackfont, initiale => $initiale, priest => $priest, expand => $expand, only => $only, langfb => $langfb, precesferiales => $precesferiales, oldhymns => $oldhymns, nofancychars => $nofancychars, column => $column, lang1 => $lang1, lang2 => $lang2, dioecesis => $dioecesis, votive => $votive, psalmvar => $psalmvar, nonumbers => $nonumbers, noflexa => $noflexa, noinnumbers => $noinnumbers, officium => $officium, command => $command, textwidth => $textwidth, border => $border, background => $background });
   print "ORACLE-SCRIPT " . $js->encode(\%o) . "\n";
 }`;
 
@@ -68,14 +83,14 @@ export function installPatched() {
 
 const toO = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${m}-${d}-${y}`; };
 
-export function runScripts(isoDates, horas = ['Laudes']) {
+export function runScripts(isoDates, horas = ['Laudes'], opts = {}) {
   const script = installPatched();
   const raw = execFileSync(
     'perl',
     [script, 'version=Rubrics 1960', 'command=prayLaudes', `date=${toO(isoDates[0])}`, 'lang1=Latin', 'lang2=Latin', 'dioecesis=Generale'],
     {
       cwd: ENGINE_ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 1024,
-      env: { ...process.env, PERL5LIB: 'web/cgi-bin:web/DivinumOfficium', DO_DATES: isoDates.map(toO).join(','), DO_HORAS: horas.join(',') }
+      env: { ...process.env, PERL5LIB: 'web/cgi-bin:web/DivinumOfficium', DO_DATES: isoDates.map(toO).join(','), DO_HORAS: horas.join(','), DO_HTML: opts.html ? '1' : '' }
     }
   );
   const rows = [];

@@ -1670,11 +1670,11 @@
       return script;
     }
 
-    function specials(script) {
+    function specials(script, special) {
       ctx.octavam = '';
       const wh = W();
       const i = hora === 'Laudes' ? ' 2' : hora === 'Vespera' ? ` ${ctx.vespera}` : '';
-      if (wh.has(`Special ${hora}${i}`)) {
+      if (!T(special) && wh.has(`Special ${hora}${i}`)) {
         // loadspecial: the whole hour is a stored text
         let str = S(wh.get(`Special ${hora}${i}`));
         return perlSplit(str, /\n/);
@@ -1929,10 +1929,11 @@
     const api = {
       cal, ctx, ss, S, N, T, perlSplit, off, setfont, FONT, chompd, push: (...x) => s.push(...x),
       translate, prayer, gettempora, getproprium, setcomment, antetpsalm, checkmtv, hymnshiftFns, postprocess_ant,
-      ensure_single_alleluia, alleluia_required, alleluia_ant, replaceNdot, fileExists
+      ensure_single_alleluia, alleluia_required, alleluia_ant, replaceNdot, fileExists,
+      preces, language, getantvers, loadLanguage
     };
     const matins = RB.createMatins(api);
-    return { script, specials, getordinarium, translate, prayer, loadLanguage, ctx, getantvers, getproprium, getfrompsalterium, postprocess_ant, matins };
+    return { script, specials, getordinarium, translate, prayer, loadLanguage, ctx, getantvers, getproprium, getfrompsalterium, postprocess_ant, matins, api };
   }
 
   RB.createHours = createHours;
