@@ -2939,7 +2939,7 @@ async function selectMode(mode) {
         const officeDisplay = document.getElementById('office-display');
         if (officeDisplay) {
             officeDisplay.innerHTML =
-                `<div class="office-container"><h3>Preparing Roman Breviary 1960/1962...</h3><p>Loading the pinned Divinum vertical slice.</p></div>`;
+                `<div class="office-container"><h3>Preparing the 1962 Breviary...</h3><p>Loading the pinned Divinum vertical slice.</p></div>`;
         }
 
         await loadKernel();
@@ -2947,7 +2947,7 @@ async function selectMode(mode) {
         if (!window.RomanBreviary1960DevSlice || typeof window.RomanBreviary1960DevSlice.mountDevSlice !== 'function') {
             if (officeDisplay) {
                 officeDisplay.innerHTML =
-                    `<div class="office-container"><h3>Roman Breviary dev slice unavailable</h3><p>The Roman Breviary dev module did not load.</p></div>`;
+                    `<div class="office-container"><h3>1962 Breviary unavailable</h3><p>The Breviary module did not load.</p></div>`;
             }
             console.warn('[roman-breviary-dev] RomanBreviary1960DevSlice module unavailable.');
             return;
@@ -4393,7 +4393,7 @@ async function renderRomanBreviary() {
     const display = document.getElementById('office-display');
     if (!display) return;
     if (!window.RomanBreviary1960DevSlice || typeof window.RomanBreviary1960DevSlice.mountDevSlice !== 'function') {
-        display.innerHTML = `<div class="office-container"><h3>Roman Breviary unavailable</h3><p>The Roman Breviary module did not load.</p></div>`;
+        display.innerHTML = `<div class="office-container"><h3>1962 Breviary unavailable</h3><p>The Breviary module did not load.</p></div>`;
         return;
     }
     const date = _clampRomanBreviaryDateToSupportedRange(_sharedOfficeNavigatorIsoDate(currentDate));
@@ -4405,7 +4405,7 @@ async function renderRomanBreviary() {
             language: getUserProfileDefaults().romanBreviaryLanguage
         });
     } catch (err) {
-        display.innerHTML = `<div class="office-container"><h3>Roman Breviary failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
+        display.innerHTML = `<div class="office-container"><h3>1962 Breviary failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
         console.error('[roman-breviary] render failed:', err);
     }
 }

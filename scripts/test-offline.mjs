@@ -94,7 +94,7 @@ async function tradition(name, familyButton, waitText, steps = []) {
   if (process.env.DEBUG_OFFLINE) console.log('  body:', (await page.evaluate(() => document.body.innerText)).slice(0, 300).replace(/\s+/g, ' '));
   check(txt.length > 300 && waitText.test(txt), `${name} offline: ${txt.slice(0, 70).replace(/\s+/g, ' ')}...`);
 }
-await tradition('latin-catholic', 'western', /Roman Breviary|Matutinum|Laudes|Deus/);
+await tradition('latin-catholic', 'western', /1962 Breviary|Matutinum|Laudes|Deus/);
 await tradition('anglican', 'western', /Psalm|Lord|Morning|Evening|Prayer/);
 await tradition('eastern-orthodox', 'eastern', /Lord|Glory|Amen|Psalm|Trisagion|Holy/, [/^\s*begin/]);
 await tradition('church-of-the-east', 'eastern', /Lord|Glory|Amen|Psalm|Ramsha|Holy/, [/Assyrian Church/, /^\s*begin/]);

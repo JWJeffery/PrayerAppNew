@@ -150,7 +150,7 @@
       return `<div class="rb1960-nocturn-group"><h3 class="rb1960-nocturn-heading">${esc(group.nocturnLabel)}</h3>${blocksHtml}</div>`;
     }).join('');
     return `<div class="office-container rb1960-dev-slice">`+
-      `<h2>Roman Breviary 1960/1962 — ${esc(envelope.context.hour_label)}</h2>`+
+      `<h2>1962 Breviary — ${esc(envelope.context.hour_label)}</h2>`+
       `<p class="rb1960-context"><strong>${esc(envelope.context.native_label||'')}</strong></p>${groupsHtml}</div>`;
   }
 
@@ -208,7 +208,7 @@
       try{
         envelope=await resolveDevSliceOffice(opts);
       }catch(err){
-        target.innerHTML=`<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${esc(err.message)}</p></div>`;
+        target.innerHTML=`<div class="office-container"><h3>1962 Breviary failed</h3><p>${esc(err.message)}</p></div>`;
         throw err;
       }
       target.innerHTML=renderResolvedOfficeHtml(envelope);
