@@ -1020,7 +1020,7 @@
         } else if (N(flcrank) === N(flrank)) {
           // "flattened" ranks equal => a capitulo
           ctx.commemoratio = ctx.winner;
-          ctx.communeHash = (/trident/i.test(version) || N(flrank) >= 5) && T(ctx.commune) ? off(ss.officestring('Latin', ctx.commune, 0)) : EMPTY;
+          ctx.communeHash = (/trident/i.test(version) || N(flrank) >= 5) && T(ctx.commune) ? off(ss.officestring(ctx.lang1, ctx.commune, 0)) : EMPTY;
           ctx.tomorrowname[2] = `Commemoratio: ${S(wrank[0])}`;
           const ch = ctx.communeHash;
           ctx.antecapitulum = winnerH.has('Ant Vespera 3') ? winnerH.get('Ant Vespera 3') : winnerH.has('Ant Vespera') ? winnerH.get('Ant Vespera') : ch.has('Ant Vespera 3') ? ch.get('Ant Vespera 3') : ch.has('Ant Vespera') ? ch.get('Ant Vespera') : '';
@@ -1169,7 +1169,7 @@
 
       if (T(ctx.winner)) {
         const flag = /tempora/i.test(ctx.winner) && ctx.vespera === 1 ? 1 : 0;
-        ctx.winnerHash = off(ss.officestring('Latin', ctx.winner, flag));
+        ctx.winnerHash = off(ss.officestring(ctx.lang1, ctx.winner, flag));
         ctx.rule = S(ctx.winnerHash.get('Rule'));
         if (/12-28/.test(ctx.winner) && ctx.dayofweek === 0) ctx.rule = ctx.rule.replace(/no Te Deum/, '');
       }
@@ -1189,7 +1189,7 @@
 
       if (T(ctx.commemoratio)) {
         const flag = /tempora/i.test(ctx.commemoratio) && ctx.tvesp === 1 ? 1 : 0;
-        ctx.commemoratioHash = off(ss.officestring('Latin', ctx.commemoratio, flag));
+        ctx.commemoratioHash = off(ss.officestring(ctx.lang1, ctx.commemoratio, flag));
         const clear = () => {
           ctx.commemoratio = '';
           ctx.commemoratioHash = EMPTY;
@@ -1204,7 +1204,7 @@
       if (/monastic/i.test(version) && /(?:Pasc|Pent)/.test(S(ctx.scriptura)) && month < 11 && !/Vigilia/.test(S(ctx.dayname[1])) && ctx.dayofweek > 0) ctx.scriptura = '';
 
       if (T(ctx.scriptura)) {
-        ctx.scripturaHash = off(ss.officestring('Latin', ctx.scriptura));
+        ctx.scripturaHash = off(ss.officestring(ctx.lang1, ctx.scriptura));
         if (!T(ctx.dayname[2]) && !/Nat0[12345]/.test(ctx.scriptura)) {
           ctx.dayname[2] = `Scriptura: ${S(ctx.scripturaHash.get('Rank'))}  ${ctx.scriptura}`.replace(/;;.*/s, '');
         }
@@ -1213,7 +1213,7 @@
       if (emberday()) ctx.transfervigil = '';
 
       if (T(ctx.commune)) {
-        ctx.communeHash = off(ss.officestring('Latin', ctx.commune));
+        ctx.communeHash = off(ss.officestring(ctx.lang1, ctx.commune));
         if (/C10/.test(ctx.commune)) {
           ctx.rule += 'ex ' + ctx.C10;
           ctx.rule = ctx.rule.replace(/Oratio Dominica/gi, '');

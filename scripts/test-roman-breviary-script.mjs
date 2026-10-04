@@ -12,6 +12,7 @@ const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i > -1 
 const from = arg('from', '2026-01-01'), to = arg('to', '2026-12-31');
 const horas = arg('hora', 'Laudes').split(',');
 const chunk = Number(arg('chunk', '40'));
+const language = arg('lang', 'Latin');
 const verbose = process.argv.includes('--verbose');
 
 function* dates(a, b) { const d = new Date(a + 'T00:00:00Z'), e = new Date(b + 'T00:00:00Z'); while (d <= e) { yield d.toISOString().slice(0, 10); d.setUTCDate(d.getUTCDate() + 1); } }
@@ -28,11 +29,12 @@ function segments(arr) {
 }
 
 const cal = RB.createCalendar(createNodeStore());
+cal.ctx.lang1 = cal.ctx.lang2 = language;
 const hours = RB.createHours(cal);
 let days = 0, daysBad = 0, unported = {}, segBad = {}, segTotal = {}, samples = [];
 for (let i = 0; i < all.length; i += chunk) {
   const part = all.slice(i, i + chunk);
-  const rows = runScripts(part, horas);
+  const rows = runScripts(part, horas, { language });
   for (const r of rows) {
     days++;
     const iso = part.find((x) => toO(x) === r.date);

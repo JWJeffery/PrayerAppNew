@@ -75,9 +75,16 @@ export function installPatched() {
   const horas = fs.readFileSync(path.join(HORAS_DIR, 'horas.pl'), 'utf8');
   if (off.split(TARGET).length !== 2 || off.split(REQ).length !== 2) throw new Error('officium.pl injection targets not found exactly once');
   if (horas.split(PRINT).length !== 2) throw new Error('horas.pl print_content target not found exactly once');
-  fs.writeFileSync(path.join(HORAS_DIR, 'horas_script.pl'), horas.replace(PRINT, DUMP));
+  // Several test processes may run at once: write each patched copy atomically and only when it changed.
+  const put = (file, content) => {
+    if (fs.existsSync(file) && fs.readFileSync(file, 'utf8') === content) return;
+    const tmp = `${file}.${process.pid}.tmp`;
+    fs.writeFileSync(tmp, content);
+    fs.renameSync(tmp, file);
+  };
+  put(path.join(HORAS_DIR, 'horas_script.pl'), horas.replace(PRINT, DUMP));
   const script = path.join(HORAS_DIR, 'officium_script.pl');
-  fs.writeFileSync(script, off.replace(REQ, 'require "$Bin/horas_script.pl";').replace(TARGET, LOOP));
+  put(script, off.replace(REQ, 'require "$Bin/horas_script.pl";').replace(TARGET, LOOP));
   return script;
 }
 
@@ -87,7 +94,7 @@ export function runScripts(isoDates, horas = ['Laudes'], opts = {}) {
   const script = installPatched();
   const raw = execFileSync(
     'perl',
-    [script, 'version=Rubrics 1960', 'command=prayLaudes', `date=${toO(isoDates[0])}`, 'lang1=Latin', 'lang2=Latin', 'dioecesis=Generale'],
+    [script, 'version=Rubrics 1960', 'command=prayLaudes', `date=${toO(isoDates[0])}`, `lang1=${opts.language || 'Latin'}`, `lang2=${opts.language || 'Latin'}`, 'dioecesis=Generale'],
     {
       cwd: ENGINE_ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 1024,
       env: { ...process.env, PERL5LIB: 'web/cgi-bin:web/DivinumOfficium', DO_DATES: isoDates.map(toO).join(','), DO_HORAS: horas.join(','), DO_HTML: opts.html ? '1' : '' }

@@ -38,6 +38,8 @@
     "test:roman-breviary-reader": "node scripts/test-roman-breviary-reader.mjs",
     "test:roman-breviary-calendar": "node scripts/test-roman-breviary-calendar.mjs",
     "test:roman-breviary-script": "node scripts/test-roman-breviary-script.mjs",
+    "test:roman-breviary-render": "node scripts/test-roman-breviary-render.mjs",
+    "test:roman-breviary-blocks": "node scripts/test-roman-breviary-blocks.mjs",
     "bible:active-text:collate": "node scripts/run-bible-active-text-collation.mjs",
     "bible:text-repair": "node scripts/run-bible-text-mass-repair.mjs"
   },

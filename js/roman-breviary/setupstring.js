@@ -425,14 +425,46 @@
       const text = store.horas(lang, fname);
       let sections = new Map();
       if (text !== undefined) sections = parseFile(doRead(text), fname.replace(/\.txt$/, ''));
-      if (sections.size === 0) return null;
-      // Latin has no lower layer: only the preamble gains a newline when present, and an
-      // [Officium] section overrides the first field of [Rank].
-      if (sections.has('__preamble')) sections.set('__preamble', sections.get('__preamble') + '\n');
-      if (sections.has('Officium')) {
-        const newrank = perlSplit(sections.get('Rank'), ';;');
-        newrank[0] = S(sections.get('Officium')).replace(/\s+$/, '');
-        sections.set('Rank', newrank.join(';;'));
+      if (lang === 'Latin') {
+        if (sections.size === 0) return null;
+        // Latin has no lower layer: only the preamble gains a newline when present, and an
+        // [Officium] section overrides the first field of [Rank].
+        if (sections.has('__preamble')) sections.set('__preamble', sections.get('__preamble') + '\n');
+        if (sections.has('Officium')) {
+          const newrank = perlSplit(sections.get('Rank'), ';;');
+          newrank[0] = S(sections.get('Officium')).replace(/\s+$/, '');
+          sections.set('Rank', newrank.join(';;'));
+        }
+      } else {
+        // The fallback language (English) layers on top of Latin: whatever the translation lacks is
+        // taken from the Latin file, and the rank always stays the Latin one (only the name is the
+        // translation's own).
+        const latin = loadParsed('Latin', fname);
+        const base = latin ? new Map(latin) : new Map();
+        if (sections.size > 0) {
+          for (const key of [...sections.keys()]) {
+            const hm = /^Hymnus (.*)/.exec(key);
+            if (hm && !sections.has('HymnusM ' + hm[1])) sections.set('HymnusM ' + hm[1], sections.get(key));
+          }
+          if (S(sections.get('__preamble')) !== S(base.get('__preamble'))) {
+            sections.set('__preamble', S(sections.get('__preamble')) + '\n' + S(base.get('__preamble')));
+          }
+          for (const k of base.keys()) if (!T(sections.get(k))) sections.set(k, base.get(k));
+          const baserank = perlSplit(S(base.get('Rank')), ';;');
+          if (baserank.length) {
+            const newrank = perlSplit(S(sections.get('Rank')), ';;');
+            const office = S(sections.get('Officium')).replace(/\s+$/, '');
+            baserank[0] = office || newrank[0];
+            sections.set('Rank', baserank.join(';;'));
+          } else if (sections.has('Officium')) {
+            const newrank = perlSplit(S(sections.get('Rank')), ';;');
+            newrank[0] = S(sections.get('Officium')).replace(/\s+$/, '');
+            sections.set('Rank', newrank.join(';;'));
+          }
+        } else {
+          sections = base;
+        }
+        if (sections.size === 0) return null;
       }
       cache.set(fullpath, sections);
       return sections;
@@ -522,7 +554,7 @@
     function setupstring(lang, ofname, mode) {
       if (mode === undefined) mode = RESOLVE_ALL;
       let fname = ofname;
-      if (lang === 'Latin') fname = checklatinfile(ofname).file;
+      fname = checklatinfile(ofname).file;
       const parsed = loadParsed(lang, fname);
       if (!parsed) return null;
       const fullpath = lang + '/' + fname;

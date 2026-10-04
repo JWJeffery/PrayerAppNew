@@ -12,18 +12,20 @@ const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i > -1 
 const from = arg('from', '2026-01-01'), to = arg('to', '2026-12-31');
 const horas = arg('hora', 'Laudes').split(',');
 const chunk = Number(arg('chunk', '30'));
+const language = arg('lang', 'Latin');
 const show = Number(arg('show', '3'));
 
 function* dates(a, b) { const d = new Date(a + 'T00:00:00Z'), e = new Date(b + 'T00:00:00Z'); while (d <= e) { yield d.toISOString().slice(0, 10); d.setUTCDate(d.getUTCDate() + 1); } }
 const all = [...dates(from, to)];
 
 const cal = RB.createCalendar(createNodeStore());
+cal.ctx.lang1 = cal.ctx.lang2 = language;
 const hours = RB.createHours(cal);
 const renderer = RB.createRenderer(hours);
 const stripWrap = (h) => h.slice(h.indexOf('<TR>'), h.lastIndexOf('</TABLE>'));
 let records = 0, bad = 0, shown = 0;
 for (let i = 0; i < all.length; i += chunk) {
-  const rows = runScripts(all.slice(i, i + chunk), horas, { html: true });
+  const rows = runScripts(all.slice(i, i + chunk), horas, { html: true, language });
   for (const o of rows) {
     records++;
     let js;

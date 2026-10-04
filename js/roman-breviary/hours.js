@@ -66,6 +66,7 @@
     const store = cal.store;
     const { get_from_directorium } = cal.directorium;
     // Perl `-e "$datafolder/Latin/$name"`: a literal existence test, no '.txt' added
+    const LANG = () => ctx.lang1;
     const fileExists = (name) => cal.store.exists('Latin', name);
     const off = (x) => x || { has: () => false, get: () => undefined, keys: () => [], set() {}, isEmpty: true };
     let s = []; // the Perl global @s
@@ -75,15 +76,14 @@
     // ------------------------------------------------------------------ language (Latin)
     const language = {};
     function loadLanguage() {
-      language.translateMap = off(ss.setupstring('Latin', 'Psalterium/Common/Translate.txt'));
-      language.prayers = off(ss.setupstring('Latin', 'Psalterium/Common/Prayers.txt'));
-      language.preces = off(ss.setupstring('Latin', 'Psalterium/Special/Preces.txt'));
-      const alleluia = (S(language.prayers.get('Alleluia')).replace(/^v\. (.*?)\..*/s, '$1'));
-      language.alleluiaWord = alleluia;
-      const latin = alleluia.toLowerCase();
-      // Perl builds the list from every language in play (Latin, English fallback).
-      const eng = off(ss.setupstring('English', 'Psalterium/Common/Prayers.txt'));
-      const engWord = S(eng.get('Alleluia')).replace(/^v\. (.*?)\..*/s, '$1').toLowerCase();
+      language.translateMap = off(ss.setupstring(LANG(), 'Psalterium/Common/Translate.txt'));
+      language.prayers = off(ss.setupstring(LANG(), 'Psalterium/Common/Prayers.txt'));
+      language.preces = off(ss.setupstring(LANG(), 'Psalterium/Special/Preces.txt'));
+      const wordOf = (prayers) => S(prayers.get('Alleluia')).replace(/^v\. (.*?)\..*/s, '$1');
+      language.alleluiaWord = wordOf(language.prayers);
+      // Perl builds the list from every language in play (Latin, the chosen language, English fallback).
+      const latin = wordOf(off(ss.setupstring('Latin', 'Psalterium/Common/Prayers.txt'))).toLowerCase();
+      const engWord = wordOf(off(ss.setupstring('English', 'Psalterium/Common/Prayers.txt'))).toLowerCase();
       const alts = [latin, engWord].filter((x, i, a) => a.indexOf(x) === i).join('|') + '|allel[uú][ij]a';
       language.alleluiaRe = alts;
     }
@@ -103,6 +103,13 @@
       const u = alleluia();
       const l = u.toLowerCase();
       return `${u}, * ${l}, ${l}.`;
+    }
+    // process_inline_alleluias: unbracket "(Alleluia ...)" in Paschaltide, delete it otherwise
+    function process_inline_alleluias(text, paschal) {
+      const alle = '(?:' + language.alleluiaRe + ')';
+      return paschal
+        ? text.replace(new RegExp(`\\((${alle}.*?)\\)`, 'isgu'), ' $1 ')
+        : text.replace(new RegExp(`\\(${alle}.*?\\)`, 'isgu'), '');
     }
     const alleluiaRegex = (flags = 'i') => new RegExp('(?:' + language.alleluiaRe + ')', flags);
     function ensure_single_alleluia(text) {
@@ -214,7 +221,7 @@
       if (ind > -1) {
         if (/Source/i.test(comment) && T(ctx.votive) && !/hodie/i.test(ctx.votive)) ind = 7;
         label = translate(label);
-        const cm = off(ss.setupstring('Latin', 'Psalterium/Comment.txt'));
+        const cm = off(ss.setupstring(LANG(), 'Psalterium/Comment.txt'));
         const comm = perlSplit(S(cm.get(comment)), /\n/);
         comment = comm[ind];
         if (T(prefix)) comment = `${prefix} ${comment}`;
@@ -289,7 +296,7 @@
             if (ctype === 'vide' && !T(flag)) break;
             const fn = m[2];
             cn = /^Sancti/i.test(fn) ? fn : subdirname('Commune') + fn;
-            com = off(ss.setupstring('Latin', `${cn}.txt`));
+            com = off(ss.setupstring(LANG(), `${cn}.txt`));
             continue;
           } else break;
         }
@@ -326,7 +333,7 @@
     }
 
     function getfrompsalterium(item, ind) {
-      const cm = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+      const cm = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
       const name = gettempora('getfrompsalterium major') + ` ${item}`;
       let w = cm.get(`${name} ${ind}`);
       if (!T(w)) w = cm.get(`${name} 1`);
@@ -339,7 +346,7 @@
       const key = `seant${String(ctx.month).padStart(2, '0')}-${String(ctx.day).padStart(2, '0')}`;
       const d = get_from_directorium('stransfer', ctx.version, key, ctx.year);
       if (T(d)) {
-        const w = off(ss.setupstring('Latin', `Tempora/${d}.txt`));
+        const w = off(ss.setupstring(LANG(), `Tempora/${d}.txt`));
         return S(w.get('Ant 3'));
       }
       return '';
@@ -405,7 +412,7 @@
         if (entries.length) {
           for (let commemo of entries) {
             if (!fileExists(commemo) && !/txt$/i.test(commemo)) commemo = commemo + '.txt';
-            const c = off(ss.officestring('Latin', commemo, 0));
+            const c = off(ss.officestring(LANG(), commemo, 0));
             const cr = perlSplit(S(c.get('Rank')), ';;');
             if (N(cr[2]) >= rl || /in.*Octav/i.test(S(c.get('Rank'))) || /octav/i.test(checkcommemoratio(c))) return 0;
           }
@@ -440,7 +447,7 @@
           } else if ((ctx.commemoentries || []).length) {
             for (let commemo of ctx.commemoentries) {
               if (!fileExists(commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
-              const c = off(ss.officestring('Latin', commemo, 0));
+              const c = off(ss.officestring(LANG(), commemo, 0));
               const cr = perlSplit(S(c.get('Rank')), ';;');
               if (N(cr[2]) >= ranklimit || /Octav/i.test(S(c.get('Rank'))) || /octav/i.test(checkcommemoratio(c))) dominicales = 0;
             }
@@ -461,7 +468,7 @@
       else if (horaName === 'Completorium') { src = 'Minor'; key = 'Dominicales'; }
       else if (flag) { throw new Error('Prima preces not ported yet'); }
       else { src = 'Prima'; key = 'feriales Prima'; }
-      const brevis = off(ss.setupstring('Latin', `Psalterium/Special/${src} Special.txt`));
+      const brevis = off(ss.setupstring(LANG(), `Psalterium/Special/${src} Special.txt`));
       return brevis.get(`Preces ${key}`);
     }
 
@@ -471,7 +478,7 @@
       const { version, dayofweek, winner, rank, laudes, day, year } = ctx;
       const hora = ctx.hora;
       const rule = S(ctx.rule), communerule = S(ctx.communerule);
-      const psalmiMap = off(ss.setupstring('Latin', 'Psalterium/Psalmi/Psalmi minor.txt'));
+      const psalmiMap = off(ss.setupstring(LANG(), 'Psalterium/Psalmi/Psalmi minor.txt'));
       let ant, psalms, prefix;
       let psalmi = perlSplit(S(psalmiMap.get(hora)), /\n/);
       let i = 2 * dayofweek;
@@ -580,7 +587,7 @@
 
     function psalmi_major() {
       const { version, rule, laudes, rank, winner, dayofweek, vespera, duplex, commune, month, day, communetype, votive } = ctx;
-      const psalmiMap = off(ss.setupstring('Latin', 'Psalterium/Psalmi/Psalmi major.txt'));
+      const psalmiMap = off(ss.setupstring(LANG(), 'Psalterium/Psalmi/Psalmi major.txt'));
       let name = ctx.hora;
       if (ctx.hora === 'Laudes') name += laudes;
       let psalmi = [];
@@ -724,7 +731,7 @@
       if (/C12/.test(S(ctx.winner)) && ctx.hora === 'Vespera') name = 'Capitulum Vespera';
       let [capit, c] = getproprium(name, 1);
       if (!T(capit)) {
-        const cm = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+        const cm = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
         name = gettempora('Capitulum major') + ` ${ctx.hora}`;
         capit = cm.get(name);
       }
@@ -733,7 +740,7 @@
     }
 
     function minor_reponsory() {
-      const capit = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+      const capit = off(ss.setupstring(LANG(), 'Psalterium/Special/Minor Special.txt'));
       let name = gettempora('Capitulum minor') + ` ${ctx.hora}`;
       if (ctx.hora === 'Completorium') name = 'Completorium';
       let resp, vers;
@@ -766,7 +773,7 @@
     }
 
     function capitulum_minor() {
-      const capitMap = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+      const capitMap = off(ss.setupstring(LANG(), 'Psalterium/Special/Minor Special.txt'));
       let name = gettempora('Capitulum minor') + ` ${ctx.hora}`;
       if (ctx.hora === 'Completorium') name = 'Completorium';
       const capit = S(capitMap.get(name)).replace(/\s*$/, '');
@@ -790,13 +797,13 @@
       if (/196/.test(version) && month === 12 && day > 8 && day < 16 && !/Newcal/.test(version) && !/12/.test(String(day))) key = 'Adv';
       if (/196/.test(version) && /Corp|Heart/.test(key)) key = '';
       if (!T(key)) return '';
-      const t = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      const t = off(ss.setupstring(LANG(), 'Psalterium/Special/Prima Special.txt'));
       return t.get(`Responsory ${key}`);
     }
 
     function capitulum_prima(withresponsory) {
       const { dayofweek, version, commune, rank } = ctx;
-      const brevis = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      const brevis = off(ss.setupstring(LANG(), 'Psalterium/Special/Prima Special.txt'));
       const wr = S(W().get('Rank'));
       const key =
         dayofweek > 0 && !/196[03]/.test(version) && /Feria|Vigilia/i.test(wr) && !/Vigilia Epi/i.test(wr) && !(/in.*Oct/i.test(wr) && /Cist/i.test(version)) &&
@@ -819,7 +826,7 @@
 
     function lectio_brevis_prima() {
       const { version } = ctx;
-      const brevisMap = off(ss.setupstring('Latin', 'Psalterium/Special/Prima Special.txt'));
+      const brevisMap = off(ss.setupstring(LANG(), 'Psalterium/Special/Prima Special.txt'));
       const name = gettempora('Lectio brevis Prima');
       let brevis = brevisMap.get(name);
       let comment = /per annum/i.test(name) ? 5 : 1;
@@ -901,18 +908,21 @@
       'vicésima prima', 'vicésima secúnda', 'vicésima tértia', 'vicésima quarta', 'vicésima quinta', 'vicésima sexta', 'vicésima séptima', 'vicésima octáva',
       'vicésima nona', 'tricésima'];
 
-    function luna_latin(month, day, year) {
+    const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    // luna(): [text, month name for the date search in English]
+    function luna_(month, day, year, language) {
       const epact2008 = 23;
       const edays = perl_date_to_days(1, 0, 2008);
       const lunarmonth = 29.53059;
+      const sfx = (n) => (n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th');
       const t = perl_date_to_days(day, month - 1, year) - edays + epact2008;
       const mult = Math.floor(t / lunarmonth);
       let dist = Math.floor(t - mult * lunarmonth - 0.25);
       if (dist <= 0) dist = 30 + dist;
-      return `Luna ${ORDINALS[dist - 1]}. Anno ${year}\n`;
+      if (/Latin/i.test(language)) return [`Luna ${ORDINALS[dist - 1]}. Anno ${year}\n`, ' '];
+      return [`${MONTHS_EN[month - 1]} ${day}${sfx(day)} ${year}. The ${dist}${sfx(dist)} day of the Moon.`, MONTHS_EN[month - 1]];
     }
-
-    function gregor_latin(month, day, year) {
+    function gregor(month, day, year, language) {
       const golden = year % 19;
       const epact = [29, 10, 21, 2, 13, 24, 5, 16, 27, 8, 19, 30, 11, 22, 3, 14, 25, 6, 17];
       const om = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 100];
@@ -932,15 +942,21 @@
       while (num < yday) { num += om[i]; i++; }
       num -= om[i - 1];
       const gday = yday - num;
-      return `Luna ${ORDINALS[gday - 1]} Anno Dómini ${year}\n`;
+      if (/Latin/i.test(language)) return [`Luna ${ORDINALS[gday - 1]} Anno Dómini ${year}\n`, ' '];
+      day = leapday || day; // recover the English date in leap years
+      const sfx = (n) => (n > 3 && n < 21 ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th');
+      return [`${MONTHS_EN[month - 1]} ${day}${sfx(day)} ${year}, the ${gday}${sfx(gday)} day of the Moon,`, MONTHS_EN[month - 1]];
     }
-
     function martyrologium() {
       const { version, year, month, day, dayofweek } = ctx;
+      const latin = /Latin/i.test(LANG());
       let t = '';
       const a = D.getweek(day, month, year, 1) + '-' + ((dayofweek + 1) % 7);
-      let am = off(ss.setupstring('Latin', 'Martyrologium1960/Mobile.txt'));
-      if (!am.has(a) && !am.keys().length) am = off(ss.setupstring('Latin', 'Martyrologium/Mobile.txt'));
+      let am = off(ss.setupstring(LANG(), 'Martyrologium/Mobile.txt'));
+      if (latin) {
+        am = off(ss.setupstring(LANG(), 'Martyrologium1960/Mobile.txt'));
+        if (!am.has(a) && !am.keys().length) am = off(ss.setupstring(LANG(), 'Martyrologium/Mobile.txt'));
+      }
       let mobile = '';
       let hd = 0;
       if (am.has(a)) mobile = `${am.get(a)}\n`;
@@ -951,12 +967,22 @@
       const fname = D.nextday(month, day, year);
       const [m, d] = fname.split('-').map(Number);
       const y = m === 1 && d === 1 ? year + 1 : year;
-      let path = `Martyrologium1960/${fname}.txt`;
-      if (!store.exists('Latin', path)) path = `Martyrologium/${fname}.txt`;
-      const lines = RB.doRead(store.horas('Latin', path));
+      let path = `Martyrologium/${fname}.txt`;
+      if (latin && store.exists('Latin', `Martyrologium1960/${fname}.txt`)) path = `Martyrologium1960/${fname}.txt`;
+      // checkfile(): the chosen language's file, else Latin
+      const raw = store.horas(LANG(), path) !== undefined ? store.horas(LANG(), path) : store.horas('Latin', path);
+      let lines = RB.doRead(raw);
       if (lines.length) {
-        const luna = year >= 1900 && year < 2200 ? gregor_latin(m, d, y) : luna_latin(m, d, y);
-        lines[0] += ` ${luna}`;
+        const [luna, mo] = year >= 1900 && year < 2200 ? gregor(m, d, y, LANG()) : luna_(m, d, y, LANG());
+        if (latin) lines[0] += ` ${luna}`;
+        else {
+          let found = false;
+          const re = new RegExp(`^U[p]+on.*?${mo}[, ]*`, 'i');
+          for (let k = 0; k < lines.length; k++) {
+            if (re.test(lines[k])) { lines[k] = lines[k].replace(re, `${luna} `); found = true; break; }
+          }
+          if (!found) lines = [luna, '_\n', ...lines];
+        }
         let prefix = 'v. ';
         for (const line of lines) {
           if (line.length > 3 && !/^\/\:/.test(line) && !/\([,;:]+[zZ]?\)/.test(line)) t += `${prefix}${line}\n`;
@@ -1034,7 +1060,7 @@
         section = '#' + section;
       }
       if (T(hymnsource)) {
-        const h = off(ss.setupstring('Latin', `Psalterium/Special/${hymnsource} Special.txt`));
+        const h = off(ss.setupstring(LANG(), `Psalterium/Special/${hymnsource} Special.txt`));
         name = tryoldhymn(h, name);
         hymn = h.get(name);
       }
@@ -1051,7 +1077,7 @@
       const { month, day, winner, version, vespera } = ctx;
       let ant, duplexf;
       if (month === 12 && day > 16 && day < 24 && /tempora/i.test(S(winner))) {
-        const specials = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+        const specials = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
         if (ctx.hora === 'Laudes' && (day === 21 || (day === 23 && !/Praedicatorum/.test(version)))) ant = specials.get(`Adv Ant ${day}L`);
         else if (ctx.hora === 'Vespera') { ant = specials.get(`Adv Ant ${day}`); duplexf = 1; }
       } else if (/^Sancti/.test(S(winner)) && !/Trident/.test(version) && vespera === 3) {
@@ -1073,7 +1099,7 @@
           ant = parts[0];
           ant2 = parts[1];
         } else {
-          const a = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+          const a = off(ss.setupstring(LANG(), 'Psalterium/Special/Minor Special.txt'));
           ant = a.get('Ant 4');
         }
       } else {
@@ -1101,7 +1127,7 @@
     }
     function papal_prayer(plural, klass, name, type) {
       type = type || 'Oratio';
-      const common = off(ss.setupstring('Latin', 'Commune/C4.txt'));
+      const common = off(ss.setupstring(LANG(), 'Commune/C4.txt'));
       const num = plural ? 91 : 9;
       let prayer = S(common.get(`${type}${num}`));
       prayer = prayer.replace(/ N\.([a-z ]+N\.)*/, () => ' ' + name);
@@ -1110,7 +1136,7 @@
       return prayer;
     }
     function papal_antiphon_dum_esset() {
-      return off(ss.setupstring('Latin', 'Commune/C4.txt')).get('Ant 3 summi Pontificis');
+      return off(ss.setupstring(LANG(), 'Commune/C4.txt')).get('Ant 3 summi Pontificis');
     }
 
     // Collects and commemorations ---------------------------------------------------
@@ -1138,7 +1164,7 @@
         const substitutions = m[4];
         item = item.replace(/\s*$/, '');
         if (/^feria$/i.test(file)) {
-          const sm = off(ss.setupstring('Latin', 'Psalterium/Major Special.txt'));
+          const sm = off(ss.setupstring(LANG(), 'Psalterium/Major Special.txt'));
           let a = chompd(sm.get(`Day${dayofweek} Ant ${ind}`));
           if (!T(a)) a = `Day${dayofweek} Ant ${ind} missing`;
           let v = chompd(sm.get(`Day${dayofweek} Versum ${ind}`));
@@ -1148,7 +1174,7 @@
           continue;
         }
         if (/Pasc/i.test(S(ctx.dayname[0]))) file = file.replace(/(C[23])/g, '$1p');
-        sec = off(ss.setupstring('Latin', `${file}.txt`));
+        sec = off(ss.setupstring(LANG(), `${file}.txt`));
         let mm;
         if ((mm = /(commemoratio|Octava)/i.exec(item))) {
           const ita = mm[1];
@@ -1177,14 +1203,14 @@
             if (/^C[1-3]a?$/.test(f) && /Pasc/i.test(S(ctx.dayname[0]))) f += 'p';
             f = `${f}.txt`;
             if (/^C/.test(f)) f = subdirname('Commune') + f;
-            c = off(ss.setupstring('Latin', f));
+            c = off(ss.setupstring(LANG(), f));
             let rm2;
             if ((rm2 = /;;(ex|vide)\s+(.*)\s*$/i.exec(S(c.get('Rank'))))) {
               let f2 = rm2[2];
               if (/^C[1-3]a?$/.test(f2) && /Pasc/i.test(S(ctx.dayname[0]))) f2 += 'p';
               f2 = `${f2}.txt`;
               if (/^C/.test(f2)) f2 = subdirname('Commune') + f2;
-              const c2 = off(ss.setupstring('Latin', f2));
+              const c2 = off(ss.setupstring(LANG(), f2));
               const merged = new Map();
               c.set('Oratio', T(c.get('Oratio')) ? c.get('Oratio') : c2.get('Oratio'));
               for (const i of [1, 2, 3]) {
@@ -1254,14 +1280,14 @@
       }
       if (!/\.txt$/.test(fname)) fname += '.txt';
       if (!/(Tempora|Sancti)/i.test(fname)) fname = `Sancti/${fname}`;
-      const w = off(ss.setupstring('Latin', fname));
+      const w = off(ss.setupstring(LANG(), fname));
       const wrank = perlSplit(S(w.get('Rank')), ';;');
       const vigilString = translate('Vigil');
       let wv;
       if (new RegExp(vigilString, 'i').test(S(w.get('Rank')))) {
         wv = w.get('Oratio');
         if (!T(wv) && /(?:ex|vide) C1v/.test(S(w.get('Rank')))) {
-          const com = off(ss.setupstring('Latin', subdirname('Commune') + 'C1v.txt'));
+          const com = off(ss.setupstring(LANG(), subdirname('Commune') + 'C1v.txt'));
           wv = com.get('Oratio');
           wv = replaceNdot(wv, w.get('Name'));
         }
@@ -1271,7 +1297,7 @@
       if (new RegExp(vigilString, 'i').test(S(w.get('Rank')))) c = c.replace(/\:.*/, `: ${S(wrank[0])}`);
       let m;
       if ((m = /(\!.*?\n)(.*)/s.exec(S(wv)))) { c = m[1]; wv = m[2]; }
-      const p = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+      const p = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
       let a = S(p.get('Feria Ant 2'));
       const v = S(p.get('Feria Versum 2'));
       a = a.replace(/\s*\*\s*/, ' ');
@@ -1279,7 +1305,7 @@
     }
 
     function getcommemoratio(wday, ind) {
-      const w = off(ss.officestring('Latin', wday, ind === 1 ? 1 : 0));
+      const w = off(ss.officestring(LANG(), wday, ind === 1 ? 1 : 0));
       let c = off(null);
       const { rule, version, rank, winner } = ctx;
       let rm;
@@ -1295,7 +1321,7 @@
         if (/^C[1-3](?![v\d])/.test(file) && /Pasc/i.test(S(ctx.dayname[0]))) file = file.replace(/p?$/, 'p');
         file = `${file}.txt`;
         if (/^C/.test(file)) file = subdirname('Commune') + file;
-        c = off(ss.setupstring('Latin', file));
+        c = off(ss.setupstring(LANG(), file));
         if (/C10/.test(S(ctx.cwinner)) && /C6/.test(file)) c.set('Versum 3', c.get('Versum 1'));
         let m2;
         if ((m2 = /;;(ex|vide)\s+(.*)\s*$/i.exec(S(c.get('Rank'))))) {
@@ -1303,7 +1329,7 @@
           if (/^C[1-3](?![v\d])/.test(f2) && /Pasc/i.test(S(ctx.dayname[0]))) f2 = f2.replace(/p?$/, 'p');
           f2 = `${f2}.txt`;
           if (/^C/.test(f2)) f2 = subdirname('Commune') + f2;
-          const c2 = off(ss.setupstring('Latin', f2));
+          const c2 = off(ss.setupstring(LANG(), f2));
           if (!T(c.get('Oratio'))) c.set('Oratio', c2.get('Oratio'));
           for (const i of [1, 2, 3]) {
             if (!T(c.get(`Ant ${i}`))) c.set(`Ant ${i}`, c2.get(`Ant ${i}`));
@@ -1317,7 +1343,7 @@
       if (/N\./.test(S(o)) && T(w.get('Name'))) o = replaceNdot(o, w.get('Name'));
       if (!T(o) && /Oratio Dominica/i.test(S(w.get('Rule')))) {
         wday = wday.replace(/\-[0-9]/, '-0').replace(/Epi1\-0/, 'Epi1-0a');
-        const w1 = off(ss.officestring('Latin', wday, 0));
+        const w1 = off(ss.officestring(LANG(), wday, 0));
         o = w1.has('OratioW') && w1.get('OratioW') !== undefined ? w1.get('OratioW') : w1.get('Oratio');
       }
       if (!T(o)) o = w.get(`Oratio ${ind}`) || w.get(`Oratio ${4 - ind}`) || c.get('Oratio');
@@ -1336,7 +1362,7 @@
       if (!T(a) || (/Epi1\-0a|01-12t/.test(S(winner)) && ctx.hora === 'Vespera' && ctx.vespera === 3)) {
         if (!/Epi[2-6]-0/.test(wday)) a = w.get(`Ant ${4 - ind}`);
         else {
-          const v = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+          const v = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
           a = v.get('Feria Ant 3');
         }
       }
@@ -1346,7 +1372,7 @@
       if (T(popeclass) && /C/.test(popeclass) && ind === 3) a = papal_antiphon_dum_esset();
       if (/tempora/i.test(wday)) {
         if (ctx.month === 12 && ((ctx.hora === 'Vespera' && ctx.day >= 17 && ctx.day <= 23) || (ctx.hora === 'Laudes' && (ctx.day === 21 || ctx.day === 23)))) {
-          const v = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+          const v = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
           a = ctx.hora === 'Vespera' ? v.get(`Adv Ant ${ctx.day}`) : v.get(`Adv Ant ${ctx.day}L`);
         }
       }
@@ -1400,7 +1426,7 @@
         (/Quattuor/i.test(S(wh.get('Rank'))) && !/Pasc7/.test(S(ctx.dayname[0])) && !/196|cist/i.test(version) && ctx.hora === 'Vespera')) {
         let name = `${ctx.dayname[0]}-0`;
         if (/(?:Epi1|Nat)/i.test(name) && version !== 'Monastic - 1930') name = 'Epi1-0a';
-        wtmp = off(ss.setupstring('Latin', subdirname('Tempora') + `${name}.txt`));
+        wtmp = off(ss.setupstring(LANG(), subdirname('Tempora') + `${name}.txt`));
       }
       if (dayofweek > 0 && wh.has('OratioW') && N(rank) < 5) w = wtmp.get('OratioW');
       else w = wtmp.get('Oratio');
@@ -1431,7 +1457,7 @@
       }
       if (/Tempora/.test(S(ctx.winner)) && !T(w)) {
         const name = `${ctx.dayname[0]}-0`;
-        wtmp = off(ss.officestring('Latin', subdirname('Tempora') + `${name}.txt`));
+        wtmp = off(ss.officestring(LANG(), subdirname('Tempora') + `${name}.txt`));
         w = wtmp.get('Oratio');
         if (!T(w)) w = wtmp.get('Oratio 2');
       }
@@ -1537,7 +1563,7 @@
             let key = 0;
             if (!fileExists(ctx.cwinner) && !/txt$/i.test(ctx.cwinner)) ctx.cwinner += '.txt';
             c = getcommemoratio(ctx.cwinner, ctx.cvespera);
-            cobj = off(ss.officestring('Latin', ctx.cwinner, ctx.cvespera === 1 && /tempora/i.test(ctx.cwinner) ? 1 : 0));
+            cobj = off(ss.officestring(LANG(), ctx.cwinner, ctx.cvespera === 1 && /tempora/i.test(ctx.cwinner) ? 1 : 0));
             if (T(c) && T(ctx.octvespera) && ctx.octvespera !== ctx.cvespera && new RegExp(octavestring, 'i').test(c)) throw new Error('octvespera (pre-1960)');
             if (T(c)) {
               const cr = perlSplit(S(cobj.get('Rank')), ';;');
@@ -1578,7 +1604,7 @@
           for (let commemo of centries) {
             let key = 0;
             if (!fileExists(commemo) && !/txt$/i.test(commemo)) commemo += '.txt';
-            let co = off(ss.officestring('Latin', commemo, 0));
+            let co = off(ss.officestring(LANG(), commemo, 0));
             if (/in.*octavam|post Octavam Asc/i.test(S(co.get('Rank'))) && T(ctx.octvespera)) c = getcommemoratio(commemo, ctx.octvespera);
             else c = getcommemoratio(commemo, cv);
             const c2 = cv === 2 ? vigilia_commemoratio(commemo) : '';
@@ -1652,7 +1678,7 @@
       let key = 'Suffragium';
       if (comment === 2) key += ' Paschale';
       else if (comment > 2) key += ` ${ctx.hora}`;
-      const suffr = off(ss.setupstring('Latin', 'Psalterium/Special/Major Special.txt'));
+      const suffr = off(ss.setupstring(LANG(), 'Psalterium/Special/Major Special.txt'));
       let sf = suffr.get(key);
       if (T(ctx.churchpatron)) sf = S(sf).replace(/r\. N\./, ctx.churchpatron);
       return [sf, comment];
@@ -1778,7 +1804,7 @@
           continue;
         }
         if (/Lectio brevis/i.test(item) && hora === 'Completorium') {
-          const lectio = off(ss.setupstring('Latin', 'Psalterium/Special/Minor Special.txt'));
+          const lectio = off(ss.setupstring(LANG(), 'Psalterium/Special/Minor Special.txt'));
           s.push(item, lectio.get('Lectio Completorium'));
           continue;
         }
@@ -1872,7 +1898,7 @@
 
         if (/Conclusio/i.test(item) && hora === 'Laudes' && (ctx.month === 4 || !/1960/.test(ctx.version)) &&
           (/Laudes Litania/i.test(S(ctx.rule)) || /Laudes Litania/i.test(S(off(ctx.commemoratioHash).get('Rule'))) || /Laudes Litania/i.test(S(off(ctx.scripturaHash).get('Rule'))) || flag)) {
-          const wp = off(ss.setupstring('Latin', 'Psalterium/Special/Preces.txt'));
+          const wp = off(ss.setupstring(LANG(), 'Psalterium/Special/Preces.txt'));
           const lname = 'Litania';
           s.push('$Domine exaudi', '&Benedicamus_Domino', '');
           const lit = perlSplit(S(wp.get(lname)), /\n\n/);
@@ -1930,7 +1956,7 @@
       cal, ctx, ss, S, N, T, perlSplit, off, setfont, FONT, chompd, push: (...x) => s.push(...x),
       translate, prayer, gettempora, getproprium, setcomment, antetpsalm, checkmtv, hymnshiftFns, postprocess_ant,
       ensure_single_alleluia, alleluia_required, alleluia_ant, replaceNdot, fileExists,
-      preces, language, getantvers, loadLanguage
+      preces, language, getantvers, loadLanguage, LANG, process_inline_alleluias
     };
     const matins = RB.createMatins(api);
     return { script, specials, getordinarium, translate, prayer, loadLanguage, ctx, getantvers, getproprium, getfrompsalterium, postprocess_ant, matins, api };

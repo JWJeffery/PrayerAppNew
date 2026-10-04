@@ -39,7 +39,7 @@
 
     // ------------------------------------------------------------------ language tables
     // Latin only for now; "lang" is carried through so English can be added without reshaping.
-    const lang = 'Latin';
+    const getLang = () => ctx.lang1;
     const tables = {};
     function loadTables() {
       api.loadLanguage();
@@ -60,7 +60,7 @@
     const prayerText = (name) => api.prayer(name);
     const translate = (name) => api.translate(name);
     const rubric = (name) => {
-      const r = off(ss.setupstring('Latin', 'Psalterium/Common/Rubricae.txt')).get(name);
+      const r = off(ss.setupstring(getLang(), 'Psalterium/Common/Rubricae.txt')).get(name);
       return T(r) ? r : name;
     };
     const prex = (name) => {
@@ -156,7 +156,8 @@
       }
       psnum = S(psnum).replace(/^-(.*)/, '$1');
       const fname = `Psalm${psnum}.txt`;
-      let lines = RB.doRead(store.horas(lang, `Psalterium/Psalmorum/${fname}`));
+      const rel = `Psalterium/Psalmorum/${fname}`;
+      let lines = RB.doRead(store.horas(getLang(), rel) !== undefined ? store.horas(getLang(), rel) : store.horas('Latin', rel));
       if (!lines.length) return `Psalm${psnum} not found`;
 
       let title = `${translate('Psalmus')} ${psnum}`;
@@ -183,6 +184,8 @@
         }
       }
       lines = handleverses(lines);
+      // put initial at begin (Quicumque has no verse numbers)
+      if (SETTINGS.nonumbers || N(psnum) === 234) lines[0] = S(lines[0]).replace(/^(?=\p{L})/u, 'v. ');
       let output = `!${title}`;
       if (!(230 < N(psnum) && N(psnum) < 234)) output += ` [${++counters.psalmnum1}]`;
       if (T(source)) output += `\n!${source}`;
@@ -279,7 +282,7 @@
       line = line.slice(sigil.length);
       if (sigil === '&') {
         const m = /^(.*?)(?:[(](.*)[)])?$/s.exec(line);
-        const args = [...parseScriptArguments(m[2]), lang];
+        const args = [...parseScriptArguments(m[2]), getLang()];
         if (T(antlineIn)) args.push(S(antlineIn).replace(/^\s*Ant\. /i, ''));
         const fn = scriptFunctions[m[1]];
         if (!fn) throw new Error(`Invalid script function ${m[1]}`);
@@ -419,15 +422,13 @@
       out += topnext_cell(text, state.searchind);
       if (/%(.*?)%/.test(text)) text = activate_links(text);
 
-      const paschal = /Pasc/.test(dn0());
       const alle = tables.alleluia;
-      if (paschal) text = text.replace(new RegExp(`\\((${'(?:' + alle + ')'}.*?)\\)`, 'isgu'), ' $1 ');
-      else text = text.replace(new RegExp(`\\(${'(?:' + alle + ')'}.*?\\)`, 'isgu'), '');
+      text = api.process_inline_alleluias(text, /Pasc/.test(dn0()));
       if (/Quadp|Quad[1-5]|Quad6-[0-5]/i.test(dn0()) && !Septuagesima_vesp()) {
         text = text.replace(new RegExp(`[,.]?\\s*(?:${alle})`, 'igu'), '');
       }
       text = text.replace(/<br\/>\s*<br\/>/gi, '<br/>');
-      text = spell_var(text);
+      if (/Latin(-bea)?$/i.test(getLang())) text = spell_var(text);
       text = text.replace(/wait[0-9]+/gi, '');
       text = text.replace(/_/g, ' ');
       text = text.replace(/\{:.*?:\}/gs, '');

@@ -1,6 +1,6 @@
 // Compares blocks built from the JS engine's own cells with the audited stored manifests/units
 // (data/roman-breviary-1960-1962/manifests/<year>.json, built earlier from the Perl engine's HTML).
-// Usage: node scripts/test-roman-breviary-blocks.mjs --year 2026 [--hora Laudes,...] [--show 5]
+// Usage: node scripts/test-roman-breviary-blocks.mjs --year 2026 [--lang en] [--hora Laudes,...] [--show 5]
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import { parseOfficiumHtml } from './parse-officium-html.mjs';
@@ -13,13 +13,17 @@ const { createNodeStore } = require('../js/roman-breviary/store-node.js');
 
 const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i > -1 ? process.argv[i + 1] : d; };
 const year = arg('year', '2026');
+const langCode = arg('lang', 'la');
+const language = langCode === 'en' ? 'English' : 'Latin';
 const from = arg('from', `${year}-01-01`), to = arg('to', `${year}-12-31`);
 const KEY = { Matutinum: 'matins', Laudes: 'lauds', Prima: 'prime', Tertia: 'terce', Sexta: 'sext', Nona: 'none', Vespera: 'vespers', Completorium: 'compline' };
 const horas = arg('hora', Object.keys(KEY).join(',')).split(',');
 const show = Number(arg('show', '5'));
-const manifest = JSON.parse(fs.readFileSync(`data/roman-breviary-1960-1962/manifests/${year}.json`, 'utf8'));
+const manifest = JSON.parse(fs.readFileSync(`data/roman-breviary-1960-1962/manifests/${langCode === 'en' ? 'en/' : ''}${year}.json`, 'utf8'));
 
-const renderer = RB.createRenderer(RB.createHours(RB.createCalendar(createNodeStore())));
+const cal = RB.createCalendar(createNodeStore());
+cal.ctx.lang1 = cal.ctx.lang2 = language;
+const renderer = RB.createRenderer(RB.createHours(cal));
 const toO = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${m}-${d}-${y}`; };
 function* dates(a, b) { const d = new Date(a + 'T00:00:00Z'), e = new Date(b + 'T00:00:00Z'); while (d <= e) { yield d.toISOString().slice(0, 10); d.setUTCDate(d.getUTCDate() + 1); } }
 
@@ -32,7 +36,7 @@ for (const iso of dates(from, to)) {
     hours++;
     const { html } = renderer.render(toO(iso), hora);
     const { sections } = parseOfficiumHtml(html);
-    const { blocks } = buildBlocksAndUnits(sections, {}, 'la');
+    const { blocks } = buildBlocksAndUnits(sections, {}, langCode);
     const a = JSON.stringify(stored.blocks), b = JSON.stringify(blocks);
     if (a === b) { same++; continue; }
     // classify: same non-omitted blocks, only omitted placeholders differ?
