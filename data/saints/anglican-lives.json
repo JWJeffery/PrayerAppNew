@@ -3246,6 +3246,308 @@
     "https://en.wikipedia.org/wiki/Jerome",
     "https://www.newadvent.org/cathen/08341a.htm"
    ]
+  },
+  "UO-SIN-000126": {
+   "name": "Richard Hooker",
+   "life": "Richard Hooker was born near Exeter in 1554 and studied at Corpus Christi College, Oxford, where he became a fellow and was ordained priest in 1579. As Master of the Temple in London he found himself in public disagreement with Walter Travers, a Puritan lecturer at the same church, and the dispute led him to write Of the Laws of Ecclesiastical Polity, a long and carefully argued defence of the Church of England. He taught that Scripture, tradition and reason belong together, and he wrote in graceful English prose. He spent his last years as a country parson in Kent and died at Bishopsbourne in 1600.",
+   "period": "died 1600",
+   "place": "Exeter, Oxford, London, Bishopsbourne (Kent)",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Richard_Hooker",
+    "https://www.britannica.com/biography/Richard-Hooker"
+   ]
+  },
+  "UO-SIN-000127": {
+   "name": "Adeline Blanchard Tyler and her Companions",
+   "life": "Adeline Blanchard Tyler was born in Massachusetts in 1805 and lived in Boston as a devout Episcopalian. Widowed in 1853, she trained in nursing among the deaconesses of Kaiserswerth in Germany. In 1856 she and three other women, Caroline Guild, Evaline Black and Catherine Minard, were set apart as deaconesses, among the first in the Episcopal Church in America. Tyler ran a church-funded infirmary in Baltimore, and during the Civil War she nursed wounded Union soldiers and later led hospitals in Maryland and Pennsylvania. She finished her working life at the Midnight Mission in New York, helping women in need, and died in January 1875.",
+   "period": "died 1875",
+   "place": "Boston, Baltimore, New York",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Adeline_Blanchard_Tyler",
+    "https://livingchurch.org/2024/01/24/telling-the-story-of-our-first-deaconesses"
+   ]
+  },
+  "UO-SIN-000128": {
+   "name": "Zechariah and Elizabeth",
+   "life": "According to the Gospel of Luke, Zechariah was a priest of the order of Abijah and Elizabeth, his wife, was a descendant of Aaron. Both were righteous and elderly, and they had no children. While Zechariah was serving at the altar of incense in the Jerusalem temple, the angel Gabriel promised that Elizabeth would bear a son, John. Zechariah doubted and lost his speech until the child was born; then he wrote, His name is John, and broke into the song of praise we call the Benedictus. Elizabeth welcomed her kinswoman Mary with joy. Their son became the forerunner of Christ, John the Baptist.",
+   "period": "1st century BC to 1st century AD",
+   "place": "Judean hill country, Jerusalem",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zechariah_(New_Testament_figure)",
+    "https://en.wikipedia.org/wiki/Elizabeth_(biblical_figure)"
+   ]
+  },
+  "UO-SIN-000129": {
+   "name": "William Temple",
+   "life": "William Temple was born in 1881, the son of an earlier Archbishop of Canterbury, and studied at Balliol College, Oxford. He was a leading figure in the Workers' Educational Association, then Bishop of Manchester from 1921, Archbishop of York from 1929 and Archbishop of Canterbury from 1942. Temple believed the Church must speak about society and the economy, and his book Christianity and Social Order, published in 1942, shaped the postwar hope for fairer common life. He also championed cooperation between the churches, helping prepare the way for the World Council of Churches. He died in October 1944, worn out by wartime labour.",
+   "period": "died 1944",
+   "place": "Manchester, York, Canterbury",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/William_Temple_(archbishop)",
+    "https://www.britannica.com/biography/William-Temple"
+   ]
+  },
+  "UO-SIN-000130": {
+   "name": "Willibrord",
+   "life": "Willibrord was born about 658 in Northumbria and spent years of study in Ireland before crossing the sea to preach to the pagan Frisians. Sponsored by the Frankish leader Pepin of Herstal, he travelled to Rome, where Pope Sergius consecrated him bishop of the Frisians in 695, and he made Utrecht his base. In 698 he founded the abbey of Echternach. Persecution under the Frisian king Radbod drove him back for a time, but he returned with the support of Charles Martel and worked for a while alongside Boniface. He died at Echternach in 739 and is honoured as the apostle of the Netherlands.",
+   "period": "died 739",
+   "place": "Northumbria, Utrecht, Echternach",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Willibrord",
+    "https://www.britannica.com/biography/Saint-Willibrord"
+   ]
+  },
+  "UO-SIN-000131": {
+   "name": "Ammonius",
+   "life": "Ammonius was a hermit among the monks of the Egyptian desert at Nitria in the later fourth century, and tradition counts him among the four Tall Brothers, with Dioscorus, Eusebius and Euthymius, who were known for fasting and learning. A well-known story says that when people tried to make him a bishop, he cut off one of his own ears to show he was unfit, and threatened to cut out his tongue if they tried again. Opposed by Theophilus of Alexandria, the brothers fled to Constantinople, where John Chrysostom welcomed them. The exact dates of his life, and his identity with the earless hermit, are not certain.",
+   "period": "c. 403 (uncertain)",
+   "place": "Nitria, Egypt; Constantinople",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tall_Brothers",
+    "https://livingchurch.org/updates/nov-8-ammonius-the-earless-hermit-4th-century/"
+   ]
+  },
+  "UO-SIN-000132": {
+   "name": "Richard Rolle, Walter Hilton, and Margery Kempe",
+   "life": "Three English mystics of the fourteenth and fifteenth centuries. Richard Rolle, born in Yorkshire about 1300, left Oxford to live as a hermit, wrote The Fire of Love, and guided nuns at Hampole, where he died in the plague of 1349. Walter Hilton studied at Cambridge and became an Augustinian canon at Thurgarton in Nottinghamshire; his Scale of Perfection is a wise guide to the contemplative life, and he died in 1396. Margery Kempe, a merchant's daughter from Lynn in Norfolk and mother of fourteen children, wept and saw visions, made pilgrimages to Jerusalem, Rome and Santiago, and dictated her Book, often called the first English autobiography.",
+   "period": "died 1349, 1396, and after 1438",
+   "place": "Yorkshire, Nottinghamshire, King's Lynn",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Richard_Rolle",
+    "https://en.wikipedia.org/wiki/Walter_Hilton",
+    "https://en.wikipedia.org/wiki/Margery_Kempe",
+    "https://www.britannica.com/biography/Richard-Rolle",
+    "https://www.britannica.com/biography/Walter-Hilton",
+    "https://www.britannica.com/biography/Margery-Kempe"
+   ]
+  },
+  "UO-SIN-000133": {
+   "name": "Leo the Great",
+   "life": "Leo became bishop of Rome in 440 and held the office until his death in 461, at a time when the western empire was crumbling. His letter known as the Tome, sent against the teaching of Eutyches, set out that Christ is one person in two natures, divine and human, and the Council of Chalcedon in 451 received it with acclaim. In 452 he led an embassy that met Attila the Hun and helped turn him from Italy, and in 455 he persuaded the Vandals to spare Rome from burning. His letters and sermons made him a great teacher, and he became a Doctor of the Church in 1754.",
+   "period": "died 461",
+   "place": "Rome",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pope_Leo_I",
+    "https://www.britannica.com/biography/Saint-Leo-I"
+   ]
+  },
+  "UO-SIN-000134": {
+   "name": "Martin of Tours",
+   "life": "Martin was born about 316 in Pannonia, the son of a soldier, and was conscripted into the Roman cavalry in Gaul. Sulpicius Severus tells how at Amiens he cut his cloak in two to clothe a freezing beggar and then dreamed of Christ wearing it. He was baptised, and around 361 he left the army, saying he was a soldier of Christ. He founded a hermitage at Ligugé, the first monastery in Gaul, and in 371 was made bishop of Tours, where he also established Marmoutier. He travelled through the countryside bringing the gospel and died at Candes in 397, honoured as a saint though not a martyr.",
+   "period": "died 397",
+   "place": "Gaul (Tours, Ligugé)",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Martin_of_Tours",
+    "https://www.britannica.com/biography/Saint-Martin-of-Tours"
+   ]
+  },
+  "UO-SIN-000135": {
+   "name": "Charles Simeon",
+   "life": "Charles Simeon was born at Reading in 1759 and studied at King's College, Cambridge. From the early 1780s until his death in 1836 he was minister of Holy Trinity Church in Cambridge, a post he held for more than fifty years. His faithful preaching and his care for undergraduates made him a leader of the evangelical movement in the Church of England. He helped found the Church Missionary Society, supported the Bible Society, wrote Horae Homileticae, a vast set of sermon outlines on the whole Bible, and set up a trust to place evangelical clergy in parishes. He died in Cambridge in November 1836.",
+   "period": "died 1836",
+   "place": "Cambridge",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_Simeon",
+    "https://www.britannica.com/biography/Charles-Simeon"
+   ]
+  },
+  "UO-SIN-000136": {
+   "name": "Frances Xavier Cabrini",
+   "life": "Frances Cabrini was born in 1850 at Sant'Angelo Lodigiano in northern Italy and in 1880 founded the Missionary Sisters of the Sacred Heart of Jesus. In 1889 she arrived in New York with six sisters. Despite opposition from church leaders and prejudice against Italians, she set up schools, orphanages and hospitals for immigrants who had few friends in a strange country. In all she founded 67 institutions in Italy, the United States, Latin America and Europe, and she became an American citizen in 1909. She died in Chicago in December 1917 and was canonised in 1946, the first United States citizen to be named a saint of the Catholic Church.",
+   "period": "died 1917",
+   "place": "Italy, New York, Chicago",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Frances_Xavier_Cabrini",
+    "https://www.britannica.com/biography/Saint-Frances-Xavier-Cabrini"
+   ]
+  },
+  "UO-SIN-000138": {
+   "name": "Herman of Alaska",
+   "life": "Herman was born in Russia around 1756 and became a monk, first near Saint Petersburg and then at Valaam Monastery on Lake Ladoga. In 1793 he joined a mission of monks sent to bring the gospel to the native peoples of Alaska, arriving at Kodiak in 1794. He outlived all his companions. He retired to nearby Spruce Island, which he called New Valaam, where he lived very simply, kept a garden and taught orphaned children their prayers and church music. He defended the native people against mistreatment and tended them in epidemics. He died in 1837 and was canonised in 1970, the first Orthodox saint of North America.",
+   "period": "died 1837",
+   "place": "Valaam, Kodiak and Spruce Island, Alaska",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Herman_of_Alaska",
+    "https://www.oca.org/saints/lives/2016/08/09/102241-glorification-of-venerable-herman-of-alaska-wonderworker-of-all"
+   ]
+  },
+  "UO-SIN-000139": {
+   "name": "Margaret of Scotland",
+   "life": "Margaret was born about 1045 in Hungary, where her father Edward the Exile lived in exile from England. The family returned to England in 1057, and after the Norman Conquest she fled north and in 1070 married King Malcolm III of Scotland. A devout queen, she worked to bring Scottish church practice into line with the wider church, welcomed Benedictine monks to Dunfermline, provided ferries for pilgrims crossing the Forth, and cared for the poor. She bore eight children, among them three kings of Scotland. She died on 16 November 1093, days after hearing that her husband and eldest son had been killed near Alnwick, and was canonised in 1250.",
+   "period": "died 1093",
+   "place": "Scotland (Dunfermline)",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Saint_Margaret_of_Scotland",
+    "https://www.britannica.com/biography/Saint-Margaret-of-Scotland"
+   ]
+  },
+  "UO-SIN-000140": {
+   "name": "Hugh of Lincoln",
+   "life": "Hugh was born about 1140 at Avalon, in Burgundy, and became a Carthusian monk at the Grande Chartreuse. In 1179 King Henry II called him to England to lead the first Carthusian house, at Witham. Chosen bishop of Lincoln in 1186, he governed the largest diocese in England and began rebuilding his cathedral in the Gothic style after an earthquake. He was known for standing up to kings: he resisted demands for money and service in royal wars, and he protected Jewish people from persecution in the reign of Richard I. He died in London on 16 November 1200 and was canonised in 1220.",
+   "period": "died 1200",
+   "place": "Lincoln, Witham, Grande Chartreuse",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hugh_of_Lincoln",
+    "https://www.britannica.com/biography/Saint-Hugh-of-Lincoln"
+   ]
+  },
+  "UO-SIN-000141": {
+   "name": "Hilda of Whitby",
+   "life": "Hilda was born about 614 into the Northumbrian royal family and was baptised around 627 with her great-uncle, King Edwin. After serving as abbess at Hartlepool she founded the double monastery of Whitby about 657, ruling both monks and nuns. Bede praises her wisdom and energy, and says that all who knew her called her mother. Her abbey hosted the Synod of Whitby in 664, which settled the date of Easter for Northumbria. She encouraged the cowherd Caedmon to become a poet, and five men trained under her became bishops. She died at Whitby in 680.",
+   "period": "died 680",
+   "place": "Whitby, Northumbria",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hilda_of_Whitby",
+    "https://www.britannica.com/biography/Saint-Hilda-of-Whitby"
+   ]
+  },
+  "UO-SIN-000142": {
+   "name": "Elizabeth of Hungary",
+   "life": "Elizabeth was born in 1207, a daughter of King Andrew II of Hungary, and was brought up at the Thuringian court at the Wartburg. She married Louis IV of Thuringia when she was still very young, and their marriage was happy. After he died on his way to the Crusade in 1227, she left the court, joined a Franciscan lay community, and used her dowry to build a hospital at Marburg, where she nursed the poor and sick herself. Worn down by this work and by severe spiritual discipline, she died in 1231 at the age of twenty-four and was canonised four years later.",
+   "period": "died 1231",
+   "place": "Thuringia, Marburg",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elizabeth_of_Hungary",
+    "https://www.britannica.com/biography/Saint-Elizabeth-of-Hungary"
+   ]
+  },
+  "UO-SIN-000143": {
+   "name": "Edmund of East Anglia",
+   "life": "Edmund became king of East Anglia in 855, still a young man. When the Danish Great Army invaded his kingdom, he was defeated and killed, in 869 according to the usual reckoning, though some give 870. According to later tradition, he was put to death because he refused to renounce Christ or to accept Danish overlordship, though it is uncertain whether he fell in battle or afterwards. Memorial coins bearing his name were being minted within a generation, and his body was later taken to Bury St Edmunds, where a great abbey grew up around his shrine. For centuries he was counted among the patron saints of England.",
+   "period": "died 869 or 870",
+   "place": "East Anglia, Bury St Edmunds",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Edmund_the_Martyr",
+    "https://www.britannica.com/biography/Edmund-king-of-East-Anglia"
+   ]
+  },
+  "UO-SIN-000144": {
+   "name": "Mechthilde of Hackeborn and Gertrude the Great",
+   "life": "Mechthilde and Gertrude were Benedictine nuns at the convent of Helfta in Saxony in the thirteenth century. Mechthilde of Hackeborn, who died in 1298, directed the choir, was called the Nightingale of Helfta for her singing, and was known for her visions of Christ's love, gathered in the Book of Special Grace. Gertrude, who lived from 1256 to 1302, entered the convent school at five. In 1281 she had visions that turned her from secular learning to prayer and theology, and she wrote the Herald of Divine Love, a work centred on the heart of Christ. She is the only woman saint to be called the Great.",
+   "period": "died 1298 and 1302",
+   "place": "Helfta, Saxony",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mechthild_of_Hackeborn",
+    "https://en.wikipedia.org/wiki/Gertrude_the_Great"
+   ]
+  },
+  "UO-SIN-000145": {
+   "name": "Clive Staples Lewis",
+   "life": "C. S. Lewis was born in Belfast in 1898 and became a fellow of Magdalen College, Oxford, in 1925, and later Professor of Medieval and Renaissance Literature at Cambridge. Raised in the Church of Ireland, he turned atheist as a teenager, but in 1931, after long conversations with friends including J. R. R. Tolkien, he returned to the Christian faith. His wartime radio talks became Mere Christianity, and he wrote The Screwtape Letters, the Narnia stories and many other books. In 1956 he married Joy Davidman, whose death in 1960 he described in A Grief Observed. He died at Oxford on 22 November 1963.",
+   "period": "died 1963",
+   "place": "Belfast, Oxford, Cambridge",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/C._S._Lewis",
+    "https://www.britannica.com/biography/C-S-Lewis"
+   ]
+  },
+  "UO-SIN-000146": {
+   "name": "Clement of Rome",
+   "life": "Clement was a leader of the church at Rome at the end of the first century, remembered as one of its early bishops. He is known above all for a letter sent to the church at Corinth about the year 96, when some of its leaders had been removed from office. He urged peace and good order. This letter is one of the oldest Christian writings outside the New Testament and was once read in some churches. Later tradition says that he was banished to the Crimea under Trajan and drowned with an anchor tied to him, but this is legend and little else is certain.",
+   "period": "died c. 100",
+   "place": "Rome",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pope_Clement_I",
+    "https://www.britannica.com/biography/Saint-Clement-I"
+   ]
+  },
+  "UO-SIN-000147": {
+   "name": "Catherine of Alexandria, Barbara of Nicomedia, and Margaret of Antioch",
+   "life": "These three young women are honoured as virgin martyrs of the early fourth century, though scholars doubt that much of their stories is historical. According to tradition, Catherine of Alexandria out-argued fifty pagan philosophers, survived a spiked wheel that shattered, and was beheaded. Barbara was shut up in a tower by her father, became a secret Christian, and was killed by him, after which he was struck by lightning. Margaret of Antioch refused to marry a pagan official, was tortured, and in legend overcame a dragon. Their stories were loved throughout medieval Europe, where they stood for courage and faithfulness under persecution.",
+   "period": "c. 305 (traditional)",
+   "place": "Alexandria, Nicomedia, Antioch in Pisidia",
+   "confidence": "low",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Catherine_of_Alexandria",
+    "https://en.wikipedia.org/wiki/Saint_Barbara",
+    "https://en.wikipedia.org/wiki/Margaret_the_Virgin"
+   ]
+  },
+  "UO-SIN-000148": {
+   "name": "James Otis Sargent Huntington",
+   "life": "James Huntington was born in 1854, the son of the bishop of Central New York, and studied at Harvard. Ordained priest in 1880, he served working families in Syracuse and then the poor of New York's Lower East Side. In 1881 he and two other priests began a common life that became the Order of the Holy Cross, the first Anglican monastic community for men in the United States, and he made his life profession on 25 November 1884. He supported labour causes and Henry George's single tax. He was several times superior of the order, whose monastery stands at West Park, New York, and he died in 1935.",
+   "period": "died 1935",
+   "place": "New York (Lower East Side, West Park)",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/James_Otis_Sargent_Huntington",
+    "https://anglicanhistory.org/religious/hughson_cloister1948/02.html"
+   ]
+  },
+  "UO-SIN-000546": {
+   "name": "Sojourner Truth",
+   "life": "Sojourner Truth was born Isabella about 1797 in Ulster County, New York, into slavery, and grew up speaking Dutch. In 1826 she escaped with her infant daughter, and two years later she went to court and won back her small son Peter, who had been sold illegally. In 1843 she took the name Sojourner Truth, believing God called her to travel and preach. She spoke for the abolition of slavery and for women's rights, and her speech at the Ohio convention of 1851 became famous. During the Civil War she helped recruit Black soldiers and met President Lincoln in 1864. She died at Battle Creek, Michigan, in 1883.",
+   "period": "died 1883",
+   "place": "New York, Michigan",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sojourner_Truth",
+    "https://www.britannica.com/biography/Sojourner-Truth"
+   ]
+  },
+  "UO-SIN-000150": {
+   "name": "Virgil of Salzburg",
+   "life": "Virgil was an Irish monk, born about 700, who became abbot of Aghaboe. Around 745 he set out for the Holy Land but stayed in Frankish lands, where King Pepin welcomed him, and then went to Bavaria at the invitation of Duke Odilo. He became abbot of St Peter's at Salzburg and, about 767, bishop of the city. He built up his diocese and sent missionaries to the Slavs of Carinthia, earning the name Apostle of Carinthia.  Boniface accused him of teaching that there were lands on the opposite side of the earth, but Pope Zachary sided with Virgil. He died in 784, though some sources say 789.",
+   "period": "died 784",
+   "place": "Ireland, Salzburg",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Virgil_of_Salzburg",
+    "https://www.newadvent.org/cathen/15353d.htm"
+   ]
+  },
+  "UO-SIN-000151": {
+   "name": "Kamehameha and Emma of Hawai‘i",
+   "life": "Kamehameha IV became king of Hawai‘i in 1855 and in 1856 married Emma Rooke. Together they asked the Church of England to send clergy to Hawai‘i, and both were baptised in 1862; the king translated the Book of Common Prayer into Hawaiian. They worked to found the Queen's Hospital for the care of the sick. Their young son died in 1862, and the king died the next year at the age of twenty-nine. Emma lived on until 1885, visiting patients, raising money for St Andrew's Cathedral, founding a school for girls, and travelling to Europe and America to seek support for her church and people.",
+   "period": "died 1863 and 1885",
+   "place": "Honolulu, Hawai‘i",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kamehameha_IV",
+    "https://en.wikipedia.org/wiki/Queen_Emma_of_Hawaii"
+   ]
+  },
+  "UO-SIN-000152": {
+   "name": "Dorothy Day",
+   "life": "Dorothy Day was born in 1897 and worked as a radical journalist in New York before her life changed. After her daughter's birth she became a Catholic in 1927. With Peter Maurin she founded the Catholic Worker newspaper and movement in 1933. It opened houses of hospitality where the poor were fed and housed, and farms where people could live and work together. Day was a committed pacifist; she supported conscientious objectors, protested nuclear weapons and civil defence drills, and was jailed several times. Her autobiography, The Long Loneliness, tells her story. She died on 29 November 1980, and the Catholic Church has opened her cause for sainthood.",
+   "period": "died 1980",
+   "place": "New York",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dorothy_Day",
+    "https://www.britannica.com/biography/Dorothy-Day"
+   ]
+  },
+  "UO-SIN-000153": {
+   "name": "Saint Andrew the Apostle",
+   "life": "Andrew came from Bethsaida in Galilee and worked as a fisherman with his brother Simon Peter. According to John's Gospel, he first followed John the Baptist and then, after hearing the Baptist point to Jesus, followed Jesus and brought Peter to him. He was one of the first four apostles called, and the Gospel shows him pointing out the boy with loaves and fishes and bringing Greek visitors to Jesus. Tradition says that he preached around the Black Sea and in Greece and was crucified at Patras, on a cross shaped like an X, around the year 60. He is patron of Scotland and Russia.",
+   "period": "1st century",
+   "place": "Galilee, Patras (Greece)",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andrew_the_Apostle",
+    "https://www.newadvent.org/cathen/01471a.htm"
+   ]
   }
  }
 }
