@@ -6,6 +6,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { buildServiceWorker } from './build-service-worker.mjs';
 const require = createRequire(import.meta.url);
 let chromium;
 try { ({ chromium } = require('playwright')); } catch { ({ chromium } = require(path.join(process.env.NODE_PATH || '', 'playwright'))); }
@@ -49,6 +50,7 @@ for (let i = 0; i < 180; i++) {
 check(precached >= 600, `service worker installed and precached ${precached} files`);
 await page.reload();
 await page.waitForFunction(() => navigator.serviceWorker.controller, null, { timeout: 20000 });
+check((await page.locator('#uo-update-prompt').count()) === 0, 'no update prompt on a first install');
 
 // Orthodox side, online first: the saint icons download once in the background (js/offline-packs.js)
 await page.goto(base + '/');
@@ -111,6 +113,27 @@ const unique = [...new Set(failures)].filter((u) => !u.includes('/images/'));
 check(unique.length === 0, `no failed same-origin requests while offline${unique.length ? ': ' + unique.slice(0, 8).join(', ') : ''}`);
 const imgFails = [...new Set(failures)].filter((u) => u.includes('/images/'));
 if (imgFails.length) console.log(`note: ${imgFails.length} image(s) not cached offline (expected for images never viewed): ${imgFails.slice(0, 3).join(', ')}`);
+
+// ---- update prompt: publish a new release while the app is open, then accept it ----
+await context.setOffline(false);
+await page.goto(base + '/');
+await page.waitForFunction(() => navigator.serviceWorker.controller, null, { timeout: 20000 });
+const marker = `/* release-test-${Date.now()} */`;
+fs.appendFileSync(path.join(ROOT, 'js/tooltip.js'), `\n${marker}\n`);
+await buildServiceWorker(ROOT);
+await page.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); await r.update(); });
+await page.waitForSelector('#uo-update-prompt', { timeout: 60000 });
+check(true, 'update prompt appears when a new release is available');
+const before = await page.evaluate(async () => (await (await fetch('/js/tooltip.js')).text()));
+check(!before.includes('release-test-'), 'the open page still runs the old release until the update is accepted');
+await Promise.all([
+  page.waitForEvent('load', { timeout: 60000 }),
+  page.click('#uo-update-prompt button.uo-primary')
+]);
+await page.waitForFunction(() => navigator.serviceWorker.controller, null, { timeout: 20000 });
+const after = await page.evaluate(async () => (await (await fetch('/js/tooltip.js')).text()));
+check(after.includes(marker), 'after "Update now" the page reloads on the new release');
+check((await page.locator('#uo-update-prompt').count()) === 0, 'the prompt is gone after updating');
 
 await browser.close();
 server.close();

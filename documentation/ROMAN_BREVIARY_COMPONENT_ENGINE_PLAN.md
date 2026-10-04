@@ -379,5 +379,7 @@ that was never opened; all pass, with no failed same-origin requests.
 
 Open points: the install icon is a placeholder; if the site stays behind hosting-level password protection
 (Directory Privacy), browsers fetch the manifest and `sw.js` without credentials and installation may fail,
-so test on the real host before relying on it; no "update available" prompt yet; per-tradition packs (so a
+so test on the real host before relying on it; per-tradition packs (so a
 Roman-only user need not download the Orthodox text) are possible later but were not chosen (all text ships).
+
+Update prompt added the same day: `js/update-prompt.js` registers the service worker and shows "A new version of The Universal Office is ready" with Update now / Later once a new release has downloaded; `test:offline` publishes a changed release while the app is open and checks the prompt, that the open page stays on the old release until accepted, and that Update now reloads onto the new one.

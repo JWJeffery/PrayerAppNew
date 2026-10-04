@@ -106,8 +106,8 @@ and say what you checked.
    included); icons download once on first Orthodox entry (`js/offline-packs.js`); `manifest.webmanifest`
    makes it installable (placeholder cross icon in `images/app/`, Josh to replace). `npm run test:offline`
    (needs `npm run release:web` first) cuts the network and opens all five traditions. The release also now
-   ships `assets/fonts` (they were missing before). Not done: an "update available" prompt (a new version
-   waits until tabs close); password-protected hosting can block the manifest/service worker, see
+   ships `assets/fonts` (they were missing before). **Update prompt (`js/update-prompt.js`):** when a new release has downloaded, a small notice offers
+   "Update now" / "Later"; the app also checks for new releases on returning to the foreground and hourly. Not done: password-protected hosting can block the manifest/service worker, see
    documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md section 17.
    All five traditions ship, with their **full text bundled** (works offline from first launch); **icons are not bundled**: they download on first use of the Orthodox side and are then kept for offline use (Josh, 2026-10-04; saint icons are ~27 MB). JSON stays the source of truth; a database is a later option only if
    measured. Scripture in the public app is limited to passages cited in the prayers (Bible browser
