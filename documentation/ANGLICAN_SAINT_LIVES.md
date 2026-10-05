@@ -45,3 +45,12 @@ as fact sources. Written: Gundelina of Niedermunster, Armogastes and Companions,
 Finnbar of Caithness (low confidence; the entry blends several Finbars, and the life says so). Still without a life, because nothing
 biographical could be found: Benedictine Martyrs of the Tyburn tradition (the entry is too vague to identify), Benjamin Tankersley,
 Tertullian of Bologna (only "eighth bishop of Bologna, died about 490"), and Alicia "Cristina" Rivera, OSH. These show as a plain line.
+
+
+## Curator-approved corrections, 2026-10-05
+
+The Benedictine Martyrs of the Tyburn tradition (March 14, UO-SIN-000911) and Benjamin Tankersley (March 31, UO-SIN-000938) were withdrawn by the curator after a direct source audit found the Anglican Martyrology attributions unsupported. Both have been removed from active `decisions[MM-DD].alternates`; their original records and withdrawal reasons remain under `withdrawn_alternates`. Their identifiers remain reserved.
+
+Tertullian of Bologna (UO-SIN-000988) was retained as an additional commemoration on the historical April 27 date. A three-sentence life is now in `data/saints/anglican-lives.json`, drawn from the Bologna diocesan episcopal and saints lists and the Italian Episcopal Conference's Sacerno church inventory. The eighth-bishop and established-death-year claims are withdrawn. Bologna lists him fifteenth with dates uncertain. The Book of Saints, PDF p.719, records the historical date and deletion from the revised Roman Martyrology; Bologna's present local collective observance is September 28. The former April 18 local date remains documented.
+
+These corrections verify the named entries only. They do not establish that the other source attributions or lives have passed a full source audit.
