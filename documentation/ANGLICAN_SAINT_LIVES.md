@@ -38,3 +38,10 @@ Benjamin Tankersley, Tertullian of Bologna, Charles Raymond Barnes, Dora P. Chap
 and used background knowledge for a few details (they listed which); Wikipedia is one of the two sources for many
 entries; Britannica could not be fetched. The medium and low entries (330) need a human read-through, and a second pass
 could confirm the entries whose second source was thin.
+
+## Update 2026-10-05 (later): the skipped saints retried
+Retried with the repository's reference books (Book of Saints, Oxford Dictionary of Saints, Anglican Martyrology, Great Cloud of Witnesses)
+as fact sources. Written: Gundelina of Niedermunster, Armogastes and Companions, Charles Raymond Barnes, Dora P. Chaplin, and
+Finnbar of Caithness (low confidence; the entry blends several Finbars, and the life says so). Still without a life, because nothing
+biographical could be found: Benedictine Martyrs of the Tyburn tradition (the entry is too vague to identify), Benjamin Tankersley,
+Tertullian of Bologna (only "eighth bishop of Bologna, died about 490"), and Alicia "Cristina" Rivera, OSH. These show as a plain line.
