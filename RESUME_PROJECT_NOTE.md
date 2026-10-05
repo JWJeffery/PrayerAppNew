@@ -207,6 +207,9 @@ menu (only one of the 25 was browser-tested).
 
 ## 8. Settled, do not reopen
 
+- The in-browser `scripts/browser-qc-*.js` sweeps were removed (Josh, 2026-10-05: they served no purpose). Lectionary correctness is checked by `scripts/lectionary/audit_lectionary.py` instead.
+- Orthodox hymn-text gaps (Octoechos, Triodion/Holy Week, Menaion canons, Paschal Hours) are documented gaps with no licensed source: Lambertsen is personal-use only, Hapgood has none of it. Re-verified 2026-10-05; do not build without a new source decision.
+
 - Charter section 11 is closed: all four original traditions carry all three explanatory depths.
 - Depth 1 on by default; higher depths user-selectable. Middle Friday is the Friday of the fourth
   week of the Great Fast. The Fast Evening Service is built.
