@@ -54,3 +54,16 @@ The Benedictine Martyrs of the Tyburn tradition (March 14, UO-SIN-000911) and Be
 Tertullian of Bologna (UO-SIN-000988) was retained as an additional commemoration on the historical April 27 date. A three-sentence life is now in `data/saints/anglican-lives.json`, drawn from the Bologna diocesan episcopal and saints lists and the Italian Episcopal Conference's Sacerno church inventory. The eighth-bishop and established-death-year claims are withdrawn. Bologna lists him fifteenth with dates uncertain. The Book of Saints, PDF p.719, records the historical date and deletion from the revised Roman Martyrology; Bologna's present local collective observance is September 28. The former April 18 local date remains documented.
 
 These corrections verify the named entries only. They do not establish that the other source attributions or lives have passed a full source audit.
+
+## Catalogue questions found while writing the lives (2026-10-05; for the Synaxarium crew's source audit)
+These come from the writing agents' own reports. I have not independently checked them, and they are leads for the audit, not findings.
+**Name or identity looked wrong for the entry as catalogued:**
+- Caradoc of Llancarfan (04-13, UO-SIN-000962): the date and the hermit's life match St Caradoc of Rhos (buried at St Davids); the Llancarfan Caradoc was a twelfth-century hagiographer. The life was written about the hermit and says so.
+- Macarius of Antioch (UO-SIN-000955): the only biography found was for Macharius of Ghent; the Patriarch Macarius of Antioch (deposed 681) is a different man.
+- Maximilian (08-26): sources give 12 March (Maximilian of Tebessa); the catalogue date is 08-26, and Kolbe's day is 14 August.
+- Boniface of Ross (UO-SIN-000686) is really Curetan, bishop of Rosemarkie; Adrian of May's massacre may be a conflation with Ethernan; Bruno of Cologne (UO-SIN-000426) is Bruno the Great (d. 965), not the Carthusian; Chaeremon and Companions: Chaeremon fled and was never found (not a martyr).
+- Finnbar of Caithness (09-25): the Caithness cult is probably a memory of Finnian of Movilla (10 Sept); 25 September is Finbar of Cork's day.
+- Placeholder or source-form names in the catalogue, read by the agents as the standard saints: "Ambrose source/date variant", "Irenaeus SEC transfer row", "Peter / Paul individual source form", "Columba source variants", "Ephrem source-date preparation", "Older BCP/HWHM form" (Latimer and Ridley), "Athanasius source octave/date context", "Pantaleon" (the Wikipedia page of that title is a Bactrian king).
+**Dates that differ from the sources:** Janani Luwum (died 16 Feb 1977, catalogue 17 Feb), Ethelfleda (catalogue c. 970, sources c. 1016), Baldred (608 vs c. 757), Elizabeth of the Trinity (1916 vs 1906), Hiram Kano (1986 vs 1988), Wright (1904 vs 1906), Adalbert of Egmond (740 vs c. 705), Joseph of Cupertino (1603 is his birth; died 1663), Quodvultdeus (439 is the exile; c. 450), Bertin (c. 698 vs c. 709), Barnes (birth 1892 vs 1894).
+**Too little to identify or write from:** Alicia "Cristina" Rivera, OSH (the Great Cloud of Witnesses appendix lists her by name only).
+**Ranking note:** many principal and additional entries are legendary or thinly attested (the lives say "according to tradition"); confidence is recorded per entry in `data/saints/anglican-lives.json`.
