@@ -26,3 +26,15 @@ Re-run `python3 scripts/merge-anglican-saint-lives.py` after adding month files 
 and merge.
 
 Also 2026-10-04: the boilerplate sentence "Commemorated in the Anglican calendar of An Anglican Synaxarium (decision of ...)" was removed from 126 saint descriptions in data/saints/sanctoral.json (the provenance stays in `angDecisionSource`), because the panel showed it to readers.
+
+## Update 2026-10-05: additional saints
+Lives for the additional saints of each day are written and merged (1,007 lives in all: 347 principal saints and groups plus
+the additional ones; confidence 677 high, 280 medium, 50 low). The "Also commemorated today" list opens each saint to
+their life. Not written, on purpose: the 17 Marian and Lord's-feast observances (Our Lady of Lourdes, Holy Cross Day,
+dedications and the like) and two devotional themes ("Interior Life of Our Saviour/Lady"); and, for lack of any
+biographical source, Benedictine Martyrs of the Tyburn tradition, Gundelina of Niedermunster, Armogastes and Companions,
+Benjamin Tankersley, Tertullian of Bologna, Charles Raymond Barnes, Dora P. Chaplin, Finnbar of Caithness and Alicia
+"Cristina" Rivera, OSH (these show as a plain line). Caveats from the writing agents: several ran out of web-search budget
+and used background knowledge for a few details (they listed which); Wikipedia is one of the two sources for many
+entries; Britannica could not be fetched. The medium and low entries (330) need a human read-through, and a second pass
+could confirm the entries whose second source was thin.
