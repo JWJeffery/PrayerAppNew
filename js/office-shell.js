@@ -547,6 +547,13 @@
         if (!rail || !env || !Array.isArray(env.blocks)) return;
 
         var head = rail.querySelector('.uo-rail-head');
+        // 2026-10-05 (Josh: clicking a seasonal-variant checkbox moved the
+        // sidebar). Every settings toggle re-renders the office, which rebuilds
+        // this rail from scratch; emptying it reset its scroll to 0, and the
+        // scroll-to-current-item that followed landed somewhere slightly
+        // different each time, so the rail crept with every click. Remember
+        // where the rail was and put it back once it is rebuilt below.
+        var prevRailScroll = rail.scrollTop;
         rail.textContent = '';
         // Always collapsed on a fresh render -- see the summary bar built
         // just below. A rebuild (office/date/hour change) starting expanded
@@ -608,6 +615,7 @@
         var foot = el('div', 'uo-rail-foot',
             toRoman(1) + ' of ' + toRoman(env.blocks.length));
         rail.appendChild(foot);
+        rail.scrollTop = prevRailScroll;
 
         // Summary bar starts matching the same first item the dot/foot above
         // do -- computeRailWaypoints()/updateRailCurrent() (below) take over
@@ -622,7 +630,15 @@
         // item's content actually begins on the page, and the scroll listener set up
         // in watchRailScroll() keeps both in sync with real reading position from
         // here on.
-        window.requestAnimationFrame(computeRailWaypoints);
+        // The rail's own layout settles after this rebuild (the highlighted item changes), and
+        // that nudged its scroll by a few px per render even with the line above. Put it back
+        // once computeRailWaypoints() has run -- unless the reader has genuinely moved to a
+        // different item, in which case updateRailCurrent() has just scrolled it there on purpose.
+        var indexBefore = railCurrentIndex;
+        window.requestAnimationFrame(function () {
+            computeRailWaypoints();
+            if (railCurrentIndex === indexBefore) rail.scrollTop = prevRailScroll;
+        });
     }
 
     var ROMAN_NUMERALS = [

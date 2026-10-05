@@ -2189,6 +2189,7 @@ body.dark-mode .app-profile-defaults {
 
 .app-profile-default-field select,
 .app-profile-default-field input[type="text"] {
+    box-sizing: border-box; /* text inputs default to content-box: 100% width + padding spilled into the next column and made the name box taller than the dropdowns */
     width: 100%;
     min-height: 42px;
     padding: 0.55rem 0.75rem;

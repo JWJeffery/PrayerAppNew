@@ -24,8 +24,12 @@ export async function buildServiceWorker(releaseDir) {
     maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
     // index.html asks for css/js with ?v=NNN cache-busters; the precache is versioned by hash instead.
     ignoreURLParametersMatching: [/^utm_/, /^fbclid$/, /^v$/],
+    // The app is one page at the site root and has no client-side routes. Only a navigation to "/" (or
+    // "/index.html") may be answered with the cached app. This worker is registered for the whole domain,
+    // so without the allowlist it also answered /parish/, /parish/admin.html and every other sibling
+    // page with the app's index.html (reported 2026-10-05).
     navigateFallback: '/index.html',
-    navigateFallbackDenylist: [/^\/admin/, /^\/data\//, /^\/images\//],
+    navigateFallbackAllowlist: [/^\/(index\.html)?(\?.*)?$/],
     cleanupOutdatedCaches: true,
     clientsClaim: true,
     skipWaiting: false, // a new version waits until the open tabs close, so a page never mixes versions
