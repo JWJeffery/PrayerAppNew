@@ -2690,3 +2690,13 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
         min-height: 44px;
     }
 }
+
+/* 2026-10-05 (Josh): gap notes are not shown on phones -- they sat under the prayers and
+   took space from them. The cards stay in the page (this is screen-only), so print still
+   carries them as footnotes, and the wider layouts still show them. The margin holds
+   nothing else now that the overlay cards are gone. */
+@media screen and (max-width: 768px) {
+    .uo-margin {
+        display: none;
+    }
+}
