@@ -1750,6 +1750,25 @@ function populateCycleOfPrayerDioceseSelects(currentKey) {
     }
 }
 
+function openResetProfileConfirm() {
+    const box = document.getElementById('profile-reset-confirm');
+    if (!box) { resetUniversalOfficeUserProfile(); return; }
+    box.hidden = false;
+    const keep = box.querySelector('.app-profile-save');
+    if (keep) keep.focus({ preventScroll: true });
+}
+
+function closeResetProfileConfirm() {
+    const box = document.getElementById('profile-reset-confirm');
+    if (box) box.hidden = true;
+}
+
+function confirmResetProfile() {
+    closeResetProfileConfirm();
+    closeUserProfilePanel();
+    resetUniversalOfficeUserProfile();
+}
+
 function resetUniversalOfficeUserProfile() {
     clearUserEntryDefault();
     showTraditionEntry();
@@ -2246,7 +2265,11 @@ function closeUserProfilePanel() {
 }
 
 function handleUserProfilePanelKeydown(event) {
-    if (event.key === 'Escape') closeUserProfilePanel();
+    if (event.key === 'Escape') {
+        const confirmBox = document.getElementById('profile-reset-confirm');
+        if (confirmBox && !confirmBox.hidden) { closeResetProfileConfirm(); return; }
+        closeUserProfilePanel();
+    }
 }
 
 function showTraditionEntry() {

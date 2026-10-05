@@ -2239,6 +2239,58 @@ body.dark-mode .app-profile-default-field input[type="text"] {
     border-top: 1px solid rgba(201, 168, 76, 0.25);
 }
 
+.app-profile-confirm {
+    position: fixed; /* pinned to the screen, so it is visible however far the tall panel is scrolled */
+    inset: 0;
+    z-index: 10003;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.app-profile-confirm[hidden] { display: none; }
+
+.app-profile-confirm-card {
+    width: min(420px, 100%);
+    padding: 22px 22px 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--gold, #c9a84c);
+    border-radius: 8px;
+    background: var(--parchment, #f4ecd8);
+    color: var(--ink, #2b2118);
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .app-profile-confirm-card {
+    background: #1a1208;
+    color: #e8d9b0;
+}
+
+.app-profile-confirm-card h3 {
+    margin: 0 0 10px;
+    font-family: "Cinzel", serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+}
+
+.app-profile-confirm-card p {
+    margin: 0 0 18px;
+    font-family: var(--app-serif, Georgia, "Times New Roman", serif);
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
+.app-profile-confirm-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+}
+
 .app-profile-save {
     min-height: 44px;
     min-width: 160px;
