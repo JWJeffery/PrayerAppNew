@@ -2489,3 +2489,53 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
         padding-right: 18px !important;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   2026-10-05: THE UNIVERSAL OFFICE SELECTOR MUST FIT AN ORDINARY WINDOW.
+   Reported by Josh with screenshots from a ~730px-tall Chrome window: the five
+   tradition cards, the Tools row and the sponsor line were cut off at a hard
+   box edge, with a scroll inside the box. The earlier task-#15 fix only moved
+   the scroll from the page into the box; it never made the content small
+   enough to fit. This block does that: the top/bottom margins, padding, title
+   and grid spacing now scale down with window HEIGHT, and the outer budget
+   (max-height) is computed from the SAME two margin variables so the two can
+   never drift apart again. The box's own overflow-y:auto stays as the safety
+   net for genuinely tiny windows. Keep this block LAST in the file: it must
+   win over the older width/height breakpoints above.
+   --------------------------------------------------------------------------- */
+#mode-selection.app-mode-shell {
+    --uo-sel-top: clamp(16px, 4vh, 56px);
+    --uo-sel-bottom: clamp(12px, 3vh, 36px);
+    margin: var(--uo-sel-top) auto var(--uo-sel-bottom);
+    padding: clamp(18px, 3.4vh, 40px) clamp(22px, 3.4vw, 44px);
+    max-height: calc(100vh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - var(--uo-sel-top) - var(--uo-sel-bottom));
+    max-height: calc(100dvh - 18px - env(safe-area-inset-top) - 26px - env(safe-area-inset-bottom) - var(--uo-sel-top) - var(--uo-sel-bottom));
+}
+
+#mode-selection.app-mode-shell h1 {
+    font-size: clamp(2rem, min(6vw, 8.5vh), 4.4rem);
+    margin-bottom: 6px;
+}
+
+#mode-selection.app-mode-shell p {
+    margin-bottom: clamp(10px, 2vh, 28px);
+}
+
+#mode-selection .app-mode-grid {
+    gap: clamp(8px, 1.4vh, 12px);
+    padding-top: clamp(12px, 2.2vh, 22px);
+}
+
+#mode-selection .mode-btn.app-mode-card {
+    min-height: 0;
+    padding: clamp(10px, 1.8vh, 16px) 18px;
+}
+
+#mode-selection .app-mode-grid + .app-mode-section-label {
+    margin-top: clamp(12px, 2.2vh, 22px);
+    padding-top: clamp(10px, 1.8vh, 18px);
+}
+
+#mode-selection .app-mode-tool-btn {
+    padding: clamp(6px, 1.2vh, 10px) 16px;
+}
