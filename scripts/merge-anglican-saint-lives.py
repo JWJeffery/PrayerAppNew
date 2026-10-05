@@ -6,11 +6,11 @@ scratch = sys.argv[1] if len(sys.argv) > 1 else '/tmp/claude-0/saints'
 target = 'data/saints/anglican-lives.json'
 cur = json.load(open(target)) if os.path.exists(target) else {"schema": "anglican-saint-lives/1", "note": "Original short lives written for this app from published sources (see each entry); no source text copied. Keyed by the saint's identifier in data/kalendar/synaxarium/decisions.json.", "lives": {}}
 inputs = {}
-for f in glob.glob(f'{scratch}/in/*.json'):
+for f in glob.glob(f'{scratch}/in*/*.json'):
     for e in json.load(open(f)): inputs[e['sin']] = e
 problems = []
 added = 0
-for f in sorted(glob.glob(f'{scratch}/out/*.json')):
+for f in sorted(glob.glob(f'{scratch}/out*/*.json')):
     try: d = json.load(open(f))['lives']
     except Exception as ex: problems.append((f, 'unreadable: %s' % ex)); continue
     for sin, v in d.items():

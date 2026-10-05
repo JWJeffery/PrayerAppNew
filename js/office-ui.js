@@ -6878,11 +6878,12 @@ const angSorted = angComms.slice().sort((a, b) => _angRoleOrder(a) - _angRoleOrd
 const angMoreAlternates = await _angDecisionAlternates(currentDate, angSorted.map(s => s.name));
 const angPrimaryDetail = await _angPrimaryDetail(currentDate);
 const angPrimaryLife = await _angPrimaryLife(currentDate);
+const angAllLives = await _loadAngLives();
 document.getElementById('saint-display').innerHTML = (angSorted
     .map(s => {
         // No tradition code ("ANG") or source label above the name: that is catalogue metadata.
         const label = s.angRole === 'alternate' ? 'Alternate' : '';
-        return `<div class="saint-box">${label ? `<small style="display:block; color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small>` : ''}<strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong>${s.angRole === 'primary' && angPrimaryLife ? '' : '<p>' + _sharedOfficeNavigatorEscape(s.description || 'No description') + '</p>'}${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}${s.angRole === 'primary' && angPrimaryLife ? '<p class="saint-life">' + _sharedOfficeNavigatorEscape(angPrimaryLife) + '</p>' : ''}</div>`;
+        return `<div class="saint-box">${label ? `<small style="display:block; color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small>` : ''}<strong>${_sharedOfficeNavigatorEscape(s.name || 'Unknown')}</strong>${_angLifeText(s, angPrimaryLife, angAllLives) ? '' : '<p>' + _sharedOfficeNavigatorEscape(s.description || 'No description') + '</p>'}${s.angRole === 'primary' && angPrimaryDetail ? '<p style="font-size:0.8em;opacity:0.75;margin-top:0.3em;">' + _sharedOfficeNavigatorEscape(angPrimaryDetail) + '</p>' : ''}${_angLifeText(s, angPrimaryLife, angAllLives) ? '<p class="saint-life">' + _sharedOfficeNavigatorEscape(_angLifeText(s, angPrimaryLife, angAllLives)) + '</p>' : ''}</div>`;
     })
     .join('') || '<p>No commemorations.</p>') + angMoreAlternates;
 }
@@ -6906,6 +6907,13 @@ function _loadAngLives() {
             .then(r => (r.ok ? r.json() : null)).catch(() => null);
     }
     return _angLivesPromise;
+}
+// The life to show for a saint box: the day's primary uses the decisions file's primary; any other saint box
+// (an alternate kept from the sanctoral data) looks itself up by its Synaxarium identifier.
+function _angLifeText(saint, primaryLife, livesFile) {
+    if (saint.angRole === 'primary') return primaryLife || '';
+    const e = saint.synaxariumSin && livesFile && livesFile.lives ? livesFile.lives[saint.synaxariumSin] : null;
+    return e && e.life ? e.life : '';
 }
 async function _angPrimaryLife(date) {
     try {
@@ -6944,9 +6952,17 @@ async function _angDecisionAlternates(date, shownNames) {
             return !shown.some(sn => sn === k || bigWords(k).some(w => sn.indexOf(w) !== -1));
         });
         if (!fresh.length) return '';
-        const items = fresh.map(a => '<li><strong>' + _sharedOfficeNavigatorEscape(a.name) + '</strong>' +
-            (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
-            (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '') + '</li>').join('');
+        const livesFile = await _loadAngLives();
+        const items = fresh.map(a => {
+            const head = '<strong>' + _sharedOfficeNavigatorEscape(a.name) + '</strong>' +
+                (a.designation ? ' \u2014 ' + _sharedOfficeNavigatorEscape(a.designation) : '') +
+                (a.period ? ', ' + _sharedOfficeNavigatorEscape(a.period) : '');
+            const entry = livesFile && livesFile.lives ? livesFile.lives[a.sin] : null;
+            // A saint with a written life opens to it; the others stay a plain line.
+            return entry && entry.life
+                ? '<li><details><summary style="cursor:pointer;">' + head + '</summary><p class="saint-life">' + _sharedOfficeNavigatorEscape(entry.life) + '</p></details></li>'
+                : '<li>' + head + '</li>';
+        }).join('');
         return '<details class="saint-box"><summary style="cursor:pointer;color:var(--accent);font-weight:bold;text-transform:uppercase;font-size:0.8em;">' +
                'Also commemorated today</summary><ul style="margin:0.5em 0 0 1.1em;">' + items + '</ul></details>';
     } catch (e) { return ''; }
