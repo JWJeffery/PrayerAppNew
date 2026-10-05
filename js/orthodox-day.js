@@ -108,6 +108,8 @@ const OrthodoxDay = (() => {
     function _segments(display) {
         let s = String(display || '').replace(/\u200b/g, '').replace(/^Composite \d+ - /, '');
         s = s.replace(/\s*\((?:[-\d.:\s]*)?LXX\)/g, '').replace(/\s*\(-?[\d.]+ LXX\)/g, '');
+        // "Jeremiah (Baruch 3.35-4.4)": the lectionary files Baruch under Jeremiah; cite the book it is read from
+        s = s.replace(/^[A-Za-z ]+\(((?:\d\s)?[A-Za-z][A-Za-z ]*\s+\d[^)]*)\)\s*$/, '$1');
         s = s.replace(/(\d)\.(\d)/g, '$1:$2').replace(/\b3 ?\[1\] Kings/g, '1 Kings').replace(/\b4 ?\[2\] Kings/g, '2 Kings');
         const parts = s.split(';').map(x => x.trim()).filter(Boolean);
         let book = null;

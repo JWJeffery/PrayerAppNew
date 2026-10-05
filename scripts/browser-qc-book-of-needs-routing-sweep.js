@@ -168,6 +168,8 @@
     }
 
     async function verifyUniversalBookOfNeedsPath() {
+        // Clergy-tier prayers are hidden from the default lay profile by design; show them so these checks test tradition routing.
+        if (typeof window.setBookOfNeedsShowAboveRole === "function") window.setBookOfNeedsShowAboveRole(true);
         assert(typeof window.openUniversalBookOfNeeds === "function", "Missing openUniversalBookOfNeeds().");
         assert(typeof window.backFromBookOfNeeds === "function", "Missing backFromBookOfNeeds().");
 
@@ -208,6 +210,8 @@
     }
 
     async function verifyHorologionBookOfNeedsPath() {
+        // Clergy-tier prayers are hidden from the default lay profile by design; show them so these checks test tradition routing.
+        if (typeof window.setBookOfNeedsShowAboveRole === "function") window.setBookOfNeedsShowAboveRole(true);
         const state = await openBookOfNeedsFromOffice("horologion", "Eastern Orthodox Church", "EO");
 
         assert(state.label === "Eastern Orthodox Church", `Horologion Book of Needs label was ${state.label || "blank"}.`);

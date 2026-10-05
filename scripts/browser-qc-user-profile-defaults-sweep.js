@@ -206,6 +206,8 @@
 
     async function verifyBookOfNeedsUniversalScopeOverride() {
         window.resetUniversalOfficeUserProfile();
+        // Clergy-tier prayers are hidden from the default lay profile by design; show them so this checks scope routing.
+        if (typeof window.setBookOfNeedsShowAboveRole === "function") window.setBookOfNeedsShowAboveRole(true);
         await wait(50);
 
         window.setUserProfileBookOfNeedsScope("universal");
