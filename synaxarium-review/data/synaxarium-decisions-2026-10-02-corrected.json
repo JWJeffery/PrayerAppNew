@@ -9662,9 +9662,9 @@
    "month": "August",
    "date": "08-22",
    "selected_candidate": "Philip Benizi",
-   "selected_sin": null,
+   "selected_sin": "UO-SIN-000290",
    "decision_type": "custom",
-   "reviewer_comments": "Josh Jeffery approved Philip Benizi as the August 22 primary in this conversation on October 5, 2026. Anglican Martyrology PDF p.102 and Oxford Dictionary of Saints PDF p.764 support the day and candidate. Rivera's unsupported primary recommendation remains withdrawn; UO-SIN-000053 remains attached to Rivera. Philip's controlled SIN allocation is pending. Resolve the conflicting death-place accounts and differing Servite observance before drafting.",
+   "reviewer_comments": "Josh Jeffery approved Philip Benizi as the August 22 primary in this conversation on October 5, 2026. Anglican Martyrology PDF p.102 and Oxford Dictionary of Saints PDF p.764 support the day and candidate. Rivera's unsupported primary recommendation remains withdrawn; UO-SIN-000053 remains attached to Rivera. Philip's existing controlled identifier is UO-SIN-000290, verified in the August alternate SIN registry and the app's current primary record. Resolve the conflicting death-place accounts and differing Servite observance before drafting.",
    "timestamp": "2026-10-05T16:16:18.000Z",
    "original_candidate_row": {
     "rank": "1",
@@ -9700,10 +9700,10 @@
     "candidate": "Philip Benizi",
     "designation": "Servite friar and priest; prior general and peacemaker",
     "date": "08-22",
-    "selected_sin": null,
+    "selected_sin": "UO-SIN-000290",
     "status": "Approved as primary by Josh Jeffery on 2026-10-05",
     "source_witnesses": "Anglican Martyrology PDF p.102; Oxford Dictionary of Saints PDF p.764",
-    "review_flags": "Controlled SIN allocation; resolve death-place and death-day discrepancies before drafting"
+    "review_flags": "Resolve death-place and death-day discrepancies before drafting"
    },
    "correction_note": "Supersedes the earlier 08-22 selection only. original_candidate_row is preserved as historical provenance, not an active ranking endorsement. Authoritative Calendar and Admission Decisions, section F; synaxarium-08-22-correction-2026-10-04.json.",
    "curator_approval": {
@@ -15180,5 +15180,36 @@
  "retired_sins": [
   "UO-SIN-000999",
   "UO-SIN-000610"
+ ],
+ "alternate_admission_corrections": [
+  {
+   "date": "03-14",
+   "candidate": "Benedictine Martyrs of the Tyburn tradition",
+   "sin": "UO-SIN-000911",
+   "operation": "Withdraw alternate; preserve historical record and reserve identifier",
+   "reason": "No identified group or March 14 witness; AM attribution withdrawn",
+   "authority": "Josh Jeffery's explicit approval in this conversation",
+   "approval_date": "2026-10-05"
+  },
+  {
+   "date": "03-31",
+   "candidate": "Benjamin Tankersley",
+   "sin": "UO-SIN-000938",
+   "operation": "Withdraw alternate; preserve historical record and reserve identifier",
+   "reason": "Claimed identity, priesthood, death year and date unsupported; AM attribution withdrawn",
+   "authority": "Josh Jeffery's explicit approval in this conversation",
+   "approval_date": "2026-10-05"
+  },
+  {
+   "date": "04-27",
+   "candidate": "Tertullian of Bologna",
+   "sin": "UO-SIN-000988",
+   "operation": "Retain admitted alternate on historical April 27 date",
+   "sources": "Book of Saints PDF p.719; Bologna diocesan episcopal and saints lists; CEI inventory for Sant'Elena di Sacerno",
+   "date_note": "Deleted from revised Roman Martyrology; Bologna former April 18 and present collective September 28",
+   "narrative_note": "Early bishop; Sacerno monastic connection preserved as local tradition; exact dates uncertain",
+   "authority": "Josh Jeffery's explicit approval in this conversation",
+   "approval_date": "2026-10-05"
+  }
  ]
 }
