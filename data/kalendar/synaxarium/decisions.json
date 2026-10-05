@@ -10141,16 +10141,6 @@
    },
    "alternates": [
     {
-     "name": "Alicia “Cristina” Rivera, OSH",
-     "sin": "UO-SIN-000053",
-     "designation": "Monastic",
-     "period": "1996",
-     "tradition": "Anglican",
-     "source_witnesses": "GCW appendix",
-     "preliminary_status": "Usable",
-     "curator_approved": null
-    },
-    {
      "name": "Queenship of Mary",
      "sin": "UO-SIN-000289",
      "designation": "Marian feast",
@@ -10159,6 +10149,23 @@
      "source_witnesses": "AM",
      "preliminary_status": "Review",
      "curator_approved": null
+    }
+   ],
+   "withdrawn_alternates": [
+    {
+     "name": "Alicia “Cristina” Rivera, OSH",
+     "sin": "UO-SIN-000053",
+     "designation": "Monastic",
+     "period": "1996",
+     "tradition": "Anglican",
+     "source_witnesses": "GCW appendix",
+     "preliminary_status": "Usable",
+     "curator_approved": false,
+     "decision_status": "Withdrawn by curator",
+     "withdrawn_at": "2026-10-05",
+     "withdrawal_reason": "Curator (Josh) withdrew her: listed only by name in the Great Cloud of Witnesses appendix, with no biographical source to support a life. Briefly principal on 08-22 until Philip Benizi replaced her.",
+     "original_source_claim": "GCW appendix",
+     "identifier_status": "Reserved to this historical record; do not reuse"
     }
    ]
   },

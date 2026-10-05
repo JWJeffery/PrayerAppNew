@@ -67,3 +67,7 @@ These come from the writing agents' own reports. I have not independently checke
 **Dates that differ from the sources:** Janani Luwum (died 16 Feb 1977, catalogue 17 Feb), Ethelfleda (catalogue c. 970, sources c. 1016), Baldred (608 vs c. 757), Elizabeth of the Trinity (1916 vs 1906), Hiram Kano (1986 vs 1988), Wright (1904 vs 1906), Adalbert of Egmond (740 vs c. 705), Joseph of Cupertino (1603 is his birth; died 1663), Quodvultdeus (439 is the exile; c. 450), Bertin (c. 698 vs c. 709), Barnes (birth 1892 vs 1894).
 **Too little to identify or write from:** Alicia "Cristina" Rivera, OSH (the Great Cloud of Witnesses appendix lists her by name only).
 **Ranking note:** many principal and additional entries are legendary or thinly attested (the lives say "according to tradition"); confidence is recorded per entry in `data/saints/anglican-lives.json`.
+
+## Rivera withdrawn (2026-10-05)
+Alicia "Cristina" Rivera, OSH was withdrawn by the curator (Josh): her `decisions` record moved to `withdrawn_alternates` on 08-22
+(identifier UO-SIN-000053 reserved) and her `sanctoral.json` row removed. Philip Benizi remains the principal for August 22.

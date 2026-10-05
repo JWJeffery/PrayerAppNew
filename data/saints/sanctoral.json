@@ -26190,29 +26190,6 @@
       "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (concur_rank1, 2026-09-07); witnesses: HWHM appendix; GCW appendix."
     },
     {
-      "id": "alicia-cristina-rivera-osh",
-      "name": "Alicia “Cristina” Rivera, OSH",
-      "description": "Monastic, 1996.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "August 22",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 8,
-            "day": 22
-          }
-        ]
-      },
-      "angRole": "alternate",
-      "synaxariumSin": "UO-SIN-000053",
-      "angDateBasis": "other witness (see source_witnesses and source_notes): Anglican Martyrology / SEC / Book of Saints / ODS",
-      "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (2026-09-07); witnesses: GCW appendix. Made an additional commemoration (not the principal) by Josh on 2026-10-04."
-    },
-    {
       "id": "philip-benizi",
       "name": "Philip Benizi",
       "description": "Servite priest and peacemaker, 1285.",
