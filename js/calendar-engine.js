@@ -518,18 +518,47 @@ class CalendarEngine {
             console.log(`[Calendar Engine] Holy Week/Easter Week transfer match for ${this.formatDateISO(targetDate)}`);
             return nearEasterResult;
         } else {
-            // Fixed-date Holy Days, checked across all season files (see
-            // _findFixedMonthDayEntry) before any season-specific routing, since
-            // their actual file doesn't always match the one getSeasonAndFile picks
-            // for their civil date in a given year.
-            const holyDayMatch = await this._findFixedMonthDayEntry(targetDate);
-            if (holyDayMatch) {
-                console.log(`[Calendar Engine] Fixed-month-day match for ${this.formatDateISO(targetDate)}`);
-                return holyDayMatch;
+            // BCP p.15-16: on a Sunday only the Principal Feasts, the Holy Name, the Presentation and the
+            // Transfiguration displace the Sunday; every other fixed-date Holy Day is "transferred to the
+            // first convenient open day within the week". Applied before the plain fixed-day lookup.
+            const sundayRule = await this._applySundayPrecedence(targetDate);
+            if (sundayRule && sundayRule.entry) {
+                console.log(`[Calendar Engine] Holy Day transferred from Sunday to ${this.formatDateISO(targetDate)}`);
+                return sundayRule.entry;
+            }
+            if (sundayRule && sundayRule.suppress) {
+                suppressedMonthDay = sundayRule.suppress;
+            } else {
+                // Fixed-date Holy Days, checked across all season files (see
+                // _findFixedMonthDayEntry) before any season-specific routing, since
+                // their actual file doesn't always match the one getSeasonAndFile picks
+                // for their civil date in a given year.
+                const holyDayMatch = await this._findFixedMonthDayEntry(targetDate);
+                if (holyDayMatch) {
+                    console.log(`[Calendar Engine] Fixed-month-day match for ${this.formatDateISO(targetDate)}`);
+                    return holyDayMatch;
+                }
             }
         }
 
         const { file, season } = this.getSeasonAndFile(targetDate);
+
+        const filterSuppressed = (data) => {
+            if (!suppressedMonthDay || !data) return data;
+            const mm = String(suppressedMonthDay.month).padStart(2, '0');
+            const dd = String(suppressedMonthDay.day).padStart(2, '0');
+            const mmdd = `${mm}-${dd}`;
+            return data.filter(d => {
+                if (!d.fixed_month_day || !d.date) return true;
+                const dIso = d.date.length === 10 ? d.date.slice(5) : null;
+                if (dIso === mmdd) return false;
+                const dLongMonth = new Date(2000, suppressedMonthDay.month - 1, 1).toLocaleDateString('en-US', { month: 'long' });
+                const dLongNoYear = d.date.replace(/,\s*\d{4}$/, '').trim();
+                if (dLongNoYear === `${dLongMonth} ${suppressedMonthDay.day}`) return false;
+                return true;
+            });
+        };
+
 
         // Ordinary Time's regular Proper-numbered weekday content, fixed
         // 2026-07-10: BCP anchors Propers to fixed civil dates, so a given
@@ -545,9 +574,15 @@ class CalendarEngine {
         // (data/season/ordinary.json, see the file-split investigation
         // 2026-07-10), but the identity-based matching itself is unchanged.
         if (season === 'ordinary') {
-            const primaryData = await this._loadSeasonFile(file);
+            const primaryData = filterSuppressed(await this._loadSeasonFile(file));
             if (primaryData) {
                 const iso = this.formatDateISO(targetDate);
+                // Thanksgiving Day (4th Thursday of November) must win over the Proper-numbered weekday
+                // below; findEntry()'s own Priority 0 is never reached once a Proper entry matches.
+                if (this._isThanksgivingDay(targetDate)) {
+                    const twEntry = primaryData.find(d => d.moveable_id === 'thanksgiving-day');
+                    if (twEntry) return twEntry;
+                }
                 const exactMatch = primaryData.find(d => d.date === iso || d.date === this.formatDateForLookup(targetDate));
                 if (exactMatch) {
                     console.log(`[Calendar Engine] Exact match (via Ordinary Time Proper routing) for ${iso}`);
@@ -565,22 +600,6 @@ class CalendarEngine {
                 }
             }
         }
-
-        const filterSuppressed = (data) => {
-            if (!suppressedMonthDay || !data) return data;
-            const mm = String(suppressedMonthDay.month).padStart(2, '0');
-            const dd = String(suppressedMonthDay.day).padStart(2, '0');
-            const mmdd = `${mm}-${dd}`;
-            return data.filter(d => {
-                if (!d.fixed_month_day || !d.date) return true;
-                const dIso = d.date.length === 10 ? d.date.slice(5) : null;
-                if (dIso === mmdd) return false;
-                const dLongMonth = new Date(2000, suppressedMonthDay.month - 1, 1).toLocaleDateString('en-US', { month: 'long' });
-                const dLongNoYear = d.date.replace(/,\s*\d{4}$/, '').trim();
-                if (dLongNoYear === `${dLongMonth} ${suppressedMonthDay.day}`) return false;
-                return true;
-            });
-        };
 
         if (this.seasonalCache[file]) {
             return this.findEntry(filterSuppressed(this.seasonalCache[file]), targetDate, file);
@@ -609,6 +628,118 @@ class CalendarEngine {
         return null;
     }
 
+    // ── BCP p.15-16: Sundays and Holy Days ──────────────────────────────────────
+    // "All Sundays of the year are feasts of our Lord Jesus Christ. In addition to the [Principal Feasts],
+    // only the following feasts, appointed on fixed days, take precedence of a Sunday: The Holy Name, The
+    // Presentation, The Transfiguration ... All other Feasts of our Lord, and all other Major Feasts
+    // appointed on fixed days in the Calendar, when they occur on a Sunday, are normally transferred to
+    // the first convenient open day within the week."
+    // Entries say which they are with `observance`: 'principal' (Epiphany, All Saints), 'sunday-precedence'
+    // (Presentation, Transfiguration), 'dated-day' (a dated lectionary row such as Dec 24, which simply
+    // yields to the Sunday); anything else is an ordinary Holy Day that yields and is transferred.
+    static _monthDayOfEntry(e) {
+        const MON = { January: 1, February: 2, March: 3, April: 4, May: 5, June: 6, July: 7, August: 8, September: 9, October: 10, November: 11, December: 12 };
+        let m = (e.date || '').match(/^\d{4}-(\d\d)-(\d\d)$/);
+        if (m) return { month: +m[1], day: +m[2] };
+        m = (e.date || '').match(/^(\w+) (\d+), \d{4}$/);
+        return m ? { month: MON[m[1]], day: +m[2] } : null;
+    }
+
+    static _yieldsToSunday(e) {
+        return !!e && e.observance !== 'principal' && e.observance !== 'sunday-precedence';
+    }
+
+    static async _applySundayPrecedence(date) {
+        const dow = date.getDay();
+        const year = date.getFullYear();
+        const easter = this._getEaster(year);
+        const inHolyOrEasterWeek = (d) => d >= this._addDays(easter, -7) && d <= this._addDays(easter, 6);
+        if (dow === 0) {
+            if (inHolyOrEasterWeek(date)) return null;          // Palm Sunday / Easter Day: the Holy Week rule handles these
+            const here = await this._findFixedMonthDayEntry(date);
+            if (here && this._yieldsToSunday(here)) {
+                const md = this._monthDayOfEntry(here);
+                return md ? { suppress: md } : null;
+            }
+            return null;
+        }
+        // A weekday: has a Holy Day been displaced from this week's Sunday, and is today the first open day?
+        const sunday = this._addDays(date, -dow);
+        if (inHolyOrEasterWeek(sunday)) return null;
+        const displaced = await this._findFixedMonthDayEntry(sunday);
+        if (!displaced || !this._yieldsToSunday(displaced) || displaced.observance === 'dated-day') return null;
+        for (let k = 1; k <= 6; k++) {
+            const day = this._addDays(sunday, k);
+            const isAshWednesday = this._sameCalendarDate(day, this._addDays(easter, -46));
+            const open = !inHolyOrEasterWeek(day) && !isAshWednesday && !(await this._findFixedMonthDayEntry(day));
+            if (open) return this._sameCalendarDate(day, date) ? { entry: displaced } : null;
+        }
+        return null;
+    }
+
+    // BCP Daily Office lectionary for Christmas Day and following: dated weekdays (Dec 29-31, Jan 2-5)
+    // plus the First and Second Sundays after Christmas as rows of their own. The BCP gives the First
+    // Sunday after Christmas precedence over the three Holy Days that follow Christmas Day (BCP p.213),
+    // so a Sunday in Dec 26-31 gets the First Sunday's readings and one in Jan 2-5 the Second Sunday's.
+    // Christmas Day, Dec 26-28 and the Holy Name (Jan 1, even on a Sunday) keep their own entries,
+    // matched by month/day further down. Dated entries are titled with the real weekday here.
+    static _findChristmasEntry(data, date) {
+        const m = date.getMonth(), d = date.getDate();
+        const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const wd = names[date.getDay()];
+        if (date.getDay() === 0) {
+            if (m === 11 && d >= 26 && d <= 31) return data.find(e => e.christmas_sunday === 1) || null;
+            if (m === 0 && d >= 2 && d <= 5)    return data.find(e => e.christmas_sunday === 2) || null;
+        }
+        // "As necessary, the observance of one, two, or all three of [St Stephen, St John, the Holy
+        // Innocents] is postponed one day" (BCP p.213, First Sunday after Christmas Day).
+        if (m === 11 && d >= 26 && d <= 29) {
+            let sd = 26;
+            while (new Date(date.getFullYear(), 11, sd).getDay() !== 0) sd++;       // First Sunday after Christmas (26-31)
+            if (sd <= 28) {
+                const feastDay = [26, 27, 28].find(f => (f >= sd ? f + 1 : f) === d);
+                if (feastDay) {
+                    const feast = data.find(e => e.date && /^December (\d+),/.test(e.date) && +e.date.match(/^December (\d+),/)[1] === feastDay);
+                    if (feast) return feast;
+                }
+            }
+        }
+        if ((m === 11 && d >= 29) || (m === 0 && d >= 2 && d <= 5)) {
+            const mmdd = this.formatDateISO(date).slice(5);
+            const dated = data.find(e => e.christmas_dated && e.date && e.date.slice(5) === mmdd);
+            if (dated) return { ...dated, title: (m === 0 && d === 5) ? `${wd} before the Epiphany` : `${wd} after Christmas` };
+        }
+        return null;
+    }
+
+    // BCP Daily Office lectionary for the Epiphany season:
+    //   * Jan 7-12 are DATED days, used only until the Saturday before the first Sunday after the
+    //     Epiphany (BCP p.942 note); their entries carry epiphany_dated and a 2026 date used only for
+    //     its month/day. The title is filled in with the real weekday here.
+    //   * From the first Sunday after Jan 6 the weeks run Sunday-Saturday: Week of 1 Epiphany ... Week
+    //     of 8 Epiphany, and the Sunday before Ash Wednesday starts the "Week of Last Epiphany"
+    //     (Sunday, Monday, Tuesday; Ash Wednesday on belongs to Lent). A season with k Sundays uses
+    //     weeks 1..k-1 and then Last.
+    static _findEpiphanyEntry(data, date) {
+        const y = date.getFullYear();
+        const jan6 = new Date(y, 0, 6);
+        if (date < jan6) return null;
+        const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const wd = names[date.getDay()];
+        const firstSun = this._addDays(jan6, (7 - jan6.getDay()) || 7);      // first Sunday AFTER Jan 6
+        if (date < firstSun) {
+            const mmdd = this.formatDateISO(date).slice(5);
+            const dated = data.find(d => d.epiphany_dated && d.date && d.date.slice(5) === mmdd);
+            return dated ? { ...dated, title: `${wd} after the Epiphany` } : null;
+        }
+        const lastSun = this._addDays(this._getEaster(y), -49);               // Sunday before Ash Wednesday
+        const daysBetween = (a, b) => Math.round((b - a) / 86400000);
+        const sundays = daysBetween(firstSun, lastSun) / 7 + 1;
+        const week = Math.floor(daysBetween(firstSun, this._addDays(date, -date.getDay())) / 7) + 1;
+        const key = week === sundays ? 'last' : week;
+        return data.find(d => d.epiphany_week === key && d.weekday === wd) || null;
+    }
+
     static findEntry(data, date, fileName) {
         const iso = this.formatDateISO(date);
         const long = this.formatDateForLookup(date);
@@ -624,6 +755,26 @@ class CalendarEngine {
             if (twEntry) {
                 console.log(`[Calendar Engine] Thanksgiving Day match for ${iso} in ${fileName}`);
                 return twEntry;
+            }
+        }
+
+        // Epiphany is addressed by BCP week and weekday, not by calendar date (fixed 2026-10-05).
+        // The old file keyed every entry to a 2026 date and matched by month/day, so in any other
+        // year each weekday's readings landed on the wrong weekday and the longer Epiphany seasons
+        // (weeks 6-8) had no entries at all. See scripts/lectionary/build_epiphany.py.
+        if (fileName === 'christmas.json') {
+            const xm = this._findChristmasEntry(data, date);
+            if (xm) {
+                console.log(`[Calendar Engine] Christmas-season match for ${iso}`);
+                return xm;
+            }
+        }
+
+        if (fileName === 'epiphany.json') {
+            const epi = this._findEpiphanyEntry(data, date);
+            if (epi) {
+                console.log(`[Calendar Engine] Epiphany week/weekday match for ${iso}`);
+                return epi;
             }
         }
 

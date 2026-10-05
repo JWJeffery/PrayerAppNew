@@ -32,12 +32,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 93, Psalm 98",
     "psalms_ep": "Psalm 66",
-    "reading_ot_mp_year1": "Exodus 12:14-27",
-    "reading_epistle_mp_year1": "1 Corinthians 15:1-11",
-    "reading_gospel_ep_year1": "Mark 16:1-8",
-    "reading_ot_mp_year2": "Jonah 2:1-9",
-    "reading_epistle_ep_year2": "Acts 2:14, 22-32",
-    "reading_gospel_mp_year2": "John 14:1-14",
+    "reading_ot_mp_year1": "Jonah 2:1-9",
+    "reading_epistle_mp_year1": "Acts 2:14, 22-32",
+    "reading_gospel_ep_year1": "John 14:1-14",
+    "reading_ot_mp_year2": "Exodus 12:14-27",
+    "reading_epistle_ep_year2": "1 Corinthians 15:1-11",
+    "reading_gospel_mp_year2": "Mark 16:1-8",
     "day_of_season": 2
   },
   {
@@ -140,11 +140,11 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 146, Psalm 147",
     "psalms_ep": "Psalm 111, Psalm 112, Psalm 113",
-    "reading_ot_mp_year1": "Exodus 14:5-22",
-    "reading_epistle_mp_year1": "1 John 1:1-7",
+    "reading_ot_mp_year1": "Isaiah 43:8-13",
+    "reading_epistle_mp_year1": "1 Peter 2:2-10",
     "reading_gospel_ep_year1": "John 14:1-7",
-    "reading_ot_mp_year2": "Isaiah 43:8-13",
-    "reading_epistle_ep_year2": "1 Peter 2:2-10",
+    "reading_ot_mp_year2": "Exodus 14:5-22",
+    "reading_epistle_ep_year2": "1 John 1:1-7",
     "reading_gospel_mp_year2": "John 14:1-7",
     "day_of_season": 8,
     "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
@@ -159,12 +159,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 1, Psalm 2, Psalm 3",
     "psalms_ep": "Psalm 4, Psalm 7",
-    "reading_ot_mp_year1": "Exodus 14:21-31",
-    "reading_epistle_mp_year1": "1 Peter 1:1-12",
-    "reading_gospel_ep_year1": "John 14:1-17",
-    "reading_ot_mp_year2": "Daniel 1:1-21",
-    "reading_epistle_ep_year2": "1 John 1:1-10",
-    "reading_gospel_mp_year2": "John 17:1-11",
+    "reading_ot_mp_year1": "Daniel 1:1-21",
+    "reading_epistle_mp_year1": "1 John 1:1-10",
+    "reading_gospel_ep_year1": "John 17:1-11",
+    "reading_ot_mp_year2": "Exodus 14:21-31",
+    "reading_epistle_ep_year2": "1 Peter 1:1-12",
+    "reading_gospel_mp_year2": "John 14:1-17",
     "day_of_season": 9
   },
   {
@@ -177,12 +177,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 5, Psalm 6",
     "psalms_ep": "Psalm 10, Psalm 11",
-    "reading_ot_mp_year1": "Exodus 15:1-21",
-    "reading_epistle_mp_year1": "1 Peter 1:13-25",
-    "reading_gospel_ep_year1": "John 14:18-31",
-    "reading_ot_mp_year2": "Daniel 2:1-16",
-    "reading_epistle_ep_year2": "1 John 2:1-11",
-    "reading_gospel_mp_year2": "John 17:12-19",
+    "reading_ot_mp_year1": "Daniel 2:1-16",
+    "reading_epistle_mp_year1": "1 John 2:1-11",
+    "reading_gospel_ep_year1": "John 17:12-19",
+    "reading_ot_mp_year2": "Exodus 15:1-21",
+    "reading_epistle_ep_year2": "1 Peter 1:13-25",
+    "reading_gospel_mp_year2": "John 14:18-31",
     "day_of_season": 10
   },
   {
@@ -195,12 +195,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 119:1-24",
     "psalms_ep": "Psalm 12, Psalm 13, Psalm 14",
-    "reading_ot_mp_year1": "Exodus 15:22-16:10",
-    "reading_epistle_mp_year1": "1 Peter 2:1-10",
-    "reading_gospel_ep_year1": "John 15:1-11",
-    "reading_ot_mp_year2": "Daniel 2:17-30",
-    "reading_epistle_ep_year2": "1 John 2:12-17",
-    "reading_gospel_mp_year2": "John 17:20-26",
+    "reading_ot_mp_year1": "Daniel 2:17-30",
+    "reading_epistle_mp_year1": "1 John 2:12-17",
+    "reading_gospel_ep_year1": "John 17:20-26",
+    "reading_ot_mp_year2": "Exodus 15:22-16:10",
+    "reading_epistle_ep_year2": "1 Peter 2:1-10",
+    "reading_gospel_mp_year2": "John 15:1-11",
     "day_of_season": 11
   },
   {
@@ -213,12 +213,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 18:1-20",
     "psalms_ep": "Psalm 18:21-50",
-    "reading_ot_mp_year1": "Exodus 16:10-22",
-    "reading_epistle_mp_year1": "1 Peter 2:11-25",
-    "reading_gospel_ep_year1": "John 15:12-27",
-    "reading_ot_mp_year2": "Daniel 2:31-49",
-    "reading_epistle_ep_year2": "1 John 2:18-29",
-    "reading_gospel_mp_year2": "Luke 3:1-14",
+    "reading_ot_mp_year1": "Daniel 2:31-49",
+    "reading_epistle_mp_year1": "1 John 2:18-29",
+    "reading_gospel_ep_year1": "Luke 3:1-14",
+    "reading_ot_mp_year2": "Exodus 16:10-22",
+    "reading_epistle_ep_year2": "1 Peter 2:11-25",
+    "reading_gospel_mp_year2": "John 15:12-27",
     "day_of_season": 12
   },
   {
@@ -231,12 +231,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 16, Psalm 17",
     "psalms_ep": "Psalm 134, Psalm 135",
-    "reading_ot_mp_year1": "Exodus 16:23-36",
-    "reading_epistle_mp_year1": "1 Peter 3:13-4:6",
-    "reading_gospel_ep_year1": "John 16:1-15",
-    "reading_ot_mp_year2": "Daniel 3:1-18",
-    "reading_epistle_ep_year2": "1 John 3:1-10",
-    "reading_gospel_mp_year2": "Luke 3:15-22",
+    "reading_ot_mp_year1": "Daniel 3:1-18",
+    "reading_epistle_mp_year1": "1 John 3:1-10",
+    "reading_gospel_ep_year1": "Luke 3:15-22",
+    "reading_ot_mp_year2": "Exodus 16:23-36",
+    "reading_epistle_ep_year2": "1 Peter 3:13-4:6",
+    "reading_gospel_mp_year2": "John 16:1-15",
     "day_of_season": 13
   },
   {
@@ -249,12 +249,12 @@
     "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
     "psalms_mp": "Psalm 20, Psalm 21:1-7",
     "psalms_ep": "Psalm 110:1-5, Psalm 116, Psalm 117",
-    "reading_ot_mp_year1": "Exodus 17:1-16",
-    "reading_epistle_mp_year1": "1 Peter 4:7-19",
-    "reading_gospel_ep_year1": "John 16:16-33",
-    "reading_ot_mp_year2": "Daniel 3:19-30",
-    "reading_epistle_ep_year2": "1 John 3:11-18",
-    "reading_gospel_mp_year2": "Luke 4:1-13",
+    "reading_ot_mp_year1": "Daniel 3:19-30",
+    "reading_epistle_mp_year1": "1 John 3:11-18",
+    "reading_gospel_ep_year1": "Luke 4:1-13",
+    "reading_ot_mp_year2": "Exodus 17:1-16",
+    "reading_epistle_ep_year2": "1 Peter 4:7-19",
+    "reading_gospel_mp_year2": "John 16:16-33",
     "day_of_season": 14
   },
   {
@@ -367,6 +367,23 @@
     "day_of_season": 20
   },
   {
+    "title": "Saturday in 3 Easter",
+    "season": "Easter",
+    "liturgicalColor": "white",
+    "collect": "collect-easter-3",
+    "antiphon_mp": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
+    "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
+    "psalms_mp": "Psalm 30, Psalm 32",
+    "psalms_ep": "Psalm 42, Psalm 43",
+    "reading_ot_mp_year1": "Daniel 6:16-28",
+    "reading_epistle_mp_year1": "3 John 1-15",
+    "reading_gospel_ep_year1": "Luke 5:27-39",
+    "reading_ot_mp_year2": "Exodus 25:1-22",
+    "reading_epistle_ep_year2": "Colossians 3:1-17",
+    "reading_gospel_mp_year2": "Matthew 4:18-25",
+    "day_of_season": 21
+  },
+  {
     "date": "2026-04-25",
     "title": "Saint Mark the Evangelist",
     "season": "Easter",
@@ -402,9 +419,9 @@
     "reading_ot_mp_year1": "Wisdom 1:1-15",
     "reading_epistle_mp_year1": "1 Peter 5:1-11",
     "reading_gospel_ep_year1": "Matthew 7:15-29",
-    "reading_ot_mp_year2": "Exodus 14:5-22",
-    "reading_epistle_ep_year2": "1 John 1:1-7",
-    "reading_gospel_mp_year2": "John 14:1-7",
+    "reading_ot_mp_year2": "Exodus 28:1-4, 30-38",
+    "reading_epistle_ep_year2": "1 John 2:18-29",
+    "reading_gospel_mp_year2": "Mark 6:30-44",
     "day_of_season": 22,
     "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
@@ -421,9 +438,9 @@
     "reading_ot_mp_year1": "Wisdom 1:16-2:11, 21-24",
     "reading_epistle_mp_year1": "Colossians 1:1-14",
     "reading_gospel_ep_year1": "Luke 6:1-11",
-    "reading_ot_mp_year2": "Exodus 28:1-4, 30-38",
-    "reading_epistle_ep_year2": "1 John 2:18-29",
-    "reading_gospel_mp_year2": "Mark 6:30-44",
+    "reading_ot_mp_year2": "Exodus 32:1-20",
+    "reading_epistle_ep_year2": "Colossians 3:18-4:18",
+    "reading_gospel_mp_year2": "Matthew 5:1-10",
     "day_of_season": 23
   },
   {
@@ -439,9 +456,9 @@
     "reading_ot_mp_year1": "Wisdom 3:1-9",
     "reading_epistle_mp_year1": "Colossians 1:15-23",
     "reading_gospel_ep_year1": "Luke 6:12-26",
-    "reading_ot_mp_year2": "Exodus 32:1-20",
-    "reading_epistle_ep_year2": "Colossians 3:18-4:18",
-    "reading_gospel_mp_year2": "Matthew 5:1-10",
+    "reading_ot_mp_year2": "Exodus 32:21-34",
+    "reading_epistle_ep_year2": "1 Thessalonians 1:1-10",
+    "reading_gospel_mp_year2": "Matthew 5:11-16",
     "day_of_season": 24
   },
   {
@@ -457,9 +474,9 @@
     "reading_ot_mp_year1": "Wisdom 4:16-5:8",
     "reading_epistle_mp_year1": "Colossians 1:24-2:7",
     "reading_gospel_ep_year1": "Luke 6:27-38",
-    "reading_ot_mp_year2": "Exodus 32:21-34",
-    "reading_epistle_ep_year2": "1 Thessalonians 1:1-10",
-    "reading_gospel_mp_year2": "Matthew 5:11-16",
+    "reading_ot_mp_year2": "Exodus 33:1-23",
+    "reading_epistle_ep_year2": "1 Thessalonians 2:1-12",
+    "reading_gospel_mp_year2": "Matthew 5:17-20",
     "day_of_season": 25
   },
   {
@@ -475,10 +492,27 @@
     "reading_ot_mp_year1": "Wisdom 5:9-23",
     "reading_epistle_mp_year1": "Colossians 2:8-23",
     "reading_gospel_ep_year1": "Luke 6:39-49",
-    "reading_ot_mp_year2": "Exodus 33:1-23",
-    "reading_epistle_ep_year2": "1 Thessalonians 2:1-12",
-    "reading_gospel_mp_year2": "Matthew 5:17-20",
+    "reading_ot_mp_year2": "Exodus 34:1-17",
+    "reading_epistle_ep_year2": "1 Thessalonians 2:13-20",
+    "reading_gospel_mp_year2": "Matthew 5:21-26",
     "day_of_season": 26
+  },
+  {
+    "title": "Friday in 4 Easter",
+    "season": "Easter",
+    "liturgicalColor": "white",
+    "collect": "collect-easter-4",
+    "antiphon_mp": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
+    "antiphon_ep": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
+    "psalms_mp": "Psalm 40, Psalm 54",
+    "psalms_ep": "Psalm 51",
+    "reading_ot_mp_year1": "Wisdom 6:12-23",
+    "reading_epistle_mp_year1": "Colossians 3:1-11",
+    "reading_gospel_ep_year1": "Luke 7:1-17",
+    "reading_ot_mp_year2": "Exodus 34:18-35",
+    "reading_epistle_ep_year2": "1 Thessalonians 3:1-13",
+    "reading_gospel_mp_year2": "Matthew 5:27-37",
+    "day_of_season": 27
   },
   {
     "date": "2026-05-01",
@@ -516,9 +550,9 @@
     "reading_ot_mp_year1": "Wisdom 7:1-14",
     "reading_epistle_mp_year1": "Colossians 3:12-17",
     "reading_gospel_ep_year1": "Luke 7:18-35",
-    "reading_ot_mp_year2": "Exodus 34:1-17",
-    "reading_epistle_ep_year2": "1 Thessalonians 2:13-20",
-    "reading_gospel_mp_year2": "Matthew 5:21-26",
+    "reading_ot_mp_year2": "Exodus 40:18-38",
+    "reading_epistle_ep_year2": "1 Thessalonians 4:1-12",
+    "reading_gospel_mp_year2": "Matthew 5:38-48",
     "day_of_season": 28
   },
   {
@@ -721,11 +755,6 @@
     "reading_ot_mp_year2": "Leviticus 26:27-42",
     "reading_epistle_ep_year2": "Ephesians 1:1-10",
     "reading_gospel_mp_year2": "Matthew 22:41-46",
-    "eve_title": "Eve of the Ascension",
-    "psalms_ep_eve": "Psalm 68:1-20",
-    "reading_ot_ep_eve": "2 Kings 2:1-15",
-    "reading_epistle_ep_eve": "",
-    "reading_gospel_ep_eve": "",
     "day_of_season": 39,
     "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
@@ -747,7 +776,13 @@
     "reading_gospel_mp_year2": "Matthew 28:16-20",
     "day_of_season": 40,
     "precedence": "major-feast",
-    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)",
+    "eve": {
+      "title": "Eve of the Ascension",
+      "psalms_ep": "Psalm 68:1-20",
+      "reading_ot": "2 Kings 2:1-15",
+      "reading_epistle": "Revelation 5:1-14"
+    }
   },
   {
     "date": "2026-05-15",
@@ -910,11 +945,6 @@
     "reading_ot_mp_year2": "Ezekiel 36:22-27",
     "reading_epistle_ep_year2": "Ephesians 6:10-24",
     "reading_gospel_mp_year2": "Matthew 9:18-26",
-    "eve_title": "Eve of Pentecost",
-    "psalms_ep_eve": "Psalm 33",
-    "reading_ot_ep_eve": "Exodus 19:3-8a, 16-20",
-    "reading_epistle_ep_eve": "1 Peter 2:4-10",
-    "reading_gospel_ep_eve": "",
     "day_of_season": 49,
     "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
   },
@@ -936,6 +966,12 @@
     "reading_gospel_mp_year2": "John 4:19-26",
     "day_of_season": 50,
     "precedence": "major-feast",
-    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)",
+    "eve": {
+      "title": "Eve of Pentecost",
+      "psalms_ep": "Psalm 33",
+      "reading_ot": "Exodus 19:3-8a, 16-20",
+      "reading_epistle": "1 Peter 2:4-10"
+    }
   }
 ]

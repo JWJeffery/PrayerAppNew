@@ -137,18 +137,26 @@ function _normalizeBibleTranslation(value) {
     return (typeof value === 'string' && value.trim()) ? value.trim() : DEFAULT_BIBLE_TRANSLATION;
 }
 
+// The NABRE data stores a verse the NABRE omits (Acts 24:7, Mark 9:44 ...) as "[ ]", and in a few cases
+// ("[ ] The Authority of Jesus Questioned.") with the NEXT section's heading attached. Neither belongs in
+// a reading: shown as-is they left a stray "[ ]" and a heading in the middle of the passage. An omitted
+// verse contributes no text.
+function _dropOmittedVerseMarker(text) {
+    return (typeof text === 'string' && /^\s*\[\s*\]/.test(text)) ? '' : text;
+}
+
 function _selectBibleText(textNode, translation = DEFAULT_BIBLE_TRANSLATION) {
-    if (typeof textNode === 'string') return textNode;
+    if (typeof textNode === 'string') return _dropOmittedVerseMarker(textNode);
     if (!textNode || typeof textNode !== 'object' || Array.isArray(textNode)) return '';
 
     const preferred = _normalizeBibleTranslation(translation);
-    if (typeof textNode[preferred] === 'string') return textNode[preferred];
+    if (typeof textNode[preferred] === 'string') return _dropOmittedVerseMarker(textNode[preferred]);
     if (preferred !== DEFAULT_BIBLE_TRANSLATION && typeof textNode[DEFAULT_BIBLE_TRANSLATION] === 'string') {
-        return textNode[DEFAULT_BIBLE_TRANSLATION];
+        return _dropOmittedVerseMarker(textNode[DEFAULT_BIBLE_TRANSLATION]);
     }
 
     const firstKey = Object.keys(textNode).find(key => typeof textNode[key] === 'string');
-    return firstKey ? textNode[firstKey] : '';
+    return firstKey ? _dropOmittedVerseMarker(textNode[firstKey]) : '';
 }
 
 async function getScriptureText(citation, options = {}) {
@@ -256,12 +264,19 @@ function extractBookRange(bookData, bookName, range, lastChapter, translation = 
     // was rendering as just 6:3-6:7 (5 verses), never reaching chapter 7 at all.
     // Verified against real data (2 Corinthians) before this fix; 172 reading
     // citations across data/season/*.json use this format.
+    //
+    // Also "V-C:V" (e.g. the "13-2:8" in "Amos 1:1-5, 13-2:8"): a chapterless start verse that
+    // inherits the chapter of the previous sub-range and runs into a new chapter. It contains a colon
+    // too, so the generic code below read the "13" as a CHAPTER ("[Amos 13 unavailable]" on the
+    // First Sunday of Advent in Year Two).
     const crossChapterMatch = range.match(/^(\d+):(\d+)-(\d+):(\d+)$/);
-    if (crossChapterMatch) {
-        const startCh = parseInt(crossChapterMatch[1]);
-        const startV  = parseInt(crossChapterMatch[2]);
-        const endCh   = parseInt(crossChapterMatch[3]);
-        const endV    = parseInt(crossChapterMatch[4]);
+    const verseToChapterMatch = crossChapterMatch ? null : range.match(/^(\d+)-(\d+):(\d+)$/);
+    if (crossChapterMatch || verseToChapterMatch) {
+        const m = crossChapterMatch || verseToChapterMatch;
+        const startCh = crossChapterMatch ? parseInt(m[1]) : (lastChapter || 1);
+        const startV  = parseInt(crossChapterMatch ? m[2] : m[1]);
+        const endCh   = parseInt(crossChapterMatch ? m[3] : m[2]);
+        const endV    = parseInt(crossChapterMatch ? m[4] : m[3]);
         let tempText = '';
         for (let ch = startCh; ch <= endCh; ch++) {
             const chapter = bookData.chapters.find(c => c.num === ch);

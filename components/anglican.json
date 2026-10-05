@@ -585,6 +585,15 @@
     "type": "Collect"
   },
   {
+    "id": "bcp-collect-christmas-1",
+    "title": "Collect for the First Sunday after Christmas",
+    "text": {
+      "rite1": "Almighty God, who hast poured upon us the new light of thine incarnate Word: Grant that the same light, enkindled in our hearts, may shine forth in our lives; through the same Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Almighty God, you have poured upon us the new light of your incarnate Word: Grant that this light, enkindled in our hearts, may shine forth in our lives; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
     "id": "bcp-collect-christmas-2",
     "title": "Collect for the Second Sunday after Christmas",
     "text": {
@@ -675,7 +684,7 @@
     "id": "bcp-collect-epiphany-6",
     "title": "Collect for the Sixth Sunday after the Epiphany",
     "text": {
-      "rite1": "O God, the strength of all who put their trust in thee: Mercifully accept our prayers; and because through the weakness of our mortal nature, we can do no good thing without thee, grant us the help of thy grace, that in keeping thy commandments we may please thee both in will and deed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite1": "O God, the strength of all who put their trust in thee: Mercifully accept our prayers; and because through the weakness of our mortal nature, we can do no good thing without thee, give us the help of thy grace, that in keeping thy commandments we may please thee both in will and deed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
       "rite2": "O God, the strength of all who put their trust in you: Mercifully accept our prayers; and because in our weakness we can do nothing good without you, give us the help of your grace, that in keeping your commandments we may please you both in will and deed; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
@@ -686,6 +695,33 @@
     "text": {
       "rite1": "Almighty and everliving God, we humbly beseech thee that, as thy only-begotten Son was this day presented in the temple, so we may be presented unto thee with pure and clean hearts by the same thy Son Jesus Christ our Lord; who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Almighty and everliving God, we humbly pray that, as your only-begotten Son was this day presented in the temple, so we may be presented to you with pure and clean hearts by Jesus Christ our Lord; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-transfiguration",
+    "title": "Collect for the Transfiguration of Our Lord (August 6)",
+    "text": {
+      "rite1": "O God, who on the holy mount didst reveal to chosen witnesses thy well-beloved Son, wonderfully transfigured, in raiment white and glistening: Mercifully grant that we, being delivered from the disquietude of this world, may by faith behold the King in his beauty; who with thee, O Father, and thee, O Holy Ghost, liveth and reigneth, one God, world without end. Amen.",
+      "rite2": "O God, who on the holy mount revealed to chosen witnesses your well-beloved Son, wonderfully transfigured, in raiment white and glistening: Mercifully grant that we, being delivered from the disquietude of this world, may by faith behold the King in his beauty; who with you, O Father, and you, O Holy Spirit, lives and reigns, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-epiphany-7",
+    "title": "Collect for the Seventh Sunday after the Epiphany",
+    "text": {
+      "rite1": "O Lord, who hast taught us that all our doings without charity are nothing worth: Send thy Holy Ghost and pour into our hearts that most excellent gift of charity, the very bond of peace and of all virtues, without which whosoever liveth is counted dead before thee. Grant this for thine only Son Jesus Christ's sake, who liveth and reigneth with thee and the same Holy Ghost, one God, now and for ever. Amen.",
+      "rite2": "O Lord, you have taught us that without love whatever we do is worth nothing; Send your Holy Spirit and pour into our hearts your greatest gift, which is love, the true bond of peace and of all virtue, without which whoever lives is accounted dead before you. Grant this for the sake of your only Son Jesus Christ, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-epiphany-8",
+    "title": "Collect for the Eighth Sunday after the Epiphany",
+    "text": {
+      "rite1": "O most loving Father, who willest us to give thanks for all things, to dread nothing but the loss of thee, and to cast all our care on thee who carest for us: Preserve us from faithless fears and worldly anxieties, and grant that no clouds of this mortal life may hide from us the light of that love which is immortal, and which thou hast manifested unto us in thy Son Jesus Christ our Lord; who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Most loving Father, whose will it is for us to give thanks for all things, to fear nothing but the loss of you, and to cast all our care on you who care for us: Preserve us from faithless fears and worldly anxieties, that no clouds of this mortal life may hide from us the light of that love which is immortal, and which you have manifested to us in your Son Jesus Christ our Lord; who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
   },
@@ -1190,6 +1226,24 @@
     "text": {
       "rite1": "Almighty and everlasting God, whose will it is to restore all things in thy well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who liveth and reigneth with thee and the Holy Ghost, one God, world without end. Amen.",
       "rite2": "Almighty and eternal God, you have willed to restore all things in your well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-proper-1",
+    "title": "Proper 1 (Week of the Sunday closest to May 11)",
+    "text": {
+      "rite1": "Remember, O Lord, what thou hast wrought in us and not what we deserve; and, as thou hast called us to thy service, make us worthy of our calling; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Remember, O Lord, what you have wrought in us and not what we deserve; and, as you have called us to your service, make us worthy of our calling; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "bcp-collect-proper-2",
+    "title": "Proper 2 (Week of the Sunday closest to May 18)",
+    "text": {
+      "rite1": "O Almighty and most merciful God, of thy bountiful goodness keep us, we beseech thee, from all things that may hurt us, that we, being ready both in body and soul, may with free hearts accomplish those things which belong to thy purpose; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Almighty and merciful God, in your goodness keep us, we pray, from all things that may hurt us, that we, being ready both in mind and body, may accomplish with free hearts those things which belong to your purpose; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
   },

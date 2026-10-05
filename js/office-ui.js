@@ -5886,6 +5886,74 @@ function esyEmitCitation(container, citationLabel, fullText) {
     return { kind: 'scripture', citation: citationLabel };
 }
 
+/* Which of a day's readings fall at Morning and at Evening Prayer.
+ *
+ * Three kinds of day, told apart by the shape of the data:
+ *  - ORDINARY days: one OT, one Epistle, one Gospel for the CURRENT liturgical year only (Year One
+ *    stores them as reading_*_mp_year1 / reading_gospel_ep_year1, Year Two as reading_ot_mp_year2 /
+ *    reading_epistle_ep_year2 / reading_gospel_mp_year2). Morning gets the OT plus either the
+ *    Epistle or the Gospel, Evening gets the other, per the Gospel-placement setting
+ *    ("evening": MP = OT + Epistle, EP = Gospel; "morning": MP = OT + Gospel, EP = Epistle;
+ *    "both": the Gospel at both offices).
+ *  - HOLY DAYS (a separate Evening OT, reading_ot_ep_year*): MP = OT + Epistle, EP = OT + Gospel,
+ *    exactly as the BCP Holy Days table has it, whatever the placement setting. Their two year
+ *    columns carry identical text, so either year's field is fine.
+ *  - Days with explicit morning/evening fields (Easter Day, Good Friday, Holy Saturday, Palm
+ *    Sunday, Christmas Eve -- flagged explicit_office_readings): those fields are used as written,
+ *    at the office they name, whatever the placement setting.
+ */
+function resolveDailyOfficeReadings(d, litYear, gospelPlacement, useAltMp, useAltEp) {
+    const y = litYear === 'year2' ? 'year2' : 'year1';
+    const other = y === 'year1' ? 'year2' : 'year1';
+    const first = (...keys) => { for (const k of keys) { if (d[k]) return d[k]; } return ''; };
+    const r = { morningOT: '', morningEpistle: '', morningGospel: '', eveningOT: '', eveningEpistle: '', eveningGospel: '' };
+
+    const generic = !!(d.explicit_office_readings || d.reading_gospel_mp || d.reading_gospel_ep || d.reading_epistle_mp || d.reading_epistle_ep || d.reading_ot_ep);
+    const holy = !generic && !!(d.reading_ot_ep_year1 || d.reading_ot_ep_year2);
+
+    const otMp = (useAltMp && d[`reading_ot_mp_alt_${y}`]) || first(`reading_ot_mp_${y}`, 'reading_ot_mp', 'reading_ot');
+    const otEp = (useAltEp && first(`reading_ot_ep_alt_${y}`, `reading_ot_ep_alt_${other}`))
+              || first(`reading_ot_ep_${y}`, `reading_ot_ep_${other}`, 'reading_ot_ep');
+
+    if (generic) {
+        r.morningOT = otMp;
+        r.morningEpistle = first(`reading_epistle_mp_${y}`, 'reading_epistle_mp', 'reading_epistle');
+        r.morningGospel = first(`reading_gospel_mp_${y}`, 'reading_gospel_mp');
+        r.eveningOT = otEp;
+        r.eveningEpistle = first(`reading_epistle_ep_${y}`, 'reading_epistle_ep');
+        r.eveningGospel = (useAltEp && first(`reading_gospel_ep_alt_${y}`, `reading_gospel_ep_alt_${other}`))
+                       || first(`reading_gospel_ep_${y}`, 'reading_gospel_ep');
+        return r;
+    }
+
+    if (holy) {
+        r.morningOT = otMp;
+        r.morningEpistle = first(`reading_epistle_mp_${y}`, `reading_epistle_ep_${y}`, `reading_epistle_mp_${other}`, `reading_epistle_ep_${other}`);
+        r.eveningOT = otEp;
+        r.eveningGospel = (useAltEp && first(`reading_gospel_ep_alt_${y}`, `reading_gospel_ep_alt_${other}`))
+                       || first(`reading_gospel_ep_${y}`, `reading_gospel_mp_${y}`, `reading_gospel_ep_${other}`, `reading_gospel_mp_${other}`);
+        return r;
+    }
+
+    // ordinary day: this year's Epistle and Gospel, wherever the data happens to store them
+    const epistle = first(`reading_epistle_mp_${y}`, `reading_epistle_ep_${y}`);
+    const gospel  = first(`reading_gospel_ep_${y}`, `reading_gospel_mp_${y}`);
+    r.morningOT = otMp;
+    r.eveningOT = otEp;
+    if (gospelPlacement === 'morning') {
+        r.morningGospel = gospel;
+        r.eveningEpistle = epistle;
+    } else if (gospelPlacement === 'both') {
+        r.morningEpistle = epistle;
+        r.morningGospel = gospel;
+        r.eveningGospel = gospel;
+    } else {
+        r.morningEpistle = epistle;
+        r.eveningGospel = gospel;
+    }
+    return r;
+}
+
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;
@@ -5984,6 +6052,18 @@ async function renderBcpOffice() {
     }
 
 
+    // Evening Prayer on the eve of a feast: the BCP gives the Eve its own psalms and lessons
+    // (Christmas Eve, Eve of the Epiphany, of Ascension, of Pentecost, of Trinity Sunday, of seven
+    // Holy Days...). They live on the FEAST's entry as `eve`, so look at tomorrow's entry.
+    let eveData = null;
+    if (isEvening) {
+        try {
+            const tomorrow = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1);
+            const nextDay = await CalendarEngine.fetchLectionaryData(tomorrow);
+            if (nextDay && !nextDay._isFallback && nextDay.eve) eveData = nextDay.eve;
+        } catch (e) { /* the Eve is an addition to the office; never let it break the office */ }
+    }
+
     const calendarInfo = document.getElementById('calendar-info');
     if (calendarInfo && dailyData) {
         const litYearLabel = litYear === 'year1' ? 'Year I' : 'Year II';
@@ -6020,6 +6100,8 @@ async function renderBcpOffice() {
         }
     }
 
+    if (eveData && !use30Day && !isNoonday && !isCompline) psalms = eveData.psalms_ep || psalms;
+
     // ── Marian components ─────────────────────────────────────────────────────
     let marianComp = null, theotokionComp = null;
     if (marianElement !== 'none') {
@@ -6050,12 +6132,6 @@ async function renderBcpOffice() {
     const altMpToggleId = dailyData?.alt_mp_toggle_id;
     const useAltMp = altMpToggleId && (document.getElementById(`toggle-${altMpToggleId}-alt`)?.checked ?? false);
 
-    let morningOT      = (useAltMp && dailyData[`reading_ot_mp_alt_${litYear}`])
-                         || dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot_mp']      || dailyData['reading_ot']      || '';
-    let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]  || dailyData[`reading_epistle_mp_${otherYear}`]  || dailyData['reading_epistle_mp']  || dailyData['reading_epistle']  || '';
-    let morningGospel  = (gospelPlacement === 'morning' || gospelPlacement === 'both')
-                         ? (dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_mp_${otherYear}`] || dailyData['reading_gospel_mp'] || dailyData['reading_gospel'] || '') : '';
-
     // Josh's settled decision (2026-07-09): same alt-EP toggle as the psalm
     // selection above -- Saint Mary the Virgin and Saint Michael and All Angels
     // both have a real BCP "or" alternative for the Evening Prayer OT and
@@ -6063,19 +6139,34 @@ async function renderBcpOffice() {
     const altEpToggleId = dailyData?.alt_ep_toggle_id;
     const useAltEp = altEpToggleId && (document.getElementById(`toggle-${altEpToggleId}-alt`)?.checked ?? false);
 
-    let eveningOT      = (useAltEp && (dailyData[`reading_ot_ep_alt_${litYear}`] || dailyData[`reading_ot_ep_alt_${otherYear}`]))
-                         || dailyData[`reading_ot_ep_${litYear}`]      || dailyData[`reading_ot_ep_${otherYear}`]      || dailyData['reading_ot_ep']      || dailyData['reading_ot']      || '';
-    let eveningEpistle = dailyData[`reading_epistle_ep_${litYear}`]  || dailyData[`reading_epistle_ep_${otherYear}`]  || dailyData['reading_epistle_ep']  || dailyData['reading_epistle']  || '';
-    let eveningGospel  = (gospelPlacement === 'evening' || gospelPlacement === 'both')
-                         ? ((useAltEp && (dailyData[`reading_gospel_ep_alt_${litYear}`] || dailyData[`reading_gospel_ep_alt_${otherYear}`]))
-                            || dailyData[`reading_gospel_ep_${litYear}`] || dailyData[`reading_gospel_ep_${otherYear}`] || dailyData['reading_gospel_ep'] || dailyData['reading_gospel'] || '') : '';
+
+    // 2026-10-05: READINGS ARE NEVER MIXED ACROSS YEARS. The season data stores Year One and Year
+    // Two readings under different field names (Year One: Epistle at MP, Gospel at EP; Year Two:
+    // Epistle at EP, Gospel at MP -- the BCP's own suggested layout). The chains this replaces fell
+    // back to the OTHER year's field whenever the current year's was empty, so on an ordinary
+    // Year Two day Morning Prayer showed Year Two's Old Testament beside Year One's Epistle, and
+    // Evening Prayer Year Two's Epistle beside Year One's Gospel (found by checking every day of
+    // 2025-2031 against the 1979 BCP tables). The fix: gather the day's three readings from the
+    // CURRENT year's fields only, then place them by the Gospel-placement setting.
+    const _dayReadings = resolveDailyOfficeReadings(dailyData, litYear, gospelPlacement, !!useAltMp, !!useAltEp);
+    let morningOT      = _dayReadings.morningOT;
+    let morningEpistle = _dayReadings.morningEpistle;
+    let morningGospel  = _dayReadings.morningGospel;
+    let eveningOT      = _dayReadings.eveningOT;
+    let eveningEpistle = _dayReadings.eveningEpistle;
+    let eveningGospel  = _dayReadings.eveningGospel;
+    if (eveData && isEvening) {
+        eveningOT      = eveData.reading_ot || '';
+        eveningEpistle = eveData.reading_epistle || '';
+        eveningGospel  = eveData.reading_gospel || '';
+    }
 
     if (!isMorning) { morningOT = ''; morningEpistle = ''; morningGospel = ''; }
     if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
 
     // ── Begin DOM assembly (Phase 3 refactor: real nodes, not one string) ────
     const officeTitle    = activeRubric?.officeName || 'Office';
-    const officeSubtitle = dailyData.title || 'Day Title';
+    const officeSubtitle = (eveData && eveData.title && eveData.title !== dailyData.title) ? `${dailyData.title} \u00b7 ${eveData.title}` : (dailyData.title || 'Day Title');
 
     const container = document.createElement('div');
     container.className = 'office-container';
@@ -6467,7 +6558,6 @@ async function renderBcpOffice() {
             if (useDayCollect) {
                 let rawId = dailyData.collect || 'collect-default-ferial';
                 cId = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
-                if (cId === 'bcp-collect-transfiguration') cId = 'bcp-collect-the-transfiguration-of-our-lord';
             } else {
                 const noondayCollectIds = ['bcp-collect-noonday-1', 'bcp-collect-noonday-2', 'bcp-collect-noonday-3', 'bcp-collect-noonday-4'];
                 const idx = getDailyRotationIndex(currentDate, noondayCollectIds.length);
@@ -6526,7 +6616,6 @@ async function renderBcpOffice() {
         if (item === 'VARIABLE_COLLECT') {
             let rawId = dailyData.collect || 'collect-default-ferial';
             let cId   = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
-            if (cId === 'bcp-collect-transfiguration') cId = 'bcp-collect-the-transfiguration-of-our-lord';
 
             const comp = appData.components.find(c => c.id === cId);
             const t    = comp ? resolveText(comp, rite) : null;

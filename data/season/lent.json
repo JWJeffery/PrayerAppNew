@@ -116,6 +116,24 @@
     "day_of_season": 6
   },
   {
+    "title": "Tuesday in 1 Lent",
+    "season": "Lent",
+    "liturgicalColor": "purple",
+    "collect": "collect-lent-1",
+    "marian_antiphon": "marian-ave-regina",
+    "antiphon_mp": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "antiphon_ep": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "psalms_mp": "Psalm 45",
+    "psalms_ep": "Psalm 47, Psalm 48",
+    "reading_ot_mp_year1": "Deuteronomy 9:4-12",
+    "reading_epistle_mp_year1": "Hebrews 3:1-11",
+    "reading_gospel_ep_year1": "John 2:13-22",
+    "reading_ot_mp_year2": "Genesis 37:12-24",
+    "reading_epistle_ep_year2": "1 Corinthians 1:20-31",
+    "reading_gospel_mp_year2": "Mark 1:14-28",
+    "day_of_season": 7
+  },
+  {
     "date": "February 24, 2026",
     "title": "Saint Matthias the Apostle",
     "season": "Lent",
@@ -564,6 +582,24 @@
     "day_of_season": 29
   },
   {
+    "title": "Thursday in 4 Lent",
+    "season": "Lent",
+    "liturgicalColor": "purple",
+    "collect": "collect-lent-4",
+    "marian_antiphon": "marian-ave-regina",
+    "antiphon_mp": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "antiphon_ep": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "psalms_mp": "Psalm 69:1-38",
+    "psalms_ep": "Psalm 73",
+    "reading_ot_mp_year1": "Jeremiah 22:13-23",
+    "reading_epistle_mp_year1": "Romans 8:12-27",
+    "reading_gospel_ep_year1": "John 6:41-51",
+    "reading_ot_mp_year2": "Exodus 1:6-22",
+    "reading_epistle_ep_year2": "1 Corinthians 12:12-26",
+    "reading_gospel_mp_year2": "Mark 8:27-9:1",
+    "day_of_season": 30
+  },
+  {
     "date": "March 19, 2026",
     "title": "Saint Joseph",
     "season": "Lent",
@@ -681,13 +717,26 @@
     "reading_ot_mp_year2": "Exodus 5:1-6:1",
     "reading_epistle_ep_year2": "1 Corinthians 14:20-33a, 39-40",
     "reading_gospel_mp_year2": "Mark 9:42-50",
-    "eve_title": "Eve of the Annunciation",
-    "psalms_ep_eve": "Psalm 8, Psalm 138",
-    "reading_ot_ep_eve": "Genesis 3:1-15",
-    "reading_epistle_ep_eve": "",
-    "reading_gospel_ep_eve": "",
     "day_of_season": 35,
     "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
+  },
+  {
+    "title": "Wednesday in 5 Lent",
+    "season": "Lent",
+    "liturgicalColor": "purple",
+    "collect": "collect-lent-5",
+    "marian_antiphon": "marian-ave-regina",
+    "antiphon_mp": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "antiphon_ep": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "psalms_mp": "Psalm 119:145-176",
+    "psalms_ep": "Psalm 128, Psalm 129, Psalm 130",
+    "reading_ot_mp_year1": "Jeremiah 25:30-38",
+    "reading_epistle_mp_year1": "Romans 10:14-21",
+    "reading_gospel_ep_year1": "John 10:1-18",
+    "reading_ot_mp_year2": "Exodus 7:8-24",
+    "reading_epistle_ep_year2": "2 Corinthians 2:14-3:6",
+    "reading_gospel_mp_year2": "Mark 10:1-16",
+    "day_of_season": 36
   },
   {
     "date": "March 25, 2026",
@@ -711,7 +760,13 @@
     "reading_ot_ep_year1": "Wisdom 9:1-12",
     "reading_ot_ep_year2": "Wisdom 9:1-12",
     "precedence": "major-feast",
-    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)"
+    "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_SundaysHolyDays_2026.ics, ics.calendar.cpg.org)",
+    "eve": {
+      "title": "Eve of the Annunciation",
+      "psalms_ep": "Psalm 8, Psalm 138",
+      "reading_ot": "Genesis 3:1-15",
+      "reading_epistle": "Romans 5:12-21"
+    }
   },
   {
     "date": "March 26, 2026",
@@ -727,9 +782,9 @@
     "reading_ot_mp_year1": "Jeremiah 26:1-16",
     "reading_epistle_mp_year1": "Romans 11:1-12",
     "reading_gospel_ep_year1": "John 10:19-42",
-    "reading_ot_mp_year2": "Exodus 7:8-24",
-    "reading_epistle_ep_year2": "2 Corinthians 2:14-3:6",
-    "reading_gospel_mp_year2": "Mark 10:1-16",
+    "reading_ot_mp_year2": "Exodus 7:25-8:19",
+    "reading_epistle_ep_year2": "2 Corinthians 3:7-18",
+    "reading_gospel_mp_year2": "Mark 10:17-31",
     "day_of_season": 37
   },
   {
