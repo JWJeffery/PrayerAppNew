@@ -861,12 +861,6 @@
         "primary_label": "Notify me when this tradition expands",
         "rule": "The signup must be opt-in, visually secondary, scoped to the selected tradition-family, and framed as service rather than marketing."
       }
-    },
-    "browser_qc_doctrine": {
-      "entry_mobile_stabilization_sweep": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
-      "release_allowlist_rule": "scripts/ remains excluded from release packaging by default; browser-runtime QC scripts may be explicitly allowlisted when they must run from deployed pages.",
-      "codespaces_auth_rule": "Codespaces tunnel/auth/CORS failures are deployment/test-target failures, not app runtime failures, unless the requested QC JavaScript is actually returned and executed.",
-      "latest_passing_browser_qc": "Entry/Mobile QC PASS: 11 check(s) passed."
     }
   },
   "major_tradition_families": [
@@ -3596,23 +3590,6 @@
             "result": "PASS release:web: files=289 output=web-release/ zip=web-release.zip"
           }
         ],
-        "browser_qc": {
-          "script": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
-          "result": "PASS: 11 check(s) passed.",
-          "covered": [
-            "Universal selector and advanced-tools gate",
-            "BCP tooltip containment and dismissal",
-            "BCP mobile label bounds",
-            "BCP Daily Office sidebar close/restore",
-            "BCP Daily Office shared selector overflow",
-            "Oriental Orthodoxy / Ethiopian Sa'atat sidebar close/restore",
-            "Oriental Orthodoxy / Ethiopian Sa'atat shared selector overflow",
-            "Church of the East sidebar close/restore",
-            "Church of the East shared selector overflow",
-            "Eastern Orthodoxy / Horologion sidebar close/restore",
-            "Eastern Orthodoxy / Horologion shared selector overflow"
-          ]
-        },
         "live_smoke_test": {
           "performed": true,
           "result": "User reported live smoke tests looked much better after corrected web-release upload."

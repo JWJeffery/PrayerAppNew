@@ -898,11 +898,6 @@
         },
         "latest_entry_mobile_note": "selectMode() now enforces one active office drawer so toggleSidebar() cannot target stale drawers after cross-mode navigation."
       },
-      "scripts/browser-qc-entry-mobile-stabilization-sweep.js": {
-        "role": "Browser-runtime QC sweep for public entry/mobile stabilization",
-        "status": "Current — passing 11 checks as of 2026-06-09",
-        "release_policy": "Explicitly allowlisted into web-release/scripts/ by scripts/prepare-web-release.mjs while scripts/ remains generally excluded."
-      },
       "scripts/audit-entry-mobile-stabilization-runner.mjs": {
         "role": "Static guard for entry/mobile browser QC, release allowlist, and source markers",
         "status": "Current — PASS 38 checks as of 2026-06-09"
@@ -1234,23 +1229,6 @@
               "result": "PASS release:web: files=289 output=web-release/ zip=web-release.zip"
             }
           ],
-          "browser_qc": {
-            "script": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
-            "result": "PASS: 11 check(s) passed.",
-            "covered": [
-              "Universal selector and advanced-tools gate",
-              "BCP tooltip containment and dismissal",
-              "BCP mobile label bounds",
-              "BCP Daily Office sidebar close/restore",
-              "BCP Daily Office shared selector overflow",
-              "Oriental Orthodoxy / Ethiopian Sa'atat sidebar close/restore",
-              "Oriental Orthodoxy / Ethiopian Sa'atat shared selector overflow",
-              "Church of the East sidebar close/restore",
-              "Church of the East shared selector overflow",
-              "Eastern Orthodoxy / Horologion sidebar close/restore",
-              "Eastern Orthodoxy / Horologion shared selector overflow"
-            ]
-          },
           "live_smoke_test": {
             "performed": true,
             "result": "User reported live smoke tests looked much better after corrected web-release upload."
