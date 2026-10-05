@@ -9661,11 +9661,11 @@
   "08-22": {
    "month": "August",
    "date": "08-22",
-   "selected_candidate": null,
+   "selected_candidate": "Philip Benizi",
    "selected_sin": null,
    "decision_type": "custom",
-   "reviewer_comments": "Unsupported Rivera primary recommendation withdrawn under Josh Jeffery's instruction to fix the source failure. Philip Benizi is recommended from Anglican Martyrology p.102 (August 22) and Oxford Dictionary of Saints PDF p.764; replacement admission awaits curator decision. Rivera remains a research candidate; UO-SIN-000053 is not reassigned.",
-   "timestamp": "2026-10-04T21:23:40.000Z",
+   "reviewer_comments": "Josh Jeffery approved Philip Benizi as the August 22 primary in this conversation on October 5, 2026. Anglican Martyrology PDF p.102 and Oxford Dictionary of Saints PDF p.764 support the day and candidate. Rivera's unsupported primary recommendation remains withdrawn; UO-SIN-000053 remains attached to Rivera. Philip's controlled SIN allocation is pending. Resolve the conflicting death-place accounts and differing Servite observance before drafting.",
+   "timestamp": "2026-10-05T16:16:18.000Z",
    "original_candidate_row": {
     "rank": "1",
     "candidate": "Alicia “Cristina” Rivera, OSH",
@@ -9694,18 +9694,24 @@
    },
    "_internal_chosen_key": null,
    "_internal_is_custom": true,
-   "_internal_custom_text": "",
-   "decision_status": "Replacement admission pending curator decision",
+   "_internal_custom_text": "Philip Benizi",
+   "decision_status": "Admitted by curator",
    "replacement_recommendation": {
     "candidate": "Philip Benizi",
     "designation": "Servite friar and priest; prior general and peacemaker",
     "date": "08-22",
     "selected_sin": null,
-    "status": "Recommended; not admitted",
+    "status": "Approved as primary by Josh Jeffery on 2026-10-05",
     "source_witnesses": "Anglican Martyrology PDF p.102; Oxford Dictionary of Saints PDF p.764",
-    "review_flags": "Curatorial admission; resolve death-place and death-day discrepancies before drafting"
+    "review_flags": "Controlled SIN allocation; resolve death-place and death-day discrepancies before drafting"
    },
-   "correction_note": "Supersedes the earlier 08-22 selection only. original_candidate_row is preserved as historical provenance, not an active ranking endorsement. Authoritative Calendar and Admission Decisions, section F; synaxarium-08-22-correction-2026-10-04.json."
+   "correction_note": "Supersedes the earlier 08-22 selection only. original_candidate_row is preserved as historical provenance, not an active ranking endorsement. Authoritative Calendar and Admission Decisions, section F; synaxarium-08-22-correction-2026-10-04.json.",
+   "curator_approval": {
+    "curator": "Josh Jeffery",
+    "date": "2026-10-05",
+    "evidence": "Explicit approval in this conversation: Yes, I do.",
+    "scope": "Philip Benizi as primary on 08-22"
+   }
   },
   "08-23": {
    "month": "August",
