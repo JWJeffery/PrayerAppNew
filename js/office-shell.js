@@ -935,12 +935,11 @@
         if (!margin || !env) return;
 
         var cards = [];
-        (Array.isArray(env.overlays) ? env.overlays : []).forEach(function (o) {
-            var body = (o.label || 'Devotion') +
-                (o.source ? ' \u2014 ' + o.source : ' \u2014 provenance not yet recorded in the corpus') +
-                (o.anchor ? '. Anchored ' + o.anchor + '.' : '.');
-            cards.push(marginCard('overlay', 'Overlay \u00b7 borrowed', body));
-        });
+        /* 2026-10-05 (Josh, from his phone): the red "Overlay \u00b7 borrowed" card that used to be
+           drawn here for every optional devotion switched on (Angelus, Trisagion, ...) is removed.
+           It said nothing a reader of the prayer needs, and on a phone it sat between the
+           prayers and the page's own controls, taking a screenful. The envelope still carries
+           env.overlays; only the on-page card is gone. */
         (Array.isArray(env.diagnostics) ? env.diagnostics : []).forEach(function (d) {
             var wording = DIAGNOSTIC_WORDING[d.code] || d.message || 'A gap, stated rather than hidden.';
             cards.push(marginCard('diagnostic', 'Diagnostic', d.block ? (d.block + ' \u2014 ' + wording) : wording));
