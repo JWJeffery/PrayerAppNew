@@ -39,16 +39,25 @@
   },
   "UO-SIN-000621": {
    "name": "Sarah, Theodora, and Syncletica of Egypt",
-   "life": "These three women are among the Desert Mothers, the \"ammas\" whom seekers visited in the Egyptian wilderness for a word of guidance. Sarah lived as a hermit for about sixty years beside the Nile and was admired for her fierce discipline and her sharp, humble replies. Syncletica, from a wealthy family, gave away her inheritance and lived in a tomb outside Alexandria, where women gathered to learn from her; she taught moderation and steady thanksgiving. Theodora, according to tradition, left a troubled marriage, lived disguised as a monk in the Thebaid, and bore false accusation in silence. Their sayings still guide those who pray.",
+   "life": "These three women are among the Desert Mothers, the ammas whose sayings were gathered in the Sayings of the Desert Fathers and who were visited by seekers for a word of guidance. Sarah is remembered as living for sixty years beside a river without letting it distract her from prayer, and for her humble, sharp replies to visitors. Theodora, the widow of a Roman official, withdrew to the desert after his death, and was consulted for her wisdom on prayer; she taught that humility, rather than harsh discipline alone, overcomes temptation. Syncletica lived an ascetic life in a tomb at Alexandria and taught perseverance and that the spiritual life is possible even in a crowd.",
    "period": "4th to 5th century",
    "place": "Egypt: the Nile, Scetis, Alexandria, the Thebaid",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Desert_Mothers",
     "https://en.wikipedia.org/wiki/Amma_Sarah",
     "https://en.wikipedia.org/wiki/Syncletica_of_Alexandria",
     "https://en.wikipedia.org/wiki/Theodora_of_Alexandria"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 18,
+    "finding": "Revise life",
+    "change_note": "Replaced the disguised-monk Theodora story with her widowhood, desert life and teaching on prayer and humility. Dropped the Nile/inheritance particulars, and kept Sarah and Syncletica to what the LFF entry gives.",
+    "checked_in": [
+     "LFF 5 January, Sarah, Theodora, and Syncletica"
+    ]
+   }
   },
   "UO-SIN-000623": {
    "name": "Lucian of Antioch",
@@ -97,14 +106,24 @@
   },
   "UO-SIN-000627": {
    "name": "Theodosius the Cenobiarch",
-   "life": "Theodosius was born about 423 in Cappadocia and, as a young man, went to the Holy Land. He lived for many years in a cave near Bethlehem in prayer and severe self-denial. As disciples gathered, he founded a large monastery in the Judean wilderness, which cared for the poor, the elderly, and the sick, and welcomed monks of several languages. When his friend Sabbas was set over the hermits of Palestine, Theodosius was given charge of the monks living in community, hence his title \"Cenobiarch.\" Together they defended the Council of Chalcedon against Emperor Anastasius, who briefly removed him. He died in 529, aged about one hundred and five.",
+   "life": "Theodosius was born in Cappadocia around 423 and trained as a monk before settling in the Holy Land. He founded a large monastery near Bethlehem, where the community of monks lived and prayed together, and he came to be placed over the monks living in community across Palestine, which gave him the title \"Cenobiarch.\" A steadfast defender of the faith of the Council of Chalcedon against those who taught that Christ has only a single nature, he was admired for his hospitality and humility. He died in 529 at a great age.",
    "period": "died 529",
    "place": "Cappadocia; near Bethlehem, Judean wilderness",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Theodosius_the_Cenobiarch",
     "https://orthodoxwiki.org/Theodosius_the_Great_(Cenobiarch)"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 20,
+    "finding": "Correct apparatus",
+    "change_note": "Removed the cave years, the care for the poor and sick, the languages detail, the Sabbas link and the Anastasius exile as unwitnessed; stated the oversight of cenobitic communities without naming who appointed him. Birth c. 423 retained from the review's 423-529 range; hospitality/humility is general and unsourced, so kept mild.",
+    "checked_in": [
+     "AM Jan 11 Theodosius",
+     "Book of Saints Theodosius the Cenobiarch entry (listing only)"
+    ]
+   }
   },
   "UO-SIN-000628": {
    "name": "Aelred of Rievaulx",
@@ -178,15 +197,25 @@
   },
   "UO-SIN-000792": {
    "name": "Macarius the Great",
-   "life": "Macarius was born in the Egyptian Delta about the year 300. He worked as a cattle-herder before turning to the ascetic life, and he was a follower of Antony the Great. He settled in the desert of Scetis, was ordained priest, and drew many monks to live near him, so that the monasteries of Wadi Natrun grew from his community. During the reign of Valens he was briefly exiled to an island in the Nile because of the controversy over the Nicene faith. Fifty Spiritual Homilies, long attributed to him, speak of the Spirit's work in the heart. He died about 390, and his monastery is still inhabited.",
-   "period": "died about 390",
+   "life": "Macarius, also called Macarius the Elder, was an Egyptian monk born about 300. He became a disciple of the teaching of Antony the Great, settled in the desert of Scetis, and was ordained priest around 340. Monks gathered around him, and his counsel was prized by other desert fathers. Many sayings and stories about him survive, though not all can be trusted, and the spiritual homilies long ascribed to him are probably not his own work. He died about 390 and remains one of the best-loved fathers of the Egyptian desert.",
+   "period": "c. 300 to c. 390",
    "place": "Scetis (Wadi Natrun), Egypt",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Macarius_of_Egypt",
     "https://orthodoxwiki.org/Macarius_the_Great",
     "https://stmacariusmonastery.org/saints/macarius/?lang=en"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 22,
+    "finding": "Further sourcing",
+    "change_note": "Dropped Delta birthplace (ODS says Upper Egypt; left unstated), cattle-herding, exile under Valens and the claim about present-day monastery continuity; softened homilies to uncertain authorship per ODS.",
+    "checked_in": [
+     "ODS Macarius the Great",
+     "AM Jan 19 Macarius the Elder (Skete, about 390)"
+    ]
+   }
   },
   "UO-SIN-000636": {
    "name": "Fabian",
@@ -315,14 +344,23 @@
   },
   "UO-SIN-000647": {
    "name": "Brigid of Kildare",
-   "life": "Brigid is one of Ireland's three national patron saints, though her story is wrapped in legend. According to tradition she was born around 450 near Faughart in County Louth, the daughter of a chieftain and an enslaved mother. She refused marriage, took the veil, and founded a monastery at Kildare, the first nunnery in Ireland, which grew into a double house of monks and nuns with a famous school. Stories tell of her generosity to the poor and of a cloak that stretched to cover the Curragh plain. She died around 525, and pilgrims still weave rush crosses in her memory.",
-   "period": "died c. 525",
+   "life": "Brigid is one of the best-loved saints of Ireland, though much of her story is told through legend. Born in the middle of the fifth century, she was the daughter of a chieftain and one of his enslaved women, and was known from childhood for giving to the poor. She gathered a community of women at Kildare, the first monastic community for women in Ireland, and later a community of men was joined to it, making a double monastery. She shared in the leadership of the Irish church of her day and died around 523.",
+   "period": "c. 523",
    "place": "Kildare, Ireland",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Brigid_of_Kildare",
     "https://www.britannica.com/biography/Saint-Brigit-of-Ireland"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 25,
+    "finding": "Period variant",
+    "change_note": "Aligned death to c. 523; removed Faughart, the cloak at the Curragh and the rush-cross custom, which lacked cited witnesses; kept slavery, father, first women's community, double monastery.",
+    "checked_in": [
+     "LFF Brigid of Kildare entry, Feb 1 (printed pp. 69-71)"
+    ]
+   }
   },
   "UO-SIN-000649": {
    "name": "Anskar",
@@ -348,14 +386,24 @@
   },
   "UO-SIN-000651": {
    "name": "Agatha of Sicily",
-   "life": "Agatha was a young Christian woman of Catania in Sicily, martyred around 251 during the persecution under Emperor Decius. Her surviving story is mostly legend. It says she came from a wealthy family and rejected the advances of the Roman governor Quintianus, who in revenge had her imprisoned and cruelly tortured. According to tradition she was comforted by a vision of Saint Peter in prison, and an earthquake interrupted her sentence of burning before she died in her cell. She was honoured early across the Church. Catania has long invoked her in times of fire and the eruptions of Mount Etna.",
-   "period": "died c. 251",
+   "life": "Agatha was a young Christian woman of Sicily who, according to tradition, was martyred around 251 during the persecution under Emperor Decius. Her story survives mostly as legend, and even her date is uncertain. It tells that the Roman governor Quintianus, whose advances she refused, had her imprisoned and tortured, that she was comforted by a vision of Saint Peter, and that an earthquake shook the city before she died in prison. Her memory was honoured early and widely, and she is invoked for protection against fire and the eruptions of Mount Etna.",
+   "period": "traditionally c. 251",
    "place": "Catania, Sicily",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Agatha_of_Sicily",
     "https://www.britannica.com/biography/Saint-Agatha"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 26,
+    "finding": "Correct apparatus",
+    "change_note": "Made c. 251 explicitly traditional and dropped the claim of a wealthy family and sentence of burning; birthplace left unspecified since Catania and Palermo are both claimed.",
+    "checked_in": [
+     "ODS Agatha",
+     "AM Feb 5"
+    ]
+   }
   },
   "UO-SIN-000652": {
    "name": "The Martyrs of Japan / Paul Miki and Companions",
@@ -624,14 +672,24 @@
   },
   "UO-SIN-000673": {
    "name": "David of Wales",
-   "life": "David was a sixth-century monk and bishop who became the patron saint of Wales. He is associated with Mynyw, now St Davids, in Pembrokeshire, where he is said to have founded a monastery of severe simplicity, its monks working the land by hand and living on bread, herbs and water. Tradition holds that at the Synod of Brefi his preaching was so persuasive that a dove settled on his shoulder and the ground rose beneath him. His reported last words urged his followers to keep to the little things. Much of his story comes from a late eleventh-century Life, so details are uncertain.",
-   "period": "died c. 589 (sources vary, 589 to c. 601)",
+   "life": "David was a sixth-century monk and bishop who became the patron saint of Wales. He is associated with Mynyw, now St Davids, in Pembrokeshire, where he founded a monastery known for its simple, disciplined life, its monks working the land by hand. His last words to his followers are remembered as an encouragement to keep the faith and to do the little things they had seen and heard from him. The earliest surviving account of his life was written centuries later, so many details are uncertain, and his death is placed around 589, though some give a later date.",
+   "period": "sixth century (died c. 589)",
    "place": "Mynyw (St Davids), Pembrokeshire, Wales",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/David_of_Wales",
     "https://www.catholic.com/encyclopedia/david-saint"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 32,
+    "finding": "Correct period",
+    "change_note": "Replaced c. 544 with sixth century / c. 589 and noted later variants only as uncertainty; removed the dove and rising-ground story at Brefi for lack of a locator and the bread-herbs-water detail.",
+    "checked_in": [
+     "LFF David of Wales entry (printed pp. 120-121)",
+     "AM Mar 1"
+    ]
+   }
   },
   "UO-SIN-000674": {
    "name": "Chad of Lichfield",
@@ -659,25 +717,44 @@
   },
   "UO-SIN-000676": {
    "name": "Adrian of May Island and Companions",
-   "life": "According to tradition, Adrian was a bishop or abbot who laboured on the Isle of May in the Firth of Forth, building hermitages and a monastery there. About 875, Viking raiders are said to have landed and slaughtered the whole community, traditionally numbered in the thousands, making them martyrs. The island later became a great pilgrimage place, visited by Scottish kings and queens and by people seeking healing and blessing. Scholars think the story may be a memory of the seventh-century saint Ethernan, killed among the Picts in 669, whose cult was later joined to Adrian's. The details remain uncertain.",
+   "life": "Adrian is remembered as a missionary bishop or abbot who worked among the Picts in Fife. Tradition says that when Viking raiders came, he and his companions withdrew to the Isle of May in the Firth of Forth, and that they were killed there by the Danes about 875, which is why they are honoured as martyrs. Later, in the twelfth century, King David I founded a Benedictine monastery on the island, and the Isle of May became a well-known place of pilgrimage. Little reliable detail survives about Adrian's own life, and accounts differ about where he came from.",
    "period": "died c. 875 (traditional)",
    "place": "Isle of May, Firth of Forth, Scotland",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Adrian_of_May",
     "https://en.wikipedia.org/wiki/Ethernan"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 2,
+    "finding": "Further sourcing",
+    "change_note": "Removed the thousands, the hermitage building and the Ethernan hypothesis as unsourced; separated the early community from David I's later monastery. Fife, 875, Danes and pilgrimage fit the books; origins are variant (Hungarian vs Irish).",
+    "checked_in": [
+     "AM 4 March, Adrian of May Island",
+     "ODS Adrian of May"
+    ]
+   }
   },
   "UO-SIN-000896": {
    "name": "Non of Wales",
-   "life": "Non, also called Nonna or Nonnita, is remembered as the mother of Saint David. Little is known with certainty, and her story comes largely from the late eleventh-century Life of David. According to that tradition she was a nun near Whitesands Bay in Pembrokeshire, and David was born after she was assaulted by a local chieftain, though she lived chastely and austerely thereafter. Legend says a storm raged at his birth, the place was filled with light, and she gripped a stone so hard it split. A chapel and holy well near St Davids bear her name, and she is also honoured in Brittany.",
-   "period": "lived 5th to 6th century",
+   "life": "Non, also called Nonna or Nonnita, is remembered as the mother of Saint David of Wales. Almost all that is known of her comes from the eleventh-century Life of David, which describes her as a nun near Whitesands Bay in Pembrokeshire, and tells that David was born after she was wronged by a prince named Sant. Other accounts instead make her a chieftain's daughter who was married to Sant and became a nun later in widowhood. She is said to have settled in Cornwall and to have died in Brittany, where her tomb survives at Dirinon. Churches and holy wells bear her name in Wales, Cornwall and Brittany.",
+   "period": "5th to 6th century",
    "place": "Pembrokeshire, Wales; Brittany",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Saint_Non",
     "https://en.wikipedia.org/wiki/David_of_Wales"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 3,
+    "finding": "Further sourcing",
+    "change_note": "Dropped the birth storm, light and split stone, which I could not check in the books. Added the variant account of her marriage and the Cornwall/Brittany links from the dictionary entry.",
+    "checked_in": [
+     "ODS Non (Nonna, Nonnita)"
+    ]
+   }
   },
   "UO-SIN-000678": {
    "name": "Baldred",
@@ -736,14 +813,24 @@
   },
   "UO-SIN-000683": {
    "name": "Sophronius of Jerusalem",
-   "life": "Born in Damascus about 560, Sophronius was a scholar and monk who travelled to the monasteries of Palestine, Egypt and Rome, and became a close friend of John Moschus. He was a fierce defender of the teaching that Christ has both a divine and a human will, against the Monothelite compromise favoured in Constantinople. Chosen patriarch of Jerusalem in 634, he led his people through a long siege by the Arab armies, and agreed to surrender the city to Caliph Umar on terms protecting Christians and their holy places. He also wrote sermons, hymns and saints' lives, and died around 638.",
-   "period": "died c. 638 (some sources say 644)",
+   "life": "Sophronius was born in Damascus and became a scholar and monk who travelled widely in his youth. At a monastery in Judea he befriended John Moschus, and the two journeyed together to Egypt, where they served the archbishop of Alexandria. A firm supporter of the faith of the Council of Chalcedon, Sophronius opposed the Monothelites, who taught that Christ had no human will. He became Patriarch of Jerusalem and was still living when Muslim armies took the city. Several of his writings survive, and he died around 639.",
+   "period": "c. 639",
    "place": "Damascus and Jerusalem",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Sophronius_of_Jerusalem",
     "https://www.oca.org/saints/lives/0216/03/11/100777-saint-sophronius-patriarch-of-jerusalem"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 34,
+    "finding": "Period variant",
+    "change_note": "Set death to c. 639; removed birth year, the 634 appointment, Umar's surrender terms and the list of literary works as needing historical sources; kept AM facts.",
+    "checked_in": [
+     "AM Mar 11 Sophronius",
+     "Book of Saints Sophronius of Jerusalem (listing only)"
+    ]
+   }
   },
   "UO-SIN-000318": {
    "name": "Gregory the Great",
@@ -793,14 +880,23 @@
   },
   "UO-SIN-000686": {
    "name": "Boniface of Ross",
-   "life": "Boniface, more often known by his Gaelic name Curetan, was a Pictish bishop who served at Rosemarkie on the Black Isle in northern Scotland around the turn of the eighth century. He is thought to have taken the name Boniface as a sign of loyalty to Rome. At the time, the Pictish king Nechtan ordered his churches to follow Roman custom in matters such as the date of Easter, and Boniface is remembered as helping bring this about. Churches and wells in Ross and beyond carry his name, including a healing well near Munlochy. Dates are uncertain, and the later legends about him are late and unreliable.",
-   "period": "flourished c. 700",
+   "life": "Boniface, also known by his Pictish name Curetan, was a bishop in northern Britain in the early eighth century. He is said to have come from Italy, perhaps from Rome, and he followed Roman rather than Celtic custom. He is remembered as baptising the Pictish king Nechtan at Restenneth in Angus about 710, and as refounding the monastery at Rosemarkie on the Black Isle about 716. His foundations were dedicated to Saint Peter, and he is remembered as a founder of churches. Churches and wells in Ross and beyond carry his name, and the exact dates of his life are uncertain.",
+   "period": "early 8th century",
    "place": "Rosemarkie, Ross, Scotland",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Boniface_of_Ross",
     "https://synaxarion.org.uk/07scotssaints/curetan/curetan"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 4,
+    "finding": "Further sourcing",
+    "change_note": "Removed the naming motive, the Munlochy well and the specific role in Easter reform, none of which I could verify, and the scholarly verdict. Added the Restenneth baptism and Rosemarkie refoundation from the martyrology entry; the place-name claim is retained only generally.",
+    "checked_in": [
+     "AM 16 March, Boniface of Ross"
+    ]
+   }
   },
   "UO-SIN-000687": {
    "name": "Patrick of Ireland",
@@ -870,14 +966,23 @@
   },
   "UO-SIN-000393": {
    "name": "Gregory the Illuminator",
-   "life": "According to tradition, Gregory was born into a noble Parthian family and raised as a Christian in Cappadocia. Returning to Armenia, he refused to take part in pagan sacrifice, and King Tiridates III had him tortured and thrown into a deep pit, where he is said to have lived for about thirteen years. He was freed to heal the king, who then accepted baptism, and Armenia became the first nation to adopt Christianity, traditionally in 301. Gregory became the first head of the Armenian church, raised up churches, and saw his sons become bishops. He is said to have ended his life in a mountain cave around 330.",
-   "period": "died c. 330",
+   "life": "Gregory, called the Illuminator and the Apostle of the Armenians, is remembered through a mixture of legend and history. Born of a noble family, he was brought up as a Christian in Cappadocia and married, and he had two sons. He returned to Armenia, suffered imprisonment, and converted King Tiridates, with whose help the country was Christianized. He was ordained bishop and established his centre at Valarshapat, near Echmiadzin, and his younger son Aristages succeeded him. His last years were spent in solitude, and he died around 332.",
+   "period": "c. 332",
    "place": "Armenia",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Gregory_the_Illuminator",
     "https://www.britannica.com/biography/Saint-Gregory-the-Illuminator"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 36,
+    "finding": "Period variant",
+    "change_note": "Aligned death to c. 332; removed the thirteen years in the pit, Parthian origin, the 301 date and the mountain cave as needing Armenian witnesses; kept conversion of Tiridates, Cappadocia, sons and final solitude.",
+    "checked_in": [
+     "LFF Gregory the Illuminator entry (printed pp. 150-151)"
+    ]
+   }
   },
   "UO-SIN-000693": {
    "name": "Óscar Romero and the Martyrs of El Salvador",
@@ -1101,14 +1206,23 @@
   },
   "UO-SIN-000714": {
    "name": "Zenaida, Philonella, and Hermione",
-   "life": "According to tradition, Zenaida and Philonella were sisters from a wealthy Jewish family of Tarsus who became Christians and trained in medicine. They settled in Thessaly, in Greece, where they treated the poor without payment and are counted among the first Christian physicians after Luke. Tradition says Zenaida specialized in children's illnesses, and Philonella worked to free medicine from superstition. Hermione, said to be a daughter of Philip the Evangelist, healed the sick at Ephesus and was martyred under the Emperor Hadrian, according to tradition. Little can be checked historically, but the three are honoured as caring women who healed freely in Christ's name.",
-   "period": "1st-2nd century",
+   "life": "According to tradition, Zenaida and Philonella were sisters from a wealthy, well-educated Jewish family in Tarsus, baptised by their brother Jason. They are said to have studied medicine and then set up a chapel and clinic in Thessaly, in Greece, where they treated all who came and refused payment. Zenaida is remembered for caring for children and for her counsel as a spiritual guide, and Philonella for treating illnesses thought incurable. Hermione, said to be a daughter of Philip the Evangelist, is remembered for opening a clinic in Ephesus. Little can be checked historically, but the three are honoured as early Christian women who healed freely.",
+   "period": "1st to 2nd century (traditional)",
    "place": "Tarsus, Thessaly and Ephesus",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Hermione_of_Ephesus",
     "https://orthodoxwiki.org/Zenaida_and_Philonilla_of_Tarsus_in_Cilicia"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 5,
+    "finding": "Correct apparatus",
+    "change_note": "Removed Philonella's work against superstition, the martyrdom of Hermione under Hadrian and the 'after Luke' claim, none of which the book supports. Details now follow the LFF entry; no firm date is verifiable.",
+    "checked_in": [
+     "LFF 14 April, Zenaida, Philonella, and Hermione"
+    ]
+   }
   },
   "UO-SIN-000715": {
    "name": "Damien of Molokai and Marianne Cope of Hawaii",
@@ -1124,14 +1238,23 @@
   },
   "UO-SIN-000716": {
    "name": "Peter Williams Cassey and Anna Besant Cassey",
-   "life": "Peter Williams Cassey was born in Philadelphia in 1831 into a prominent free Black family active in abolition. He went to California in the Gold Rush, worked as a barber in San Francisco, and with his wife Anna moved to San Jose. There they founded the Phoenixonian Institute, the first secondary school in California for African American students. Peter was ordained a deacon in the 1860s, among the first clergy of color ordained on the West Coast, and helped begin churches in San Francisco and San Jose. Anna, a teacher and community leader, died in 1875. Peter later served in North Carolina and Florida and died in 1917.",
-   "period": "died 1875 and 1917",
+   "life": "Peter Williams Cassey (died 1917) was born in Philadelphia into a prominent free Black family active in the abolition movement. He arrived in San Francisco in 1853, worked as a barber, and helped organize groups to protect African Americans. With his wife Anna Besant Cassey (died 1875) he moved to San Jose, where they helped found Trinity Parish and began a mission and school open to children of color who were barred from public schools. Peter was ordained deacon in 1866, the first person of color ordained in the Episcopal Church west of the Mississippi. He later served parishes in North Carolina and Florida.",
+   "period": "Peter died 1917; Anna died 1875",
    "place": "San Francisco and San Jose, California",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Peter_William_Cassey",
     "https://stfrancisepiscopal.org/peter-and-anna-cassey-early-african-american-church-leaders-in-california/"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 38,
+    "finding": "Further sourcing",
+    "change_note": "Dropped the Phoenixonian Institute name and 'first secondary school' claim; used the school and mission as in LFF, and put each death year beside its name. Birth year 1831 and Anna's roles beyond the school not included.",
+    "checked_in": [
+     "LFF Peter Williams Cassey and Anna Besant Cassey entry (printed pp. 192-193)"
+    ]
+   }
   },
   "UO-SIN-000208": {
    "name": "Kateri Tekakwitha",
@@ -1335,14 +1458,24 @@
   },
   "UO-SIN-001003": {
    "name": "Jutta of Kulmsee",
-   "life": "Jutta was born about 1200 into a noble family of Sangerhausen in Germany and married young, bearing children. Inspired by the example of Elizabeth of Hungary, she lived simply, and after her husband died on pilgrimage to the Holy Land she gave away her goods to the poor and nursed the sick, including lepers. She became a Franciscan tertiary and moved to Prussia, where in 1260 she enclosed herself in a cell near Kulmsee, praying for the conversion of the people there. She died in the 1260s, and crowds came to her burial. She is remembered as a patron of Prussia.",
-   "period": "died 1260s",
+   "life": "Jutta was born about 1200 into a noble family of Sangerhausen in Germany. She married and had children, and after her husband died on pilgrimage she gave away her possessions and cared for the poor and the sick, including lepers. She moved to Prussia and in 1256 settled as a recluse near Kulmsee, giving herself to prayer for the people of that land. She died there in 1260, and is remembered as a patron of Prussia.",
+   "period": "died 1260",
    "place": "Sangerhausen; Kulmsee (Chełmża), Prussia",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Jutta_of_Kulmsee",
     "https://franciscans.sg/st-jutta-1200-1260/"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 44,
+    "finding": "Correct apparatus",
+    "change_note": "Corrected settlement to 1256 and death to 1260 as the review states from the New Catholic Encyclopedia; removed the Franciscan tertiary claim and the Elizabeth of Hungary inspiration as unverified. I could not independently open the web sources; AM is confirmed to lack her.",
+    "checked_in": [
+     "AM (absent on May 5; Jutta of Huy distinct, AM May entry)",
+     "review citation to New Catholic Encyclopedia (not read directly)"
+    ]
+   }
   },
   "UO-SIN-001004": {
    "name": "John before the Latin Gate",
@@ -1436,14 +1569,24 @@
   },
   "UO-SIN-000742": {
    "name": "Carthach of Lismore",
-   "life": "Carthach, also called Mochuda or Mo Chutu, was an Irish monk of the seventh century, said to have been born in County Kerry. He founded a monastery at Rahan in County Offaly, where hundreds are said to have joined him, and he composed a rule for his monks in Irish verse. Around Easter in the mid-630s he and his community were driven from Rahan, perhaps by a local prince or perhaps over a dispute about the date of Easter. He travelled south to the banks of the Blackwater in County Waterford and founded Lismore, which became a famous school and see. He died there in 637.",
-   "period": "died 637",
+   "life": "Carthach, also known as Mochuda, was an Irish monk and abbot of the seventh century. He founded several monasteries, spending some time at Comgall's monastery at Bangor, and finally established a monastery at Lismore, in County Waterford, which grew into a famous centre of learning. In his old age he lived as a hermit at nearby Inch. He died around 637.",
+   "period": "c. 637",
    "place": "Rahan, County Offaly; Lismore, County Waterford",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Mochuda",
     "https://newadvent.org/cathen/03384c.htm"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 46,
+    "finding": "Further sourcing",
+    "change_note": "Removed Kerry birth, Rahan details, expulsion, verse rule and Easter dispute as lacking Irish witness; kept the AM account of foundations, Lismore and Inch. Some witnesses give 638; the 'famous centre of learning' phrasing is general.",
+    "checked_in": [
+     "AM May 14 Carthach",
+     "Book of Saints Carthage (Carthach Mochuda) the Younger (listing only)"
+    ]
+   }
   },
   "UO-SIN-000743": {
    "name": "Pachomius of Tabenissi",
@@ -1458,25 +1601,44 @@
   },
   "UO-SIN-001023": {
    "name": "Brendan the Navigator",
-   "life": "Brendan was born in County Kerry around 484 and became one of the great monastic founders of early Ireland, establishing Clonfert in County Galway about 560 and other communities. He is best remembered for the Voyage of Brendan, a medieval tale written long after his death, in which he and a band of monks sail in a leather boat across the ocean to the Isle of the Blessed, meeting wonders on the way. Scholars regard it as a story of spiritual pilgrimage, though it may reflect real seafaring. The details of his own life are uncertain. He died around 577.",
-   "period": "died c. 577",
+   "life": "Brendan was an Irish abbot of the sixth century, born in the southwest of Ireland, who founded several monasteries, among them Clonfert in County Galway. He is best remembered through the Voyage of Brendan, a much-loved medieval tale written long after his death, in which he and a band of monks sail across the ocean in search of the Isle of the Blessed and meet wonders on the way. Many read it as a story of spiritual pilgrimage, though it may echo real sea journeys. Few details of his own life are certain. He is thought to have died in the 570s.",
+   "period": "died c. 575-577",
    "place": "County Kerry; Clonfert, Ireland",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Brendan_the_Navigator",
     "https://www.britannica.com/biography/Saint-Brendan"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 48,
+    "finding": "Period variant",
+    "change_note": "Removed the 484 birth date, the 560 foundation date and the leather boat, which the books do not support. Death date given as a range because the books differ (c. 575 vs c. 577).",
+    "checked_in": [
+     "AM p.57-58 (Brendan of Clonfert, about 575)",
+     "ODS Brendan the Navigator"
+    ]
+   }
   },
   "UO-SIN-001024": {
    "name": "Restituta of Carthage",
-   "life": "Restituta was a young Christian woman of North Africa, said to have been put to death for her faith, perhaps in the persecution under Diocletian around 304, though some accounts give an earlier date. Very little is certain about her. A medieval legend says that after being tortured she was set adrift in a burning boat, which an angel guided safely to the island of Ischia, where a woman named Lucina found her dead body on the shore. Devotion to her spread to Italy, perhaps through North African refugees, and a church in Naples and a sanctuary at Lacco Ameno on Ischia bear her name.",
-   "period": "died c. 304 (uncertain)",
+   "life": "Restituta was a young Christian woman of North Africa, said to have been put to death for her faith, perhaps in the persecution under Diocletian around 304. Very little is certain about her. According to tradition, she was placed in a boat meant to be burned, but the fire turned against the boat of her executioners instead, and her body came to rest on the island of Ischia, where a woman named Lucina received it and buried it. Devotion to her spread in Italy, and a church in Naples and a sanctuary at Lacco Ameno on Ischia bear her name.",
+   "period": "c. 304 (traditional)",
    "place": "Carthage; Ischia, Italy",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Restituta",
     "https://en.wikipedia.org/wiki/Saint_Restituta"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 6,
+    "finding": "Revise life",
+    "change_note": "Replaced the angel-guided burning boat with the Ischian tradition that the fire turned on the executioners' boat and Lucina received her body; marked the sea journey as tradition. I could not re-read the Book entry (not found in the extracted text) and followed the review's locator and the Ischia diocese reference given there.",
+    "checked_in": [
+     "Book of Saints Restituta (review locator; text not located in extract)"
+    ]
+   }
   },
   "UO-SIN-000746": {
    "name": "John I",
@@ -1524,14 +1686,24 @@
   },
   "UO-SIN-001035": {
    "name": "Julia of Corsica",
-   "life": "Julia was a young Christian noblewoman of Carthage who, when the Vandal king Gaiseric captured the city in 439, was sold into slavery to a pagan merchant from Syria named Eusebius. According to the tradition that has come down to us, when his ship put in at northern Corsica he joined a pagan festival, and Julia refused to take part. The governor, Felix, urged her to honour the gods, but she answered that her freedom lay in serving Christ. For this she was tortured and crucified. Monks later rescued her relics, and she is honoured as a patron of Corsica.",
-   "period": "5th century (c. 439)",
+   "life": "Julia is remembered as a young noblewoman of Carthage who was sold into slavery when the Vandals captured the city. According to the tradition handed down, the ship carrying her was wrecked on Corsica while a pagan festival was under way, and Julia, once rescued, refused to join in the festivities. For this she was crucified on the north of the island. Her story has come to us as a pious tradition and its details are uncertain, but she is honoured as a patron of Corsica.",
+   "period": "5th century (traditional)",
    "place": "Carthage; Corsica",
-   "confidence": "medium",
+   "confidence": "low",
    "sources": [
     "https://en.wikipedia.org/wiki/Julia_of_Corsica",
     "https://anastpaul.com/2019/05/22/saint-of-the-day-22-may-st-julia-5th-century-martyr/"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 49,
+    "finding": "Tradition conflict",
+    "change_note": "Dropped Eusebius, Felix, the 439 date, the torture and the monks' rescue of relics, none of which the Book of Saints supports. Kept the Vandal-captivity story as tradition, with Corsican patronage. The Anglican Martyrology gives a different account (sixth century, Saracen raiders), so the period stays hedged.",
+    "checked_in": [
+     "Book of Saints Julia of Corsica",
+     "AM (Corsica, sixth century, Saracen raiders)"
+    ]
+   }
   },
   "UO-SIN-000749": {
    "name": "Petroc of Cornwall",
@@ -1546,14 +1718,23 @@
   },
   "UO-SIN-001038": {
    "name": "Vincent of Lérins",
-   "life": "Vincent, probably a Gaul from the region of Toul or Toulouse, became a monk on the island of Lérins off the southern coast of France, and was ordained a priest. Around 434, writing under the pen-name Peregrinus, he composed the Commonitory, a short guide for telling true teaching from error. His famous rule held that the faith to hold is what has been believed everywhere, always and by all. He wrote in the shadow of the debate about Augustine's teaching on grace, and some have found him critical of it. He died around 445.",
-   "period": "died c. 445",
+   "life": "Vincent was a monk of the island monastery of Lérins off the southern coast of France, and a priest. Writing under the pen-name Peregrinus, he composed the Commonitory, a short guide for telling true Christian teaching from error. In it he gave his famous test: hold what has been believed everywhere, always and by all. He wrote while the Church in Gaul was debating Augustine's teaching on grace, and readers have long discussed where he stood in that quarrel. He is thought to have died in the middle of the fifth century.",
+   "period": "died c. 445-450",
    "place": "Lérins, southern Gaul",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Vincent_of_L%C3%A9rins",
     "https://www.britannica.com/biography/Saint-Vincent-of-Lerins"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 51,
+    "finding": "Period variant",
+    "change_note": "Removed the unverified Toul/Toulouse origin and the 434 date for the Commonitory. Death given as c. 445-450 since the books differ (AM 450). Neutral wording on his stance on grace.",
+    "checked_in": [
+     "AM p.60 (Vincent of Lérins, 450)"
+    ]
+   }
   },
   "UO-SIN-000751": {
    "name": "Bede",
@@ -1601,14 +1782,23 @@
   },
   "UO-SIN-000755": {
    "name": "Maximinus of Trier",
-   "life": "Maximinus was born near Poitiers and became bishop of Trier in the 330s, when the city was an imperial residence in the West. A firm defender of the Nicene faith, he welcomed Athanasius of Alexandria when the bishop was exiled and sheltered him for more than two years. When Arian bishops came to the emperor Constans, Maximinus is said to have persuaded him to reject their appeals, and he joined those who urged the council at Sardica in 343. He sent missionaries into the Moselle valley.He died around the middle of the fourth century, and an abbey rose over his tomb at Trier.",
-   "period": "died c. 349 (uncertain)",
+   "life": "Maximinus was bishop of Trier in the middle of the fourth century, when the city was an imperial residence in the West. He was a firm defender of the Nicene faith against the Arians, and he gave refuge to Athanasius of Alexandria when Athanasius was driven into exile. Trier became a place of shelter for bishops who suffered for the same cause. He died around the middle of the fourth century, and the memory of his holiness lived on in the city.",
+   "period": "died mid-4th century (c. 347)",
    "place": "Trier, Germany",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Maximinus_of_Trier",
     "https://newadvent.org/cathen/10077a.htm"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 53,
+    "finding": "Period variant",
+    "change_note": "Removed Sardica, Constans, the two-year duration, the Poitiers birth, the missionaries and the tomb abbey, which could not be verified in the books I read. Kept the Nicene defence and shelter for Athanasius (AM, c. 347).",
+    "checked_in": [
+     "AM p.63 (Maximinus of Trier, about 347)"
+    ]
+   }
   },
   "UO-SIN-000756": {
    "name": "Josephine Butler",
@@ -1700,14 +1890,24 @@
   },
   "UO-SIN-000765": {
    "name": "Melania the Elder",
-   "life": "Born about 350 into a wealthy Roman family of Spanish origin, Melania was married young and widowed at twenty-two, having lost her husband and two sons. She gave up her comfortable life and sailed to Egypt, where she supported the monks of Nitria and sheltered exiled clergy. About 380 she settled on the Mount of Olives in Jerusalem, founding a convent for women and, with the priest Rufinus, a monastery for men, and welcoming pilgrims for some twenty-seven years. Late in life she returned to Rome to guide her family, including her granddaughter Melania the Younger. She died around 410.",
-   "period": "died c. 410",
+   "life": "Melania was born around 341 into a wealthy Roman family, married young and was widowed at twenty-two. Giving up the comforts of her rank, she travelled to Egypt, where she used her fortune to support monks and other Christians in need. She then settled in Jerusalem, where she founded a monastery on the Mount of Olives with the priest Rufinus and welcomed many pilgrims. She later visited Rome and encouraged her granddaughter, Melania the Younger, to take up the monastic life. Melania the Elder died around 410.",
+   "period": "c. 341-410",
    "place": "Rome; Egypt; Jerusalem",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Melania_the_Elder",
     "https://www.johnsanidopoulos.com/2018/06/venerable-melania-elder-410.html"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 55,
+    "finding": "Revise life",
+    "change_note": "Birth corrected from about 350 to about 341 (LFF 341, Book c. 342). Removed the 27-year figure and the 'about 380' date, and no longer says she lost two sons (LFF says one son survived).",
+    "checked_in": [
+     "LFF Melania the Elder entry",
+     "Book of Saints Melania the Elder"
+    ]
+   }
   },
   "UO-SIN-000766": {
    "name": "Columba of Iona",
@@ -1832,14 +2032,24 @@
   },
   "UO-SIN-000776": {
    "name": "Fillan",
-   "life": "Fillan was an Irish monk, probably from Munster, who crossed to Scotland about 717 and is associated with Fife and Perthshire. He is said to have led a monastery in Fife and a hermit's life in a cave at Pittenweem, then lived at Glen Dochart and Strathfillan, where he was buried. According to tradition, a wolf took the place of his slain ox at the plough, and a glow from his arm let him write in the dark. His relics, including a crozier and a bell, were carried by Scots and later associated with Bannockburn. Few reliable details survive, and his dates are uncertain.",
-   "period": "died c. 750",
+   "life": "Fillan was an Irish monk of the early eighth century who went to Scotland, traditionally with his uncle Comgan. He lived as a hermit at Pittenweem in Fife and was chosen abbot of the monastery nearby, but after some years he resigned and withdrew to Glen Dochart in Perthshire. He is remembered at Strathfillan, where he was buried, and a nearby well was long visited by people seeking healing, especially from mental distress. His bell and staff survive, and a relic of his arm was carried by Robert the Bruce at Bannockburn. Several Irish saints bore this name, and the details of his life are uncertain.",
+   "period": "early 8th century",
    "place": "Fife; Strathfillan, Scotland",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Saint_Fillan",
     "https://www.undiscoveredscotland.co.uk/usbiography/f/saintfillan.html"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 9,
+    "finding": "Further sourcing",
+    "change_note": "Removed the 717 arrival, Munster origin, wolf and luminous arm stories as unverified. Kept the places, abbacy, relics and Bannockburn from the books. Noted that the books give a different feast date and that the name was shared by several saints.",
+    "checked_in": [
+     "AM 20 June, Fillan",
+     "ODS Fillan"
+    ]
+   }
   },
   "UO-SIN-000777": {
    "name": "Aloysius Gonzaga",
@@ -2010,14 +2220,23 @@
   },
   "UO-SIN-000007": {
    "name": "Boisil",
-   "life": "Boisil was a seventh-century monk of the young monastery of Melrose in the Scottish borders, serving as prior under Abbot Eata. He is best remembered as the teacher of Cuthbert, who came to Melrose as a young man in 651. Boisil is said to have recognised his promise at once and taught him the Scriptures. He was also known for care of the sick. Bede tells that he foresaw both a coming plague and Cuthbert's future as a bishop. Boisil died in the plague, around 664, and the Scottish village of St Boswells still bears his name.",
-   "period": "died c. 664",
+   "life": "Boisil was a seventh-century monk of Melrose in the Scottish borders, esteemed for his learning, holiness and gift of prophecy. He is best remembered as the teacher of Cuthbert, who came to Melrose as a young man in 651, and with whom he shared preaching journeys among the neighbouring villages. Boisil later became head of the community. When plague struck, he fell ill, and he and Cuthbert read the Gospel of John together before he died. This was probably around 661, though some place it a few years later. The village of St Boswells still bears his name.",
+   "period": "7th century (d. c. 661-664)",
    "place": "Melrose, Scotland",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Saint_Boisil",
     "https://en.wikipedia.org/wiki/Cuthbert"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 60,
+    "finding": "Correct period",
+    "change_note": "Replaced c. 642 and 664 with the seventh century and a 661-664 range (ODS c. 661). Removed the Bede-sourced prophecy of Cuthbert's episcopate and the 'prior under Eata' wording; ODS says he succeeded Eata as abbot c. 659, so I wrote that he later led the community. Added the shared reading of John from ODS.",
+    "checked_in": [
+     "ODS Boisil"
+    ]
+   }
   },
   "UO-SIN-000008": {
    "name": "Priscilla and Aquila",
@@ -2465,14 +2684,24 @@
   },
   "UO-SIN-000109": {
    "name": "Ignatius of Antioch",
-   "life": "Ignatius was an early bishop of Antioch in Syria, taking the name Theophoros, God-bearer. Condemned for his faith under the emperor Trajan, he was taken under guard to Rome to face the beasts in the arena. On the way he wrote seven letters, to churches in Asia Minor, to Rome and to Bishop Polycarp, urging unity around the bishop, warning against false teaching, and praising the Eucharist as the medicine of immortality. He begged the Romans not to save him from martyrdom. Tradition places his death around 108 under Trajan, though scholars debate the date, which may lie between about 108 and 140.",
-   "period": "died c. 110",
+   "life": "Ignatius was bishop of Antioch in Syria in the early second century. Arrested for being a Christian, he was taken under guard to Rome to be put to death in the arena. On the journey he wrote seven letters, to churches in Asia Minor, to the Christians of Rome and to Bishop Polycarp of Smyrna. They urge unity around the bishop, warn against false teaching, and speak of the Eucharist as the medicine of immortality. He begged the Romans not to prevent his martyrdom, longing to reach Christ through it. He is remembered as one of the earliest and most vivid Christian voices after the apostles.",
+   "period": "early second century",
    "place": "Antioch and Rome",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Ignatius_of_Antioch",
     "https://www.britannica.com/biography/Saint-Ignatius-of-Antioch"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 73,
+    "finding": "Period variant",
+    "change_note": "Removed the claim that he took the name Theophoros and the exact Trajan and 108-140 endpoints; period given as early second century (estimates run c. 105 to c. 115).",
+    "checked_in": [
+     "LFF Ignatius entry",
+     "AM Ignatius entry"
+    ]
+   }
   },
   "UO-SIN-000110": {
    "name": "Saint Luke the Evangelist",
@@ -2520,14 +2749,24 @@
   },
   "UO-SIN-000459": {
    "name": "Donatus of Fiesole",
-   "life": "Born in Ireland of a noble family, Donatus was a scholar and teacher who travelled to Rome as a pilgrim about 816. According to tradition, on his return journey he came to Fiesole in Tuscany just as the people were praying for a new bishop; when he entered the cathedral the bells rang and the candles lit of themselves, and he was chosen. He served as bishop from about 829 until 876, restoring church life and learning, advising the Carolingian rulers Lothair and Louis II, and teaching grammar and poetry. He wrote a life of Saint Brigid and his own epitaph, which mentions his Irish birth.",
+   "life": "Donatus was an Irish monk who made a pilgrimage to Rome. On his way home he reached Fiesole in Tuscany just as the people were choosing a new bishop. Tradition says that when he entered the cathedral the bells rang and the lamps lit of themselves, and he was acclaimed bishop, about 829. He served the church of Fiesole for decades under the Carolingian rulers, and was also known as a scholar and teacher. He wrote a Life of Saint Brigid, a poem in praise of Ireland and his own epitaph, and founded a hospice for Irish pilgrims. He died in 876 and was buried at Fiesole.",
    "period": "died 876",
    "place": "Fiesole, Italy",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Donatus_of_Fiesole",
     "https://www.catholic.org/encyclopedia/view.php?id=3973"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 76,
+    "finding": "Further sourcing",
+    "change_note": "Removed the 816 pilgrimage date, noble birth, grammar teaching and the epitaph detail, and the specific ruler (ODS names Lothair and Louis the Pious; the draft's Louis II was unsupported). Kept miraculous election c. 829, writings, hospice and death 876 from ODS.",
+    "checked_in": [
+     "ODS Donatus entry",
+     "AM 22 Oct"
+    ]
+   }
   },
   "UO-SIN-000115": {
    "name": "Saint James of Jerusalem",
@@ -2542,14 +2781,23 @@
   },
   "UO-SIN-000116": {
    "name": "Hiram Hisanori Kano",
-   "life": "Born in 1889 into a Japanese noble family, Hiram Kano studied agriculture in Japan and Nebraska, farmed sugar beets, and taught English to Japanese immigrants in the Great Plains. Ordained deacon in 1928 and priest in 1936, he founded Episcopal congregations at Mitchell and North Platte. Within hours of Pearl Harbor he was arrested as a suspected danger, and was held in several internment camps for about three years, separated from his family. There he taught, led worship and ministered to fellow internees, guards and prisoners of war. Released in 1944, he studied at Nashotah House, then served Nebraska's Japanese residents until 1957. He died in 1988.",
-   "period": "died 1988",
+   "life": "Hiram Hisanori Kano was born in 1889 into a noble family in Tokyo, and became a Christian as a young man. In 1916 he went to America to help Japanese settlers farming in the Midwest, and worked as a farmer and teacher before the Episcopal bishop of Western Nebraska called him to minister among Nebraska's Japanese. He was ordained deacon in 1928 and priest in 1936. On the morning of Pearl Harbor he was arrested, and he spent the war years in internment camps in several states, teaching, preaching and caring for fellow internees and for imprisoned American soldiers. After his release in 1944 he studied at Nashotah House, then returned to Nebraska and served until he retired in 1957. He died in 1988.",
+   "period": "1889-1988",
    "place": "Nebraska, United States",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Hiram_Kano",
     "https://plainshumanities.unl.edu/encyclopedia/doc/egp.asam.015.html"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 77,
+    "finding": "Correct period",
+    "change_note": "Corrected to death 1988 (GCW heading says 1986, but its own text says 1988). Dropped sugar beets, specific congregations and Nebraska study; internment described as the war years in several states rather than a fixed length, as the witnesses differ (two years in GCW, three in ENS).",
+    "checked_in": [
+     "GCW Kano entry (printed 517-518)"
+    ]
+   }
   },
   "UO-SIN-000117": {
    "name": "Tabitha (Dorcas) of Joppa",
@@ -2575,14 +2823,23 @@
   },
   "UO-SIN-000119": {
    "name": "Odran of Iona",
-   "life": "According to tradition, Odran was an Irish monk, abbot of Tyfarnham and founder of Latteragh, who was one of twelve companions sailing with Columba to Iona in Scotland. Tradition says he was the first of the community to die there, foretelling it himself, and Columba promised that anyone praying at his grave must also ask Odran's prayers. Iona's burial ground grew around his resting place. A later folk legend says he volunteered to be buried alive beneath the walls of the chapel to make them stand, but this is almost certainly a story and not history. The dates are uncertain, and sources give both 548 and about 563.",
+   "life": "Odran was one of the first companions of Columba on Iona, and is said to have died not long after their arrival in Scotland. Tradition tells that Columba saw a vision of his soul rising to heaven. The burial ground at Iona has long been called by his name. Irish tradition remembers an Odran as an abbot and the founder of Latteragh in Tipperary, and it is probable, though not certain, that these are the same man. The details of his life and the date of his death, about 563, are uncertain.",
    "period": "died c. 563 (uncertain)",
    "place": "Ireland and Iona, Scotland",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Odran_of_Iona",
     "https://www.catholic.org/saints/saint.php?saint_id=5920"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 15,
+    "finding": "Further sourcing",
+    "change_note": "Removed the Tyfarnham link, 548, Odran's foretelling of his death, the grave-prayer promise and the live-burial legend, which I could not verify. Kept Iona identity and noted the Irish identification is only probable.",
+    "checked_in": [
+     "ODS Odran of Iona"
+    ]
+   }
   },
   "UO-SIN-000120": {
    "name": "Saint Simon and Saint Jude",
@@ -2609,14 +2866,23 @@
   },
   "UO-SIN-000122": {
    "name": "Maryam of Qidun",
-   "life": "Maryam, also called Mary the Harlot, is a popular Syriac saint of the fourth century. According to tradition, she was orphaned young and raised by her uncle, the hermit Abraham of Qidun near Edessa, in a cell beside his own. At about twenty she was deceived by a false monk and, overcome with shame, fled and fell into a life of sin in a distant town. Abraham, disguised as a customer, found her and brought her home with tenderness instead of reproach. She spent the rest of her life in repentance and prayer, remembered as a sign of God's mercy.",
-   "period": "4th century",
+   "life": "Maryam of Qidun is one of the most loved saints of the Syriac Christian tradition, and is thought to have lived in the fourth century. Orphaned at seven, she was raised by her uncle Abraham, a hermit near Edessa, and lived for twenty years in a cell beside his, growing in prayer and holiness. A monk who had visited the hermitage then raped her. Overwhelmed by despair and shame, she fled to a city and lived there in hardship. After two years Abraham found her, disguised as a soldier, and brought her home, telling her he would have borne her penance himself. She returned to her life of prayer, a sign of God's mercy.",
+   "period": "fourth century",
    "place": "Qidun near Edessa (Syria/Turkey)",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Abraham_Kidunaia",
     "https://www.growchristians.org/2024/10/30/narrative-arts-maryam-of-quidun-my-mother-and-me/"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 80,
+    "finding": "Revise life",
+    "change_note": "Rewrote to follow the LFF account (orphaned at seven, twenty years with Abraham, assaulted by a monk, two years away, rescue in disguise) in place of the softened 'deceived' version, and dropped the 'Mary the Harlot' epithet to avoid conflation with Mary of Egypt. Stories vary and are partly legendary.",
+    "checked_in": [
+     "LFF Maryam of Qidun entry (printed 490-491)"
+    ]
+   }
   },
   "UO-SIN-000123": {
    "name": "Paul Shinji Sasaki and Philip Lindel Tsen",
@@ -2785,14 +3051,23 @@
   },
   "UO-SIN-000168": {
    "name": "Nino of Georgia",
-   "life": "Nino, according to tradition, was a young woman from Cappadocia who came to the kingdom of Iberia, in present-day Georgia, early in the fourth century. She is said to have carried a cross made of vine branches, bound with her own hair, and to have healed the sick, among them the queen. The story goes that King Mirian, lost and blinded while hunting, called on Nino's God and recovered his sight, after which he accepted baptism and made Christianity the faith of the kingdom, about 326. Nino is said to have ended her days preaching in eastern Georgia, and she is remembered as Georgia's enlightener.",
-   "period": "died c. 332 (4th century)",
+   "life": "Nino, according to tradition, was a woman from Cappadocia who came to the kingdom of Iberia, in present-day Georgia, as a captive in the fourth century. The people were drawn to her devotion, and she is said to have healed a sick child and then the queen, who became a Christian. The story goes that the king, lost in darkness while hunting, called on Nino's God and found his way back, after which he was taught the gospel by her, a church was built, and priests were sought from the emperor. She is said to have made a cross of vine branches bound with her own hair, and is honoured as the Enlightener of Georgia. Her tomb is believed to be at Bodbe.",
+   "period": "4th century (traditionally c. 332)",
    "place": "Iberia (Georgia)",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Saint_Nino",
     "https://www.britannica.com/biography/Saint-Nino"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 17,
+    "finding": "Correct period",
+    "change_note": "Changed 'died c. 332' to a fourth-century period; removed the unsupported 326 conversion date and the claim that she ended her days preaching in eastern Georgia (replaced with the Bodbe tomb tradition). Following LFF, she is a captive rather than a young free traveller; the king's blindness and his name are dropped.",
+    "checked_in": [
+     "LFF 15 December, Nino of Georgia"
+    ]
+   }
   },
   "UO-SIN-000169": {
    "name": "Ralph Adams Cram, Richard Upjohn and John La Farge",
@@ -2842,14 +3117,25 @@
   },
   "UO-SIN-000598": {
    "name": "Ammon and Companions",
-   "life": "Ammon, Zeno, Ptolemy, Ingenuus and Theophilus were soldiers in Alexandria during the persecution under the emperor Decius, around 250. As told by Bishop Dionysius of Alexandria, they were standing near the court when a Christian on trial seemed ready to deny his faith. They signalled their encouragement with gestures and looks, and when the crowd noticed, they stepped forward and declared themselves Christians. The governor and his officials were alarmed. The soldiers were condemned and led away in triumph, rejoicing in their witness. They are remembered together as the Alexandrian soldier martyrs of the Decian persecution.",
-   "period": "died c. 250",
+   "life": "Ammon, Zeno, Ptolemy and Ingenuus were soldiers in Alexandria during the persecution under the emperor Decius, around 250, and with them stood an old man named Theophilus. Bishop Dionysius of Alexandria tells how, as a Christian was being tried and seemed ready to deny his faith, they stood near the court and encouraged him with gestures and looks. When the crowd noticed, they came forward and declared themselves Christians before the judges could seize them. The governor and his officials were alarmed, and the group left the court rejoicing in their witness. They are remembered together as martyrs of the Decian persecution.",
+   "period": "c. 250",
    "place": "Alexandria, Egypt",
    "confidence": "medium",
    "sources": [
     "https://cts.perseids.org/read/greekLit/tlg2018/tlg002/1st1K-eng1/6.40-6.46",
     "https://en.wikipedia.org/wiki/Martyrs_of_Alexandria_under_Decius"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 92,
+    "finding": "Revise life",
+    "change_note": "Per review: four were soldiers and Theophilus an old civilian; removed 'condemned and led away'. Dionysius reports their declaration and triumphant departure, not a sentence, so their execution is left as later tradition and not stated. I did not re-read Dionysius directly, so the summary follows the review.",
+    "checked_in": [
+     "AM 20 Dec",
+     "Book of Saints (Ammon variant entry)",
+     "review citation of Dionysius to Fabius"
+    ]
+   }
   },
   "UO-SIN-000003": {
    "name": "Thomas the Apostle",
@@ -2919,14 +3205,24 @@
   },
   "UO-SIN-000612": {
    "name": "Egwin of Worcester",
-   "life": "Egwin, said to be of Mercian royal blood, became the third bishop of Worcester after 693, chosen, his biographers say, by popular demand. He enforced moral and clerical discipline so strictly that he met resentment at home and went to Rome to be vindicated. According to a famous legend, he locked fetters on his feet and threw the key in the River Avon, and at Rome a servant found the key in a fish caught in the Tiber. After a vision of Our Lady, he founded Evesham Abbey around 701, and its Benedictine monks kept his memory. Sources give his death as 717, though one older reckoning says 720.",
+   "life": "Egwin, said to be of Mercian royal blood, became the third bishop of Worcester, about 693. He enforced moral and clerical discipline so strictly that he met resentment and went to Rome to be vindicated. According to a famous legend, he locked fetters on his feet and threw the key into the River Avon, and at Rome the key was found in a fish. After a vision of the Virgin Mary he founded Evesham Abbey, where he is remembered as the founder. He is said to have died in 717, and his relics were later honoured at Evesham.",
    "period": "died 717",
    "place": "Worcester; Evesham, England",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Ecgwine_of_Worcester",
     "https://www.newadvent.org/cathen/05329a.htm"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 96,
+    "finding": "Correct apparatus",
+    "change_note": "Dropped the 701 foundation date and the 720 death variant, and the Tiber detail as narrative variants. Kept bishopric from 693, the legend, Evesham and 717 as given by ODS. Evesham timing and the vision are legendary.",
+    "checked_in": [
+     "ODS Egwin entry",
+     "AM 10 Sept translation entry"
+    ]
+   }
   },
   "UO-SIN-000181": {
    "name": "Frances Joseph-Gaudet",
@@ -2952,14 +3248,23 @@
   },
   "UO-SIN-000064": {
    "name": "The Martyrs of New Guinea",
-   "life": "When Japanese forces invaded Papua and New Guinea in 1942, the Anglican mission there chose to stay with its people rather than flee. Priests such as Vivian Redlich and Henry Holland, nurses and teachers such as May Hayman, Margery Brenchley, Lilla Lashmar and Mavis Parkinson, and the builder John Duffill were captured around Buna and Gona and killed, several of them beheaded. Lucian Tapiedi, a young Papuan evangelist and teacher, was killed after protesting their capture. Others, including Henry Matthews and Leslie Gariadi, died at sea or elsewhere. They are remembered for faithfulness to the people they served, whatever the cost.",
-   "period": "died 1942-1943",
+   "life": "When Japanese forces invaded Papua and New Guinea in 1942, Anglican missionaries chose to stay with the people they served. Nine Australian missionaries and two Papuan Christians died during these years. Some were captured and executed, and others were killed by local people who feared reprisals. Two were lost when their boat was attacked from the air. Among the Papuans was Lucian Tapiedi, a young evangelist who was killed while guiding his companions, and who is among the twentieth-century martyrs honoured at Westminster Abbey. They are remembered for their faithfulness to the people they loved, whatever the cost.",
+   "period": "1942",
    "place": "Papua New Guinea",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Martyrs_of_New_Guinea",
     "https://anglicanhistory.org/aus/png/rowland_faithful1964.html"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 67,
+    "finding": "Further sourcing",
+    "change_note": "Removed the individual name list, the beheading, the claim that Tapiedi was killed protesting, and the 1943 inclusion, none of which the books support. Followed LFF: nine Australians and two Papuans, executions, a boat attacked from the air, and Tapiedi killed after being separated from the group.",
+    "checked_in": [
+     "LFF Martyrs of New Guinea entry"
+    ]
+   }
   },
   "UO-SIN-000065": {
    "name": "Phoebe",
@@ -2985,14 +3290,23 @@
   },
   "UO-SIN-000326": {
    "name": "Bertin",
-   "life": "Bertin was born near Lake Constance around 615 and entered the monastery of Luxeuil, where he was trained in the strict rule of Columbanus. About 638 he set out with two companions for the marshy north of France to help his kinsman Bishop Omer teach the Christian faith to the Morini. They were given land at Sithiu, near the present Saint-Omer, and built a monastery there. Bertin later became its abbot, and his reputation for learning and holiness drew more than a hundred monks, including Winnoc and companions from Brittany. He lived to great age, chose Rigobert to succeed him, and died around 709.",
-   "period": "died c. 709",
+   "life": "Bertin was a monk of Luxeuil, the monastery founded in the tradition of Columbanus. He was sent with companions to help Omer, bishop of Thérouanne, bring the Christian faith to the Morini in the marshy north of France. A monastery arose at Sithiu, near the present Saint-Omer, and Bertin became its abbot. Under him it grew into an important centre of prayer and learning, and it later took his name. He lived to a great age and died at the end of the seventh century or in the early eighth.",
+   "period": "died c. 698-709",
    "place": "Sithiu (Saint-Omer), northern France",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Bertin",
     "https://www.newadvent.org/cathen/02522b.htm"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 68,
+    "finding": "Period variant",
+    "change_note": "Removed the 615 birth, Lake Constance, 638, kinship, hundred monks, Winnoc and Rigobert, which I could not verify. Death given as a range (AM c. 698, other sources 709).",
+    "checked_in": [
+     "AM p.107 (Bertin, about 698)"
+    ]
+   }
   },
   "UO-SIN-000068": {
    "name": "Hannah More",
@@ -3040,14 +3354,24 @@
   },
   "UO-SIN-000073": {
    "name": "Deiniol",
-   "life": "Deiniol is remembered as the founder of the monastery of Bangor in Gwynedd and, according to tradition, the first bishop of Bangor, in the sixth century. Welsh tradition holds that the local ruler Maelgwn Gwynedd gave him land and privileges, and that he may have studied under Cadoc at Llancarfan. Some accounts credit him with a second Bangor on the River Dee, though this is disputed. He is said to have died around 572 or 584 and to have been buried on Bardsey Island. Churches in north Wales, including Hawarden, bear his name, and Bangor Cathedral stands where his community is said to have lived.",
-   "period": "traditionally 6th century",
+   "life": "Deiniol was a Welsh monk who, according to tradition, founded a monastic community at Bangor in Gwynedd and became its first bishop in the sixth century. The community he established grew into the church of Bangor, and the cathedral there still carries his memory. Later Welsh tradition places his death in the 580s, and tells that he was buried on Bardsey Island. Churches in north Wales bear his name. Details of his life come from late tradition, but his place as the founding father of Bangor is firmly remembered.",
+   "period": "sixth century",
    "place": "Bangor, Gwynedd, Wales",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Deiniol",
     "https://orthochristian.com/82345.html"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 70,
+    "finding": "Correct apparatus",
+    "change_note": "Removed Maelgwn's grant, Cadoc schooling, the Dee Bangor and Hawarden claims as unattributed; kept sixth century and a vague 580s death. Did not treat AM's 384 as valid. Could not fetch the Welsh Biography page to confirm the 584/572 figures, so the death is stated loosely.",
+    "checked_in": [
+     "AM Deiniol entry (11 Sept)",
+     "review citation of Dictionary of Welsh Biography"
+    ]
+   }
   },
   "UO-SIN-000074": {
    "name": "John Henry Hobart",
@@ -3260,14 +3584,23 @@
   },
   "UO-SIN-000127": {
    "name": "Adeline Blanchard Tyler and her Companions",
-   "life": "Adeline Blanchard Tyler was born in Massachusetts in 1805 and lived in Boston as a devout Episcopalian. Widowed in 1853, she trained in nursing among the deaconesses of Kaiserswerth in Germany. In 1856 she and three other women, Caroline Guild, Evaline Black and Catherine Minard, were set apart as deaconesses, among the first in the Episcopal Church in America. Tyler ran a church-funded infirmary in Baltimore, and during the Civil War she nursed wounded Union soldiers and later led hospitals in Maryland and Pennsylvania. She finished her working life at the Midnight Mission in New York, helping women in need, and died in January 1875.",
-   "period": "died 1875",
+   "life": "Adeline Blanchard Tyler was born in 1805 and lived in Boston, where she was an active member of Episcopal parishes, helping to found a Sunday school for poor children and working in a parish school. In 1856 she went to Baltimore to head the new St Andrew's Infirmary. There, on 4 November 1856, she and three other women, Caroline Guild, Eveline Black and Catherine Minard, were admitted as deaconesses, among the first in the Episcopal Church. They nursed and taught the sick and poor of every kind. During and after the Civil War they cared for wounded soldiers of both sides in hospitals in Maryland and Pennsylvania. She died in January 1875.",
+   "period": "1805-1875",
    "place": "Boston, Baltimore, New York",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Adeline_Blanchard_Tyler",
     "https://livingchurch.org/2024/01/24/telling-the-story-of-our-first-deaconesses"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 81,
+    "finding": "Revise life",
+    "change_note": "Corrected Eveline's spelling and added care for wounded on both sides. Removed widowhood in 1853, Kaiserswerth training and the Midnight Mission, which LFF does not support. The 1856 date is her admission as deaconess, not a death.",
+    "checked_in": [
+     "LFF Tyler entry (printed 498-499)"
+    ]
+   }
   },
   "UO-SIN-000128": {
    "name": "Zechariah and Elizabeth",
@@ -3429,14 +3762,24 @@
   },
   "UO-SIN-000143": {
    "name": "Edmund of East Anglia",
-   "life": "Edmund became king of East Anglia in 855, still a young man. When the Danish Great Army invaded his kingdom, he was defeated and killed, in 869 according to the usual reckoning, though some give 870. According to later tradition, he was put to death because he refused to renounce Christ or to accept Danish overlordship, though it is uncertain whether he fell in battle or afterwards. Memorial coins bearing his name were being minted within a generation, and his body was later taken to Bury St Edmunds, where a great abbey grew up around his shrine. For centuries he was counted among the patron saints of England.",
+   "life": "Edmund was king of East Anglia in the ninth century. When the Danish Great Army invaded his kingdom, he was defeated and killed, in 869 by the usual reckoning, though some give 870. Later tradition says he was put to death for refusing to renounce Christ or to submit to the Danish leaders as a pagan's vassal, and accounts differ on whether he fell in battle or was executed afterward. His body was later enshrined at the place that took his name, Bury St Edmunds, where a great abbey grew up. He was remembered as a Christian king who died faithful to his people and his faith.",
    "period": "died 869 or 870",
    "place": "East Anglia, Bury St Edmunds",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Edmund_the_Martyr",
     "https://www.britannica.com/biography/Edmund-king-of-East-Anglia"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 84,
+    "finding": "Period variant",
+    "change_note": "Removed the 855 accession, the memorial coins and the patron-saint claim as unsourced; kept both 869 and 870 death years.",
+    "checked_in": [
+     "LFF Edmund entry (printed 526-527)",
+     "AM Edmund entry"
+    ]
+   }
   },
   "UO-SIN-000144": {
    "name": "Mechthilde of Hackeborn and Gertrude the Great",
@@ -3507,14 +3850,24 @@
   },
   "UO-SIN-000150": {
    "name": "Virgil of Salzburg",
-   "life": "Virgil was an Irish monk, born about 700, who became abbot of Aghaboe. Around 745 he set out for the Holy Land but stayed in Frankish lands, where King Pepin welcomed him, and then went to Bavaria at the invitation of Duke Odilo. He became abbot of St Peter's at Salzburg and, about 767, bishop of the city. He built up his diocese and sent missionaries to the Slavs of Carinthia, earning the name Apostle of Carinthia.  Boniface accused him of teaching that there were lands on the opposite side of the earth, but Pope Zachary sided with Virgil. He died in 784, though some sources say 789.",
+   "life": "Virgil, also called Fergal, was an Irish monk who left Ireland and came to the court of the Frankish king Pepin the Short, who welcomed him. He was sent to Duke Odilo of Bavaria, who made him abbot of St Peter's monastery in Salzburg and entrusted him with much of the church's life there. Some years after the death of Boniface in 755 he was consecrated bishop of Salzburg. He was known for learning, and for sending missionaries to the Slavs of Carinthia, so that he is called the Apostle of Carinthia. Boniface suspected his teaching, and the pope warned him against a speculation about another world beneath this one. He died in 784.",
    "period": "died 784",
    "place": "Ireland, Salzburg",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/Virgil_of_Salzburg",
     "https://www.newadvent.org/cathen/15353d.htm"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 87,
+    "finding": "Revise life",
+    "change_note": "Removed the claim that Pope Zachary sided with Virgil (ODS says the pope warned him conditionally). Dropped Aghaboe, 745, 767, 789 and the Holy Land journey as unsupported by the witnesses checked.",
+    "checked_in": [
+     "ODS Virgil entry",
+     "AM 27 Nov"
+    ]
+   }
   },
   "UO-SIN-000151": {
    "name": "Kamehameha and Emma of Hawai‘i",
@@ -3597,14 +3950,23 @@
   },
   "UO-SIN-000251": {
    "name": "Addai and Mari",
-   "life": "Addai and Mari are honoured as the first teachers of the faith in Mesopotamia and Persia. According to tradition, Addai was one of the seventy disciples sent out by Jesus, who came to Edessa, healed King Abgar and preached the gospel there. Mari, said to be his disciple, carried the work further east. Little certain history survives, and the stories date from later centuries. Their names remain attached to the ancient Eucharistic prayer used in the Church of the East, which many scholars place in the early centuries of Syriac Christianity, so that their memory lives on in the worship of those churches.",
-   "period": "2nd century (tradition)",
+   "life": "Addai and Mari are honoured as the first teachers of the Christian faith in Mesopotamia and the lands around Edessa. Tradition names Addai as an apostle sent out by Jesus and tells of his preaching at Edessa, with Mari as his disciple who carried the gospel further east. The dates are uncertain: the stories come from later centuries and place the mission anywhere from the first century to the late second. Their names are attached to an ancient Eucharistic prayer of the Church of the East, which keeps their memory alive in worship.",
+   "period": "uncertain; late 2nd century in some accounts",
    "place": "Edessa and Mesopotamia",
-   "confidence": "low",
+   "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Addai",
     "https://en.wikipedia.org/wiki/Addai_and_Mari"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 12,
+    "finding": "Correct period",
+    "change_note": "Removed the literal claim that Addai was one of the seventy and the healing of King Abgar; stated the chronology is uncertain. I could verify only the late-second-century evangelisation in the martyrology; the Syriac and liturgical details remain unchecked.",
+    "checked_in": [
+     "AM 5 August, Addai and Mari"
+    ]
+   }
   },
   "UO-SIN-000038": {
    "name": "John Mason Neale",
@@ -3753,14 +4115,24 @@
   },
   "UO-SIN-000052": {
    "name": "Tan Sri John Savarimuthu",
-   "life": "John Gurubatham Savarimuthu was born in 1925 in South India and studied theology at Tirumaraiyur. Ordained in 1952 for the Diocese of Singapore and Malaya, he served as a curate and parish priest in Seremban and Johor. In 1972 he became the second bishop of West Malaysia and was consecrated in 1973. He championed theological education, helping to found the Malaysia Theological Seminary and urging that the church be led by Malaysians. He served as president of the Council of Churches of Malaysia and led delegations to government on matters such as the Malay Bible. Honoured with the title Tan Sri in 1980, he served until his death in 1994.",
+   "life": "John Savarimuthu was an Anglican bishop in Malaysia. He served as bishop of West Malaysia from the early 1970s until his death in 1994, and was consecrated in 1973. He was known by the title Tan Sri, a Malaysian honour. He is remembered as a leader of the church in a young nation, in the years when Malaysians were taking up leadership of their own church.",
    "period": "died 1994",
    "place": "Malaysia",
-   "confidence": "medium",
+   "confidence": "low",
    "sources": [
     "https://dcbasia.org/zh-hans/node/161",
     "https://en.wikipedia.org/wiki/Bishop_of_West_Malaysia"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 64,
+    "finding": "Further sourcing",
+    "change_note": "Removed birth, seminary, ordination, Council, Bible and Malaysia Theological Seminary details and the 1980 date of the title, which I could not verify; the books give only name, office and 21 August 1994. The 1972-1994 episcopate and 1973 consecration rest on the diocesan listing named in the review, which I did not fetch myself.",
+    "checked_in": [
+     "HWHM Appendix entry (name and date only)",
+     "GCW Appendix A entry (name and date only)"
+    ]
+   }
   },
   "UO-SIN-000054": {
    "name": "Martin de Porres, Rosa de Lima, and Toribio de Mogrovejo",
@@ -3778,14 +4150,23 @@
   },
   "UO-SIN-000055": {
    "name": "Bartholomew the Apostle",
-   "life": "Bartholomew is named among the Twelve in the first three Gospels. Most scholars identify him with Nathanael, whom Philip brought to Jesus and whom Jesus called an Israelite without deceit. The New Testament says nothing more about him, but later traditions carry him far afield. Some say he preached in India, leaving a copy of Matthew's Gospel, and others say Mesopotamia, Ethiopia or Armenia, where tradition holds he was martyred, flayed and beheaded or crucified. None of this can be verified. What is certain is that he was one of the first to follow Jesus and to be sent out in his name.",
+   "life": "Bartholomew is named among the Twelve in the first three Gospels. He is traditionally identified with Nathanael, whom Philip brought to Jesus and whom Jesus called an Israelite without deceit. The New Testament tells us nothing more about him, but early traditions carry him far afield. One says he preached in India and left behind a Gospel of Matthew in Hebrew; another says he was flayed alive in Armenia. Whatever the details, he is remembered as one of the first to follow Jesus and to be sent out in his name.",
    "period": "1st century",
    "place": "Palestine, and tradition says India and Armenia",
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/Bartholomew_the_Apostle",
     "https://www.oca.org/saints/lives/2023/06/11/101690-apostle-bartholomew-of-the-twelve"
-   ]
+   ],
+   "review": {
+    "date": "2026-10-05",
+    "register_row": 65,
+    "finding": "Revise life",
+    "change_note": "Replaced 'most scholars identify' with 'traditionally identified'. Kept only the India/Matthew and Armenia flaying traditions that the LFF supports, and dropped the other destinations and alternative deaths.",
+    "checked_in": [
+     "LFF Bartholomew entry"
+    ]
+   }
   },
   "UO-SIN-000056": {
    "name": "Louis IX of France",

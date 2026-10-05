@@ -74,3 +74,15 @@ Alicia "Cristina" Rivera, OSH was withdrawn by the curator (Josh): her `decision
 (identifier UO-SIN-000053 reserved) and her `sanctoral.json` row removed. Philip Benizi remains the principal for August 22.
 
 Counts: 1,013 lives written; 335 rated medium or low, 678 high. A high rating records only that the writing agent found consistent sources; it is not a source verification of the catalogue identity or date. The audit must cover every catalogue identity and assigned date.
+
+## Crew review applied to the lives (2026-10-05)
+The Synaxarium crew's individual review of the 96 flagged principal lives (register: ANGLICAN_SAINT_LIVES_REVIEW_2026-10-05.xlsx) was applied to the **life texts** of 40 entries (every
+entry whose finding was not "Supported with limits", except Baldred). Each revised entry in `data/saints/anglican-lives.json` now has a `review` block (register row, finding,
+what changed, what it was checked in). Unverified particulars the review named were removed, not kept; some lives are shorter. Confidence was re-set from what could be checked.
+**Not applied:** (1) Baldred (UO-SIN-000676, 03-06): the curator must choose which Baldred is meant before the catalogue and life can agree; the life is unchanged and still uncertified.
+(2) Catalogue corrections, which belong to the crew's data: David of Wales (c. 544 to sixth century, variants c. 589 and 601), Boisil (c. 642 to seventh century, variants 661/664),
+Hiram Kano (1986 to 1988), Brigid (c. 523 against c. 525), Gregory the Illuminator (c. 332 against c. 330), Vincent of Lérins (445/450), Sophronius (639 against 638/644), Brendan (575/577),
+Ignatius (early second century), Edmund (869/870), Maximinus (346/347/349), Bertin (698/709), Nino (a fourth-century period, not a death year), Deiniol (AM's 384 is a source error),
+Jutta (5 May has a Teutonic Order witness, not AM), Egwin (AM locator is its 10 September entry), Agatha (no LFF entry), Zenaida/Philonella/Hermione (LFF locator).
+(3) The 55 entries found "Supported with limits" were left as written; their listed limits (unverified particulars) remain.
+This does not certify the other 251 principal lives or the additional commemorations.
