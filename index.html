@@ -1057,7 +1057,6 @@
      from before the move -- every setter function that reads them by id needed no changes. -->
 <div id="user-profile-panel" class="app-profile-modal-backdrop" style="display:none;" onclick="if (event.target === this) closeUserProfilePanel();">
     <section id="user-profile-defaults" class="app-profile-defaults" role="dialog" aria-modal="true" aria-labelledby="user-profile-defaults-title">
-        <button type="button" class="app-profile-close" onclick="closeUserProfilePanel()" aria-label="Close">&times;</button>
 
         <div class="app-profile-defaults-copy">
             <p class="app-profile-kicker">Your Profile</p>
@@ -1221,8 +1220,21 @@
         </div>
 
         <div class="app-profile-defaults-actions">
-            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local defaults</button>
+            <button type="button" class="mode-btn app-profile-save" onclick="closeUserProfilePanel()">Save</button>
+            <button type="button" class="mode-btn app-profile-reset" onclick="openResetProfileConfirm()">Reset local defaults</button>
             <p id="profile-defaults-summary" class="app-profile-defaults-summary" aria-live="polite"></p>
+        </div>
+
+        <!-- "Are you sure?" for Reset local defaults: people tap Reset thinking it is Save. -->
+        <div id="profile-reset-confirm" class="app-profile-confirm" hidden role="alertdialog" aria-modal="true" aria-labelledby="profile-reset-confirm-title">
+            <div class="app-profile-confirm-card">
+                <h3 id="profile-reset-confirm-title">Reset your defaults?</h3>
+                <p>This clears your saved opening choice and returns you to the start. It does not undo anything you have already saved in this panel by changing a field.</p>
+                <div class="app-profile-confirm-actions">
+                    <button type="button" class="mode-btn app-profile-save" onclick="closeResetProfileConfirm()">Keep my settings</button>
+                    <button type="button" class="mode-btn app-profile-reset" onclick="confirmResetProfile()">Yes, reset</button>
+                </div>
+            </div>
         </div>
     </section>
 </div>
