@@ -3279,16 +3279,23 @@
      "source_witnesses": "AM/source awareness",
      "preliminary_status": "Review",
      "curator_approved": null
-    },
+    }
+   ],
+   "withdrawn_alternates": [
     {
      "name": "Benedictine Martyrs of the Tyburn tradition",
      "sin": "UO-SIN-000911",
      "designation": "Martyrs",
      "period": "16th century",
      "tradition": "Roman Catholic / English",
-     "source_witnesses": "AM",
+     "source_witnesses": null,
      "preliminary_status": "Review",
-     "curator_approved": null
+     "curator_approved": false,
+     "decision_status": "Withdrawn by curator",
+     "withdrawn_at": "2026-10-05",
+     "withdrawal_reason": "Generic group and March 14 assignment unidentified; cited Anglican Martyrology entry does not exist.",
+     "original_source_claim": "AM",
+     "identifier_status": "Reserved to this historical record; do not reuse"
     }
    ]
   },
@@ -4008,16 +4015,6 @@
    },
    "alternates": [
     {
-     "name": "Benjamin Tankersley",
-     "sin": "UO-SIN-000938",
-     "designation": "Priest",
-     "period": "1898",
-     "tradition": "Anglican",
-     "source_witnesses": "AM",
-     "preliminary_status": "Usable",
-     "curator_approved": null
-    },
-    {
      "name": "Guido of Pomposa",
      "sin": "UO-SIN-000939",
      "designation": "Abbot",
@@ -4026,6 +4023,23 @@
      "source_witnesses": "AM; Oxford Dictionary of Saints",
      "preliminary_status": "Usable",
      "curator_approved": null
+    }
+   ],
+   "withdrawn_alternates": [
+    {
+     "name": "Benjamin Tankersley",
+     "sin": "UO-SIN-000938",
+     "designation": "Priest",
+     "period": "1898",
+     "tradition": "Anglican",
+     "source_witnesses": null,
+     "preliminary_status": "Usable",
+     "curator_approved": false,
+     "decision_status": "Withdrawn by curator",
+     "withdrawn_at": "2026-10-05",
+     "withdrawal_reason": "Claimed priestly identity, death year and March 31 commemoration unverified; cited Anglican Martyrology entry does not exist.",
+     "original_source_claim": "AM",
+     "identifier_status": "Reserved to this historical record; do not reuse"
     }
    ]
   },
@@ -5193,11 +5207,20 @@
      "name": "Tertullian of Bologna",
      "sin": "UO-SIN-000988",
      "designation": "Bishop",
-     "period": "470",
+     "period": "Late fifth century?",
      "tradition": "Greater Church / Western",
-     "source_witnesses": "AM",
-     "preliminary_status": "Usable",
-     "curator_approved": null
+     "source_witnesses": "Book of Saints PDF p.719; Bologna diocesan episcopal and saints lists; CEI inventory for Sant'Elena di Sacerno",
+     "preliminary_status": "Admitted alternate; thin narrative",
+     "curator_approved": true,
+     "decision_status": "Retained by curator on April 27",
+     "decided_at": "2026-10-05",
+     "date_basis": "Historical April 27 observance, deliberately retained by the curator; not a current Anglican Martyrology witness",
+     "source_notes": "AM attribution withdrawn. Book of Saints marks deletion from the revised Roman Martyrology. Bologna's episcopal list places him fifteenth, dates uncertain. Local saints list gives former April 18 and present collective September 28. CEI preserves the tradition of founding or protecting a monastic community at Sacerno. No established death year of 470 or c.490.",
+     "source_urls": [
+      "https://www.chiesadibologna.it/la-storia-dellarcidiocesi-bolognese/la-cronotassi-dei-vescovi-diocesani/",
+      "https://www.chiesadibologna.it/la-storia-dellarcidiocesi-bolognese/santi-beati-e-cause-in-corso/",
+      "https://chieseitaliane.chiesacattolica.it/chieseitaliane/stampaapprofondimento.jsp?guest=true&sercd=64749"
+     ]
     }
    ]
   },
