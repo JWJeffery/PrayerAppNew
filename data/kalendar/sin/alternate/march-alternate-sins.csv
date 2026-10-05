@@ -23,7 +23,7 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 03-12,2,UO-SIN-000908,Theophanes the Confessor,person,Theophanes the Confessor,
 03-13,2,UO-SIN-000909,Roderick / Ruderic of Cordoba,person,Roderick / Ruderic of Cordoba,
 03-14,2,UO-SIN-000910,Chiara Lubich,person,Chiara Lubich,
-03-14,3,UO-SIN-000911,Benedictine Martyrs of the Tyburn tradition,group,Benedictine Martyrs of the Tyburn tradition,
+03-14,3,UO-SIN-000911,Benedictine Martyrs of the Tyburn tradition,group,Benedictine Martyrs of the Tyburn tradition,"Withdrawn by curator 2026-10-05; historical identifier reserved; do not reuse"
 03-15,2,UO-SIN-000912,Louise de Marillac,person,Louise de Marillac,date/source-form harmonization
 03-15,3,UO-SIN-000913,Clement Mary Hofbauer,person,Clement Mary Hofbauer,
 03-16,2,UO-SIN-000914,Jean de Brébeuf and Gabriel Lalemant,group,Jean de Brébeuf and Gabriel Lalemant,
@@ -52,5 +52,5 @@ date,rank,sin,normalized_name,entity_type,source_candidate_name,identity_note
 03-29,3,UO-SIN-000935,Armogastes and Companions,group,Armogastes and Companions,
 03-30,2,UO-SIN-000936,Innocent of Alaska,person,Innocent of Alaska,
 03-30,3,UO-SIN-000937,John Climacus,person,John Climacus,
-03-31,2,UO-SIN-000938,Benjamin Tankersley,person,Benjamin Tankersley,
+03-31,2,UO-SIN-000938,Benjamin Tankersley,person,Benjamin Tankersley,"Withdrawn by curator 2026-10-05; historical identifier reserved; do not reuse"
 03-31,3,UO-SIN-000939,Guido of Pomposa,person,Guido of Pomposa,
