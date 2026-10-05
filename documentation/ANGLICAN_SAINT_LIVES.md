@@ -57,13 +57,14 @@ These corrections verify the named entries only. They do not establish that the 
 
 ## Catalogue questions found while writing the lives (2026-10-05; for the Synaxarium crew's source audit)
 These come from the writing agents' own reports. I have not independently checked them, and they are leads for the audit, not findings.
-**Name or identity looked wrong for the entry as catalogued:**
-- Caradoc of Llancarfan (04-13, UO-SIN-000962): the date and the hermit's life match St Caradoc of Rhos (buried at St Davids); the Llancarfan Caradoc was a twelfth-century hagiographer. The life was written about the hermit and says so.
-- Macarius of Antioch (UO-SIN-000955): the only biography found was for Macharius of Ghent; the Patriarch Macarius of Antioch (deposed 681) is a different man.
-- Maximilian (08-26): sources give 12 March (Maximilian of Tebessa); the catalogue date is 08-26, and Kolbe's day is 14 August.
-- Boniface of Ross (UO-SIN-000686) is really Curetan, bishop of Rosemarkie; Adrian of May's massacre may be a conflation with Ethernan; Bruno of Cologne (UO-SIN-000426) is Bruno the Great (d. 965), not the Carthusian; Chaeremon and Companions: Chaeremon fled and was never found (not a martyr).
-- Finnbar of Caithness (09-25): the Caithness cult is probably a memory of Finnian of Movilla (10 Sept); 25 September is Finbar of Cork's day.
-- Placeholder or source-form names in the catalogue, read by the agents as the standard saints: "Ambrose source/date variant", "Irenaeus SEC transfer row", "Peter / Paul individual source form", "Columba source variants", "Ephrem source-date preparation", "Older BCP/HWHM form" (Latimer and Ridley), "Athanasius source octave/date context", "Pantaleon" (the Wikipedia page of that title is a Bactrian king).
+**Name or identity questions (corrected 2026-10-05 after the Synaxarium crew's source check against the Anglican Martyrology (AM) pages):**
+- Caradoc of Llancarfan (04-13, UO-SIN-000962): confirmed mismatch. The entry describes the hermit who died in 1124 (AM p.44, Oxford Dictionary of Saints p.193), not the Llancarfan writer; the life was written about the hermit and says so.
+- Macarius of Antioch (UO-SIN-000955): the only biography found was for Macharius of Ghent. The crew notes these are received designations of the same saint in Ghent's diocesan account, so "a different man" was premature; the biography itself still needs examination.
+- Maximilian (08-26): not an error. AM p.103 explicitly commemorates the Numidian conscientious objector (Maximilian of Tebessa) on 26 August; 12 March elsewhere does not invalidate that witness.
+- Finnbar of Caithness (09-25): AM p.116 lists him separately from Fin Barre of Cork, so the date has a witness. The uncertain identity and the blended biography (possible confusion with Finnian of Movilla) still need review.
+- Elizabeth of the Trinity: the AM itself prints 1916 (a faithfully copied source error); the Vatican canonization biography gives 1906, which the life uses.
+- Also reported, unchecked: Boniface of Ross (UO-SIN-000686) is really Curetan, bishop of Rosemarkie; Adrian of May's massacre may be a conflation with Ethernan; Bruno of Cologne (UO-SIN-000426) is Bruno the Great (d. 965), not the Carthusian; Chaeremon and Companions: Chaeremon fled and was never found.
+- Placeholder or source-form names in the catalogue, read by the agents as the standard saints, which still need canonical identification and date harmonization: "Ambrose source/date variant", "Irenaeus SEC transfer row", "Peter / Paul individual source form", "Columba source variants", "Ephrem source-date preparation", "Older BCP/HWHM form" (Latimer and Ridley), "Athanasius source octave/date context", "Pantaleon" (the Wikipedia page of that title is a Bactrian king).
 **Dates that differ from the sources:** Janani Luwum (died 16 Feb 1977, catalogue 17 Feb), Ethelfleda (catalogue c. 970, sources c. 1016), Baldred (608 vs c. 757), Elizabeth of the Trinity (1916 vs 1906), Hiram Kano (1986 vs 1988), Wright (1904 vs 1906), Adalbert of Egmond (740 vs c. 705), Joseph of Cupertino (1603 is his birth; died 1663), Quodvultdeus (439 is the exile; c. 450), Bertin (c. 698 vs c. 709), Barnes (birth 1892 vs 1894).
 **Too little to identify or write from:** Alicia "Cristina" Rivera, OSH (the Great Cloud of Witnesses appendix lists her by name only).
 **Ranking note:** many principal and additional entries are legendary or thinly attested (the lives say "according to tradition"); confidence is recorded per entry in `data/saints/anglican-lives.json`.
@@ -71,3 +72,5 @@ These come from the writing agents' own reports. I have not independently checke
 ## Rivera withdrawn (2026-10-05)
 Alicia "Cristina" Rivera, OSH was withdrawn by the curator (Josh): her `decisions` record moved to `withdrawn_alternates` on 08-22
 (identifier UO-SIN-000053 reserved) and her `sanctoral.json` row removed. Philip Benizi remains the principal for August 22.
+
+Counts: 1,013 lives written; 335 rated medium or low, 678 high. A high rating records only that the writing agent found consistent sources; it is not a source verification of the catalogue identity or date. The audit must cover every catalogue identity and assigned date.
