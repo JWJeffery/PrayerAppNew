@@ -11263,6 +11263,19 @@
     "The Oxford Dictionary of Saints, entry Finbar",
     "The Anglican Martyrology, 25 September"
    ]
+  },
+  "UO-SIN-000988": {
+   "name": "Tertullian of Bologna",
+   "life": "Tertullian was an early bishop of Bologna. According to local tradition, he helped establish or protect a monastic community at Sacerno. His memory is kept among the city's holy bishops.",
+   "period": "Dates uncertain; traditionally late fifth century",
+   "place": "Bologna and Sacerno, Italy",
+   "confidence": "low",
+   "sources": [
+    "https://www.chiesadibologna.it/la-storia-dellarcidiocesi-bolognese/la-cronotassi-dei-vescovi-diocesani/",
+    "https://www.chiesadibologna.it/la-storia-dellarcidiocesi-bolognese/santi-beati-e-cause-in-corso/",
+    "https://chieseitaliane.chiesacattolica.it/chieseitaliane/stampaapprofondimento.jsp?guest=true&sercd=64749"
+   ],
+   "sourceNote": "Narrative limited to episcopal identity, locally preserved monastic tradition and local ecclesial veneration. The historical April 27 date was retained by the curator on 2026-10-05; Book of Saints PDF p.719 marks deletion from the revised Roman Martyrology. Former Bologna observance April 18; present collective September 28."
   }
  }
 }
