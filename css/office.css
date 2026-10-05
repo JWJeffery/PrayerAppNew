@@ -2087,11 +2087,15 @@ body.light-mode #individual-prayers-section.app-book-needs-shell::before {
     z-index: 10002;
     background: rgba(0, 0, 0, 0.6);
     overflow-y: auto;
+    overflow-x: hidden; /* the panel scrolls up and down only, never sideways */
+    overscroll-behavior: contain;
     padding: 6vh 16px;
     box-sizing: border-box;
 }
 
 .app-profile-defaults {
+    box-sizing: border-box;
+    max-width: 100%;
     position: relative;
     width: min(820px, 100%);
     margin: 0 auto;
@@ -2160,12 +2164,13 @@ body.dark-mode .app-profile-defaults {
 
 .app-profile-defaults-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 18px;
     align-items: end;
 }
 
 .app-profile-default-field {
+    min-width: 0; /* a long option label must not stretch the column wider than the screen */
     display: grid;
     gap: 6px;
     color: var(--gold, #c9a84c);
@@ -2234,6 +2239,21 @@ body.dark-mode .app-profile-default-field input[type="text"] {
     border-top: 1px solid rgba(201, 168, 76, 0.25);
 }
 
+.app-profile-save {
+    min-height: 44px;
+    min-width: 160px;
+    padding: 0.6rem 1.6rem;
+    font-size: 0.9rem;
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--gold, #c9a84c);
+    border-radius: 4px;
+    background: var(--gold, #c9a84c);
+    color: #1a1208;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .app-profile-reset {
     min-height: 38px;
     padding: 0.5rem 1rem;
@@ -2259,7 +2279,11 @@ body.dark-mode .app-profile-default-field input[type="text"] {
 
 @media (max-width: 640px) {
     .app-profile-defaults-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-profile-defaults-copy {
+        padding-right: 0; /* the corner X is gone; no room to reserve for it */
     }
 
     .app-profile-defaults-actions {
