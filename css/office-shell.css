@@ -2539,3 +2539,164 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
 #mode-selection .app-mode-tool-btn {
     padding: clamp(6px, 1.2vh, 10px) 16px;
 }
+
+/* ---------------------------------------------------------------------------
+   2026-10-05: MOBILE AND TABLET PASS (Josh: "this thing needs to be optimized
+   for mobile"). Audited with a real browser at iPhone SE / 14 / 15 Pro Max,
+   Galaxy S9 / Pixel 7, an Android tablet, iPad mini / Pro 11 and iPad
+   landscape. What it found, and what this block does about each:
+   - Phones: the header took 171px of a 667px screen (profile icon alone on a
+     row, title on a row, tools on a row, "Explore" on a row), leaving about
+     400px to read in. Now two short rows (~95px).
+   - iPad landscape: the header overflowed -- "Book of Needs" crushed into a
+     three-line blob, the day line wrapped to five lines, "Explore other
+     Offices" ran off the edge.
+   - The white "Book of Needs" pill glared on the dark header.
+   - Every paragraph reserved 69px for its drop cap, a fifth of a phone screen.
+   - The Universal Office selector scrolled inside its own box on phones.
+   - Touch targets under 36px (theme buttons, profile icon, checkboxes).
+   Keep this block LAST: it must win over everything above.
+   --------------------------------------------------------------------------- */
+
+.uo-ordo > #office-mode-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.uo-ordo .office-context-action {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    background: transparent;
+    color: var(--uo-accent);
+    border: 1px solid var(--uo-hairline);
+    border-radius: 2px;
+    font-family: var(--uo-face-title);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+}
+
+.uo-ordo .office-context-action:hover,
+.uo-ordo .office-context-action:focus-visible {
+    background: transparent;
+    border-color: var(--uo-accent);
+}
+
+@media (max-width: 1100px) {
+    .uo-ordo-mark {
+        display: none;
+    }
+
+    .uo-ordo {
+        gap: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .uo-ordo-day {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .uo-ordo {
+        gap: 6px 8px;
+        padding: 8px 14px;
+    }
+
+    .uo-ordo > .app-profile-icon-btn { order: 1; }
+
+    /* May wrap to two lines rather than truncate: "The Episcopal Church" cut to
+       "The E..." told the reader nothing about where they are. */
+    .uo-ordo > #office-mode-title {
+        order: 2;
+        flex: 1 1 90px;
+        font-size: 14px !important;  /* office.css's small-screen rule is !important too */
+        line-height: 1.15 !important;
+        letter-spacing: 0.04em;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        overflow-wrap: break-word !important;
+    }
+
+    .uo-ordo > .uo-theme-control { order: 3; }
+    .uo-ordo > #office-context-actions { order: 4; flex: 0 0 auto; }
+
+    .uo-ordo > #app-mode-return-button,
+    .uo-ordo button[onclick*="backToSplash"] {
+        order: 5;
+        /* inline styles in index.html, hence !important */
+        padding: 7px 10px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.08em !important;
+    }
+}
+
+/* A phone shows the same prayer in a ~335px column; the drop cap's reserved
+   2.75em (69px at the 25px body size) is a fifth of it. Smaller cap, smaller
+   reservation. The negative margin is the reservation divided by the cap's own
+   font-size (2.1 / 2.5), which is what keeps line 1 and every later line
+   starting at the same x -- see office.css's .component-text for the mechanism. */
+@media (max-width: 600px) {
+    .component-text {
+        padding-left: 2.1em;
+    }
+
+    .component-text::first-letter {
+        font-size: 2.5em;
+        margin: 0.05em 0.1em 0 -0.84em;
+    }
+}
+
+/* The selector is a normal page on a phone: the page scrolls, not a box inside it. */
+@media (max-width: 760px) {
+    #mode-selection.app-mode-shell {
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+/* Fingers, not pointers. */
+@media (pointer: coarse) {
+    .uo-theme-button {
+        padding: 9px 10px;
+        min-height: 36px;
+    }
+
+    .uo-ordo .office-context-action {
+        min-height: 36px;
+        padding: 8px 12px;
+    }
+
+    .app-profile-icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app-dark-toggle input,
+    .app-book-needs-show-all input,
+    .app-profile-default-field-checkbox input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+    }
+
+    .uo-drawer-close {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* 2026-10-05 (Josh): gap notes are not shown on phones -- they sat under the prayers and
+   took space from them. The cards stay in the page (this is screen-only), so print still
+   carries them as footnotes, and the wider layouts still show them. The margin holds
+   nothing else now that the overlay cards are gone. */
+@media screen and (max-width: 768px) {
+    .uo-margin {
+        display: none;
+    }
+}

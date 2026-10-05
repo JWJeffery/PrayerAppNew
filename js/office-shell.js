@@ -941,6 +941,11 @@
            prayers and the page's own controls, taking a screenful. The envelope still carries
            env.overlays; only the on-page card is gone. */
         (Array.isArray(env.diagnostics) ? env.diagnostics : []).forEach(function (d) {
+            /* 2026-10-05 (Josh): a "section-omitted" entry (the Roman Breviary's `{omittitur}`,
+               e.g. Weekday Intercessions) means the rubrics deliberately skip that section today.
+               It is correct behaviour, not a gap, and it used to be drawn as the generic "A gap,
+               stated rather than hidden." Nothing for a reader to be told. */
+            if (d && d.type === 'section-omitted') return;
             var wording = DIAGNOSTIC_WORDING[d.code] || d.message || 'A gap, stated rather than hidden.';
             cards.push(marginCard('diagnostic', 'Diagnostic', d.block ? (d.block + ' \u2014 ' + wording) : wording));
         });
