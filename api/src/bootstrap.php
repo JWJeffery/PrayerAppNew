@@ -20,6 +20,7 @@ require_once __DIR__ . '/Handlers/AuthHandlers.php';
 require_once __DIR__ . '/Handlers/Staff.php';
 require_once __DIR__ . '/Handlers/Register.php';
 require_once __DIR__ . '/Handlers/Admin.php';
+require_once __DIR__ . '/Handlers/ParishPages.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -56,6 +57,9 @@ function uo_build_router(): Router
     $r->add('GET', '/parishes', ['PublicApi', 'listParishes']);
     $r->add('GET', '/parishes/{slug}/intentions', ['PublicApi', 'intentions']);
     $r->add('POST', '/parishes/{slug}/join', ['PublicApi', 'join']);
+    // Parish home page, events, announcements and the diocesan page (2026-10-06).
+    $r->add('GET', '/parishes/{slug}', ['ParishPagesApi', 'home']);
+    $r->add('GET', '/dioceses/{body}/{name}', ['ParishPagesApi', 'diocese']);
     // Staff authentication (spec 8.3).
     $r->add('POST', '/auth/request-code', ['AuthApi', 'requestCode']);
     $r->add('POST', '/auth/verify-code', ['AuthApi', 'verifyCode']);
@@ -75,6 +79,16 @@ function uo_build_router(): Router
     $r->add('GET', '/staff/parish/join-code', ['StaffApi', 'getJoinCode']);
     $r->add('POST', '/staff/parish/join-code/rotate', ['StaffApi', 'rotateJoinCode']);
     $r->add('DELETE', '/staff/me', ['StaffApi', 'deleteMe']);
+    $r->add('GET', '/staff/parish/profile', ['ParishPagesApi', 'getProfile']);
+    $r->add('PUT', '/staff/parish/profile', ['ParishPagesApi', 'putProfile']);
+    $r->add('GET', '/staff/events', ['ParishPagesApi', 'listEvents']);
+    $r->add('POST', '/staff/events', ['ParishPagesApi', 'createEvent']);
+    $r->add('PATCH', '/staff/events/{id}', ['ParishPagesApi', 'editEvent']);
+    $r->add('DELETE', '/staff/events/{id}', ['ParishPagesApi', 'deleteEvent']);
+    $r->add('GET', '/staff/announcements', ['ParishPagesApi', 'listAnnouncements']);
+    $r->add('POST', '/staff/announcements', ['ParishPagesApi', 'createAnnouncement']);
+    $r->add('POST', '/staff/announcements/{id}/extend', ['ParishPagesApi', 'extendAnnouncement']);
+    $r->add('DELETE', '/staff/announcements/{id}', ['ParishPagesApi', 'deleteAnnouncement']);
     // Registration (spec 8.2).
     $r->add('POST', '/register', ['RegisterApi', 'register']);
     $r->add('POST', '/register/verify', ['RegisterApi', 'verify']);
@@ -89,6 +103,9 @@ function uo_build_router(): Router
     $r->add('POST', '/admin/parishes/{id}/unsuspend', ['AdminApi', 'unsuspend']);
     $r->add('DELETE', '/admin/parishes/{id}', ['AdminApi', 'delete']);
     $r->add('GET', '/admin/status', ['AdminApi', 'status']);
+    $r->add('PUT', '/admin/dioceses/{body}/{name}', ['ParishPagesApi', 'adminPutDiocese']);
+    $r->add('POST', '/admin/dioceses/{body}/{name}/prayers', ['ParishPagesApi', 'adminAddPrayer']);
+    $r->add('DELETE', '/admin/dioceses/{body}/{name}/prayers/{id}', ['ParishPagesApi', 'adminDeletePrayer']);
     return $r;
 }
 

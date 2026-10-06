@@ -12,7 +12,7 @@ final class StaffApi
     // ---- Shared plumbing -----------------------------------------------------
 
     /** Staff principal, or an emitted 401/429 and null. $write counts against the 60/hour session limit. */
-    private static function ctx(bool $write, bool $rectorOnly = false): ?array
+    public static function ctx(bool $write, bool $rectorOnly = false): ?array
     {
         $p = Auth::require();
         if ($p === null) { return null; }
@@ -28,20 +28,20 @@ final class StaffApi
         return $p;
     }
 
-    private static function json(): ?array
+    public static function json(): ?array
     {
         [$body] = Request::jsonBody();
         if ($body === null) { Response::error(400, 'bad_request', 'Bad request.'); }
         return $body;
     }
 
-    private static function idParam(array $params): ?int
+    public static function idParam(array $params): ?int
     {
         $id = (string)($params['id'] ?? '');
         return ctype_digit($id) && strlen($id) <= 18 ? (int)$id : null;
     }
 
-    private static function audit(array $p, string $action, ?string $detail = null): void
+    public static function audit(array $p, string $action, ?string $detail = null): void
     {
         Audit::log('staff:' . $p['staff']['id'], $p['parish']['id'], $action, $detail); // ids only, never text/emails
     }
@@ -70,7 +70,7 @@ final class StaffApi
         return $r === false ? null : $r;
     }
 
-    private static function invalid(array $fields): void
+    public static function invalid(array $fields): void
     {
         Response::error(422, 'invalid_input', 'Invalid input.', $fields);
     }

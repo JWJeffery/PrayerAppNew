@@ -53,6 +53,65 @@ final class Validate
         return [$v, null];
     }
 
+    /** Web address a reader may tap: http(s) only, no credentials in it, 1..255 characters. Null/'' = none. */
+    public static function url($v): array
+    {
+        if ($v === null || $v === '') { return [null, null]; }
+        if (!is_string($v) || !mb_check_encoding($v, 'UTF-8')) { return [null, 'Must be a web address.']; }
+        $v = trim($v);
+        if ($v === '') { return [null, null]; }
+        if (strlen($v) > 255 || preg_match('/[\x00-\x20\x7F"<>\\^`{|}]/', $v)) { return [null, 'Enter a full web address such as https://example.org (255 characters at most).']; }
+        $parts = parse_url($v);
+        if ($parts === false || !isset($parts['scheme'], $parts['host'])
+            || !in_array(strtolower($parts['scheme']), ['http', 'https'], true)
+            || isset($parts['user']) || isset($parts['pass'])
+            || strpos($parts['host'], '.') === false) {
+            return [null, 'Enter a full web address that starts with https:// (or http://).'];
+        }
+        return [$v, null];
+    }
+
+    /**
+     * A short list of text lines (service times, convention dates): up to $maxLines non-empty lines of
+     * up to $maxLen characters each, each cleaned like Validate::text. Accepts an array of strings.
+     * @return array{0:?array,1:?string} [list of lines or null when empty, error message]
+     */
+    public static function lines($v, int $maxLines, int $maxLen): array
+    {
+        if ($v === null || $v === '' || $v === []) { return [null, null]; }
+        if (!is_array($v) || array_keys($v) !== range(0, count($v) - 1)) { return [null, 'Must be a list of lines.']; }
+        $out = [];
+        foreach ($v as $line) {
+            if ($line === null || (is_string($line) && trim($line) === '')) { continue; }
+            [$clean, $e] = self::text($line, $maxLen);
+            if ($e !== null) { return [null, $e === 'Required.' ? 'Must be text.' : "Each line: $e"]; }
+            $out[] = $clean;
+        }
+        if (count($out) > $maxLines) { return [null, "Use $maxLines lines or fewer."]; }
+        return [$out === [] ? null : $out, null];
+    }
+
+    /** Calendar date "YYYY-MM-DD" that really exists. */
+    public static function date($v): array
+    {
+        if (!is_string($v) || !preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $v, $m) || !checkdate((int)$m[2], (int)$m[3], (int)$m[1])) {
+            return [null, 'Enter a date.'];
+        }
+        return [$v, null];
+    }
+
+    /** "HH:MM" 24-hour time, or null/'' for none. */
+    public static function time($v): array
+    {
+        if ($v === null || $v === '') { return [null, null]; }
+        if (!is_string($v) || !preg_match('/^([01]\d|2[0-3]):([0-5]\d)$/', $v)) { return [null, 'Enter a time like 18:30.']; }
+        return [$v, null];
+    }
+
+    /** Text lines stored as one newline-joined column value, and back. */
+    public static function joinLines(?array $lines): ?string { return $lines === null ? null : implode("\n", $lines); }
+    public static function splitLines(?string $stored): array { return ($stored === null || $stored === '') ? [] : explode("\n", $stored); }
+
     /** URL slug from a parish name: a-z 0-9 hyphen, max 80. "St. Bede's Church" -> "st-bedes-church". */
     public static function slugify(string $name): string
     {

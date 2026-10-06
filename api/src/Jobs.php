@@ -75,6 +75,9 @@ final class Jobs
         $pdo = Db::pdo();
         $rules = [
             'intentions'      => 'expires_at < UTC_TIMESTAMP() - INTERVAL 7 DAY',
+            'parish_events'   => 'event_date < UTC_DATE() - INTERVAL 7 DAY',
+            'parish_announcements' => 'expires_at < UTC_TIMESTAMP() - INTERVAL 7 DAY',
+            'diocese_prayers' => 'expires_at < UTC_TIMESTAMP() - INTERVAL 7 DAY',
             'login_codes'     => 'expires_at < UTC_TIMESTAMP() - INTERVAL 1 DAY',
             'sessions'        => 'expires_at < UTC_TIMESTAMP()',
             'rate_limits'     => 'window_start < UTC_TIMESTAMP() - INTERVAL 2 DAY',
