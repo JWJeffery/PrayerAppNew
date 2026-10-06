@@ -753,6 +753,7 @@ body.uo-day.office-active #main-content.app-primary-canvas[data-uo-tradition="BY
    rather than hidden, so every existing affordance stays reachable in Phase 2.
    Phase 4 gives them their proper homes. */
 .uo-ordo > #office-mode-title {
+    flex-shrink: 0; /* 2026-10-06: the "My Parish" button joined the line; the title keeps its full name and the date line wraps instead */
     margin: 0;
     font-family: var(--uo-face-title);
     font-size: 15px;
@@ -2582,6 +2583,18 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
 .uo-ordo .office-context-action:active {
     background: transparent;
     border-color: var(--uo-accent);
+}
+
+/* 2026-10-06: with "My Parish" beside "Book of Needs", tablet-width screens tighten the two buttons so the
+   ordo line still fits without overflowing. */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .uo-ordo > #office-context-actions { gap: 4px; }
+    .uo-ordo .office-context-action {
+        padding-left: 7px;
+        padding-right: 7px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
 }
 
 /* 2026-10-06 (Josh: "Book of needs should not be backlit like that"): on a phone the

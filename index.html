@@ -17,7 +17,7 @@
          dev flag while it shipped safely alongside the old skin. Phase 6
          (2026-09-24) made it the only office shell and dropped the flag; see
          documentation/UI_REDESIGN_HANDOFF.md section 9. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=330">
+    <link rel="stylesheet" href="css/office-shell.css?v=332">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
 
@@ -593,6 +593,7 @@
         </button>
         <h1 id="office-mode-title">The Universal Office</h1>
         <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
+            <button class="office-context-action" id="office-my-parish-button" type="button" onclick="openMyParish()" hidden>My Parish</button>
             <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
         </div>
         <div id="office-display"></div>
@@ -1320,7 +1321,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=333" defer></script>
+<script src="js/office-ui.js?v=334" defer></script>
 <script src="js/prayers.js?v=223"></script>
 <script src="js/tooltip.js"></script>
 

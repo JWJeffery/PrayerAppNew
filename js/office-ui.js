@@ -3041,6 +3041,30 @@ function updateOfficeModeHeader(mode) {
     if (!title) return;
 
     title.textContent = OFFICE_MODE_HEADER_LABELS[mode] || 'The Universal Office';
+
+    // ADDED 2026-10-06 (Josh): the "My Parish" button sits left of "Book of Needs" and, like the parish
+    // features themselves, belongs to the Anglican Daily Office only.
+    const myParish = document.getElementById('office-my-parish-button');
+    if (myParish) myParish.hidden = (mode !== 'daily');
+}
+
+/**
+ * ADDED 2026-10-06 (Josh). "My Parish" button in the office header. A reader who follows a parish goes
+ * to that parish's page (parish/home.html). One who does not is taken to the Parish prayer intentions
+ * field in the profile, where they pick a parish. The slug is validated before it goes into the address.
+ */
+function openMyParish() {
+    const slug = getUserProfileDefaults().parishIntentionsSlug;
+    if (typeof slug === 'string' && /^[a-z0-9-]{1,80}$/.test(slug)) {
+        window.location.href = 'parish/home.html?p=' + encodeURIComponent(slug);
+        return;
+    }
+    openUserProfilePanel();
+    const field = document.getElementById('profile-parish-intentions-field');
+    if (field && !field.hidden) {
+        setParishIntentionsNote('Choose your parish above to follow it. Then \u201cMy Parish\u201d opens its page.');
+        field.scrollIntoView({ block: 'center' });
+    }
 }
 
 // ── Book of Needs tradition-context routing ──────────────────────────────────
