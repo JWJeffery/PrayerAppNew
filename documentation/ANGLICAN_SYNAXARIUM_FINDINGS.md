@@ -191,3 +191,12 @@ Edited by hand in `data/kalendar/synaxarium/decisions.json` (primary and alterna
 and `data/saints/sanctoral.json` (new `philip-benizi` row with `angRole: primary`; Rivera's row now `alternate`).
 `scripts/saints/apply-synaxarium-decisions.py` regenerates both files from the review-tool export, so re-running it would
 undo this; apply the same swap to the export first.
+
+## Curator exclusion, 2026-10-06: William Tyndale
+
+Josh reaffirmed the absolute rule: **NO PROTESTANT REFORMERS**, including primaries, alternates and additional commemorations.
+The October 2 source-proof retention of `william-tyndale` is superseded. A printed calendar establishes a source date; it does not override admission rules.
+
+William Tyndale's Anglican-only sanctoral row, both the individual and Tyndale–Coverdale active decision alternates, and their two short-life records were removed.
+Bruno of Cologne remains the October 6 primary; Faith of Agen remains an alternate. Withdrawn decision records retain the identifiers and exclusion reason for audit.
+`data/kalendar/synaxarium/exclusions.json` records the known excluded identity and both SINs. The importer rejects an excluded primary before writing, filters excluded candidates and approved-alternate lists, and removes excluded Anglican sanctoral rows before source-proof retention can run.

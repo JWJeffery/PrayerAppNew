@@ -9,10 +9,21 @@ Outputs: data/kalendar/synaxarium/decisions.json  (primary + alternates per civi
 Rules (Josh, 2026-10-02): primary plus alternates; an existing ANG row that conflicts with the decision for its day
 is DROPPED unless a credible ecclesial source (printed LFF 2024, Holy Women Holy Men, A Great Cloud of Witnesses)
 prints it on that day, in which case it stays as an alternate. The hagiographies are NOT part of this export.
+The curator's absolute NO PROTESTANT REFORMERS rule takes precedence over printed-calendar proof.
+Known excluded identities are recorded in data/kalendar/synaxarium/exclusions.json.
 """
 import json, re, sys, collections
 dec_path, cal_path = sys.argv[1], sys.argv[2]
 dec = json.load(open(dec_path)); decisions = dec['decisions']
+exclusions = json.load(open('data/kalendar/synaxarium/exclusions.json'))['exclusions']
+def excluded_anglican(name, sin=None):
+    words = set(re.findall(r'[a-z]+', str(name or '').lower()))
+    return any(e['name_token'] in words or sin in e['sins'] for e in exclusions)
+
+# Reject excluded primaries before writing either output; approval flags are not exceptions.
+for k, r in decisions.items():
+    if excluded_anglican(r['selected_candidate'], r.get('selected_sin')):
+        raise ValueError(f"{k}: excluded Anglican commemoration: {r['selected_candidate']}")
 kd = json.load(open('synaxarium-review/data/kalendar-data.json'))
 cands = {}
 for m, v in kd.items():
@@ -62,6 +73,7 @@ for k in sorted(decisions):
     approved = r.get('approved_alternates') or []
     alts = []
     for c in cands.get(k, []):
+        if excluded_anglican(c['candidate'], (c.get('sin') or {}).get('sin')): continue
         if c['candidate'] == r['selected_candidate'] or str(c.get('preliminary_status', '')).startswith('Weak'): continue
         alts.append({'name': c['candidate'], 'sin': (c.get('sin') or {}).get('sin'), 'designation': c.get('designation'),
                      'period': c.get('year_or_period'), 'tradition': c.get('tradition'),
@@ -76,6 +88,14 @@ json.dump(out, open('data/kalendar/synaxarium/decisions.json', 'w'), ensure_asci
 
 # ---- 2. sanctoral ------------------------------------------------------------------
 p = 'data/saints/sanctoral.json'; sd = json.load(open(p)); rows = sd['entries']
+for x in list(rows):
+    if 'ANG' not in x['tags'] or not excluded_anglican(x['name'], x.get('synaxariumSin')): continue
+    if x['tags'] == ['ANG']:
+        rows.remove(x)
+    else:
+        x['tags'].remove('ANG')
+        for key in list(x):
+            if key.startswith('ang') or key == 'synaxariumSin': del x[key]
 ids = {r['id'] for r in rows}
 def slug(n):
     b = re.sub(r'[^a-z0-9]+', '-', n.lower().replace('’', '')).strip('-')[:60]; i = b; c = 2
@@ -108,6 +128,7 @@ for k in sorted(decisions):
 # curator-approved alternates (Josh, 2026-10-02): rows with angRole alternate, on the date the sources print
 for k in sorted(decisions):
     for aname in decisions[k].get('approved_alternates') or []:
+        if excluded_anglican(aname): continue
         arow = next((c for c in cands[k] if c['candidate'] == aname), None)
         hit = next((x for x in rows if k in fixed_dates(x) and same(aname, x['name']) and x.get('angRole') != 'primary'), None)
         if hit is None:

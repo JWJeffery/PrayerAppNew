@@ -18191,30 +18191,6 @@
       "angDecisionSource": "An Anglican Synaxarium, Kalendar Review decision (select_alternate, 2026-09-07); witnesses: AM; Oxford Dictionary of Saints."
     },
     {
-      "id": "william-tyndale",
-      "name": "William Tyndale",
-      "description": "Translator of the Scriptures, Martyr, 1536.",
-      "type": "saint",
-      "tags": [
-        "ANG"
-      ],
-      "dayLegacy": "October 6",
-      "observance": {
-        "type": "fixed",
-        "dates": [
-          {
-            "month": 10,
-            "day": 6
-          }
-        ]
-      },
-      "ruleSource": "Date CONFIRMED 2026-09-05 against Lesser Feasts and Fasts 2024 (data/kalendar/source-witnesses/lesser_feasts_and_fasts_-_2024__final_.pdf, Calendar of the Church Year, pp.6-18), which prints on this day: “William Tyndale, Priest, 1536”. LFF controls dates for TEC (Josh, 2026-09-05); this row is in LFF on this day. Matched on distinctive name tokens with the day held fixed, so a match means the printed calendar keeps this identity on this date — not merely that the name occurs somewhere in the book.",
-      "liturgicalColor": "white",
-      "liturgicalColorSource": "Church Pension Group, Liturgical eCalendar 2026 (EpiscopalCalendar_Lesser_2026.ics, ics.calendar.cpg.org) -- matched by name among multiple same-day candidates.",
-      "angRole": "alternate",
-      "angAlternateProof": "Printed on this day in Lesser Feasts and Fasts 2024; Holy Women, Holy Men; A Great Cloud of Witnesses."
-    },
-    {
       "id": "birgitta-of-sweden",
       "name": "Birgitta of Sweden",
       "description": "Mystic, 1373.",

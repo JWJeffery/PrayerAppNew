@@ -12375,6 +12375,18 @@
    },
    "alternates": [
     {
+     "name": "Faith of Agen",
+     "sin": "UO-SIN-000408",
+     "designation": "Martyr",
+     "period": "3rd century",
+     "tradition": "Greater Church / Western",
+     "source_witnesses": "AM; Oxford Dictionary of Saints",
+     "preliminary_status": "Usable",
+     "curator_approved": null
+    }
+   ],
+   "withdrawn_alternates": [
+    {
      "name": "William Tyndale",
      "sin": "UO-SIN-000098",
      "designation": "Priest and Bible translator",
@@ -12382,7 +12394,11 @@
      "tradition": "Anglican / Reformation martyr",
      "source_witnesses": "BCP; LFF; HWHM/GCW with Coverdale; AM",
      "preliminary_status": "Strong candidate with review",
-     "curator_approved": null
+     "curator_approved": false,
+     "decision_status": "Withdrawn by curator",
+     "withdrawn_at": "2026-10-06",
+     "withdrawal_reason": "NO PROTESTANT REFORMERS. Published-calendar inclusion does not override the curator's absolute exclusion.",
+     "identifier_status": "Reserved to this historical record; do not reuse"
     },
     {
      "name": "William Tyndale and Miles Coverdale",
@@ -12392,17 +12408,11 @@
      "tradition": "Anglican / Reformation witnesses",
      "source_witnesses": "HWHM; GCW",
      "preliminary_status": "Strong alternate",
-     "curator_approved": null
-    },
-    {
-     "name": "Faith of Agen",
-     "sin": "UO-SIN-000408",
-     "designation": "Martyr",
-     "period": "3rd century",
-     "tradition": "Greater Church / Western",
-     "source_witnesses": "AM; Oxford Dictionary of Saints",
-     "preliminary_status": "Usable",
-     "curator_approved": null
+     "curator_approved": false,
+     "decision_status": "Withdrawn by curator",
+     "withdrawn_at": "2026-10-06",
+     "withdrawal_reason": "NO PROTESTANT REFORMERS. Published-calendar inclusion does not override the curator's absolute exclusion.",
+     "identifier_status": "Reserved to this historical record; do not reuse"
     }
    ]
   },

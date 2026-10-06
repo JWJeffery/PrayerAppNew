@@ -1,0 +1,14 @@
+{
+ "schema": "universal_office_anglican_exclusions_v1",
+ "rule": "NO PROTESTANT REFORMERS",
+ "scope": "Anglican primaries, alternates and additional commemorations. Calendar-source evidence does not override this exclusion.",
+ "exclusions": [
+  {
+   "name": "William Tyndale",
+   "name_token": "tyndale",
+   "sins": ["UO-SIN-000098", "UO-SIN-000406"],
+   "excluded_at": "2026-10-06",
+   "reason": "Curator's absolute exclusion of Protestant reformers; includes the joint William Tyndale and Miles Coverdale entry."
+  }
+ ]
+}
