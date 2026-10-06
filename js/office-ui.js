@@ -777,17 +777,13 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
 // Breviary 1960/1962' as a TRADITION label rather than an office name), found
 // and fixed in the same pass rather than left as a still-open inconsistency.
 // CORRECTED 2026-09-29, per Josh's direct correction: "The Tradition is
-// Anglicanism. The sub-tradition is The Episcopal Church." -- "Anglican
-// Communion" names the worldwide fellowship of ~40 independent national/
-// regional churches (Church of England, TEC, the Church of Nigeria, etc.),
-// each with its own prayer book; it is not itself a specific tradition this
-// app implements, and calling this lane that could lead a Church of England
-// or ACNA user to expect their own province's book rather than TEC's. This
-// app's Anglican/Western Christian lane specifically implements the 1979
-// Book of Common Prayer -- The Episcopal Church's own book -- so the label
-// now names that specific church, matching the pattern every other entry
-// here already follows (a specific church body, e.g. 'Church of the East',
-// not a wider family or fellowship name).
+// Anglicanism. The sub-tradition is The Episcopal Church." -- never "Anglican
+// Communion", which names the worldwide fellowship of ~40 independent churches.
+// RE-CORRECTED 2026-10-06: the 09-29 fix was applied backwards. The label for
+// this lane is the TRADITION, "Anglican"; The Episcopal Church is the church
+// within it (whose 1979 BCP the lane renders) and appears only in descriptive
+// text, e.g. the entry card's subtitle. The other four entries are named for
+// their traditions or church families and are unchanged.
 const UNIVERSAL_OFFICE_TRADITION_LABELS = {
     anglican: 'Anglican',
     'church-of-the-east': 'Church of the East',

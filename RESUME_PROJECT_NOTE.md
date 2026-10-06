@@ -5,7 +5,7 @@ current state, and the short list of things that are actually open. Everything c
 `documentation/project-history/` (start at `INDEX.md`) and `AUDIT_GOVERNANCE_LEDGER.md`; anything
 there is HISTORICAL and is marked so. **Where this note and the repo disagree, the repo wins.**
 
-**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines). The retired sections went
+**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06**. The retired sections went
 verbatim to `documentation/project-history/VOLUME-7-2026-10-03-resume-note-retired-sections.md`.
 **Keep it this way:** if you add something to this note, move whatever it displaces into a
 history volume in the same session, and do not list an item as "open" unless it is either (a) a
@@ -40,12 +40,15 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 ## 2. Workflow rules
 
 - Work on the assigned branch, commit, and push with `git push -u origin <branch>` in the same turn.
-  Do not open a PR unless asked. **Merging to `main` only on Josh's explicit word** (he has said
-  "merge to main" each time; the merges have been fast-forwards).
+  Do not open a PR unless asked. **Merging to `main` only on Josh's explicit word.** Recent merges
+  (PRs #114-#118) were GitHub PR merge commits, opened and merged when he said "Open a PR and
+  merge"; after a merge, restart the branch from `origin/main` (same name) before new work.
 - Fetch and check `git log --oneline -1` before building on a branch.
 - Validate JSON before writing; prefer targeted edits to bulk dumps. For bulk edits to
   `data/saints/sanctoral.json` key on `(id, month, day)`, never `id` alone; back up first.
-- Bump `?v=NNN` cache-bust params in `index.html` whenever the matching JS changes.
+- Bump `?v=NNN` cache-bust params in `index.html` whenever the matching JS **or CSS** changes. This
+  was missed on 2026-10-06 (PR #118 shipped without it) and had to be fixed after the merge: without
+  it a browser that cached the old file may keep serving it.
 - Ledger/`SEED_VERSION` entries go in the same commit as the fix.
 - Name exact paths when staging; do not `git add -A` blindly.
 - Josh does not see background-task notifications: work synchronously and report plainly.
@@ -96,23 +99,24 @@ and say what you checked.
    every hour (Latin and English) and the app now runs on it for any date 1900-2100. Verified against the
    Perl engine and the audited stored data (plan doc sections 12-16; tests `npm run test:roman-breviary-
    script|render|blocks`; engine clone for tests: `npm run roman-breviary:engine:setup`). Old
-   `units/`/`manifests/` stay as fixtures and fallback, not shipped. **Next: phase 6** (offline data pack),
-   then item 2 below. **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
+   `units/`/`manifests/` stay as fixtures and fallback, not shipped. **Phase 6 (offline data pack) is
+   done, see item 2.** **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
    only after the 1960 engine matches the audited output** (decided 2026-10-03).
-2. **Offline delivery:** installable offline website first (service worker, manifest, generated data
-   pack), then Capacitor iOS/Android apps once Josh has Apple/Google accounts (he has neither yet).
-   **Offline website is built (2026-10-04):** `npm run release:web` now also writes `sw.js` (Workbox) that
-   keeps the app and all text on the device (668 files, ~70 MB, versioned by hash; Roman Breviary engine data
-   included); icons download once on first Orthodox entry (`js/offline-packs.js`); `manifest.webmanifest`
-   makes it installable (placeholder cross icon in `images/app/`, Josh to replace). `npm run test:offline`
-   (needs `npm run release:web` first) cuts the network and opens all five traditions. The release also now
-   ships `assets/fonts` (they were missing before). **Roman Breviary now uses the shared Office Settings drawer** (date stepper, the eight hours, Language, Explanations) like every other lane; its own inline Date/Hour/Language form is gone (`renderRomanBreviary()` in `js/office-ui.js`). **Anglican saint panel** no longer shows catalogue metadata (tradition code, source witnesses); it shows the saint's name, description and designation/period. Richer saint biographies for the Anglican/Roman calendars do not exist in the data yet (only one-line descriptions); the Menaion lives are the model. **Update prompt (`js/update-prompt.js`):** when a new release has downloaded, a small notice offers
-   "Update now" / "Later"; the app also checks for new releases on returning to the foreground and hourly. Not done: password-protected hosting can block the manifest/service worker, see
-   documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md section 17.
-   All five traditions ship, with their **full text bundled** (works offline from first launch); **icons are not bundled**: they download on first use of the Orthodox side and are then kept for offline use (Josh, 2026-10-04; saint icons are ~27 MB). JSON stays the source of truth; a database is a later option only if
-   measured. Scripture in the public app is limited to passages cited in the prayers (Bible browser
-   stays admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by
-   us). Record: `documentation/JSON_TO_DATABASE_SCOPING.md`.
+2. **Offline delivery:** installable offline website is **built (2026-10-04)**: `npm run release:web`
+   writes `sw.js` (Workbox, versioned by hash) so the app and all text work offline from first launch;
+   icons (~27 MB) download once on first Orthodox entry (`js/offline-packs.js`) and are then kept;
+   `manifest.webmanifest` makes it installable (placeholder cross icon in `images/app/`, Josh to
+   replace); `js/update-prompt.js` offers "Update now / Later" when a new release has downloaded.
+   `npm run test:offline` (needs `npm run release:web` first) cuts the network and opens all five
+   traditions. **Not done:** Capacitor iOS/Android apps (gated on Josh getting Apple/Google accounts,
+   he has neither); password-protected hosting can block the manifest/service worker (plan doc
+   section 17). JSON stays the source of truth; a database is a later option only if measured.
+   Scripture in the public app is limited to passages cited in the prayers (Bible browser stays
+   admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by us).
+   Records: `documentation/JSON_TO_DATABASE_SCOPING.md`, `ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`.
+   Smaller 2026-10-04 changes (Roman Breviary on the shared Office Settings drawer, Anglican saint
+   panel without catalogue metadata, no Anglican/Roman saint biographies in the data yet) are in
+   history Volume 8.
 
 **Josh's own hands (Drive):**
 - Delete the Google Doc "Calendar and Admission Decisions — Corrections of 2026-10-02" (it wrongly
@@ -183,6 +187,19 @@ Join codes live encrypted in the production database, not in any repo file. The 
 `faq/index.html` (rector join-code question), exists but is deliberately not linked from the app;
 wiring it in is Josh's call. Add further questions there.
 
+**Naming in the UI (Josh, 2026-10-06; supersedes the 2026-09-28/29 labels).** Three different
+things must not be mixed: the *tradition* (picker label), the *church* (named in descriptions), and
+the *office* (page title). The Anglican lane's tradition label is **"Anglican"**; The Episcopal Church
+is the church within it and appears only in text such as "The Episcopal Church: 1979 Book of Common
+Prayer Daily Office." Never "Anglican Communion". The page title at the top of an office is the
+**office name**: The Daily Office, The Coptic Agpeya, The Hudra (Church of the East), The Horologion,
+The Roman Breviary (`OFFICE_MODE_HEADER_LABELS` in `js/office-ui.js`); Book of Needs stays "The Book
+of Needs". The other four tradition labels (Oriental Orthodox Church, Church of the East, Eastern
+Orthodox Church, Catholic Church) were not questioned and were left alone. The header "Book of Needs"
+button is an outline in every state (no tap fill). The profile modal fits phone widths (checked at
+360px, 16-344px, no sideways scroll); only long dropdown text truncates inside its box.
+Not yet seen on a real phone: the live site only changes when Josh uploads a new `release:web` build.
+
 **Housekeeping.** `AUDIT_GOVERNANCE_LEDGER.md` and `AUDIT_SOURCE_VERIFICATION.md` are out of scope
 for any documentation cleanup unless Josh asks. `structure.json`'s innerHTML item is mitigated
 (audited 2026-10-02). The three stale navigation audit scripts were retired to
@@ -221,8 +238,9 @@ menu (only one of the 25 was browser-tested).
 - The ordinary-cycle Horologion office audit (14 offices) is done. "Horologion" means two things:
   the physical book (ordinary weekly cycle, the "complete" claim) and `js/horologion-engine.js`
   (which also renders Menaion integration points). Never conflate them without saying so.
-- Defaults/Modes consolidation and Interhour gating are closed. Tradition-selector naming is
-  closed (five traditions read identically everywhere). The Gloria Patri/Kyrie "duplication" item
+- Defaults/Modes consolidation and Interhour gating are closed. Tradition-selector naming: the
+  same five labels everywhere (profile dropdown, entry cards, selector, Book of Needs scope), but see
+  the 2026-10-06 rule in section 6 for what each label names. The Gloria Patri/Kyrie "duplication" item
   is closed.
 - Mobile prayer-reading window maximized (2026-09-28).
 - Curatorial decisions recorded 2026-10-02 and not to be revisited: Charles Wesley's 12-18 is a
@@ -251,5 +269,5 @@ menu (only one of the 25 was browser-tested).
   ordinary ramsha sequence; an unresolvable marker fails loudly by design.
 - Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
   into four zips when over ~30MB: Breviary data, other data, saint icons, app shell). There is no auto-deploy.
-- Old narrative detail: `documentation/project-history/INDEX.md`, seven HISTORICAL volumes
-  (2026-07-06 to 2026-10-03).
+- Old narrative detail: `documentation/project-history/INDEX.md`, eight HISTORICAL volumes
+  (2026-07-06 to 2026-10-06).
