@@ -71,7 +71,7 @@ handled as part of the full todo-inventory pass, not decided here.
 ## Status note, 2026-09-28
 
 This package was built as part of a larger cleanup (see the live `RESUME_PROJECT_NOTE.md` for
-current status). (Written 2026-09-28; Volumes 5-7 were added afterwards.) All four volumes were then in place, and the live note has been rewritten down to
+current status). (Written 2026-09-28; Volumes 5-8 were added afterwards.) All four volumes were then in place, and the live note has been rewritten down to
 current material only (5507 lines to ~300). **Not yet done as of this writing:** a full
 line-by-line inventory of every todo across `AUDIT_GOVERNANCE_LEDGER.md` (23,523 lines),
 `AUDIT_SOURCE_VERIFICATION.md`, and `data/bible/registry/bible-corpus-remediation-ledger.md` — the
