@@ -2259,6 +2259,7 @@ body.dark-mode .app-profile-default-field input[type="text"] {
 }
 
 .app-profile-parish-intentions-join[hidden],
+.app-profile-parish-intentions-page[hidden],
 .app-profile-parish-intentions-stop[hidden] {
     display: none;
 }
@@ -2282,6 +2283,15 @@ body.dark-mode .app-profile-default-field input[type="text"] {
 
 .app-profile-parish-intentions-stop {
     justify-self: start;
+}
+
+/* ADDED 2026-10-06: link from the profile to a followed parish's own page. */
+.app-profile-parish-intentions-page {
+    justify-self: start;
+    font-family: var(--app-serif, Georgia, "Times New Roman", serif);
+    font-size: 0.9rem;
+    color: inherit;
+    text-decoration: underline;
 }
 
 .app-profile-defaults-actions {

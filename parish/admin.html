@@ -56,6 +56,35 @@
         </table>
       </div>
     </section>
+
+    <section id="view-dioceses" class="panel" hidden aria-labelledby="h-dioceses">
+      <h2 id="h-dioceses">Diocesan pages</h2>
+      <p class="muted small">A diocese has no sign-in of its own yet, so its page is kept here. Readers see it at <span class="muted">parish/diocese.html</span>.</p>
+      <label for="dio-select">Diocese</label>
+      <select id="dio-select"><option value="">Choose a diocese&hellip;</option></select>
+      <div id="dio-edit" hidden>
+        <form id="form-diocese" novalidate>
+          <label for="dio-bishop">Bishop's name</label>
+          <input id="dio-bishop" type="text" maxlength="120" autocomplete="off">
+          <label for="dio-site">Diocesan website</label>
+          <input id="dio-site" type="text" maxlength="255" inputmode="url" autocomplete="off" placeholder="https://">
+          <label for="dio-dates">Convention and other dates (one per line, up to 6)</label>
+          <textarea id="dio-dates" rows="4"></textarea>
+          <div class="row"><button type="submit" class="primary" id="btn-save-diocese">Save diocesan page</button></div>
+        </form>
+        <h3>The bishop's prayer list</h3>
+        <form id="form-dprayer" novalidate>
+          <label for="dp-text">Add an item (200 characters at most)</label>
+          <input id="dp-text" type="text" maxlength="200" autocomplete="off">
+          <label for="dp-days">Show it for (days)</label>
+          <input id="dp-days" type="number" min="1" max="45" step="1" value="21" inputmode="numeric">
+          <div class="row"><button type="submit" id="btn-add-dprayer">Add to the list</button></div>
+        </form>
+        <ul id="dp-list" class="items"></ul>
+        <p id="dp-empty" class="muted" hidden>No prayer items showing.</p>
+        <p id="dio-status" class="status" role="status" aria-live="polite" hidden></p>
+      </div>
+    </section>
   </main>
 
   <script src="common.js"></script>

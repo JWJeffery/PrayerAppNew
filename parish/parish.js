@@ -160,15 +160,17 @@
     });
   }
 
+  var TABS = { requests: 'pane-requests', pages: 'pane-pages', settings: 'pane-settings' };
   function selectTab(name) {
-    var isReq = (name === 'requests');
-    $('tab-requests').setAttribute('aria-selected', String(isReq));
-    $('tab-settings').setAttribute('aria-selected', String(!isReq));
-    $('pane-requests').hidden = !isReq;
-    $('pane-settings').hidden = isReq;
-    if (!isReq) { loadSettings(); }
+    Object.keys(TABS).forEach(function (k) {
+      $('tab-' + k).setAttribute('aria-selected', String(k === name));
+      $(TABS[k]).hidden = (k !== name);
+    });
+    if (name === 'settings') { loadSettings(); }
+    if (name === 'pages' && window.UOPages) { window.UOPages.load(client, me); }
   }
   $('tab-requests').addEventListener('click', function () { selectTab('requests'); });
+  $('tab-pages').addEventListener('click', function () { selectTab('pages'); });
   $('tab-settings').addEventListener('click', function () { selectTab('settings'); });
 
   // ---------- prayer requests ----------

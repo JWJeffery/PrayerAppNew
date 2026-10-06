@@ -215,3 +215,29 @@ function getParishIntentionsFetchedAt(slug) {
     const t = Date.parse(entry.fetchedAt);
     return Number.isFinite(t) ? t : 0;
 }
+
+/**
+ * ADDED 2026-10-06. The parish home page (parish/home.html) cannot safely rewrite the whole local
+ * profile, which belongs to js/office-ui.js, so when a reader presses Follow / Stop following (or joins
+ * with a code) there it leaves one small request in localStorage instead. The app calls this once at
+ * startup and applies what it returns. Returns { slug, pass } (slug null = stop following) or null when
+ * there is no valid request. The request is always removed, valid or not, so a bad one cannot stick.
+ */
+const PARISH_FOLLOW_REQUEST_KEY = 'universalOffice.parishFollowRequest.v1';
+
+function consumePendingParishFollowRequest() {
+    let request = null;
+    try {
+        const stored = localStorage.getItem(PARISH_FOLLOW_REQUEST_KEY);
+        if (!stored) return null;
+        localStorage.removeItem(PARISH_FOLLOW_REQUEST_KEY);
+        request = JSON.parse(stored);
+    } catch (_error) {
+        return null;
+    }
+    if (!request || typeof request !== 'object') return null;
+    if (request.slug === null) return { slug: null, pass: null };
+    if (!parishIntentionsIsValidSlug(request.slug)) return null;
+    const pass = (typeof request.pass === 'string' && request.pass && request.pass.length <= 400) ? request.pass : null;
+    return { slug: request.slug, pass: pass };
+}

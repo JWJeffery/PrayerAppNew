@@ -169,8 +169,8 @@ Now move it to the server:
    under `lwmpzdytfh_uo`, you should now see 9 tables: `approval_tokens`, `audit_log`,
    `intentions`, `login_codes`, `parishes`, `rate_limits`, `schema_migrations`, `sessions`, `staff`.
 
-(Future database changes will be delivered as new numbered files -- `002_...sql` and so on --
-imported the same way.)
+(Later database changes are delivered as new numbered files, imported the same way: `002_parish_pages.sql`
+is described in Part 3c.)
 
 ### Step G -- Check it from the outside (Codespace)
 
@@ -266,6 +266,44 @@ automatically when it is installed): `php api/tests/run.php` includes about 70 c
 Chromium through sign-in, adding / extending / editing / removing requests, settings, registration, the
 approval link and the admin page, and that hostile text (script tags, broken HTML) shows as plain
 text and runs nothing.
+
+---
+
+## Part 3c -- Parish page, events, announcements and the diocesan page (2026-10-06)
+
+Four features built on the same backend. **Before they work on the live site you must import one new
+database file, `002_parish_pages.sql`** (same way as Part 2, Step F: Codespace -> `api` -> `migrations` ->
+right-click `002_parish_pages.sql` -> Download; phpMyAdmin -> your database -> Import -> Choose File ->
+Import). It only adds columns and four new tables; it changes no existing data, and importing it twice is
+harmless. After it, the left column of phpMyAdmin shows 13 tables. Then rebuild and upload `parish-backend.zip`
+(Part 2, Steps A and E), and upload the next `release:web` build so the app has the profile link.
+
+| What | Where readers see it | Who keeps it |
+|---|---|---|
+| **Parish home page**: service times, rector, address, website, Follow / Join | `https://theuniversaloffice.com/parish/home.html?p=<parish short name>`; the profile in the app links to it once a parish is followed | The rector: dashboard -> **Parish page** tab -> *About your parish* |
+| **Rector's announcements**: short note pinned at the top of the parish page, 1-45 days (7 by default), up to 5 at once | the parish page | Rector or helpers: **Parish page** tab -> *Announcements* |
+| **Parish events**: vestry meetings, funerals, the parish supper, feast-day services | the parish page ("Coming up") | Rector or helpers: **Parish page** tab -> *Coming events* |
+| **Diocesan page**: bishop, convention dates, the bishop's prayer list, the diocese's parishes, "pray for a parish today" | `https://theuniversaloffice.com/parish/diocese.html?d=episcopal/western-oregon` | **You**, on the admin page, under *Diocesan pages* (a diocese has no sign-in of its own yet) |
+
+How they behave, so nothing surprises you:
+
+- **Same privacy rule as prayer requests.** A parish that needs a join code shows nothing but a code box until the
+  reader enters the code; the join code is never in any page. A pending or suspended parish serves nothing.
+- **Following.** The parish page's *Follow this parish* button (or entering a join code there) leaves a small note in
+  the reader's browser; the app applies it the next time it opens. *Stop following* works the same way.
+- **Events** use the parish's own date and time; the server never converts them. An event stays on the page through
+  the day after its date, and is deleted a week later by the daily job. Up to 60 upcoming.
+- **Announcements** disappear on their own at the expiry date and are deleted a week later. They can be extended.
+- **"Pray for a parish today"** has two separate sources: the diocese's parishes taken in turn, one per day; and, only
+  when the diocese's own dated Cycle of Prayer names a parish that has a page, that parish with a link. Dioceses whose
+  cycle is not dated (monthly, weekly and so on) show only the rotation.
+- **The bishop's prayer list** is text you enter; it expires like other requests (21 days unless you choose 1-45).
+- Everything a rector or you type is shown as plain text; markup does nothing. The automated browser checks
+  (`php api/tests/run.php`, files `t95` and `t96`) prove it.
+
+**Not built (your call):** a Collect and readings beside each service time ("this Sunday's Collect"). The app works
+those out in the browser from its liturgical calendar engine and has no way to open a given date from a link, so it
+needs its own piece of work.
 
 ---
 

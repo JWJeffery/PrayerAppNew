@@ -1749,6 +1749,14 @@ function parishIntentionsMemoryCacheName(slug) {
 function setParishIntentionsStopVisible(visible) {
     const button = document.getElementById('profile-parish-intentions-stop');
     if (button) button.hidden = !visible;
+    // ADDED 2026-10-06: a followed parish also gets a link to its parish page (service times,
+    // announcements, events). The slug is validated before it goes into the address.
+    const link = document.getElementById('profile-parish-page-link');
+    if (link) {
+        const slug = getUserProfileDefaults().parishIntentionsSlug;
+        link.hidden = !(visible && slug);
+        if (visible && slug) link.setAttribute('href', 'parish/home.html?p=' + encodeURIComponent(slug));
+    }
 }
 
 function setUserProfileParishIntentions(slug, pass) {
@@ -1765,6 +1773,24 @@ function clearUserProfileParishIntentions() {
     setParishIntentionsJoinBoxVisible(false);
     setParishIntentionsNote('You are no longer following a parish.');
     if (selectedMode === 'daily') requestRender();
+}
+
+/**
+ * ADDED 2026-10-06. Applies the one-shot request parish/home.html leaves behind (see
+ * consumePendingParishFollowRequest in js/parish-intentions.js). Following goes through the same path as
+ * the profile picker; stopping clears the profile and the cached list exactly like "Stop following".
+ */
+function applyPendingParishFollowRequest() {
+    if (typeof consumePendingParishFollowRequest !== 'function') return;
+    const request = consumePendingParishFollowRequest();
+    if (!request) return;
+    if (request.slug === null) {
+        setUserProfileParishIntentions(null, null);
+        if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
+        return;
+    }
+    setUserProfileParishIntentions(request.slug, request.pass);
+    if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
 }
 
 function followParishIntentions(slug, pass) {
@@ -2866,6 +2892,9 @@ async function initializeEntryRouting() {
     // repaints on its own once the fetch resolves. Independent of the routing
     // decision below, so it runs regardless of which branch this function
     // takes.
+    // ADDED 2026-10-06: apply a Follow / Stop following left by the parish home page
+    // (parish/home.html) before the startup profile is read, so everything below sees it.
+    applyPendingParishFollowRequest();
     const startupProfile = getUserProfileDefaults();
     if (startupProfile.cycleOfPrayerDiocese) {
         refreshCycleOfPrayerForCurrentYear(startupProfile.cycleOfPrayerDiocese);

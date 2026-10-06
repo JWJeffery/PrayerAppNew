@@ -87,6 +87,7 @@
         <p class="muted small" id="dash-sub"></p>
         <div class="tabs" role="tablist" aria-label="Sections">
           <button type="button" role="tab" id="tab-requests" aria-selected="true" aria-controls="pane-requests">Prayer requests</button>
+          <button type="button" role="tab" id="tab-pages" aria-selected="false" aria-controls="pane-pages">Parish page</button>
           <button type="button" role="tab" id="tab-settings" aria-selected="false" aria-controls="pane-settings">Parish settings</button>
         </div>
 
@@ -121,6 +122,59 @@
             <p class="muted small">These are no longer shown to readers. Extend one to bring it back, or leave it &mdash; expired requests are deleted a week after they expire.</p>
             <ul id="list-expired" class="items"></ul>
           </div>
+        </div>
+
+        <div id="pane-pages" role="tabpanel" aria-labelledby="tab-pages" hidden>
+          <p>Your parish page is what readers see when they open your parish: service times, who to contact, announcements and coming events.
+            Readers who follow your parish can open it from their profile. <a id="pages-public-link" href="home.html">Open your parish page</a></p>
+
+          <h2>About your parish</h2>
+          <form id="form-profile" novalidate>
+            <p class="field-hint" id="profile-readonly-note" hidden>Only the rector can change these details.</p>
+            <label for="prof-rector">Rector's name</label>
+            <input id="prof-rector" type="text" maxlength="120" autocomplete="off">
+            <label for="prof-address">Address</label>
+            <input id="prof-address" type="text" maxlength="255" autocomplete="off">
+            <label for="prof-website">Parish website</label>
+            <input id="prof-website" type="text" maxlength="255" inputmode="url" autocomplete="off" placeholder="https://">
+            <label for="prof-times">Service times (one per line, up to 8)</label>
+            <textarea id="prof-times" rows="5" aria-describedby="prof-times-hint"></textarea>
+            <p class="field-hint" id="prof-times-hint">For example: Sunday 8:00 am Holy Eucharist, Rite I. Each line can be up to 80 characters.</p>
+            <div class="row"><button type="submit" class="primary" id="btn-save-profile">Save parish details</button></div>
+          </form>
+          <p id="profile-status" class="status" role="status" aria-live="polite" hidden></p>
+
+          <h2 class="section-gap">Announcements</h2>
+          <p class="muted">A short note shown at the top of your parish page until it expires: a death or funeral, urgent pastoral news, a change of plans.
+            Up to 5 at a time.</p>
+          <form id="form-announce" novalidate>
+            <label for="ann-text">The announcement</label>
+            <textarea id="ann-text" maxlength="300" rows="3" aria-describedby="ann-counter"></textarea>
+            <p id="ann-counter" class="counter" aria-live="polite">0 / 300</p>
+            <label for="ann-days">Show it for (days)</label>
+            <input id="ann-days" type="number" min="1" max="45" step="1" value="7" inputmode="numeric">
+            <div class="row"><button type="submit" class="primary" id="btn-add-announce">Post announcement</button></div>
+          </form>
+          <p id="announce-status" class="status" role="status" aria-live="polite" hidden></p>
+          <ul id="list-announce" class="items"></ul>
+          <p id="empty-announce" class="muted" hidden>No announcements showing.</p>
+
+          <h2 class="section-gap">Coming events</h2>
+          <p class="muted">Vestry meetings, funerals, the parish supper, feast-day services. Dates and times are the ones where your parish is.</p>
+          <form id="form-event" novalidate>
+            <label for="ev-title">What is happening</label>
+            <input id="ev-title" type="text" maxlength="120" autocomplete="off">
+            <label for="ev-date">Date</label>
+            <input id="ev-date" type="date">
+            <label for="ev-time">Time (optional)</label>
+            <input id="ev-time" type="time">
+            <label for="ev-note">A line of detail (optional)</label>
+            <input id="ev-note" type="text" maxlength="200" autocomplete="off">
+            <div class="row"><button type="submit" class="primary" id="btn-add-event">Add event</button></div>
+          </form>
+          <p id="event-status" class="status" role="status" aria-live="polite" hidden></p>
+          <ul id="list-events" class="items"></ul>
+          <p id="empty-events" class="muted" hidden>No events yet.</p>
         </div>
 
         <div id="pane-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>
@@ -179,6 +233,7 @@
 
   <script src="common.js"></script>
   <script src="dioceses.js"></script>
+  <script src="pages.js"></script>
   <script src="parish.js"></script>
 </body>
 </html>
