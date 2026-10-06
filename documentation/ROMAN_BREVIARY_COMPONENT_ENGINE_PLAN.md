@@ -407,10 +407,10 @@ Matins lesson of a commemorated vigil is skipped when the version matches `/2020
 | plain 1960, Matins | August 2027 | still 0 differences |
 
 Checked that the variant really differs: 6 July 2026 is Sancti/07-06n (Maria Goretti) instead of the Sunday
-ferial; 12 December 2026 is Our Lady of Guadalupe instead of the Advent Saturday. Not run: all 8 hours for years other than 2026.
+ferial; 12 December 2026 is Our Lady of Guadalupe instead of the Advent Saturday. Later the same day all 8 hours were also run, Latin, for 2027, 2031, 2038 and 1999, and English for 2027: 0 differences in every case (2,920 records each).
 
 **In the app:** a "Calendar" setting (Rubrics 1960, the default, or Rubrics 1960 - 2020 USA) in the Roman Breviary
 Office Settings drawer and in the profile (`profile.romanBreviaryCalendar`). The stored per-year fallback files are
 1960 output only, so under the 2020 USA calendar a failed data load shows an error instead of the wrong calendar.
 Checked in headless Chromium: 12 December 2026 Lauds renders "Sabbato infra Hebdomadam II Adventus" under 1960 and
-"Our Lady of Guadalupe ~ III. classis" under 2020 USA. The drawer and profile controls themselves were not clicked through in a browser.
+"Our Lady of Guadalupe ~ III. classis" under 2020 USA. The controls were clicked through in headless Chromium: the Calendar row in the Office Settings drawer and the profile select both change the office (12 December 2026 Lauds, English and Latin, Advent Saturday under 1960 and Guadalupe under 2020 USA), both stay in step, the choice survives a reload, and the profile select lays out correctly. No script errors (the only console errors were 404s for the service worker script, which the dev server does not serve).
