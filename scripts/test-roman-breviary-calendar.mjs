@@ -24,6 +24,7 @@ const sameArr = (a, b) => {
 
 const oracle = runStateRange(from, to, hora);
 const cal = RB.createCalendar(createNodeStore());
+if (process.env.DO_VERSION) cal.ctx.version = process.env.DO_VERSION; // e.g. 'Rubrics 1960 - 2020 USA'
 const scalar = ['winner', 'commemoratio', 'commemoratio1', 'scriptura', 'commune', 'communetype', 'rank', 'comrank', 'duplex', 'laudes', 'vespera', 'svesp', 'tvesp', 'tname', 'sname', 'transfervigil', 'rule', 'communerule', 'dayofweek'];
 const arrays = ['trank', 'srank', 'commemoentries'];
 let bad = 0, daysBad = 0;

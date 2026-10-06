@@ -710,7 +710,7 @@
           if (!api.fileExists(tv)) tv = tv.replace(/v\.txt/, '.txt');
           const tro = off(ss.setupstring(LANG(), tv));
           if (tro.has('Lectio Vigilia')) w = tro.get('Lectio Vigilia');
-        } else if (homilyflag === 9) {
+        } else if (homilyflag === 9 && !(/2020/.test(version) && /08-09t/.test(S(ctx.commemoratio)))) {
           const tro = cmh;
           if (tro.has('Lectio1')) {
             const trorank = S(tro.get('Rank')).replace(/;;.*/, '');

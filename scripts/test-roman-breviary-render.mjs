@@ -20,6 +20,7 @@ const all = [...dates(from, to)];
 
 const cal = RB.createCalendar(createNodeStore());
 cal.ctx.lang1 = cal.ctx.lang2 = language;
+if (process.env.DO_VERSION) cal.ctx.version = process.env.DO_VERSION; // e.g. 'Rubrics 1960 - 2020 USA'
 const hours = RB.createHours(cal);
 const renderer = RB.createRenderer(hours);
 const stripWrap = (h) => h.slice(h.indexOf('<TR>'), h.lastIndexOf('</TABLE>'));

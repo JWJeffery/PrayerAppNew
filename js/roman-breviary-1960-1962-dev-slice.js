@@ -182,14 +182,20 @@
     const hour=options.hour||'matins';
     const year=options.year||Number(date.slice(0,4))||2026;
     const language=normalizeLanguage(options.language);
+    const calendar=options.calendar==='2020usa'?'2020usa':'1960';
     const engine=await getEngine();
     if(engine){
       try{
-        const live=await engine.resolve({date,hour,language});
+        const live=await engine.resolve({date,hour,language,calendar});
         return composeResolvedOffice({unitsData:live.unitsData,manifestData:live.manifestData,date,hour});
       }catch(err){
-        console.warn('[roman-breviary] engine failed for',date,hour,language,'- using stored files:',err);
+        console.warn('[roman-breviary] engine failed for',date,hour,language,calendar,err);
+        if(calendar!=='1960') throw err;
+        console.warn('[roman-breviary] using stored files');
       }
+    } else if(calendar!=='1960'){
+      // The stored per-year files are 1960-calendar output only; never show them under another calendar.
+      throw new Error('The 2020 USA calendar needs the Breviary data pack, which did not load.');
     }
     const [unitsData,manifestData]=await Promise.all([
       fetchJson(unitsPathFor(year,language)),
@@ -252,7 +258,7 @@
       return envelope;
     }
 
-    return renderFor({...options,language:normalizeLanguage(options.language)});
+    return renderFor({...options,language:normalizeLanguage(options.language),calendar:options.calendar==='2020usa'?'2020usa':'1960'});
   }
 
   return {

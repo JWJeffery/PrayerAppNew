@@ -383,3 +383,34 @@ so test on the real host before relying on it; per-tradition packs (so a
 Roman-only user need not download the Orthodox text) are possible later but were not chosen (all text ships).
 
 Update prompt added the same day: `js/update-prompt.js` registers the service worker and shows "A new version of The Universal Office is ready" with Update now / Later once a new release has downloaded; `test:offline` publishes a changed release while the app is open and checks the prompt, that the open page stays on the old release until accepted, and that Update now reloads onto the new one.
+
+
+## 18. The "Rubrics 1960 - 2020 USA" variant is built (2026-10-06)
+
+Josh said go ahead on 2026-10-06 (the 1960 engine already matched the Perl engine and the audited output).
+**It needed almost no new engine code**: the version `Rubrics 1960 - 2020 USA` inherits from 1960 through
+`Tabulae/data.txt` and its calendar overlay `Tabulae/Kalendaria/NC.txt` and the 30 `n`-suffixed Sancti files
+were already in the data pack. One Perl rule was missing from the JS port: in `specmatins.pl` the third
+Matins lesson of a commemorated vigil is skipped when the version matches `/2020/` and the commemoration is
+`08-09t` (St Teresa Benedicta on 9 August with the Vigil of St Lawrence); ported in `js/roman-breviary/matins.js`.
+
+**Verification** against the pinned Perl engine, same method as phases 2 and 5, setting `DO_VERSION="Rubrics 1960 - 2020 USA"`
+(the oracle scripts and the calendar/render tests now read that variable; unset means plain 1960):
+
+| Check | Scope | Result |
+|---|---|---|
+| `test:roman-breviary-calendar` (Laudes) | every day of 1900, 1962, 2026-2032, 2038, 2100 | 0 differences |
+| same, Vespera | 2026-2027 | 0 differences |
+| `test:roman-breviary-render`, Latin | all 8 hours, every day of 2026 | 0 differences |
+| same, English | all 8 hours, every day of 2026 | 0 differences |
+| same, Latin Laudes/Vespera/Matins | 2027, 1999, 2031, 2038 | 0 differences (one real difference, 9 Aug in 2027/1999/2038, fixed as above) |
+| plain 1960, Matins | August 2027 | still 0 differences |
+
+Checked that the variant really differs: 6 July 2026 is Sancti/07-06n (Maria Goretti) instead of the Sunday
+ferial; 12 December 2026 is Our Lady of Guadalupe instead of the Advent Saturday. Later the same day all 8 hours were also run, Latin, for 2027, 2031, 2038 and 1999, and English for 2027: 0 differences in every case (2,920 records each).
+
+**In the app:** a "Calendar" setting (Rubrics 1960, the default, or Rubrics 1960 - 2020 USA) in the Roman Breviary
+Office Settings drawer and in the profile (`profile.romanBreviaryCalendar`). The stored per-year fallback files are
+1960 output only, so under the 2020 USA calendar a failed data load shows an error instead of the wrong calendar.
+Checked in headless Chromium: 12 December 2026 Lauds renders "Sabbato infra Hebdomadam II Adventus" under 1960 and
+"Our Lady of Guadalupe ~ III. classis" under 2020 USA. The controls were clicked through in headless Chromium: the Calendar row in the Office Settings drawer and the profile select both change the office (12 December 2026 Lauds, English and Latin, Advent Saturday under 1960 and Guadalupe under 2020 USA), both stay in step, the choice survives a reload, and the profile select lays out correctly. No script errors (the only console errors were 404s for the service worker script, which the dev server does not serve).
