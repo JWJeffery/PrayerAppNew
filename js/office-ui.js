@@ -789,7 +789,7 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
 // here already follows (a specific church body, e.g. 'Church of the East',
 // not a wider family or fellowship name).
 const UNIVERSAL_OFFICE_TRADITION_LABELS = {
-    anglican: 'The Episcopal Church',
+    anglican: 'Anglican',
     'church-of-the-east': 'Church of the East',
     'eastern-orthodox': 'Eastern Orthodox Church',
     'oriental-orthodox': 'Oriental Orthodox Church',
@@ -2676,17 +2676,20 @@ document.addEventListener('DOMContentLoaded', function () {
 // and RESUME_PROJECT_NOTE.md's Task #14 entry) -- this was a further,
 // still-older spot carrying its own naming ('The Episcopal Church', a bare
 // office name for Catholic) found and fixed in the same pass.
-// CORRECTED 2026-09-29: same fix as UNIVERSAL_OFFICE_TRADITION_LABELS.anglican
-// above, same reasoning -- "Anglican Communion" is the worldwide fellowship,
-// not the specific church whose 1979 Book of Common Prayer this office page
-// actually renders. Per Josh's direct correction, the sub-tradition this
-// office page names is The Episcopal Church.
+// CORRECTED 2026-10-06, per Josh's direct instruction ("The very top of the
+// office should have the office name not the church name"): this header names
+// the OFFICE (The Daily Office, The Coptic Agpeya, The Hudra, The Horologion,
+// The Roman Breviary), not the church body or tradition. The same day he
+// clarified that The Episcopal Church is the church within the Anglican
+// tradition, not the tradition itself, so tradition pickers now say
+// "Anglican" and The Episcopal Church appears only as the church named in
+// descriptions.
 const OFFICE_MODE_HEADER_LABELS = {
-    daily: 'The Episcopal Church',
-    'coptic-agpeya': 'Oriental Orthodox Church',
-    'east-syriac': 'Church of the East',
-    horologion: 'Eastern Orthodox Church',
-    'roman-breviary-dev': 'Catholic Church',
+    daily: 'The Daily Office',
+    'coptic-agpeya': 'The Coptic Agpeya',
+    'east-syriac': 'The Hudra',
+    horologion: 'The Horologion',
+    'roman-breviary-dev': 'The Roman Breviary',
     prayers: 'The Book of Needs'
 };
 

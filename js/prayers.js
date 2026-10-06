@@ -18,7 +18,7 @@ const BOOK_OF_NEEDS_TAXONOMY_VERSION = 1;
 // app tags -- same fix as UNIVERSAL_OFFICE_TRADITION_LABELS.anglican and
 // OFFICE_MODE_HEADER_LABELS.daily in js/office-ui.js.
 const BOOK_OF_NEEDS_TRADITION_CODES = Object.freeze({
-    ANG: 'The Episcopal Church',
+    ANG: 'Anglican',
     LC: 'Catholic Church',
     EO: 'Eastern Orthodox Church',
     OO: 'Oriental Orthodox Church',
@@ -34,7 +34,7 @@ const BOOK_OF_NEEDS_CONTEXTS = {
         returnText: 'Back to Modes'
     },
     ANG: {
-        label: 'The Episcopal Church',
+        label: 'Anglican',
         note: 'Showing prayers explicitly tagged for Anglican use.',
         empty: 'No Anglican prayers are available in this section yet.',
         returnText: 'Back to Office'
