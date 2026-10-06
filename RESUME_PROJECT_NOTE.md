@@ -5,7 +5,8 @@ current state, and the short list of things that are actually open. Everything c
 `documentation/project-history/` (start at `INDEX.md`) and `AUDIT_GOVERNANCE_LEDGER.md`; anything
 there is HISTORICAL and is marked so. **Where this note and the repo disagree, the repo wins.**
 
-**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06 (end of day, after PR #120)**. The retired sections went
+**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed and stale-scanned 2026-10-06 (end of day, after PR #120)**: every file path, count and status claim in this note was
+checked against the repo that day (all held except the "active direction" heading, now condensed). The retired sections went
 verbatim to `documentation/project-history/VOLUME-7-2026-10-03-resume-note-retired-sections.md`.
 **Keep it this way:** if you add something to this note, move whatever it displaces into a
 history volume in the same session, and do not list an item as "open" unless it is either (a) a
@@ -58,7 +59,7 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 - Whole-app JSON-to-database migration: only scoped, not started; JSON stays the source of truth (section 5, item 2).
 - Josh asked repeatedly for stale notes to be caught. Before listing anything as open, grep the code and
   `AUDIT_GOVERNANCE_LEDGER.md` to confirm it is not already built (the Book of Needs role ladder sat here
-  as "open" for weeks though built 2026-08-30). A scan of the rest of this note for stale items is still owed.
+  as "open" for weeks though built 2026-08-30). The 2026-10-06 scan found nothing else stale.
 - Do not wait on a test with `until ! pgrep -f <name>`: the loop matches itself and never ends. Read the
   output file instead.
 
@@ -93,32 +94,15 @@ and say what you checked.
   for monastic minor-hour texts.
 - **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming. Josh wants to DISCUSS this (2026-10-06); do not decide it for him; start the discussion by asking which headings he means.
 
-**Active direction (Josh, 2026-10-03), in this order:**
-1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
-   and English, Rubrics 1960 only, engine wins over Divinum when the rubrics support it). Plan and
-   decisions: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`. **Phases 1-5 are done (2026-10-04):** pinned mirror
-   completed; 3,890 files as lossless JSON in `data/roman-breviary-1960-1962/components/`
-   (`npm run audit:roman-breviary-components`); `js/roman-breviary/` decides the office, fills and expands
-   every hour (Latin and English) and the app now runs on it for any date 1900-2100. Verified against the
-   Perl engine and the audited stored data (plan doc sections 12-16; tests `npm run test:roman-breviary-
-   script|render|blocks`; engine clone for tests: `npm run roman-breviary:engine:setup`). Old
-   `units/`/`manifests/` stay as fixtures and fallback, not shipped. **Phase 6 (offline data pack) is
-   done, see item 2.** **The "Rubrics 1960 - 2020 USA" calendar variant is built (2026-10-06)** as a Calendar setting in the Roman
-   Breviary drawer and profile, verified against the Perl engine (plan doc section 18).
-2. **Offline delivery:** installable offline website is **built (2026-10-04)**: `npm run release:web`
-   writes `sw.js` (Workbox, versioned by hash) so the app and all text work offline from first launch;
-   icons (~27 MB) download once on first Orthodox entry (`js/offline-packs.js`) and are then kept;
-   `manifest.webmanifest` makes it installable (placeholder icon, see Josh's own hands); `js/update-prompt.js` offers "Update now / Later" when a new release has downloaded.
-   `npm run test:offline` (needs `npm run release:web` first) cuts the network and opens all five
-   traditions. **Not done:** Capacitor iOS/Android apps (gated on Josh getting Apple/Google accounts,
-   he has neither); password-protected hosting can block the manifest/service worker (plan doc
-   section 17). JSON stays the source of truth; a database is a later option only if measured.
-   Scripture in the public app is limited to passages cited in the prayers (Bible browser stays
-   admin-only); Josh judges the NRSV discrete-passage use licensed (his call, not verified by us).
-   Records: `documentation/JSON_TO_DATABASE_SCOPING.md`, `ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md`.
-   Smaller 2026-10-04 changes (Roman Breviary on the shared Office Settings drawer, Anglican saint
-   panel without catalogue metadata, no Anglican/Roman saint biographies in the data yet) are in
-   history Volume 8.
+**Josh's direction of 2026-10-03 is done, apart from what is gated on him.** (1) Roman Breviary rebuild: components plus
+JS rubrics engine, any year 1900-2100, Latin and English, with a Calendar setting for Rubrics 1960 or Rubrics 1960 -
+2020 USA (PR #120, 2026-10-06); plan and results: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md` sections 12-18.
+(2) Offline delivery: installable offline website built 2026-10-04 (`npm run release:web`, `npm run test:offline`).
+**Not done:** Capacitor iOS/Android apps (gated on Josh getting Apple/Google accounts, he has neither);
+password-protected hosting can block the manifest/service worker (plan doc section 17). JSON stays the source of
+truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). Scripture in the public app is limited
+to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
+licensed (his call, not verified by us).
 
 **Todo: Parish Prayer Requests features (Josh, 2026-10-06; none started; the backend and `parish/` pages live on branch `claude/determined-einstein-kny5ms`, not `main`; research and reuse before building):**
 - **Parish home page:** one screen with service times, rector's name, address, link to the parish website, and Follow / Join.
@@ -165,32 +149,25 @@ are done.
 
 ## 6. Current state, one paragraph each
 
-**Menaion / Byzantine day layer (complete as planned, 2026-10-02).** All 360 commemorations have
-original short lives; the day's fast, appointed readings, "About Today" panel, education layer,
-patristic commentary and icons (212) show in Vespers/Orthros/Typika for 2026-2027, New and Old
-Calendar. Orloff Commons (71 rank-3 saints fully, 203 rank-4 Vespers stichera) and AGES (36 rank-3
-saints; 58 rank-4 Vespers stichera) are wired. Records: `documentation/ORTHODOX_DAY.md`,
-`MENAION_COMMONS_ORLOFF.md`, `MENAION_AGES.md`, `MENAION_DATA_FINDINGS.md`. The AGES ZIP is not in
-the repo; re-ingesting needs Josh to re-supply it.
+**Menaion / Byzantine day layer (complete as planned, 2026-10-02).** All 360 commemorations have short lives, and the
+day's fast, readings, "About Today" panel, education layer, commentary and icons (212) show in Vespers/Orthros/Typika
+for 2026-2027, New and Old Calendar. Orloff Commons and AGES propers are wired. Records: `documentation/ORTHODOX_DAY.md`,
+`MENAION_COMMONS_ORLOFF.md`, `MENAION_AGES.md`, `MENAION_DATA_FINDINGS.md`. The AGES ZIP is not in the repo; re-ingesting
+needs Josh to re-supply it.
 
-**Anglican Synaxarium (implemented and merged to `main`, 2026-10-02/03).** All 366 dates decided;
-Josh's final approved corrections applied to the candidate matrix, SIN tables (retired SINs in
-`data/kalendar/sin/retired-sins.csv`), `data/kalendar/synaxarium/decisions.json`,
-`data/saints/sanctoral.json` (primary plus alternates; `angRole`, `angDateBasis`) and the review-tool
-data. Records: `documentation/ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md` (the implemented record)
-and `ANGLICAN_SYNAXARIUM_FINDINGS.md`. Check: `python3 scripts/saints/verify-synaxarium-calendar.py`
-(96 checks). Hagiographies are deliberately not in the repo.
+**Anglican Synaxarium (merged to `main`, 2026-10-02/03).** All 366 dates decided and applied (candidate matrix, SIN
+tables, `data/kalendar/synaxarium/decisions.json`, `data/saints/sanctoral.json`, review-tool data). Records:
+`documentation/ANGLICAN_SYNAXARIUM_CORRECTION_PROPOSAL.md`, `ANGLICAN_SYNAXARIUM_FINDINGS.md`. Check:
+`python3 scripts/saints/verify-synaxarium-calendar.py` (96 checks). Hagiographies are deliberately not in the repo.
 
-**Cycles of Prayer.** All 92 files validate (`npm run audit:cycles-of-prayer`); Communion,
-Diocesan and Parish tiers render in BCP Morning/Evening Prayer; the profile (diocese and parish
-picker) is live. The only parish file is St. Bede's, Forest Grove.
+**Cycles of Prayer.** All 92 files validate (`npm run audit:cycles-of-prayer`); Communion, Diocesan and Parish tiers render
+in BCP Morning/Evening Prayer; the profile (diocese and parish picker) is live. The only parish file is St. Bede's, Forest Grove.
 
-**Roman Breviary 1960/1962** is shipped and runs on the in-browser engine (all 8 hours, Latin and English, any
-date 1900-2100, generated from Divinum Officium at a pinned commit), with a Calendar setting for Rubrics 1960
-or Rubrics 1960 - 2020 USA (PR #120, merged 2026-10-06). To test the variant: `DO_VERSION="Rubrics 1960 - 2020 USA"`
-before `test:roman-breviary-calendar|render` (unset means 1960). All 8 hours verified for 2026 (Latin, English),
-2027 (Latin, English), 2031, 2038, 1999 (Latin); calendar decisions for 1900-2100 samples. Plan doc section 18.
-See `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
+**Roman Breviary 1960/1962** runs on the in-browser engine (all 8 hours, Latin and English, 1900-2100, from Divinum
+Officium at a pinned commit), with the Calendar setting above. To test the 2020 USA variant set
+`DO_VERSION="Rubrics 1960 - 2020 USA"` before `npm run test:roman-breviary-calendar|render` (unset means 1960); the
+Perl engine clone comes from `npm run roman-breviary:engine:setup`. Verified zero differences: all 8 hours for 2026
+(Latin, English), 2027 (Latin, English), 2031, 2038, 1999 (Latin). See `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
 **Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
@@ -215,12 +192,10 @@ button is an outline in every state (no tap fill). The profile modal fits phone 
 360px, 16-344px, no sideways scroll); only long dropdown text truncates inside its box.
 Not yet seen on a real phone: the live site only changes when Josh uploads a new `release:web` build.
 
-**Housekeeping.** `AUDIT_GOVERNANCE_LEDGER.md` and `AUDIT_SOURCE_VERIFICATION.md` are out of scope
-for any documentation cleanup unless Josh asks. `structure.json`'s innerHTML item is mitigated
-(audited 2026-10-02). The three stale navigation audit scripts were retired to
-`scripts/retired-audits/`. PR #110 (merged 2026-10-03) removed 57 more stale audit scripts and the
-source-lane adapter audit, and added the 25 Maclean Church of the East prayers to the Book of Needs
-menu (only one of the 25 was browser-tested).
+**Housekeeping.** `AUDIT_GOVERNANCE_LEDGER.md` and `AUDIT_SOURCE_VERIFICATION.md` are out of scope for any
+documentation cleanup unless Josh asks. `structure.json`'s innerHTML item is mitigated (audited 2026-10-02). Stale audit
+scripts are in `scripts/retired-audits/`. Of the 25 Maclean Church of the East prayers added to the Book of Needs menu
+(PR #110), only one was browser-tested.
 
 ## 7. Source reachability (probed, not assumed)
 
