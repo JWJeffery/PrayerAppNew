@@ -695,6 +695,7 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // should also default to English"): 'en' is now the default, 'la' (Latin)
     // an explicit opt-in -- the original comment here had this backwards.
     romanBreviaryLanguage: 'en',
+    romanBreviaryCalendar: '1960',
     // ADDED 2026-09-28. See UNIVERSAL_OFFICE_PARISH_DEDICATION_VALUES above.
     // null means "not declared" -- the Kontakion-of-the-temple clause stays
     // disclosed-not-modeled, exactly today's behaviour, so no existing user
@@ -796,6 +797,7 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
 const UNIVERSAL_OFFICE_ROMAN_BREVIARY_LANGUAGE_VALUES = new Set(['la', 'en']);
+const UNIVERSAL_OFFICE_ROMAN_BREVIARY_CALENDAR_VALUES = new Set(['1960', '2020usa']);
 
 // The Oriental Orthodox sub-traditions currently represented in the sanctoral.
 // Josh, 2026-09-07: more are coming -- this set is expected to grow, and the
@@ -1142,6 +1144,10 @@ function normalizeUserProfileDefaults(raw) {
         profile.romanBreviaryLanguage = 'en';
     }
 
+    if (!UNIVERSAL_OFFICE_ROMAN_BREVIARY_CALENDAR_VALUES.has(profile.romanBreviaryCalendar)) {
+        profile.romanBreviaryCalendar = '1960';
+    }
+
     // Migrate the old three-value field (lay/clergy/all), replaced 2026-08-30
     // by the eight-role ladder above, so existing saved preferences aren't
     // silently reset to 'lay' and existing access silently taken away.
@@ -1400,6 +1406,15 @@ function setUserProfileBookOfNeedsScope(value) {
     profile.bookOfNeedsScope = UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(value)
         ? value
         : 'tradition';
+
+    persistUserProfileDefaults(profile);
+}
+
+function setUserProfileRomanBreviaryCalendar(value) {
+    const profile = getUserProfileDefaults();
+    profile.romanBreviaryCalendar = UNIVERSAL_OFFICE_ROMAN_BREVIARY_CALENDAR_VALUES.has(value)
+        ? value
+        : '1960';
 
     persistUserProfileDefaults(profile);
 }
@@ -1807,6 +1822,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const ministryRoleSelect = document.getElementById('profile-ministry-role');
     const oorSubtraditionSelect = document.getElementById('profile-oor-subtradition');
     const romanBreviaryLanguageSelect = document.getElementById('profile-roman-breviary-language');
+    const romanBreviaryCalendarSelect = document.getElementById('profile-roman-breviary-calendar');
     const parishDedicationSelect = document.getElementById('profile-parish-dedication');
     const displayNameInput = document.getElementById('profile-display-name');
     const summary = document.getElementById('profile-defaults-summary');
@@ -1842,6 +1858,9 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
 
     if (romanBreviaryLanguageSelect) {
         romanBreviaryLanguageSelect.value = normalized.romanBreviaryLanguage;
+    }
+    if (romanBreviaryCalendarSelect) {
+        romanBreviaryCalendarSelect.value = normalized.romanBreviaryCalendar;
     }
 
     if (parishDedicationSelect) {
@@ -2643,6 +2662,7 @@ window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
 window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
 window.setUserProfileMinistryRole = setUserProfileMinistryRole;
 window.setUserProfileRomanBreviaryLanguage = setUserProfileRomanBreviaryLanguage;
+window.setUserProfileRomanBreviaryCalendar = setUserProfileRomanBreviaryCalendar;
 window.setUserProfileDisplayName = setUserProfileDisplayName;
 window.setUserProfileSuperUser = setUserProfileSuperUser;
 window.setUserProfileCycleOfPrayerDiocese = setUserProfileCycleOfPrayerDiocese;
@@ -4424,7 +4444,8 @@ async function renderRomanBreviary() {
             year: Number(date.slice(0, 4)),
             date,
             hour: selectedRomanBreviaryHour || 'lauds',
-            language: getUserProfileDefaults().romanBreviaryLanguage
+            language: getUserProfileDefaults().romanBreviaryLanguage,
+            calendar: getUserProfileDefaults().romanBreviaryCalendar
         });
     } catch (err) {
         display.innerHTML = `<div class="office-container"><h3>1962 Breviary failed</h3><p>${_sharedOfficeNavigatorEscape(err.message)}</p></div>`;
@@ -4439,6 +4460,14 @@ function setRomanBreviaryLanguage(value) {
 }
 window.setRomanBreviaryLanguage = setRomanBreviaryLanguage;
 window.getRomanBreviaryLanguage = () => getUserProfileDefaults().romanBreviaryLanguage;
+
+// Calendar choice (Rubrics 1960 general calendar, or the same rubrics with the 2020 USA calendar).
+function setRomanBreviaryCalendar(value) {
+    setUserProfileRomanBreviaryCalendar(value);
+    requestRender();
+}
+window.setRomanBreviaryCalendar = setRomanBreviaryCalendar;
+window.getRomanBreviaryCalendar = () => getUserProfileDefaults().romanBreviaryCalendar;
 
 // ── HOROLOGION UI ADAPTER ─────────────────────────────────────────────────────
 //

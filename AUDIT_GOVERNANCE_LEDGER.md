@@ -26381,3 +26381,12 @@ intact, each time). Zero new console errors beyond the pre-documented sandbox fo
 cycle is now ingested into this corpus** -- the roster ingestion effort that began this session is
 genuinely complete, no exceptions remaining. Only the ~18 no-source-found jurisdictions (schema.json's own
 `tecDioceseRoster.noSourceFound`) are outstanding, and those won't be addressed unless a source turns up.
+
+## Session 2026-10-06 -- Roman Breviary "Rubrics 1960 - 2020 USA" calendar variant built
+
+Per Josh's go-ahead. Engine: one missing Perl rule ported (`specmatins.pl` line 1134, third lesson of a
+commemorated vigil under the 2020 version, `js/roman-breviary/matins.js`). Verified against the pinned Perl engine:
+precedence for every day of 1900, 1962, 2026-2032, 2038, 2100 (Laudes) and 2026-2027 (Vespera); rendered text for all
+8 hours of 2026 in Latin and English; Latin Laudes/Vespera/Matins for 2027, 1999, 2031, 2038. All zero differences.
+App: new "Calendar" setting (drawer and profile). Cache-bust params bumped for matins.js, engine-office.js, the dev-slice
+script, office-ui.js and office-drawer.js. Details: `ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md` section 18.

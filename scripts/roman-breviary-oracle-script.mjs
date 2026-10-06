@@ -94,7 +94,7 @@ export function runScripts(isoDates, horas = ['Laudes'], opts = {}) {
   const script = installPatched();
   const raw = execFileSync(
     'perl',
-    [script, 'version=Rubrics 1960', 'command=prayLaudes', `date=${toO(isoDates[0])}`, `lang1=${opts.language || 'Latin'}`, `lang2=${opts.language || 'Latin'}`, 'dioecesis=Generale'],
+    [script, `version=${process.env.DO_VERSION || 'Rubrics 1960'}`, 'command=prayLaudes', `date=${toO(isoDates[0])}`, `lang1=${opts.language || 'Latin'}`, `lang2=${opts.language || 'Latin'}`, 'dioecesis=Generale'],
     {
       cwd: ENGINE_ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 1024,
       env: { ...process.env, PERL5LIB: 'web/cgi-bin:web/DivinumOfficium', DO_DATES: isoDates.map(toO).join(','), DO_HORAS: horas.join(','), DO_HTML: opts.html ? '1' : '' }

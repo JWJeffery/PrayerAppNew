@@ -1175,6 +1175,14 @@
                 </select>
             </label>
 
+            <label class="app-profile-default-field" for="profile-roman-breviary-calendar" data-tradition-field="latin-catholic" hidden aria-hidden="true">
+                <span>1962 Breviary calendar</span>
+                <select id="profile-roman-breviary-calendar" onchange="setUserProfileRomanBreviaryCalendar(this.value)">
+                    <option value="1960">Rubrics 1960 (default)</option>
+                    <option value="2020usa">Rubrics 1960 &ndash; 2020 USA</option>
+                </select>
+            </label>
+
             <label class="app-profile-default-field" for="profile-parish-dedication" data-tradition-field="eastern-orthodox" hidden aria-hidden="true">
                 <span>Home parish dedication (Byzantine Horologion)</span>
                 <select id="profile-parish-dedication" onchange="setUserProfileParishDedication(this.value)">
@@ -1276,12 +1284,12 @@
 <script src="js/roman-breviary/directorium.js?v=1" defer></script>
 <script src="js/roman-breviary/setupstring.js?v=1" defer></script>
 <script src="js/roman-breviary/occurrence.js?v=1" defer></script>
-<script src="js/roman-breviary/matins.js?v=1" defer></script>
+<script src="js/roman-breviary/matins.js?v=2" defer></script>
 <script src="js/roman-breviary/hours.js?v=1" defer></script>
 <script src="js/roman-breviary/expand.js?v=1" defer></script>
 <script src="js/roman-breviary/blocks.js?v=1" defer></script>
-<script src="js/roman-breviary/engine-office.js?v=1" defer></script>
-<script src="js/roman-breviary-1960-1962-dev-slice.js?v=1" defer></script>
+<script src="js/roman-breviary/engine-office.js?v=2" defer></script>
+<script src="js/roman-breviary-1960-1962-dev-slice.js?v=2" defer></script>
 <script src="js/offline-packs.js?v=1" defer></script>
 <script src="js/bible-browser/bible-registry-adapter.js" defer></script>
 <script src="js/bible-browser/reference-parser.js" defer></script>
@@ -1292,14 +1300,14 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=331" defer></script>
+<script src="js/office-ui.js?v=332" defer></script>
 <script src="js/prayers.js?v=223"></script>
 <script src="js/tooltip.js"></script>
 
 <script src="js/anglican-envelope.js?v=290" defer></script>
 <script src="js/office-shell.js?v=304" defer></script>
 <!-- Phase 4: Office Settings as one drawer. -->
-<script src="js/office-drawer.js?v=9" defer></script>
+<script src="js/office-drawer.js?v=10" defer></script>
 <script src="js/update-prompt.js?v=1" defer></script>
 </body>
 </html>

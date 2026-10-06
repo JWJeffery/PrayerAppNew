@@ -81,7 +81,7 @@ export function runStateChunk(isoDates, hora = 'Laudes') {
   const script = installPatchedOfficium();
   const raw = execFileSync(
     'perl',
-    [script, 'version=Rubrics 1960', 'command=prayLaudes', `date=${toOfficiumDate(isoDates[0])}`,
+    [script, `version=${process.env.DO_VERSION || 'Rubrics 1960'}`, 'command=prayLaudes', `date=${toOfficiumDate(isoDates[0])}`,
       'lang1=Latin', 'lang2=Latin', 'dioecesis=Generale'],
     {
       cwd: ENGINE_ROOT,
@@ -116,7 +116,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const hora = arg('hora', 'Laudes');
   const out = arg('out', null);
   const rows = runStateRange(from, to, hora, Number(arg('chunk', '60')));
-  const doc = { schema_version: 'roman_breviary_oracle_state_v1', engine_commit: PINNED_COMMIT, version: 'Rubrics 1960 - 1960', hora, from, to, days: rows };
+  const doc = { schema_version: 'roman_breviary_oracle_state_v1', engine_commit: PINNED_COMMIT, version: process.env.DO_VERSION || 'Rubrics 1960 - 1960', hora, from, to, days: rows };
   if (out) { fs.writeFileSync(out, JSON.stringify(doc)); console.log(`wrote ${rows.length} days to ${out}`); }
   else console.log(JSON.stringify(rows[0], null, 1));
 }

@@ -596,6 +596,19 @@
                 lrow.appendChild(lsel);
                 add(lrow);
             }
+            if (typeof window.setRomanBreviaryCalendar === 'function') {
+                var crow = el('label', 'uo-drawer-row');
+                crow.appendChild(el('span', 'uo-drawer-row-label', 'Calendar'));
+                var csel = el('select', 'uo-drawer-row-value');
+                csel.setAttribute('data-uo-key', 'rb-calendar');
+                [['1960', 'Rubrics 1960'], ['2020usa', 'Rubrics 1960 \u2013 2020 USA']].forEach(function (o) {
+                    var opt = el('option', null, o[1]); opt.value = o[0]; csel.appendChild(opt);
+                });
+                csel.value = window.getRomanBreviaryCalendar();
+                csel.addEventListener('change', function () { window.setRomanBreviaryCalendar(csel.value); });
+                crow.appendChild(csel);
+                add(crow);
+            }
         } else if (modeKey === 'horologion') {
             add(selectRow('hor-cal', 'Calendar', 'hor-eo-calendar-select'));
             add(selectRow('hor-depth', 'Display depth', 'hor-depth-select'));
