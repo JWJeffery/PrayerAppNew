@@ -5,7 +5,7 @@ current state, and the short list of things that are actually open. Everything c
 `documentation/project-history/` (start at `INDEX.md`) and `AUDIT_GOVERNANCE_LEDGER.md`; anything
 there is HISTORICAL and is marked so. **Where this note and the repo disagree, the repo wins.**
 
-**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06**. The retired sections went
+**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06 (end of day, after PR #120)**. The retired sections went
 verbatim to `documentation/project-history/VOLUME-7-2026-10-03-resume-note-retired-sections.md`.
 **Keep it this way:** if you add something to this note, move whatever it displaces into a
 history volume in the same session, and do not list an item as "open" unless it is either (a) a
@@ -41,7 +41,7 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 
 - Work on the assigned branch, commit, and push with `git push -u origin <branch>` in the same turn.
   Do not open a PR unless asked. **Merging to `main` only on Josh's explicit word.** Recent merges
-  (PRs #114-#118) were GitHub PR merge commits, opened and merged when he said "Open a PR and
+  (PRs #114-#120) were GitHub PR merge commits, opened and merged when he said "Open a PR and
   merge"; after a merge, restart the branch from `origin/main` (same name) before new work.
 - Fetch and check `git log --oneline -1` before building on a branch.
 - Validate JSON before writing; prefer targeted edits to bulk dumps. For bulk edits to
@@ -55,7 +55,12 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 - Josh's preferences: no licensing lectures; specific per-source evidence; never fabricate
   liturgical text; give unambiguous landmarks for any edit he must make by hand; Daily Office
   lectionary only from the 1979 BCP (bcponline.org or justus.anglican.org PDF).
-- Whole-app JSON-to-database migration: scoped and approved in direction (see section 5); build only in the order Josh set there.
+- Whole-app JSON-to-database migration: only scoped, not started; JSON stays the source of truth (section 5, item 2).
+- Josh asked repeatedly for stale notes to be caught. Before listing anything as open, grep the code and
+  `AUDIT_GOVERNANCE_LEDGER.md` to confirm it is not already built (the Book of Needs role ladder sat here
+  as "open" for weeks though built 2026-08-30). A scan of the rest of this note for stale items is still owed.
+- Do not wait on a test with `until ! pgrep -f <name>`: the loop matches itself and never ends. Read the
+  output file instead.
 
 ## 3. Content rules
 
@@ -86,7 +91,7 @@ and say what you checked.
   disclosed machine translation from Bedjan's public-domain Syriac. Four leads already exhausted.
 - **East Syriac minor hours:** keep them out of scope (as Maclean does) or find a separate source
   for monastic minor-hour texts.
-- **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming. Josh wants to DISCUSS this (2026-10-06); do not decide it for him.
+- **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming. Josh wants to DISCUSS this (2026-10-06); do not decide it for him; start the discussion by asking which headings he means.
 
 **Active direction (Josh, 2026-10-03), in this order:**
 1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
@@ -103,8 +108,7 @@ and say what you checked.
 2. **Offline delivery:** installable offline website is **built (2026-10-04)**: `npm run release:web`
    writes `sw.js` (Workbox, versioned by hash) so the app and all text work offline from first launch;
    icons (~27 MB) download once on first Orthodox entry (`js/offline-packs.js`) and are then kept;
-   `manifest.webmanifest` makes it installable (placeholder cross icon in `images/app/`, Josh to
-   replace); `js/update-prompt.js` offers "Update now / Later" when a new release has downloaded.
+   `manifest.webmanifest` makes it installable (placeholder icon, see Josh's own hands); `js/update-prompt.js` offers "Update now / Later" when a new release has downloaded.
    `npm run test:offline` (needs `npm run release:web` first) cuts the network and opens all five
    traditions. **Not done:** Capacitor iOS/Android apps (gated on Josh getting Apple/Google accounts,
    he has neither); password-protected hosting can block the manifest/service worker (plan doc
@@ -122,7 +126,13 @@ and say what you checked.
 - **Rector's announcements:** a short pinned note with an expiry date, like the intention lifetime (deaths, funerals, urgent pastoral news).
 - **Diocesan page:** the bishop's prayer list, convention dates, and a "pray for a parish today" link joining the Cycle of Prayer to that parish's page.
 
-**Josh's own hands (Drive):**
+**Josh's own hands:**
+- Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
+  not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06
+  naming changes. Whether he has uploaded is not recorded: ask before assuming.
+- Replace the placeholder install icon in `images/app/` (dark square, gold ring, small double-barred cross;
+  needs one square image, ideally 1024x1024 PNG, artwork well inside the edges; sizes can then be generated).
+- Drive:
 - (Done 2026-10-06: Josh deleted the superseded "Corrections of 2026-10-02" Google Doc, the one with the incorrect 22-record count; the replacement stays.)
 - Optionally upload `synaxarium-review/data/synaxarium-decisions-2026-10-02-corrected.json` to
   Drive. The connector cannot overwrite existing Drive files, so Drive's own
@@ -175,8 +185,11 @@ and `ANGLICAN_SYNAXARIUM_FINDINGS.md`. Check: `python3 scripts/saints/verify-syn
 Diocesan and Parish tiers render in BCP Morning/Evening Prayer; the profile (diocese and parish
 picker) is live. The only parish file is St. Bede's, Forest Grove.
 
-**Roman Breviary 1960/1962** is shipped (all 8 hours, 2026 and 2027, Latin and English, generated
-from Divinum Officium at a pinned commit, but as stored per-date output for 2026-2027 only; being rebuilt, see section 5).
+**Roman Breviary 1960/1962** is shipped and runs on the in-browser engine (all 8 hours, Latin and English, any
+date 1900-2100, generated from Divinum Officium at a pinned commit), with a Calendar setting for Rubrics 1960
+or Rubrics 1960 - 2020 USA (PR #120, merged 2026-10-06). To test the variant: `DO_VERSION="Rubrics 1960 - 2020 USA"`
+before `test:roman-breviary-calendar|render` (unset means 1960). All 8 hours verified for 2026 (Latin, English),
+2027 (Latin, English), 2031, 2038, 1999 (Latin); calendar decisions for 1900-2100 samples. Plan doc section 18.
 See `documentation/ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
