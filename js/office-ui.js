@@ -758,7 +758,24 @@ const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
     // corpus (there is nothing to match); purely a record of what the person
     // typed, for their own profile summary and for a future session to build
     // on once that diocese's own cycle is eventually ingested.
-    cycleOfPrayerParishOther: null
+    cycleOfPrayerParishOther: null,
+    // ADDED 2026-09-30. The parish whose prayer intentions (a rector-managed
+    // list of current requests, served by /api/v1 -- see js/parish-intentions.js
+    // and documentation/PARISH_INTENTIONS.md) this reader follows in the BCP
+    // "authorized intercessions" space. A server-generated slug, validated
+    // ^[a-z0-9-]{1,80}$. Independent of cycleOfPrayerDiocese/Parish: following
+    // a parish never requires declaring a diocese, and never changes the Cycle
+    // of Prayer tiers. null means "not following any parish" -- no request is
+    // ever made and the rubric renders exactly as it did before this field.
+    parishIntentionsSlug: null,
+    // ADDED 2026-09-30. The stateless pass POST /parishes/{slug}/join returned
+    // for a parish that requires a join code (null for a public parish, or
+    // before the code has been entered). Meaningless without
+    // parishIntentionsSlug -- normalization nulls it whenever the slug is null.
+    // Rotating the parish's code invalidates it server-side; the 401 that
+    // follows clears it here (see refreshParishIntentionsForProfile) so the
+    // reader is asked for the new code rather than silently shown nothing.
+    parishIntentionsPass: null
 });
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
@@ -1222,6 +1239,20 @@ function normalizeUserProfileDefaults(raw) {
         profile.cycleOfPrayerParishOther = null;
     }
 
+    // ADDED 2026-09-30. A followed parish is a server-generated slug, so anything
+    // else (a corrupted or hand-edited stored value) degrades to "not following",
+    // and the pass only means something alongside a slug -- same "coerce to the
+    // safe default" direction as every field above.
+    if (typeof profile.parishIntentionsSlug !== 'string' || !/^[a-z0-9-]{1,80}$/.test(profile.parishIntentionsSlug)) {
+        profile.parishIntentionsSlug = null;
+    }
+    if (profile.parishIntentionsSlug === null
+        || typeof profile.parishIntentionsPass !== 'string'
+        || !profile.parishIntentionsPass
+        || profile.parishIntentionsPass.length > 400) {
+        profile.parishIntentionsPass = null;
+    }
+
     if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
         profile.traditionDefault = null;
     }
@@ -1356,6 +1387,10 @@ function clearUserEntryDefault() {
     } catch (_error) {
         console.warn('[entry-routing] Could not clear local profile defaults.');
     }
+
+    // ADDED 2026-09-30: the followed parish's cached intentions go with the
+    // profile that named it (js/parish-intentions.js).
+    if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
 
     syncUserProfileControls(normalizeUserProfileDefaults(null));
 }
@@ -1559,6 +1594,258 @@ function setUserProfileCycleOfPrayerParishOther(value) {
     profile.cycleOfPrayerParish = null;
     persistUserProfileDefaults(profile);
     populateCycleOfPrayerParishSelect(profile.cycleOfPrayerDiocese, null, profile.cycleOfPrayerParishOther);
+}
+
+/* ---------------------------------------------------------------------------
+ * Parish prayer intentions -- profile controls and refresh. ADDED 2026-09-30.
+ *
+ * The network/cache layer is js/parish-intentions.js (loaded first); this block is the profile
+ * side: the "Parish prayer intentions" field group in #user-profile-defaults, and the refresh
+ * that repaints the office when data arrives. Same warm-then-repaint pattern as
+ * refreshCycleOfPrayerForCurrentYear above. Only Anglican profiles see the field (the same
+ * data-tradition-field gating as the diocese/parish fields), and no request of any kind is made
+ * for anyone who does not follow a parish or open that field.
+ * ------------------------------------------------------------------------- */
+
+const PARISH_INTENTIONS_STALE_MS = 10 * 60 * 1000;   // refresh a cache older than this when the office renders
+const PARISH_INTENTIONS_RETRY_MS = 60 * 1000;        // ...but never attempt more often than this
+const PARISH_INTENTIONS_LIST_TTL_MS = 5 * 60 * 1000; // parish list reuse across the many profile syncs
+const PARISH_INTENTIONS_CODE_MESSAGES = {
+    'wrong-code': 'That code was not accepted. Please check it with your parish.',
+    'rate-limited': 'Too many attempts. Please wait a while and try again.',
+    'not-found': 'That parish is no longer available.',
+    'network': 'Could not reach the server. Please try again in a moment.'
+};
+
+let parishIntentionsListCache = { key: null, at: 0, result: null, promise: null };
+let parishIntentionsPopulateSeq = 0;
+let parishIntentionsRefreshInFlight = false;
+let parishIntentionsLastAttemptAt = 0;
+let parishIntentionsNeedsCodeSlug = null; // a followed parish whose pass was rejected (code rotated)
+
+function setParishIntentionsNote(text) {
+    const note = document.getElementById('profile-parish-intentions-note');
+    if (note) note.textContent = text || '';
+}
+
+function setParishIntentionsJoinBoxVisible(visible) {
+    const box = document.getElementById('profile-parish-intentions-join');
+    if (box) box.hidden = !visible;
+}
+
+/**
+ * Approved parishes for the picker: the reader's own diocese first; if that diocese has none, every
+ * approved parish (per the build spec). Cached briefly and de-duplicated, because
+ * syncUserProfileControls runs on every profile change. Resolves to { parishes: [...]|null, fellBack }.
+ */
+function getParishIntentionsList(dioceseKey) {
+    const key = dioceseKey || 'all';
+    const cache = parishIntentionsListCache;
+    if (cache.key === key && cache.result && (Date.now() - cache.at) < PARISH_INTENTIONS_LIST_TTL_MS) {
+        return Promise.resolve(cache.result);
+    }
+    if (cache.key === key && cache.promise) return cache.promise;
+
+    const promise = (async () => {
+        let parishes = await listApprovedParishes(dioceseKey || null);
+        let fellBack = false;
+        if (Array.isArray(parishes) && parishes.length === 0 && dioceseKey) {
+            parishes = await listApprovedParishes(null);
+            fellBack = true;
+        }
+        const result = { parishes: parishes, fellBack: fellBack };
+        // A failed lookup (null) is not cached, so the next sync tries again.
+        parishIntentionsListCache = { key: key, at: parishes === null ? 0 : Date.now(), result: parishes === null ? null : result, promise: null };
+        return result;
+    })();
+    parishIntentionsListCache = { key: key, at: 0, result: null, promise: promise };
+    return promise;
+}
+
+function populateParishIntentionsControls(profile) {
+    const select = document.getElementById('profile-parish-intentions-select');
+    // No field mounted, not an Anglican profile (the field is hidden), or the client script is
+    // missing: do nothing, and above all make no request.
+    if (!select || profile.traditionDefault !== 'anglican' || typeof listApprovedParishes !== 'function') return;
+
+    const requestId = ++parishIntentionsPopulateSeq;
+    getParishIntentionsList(profile.cycleOfPrayerDiocese).then((result) => {
+        if (requestId !== parishIntentionsPopulateSeq) return; // a newer sync superseded this one
+        renderParishIntentionsSelect(select, getUserProfileDefaults(), result);
+    });
+}
+
+function renderParishIntentionsSelect(select, profile, result) {
+    const parishes = result.parishes;
+    const followed = profile.parishIntentionsSlug;
+    select.textContent = '';
+
+    const none = document.createElement('option');
+    none.value = '';
+    none.textContent = 'Not following a parish';
+    select.appendChild(none);
+
+    if (Array.isArray(parishes) && parishes.length === 0 && !followed) {
+        none.textContent = 'No parishes are using prayer intentions yet.';
+        select.disabled = true;
+        setParishIntentionsJoinBoxVisible(false);
+        setParishIntentionsStopVisible(false);
+        return;
+    }
+
+    const homeSlug = profile.cycleOfPrayerParish;
+    let suggested = null;
+    let listedFollowed = false;
+    for (const parish of (parishes || [])) {
+        const opt = document.createElement('option');
+        opt.value = parish.slug;
+        let label = parish.name;
+        if (parish.visibility === 'code') label += ' (join code needed)';
+        if (homeSlug && parish.corpusParishSlug === homeSlug) {
+            label += ' — your home parish';
+            suggested = parish;
+        }
+        opt.textContent = label; // names come from the server: textContent only
+        select.appendChild(opt);
+        if (parish.slug === followed) listedFollowed = true;
+    }
+
+    // A followed parish that is no longer in the list (suspended, deleted, or the list failed to load)
+    // keeps its own option, so the reader can see and stop following it.
+    if (followed && !listedFollowed) {
+        const cached = (typeof getCachedParishIntentions === 'function') ? parishIntentionsMemoryCacheName(followed) : null;
+        const opt = document.createElement('option');
+        opt.value = followed;
+        opt.textContent = (cached || followed) + (parishes === null ? '' : ' (no longer listed)');
+        select.appendChild(opt);
+    }
+
+    select.disabled = false;
+    select.value = followed || '';
+    setParishIntentionsStopVisible(Boolean(followed));
+
+    const needsCode = followed && parishIntentionsNeedsCodeSlug === followed;
+    setParishIntentionsJoinBoxVisible(Boolean(needsCode));
+
+    // Suggest, never follow silently.
+    if (suggested && !followed) {
+        setParishIntentionsNote('Your home parish, ' + suggested.name + ', is using prayer intentions. Choose it above to follow it.');
+    } else if (parishes === null && !followed) {
+        setParishIntentionsNote('Could not load the list of parishes right now.');
+    } else if (result.fellBack && !followed) {
+        setParishIntentionsNote('No parish in your diocese is using prayer intentions yet, so all parishes are shown.');
+    }
+}
+
+function parishIntentionsMemoryCacheName(slug) {
+    try {
+        const stored = JSON.parse(localStorage.getItem(PARISH_INTENTIONS_CACHE_KEY) || 'null');
+        return stored && stored.slug === slug && stored.parish && typeof stored.parish.name === 'string' ? stored.parish.name : null;
+    } catch (_error) {
+        return null;
+    }
+}
+
+function setParishIntentionsStopVisible(visible) {
+    const button = document.getElementById('profile-parish-intentions-stop');
+    if (button) button.hidden = !visible;
+}
+
+function setUserProfileParishIntentions(slug, pass) {
+    const profile = getUserProfileDefaults();
+    profile.parishIntentionsSlug = slug || null;
+    profile.parishIntentionsPass = slug ? (pass || null) : null;
+    persistUserProfileDefaults(profile);
+}
+
+function clearUserProfileParishIntentions() {
+    parishIntentionsNeedsCodeSlug = null;
+    setUserProfileParishIntentions(null, null);
+    if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
+    setParishIntentionsJoinBoxVisible(false);
+    setParishIntentionsNote('You are no longer following a parish.');
+    if (selectedMode === 'daily') requestRender();
+}
+
+function followParishIntentions(slug, pass) {
+    parishIntentionsNeedsCodeSlug = null;
+    setUserProfileParishIntentions(slug, pass);
+    setParishIntentionsJoinBoxVisible(false);
+    parishIntentionsLastAttemptAt = 0;
+    refreshParishIntentionsForProfile();
+}
+
+function setUserProfileParishIntentionsFromSelect(value) {
+    if (!value) { clearUserProfileParishIntentions(); return; }
+    const profile = getUserProfileDefaults();
+    const known = (parishIntentionsListCache.result && parishIntentionsListCache.result.parishes || []).find(p => p.slug === value);
+    if (profile.parishIntentionsSlug === value && parishIntentionsNeedsCodeSlug !== value) return;
+
+    if (known && known.visibility === 'code') {
+        // Not followed until the code is accepted -- the pass is what proves it.
+        setParishIntentionsJoinBoxVisible(true);
+        setParishIntentionsNote('Enter the join code your parish gave you, then press Join.');
+        const input = document.getElementById('profile-parish-intentions-code');
+        if (input) input.focus();
+        return;
+    }
+    setParishIntentionsJoinBoxVisible(false);
+    followParishIntentions(value, null);
+    setParishIntentionsNote(known ? 'You now follow ' + known.name + '.' : 'You now follow this parish.');
+}
+
+function joinSelectedParishIntentions() {
+    const select = document.getElementById('profile-parish-intentions-select');
+    const input = document.getElementById('profile-parish-intentions-code');
+    const button = document.getElementById('profile-parish-intentions-join-button');
+    if (!select || !input || !select.value || typeof joinParish !== 'function') return;
+
+    const code = input.value.trim();
+    if (!code) { setParishIntentionsNote('Please enter the join code.'); return; }
+
+    const slug = select.value;
+    const known = (parishIntentionsListCache.result && parishIntentionsListCache.result.parishes || []).find(p => p.slug === slug);
+    if (button) button.disabled = true;
+    joinParish(slug, code).then((result) => {
+        if (button) button.disabled = false;
+        if (!result.ok) {
+            setParishIntentionsNote(PARISH_INTENTIONS_CODE_MESSAGES[result.reason] || PARISH_INTENTIONS_CODE_MESSAGES.network);
+            return;
+        }
+        input.value = '';
+        followParishIntentions(slug, result.pass);
+        setParishIntentionsNote('You now follow ' + (known ? known.name : 'this parish') + '.');
+    });
+}
+
+/**
+ * Fetches the followed parish's intentions (cache + repaint), the same fire-and-forget shape as
+ * refreshCycleOfPrayerForCurrentYear. A 401 means the parish rotated its join code: the stale pass is
+ * cleared and the reader is asked for the new one; the slug is kept so the choice is not lost.
+ */
+function refreshParishIntentionsForProfile() {
+    const profile = getUserProfileDefaults();
+    if (!profile.parishIntentionsSlug || typeof refreshParishIntentions !== 'function') return;
+    if (parishIntentionsRefreshInFlight) return;
+
+    parishIntentionsRefreshInFlight = true;
+    parishIntentionsLastAttemptAt = Date.now();
+    refreshParishIntentions(profile.parishIntentionsSlug, profile.parishIntentionsPass).then((result) => {
+        parishIntentionsRefreshInFlight = false;
+        if (result.status === 'code-required') {
+            parishIntentionsNeedsCodeSlug = profile.parishIntentionsSlug;
+            if (profile.parishIntentionsPass) {
+                const fresh = getUserProfileDefaults();
+                fresh.parishIntentionsPass = null;
+                persistUserProfileDefaults(fresh);
+            }
+            setParishIntentionsJoinBoxVisible(true);
+            setParishIntentionsNote('The join code for this parish has changed. Enter the new code to keep following it.');
+        } else if (result.status === 'not-found') {
+            setParishIntentionsNote('This parish is no longer available.');
+        }
+        if (result.status !== 'error' && selectedMode === 'daily') requestRender();
+    }).catch(() => { parishIntentionsRefreshInFlight = false; });
 }
 
 /**
@@ -1877,6 +2164,7 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     // cached) rather than only after a select fires its own onchange again.
     populateCycleOfPrayerDioceseSelects(normalized.cycleOfPrayerDiocese);
     populateCycleOfPrayerParishSelect(normalized.cycleOfPrayerDiocese, normalized.cycleOfPrayerParish, normalized.cycleOfPrayerParishOther);
+    populateParishIntentionsControls(normalized);
 
     if (summary) {
         const entryLabel = normalized.entryPageDefault === 'universal'
@@ -2586,6 +2874,13 @@ async function initializeEntryRouting() {
         refreshCycleOfPrayerParishForCurrentMonth(startupProfile.cycleOfPrayerDiocese, startupProfile.cycleOfPrayerParish);
     }
 
+    // ADDED 2026-09-30: same warm-then-repaint for a followed parish's prayer
+    // intentions. Gated on the profile field, so a reader who follows no parish
+    // makes no request at all.
+    if (startupProfile.parishIntentionsSlug) {
+        refreshParishIntentionsForProfile();
+    }
+
     // Same warming, unconditionally: the worldwide Anglican Cycle of Prayer
     // (scope 'communion' in data/cycles-of-prayer/schema.json) applies to
     // every user identically, so unlike the diocese/parish warm-ups just
@@ -2666,6 +2961,9 @@ window.setUserProfileRomanBreviaryCalendar = setUserProfileRomanBreviaryCalendar
 window.setUserProfileDisplayName = setUserProfileDisplayName;
 window.setUserProfileSuperUser = setUserProfileSuperUser;
 window.setUserProfileCycleOfPrayerDiocese = setUserProfileCycleOfPrayerDiocese;
+window.setUserProfileParishIntentionsFromSelect = setUserProfileParishIntentionsFromSelect;
+window.joinSelectedParishIntentions = joinSelectedParishIntentions;
+window.clearUserProfileParishIntentions = clearUserProfileParishIntentions;
 window.setUserProfileCycleOfPrayerParish = setUserProfileCycleOfPrayerParish;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
@@ -5724,6 +6022,7 @@ function renderCycleOfPrayerLine(container, env, date) {
     renderCommunionCycleOfPrayerLine(container, env, date);
     renderDiocesanCycleOfPrayerLine(container, env, date);
     renderParishCycleOfPrayerLine(container, env, date);
+    renderParishIntentionsLine(container, env, date);
 }
 
 /**
@@ -5815,6 +6114,63 @@ function renderParishCycleOfPrayerLine(container, env, date) {
 
     bcpEmitRubricHeading(container, env, 'The Parish Cycle of Prayer');
     bcpEmitBare(container, `Today, your Parish Cycle of Prayer asks us to pray for ${subjectPhrase}.`, { italic: true });
+}
+
+/**
+ * ADDED 2026-09-30. Plain-text sibling of bcpEmitBare: builds its node with createElement +
+ * textContent and places it with bcpWrapInGutter. bcpEmitBare/bcpMakeSpan set innerHTML, which is
+ * right for the app's own trusted corpus text and WRONG for anything a person typed -- prayer requests
+ * come from a rector, so they must never pass through bcpMakeSpan. Nothing here can interpret markup.
+ */
+function bcpEmitPlainText(container, text, opts) {
+    var span = document.createElement('span');
+    span.className = (opts && opts.cls) || 'parish-intentions-item';
+    if (opts && opts.italic) {
+        var i = document.createElement('i');
+        i.textContent = text;
+        span.appendChild(i);
+    } else {
+        span.textContent = text;
+    }
+    bcpWrapInGutter(container, '', [span]);
+}
+
+/**
+ * ADDED 2026-09-30 (Parish Intercessions, spec 11.2). The fourth tier under the Cycle of Prayer
+ * lines: the followed parish's current, unexpired prayer requests, grouped by kind. Gated on
+ * profile.parishIntentionsSlug; renders nothing (no heading, no rail entry) when nothing is cached
+ * or every cached item has expired -- the same "no data yet" convention as the tiers above. Reads
+ * the cache only (getCachedParishIntentions is synchronous); when that cache is old it kicks off a
+ * background refresh that repaints on arrival. Expiry is judged against the REAL current time, not the
+ * office's own `date`: unlike the dated Cycle of Prayer lines these are a "now" list, so an office
+ * rendered for last Tuesday still shows what the parish is praying for today.
+ */
+function renderParishIntentionsLine(container, env, date) {
+    const profile = getUserProfileDefaults();
+    const slug = profile.parishIntentionsSlug;
+    if (!slug || typeof getCachedParishIntentions !== 'function') return;
+
+    const age = Date.now() - getParishIntentionsFetchedAt(slug);
+    if (age > PARISH_INTENTIONS_STALE_MS && (Date.now() - parishIntentionsLastAttemptAt) > PARISH_INTENTIONS_RETRY_MS) {
+        refreshParishIntentionsForProfile();
+    }
+
+    const items = getCachedParishIntentions(slug);
+    if (!items || items.length === 0) return;
+
+    bcpEmitRubricHeading(container, env, 'Parish Intercessions');
+    const groups = [
+        ['individual', 'Individuals'],
+        ['family', 'Families'],
+        ['situation', 'Situations'],
+        ['institution', 'Institutions']
+    ];
+    for (const [category, label] of groups) {
+        const inGroup = items.filter(item => item.category === category);
+        if (inGroup.length === 0) continue;
+        bcpEmitPlainText(container, label, { italic: true, cls: 'parish-intentions-category' });
+        for (const item of inGroup) bcpEmitPlainText(container, item.text);
+    }
 }
 
 function bcpEmitDivider(container) {

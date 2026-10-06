@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Parish administration</title>
+  <link rel="stylesheet" href="parish.css">
+</head>
+<body>
+  <header class="topbar">
+    <p class="kicker">The Universal Office &middot; Administration</p>
+    <nav aria-label="Account">
+      <span id="who" class="who" hidden></span>
+      <button id="btn-refresh" type="button" class="small" hidden>Refresh</button>
+      <button id="logout" type="button" class="small" hidden>Log out</button>
+    </nav>
+  </header>
+
+  <noscript><main><div class="panel"><p>This page needs JavaScript to work.</p></div></main></noscript>
+
+  <main class="wide">
+    <section id="view-signin" class="panel" aria-labelledby="h-signin">
+      <h1 id="h-signin" tabindex="-1">Administrator sign in</h1>
+      <p>Enter the administrator email address. We email you a 6-digit code.</p>
+      <form id="form-email" novalidate>
+        <label for="signin-email">Email address</label>
+        <input id="signin-email" type="email" autocomplete="email" inputmode="email" required>
+        <div class="row"><button type="submit" class="primary" id="btn-send-code">Send code</button></div>
+      </form>
+      <form id="form-code" hidden novalidate>
+        <p class="muted small">If that address is an administrator address, a code has been sent. It expires in 10 minutes.</p>
+        <label for="signin-code">6-digit code</label>
+        <input id="signin-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required>
+        <div class="row">
+          <button type="submit" class="primary" id="btn-verify">Sign in</button>
+          <button type="button" class="linklike" id="btn-other-email">Use a different email</button>
+        </div>
+      </form>
+      <p id="signin-status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section id="view-dashboard" class="panel" hidden aria-labelledby="h-dash">
+      <h1 id="h-dash" tabindex="-1">Parishes</h1>
+      <p class="muted small">Prayer requests are never shown on this page.</p>
+      <p id="admin-status" class="status" role="status" aria-live="polite" hidden></p>
+      <p id="empty" class="muted" hidden>No parishes have registered yet.</p>
+      <div class="table-wrap">
+        <table class="data" id="parish-table" hidden>
+          <thead>
+            <tr><th scope="col">Parish</th><th scope="col">Status</th><th scope="col">Diocese</th><th scope="col">Rector</th>
+                <th scope="col">Staff</th><th scope="col">Active requests</th><th scope="col">Registered</th><th scope="col">Actions</th></tr>
+          </thead>
+          <tbody id="parish-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="dioceses.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
