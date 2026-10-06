@@ -17,7 +17,10 @@ const includeEntries = [
   "css",
   "data",
   "images",
-  "js"
+  "js",
+  // Parish intentions backend and rector/admin pages (see documentation/PARISH_INTENTIONS.md).
+  "api",
+  "parish"
 ];
 
 const adminReleaseFiles = [
@@ -43,7 +46,25 @@ const denyNames = new Set([
   "source-witnesses"
 ]);
 
+// Parish intentions backend: development-only directories and anything that could hold a
+// secret must never reach the web root. Real configuration lives OUTSIDE the web root, in
+// <home>/uo-private/, and is never part of a release.
+// The Roman Breviary now runs from its component bundles (data/roman-breviary-1960-1962/components).
+// The Divinum Officium source mirror and the old per-year units/manifests are audit material kept in the
+// repository, not shipped.
+const denyPathPrefixes = [
+  "api/tests",
+  "api/dev",
+  "api/cli/seed-dev.php",
+  "data/roman-breviary-1960-1962/source",
+  "data/roman-breviary-1960-1962/units",
+  "data/roman-breviary-1960-1962/manifests"
+];
+
 const denyFilePatterns = [
+  /^config[^/]*\.php$/,
+  /\.cnf$/,
+  /\.sql\.gz$/,
   /^package(-lock)?\.json$/,
   /^patch_.*\.(py|js|mjs|sh)$/,
   /^.*\.bak$/,
@@ -68,15 +89,6 @@ function rmIfExists(target) {
     fs.rmSync(target, { recursive: true, force: true });
   }
 }
-
-// The Roman Breviary now runs from its component bundles (data/roman-breviary-1960-1962/components).
-// The Divinum Officium source mirror and the old per-year units/manifests are audit material kept in the
-// repository, not shipped.
-const denyPathPrefixes = [
-  "data/roman-breviary-1960-1962/source",
-  "data/roman-breviary-1960-1962/units",
-  "data/roman-breviary-1960-1962/manifests"
-];
 
 function shouldDeny(relativePath) {
   const normalized = relativePath.split(path.sep).join("/");
@@ -194,6 +206,23 @@ const swResult = await buildServiceWorker(releaseDir);
 console.log(`release:web: sw.js precaches ${swResult.count} files (${(swResult.size / (1024 * 1024)).toFixed(1)} MB)`);
 
 const files = walkFiles(releaseDir);
+
+// Hard assertion: nothing secret or development-only may be in the release.
+{
+  const forbidden = files.filter((f) =>
+    /(^|\/)config[^/]*\.php$/.test(f) ||
+    /\.cnf$/.test(f) ||
+    /\.sql\.gz$/.test(f) ||
+    f.startsWith("api/tests/") ||
+    f.startsWith("api/dev/") ||
+    f === "api/cli/seed-dev.php" ||
+    f.startsWith(".external/")
+  );
+  if (forbidden.length) fail(`forbidden files in release: ${forbidden.join(", ")}`);
+  if (!files.includes("api/.htaccess")) fail("api/.htaccess missing from the release (dotfile not copied?)");
+  if (!files.includes("api/index.php")) fail("api/index.php missing from the release");
+}
+
 const manifest = {
   generatedAt: new Date().toISOString(),
   purpose: "Deployable browser-runtime export for theuniversaloffice.com.",

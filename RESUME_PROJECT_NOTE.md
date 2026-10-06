@@ -104,13 +104,14 @@ truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). 
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
 licensed (his call, not verified by us).
 
-**Todo: Parish Prayer Requests features (Josh, 2026-10-06; none started; the backend and `parish/` pages live on branch `claude/determined-einstein-kny5ms`, not `main`; research and reuse before building):**
-- **Parish home page:** one screen with service times, rector's name, address, link to the parish website, and Follow / Join.
-- **Parish events:** the rector posts vestry meetings, funerals, the parish supper and feast-day services. Idea: show "this Sunday's Collect and readings" next to the service time.
-- **Rector's announcements:** a short pinned note with an expiry date, like the intention lifetime (deaths, funerals, urgent pastoral news).
-- **Diocesan page:** the bishop's prayer list, convention dates, and a "pray for a parish today" link joining the Cycle of Prayer to that parish's page.
+**Parish features built (2026-10-06, on this branch, not yet on `main`):** parish home page, rector announcements, parish events and the
+diocesan page. Still open: "this Sunday's Collect and readings" beside the service times (needs the app's calendar engine; no date deep-link
+exists yet) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). The original todo is in history Volume 9.
 
 **Josh's own hands:**
+- Parish features (the merge of `claude/determined-einstein-kny5ms` plus the four new features) go live only after: import
+  `api/migrations/002_parish_pages.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
+  `parish-backend.zip`, then upload the next `release:web` build. Do not upload the app build first: the profile link would point at pages that are not there.
 - Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
   not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06
   naming changes. Whether he has uploaded is not recorded: ask before assuming.
@@ -171,8 +172,10 @@ Perl engine clone comes from `npm run roman-breviary:engine:setup`. Verified zer
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
 **Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
-site, built on branch `claude/determined-einstein-kny5ms` (it is NOT on `main`; the repo's `main`
-only has the per-parish Cycle of Prayer files above). Rectors sign in at
+site, built on branch `claude/determined-einstein-kny5ms` and merged into `claude/amazing-shannon-p0rlhf` on 2026-10-06 together with the
+parish home page, announcements, events and diocesan page (migration 002; `php api/tests/run.php` 685 checks, `npm run audit:parish-intentions`);
+neither is on `main` until Josh says so. Readers' pages: `parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through
+a request key the app consumes at startup (`consumePendingParishFollowRequest`). Rectors sign in at
 `theuniversaloffice.com/parish/` (emailed 6-digit code, no password) and read the join code under
 "Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the rector's.
 Join codes live encrypted in the production database, not in any repo file. The first FAQ page,
@@ -259,5 +262,5 @@ scripts are in `scripts/retired-audits/`. Of the 25 Maclean Church of the East p
   ordinary ramsha sequence; an unresolvable marker fails loudly by design.
 - Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
   into four zips when over ~30MB: Breviary data, other data, saint icons, app shell). There is no auto-deploy.
-- Old narrative detail: `documentation/project-history/INDEX.md`, eight HISTORICAL volumes
+- Old narrative detail: `documentation/project-history/INDEX.md`, nine HISTORICAL volumes
   (2026-07-06 to 2026-10-06).

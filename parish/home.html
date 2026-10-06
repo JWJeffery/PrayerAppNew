@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Parish page</title>
+  <link rel="stylesheet" href="parish.css">
+</head>
+<body>
+  <header class="topbar">
+    <p class="kicker">The Universal Office</p>
+    <nav aria-label="Site">
+      <a href="../index.html">Open the Daily Office</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <noscript><main><div class="panel"><p>This page needs JavaScript to work.</p></div></main></noscript>
+
+  <main id="main">
+    <section id="view-loading" class="panel"><p class="muted" role="status">Loading&hellip;</p></section>
+
+    <!-- A join code is needed -->
+    <section id="view-code" class="panel" hidden aria-labelledby="h-code">
+      <h1 id="h-code" tabindex="-1">This parish asks for a join code</h1>
+      <p>Your parish gives you the code. You enter it once, and you will follow this parish's prayer list from then on.</p>
+      <form id="form-join" novalidate>
+        <label for="join-code">Join code</label>
+        <input id="join-code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABCD-EFGH">
+        <div class="row"><button type="submit" class="primary" id="btn-join">Join this parish</button></div>
+      </form>
+      <p id="join-status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <!-- Not found / error -->
+    <section id="view-missing" class="panel" hidden aria-labelledby="h-missing">
+      <h1 id="h-missing" tabindex="-1">Parish page not available</h1>
+      <p id="missing-text">This parish page could not be found. It may not be set up yet, or it may have been removed.</p>
+    </section>
+
+    <!-- The parish page -->
+    <article id="view-parish" hidden aria-labelledby="h-parish">
+      <div class="panel">
+        <p class="kicker" id="parish-diocese"></p>
+        <h1 id="h-parish" tabindex="-1"></h1>
+        <p class="muted" id="parish-rector"></p>
+        <div class="row">
+          <button type="button" class="primary" id="btn-follow">Follow this parish</button>
+          <button type="button" id="btn-unfollow" hidden>Stop following</button>
+        </div>
+        <p id="follow-status" class="status" role="status" aria-live="polite" hidden></p>
+      </div>
+
+      <div id="wrap-announcements" hidden>
+        <h2 class="visually-hidden">Announcements</h2>
+        <ul id="list-announcements" class="items"></ul>
+      </div>
+
+      <div class="panel" id="wrap-times" hidden>
+        <h2>Service times</h2>
+        <ul id="list-times" class="plain"></ul>
+      </div>
+
+      <div class="panel" id="wrap-events" hidden>
+        <h2>Coming up</h2>
+        <ul id="list-events" class="items"></ul>
+      </div>
+
+      <div class="panel" id="wrap-contact" hidden>
+        <h2>Find us</h2>
+        <dl class="card">
+          <dt id="dt-address" hidden>Address</dt><dd id="dd-address" hidden></dd>
+          <dt id="dt-website" hidden>Website</dt><dd id="dd-website" hidden></dd>
+        </dl>
+      </div>
+
+      <div class="panel">
+        <h2>Pray with this parish</h2>
+        <p>Followers see this parish's prayer requests in the Intercessions of Morning and Evening Prayer.</p>
+        <p><a href="../index.html">Open the Daily Office</a></p>
+        <p id="diocese-link-wrap" hidden><a id="diocese-link" href="diocese.html">The diocese's page</a></p>
+      </div>
+    </article>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="dioceses.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

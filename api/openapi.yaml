@@ -1,0 +1,677 @@
+openapi: 3.0.3
+info:
+  title: The Universal Office -- Parish Intercessions API
+  version: "1.0.0"
+  description: |
+    Standalone, versioned JSON API for rector-managed intercessory prayer lists. Bearer tokens only
+    (no cookies), no CORS. Hand-maintained: `scripts/audit-parish-intentions.mjs` fails if a route in
+    `api/src/bootstrap.php` is missing from this file. Written for the web client today and the future
+    native app tomorrow.
+
+    Conventions: timestamps are ISO-8601 UTC with `Z`. Errors are `{"error": "<code>", "message": "<text>"}`
+    (422 adds `fields`). Error codes: bad_request 400, unauthorized 401 (and code_required 401), forbidden 403,
+    not_found 404, conflict / limit_reached 409, invalid_input 422, rate_limited 429, server_error 500.
+    Email-based endpoints answer identically whether or not an address is known (no enumeration).
+servers:
+  - url: https://theuniversaloffice.com/api/v1
+components:
+  securitySchemes:
+    staffToken:
+      type: http
+      scheme: bearer
+      description: Session token from POST /auth/verify-code (30 days, absolute).
+    adminToken:
+      type: http
+      scheme: bearer
+      description: Session token from POST /admin/auth/verify-code.
+    parishPass:
+      type: apiKey
+      in: header
+      name: X-Parish-Pass
+      description: Reader pass from POST /parishes/{slug}/join. Needed only for parishes whose visibility is "code".
+  schemas:
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error: { type: string }
+        message: { type: string }
+        fields: { type: object, additionalProperties: { type: string } }
+    Ok:
+      type: object
+      properties:
+        status: { type: string, example: ok }
+    Category:
+      type: string
+      enum: [individual, family, situation, institution]
+    Visibility:
+      type: string
+      enum: [public, code]
+    ParishListing:
+      type: object
+      properties:
+        slug: { type: string }
+        name: { type: string }
+        diocese_key: { type: string, nullable: true }
+        corpus_parish_slug: { type: string, nullable: true, description: Links to the app's Diocesan Cycle of Prayer parish entry. }
+        visibility: { $ref: "#/components/schemas/Visibility" }
+    ReaderIntention:
+      type: object
+      properties:
+        id: { type: integer }
+        category: { $ref: "#/components/schemas/Category" }
+        text: { type: string, maxLength: 200, description: Plain text. Clients MUST render it as text, never as markup. }
+        expires_at: { type: string, format: date-time }
+    StaffIntention:
+      type: object
+      properties:
+        id: { type: integer }
+        category: { $ref: "#/components/schemas/Category" }
+        text: { type: string, maxLength: 200 }
+        created_at: { type: string, format: date-time }
+        expires_at: { type: string, format: date-time }
+        extension_count: { type: integer }
+        expired: { type: boolean, description: True for requests expired within the last 7 days (kept until purged). }
+    EmailBody:
+      type: object
+      required: [email]
+      properties:
+        email: { type: string, format: email }
+    CodeBody:
+      type: object
+      required: [email, code]
+      properties:
+        email: { type: string, format: email }
+        code: { type: string, example: "123456" }
+    Generic:
+      type: object
+      description: Identical body for every email, known or not.
+      properties:
+        status: { type: string }
+    ParishPage:
+      type: object
+      properties:
+        slug: { type: string }
+        name: { type: string }
+        diocese_key: { type: string, nullable: true }
+        rector_name: { type: string, nullable: true }
+        address: { type: string, nullable: true }
+        website: { type: string, nullable: true, description: "http(s) address only." }
+        service_times: { type: array, items: { type: string }, maxItems: 8 }
+    ParishEvent:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string, maxLength: 120 }
+        date: { type: string, format: date, description: "The parish's own calendar date." }
+        time: { type: string, nullable: true, example: "19:00", description: "The parish's own 24-hour wall-clock time." }
+        note: { type: string, nullable: true, maxLength: 200 }
+    ParishAnnouncement:
+      type: object
+      properties:
+        id: { type: integer }
+        text: { type: string, maxLength: 300 }
+        created_at: { type: string, format: date-time }
+        expires_at: { type: string, format: date-time }
+        expired: { type: boolean }
+  responses:
+    Unauthorized:
+      description: Missing, invalid or expired token; or a wrong/expired code.
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+    Forbidden:
+      description: Wrong principal or role for this endpoint.
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+    NotFound:
+      description: Not found (including another parish's item).
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+    Invalid:
+      description: Validation failed; `fields` maps field to message.
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+    RateLimited:
+      description: Too many requests. Honour the Retry-After header.
+      headers: { Retry-After: { schema: { type: integer } } }
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+paths:
+  /health:
+    get:
+      summary: Liveness check (no database).
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: object, properties: { status: { type: string, example: ok } } } } } }
+  /parishes:
+    get:
+      summary: Approved parishes (pending and suspended never appear).
+      parameters:
+        - { name: diocese, in: query, required: false, schema: { type: string }, description: "Diocese key, e.g. episcopal/western-oregon." }
+      responses:
+        "200":
+          description: Up to 200, alphabetical.
+          content: { application/json: { schema: { type: object, properties: { parishes: { type: array, items: { $ref: "#/components/schemas/ParishListing" } } } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /parishes/{slug}:
+    get:
+      summary: A parish's home page -- service times, rector, address, website, current announcements and coming events. Same visibility rule as intentions.
+      security: [ {}, { parishPass: [] } ]
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string } }
+        - { name: X-Parish-Pass, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: Cacheable for 60 seconds (private). Events stay listed through the day after their date.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  parish: { $ref: "#/components/schemas/ParishPage" }
+                  events: { type: array, items: { $ref: "#/components/schemas/ParishEvent" } }
+                  announcements: { type: array, items: { type: object, properties: { id: { type: integer }, text: { type: string }, expires_at: { type: string, format: date-time } } } }
+                  generated_at: { type: string, format: date-time }
+        "401": { description: "error code_required -- this parish needs a join code pass.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /dioceses/{body}/{name}:
+    get:
+      summary: A diocese's page -- bishop, website, convention dates, the bishop's unexpired prayer list, and its approved parishes.
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string }, description: "Body slug, e.g. episcopal." }
+        - { name: name, in: path, required: true, schema: { type: string }, description: "Diocese slug, e.g. western-oregon." }
+      responses:
+        "200":
+          description: Cacheable for 5 minutes (public). A diocese nobody has configured answers with empty fields.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  diocese: { type: object, properties: { key: { type: string }, bishop_name: { type: string, nullable: true }, website: { type: string, nullable: true }, convention_dates: { type: array, items: { type: string } } } }
+                  prayers: { type: array, items: { type: object, properties: { id: { type: integer }, text: { type: string }, expires_at: { type: string, format: date-time } } } }
+                  parishes: { type: array, items: { $ref: "#/components/schemas/ParishListing" } }
+                  generated_at: { type: string, format: date-time }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /parishes/{slug}/intentions:
+    get:
+      summary: A parish's current, unexpired requests (ordered by category, then creation).
+      security: [ {}, { parishPass: [] } ]
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string } }
+        - { name: X-Parish-Pass, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: Cacheable for 60 seconds (private).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  parish: { type: object, properties: { slug: { type: string }, name: { type: string } } }
+                  intentions: { type: array, items: { $ref: "#/components/schemas/ReaderIntention" } }
+                  generated_at: { type: string, format: date-time }
+        "401": { description: "error code_required -- this parish needs a join code pass.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /parishes/{slug}/join:
+    post:
+      summary: Exchange a join code for a reader pass (valid while the code is unchanged, max 365 days).
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [code], properties: { code: { type: string, example: ABCD-EFGH } } } } }
+      responses:
+        "200":
+          description: Pass issued.
+          content: { application/json: { schema: { type: object, properties: { pass: { type: string }, parish: { type: object, properties: { slug: { type: string }, name: { type: string } } } } } } }
+        "400": { description: "Bad request, or the parish is public and needs no code.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "403": { description: Code not accepted (generic), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /register:
+    post:
+      summary: Start a parish registration; emails a 6-digit code. Always answers the same 200.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [parish_name, contact_name, email]
+              properties:
+                parish_name: { type: string, maxLength: 160 }
+                contact_name: { type: string, maxLength: 120 }
+                email: { type: string, format: email }
+                diocese_key: { type: string }
+                corpus_parish_slug: { type: string, pattern: "^[a-z0-9-]{1,80}$" }
+                visibility: { $ref: "#/components/schemas/Visibility" }
+      responses:
+        "200": { description: Generic acknowledgement., content: { application/json: { schema: { $ref: "#/components/schemas/Generic" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /register/verify:
+    post:
+      summary: Confirm the email code; creates the pending parish and its rector and notifies the administrator.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/CodeBody" } } } }
+      responses:
+        "200": { description: Awaiting administrator approval., content: { application/json: { schema: { type: object, properties: { status: { type: string, example: pending_approval } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /auth/request-code:
+    post:
+      summary: Email a staff login code (only sent to staff of approved parishes). Identical response either way.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/EmailBody" } } } }
+      responses:
+        "200": { description: Generic acknowledgement., content: { application/json: { schema: { $ref: "#/components/schemas/Generic" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /auth/verify-code:
+    post:
+      summary: Exchange a code for a session token.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/CodeBody" } } } }
+      responses:
+        "200":
+          description: Signed in.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+                  expires_at: { type: string, format: date-time }
+                  staff: { type: object, properties: { id: { type: integer }, role: { type: string, enum: [rector, delegate] }, display_name: { type: string, nullable: true } } }
+                  parish: { type: object, properties: { slug: { type: string }, name: { type: string }, visibility: { $ref: "#/components/schemas/Visibility" }, status: { type: string } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /auth/logout:
+    post:
+      summary: End the current session.
+      security: [ { staffToken: [] }, { adminToken: [] } ]
+      responses:
+        "200": { description: Signed out., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+  /me:
+    get:
+      summary: The signed-in principal (staff with parish, or admin).
+      security: [ { staffToken: [] }, { adminToken: [] } ]
+      responses:
+        "200":
+          description: Principal.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  principal: { type: string, enum: [staff, admin] }
+                  email: { type: string }
+                  staff: { type: object }
+                  parish: { type: object }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+  /staff/intentions:
+    get:
+      summary: All of the parish's requests, including those expired within the last 7 days.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The list., content: { application/json: { schema: { type: object, properties: { intentions: { type: array, items: { $ref: "#/components/schemas/StaffIntention" } } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      summary: Add a request (1-200 characters; `days` 1-45, default 21; at most 100 active).
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [category, text]
+              properties:
+                category: { $ref: "#/components/schemas/Category" }
+                text: { type: string, minLength: 1, maxLength: 200 }
+                days: { type: integer, minimum: 1, maximum: 45, default: 21 }
+      responses:
+        "201": { description: Created., content: { application/json: { schema: { type: object, properties: { intention: { $ref: "#/components/schemas/StaffIntention" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "409": { description: "limit_reached -- 100 active requests.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /staff/intentions/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: integer } }
+    patch:
+      summary: Edit text and/or category.
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, properties: { category: { $ref: "#/components/schemas/Category" }, text: { type: string, maxLength: 200 } } } } }
+      responses:
+        "200": { description: Updated., content: { application/json: { schema: { type: object, properties: { intention: { $ref: "#/components/schemas/StaffIntention" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+    delete:
+      summary: Hard-delete a request.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/intentions/{id}/extend:
+    post:
+      summary: Extend by 1-45 days from the later of now and the current expiry; resets the reminder.
+      security: [ { staffToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [days], properties: { days: { type: integer, minimum: 1, maximum: 45 } } } } }
+      responses:
+        "200": { description: Extended., content: { application/json: { schema: { type: object, properties: { intention: { $ref: "#/components/schemas/StaffIntention" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /staff/delegates:
+    get:
+      summary: Staff of the parish (rector only).
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The staff list., content: { application/json: { schema: { type: object, properties: { staff: { type: array, items: { type: object } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+    post:
+      summary: Add a delegate (rector only; at most 5).
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email], properties: { email: { type: string, format: email }, display_name: { type: string } } } } }
+      responses:
+        "201": { description: Added., content: { application/json: { schema: { type: object, properties: { delegate: { type: object } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "409": { description: "limit_reached, or conflict (address cannot be added).", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /staff/delegates/{id}:
+    delete:
+      summary: Remove a delegate (rector only).
+      security: [ { staffToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Removed., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/parish:
+    patch:
+      summary: Change visibility (rector only). Switching to "code" returns a fresh `join_code`; every change invalidates earlier passes.
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [visibility], properties: { visibility: { $ref: "#/components/schemas/Visibility" } } } } }
+      responses:
+        "200": { description: Updated., content: { application/json: { schema: { type: object, properties: { parish: { type: object }, join_code: { type: string, description: "Present only when switching to code." } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "422": { $ref: "#/components/responses/Invalid" }
+    delete:
+      summary: Delete the parish and all its data (rector only). Account-deletion endpoint for app-store requirements.
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [confirm], properties: { confirm: { type: string, example: "DELETE st-bede" } } } } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /staff/parish/join-code:
+    get:
+      summary: Show the current join code (rector only; code parishes only).
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The code., content: { application/json: { schema: { type: object, properties: { join_code: { type: string, example: ABCD-EFGH } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/parish/join-code/rotate:
+    post:
+      summary: New join code; all existing reader passes stop working (rector only).
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The new code., content: { application/json: { schema: { type: object, properties: { join_code: { type: string } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "409": { description: The parish does not use a join code., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /staff/parish/profile:
+    get:
+      summary: The parish page details (any staff member).
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The details., content: { application/json: { schema: { type: object, properties: { profile: { $ref: "#/components/schemas/ParishPage" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    put:
+      summary: Replace the parish page details (rector only). Omitted fields are cleared.
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rector_name: { type: string, maxLength: 120 }
+                address: { type: string, maxLength: 255 }
+                website: { type: string, maxLength: 255, description: "http(s) only; no credentials in the address." }
+                service_times: { type: array, items: { type: string, maxLength: 80 }, maxItems: 8 }
+      responses:
+        "200": { description: Saved., content: { application/json: { schema: { type: object, properties: { profile: { $ref: "#/components/schemas/ParishPage" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /staff/events:
+    get:
+      summary: The parish's events from a week ago onward.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The list., content: { application/json: { schema: { type: object, properties: { events: { type: array, items: { $ref: "#/components/schemas/ParishEvent" } } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      summary: Add an event (at most 60 upcoming).
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [title, date], properties: { title: { type: string, maxLength: 120 }, date: { type: string, format: date }, time: { type: string, example: "19:00" }, note: { type: string, maxLength: 200 } } } } }
+      responses:
+        "201": { description: Created., content: { application/json: { schema: { type: object, properties: { event: { $ref: "#/components/schemas/ParishEvent" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "409": { description: "limit_reached -- 60 upcoming events.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /staff/events/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: integer } }
+    patch:
+      summary: Change any of title, date, time, note.
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, properties: { title: { type: string }, date: { type: string, format: date }, time: { type: string, nullable: true }, note: { type: string, nullable: true } } } } }
+      responses:
+        "200": { description: Updated., content: { application/json: { schema: { type: object, properties: { event: { $ref: "#/components/schemas/ParishEvent" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+    delete:
+      summary: Delete an event.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/announcements:
+    get:
+      summary: The parish's announcements, including those expired within the last 7 days.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: The list., content: { application/json: { schema: { type: object, properties: { announcements: { type: array, items: { $ref: "#/components/schemas/ParishAnnouncement" } } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      summary: Post an announcement (1-300 characters; `days` 1-45, default 7; at most 5 showing).
+      security: [ { staffToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string, maxLength: 300 }, days: { type: integer, minimum: 1, maximum: 45, default: 7 } } } } }
+      responses:
+        "201": { description: Created., content: { application/json: { schema: { type: object, properties: { announcement: { $ref: "#/components/schemas/ParishAnnouncement" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "409": { description: "limit_reached -- 5 announcements showing.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /staff/announcements/{id}:
+    delete:
+      summary: Delete an announcement.
+      security: [ { staffToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/announcements/{id}/extend:
+    post:
+      summary: Extend by 1-45 days from the later of now and the current expiry.
+      security: [ { staffToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [days], properties: { days: { type: integer, minimum: 1, maximum: 45 } } } } }
+      responses:
+        "200": { description: Extended., content: { application/json: { schema: { type: object, properties: { announcement: { $ref: "#/components/schemas/ParishAnnouncement" } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /staff/me:
+    delete:
+      summary: Delete the caller's own staff account and sessions. A sole rector must delete the parish instead (409). Account-deletion endpoint for app-store requirements.
+      security: [ { staffToken: [] } ]
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "409": { description: Only rector., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/auth/request-code:
+    post:
+      summary: Email an admin code (only to addresses in the server's admin list). Identical response either way.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/EmailBody" } } } }
+      responses:
+        "200": { description: Generic acknowledgement., content: { application/json: { schema: { $ref: "#/components/schemas/Generic" } } } }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /admin/auth/verify-code:
+    post:
+      summary: Exchange an admin code for an admin session token.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/CodeBody" } } } }
+      responses:
+        "200": { description: Signed in., content: { application/json: { schema: { type: object, properties: { token: { type: string }, expires_at: { type: string, format: date-time }, admin: { type: object, properties: { email: { type: string } } } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+  /admin/approval-info:
+    post:
+      summary: Parish name and diocese for an approval-email token (the token is the authorization).
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [token], properties: { token: { type: string } } } } } }
+      responses:
+        "200": { description: Pending parish., content: { application/json: { schema: { type: object, properties: { parish: { type: object, properties: { name: { type: string }, diocese_key: { type: string, nullable: true } } } } } } } }
+        "400": { description: Unknown, used or expired token., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/approve:
+    post:
+      summary: Approve a pending parish using its single-use token (POST only; opening the emailed link changes nothing).
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [token], properties: { token: { type: string } } } } } }
+      responses:
+        "200": { description: Approved; the rector is emailed., content: { application/json: { schema: { type: object, properties: { status: { type: string, example: approved }, parish: { type: object } } } } } }
+        "400": { description: Unknown, used or expired token., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/parishes:
+    get:
+      summary: Every parish with status and counts. Never any request text.
+      security: [ { adminToken: [] } ]
+      responses:
+        "200": { description: The list., content: { application/json: { schema: { type: object, properties: { parishes: { type: array, items: { type: object } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+  /admin/parishes/{id}/approve:
+    post:
+      summary: Approve a pending parish from the list.
+      security: [ { adminToken: [] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        "200": { description: Approved., content: { application/json: { schema: { type: object, properties: { status: { type: string } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { description: Not pending., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/parishes/{id}/suspend:
+    post:
+      summary: Suspend an approved parish (it disappears from readers; staff are locked out).
+      security: [ { adminToken: [] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        "200": { description: Suspended., content: { application/json: { schema: { type: object, properties: { status: { type: string } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { description: Not approved., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/parishes/{id}/unsuspend:
+    post:
+      summary: Restore a suspended parish.
+      security: [ { adminToken: [] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      responses:
+        "200": { description: Restored., content: { application/json: { schema: { type: object, properties: { status: { type: string } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { description: Not suspended., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /admin/parishes/{id}:
+    delete:
+      summary: Delete a parish and all its data.
+      security: [ { adminToken: [] } ]
+      parameters: [ { name: id, in: path, required: true, schema: { type: integer } } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [confirm], properties: { confirm: { type: string, example: "DELETE st-bede" } } } } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /admin/dioceses/{body}/{name}:
+    put:
+      summary: Replace a diocese's page details (administrator). Omitted fields are cleared.
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string } }
+        - { name: name, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, properties: { bishop_name: { type: string, maxLength: 120 }, website: { type: string, maxLength: 255 }, convention_dates: { type: array, items: { type: string, maxLength: 120 }, maxItems: 6 } } } } }
+      responses:
+        "200": { description: Saved., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /admin/dioceses/{body}/{name}/prayers:
+    post:
+      summary: Add an item to the bishop's prayer list (1-200 characters; `days` 1-45, default 21; at most 60).
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string } }
+        - { name: name, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string, maxLength: 200 }, days: { type: integer, minimum: 1, maximum: 45, default: 21 } } } } }
+      responses:
+        "201": { description: Created., content: { application/json: { schema: { type: object, properties: { prayer: { type: object, properties: { id: { type: integer }, text: { type: string } } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { description: "limit_reached -- 60 items.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /admin/dioceses/{body}/{name}/prayers/{id}:
+    delete:
+      summary: Remove an item from the bishop's prayer list.
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string } }
+        - { name: name, in: path, required: true, schema: { type: string } }
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /admin/status:
+    get:
+      summary: Deployment diagnostics (PHP version, extensions, migrations, mail driver). No secrets.
+      security: [ { adminToken: [] } ]
+      responses:
+        "200": { description: Status., content: { application/json: { schema: { type: object } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
