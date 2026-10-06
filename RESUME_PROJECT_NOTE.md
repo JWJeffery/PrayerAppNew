@@ -86,9 +86,7 @@ and say what you checked.
   disclosed machine translation from Bedjan's public-domain Syriac. Four leads already exhausted.
 - **East Syriac minor hours:** keep them out of scope (as Maclean does) or find a separate source
   for monastic minor-hour texts.
-- **Book of Needs role ladder:** whether to extend to the 8-role access-tier ladder in
-  `book-of-needs-role-access-governance.json`.
-- **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming.
+- **Navigation headings:** uniform headings versus the navigation doc's allowance for local naming. Josh wants to DISCUSS this (2026-10-06); do not decide it for him.
 
 **Active direction (Josh, 2026-10-03), in this order:**
 1. **Roman Breviary rebuild** as liturgy-shaped components plus a JS rubrics engine (any year, Latin
@@ -100,8 +98,7 @@ and say what you checked.
    Perl engine and the audited stored data (plan doc sections 12-16; tests `npm run test:roman-breviary-
    script|render|blocks`; engine clone for tests: `npm run roman-breviary:engine:setup`). Old
    `units/`/`manifests/` stay as fixtures and fallback, not shipped. **Phase 6 (offline data pack) is
-   done, see item 2.** **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on, built
-   only after the 1960 engine matches the audited output** (decided 2026-10-03).
+   done, see item 2.** **The "Rubrics 1960 - 2020 USA" calendar variant is a planned add-on; the 1960 engine now matches the audited output (it did by 2026-10-04), so it is unblocked, awaiting Josh's go-ahead** (decided 2026-10-03).
 2. **Offline delivery:** installable offline website is **built (2026-10-04)**: `npm run release:web`
    writes `sw.js` (Workbox, versioned by hash) so the app and all text work offline from first launch;
    icons (~27 MB) download once on first Orthodox entry (`js/offline-packs.js`) and are then kept;
@@ -118,10 +115,14 @@ and say what you checked.
    panel without catalogue metadata, no Anglican/Roman saint biographies in the data yet) are in
    history Volume 8.
 
+**Todo: Parish Prayer Requests features (Josh, 2026-10-06; none started; the backend and `parish/` pages live on branch `claude/determined-einstein-kny5ms`, not `main`; research and reuse before building):**
+- **Parish home page:** one screen with service times, rector's name, address, link to the parish website, and Follow / Join.
+- **Parish events:** the rector posts vestry meetings, funerals, the parish supper and feast-day services. Idea: show "this Sunday's Collect and readings" next to the service time.
+- **Rector's announcements:** a short pinned note with an expiry date, like the intention lifetime (deaths, funerals, urgent pastoral news).
+- **Diocesan page:** the bishop's prayer list, convention dates, and a "pray for a parish today" link joining the Cycle of Prayer to that parish's page.
+
 **Josh's own hands (Drive):**
-- Delete the Google Doc "Calendar and Admission Decisions — Corrections of 2026-10-02" (it wrongly
-  says the delta has 22 records). The replacement is "Calendar and Admission Decisions" in the same
-  folder.
+- (Done 2026-10-06: the wrong "Corrections of 2026-10-02" Google Doc was deleted by Josh.)
 - Optionally upload `synaxarium-review/data/synaxarium-decisions-2026-10-02-corrected.json` to
   Drive. The connector cannot overwrite existing Drive files, so Drive's own
   `synaxarium-decisions-2026-09-07-cleaned.json` still shows the pre-correction decisions until he
