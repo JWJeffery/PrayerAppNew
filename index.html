@@ -22,7 +22,7 @@
          dev flag while it shipped safely alongside the old skin. Phase 6
          (2026-09-24) made it the only office shell and dropped the flag; see
          documentation/UI_REDESIGN_HANDOFF.md section 9. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=334">
+    <link rel="stylesheet" href="css/office-shell.css?v=336">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
 <!-- Opening screen: "The Universal Office" for five seconds (css/splash.css, js/splash.js). -->
@@ -32,24 +32,29 @@
         <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
             <defs>
                 <linearGradient id="uo-sp-gold" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#fbefc0"/><stop offset="0.5" stop-color="#e0bf68"/><stop offset="1" stop-color="#a98338"/>
+                    <stop offset="0" stop-color="#fbefc0"/><stop offset="0.45" stop-color="#e3c36d"/><stop offset="1" stop-color="#a98338"/>
                 </linearGradient>
+                <linearGradient id="uo-sp-cream" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fff7da"/><stop offset="1" stop-color="#ecd9a0"/>
+                </linearGradient>
+                <!-- One arm of the Canterbury cross: a narrow neck that flares into curved, horned ends, with a long
+                     triangle set into it and a triquetra near the wide end. The other three are this, turned. -->
+                <g id="uo-sp-arm">
+                    <path d="M90.3 89.1 Q91.2 60.1 62.2 36.6 Q100 8.9 137.8 36.6 Q108.8 60.1 109.7 89.1 Z" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="0.9" stroke-linejoin="round"/>
+                    <path d="M82.6 38.6 L117.4 38.6 L100 86 Z" fill="url(#uo-sp-cream)" stroke="#7a5c22" stroke-width="0.9" stroke-linejoin="round"/>
+                    <path d="M87 42.2 L113 42.2 L100 77 Z" fill="none" stroke="#9a7430" stroke-width="0.6" stroke-linejoin="round"/>
+                    <g fill="none" stroke="#8a5a1a" stroke-width="0.75"><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4"/><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4" transform="rotate(120 100 50.5)"/><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4" transform="rotate(240 100 50.5)"/></g>
+                </g>
             </defs>
             <circle class="uo-sp-ring" cx="100" cy="100" r="92"/>
-            <g class="uo-sp-cross" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="1" stroke-linejoin="round">
-                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z"/>
-                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(90 100 100)"/>
-                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(180 100 100)"/>
-                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(270 100 100)"/>
-                <rect x="88" y="88" width="24" height="24" fill="#f6e7b4"/>
-                <g fill="none" stroke="#7a5c22" stroke-width="0.9">
-                    <path d="M100 42 L107 80 L93 80 Z"/>
-                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(90 100 100)"/>
-                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(180 100 100)"/>
-                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(270 100 100)"/>
-                    <rect x="93" y="93" width="14" height="14"/>
-                </g>
-            </g>
+            <g class="uo-sp-cross"><g transform="translate(100 100) scale(1.08) translate(-100 -100)">
+                <use href="#uo-sp-arm"/>
+                <use href="#uo-sp-arm" transform="rotate(90 100 100)"/>
+                <use href="#uo-sp-arm" transform="rotate(180 100 100)"/>
+                <use href="#uo-sp-arm" transform="rotate(270 100 100)"/>
+                <rect x="89" y="89" width="22" height="22" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="0.9"/>
+                <rect x="92.6" y="92.6" width="14.8" height="14.8" fill="url(#uo-sp-cream)" stroke="#7a5c22" stroke-width="0.8"/>
+            </g></g>
         </svg>
     </div>
     <h1 class="uo-sp-name"><span class="uo-sp-the">The</span><span class="uo-sp-main"><span>Universal</span><span>Office</span></span></h1>
@@ -80,7 +85,7 @@
 
     <div id="entry-family-grid" class="app-entry-family-grid" aria-label="Choose Western, Eastern, or unknown">
         <button class="app-entry-family-card" type="button" data-entry-family="western">
-            <span class="app-entry-family-icon">☩</span>
+            <span class="app-entry-family-icon" aria-hidden="true"><svg class="app-entry-cross" viewBox="0 0 32 32" focusable="false"><rect x="14.1" y="3" width="3.8" height="26" rx="0.4"/><rect x="7" y="9" width="18" height="3.8" rx="0.4"/></svg></span>
             <span>
                 <strong>Western Christian</strong>
                 <small>The churches of the Western Christian tradition.</small>
@@ -88,7 +93,7 @@
         </button>
 
         <button class="app-entry-family-card" type="button" data-entry-family="eastern">
-            <span class="app-entry-family-icon">✠</span>
+            <span class="app-entry-family-icon" aria-hidden="true"><svg class="app-entry-cross" viewBox="0 0 32 32" focusable="false"><rect x="14.4" y="2" width="3.2" height="28" rx="0.4"/><rect x="11.2" y="4.6" width="9.6" height="2.3" rx="0.3"/><rect x="8" y="10" width="16" height="3" rx="0.3"/><rect x="9.4" y="21.2" width="13.2" height="2.6" rx="0.3" transform="rotate(18 16 22.5)"/></svg></span>
             <span>
                 <strong>Eastern Christian</strong>
                 <small>The churches of the Eastern Christian traditions.</small>

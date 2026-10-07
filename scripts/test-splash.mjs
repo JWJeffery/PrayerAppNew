@@ -1,5 +1,5 @@
-// Opening screen test (js/splash.js, css/splash.css): five seconds then gone; once per browser session; a tap
-// skips it; automated browsers skip it unless ?splash=force; a still version for reduced motion.
+// Opening screen test (js/splash.js, css/splash.css): plays about five seconds, then waits for a tap and never
+// leaves by itself; once per browser session; a tap moves past it at any time; automated browsers skip it unless ?splash=force; a still version for reduced motion.
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -29,10 +29,14 @@ const NOT_AUTOMATED = () => Object.defineProperty(navigator, 'webdriver', { get:
   check(['Anglican', 'Roman', 'Coptic', 'Byzantine', 'Church of the East'].every((w) => text.includes(w)), 'it names the five traditions');
   const box = await page.locator('#uo-splash').boundingBox();
   check(box.width === 390 && box.height === 800, 'it fills the screen');
-  await page.waitForTimeout(Math.max(0, 4500 - (Date.now() - t0)));
-  check(await present(page), 'still showing at 4.5 seconds');
-  await page.waitForTimeout(Math.max(0, 6200 - (Date.now() - t0)));
-  check(!(await present(page)), 'gone by about 6 seconds (5 seconds, then a short fade)');
+  await page.waitForTimeout(Math.max(0, 6500 - (Date.now() - t0)));
+  check(await present(page), 'still showing at 6.5 seconds: it does not move on by itself');
+  check(await page.locator('.uo-sp-hint').evaluate((e) => Number(getComputedStyle(e).opacity) > 0.4), '"Tap to continue" is showing by then');
+  await page.waitForTimeout(Math.max(0, 11000 - (Date.now() - t0)));
+  check(await present(page), 'still waiting at 11 seconds');
+  await page.locator('#uo-splash').click();
+  await page.waitForTimeout(1000);
+  check(!(await present(page)), 'a tap then moves past it');
   check(!(await page.evaluate(() => document.documentElement.classList.contains('uo-splash-on'))), 'scrolling is unlocked afterwards');
   await ctx.close();
 }
@@ -87,7 +91,8 @@ const NOT_AUTOMATED = () => Object.defineProperty(navigator, 'webdriver', { get:
 {
   const ctx = await browser.newContext(); const page = await ctx.newPage();
   const errors = []; page.on('pageerror', (e) => errors.push(String(e)));
-  await page.goto(base + '?splash=force'); await page.waitForTimeout(6200);
+  await page.goto(base + '?splash=force'); await page.waitForTimeout(800);
+  await page.locator('#uo-splash').click(); await page.waitForTimeout(1200);
   check((await page.locator('#tradition-entry, #app-body').count()) > 0 && errors.length === 0, 'the app is there afterwards, with no page errors' + (errors.length ? ': ' + errors.join(' | ') : ''));
   await ctx.close();
 }

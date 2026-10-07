@@ -1,5 +1,5 @@
-/* Opening screen (js/splash.js): "The Universal Office" for five seconds when the app is first opened in a
-   browser session. Dark navy and gold, a ring that draws itself around a cross, the name rising out of a wide
+/* Opening screen (js/splash.js): "The Universal Office" when the app is first opened in a browser session;
+   it plays for about five seconds, then waits for a tap. Dark navy and gold, a ring that draws itself around a cross, the name rising out of a wide
    letter-spacing, then the five traditions. Self-contained: it does not depend on the app's own theme or on
    Google Fonts, so it looks the same on the first visit and offline. */
 
@@ -164,9 +164,10 @@ html.uo-splash-on, html.uo-splash-on body { overflow: hidden; }
     font: 12px/1.2 system-ui, sans-serif;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(205, 189, 144, 0.55);
+    color: rgba(225, 205, 150, 0.8);
     opacity: 0;
-    animation: uo-sp-hint 5s linear both;
+    /* appears once the picture is complete, then breathes gently until tapped */
+    animation: uo-sp-rise 1s ease-out 4.6s forwards, uo-sp-breathe 3s ease-in-out 5.8s infinite;
 }
 
 @keyframes uo-sp-draw { to { stroke-dashoffset: 0; } }
@@ -193,7 +194,7 @@ html.uo-splash-on, html.uo-splash-on body { overflow: hidden; }
     30%  { opacity: 1; }
     to   { transform: translateY(-14px); opacity: 1; }
 }
-@keyframes uo-sp-hint { 0%, 55% { opacity: 0; } 70%, 92% { opacity: 1; } 100% { opacity: 1; } }
+@keyframes uo-sp-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
 /* People who ask their device for less motion get the finished picture at once. */
 @media (prefers-reduced-motion: reduce) {
