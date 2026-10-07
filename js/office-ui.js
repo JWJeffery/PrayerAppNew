@@ -1362,6 +1362,8 @@ function persistUserProfileDefaults(profile) {
 
     writeLegacyEntryDefault(legacyValue);
     syncUserProfileControls(normalized);
+    // ADDED 2026-10-07: if the reader has signed in to an account, their saved settings follow (js/account-ui.js).
+    if (typeof accountProfileChanged === 'function') accountProfileChanged(normalized);
     return normalized;
 }
 
@@ -2895,6 +2897,8 @@ async function initializeEntryRouting() {
     // ADDED 2026-10-06: apply a Follow / Stop following left by the parish home page
     // (parish/home.html) before the startup profile is read, so everything below sees it.
     applyPendingParishFollowRequest();
+    // ADDED 2026-10-07: a reader already signed in to an account takes any newer settings saved from another device.
+    if (typeof accountStartup === 'function') accountStartup();
     const startupProfile = getUserProfileDefaults();
     if (startupProfile.cycleOfPrayerDiocese) {
         refreshCycleOfPrayerForCurrentYear(startupProfile.cycleOfPrayerDiocese);

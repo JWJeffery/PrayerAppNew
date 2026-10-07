@@ -7,12 +7,13 @@
   function $(id) { return document.getElementById(id); }
 
   var client = U.createClient('uoAdminSession', function () { showSignin('Your session has ended. Please sign in again.'); });
+  var core = window.UOAccount.create('uoAdminSession');   // the same saved sign-in, for password, passkey and sign-in options
   var dioceseLabel = {};
   (window.UO_DIOCESES || []).forEach(function (d) { dioceseLabel[d.key] = d.label; });
 
   function show(name) {
     var dash = (name === 'dashboard');
-    $('view-signin').hidden = dash; $('view-dashboard').hidden = !dash; $('view-dioceses').hidden = !dash; $('view-admins').hidden = !dash;
+    $('view-signin').hidden = dash; $('view-dashboard').hidden = !dash; $('view-dioceses').hidden = !dash; $('view-admins').hidden = !dash; $('view-security').hidden = !dash;
     $('logout').hidden = !dash; $('btn-refresh').hidden = !dash; $('who').hidden = !dash;
     var hd = $(dash ? 'h-dash' : 'h-signin'); if (hd) { hd.focus(); }
   }
@@ -58,6 +59,29 @@
   });
   $('btn-refresh').addEventListener('click', function () { load(false); });
 
+  // ---------- other ways to sign in: password, passkey (optional) ----------
+  if (!window.UOAccount.passkeysSupported()) { $('passkey-row').hidden = true; }
+  $('form-password').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = $('pw-email').value.trim(), pw = $('pw-password').value;
+    if (!email || !pw) { U.say($('signin-status'), 'bad', 'Please enter your email address and password.'); return; }
+    var btn = $('btn-pw-signin'); btn.disabled = true;
+    core.passwordLogin(email, pw, 'admin').then(function (res) {
+      btn.disabled = false;
+      if (res.ok) { $('pw-password').value = ''; $('who').textContent = email; load(true); }
+      else { U.say($('signin-status'), 'bad', U.problem(res, 'That email and password were not accepted. You can always use an emailed code instead.')); }
+    });
+  });
+  $('btn-passkey-signin').addEventListener('click', function () {
+    var btn = $('btn-passkey-signin'); btn.disabled = true;
+    core.passkeyLogin('admin').then(function (res) {
+      btn.disabled = false;
+      if (res.ok) { $('who').textContent = 'Administrator'; load(true); }
+      else if (res.body && res.body.error === 'cancelled') { U.say($('signin-status'), '', ''); }
+      else { U.say($('signin-status'), 'bad', U.problem(res, 'That passkey was not accepted for an administrator account. You can use an emailed code instead.')); }
+    });
+  });
+
   function pill(status) { return h('span', { class: 'pill ' + status, text: status }); }
   function cell(label, kids) { return h('td', { 'data-label': label }, kids); }
 
@@ -94,6 +118,7 @@
       $('empty').hidden = list.length !== 0;
       if (first) { show('dashboard'); }
       loadAdmins();
+      window.UOAccountPanel.mount($('security-panel'), core);
     });
   }
 

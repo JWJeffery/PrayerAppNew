@@ -243,3 +243,6 @@ html[data-theme="light"] .feature { box-shadow: none; }
 .item-actions a.small { display: inline-block; padding: 6px 12px; border: 1px solid var(--gold); font-family: var(--display); font-size: 11px;
   letter-spacing: .12em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
 .item-actions a.small:hover { background: var(--panel2); box-shadow: 0 0 18px -4px var(--gold); }
+.alt-signin { margin: 18px 0 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--panel2); }
+.alt-signin summary { cursor: pointer; font-family: var(--display); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.alt-signin[open] summary { margin-bottom: 8px; }

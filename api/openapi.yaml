@@ -23,7 +23,15 @@ components:
     adminToken:
       type: http
       scheme: bearer
-      description: Session token from POST /admin/auth/verify-code.
+      description: Session token from POST /admin/auth/verify-code, POST /auth/password-login (as admin) or POST /passkey/login (as admin).
+    readerToken:
+      type: http
+      scheme: bearer
+      description: Reader session token from POST /reader/verify-code, POST /auth/password-login (as reader) or POST /passkey/login (as reader).
+    anyToken:
+      type: http
+      scheme: bearer
+      description: Any signed-in session (reader, rector or helper, administrator).
     parishPass:
       type: apiKey
       in: header
@@ -88,6 +96,23 @@ components:
       description: Identical body for every email, known or not.
       properties:
         status: { type: string }
+    SessionAnswer:
+      type: object
+      properties:
+        token: { type: string, description: "Bearer token, 64 hex characters; keep it, send it in the Authorization header." }
+        expires_at: { type: string, format: date-time }
+        principal: { type: string, enum: [reader, staff, admin] }
+        account: { $ref: "#/components/schemas/AccountSummary" }
+    AccountSummary:
+      type: object
+      properties:
+        email: { type: string }
+        has_password: { type: boolean }
+        passkeys: { type: integer }
+    AccountAnswer:
+      type: object
+      properties:
+        account: { $ref: "#/components/schemas/AccountSummary" }
     ParishPage:
       type: object
       properties:
@@ -255,6 +280,175 @@ paths:
         "200": { description: Awaiting administrator approval., content: { application/json: { schema: { type: object, properties: { status: { type: string, example: pending_approval } } } } } }
         "401": { $ref: "#/components/responses/Unauthorized" }
         "429": { $ref: "#/components/responses/RateLimited" }
+  /reader/request-code:
+    post:
+      summary: Email a 6-digit code to any valid address, to sign in or create a reader account. The answer never says whether the address already has an account.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email], properties: { email: { type: string } } } } }
+      responses:
+        "200": { description: A code has been sent if the address is valid., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /reader/verify-code:
+    post:
+      summary: Exchange the emailed code for a reader session. The first correct code creates the account.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email, code], properties: { email: { type: string }, code: { type: string } } } } }
+      responses:
+        "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /reader/profile:
+    get:
+      summary: The reader's saved settings (decrypted for them only).
+      security: [ { readerToken: [] } ]
+      responses:
+        "200": { description: The settings, or null when none are saved yet., content: { application/json: { schema: { type: object, properties: { profile: { type: object, nullable: true, additionalProperties: true }, updated_at: { type: string, format: date-time, nullable: true } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { $ref: "#/components/responses/Forbidden" }
+    put:
+      summary: Replace the saved settings. Plain values only (strings up to 600 characters, numbers, booleans, null), at most 60 keys and 7000 bytes. Stored encrypted.
+      security: [ { readerToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [profile], properties: { profile: { type: object, additionalProperties: true } } } } }
+      responses:
+        "200": { description: Saved., content: { application/json: { schema: { type: object, properties: { updated_at: { type: string, format: date-time } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /auth/password-login:
+    post:
+      summary: Sign in with an email address and password. `as` chooses the role. One generic 401 for every failure (wrong password, unknown address, a role the address does not hold).
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email, password, as], properties: { email: { type: string }, password: { type: string }, as: { type: string, enum: [reader, staff, admin] } } } } }
+      responses:
+        "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /auth/social:
+    post:
+      summary: Sign in with another provider (Apple, Google, Facebook). Switched off until a provider is enabled in the private config; every provider answers 400 provider_unavailable today.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [provider, id_token, as], properties: { provider: { type: string }, id_token: { type: string }, as: { type: string, enum: [reader, staff, admin] } } } } }
+      responses:
+        "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
+        "400": { description: "provider_unavailable.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /passkey/login/options:
+    post:
+      summary: Options for navigator.credentials.get. No address is needed and nothing reveals which addresses have passkeys. Binary fields are base64url.
+      responses:
+        "200": { description: A one-time token and the public-key options., content: { application/json: { schema: { type: object, properties: { token: { type: string }, publicKey: { type: object, additionalProperties: true } } } } } }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /passkey/login:
+    post:
+      summary: Finish a passkey sign-in with the browser's assertion (base64url fields). `as` chooses the role.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [token, as, id, clientDataJSON, authenticatorData, signature], properties: { token: { type: string }, as: { type: string, enum: [reader, staff, admin] }, id: { type: string }, clientDataJSON: { type: string }, authenticatorData: { type: string }, signature: { type: string } } } } }
+      responses:
+        "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /account/reauth/request-code:
+    post:
+      summary: Email a code to confirm it is really the account holder (needed when the sign-in is more than 15 minutes old).
+      security: [ { anyToken: [] } ]
+      responses:
+        "200": { description: Sent., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /account/reauth:
+    post:
+      summary: Confirm with the emailed code. The session then counts as just confirmed for 15 minutes.
+      security: [ { anyToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [code], properties: { code: { type: string } } } } }
+      responses:
+        "200": { description: Confirmed., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /account/password:
+    post:
+      summary: Add or change the password (15 to 128 characters, any characters, no composition rules, not common). Needs a recent sign-in or `current_password`; otherwise 403 reauth_required. Signs out every other session for the address.
+      security: [ { anyToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [password], properties: { password: { type: string }, current_password: { type: string } } } } }
+      responses:
+        "200": { description: Saved., content: { application/json: { schema: { $ref: "#/components/schemas/AccountAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { description: "reauth_required.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+    delete:
+      summary: Remove the password. Same confirmation rule; signs out every other session.
+      security: [ { anyToken: [] } ]
+      requestBody:
+        required: false
+        content: { application/json: { schema: { type: object, properties: { current_password: { type: string } } } } }
+      responses:
+        "200": { description: Removed., content: { application/json: { schema: { $ref: "#/components/schemas/AccountAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { description: "reauth_required.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /account/passkeys:
+    get:
+      summary: The account's passkeys (label and dates only).
+      security: [ { anyToken: [] } ]
+      responses:
+        "200": { description: The list., content: { application/json: { schema: { type: object, properties: { passkeys: { type: array, items: { type: object, properties: { id: { type: integer }, label: { type: string, nullable: true }, created_at: { type: string, format: date-time }, last_used_at: { type: string, format: date-time, nullable: true } } } } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      summary: Finish adding a passkey with the browser's attestation (base64url fields). At most 10 per account. Needs a recent sign-in or `current_password`.
+      security: [ { anyToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [token, clientDataJSON, attestationObject], properties: { token: { type: string }, clientDataJSON: { type: string }, attestationObject: { type: string }, label: { type: string }, current_password: { type: string } } } } }
+      responses:
+        "201": { description: Added., content: { application/json: { schema: { $ref: "#/components/schemas/AccountAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { description: "reauth_required.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "409": { description: "limit_reached.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /account/passkeys/options:
+    post:
+      summary: Options for navigator.credentials.create (a resident key with user verification, attestation none). Needs a recent sign-in or `current_password`.
+      security: [ { anyToken: [] } ]
+      requestBody:
+        required: false
+        content: { application/json: { schema: { type: object, properties: { current_password: { type: string } } } } }
+      responses:
+        "200": { description: A one-time token and the public-key options., content: { application/json: { schema: { type: object, properties: { token: { type: string }, publicKey: { type: object, additionalProperties: true } } } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { description: "reauth_required.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /account/passkeys/{id}:
+    delete:
+      summary: Remove one of your passkeys. Needs a recent sign-in or `current_password`.
+      security: [ { anyToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Removed., content: { application/json: { schema: { $ref: "#/components/schemas/AccountAnswer" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { description: "reauth_required.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /account:
+    delete:
+      summary: A reader deletes their account, saved settings and sessions (and password and passkeys, unless the address also holds a parish or administrator role). Needs a recent sign-in or `current_password`.
+      security: [ { readerToken: [] } ]
+      requestBody:
+        required: false
+        content: { application/json: { schema: { type: object, properties: { current_password: { type: string } } } } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { $ref: "#/components/responses/Forbidden" }
   /auth/request-code:
     post:
       summary: Email a staff login code (only sent to staff of approved parishes). Identical response either way.

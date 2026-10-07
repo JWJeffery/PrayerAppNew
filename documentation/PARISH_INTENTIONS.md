@@ -315,6 +315,12 @@ pages. The **Administrators** section on that admin page lists them and, for own
 - Import `api/migrations/003_admins.sql` in phpMyAdmin the same way as `002` (adds one table, `admins`; you
   should then see 14 tables).
 
+**Optional accounts, passwords and passkeys (migration `004_accounts.sql`).** Readers can create a free account to keep
+their settings on every device; rectors, helpers and administrators can add a password or a passkey as an extra way in.
+Emailed codes keep working and nothing is required. Everything about it, including deploying it and adding Apple, Google
+or Facebook sign-in later, is in `ACCOUNTS_AND_SIGN_IN.md`. Import `004_accounts.sql` the same way as `002` and `003`
+(you should then have 19 tables), and upload **both** zips.
+
 **Not built (your call):** a Collect and readings beside each service time ("this Sunday's Collect"). The app works
 those out in the browser from its liturgical calendar engine and has no way to open a given date from a link, so it
 needs its own piece of work.
