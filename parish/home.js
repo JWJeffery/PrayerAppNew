@@ -97,7 +97,24 @@
 
     var times = Array.isArray(p.service_times) ? p.service_times : [];
     U.clear($('list-times'));
-    times.forEach(function (t) { if (typeof t === 'string') { $('list-times').appendChild(h('li', { text: t })); } });
+    // How the rector wrote the lines decides how they are set out, with no bullets:
+    //   "Sunday:"                      a line ending in a colon is a day heading for the lines under it;
+    //   "8:00 am | Holy Eucharist"     a line with a bar is a time, then what happens at that time;
+    //   anything else                  plain text.
+    times.forEach(function (t) {
+      if (typeof t !== 'string') { return; }
+      var bar = t.indexOf('|');
+      if (/:\s*$/.test(t)) {
+        $('list-times').appendChild(h('li', { class: 'day', text: t.replace(/:\s*$/, '') }));
+      } else if (bar > 0 && bar < t.length - 1) {
+        $('list-times').appendChild(h('li', { class: 'svc' }, [
+          h('span', { class: 'svc-time', text: t.slice(0, bar).trim() }),
+          h('span', { class: 'svc-what', text: t.slice(bar + 1).trim() })
+        ]));
+      } else {
+        $('list-times').appendChild(h('li', { text: t }));
+      }
+    });
     $('wrap-times').hidden = times.length === 0;
 
     var events = Array.isArray(data.events) ? data.events : [];

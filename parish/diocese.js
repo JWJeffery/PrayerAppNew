@@ -46,7 +46,23 @@
 
   function parishPageHref(slug) { return 'home.html?p=' + encodeURIComponent(slug); }
 
+  /** The parish this reader follows, as the app will see it (a waiting Follow / Stop request wins over the
+      stored profile). Read-only and defensive, the same reading parish/home.js does. */
+  function followedSlug() {
+    function read(key) { try { var raw = window.localStorage.getItem(key); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+    var req = read('universalOffice.parishFollowRequest.v1');
+    if (req && typeof req === 'object' && (req.slug === null || typeof req.slug === 'string')) {
+      return (typeof req.slug === 'string' && SLUG_RE.test(req.slug)) ? req.slug : null;
+    }
+    var prof = read('universalOffice.userProfile.v1');
+    return (prof && typeof prof.parishIntentionsSlug === 'string' && SLUG_RE.test(prof.parishIntentionsSlug)) ? prof.parishIntentionsSlug : null;
+  }
+
   function renderRotation(parishes) {
+    // The reader's own parish is already prayed for in the Intercessions, so "pray for a parish today" is
+    // always a different one.
+    var own = followedSlug();
+    parishes = parishes.filter(function (p) { return p.slug !== own; });
     if (!parishes.length) { return false; }
     var pick = parishes[localDayNumber() % parishes.length];
     $('today-rotation-name').textContent = pick.name;
@@ -114,6 +130,7 @@
     var parishes = (Array.isArray(data.parishes) ? data.parishes : []).filter(function (p) {
       return p && typeof p.name === 'string' && typeof p.slug === 'string' && SLUG_RE.test(p.slug);
     });
+    $('h-parishes').textContent = 'Parishes of the Diocese of ' + label() + ' using the Universal Office';
     U.clear($('list-parishes'));
     parishes.forEach(function (p) {
       $('list-parishes').appendChild(h('li', {}, [h('a', { href: parishPageHref(p.slug), text: p.name })]));
