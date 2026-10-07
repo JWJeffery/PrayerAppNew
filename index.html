@@ -198,11 +198,11 @@
             </span>
         </button>
 
-        <button class="mode-btn app-mode-card" onclick="showLaneThreshold('coptic-agpeya')">
-            <span class="app-mode-icon">⳩</span>
+        <button class="mode-btn app-mode-card" type="button" onclick="selectMode('roman-breviary-dev')">
+            <span class="app-mode-icon">✚</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Oriental Orthodox Church</span>
-                <span class="app-mode-subtitle">The Coptic Agpeya — the seven hours and Theotokia of the Coptic Church.</span>
+                <span class="app-mode-title">Catholic Church</span>
+                <span class="app-mode-subtitle">The 1962 Breviary — Roman Rite, Latin, all eight hours.</span>
             </span>
         </button>
 
@@ -222,11 +222,11 @@
             </span>
         </button>
 
-        <button class="mode-btn app-mode-card" type="button" onclick="selectMode('roman-breviary-dev')">
-            <span class="app-mode-icon">✚</span>
+        <button class="mode-btn app-mode-card" onclick="showLaneThreshold('coptic-agpeya')">
+            <span class="app-mode-icon">⳩</span>
             <span class="app-mode-copy">
-                <span class="app-mode-title">Catholic Church</span>
-                <span class="app-mode-subtitle">The 1962 Breviary — Roman Rite, Latin, all eight hours.</span>
+                <span class="app-mode-title">Oriental Orthodox Church</span>
+                <span class="app-mode-subtitle">The Coptic Agpeya — the seven hours and Theotokia of the Coptic Church.</span>
             </span>
         </button>
     </div>
@@ -1087,10 +1087,10 @@
                 <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
                     <option value="">No tradition selected</option>
                     <option value="anglican" data-available-label="Anglican">Anglican</option>
-                    <option value="oriental-orthodox" data-available-label="Oriental Orthodox Church">Oriental Orthodox Church</option>
+                    <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
                     <option value="church-of-the-east" data-available-label="Church of the East">Church of the East</option>
                     <option value="eastern-orthodox" data-available-label="Eastern Orthodox Church">Eastern Orthodox Church</option>
-                    <option value="latin-catholic" data-available-label="Catholic Church">Catholic Church</option>
+                    <option value="oriental-orthodox" data-available-label="Oriental Orthodox Church">Oriental Orthodox Church</option>
                 </select>
             </label>
 
