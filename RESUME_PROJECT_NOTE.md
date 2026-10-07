@@ -42,7 +42,7 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 
 - Work on the assigned branch, commit, and push with `git push -u origin <branch>` in the same turn.
   Do not open a PR unless asked. **Merging to `main` only on Josh's explicit word.** Recent merges
-  (PRs #114-#120) were GitHub PR merge commits, opened and merged when he said "Open a PR and
+  (PRs #114-#125) were GitHub PR merge commits, opened and merged when he said "Open a PR and
   merge"; after a merge, restart the branch from `origin/main` (same name) before new work.
 - Fetch and check `git log --oneline -1` before building on a branch.
 - Validate JSON before writing; prefer targeted edits to bulk dumps. For bulk edits to
@@ -104,23 +104,20 @@ truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). 
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
 licensed (his call, not verified by us).
 
-**Optional accounts built (2026-10-07, same branch):** readers can create a free account that keeps their settings on every
-device; everyone who signs in (reader, rector, helper, administrator) can add a password and/or passkey; emailed codes still work and nothing is
-required. A seam for Apple/Google/Facebook sign-in exists but no provider is on. Read `documentation/ACCOUNTS_AND_SIGN_IN.md`. Needs migration
-`004_accounts.sql` and BOTH zips. **Google Play blocker (Josh, 2026-10-07):** a new personal Play developer account must run a 12-tester, 14-day
-closed test before publishing; organization accounts are exempt (needs a D-U-N-S number). **Decision (Josh, 2026-10-07): web only.** The app ships as the installable offline website; no Capacitor/Play/App Store apps for now. Revisit only if Josh says so.
-
-**Parish features built (2026-10-06, on this branch, not yet on `main`):** parish home page, rector announcements, parish events and the
-diocesan page. Still open: "this Sunday's Collect and readings" beside the service times (needs the app's calendar engine; no date deep-link
-exists yet) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). The original todo is in history Volume 9.
+**Parish features and optional accounts: built, merged to `main`, and LIVE (2026-10-07).** Parish home page, rector announcements, events,
+the diocesan page, global-administrator viewing and in-app administrator management, parish-page restyle, and optional accounts (readers keep
+settings across devices; password and/or passkey optional for everyone; emailed codes still work; Apple/Google/Facebook seam exists, no provider
+on). Migrations 002, 003 and 004 are imported on production (19 tables) and Josh confirmed emailed-code sign-in works. Both zips (`parish-backend.zip`
+and `web-release-app-shell.zip`, strict SQL mode plus a "database is missing updates" warning on the admin page) are deployed; PR #125 put
+everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **Decision (Josh, 2026-10-07): web
+only** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
+unless Josh revisits. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
+deep-link exists) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). Original todo: history Volume 9.
 
 **Josh's own hands:**
-- Parish features (the merge of `claude/determined-einstein-kny5ms` plus the four new features) go live only after: import
-  `api/migrations/002_parish_pages.sql`, `003_admins.sql` and `004_accounts.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
-  `parish-backend.zip`, then upload the next `release:web` build. Do not upload the app build first: the profile link would point at pages that are not there.
-- Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
-  not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06
-  naming changes. Whether he has uploaded is not recorded: ask before assuming.
+- Deploys are by hand: cPanel File Manager for zips, phpMyAdmin for migrations (click the database name first, then Import). Upload
+  `parish-backend.zip` AND `web-release-app-shell.zip` together; an older app-shell zip overwrites newer parish files. Whether the other
+  `web-release-*` zips from the 2026-10-06 release are uploaded is not recorded: ask before assuming.
 - Replace the placeholder install icon in `images/app/` (dark square, gold ring, small double-barred cross;
   needs one square image, ideally 1024x1024 PNG, artwork well inside the edges; sizes can then be generated).
 - Drive:
