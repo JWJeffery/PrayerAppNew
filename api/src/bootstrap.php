@@ -22,6 +22,7 @@ require_once __DIR__ . '/Handlers/Register.php';
 require_once __DIR__ . '/Handlers/Admin.php';
 require_once __DIR__ . '/Handlers/ParishPages.php';
 require_once __DIR__ . '/Password.php';
+require_once __DIR__ . '/Social.php';
 require_once __DIR__ . '/Passkeys.php';
 require_once __DIR__ . '/Handlers/Account.php';
 
@@ -73,6 +74,7 @@ function uo_build_router(): Router
     $r->add('GET', '/reader/profile', ['AccountApi', 'getProfile']);
     $r->add('PUT', '/reader/profile', ['AccountApi', 'putProfile']);
     $r->add('POST', '/auth/password-login', ['AccountApi', 'passwordLogin']);
+    $r->add('POST', '/auth/social', ['AccountApi', 'socialLogin']);
     $r->add('POST', '/passkey/login/options', ['AccountApi', 'passkeyLoginOptions']);
     $r->add('POST', '/passkey/login', ['AccountApi', 'passkeyLogin']);
     $r->add('POST', '/account/reauth/request-code', ['AccountApi', 'reauthRequestCode']);

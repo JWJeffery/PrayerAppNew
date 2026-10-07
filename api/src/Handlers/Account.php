@@ -179,6 +179,49 @@ final class AccountApi
         Response::json(200, ['token' => $s['token'], 'expires_at' => $s['expires_at'], 'principal' => $s['principal']]);
     }
 
+    // ---- Other providers (Apple, Google, Facebook ...) -- switched off until a provider is added -------
+
+    /** POST /auth/social {provider, id_token, as} */
+    public static function socialLogin(array $params): void
+    {
+        $b = self::json();
+        if ($b === null) { return; }
+        $rl = RateLimit::hit('social_ip', Request::ip(), 40, self::HOUR);
+        if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return; }
+        $provider = $b['provider'] ?? null;
+        $verifier = Social::verifier($provider);
+        if ($verifier === null) { Response::error(400, 'provider_unavailable', 'That way of signing in is not available.'); return; }
+        $as = self::roleOf($b['as'] ?? null);
+        $token = $b['id_token'] ?? null;
+        $claims = (is_string($token) && $token !== '' && strlen($token) <= 8192) ? $verifier->verify($token) : null;
+        $subject = is_array($claims) && is_string($claims['subject'] ?? null) ? $claims['subject'] : '';
+        $pdo = Db::pdo();
+        $email = null;
+        if ($subject !== '' && strlen($subject) <= 255) {
+            $known = $pdo->prepare('SELECT id, email FROM identities WHERE provider = ? AND subject = ?');
+            $known->execute([$provider, $subject]);
+            $row = $known->fetch();
+            if ($row !== false) {
+                // Already linked: the provider's own stable id is what identifies them, even if their address there changed.
+                $email = $row['email'];
+                $pdo->prepare('UPDATE identities SET last_used_at = UTC_TIMESTAMP() WHERE id = ?')->execute([(int)$row['id']]);
+            } elseif (($claims['email_verified'] ?? false) === true && ($e = Auth::normalizeEmail($claims['email'] ?? null)) !== null) {
+                // First time: link to the account that owns this address. Only a provider-VERIFIED address may be
+                // linked, so nobody can claim an address they have not proved they own.
+                $email = $e;
+                if ($as === 'reader') {
+                    $pdo->prepare('INSERT INTO readers (email, created_at, last_login_at) VALUES (?, UTC_TIMESTAMP(), UTC_TIMESTAMP())
+                                   ON DUPLICATE KEY UPDATE last_login_at = UTC_TIMESTAMP()')->execute([$email]);
+                }
+                $pdo->prepare('INSERT INTO identities (provider, subject, email, created_at, last_used_at) VALUES (?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP())')
+                    ->execute([$provider, $subject, $email]);
+            }
+        }
+        $s = ($email !== null && $as !== null) ? self::startSession($as, $email) : null;
+        if ($s === null) { Response::error(401, 'unauthorized', 'That sign-in was not accepted.'); return; }
+        Response::json(200, ['token' => $s['token'], 'expires_at' => $s['expires_at'], 'principal' => $s['principal']]);
+    }
+
     // ---- Re-confirming with an emailed code -----------------------------------------
 
     /** POST /account/reauth/request-code */

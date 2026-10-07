@@ -227,3 +227,30 @@ foreach ([['POST', '/account/password'], ['DELETE', '/account/password'], ['GET'
     [$s] = http($m, "/api/v1$path", [], in_array($m, ['GET', 'DELETE'], true) ? null : []); if ($s !== 401) { $bad[] = "$m $path=$s"; }
 }
 t('every account route returns 401 without a session', $bad === [], implode(', ', $bad));
+
+section('Accounts: other sign-in providers (the seam; none is switched on)');
+$pdo->exec('TRUNCATE TABLE rate_limits');
+foreach (['google', 'apple', 'facebook', 'nonsense', 'GOOGLE', '../x'] as $prov) {
+    [$s, $b] = jpost('/auth/social', ['provider' => $prov, 'id_token' => 'x|a@b.org|yes', 'as' => 'reader']);
+    t("provider '$prov' is not available (400, nothing created)", $s === 400 && (jbody($b)['error'] ?? '') === 'provider_unavailable', "$s $b");
+}
+t('...and no account was created by those attempts', (int)$pdo->query("SELECT COUNT(*) FROM readers WHERE email='a@b.org'")->fetchColumn() === 0 && (int)$pdo->query('SELECT COUNT(*) FROM identities')->fetchColumn() === 0);
+// The stand-in provider "fakeid" (registered only by api/dev/router.php under UO_TEST_SOCIAL=1) proves the linking rules.
+[$s, $b] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-1|newcomer@example.org|yes', 'as' => 'reader']);
+t('a verified address from a provider creates a reader account and signs in', $s === 200 && (jbody($b)['principal'] ?? '') === 'reader', "$s $b");
+t('...and the provider identity is remembered', (int)$pdo->query("SELECT COUNT(*) FROM identities WHERE provider='fakeid' AND subject='sub-1' AND email='newcomer@example.org'")->fetchColumn() === 1);
+[$s, $b] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-1|changed@example.org|yes', 'as' => 'reader']);
+$tok = jbody($b)['token'] ?? '';
+[$s2, $b2] = http('GET', '/api/v1/me', auth_h($tok));
+t('the same provider identity returns to the same account even if its address there changed', $s === 200 && (jbody($b2)['email'] ?? '') === 'newcomer@example.org');
+[$s] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-2|attacker-target@example.org|no', 'as' => 'reader']);
+t('an address the provider has NOT verified is refused (401)', $s === 401);
+t('...and creates nothing', (int)$pdo->query("SELECT COUNT(*) FROM readers WHERE email='attacker-target@example.org'")->fetchColumn() === 0 && (int)$pdo->query("SELECT COUNT(*) FROM identities WHERE subject='sub-2'")->fetchColumn() === 0);
+[$s] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'garbage', 'as' => 'reader']);
+t('a token the provider does not vouch for is refused (401)', $s === 401);
+[$s] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-3|rector@acct.org|yes', 'as' => 'staff']);
+t('a verified address links to the rector of that address when signing in as staff', $s === 200);
+[$s] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-4|stranger@example.org|yes', 'as' => 'staff']);
+t('...but a stranger cannot sign in as staff or admin (401)', $s === 401);
+[$s] = jpost('/auth/social', ['provider' => 'fakeid', 'id_token' => 'sub-5|stranger@example.org|yes', 'as' => 'admin']);
+t('...nor as an administrator (401)', $s === 401);

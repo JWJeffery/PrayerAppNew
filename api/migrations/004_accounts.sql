@@ -34,6 +34,20 @@ CREATE TABLE IF NOT EXISTS passkeys (
   KEY idx_passkeys_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- A link between a person's address here and their identity at another sign-in provider (Apple, Google,
+-- Facebook ...), kept by the provider's own stable id for them. Empty until a provider is switched on; see
+-- documentation/ACCOUNTS_AND_SIGN_IN.md.
+CREATE TABLE IF NOT EXISTS identities (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  provider VARCHAR(20) NOT NULL,
+  subject VARCHAR(255) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  created_at DATETIME NOT NULL,
+  last_used_at DATETIME NULL,
+  UNIQUE KEY uq_identities_subject (provider, subject),
+  KEY idx_identities_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- One-time challenges for passkey registration and sign-in. Deleted when used or expired.
 CREATE TABLE IF NOT EXISTS webauthn_challenges (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,

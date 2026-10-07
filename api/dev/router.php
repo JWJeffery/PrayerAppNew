@@ -23,6 +23,20 @@ if (preg_match('#^/api(/|$)#', $uri)) {
         return true;
     }
     $_SERVER['SCRIPT_NAME'] = '/api/index.php';
+    if (getenv('UO_TEST_SOCIAL') === '1') {
+        // Tests only (this router is never deployed): a stand-in provider named "fakeid" whose token reads
+        // "subject|email|verified", so the sign-in-with-another-provider seam can be exercised end to end.
+        define('UO_API', true);
+        require "$root/api/src/bootstrap.php";
+        Social::register('fakeid', new class implements SocialVerifier {
+            public function verify(string $idToken): ?array {
+                $p = explode('|', $idToken);
+                return count($p) === 3 && $p[0] !== '' ? ['subject' => $p[0], 'email' => $p[1], 'email_verified' => $p[2] === 'yes'] : null;
+            }
+        });
+        uo_api_run();
+        return true;
+    }
     require "$root/api/index.php";
     return true;
 }
