@@ -77,14 +77,16 @@ final class AuthApi
         Response::json(200, ['status' => 'ok']);
     }
 
-    /** GET /me */
+    /** GET /me -- who is signed in, and how they can sign in (never the password or any secret). */
     public static function me(array $params): void
     {
         $p = Auth::require();
         if ($p === null) { return; }
-        if ($p['type'] === 'admin') { Response::json(200, ['principal' => 'admin', 'email' => $p['email']]); return; }
+        $account = AccountApi::summary((string)Auth::emailOf($p));
+        if ($p['type'] === 'admin') { Response::json(200, ['principal' => 'admin', 'email' => $p['email'], 'account' => $account]); return; }
+        if ($p['type'] === 'reader') { Response::json(200, ['principal' => 'reader', 'email' => $p['reader']['email'], 'account' => $account]); return; }
         $parish = $p['parish'];
         unset($parish['id']);
-        Response::json(200, ['principal' => 'staff', 'staff' => $p['staff'], 'parish' => $parish]);
+        Response::json(200, ['principal' => 'staff', 'staff' => $p['staff'], 'parish' => $parish, 'account' => $account]);
     }
 }

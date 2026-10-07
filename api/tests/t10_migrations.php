@@ -1,6 +1,6 @@
 <?php
 section('Migrations');
-t('first run applied 001_init and the later migrations', $applied === ['001_init', '002_parish_pages', '003_admins'], json_encode($applied));
+t('first run applied 001_init and the later migrations', $applied === ['001_init', '002_parish_pages', '003_admins', '004_accounts'], json_encode($applied));
 $tables = $pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);
 foreach (['schema_migrations', 'parishes', 'staff', 'login_codes', 'sessions', 'approval_tokens', 'intentions', 'rate_limits', 'audit_log'] as $tbl) {
     t("table exists: $tbl", in_array($tbl, $tables, true));

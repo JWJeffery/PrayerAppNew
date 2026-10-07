@@ -75,6 +75,17 @@ final class Crypto
         return $plain === false ? null : $plain;
     }
 
+    /** Seal arbitrary text at rest (secretbox, fresh nonce each time). unseal() returns null for anything altered. */
+    public static function seal(string $plain): string
+    {
+        return self::encryptJoinCode($plain);
+    }
+
+    public static function unseal(?string $blob): ?string
+    {
+        return self::decryptJoinCode($blob);
+    }
+
     /** Decrypt-and-compare (constant time) a reader-supplied code against the stored one. */
     public static function verifyJoinCode($input, ?string $blob): bool
     {

@@ -21,6 +21,9 @@ require_once __DIR__ . '/Handlers/Staff.php';
 require_once __DIR__ . '/Handlers/Register.php';
 require_once __DIR__ . '/Handlers/Admin.php';
 require_once __DIR__ . '/Handlers/ParishPages.php';
+require_once __DIR__ . '/Password.php';
+require_once __DIR__ . '/Passkeys.php';
+require_once __DIR__ . '/Handlers/Account.php';
 
 /**
  * Append a line to the API error log. Reason/class names only -- never request
@@ -64,6 +67,23 @@ function uo_build_router(): Router
     $r->add('POST', '/auth/request-code', ['AuthApi', 'requestCode']);
     $r->add('POST', '/auth/verify-code', ['AuthApi', 'verifyCode']);
     $r->add('POST', '/auth/logout', ['AuthApi', 'logout']);
+    // Optional accounts: reader sign-in, passwords, passkeys, saved settings (2026-10-07).
+    $r->add('POST', '/reader/request-code', ['AccountApi', 'readerRequestCode']);
+    $r->add('POST', '/reader/verify-code', ['AccountApi', 'readerVerifyCode']);
+    $r->add('GET', '/reader/profile', ['AccountApi', 'getProfile']);
+    $r->add('PUT', '/reader/profile', ['AccountApi', 'putProfile']);
+    $r->add('POST', '/auth/password-login', ['AccountApi', 'passwordLogin']);
+    $r->add('POST', '/passkey/login/options', ['AccountApi', 'passkeyLoginOptions']);
+    $r->add('POST', '/passkey/login', ['AccountApi', 'passkeyLogin']);
+    $r->add('POST', '/account/reauth/request-code', ['AccountApi', 'reauthRequestCode']);
+    $r->add('POST', '/account/reauth', ['AccountApi', 'reauth']);
+    $r->add('POST', '/account/password', ['AccountApi', 'setPassword']);
+    $r->add('DELETE', '/account/password', ['AccountApi', 'removePassword']);
+    $r->add('GET', '/account/passkeys', ['AccountApi', 'listPasskeys']);
+    $r->add('POST', '/account/passkeys/options', ['AccountApi', 'passkeyRegisterOptions']);
+    $r->add('POST', '/account/passkeys', ['AccountApi', 'passkeyRegister']);
+    $r->add('DELETE', '/account/passkeys/{id}', ['AccountApi', 'passkeyDelete']);
+    $r->add('DELETE', '/account', ['AccountApi', 'deleteAccount']);
     $r->add('GET', '/me', ['AuthApi', 'me']);
     // Staff endpoints (spec 8.4); the parish always comes from the session.
     $r->add('GET', '/staff/intentions', ['StaffApi', 'listIntentions']);
