@@ -24,6 +24,10 @@ components:
       type: http
       scheme: bearer
       description: Session token from POST /admin/auth/verify-code, POST /auth/password-login (as admin) or POST /passkey/login (as admin).
+    dioceseToken:
+      type: http
+      scheme: bearer
+      description: Diocese editor session token from POST /diocese/auth/verify-code, POST /auth/password-login (as diocese) or POST /passkey/login (as diocese).
     readerToken:
       type: http
       scheme: bearer
@@ -31,7 +35,7 @@ components:
     anyToken:
       type: http
       scheme: bearer
-      description: Any signed-in session (reader, rector or helper, administrator).
+      description: Any signed-in session (reader, rector or helper, diocese editor, administrator).
     parishPass:
       type: apiKey
       in: header
@@ -101,7 +105,7 @@ components:
       properties:
         token: { type: string, description: "Bearer token, 64 hex characters; keep it, send it in the Authorization header." }
         expires_at: { type: string, format: date-time }
-        principal: { type: string, enum: [reader, staff, admin] }
+        principal: { type: string, enum: [reader, staff, admin, diocese] }
         account: { $ref: "#/components/schemas/AccountSummary" }
     AccountSummary:
       type: object
@@ -324,7 +328,7 @@ paths:
       summary: Sign in with an email address and password. `as` chooses the role. One generic 401 for every failure (wrong password, unknown address, a role the address does not hold).
       requestBody:
         required: true
-        content: { application/json: { schema: { type: object, required: [email, password, as], properties: { email: { type: string }, password: { type: string }, as: { type: string, enum: [reader, staff, admin] } } } } }
+        content: { application/json: { schema: { type: object, required: [email, password, as], properties: { email: { type: string }, password: { type: string }, as: { type: string, enum: [reader, staff, admin, diocese] } } } } }
       responses:
         "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
         "401": { $ref: "#/components/responses/Unauthorized" }
@@ -334,7 +338,7 @@ paths:
       summary: Sign in with another provider (Apple, Google, Facebook). Switched off until a provider is enabled in the private config; every provider answers 400 provider_unavailable today.
       requestBody:
         required: true
-        content: { application/json: { schema: { type: object, required: [provider, id_token, as], properties: { provider: { type: string }, id_token: { type: string }, as: { type: string, enum: [reader, staff, admin] } } } } }
+        content: { application/json: { schema: { type: object, required: [provider, id_token, as], properties: { provider: { type: string }, id_token: { type: string }, as: { type: string, enum: [reader, staff, admin, diocese] } } } } }
       responses:
         "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
         "400": { description: "provider_unavailable.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
@@ -351,7 +355,7 @@ paths:
       summary: Finish a passkey sign-in with the browser's assertion (base64url fields). `as` chooses the role.
       requestBody:
         required: true
-        content: { application/json: { schema: { type: object, required: [token, as, id, clientDataJSON, authenticatorData, signature], properties: { token: { type: string }, as: { type: string, enum: [reader, staff, admin] }, id: { type: string }, clientDataJSON: { type: string }, authenticatorData: { type: string }, signature: { type: string } } } } }
+        content: { application/json: { schema: { type: object, required: [token, as, id, clientDataJSON, authenticatorData, signature], properties: { token: { type: string }, as: { type: string, enum: [reader, staff, admin, diocese] }, id: { type: string }, clientDataJSON: { type: string }, authenticatorData: { type: string }, signature: { type: string } } } } }
       responses:
         "200": { description: Signed in., content: { application/json: { schema: { $ref: "#/components/schemas/SessionAnswer" } } } }
         "401": { $ref: "#/components/responses/Unauthorized" }
@@ -494,7 +498,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  principal: { type: string, enum: [staff, admin] }
+                  principal: { type: string, enum: [staff, admin, reader, diocese] }
                   email: { type: string }
                   staff: { type: object }
                   parish: { type: object }
@@ -860,6 +864,98 @@ paths:
         - { name: id, in: path, required: true, schema: { type: integer } }
       responses:
         "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /diocese/auth/request-code:
+    post:
+      summary: Email a diocese-editor code (only to addresses an administrator designated). Identical response either way.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/EmailBody" } } } }
+      responses:
+        "200": { description: Generic acknowledgement., content: { application/json: { schema: { $ref: "#/components/schemas/Generic" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /diocese/auth/verify-code:
+    post:
+      summary: Exchange a code for a diocese-editor session token.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/CodeBody" } } } }
+      responses:
+        "200":
+          description: Signed in.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+                  expires_at: { type: string, format: date-time }
+                  diocese: { type: object, properties: { key: { type: string } } }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /diocese/page:
+    put:
+      summary: Replace the editor's own diocese page details. The diocese always comes from the session. Omitted fields are cleared.
+      security: [ { dioceseToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, properties: { bishop_name: { type: string, maxLength: 120 }, website: { type: string, maxLength: 255 }, convention_dates: { type: array, items: { type: string, maxLength: 120 }, maxItems: 6 } } } } }
+      responses:
+        "200": { description: Saved., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /diocese/prayers:
+    post:
+      summary: Add an item to the editor's own diocese's prayer list (1-200 characters; `days` 1-45, default 21; at most 60).
+      security: [ { dioceseToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string, maxLength: 200 }, days: { type: integer, minimum: 1, maximum: 45, default: 21 } } } } }
+      responses:
+        "201": { description: Created., content: { application/json: { schema: { type: object, properties: { prayer: { type: object, properties: { id: { type: integer }, text: { type: string } } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "409": { description: "limit_reached -- 60 items.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /diocese/prayers/{id}:
+    delete:
+      summary: Remove an item from the editor's own diocese's prayer list.
+      security: [ { dioceseToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /admin/dioceses/{body}/{name}/editors:
+    get:
+      summary: The people designated to keep this diocese's page (administrator).
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string } }
+        - { name: name, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: The editors., content: { application/json: { schema: { type: object, properties: { editors: { type: array, items: { type: object, properties: { id: { type: integer }, email: { type: string }, added_at: { type: string, format: date-time } } } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+    post:
+      summary: Designate an editor for this diocese (administrator). One address keeps at most one diocese. They are emailed how to sign in.
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: body, in: path, required: true, schema: { type: string } }
+        - { name: name, in: path, required: true, schema: { type: string } }
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/EmailBody" } } } }
+      responses:
+        "201": { description: Added., content: { application/json: { schema: { type: object, properties: { editor: { type: object, properties: { id: { type: integer }, email: { type: string } } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { description: That address already keeps a diocesan page., content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+  /admin/diocese-editors/{id}:
+    delete:
+      summary: Remove a diocese editor (administrator). Their sessions end at once.
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Removed., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
         "403": { $ref: "#/components/responses/Forbidden" }
         "404": { $ref: "#/components/responses/NotFound" }
   /admin/admins:

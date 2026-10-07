@@ -12,6 +12,7 @@ that readers have no accounts (`PARISH_INTENTIONS_BUILD_SPEC.md`, section 0 item
 | **Reader** (anyone using the app) | emailed code, optional password, optional passkey | the app: Profile → *Your account (optional)* |
 | **Rector / helper** | emailed code, optional password, optional passkey | `/parish/` → Parish settings → *Sign-in options* |
 | **Administrator** | emailed code, optional password, optional passkey | `/parish/admin.html` → *Sign-in options* |
+| **Diocese editor** (designated by an administrator for one diocese) | emailed code, optional password, optional passkey | `/parish/diocese-admin.html` → *Sign-in options* |
 
 - **Emailed code always works.** It is also how someone who forgets a password gets back in, and how a new password is set.
 - A reader account exists only after the first correct emailed code. It keeps the person's **settings** (the same
@@ -20,6 +21,21 @@ that readers have no accounts (`PARISH_INTENTIONS_BUILD_SPEC.md`, section 0 item
 - One **password** per email address, shared by whatever roles that address holds (reader, rector, administrator).
 - **Passkeys** are sign-in without typing: Face ID, a fingerprint or a device PIN. Sign-in is usernameless (the browser
   offers the passkeys it holds for this site), so nothing is typed and nothing reveals which addresses exist.
+
+## Diocese sign-in (added 2026-10-07)
+
+A diocese keeps its own page (bishop, website, convention dates, the bishop's prayer list) through a **diocese editor**.
+
+- **Nobody can claim a diocese.** A global administrator designates an editor on `/parish/admin.html` → *Diocesan pages* → choose the
+  diocese → *Who keeps this page* → *Add editor*. The person is emailed the sign-in address. Removing them ends their sign-in at once.
+- **One address keeps at most one diocese** (`diocese_staff.email` is unique). The administrators and owners can still edit any diocese.
+- **The diocese comes from the server's record, never the request.** An editor's writes go to `PUT /diocese/page`, `POST /diocese/prayers`
+  and `DELETE /diocese/prayers/{id}`; a diocese named in the body or URL is ignored or refused. Editors cannot reach any administrator,
+  parish or reader endpoint, and cannot list or add editors.
+- Sign-in is the same as everyone else's: emailed code (`/diocese/auth/request-code`, `/diocese/auth/verify-code`), optional password and
+  passkey (`as: 'diocese'`), the same 15-minute fresh-confirmation rule, the same rate limits and no-enumeration answers. One password
+  and one set of passkeys per email address, shared by every role that address holds.
+- Migration `005_diocese_staff.sql` adds the `diocese_staff` table (20 tables in all), the `diocese` session kind and its code purpose.
 
 ## Security decisions (and why)
 
@@ -81,7 +97,8 @@ Apple's "hide my email" gives a private relay address: it simply becomes its own
 
 `php api/tests/run.php` covers all of this: `t98_accounts.php` (reader sign-in, saved settings, passwords, confirming,
 passkey endpoints, the social seam, deleting an account) and, in a real browser with Chromium's virtual authenticator,
-`t99_accounts_browser.php` (the full passkey ceremony for a reader and a rector, password sign-in for a reader, a rector
+`t99a_diocese_staff.php` (diocese sign-in: designating, code and password sign-in, one-diocese scoping, removal) and, in a real browser with
+Chromium's virtual authenticator, `t99_accounts_browser.php` (the full passkey ceremony for a reader and a rector, password sign-in for a reader, a rector
 and an administrator, the second-device choice, deleting the account).
 
 ## What is not built (decisions for later)

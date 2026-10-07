@@ -228,6 +228,67 @@ console.log('Browser: admin page, administrators');
   await page.context().close();
 }
 
+// ------------------------------------------------------------ admin designates a diocese editor; the editor keeps their page
+console.log('Browser: diocese editor');
+{
+  const page = await newPage([(tok) => localStorage.setItem('uoAdminSession', JSON.stringify({ token: tok, expires_at: '2099-01-01T00:00:00Z' })), fx.adminToken]);
+  await page.goto(`${BASE}/parish/admin.html`);
+  await page.waitForSelector('#dio-select', { state: 'visible', timeout: 8000 });
+  await page.selectOption('#dio-select', fx.diocese);
+  await page.waitForSelector('#dio-edit:not([hidden])');
+  await page.waitForSelector('#editor-empty:not([hidden])', { timeout: 8000 });
+  t('a diocese with no editor says so plainly', (await page.locator('#editor-empty').innerText()).includes('Nobody has been designated'));
+  await page.fill('#editor-new-email', 'new.editor@example.org');
+  await page.getByRole('button', { name: 'Add editor' }).click();
+  await page.waitForFunction(() => [...document.querySelectorAll('#editor-list li')].some((li) => li.textContent.includes('new.editor@example.org')), null, { timeout: 8000 });
+  t('the administrator designates an editor and sees them listed', true);
+  await page.fill('#editor-new-email', 'new.editor@example.org');
+  await page.getByRole('button', { name: 'Add editor' }).click();
+  await page.waitForSelector('#editors-status.bad', { timeout: 8000 });
+  t('designating the same address again says so plainly', (await page.locator('#editors-status').innerText()).includes('already'));
+  await page.getByRole('button', { name: 'Remove new.editor@example.org' }).click();
+  await page.getByRole('dialog').getByRole('button', { name: 'Remove' }).click();
+  await page.waitForFunction(() => ![...document.querySelectorAll('#editor-list li')].some((li) => li.textContent.includes('new.editor@example.org')), null, { timeout: 8000 });
+  t('removing asks first, then removes them', true);
+  await page.context().close();
+
+  const anon = await newPage();
+  await anon.goto(`${BASE}/parish/diocese-admin.html`);
+  await anon.waitForSelector('#view-signin:not([hidden])');
+  t('without a sign-in the editor page shows only the sign-in form', (await anon.locator('#view-edit').isHidden()) && !(await anon.locator('#form-email').isHidden()));
+  t('the sign-in form fits a phone', await noSideScroll(anon));
+  await anon.context().close();
+
+  const ed = await newPage([(tok) => localStorage.setItem('uoDioceseSession', JSON.stringify({ token: tok, expires_at: '2099-01-01T00:00:00Z' })), fx.editorToken]);
+  await ed.goto(`${BASE}/parish/diocese-admin.html`);
+  await ed.waitForSelector('#view-edit:not([hidden])', { timeout: 8000 });
+  t('a signed-in editor sees the page for their own diocese', (await ed.locator('#h-edit').textContent()).startsWith('Iowa'));
+  await ed.fill('#dio-bishop', 'The Rt. Rev. Iowa Editor ' + fx.hostile);
+  await ed.fill('#dio-dates', 'Convention: Nov 1');
+  await ed.getByRole('button', { name: 'Save diocesan page' }).click();
+  await ed.waitForSelector('#dio-status.ok', { timeout: 8000 });
+  await ed.fill('#dp-text', 'For Iowa ' + fx.hostile);
+  await ed.getByRole('button', { name: 'Add to the list' }).click();
+  await ed.waitForFunction(() => [...document.querySelectorAll('#dp-list .item')].some((li) => li.textContent.includes('For Iowa')), null, { timeout: 8000 });
+  t('the editor saves their page and adds a prayer item', true);
+  t('hostile text shows as text and runs nothing', (await ed.locator('#dp-list img').count()) === 0 && !(await pwned(ed)));
+  t('the editor page fits a phone', await noSideScroll(ed));
+  const pub = await newPage();
+  await pub.goto(`${BASE}/parish/diocese.html?d=${fx.editorDiocese}`);
+  await pub.waitForSelector('#view-diocese:not([hidden])');
+  const text = await pub.locator('#view-diocese').innerText();
+  t('readers see the editor\'s changes on that diocese', text.includes('The Rt. Rev. Iowa Editor') && text.includes('Convention: Nov 1') && text.includes('For Iowa'));
+  const other = await newPage();
+  await other.goto(`${BASE}/parish/diocese.html?d=${fx.diocese}`);
+  await other.waitForSelector('#view-diocese:not([hidden])');
+  t('...and another diocese\'s page is untouched', !(await other.locator('#view-diocese').innerText()).includes('Iowa Editor'));
+  await other.context().close();
+  await ed.getByRole('button', { name: 'Log out' }).click();
+  await ed.waitForSelector('#view-signin:not([hidden])', { timeout: 8000 });
+  t('logging out returns to the sign-in form', (await ed.locator('#view-edit').isHidden()));
+  await ed.context().close(); await pub.context().close();
+}
+
 console.log('Browser: parish pages overall');
 t('no alert dialogs opened', problems.dialogs.length === 0, problems.dialogs.join(' | '));
 t('no Content-Security-Policy violations', problems.csp.length === 0, problems.csp.join(' | '));

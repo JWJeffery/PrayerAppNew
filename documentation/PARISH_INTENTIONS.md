@@ -283,7 +283,7 @@ harmless. After it, the left column of phpMyAdmin shows 13 tables. Then rebuild 
 | **Parish home page**: service times, rector, address, website, Follow / Join | `https://theuniversaloffice.com/parish/home.html?p=<parish short name>`; the profile in the app links to it once a parish is followed | The rector: dashboard -> **Parish page** tab -> *About your parish* |
 | **Rector's announcements**: short note pinned at the top of the parish page, 1-45 days (7 by default), up to 5 at once | the parish page | Rector or helpers: **Parish page** tab -> *Announcements* |
 | **Parish events**: vestry meetings, funerals, the parish supper, feast-day services | the parish page ("Coming up") | Rector or helpers: **Parish page** tab -> *Coming events* |
-| **Diocesan page**: bishop, convention dates, the bishop's prayer list, the diocese's parishes, "pray for a parish today" | `https://theuniversaloffice.com/parish/diocese.html?d=episcopal/western-oregon` | **You**, on the admin page, under *Diocesan pages* (a diocese has no sign-in of its own yet) |
+| **Diocesan page**: bishop, convention dates, the bishop's prayer list, the diocese's parishes, "pray for a parish today" | `https://theuniversaloffice.com/parish/diocese.html?d=episcopal/western-oregon` | **You**, on the admin page, under *Diocesan pages*; or a **diocese editor** you designate there, who signs in at `https://theuniversaloffice.com/parish/diocese-admin.html` |
 
 How they behave, so nothing surprises you:
 
@@ -320,6 +320,12 @@ their settings on every device; rectors, helpers and administrators can add a pa
 Emailed codes keep working and nothing is required. Everything about it, including deploying it and adding Apple, Google
 or Facebook sign-in later, is in `ACCOUNTS_AND_SIGN_IN.md`. Import `004_accounts.sql` the same way as `002` and `003`
 (you should then have 19 tables), and upload **both** zips.
+
+**Diocese sign-in (migration `005_diocese_staff.sql`, 2026-10-07).** On the admin page, under *Diocesan pages*, choose a diocese and, under
+*Who keeps this page*, add an email address. That person is emailed the address `parish/diocese-admin.html`, signs in with an emailed code (a
+password or passkey is optional), and can edit only that diocese's page. One address keeps one diocese; removing them ends their access at
+once. Nobody can claim a diocese for themselves. Details: `ACCOUNTS_AND_SIGN_IN.md`. To deploy: import `005_diocese_staff.sql` in phpMyAdmin the
+same way as `002` to `004` (you should then have 20 tables), and upload `parish-backend.zip` (no app-shell change is needed).
 
 **Not built (your call):** a Collect and readings beside each service time ("this Sunday's Collect"). The app works
 those out in the browser from its liturgical calendar engine and has no way to open a given date from a link, so it

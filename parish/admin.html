@@ -90,10 +90,20 @@
 
     <section id="view-dioceses" class="panel" hidden aria-labelledby="h-dioceses">
       <h2 id="h-dioceses">Diocesan pages</h2>
-      <p class="muted small">A diocese has no sign-in of its own yet, so its page is kept here. Readers see it at <span class="muted">parish/diocese.html</span>.</p>
+      <p class="muted small">You can keep any diocese's page here, or designate someone to keep their own diocese's page: they sign in at <span class="muted">parish/diocese-admin.html</span>. Readers see the page at <span class="muted">parish/diocese.html</span>.</p>
       <label for="dio-select">Diocese</label>
       <select id="dio-select"><option value="">Choose a diocese&hellip;</option></select>
       <div id="dio-edit" hidden>
+        <h3>Who keeps this page</h3>
+        <ul id="editor-list" class="people"></ul>
+        <p id="editor-empty" class="muted small" hidden>Nobody has been designated. Only you and the other administrators can edit this page.</p>
+        <form id="form-editor-add" novalidate>
+          <label for="editor-new-email">Designate an editor (email address)</label>
+          <input id="editor-new-email" type="email" autocomplete="off" inputmode="email">
+          <p class="field-hint">They are emailed instructions and sign in with an emailed 6-digit code. One address can keep only one diocese.</p>
+          <div class="row"><button type="submit" id="btn-editor-add">Add editor</button></div>
+        </form>
+        <p id="editors-status" class="status" role="status" aria-live="polite" hidden></p>
         <form id="form-diocese" novalidate>
           <label for="dio-bishop">Bishop's name</label>
           <input id="dio-bishop" type="text" maxlength="120" autocomplete="off">

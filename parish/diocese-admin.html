@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Keep your diocese's page</title>
+  <link rel="stylesheet" href="parish.css?v=4">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <p class="kicker">The Universal Office &middot; Diocese</p>
+    <nav aria-label="Account">
+      <span id="who" class="who" hidden></span>
+      <a id="view-link" class="small" href="diocese.html" hidden>View the page</a>
+      <button id="logout" type="button" class="small" hidden>Log out</button>
+    </nav>
+  </header>
+
+  <noscript><main><div class="panel"><p>This page needs JavaScript to work.</p></div></main></noscript>
+
+  <main class="wide">
+    <section id="view-signin" class="panel" aria-labelledby="h-signin">
+      <h1 id="h-signin" tabindex="-1">Diocese sign in</h1>
+      <p>For the person a Universal Office administrator has designated to keep a diocese's page. Enter your email address. We email you a 6-digit code.</p>
+      <form id="form-email" novalidate>
+        <label for="signin-email">Email address</label>
+        <input id="signin-email" type="email" autocomplete="email" inputmode="email" required>
+        <div class="row"><button type="submit" class="primary" id="btn-send-code">Send code</button></div>
+      </form>
+      <form id="form-code" hidden novalidate>
+        <p class="muted small">If that address has been designated, a code has been sent. It expires in 10 minutes.</p>
+        <label for="signin-code">6-digit code</label>
+        <input id="signin-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required>
+        <div class="row">
+          <button type="submit" class="primary" id="btn-verify">Sign in</button>
+          <button type="button" class="linklike" id="btn-other-email">Use a different email</button>
+        </div>
+      </form>
+      <details class="alt-signin" id="alt-signin">
+        <summary>Other ways to sign in</summary>
+        <form id="form-password" novalidate>
+          <label for="pw-email">Email address</label>
+          <input id="pw-email" type="email" autocomplete="username" inputmode="email">
+          <label for="pw-password">Password</label>
+          <input id="pw-password" type="password" autocomplete="current-password">
+          <div class="row"><button type="submit" id="btn-pw-signin">Sign in with password</button></div>
+        </form>
+        <div class="row" id="passkey-row"><button type="button" id="btn-passkey-signin">Sign in with a passkey</button></div>
+        <p class="field-hint">Only if you have already added one. An emailed code always works.</p>
+      </details>
+      <p id="signin-status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section id="view-edit" class="panel" hidden aria-labelledby="h-edit">
+      <h1 id="h-edit" tabindex="-1">Your diocese's page</h1>
+      <p class="muted small">Readers see this at <span class="muted">parish/diocese.html</span>. Everything you type is shown as plain text.</p>
+      <form id="form-diocese" novalidate>
+        <label for="dio-bishop">Bishop's name</label>
+        <input id="dio-bishop" type="text" maxlength="120" autocomplete="off">
+        <label for="dio-site">Diocesan website</label>
+        <input id="dio-site" type="text" maxlength="255" inputmode="url" autocomplete="off" placeholder="https://">
+        <label for="dio-dates">Convention and other dates (one per line, up to 6)</label>
+        <textarea id="dio-dates" rows="4"></textarea>
+        <div class="row"><button type="submit" class="primary" id="btn-save-diocese">Save diocesan page</button></div>
+      </form>
+      <h2>The bishop's prayer list</h2>
+      <form id="form-dprayer" novalidate>
+        <label for="dp-text">Add an item (200 characters at most)</label>
+        <input id="dp-text" type="text" maxlength="200" autocomplete="off">
+        <label for="dp-days">Show it for (days)</label>
+        <input id="dp-days" type="number" min="1" max="45" step="1" value="21" inputmode="numeric">
+        <div class="row"><button type="submit" id="btn-add-dprayer">Add to the list</button></div>
+      </form>
+      <ul id="dp-list" class="items"></ul>
+      <p id="dp-empty" class="muted" hidden>No prayer items showing.</p>
+      <p id="dio-status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section id="view-security" class="panel" hidden aria-label="Sign-in options">
+      <div id="security-panel"></div>
+    </section>
+  </main>
+
+  <script src="../js/account-core.js"></script>
+  <script src="common.js"></script>
+  <script src="account-panel.js"></script>
+  <script src="dioceses.js"></script>
+  <script src="diocese-admin.js"></script>
+</body>
+</html>

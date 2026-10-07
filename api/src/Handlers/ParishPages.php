@@ -388,29 +388,39 @@ final class ParishPagesApi
         Response::json(200, ['status' => 'ok']);
     }
 
-    // ---- Admin: diocesan page -------------------------------------------------------
+    // ---- Diocesan page: written by a global administrator (any diocese) or by that diocese's own editor ----------
 
-    private static function admin(bool $write): ?array
+    /**
+     * Who may write, and which diocese. The /admin/dioceses/{body}/{name} routes carry the diocese in the URL and
+     * need a global administrator (re-checked on every call). The /diocese/... routes carry none: a diocese editor
+     * always writes to the diocese on their own session, whatever the client sends. Returns [key, actor] or null
+     * after emitting the error.
+     */
+    private static function dioceseScope(array $params, bool $write): ?array
     {
         $p = Auth::require();
         if ($p === null) { return null; }
-        if ($p['type'] !== 'admin') { Response::error(403, 'forbidden', 'Not allowed.'); return null; }
-        $email = Auth::normalizeEmail($p['email'] ?? null);
-        if ($email === null || !AdminApi::isAdminEmail($email)) { Response::error(401, 'unauthorized', 'Authentication required.'); return null; }
+        $own = !array_key_exists('body', $params);
+        if ($p['type'] !== ($own ? 'diocese' : 'admin')) { Response::error(403, 'forbidden', 'Not allowed.'); return null; }
+        if (!$own) {
+            $email = Auth::normalizeEmail($p['email'] ?? null);
+            if ($email === null || !AdminApi::isAdminEmail($email)) { Response::error(401, 'unauthorized', 'Authentication required.'); return null; }
+        }
         if ($write) {
-            $rl = RateLimit::hit('adminwrite', 'session:' . $p['session_id'], 60, self::HOUR);
+            $rl = RateLimit::hit($own ? 'dioceseWrite' : 'adminwrite', 'session:' . $p['session_id'], 60, self::HOUR);
             if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return null; }
         }
-        return $p;
+        $key = $own ? $p['diocese_key'] : self::dioceseKeyFrom($params);
+        if ($key === null) { Response::error(404, 'not_found', 'Not found.'); return null; }
+        return [$key, $own ? 'diocese:' . $p['diocese_staff_id'] : 'admin'];
     }
 
-    /** PUT /admin/dioceses/{body}/{name} {bishop_name, website, convention_dates[]} -- replaces all three. */
-    public static function adminPutDiocese(array $params): void
+    /** PUT /admin/dioceses/{body}/{name} or PUT /diocese/page {bishop_name, website, convention_dates[]} -- replaces all three. */
+    public static function putDiocese(array $params): void
     {
-        $p = self::admin(true);
-        if ($p === null) { return; }
-        $key = self::dioceseKeyFrom($params);
-        if ($key === null) { Response::error(404, 'not_found', 'Not found.'); return; }
+        $scope = self::dioceseScope($params, true);
+        if ($scope === null) { return; }
+        [$key, $actor] = $scope;
         [$b] = Request::jsonBody();
         if ($b === null) { Response::error(400, 'bad_request', 'Bad request.'); return; }
         $errors = [];
@@ -423,17 +433,16 @@ final class ParishPagesApi
                             ON DUPLICATE KEY UPDATE bishop_name = VALUES(bishop_name), website = VALUES(website),
                                                     convention_dates = VALUES(convention_dates), updated_at = UTC_TIMESTAMP()')
             ->execute([$key, $bishop, $site, Validate::joinLines($dates)]);
-        Audit::log('admin', null, 'diocese.put', $key);
+        Audit::log($actor, null, 'diocese.put', $key);
         Response::json(200, ['status' => 'ok']);
     }
 
-    /** POST /admin/dioceses/{body}/{name}/prayers {text, days?} */
-    public static function adminAddPrayer(array $params): void
+    /** POST /admin/dioceses/{body}/{name}/prayers or POST /diocese/prayers {text, days?} */
+    public static function addDiocesePrayer(array $params): void
     {
-        $p = self::admin(true);
-        if ($p === null) { return; }
-        $key = self::dioceseKeyFrom($params);
-        if ($key === null) { Response::error(404, 'not_found', 'Not found.'); return; }
+        $scope = self::dioceseScope($params, true);
+        if ($scope === null) { return; }
+        [$key, $actor] = $scope;
         [$b] = Request::jsonBody();
         if ($b === null) { Response::error(400, 'bad_request', 'Bad request.'); return; }
         $errors = [];
@@ -450,22 +459,22 @@ final class ParishPagesApi
         $pdo->prepare('INSERT INTO diocese_prayers (diocese_key, body, created_at, expires_at)
                        VALUES (?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL ? DAY)')->execute([$key, $text, $days]);
         $id = (int)$pdo->lastInsertId();
-        Audit::log('admin', null, 'diocese.prayer.add', "id=$id");
+        Audit::log($actor, null, 'diocese.prayer.add', "id=$id");
         Response::json(201, ['prayer' => ['id' => $id, 'text' => $text]]);
     }
 
-    /** DELETE /admin/dioceses/{body}/{name}/prayers/{id} */
-    public static function adminDeletePrayer(array $params): void
+    /** DELETE /admin/dioceses/{body}/{name}/prayers/{id} or DELETE /diocese/prayers/{id} */
+    public static function deleteDiocesePrayer(array $params): void
     {
-        $p = self::admin(true);
-        if ($p === null) { return; }
-        $key = self::dioceseKeyFrom($params);
+        $scope = self::dioceseScope($params, true);
+        if ($scope === null) { return; }
+        [$key, $actor] = $scope;
         $id = (string)($params['id'] ?? '');
-        if ($key === null || !ctype_digit($id) || strlen($id) > 18) { Response::error(404, 'not_found', 'Not found.'); return; }
+        if (!ctype_digit($id) || strlen($id) > 18) { Response::error(404, 'not_found', 'Not found.'); return; }
         $n = Db::pdo()->prepare('DELETE FROM diocese_prayers WHERE id = ? AND diocese_key = ?');
         $n->execute([(int)$id, $key]);
         if ($n->rowCount() === 0) { Response::error(404, 'not_found', 'Not found.'); return; }
-        Audit::log('admin', null, 'diocese.prayer.delete', "id=$id");
+        Audit::log($actor, null, 'diocese.prayer.delete', "id=$id");
         Response::json(200, ['status' => 'ok']);
     }
 }

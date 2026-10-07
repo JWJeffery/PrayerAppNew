@@ -73,8 +73,9 @@ final class AccountApi
         Db::pdo()->prepare("DELETE FROM sessions WHERE id <> ? AND (
                               admin_email = ?
                               OR staff_id IN (SELECT id FROM staff WHERE email = ?)
-                              OR reader_id IN (SELECT id FROM readers WHERE email = ?))")
-            ->execute([$keepSessionId, $email, $email, $email]);
+                              OR reader_id IN (SELECT id FROM readers WHERE email = ?)
+                              OR diocese_staff_id IN (SELECT id FROM diocese_staff WHERE email = ?))")
+            ->execute([$keepSessionId, $email, $email, $email, $email]);
     }
 
     /** Start a session for $email in role $as ('staff' | 'admin' | 'reader'); null when that address does not hold the role. */
@@ -97,6 +98,15 @@ final class AccountApi
             Audit::log('admin', null, 'session.create');
             return $s + ['principal' => 'admin'];
         }
+        if ($as === 'diocese') {
+            $st = $pdo->prepare('SELECT id FROM diocese_staff WHERE email = ?');
+            $st->execute([$email]);
+            $id = $st->fetchColumn();
+            if ($id === false) { return null; }
+            $s = Auth::createSession('diocese', null, null, null, (int)$id);
+            Audit::log('diocese:' . $id, null, 'session.create');
+            return $s + ['principal' => 'diocese'];
+        }
         if ($as === 'reader') {
             $st = $pdo->prepare('SELECT id FROM readers WHERE email = ?');
             $st->execute([$email]);
@@ -112,7 +122,7 @@ final class AccountApi
 
     private static function roleOf($v): ?string
     {
-        return in_array($v, ['staff', 'admin', 'reader'], true) ? $v : null;
+        return in_array($v, ['staff', 'admin', 'reader', 'diocese'], true) ? $v : null;
     }
 
     // ---- Readers: emailed code ---------------------------------------------------
@@ -297,6 +307,7 @@ final class AccountApi
 
     private static function actor(array $p): string
     {
+        if ($p['type'] === 'diocese') { return 'diocese:' . $p['diocese_staff_id']; }
         return $p['type'] === 'staff' ? 'staff:' . $p['staff']['id'] : ($p['type'] === 'reader' ? 'reader:' . $p['reader']['id'] : 'admin');
     }
 
@@ -456,7 +467,9 @@ final class AccountApi
         $pdo->prepare('DELETE FROM readers WHERE id = ?')->execute([$p['reader']['id']]);   // their sessions go with it
         $other = $pdo->prepare('SELECT 1 FROM staff WHERE email = ? LIMIT 1');
         $other->execute([$email]);
-        if ($other->fetchColumn() === false && !AdminApi::isAdminEmail($email)) {
+        $otherDio = $pdo->prepare('SELECT 1 FROM diocese_staff WHERE email = ? LIMIT 1');
+        $otherDio->execute([$email]);
+        if ($other->fetchColumn() === false && $otherDio->fetchColumn() === false && !AdminApi::isAdminEmail($email)) {
             // The address holds no other role, so its password and passkeys go too.
             $pdo->prepare('DELETE FROM credentials WHERE email = ?')->execute([$email]);
             $pdo->prepare('DELETE FROM passkeys WHERE email = ?')->execute([$email]);
