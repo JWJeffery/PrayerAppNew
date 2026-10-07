@@ -6,17 +6,18 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
   <title>Privacy notice for parish prayer requests</title>
-  <link rel="stylesheet" href="parish.css">
+  <link rel="stylesheet" href="parish.css?v=4">
+  <script src="theme.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <p class="kicker">The Universal Office</p>
+    <a class="kicker" href="../index.html">The Universal Office</a>
     <nav aria-label="Pages"><a href="index.html">Parish sign in</a></nav>
   </header>
   <main>
     <article class="panel">
-      <h1>Privacy notice: parish prayer requests</h1>
-      <p class="muted small">This is a plain-language description of how the parish prayer-request feature handles information. It is not legal advice.</p>
+      <h1>Privacy notice</h1>
+      <p class="muted small">This is a plain-language description of how the parish prayer-request feature and optional accounts handle information. It is not legal advice.</p>
 
       <h2>A word before you add anything</h2>
       <p class="reminder">Add names only with the person's or family's permission &mdash; first names or initials are fine. Please don't share overly sensitive information, such as detailed medical, legal, financial or family details. When in doubt, keep it general.</p>
@@ -26,12 +27,14 @@
         <li><strong>For rectors and helpers:</strong> your email address, the name you give us, and your role.</li>
         <li><strong>Prayer requests:</strong> the text a rector or helper types, its category and its dates.</li>
         <li><strong>For rate limiting only:</strong> a scrambled (hashed) form of your network address, which cannot be turned back into the address. These are deleted within two days.</li>
+        <li><strong>If you create an optional reader account:</strong> your email address and the settings you choose to keep (your name, tradition, diocese and the parish you follow). Your settings are stored encrypted. If you add a password, only a salted one-way hash of it is kept, which we cannot read or recover. If you add a passkey, only its public part is kept; the private key never leaves your device. Signing in creates a sign-in token that lasts up to 30 days.</li>
         <li><strong>Records of actions:</strong> a short log that says <em>what</em> was done (for example, &ldquo;a request was added&rdquo;), never the request text, names or email addresses. These are deleted after 180 days.</li>
       </ul>
 
       <h2>What is not stored</h2>
       <ul>
-        <li>Readers who follow a parish have no account. Nothing about them is stored on our servers.</li>
+        <li>Readers do not need an account to follow a parish. If you never create one, nothing about you is stored on our servers.</li>
+        <li>We never see or store a password in readable form, and we do not use your email address for anything except signing you in and the emails you ask for.</li>
         <li>No tracking, advertising or analytics is used on these pages.</li>
         <li>Reminder emails to rectors give counts and dates only, never the text of a request.</li>
       </ul>
@@ -46,6 +49,7 @@
       <h2>Deleting your information</h2>
       <ul>
         <li>Any rector or helper can delete their own access at any time from <strong>Parish settings &rarr; Delete my membership</strong>.</li>
+        <li>A reader can delete their account at any time from the app: <strong>Profile &rarr; Your account &rarr; Delete my account</strong>. Their saved settings, password and passkeys are removed from our server.</li>
         <li>A rector can delete the whole parish, with all its requests and helpers, from the same page.</li>
         <li>Or write to <a href="mailto:admin@theuniversaloffice.com">admin@theuniversaloffice.com</a> and we will do it for you.</li>
       </ul>

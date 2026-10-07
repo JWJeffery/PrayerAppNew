@@ -6,11 +6,12 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
   <title>Parish page</title>
-  <link rel="stylesheet" href="parish.css">
+  <link rel="stylesheet" href="parish.css?v=4">
+  <script src="theme.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <p class="kicker">The Universal Office</p>
+    <a class="kicker" href="../index.html">The Universal Office</a>
     <nav aria-label="Site">
       <a href="../index.html">Open the Daily Office</a>
       <a href="privacy.html">Privacy</a>
@@ -42,9 +43,11 @@
 
     <!-- The parish page -->
     <article id="view-parish" hidden aria-labelledby="h-parish">
-      <div class="panel">
+      <p id="admin-note" class="status" role="status" hidden></p>
+      <div class="panel hero">
         <p class="kicker" id="parish-diocese"></p>
         <h1 id="h-parish" tabindex="-1"></h1>
+        <div class="orn" aria-hidden="true"><i></i></div>
         <p class="muted" id="parish-rector"></p>
         <div class="row">
           <button type="button" class="primary" id="btn-follow">Follow this parish</button>
@@ -87,6 +90,7 @@
 
   <script src="common.js"></script>
   <script src="dioceses.js"></script>
+  <script src="diocese-names.js"></script>
   <script src="home.js"></script>
 </body>
 </html>

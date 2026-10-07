@@ -8,7 +8,8 @@ final class AdminApi
     private const GENERIC_OK = ['status' => 'ok', 'message' => 'If that address is authorized, a code has been sent.'];
     private const BAD_TOKEN = 'This approval link is invalid, already used, or has expired.';
 
-    private static function isAdminEmail(string $email): bool
+    /** An OWNER: an address listed under admin_emails in the private config. Owners cannot be removed in the app. */
+    public static function isOwnerEmail(string $email): bool
     {
         foreach ((array)Config::get('admin_emails', []) as $a) {
             if (Auth::normalizeEmail($a) === $email) { return true; }
@@ -16,13 +17,106 @@ final class AdminApi
         return false;
     }
 
-    /** Admin principal, else an emitted 401 (no session) or 403 (a staff session). */
+    /** Any global administrator: an owner, or an address an owner designated on the admin page (table admins). */
+    public static function isAdminEmail(string $email): bool
+    {
+        if (self::isOwnerEmail($email)) { return true; }
+        $st = Db::pdo()->prepare('SELECT 1 FROM admins WHERE email = ?');
+        $st->execute([$email]);
+        return $st->fetchColumn() !== false;
+    }
+
+    /**
+     * Admin principal, else an emitted 401 (no session) or 403 (a staff session). The address behind the
+     * session is checked against the administrator list on EVERY call, so removing someone ends their access
+     * at once even if their 30-day sign-in has not expired.
+     */
     private static function admin(): ?array
     {
         $p = Auth::require();
         if ($p === null) { return null; }
         if ($p['type'] !== 'admin') { Response::error(403, 'forbidden', 'Not allowed.'); return null; }
+        $email = Auth::normalizeEmail($p['email'] ?? null);
+        if ($email === null || !self::isAdminEmail($email)) { Response::error(401, 'unauthorized', 'Authentication required.'); return null; }
         return $p;
+    }
+
+    /** Admin principal for a handler that only owners may use (managing the administrator list). */
+    private static function owner(): ?array
+    {
+        $p = self::admin();
+        if ($p === null) { return null; }
+        if (!self::isOwnerEmail((string)Auth::normalizeEmail($p['email']))) {
+            Response::error(403, 'forbidden', 'Only an owner can manage administrators.');
+            return null;
+        }
+        return $p;
+    }
+
+    // ---- Administrators (managed in the app) ------------------------------------
+
+    /** GET /admin/admins -- owners (from the config) and designated administrators. */
+    public static function listAdmins(array $params): void
+    {
+        $p = self::admin();
+        if ($p === null) { return; }
+        $out = [];
+        foreach ((array)Config::get('admin_emails', []) as $a) {
+            $e = Auth::normalizeEmail($a);
+            if ($e !== null) { $out[] = ['id' => null, 'email' => $e, 'owner' => true, 'added_at' => null]; }
+        }
+        foreach (Db::pdo()->query('SELECT id, email, created_at FROM admins ORDER BY id ASC')->fetchAll() as $r) {
+            $out[] = ['id' => (int)$r['id'], 'email' => $r['email'], 'owner' => false, 'added_at' => Validate::isoUtc($r['created_at'])];
+        }
+        $you = Auth::normalizeEmail($p['email']);
+        Response::json(200, ['admins' => $out, 'you' => $you, 'can_manage' => self::isOwnerEmail((string)$you)]);
+    }
+
+    /** POST /admin/admins {email} -- owners only. Emails the new administrator how to sign in. */
+    public static function addAdmin(array $params): void
+    {
+        $p = self::owner();
+        if ($p === null) { return; }
+        $rl = RateLimit::hit('adminwrite', 'session:' . $p['session_id'], 60, self::HOUR);
+        if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return; }
+        [$b] = Request::jsonBody();
+        if ($b === null) { Response::error(400, 'bad_request', 'Bad request.'); return; }
+        $email = Auth::normalizeEmail($b['email'] ?? null);
+        if ($email === null) { Response::error(422, 'invalid_input', 'Invalid input.', ['email' => 'Enter a valid email address.']); return; }
+        if (self::isAdminEmail($email)) { Response::error(409, 'conflict', 'That address is already an administrator.'); return; }
+        $pdo = Db::pdo();
+        $pdo->prepare('INSERT INTO admins (email, added_by, created_at) VALUES (?, ?, UTC_TIMESTAMP())')
+            ->execute([$email, Auth::normalizeEmail($p['email'])]);
+        $id = (int)$pdo->lastInsertId();
+        Audit::log('admin', null, 'admin.add', "id=$id");
+        Response::json(201, ['admin' => ['id' => $id, 'email' => $email, 'owner' => false]]);
+        Deferred::run(function () use ($email): void {
+            $url = rtrim((string)Config::get('site_url'), '/') . '/parish/admin.html';
+            Mailer::send($email, 'You are now an administrator of The Universal Office',
+                "You have been designated an administrator of The Universal Office.\n\n"
+                . "To sign in, open $url and enter this email address. We then email you a 6-digit code.\n"
+                . "There is no password. If you did not expect this, you can ignore this message.\n");
+        });
+    }
+
+    /** DELETE /admin/admins/{id} -- owners only. Ends that person's sessions at once. */
+    public static function removeAdmin(array $params): void
+    {
+        $p = self::owner();
+        if ($p === null) { return; }
+        $rl = RateLimit::hit('adminwrite', 'session:' . $p['session_id'], 60, self::HOUR);
+        if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return; }
+        $id = (string)($params['id'] ?? '');
+        if (!ctype_digit($id) || strlen($id) > 18) { Response::error(404, 'not_found', 'Not found.'); return; }
+        $pdo = Db::pdo();
+        $st = $pdo->prepare('SELECT email FROM admins WHERE id = ?');
+        $st->execute([(int)$id]);
+        $email = $st->fetchColumn();
+        if ($email === false) { Response::error(404, 'not_found', 'Not found.'); return; }
+        $pdo->prepare('DELETE FROM admins WHERE id = ?')->execute([(int)$id]);
+        $pdo->prepare("DELETE FROM sessions WHERE principal = 'admin' AND admin_email = ?")->execute([$email]);
+        Audit::log('admin', null, 'admin.remove', "id=$id");
+        Response::json(200, ['status' => 'ok']);
     }
 
     // ---- Admin sign-in (same rules as staff, separate flow) --------------------

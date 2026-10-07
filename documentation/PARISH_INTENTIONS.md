@@ -294,12 +294,32 @@ How they behave, so nothing surprises you:
 - **Events** use the parish's own date and time; the server never converts them. An event stays on the page through
   the day after its date, and is deleted a week later by the daily job. Up to 60 upcoming.
 - **Announcements** disappear on their own at the expiry date and are deleted a week later. They can be extended.
-- **"Pray for a parish today"** has two separate sources: the diocese's parishes taken in turn, one per day; and, only
-  when the diocese's own dated Cycle of Prayer names a parish that has a page, that parish with a link. Dioceses whose
-  cycle is not dated (monthly, weekly and so on) show only the rotation.
+- **"Pray for a parish today"** shows the parish or parishes the diocese's own Cycle of Prayer names for this week,
+  and links to its page when that parish has one. It shows nothing when the diocese's cycle is not a dated one
+  (monthly, weekly and so on) or has no file for the year.
 - **The bishop's prayer list** is text you enter; it expires like other requests (21 days unless you choose 1-45).
 - Everything a rector or you type is shown as plain text; markup does nothing. The automated browser checks
   (`php api/tests/run.php`, files `t95` and `t96`) prove it.
+
+**Administrators (migration `003_admins.sql`).** A global administrator signs in at
+`https://theuniversaloffice.com/parish/admin.html` with an emailed code, can approve and manage parishes, open
+**any** parish page whatever its join code or status (the page shows "Administrator View"), and edit diocesan
+pages. The **Administrators** section on that admin page lists them and, for owners, lets you add or remove one:
+
+- **Owners** are the addresses under `admin_emails` in `uo-private/config.php`. They always work and cannot be
+  removed in the app (so you can never lock yourself out). Only an owner can add or remove administrators.
+- **Designated administrators** are added in the app with their email address. They are emailed how to sign in
+  (no password). They cannot add or remove other administrators, and they do not receive the "parish awaiting
+  approval" emails, which go to owners only.
+- **Removing** someone ends their sign-in at once. Every administrator request re-checks the list.
+- Import `api/migrations/003_admins.sql` in phpMyAdmin the same way as `002` (adds one table, `admins`; you
+  should then see 14 tables).
+
+**Optional accounts, passwords and passkeys (migration `004_accounts.sql`).** Readers can create a free account to keep
+their settings on every device; rectors, helpers and administrators can add a password or a passkey as an extra way in.
+Emailed codes keep working and nothing is required. Everything about it, including deploying it and adding Apple, Google
+or Facebook sign-in later, is in `ACCOUNTS_AND_SIGN_IN.md`. Import `004_accounts.sql` the same way as `002` and `003`
+(you should then have 19 tables), and upload **both** zips.
 
 **Not built (your call):** a Collect and readings beside each service time ("this Sunday's Collect"). The app works
 those out in the browser from its liturgical calendar engine and has no way to open a given date from a link, so it

@@ -36,7 +36,7 @@ function functionBody(src, name) {
 // ---- 1. Text safety: nothing that turns text into markup or code touches prayer text ----------------
 const UNSAFE = /\binnerHTML\b|\bouterHTML\b|insertAdjacentHTML|document\.write|\beval\s*\(|new\s+Function\s*\(|setAttribute\(\s*['"]on|createContextualFragment|srcdoc|\bbcpEmitBare\b|\bbcpMakeSpan\b/;
 const parishJs = fs.readdirSync('parish').filter((f) => f.endsWith('.js') && f !== 'dioceses.js').map((f) => `parish/${f}`);
-for (const f of ['js/parish-intentions.js', ...parishJs]) {
+for (const f of ['js/parish-intentions.js', 'js/account-core.js', 'js/account-ui.js', ...parishJs]) {
   check(`no unsafe text-to-markup API in ${f}`, !UNSAFE.test(stripJsComments(read(f))));
 }
 const officeUi = stripJsComments(read('js/office-ui.js'));

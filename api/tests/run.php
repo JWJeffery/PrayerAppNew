@@ -42,7 +42,7 @@ function http(string $method, string $path, array $headers = [], ?array $json = 
 function jbody(string $body): array { $d = json_decode($body, true); return is_array($d) ? $d : []; }
 
 function start_server(int $port, string $configPath, string $apiDir) {
-    $env = array_merge(getenv(), ['UO_CONFIG_PATH' => $configPath]);
+    $env = array_merge(getenv(), ['UO_CONFIG_PATH' => $configPath, 'UO_TEST_SOCIAL' => '1']);
     $proc = proc_open([PHP_BINARY, '-S', "127.0.0.1:$port", '-t', dirname($apiDir), "$apiDir/dev/router.php"],
         [0 => ['file', '/dev/null', 'r'], 1 => ['file', '/dev/null', 'w'], 2 => ['file', '/dev/null', 'w']],
         $pipes, dirname($apiDir), $env);
@@ -91,7 +91,7 @@ function reset_state(): void {
     global $pdo;
     $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
     mail_reset();
-    foreach (['intentions', 'parish_events', 'parish_announcements', 'diocese_prayers', 'dioceses', 'sessions', 'login_codes', 'approval_tokens', 'staff', 'parishes', 'rate_limits', 'audit_log'] as $tbl) {
+    foreach (['intentions', 'parish_events', 'parish_announcements', 'diocese_prayers', 'dioceses', 'sessions', 'login_codes', 'approval_tokens', 'staff', 'parishes', 'rate_limits', 'audit_log', 'admins', 'readers', 'credentials', 'passkeys', 'webauthn_challenges', 'identities'] as $tbl) {
         $pdo->exec("TRUNCATE TABLE `$tbl`");
     }
     $pdo->exec('SET FOREIGN_KEY_CHECKS = 1');

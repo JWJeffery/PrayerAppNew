@@ -3035,3 +3035,79 @@ body.dark-mode .uo-onboarding-field select {
    design-pass block above, 2026-09-25 (kept its explanatory comment there:
    "the ministry role is a default filter, not a bar... deliberately
    quiet -- it is not a permission prompt and nothing is being unlocked"). */
+
+/* ADDED 2026-10-07: the optional account section of the profile panel (js/account-ui.js). */
+.app-account-section {
+    margin-top: 22px;
+    padding: 12px 14px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.35);
+}
+.app-account-section > summary {
+    cursor: pointer;
+    font-family: var(--app-label, Georgia, "Times New Roman", serif);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.app-account-section[open] > summary { margin-bottom: 12px; }
+.app-account-section h4 {
+    margin: 18px 0 4px;
+    font-family: var(--app-label, Georgia, "Times New Roman", serif);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.app-account-section label {
+    display: block;
+    margin: 12px 0 4px;
+    font-family: var(--app-label, Georgia, "Times New Roman", serif);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.app-account-section input[type="text"],
+.app-account-section input[type="email"],
+.app-account-section input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #2b2118;
+    font-family: var(--app-serif, Georgia, "Times New Roman", serif);
+    font-size: 0.96rem;
+}
+body.dark-mode .app-account-section input[type="text"],
+body.dark-mode .app-account-section input[type="email"],
+body.dark-mode .app-account-section input[type="password"] {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8d9b0;
+}
+.app-account-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.app-account-tab {
+    padding: 6px 12px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font-family: var(--app-label, Georgia, "Times New Roman", serif);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.app-account-tab[aria-pressed="true"] { background: rgba(201, 168, 76, 0.22); }
+.app-account-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; }
+.app-account-hint, .app-account-intro, .app-account-who { margin: 6px 0; font-size: 0.92rem; line-height: 1.45; }
+.app-account-status { margin: 12px 0 0; padding: 8px 10px; border-left: 3px solid rgba(201, 168, 76, 0.6); font-size: 0.92rem; }
+.app-account-status.ok { border-color: #4a7c59; }
+.app-account-status.bad { border-color: #9b2335; }
+.app-account-confirm { margin-top: 12px; padding: 10px 12px; border: 1px solid rgba(201, 168, 76, 0.5); border-radius: 6px; }
+.app-account-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.app-account-list li { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(201, 168, 76, 0.25); }
+[hidden].app-account-confirm, [hidden].app-account-status { display: none; }
+body.dark-mode .app-account-section { background: rgba(255, 255, 255, 0.05); }

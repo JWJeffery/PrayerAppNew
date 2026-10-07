@@ -66,13 +66,13 @@ final class Auth
     }
 
     /** New session. The raw token is returned once and never stored (only its SHA-256). */
-    public static function createSession(string $principal, ?int $staffId, ?string $adminEmail = null): array
+    public static function createSession(string $principal, ?int $staffId, ?string $adminEmail = null, ?int $readerId = null): array
     {
         $token = bin2hex(random_bytes(32));
         $pdo = Db::pdo();
-        $pdo->prepare('INSERT INTO sessions (token_hash, principal, staff_id, admin_email, created_at, expires_at)
-                       VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL ? DAY)')
-            ->execute([hash('sha256', $token), $principal, $staffId, $adminEmail, self::SESSION_TTL_DAYS]);
+        $pdo->prepare('INSERT INTO sessions (token_hash, principal, staff_id, admin_email, reader_id, created_at, expires_at)
+                       VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL ? DAY)')
+            ->execute([hash('sha256', $token), $principal, $staffId, $adminEmail, $readerId, self::SESSION_TTL_DAYS]);
         $exp = $pdo->query('SELECT expires_at FROM sessions WHERE id = ' . (int)$pdo->lastInsertId())->fetchColumn();
         return ['token' => $token, 'expires_at' => Validate::isoUtc($exp)];
     }
@@ -94,27 +94,45 @@ final class Auth
         if ($token === null) { return null; }
         $st = Db::pdo()->prepare(
             'SELECT s.id AS session_id, s.principal, s.admin_email,
+                    TIMESTAMPDIFF(SECOND, COALESCE(s.reauth_at, s.created_at), UTC_TIMESTAMP()) AS fresh_age,
                     st.id AS staff_id, st.email, st.display_name, st.role,
-                    p.id AS parish_id, p.slug, p.name, p.visibility, p.status
+                    p.id AS parish_id, p.slug, p.name, p.visibility, p.status,
+                    rd.id AS reader_id, rd.email AS reader_email
              FROM sessions s
              LEFT JOIN staff st ON st.id = s.staff_id
              LEFT JOIN parishes p ON p.id = st.parish_id
+             LEFT JOIN readers rd ON rd.id = s.reader_id
              WHERE s.token_hash = ? AND s.expires_at > UTC_TIMESTAMP()'
         );
         $st->execute([hash('sha256', $token)]);
         $r = $st->fetch();
         if ($r === false) { return null; }
+        $fresh = (int)$r['fresh_age'];   // seconds since this session was created or last confirmed by an emailed code
         if ($r['principal'] === 'admin') {
-            return ['type' => 'admin', 'session_id' => (int)$r['session_id'], 'email' => $r['admin_email']];
+            return ['type' => 'admin', 'session_id' => (int)$r['session_id'], 'email' => $r['admin_email'], 'fresh_age' => $fresh];
+        }
+        if ($r['principal'] === 'reader') {
+            if ($r['reader_id'] === null) { return null; }
+            return ['type' => 'reader', 'session_id' => (int)$r['session_id'], 'fresh_age' => $fresh,
+                    'reader' => ['id' => (int)$r['reader_id'], 'email' => $r['reader_email']]];
         }
         if ($r['staff_id'] === null || $r['status'] !== 'approved') { return null; }
         return [
             'type' => 'staff',
             'session_id' => (int)$r['session_id'],
+            'fresh_age' => $fresh,
             'staff' => ['id' => (int)$r['staff_id'], 'role' => $r['role'], 'display_name' => $r['display_name'], 'email' => $r['email']],
             'parish' => ['id' => (int)$r['parish_id'], 'slug' => $r['slug'], 'name' => $r['name'],
                          'visibility' => $r['visibility'], 'status' => $r['status']],
         ];
+    }
+
+    /** The email address behind any kind of session. */
+    public static function emailOf(array $p): ?string
+    {
+        if ($p['type'] === 'staff') { return self::normalizeEmail($p['staff']['email'] ?? null); }
+        if ($p['type'] === 'reader') { return self::normalizeEmail($p['reader']['email'] ?? null); }
+        return self::normalizeEmail($p['email'] ?? null);
     }
 
     /** Principal or an emitted 401 (then null). */

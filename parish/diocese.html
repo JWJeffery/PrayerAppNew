@@ -6,11 +6,12 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
   <title>Diocese page</title>
-  <link rel="stylesheet" href="parish.css">
+  <link rel="stylesheet" href="parish.css?v=4">
+  <script src="theme.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <p class="kicker">The Universal Office</p>
+    <a class="kicker" href="../index.html">The Universal Office</a>
     <nav aria-label="Site">
       <a href="../index.html">Open the Daily Office</a>
       <a href="privacy.html">Privacy</a>
@@ -28,20 +29,16 @@
     </section>
 
     <article id="view-diocese" hidden aria-labelledby="h-diocese">
-      <div class="panel">
+      <div class="panel hero">
         <p class="kicker">Diocese</p>
         <h1 id="h-diocese" tabindex="-1"></h1>
+        <div class="orn" aria-hidden="true"><i></i></div>
         <p class="muted" id="bishop-line"></p>
         <p id="site-line" hidden><a id="site-link" rel="noopener noreferrer" target="_blank" href="diocese.html"></a></p>
       </div>
 
       <div class="panel" id="wrap-today" hidden>
         <h2>Pray for a parish today</h2>
-        <div class="feature" id="today-rotation" hidden>
-          <h3 id="today-rotation-name"></h3>
-          <p class="muted small">One parish of the diocese each day, in turn.</p>
-          <p><a id="today-rotation-link" href="home.html">Visit their parish page</a></p>
-        </div>
         <div class="feature" id="today-cycle" hidden>
           <h3 id="today-cycle-name"></h3>
           <p class="muted small" id="today-cycle-note"></p>
@@ -60,7 +57,7 @@
       </div>
 
       <div class="panel">
-        <h2>Parishes using the Universal Office</h2>
+        <h2 id="h-parishes">Parishes using the Universal Office</h2>
         <ul id="list-parishes" class="plain"></ul>
         <p id="empty-parishes" class="muted" hidden>No parish in this diocese has set up a page yet.</p>
       </div>
@@ -69,6 +66,7 @@
 
   <script src="common.js"></script>
   <script src="dioceses.js"></script>
+  <script src="diocese-names.js"></script>
   <script src="diocese.js"></script>
 </body>
 </html>

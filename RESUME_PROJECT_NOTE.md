@@ -104,13 +104,19 @@ truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). 
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
 licensed (his call, not verified by us).
 
+**Optional accounts built (2026-10-07, same branch):** readers can create a free account that keeps their settings on every
+device; everyone who signs in (reader, rector, helper, administrator) can add a password and/or passkey; emailed codes still work and nothing is
+required. A seam for Apple/Google/Facebook sign-in exists but no provider is on. Read `documentation/ACCOUNTS_AND_SIGN_IN.md`. Needs migration
+`004_accounts.sql` and BOTH zips. **Google Play blocker (Josh, 2026-10-07):** a new personal Play developer account must run a 12-tester, 14-day
+closed test before publishing; organization accounts are exempt (needs a D-U-N-S number). Not yet decided: which route to take.
+
 **Parish features built (2026-10-06, on this branch, not yet on `main`):** parish home page, rector announcements, parish events and the
 diocesan page. Still open: "this Sunday's Collect and readings" beside the service times (needs the app's calendar engine; no date deep-link
 exists yet) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). The original todo is in history Volume 9.
 
 **Josh's own hands:**
 - Parish features (the merge of `claude/determined-einstein-kny5ms` plus the four new features) go live only after: import
-  `api/migrations/002_parish_pages.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
+  `api/migrations/002_parish_pages.sql`, `003_admins.sql` and `004_accounts.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
   `parish-backend.zip`, then upload the next `release:web` build. Do not upload the app build first: the profile link would point at pages that are not there.
 - Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
   not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06

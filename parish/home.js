@@ -50,6 +50,14 @@
     } catch (e) { return false; }
   }
 
+  /** The administrator's session token from the admin page, or null. Expired or malformed means none. */
+  function adminSessionToken() {
+    var s = readJson('uoAdminSession');
+    if (!s || typeof s.token !== 'string' || !/^[0-9a-f]{64}$/.test(s.token)) { return null; }
+    if (s.expires_at && Date.parse(s.expires_at) <= Date.now()) { return null; }
+    return s.token;
+  }
+
   // ---------- fetching ----------
   function api(method, path, headers, body) {
     var opts = { method: method, headers: Object.assign({ 'Accept': 'application/json' }, headers || {}), credentials: 'omit', cache: 'no-store' };
@@ -69,9 +77,10 @@
     if (t) { out += ' at ' + new Date(2000, 0, 1, Number(t[1]), Number(t[2])).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }); }
     return out;
   }
-  function dioceseLabel(key) {
+  /** The diocese's name in running text, e.g. "Western Diocese of Oregon" (see diocese-names.js); '' when unknown. */
+  function dioceseName(key) {
     var found = (window.UO_DIOCESES || []).filter(function (d) { return d.key === key; })[0];
-    return found ? 'Diocese of ' + found.label : '';
+    return found ? window.UO_dioceseName(key, found.label) : '';
   }
 
   // ---------- rendering ----------
@@ -80,12 +89,16 @@
     parishName = typeof p.name === 'string' ? p.name : '';
     document.title = parishName ? parishName + ' — parish page' : 'Parish page';
     $('h-parish').textContent = parishName;
-    $('parish-diocese').textContent = p.diocese_key ? dioceseLabel(p.diocese_key) : '';
+    $('parish-diocese').textContent = p.diocese_key ? dioceseName(p.diocese_key) : '';
     $('parish-rector').textContent = p.rector_name ? 'Rector: ' + p.rector_name : '';
 
     var dl = $('diocese-link-wrap');
     dl.hidden = !(typeof p.diocese_key === 'string' && /^[a-z0-9-]{1,40}\/[a-z0-9-]{1,80}$/.test(p.diocese_key));
-    if (!dl.hidden) { $('diocese-link').setAttribute('href', 'diocese.html?d=' + encodeURIComponent(p.diocese_key)); }
+    if (!dl.hidden) {
+      $('diocese-link').setAttribute('href', 'diocese.html?d=' + encodeURIComponent(p.diocese_key));
+      var dn = dioceseName(p.diocese_key);
+      $('diocese-link').textContent = dn ? 'The ' + dn + '\u2019s page' : 'The diocese\u2019s page';
+    }
 
     var anns = Array.isArray(data.announcements) ? data.announcements : [];
     U.clear($('list-announcements'));
@@ -97,7 +110,24 @@
 
     var times = Array.isArray(p.service_times) ? p.service_times : [];
     U.clear($('list-times'));
-    times.forEach(function (t) { if (typeof t === 'string') { $('list-times').appendChild(h('li', { text: t })); } });
+    // How the rector wrote the lines decides how they are set out, with no bullets:
+    //   "Sunday:"                      a line ending in a colon is a day heading for the lines under it;
+    //   "8:00 am | Holy Eucharist"     a line with a bar is a time, then what happens at that time;
+    //   anything else                  plain text.
+    times.forEach(function (t) {
+      if (typeof t !== 'string') { return; }
+      var bar = t.indexOf('|');
+      if (/:\s*$/.test(t)) {
+        $('list-times').appendChild(h('li', { class: 'day', text: t.replace(/:\s*$/, '') }));
+      } else if (bar > 0 && bar < t.length - 1) {
+        $('list-times').appendChild(h('li', { class: 'svc' }, [
+          h('span', { class: 'svc-time', text: t.slice(0, bar).trim() }),
+          h('span', { class: 'svc-what', text: t.slice(bar + 1).trim() })
+        ]));
+      } else {
+        $('list-times').appendChild(h('li', { text: t }));
+      }
+    });
     $('wrap-times').hidden = times.length === 0;
 
     var events = Array.isArray(data.events) ? data.events : [];
@@ -119,7 +149,15 @@
     if (site) { $('dd-website').appendChild(h('a', { href: site, rel: 'noopener noreferrer', target: '_blank', text: site })); }
     $('wrap-contact').hidden = !hasAddress && !site;
 
+    var note = $('admin-note');
+    if (data.viewer_admin === true) {
+      note.textContent = 'Administrator View';
+      note.hidden = false;
+    } else { note.hidden = true; }
+
     syncFollowButtons();
+    // An administrator looking in (not following) is not offered Follow: a join-code parish could not be followed without its code.
+    if (data.viewer_admin === true && currentFollow().slug !== slug) { $('btn-follow').hidden = true; }
     show('parish');
   }
 
@@ -135,6 +173,10 @@
     if (!SLUG_RE.test(slug)) { show('missing'); return; }
     var follow = currentFollow();
     var headers = (follow.slug === slug && follow.pass) ? { 'X-Parish-Pass': follow.pass } : {};
+    // A signed-in global administrator (the session the admin page keeps) is recognised by the server and
+    // sees any parish. The token goes only to this site's own API, and only when one exists.
+    var adminToken = adminSessionToken();
+    if (adminToken) { headers['Authorization'] = 'Bearer ' + adminToken; }
     api('GET', '/parishes/' + encodeURIComponent(slug), headers).then(function (res) {
       if (res.status === 200) { render(res.body); }
       else if (res.status === 401) { show('code'); }

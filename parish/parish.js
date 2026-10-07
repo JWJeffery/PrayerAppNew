@@ -17,6 +17,7 @@
   var MAX_TEXT = 200;
 
   var client = U.createClient(STORAGE_KEY, function () { showSignin('Your session has ended. Please sign in again.'); });
+  var core = window.UOAccount.create(STORAGE_KEY);   // the same saved sign-in, for password, passkey and sign-in options
   var me = null; // { staff: {...}, parish: {...} } from GET /me
 
   // ---------- views ----------
@@ -82,6 +83,29 @@
   });
   $('logout').addEventListener('click', function () {
     client.call('POST', '/auth/logout', {}).then(function () { client.drop(); showSignin(''); });
+  });
+
+  // ---------- other ways to sign in: password, passkey (optional) ----------
+  if (!window.UOAccount.passkeysSupported()) { $('passkey-row').hidden = true; }
+  $('form-password').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = $('pw-email').value.trim(), pw = $('pw-password').value;
+    if (!email || !pw) { U.say($('signin-status'), 'bad', 'Please enter your email address and password.'); return; }
+    var btn = $('btn-pw-signin'); btn.disabled = true;
+    core.passwordLogin(email, pw, 'staff').then(function (res) {
+      btn.disabled = false;
+      if (res.ok) { $('pw-password').value = ''; loadDashboard(); }
+      else { U.say($('signin-status'), 'bad', U.problem(res, 'That email and password were not accepted. You can always use an emailed code instead.')); }
+    });
+  });
+  $('btn-passkey-signin').addEventListener('click', function () {
+    var btn = $('btn-passkey-signin'); btn.disabled = true;
+    core.passkeyLogin('staff').then(function (res) {
+      btn.disabled = false;
+      if (res.ok) { loadDashboard(); }
+      else if (res.body && res.body.error === 'cancelled') { U.say($('signin-status'), '', ''); }
+      else { U.say($('signin-status'), 'bad', U.problem(res, 'That passkey was not accepted for a parish account. You can use an emailed code instead.')); }
+    });
   });
 
   // ---------- registration ----------
@@ -166,7 +190,7 @@
       $('tab-' + k).setAttribute('aria-selected', String(k === name));
       $(TABS[k]).hidden = (k !== name);
     });
-    if (name === 'settings') { loadSettings(); }
+    if (name === 'settings') { loadSettings(); window.UOAccountPanel.mount($('security-panel'), core); }
     if (name === 'pages' && window.UOPages) { window.UOPages.load(client, me); }
   }
   $('tab-requests').addEventListener('click', function () { selectTab('requests'); });

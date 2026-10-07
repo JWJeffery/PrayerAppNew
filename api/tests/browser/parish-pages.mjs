@@ -118,12 +118,12 @@ console.log('Browser: diocesan page');
     (await page.locator('#view-diocese img').count()) === 0 && (await page.locator('#view-diocese script').count()) === 0 && !(await pwned(page)));
   t('both registered parishes are listed with links to their pages', await page.evaluate(() =>
     [...document.querySelectorAll('#list-parishes a')].map((a) => a.getAttribute('href')).sort().join() === 'home.html?p=grace-pages,home.html?p=open-pages'));
-  await page.waitForFunction(() => !document.getElementById('wrap-today').hidden, null, { timeout: 8000 }).catch(() => {});
-  t('"pray for a parish today" names one of the diocese\'s parishes', await page.evaluate(() => {
-    const name = document.getElementById('today-rotation-name').textContent;
-    return !document.getElementById('today-rotation').hidden && ['Grace Church', 'Open Church'].includes(name)
-      && /^home\.html\?p=(grace|open)-pages$/.test(document.getElementById('today-rotation-link').getAttribute('href'));
-  }));
+  await page.waitForTimeout(1500);
+  t('"pray for a parish today" shows only the diocese\'s own Cycle of Prayer (no rotation card)',
+    (await page.locator('#today-rotation').count()) === 0 && await page.evaluate(() => {
+      const wrap = document.getElementById('wrap-today'), cyc = document.getElementById('today-cycle');
+      return wrap.hidden === cyc.hidden && (cyc.hidden || /Cycle of Prayer/.test(document.getElementById('today-cycle-note').textContent));
+    }));
   t('no sideways scroll at phone width', await noSideScroll(page));
   const bad = await newPage();
   await bad.goto(`${BASE}/parish/diocese.html?d=nonsense`);
@@ -201,6 +201,31 @@ console.log('Browser: admin diocese editor');
   const text = await pub.locator('#view-diocese').innerText();
   t('readers see the administrator\'s changes', text.includes('The Rt. Rev. Diane Doe') && text.includes('Standing committee: Nov 5') && text.includes('For our new deacons'));
   await page.context().close(); await pub.context().close();
+}
+
+// ------------------------------------------------------------ admin: administrators section
+console.log('Browser: admin page, administrators');
+{
+  const page = await newPage([(tok) => localStorage.setItem('uoAdminSession', JSON.stringify({ token: tok, expires_at: '2099-01-01T00:00:00Z' })), fx.adminToken]);
+  await page.goto(`${BASE}/parish/admin.html`);
+  await page.waitForSelector('#admin-list li', { timeout: 8000 });
+  const first = await page.locator('#admin-list li').first().innerText();
+  t('the owner is listed, marked as the signed-in owner', first.includes('a@example.org') && first.includes('(you)') && /owner/i.test(first), first);
+  t('an owner is offered the add form but no Remove button on an owner', !(await page.locator('#form-admin-add').isHidden()) && (await page.locator('#admin-list li').first().getByRole('button').count()) === 0);
+  await page.fill('#admin-new-email', 'new.admin@example.org');
+  await page.getByRole('button', { name: 'Add administrator' }).click();
+  await page.waitForFunction(() => [...document.querySelectorAll('#admin-list li')].some((li) => li.textContent.includes('new.admin@example.org')), null, { timeout: 8000 });
+  t('a designated administrator appears in the list', true);
+  await page.fill('#admin-new-email', 'new.admin@example.org');
+  await page.getByRole('button', { name: 'Add administrator' }).click();
+  await page.waitForSelector('#admins-status.bad', { timeout: 8000 });
+  t('adding the same address again says so plainly', (await page.locator('#admins-status').innerText()).includes('already'));
+  await page.getByRole('button', { name: 'Remove new.admin@example.org' }).click();
+  await page.getByRole('dialog').getByRole('button', { name: 'Remove' }).click();
+  await page.waitForFunction(() => ![...document.querySelectorAll('#admin-list li')].some((li) => li.textContent.includes('new.admin@example.org')), null, { timeout: 8000 });
+  t('removing asks first, then removes them', true);
+  t('no sideways scroll at phone width', await noSideScroll(page));
+  await page.context().close();
 }
 
 console.log('Browser: parish pages overall');
