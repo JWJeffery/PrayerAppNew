@@ -77,9 +77,10 @@
     if (t) { out += ' at ' + new Date(2000, 0, 1, Number(t[1]), Number(t[2])).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }); }
     return out;
   }
-  function dioceseLabel(key) {
+  /** The diocese's name in running text, e.g. "Western Diocese of Oregon" (see diocese-names.js); '' when unknown. */
+  function dioceseName(key) {
     var found = (window.UO_DIOCESES || []).filter(function (d) { return d.key === key; })[0];
-    return found ? 'Diocese of ' + found.label : '';
+    return found ? window.UO_dioceseName(key, found.label) : '';
   }
 
   // ---------- rendering ----------
@@ -88,12 +89,16 @@
     parishName = typeof p.name === 'string' ? p.name : '';
     document.title = parishName ? parishName + ' — parish page' : 'Parish page';
     $('h-parish').textContent = parishName;
-    $('parish-diocese').textContent = p.diocese_key ? dioceseLabel(p.diocese_key) : '';
+    $('parish-diocese').textContent = p.diocese_key ? dioceseName(p.diocese_key) : '';
     $('parish-rector').textContent = p.rector_name ? 'Rector: ' + p.rector_name : '';
 
     var dl = $('diocese-link-wrap');
     dl.hidden = !(typeof p.diocese_key === 'string' && /^[a-z0-9-]{1,40}\/[a-z0-9-]{1,80}$/.test(p.diocese_key));
-    if (!dl.hidden) { $('diocese-link').setAttribute('href', 'diocese.html?d=' + encodeURIComponent(p.diocese_key)); }
+    if (!dl.hidden) {
+      $('diocese-link').setAttribute('href', 'diocese.html?d=' + encodeURIComponent(p.diocese_key));
+      var dn = dioceseName(p.diocese_key);
+      $('diocese-link').textContent = dn ? 'The ' + dn + '\u2019s page' : 'The diocese\u2019s page';
+    }
 
     var anns = Array.isArray(data.announcements) ? data.announcements : [];
     U.clear($('list-announcements'));

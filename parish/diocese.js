@@ -130,7 +130,7 @@
     var parishes = (Array.isArray(data.parishes) ? data.parishes : []).filter(function (p) {
       return p && typeof p.name === 'string' && typeof p.slug === 'string' && SLUG_RE.test(p.slug);
     });
-    $('h-parishes').textContent = 'Parishes of the Diocese of ' + label() + ' using the Universal Office';
+    $('h-parishes').textContent = 'Parishes of the ' + window.UO_dioceseName(key, label()) + ' using the Universal Office';
     U.clear($('list-parishes'));
     parishes.forEach(function (p) {
       $('list-parishes').appendChild(h('li', {}, [h('a', { href: parishPageHref(p.slug), text: p.name })]));
