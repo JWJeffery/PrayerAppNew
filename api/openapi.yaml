@@ -668,6 +668,45 @@ paths:
         "200": { description: Deleted., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
         "403": { $ref: "#/components/responses/Forbidden" }
         "404": { $ref: "#/components/responses/NotFound" }
+  /admin/admins:
+    get:
+      summary: The administrator list -- owners (set in the private config) and administrators designated in the app.
+      security: [ { adminToken: [] } ]
+      responses:
+        "200":
+          description: The list, who you are, and whether you may manage it (owners only).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  admins: { type: array, items: { type: object, properties: { id: { type: integer, nullable: true, description: "null for an owner." }, email: { type: string }, owner: { type: boolean }, added_at: { type: string, format: date-time, nullable: true } } } }
+                  you: { type: string }
+                  can_manage: { type: boolean }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "403": { $ref: "#/components/responses/Forbidden" }
+    post:
+      summary: Designate an administrator (owners only). They are emailed how to sign in; they sign in with a code, as any administrator does.
+      security: [ { adminToken: [] } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email], properties: { email: { type: string } } } } }
+      responses:
+        "201": { description: Added., content: { application/json: { schema: { type: object, properties: { admin: { type: object, properties: { id: { type: integer }, email: { type: string }, owner: { type: boolean } } } } } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "409": { description: "conflict -- already an administrator.", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "429": { $ref: "#/components/responses/RateLimited" }
+  /admin/admins/{id}:
+    delete:
+      summary: Remove a designated administrator (owners only). Their sessions end at once. Owners cannot be removed here.
+      security: [ { adminToken: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        "200": { description: Removed., content: { application/json: { schema: { $ref: "#/components/schemas/Ok" } } } }
+        "403": { $ref: "#/components/responses/Forbidden" }
+        "404": { $ref: "#/components/responses/NotFound" }
   /admin/status:
     get:
       summary: Deployment diagnostics (PHP version, extensions, migrations, mail driver). No secrets.

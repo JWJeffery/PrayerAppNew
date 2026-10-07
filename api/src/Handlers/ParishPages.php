@@ -15,20 +15,16 @@ final class ParishPagesApi
     // ---- Reader ---------------------------------------------------------------
 
     /**
-     * True when the request carries a live ADMIN session whose email is still on the administrator list in
-     * the private config. Checked on every call, so taking an address off the list (api config
-     * "admin_emails") ends that person's access at once even though their 30-day session has not expired.
+     * True when the request carries a live ADMIN session whose email is still an administrator (an owner in
+     * the private config, or one designated on the admin page). Checked on every call, so removing an
+     * address ends that person's access at once even though their 30-day session has not expired.
      */
     private static function isGlobalAdmin(): bool
     {
         $p = Auth::principal();
         if ($p === null || $p['type'] !== 'admin') { return false; }
         $email = Auth::normalizeEmail($p['email'] ?? null);
-        if ($email === null) { return false; }
-        foreach ((array)Config::get('admin_emails', []) as $a) {
-            if (Auth::normalizeEmail($a) === $email) { return true; }
-        }
-        return false;
+        return $email !== null && AdminApi::isAdminEmail($email);
     }
 
     /**
@@ -399,6 +395,8 @@ final class ParishPagesApi
         $p = Auth::require();
         if ($p === null) { return null; }
         if ($p['type'] !== 'admin') { Response::error(403, 'forbidden', 'Not allowed.'); return null; }
+        $email = Auth::normalizeEmail($p['email'] ?? null);
+        if ($email === null || !AdminApi::isAdminEmail($email)) { Response::error(401, 'unauthorized', 'Authentication required.'); return null; }
         if ($write) {
             $rl = RateLimit::hit('adminwrite', 'session:' . $p['session_id'], 60, self::HOUR);
             if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return null; }

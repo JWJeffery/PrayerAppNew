@@ -12,7 +12,7 @@
 
   function show(name) {
     var dash = (name === 'dashboard');
-    $('view-signin').hidden = dash; $('view-dashboard').hidden = !dash; $('view-dioceses').hidden = !dash;
+    $('view-signin').hidden = dash; $('view-dashboard').hidden = !dash; $('view-dioceses').hidden = !dash; $('view-admins').hidden = !dash;
     $('logout').hidden = !dash; $('btn-refresh').hidden = !dash; $('who').hidden = !dash;
     var hd = $(dash ? 'h-dash' : 'h-signin'); if (hd) { hd.focus(); }
   }
@@ -93,6 +93,7 @@
       $('parish-table').hidden = list.length === 0;
       $('empty').hidden = list.length !== 0;
       if (first) { show('dashboard'); }
+      loadAdmins();
     });
   }
 
@@ -172,6 +173,48 @@
       if (res.status === 201) { $('dp-text').value = ''; U.say($('dio-status'), 'ok', 'Added.'); loadDiocese(); }
       else if (res.status === 409) { U.say($('dio-status'), 'bad', 'This diocese already has 60 prayer items. Remove some first.'); }
       else { U.say($('dio-status'), 'bad', U.problem(res, U.fieldMessage(res, 'Could not add it.'))); }
+    });
+  });
+
+  // ---------- administrators ----------
+  function loadAdmins() {
+    client.call('GET', '/admin/admins').then(function (res) {
+      if (!res.ok) { if (res.status !== 401) { U.say($('admins-status'), 'bad', U.problem(res, 'Could not load the administrators.')); } return; }
+      var list = res.body.admins || [], you = res.body.you || '', canManage = res.body.can_manage === true;
+      U.clear($('admin-list'));
+      list.forEach(function (a) {
+        var label = h('span', {}, [a.email, a.email === you ? ' (you)' : '']);
+        var tag = h('span', { class: 'chip', text: a.owner ? 'Owner' : 'Administrator' });
+        var kids = [h('span', {}, [label, ' ', tag])];
+        if (canManage && !a.owner) {
+          kids.push(h('button', { type: 'button', class: 'small danger', text: 'Remove', 'aria-label': 'Remove ' + a.email, on: { click: function () { removeAdmin(a); } } }));
+        }
+        $('admin-list').appendChild(h('li', {}, kids));
+      });
+      $('form-admin-add').hidden = !canManage;
+    });
+  }
+  function removeAdmin(a) {
+    U.confirmDialog({ title: 'Remove this administrator?', message: a.email + ' will lose administrator access immediately, and any sign-in they have is ended.',
+      confirmLabel: 'Remove', danger: true }).then(function (yes) {
+      if (!yes) { return; }
+      client.call('DELETE', '/admin/admins/' + a.id).then(function (res) {
+        if (res.ok) { U.say($('admins-status'), 'ok', 'Removed.'); loadAdmins(); }
+        else { U.say($('admins-status'), 'bad', U.problem(res, 'Could not remove that administrator.')); }
+      });
+    });
+  }
+  $('form-admin-add').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = $('admin-new-email').value.trim();
+    if (!email) { U.say($('admins-status'), 'bad', 'Please enter an email address.'); return; }
+    var btn = $('btn-admin-add'); btn.disabled = true;
+    client.call('POST', '/admin/admins', { email: email }).then(function (res) {
+      btn.disabled = false;
+      if (res.status === 201) { $('admin-new-email').value = ''; U.say($('admins-status'), 'ok', 'Added. They have been emailed how to sign in.'); loadAdmins(); }
+      else if (res.status === 409) { U.say($('admins-status'), 'bad', 'That address is already an administrator.'); }
+      else if (res.status === 403) { U.say($('admins-status'), 'bad', 'Only an owner can add administrators.'); }
+      else { U.say($('admins-status'), 'bad', U.problem(res, U.fieldMessage(res, 'Could not add that administrator.'))); }
     });
   });
 

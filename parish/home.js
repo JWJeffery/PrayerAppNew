@@ -151,9 +151,7 @@
 
     var note = $('admin-note');
     if (data.viewer_admin === true) {
-      var st = typeof p.status === 'string' ? p.status : '';
-      var vis = p.visibility === 'code' ? 'join code required for readers' : 'open to anyone';
-      note.textContent = 'Administrator view. You can see this parish whatever its join code or status. Status: ' + (st || 'unknown') + '; ' + vis + '.';
+      note.textContent = 'Administrator View';
       note.hidden = false;
     } else { note.hidden = true; }
 

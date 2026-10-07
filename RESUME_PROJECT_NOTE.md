@@ -110,7 +110,7 @@ exists yet) and a diocese sign-in (for now the diocesan page is kept by Josh on 
 
 **Josh's own hands:**
 - Parish features (the merge of `claude/determined-einstein-kny5ms` plus the four new features) go live only after: import
-  `api/migrations/002_parish_pages.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
+  `api/migrations/002_parish_pages.sql` and `003_admins.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
   `parish-backend.zip`, then upload the next `release:web` build. Do not upload the app build first: the profile link would point at pages that are not there.
 - Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
   not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06

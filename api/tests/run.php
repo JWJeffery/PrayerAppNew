@@ -91,7 +91,7 @@ function reset_state(): void {
     global $pdo;
     $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
     mail_reset();
-    foreach (['intentions', 'parish_events', 'parish_announcements', 'diocese_prayers', 'dioceses', 'sessions', 'login_codes', 'approval_tokens', 'staff', 'parishes', 'rate_limits', 'audit_log'] as $tbl) {
+    foreach (['intentions', 'parish_events', 'parish_announcements', 'diocese_prayers', 'dioceses', 'sessions', 'login_codes', 'approval_tokens', 'staff', 'parishes', 'rate_limits', 'audit_log', 'admins'] as $tbl) {
         $pdo->exec("TRUNCATE TABLE `$tbl`");
     }
     $pdo->exec('SET FOREIGN_KEY_CHECKS = 1');

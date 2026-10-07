@@ -58,6 +58,20 @@
       </div>
     </section>
 
+    <section id="view-admins" class="panel" hidden aria-labelledby="h-admins">
+      <h2 id="h-admins">Administrators</h2>
+      <p class="muted small">Administrators can approve and manage parishes, open any parish page, and edit diocesan pages. Owners are set in the server's private configuration and cannot be removed here. Only an owner can add or remove administrators.</p>
+      <ul id="admin-list" class="people"></ul>
+      <form id="form-admin-add" novalidate hidden>
+        <h3>Designate an administrator</h3>
+        <label for="admin-new-email">Email address</label>
+        <input id="admin-new-email" type="email" autocomplete="off" inputmode="email">
+        <p class="field-hint">They are emailed instructions. They sign in on this page with an emailed 6-digit code; there is no password.</p>
+        <div class="row"><button type="submit" class="primary" id="btn-admin-add">Add administrator</button></div>
+      </form>
+      <p id="admins-status" class="status" role="status" aria-live="polite" hidden></p>
+    </section>
+
     <section id="view-dioceses" class="panel" hidden aria-labelledby="h-dioceses">
       <h2 id="h-dioceses">Diocesan pages</h2>
       <p class="muted small">A diocese has no sign-in of its own yet, so its page is kept here. Readers see it at <span class="muted">parish/diocese.html</span>.</p>

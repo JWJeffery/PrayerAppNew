@@ -103,6 +103,9 @@ function uo_build_router(): Router
     $r->add('POST', '/admin/parishes/{id}/unsuspend', ['AdminApi', 'unsuspend']);
     $r->add('DELETE', '/admin/parishes/{id}', ['AdminApi', 'delete']);
     $r->add('GET', '/admin/status', ['AdminApi', 'status']);
+    $r->add('GET', '/admin/admins', ['AdminApi', 'listAdmins']);
+    $r->add('POST', '/admin/admins', ['AdminApi', 'addAdmin']);
+    $r->add('DELETE', '/admin/admins/{id}', ['AdminApi', 'removeAdmin']);
     $r->add('PUT', '/admin/dioceses/{body}/{name}', ['ParishPagesApi', 'adminPutDiocese']);
     $r->add('POST', '/admin/dioceses/{body}/{name}/prayers', ['ParishPagesApi', 'adminAddPrayer']);
     $r->add('DELETE', '/admin/dioceses/{body}/{name}/prayers/{id}', ['ParishPagesApi', 'adminDeletePrayer']);

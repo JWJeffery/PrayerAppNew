@@ -1,12 +1,9 @@
 /* Diocesan page for readers: the bishop, convention dates, the bishop's prayer list, the diocese's
  * registered parishes, and "pray for a parish today". Reads /api/v1/dioceses/{body}/{name}.
  *
- * "Pray for a parish today" has two sources, shown separately and never mixed:
- *   1. Rotation: the diocese's registered parishes in name order, one per calendar day, so every
- *      parish comes round in turn. Deterministic: the same device date always gives the same parish.
- *   2. The diocese's own Cycle of Prayer (data/cycles-of-prayer/, a dated cycle): when this week's
- *      subjects include a registered parish, that parish is linked. Other cycle types, and years
- *      with no file, simply show nothing here.
+ * "Pray for a parish today" shows the parish (or parishes) the diocese's own Cycle of Prayer names for this
+ * week (data/cycles-of-prayer/, a dated cycle), linked to its parish page when that parish is registered.
+ * Other cycle types, and years with no file, show nothing here.
  *
  * Same safety rule as the rest of /parish/ (see common.js): server text goes in with textContent only. */
 (function () {
@@ -35,41 +32,12 @@
     return raw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
-  function localDayNumber() {
-    var n = new Date();
-    return Math.floor(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 86400000);
-  }
   function localIso() {
     var n = new Date();
     return n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0');
   }
 
   function parishPageHref(slug) { return 'home.html?p=' + encodeURIComponent(slug); }
-
-  /** The parish this reader follows, as the app will see it (a waiting Follow / Stop request wins over the
-      stored profile). Read-only and defensive, the same reading parish/home.js does. */
-  function followedSlug() {
-    function read(key) { try { var raw = window.localStorage.getItem(key); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
-    var req = read('universalOffice.parishFollowRequest.v1');
-    if (req && typeof req === 'object' && (req.slug === null || typeof req.slug === 'string')) {
-      return (typeof req.slug === 'string' && SLUG_RE.test(req.slug)) ? req.slug : null;
-    }
-    var prof = read('universalOffice.userProfile.v1');
-    return (prof && typeof prof.parishIntentionsSlug === 'string' && SLUG_RE.test(prof.parishIntentionsSlug)) ? prof.parishIntentionsSlug : null;
-  }
-
-  function renderRotation(parishes) {
-    // The reader's own parish is already prayed for in the Intercessions, so "pray for a parish today" is
-    // always a different one.
-    var own = followedSlug();
-    parishes = parishes.filter(function (p) { return p.slug !== own; });
-    if (!parishes.length) { return false; }
-    var pick = parishes[localDayNumber() % parishes.length];
-    $('today-rotation-name').textContent = pick.name;
-    $('today-rotation-link').setAttribute('href', parishPageHref(pick.slug));
-    $('today-rotation').hidden = false;
-    return true;
-  }
 
   /** This week's entry of a dated cycle: the latest entry dated on or before today, within the last 7 days. */
   function currentWeekEntry(doc) {
@@ -137,8 +105,7 @@
     });
     $('empty-parishes').hidden = parishes.length > 0;
 
-    var rotation = renderRotation(parishes);
-    renderCycle(parishes).then(function (cycle) { $('wrap-today').hidden = !(rotation || cycle); });
+    renderCycle(parishes).then(function (shown) { $('wrap-today').hidden = !shown; });
     show('diocese');
   }
 
