@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Opening screen (js/splash.js). Its own stylesheet and font file, so it paints first and offline. -->
+    <link rel="preload" href="assets/fonts/Cinzel-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/splash.css?v=1">
+    <noscript><style>#uo-splash { display: none; }</style></noscript>
     <link rel="stylesheet" href="css/office.css?v=237">
     <link rel="stylesheet" href="css/install-prompt.css?v=1">
     <link rel="stylesheet" href="css/bible-browser.css">
@@ -21,6 +25,41 @@
     <link rel="stylesheet" href="css/office-shell.css?v=334">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
+<!-- Opening screen: "The Universal Office" for five seconds (css/splash.css, js/splash.js). -->
+<div id="uo-splash" role="dialog" aria-modal="true" aria-label="The Universal Office" tabindex="-1">
+    <div class="uo-sp-mark">
+        <div class="uo-sp-glow"></div>
+        <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+                <linearGradient id="uo-sp-gold" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fbefc0"/><stop offset="0.5" stop-color="#e0bf68"/><stop offset="1" stop-color="#a98338"/>
+                </linearGradient>
+            </defs>
+            <circle class="uo-sp-ring" cx="100" cy="100" r="92"/>
+            <g class="uo-sp-cross" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="1" stroke-linejoin="round">
+                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z"/>
+                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(90 100 100)"/>
+                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(180 100 100)"/>
+                <path d="M90 90 L86 54 Q76 38 66 18 Q100 31 134 18 Q124 38 114 54 L110 90 Z" transform="rotate(270 100 100)"/>
+                <rect x="88" y="88" width="24" height="24" fill="#f6e7b4"/>
+                <g fill="none" stroke="#7a5c22" stroke-width="0.9">
+                    <path d="M100 42 L107 80 L93 80 Z"/>
+                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(90 100 100)"/>
+                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(180 100 100)"/>
+                    <path d="M100 42 L107 80 L93 80 Z" transform="rotate(270 100 100)"/>
+                    <rect x="93" y="93" width="14" height="14"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <h1 class="uo-sp-name"><span class="uo-sp-the">The</span><span class="uo-sp-main"><span>Universal</span><span>Office</span></span></h1>
+    <div class="uo-sp-rule" aria-hidden="true"><i>&#10022;</i></div>
+    <ul class="uo-sp-lines">
+        <li>Anglican</li><li>Roman</li><li>Coptic</li><li>Byzantine</li><li>Church of the East</li>
+    </ul>
+    <div class="uo-sp-hint" aria-hidden="true">Tap to continue</div>
+</div>
+<script src="js/splash.js?v=1"></script>
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
@@ -1293,7 +1332,7 @@
 <script src="js/orthodox-day.js" defer></script>
 <script src="js/day-guide.js" defer></script>
 <script src="js/cycles-of-prayer.js" defer></script>
-<script src="js/parish-intentions.js?v=2" defer></script>
+<script src="js/parish-intentions.js?v=3" defer></script>
 <script src="js/account-core.js?v=1" defer></script>
 <script src="js/account-ui.js?v=1" defer></script>
 <script src="js/octoechos/orthros-praises-sunday.js" defer></script>
@@ -1346,6 +1385,6 @@
 <!-- Phase 4: Office Settings as one drawer. -->
 <script src="js/office-drawer.js?v=10" defer></script>
 <script src="js/update-prompt.js?v=1" defer></script>
-<script src="js/install-prompt.js?v=1" defer></script>
+<script src="js/install-prompt.js?v=2" defer></script>
 </body>
 </html>
