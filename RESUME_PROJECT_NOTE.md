@@ -5,7 +5,7 @@ current state, and the short list of things that are actually open. Everything c
 `documentation/project-history/` (start at `INDEX.md`) and `AUDIT_GOVERNANCE_LEDGER.md`; anything
 there is HISTORICAL and is marked so. **Where this note and the repo disagree, the repo wins.**
 
-**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed and stale-scanned 2026-10-06 (end of day, after PR #120)**: every file path, count and status claim in this note was
+**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06 (after PR #120) and again 2026-10-07 (after PR #125; parish and accounts sections rewritten and stale-scanned)**: every file path, count and status claim in this note was
 checked against the repo that day (all held except the "active direction" heading, now condensed). The retired sections went
 verbatim to `documentation/project-history/VOLUME-7-2026-10-03-resume-note-retired-sections.md`.
 **Keep it this way:** if you add something to this note, move whatever it displaces into a
@@ -174,13 +174,12 @@ Perl engine clone comes from `npm run roman-breviary:engine:setup`. Verified zer
 (Latin, English), 2027 (Latin, English), 2031, 2038, 1999 (Latin). See `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
-**Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
-site, built on branch `claude/determined-einstein-kny5ms` and merged into `claude/amazing-shannon-p0rlhf` on 2026-10-06 together with the
-parish home page, announcements, events and diocesan page (migration 002; `php api/tests/run.php` 685 checks, `npm run audit:parish-intentions`);
-neither is on `main` until Josh says so. Readers' pages: `parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through
-a request key the app consumes at startup (`consumePendingParishFollowRequest`). Rectors sign in at
-`theuniversaloffice.com/parish/` (emailed 6-digit code, no password) and read the join code under
-"Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the rector's.
+**Parish Prayer Requests (separate live system, on `main` and in production).** A PHP/MariaDB backend (`api/`, versioned `/api/v1`) plus
+`parish/` pages. Checks: `php api/tests/run.php` (873 passed; needs MariaDB running) and `npm run audit:parish-intentions` (239 checks). Readers' pages:
+`parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through a request key the app consumes at startup
+(`applyPendingParishFollowRequest` in `js/office-ui.js`). Rectors sign in at `theuniversaloffice.com/parish/` (emailed 6-digit code; password and
+passkey are optional extras) and read the join code under "Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the
+rector's. Global administrators (owners in `uo-private/config.php` `admin_emails`, plus others owners add on the admin page) see every parish page.
 Join codes live encrypted in the production database, not in any repo file. The first FAQ page,
 `faq/index.html` (rector join-code question), exists but is deliberately not linked from the app;
 wiring it in is Josh's call. Add further questions there.
