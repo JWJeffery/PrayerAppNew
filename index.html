@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/office.css?v=237">
+    <link rel="stylesheet" href="css/install-prompt.css?v=1">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
@@ -1247,6 +1248,9 @@
             </label>
         </div>
 
+        <!-- ADDED 2026-10-07: always-available install steps (js/install-prompt.js fills this in). -->
+        <div id="install-section"></div>
+
         <!-- ADDED 2026-10-07: optional account. Keeps the settings above on every device; sign in with an
              emailed code, and optionally a password or a passkey. Closed by default; the app works fully without it.
              Behaviour: js/account-ui.js (client core: js/account-core.js). -->
@@ -1342,5 +1346,6 @@
 <!-- Phase 4: Office Settings as one drawer. -->
 <script src="js/office-drawer.js?v=10" defer></script>
 <script src="js/update-prompt.js?v=1" defer></script>
+<script src="js/install-prompt.js?v=1" defer></script>
 </body>
 </html>

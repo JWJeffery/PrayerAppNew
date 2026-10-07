@@ -260,6 +260,7 @@ scripts are in `scripts/retired-audits/`. Of the 25 Maclean Church of the East p
   (`EthiopianCalendar`, `EastSyriacCalendar`, `ByzantinePaschalion`); test across edge-case years.
 - Fast Ramsha placeholders are resolved in `js/office-ui.js` by substring match against the day's
   ordinary ramsha sequence; an unresolvable marker fails loudly by design.
+- Install banner (2026-10-07): `js/install-prompt.js` + `css/install-prompt.css`; a dismissible banner for phone browsers (second visit on, device-specific steps; Android uses the browser's own Install button), plus an always-on "Install this app" section in the profile panel. App only, not the `/parish/` pages (they have no manifest link). Test: `npm run test:install-prompt`. A phone keeps showing the OLD icon/manifest until its old service worker updates (accept "Update now", reopen); the zips are not the cause.
 - Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
   into four zips when over ~30MB: Breviary data, other data, saint icons, app shell). There is no auto-deploy.
 - Old narrative detail: `documentation/project-history/INDEX.md`, nine HISTORICAL volumes
