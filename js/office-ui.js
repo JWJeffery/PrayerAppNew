@@ -2140,7 +2140,6 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const romanBreviaryCalendarSelect = document.getElementById('profile-roman-breviary-calendar');
     const parishDedicationSelect = document.getElementById('profile-parish-dedication');
     const displayNameInput = document.getElementById('profile-display-name');
-    const summary = document.getElementById('profile-defaults-summary');
 
     if (entrySelect) {
         entrySelect.value = normalized.entryPageDefault;
@@ -2193,84 +2192,6 @@ function syncUserProfileControls(profile = getUserProfileDefaults()) {
     populateCycleOfPrayerDioceseSelects(normalized.cycleOfPrayerDiocese);
     populateCycleOfPrayerParishSelect(normalized.cycleOfPrayerDiocese, normalized.cycleOfPrayerParish, normalized.cycleOfPrayerParishOther);
     populateParishIntentionsControls(normalized);
-
-    if (summary) {
-        const entryLabel = normalized.entryPageDefault === 'universal'
-            ? 'opens to the Universal Office selector'
-            : normalized.entryPageDefault === 'tradition' && normalized.traditionDefault
-                ? `opens to ${UNIVERSAL_OFFICE_TRADITION_LABELS[normalized.traditionDefault] || 'the selected tradition'}`
-                : 'asks for a tradition on entry';
-
-        const bookNeedsLabel = normalized.bookOfNeedsScope === 'universal'
-            ? 'Book of Needs office access shows all prayers'
-            : 'Book of Needs office access stays tradition-filtered';
-
-        const roleLabels = {
-            'lay':                'showing lay-appropriate Book of Needs content only',
-            'reader':             "showing lay content plus material for a reader's own use (not priestly or diaconal material)",
-            'catechist':          "showing lay content plus material for a catechist's own use (not priestly or diaconal material)",
-            'eucharistic-minister': "showing lay content plus material for a eucharistic minister's own use (not priestly or diaconal material)",
-            'eucharistic-visitor':  "showing lay content plus material for a eucharistic visitor's own use (not priestly or diaconal material)",
-            'pastoral-leader':    "showing lay content plus material for a pastoral leader's own use (not priestly or diaconal material)",
-            'preacher':           "showing lay content plus material for a preacher's own use (not priestly or diaconal material)",
-            'worship-leader':     "showing lay content plus material for a worship leader's own use (not priestly or diaconal material)",
-            'subdeacon':          "showing lay content plus material for a subdeacon's own use (not priestly or diaconal material)",
-            'deacon':             'showing content appropriate for a deacon (a major order -- not priestly or episcopal material)',
-            'priest':             'showing content appropriate for a priest (not episcopal-only material)',
-            'bishop':             'showing all role-gated content, including episcopal material',
-            'monastic':           'showing lay-appropriate Book of Needs content, plus material for monastic use',
-            'research-reference': 'showing all role-gated content for study and reference, not as an attestation of fitness to perform it',
-            'all':                'showing all Book of Needs content regardless of role',
-        };
-        const roleLabel = roleLabels[normalized.ministryRole] || roleLabels['lay'];
-
-        // Worded to state what narrowing actually does: it hides rows EXCLUSIVE
-        // to another sub-tradition and keeps the shared ones, which is not the
-        // same as "showing only Coptic saints".
-        const subtraditionLabel = normalized.oorSubtradition
-            ? `Oriental Orthodox commemorations narrowed to ${normalized.oorSubtradition} use, plus those kept across all the Oriental Orthodox churches`
-            : 'Oriental Orthodox commemorations shown for every sub-tradition';
-
-        // Labels live once, in the <select>'s own <option> text -- not duplicated
-        // here, so this can never drift from data/horologion/parish-dedications.json.
-        const dedicationOptionText = parishDedicationSelect && parishDedicationSelect.selectedOptions.length
-            ? parishDedicationSelect.selectedOptions[0].textContent
-            : null;
-        const dedicationLabel = normalized.parishDedication && dedicationOptionText
-            ? `home parish dedication set to ${dedicationOptionText}, for the Kontakion "of the temple"`
-            : 'no home parish dedication declared, so the Kontakion "of the temple" stays disclosed rather than resolved';
-
-        // Diocese label lives in TEC_DIOCESE_DIRECTORY (js/cycles-of-prayer.js),
-        // same "one place, not duplicated" rule the dedication label above
-        // follows -- the FULL directory, not just findCycleOfPrayerDiocese's
-        // much shorter "has real content" list, so a declared diocese this
-        // app has no cycle file for still gets its real name in the summary
-        // rather than being reported as "no diocese declared".
-        const dioceseDirectoryEntry = normalized.cycleOfPrayerDiocese && typeof findTecDioceseDirectoryEntry === 'function'
-            ? findTecDioceseDirectoryEntry(normalized.cycleOfPrayerDiocese)
-            : null;
-        const dioceseHasCycleContent = normalized.cycleOfPrayerDiocese && typeof findCycleOfPrayerDiocese === 'function'
-            && findCycleOfPrayerDiocese(normalized.cycleOfPrayerDiocese) !== null;
-        const parishSelect = document.getElementById('profile-cycle-of-prayer-parish');
-        const parishOptionText = normalized.cycleOfPrayerParish && parishSelect && parishSelect.selectedOptions.length
-            ? parishSelect.selectedOptions[0].textContent
-            : null;
-        const cycleOfPrayerLabel = !dioceseDirectoryEntry
-            ? 'no diocese declared, so the Diocesan Cycle of Prayer space stays a plain rubric'
-            : !dioceseHasCycleContent
-                ? `diocese on file: ${dioceseDirectoryEntry.label}${normalized.cycleOfPrayerParishOther ? ` (parish: ${normalized.cycleOfPrayerParishOther})` : ''}, but this app has no Cycle of Prayer content for it yet`
-                : parishOptionText
-                    ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}, highlighting this week's entry for ${parishOptionText}`
-                    : normalized.cycleOfPrayerParishOther
-                        ? `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label} (parish: ${normalized.cycleOfPrayerParishOther}, not in that diocese's own list)`
-                        : `the Diocesan Cycle of Prayer follows ${dioceseDirectoryEntry.label}`;
-
-        const nameLabel = normalized.displayName
-            ? `saved for ${normalized.displayName}`
-            : 'no name entered yet';
-
-        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}; ${roleLabel}; ${subtraditionLabel}; ${dedicationLabel}; ${cycleOfPrayerLabel}; ${nameLabel}.`;
-    }
 }
 
 function selectTraditionFamily(family) {

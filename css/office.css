@@ -2385,16 +2385,6 @@ body.dark-mode .app-profile-confirm-card {
     cursor: pointer;
 }
 
-.app-profile-defaults-summary {
-    margin: 0;
-    color: inherit;
-    opacity: 0.85;
-    font-family: var(--app-serif, Georgia, "Times New Roman", serif);
-    font-size: 0.9rem;
-    line-height: 1.4;
-    text-align: center;
-}
-
 @media (max-width: 640px) {
     .app-profile-defaults-grid {
         grid-template-columns: minmax(0, 1fr);
