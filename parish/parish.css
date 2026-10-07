@@ -240,3 +240,6 @@ table.data th, table.data td { border-color: var(--line); }
 @media (prefers-reduced-motion: reduce) { button { transition: none; } }
 @media print { body::before, body::after { display: none; } .panel { box-shadow: none; background: #fff; } }
 html[data-theme="light"] .feature { box-shadow: none; }
+.item-actions a.small { display: inline-block; padding: 6px 12px; border: 1px solid var(--gold); font-family: var(--display); font-size: 11px;
+  letter-spacing: .12em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+.item-actions a.small:hover { background: var(--panel2); box-shadow: 0 0 18px -4px var(--gold); }

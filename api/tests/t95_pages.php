@@ -198,3 +198,41 @@ section('Pages: deleting a parish removes its events and announcements');
 [$s] = api('DELETE', '/staff/parish', $w['ra'], ['confirm' => 'DELETE alpha']);
 t('parish delete cascades', $s === 200 && (int)$pdo->query("SELECT COUNT(*) FROM parish_events WHERE parish_id = {$w['a']}")->fetchColumn() === 0
     && (int)$pdo->query("SELECT COUNT(*) FROM parish_announcements WHERE parish_id = {$w['a']}")->fetchColumn() === 0);
+
+section('Pages: global administrator sees every parish page');
+$w = world();
+[$codeId, $code] = [$w['a'], $w['aCode']];                     // alpha: approved, code-only
+[$pendId] = make_parish('pending-view', 'pending', 'code', null, 'Pending View');
+[$suspId] = make_parish('suspended-view', 'suspended', 'public', null, 'Suspended View');
+$adm = Auth::createSession('admin', null, 'a@example.org')['token'];
+$bearer = ['Authorization: Bearer ' . $adm];
+[$s, $b] = http('GET', '/api/v1/parishes/alpha');
+t('without a session a code-only parish still needs its code (401)', $s === 401);
+[$s, $b] = http('GET', '/api/v1/parishes/alpha', $bearer);
+$v = jbody($b);
+t('an administrator sees a code-only parish with no join code', $s === 200 && ($v['parish']['name'] ?? '') === 'Alpha Church', "$s $b");
+t('...and is told it is the administrator view, with status and visibility', ($v['viewer_admin'] ?? false) === true && ($v['parish']['status'] ?? '') === 'approved' && ($v['parish']['visibility'] ?? '') === 'code');
+t('...and the join code never appears in the response', strpos($b, $code) === false);
+[$s, $b] = http('GET', '/api/v1/parishes/pending-view', $bearer);
+t('an administrator sees a PENDING parish, marked pending', $s === 200 && (jbody($b)['parish']['status'] ?? '') === 'pending', "$s $b");
+[$s, $b] = http('GET', '/api/v1/parishes/suspended-view', $bearer);
+t('an administrator sees a SUSPENDED parish, marked suspended', $s === 200 && (jbody($b)['parish']['status'] ?? '') === 'suspended');
+[$s] = http('GET', '/api/v1/parishes/pending-view');
+t('everyone else still gets 404 for a pending parish', $s === 404);
+[$s] = http('GET', '/api/v1/parishes/suspended-view', ['Authorization: Bearer ' . $w['ra']]);
+t('a rector session is not an administrator (suspended parish 404)', $s === 404);
+[$s] = http('GET', '/api/v1/parishes/beta', ['Authorization: Bearer ' . $w['ra']]);
+t('a rector session does not open another parish\'s code-only page', $s === 200);   // beta is public: ordinary reading
+[$s] = http('GET', '/api/v1/parishes/alpha', ['Authorization: Bearer ' . $w['rb']]);
+t('another parish\'s rector cannot read alpha\'s code-only page (401)', $s === 401);
+[$s] = http('GET', '/api/v1/parishes/alpha', ['Authorization: Bearer ' . str_repeat('0', 64)]);
+t('an unknown token is no administrator (401)', $s === 401);
+[$s] = http('GET', '/api/v1/parishes/alpha', ['Authorization: Bearer notatoken']);
+t('a malformed token is no administrator (401)', $s === 401);
+$gone = Auth::createSession('admin', null, 'removed@example.org')['token'];
+[$s] = http('GET', '/api/v1/parishes/alpha', ['Authorization: Bearer ' . $gone]);
+t('an admin session whose address is no longer on the administrator list is refused (401)', $s === 401);
+[$s, $b, $h] = http('GET', '/api/v1/parishes/alpha', $bearer);
+t('the administrator view is never cached', ($h['cache-control'] ?? '') === 'no-store');
+[$s, $b, $h] = http('GET', '/api/v1/parishes/beta');
+t('the ordinary reader view still caches privately for 60 seconds', ($h['cache-control'] ?? '') === 'private, max-age=60');

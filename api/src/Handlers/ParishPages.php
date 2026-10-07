@@ -14,21 +14,44 @@ final class ParishPagesApi
 
     // ---- Reader ---------------------------------------------------------------
 
-    /** GET /parishes/{slug} -- profile, upcoming events, current announcements. */
+    /**
+     * True when the request carries a live ADMIN session whose email is still on the administrator list in
+     * the private config. Checked on every call, so taking an address off the list (api config
+     * "admin_emails") ends that person's access at once even though their 30-day session has not expired.
+     */
+    private static function isGlobalAdmin(): bool
+    {
+        $p = Auth::principal();
+        if ($p === null || $p['type'] !== 'admin') { return false; }
+        $email = Auth::normalizeEmail($p['email'] ?? null);
+        if ($email === null) { return false; }
+        foreach ((array)Config::get('admin_emails', []) as $a) {
+            if (Auth::normalizeEmail($a) === $email) { return true; }
+        }
+        return false;
+    }
+
+    /**
+     * GET /parishes/{slug} -- profile, upcoming events, current announcements.
+     * A global administrator (Bearer admin session) sees ANY parish: whatever its join code and whatever
+     * its status (pending and suspended included). Everyone else is held to the reader rules.
+     */
     public static function home(array $params): void
     {
         $rl = RateLimit::hit('readip', Request::ip(), 300, self::HOUR);
         if (!$rl['allowed']) { Response::rateLimited($rl['retry_after']); return; }
 
-        $st = Db::pdo()->prepare("SELECT id, slug, name, diocese_key, visibility, join_code_version, rector_name, address, website, service_times
-                                  FROM parishes WHERE slug = ? AND status = 'approved'");
         $slug = (string)($params['slug'] ?? '');
         if (!Validate::slug($slug)) { Response::error(404, 'not_found', 'Not found.'); return; }
+        $admin = self::isGlobalAdmin();
+
+        $st = Db::pdo()->prepare('SELECT id, slug, name, diocese_key, visibility, status, join_code_version, rector_name, address, website, service_times
+                                  FROM parishes WHERE slug = ?' . ($admin ? '' : " AND status = 'approved'"));
         $st->execute([$slug]);
         $parish = $st->fetch();
         if ($parish === false) { Response::error(404, 'not_found', 'Not found.'); return; }
 
-        if ($parish['visibility'] === 'code'
+        if (!$admin && $parish['visibility'] === 'code'
             && !Crypto::verifyPass(Request::header('X-Parish-Pass'), (int)$parish['id'], (int)$parish['join_code_version'])) {
             Response::error(401, 'code_required', 'A join code is required for this parish.');
             return;
@@ -52,7 +75,7 @@ final class ParishPagesApi
             $announcements[] = ['id' => (int)$r['id'], 'text' => $r['body'], 'expires_at' => Validate::isoUtc($r['expires_at'])];
         }
 
-        Response::json(200, [
+        $out = [
             'parish' => [
                 'slug' => $parish['slug'], 'name' => $parish['name'], 'diocese_key' => $parish['diocese_key'],
                 'rector_name' => $parish['rector_name'], 'address' => $parish['address'], 'website' => $parish['website'],
@@ -61,7 +84,16 @@ final class ParishPagesApi
             'events' => $events,
             'announcements' => $announcements,
             'generated_at' => gmdate('Y-m-d\TH:i:s\Z'),
-        ], 'private, max-age=60');
+        ];
+        if ($admin) {
+            // Only an administrator is told the parish's status and visibility; never cached.
+            $out['viewer_admin'] = true;
+            $out['parish']['status'] = $parish['status'];
+            $out['parish']['visibility'] = $parish['visibility'];
+            Response::json(200, $out, 'no-store');
+            return;
+        }
+        Response::json(200, $out, 'private, max-age=60');
     }
 
     /** GET /dioceses/{body}/{name} -- bishop, convention dates, prayer list and the diocese's approved parishes. */

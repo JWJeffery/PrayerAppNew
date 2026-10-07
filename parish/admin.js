@@ -67,6 +67,7 @@
     if (p.status === 'pending') { box.appendChild(h('button', { type: 'button', class: 'small primary', text: 'Approve', 'aria-label': 'Approve ' + p.name, on: { click: function () { act(p, 'approve'); } } })); }
     if (p.status === 'approved') { box.appendChild(h('button', { type: 'button', class: 'small', text: 'Suspend', 'aria-label': 'Suspend ' + p.name, on: { click: function () { act(p, 'suspend'); } } })); }
     if (p.status === 'suspended') { box.appendChild(h('button', { type: 'button', class: 'small', text: 'Restore', 'aria-label': 'Restore ' + p.name, on: { click: function () { act(p, 'unsuspend'); } } })); }
+    box.appendChild(h('a', { href: 'home.html?p=' + encodeURIComponent(p.slug), class: 'small', text: 'View page', 'aria-label': 'View the page of ' + p.name }));
     box.appendChild(h('button', { type: 'button', class: 'small danger', text: 'Delete', 'aria-label': 'Delete ' + p.name, on: { click: function () { remove(p); } } }));
     actions.appendChild(box);
     return h('tr', {}, [

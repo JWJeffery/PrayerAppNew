@@ -50,6 +50,14 @@
     } catch (e) { return false; }
   }
 
+  /** The administrator's session token from the admin page, or null. Expired or malformed means none. */
+  function adminSessionToken() {
+    var s = readJson('uoAdminSession');
+    if (!s || typeof s.token !== 'string' || !/^[0-9a-f]{64}$/.test(s.token)) { return null; }
+    if (s.expires_at && Date.parse(s.expires_at) <= Date.now()) { return null; }
+    return s.token;
+  }
+
   // ---------- fetching ----------
   function api(method, path, headers, body) {
     var opts = { method: method, headers: Object.assign({ 'Accept': 'application/json' }, headers || {}), credentials: 'omit', cache: 'no-store' };
@@ -136,7 +144,17 @@
     if (site) { $('dd-website').appendChild(h('a', { href: site, rel: 'noopener noreferrer', target: '_blank', text: site })); }
     $('wrap-contact').hidden = !hasAddress && !site;
 
+    var note = $('admin-note');
+    if (data.viewer_admin === true) {
+      var st = typeof p.status === 'string' ? p.status : '';
+      var vis = p.visibility === 'code' ? 'join code required for readers' : 'open to anyone';
+      note.textContent = 'Administrator view. You can see this parish whatever its join code or status. Status: ' + (st || 'unknown') + '; ' + vis + '.';
+      note.hidden = false;
+    } else { note.hidden = true; }
+
     syncFollowButtons();
+    // An administrator looking in (not following) is not offered Follow: a join-code parish could not be followed without its code.
+    if (data.viewer_admin === true && currentFollow().slug !== slug) { $('btn-follow').hidden = true; }
     show('parish');
   }
 
@@ -152,6 +170,10 @@
     if (!SLUG_RE.test(slug)) { show('missing'); return; }
     var follow = currentFollow();
     var headers = (follow.slug === slug && follow.pass) ? { 'X-Parish-Pass': follow.pass } : {};
+    // A signed-in global administrator (the session the admin page keeps) is recognised by the server and
+    // sees any parish. The token goes only to this site's own API, and only when one exists.
+    var adminToken = adminSessionToken();
+    if (adminToken) { headers['Authorization'] = 'Bearer ' + adminToken; }
     api('GET', '/parishes/' + encodeURIComponent(slug), headers).then(function (res) {
       if (res.status === 200) { render(res.body); }
       else if (res.status === 401) { show('code'); }
