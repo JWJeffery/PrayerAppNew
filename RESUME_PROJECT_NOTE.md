@@ -5,7 +5,7 @@ current state, and the short list of things that are actually open. Everything c
 `documentation/project-history/` (start at `INDEX.md`) and `AUDIT_GOVERNANCE_LEDGER.md`; anything
 there is HISTORICAL and is marked so. **Where this note and the repo disagree, the repo wins.**
 
-**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed and stale-scanned 2026-10-06 (end of day, after PR #120)**: every file path, count and status claim in this note was
+**Cleaned and pruned 2026-10-03** at Josh's request (~510 -> ~220 lines); **refreshed 2026-10-06 (after PR #120) and again 2026-10-07 (after PR #125; parish and accounts sections rewritten and stale-scanned)**: every file path, count and status claim in this note was
 checked against the repo that day (all held except the "active direction" heading, now condensed). The retired sections went
 verbatim to `documentation/project-history/VOLUME-7-2026-10-03-resume-note-retired-sections.md`.
 **Keep it this way:** if you add something to this note, move whatever it displaces into a
@@ -42,7 +42,7 @@ way that stamps decisions into the CSVs: stamping "Decided" makes `build_data_v3
 
 - Work on the assigned branch, commit, and push with `git push -u origin <branch>` in the same turn.
   Do not open a PR unless asked. **Merging to `main` only on Josh's explicit word.** Recent merges
-  (PRs #114-#120) were GitHub PR merge commits, opened and merged when he said "Open a PR and
+  (PRs #114-#125) were GitHub PR merge commits, opened and merged when he said "Open a PR and
   merge"; after a merge, restart the branch from `origin/main` (same name) before new work.
 - Fetch and check `git log --oneline -1` before building on a branch.
 - Validate JSON before writing; prefer targeted edits to bulk dumps. For bulk edits to
@@ -104,23 +104,20 @@ truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). 
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
 licensed (his call, not verified by us).
 
-**Optional accounts built (2026-10-07, same branch):** readers can create a free account that keeps their settings on every
-device; everyone who signs in (reader, rector, helper, administrator) can add a password and/or passkey; emailed codes still work and nothing is
-required. A seam for Apple/Google/Facebook sign-in exists but no provider is on. Read `documentation/ACCOUNTS_AND_SIGN_IN.md`. Needs migration
-`004_accounts.sql` and BOTH zips. **Google Play blocker (Josh, 2026-10-07):** a new personal Play developer account must run a 12-tester, 14-day
-closed test before publishing; organization accounts are exempt (needs a D-U-N-S number). **Decision (Josh, 2026-10-07): web only.** The app ships as the installable offline website; no Capacitor/Play/App Store apps for now. Revisit only if Josh says so.
-
-**Parish features built (2026-10-06, on this branch, not yet on `main`):** parish home page, rector announcements, parish events and the
-diocesan page. Still open: "this Sunday's Collect and readings" beside the service times (needs the app's calendar engine; no date deep-link
-exists yet) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). The original todo is in history Volume 9.
+**Parish features and optional accounts: built, merged to `main`, and LIVE (2026-10-07).** Parish home page, rector announcements, events,
+the diocesan page, global-administrator viewing and in-app administrator management, parish-page restyle, and optional accounts (readers keep
+settings across devices; password and/or passkey optional for everyone; emailed codes still work; Apple/Google/Facebook seam exists, no provider
+on). Migrations 002, 003 and 004 are imported on production (19 tables) and Josh confirmed emailed-code sign-in works. Both zips (`parish-backend.zip`
+and `web-release-app-shell.zip`, strict SQL mode plus a "database is missing updates" warning on the admin page) are deployed; PR #125 put
+everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **Decision (Josh, 2026-10-07): web
+only** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
+unless Josh revisits. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
+deep-link exists) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). Original todo: history Volume 9.
 
 **Josh's own hands:**
-- Parish features (the merge of `claude/determined-einstein-kny5ms` plus the four new features) go live only after: import
-  `api/migrations/002_parish_pages.sql`, `003_admins.sql` and `004_accounts.sql` in phpMyAdmin (documentation/PARISH_INTENTIONS.md Part 3c), rebuild and upload
-  `parish-backend.zip`, then upload the next `release:web` build. Do not upload the app build first: the profile link would point at pages that are not there.
-- Upload the 2026-10-06 release (four zips, sent to him in chat; they were built from `main` at PR #120 and are
-  not in the repo). Until he does, the live site lacks the Roman Breviary Calendar setting and the 2026-10-06
-  naming changes. Whether he has uploaded is not recorded: ask before assuming.
+- Deploys are by hand: cPanel File Manager for zips, phpMyAdmin for migrations (click the database name first, then Import). Upload
+  `parish-backend.zip` AND `web-release-app-shell.zip` together; an older app-shell zip overwrites newer parish files. Whether the other
+  `web-release-*` zips from the 2026-10-06 release are uploaded is not recorded: ask before assuming.
 - Replace the placeholder install icon in `images/app/` (dark square, gold ring, small double-barred cross;
   needs one square image, ideally 1024x1024 PNG, artwork well inside the edges; sizes can then be generated).
 - Drive:
@@ -177,13 +174,12 @@ Perl engine clone comes from `npm run roman-breviary:engine:setup`. Verified zer
 (Latin, English), 2027 (Latin, English), 2031, 2038, 1999 (Latin). See `ROMAN_BREVIARY_1960_1962_BUILDOUT.md`.
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
-**Parish Prayer Requests (separate live system).** A PHP/MySQL backend plus `parish/` pages on the live
-site, built on branch `claude/determined-einstein-kny5ms` and merged into `claude/amazing-shannon-p0rlhf` on 2026-10-06 together with the
-parish home page, announcements, events and diocesan page (migration 002; `php api/tests/run.php` 685 checks, `npm run audit:parish-intentions`);
-neither is on `main` until Josh says so. Readers' pages: `parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through
-a request key the app consumes at startup (`consumePendingParishFollowRequest`). Rectors sign in at
-`theuniversaloffice.com/parish/` (emailed 6-digit code, no password) and read the join code under
-"Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the rector's.
+**Parish Prayer Requests (separate live system, on `main` and in production).** A PHP/MariaDB backend (`api/`, versioned `/api/v1`) plus
+`parish/` pages. Checks: `php api/tests/run.php` (873 passed; needs MariaDB running) and `npm run audit:parish-intentions` (239 checks). Readers' pages:
+`parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through a request key the app consumes at startup
+(`applyPendingParishFollowRequest` in `js/office-ui.js`). Rectors sign in at `theuniversaloffice.com/parish/` (emailed 6-digit code; password and
+passkey are optional extras) and read the join code under "Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the
+rector's. Global administrators (owners in `uo-private/config.php` `admin_emails`, plus others owners add on the admin page) see every parish page.
 Join codes live encrypted in the production database, not in any repo file. The first FAQ page,
 `faq/index.html` (rector join-code question), exists but is deliberately not linked from the app;
 wiring it in is Josh's call. Add further questions there.
