@@ -377,9 +377,11 @@ Bible-browser translation files, web fonts. A new version waits until open tabs 
 installs the service worker in Chromium, cuts the network, and opens all five traditions plus a Breviary date
 that was never opened; all pass, with no failed same-origin requests.
 
-Open points: the install icon is a placeholder; if the site stays behind hosting-level password protection
-(Directory Privacy), browsers fetch the manifest and `sw.js` without credentials and installation may fail,
-so test on the real host before relying on it; per-tradition packs (so a
+Open points: if the site stays behind hosting-level password protection
+(Directory Privacy), browsers fetch the manifest and `sw.js` without credentials and installation may fail.
+Seen 2026-10-07: after a phone's site data was cleared, Chrome said "This app cannot be installed" with a grey "T" icon.
+`index.html` now links the manifest with `crossorigin="use-credentials"` (the standard remedy); removing the password
+protection from the site root is the clean fix. Test on the real host before relying on it; per-tradition packs (so a
 Roman-only user need not download the Orthodox text) are possible later but were not chosen (all text ships).
 
 Update prompt added the same day: `js/update-prompt.js` registers the service worker and shows "A new version of The Universal Office is ready" with Update now / Later once a new release has downloaded; `test:offline` publishes a changed release while the app is open and checks the prompt, that the open page stays on the old release until accepted, and that Update now reloads onto the new one.
