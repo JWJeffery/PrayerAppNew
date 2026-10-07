@@ -21,6 +21,7 @@ require_once __DIR__ . '/Handlers/Staff.php';
 require_once __DIR__ . '/Handlers/Register.php';
 require_once __DIR__ . '/Handlers/Admin.php';
 require_once __DIR__ . '/Handlers/ParishPages.php';
+require_once __DIR__ . '/Handlers/DioceseStaff.php';
 require_once __DIR__ . '/Password.php';
 require_once __DIR__ . '/Social.php';
 require_once __DIR__ . '/Passkeys.php';
@@ -128,9 +129,18 @@ function uo_build_router(): Router
     $r->add('GET', '/admin/admins', ['AdminApi', 'listAdmins']);
     $r->add('POST', '/admin/admins', ['AdminApi', 'addAdmin']);
     $r->add('DELETE', '/admin/admins/{id}', ['AdminApi', 'removeAdmin']);
-    $r->add('PUT', '/admin/dioceses/{body}/{name}', ['ParishPagesApi', 'adminPutDiocese']);
-    $r->add('POST', '/admin/dioceses/{body}/{name}/prayers', ['ParishPagesApi', 'adminAddPrayer']);
-    $r->add('DELETE', '/admin/dioceses/{body}/{name}/prayers/{id}', ['ParishPagesApi', 'adminDeletePrayer']);
+    $r->add('PUT', '/admin/dioceses/{body}/{name}', ['ParishPagesApi', 'putDiocese']);
+    $r->add('POST', '/admin/dioceses/{body}/{name}/prayers', ['ParishPagesApi', 'addDiocesePrayer']);
+    $r->add('DELETE', '/admin/dioceses/{body}/{name}/prayers/{id}', ['ParishPagesApi', 'deleteDiocesePrayer']);
+    $r->add('GET', '/admin/dioceses/{body}/{name}/editors', ['DioceseStaffApi', 'listEditors']);
+    $r->add('POST', '/admin/dioceses/{body}/{name}/editors', ['DioceseStaffApi', 'addEditor']);
+    $r->add('DELETE', '/admin/diocese-editors/{id}', ['DioceseStaffApi', 'removeEditor']);
+    // Diocesan sign-in: an editor designated by an administrator keeps their own diocese's page (2026-10-07).
+    $r->add('POST', '/diocese/auth/request-code', ['DioceseStaffApi', 'requestCode']);
+    $r->add('POST', '/diocese/auth/verify-code', ['DioceseStaffApi', 'verifyCode']);
+    $r->add('PUT', '/diocese/page', ['ParishPagesApi', 'putDiocese']);
+    $r->add('POST', '/diocese/prayers', ['ParishPagesApi', 'addDiocesePrayer']);
+    $r->add('DELETE', '/diocese/prayers/{id}', ['ParishPagesApi', 'deleteDiocesePrayer']);
     return $r;
 }
 

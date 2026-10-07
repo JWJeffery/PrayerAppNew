@@ -184,7 +184,48 @@
       })
       .catch(function () { U.say($('dio-status'), 'bad', 'Could not load that diocese.'); });
   }
-  $('dio-select').addEventListener('change', function () { U.say($('dio-status'), '', ''); loadDiocese(); });
+  $('dio-select').addEventListener('change', function () { U.say($('dio-status'), '', ''); U.say($('editors-status'), '', ''); loadDiocese(); loadEditors(); });
+
+  // People designated to keep a diocese's page (they sign in at diocese-admin.html).
+  function loadEditors() {
+    if (!$('dio-select').value) { return; }
+    var forKey = $('dio-select').value;
+    client.call('GET', dioPath('/editors')).then(function (res) {
+      if (forKey !== $('dio-select').value) { return; }   // the choice changed while this was loading
+      if (!res.ok) { if (res.status !== 401) { U.say($('editors-status'), 'bad', U.problem(res, 'Could not load the editors.')); } return; }
+      var list = res.body.editors || [];
+      U.clear($('editor-list'));
+      list.forEach(function (e) {
+        $('editor-list').appendChild(h('li', {}, [
+          h('span', { text: e.email }),
+          h('button', { type: 'button', class: 'small danger', text: 'Remove', 'aria-label': 'Remove ' + e.email, on: { click: function () { removeEditor(e); } } })
+        ]));
+      });
+      $('editor-empty').hidden = list.length > 0;
+    });
+  }
+  function removeEditor(e) {
+    U.confirmDialog({ title: 'Remove this editor?', message: e.email + ' will lose the ability to edit this diocese\u2019s page immediately, and any sign-in they have is ended.',
+      confirmLabel: 'Remove', danger: true }).then(function (yes) {
+      if (!yes) { return; }
+      client.call('DELETE', '/admin/diocese-editors/' + e.id).then(function (res) {
+        if (res.ok) { U.say($('editors-status'), 'ok', 'Removed.'); loadEditors(); }
+        else { U.say($('editors-status'), 'bad', U.problem(res, 'Could not remove that editor.')); }
+      });
+    });
+  }
+  $('form-editor-add').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = $('editor-new-email').value.trim();
+    if (!email || !$('dio-select').value) { U.say($('editors-status'), 'bad', 'Please enter an email address.'); return; }
+    var btn = $('btn-editor-add'); btn.disabled = true;
+    client.call('POST', dioPath('/editors'), { email: email }).then(function (res) {
+      btn.disabled = false;
+      if (res.status === 201) { $('editor-new-email').value = ''; U.say($('editors-status'), 'ok', 'Added. They have been emailed how to sign in.'); loadEditors(); }
+      else if (res.status === 409) { U.say($('editors-status'), 'bad', 'That address already keeps a diocesan page.'); }
+      else { U.say($('editors-status'), 'bad', U.problem(res, U.fieldMessage(res, 'Could not add that editor.'))); }
+    });
+  });
   $('form-diocese').addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (!$('dio-select').value) { return; }

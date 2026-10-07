@@ -24,7 +24,11 @@ $pdo->exec("INSERT INTO dioceses (diocese_key, bishop_name, website, convention_
 $pdo->prepare('INSERT INTO diocese_prayers (diocese_key, body, created_at, expires_at) VALUES (?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL 5 DAY)')
     ->execute([$dk, "For all clergy $hostile"]);
 
+$pdo->prepare("INSERT INTO diocese_staff (diocese_key, email, added_by, created_at) VALUES ('episcopal/iowa', 'editor@iowa.example.org', 'a@example.org', UTC_TIMESTAMP())")->execute();
+$editorId = (int)$pdo->lastInsertId();
+
 $fixtures = [
+    'editorToken' => Auth::createSession('diocese', null, null, null, $editorId)['token'], 'editorDiocese' => 'episcopal/iowa',
     'base' => "http://127.0.0.1:$port",
     'hostile' => $hostile,
     'rectorToken' => Auth::createSession('staff', $rid)['token'],

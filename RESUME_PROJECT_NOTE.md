@@ -111,13 +111,13 @@ on). Migrations 002, 003 and 004 are imported on production (19 tables) and Josh
 and `web-release-app-shell.zip`, strict SQL mode plus a "database is missing updates" warning on the admin page) are deployed; PR #125 put
 everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **Decision (Josh, 2026-10-07): web
 only** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
-unless Josh revisits. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
-deep-link exists) and a diocese sign-in (for now the diocesan page is kept by Josh on the admin page). Original todo: history Volume 9.
+unless Josh revisits. **Diocese sign-in: built 2026-10-07, on the branch and NOT yet merged or deployed** (migration `005_diocese_staff.sql`; Josh designates an editor per diocese on the admin page; they sign in at `parish/diocese-admin.html`; `documentation/ACCOUNTS_AND_SIGN_IN.md`). Deploy: import 005, upload `parish-backend.zip`. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
+deep-link exists). Original todo: history Volume 9.
 
 **Josh's own hands:**
 - Deploys are by hand: cPanel File Manager for zips, phpMyAdmin for migrations (click the database name first, then Import). Upload
-  `parish-backend.zip` AND `web-release-app-shell.zip` together; an older app-shell zip overwrites newer parish files. Whether the other
-  `web-release-*` zips from the 2026-10-06 release are uploaded is not recorded: ask before assuming.
+  `parish-backend.zip` AND `web-release-app-shell.zip` together; an older app-shell zip overwrites newer parish files. All
+  the `web-release-*` zips from the 2026-10-06 release are uploaded (Josh, 2026-10-07).
 - Replace the placeholder install icon in `images/app/` (dark square, gold ring, small double-barred cross;
   needs one square image, ideally 1024x1024 PNG, artwork well inside the edges; sizes can then be generated).
 - Drive:
@@ -175,7 +175,7 @@ Perl engine clone comes from `npm run roman-breviary:engine:setup`. Verified zer
 The modern Liturgy of the Hours lane was abandoned by Josh on 2026-09-27.
 
 **Parish Prayer Requests (separate live system, on `main` and in production).** A PHP/MariaDB backend (`api/`, versioned `/api/v1`) plus
-`parish/` pages. Checks: `php api/tests/run.php` (873 passed; needs MariaDB running) and `npm run audit:parish-intentions` (239 checks). Readers' pages:
+`parish/` pages. Checks: `php api/tests/run.php` (941 passed; needs MariaDB running) and `npm run audit:parish-intentions` (249 checks). Readers' pages:
 `parish/home.html?p=<slug>`, `parish/diocese.html?d=<key>`; following from the page works through a request key the app consumes at startup
 (`applyPendingParishFollowRequest` in `js/office-ui.js`). Rectors sign in at `theuniversaloffice.com/parish/` (emailed 6-digit code; password and
 passkey are optional extras) and read the join code under "Who can follow your parish"; `/parish/admin.html` is the administrator sign-in, not the

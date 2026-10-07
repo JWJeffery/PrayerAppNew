@@ -85,6 +85,7 @@ final class AuthApi
         $account = AccountApi::summary((string)Auth::emailOf($p));
         if ($p['type'] === 'admin') { Response::json(200, ['principal' => 'admin', 'email' => $p['email'], 'account' => $account]); return; }
         if ($p['type'] === 'reader') { Response::json(200, ['principal' => 'reader', 'email' => $p['reader']['email'], 'account' => $account]); return; }
+        if ($p['type'] === 'diocese') { Response::json(200, ['principal' => 'diocese', 'email' => $p['email'], 'diocese_key' => $p['diocese_key'], 'account' => $account]); return; }
         $parish = $p['parish'];
         unset($parish['id']);
         Response::json(200, ['principal' => 'staff', 'staff' => $p['staff'], 'parish' => $parish, 'account' => $account]);

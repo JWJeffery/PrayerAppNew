@@ -66,13 +66,13 @@ final class Auth
     }
 
     /** New session. The raw token is returned once and never stored (only its SHA-256). */
-    public static function createSession(string $principal, ?int $staffId, ?string $adminEmail = null, ?int $readerId = null): array
+    public static function createSession(string $principal, ?int $staffId, ?string $adminEmail = null, ?int $readerId = null, ?int $dioceseStaffId = null): array
     {
         $token = bin2hex(random_bytes(32));
         $pdo = Db::pdo();
-        $pdo->prepare('INSERT INTO sessions (token_hash, principal, staff_id, admin_email, reader_id, created_at, expires_at)
-                       VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL ? DAY)')
-            ->execute([hash('sha256', $token), $principal, $staffId, $adminEmail, $readerId, self::SESSION_TTL_DAYS]);
+        $pdo->prepare('INSERT INTO sessions (token_hash, principal, staff_id, admin_email, reader_id, diocese_staff_id, created_at, expires_at)
+                       VALUES (?, ?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP() + INTERVAL ? DAY)')
+            ->execute([hash('sha256', $token), $principal, $staffId, $adminEmail, $readerId, $dioceseStaffId, self::SESSION_TTL_DAYS]);
         $exp = $pdo->query('SELECT expires_at FROM sessions WHERE id = ' . (int)$pdo->lastInsertId())->fetchColumn();
         return ['token' => $token, 'expires_at' => Validate::isoUtc($exp)];
     }
@@ -97,11 +97,13 @@ final class Auth
                     TIMESTAMPDIFF(SECOND, COALESCE(s.reauth_at, s.created_at), UTC_TIMESTAMP()) AS fresh_age,
                     st.id AS staff_id, st.email, st.display_name, st.role,
                     p.id AS parish_id, p.slug, p.name, p.visibility, p.status,
-                    rd.id AS reader_id, rd.email AS reader_email
+                    rd.id AS reader_id, rd.email AS reader_email,
+                    ds.id AS diocese_staff_id, ds.email AS diocese_email, ds.diocese_key
              FROM sessions s
              LEFT JOIN staff st ON st.id = s.staff_id
              LEFT JOIN parishes p ON p.id = st.parish_id
              LEFT JOIN readers rd ON rd.id = s.reader_id
+             LEFT JOIN diocese_staff ds ON ds.id = s.diocese_staff_id
              WHERE s.token_hash = ? AND s.expires_at > UTC_TIMESTAMP()'
         );
         $st->execute([hash('sha256', $token)]);
@@ -115,6 +117,12 @@ final class Auth
             if ($r['reader_id'] === null) { return null; }
             return ['type' => 'reader', 'session_id' => (int)$r['session_id'], 'fresh_age' => $fresh,
                     'reader' => ['id' => (int)$r['reader_id'], 'email' => $r['reader_email']]];
+        }
+        if ($r['principal'] === 'diocese') {
+            // The editor row is re-read on every call: removing someone ends their access at once.
+            if ($r['diocese_staff_id'] === null) { return null; }
+            return ['type' => 'diocese', 'session_id' => (int)$r['session_id'], 'fresh_age' => $fresh,
+                    'email' => $r['diocese_email'], 'diocese_staff_id' => (int)$r['diocese_staff_id'], 'diocese_key' => $r['diocese_key']];
         }
         if ($r['staff_id'] === null || $r['status'] !== 'approved') { return null; }
         return [
