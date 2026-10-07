@@ -153,8 +153,22 @@
     return box;
   }
 
+  // Arriving from a "Get the app" link (?install=1, e.g. on a parish page): show the steps straight away,
+  // once, whatever was dismissed before. The marker is removed from the address so it never sticks.
+  var asked = false;
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('install') === '1') {
+      asked = true;
+      params.delete('install');
+      var qs = params.toString();
+      window.history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+    }
+  } catch (e) { /* ignore */ }
+
   function eligible() {
     if (!isMobile || isInstalled()) { return false; }
+    if (asked) { return true; }
     if (get(KEYS.never) === '1') { return false; }
     var until = Number(get(KEYS.snooze) || 0);
     if (until && Date.now() < until) { return false; }
@@ -204,6 +218,11 @@
       }
     } catch (e) { /* storage unavailable: the banner then waits for a visit it can count */ }
     drawSection();
+    if (asked) {
+      // Asked for (a "Get the app" link): no waiting, apart from a moment for an Android browser's own offer.
+      window.setTimeout(showBanner, isAndroid && !deferred ? 1500 : 300);
+      return;
+    }
     window.setTimeout(function () {
       if (isAndroid && !deferred) {
         // Give the browser a moment to offer its own install; if it does not, show the menu steps instead.

@@ -37,6 +37,9 @@ function parishIntentionsIsValidSlug(slug) {
 // Mirrors fetchDailyOfficeResource in js/office-ui.js: an AbortController timeout so a slow or dead
 // server can never hang the office. credentials 'omit' -- nothing identifying is ever sent.
 async function parishIntentionsFetch(path, options) {
+    // Offline: do not even start the request (the parish list loads whenever a diocese picker draws, and a failed
+    // request per load is noise). Every caller already treats a throw as "network trouble" and falls back to its cache.
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) throw new Error('offline');
     const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
     const timeoutId = controller ? setTimeout(() => controller.abort(), PARISH_INTENTIONS_TIMEOUT_MS) : null;
     try {

@@ -123,6 +123,38 @@ const waitBanner = (page, ms = 12000) => page.waitForSelector('#uo-install-banne
   check(/address bar/.test(await page.locator('#install-section').innerText()), '...but the profile-panel section explains how to install');
   await ctx.close();
 }
+// "Get the app" link: arriving with ?install=1 shows the steps at once, even on a first visit and after a dismissal.
+{
+  const { ctx, page } = await phone(IPHONE);
+  await page.goto(base + '?install=1');
+  check(await waitBanner(page, 5000), '?install=1 shows the banner straight away on a first visit');
+  check(!(await page.url()).includes('install=1'), '...and removes the marker from the address');
+  await ctx.close();
+}
+{
+  const { ctx, page } = await phone(IPHONE, { visits: 5 });
+  await page.addInitScript(() => { try { localStorage.setItem('uoInstall.never', '1'); } catch (e) {} });
+  await page.goto(base + '?install=1');
+  check(await waitBanner(page, 5000), '?install=1 shows it even after "Don\'t show again"');
+  await ctx.close();
+}
+{
+  const { ctx, page } = await phone(DESKTOP);
+  await page.goto(base + '?install=1'); await page.waitForTimeout(2500);
+  check((await banner(page).count()) === 0, '?install=1 on a computer shows no banner');
+  await ctx.close();
+}
+// Parish pages: the header link appears only for a phone that has not installed.
+for (const [ua, standalone, expect, label] of [[IPHONE, false, true, 'a phone'], [ANDROID, false, true, 'an Android phone'], [DESKTOP, false, false, 'a computer'], [IPHONE, true, false, 'the installed app']]) {
+  const { ctx, page } = await phone(ua, { standalone });
+  for (const f of ['parish/home.html?p=x', 'parish/diocese.html?d=episcopal/iowa']) {
+    await page.goto(base + f); await page.waitForTimeout(400);
+    const vis = await page.locator('#get-app-link').isVisible();
+    check(vis === expect, `${f.split('?')[0]}: "Get the app" link ${expect ? 'shown' : 'hidden'} for ${label}`);
+  }
+  if (expect) { check((await page.locator('#get-app-link').getAttribute('href')) === '../index.html?install=1', '...and it points at the app with ?install=1'); }
+  await ctx.close();
+}
 check(errors.length === 0, 'no uncaught page errors' + (errors.length ? ': ' + errors.join(' | ') : ''));
 await browser.close();
 server.kill();
