@@ -98,7 +98,7 @@ and say what you checked.
 JS rubrics engine, any year 1900-2100, Latin and English, with a Calendar setting for Rubrics 1960 or Rubrics 1960 -
 2020 USA (PR #120, 2026-10-06); plan and results: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md` sections 12-18.
 (2) Offline delivery: installable offline website built 2026-10-04 (`npm run release:web`, `npm run test:offline`).
-**Not done:** Capacitor iOS/Android apps (gated on Josh getting Apple/Google accounts, he has neither);
+**Not done, and not planned (Josh, 2026-10-07: web only):** Capacitor iOS/Android apps;
 password-protected hosting can block the manifest/service worker (plan doc section 17). JSON stays the source of
 truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). Scripture in the public app is limited
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
@@ -108,7 +108,7 @@ licensed (his call, not verified by us).
 device; everyone who signs in (reader, rector, helper, administrator) can add a password and/or passkey; emailed codes still work and nothing is
 required. A seam for Apple/Google/Facebook sign-in exists but no provider is on. Read `documentation/ACCOUNTS_AND_SIGN_IN.md`. Needs migration
 `004_accounts.sql` and BOTH zips. **Google Play blocker (Josh, 2026-10-07):** a new personal Play developer account must run a 12-tester, 14-day
-closed test before publishing; organization accounts are exempt (needs a D-U-N-S number). Not yet decided: which route to take.
+closed test before publishing; organization accounts are exempt (needs a D-U-N-S number). **Decision (Josh, 2026-10-07): web only.** The app ships as the installable offline website; no Capacitor/Play/App Store apps for now. Revisit only if Josh says so.
 
 **Parish features built (2026-10-06, on this branch, not yet on `main`):** parish home page, rector announcements, parish events and the
 diocesan page. Still open: "this Sunday's Collect and readings" beside the service times (needs the app's calendar engine; no date deep-link

@@ -85,3 +85,17 @@ foreach ([['GET', '/admin/parishes'], ['GET', '/admin/status'], ['GET', '/admin/
     [$s] = http($m, "/api/v1$path", $gb, $m === 'PUT' ? [] : null); if ($s !== 401) { $bad[] = "$m $path=$s"; }
 }
 t('every admin route returns 401', $bad === [], implode(', ', $bad));
+
+section('Admins: status lists database updates not yet imported');
+[$s, $b] = http('GET', '/api/v1/admin/status', ['Authorization: Bearer ' . ($ownerTok = Auth::createSession('admin', null, 'a@example.org')['token'])]);
+$st = jbody($b);
+t('status reports no pending updates when the database is current', $s === 200 && ($st['pending_migrations'] ?? ['x']) === [], "$s $b");
+$pdo->exec("DELETE FROM schema_migrations WHERE version = '004_accounts'");
+[$s, $b] = http('GET', '/api/v1/admin/status', ['Authorization: Bearer ' . $ownerTok]);
+t('...and names an update that is missing', ($st2 = jbody($b))['pending_migrations'] === ['004_accounts'], $b);
+$pdo->exec("INSERT IGNORE INTO schema_migrations (version, applied_at) VALUES ('004_accounts', UTC_TIMESTAMP())");
+section('Admins: a value the tables cannot store fails loudly');
+$bad = false;
+try { $pdo = Db::pdo(); $pdo->exec("INSERT INTO login_codes (purpose, email, code_hash, created_at, expires_at) VALUES ('nonexistent', 'x@y.org', REPEAT('a',64), UTC_TIMESTAMP(), UTC_TIMESTAMP())"); }
+catch (PDOException $e) { $bad = true; }
+t('inserting an unknown code purpose is an error, not a silent blank', $bad);

@@ -119,6 +119,13 @@
       if (first) { show('dashboard'); }
       loadAdmins();
       window.UOAccountPanel.mount($('security-panel'), core);
+      // The code is ahead of the database when an update file has not been imported: say so, plainly.
+      client.call('GET', '/admin/status').then(function (st) {
+        var pending = st.ok && Array.isArray(st.body.pending_migrations) ? st.body.pending_migrations : [];
+        if (pending.length) {
+          U.say($('admin-status'), 'bad', 'The database is missing updates: ' + pending.join(', ') + '. Import each of those files (api/migrations/<name>.sql) in phpMyAdmin. Until then some features will not work, such as sign-in codes for readers.');
+        }
+      });
     });
   }
 

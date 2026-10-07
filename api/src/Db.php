@@ -18,6 +18,10 @@ final class Db
             ]);
             // All stored timestamps are UTC (spec section 5).
             self::$pdo->exec("SET time_zone = '+00:00'");
+            // Strict mode, whatever the host's default: a value the database cannot store (such as a sign-in code
+            // purpose the tables do not know yet because an update was not imported) must fail loudly, never be
+            // quietly blanked and leave someone with a code that can never work.
+            self::$pdo->exec("SET SESSION sql_mode = CONCAT_WS(',', @@SESSION.sql_mode, 'STRICT_ALL_TABLES')");
         }
         return self::$pdo;
     }
