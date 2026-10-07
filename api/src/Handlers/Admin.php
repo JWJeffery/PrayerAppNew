@@ -332,7 +332,10 @@ final class AdminApi
             'extensions' => ['sodium' => extension_loaded('sodium'), 'pdo_mysql' => extension_loaded('pdo_mysql'),
                              'mbstring' => extension_loaded('mbstring'), 'openssl' => extension_loaded('openssl')],
             'database' => true,
-            'migrations' => $pdo->query('SELECT version FROM schema_migrations ORDER BY version')->fetchAll(PDO::FETCH_COLUMN),
+            'migrations' => $applied = $pdo->query('SELECT version FROM schema_migrations ORDER BY version')->fetchAll(PDO::FETCH_COLUMN),
+            // Update files shipped with this code that the database has not recorded yet: they still need importing.
+            'pending_migrations' => array_values(array_diff(
+                array_map(fn($f) => basename($f, '.sql'), glob(dirname(__DIR__, 2) . '/migrations/*.sql') ?: []), $applied)),
             'mail_driver' => Config::get('mail.driver'),
             'time_utc' => gmdate('Y-m-d\TH:i:s\Z'),
         ]);
