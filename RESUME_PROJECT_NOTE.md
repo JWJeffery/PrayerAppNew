@@ -114,12 +114,10 @@ only** (Google Play needs a 12-tester, 14-day test for personal accounts; organi
 unless Josh revisits. **Diocese sign-in: built 2026-10-07, on the branch and NOT yet merged or deployed** (migration `005_diocese_staff.sql`; Josh designates an editor per diocese on the admin page; they sign in at `parish/diocese-admin.html`; `documentation/ACCOUNTS_AND_SIGN_IN.md`). Deploy: import 005, upload `parish-backend.zip`. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
 deep-link exists). Original todo: history Volume 9.
 
-**Josh's own hands:**
+**Josh's own hands** (install icon done 2026-10-07: his gold cross, open book and Episcopal shield artwork is in `images/app/`; ships with the next `release:web` app-shell zip):
 - Deploys are by hand: cPanel File Manager for zips, phpMyAdmin for migrations (click the database name first, then Import). Upload
   `parish-backend.zip` AND `web-release-app-shell.zip` together; an older app-shell zip overwrites newer parish files. All
   the `web-release-*` zips from the 2026-10-06 release are uploaded (Josh, 2026-10-07).
-- Replace the placeholder install icon in `images/app/` (dark square, gold ring, small double-barred cross;
-  needs one square image, ideally 1024x1024 PNG, artwork well inside the edges; sizes can then be generated).
 - Drive:
 - (Done 2026-10-06: Josh deleted the superseded "Corrections of 2026-10-02" Google Doc, the one with the incorrect 22-record count; the replacement stays.)
 - Optionally upload `synaxarium-review/data/synaxarium-decisions-2026-10-02-corrected.json` to
