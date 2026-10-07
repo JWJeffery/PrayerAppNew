@@ -329,7 +329,16 @@
         if (!main || main.querySelector(':scope > .uo-page')) return;   /* idempotent */
 
         var ordo = el('div', 'uo-ordo');
-        ordo.appendChild(el('div', 'uo-ordo-mark', 'The Universal Office'));
+        /* 2026-10-06 (Josh): the wordmark is a link back to the main splash page (the tradition chooser).
+           A real <button> so it takes keyboard focus and is announced as a control; backToSplash() is the
+           same function the "Explore Other Offices" button uses. */
+        var mark = el('button', 'uo-ordo-mark', 'The Universal Office');
+        mark.type = 'button';
+        mark.setAttribute('aria-label', 'The Universal Office: return to the main page');
+        mark.addEventListener('click', function () {
+            if (typeof window.backToSplash === 'function') window.backToSplash();
+        });
+        ordo.appendChild(mark);
         var centre = el('div', 'uo-ordo-day');
         /* The liturgical day line is context.calendarSummary, verbatim, and
            arrives with the envelope in Phase 3. Empty until then — deliberately
