@@ -610,6 +610,13 @@
             item.appendChild(el('span', 'uo-rail-dot'));
             item.appendChild(el('span', 'uo-rail-label', b.label));
             item.setAttribute('data-uo-role', b.role || 'other');
+            // ADDED 2026-10-06 (Josh): each rail entry takes the reader to that part of the office.
+            item.setAttribute('role', 'button');
+            item.tabIndex = 0;
+            item.addEventListener('click', function () { scrollToRailItem(item); });
+            item.addEventListener('keydown', function (ev) {
+                if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); scrollToRailItem(item); }
+            });
             list.appendChild(item);
             if (i === 0) item.classList.add('is-current');
         });
@@ -753,23 +760,67 @@
             return out.trim();
         }
 
+        // FIXED 2026-10-06 (Josh: "Prayer for Forgiveness gets skipped"). Matching was an exact text
+        // comparison, so a rail label such as "The Invitatory" never matched the page's gutter label
+        // "INVITATORY" (and likewise "The Collect"/"COLLECT", "Antiphon"/"ANTIPHON"). An unmatched item
+        // took the PREVIOUS item's position, the two tied, and the later one always won -- so the
+        // highlight jumped straight past "Prayer for Forgiveness". Two changes: labels now compare
+        // without case, extra spaces or a leading "The"; and an item that still has no match is placed
+        // between its matched neighbours instead of on top of one, so it is never skipped and has a
+        // sensible place to scroll to.
+        function norm(t) {
+            return t.toLowerCase().replace(/\s+/g, ' ').replace(/^the /, '').trim();
+        }
+
+        var matchedYs = [];   // y for each item, or null when nothing on the page matched it
         items.forEach(function (item) {
             var labelEl = item.querySelector('.uo-rail-label');
-            var labelText = labelEl ? labelEl.textContent.trim() : '';
+            var labelText = labelEl ? norm(labelEl.textContent) : '';
             var matched = null;
             for (var j = rubricPointer; j < rubrics.length; j++) {
-                if (ownText(rubrics[j]) === labelText) {
+                if (norm(ownText(rubrics[j])) === labelText) {
                     matched = rubrics[j];
                     rubricPointer = j + 1;
                     break;
                 }
             }
-            var y = matched ? (matched.getBoundingClientRect().top - pageTop) : lastY;
-            railWaypoints.push({ item: item, y: y });
-            lastY = y;
+            matchedYs.push(matched ? (matched.getBoundingClientRect().top - pageTop) : null);
+        });
+
+        var endY = Math.max(page.scrollHeight, lastY);
+        var ys = matchedYs.slice();
+        for (var a = 0; a < ys.length; a++) {
+            if (ys[a] !== null) continue;
+            var runStart = a;
+            while (a < ys.length && ys[a] === null) a++;
+            var before = runStart > 0 ? ys[runStart - 1] : 0;
+            var after = a < ys.length ? ys[a] : endY;
+            var count = a - runStart;
+            for (var k = 0; k < count; k++) {
+                ys[runStart + k] = before + (after - before) * ((k + 1) / (count + 1));
+            }
+            a--;
+        }
+        items.forEach(function (item, idx) {
+            railWaypoints.push({ item: item, y: ys[idx] });
         });
 
         updateRailCurrent();
+    }
+
+    /* ADDED 2026-10-06 (Josh): a rail entry takes the reader to that part of the office. Lands the
+       entry's block a little below the top of the page so it is also the one the rail marks current
+       (RAIL_CURRENT_THRESHOLD_PX, below). Honours reduced-motion. */
+    function scrollToRailItem(item) {
+        var page = document.querySelector('.uo-page');
+        if (!page) return;
+        var target = null;
+        for (var i = 0; i < railWaypoints.length; i++) {
+            if (railWaypoints[i].item === item) { target = railWaypoints[i]; break; }
+        }
+        if (!target) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        page.scrollTo({ top: Math.max(0, target.y - 60), behavior: reduce ? 'auto' : 'smooth' });
     }
 
     /* How far below the top of .uo-page's own viewport a block must cross before
