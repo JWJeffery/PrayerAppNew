@@ -4,22 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
     <meta name="theme-color" content="#1b1612">
     <link rel="apple-touch-icon" href="/images/app/apple-touch-icon.png">
     <title>The Universal Office</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css?v=237">
+    <!-- Opening screen (js/splash.js). Its own stylesheet and font file, so it paints first and offline. -->
+    <link rel="preload" href="assets/fonts/Cinzel-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/splash.css?v=1">
+    <noscript><style>#uo-splash { display: none; }</style></noscript>
+    <link rel="stylesheet" href="css/office.css?v=238">
+    <link rel="stylesheet" href="css/install-prompt.css?v=1">
     <link rel="stylesheet" href="css/bible-browser.css">
     <!-- Redesigned office shell (Phases 1-5) -- was scoped under a body.shell-v2
          dev flag while it shipped safely alongside the old skin. Phase 6
          (2026-09-24) made it the only office shell and dropped the flag; see
          documentation/UI_REDESIGN_HANDOFF.md section 9. -->
-    <link rel="stylesheet" href="css/office-shell.css?v=334">
+    <link rel="stylesheet" href="css/office-shell.css?v=336">
 </head>
 <body id="app-body" class="dark-mode shell-v2">
+<!-- Opening screen: "The Universal Office" for five seconds (css/splash.css, js/splash.js). -->
+<div id="uo-splash" role="dialog" aria-modal="true" aria-label="The Universal Office" tabindex="-1">
+    <div class="uo-sp-mark">
+        <div class="uo-sp-glow"></div>
+        <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+                <linearGradient id="uo-sp-gold" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fbefc0"/><stop offset="0.45" stop-color="#e3c36d"/><stop offset="1" stop-color="#a98338"/>
+                </linearGradient>
+                <linearGradient id="uo-sp-cream" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fff7da"/><stop offset="1" stop-color="#ecd9a0"/>
+                </linearGradient>
+                <!-- One arm of the Canterbury cross: a narrow neck that flares into curved, horned ends, with a long
+                     triangle set into it and a triquetra near the wide end. The other three are this, turned. -->
+                <g id="uo-sp-arm">
+                    <path d="M90.3 89.1 Q91.2 60.1 62.2 36.6 Q100 8.9 137.8 36.6 Q108.8 60.1 109.7 89.1 Z" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="0.9" stroke-linejoin="round"/>
+                    <path d="M82.6 38.6 L117.4 38.6 L100 86 Z" fill="url(#uo-sp-cream)" stroke="#7a5c22" stroke-width="0.9" stroke-linejoin="round"/>
+                    <path d="M87 42.2 L113 42.2 L100 77 Z" fill="none" stroke="#9a7430" stroke-width="0.6" stroke-linejoin="round"/>
+                    <g fill="none" stroke="#8a5a1a" stroke-width="0.75"><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4"/><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4" transform="rotate(120 100 50.5)"/><ellipse cx="100" cy="47.9" rx="2.4" ry="4.4" transform="rotate(240 100 50.5)"/></g>
+                </g>
+            </defs>
+            <circle class="uo-sp-ring" cx="100" cy="100" r="92"/>
+            <g class="uo-sp-cross"><g transform="translate(100 100) scale(1.08) translate(-100 -100)">
+                <use href="#uo-sp-arm"/>
+                <use href="#uo-sp-arm" transform="rotate(90 100 100)"/>
+                <use href="#uo-sp-arm" transform="rotate(180 100 100)"/>
+                <use href="#uo-sp-arm" transform="rotate(270 100 100)"/>
+                <rect x="89" y="89" width="22" height="22" fill="url(#uo-sp-gold)" stroke="#7a5c22" stroke-width="0.9"/>
+                <rect x="92.6" y="92.6" width="14.8" height="14.8" fill="url(#uo-sp-cream)" stroke="#7a5c22" stroke-width="0.8"/>
+            </g></g>
+        </svg>
+    </div>
+    <h1 class="uo-sp-name"><span class="uo-sp-the">The</span><span class="uo-sp-main"><span>Universal</span><span>Office</span></span></h1>
+    <div class="uo-sp-rule" aria-hidden="true"><i>&#10022;</i></div>
+    <ul class="uo-sp-lines">
+        <li>Anglican</li><li>Roman</li><li>Coptic</li><li>Byzantine</li><li>Church of the East</li>
+    </ul>
+    <div class="uo-sp-hint" aria-hidden="true">Tap to continue</div>
+</div>
+<script src="js/splash.js?v=1"></script>
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
@@ -40,7 +85,7 @@
 
     <div id="entry-family-grid" class="app-entry-family-grid" aria-label="Choose Western, Eastern, or unknown">
         <button class="app-entry-family-card" type="button" data-entry-family="western">
-            <span class="app-entry-family-icon">☩</span>
+            <span class="app-entry-family-icon" aria-hidden="true"><svg class="app-entry-cross" viewBox="0 0 32 32" focusable="false"><rect x="14.1" y="3" width="3.8" height="26" rx="0.4"/><rect x="7" y="9" width="18" height="3.8" rx="0.4"/></svg></span>
             <span>
                 <strong>Western Christian</strong>
                 <small>The churches of the Western Christian tradition.</small>
@@ -48,7 +93,7 @@
         </button>
 
         <button class="app-entry-family-card" type="button" data-entry-family="eastern">
-            <span class="app-entry-family-icon">✠</span>
+            <span class="app-entry-family-icon" aria-hidden="true"><svg class="app-entry-cross" viewBox="0 0 32 32" focusable="false"><rect x="14.4" y="2" width="3.2" height="28" rx="0.4"/><rect x="11.2" y="4.6" width="9.6" height="2.3" rx="0.3"/><rect x="8" y="10" width="16" height="3" rx="0.3"/><rect x="9.4" y="21.2" width="13.2" height="2.6" rx="0.3" transform="rotate(18 16 22.5)"/></svg></span>
             <span>
                 <strong>Eastern Christian</strong>
                 <small>The churches of the Eastern Christian traditions.</small>
@@ -1079,7 +1124,7 @@
         <div class="app-profile-defaults-grid">
             <label class="app-profile-default-field" for="profile-display-name">
                 <span>Your name</span>
-                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" onchange="setUserProfileDisplayName(this.value)">
+                <input type="text" id="profile-display-name" placeholder="Not entered" autocomplete="name" oninput="scheduleProfileTextSave()" onchange="setUserProfileDisplayName(this.value)">
             </label>
 
             <label class="app-profile-default-field" for="profile-tradition-default">
@@ -1109,30 +1154,27 @@
             </label>
 
             <label class="app-profile-default-field" for="profile-cycle-of-prayer-parish" data-tradition-field="anglican" hidden aria-hidden="true">
-                <span>Home parish (optional)</span>
+                <span>Your parish (optional)</span>
                 <select id="profile-cycle-of-prayer-parish" onchange="setUserProfileCycleOfPrayerParish(this.value)" disabled>
                     <option value="">Choose a diocese first</option>
                 </select>
                 <input type="text" id="profile-cycle-of-prayer-parish-other" placeholder="Your parish's name"
-                       style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
+                       style="display:none" oninput="scheduleProfileTextSave()" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">
             </label>
 
-            <!-- ADDED 2026-09-30 (Parish Intercessions). Follow a parish's prayer requests in the office.
-                 Options are filled at run time from GET /api/v1/parishes (js/parish-intentions.js +
+            <!-- Parish prayer requests (2026-09-30), reworked 2026-10-08: there is ONE parish picker (the "Your parish"
+                 field above). Choosing a parish that has a page on the app follows it at once, so there is no second
+                 list and no separate "follow" step. This block is only what belongs under that picker: the join-code
+                 box for a parish that needs one, a status line, and a link to the parish's page. The picker's options
+                 are filled at run time from GET /api/v1/parishes (js/parish-intentions.js and
                  populateParishIntentionsControls in js/office-ui.js) -- never hand-list parishes here.
-                 A parish that needs a join code shows the code box below; the reader follows it only once
-                 the code is accepted. Anglican-only, gated exactly like the diocese/parish fields. -->
+                 Anglican-only, gated exactly like the diocese/parish fields. -->
             <div class="app-profile-default-field app-profile-default-field-wide" id="profile-parish-intentions-field" data-tradition-field="anglican" hidden aria-hidden="true">
-                <label for="profile-parish-intentions-select">Parish prayer intentions</label>
-                <select id="profile-parish-intentions-select" onchange="setUserProfileParishIntentionsFromSelect(this.value)" disabled>
-                    <option value="">Loading parishes&hellip;</option>
-                </select>
                 <div class="app-profile-parish-intentions-join" id="profile-parish-intentions-join" hidden>
                     <input type="text" id="profile-parish-intentions-code" placeholder="Join code (for example ABCD-EFGH)" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Parish join code">
                     <button type="button" class="app-profile-reset" id="profile-parish-intentions-join-button" onclick="joinSelectedParishIntentions()">Join</button>
                 </div>
                 <p class="app-profile-parish-intentions-note" id="profile-parish-intentions-note" role="status" aria-live="polite"></p>
-                <button type="button" class="app-profile-reset app-profile-parish-intentions-stop" id="profile-parish-intentions-stop" hidden onclick="clearUserProfileParishIntentions()">Stop following</button>
                 <a class="app-profile-parish-intentions-page" id="profile-parish-page-link" href="parish/home.html" hidden>Parish page: service times, announcements, events</a>
             </div>
 
@@ -1247,6 +1289,9 @@
             </label>
         </div>
 
+        <!-- ADDED 2026-10-07: always-available install steps (js/install-prompt.js fills this in). -->
+        <div id="install-section"></div>
+
         <!-- ADDED 2026-10-07: optional account. Keeps the settings above on every device; sign in with an
              emailed code, and optionally a password or a passkey. Closed by default; the app works fully without it.
              Behaviour: js/account-ui.js (client core: js/account-core.js). -->
@@ -1257,6 +1302,8 @@
             <div id="account-confirm" class="app-account-confirm" hidden></div>
             <p id="account-status" class="app-account-status" role="status" aria-live="polite" hidden></p>
         </details>
+
+        <p class="app-profile-storage-note" id="profile-storage-note"></p>
 
         <div class="app-profile-defaults-actions">
             <button type="button" class="mode-btn app-profile-save" onclick="closeUserProfilePanel()">Save</button>
@@ -1289,7 +1336,7 @@
 <script src="js/orthodox-day.js" defer></script>
 <script src="js/day-guide.js" defer></script>
 <script src="js/cycles-of-prayer.js" defer></script>
-<script src="js/parish-intentions.js?v=2" defer></script>
+<script src="js/parish-intentions.js?v=3" defer></script>
 <script src="js/account-core.js?v=1" defer></script>
 <script src="js/account-ui.js?v=1" defer></script>
 <script src="js/octoechos/orthros-praises-sunday.js" defer></script>
@@ -1333,7 +1380,7 @@
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/explanations.js?v=220" defer></script>
-<script src="js/office-ui.js?v=336" defer></script>
+<script src="js/office-ui.js?v=339" defer></script>
 <script src="js/prayers.js?v=223"></script>
 <script src="js/tooltip.js"></script>
 
@@ -1342,5 +1389,6 @@
 <!-- Phase 4: Office Settings as one drawer. -->
 <script src="js/office-drawer.js?v=10" defer></script>
 <script src="js/update-prompt.js?v=1" defer></script>
+<script src="js/install-prompt.js?v=2" defer></script>
 </body>
 </html>

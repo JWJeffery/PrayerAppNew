@@ -98,7 +98,7 @@ and say what you checked.
 JS rubrics engine, any year 1900-2100, Latin and English, with a Calendar setting for Rubrics 1960 or Rubrics 1960 -
 2020 USA (PR #120, 2026-10-06); plan and results: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md` sections 12-18.
 (2) Offline delivery: installable offline website built 2026-10-04 (`npm run release:web`, `npm run test:offline`).
-**Not done, and not planned (Josh, 2026-10-07: web only):** Capacitor iOS/Android apps;
+**Not done (an earlier note recorded "web only", but Josh says he never asked for that; Google Play is OPEN, he is planning a beta and asking about Play closed testing):** Capacitor iOS/Android apps;
 password-protected hosting can block the manifest/service worker (plan doc section 17). JSON stays the source of
 truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). Scripture in the public app is limited
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
@@ -109,8 +109,7 @@ the diocesan page, global-administrator viewing and in-app administrator managem
 settings across devices; password and/or passkey optional for everyone; emailed codes still work; Apple/Google/Facebook seam exists, no provider
 on). Migrations 002, 003 and 004 are imported on production (19 tables) and Josh confirmed emailed-code sign-in works. Both zips (`parish-backend.zip`
 and `web-release-app-shell.zip`, strict SQL mode plus a "database is missing updates" warning on the admin page) are deployed; PR #125 put
-everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **Decision (Josh, 2026-10-07): web
-only** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
+everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **An earlier note recorded "web only" as Josh's decision; he says he never asked for that, so Play/store apps are OPEN:** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
 unless Josh revisits. **Diocese sign-in: built 2026-10-07, on the branch and NOT yet merged or deployed** (migration `005_diocese_staff.sql`; Josh designates an editor per diocese on the admin page; they sign in at `parish/diocese-admin.html`; `documentation/ACCOUNTS_AND_SIGN_IN.md`). Deploy: import 005, upload `parish-backend.zip`. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
 deep-link exists). Original todo: history Volume 9.
 
@@ -260,7 +259,10 @@ scripts are in `scripts/retired-audits/`. Of the 25 Maclean Church of the East p
   (`EthiopianCalendar`, `EastSyriacCalendar`, `ByzantinePaschalion`); test across edge-case years.
 - Fast Ramsha placeholders are resolved in `js/office-ui.js` by substring match against the day's
   ordinary ramsha sequence; an unresolvable marker fails loudly by design.
-- Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
+- Install banner (2026-10-07): `js/install-prompt.js` + `css/install-prompt.css`; a dismissible banner for phone browsers (second visit on, device-specific steps; Android uses the browser's own Install button), plus an always-on "Install this app" section in the profile panel. The `/parish/` reader pages (home, diocese) show a "Get the app" header link to phones only (`parish/get-app.js`), which opens the app at `?install=1` to show the steps. Test: `npm run test:install-prompt`. A phone keeps showing the OLD icon/manifest until its old service worker updates (accept "Update now", reopen); the zips are not the cause.
+- Opening screen (2026-10-07): `css/splash.css` + `js/splash.js` + the `#uo-splash` markup at the top of `index.html`; "The Universal Office" plays ~5 seconds, then shows "Tap to continue" and waits (it never auto-advances; Josh asked for this), once per browser session (tap, Enter, Space or Escape moves on; still version for reduced motion; skipped in automated browsers unless `?splash=force`). Test: `npm run test:splash`. The brief big-icon flash before it is Android's own launch screen (icon on the manifest `background_color`, now deep navy); it cannot be replaced.
+- The cross is drawn after the Canterbury cross in Josh's icon (flared horned arms, a cream triangle and triquetra in each arm). The Western and Eastern cards on the tradition-entry screen show a Latin and an Orthodox (slanted footrest) cross.
+Web release: `npm run release:web` builds a static export that Josh uploads by hand (it splits
   into four zips when over ~30MB: Breviary data, other data, saint icons, app shell). There is no auto-deploy.
 - Old narrative detail: `documentation/project-history/INDEX.md`, nine HISTORICAL volumes
   (2026-07-06 to 2026-10-06).

@@ -2314,6 +2314,13 @@ body.office-active dialog.uo-drawer .uo-drawer-title {
     font-size: 1.25rem;
 }
 
+/* The Western card shows a Latin cross and the Eastern card an Orthodox cross (three bars, the lowest slanted). */
+.app-entry-cross {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
 .app-entry-tradition-code {
     width: 50px;
     height: 50px;

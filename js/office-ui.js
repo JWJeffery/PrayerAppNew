@@ -1345,6 +1345,70 @@ function getUserProfileDefaults() {
     return profile;
 }
 
+// ADDED 2026-10-08 (Josh: the profile is lost between sessions of the installed Android app). A second copy of the
+// profile is kept in IndexedDB, a separate and more durable browser store than localStorage, and put back at launch
+// if localStorage comes up empty. Best-effort and silent: every failure just leaves localStorage as the only copy.
+const PROFILE_BACKUP_DB = 'universalOfficeBackup';
+const PROFILE_RESTORED_STORAGE_KEY = 'uoProfileRestoredAt';
+
+function profileBackupOpen() {
+    return new Promise((resolve, reject) => {
+        if (typeof indexedDB === 'undefined') { reject(new Error('no IndexedDB')); return; }
+        const request = indexedDB.open(PROFILE_BACKUP_DB, 1);
+        request.onupgradeneeded = () => { request.result.createObjectStore('kv'); };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+}
+
+function profileBackupWrite(profile) {
+    profileBackupOpen().then((db) => {
+        const tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').put({ profile: profile, savedAt: new Date().toISOString() }, 'profile');
+        tx.oncomplete = () => db.close();
+        tx.onerror = () => db.close();
+    }).catch(() => { /* best-effort */ });
+}
+
+function profileBackupRead() {
+    return profileBackupOpen().then((db) => new Promise((resolve) => {
+        const request = db.transaction('kv', 'readonly').objectStore('kv').get('profile');
+        request.onsuccess = () => { db.close(); resolve(request.result || null); };
+        request.onerror = () => { db.close(); resolve(null); };
+    })).catch(() => null);
+}
+
+function profileBackupClear() {
+    profileBackupOpen().then((db) => {
+        const tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').delete('profile');
+        tx.oncomplete = () => db.close();
+        tx.onerror = () => db.close();
+    }).catch(() => { /* best-effort */ });
+}
+
+/** At launch: if localStorage holds no profile but the backup does, put it back. Resolves true when it did. */
+async function restoreProfileFromBackupIfMissing() {
+    try {
+        if (localStorage.getItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY)) return false;
+    } catch (_error) { return false; }
+
+    const backup = await profileBackupRead();
+    if (!backup || !backup.profile || typeof backup.profile !== 'object') return false;
+
+    const restored = normalizeUserProfileDefaults(backup.profile);
+    try {
+        localStorage.setItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY, JSON.stringify(restored));
+        localStorage.setItem(PROFILE_RESTORED_STORAGE_KEY, new Date().toISOString());
+        const legacyValue = restored.entryPageDefault === 'universal'
+            ? 'universal'
+            : (restored.entryPageDefault === 'tradition' ? restored.traditionDefault : null);
+        writeLegacyEntryDefault(legacyValue);
+    } catch (_error) { return false; }
+    syncUserProfileControls(restored);
+    return true;
+}
+
 function persistUserProfileDefaults(profile) {
     const normalized = normalizeUserProfileDefaults(profile);
 
@@ -1353,6 +1417,7 @@ function persistUserProfileDefaults(profile) {
     } catch (_error) {
         console.warn('[entry-routing] Could not persist local profile defaults.');
     }
+    profileBackupWrite(normalized);
 
     const legacyValue = normalized.entryPageDefault === 'universal'
         ? 'universal'
@@ -1382,7 +1447,16 @@ function persistUserEntryDefault(value) {
     );
 }
 
+/** Forgets only the opening tradition (the reader is asked again); everything else in the profile stays. */
+function clearStoredTraditionDefault() {
+    const profile = getUserProfileDefaults();
+    profile.entryPageDefault = 'ask';
+    profile.traditionDefault = null;
+    persistUserProfileDefaults(profile);
+}
+
 function clearUserEntryDefault() {
+    profileBackupClear(); // a deliberate reset must not be undone by the backup
     try {
         localStorage.removeItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY);
         localStorage.removeItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
@@ -1511,6 +1585,49 @@ function setUserProfileDisplayName(value) {
     persistUserProfileDefaults(profile);
 }
 
+// FIXED 2026-10-08 (Josh: "the app is not saving my profile when I exit"): a text field only fired its change
+// event when it lost focus, so a name typed and then left behind (closing the app, switching away, the phone's
+// back button) was never saved, and the first-time prompt saved nothing at all until its own Save button. Text is
+// now saved as it is typed (a short pause after the last key), and again whenever the page is hidden or closed.
+let profileTextSaveTimer = null;
+let profileTextDirty = false; // something was typed since the last save; untouched fields are never re-written
+
+function scheduleProfileTextSave() {
+    profileTextDirty = true;
+    if (profileTextSaveTimer) clearTimeout(profileTextSaveTimer);
+    profileTextSaveTimer = setTimeout(saveProfileTextFieldsNow, 600);
+}
+
+/** Having typed in the first-time prompt counts as having used it, so it does not come back next time. */
+function markOnboardingEngaged() {
+    const profile = getUserProfileDefaults();
+    if (profile.onboardingComplete) return;
+    profile.onboardingComplete = true;
+    persistUserProfileDefaults(profile);
+}
+
+function saveProfileTextFieldsNow() {
+    if (profileTextSaveTimer) { clearTimeout(profileTextSaveTimer); profileTextSaveTimer = null; }
+    if (!profileTextDirty) return;
+    profileTextDirty = false;
+    ['profile-display-name', 'uo-onboarding-name'].forEach((id) => {
+        const input = document.getElementById(id);
+        if (!input) return;
+        if (input.value.trim() === (getUserProfileDefaults().displayName || '')) return;
+        setUserProfileDisplayName(input.value);
+        if (id === 'uo-onboarding-name') markOnboardingEngaged();
+    });
+    ['profile-cycle-of-prayer-parish', 'uo-onboarding-cycle-of-prayer-parish'].forEach((selectId) => {
+        const input = document.getElementById(selectId + '-other');
+        if (!input || input.style.display === 'none') return;
+        if (input.value.trim() === (getUserProfileDefaults().cycleOfPrayerParishOther || '')) return;
+        setUserProfileCycleOfPrayerParishOther(input.value);
+    });
+}
+
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') saveProfileTextFieldsNow(); });
+window.addEventListener('pagehide', saveProfileTextFieldsNow);
+
 // Soft/cosmetic only -- see UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS.isSuperUser's
 // own comment. Called only from the Admin Console's own toggle
 // (already gated behind advanced-tools), never from the public onboarding
@@ -1559,6 +1676,16 @@ function setUserProfileCycleOfPrayerDiocese(value) {
     // stale cross-diocese value around.
     profile.cycleOfPrayerParish = null;
     profile.cycleOfPrayerParishOther = null;
+    // The parish picker is reset along with it, so any parish followed through it is let go too.
+    if (profile.parishIntentionsSlug || parishIntentionsPendingSlug) {
+        profile.parishIntentionsSlug = null;
+        profile.parishIntentionsPass = null;
+        parishIntentionsNeedsCodeSlug = null;
+        parishIntentionsPendingSlug = null;
+        if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
+        setParishIntentionsJoinBoxVisible(false);
+        setParishIntentionsNote('', false);
+    }
     persistUserProfileDefaults(profile);
 
     populateCycleOfPrayerDioceseSelects(key);
@@ -1567,6 +1694,15 @@ function setUserProfileCycleOfPrayerDiocese(value) {
 }
 
 function setUserProfileCycleOfPrayerParish(value) {
+    // A parish that has a page on the app: choosing it also follows it (see chooseRegisteredParish).
+    if (typeof value === 'string' && value.indexOf(REGISTERED_PARISH_VALUE_PREFIX) === 0) {
+        const slug = value.slice(REGISTERED_PARISH_VALUE_PREFIX.length);
+        if (/^[a-z0-9-]{1,80}$/.test(slug)) chooseRegisteredParish(slug);
+        return;
+    }
+    // Anything else (no parish, a parish from the diocese's list, or "Other") is a different choice, so a parish
+    // followed through this picker is let go.
+    if (getUserProfileDefaults().parishIntentionsSlug || parishIntentionsPendingSlug) stopFollowingQuietly();
     const profile = getUserProfileDefaults();
 
     if (value === CYCLE_OF_PRAYER_OTHER_PARISH_VALUE) {
@@ -1619,15 +1755,24 @@ const PARISH_INTENTIONS_CODE_MESSAGES = {
     'network': 'Could not reach the server. Please try again in a moment.'
 };
 
-let parishIntentionsListCache = { key: null, at: 0, result: null, promise: null };
+// ONE parish picker (2026-10-08, Josh): the reader chooses a parish once, and a parish that has a page on the
+// app is followed at once; there is no separate "follow" step and no second list. The parishes that have a page
+// (the server's approved list) are merged into the same <select> as the diocese's Cycle of Prayer parishes.
+let registeredParishesCache = { key: null, at: 0, parishes: null, promise: null };
 let parishIntentionsPopulateSeq = 0;
 let parishIntentionsRefreshInFlight = false;
 let parishIntentionsLastAttemptAt = 0;
 let parishIntentionsNeedsCodeSlug = null; // a followed parish whose pass was rejected (code rotated)
+let parishIntentionsPendingSlug = null;   // a chosen parish that needs its join code before it can be followed
+let parishIntentionsNoteIsTransient = false;
+const REGISTERED_PARISH_VALUE_PREFIX = 'p:';
 
-function setParishIntentionsNote(text) {
+function setParishIntentionsNote(text, transient) {
+    parishIntentionsNoteIsTransient = Boolean(transient && text);
     const note = document.getElementById('profile-parish-intentions-note');
     if (note) note.textContent = text || '';
+    const onboardingNote = document.getElementById('uo-onboarding-parish-note');
+    if (onboardingNote) onboardingNote.textContent = text || '';
 }
 
 function setParishIntentionsJoinBoxVisible(visible) {
@@ -1636,107 +1781,168 @@ function setParishIntentionsJoinBoxVisible(visible) {
 }
 
 /**
- * Approved parishes for the picker: the reader's own diocese first; if that diocese has none, every
- * approved parish (per the build spec). Cached briefly and de-duplicated, because
- * syncUserProfileControls runs on every profile change. Resolves to { parishes: [...]|null, fellBack }.
+ * Approved parishes (those with a page), for the diocese given, or all of them when no diocese is declared.
+ * Cached briefly and de-duplicated, because syncUserProfileControls runs on every profile change. Resolves to an
+ * array, or null when the list could not be loaded (not cached, so the next sync tries again).
  */
-function getParishIntentionsList(dioceseKey) {
+function loadRegisteredParishes(dioceseKey) {
     const key = dioceseKey || 'all';
-    const cache = parishIntentionsListCache;
-    if (cache.key === key && cache.result && (Date.now() - cache.at) < PARISH_INTENTIONS_LIST_TTL_MS) {
-        return Promise.resolve(cache.result);
+    const cache = registeredParishesCache;
+    if (cache.key === key && Array.isArray(cache.parishes) && (Date.now() - cache.at) < PARISH_INTENTIONS_LIST_TTL_MS) {
+        return Promise.resolve(cache.parishes);
     }
     if (cache.key === key && cache.promise) return cache.promise;
+    if (typeof listApprovedParishes !== 'function') return Promise.resolve(null);
 
-    const promise = (async () => {
-        let parishes = await listApprovedParishes(dioceseKey || null);
-        let fellBack = false;
-        if (Array.isArray(parishes) && parishes.length === 0 && dioceseKey) {
-            parishes = await listApprovedParishes(null);
-            fellBack = true;
-        }
-        const result = { parishes: parishes, fellBack: fellBack };
-        // A failed lookup (null) is not cached, so the next sync tries again.
-        parishIntentionsListCache = { key: key, at: parishes === null ? 0 : Date.now(), result: parishes === null ? null : result, promise: null };
-        return result;
-    })();
-    parishIntentionsListCache = { key: key, at: 0, result: null, promise: promise };
+    const promise = listApprovedParishes(dioceseKey || null).then((parishes) => {
+        registeredParishesCache = { key: key, at: parishes === null ? 0 : Date.now(), parishes: parishes, promise: null };
+        return parishes;
+    });
+    registeredParishesCache = { key: key, at: 0, parishes: null, promise: promise };
     return promise;
 }
 
+/** The loaded list for this diocese (null for "all"), or null when it has not loaded. Never makes a request. */
+function getCachedRegisteredParishes(dioceseKey) {
+    const cache = registeredParishesCache;
+    return (cache.key === (dioceseKey || 'all') && Array.isArray(cache.parishes)) ? cache.parishes : null;
+}
+
+/** The parish with a page that this profile points at: the one it follows, else the one matching its parish choice. */
+function findSelectedRegisteredParish(profile) {
+    const list = getCachedRegisteredParishes(profile.cycleOfPrayerDiocese) || [];
+    if (profile.parishIntentionsSlug) {
+        const followed = list.find((p) => p.slug === profile.parishIntentionsSlug);
+        if (followed) return followed;
+    }
+    if (profile.cycleOfPrayerParish) {
+        const byCorpus = list.find((p) => p.corpusParishSlug === profile.cycleOfPrayerParish);
+        if (byCorpus) return byCorpus;
+    }
+    if (profile.cycleOfPrayerParishOther) {
+        const byName = list.find((p) => p.name === profile.cycleOfPrayerParishOther);
+        if (byName) return byName;
+    }
+    return null;
+}
+
 function populateParishIntentionsControls(profile) {
-    const select = document.getElementById('profile-parish-intentions-select');
-    // No field mounted, not an Anglican profile (the field is hidden), or the client script is
-    // missing: do nothing, and above all make no request.
-    if (!select || profile.traditionDefault !== 'anglican' || typeof listApprovedParishes !== 'function') return;
+    // No parish picker mounted, not an Anglican profile, or the client script is missing: do nothing, and above
+    // all make no request.
+    const mounted = CYCLE_OF_PRAYER_PARISH_SELECT_IDS.some((id) => document.getElementById(id));
+    if (!mounted || profile.traditionDefault !== 'anglican' || typeof listApprovedParishes !== 'function') return;
 
     const requestId = ++parishIntentionsPopulateSeq;
-    getParishIntentionsList(profile.cycleOfPrayerDiocese).then((result) => {
+    loadRegisteredParishes(profile.cycleOfPrayerDiocese).then(() => {
         if (requestId !== parishIntentionsPopulateSeq) return; // a newer sync superseded this one
-        renderParishIntentionsSelect(select, getUserProfileDefaults(), result);
+        const fresh = getUserProfileDefaults();
+        populateCycleOfPrayerParishSelect(fresh.cycleOfPrayerDiocese, fresh.cycleOfPrayerParish, fresh.cycleOfPrayerParishOther);
+        updateParishFollowUi();
     });
 }
 
-function renderParishIntentionsSelect(select, profile, result) {
-    const parishes = result.parishes;
-    const followed = profile.parishIntentionsSlug;
-    select.textContent = '';
-
-    const none = document.createElement('option');
-    none.value = '';
-    none.textContent = 'Not following a parish';
-    select.appendChild(none);
-
-    if (Array.isArray(parishes) && parishes.length === 0 && !followed) {
-        none.textContent = 'No parishes are using prayer intentions yet.';
-        select.disabled = true;
-        setParishIntentionsJoinBoxVisible(false);
-        setParishIntentionsStopVisible(false);
+/**
+ * Brings the follow state and the little status area under the parish picker in line with the choice:
+ * a chosen parish that has a page is followed (a public one at once; one that needs a join code once the code
+ * is entered), and the join box, status line and parish-page link follow from that.
+ */
+function updateParishFollowUi() {
+    const profile = getUserProfileDefaults();
+    const selected = findSelectedRegisteredParish(profile);
+    if (selected && profile.parishIntentionsSlug !== selected.slug) {
+        syncFollowToSelectedParish(selected, false);
         return;
     }
 
-    const homeSlug = profile.cycleOfPrayerParish;
-    let suggested = null;
-    let listedFollowed = false;
-    for (const parish of (parishes || [])) {
-        const opt = document.createElement('option');
-        opt.value = parish.slug;
-        let label = parish.name;
-        if (parish.visibility === 'code') label += ' (join code needed)';
-        if (homeSlug && parish.corpusParishSlug === homeSlug) {
-            label += ' — your home parish';
-            suggested = parish;
+    const followed = profile.parishIntentionsSlug;
+    const needsCode = Boolean(followed) && parishIntentionsNeedsCodeSlug === followed;
+    const pending = !followed && selected !== null && parishIntentionsPendingSlug === selected.slug;
+    if (!pending && !needsCode) parishIntentionsPendingSlug = null;
+    setParishIntentionsJoinBoxVisible(needsCode || pending);
+
+    const link = document.getElementById('profile-parish-page-link');
+    if (link) {
+        link.hidden = !followed;
+        if (followed) link.setAttribute('href', 'parish/home.html?p=' + encodeURIComponent(followed));
+    }
+
+    if (!parishIntentionsNoteIsTransient) {
+        let text = '';
+        if (needsCode) {
+            text = 'The join code for this parish has changed. Enter the new code to keep following it.';
+        } else if (followed) {
+            const name = selected ? selected.name : parishIntentionsMemoryCacheName(followed);
+            text = name ? 'You follow ' + name + '. Its prayer requests appear in the office.' : 'You follow this parish.';
+        } else if (pending) {
+            text = 'Enter the join code ' + selected.name + ' gave you, then press Join.';
         }
-        opt.textContent = label; // names come from the server: textContent only
-        select.appendChild(opt);
-        if (parish.slug === followed) listedFollowed = true;
+        setParishIntentionsNote(text, false);
     }
+}
 
-    // A followed parish that is no longer in the list (suspended, deleted, or the list failed to load)
-    // keeps its own option, so the reader can see and stop following it.
-    if (followed && !listedFollowed) {
-        const cached = (typeof getCachedParishIntentions === 'function') ? parishIntentionsMemoryCacheName(followed) : null;
-        const opt = document.createElement('option');
-        opt.value = followed;
-        opt.textContent = (cached || followed) + (parishes === null ? '' : ' (no longer listed)');
-        select.appendChild(opt);
+/**
+ * The reader chose a parish that has a page: follow it. A public parish is followed at once; one that needs a
+ * join code is not followed until the code is accepted (the pass is what proves it), so any earlier parish is
+ * let go and the code box is shown.
+ */
+function syncFollowToSelectedParish(parish, userInitiated) {
+    const profile = getUserProfileDefaults();
+    if (profile.parishIntentionsSlug === parish.slug && parishIntentionsNeedsCodeSlug !== parish.slug) return;
+
+    if (parish.visibility === 'code') {
+        if (profile.parishIntentionsSlug && profile.parishIntentionsSlug !== parish.slug) stopFollowingQuietly();
+        parishIntentionsPendingSlug = parish.slug;
+        setParishIntentionsJoinBoxVisible(true);
+        setParishIntentionsNote('Enter the join code ' + parish.name + ' gave you, then press Join.', true);
+        if (userInitiated) {
+            const input = document.getElementById('profile-parish-intentions-code');
+            if (input && input.offsetParent !== null) input.focus();
+        }
+        return;
     }
+    parishIntentionsPendingSlug = null;
+    followParishIntentions(parish.slug, null);
+    setParishIntentionsNote('You now follow ' + parish.name + '. Its prayer requests appear in the office.', true);
+}
 
-    select.disabled = false;
-    select.value = followed || '';
-    setParishIntentionsStopVisible(Boolean(followed));
+/** Choosing a parish that has a page also settles the diocese and the home parish, then follows it. */
+function chooseRegisteredParish(slug) {
+    const list = registeredParishesCache.parishes || [];
+    const parish = list.find((p) => p.slug === slug);
+    if (!parish) return;
 
-    const needsCode = followed && parishIntentionsNeedsCodeSlug === followed;
-    setParishIntentionsJoinBoxVisible(Boolean(needsCode));
-
-    // Suggest, never follow silently.
-    if (suggested && !followed) {
-        setParishIntentionsNote('Your home parish, ' + suggested.name + ', is using prayer intentions. Choose it above to follow it.');
-    } else if (parishes === null && !followed) {
-        setParishIntentionsNote('Could not load the list of parishes right now.');
-    } else if (result.fellBack && !followed) {
-        setParishIntentionsNote('No parish in your diocese is using prayer intentions yet, so all parishes are shown.');
+    const profile = getUserProfileDefaults();
+    const dioceseKnown = parish.dioceseKey && typeof isValidCycleOfPrayerDioceseKey === 'function'
+        && isValidCycleOfPrayerDioceseKey(parish.dioceseKey);
+    if (dioceseKnown && profile.cycleOfPrayerDiocese !== parish.dioceseKey) profile.cycleOfPrayerDiocese = parish.dioceseKey;
+    if (profile.cycleOfPrayerDiocese) {
+        if (parish.corpusParishSlug) {
+            profile.cycleOfPrayerParish = parish.corpusParishSlug;
+            profile.cycleOfPrayerParishOther = null;
+        } else {
+            profile.cycleOfPrayerParish = null;
+            profile.cycleOfPrayerParishOther = parish.name;
+        }
     }
+    persistUserProfileDefaults(profile);
+    syncFollowToSelectedParish(parish, true);
+
+    if (profile.cycleOfPrayerDiocese) {
+        refreshCycleOfPrayerForCurrentYear(profile.cycleOfPrayerDiocese);
+        refreshCycleOfPrayerParishForCurrentMonth(profile.cycleOfPrayerDiocese, getUserProfileDefaults().cycleOfPrayerParish);
+    }
+    if (selectedMode === 'daily') requestRender();
+}
+
+/** Stops following without a message: the parish picker itself is changing, so the old follow no longer applies. */
+function stopFollowingQuietly() {
+    parishIntentionsNeedsCodeSlug = null;
+    parishIntentionsPendingSlug = null;
+    if (getUserProfileDefaults().parishIntentionsSlug) setUserProfileParishIntentions(null, null);
+    if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
+    setParishIntentionsJoinBoxVisible(false);
+    setParishIntentionsNote('', false);
+    if (selectedMode === 'daily') requestRender();
 }
 
 function parishIntentionsMemoryCacheName(slug) {
@@ -1748,19 +1954,6 @@ function parishIntentionsMemoryCacheName(slug) {
     }
 }
 
-function setParishIntentionsStopVisible(visible) {
-    const button = document.getElementById('profile-parish-intentions-stop');
-    if (button) button.hidden = !visible;
-    // ADDED 2026-10-06: a followed parish also gets a link to its parish page (service times,
-    // announcements, events). The slug is validated before it goes into the address.
-    const link = document.getElementById('profile-parish-page-link');
-    if (link) {
-        const slug = getUserProfileDefaults().parishIntentionsSlug;
-        link.hidden = !(visible && slug);
-        if (visible && slug) link.setAttribute('href', 'parish/home.html?p=' + encodeURIComponent(slug));
-    }
-}
-
 function setUserProfileParishIntentions(slug, pass) {
     const profile = getUserProfileDefaults();
     profile.parishIntentionsSlug = slug || null;
@@ -1769,12 +1962,14 @@ function setUserProfileParishIntentions(slug, pass) {
 }
 
 function clearUserProfileParishIntentions() {
-    parishIntentionsNeedsCodeSlug = null;
-    setUserProfileParishIntentions(null, null);
-    if (typeof clearParishIntentionsCache === 'function') clearParishIntentionsCache();
-    setParishIntentionsJoinBoxVisible(false);
-    setParishIntentionsNote('You are no longer following a parish.');
-    if (selectedMode === 'daily') requestRender();
+    // The parish picker is the one place a parish is chosen, so letting one go also clears the choice
+    // (otherwise the next sync would follow it again).
+    stopFollowingQuietly();
+    const profile = getUserProfileDefaults();
+    profile.cycleOfPrayerParish = null;
+    profile.cycleOfPrayerParishOther = null;
+    persistUserProfileDefaults(profile);
+    setParishIntentionsNote('You are no longer following a parish.', true);
 }
 
 /**
@@ -1803,46 +1998,27 @@ function followParishIntentions(slug, pass) {
     refreshParishIntentionsForProfile();
 }
 
-function setUserProfileParishIntentionsFromSelect(value) {
-    if (!value) { clearUserProfileParishIntentions(); return; }
-    const profile = getUserProfileDefaults();
-    const known = (parishIntentionsListCache.result && parishIntentionsListCache.result.parishes || []).find(p => p.slug === value);
-    if (profile.parishIntentionsSlug === value && parishIntentionsNeedsCodeSlug !== value) return;
-
-    if (known && known.visibility === 'code') {
-        // Not followed until the code is accepted -- the pass is what proves it.
-        setParishIntentionsJoinBoxVisible(true);
-        setParishIntentionsNote('Enter the join code your parish gave you, then press Join.');
-        const input = document.getElementById('profile-parish-intentions-code');
-        if (input) input.focus();
-        return;
-    }
-    setParishIntentionsJoinBoxVisible(false);
-    followParishIntentions(value, null);
-    setParishIntentionsNote(known ? 'You now follow ' + known.name + '.' : 'You now follow this parish.');
-}
-
 function joinSelectedParishIntentions() {
-    const select = document.getElementById('profile-parish-intentions-select');
     const input = document.getElementById('profile-parish-intentions-code');
     const button = document.getElementById('profile-parish-intentions-join-button');
-    if (!select || !input || !select.value || typeof joinParish !== 'function') return;
+    const slug = parishIntentionsNeedsCodeSlug || parishIntentionsPendingSlug;
+    if (!input || !slug || typeof joinParish !== 'function') return;
 
     const code = input.value.trim();
-    if (!code) { setParishIntentionsNote('Please enter the join code.'); return; }
+    if (!code) { setParishIntentionsNote('Please enter the join code.', true); return; }
 
-    const slug = select.value;
-    const known = (parishIntentionsListCache.result && parishIntentionsListCache.result.parishes || []).find(p => p.slug === slug);
+    const known = (registeredParishesCache.parishes || []).find((p) => p.slug === slug);
     if (button) button.disabled = true;
     joinParish(slug, code).then((result) => {
         if (button) button.disabled = false;
         if (!result.ok) {
-            setParishIntentionsNote(PARISH_INTENTIONS_CODE_MESSAGES[result.reason] || PARISH_INTENTIONS_CODE_MESSAGES.network);
+            setParishIntentionsNote(PARISH_INTENTIONS_CODE_MESSAGES[result.reason] || PARISH_INTENTIONS_CODE_MESSAGES.network, true);
             return;
         }
         input.value = '';
+        parishIntentionsPendingSlug = null;
         followParishIntentions(slug, result.pass);
-        setParishIntentionsNote('You now follow ' + (known ? known.name : 'this parish') + '.');
+        setParishIntentionsNote('You now follow ' + (known ? known.name : 'this parish') + '. Its prayer requests appear in the office.', true);
     });
 }
 
@@ -1868,9 +2044,9 @@ function refreshParishIntentionsForProfile() {
                 persistUserProfileDefaults(fresh);
             }
             setParishIntentionsJoinBoxVisible(true);
-            setParishIntentionsNote('The join code for this parish has changed. Enter the new code to keep following it.');
+            setParishIntentionsNote('The join code for this parish has changed. Enter the new code to keep following it.', true);
         } else if (result.status === 'not-found') {
-            setParishIntentionsNote('This parish is no longer available.');
+            setParishIntentionsNote('This parish is no longer available.', true);
         }
         if (result.status !== 'error' && selectedMode === 'daily') requestRender();
     }).catch(() => { parishIntentionsRefreshInFlight = false; });
@@ -1971,13 +2147,59 @@ function _populateOneCycleOfPrayerParishSelect(select, otherInput, dioceseKey, c
         otherInput.style.display = visible ? '' : 'none';
         otherInput.value = visible ? (value || '') : '';
     };
+    const addOption = (parent, value, text) => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = text; // names come from the server or the corpus: textContent only
+        parent.appendChild(opt);
+        return opt;
+    };
+
+    // The parishes that have a page on the app are part of this same list (2026-10-08): choosing one also
+    // follows it. They come from the server's approved list, read from cache here (never a request).
+    const followed = getUserProfileDefaults().parishIntentionsSlug;
+    const loadedRegistered = getCachedRegisteredParishes(dioceseKey);
+    const registered = loadedRegistered || [];
+    const prefix = REGISTERED_PARISH_VALUE_PREFIX;
+
+    const appendRegistered = () => {
+        if (registered.length) {
+            const group = document.createElement('optgroup');
+            group.label = 'Parishes with a page here';
+            registered.forEach((parish) => addOption(group, prefix + parish.slug, parish.name));
+            select.appendChild(group);
+        }
+        // A followed parish that is not in this list keeps its own option, so the choice stays visible.
+        if (followed && loadedRegistered !== null && !registered.some((parish) => parish.slug === followed)) {
+            const cachedName = parishIntentionsMemoryCacheName(followed);
+            addOption(select, prefix + followed, (cachedName || followed) + ' (not listed for this diocese)');
+        }
+    };
+    const registeredChoice = () => {
+        if (followed && registered.some((parish) => parish.slug === followed)) return prefix + followed;
+        if (currentSlug) {
+            const byCorpus = registered.find((parish) => parish.corpusParishSlug === currentSlug);
+            if (byCorpus) return prefix + byCorpus.slug;
+        }
+        if (currentOther) {
+            const byName = registered.find((parish) => parish.name === currentOther);
+            if (byName) return prefix + byName.slug;
+        }
+        if (followed && loadedRegistered !== null) return prefix + followed;
+        return null;
+    };
 
     if (!dioceseKey) {
-        const opt = document.createElement('option');
-        opt.value = '';
-        opt.textContent = 'Choose a diocese first';
-        select.appendChild(opt);
-        select.disabled = true;
+        if (!registered.length) {
+            addOption(select, '', 'Choose a diocese first');
+            select.disabled = true;
+            showOther(false);
+            return;
+        }
+        addOption(select, '', 'Not declared (optional)');
+        appendRegistered();
+        select.disabled = false;
+        select.value = registeredChoice() || '';
         showOther(false);
         return;
     }
@@ -1986,13 +2208,21 @@ function _populateOneCycleOfPrayerParishSelect(select, otherInput, dioceseKey, c
         && findCycleOfPrayerDiocese(dioceseKey) !== null;
 
     if (!dioceseHasCycleContent) {
-        const opt = document.createElement('option');
-        opt.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
-        opt.textContent = 'Other (type below)';
-        select.appendChild(opt);
-        select.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
-        select.disabled = true; // nothing else to choose from
-        showOther(true, currentOther);
+        if (!registered.length) {
+            addOption(select, CYCLE_OF_PRAYER_OTHER_PARISH_VALUE, 'Other (type below)');
+            select.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
+            select.disabled = true; // nothing else to choose from
+            showOther(true, currentOther);
+            return;
+        }
+        addOption(select, '', 'Not declared (optional)');
+        appendRegistered();
+        addOption(select, CYCLE_OF_PRAYER_OTHER_PARISH_VALUE, 'Other (type below)');
+        select.disabled = false;
+        const choice = registeredChoice();
+        if (choice) { select.value = choice; showOther(false); }
+        else if (currentOther) { select.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE; showOther(true, currentOther); }
+        else { select.value = ''; showOther(false); }
         return;
     }
 
@@ -2001,38 +2231,38 @@ function _populateOneCycleOfPrayerParishSelect(select, otherInput, dioceseKey, c
         : null;
 
     if (!corpus) {
-        const opt = document.createElement('option');
-        opt.value = '';
-        opt.textContent = 'Loading parishes...';
-        select.appendChild(opt);
+        addOption(select, '', 'Loading parishes...');
         select.disabled = true;
         showOther(false);
         return;
     }
 
-    const notDeclared = document.createElement('option');
-    notDeclared.value = '';
-    notDeclared.textContent = 'Not declared (optional)';
-    select.appendChild(notDeclared);
+    addOption(select, '', 'Not declared (optional)');
+    appendRegistered();
 
-    const parishes = listCycleOfPrayerParishes(corpus);
+    // A parish that has a page is listed once, in its own group above, not again in the diocese's list.
+    const ownedSlugs = new Set(registered.map((parish) => parish.corpusParishSlug).filter(Boolean));
+    const parishes = listCycleOfPrayerParishes(corpus).filter((parish) => !ownedSlugs.has(parish.slug));
+    let listParent = select;
+    if (registered.length && parishes.length) {
+        listParent = document.createElement('optgroup');
+        listParent.label = 'All parishes in the diocese';
+        select.appendChild(listParent);
+    }
     let matchedCurrent = false;
     for (const parish of parishes) {
-        const opt = document.createElement('option');
-        opt.value = parish.slug;
-        opt.textContent = parish.place + ', ' + parish.name;
-        select.appendChild(opt);
+        addOption(listParent, parish.slug, parish.place + ', ' + parish.name);
         if (parish.slug === currentSlug) matchedCurrent = true;
     }
 
-    const otherOpt = document.createElement('option');
-    otherOpt.value = CYCLE_OF_PRAYER_OTHER_PARISH_VALUE;
-    otherOpt.textContent = 'Other (type below)';
-    select.appendChild(otherOpt);
-
+    addOption(select, CYCLE_OF_PRAYER_OTHER_PARISH_VALUE, 'Other (type below)');
     select.disabled = false;
 
-    if (matchedCurrent) {
+    const choice = registeredChoice();
+    if (choice) {
+        select.value = choice;
+        showOther(false);
+    } else if (matchedCurrent) {
         select.value = currentSlug;
         showOther(false);
     } else if (currentOther) {
@@ -2130,6 +2360,7 @@ function openLocalProfileDefaultsFromOffice() {
 }
 
 function syncUserProfileControls(profile = getUserProfileDefaults()) {
+    syncStorageNote();
     const normalized = normalizeUserProfileDefaults(profile);
     const entrySelect = document.getElementById('profile-entry-default');
     const traditionSelect = document.getElementById('profile-tradition-default');
@@ -2510,6 +2741,7 @@ function openUserProfilePanel() {
 }
 
 function closeUserProfilePanel() {
+    saveProfileTextFieldsNow();
     const backdrop = document.getElementById('user-profile-panel');
     if (!backdrop) return;
     backdrop.style.display = 'none';
@@ -2634,7 +2866,11 @@ const TRADITION_AVAILABILITY_URL = 'data/tradition-availability.json';
 // when the data-driven path can't run. The entry cards/dropdown need no such
 // fallback: their disabled/aria-disabled markup in index.html already ships
 // matching today's real state, so a failed fetch just leaves that baseline alone.
-const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set(['eastern-orthodox']);
+// CORRECTED 2026-10-08: the Byzantine Horologion is live (data/tradition-availability.json says so), so nothing is
+// assumed paused when the file cannot be fetched. Before this, a slow or failed fetch at launch (the 1.5-second cap
+// below) made every Eastern Orthodox reader's saved profile look like a paused lane, and the guard that followed
+// DELETED THE WHOLE PROFILE (name, parish, everything), sending them back to "Where do you pray?" at random.
+const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set();
 
 async function loadTraditionAvailability() {
     try {
@@ -2799,7 +3035,47 @@ function resetUserTraditionDefault() {
     showTraditionEntry();
 }
 
+// ADDED 2026-10-08 (Josh: the profile is not persisting between sessions of the installed app). Asks the browser to
+// treat this site's saved data as durable (not to be discarded when the phone is short of space), and records when
+// the data on this device began, so the profile panel can show "Saved on this device since ..." and a wipe is visible.
+const FIRST_SEEN_STORAGE_KEY = 'uoFirstSeenAt';
+let storageIsDurable = null;
+
+function recordStorageFirstSeen() {
+    try {
+        if (!localStorage.getItem(FIRST_SEEN_STORAGE_KEY)) localStorage.setItem(FIRST_SEEN_STORAGE_KEY, new Date().toISOString());
+    } catch (_error) { /* storage unavailable: nothing to record */ }
+}
+
+async function requestDurableStorage() {
+    try {
+        if (!navigator.storage || !navigator.storage.persist) { storageIsDurable = null; return; }
+        storageIsDurable = (await navigator.storage.persisted()) || (await navigator.storage.persist());
+    } catch (_error) { storageIsDurable = null; }
+    syncStorageNote();
+}
+
+function syncStorageNote() {
+    const note = document.getElementById('profile-storage-note');
+    if (!note) return;
+    let since = null;
+    try { since = localStorage.getItem(FIRST_SEEN_STORAGE_KEY); } catch (_error) { /* ignore */ }
+    const when = since && Number.isFinite(Date.parse(since))
+        ? new Date(since).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
+        : null;
+    const kept = storageIsDurable === true ? 'protected from clean-up' : (storageIsDurable === false ? 'not protected from clean-up' : 'protection unknown');
+    let restored = null;
+    try { restored = localStorage.getItem(PROFILE_RESTORED_STORAGE_KEY); } catch (_error) { /* ignore */ }
+    const restoredText = restored && Number.isFinite(Date.parse(restored))
+        ? ' Restored from a backup copy on ' + new Date(restored).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) + ', after the browser cleared its main copy.'
+        : '';
+    note.textContent = 'Your settings are saved on this device' + (when ? ' since ' + when : '') + ' (' + kept + ').' + restoredText;
+}
+
 async function initializeEntryRouting() {
+    await restoreProfileFromBackupIfMissing();
+    recordStorageFirstSeen();
+    requestDurableStorage();
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
@@ -2884,8 +3160,11 @@ async function initializeEntryRouting() {
     // the card is now shown disabled, per applyTraditionAvailabilityToDOM() above) rather
     // than silently reopening a paused lane. See
     // documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
-    if (storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
-        clearUserEntryDefault();
+    // Only when the availability file actually loaded and says this tradition is paused (never on a failed or slow
+    // fetch), and then only the opening tradition is forgotten: the rest of the profile (name, parish, role and so
+    // on) is kept. It used to clear the entire profile.
+    if (traditionAvailability && storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
+        clearStoredTraditionDefault();
         storedDefault = null;
     }
 
@@ -2915,7 +3194,6 @@ window.setUserProfileRomanBreviaryCalendar = setUserProfileRomanBreviaryCalendar
 window.setUserProfileDisplayName = setUserProfileDisplayName;
 window.setUserProfileSuperUser = setUserProfileSuperUser;
 window.setUserProfileCycleOfPrayerDiocese = setUserProfileCycleOfPrayerDiocese;
-window.setUserProfileParishIntentionsFromSelect = setUserProfileParishIntentionsFromSelect;
 window.joinSelectedParishIntentions = joinSelectedParishIntentions;
 window.clearUserProfileParishIntentions = clearUserProfileParishIntentions;
 window.setUserProfileCycleOfPrayerParish = setUserProfileCycleOfPrayerParish;
@@ -2975,20 +3253,26 @@ function updateOfficeModeHeader(mode) {
 
 /**
  * ADDED 2026-10-06 (Josh). "My Parish" button in the office header. A reader who follows a parish goes
- * to that parish's page (parish/home.html). One who does not is taken to the Parish prayer intentions
- * field in the profile, where they pick a parish. The slug is validated before it goes into the address.
+ * to that parish's page (parish/home.html). One who does not is taken to the parish picker in the profile
+ * (the one place a parish is chosen; choosing one follows it). The slug is validated before it goes into the
+ * address.
  */
 function openMyParish() {
-    const slug = getUserProfileDefaults().parishIntentionsSlug;
+    const profile = getUserProfileDefaults();
+    const slug = profile.parishIntentionsSlug;
     if (typeof slug === 'string' && /^[a-z0-9-]{1,80}$/.test(slug)) {
         window.location.href = 'parish/home.html?p=' + encodeURIComponent(slug);
         return;
     }
+    // Not following a parish yet: show the one picker, with the join-code box when the chosen parish needs one.
     openUserProfilePanel();
     const field = document.getElementById('profile-parish-intentions-field');
     if (field && !field.hidden) {
-        setParishIntentionsNote('Choose your parish above to follow it. Then \u201cMy Parish\u201d opens its page.');
-        field.scrollIntoView({ block: 'center' });
+        if (!parishIntentionsPendingSlug && !parishIntentionsNeedsCodeSlug) {
+            setParishIntentionsNote('Choose your parish above. Then \u201cMy Parish\u201d opens its page.', true);
+        }
+        const picker = document.getElementById('profile-cycle-of-prayer-parish');
+        (picker || field).scrollIntoView({ block: 'center' });
     }
 }
 
@@ -5586,7 +5870,8 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
           '<option value="">Choose a diocese first</option>' +
           '</select>' +
           '<input type="text" id="uo-onboarding-cycle-of-prayer-parish-other" placeholder="Your parish\'s name" ' +
-          'style="display:none" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">' +
+          'style="display:none" oninput="scheduleProfileTextSave()" onchange="setUserProfileCycleOfPrayerParishOther(this.value)">' +
+          '<p class="uo-onboarding-note" id="uo-onboarding-parish-note" role="status" aria-live="polite"></p>' +
           '</div>'
         : '';
 
@@ -5596,11 +5881,11 @@ function renderOnboardingPrompt(profile = getUserProfileDefaults()) {
         '<p class="uo-explanation-body">' + traditionLine + '</p>' +
         '<div class="uo-onboarding-field">' +
         '<label for="uo-onboarding-name">Your name (optional)</label>' +
-        '<input type="text" id="uo-onboarding-name" autocomplete="name" value="' + esc(profile.displayName || '') + '">' +
+        '<input type="text" id="uo-onboarding-name" autocomplete="name" oninput="scheduleProfileTextSave()" value="' + esc(profile.displayName || '') + '">' +
         '</div>' +
         '<div class="uo-onboarding-field">' +
         '<label for="uo-onboarding-role">Your role</label>' +
-        '<select id="uo-onboarding-role">' + roleOptionsHtml + '</select>' +
+        '<select id="uo-onboarding-role" onchange="setUserProfileMinistryRole(this.value); markOnboardingEngaged()">' + roleOptionsHtml + '</select>' +
         '</div>' +
         cycleOfPrayerFieldsHtml +
         '<div class="uo-onboarding-actions">' +
