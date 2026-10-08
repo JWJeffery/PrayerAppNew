@@ -41,10 +41,11 @@ for (const f of ['js/parish-intentions.js', 'js/account-core.js', 'js/account-ui
 }
 const officeUi = stripJsComments(read('js/office-ui.js'));
 const OFFICE_FUNCTIONS = [
-  'bcpEmitPlainText', 'renderParishIntentionsLine', 'populateParishIntentionsControls', 'renderParishIntentionsSelect',
+  'bcpEmitPlainText', 'renderParishIntentionsLine', 'populateParishIntentionsControls', 'updateParishFollowUi',
   'setParishIntentionsNote', 'setParishIntentionsJoinBoxVisible', 'followParishIntentions', 'joinSelectedParishIntentions',
   'refreshParishIntentionsForProfile', 'setUserProfileParishIntentions', 'clearUserProfileParishIntentions',
-  'setUserProfileParishIntentionsFromSelect', 'getParishIntentionsList', 'setParishIntentionsStopVisible',
+  'loadRegisteredParishes', 'chooseRegisteredParish', 'syncFollowToSelectedParish', 'stopFollowingQuietly',
+  '_populateOneCycleOfPrayerParishSelect', 'saveProfileTextFieldsNow',
 ];
 for (const fn of OFFICE_FUNCTIONS) {
   const body = functionBody(officeUi, fn);

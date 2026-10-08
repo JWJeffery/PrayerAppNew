@@ -420,22 +420,29 @@ console.log('Browser: registration, approval link and admin page');
 }
 
 {
-  // profile chooser: follow a public parish; join a code parish (wrong then right code); stop following
+  // ONE parish picker (2026-10-08): choosing a parish that has a page follows it at once; a code parish asks for its
+  // code; choosing "Not declared" lets it go; there is no second picker and no separate follow step.
   const own = await browser.newContext({ viewport: { width: 1200, height: 1000 } });
   const page = await own.newPage(); watch(page);
   await page.addInitScript(() => { if (!window.localStorage.getItem('universalOffice.userProfile.v1')) window.localStorage.setItem('universalOffice.userProfile.v1', JSON.stringify({ version: 1, traditionDefault: 'anglican', entryPageDefault: 'tradition', onboardingComplete: true, cycleOfPrayerDiocese: 'episcopal/western-oregon' })); });
   await page.goto(BASE + '/index.html');
   await sleep(2500);
   await page.evaluate(() => openUserProfilePanel());
-  await page.waitForFunction(() => document.querySelectorAll('#profile-parish-intentions-select option').length > 2, null, { timeout: 10000 }).catch(() => {});
+  await page.waitForFunction((v) => !!document.querySelector('#profile-cycle-of-prayer-parish option[value="' + v + '"]'), 'p:' + fx.office.slug, { timeout: 10000 }).catch(() => {});
   const stored = () => page.evaluate(() => JSON.parse(localStorage.getItem('universalOffice.userProfile.v1') || '{}'));
-  await page.selectOption('#profile-parish-intentions-select', fx.office.slug);
+  t('there is one parish picker, not two', (await page.locator('#profile-parish-intentions-select').count()) === 0 && (await page.locator('#profile-cycle-of-prayer-parish').count()) === 1);
+  t('the parishes that have a page are listed in that picker', (await page.locator('#profile-cycle-of-prayer-parish optgroup option').count()) >= 2);
+  await page.selectOption('#profile-cycle-of-prayer-parish', 'p:' + fx.office.slug);
   await sleep(1500);
   let st = await stored();
-  t('choosing a public parish follows it with no code', st.parishIntentionsSlug === fx.office.slug && !st.parishIntentionsPass);
-  await page.selectOption('#profile-parish-intentions-select', fx.office.codedSlug);
+  t('choosing a public parish follows it at once, with no second step', st.parishIntentionsSlug === fx.office.slug && !st.parishIntentionsPass);
+  t('...and the picker shows that parish as chosen', (await page.inputValue('#profile-cycle-of-prayer-parish')) === 'p:' + fx.office.slug);
+  t('...with a link to its parish page', (await page.getAttribute('#profile-parish-page-link', 'href')) === 'parish/home.html?p=' + fx.office.slug);
+  await page.selectOption('#profile-cycle-of-prayer-parish', 'p:' + fx.office.codedSlug);
   await sleep(800);
   t('choosing a code parish asks for its code', await page.isVisible('#profile-parish-intentions-code'));
+  st = await stored();
+  t('...and no longer follows the earlier parish', st.parishIntentionsSlug !== fx.office.slug);
   await page.fill('#profile-parish-intentions-code', 'AAAA-AAAA');
   await page.click('#profile-parish-intentions-join button, #profile-parish-intentions-join [type=button]');
   await sleep(1500);
@@ -446,10 +453,50 @@ console.log('Browser: registration, approval link and admin page');
   await sleep(2000);
   st = await stored();
   t('the right join code follows the parish and stores a pass, not the code', st.parishIntentionsSlug === fx.office.codedSlug && !!st.parishIntentionsPass && !JSON.stringify(st).includes(fx.office.joinCode));
-  await page.click('#profile-parish-intentions-stop');
-  await sleep(500);
+  // "My Parish" opens the parish page once a parish is followed
+  await page.evaluate(() => openMyParish());
+  await page.waitForURL('**/parish/home.html?p=' + fx.office.codedSlug, { timeout: 8000 }).catch(() => {});
+  t('"My Parish" opens the parish page of the followed parish', page.url().includes('/parish/home.html?p=' + fx.office.codedSlug), page.url());
+  await page.goto(BASE + '/index.html'); await sleep(2000);
+  await page.evaluate(() => openUserProfilePanel());
+  await page.waitForFunction((v) => !!document.querySelector('#profile-cycle-of-prayer-parish option[value="' + v + '"]'), 'p:' + fx.office.slug, { timeout: 10000 }).catch(() => {});
+  await page.selectOption('#profile-cycle-of-prayer-parish', '');
+  await sleep(600);
   st = await stored();
-  t('"Stop following" clears the parish and pass', !st.parishIntentionsSlug && !st.parishIntentionsPass);
+  t('choosing "Not declared" clears the parish, the pass and the follow', !st.parishIntentionsSlug && !st.parishIntentionsPass && !st.cycleOfPrayerParish);
+  // choosing a parish with no diocese declared also declares its diocese
+  await page.selectOption('#profile-cycle-of-prayer-diocese', '');
+  await sleep(600);
+  await page.waitForFunction((v) => !!document.querySelector('#profile-cycle-of-prayer-parish option[value="' + v + '"]'), 'p:' + fx.office.slug, { timeout: 10000 }).catch(() => {});
+  await page.selectOption('#profile-cycle-of-prayer-parish', 'p:' + fx.office.slug);
+  await sleep(1500);
+  st = await stored();
+  t('choosing a parish with no diocese declared declares its diocese and follows it', st.cycleOfPrayerDiocese === 'episcopal/western-oregon' && st.parishIntentionsSlug === fx.office.slug, JSON.stringify(st).slice(0, 200));
+  await own.close();
+}
+
+{
+  // the profile is saved as it is typed (not only when the field loses focus or Save is pressed)
+  const own = await browser.newContext({ viewport: { width: 390, height: 800 } });
+  const page = await own.newPage(); watch(page);
+  await page.addInitScript(() => { if (!window.localStorage.getItem('universalOffice.userProfile.v1')) window.localStorage.setItem('universalOffice.userProfile.v1', JSON.stringify({ version: 1, traditionDefault: 'anglican', entryPageDefault: 'tradition' })); });
+  await page.goto(BASE + '/index.html'); await sleep(1500);
+  await page.evaluate(() => openUserProfilePanel());
+  await page.waitForSelector('#uo-onboarding-name', { state: 'visible', timeout: 8000 });
+  await page.locator('#uo-onboarding-name').pressSequentially('Bernie');
+  await sleep(1000);
+  await page.reload(); await sleep(1500);
+  const st = await page.evaluate(() => JSON.parse(localStorage.getItem('universalOffice.userProfile.v1') || '{}'));
+  t('a name typed in the first-time prompt is kept when the app is left without pressing Save', st.displayName === 'Bernie' && st.onboardingComplete === true, JSON.stringify(st).slice(0, 160));
+  await page.evaluate(() => openUserProfilePanel());
+  await page.waitForSelector('#profile-display-name', { state: 'visible', timeout: 8000 });
+  await page.locator('#profile-display-name').fill('');
+  await page.locator('#profile-display-name').pressSequentially('Bernadette');
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+  await sleep(900);
+  await page.reload(); await sleep(1500);
+  const st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('universalOffice.userProfile.v1') || '{}'));
+  t('a name typed in the profile panel is kept even while the cursor is still in the field', st2.displayName === 'Bernadette', JSON.stringify(st2).slice(0, 160));
   await own.close();
 }
 
