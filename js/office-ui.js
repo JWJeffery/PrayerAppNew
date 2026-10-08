@@ -1382,6 +1382,14 @@ function persistUserEntryDefault(value) {
     );
 }
 
+/** Forgets only the opening tradition (the reader is asked again); everything else in the profile stays. */
+function clearStoredTraditionDefault() {
+    const profile = getUserProfileDefaults();
+    profile.entryPageDefault = 'ask';
+    profile.traditionDefault = null;
+    persistUserProfileDefaults(profile);
+}
+
 function clearUserEntryDefault() {
     try {
         localStorage.removeItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY);
@@ -2282,6 +2290,7 @@ function openLocalProfileDefaultsFromOffice() {
 }
 
 function syncUserProfileControls(profile = getUserProfileDefaults()) {
+    syncStorageNote();
     const normalized = normalizeUserProfileDefaults(profile);
     const entrySelect = document.getElementById('profile-entry-default');
     const traditionSelect = document.getElementById('profile-tradition-default');
@@ -2787,7 +2796,11 @@ const TRADITION_AVAILABILITY_URL = 'data/tradition-availability.json';
 // when the data-driven path can't run. The entry cards/dropdown need no such
 // fallback: their disabled/aria-disabled markup in index.html already ships
 // matching today's real state, so a failed fetch just leaves that baseline alone.
-const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set(['eastern-orthodox']);
+// CORRECTED 2026-10-08: the Byzantine Horologion is live (data/tradition-availability.json says so), so nothing is
+// assumed paused when the file cannot be fetched. Before this, a slow or failed fetch at launch (the 1.5-second cap
+// below) made every Eastern Orthodox reader's saved profile look like a paused lane, and the guard that followed
+// DELETED THE WHOLE PROFILE (name, parish, everything), sending them back to "Where do you pray?" at random.
+const TRADITION_AVAILABILITY_FETCH_FAILURE_FALLBACK = new Set();
 
 async function loadTraditionAvailability() {
     try {
@@ -2952,7 +2965,41 @@ function resetUserTraditionDefault() {
     showTraditionEntry();
 }
 
+// ADDED 2026-10-08 (Josh: the profile is not persisting between sessions of the installed app). Asks the browser to
+// treat this site's saved data as durable (not to be discarded when the phone is short of space), and records when
+// the data on this device began, so the profile panel can show "Saved on this device since ..." and a wipe is visible.
+const FIRST_SEEN_STORAGE_KEY = 'uoFirstSeenAt';
+let storageIsDurable = null;
+
+function recordStorageFirstSeen() {
+    try {
+        if (!localStorage.getItem(FIRST_SEEN_STORAGE_KEY)) localStorage.setItem(FIRST_SEEN_STORAGE_KEY, new Date().toISOString());
+    } catch (_error) { /* storage unavailable: nothing to record */ }
+}
+
+async function requestDurableStorage() {
+    try {
+        if (!navigator.storage || !navigator.storage.persist) { storageIsDurable = null; return; }
+        storageIsDurable = (await navigator.storage.persisted()) || (await navigator.storage.persist());
+    } catch (_error) { storageIsDurable = null; }
+    syncStorageNote();
+}
+
+function syncStorageNote() {
+    const note = document.getElementById('profile-storage-note');
+    if (!note) return;
+    let since = null;
+    try { since = localStorage.getItem(FIRST_SEEN_STORAGE_KEY); } catch (_error) { /* ignore */ }
+    const when = since && Number.isFinite(Date.parse(since))
+        ? new Date(since).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
+        : null;
+    const kept = storageIsDurable === true ? 'protected from clean-up' : (storageIsDurable === false ? 'not protected from clean-up' : 'protection unknown');
+    note.textContent = 'Your settings are saved on this device' + (when ? ' since ' + when : '') + ' (' + kept + ').';
+}
+
 async function initializeEntryRouting() {
+    recordStorageFirstSeen();
+    requestDurableStorage();
     bindTraditionEntryControls();
     syncUserProfileControls();
     syncUniversalOfficeAdvancedToolsVisibility();
@@ -3037,8 +3084,11 @@ async function initializeEntryRouting() {
     // the card is now shown disabled, per applyTraditionAvailabilityToDOM() above) rather
     // than silently reopening a paused lane. See
     // documentation/ADMIN_OFFICE_AVAILABILITY_CONTROL_DESIGN.md.
-    if (storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
-        clearUserEntryDefault();
+    // Only when the availability file actually loaded and says this tradition is paused (never on a failed or slow
+    // fetch), and then only the opening tradition is forgotten: the rest of the profile (name, parish, role and so
+    // on) is kept. It used to clear the entire profile.
+    if (traditionAvailability && storedDefault && storedDefault !== 'universal' && !isTraditionAvailable(storedDefault, traditionAvailability)) {
+        clearStoredTraditionDefault();
         storedDefault = null;
     }
 

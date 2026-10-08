@@ -14,6 +14,7 @@
     "test:offline": "node scripts/test-offline.mjs",
     "test:install-prompt": "node scripts/test-install-prompt.mjs",
     "test:splash": "node scripts/test-splash.mjs",
+    "test:profile-persistence": "node scripts/test-profile-persistence.mjs",
     "release:parish-backend": "node scripts/pack-parish-backend.mjs",
     "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs",
     "start:spa": "node scripts/dev-spa-server.mjs",
