@@ -1345,6 +1345,70 @@ function getUserProfileDefaults() {
     return profile;
 }
 
+// ADDED 2026-10-08 (Josh: the profile is lost between sessions of the installed Android app). A second copy of the
+// profile is kept in IndexedDB, a separate and more durable browser store than localStorage, and put back at launch
+// if localStorage comes up empty. Best-effort and silent: every failure just leaves localStorage as the only copy.
+const PROFILE_BACKUP_DB = 'universalOfficeBackup';
+const PROFILE_RESTORED_STORAGE_KEY = 'uoProfileRestoredAt';
+
+function profileBackupOpen() {
+    return new Promise((resolve, reject) => {
+        if (typeof indexedDB === 'undefined') { reject(new Error('no IndexedDB')); return; }
+        const request = indexedDB.open(PROFILE_BACKUP_DB, 1);
+        request.onupgradeneeded = () => { request.result.createObjectStore('kv'); };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+}
+
+function profileBackupWrite(profile) {
+    profileBackupOpen().then((db) => {
+        const tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').put({ profile: profile, savedAt: new Date().toISOString() }, 'profile');
+        tx.oncomplete = () => db.close();
+        tx.onerror = () => db.close();
+    }).catch(() => { /* best-effort */ });
+}
+
+function profileBackupRead() {
+    return profileBackupOpen().then((db) => new Promise((resolve) => {
+        const request = db.transaction('kv', 'readonly').objectStore('kv').get('profile');
+        request.onsuccess = () => { db.close(); resolve(request.result || null); };
+        request.onerror = () => { db.close(); resolve(null); };
+    })).catch(() => null);
+}
+
+function profileBackupClear() {
+    profileBackupOpen().then((db) => {
+        const tx = db.transaction('kv', 'readwrite');
+        tx.objectStore('kv').delete('profile');
+        tx.oncomplete = () => db.close();
+        tx.onerror = () => db.close();
+    }).catch(() => { /* best-effort */ });
+}
+
+/** At launch: if localStorage holds no profile but the backup does, put it back. Resolves true when it did. */
+async function restoreProfileFromBackupIfMissing() {
+    try {
+        if (localStorage.getItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY)) return false;
+    } catch (_error) { return false; }
+
+    const backup = await profileBackupRead();
+    if (!backup || !backup.profile || typeof backup.profile !== 'object') return false;
+
+    const restored = normalizeUserProfileDefaults(backup.profile);
+    try {
+        localStorage.setItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY, JSON.stringify(restored));
+        localStorage.setItem(PROFILE_RESTORED_STORAGE_KEY, new Date().toISOString());
+        const legacyValue = restored.entryPageDefault === 'universal'
+            ? 'universal'
+            : (restored.entryPageDefault === 'tradition' ? restored.traditionDefault : null);
+        writeLegacyEntryDefault(legacyValue);
+    } catch (_error) { return false; }
+    syncUserProfileControls(restored);
+    return true;
+}
+
 function persistUserProfileDefaults(profile) {
     const normalized = normalizeUserProfileDefaults(profile);
 
@@ -1353,6 +1417,7 @@ function persistUserProfileDefaults(profile) {
     } catch (_error) {
         console.warn('[entry-routing] Could not persist local profile defaults.');
     }
+    profileBackupWrite(normalized);
 
     const legacyValue = normalized.entryPageDefault === 'universal'
         ? 'universal'
@@ -1391,6 +1456,7 @@ function clearStoredTraditionDefault() {
 }
 
 function clearUserEntryDefault() {
+    profileBackupClear(); // a deliberate reset must not be undone by the backup
     try {
         localStorage.removeItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY);
         localStorage.removeItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
@@ -1524,8 +1590,10 @@ function setUserProfileDisplayName(value) {
 // back button) was never saved, and the first-time prompt saved nothing at all until its own Save button. Text is
 // now saved as it is typed (a short pause after the last key), and again whenever the page is hidden or closed.
 let profileTextSaveTimer = null;
+let profileTextDirty = false; // something was typed since the last save; untouched fields are never re-written
 
 function scheduleProfileTextSave() {
+    profileTextDirty = true;
     if (profileTextSaveTimer) clearTimeout(profileTextSaveTimer);
     profileTextSaveTimer = setTimeout(saveProfileTextFieldsNow, 600);
 }
@@ -1540,6 +1608,8 @@ function markOnboardingEngaged() {
 
 function saveProfileTextFieldsNow() {
     if (profileTextSaveTimer) { clearTimeout(profileTextSaveTimer); profileTextSaveTimer = null; }
+    if (!profileTextDirty) return;
+    profileTextDirty = false;
     ['profile-display-name', 'uo-onboarding-name'].forEach((id) => {
         const input = document.getElementById(id);
         if (!input) return;
@@ -2994,10 +3064,16 @@ function syncStorageNote() {
         ? new Date(since).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
         : null;
     const kept = storageIsDurable === true ? 'protected from clean-up' : (storageIsDurable === false ? 'not protected from clean-up' : 'protection unknown');
-    note.textContent = 'Your settings are saved on this device' + (when ? ' since ' + when : '') + ' (' + kept + ').';
+    let restored = null;
+    try { restored = localStorage.getItem(PROFILE_RESTORED_STORAGE_KEY); } catch (_error) { /* ignore */ }
+    const restoredText = restored && Number.isFinite(Date.parse(restored))
+        ? ' Restored from a backup copy on ' + new Date(restored).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) + ', after the browser cleared its main copy.'
+        : '';
+    note.textContent = 'Your settings are saved on this device' + (when ? ' since ' + when : '') + ' (' + kept + ').' + restoredText;
 }
 
 async function initializeEntryRouting() {
+    await restoreProfileFromBackupIfMissing();
     recordStorageFirstSeen();
     requestDurableStorage();
     bindTraditionEntryControls();

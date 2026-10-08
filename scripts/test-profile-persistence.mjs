@@ -67,6 +67,39 @@ for (const mode of ['abort', 'timeout']) {
   check(await page.locator('#tradition-entry').evaluate((e) => getComputedStyle(e).display !== 'none'), '...and the reader is asked where they pray');
   await browser.close();
 }
+
+// 4. The browser clears localStorage but leaves IndexedDB: the backup copy puts the profile back at launch.
+{
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'uo-backup-'));
+  const open = () => chromium.launchPersistentContext(dir, { executablePath: exe, viewport: { width: 390, height: 850 }, isMobile: true, hasTouch: true });
+  let ctx = await open(); let page = ctx.pages()[0] || await ctx.newPage();
+  await page.goto(base); await page.waitForTimeout(2000);
+  await page.locator('[data-entry-family="western"]').click();
+  await page.locator('[data-entry-tradition="anglican"]').first().click();
+  await page.waitForTimeout(2000);
+  await page.evaluate(() => { setUserProfileDisplayName('Bernie'); setUserProfileMinistryRole('reader'); });
+  await page.waitForTimeout(1200);
+  // What a clean-up on the phone does: the app is not running, localStorage is emptied, IndexedDB is left alone.
+  await page.goto('about:blank');
+  const cdp = await ctx.newCDPSession(page);
+  await cdp.send('Storage.clearDataForOrigin', { origin: new URL(base).origin, storageTypes: 'local_storage' });
+  await page.goto(base); await page.waitForTimeout(2500);
+  const p = await profileOf(page);
+  check(p && p.displayName === 'Bernie' && p.ministryRole === 'reader' && p.traditionDefault === 'anglican', 'the backup copy restores the profile when localStorage comes up empty');
+  check(await page.locator('#tradition-entry').evaluate((e) => getComputedStyle(e).display === 'none'), '...and the app opens straight into the office');
+  await page.evaluate(() => openUserProfilePanel());
+  check(/Restored from a backup copy/.test(await page.locator('#profile-storage-note').textContent()), '...and the profile panel says it was restored');
+  // A deliberate reset must not be undone by the backup.
+  await page.evaluate(() => resetUniversalOfficeUserProfile());
+  await page.waitForTimeout(1200);
+  await page.goto('about:blank');
+  await cdp.send('Storage.clearDataForOrigin', { origin: new URL(base).origin, storageTypes: 'local_storage' });
+  await page.goto(base); await page.waitForTimeout(2500);
+  check((await profileOf(page)) === null || !(await profileOf(page)).displayName, 'after "Reset local defaults" the backup does not bring the profile back');
+  check(await page.locator('#tradition-entry').evaluate((e) => getComputedStyle(e).display !== 'none'), '...the reader is asked where they pray');
+  await ctx.close();
+  fs.rmSync(dir, { recursive: true, force: true });
+}
 server.kill();
 console.log(bad === 0 ? 'PASS profile persistence' : `FAIL profile persistence (${bad})`);
 process.exit(bad === 0 ? 0 : 1);
