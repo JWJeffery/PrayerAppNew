@@ -98,7 +98,7 @@ and say what you checked.
 JS rubrics engine, any year 1900-2100, Latin and English, with a Calendar setting for Rubrics 1960 or Rubrics 1960 -
 2020 USA (PR #120, 2026-10-06); plan and results: `documentation/ROMAN_BREVIARY_COMPONENT_ENGINE_PLAN.md` sections 12-18.
 (2) Offline delivery: installable offline website built 2026-10-04 (`npm run release:web`, `npm run test:offline`).
-**Not done (recorded 2026-10-07 as "web only"; Josh said on 2026-10-08 he does not recall deciding that and is asking about Google Play closed testing, so treat it as OPEN):** Capacitor iOS/Android apps;
+**Not done (an earlier note recorded "web only", but Josh says he never asked for that; Google Play is OPEN, he is planning a beta and asking about Play closed testing):** Capacitor iOS/Android apps;
 password-protected hosting can block the manifest/service worker (plan doc section 17). JSON stays the source of
 truth; a database is only scoped (`documentation/JSON_TO_DATABASE_SCOPING.md`). Scripture in the public app is limited
 to passages cited in the prayers (Bible browser stays admin-only); Josh judges the NRSV discrete-passage use
@@ -109,8 +109,7 @@ the diocesan page, global-administrator viewing and in-app administrator managem
 settings across devices; password and/or passkey optional for everyone; emailed codes still work; Apple/Google/Facebook seam exists, no provider
 on). Migrations 002, 003 and 004 are imported on production (19 tables) and Josh confirmed emailed-code sign-in works. Both zips (`parish-backend.zip`
 and `web-release-app-shell.zip`, strict SQL mode plus a "database is missing updates" warning on the admin page) are deployed; PR #125 put
-everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **Recorded 2026-10-07 as a decision (Josh does not recall it, 2026-10-08; treat as open): web
-only** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
+everything on `main`. Read `documentation/ACCOUNTS_AND_SIGN_IN.md` and `documentation/PARISH_INTENTIONS.md` Part 3c. **An earlier note recorded "web only" as Josh's decision; he says he never asked for that, so Play/store apps are OPEN:** (Google Play needs a 12-tester, 14-day test for personal accounts; organization accounts need a D-U-N-S number); no Capacitor/Play/App Store apps
 unless Josh revisits. **Diocese sign-in: built 2026-10-07, on the branch and NOT yet merged or deployed** (migration `005_diocese_staff.sql`; Josh designates an editor per diocese on the admin page; they sign in at `parish/diocese-admin.html`; `documentation/ACCOUNTS_AND_SIGN_IN.md`). Deploy: import 005, upload `parish-backend.zip`. **Still open, held by Josh:** "this Sunday's Collect and readings" beside the service times (needs the calendar engine; no date
 deep-link exists). Original todo: history Volume 9.
 
